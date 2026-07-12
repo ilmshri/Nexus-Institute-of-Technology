@@ -141,6 +141,18 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   (OCW course pages, NPTEL course pages, Open Library work pages,
   smrp.org, nebosh.org.uk). Sources without verifiable official URLs stay
   plain text. build.py linkify() renders them.
+- Video-source policy (applied 2026-07-13): registry entries may carry
+  "watch" (verified lecture-videos page → rendered "Watch lectures ▶"),
+  "label" (visible note, e.g. NPTEL's "alternative (enable captions)"),
+  and "arabic" (verified Arabic source → "In Arabic"; none has passed the
+  verification bar yet — only official university/professional-body
+  channels qualify). Priority: OCW video pages > university channels
+  (Jeff Hanson/TTU via channel id UCXKW_dKcpFh358S1rV5qBDw — NOT the
+  @JeffHanson handle, which is a different channel; LearnChemE/CU Boulder)
+  > professional bodies (SME channel UCiEiOeFUl4Ytrv63Udugckg, Mobius
+  Institute) > independent channels labeled "supplementary" (The Efficient
+  Engineer, RealPars). NPTEL links are kept as labeled alternatives, never
+  removed without a verified replacement.
 
 - Tier 1 done: y1s1-mp1-02 (casting solidification), y1s1-mp1-03 (casting
   practice, quality & defects).

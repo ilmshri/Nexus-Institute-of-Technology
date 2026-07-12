@@ -22,7 +22,7 @@ CORE60_BLOCKS = {
 }
 
 FORK = (
-    '<svg class="fork" viewBox="0 0 22 30" aria-hidden="true" focusable="false">'
+    '<svg class="fork" viewBox="1.8 0 18.4 30" aria-hidden="true" focusable="false">'
     '<path d="M11,0 L13.1,3.2 L13.1,13 L8.9,13 L8.9,3.2 Z"/>'
     '<path d="M3,1.4 C1.8,4.6 2.1,8.6 3.9,11.5 C4.6,12.5 5.5,13 6.5,13 L8.6,13 '
     'C6.8,11.4 5.7,8.9 5.4,5.9 C5.3,4.3 5.1,2.7 3,1.4 Z"/>'
@@ -98,13 +98,13 @@ def esc(s):
 
 
 def load_sources():
-    """Registry of verified source URLs; returns [(escaped_match, name, url)]
+    """Registry of verified source URLs; returns [(escaped_match, entry)]
     sorted longest-match-first so specific names win over generic ones."""
     reg = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
     entries = []
     for s in reg["sources"]:
         for m in s["match"]:
-            entries.append((esc(m), s["name"], s["url"]))
+            entries.append((esc(m), s))
     entries.sort(key=lambda e: -len(e[0]))
     return entries
 
@@ -114,14 +114,24 @@ SOURCES = None  # set in main()
 
 def linkify(escaped_text):
     """Replace known source names (already-escaped text) with links to the
-    verified registry URL. Placeholder pass prevents nested anchors."""
+    verified registry URL, plus optional Watch-lectures / label / Arabic
+    companions. Placeholder pass prevents nested anchors."""
     subs = []
-    for m, name, url in SOURCES:
+    for m, s in SOURCES:
         if m in escaped_text:
             token = f"\x00{len(subs)}\x00"
             escaped_text = escaped_text.replace(m, token, 1)
-            subs.append((token, f'<a href="{url}" title="{esc(name)}" '
-                                f'target="_blank" rel="noopener">{m}</a>'))
+            html = (f'<a href="{s["url"]}" title="{esc(s["name"])}" '
+                    f'target="_blank" rel="noopener">{m}</a>')
+            if s.get("watch"):
+                html += (f' <a class="watch" href="{s["watch"]}" '
+                         f'target="_blank" rel="noopener">Watch lectures ▶</a>')
+            if s.get("arabic"):
+                html += (f' <a class="watch" href="{s["arabic"]}" '
+                         f'target="_blank" rel="noopener">In Arabic</a>')
+            if s.get("label"):
+                html += f' <span class="srcnote">{esc(s["label"])}</span>'
+            subs.append((token, html))
     for token, anchor in subs:
         escaped_text = escaped_text.replace(token, anchor)
     return escaped_text
