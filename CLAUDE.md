@@ -144,9 +144,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 - Video-source policy (applied 2026-07-13): registry entries may carry
   "watch" (verified lecture-videos page → rendered "Watch lectures ▶"),
   "label" (visible note, e.g. NPTEL's "alternative (enable captions)"),
-  and "arabic" (verified Arabic source → "In Arabic"; none has passed the
-  verification bar yet — only official university/professional-body
-  channels qualify). Priority: OCW video pages > university channels
+  and "arabic" (verified Arabic source → rendered "In Arabic — alternative";
+  bar RELAXED by owner decision 2026-07-13: independent Arabic educators and
+  unofficial recordings of real university lectures are acceptable if
+  on-topic, technically sound, and watchable — each URL oEmbed/title
+  verified before entry; ripped paid courses and content farms remain
+  excluded; English always stays the primary link; where the source is an
+  unofficial recording, add {"url":…, "note":"unofficial recording"}).
+  Registry uses topic-suffixed match tokens (e.g. "LearnChemE (CU Boulder)
+  — fluids") so an Arabic source never renders on a lesson whose topic it
+  doesn't cover. Priority: OCW video pages > university channels
   (Jeff Hanson/TTU via channel id UCXKW_dKcpFh358S1rV5qBDw — NOT the
   @JeffHanson handle, which is a different channel; LearnChemE/CU Boulder)
   > professional bodies (SME channel UCiEiOeFUl4Ytrv63Udugckg, Mobius

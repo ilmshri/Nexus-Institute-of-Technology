@@ -127,8 +127,12 @@ def linkify(escaped_text):
                 html += (f' <a class="watch" href="{s["watch"]}" '
                          f'target="_blank" rel="noopener">Watch lectures ▶</a>')
             if s.get("arabic"):
-                html += (f' <a class="watch" href="{s["arabic"]}" '
-                         f'target="_blank" rel="noopener">In Arabic</a>')
+                ar = s["arabic"]
+                ar_url = ar["url"] if isinstance(ar, dict) else ar
+                html += (f' <a class="watch ar" href="{ar_url}" '
+                         f'target="_blank" rel="noopener">In Arabic — alternative</a>')
+                if isinstance(ar, dict) and ar.get("note"):
+                    html += f' <span class="srcnote">{esc(ar["note"])}</span>'
             if s.get("label"):
                 html += f' <span class="srcnote">{esc(s["label"])}</span>'
             subs.append((token, html))

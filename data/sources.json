@@ -1,37 +1,298 @@
 {
   "_comment": "Central source registry. Every URL verified live before entry (see CLAUDE.md ledger). 'url' = course/home link; 'watch' = verified lecture-video page (rendered as 'Watch lectures'); 'label' = visible annotation after the link. Books link only to Open Library work pages. Sources without verifiable official URLs stay plain text.",
   "sources": [
-    {"name": "MIT OCW 18.01SC Single Variable Calculus", "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/", "watch": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/", "match": ["MIT OCW 18.01"]},
-    {"name": "MIT OCW 18.02SC Multivariable Calculus", "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/", "watch": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/video_galleries/video-lectures/", "match": ["MIT OCW 18.02"]},
-    {"name": "MIT OCW 18.03SC Differential Equations", "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/", "watch": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/", "match": ["MIT OCW 18.03", "18.03 Differential Equations"]},
-    {"name": "MIT OCW 18.05 Introduction to Probability and Statistics", "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/", "match": ["MIT OCW 18.05"]},
-    {"name": "MIT OCW 2.001 Mechanics & Materials I", "url": "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/", "match": ["MIT OCW 2.001"]},
-    {"name": "MIT OCW 2.003SC Engineering Dynamics (Prof. Vandiver)", "url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", "watch": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/", "match": ["MIT OCW 2.003"]},
-    {"name": "MIT OCW 2.04A Systems and Controls", "url": "https://ocw.mit.edu/courses/2-04a-systems-and-controls-spring-2013/", "match": ["MIT OCW 2.04A"]},
-    {"name": "MIT OCW 2.72 Elements of Mechanical Design", "url": "https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/", "match": ["MIT OCW 2.72"]},
-    {"name": "MIT OCW 6.0001 Introduction to CS and Programming in Python", "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/", "watch": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/", "match": ["MIT OCW 6.0001"]},
-    {"name": "MIT OCW 2.008 Design and Manufacturing II", "url": "https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/", "match": ["MIT OCW 2.008"]},
-    {"name": "Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos", "url": "https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw", "match": ["Jeff Hanson (Texas Tech)"]},
-    {"name": "LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts", "url": "https://www.youtube.com/@LearnChemE", "match": ["LearnChemE (CU Boulder)"]},
-    {"name": "Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)", "url": "https://www.mobiusinstitute.com/youtube-videos/", "watch": "https://www.youtube.com/watch?v=DUznmZvSQOU", "match": ["Mobius Institute"]},
-    {"name": "The Efficient Engineer — supplementary animated engineering explainers (independent channel)", "url": "https://www.youtube.com/@TheEfficientEngineer", "match": ["The Efficient Engineer"]},
-    {"name": "RealPars — supplementary PLC and industrial automation training videos (independent channel)", "url": "https://www.youtube.com/@realpars", "match": ["RealPars"]},
-    {"name": "NPTEL — Industrial Automation and Control (IIT Kharagpur)", "url": "https://nptel.ac.in/courses/108105062", "label": "alternative (enable captions)", "match": ["NPTEL: Industrial Automation and Control"]},
-    {"name": "NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)", "url": "https://nptel.ac.in/courses/127105234", "label": "alternative (enable captions)", "match": ["NPTEL: Reliability Engineering"]},
-    {"name": "NPTEL — Industrial Instrumentation (IIT Kharagpur)", "url": "https://nptel.ac.in/courses/108105064", "label": "alternative (enable captions)", "match": ["NPTEL: Industrial Instrumentation"]},
-    {"name": "NPTEL — Fundamentals of Manufacturing Processes (IIT Roorkee)", "url": "https://nptel.ac.in/courses/112107219", "label": "alternative (enable captions)", "match": ["NPTEL: Fundamentals of Manufacturing Processes"]},
-    {"name": "NPTEL — Manufacturing Processes II (IIT Kharagpur)", "url": "https://nptel.ac.in/courses/112105126", "label": "alternative (enable captions)", "match": ["NPTEL: Manufacturing Processes II"]},
-    {"name": "Groover — Fundamentals of Modern Manufacturing (Open Library)", "url": "https://openlibrary.org/works/OL3752130W", "match": ["Groover"]},
-    {"name": "Kalpakjian & Schmid — Manufacturing Engineering and Technology (Open Library)", "url": "https://openlibrary.org/works/OL3289918W", "match": ["Kalpakjian & Schmid"]},
-    {"name": "Callister & Rethwisch — Materials Science and Engineering (Open Library)", "url": "https://openlibrary.org/works/OL29074519W", "match": ["Callister & Rethwisch"]},
-    {"name": "Çengel & Ghajar — Heat and Mass Transfer (Open Library)", "url": "https://openlibrary.org/works/OL44718382W", "match": ["Çengel & Ghajar"]},
-    {"name": "Çengel & Cimbala — Fluid Mechanics (Open Library)", "url": "https://openlibrary.org/works/OL18026047W", "match": ["Çengel & Cimbala"]},
-    {"name": "Flemings — Solidification Processing (Open Library)", "url": "https://openlibrary.org/works/OL7199330W", "match": ["Flemings"]},
-    {"name": "Campbell — Complete Casting Handbook (Open Library)", "url": "https://openlibrary.org/works/OL25691294W", "match": ["Campbell"]},
-    {"name": "Black & Kohser — DeGarmo's Materials and Processes in Manufacturing (Open Library)", "url": "https://openlibrary.org/works/OL20399370W", "match": ["Black & Kohser"]},
-    {"name": "The Making, Shaping and Treating of Steel (Open Library)", "url": "https://openlibrary.org/works/OL19565051W", "match": ["The Making, Shaping and Treating of Steel"]},
-    {"name": "ASM Handbook, Volume 15: Casting (Open Library)", "url": "https://openlibrary.org/works/OL16920478W", "match": ["ASM Handbook, Volume 15", "ASM Handbook Vol. 15", "ASM Handbook"]},
-    {"name": "SMRP — Society for Maintenance & Reliability Professionals", "url": "https://smrp.org", "match": ["SMRP CMRP framework", "SMRP framework", "SMRP CMRP body-of-knowledge"]},
-    {"name": "NEBOSH", "url": "https://www.nebosh.org.uk", "match": ["NEBOSH IGC alignment", "NEBOSH IGC syllabus alignment", "NEBOSH alignment", "NEBOSH IGC"]}
+    {
+      "name": "MIT OCW 18.01SC Single Variable Calculus",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "watch": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/",
+      "match": [
+        "MIT OCW 18.01"
+      ]
+    },
+    {
+      "name": "MIT OCW 18.02SC Multivariable Calculus",
+      "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+      "watch": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/video_galleries/video-lectures/",
+      "match": [
+        "MIT OCW 18.02"
+      ]
+    },
+    {
+      "name": "MIT OCW 18.03SC Differential Equations",
+      "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/",
+      "watch": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/",
+      "match": [
+        "MIT OCW 18.03",
+        "18.03 Differential Equations"
+      ]
+    },
+    {
+      "name": "MIT OCW 18.05 Introduction to Probability and Statistics",
+      "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/",
+      "match": [
+        "MIT OCW 18.05"
+      ]
+    },
+    {
+      "name": "MIT OCW 2.001 Mechanics & Materials I",
+      "url": "https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/",
+      "match": [
+        "MIT OCW 2.001"
+      ]
+    },
+    {
+      "name": "MIT OCW 2.003SC Engineering Dynamics (Prof. Vandiver)",
+      "url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/",
+      "watch": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/",
+      "match": [
+        "MIT OCW 2.003"
+      ]
+    },
+    {
+      "name": "MIT OCW 2.04A Systems and Controls",
+      "url": "https://ocw.mit.edu/courses/2-04a-systems-and-controls-spring-2013/",
+      "match": [
+        "MIT OCW 2.04A"
+      ]
+    },
+    {
+      "name": "MIT OCW 2.72 Elements of Mechanical Design",
+      "url": "https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/",
+      "match": [
+        "MIT OCW 2.72"
+      ]
+    },
+    {
+      "name": "MIT OCW 6.0001 Introduction to CS and Programming in Python",
+      "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/",
+      "watch": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/",
+      "match": [
+        "MIT OCW 6.0001"
+      ]
+    },
+    {
+      "name": "MIT OCW 2.008 Design and Manufacturing II",
+      "url": "https://ocw.mit.edu/courses/2-008-design-and-manufacturing-ii-spring-2025/",
+      "match": [
+        "MIT OCW 2.008"
+      ]
+    },
+    {
+      "name": "Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos",
+      "url": "https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw",
+      "match": [
+        "Jeff Hanson (Texas Tech)"
+      ],
+      "arabic": "https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db"
+    },
+    {
+      "name": "LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts",
+      "url": "https://www.youtube.com/@LearnChemE",
+      "match": [
+        "LearnChemE (CU Boulder)"
+      ],
+      "arabic": "https://www.youtube.com/playlist?list=PLoiEx8wAxvXJ4Z-410esK8x81OOKfZUZt"
+    },
+    {
+      "name": "Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)",
+      "url": "https://www.mobiusinstitute.com/youtube-videos/",
+      "watch": "https://www.youtube.com/watch?v=DUznmZvSQOU",
+      "match": [
+        "Mobius Institute"
+      ]
+    },
+    {
+      "name": "The Efficient Engineer — supplementary animated engineering explainers (independent channel)",
+      "url": "https://www.youtube.com/@TheEfficientEngineer",
+      "match": [
+        "The Efficient Engineer"
+      ]
+    },
+    {
+      "name": "RealPars — supplementary PLC and industrial automation training videos (independent channel)",
+      "url": "https://www.youtube.com/@realpars",
+      "match": [
+        "RealPars"
+      ],
+      "arabic": "https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl"
+    },
+    {
+      "name": "NPTEL — Industrial Automation and Control (IIT Kharagpur)",
+      "url": "https://nptel.ac.in/courses/108105062",
+      "label": "alternative (enable captions)",
+      "match": [
+        "NPTEL: Industrial Automation and Control"
+      ]
+    },
+    {
+      "name": "NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)",
+      "url": "https://nptel.ac.in/courses/127105234",
+      "label": "alternative (enable captions)",
+      "match": [
+        "NPTEL: Reliability Engineering"
+      ]
+    },
+    {
+      "name": "NPTEL — Industrial Instrumentation (IIT Kharagpur)",
+      "url": "https://nptel.ac.in/courses/108105064",
+      "label": "alternative (enable captions)",
+      "match": [
+        "NPTEL: Industrial Instrumentation"
+      ]
+    },
+    {
+      "name": "NPTEL — Fundamentals of Manufacturing Processes (IIT Roorkee)",
+      "url": "https://nptel.ac.in/courses/112107219",
+      "label": "alternative (enable captions)",
+      "match": [
+        "NPTEL: Fundamentals of Manufacturing Processes"
+      ]
+    },
+    {
+      "name": "NPTEL — Manufacturing Processes II (IIT Kharagpur)",
+      "url": "https://nptel.ac.in/courses/112105126",
+      "label": "alternative (enable captions)",
+      "match": [
+        "NPTEL: Manufacturing Processes II"
+      ]
+    },
+    {
+      "name": "Groover — Fundamentals of Modern Manufacturing (Open Library)",
+      "url": "https://openlibrary.org/works/OL3752130W",
+      "match": [
+        "Groover"
+      ]
+    },
+    {
+      "name": "Kalpakjian & Schmid — Manufacturing Engineering and Technology (Open Library)",
+      "url": "https://openlibrary.org/works/OL3289918W",
+      "match": [
+        "Kalpakjian & Schmid"
+      ]
+    },
+    {
+      "name": "Callister & Rethwisch — Materials Science and Engineering (Open Library)",
+      "url": "https://openlibrary.org/works/OL29074519W",
+      "match": [
+        "Callister & Rethwisch"
+      ]
+    },
+    {
+      "name": "Çengel & Ghajar — Heat and Mass Transfer (Open Library)",
+      "url": "https://openlibrary.org/works/OL44718382W",
+      "match": [
+        "Çengel & Ghajar"
+      ]
+    },
+    {
+      "name": "Çengel & Cimbala — Fluid Mechanics (Open Library)",
+      "url": "https://openlibrary.org/works/OL18026047W",
+      "match": [
+        "Çengel & Cimbala"
+      ]
+    },
+    {
+      "name": "Flemings — Solidification Processing (Open Library)",
+      "url": "https://openlibrary.org/works/OL7199330W",
+      "match": [
+        "Flemings"
+      ]
+    },
+    {
+      "name": "Campbell — Complete Casting Handbook (Open Library)",
+      "url": "https://openlibrary.org/works/OL25691294W",
+      "match": [
+        "Campbell"
+      ]
+    },
+    {
+      "name": "Black & Kohser — DeGarmo's Materials and Processes in Manufacturing (Open Library)",
+      "url": "https://openlibrary.org/works/OL20399370W",
+      "match": [
+        "Black & Kohser"
+      ]
+    },
+    {
+      "name": "The Making, Shaping and Treating of Steel (Open Library)",
+      "url": "https://openlibrary.org/works/OL19565051W",
+      "match": [
+        "The Making, Shaping and Treating of Steel"
+      ]
+    },
+    {
+      "name": "ASM Handbook, Volume 15: Casting (Open Library)",
+      "url": "https://openlibrary.org/works/OL16920478W",
+      "match": [
+        "ASM Handbook, Volume 15",
+        "ASM Handbook Vol. 15",
+        "ASM Handbook"
+      ]
+    },
+    {
+      "name": "SMRP — Society for Maintenance & Reliability Professionals",
+      "url": "https://smrp.org",
+      "match": [
+        "SMRP CMRP framework",
+        "SMRP framework",
+        "SMRP CMRP body-of-knowledge"
+      ]
+    },
+    {
+      "name": "NEBOSH",
+      "url": "https://www.nebosh.org.uk",
+      "match": [
+        "NEBOSH IGC alignment",
+        "NEBOSH IGC syllabus alignment",
+        "NEBOSH alignment",
+        "NEBOSH IGC"
+      ]
+    },
+    {
+      "name": "Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series",
+      "url": "https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw",
+      "arabic": "https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp",
+      "match": [
+        "Jeff Hanson (Texas Tech) — mechanics of materials"
+      ]
+    },
+    {
+      "name": "LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts",
+      "url": "https://www.youtube.com/@LearnChemE",
+      "match": [
+        "LearnChemE (CU Boulder) — applied thermo"
+      ]
+    },
+    {
+      "name": "LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts",
+      "url": "https://www.youtube.com/@LearnChemE",
+      "arabic": "https://www.youtube.com/playlist?list=PLGED90Y_uL1IMZkaD9wTnlFdC3F9DpUkJ",
+      "match": [
+        "LearnChemE (CU Boulder) — fluids"
+      ]
+    },
+    {
+      "name": "LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts",
+      "url": "https://www.youtube.com/@LearnChemE",
+      "match": [
+        "LearnChemE (CU Boulder) — heat transfer"
+      ]
+    },
+    {
+      "name": "Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)",
+      "url": "https://www.mobiusinstitute.com/youtube-videos/",
+      "watch": "https://www.youtube.com/watch?v=DUznmZvSQOU",
+      "arabic": "https://www.youtube.com/playlist?list=PL5P9-IPjYzZ76w1y6uNAB59SFRDUpVNuS",
+      "match": [
+        "Mobius Institute — vibration"
+      ]
+    },
+    {
+      "name": "The Efficient Engineer — supplementary animated engineering explainers (independent channel)",
+      "url": "https://www.youtube.com/@TheEfficientEngineer",
+      "arabic": "https://www.youtube.com/playlist?list=PLAsIlqPnYwTv6AOJbdvSOODxAgWCf7KjZ",
+      "match": [
+        "The Efficient Engineer — pumps"
+      ]
+    }
   ]
 }
