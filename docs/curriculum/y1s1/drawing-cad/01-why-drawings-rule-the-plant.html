@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 01 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Why drawings rule the plant</h1>
     <p class="sub">The drawing as a contract between design, fabrication, and maintenance. Title blocks, revisions, and drawing control. What 'as-built' means and why it is often untrue.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,81 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Who is protected by drawing revision control, and what goes wrong without it?</li><li>Why is an 'as-built' stamp often untrue, and what does that mean for the maintenance engineer using it?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Who is protected by drawing revision control, and what goes wrong without it?</li><li>Why is an 'as-built' stamp often untrue, and what does that mean for the maintenance engineer using it?</li></ul></div><div class="measure">
+<h3>§1 · The drawing is the contract</h3>
+<p>A drawing is not a picture of a part; it is a <em>contract</em> about a part. It binds a
+designer's intent, a fabricator's obligation, an inspector's acceptance criteria, and — years
+later — a maintenance engineer's only honest witness to what was actually built. When the
+drawing and the machine disagree, work stops until somebody finds out which one is lying.</p>
+<h3>§2 · Revision control — the drawing's chain of custody</h3>
+<p>Every drawing carries a title block (who, what, when, scale, projection symbol, drawing
+number) and a revision table (what changed, when, approved by whom). The revision letter is
+the single most important character on the sheet: torque a coupling per Rev B when the shop
+built Rev D and the bolts may be the wrong length. The discipline is absolute: work only from
+the revision the document register calls current, and treat uncontrolled prints — the ones
+taped inside panel doors — as rumors.</p>
+<h3>§3 · As-built, as-designed, as-found</h3>
+<p>Plants drift away from their drawings. Nozzles get relocated, supports added, impellers
+trimmed. An <em>as-built</em> drawing claims to capture reality after construction; in
+practice the claim decays from the day it's stamped. The maintenance engineer's habit:
+verify the two or three dimensions that matter against the metal before cutting steel, and
+red-line the drawing when reality wins. A marked-up print returned to document control is a
+gift to the next engineer; a silent discrepancy is a trap armed for them.</p>
+<p><strong>Closing.</strong> Drawings rule because they are the only durable, arguable record
+of intent. Respect the revision letter, distrust uncontrolled prints, and feed corrections
+back — the drawing system is a living asset exactly as much as the machines it describes.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>None yet</b> — this is the course's gate. It defines the vocabulary the next ten lessons use.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Title block</b> — the sheet's identity card: number, title, scale, projection, approvals.</li>
+<li><b>Revision</b> — a controlled change to a released drawing, lettered and logged.</li>
+<li><b>Document register</b> — the authoritative list of current revisions.</li>
+<li><b>As-built</b> — drawing updated to reflect what was actually constructed.</li>
+<li><b>Red-line</b> — field markup recording reality for document control to absorb.</li>
+<li><b>Uncontrolled copy</b> — any print outside the register's custody; convenient and dangerous.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Who is protected by drawing revision control, and what goes wrong without it?</li><li>Why is an 'as-built' stamp often untrue, and what does that mean for the maintenance engineer using it?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — the revision audit</h4>
+<p><b>Problem.</b> A pump baseplate drawing exists as Rev A (issued 2011), Rev C (2016,
+"anchor bolt pattern revised"), and Rev D (2019, "grout pocket added"). The workshop print in
+the job pack says Rev C. <b>Find:</b> what must be checked before fabrication proceeds.</p>
+<p><b>Solution.</b> (1) Query the register for the current revision — it is D.
+(2) Diff C→D via the revision table: the grout pocket affects the pour, not the bolt pattern.
+(3) Decision: fabrication of the bolt pattern may proceed per C <em>only if</em> D's change is
+confirmed irrelevant to it; the job pack is nonetheless corrected to Rev D before any work is
+signed off.</p>
+<p><b>Answer:</b> update the pack to Rev D; verify via the revision description that the
+C→D delta doesn't touch the work at hand. <b>Sanity check:</b> the failure mode avoided —
+pouring a base with no grout pocket — costs a jackhammer and a week; the check cost five minutes.</p>
+<h4>Worked example 2 — which drawing wins?</h4>
+<p><b>Problem.</b> During a seal change, the mechanic reports the shaft sleeve measures
+44.96 mm; the drawing says 45.00 h6. The stores catalog lists sleeves at both 45.00 and 44.95.
+<b>Find:</b> the correct action.</p>
+<p><b>Solution.</b> (1) h6 on 45 mm allows 45.000/44.984 — a 44.96 sleeve is out of drawing
+tolerance, so either wear or a substituted part. (2) Check the machine's history: a previous
+work order fitted the 44.95 catalog sleeve with a matching seal. (3) The <em>machine's
+configuration record</em>, not the original drawing, governs the spare to order — and a
+red-line goes to document control proposing the drawing note "alternate sleeve 44.95 fitted
+2019, WO #—."</p>
+<p><b>Answer:</b> order to the as-fitted configuration; red-line the drawing.
+<b>Sanity check:</b> ordering blind to the drawing would have delivered a sleeve 0.05 mm
+proud of the fitted seal's working range — a leak on startup.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the panel-door print.</b> You arrive at a packaging line stoppage where the
+electrician is wiring from a print taped inside the MCC door — hand-annotated, no revision
+letter, edges soft with age. The controlled drawing, two revisions newer, moved the interlock
+he is about to bridge. Nothing failed yet; you stop the work anyway, pull the current sheet
+from the register, and the "fault" resolves in twenty minutes without the bridge. The
+uncontrolled print goes in the bin with a little ceremony. Standards context: ISO 7200 governs
+title blocks, but the deeper rule is older than any standard — the register is the truth.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

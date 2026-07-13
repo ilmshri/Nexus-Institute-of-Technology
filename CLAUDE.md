@@ -136,8 +136,8 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   real content, course by course, WITHOUT per-batch approval. Content merges
   via data/content/<sem>-<course>.json ({lesson_n: {lecture, foundations,
   examples, kuwait}} — HTML, MathJax LaTeX allowed). Arithmetic in worked
-  examples must be verified before writing. DONE: y1s1/math-1 (MTH 101, 11
-  lessons, full). NEXT QUEUE: drawing-cad, statics, materials-1, computing,
+  examples must be verified before writing. DONE: y1s1/math-1 (MTH 101) + y1s1/drawing-cad (DRW 102), 22 lessons
+  full. NEXT QUEUE: statics, materials-1, computing,
   then y1s2 onward. Every session: author as many complete courses as fit,
   rebuild, push (origin = sundevilfactory/asu, credential in keychain),
   verify live.

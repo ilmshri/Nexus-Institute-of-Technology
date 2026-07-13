@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 07 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>GD&amp;T essentials</h1>
     <p class="sub">Feature control frames, datums, flatness, position, runout. What GD&amp;T buys over coordinate tolerances. Runout callouts as the language of rotating-equipment repair standards.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,82 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What does total runout control that circular runout does not?</li><li>Why does GD&amp;T's datum system beat coordinate tolerancing for function?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does total runout control that circular runout does not?</li><li>Why does GD&amp;T's datum system beat coordinate tolerancing for function?</li></ul></div><div class="measure">
+<h3>§1 · Why coordinates aren't enough</h3>
+<p>Plus-minus tolerances on coordinates control a hole's X and Y separately — but function
+cares about the hole's <em>position as a whole</em>, its axis attitude, the flatness of the
+face it lives on. Geometric Dimensioning & Tolerancing (GD&T) tolerances geometry directly:
+form (flatness, straightness), orientation (perpendicularity, parallelism), location
+(position, concentricity-family), and runout. Each control is a feature-control frame: symbol,
+tolerance zone, and the datums it's measured from.</p>
+<h3>§2 · Datums — the measurement contract</h3>
+<p>A datum reference frame (A|B|C) declares the exact sequence of surfaces the part sits on
+during measurement: primary A arrests three degrees of freedom, secondary B two, tertiary C
+one. The same part, gauged from different datums, yields different verdicts — so the drawing
+fixes the frame once, and design, manufacture, and inspection all argue inside it. Datums are
+chosen from function: the faces that seat, the bores that locate.</p>
+<h3>§3 · Runout — the rotating machine's own control</h3>
+<p><em>Circular runout</em> limits the wobble of each circular element as the part turns on
+its datum axis — one dial reading per section. <em>Total runout</em> sweeps the whole surface
+axially and radially at once, controlling taper and coning that circular runout cannot see.
+For couplings, sleeves, and seal faces, runout tolerances are the drawing's way of promising
+your dial indicator a quiet needle — and Lesson 6's fits plus today's runout are the complete
+language of a shaft drawing.</p>
+<p><strong>Closing.</strong> GD&T tolerances what function feels — form, orientation,
+location, runout — from declared datums. Read the frame, find the datums, and the drawing
+tells you exactly how the inspector will set the part up.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Limits and fits</b> (Lesson 6) — GD&T rides on toleranced features.</li>
+<li><b>Datum thinking</b> (Lesson 5) — formalized here into A|B|C frames.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Feature-control frame</b> — the boxed callout: symbol | zone | datums.</li>
+<li><b>Datum reference frame</b> — the seating sequence that arrests the part for measurement.</li>
+<li><b>Position tolerance</b> — a zone (usually ⌀) the feature's axis must live in.</li>
+<li><b>MMC</b> — maximum material condition; enables bonus tolerance and functional gauging.</li>
+<li><b>Circular vs total runout</b> — per-section wobble vs whole-surface sweep.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What does total runout control that circular runout does not?</li><li>Why does GD&amp;T's datum system beat coordinate tolerancing for function?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — position beats coordinates</h4>
+<p><b>Problem.</b> A hole is located X = 50±0.1, Y = 50±0.1. <b>Find:</b> the worst-case
+radial position error, and the equivalent GD&T callout that controls it directly.</p>
+<p><b>Solution.</b> (1) Worst case: both coordinates off by 0.1 → radial error
+\( \sqrt{0.1^2 + 0.1^2} = 0.141 \) mm; the coordinate scheme actually permits a square zone
+whose corners stick out 41% farther than its sides.
+(2) GD&T equivalent: basic dimensions 50, 50 with position ⌀0.28 (A|B|C) — a round zone of
+the same worst-case radius, uniform in all directions.
+(3) Bonus: add Ⓜ and the zone grows as the hole departs MMC — functional gauging becomes
+possible.</p>
+<p><b>Answer:</b> ±0.1 coordinates permit 0.141 radial error; position ⌀0.28 controls the
+same function honestly. <b>Sanity check:</b> the diagonal of a square vs its side — the 41%
+is pure Pythagoras.</p>
+<h4>Worked example 2 — circular passes, total fails</h4>
+<p><b>Problem.</b> A seal sleeve shows circular runout 0.02 at every measured section, yet
+total runout measures 0.09. <b>Find:</b> what geometry explains this, and which control the
+seal cares about.</p>
+<p><b>Solution.</b> (1) Each section is individually round about the axis (0.02) but the
+sections don't line up: the surface is <em>tapered or coned</em> — radius drifts along the
+length. (2) Total runout sweeps axially and accumulates that drift (0.09).
+(3) A lip seal riding that sleeve sees a changing interference along its width — total runout
+is the functional control for seal tracks and coupling rims.</p>
+<p><b>Answer:</b> taper/coning; specify total runout for seal surfaces.
+<b>Sanity check:</b> circular runout at many sections plus a straightness check ≈ total
+runout — the 0.07 gap is the taper the single-section dial could never see.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the coupling that "passed" and still shook.</b> You arrive at a pump train
+that vibrates at 1× despite laser alignment certificates. The coupling hub's rim runout was
+checked — circular, mid-face, 0.02, pass. Swept across the full rim face, total runout comes
+in at 0.11: the hub face is coned from a previous overheat, and the alignment laser has been
+faithfully aligning to a lie. The hub is refaced; the 1× drops by two-thirds. Your close-out
+adds one line to the site's alignment procedure: <em>face runout means total, swept, per the
+drawing's GD&T — not one ring at one radius</em>.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

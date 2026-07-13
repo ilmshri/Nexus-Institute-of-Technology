@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 08 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Fasteners, welds, and surface symbols</h1>
     <p class="sub">Thread designation and fastener callouts. Weld symbols on structural drawings — the arrow side convention that everyone gets wrong once. Surface finish symbols and Ra values.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,77 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>On a weld symbol, what changes between arrow-side and other-side placement?</li><li>Decode M16×2: what do the numbers promise the fitter?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>On a weld symbol, what changes between arrow-side and other-side placement?</li><li>Decode M16×2: what do the numbers promise the fitter?</li></ul></div><div class="measure">
+<h3>§1 · Symbols — high-density engineering language</h3>
+<p>Drawings compress whole procedures into symbols. Three families dominate plant work:
+threads and fasteners, welds, and surface finish. Misread any of them and the error is built,
+not drawn. This lesson is deliberately a reading lesson: the symbols carry law.</p>
+<h3>§2 · Threads and welds</h3>
+<p>M16×2 6g reads: ISO metric thread, 16 mm nominal, 2 mm pitch, external tolerance class 6g.
+Coarse pitch is default; fine pitch is specified. For welds, the ISO/AWS symbol hangs
+instructions on a reference line: the symbol below the line applies to the <em>arrow side</em>
+of the joint, above the line to the <em>other side</em>; numbers left of the symbol give
+throat or leg size, right of it length and pitch; a flag means field weld; a circle means
+weld-all-around. A fillet symbol with 6 below the line and 6 above commands both sides at
+6 mm — miss the top symbol and half the strength stays undelivered.</p>
+<h3>§3 · Surface finish</h3>
+<p>The checkmark symbol carries roughness (Ra in µm), sometimes process notes and lay
+direction. Ra 3.2 is honest machining; 1.6 careful turning; 0.8 grinding territory;
+0.4 and below, lapping and money. Finish symbols on seal journals, gasket faces, and bearing
+seats are functional specifications: a seal lip on an Ra 3.2 journal wears out years early,
+a gasket on a too-smooth flange face slides instead of gripping. The number is a friction,
+sealing, and fatigue decision — never cosmetic.</p>
+<p><strong>Closing.</strong> Thread callouts, weld symbols, and finish marks are compressed
+contracts. Read them slowly once, and the shop reads your intent forever.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Sections and dimensions</b> (Lessons 4–5) — symbols attach to defined geometry.</li>
+<li><b>Fits</b> (Lesson 6) — thread classes are the fit system's cousins.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Pitch</b> — axial advance per thread turn (mm).</li>
+<li><b>Arrow side / other side</b> — the weld symbol's two shores of the reference line.</li>
+<li><b>Throat / leg</b> — a fillet weld's two size languages (a ≈ 0.7z).</li>
+<li><b>Field weld flag</b> — welded at site, not in the shop.</li>
+<li><b>Ra</b> — arithmetic average roughness, µm.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>On a weld symbol, what changes between arrow-side and other-side placement?</li><li>Decode M16×2: what do the numbers promise the fitter?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — decode a weld callout</h4>
+<p><b>Problem.</b> A gusset drawing shows a fillet symbol below the line marked "z6", the
+same symbol above the line, a circle at the bend, and a flag. <b>Find:</b> the complete
+instruction.</p>
+<p><b>Solution.</b> (1) Fillet below line: 6 mm leg on the arrow side. (2) Fillet above:
+same weld on the other side — both sides welded. (3) Circle: all around the joint's
+perimeter. (4) Flag: executed at site, not in the shop.</p>
+<p><b>Answer:</b> 6 mm double-sided all-around fillet, field welded.
+<b>Sanity check:</b> leg 6 → throat ≈ 4.2 mm; if the design note requires a 4 mm throat,
+the callout closes it with margin.</p>
+<h4>Worked example 2 — the finish that seals</h4>
+<p><b>Problem.</b> A shaft drawing marks the seal journal Ra 0.4 with lay circumferential,
+while the adjacent bearing seat reads Ra 0.8. The repair shop proposes "polishing everything
+to a mirror." <b>Find:</b> the ruling.</p>
+<p><b>Solution.</b> (1) Ra 0.4 circumferential on the seal track: the lip needs a smooth
+surface with micro-texture oriented so it pumps lubricant under the lip — mirror-smooth
+(Ra ≈ 0.1) can actually starve and cook the lip. (2) The bearing seat's 0.8 supports the
+fit's friction; over-polishing lowers grip of the interference. (3) Ruling: finish to the
+numbers, not beyond them.</p>
+<p><b>Answer:</b> hold Ra 0.4 (circumferential lay) and Ra 0.8 respectively; "better" finish
+is worse function. <b>Sanity check:</b> seal manufacturers specify Ra bands (typ. 0.2–0.8)
+with plunge-ground lay — bands, not ceilings, because both edges bite.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the missing top fillet.</b> You arrive at a cracked conveyor-support gusset,
+eighteen months old. The drawing commanded double-sided fillets — symbol above and below the
+line; the fabricator welded the visible side only, and paint hid the omission until fatigue
+found it. The repair is one evening's welding; the systemic fix is a fabrication-QC
+checklist line — <em>weld symbols verified both sides of reference line</em> — and a toolbox
+talk where you draw the symbol grammar on the whiteboard. AWS A2.4 in ten minutes, cheaper
+than the next crack.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

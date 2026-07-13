@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 04 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Sections and conventions</h1>
     <p class="sub">Full, half, offset, and revolved sections. Hatching conventions by material. The conventions for ribs, shafts, and fasteners that are deliberately not sectioned.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,74 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are ribs and fasteners conventionally not hatched in section?</li><li>Choose a section type for an offset bolt circle on a flange — and defend it.</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why are ribs and fasteners conventionally not hatched in section?</li><li>Choose a section type for an offset bolt circle on a flange — and defend it.</li></ul></div><div class="measure">
+<h3>§1 · Cutting the part open on paper</h3>
+<p>Interior features drawn as forests of hidden lines become unreadable fast. A <em>section
+view</em> slices the part with an imaginary cutting plane and draws what the knife exposes:
+solid material carries hatching; voids stay clear. The cutting-plane line in the parent view
+— with arrows showing viewing direction and letters naming the section — is the key that
+connects slice to view.</p>
+<h3>§2 · The section family</h3>
+<p><em>Full</em> sections cut straight across. <em>Half</em> sections show half-in, half-out
+on symmetric parts. <em>Offset</em> sections bend the cutting plane to pass through features
+that don't share a line — the bends are never drawn in the section itself. <em>Revolved</em>
+and <em>removed</em> sections drop a cross-section onto or beside a long member; <em>broken-out</em>
+sections peel a small window. Choosing the right family is drawing craft: the goal is always
+the fewest, clearest slices.</p>
+<h3>§3 · Conventions that lie honestly</h3>
+<p>Ribs, webs, shafts, bolts, and keys are conventionally <em>not hatched</em> even when the
+plane slices them — hatching them would suggest massive solidity and hide the part's real
+structure. Similarly, spokes rotate into the plane, and lugs align by convention. These are
+deliberate, standardized departures from literal truth that make drawings more truthful about
+function. Knowing them separates readers from decoders.</p>
+<p><strong>Closing.</strong> Sections replace hidden-line archaeology with visible truth;
+the conventions — unhatched ribs and fasteners above all — are shared grammar, not license.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Orthographic views</b> (Lesson 2) — sections are views with a knife.</li>
+<li><b>Hidden-line reading</b> — to appreciate what sectioning removes.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Cutting plane</b> — the imaginary knife; its line, arrows, and letters index the section.</li>
+<li><b>Hatching</b> — thin parallel lines marking cut material; pattern hints at material family.</li>
+<li><b>Full/half/offset section</b> — the main slice strategies.</li>
+<li><b>Broken-out section</b> — a local peel, bounded by a freehand break line.</li>
+<li><b>Convention</b> — a standardized deliberate simplification (unhatched ribs, bolts, shafts).</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why are ribs and fasteners conventionally not hatched in section?</li><li>Choose a section type for an offset bolt circle on a flange — and defend it.</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — choosing the slice</h4>
+<p><b>Problem.</b> A pump casing has: a suction bore on the centerline, a gauge boss 40 mm
+off-center, and a drain boss lower still — none collinear. <b>Find:</b> the section strategy
+that shows all three bores in one view.</p>
+<p><b>Solution.</b> (1) A straight full section catches only the suction bore.
+(2) An <em>offset section</em> routes the cutting plane through all three features with two
+right-angle jogs. (3) The parent view shows the jogged cutting-plane line A–A; the section
+view draws the three bores as if they were coplanar, jogs invisible.</p>
+<p><b>Answer:</b> offset section A–A. <b>Sanity check:</b> three separate sections would say
+less with three times the ink — the offset section exists precisely for this case.</p>
+<h4>Worked example 2 — why isn't the rib hatched?</h4>
+<p><b>Problem.</b> A sectioned bracket shows its central stiffening rib unhatched while the
+flanges carry hatching; a trainee flags it as a drafting error. <b>Find:</b> the ruling and
+the reason.</p>
+<p><b>Solution.</b> (1) Standard convention (ASME Y14.3 / ISO 128 practice): ribs and webs cut
+longitudinally are shown unhatched, to avoid the false impression of a solid block.
+(2) The convention preserves the reader's sense of the part as thin structure with a
+stiffener, which is the mechanical truth that matters for strength and casting alike.</p>
+<p><b>Answer:</b> not an error — convention. <b>Sanity check:</b> hatch the rib mentally and
+the bracket reads as a solid wedge — heavier, stiffer, and wrong.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the void that wasn't on the print.</b> You arrive at a valve refurbishment
+where the machinist, boring out a seat, breaks into an unexpected cored passage. The drawing's
+single full section missed it; the casting's offset drain gallery ran exactly where nobody
+sliced. The repair becomes a weld build-up job, and your close-out note to document control
+requests one addition: an offset section through the gallery on the next revision. Sections
+are cheap; discovering geometry with a boring bar is not.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

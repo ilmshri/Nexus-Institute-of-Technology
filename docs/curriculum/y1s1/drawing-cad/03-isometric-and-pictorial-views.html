@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 03 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Isometric and pictorial views</h1>
     <p class="sub">Isometric drawing for communication with the shop floor. Sketching a part freehand in proportion. When a pictorial view misleads and a section is owed instead.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,78 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>When does an isometric view mislead about a feature, and which view type fixes it?</li><li>Why sketch in proportion even when CAD exists?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>When does an isometric view mislead about a feature, and which view type fixes it?</li><li>Why sketch in proportion even when CAD exists?</li></ul></div><div class="measure">
+<h3>§1 · Pictorials — communication, not measurement</h3>
+<p>Isometric and other pictorial views show three faces at once, trading measurability for
+immediacy. In isometric projection the three axes sit 120° apart and equal lengths along each
+axis draw equal — but diagonals and circles distort: a hole becomes an ellipse, a square face
+a rhombus. Pictorials excel at telling a fitter <em>which way parts face</em>; they are the
+wrong place to scale a dimension, ever.</p>
+<h3>§2 · Where pictorials mislead</h3>
+<p>Isometric distortion hides interferences and flattens depth: two edges that clear by
+millimetres can appear to collide, and coaxial features can appear offset. The professional
+rule: sight the pictorial for orientation and sequence, then verify geometry in the
+orthographic views. Exploded isometrics — parts strung along assembly axes — are the fitter's
+map for teardown order, which is why parts catalogs live on them.</p>
+<h3>§3 · Freehand sketching — the engineer's fastest tool</h3>
+<p>A proportioned freehand sketch remains the fastest CAD in existence: boxing in overall
+proportions first, then carving features, keeping the three isometric axes disciplined. On
+the floor you will sketch worn parts for the machine shop, mark up failure locations, and
+capture as-found configurations — with a pencil beating a laptop to every one of these tasks.
+Proportion matters more than beauty: a sketch with honest ratios and three good dimensions
+makes a part; a pretty sketch with vague ratios makes scrap.</p>
+<p><strong>Closing.</strong> Pictorials orient, orthographics measure, and a disciplined
+freehand sketch is a professional instrument — practice all three deliberately.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Orthographic fluency</b> (Lesson 2) — pictorials complement, never replace, the views.</li>
+<li><b>Axis discipline</b> — holding 120° axes steady on paper.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Isometric</b> — pictorial with equal-scaled axes at 120°.</li>
+<li><b>Exploded view</b> — assembly drawn apart along its assembly axes.</li>
+<li><b>Foreshortening</b> — apparent shrinkage of lines not parallel to a projection plane.</li>
+<li><b>Boxing-in</b> — sketch technique: overall proportions first, features second.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>When does an isometric view mislead about a feature, and which view type fixes it?</li><li>Why sketch in proportion even when CAD exists?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — the ellipse that is a hole</h4>
+<p><b>Problem.</b> In an isometric view, a hole on the top face appears as an ellipse with
+major axis 20 mm. <b>Find:</b> can the true hole diameter be read from the pictorial, and
+what is the correct source?</p>
+<p><b>Solution.</b> (1) In isometric projection circles on axis-aligned faces draw as
+ellipses; scale along the view varies with direction, so the ellipse's axes are not the
+hole's diameter. (2) The true ⌀ comes only from the dimension callout or the orthographic
+view. (3) If forced to estimate: the isometric ellipse's major axis ≈ 1.22× the true
+diameter (projection factor), so ⌀ ≈ 16.4 mm — an estimate for sanity only, never for
+manufacture.</p>
+<p><b>Answer:</b> read the callout (≈⌀16.4 estimated); never dimension from a pictorial.
+<b>Sanity check:</b> the 1.22 factor is the isometric distortion \( \sqrt{3/2} \) — geometry,
+not opinion.</p>
+<h4>Worked example 2 — sketching a worn bush for remanufacture</h4>
+<p><b>Problem.</b> A failed bronze bush must be re-made today; no drawing exists. <b>Find:</b>
+the minimum sketch content that lets a machine shop produce it.</p>
+<p><b>Solution.</b> (1) Boxed proportioned section sketch: OD, ID, length. (2) Measured
+dimensions with the instrument stated (vernier ±0.02): OD 60.02, ID 45.05 (worn — spec from
+shaft: 45.00 H7 running fit, Lesson 6), length 50.0, chamfers 1×45°. (3) Material note
+(bronze, from spark/color/history), one fit note ("press in housing ⌀60 H7"), date, machine
+tag, your name.</p>
+<p><b>Answer:</b> a one-page sectioned sketch with five dimensions, material, fit note, and
+provenance. <b>Sanity check:</b> the shop can machine from it without a phone call — the test
+every field sketch must pass.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the exploded view that ran the outage.</b> You arrive at a gearbox rebuild
+where the OEM manual's exploded isometric is the only assembly reference. The crew photographs
+each stage, but it's the exploded view taped to the bench — parts numbered along the assembly
+axis — that sequences the rebuild and catches the thrust-washer that "didn't seem to go
+anywhere." You add one improvement for next time: a freehand sketch of the shim stack with
+measured thicknesses, because the pictorial shows order, not sizes. Orientation from the
+picture; numbers from the calipers.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

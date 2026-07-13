@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 11 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Reading plant drawings</h1>
     <p class="sub">GA drawings, fabrication drawings, and datasheets read side by side. Tracing a dimension from a pump GA to a foundation bolt plan. Practice on structural-steel and equipment drawings.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,86 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Trace a dimension from a pump GA to the foundation bolt plan: what drawings intervene?</li><li>What three things do you check first when handed an unfamiliar GA?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Trace a dimension from a pump GA to the foundation bolt plan: what drawings intervene?</li><li>What three things do you check first when handed an unfamiliar GA?</li></ul></div><div class="measure">
+<h3>§1 · The plant's drawing ecosystem</h3>
+<p>Beyond part and assembly drawings, a plant runs on: <em>GA</em> (general arrangement)
+drawings — equipment in space, with footprints, elevations, and maintenance clearances;
+<em>P&IDs</em> — process logic, every pipe, valve, and instrument as symbols (INS 352 goes
+deep); <em>isometrics</em> — pipe runs dimensioned for fabrication; <em>foundation and
+structural drawings</em> — what the equipment stands on; and <em>electrical single-lines</em>
+— power distribution's family tree. Each answers one question well; the reader's skill is
+knowing which sheet answers today's question.</p>
+<h3>§2 · Navigating a GA</h3>
+<p>A GA is read in three passes. Pass one: orientation — north arrow, column grid, elevation
+datums. Pass two: the equipment item and its immediate space — footprint, anchor pattern,
+withdrawal clearances (tube bundle pull, rotor removal envelope, crane hook travel). Pass
+three: the cross-references — detail drawings, foundation sheets, vendor drawings called up
+by number. The grid reference (column line C-7) is the plant's postal address system; learn
+to speak it and rigging studies stop being arguments.</p>
+<h3>§3 · The drawing package as a system</h3>
+<p>A pump replacement touches the GA (space and clearances), the foundation drawing (bolts
+and grout), the vendor GA (nozzle loads, base details), the P&ID (what it connects to), an
+isometric (how the pipe reaches it), and the single-line (its feeder). The engineer's product
+is often not a drawing but a <em>package</em>: the current revisions of all of these,
+cross-checked. Lesson 1's register discipline scales up here — a package with one stale sheet
+is a stale package.</p>
+<p><strong>Closing.</strong> The course ends where it began: drawings as the plant's
+contracts. You can now read the whole family — parts, assemblies, GAs — with revision
+discipline, datum eyes, and symbol fluency. DRW 102's exam is every job pack you'll ever
+assemble.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The whole course</b> — Lessons 1–10 supply custody, views, sections, dimensions,
+fits, GD&T, symbols, and CAD; this lesson deploys them at plant scale.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>GA drawing</b> — general arrangement: equipment in plant space.</li>
+<li><b>P&ID</b> — piping & instrumentation diagram; process logic, not geometry.</li>
+<li><b>Isometric (piping)</b> — fabrication drawing of a pipe run.</li>
+<li><b>Column grid</b> — the lettered/numbered address system of a plant.</li>
+<li><b>Withdrawal clearance</b> — reserved space to pull bundles, rotors, filters.</li>
+<li><b>Drawing package</b> — the cross-checked set of current sheets for one job.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Trace a dimension from a pump GA to the foundation bolt plan: what drawings intervene?</li><li>What three things do you check first when handed an unfamiliar GA?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — will the new pump fit?</h4>
+<p><b>Problem.</b> A replacement pump is 180 mm longer than the original. The GA shows the
+pump at grid E-4, discharge toward north, 1,100 mm clear to a cable tray column; the vendor
+GA gives the new overall length and the same anchor pattern. <b>Find:</b> the fit verdict and
+the checks that produce it.</p>
+<p><b>Solution.</b> (1) Anchor pattern identical → foundation unchanged (verify against the
+foundation sheet's bolt layout anyway — Lesson 5's accumulation ghosts live in old
+foundations). (2) Length grows 180 mm toward the coupling end; GA scaling of the 1,100 mm
+gap minus 180 leaves 920 mm — above the 800 mm maintenance aisle minimum noted on the GA.
+(3) Check withdrawal: rotor pulls toward the aisle, envelope still clear.</p>
+<p><b>Answer:</b> fits, with 920 mm aisle retained; foundation reused.
+<b>Sanity check:</b> every number came off a controlled sheet, not a tape measure — and the
+site verification tape measure comes anyway, because as-builts drift (Lesson 1).</p>
+<h4>Worked example 2 — assembling the job package</h4>
+<p><b>Problem.</b> Scope: replace the E-4 pump. <b>Find:</b> the minimum drawing package and
+the currency check.</p>
+<p><b>Solution.</b> (1) Sheets: plant GA (E-4 area), foundation drawing, vendor GA + sectional
+drawing, P&ID for the loop, suction/discharge isometrics, electrical single-line for the
+feeder, plus the coupling and seal detail drawings. (2) Currency: pull revisions from the
+register the same day, list them on the package cover, and mark the package itself with a
+compile date. (3) One stale sheet — say an isometric missing a rerouted drain — invalidates
+the pressure-test plan; the register check is the package's foundation.</p>
+<p><b>Answer:</b> eight sheets, register-verified, cover-listed.
+<b>Sanity check:</b> the package answers space, support, process, pipe, and power — the five
+questions every equipment change asks.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the bundle with nowhere to go.</b> You arrive at an exchanger cleaning job
+where the crane is rigged, the bundle is unbolted — and the pull path dead-ends into a
+pipe rack erected two projects ago. The GA's withdrawal envelope was never updated; the rack's
+drawing package didn't cross-check the reserved clearance. The bundle waits a week for a
+scaffold-and-skate solution. Your close-out attaches both drawings side by side and lands one
+standing rule for the site: <em>no structure inside a marked withdrawal envelope without a GA
+revision</em> — the drawing system defending physical space the way it defends dimensions.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

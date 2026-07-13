@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 09 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Parametric CAD: parts</h1>
     <p class="sub">Sketch–constrain–feature workflow in any parametric CAD tool. Design intent: modeling so the part edits sanely. Fully defined sketches as a discipline.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,81 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What is design intent in a parametric model, and how does a bad sketch betray it?</li><li>Why should sketches be fully defined before features are built?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What is design intent in a parametric model, and how does a bad sketch betray it?</li><li>Why should sketches be fully defined before features are built?</li></ul></div><div class="measure">
+<h3>§1 · Parametric means rebuildable</h3>
+<p>Parametric CAD stores <em>recipes</em>, not shapes: a sketch with dimensions, then features
+— extrude, revolve, hole, fillet — stacked in a history tree. Change a dimension and the
+recipe re-executes. The power is enormous and conditional: a model rebuilt from a disciplined
+recipe updates cleanly; a model built on accidental geometry collapses into red errors the
+first time anyone touches it.</p>
+<h3>§2 · Design intent — the recipe's grammar</h3>
+<p>Design intent is deciding <em>what should stay true when things change</em>. A hole 10 mm
+from the edge (offset intent) behaves differently from a hole at the plate's midline
+(symmetry intent) when the plate grows. The discipline: fully define every sketch (no
+under-constrained geometry drifting at a click), reference datums and axes rather than face
+edges that may vanish, name features, and order the tree so machining-like operations come
+last. Model as if the next engineer will change the one dimension you least expect — because
+they will.</p>
+<h3>§3 · From model to manufacture</h3>
+<p>The model is master; drawings, CAM paths, and 3-D prints are projections of it. Materials,
+mass properties, and revision metadata live on the model. For the maintenance engineer, the
+skill is bidirectional: read OEM models when you have them, and rebuild worn parts as clean
+parametric models when you don't — Lesson 3's field sketch becomes tonight's model and
+tomorrow's machined spare.</p>
+<p><strong>Closing.</strong> Parametric CAD is programming with geometry: fully defined
+sketches, functional references, an ordered tree — that is what separates a model from a
+liability.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Views and dimensioning</b> (Lessons 2, 5) — sketch constraints are dimensions with intent.</li>
+<li><b>Datum thinking</b> (Lesson 7) — model references mirror measurement datums.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Feature tree</b> — the ordered recipe of operations.</li>
+<li><b>Fully defined sketch</b> — zero degrees of freedom; nothing drifts.</li>
+<li><b>Design intent</b> — the declared invariants under change.</li>
+<li><b>Reference geometry</b> — planes/axes/points created to anchor features stably.</li>
+<li><b>Rebuild error</b> — the tree failing after an upstream change; the tax on lazy references.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What is design intent in a parametric model, and how does a bad sketch betray it?</li><li>Why should sketches be fully defined before features are built?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — intent, tested</h4>
+<p><b>Problem.</b> A 100×60 plate has a ⌀9 hole. Model A dimensions the hole 20 from the left
+edge; Model B constrains it to the plate's vertical midline. The plate is later widened to
+140. <b>Find:</b> where the hole lands in each model, and which intent suits (a) a clearance
+hole for a fixed stud, (b) a lifting hole.</p>
+<p><b>Solution.</b> (1) Model A: hole stays 20 from the left edge — absolute offset preserved.
+(2) Model B: hole rides to the new midline (70) — symmetry preserved.
+(3) Function decides: (a) the stud doesn't move when the plate grows → offset intent (A);
+(b) lifting wants balance → symmetry intent (B).</p>
+<p><b>Answer:</b> A: x=20; B: x=70; choose by function — (a) A, (b) B.
+<b>Sanity check:</b> neither model is "right" in the abstract; intent is a functional claim,
+which is why it must be chosen, not defaulted.</p>
+<h4>Worked example 2 — the fillet that killed the tree</h4>
+<p><b>Problem.</b> A bracket model references a hole sketch to the <em>edge created by a
+fillet</em>. A revision deletes the fillet; forty downstream features error out. <b>Find:</b>
+the modeling fault and the repair strategy.</p>
+<p><b>Solution.</b> (1) Fault: sketch referenced consumable geometry (a fillet edge) instead
+of stable references (datum plane / base edge). (2) Repair: redefine the sketch onto the base
+face and datum axis, then re-run the tree; add reference planes for any future features.
+(3) Prevention: reference datums first, faces second, feature edges never — the same
+hierarchy inspection uses.</p>
+<p><b>Answer:</b> re-anchor to stable references; adopt datum-first modeling.
+<b>Sanity check:</b> the fix touches one sketch, not forty features — proof the fault was
+referential, not geometric.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the impeller wear ring, digitized.</b> You arrive at a stores review where a
+pump's wear rings — obsolete, OEM defunct — are consuming six-week emergency machining cycles
+from a faded fax of a sketch. One evening of parametric modeling from a measured worn ring
+(Lesson 3's sketch, Lesson 6's fits restoring the design clearance) produces a clean model
+with the running clearance driven by one named parameter. The next order is a two-day local
+machining job with the drawing auto-generated from the model. The fax retires; the parameter
+<em>ring_clearance</em> is now plant knowledge instead of folklore.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing and Computer Graphics</p>

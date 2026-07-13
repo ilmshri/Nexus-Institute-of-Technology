@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 02 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Projection theory and orthographic views</h1>
     <p class="sub">First-angle and third-angle projection and how to tell them apart on sight. Choosing principal views. Reading a three-view drawing back into a 3-D object.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,75 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Given the projection symbol, how do you tell first-angle from third-angle at a glance?</li><li>Why might two correct views still be ambiguous, and what resolves it?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Given the projection symbol, how do you tell first-angle from third-angle at a glance?</li><li>Why might two correct views still be ambiguous, and what resolves it?</li></ul></div><div class="measure">
+<h3>§1 · Projection — flattening three dimensions honestly</h3>
+<p>Orthographic projection maps a 3-D object onto 2-D planes with parallel rays, preserving
+true lengths and angles in each view. The object is imagined inside a glass box; each face of
+the box receives one view. Unfold the box and the views land in fixed positions relative to
+each other — that fixed arrangement is what lets a trained reader reconstruct the solid.</p>
+<h3>§2 · First angle versus third angle</h3>
+<p>Two unfolding conventions rule the world. In <em>first angle</em> (ISO default, most of
+Europe and Asia), the object sits between observer and plane: the top view lands <em>below</em>
+the front view. In <em>third angle</em> (ASME, North America), the plane sits between observer
+and object: the top view lands <em>above</em>. The truncated-cone symbol in the title block
+declares which convention the sheet uses — read it first, every sheet, because a first-angle
+drawing read with third-angle eyes puts every feature on the wrong side of the part.</p>
+<h3>§3 · Choosing and reading views</h3>
+<p>The front view carries the most shape information; additional views exist only to remove
+ambiguity. Hidden lines (dashed) show edges behind material; center lines (chain) declare
+axes and symmetry. A competent drawing shows the minimum views that fully define the part —
+and a competent reader cross-references features between views until the solid clicks into
+place mentally. That click is the skill; it comes only from reps.</p>
+<p><strong>Closing.</strong> Orthographic views are a lossless code for shape. Learn the two
+unfolding conventions, check the symbol before reading, and practice the mental refold until
+drawings become pictures.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Drawing custody</b> (Lesson 1) — you are reading the current revision.</li>
+<li><b>Basic solid visualization</b> — rotating simple prisms and cylinders mentally.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Orthographic projection</b> — parallel-ray mapping preserving true size per view.</li>
+<li><b>First/third angle</b> — the two view-arrangement conventions; declared by symbol.</li>
+<li><b>Hidden line</b> — dashed; an edge behind material.</li>
+<li><b>Center line</b> — chain line marking axes and symmetry.</li>
+<li><b>Auxiliary view</b> — projection onto an inclined plane to show a slanted face true-size.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Given the projection symbol, how do you tell first-angle from third-angle at a glance?</li><li>Why might two correct views still be ambiguous, and what resolves it?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — which convention?</h4>
+<p><b>Problem.</b> A drawing shows a stepped shaft: front view with the larger diameter on
+the left; the view placed <em>below</em> the front view shows a keyway slot. <b>Find:</b> if
+the sheet is first-angle, which face of the shaft carries the keyway?</p>
+<p><b>Solution.</b> (1) First angle: the view below the front is the <em>top</em> view
+(object between observer and plane — projections fall through). (2) A keyway visible in the
+top view lies on the shaft's <em>upper</em> surface as drawn in the front view.
+(3) Had the sheet been third angle, the same placement would be the <em>bottom</em> view and
+the keyway would sit underneath.</p>
+<p><b>Answer:</b> on top (first angle). <b>Sanity check:</b> one symbol, two opposite
+machining setups — this is why the convention symbol outranks every other mark on the sheet.</p>
+<h4>Worked example 2 — minimum views</h4>
+<p><b>Problem.</b> Decide the minimum view set for (a) a plain cylindrical bushing, (b) an
+L-shaped bracket with two hole patterns on perpendicular faces.</p>
+<p><b>Solution.</b> (1) Bushing: one view plus a diameter symbol — the ⌀ mark encodes the
+revolution, so a single longitudinal view fully defines it.
+(2) Bracket: two views minimum (front + top or front + side) because perpendicular faces each
+carry features; a third view or an auxiliary is added only if hole positions remain ambiguous.</p>
+<p><b>Answer:</b> (a) one view; (b) two, sometimes three. <b>Sanity check:</b> every extra
+view is another place for revisions to miss — minimum views is quality practice, not laziness.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — mirror-image bracket.</b> You arrive at a fabrication shop holding a
+freshly made support bracket that bolts up perfectly — mirrored. The drawing came from an
+overseas licensor in first angle; the shop, used to third-angle prints, read the side view on
+the wrong side. The truncated-cone symbol was on the sheet all along, small and ignored. The
+re-make is charged to "training," and the shop adds a one-line stamp to its job traveler:
+<em>projection convention checked</em>. Cheap lesson at one bracket; expensive at one heat
+exchanger.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

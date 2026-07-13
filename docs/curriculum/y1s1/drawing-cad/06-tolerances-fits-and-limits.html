@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Tolerances, fits, and limits</h1>
     <p class="sub">Limits and fits for shafts and holes; clearance, transition, and interference classes. Why a bearing seat tolerance is a maintenance issue, not a design nicety. Reading fit callouts on real drawings.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,74 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>An H7/g6 callout: clearance, transition, or interference — and what duty suits it?</li><li>Why is a bearing-seat fit a maintenance concern rather than a design nicety?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>An H7/g6 callout: clearance, transition, or interference — and what duty suits it?</li><li>Why is a bearing-seat fit a maintenance concern rather than a design nicety?</li></ul></div><div class="measure">
+<h3>§1 · Tolerance is a purchase</h3>
+<p>No process makes exact dimensions; tolerance is how much inexactness the function can
+afford. Tightening a tolerance buys precision with money — grinding instead of turning,
+gauging instead of measuring. The engineer's discipline is to tolerance <em>functionally</em>:
+as loose as the function allows, as tight as it demands, feature by feature. Blanket tight
+tolerances are a tax the shop invoices back.</p>
+<h3>§2 · The ISO fit system</h3>
+<p>Cylindrical fits are standardized as a letter-number pair on each member: the letter
+locates the tolerance zone (A…H clearance side for holes, h…z for shafts), the number (IT
+grade) sets its width. The hole-basis convention keeps the hole at H (zone starting at
+nominal) and moves the shaft:</p>
+\[ \text{H7/g6: running clearance} \qquad \text{H7/k6: transition} \qquad \text{H7/p6: interference} \tag{1} \]
+<p>For ⌀45 H7/g6: hole 45.000/45.025, shaft 44.991/44.975 — clearance between 0.009 and
+0.050 mm: a shaft that turns freely with minimal slop, the classic bearing-journal recipe.</p>
+<h3>§3 · Reading limits like a fitter</h3>
+<p>Every fit resolves to four numbers — hole max/min, shaft max/min — and two extremes:
+tightest (min hole, max shaft) and loosest (max hole, min shaft). Compute both before
+assembly decisions: will it press, slide, or rattle? Bearing catalogs, coupling manuals, and
+seal datasheets all speak this language; the fitter's micrometer settles the argument.</p>
+<p><strong>Closing.</strong> Tolerances price function; the ISO letter-number system encodes
+fits compactly; and four limit numbers per joint tell you tight, loose, and everything a
+rebuild needs to know.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Dimensioning</b> (Lesson 5) — limits attach to dimensions.</li>
+<li><b>Decimal discipline</b> — thousandths of a millimetre matter here.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>IT grade</b> — tolerance-zone width class (IT6 tighter than IT8).</li>
+<li><b>Hole basis</b> — hole held at H; shaft letter sets the fit.</li>
+<li><b>Clearance/transition/interference</b> — always loose / could be either / always tight.</li>
+<li><b>Allowance</b> — the tightest intended condition of a fit.</li>
+<li><b>Limits</b> — the max and min values a dimension may take.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>An H7/g6 callout: clearance, transition, or interference — and what duty suits it?</li><li>Why is a bearing-seat fit a maintenance concern rather than a design nicety?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — decode ⌀45 H7/g6 completely</h4>
+<p><b>Problem.</b> For ⌀45 H7/g6 (hole 45.000/45.025; shaft 44.991/44.975), <b>find</b> the
+extreme clearances and classify the fit.</p>
+<p><b>Solution.</b> (1) Tightest: min hole − max shaft = 45.000 − 44.991 = 0.009 mm.
+(2) Loosest: max hole − min shaft = 45.025 − 44.975 = 0.050 mm.
+(3) Both positive → pure clearance fit; magnitudes (9–50 µm on ⌀45) → precision running fit.</p>
+<p><b>Answer:</b> clearance 0.009–0.050 mm; precision running fit (journals, sliding hubs).
+<b>Sanity check:</b> clearance ≈ 0.2–1‰ of diameter — the classic oil-film neighborhood.</p>
+<h4>Worked example 2 — will it press or slide?</h4>
+<p><b>Problem.</b> A coupling hub is bored ⌀60 H7 (60.000/60.030); the shaft end measures
+60.021 on site. <b>Find:</b> the assembly condition across the hole's range.</p>
+<p><b>Solution.</b> (1) Against min hole: 60.000 − 60.021 = −0.021 → 21 µm interference.
+(2) Against max hole: 60.030 − 60.021 = +0.009 → 9 µm clearance.
+(3) The joint is <em>transition</em>: this specific hub may press on or slip on depending on
+its actual bore — measure the hub, then decide heating or pressing.</p>
+<p><b>Answer:</b> between 21 µm tight and 9 µm loose — measure the mating bore before method
+selection. <b>Sanity check:</b> transition fits exist exactly for keyed couplings: snug
+location, feasible assembly; the k6 shaft zone straddling nominal is the giveaway.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the bearing that spun its seat.</b> You arrive at a repeated bearing failure:
+inner races spinning on a fan shaft, blued and scored. Site measurements tell the story the
+work orders didn't — the shaft journal, polished by three "emergency" rebuilds, sits 30 µm
+under its k5 zone: what should be a light transition fit became running clearance under load.
+The metallurgy is fine; the <em>fit</em> died. Repair by metal-spray and regrind back to
+limits, and the failure mode disappears. The lesson you brief the crew: a bearing seat is a
+toleranced dimension with a job, and every polish "just to clean it up" spends the fit.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>

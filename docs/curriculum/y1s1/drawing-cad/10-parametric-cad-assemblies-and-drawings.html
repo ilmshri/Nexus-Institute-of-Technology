@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 10 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Parametric CAD: assemblies and drawings</h1>
     <p class="sub">Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare-parts thinking.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,78 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div><div class="measure">
+<h3>§1 · Assemblies — constraints as kinematics</h3>
+<p>An assembly model positions parts with <em>mates</em>: coincident faces, concentric axes,
+distance offsets. Every mate removes degrees of freedom; the art is removing exactly the
+right ones. A shaft concentric to a bore and seated on a shoulder should still spin — leave
+that freedom alive and the model tells you how the machine moves; over-constrain it and the
+model fights itself with warnings that mean nothing and hide the one that does.</p>
+<h3>§2 · The BOM is the assembly's ledger</h3>
+<p>The bill of materials — item numbers ballooned on the drawing, quantities, part numbers,
+materials — is what stores, procurement, and the fitter actually consume. Balloon 7 on the
+exploded view <em>is</em> line 7 in the table <em>is</em> the box on the shelf. Structure
+matters: sub-assemblies roll up (a bearing unit is one line here, four lines in its own BOM),
+and phantom items (bulk grease, thread-locker) appear where policy puts them. A drawing whose
+balloons and BOM disagree is a stores error factory.</p>
+<h3>§3 · Drawings from models — still a craft</h3>
+<p>CAD auto-generates views, but choosing them is still Lesson 2's judgment: which section
+shows the fits, where the BOM table sits, which dimensions the fitter needs at the machine
+(coupling gap, seal compression, bolt torque table). Auto-ballooning follows assembly
+structure; verify it — a regenerated drawing can renumber balloons silently between
+revisions, and a fitter working from memory of "item 3" will draw the wrong part.</p>
+<p><strong>Closing.</strong> Mates encode kinematics, BOMs encode logistics, and the assembly
+drawing binds them for the person with the spanner. Model the motion, audit the balloons.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Part modeling</b> (Lesson 9) — assemblies consume disciplined parts.</li>
+<li><b>Exploded views</b> (Lesson 3) — the assembly drawing's teaching view.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Mate/constraint</b> — a positional relation removing degrees of freedom.</li>
+<li><b>Degrees of freedom</b> — the six motions a free rigid body owns.</li>
+<li><b>BOM</b> — the ballooned parts ledger of an assembly.</li>
+<li><b>Sub-assembly</b> — a rolled-up unit with its own BOM.</li>
+<li><b>Interference check</b> — the assembly's clash audit before metal exists.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — count the freedoms</h4>
+<p><b>Problem.</b> A pump shaft is mated into an assembly: concentric to the bearing bore,
+face-coincident at the shaft shoulder. <b>Find:</b> the remaining degrees of freedom, and
+state whether the assembly is correctly constrained for a rotating machine model.</p>
+<p><b>Solution.</b> (1) Free body: 6 DOF. (2) Concentric (axis-to-axis): removes 4 — two
+translations and two rotations transverse to the axis. (3) Face coincidence at the shoulder:
+removes axial translation (1 more). (4) Remaining: rotation about the axis — exactly the
+freedom a shaft must keep.</p>
+<p><b>Answer:</b> 1 DOF (spin) — correctly constrained.
+<b>Sanity check:</b> add a keyway parallel mate and DOF drops to 0: right for a static check,
+wrong for motion studies — constraint choice follows the question being asked.</p>
+<h4>Worked example 2 — the balloon audit</h4>
+<p><b>Problem.</b> Rev F of a gearbox drawing ballooned the input seal as item 9; stores
+stocked shelf 9 accordingly. Rev G inserted a spacer as item 5, shifting the seal to item 10,
+and the drawing was reissued without a change note on numbering. <b>Find:</b> the failure
+mode and the two-line fix.</p>
+<p><b>Solution.</b> (1) Failure: fitters ordering "item 9" now receive the spacer's neighbor —
+wrong part at 2 a.m., the classic renumbering trap. (2) Fix line 1: BOMs reference immutable
+<em>part numbers</em>, balloons are per-revision pointers only — train and enforce.
+(3) Fix line 2: revision note must state "items renumbered" whenever structure changes, and
+stores cross-references by part number, never balloon.</p>
+<p><b>Answer:</b> renumbered balloons + part-number-blind ordering; enforce part-number
+ordering and renumbering notes. <b>Sanity check:</b> the failure needs no bad actor — two
+correct documents, one missing sentence.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the 2 a.m. wrong seal.</b> You arrive the morning after a night crew rebuilt
+a filler gearbox with "item 9 per the wall drawing" — an uncontrolled Rev F print (Lesson 1's
+ghost returns) whose numbering Rev G had shifted. The machine ran eight hours before the
+too-narrow seal let go. Root cause is boring and structural: balloon-ordering culture plus an
+uncontrolled print. The fix package: register-only prints in the shop, part-number ordering
+policy, and a BOM audit of the five most-rebuilt assets. Nobody gets named; the system does.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing and Computer Graphics</p>

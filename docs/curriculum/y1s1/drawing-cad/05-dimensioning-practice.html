@@ -30,7 +30,7 @@
     <p class="eyebrow">DRW 102 · LESSON 05 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Dimensioning practice</h1>
     <p class="sub">Datum thinking: dimension from function, not convenience. Chain versus baseline dimensioning and tolerance stack-up. Over-dimensioning as an error, not a courtesy.</p>
-    <div class="hero-meta"><div>Format<b>Scope + sources (depth queued)</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW / NPTEL: Engineering Drawing and Com</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -42,28 +42,78 @@
   <button data-tab="t-kuwait">Kuwait Floor</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2>
-<div class="measure">
-  <div class="preview"><b>After this lesson you can answer:</b><ul><li>Chain versus baseline dimensioning: which accumulates tolerance, and why?</li><li>What makes an over-dimensioned drawing an error rather than extra information?</li></ul></div>
-  <p class="queued-note">Structured-notes tier: the scope below defines the lesson; full teaching depth is queued behind the Core 60.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Chain versus baseline dimensioning: which accumulates tolerance, and why?</li><li>What makes an over-dimensioned drawing an error rather than extra information?</li></ul></div><div class="measure">
+<h3>§1 · Dimensions carry function</h3>
+<p>A dimension is not decoration; it encodes <em>which distances matter and from where</em>.
+Good practice dimensions each feature once, from datums that mean something to the part's
+function, placed in the view where the feature shows true shape. Duplicated or over-complete
+dimensioning is an error, not generosity: two paths to the same edge will one day disagree,
+and the shop must guess which one you meant.</p>
+<h3>§2 · Chains, baselines, and the accumulation problem</h3>
+<p>Chain dimensioning strings features end-to-end: each step is controlled, but the position
+of the last feature accumulates every tolerance in the chain — three steps at ±0.1 can put
+the final hole ±0.3 from the first. Baseline dimensioning measures every feature from one
+datum: each position is held directly, and accumulation dies. The choice is functional:
+chain when step-to-step spacing matters (mating hole pairs), baseline when positions from a
+reference matter (mounting patterns).</p>
+<h3>§3 · The grammar of callouts</h3>
+<p>⌀ before a value means diameter; R radius; ( ) marks a reference dimension (information,
+not control); a boxed dimension is theoretically exact — controlled elsewhere, usually by
+GD&T. Units are declared once in the title block; mixed units on a face of a drawing are a
+defect. Reading a dimension means reading its <em>status</em>: controlled, reference, or
+basic — three different levels of promise.</p>
+<p><strong>Closing.</strong> Dimension once, from functional datums, chain or baseline by
+intent, and read every callout's status before trusting it. The dimensions are the part's
+legal description; everything else is scenery.</p>
 </div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>DRW 102 · Engineering Drawing &amp; CAD</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
-  <p class="small">Course context: The plant's native written language: orthographic projection, sections, dimensions and tolerances, weld and surface symbols — read first, draw second — plus enough parametric CAD to model and detail real parts.</p>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Views and sections</b> (Lessons 2, 4) — dimensions live where shape shows true.</li>
+<li><b>Tolerance intuition</b> — every dimension implies a permitted variation (Lesson 6 formalizes).</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Datum</b> — the reference a dimension originates from.</li>
+<li><b>Chain dimensioning</b> — feature-to-feature; accumulates tolerance.</li>
+<li><b>Baseline dimensioning</b> — all from one datum; kills accumulation.</li>
+<li><b>Reference dimension</b> — parenthesized; informative, not binding.</li>
+<li><b>Basic dimension</b> — boxed; exact by definition, toleranced through GD&T.</li>
+</ul>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2>
-<div class="measure">
-  <p>Worked solutions for this lesson are queued. Until they land, use the
-  lesson's own checkpoint questions as practice prompts — attempt them from
-  the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Chain versus baseline dimensioning: which accumulates tolerance, and why?</li><li>What makes an over-dimensioned drawing an error rather than extra information?</li></ul></div>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
+<h4>Worked example 1 — accumulation, quantified</h4>
+<p><b>Problem.</b> Four holes in a strip are chain-dimensioned 50±0.1, 50±0.1, 50±0.1 from
+hole 1. <b>Find:</b> the worst-case position error of hole 4 relative to hole 1, and the
+baseline alternative.</p>
+<p><b>Solution.</b> (1) Chain: errors add — worst case \( \pm(0.1+0.1+0.1) = \pm0.3 \) mm.
+(2) Baseline: dimension holes at 50±0.1, 100±0.1, 150±0.1 from hole 1 — each position now
+held to ±0.1 directly. (3) Note the trade: baseline loosens control of <em>spacing</em>
+between adjacent holes (two ±0.1 positions → spacing ±0.2), so the functional question — do
+positions or spacings matter? — decides the scheme.</p>
+<p><b>Answer:</b> chain worst case ±0.3; baseline holds each position to ±0.1 at the cost of
+±0.2 on adjacent spacing. <b>Sanity check:</b> tolerances add linearly in worst case — three
+dice, three chances to land long.</p>
+<h4>Worked example 2 — the double-dimension trap</h4>
+<p><b>Problem.</b> A plate 120 mm long carries a slot dimensioned 40 from the left edge
+<em>and</em> 80 from the right edge, both toleranced ±0.2. <b>Find:</b> the defect.</p>
+<p><b>Solution.</b> (1) The dimensions over-define the slot: 40 + 80 = 120 only if the plate
+is exactly 120. (2) With the plate itself at 120±0.3, a shop holding both slot dimensions is
+being asked to control the plate length through the slot — impossible as written.
+(3) Fix: one dimension governs (say 40±0.2 from the functional edge); the other becomes
+reference (80) or is deleted.</p>
+<p><b>Answer:</b> over-dimensioning; demote one dimension to reference.
+<b>Sanity check:</b> ask "could both be simultaneously out?" If yes, the scheme fights itself.</p>
 </div></section>
-<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure"><p class="queued-note">No Kuwait anchor assigned to this lesson yet. The six anchor companies and their processes are mapped on the career page.</p></div></section>
+<section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
+<p><b>Vignette — the base that wouldn't bolt down.</b> You arrive at a motor swap where the
+new base's holes miss the foundation bolts by 2 mm on the far pair — every hole individually
+"in tolerance" on the shop's report. The drawing chained the pattern; the tolerances
+accumulated exactly as Lesson-5 arithmetic predicts, and the far holes wandered. The concrete
+wins arguments with steel, so the base gets slotted this time — and the drawing gets a
+baseline-dimensioned revision so the next base arrives right. You attach worked example 1 to
+the revision request verbatim; document control approves it same-day.</p>
+</div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="measure">
   <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>
