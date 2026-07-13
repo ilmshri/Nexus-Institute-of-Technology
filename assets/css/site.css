@@ -7,7 +7,8 @@
   --steel:#666c73;
   --line:#dcddd9;
   --line-soft:#e9eae6;
-  --ember:#b0521c;
+  --ember:#8C1D40;  /* maroon — primary accent (spec) */
+  --gold:#FFC627;   /* pitchfork gold — secondary accent (spec) */
   --maroon:#8C1D40;
   --board:#1e2125;
   --board-ink:#e9e7e0;
@@ -25,7 +26,7 @@ body{
   font-family:var(--serif);font-size:17px;line-height:1.72;
   margin:0;overflow-x:clip;
 }
-::selection{background:#e9d8cb}
+::selection{background:#ffe9a8}
 img{max-width:100%}
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
@@ -44,7 +45,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offs
   text-decoration:none;white-space:nowrap;
 }
 .wordmark span{color:var(--steel)}
-.fork{height:1.2em;width:auto;vertical-align:-.25em;color:var(--ember);display:inline-block}
+.fork{height:1.2em;width:auto;vertical-align:-.25em;color:var(--gold);display:inline-block}
 .fork path,.fork rect{fill:currentColor}
 footer .mark .mn{color:var(--maroon)}
 .hd nav{display:flex;gap:26px;flex-wrap:wrap}
@@ -155,21 +156,21 @@ figcaption .notice b{color:var(--ember);font-weight:600;letter-spacing:.12em;fon
 /* ---------- whiteboard examples ---------- */
 .board{background:var(--board);color:var(--board-ink);margin:70px calc(50% - 50vw);padding:80px 4vw}
 .board .inner{max-width:760px;margin:0 auto}
-.board .kicker{color:#e8933c}
+.board .kicker{color:var(--gold)}
 .board .kicker .n{color:#8a8f97}
 .board h3{color:#fff;margin-top:0;font-size:22px}
 .board p{color:#cfccc4;font-size:16px}
 .board .given{font-family:var(--mono);font-size:13.5px;line-height:2;color:#b9beb9;border:1px solid var(--board-line);padding:18px 22px;margin:26px 0}
 .board .given b{color:#e9e7e0;font-weight:600}
 .step{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--board-line)}
-.step .no{font-family:var(--mono);font-size:12px;color:#e8933c;padding-top:6px}
+.step .no{font-family:var(--mono);font-size:12px;color:var(--gold);padding-top:6px}
 .step h5{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin:0 0 10px;font-weight:600}
 .step p{font-size:15px;margin-bottom:12px}
 .work{font-family:var(--mono);font-size:14px;line-height:2.15;color:#e9e7e0;overflow-x:auto;padding:2px 0}
-.work .res{color:#e8933c;font-weight:600}
+.work .res{color:var(--gold);font-weight:600}
 .work .cm{color:#8a8f97}
-.board .verdict{border:1px solid #e8933c;padding:20px 24px;margin-top:34px;font-size:15.5px;color:#e9e7e0}
-.board .verdict b{color:#e8933c;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:8px}
+.board .verdict{border:1px solid var(--gold);padding:20px 24px;margin-top:34px;font-size:15.5px;color:#e9e7e0}
+.board .verdict b{color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:8px}
 
 /* ---------- misconceptions ---------- */
 .miscon{border-top:1px solid var(--line);margin-top:40px}
@@ -245,7 +246,7 @@ a.watch{color:var(--ember) !important;border-bottom:1px solid var(--ember) !impo
 .srcnote{color:var(--steel);font-style:italic;letter-spacing:0;text-transform:none}
 ul.plain a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
 ul.plain a:hover{border-color:var(--ember);color:var(--ember)}
-.preview{border:1px solid var(--line-soft);border-left:3px solid var(--ember);background:#f6f5f0;padding:14px 18px 12px;margin:0 0 14px;max-width:75ch}
+.preview{border:1px solid var(--line-soft);border-left:3px solid var(--gold);background:#f6f5f0;padding:14px 18px 12px;margin:0 0 14px;max-width:75ch}
 .preview b{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ember)}
 .preview ul{margin:8px 0 0;padding-left:18px}
 .preview li{font-size:14px;line-height:1.6;color:#33373c;margin:4px 0}
@@ -275,7 +276,7 @@ table.sdf tr:last-child td{border-bottom:0}
 footer{background:var(--board);color:#b9beb9;margin-top:110px;padding:80px 4vw 60px}
 footer .inner{max-width:1060px;margin:0 auto}
 footer .next{border:1px solid var(--board-line);padding:34px 36px;margin-bottom:56px}
-footer .next .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#e8933c;display:block;margin-bottom:12px}
+footer .next .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
 footer .next h4{font-family:var(--sans);color:#fff;font-size:20px;margin:0 0 10px}
 footer .next p{font-size:15px;margin:0;line-height:1.7}
 footer a{color:#e9e7e0}
@@ -331,3 +332,23 @@ footer .fine{font-size:11.5px;color:#7d828a;margin-top:14px;line-height:1.7}
 .search-results a:hover b{color:var(--maroon)}
 .search-results a span{font-family:var(--sans);font-size:11.5px;color:var(--steel)}
 .search-results .none{padding:12px 14px;font-family:var(--sans);font-size:12.5px;color:var(--steel)}
+
+/* ---------- sidebar: semesters -> courses -> lessons ---------- */
+.withside{display:grid;grid-template-columns:264px minmax(0,1fr);gap:0;max-width:1440px;margin:0 auto}
+.sidenav{border-right:1px solid var(--line);padding:34px 22px 60px;font-family:var(--sans)}
+.sn-title{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--maroon);margin:0 0 14px;font-weight:700}
+.sidenav details{border-top:1px solid var(--line-soft);padding:7px 0}
+.sidenav summary{cursor:pointer;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);padding:4px 0}
+.sidenav summary:hover{color:var(--maroon)}
+.sidenav ul{list-style:none;margin:6px 0 4px;padding:0 0 0 10px}
+.sidenav li{margin:0 0 6px}
+.sidenav a{font-size:12.5px;color:#3c4046;text-decoration:none;line-height:1.45;display:block}
+.sidenav a:hover{color:var(--maroon)}
+.sn-cur > a{color:var(--maroon);font-weight:600}
+.sn-cur ul{border-left:2px solid var(--gold);margin-top:8px;padding-left:12px}
+.sn-les a{font-size:12px;color:var(--steel)}
+@media (max-width:1000px){
+  .withside{display:block}
+  .sidenav{border-right:0;border-bottom:1px solid var(--line);padding:18px 4vw}
+  .sidenav details{display:inline-block;margin-right:18px;border:0}
+}

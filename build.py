@@ -45,7 +45,7 @@ PAGE = """<!doctype html>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="stylesheet" href="{prefix}assets/css/site.css">
-</head>
+{extra_head}</head>
 <body>
 <header class="hd">
   <a class="wordmark" href="{prefix}index.html">Sun {fork} Devil <span>Factory</span></a>
@@ -88,6 +88,11 @@ PAGE = """<!doctype html>
 </body>
 </html>
 """
+
+MATHJAX = (
+    "<script>MathJax={tex:{inlineMath:[['\\\\(','\\\\)']]},svg:{fontCache:'global'}};</script>\n"
+    '<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>\n'
+)
 
 YT_WATCH = re.compile(r"youtube\.com/watch\?v=([\w-]{6,})")
 YT_LIST = re.compile(r"youtube\.com/playlist\?list=([\w-]+)")
@@ -164,10 +169,10 @@ def matched_sources(raw_text):
     return out
 
 
-def page(path, title, desc, body, prefix, active="", footer_next=""):
+def page(path, title, desc, body, prefix, active="", footer_next="", extra_head=""):
     html = PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
-        footer_next=footer_next, fork=FORK,
+        footer_next=footer_next, fork=FORK, extra_head=extra_head,
         on_home=' class="on"' if active == "home" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
         on_career=' class="on"' if active == "career" else "",
@@ -250,7 +255,30 @@ def video_cards(course):
     return cards
 
 
-def build_lesson_page(sem, course, les, prefix):
+def sidebar_html(sems, cur_sem, cur_course, prefix):
+    """8 semesters -> courses -> (current course's) lessons."""
+    parts = ['<aside class="sidenav"><p class="sn-title">Curriculum</p>']
+    for sem in sems:
+        is_cur_sem = sem["id"] == cur_sem["id"]
+        parts.append(f'<details{" open" if is_cur_sem else ""}>'
+                     f'<summary>{esc(sem["title"])}</summary><ul>')
+        for c in sem["courses"]:
+            href = f'{prefix}curriculum/{sem["id"]}/{c["id"]}/index.html'
+            if is_cur_sem and c["id"] == cur_course["id"]:
+                lessons = "".join(
+                    f'<li class="sn-les"><a href="{prefix}curriculum/{sem["id"]}/{c["id"]}/'
+                    f'{lesson_page_name(c, l)}">{l["n"]:02d} · {esc(l["t"])}</a></li>'
+                    for l in c["lessons"])
+                parts.append(f'<li class="sn-cur"><a href="{href}">{esc(c["code"])} · '
+                             f'{esc(c["title"])}</a><ul>{lessons}</ul></li>')
+            else:
+                parts.append(f'<li><a href="{href}">{esc(c["code"])} · {esc(c["title"])}</a></li>')
+        parts.append("</ul></details>")
+    parts.append("</aside>")
+    return "".join(parts)
+
+
+def build_lesson_page(sems, sem, course, les, prefix):
     """One page per lesson, five tabs, populated from what actually exists."""
     n_total = len(course["lessons"])
     tier = les.get("tier", 3)
@@ -415,14 +443,17 @@ def build_lesson_page(sem, course, les, prefix):
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2>{kuwait}</section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>{library}</section>
 {nav}"""
+    body = (f'<div class="withside">{sidebar_html(sems, sem, course, prefix)}'
+            f'<div class="main-col">{body}</div></div>')
     page(
         f"curriculum/{sem['id']}/{course['id']}/{name}",
         f"{les['t']} — {course['title']} — Sun Devil Factory",
         les.get("scope", "")[:150], body, prefix, "curriculum",
+        extra_head=MATHJAX,
     )
 
 
-def build_course_page(sem, course, prefix):
+def build_course_page(sems, sem, course, prefix):
     rows = []
     for les in course["lessons"]:
         href = lesson_page_name(course, les)
@@ -465,6 +496,8 @@ def build_course_page(sem, course, prefix):
     {vids}
   </div>
 </section>"""
+    body = (f'<div class="withside">{sidebar_html(sems, sem, course, prefix)}'
+            f'<div class="main-col">{body}</div></div>')
     page(
         f"curriculum/{sem['id']}/{course['id']}/index.html",
         f"{course['title']} — Sun Devil Factory",
@@ -571,9 +604,9 @@ def main():
     build_curriculum_index(sems, "../")
     for sem in sems:
         for course in sem["courses"]:
-            build_course_page(sem, course, "../../../")
+            build_course_page(sems, sem, course, "../../../")
             for les in course["lessons"]:
-                build_lesson_page(sem, course, les, "../../../")
+                build_lesson_page(sems, sem, course, les, "../../../")
     build_static_pages(sems, "")
     n_idx = build_search_index(sems)
     n_pages = len(list(OUT.rglob("*.html")))
