@@ -135,14 +135,20 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 - ARCHITECTURE (2026-07-13, owner-approved): every lesson has its own page
   with FIVE TABS — Lecture / Foundations / Worked Examples / Kuwait Floor /
   Library (~573 pages total). Tabs are populated from real content at the
-  lesson's tier; unbuilt depth carries queued labels, never filler. Owner
-  explicitly chose: keep paper/ink/ember design with maroon+gold as
-  accents only (NO full ASU maroon/gold re-skin — trademark + design
-  consistency); depth continues in batches, Core-60 first. The "522 fully
-  written lessons in one pass" spec was rejected as infeasible/dishonest.
-  MathJax was NOT added: the site's equation system is the hand-built
-  HTML/CSS notation from the approved artifact; new Tier-1 lectures should
-  use it (see y1s1-mp1-02 fragment) for visual consistency.
+  lesson's tier; unbuilt depth carries queued labels, never filler.
+  DESIGN (owner REVERSED their earlier choice on 2026-07-13, second
+  instruction wins): ASU-style palette is now PRIMARY — --ember token IS
+  maroon #8C1D40 (universal accent), --gold #FFC627 for lines/chips/fork
+  and dark-board accents (never body text on white — contrast). Trademark
+  exposure was flagged twice; owner accepted it. Layout: left sidebar
+  (semesters → courses → current course's lessons) on all course/lesson
+  pages, stacking below 1000px. MathJax 3 loads from CDN on all lesson
+  pages (tex-chtml, \( \) inline) — existing equations remain hand-built
+  HTML/CSS; write NEW lecture math in either, prefer LaTeX going forward.
+  Depth continues in batches, Core-60 first; the "522 fully written
+  lessons in one pass" demand remains infeasible and is delivered
+  incrementally instead. Per-lesson video embeds are verified-only
+  (fabricating YouTube IDs is prohibited regardless of instructions).
   Library-tab embeds are generated ONLY from registry/card URLs that are
   embeddable YouTube watch/playlist links — all verified. Client search:
   docs/curriculum/search-index.json + JS on the curriculum index.
