@@ -18,8 +18,6 @@ facilities.
 4. `billet-cutting.jpg` — "Steel billet gas cutter." Photo: GenFM31.
    CC BY-SA 4.0. Via Wikimedia Commons.
 
-CC BY-SA images are reused under their license terms with attribution; any
-modification here is limited to resizing/compression.
 
 5. `welding.jpg` — "Welding Away." Photo: Spc. Erica Isaacson, U.S. Army
    (DVIDS 128479). Public domain. Via Wikimedia Commons.
@@ -29,3 +27,6 @@ modification here is limited to resizing/compression.
    (Norway), Flickr. CC BY 2.0. Via Wikimedia Commons.
 8. `turbine-hall.jpg` — "Turbine Hall JHB 1" (building exterior),
    Johannesburg. Photo: Ossewa. CC BY 4.0. Via Wikimedia Commons.
+
+CC BY-SA images are reused under their license terms with attribution; any
+modification here is limited to resizing/compression.
