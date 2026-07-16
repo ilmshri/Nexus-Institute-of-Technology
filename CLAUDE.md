@@ -132,6 +132,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- NEXUS INSTITUTE OF TECHNOLOGY (2026-07-13): a SEPARATE platform (owner
+  decision — does NOT replace the live ASU site). Staged rebuild lives in
+  nexus/ (Stage 1 design system approved-pending: metallic planetary-gear
+  logo per owner's reference image, teal #14CFA0/#07785C + amber #F5A623
+  on whitish bg, 4-tab lesson model Foundations/Lecture/Worked Examples/
+  Library, bilingual EN/AR RTL, PWA planned, no photography — original
+  vectors only, no "§" anywhere). Stage gates: 2 = nav/IA, 3 = sample
+  lesson, 4 = full rollout — each requires owner approval. Stage-1 artifact:
+  https://claude.ai/code/artifact/23ea55c4-300a-41aa-a9d6-c3bf25ce1930
+
 - STANDING ORDER (owner, 2026-07-13): fill ALL 522 lessons' five tabs with
   real content, course by course, WITHOUT per-batch approval. Content merges
   via data/content/<sem>-<course>.json ({lesson_n: {lecture, foundations,
