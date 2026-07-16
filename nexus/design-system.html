@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nexus Institute of Technology — Design System (Stage 1)</title>
+<style>
+:root{
+  --nx-bg:#FBFBF9; --nx-panel:#0E1626; --nx-panel-soft:#16202f;
+  --nx-ink:#14181F; --nx-muted:#5B6672; --nx-line:#E2E5E4;
+  --nx-teal:#14CFA0; --nx-teal-d:#07785C; --nx-teal-dd:#06664F; --nx-teal-h:#0A8F6E;
+  --nx-amber:#F5A623; --nx-amber-d:#8A5A0F; --nx-amber-h:#FFB53D; --nx-amber-a:#D98E12;
+  --nx-grad:linear-gradient(135deg,#14CFA0 0%,#07785C 100%);
+  --nx-grad-hero:linear-gradient(135deg,#0E1626 0%,#0d3b31 60%,#07785C 100%);
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  --serif:Georgia,'Times New Roman',serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--nx-bg);color:var(--nx-ink);font-family:var(--sans);margin:0;line-height:1.6}
+.wrap{max-width:1100px;margin:0 auto;padding:0 5vw 80px}
+
+/* header / brand lockup (centered per spec) */
+.brand{text-align:center;padding:40px 0 8px}
+.nx-logo{width:96px;height:96px;display:inline-block}
+.brand h1{font-size:clamp(20px,3.4vw,30px);letter-spacing:.16em;margin:12px 0 0;font-weight:800}
+.brand .teal{color:var(--nx-teal-d)}
+.topnav{text-align:center;margin:14px 0 6px;font-size:14px;letter-spacing:.06em}
+.topnav a{color:var(--nx-muted);text-decoration:none;padding:0 4px}
+.topnav a.on,.topnav a:hover{color:var(--nx-teal-d);font-weight:600}
+.topnav .pipe{color:var(--nx-line)}
+.stage{text-align:center;font-family:var(--mono);font-size:12px;color:var(--nx-amber-d);letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+
+.catch{background:var(--nx-grad-hero);color:#eafff8;border-radius:14px;padding:26px 30px;margin:26px 0;text-align:center;font-size:18px;line-height:1.5}
+.catch b{color:var(--nx-teal)}
+
+h2.sec{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--nx-teal-d);border-bottom:1px solid var(--nx-line);padding-bottom:8px;margin:52px 0 22px}
+
+/* swatches */
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px}
+.sw{border:1px solid var(--nx-line);border-radius:12px;overflow:hidden;background:#fff}
+.sw .chip{height:74px}
+.sw .meta{padding:10px 12px}
+.sw .meta b{font-family:var(--mono);font-size:12px}
+.sw .meta span{display:block;font-size:11.5px;color:var(--nx-muted);margin-top:3px}
+.sw .cr{font-family:var(--mono);font-size:11px;color:var(--nx-teal-d);margin-top:5px;display:block}
+
+/* type scale */
+.type div{border-bottom:1px solid var(--nx-line);padding:12px 0}
+.t-h1{font-size:40px;font-weight:800;letter-spacing:-.01em}
+.t-h2{font-size:28px;font-weight:700}
+.t-h3{font-size:19px;font-weight:600;font-family:var(--sans)}
+.t-body{font-size:17px;font-family:var(--serif)}
+.t-small{font-size:13px;color:var(--nx-muted)}
+.type label{font-family:var(--mono);font-size:11px;color:var(--nx-muted);display:block;margin-bottom:4px}
+
+/* components */
+.comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;align-items:start}
+.card{border:1px solid var(--nx-line);border-radius:14px;overflow:hidden;background:#fff}
+.card .cap{height:118px;background:var(--nx-panel);display:flex;align-items:center;justify-content:center;position:relative}
+.card .cap .ill{width:96px;height:96px}
+.card .cap .ill line,.card .cap .ill circle,.card .cap .ill rect{--nx-teal-d:#14CFA0;--nx-ink:#c9d3dd;--nx-amber:#F5A623}
+.card .body{padding:16px 18px}
+.card .tag{font-family:var(--mono);font-size:11px;color:var(--nx-amber-d);letter-spacing:.08em}
+.card h4{margin:6px 0 8px;font-size:17px}
+.card p{margin:0;font-size:14px;color:var(--nx-muted)}
+
+.btn{display:inline-block;border:0;border-radius:9px;padding:12px 22px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn-primary{background:var(--nx-teal-d);color:#fff}
+.btn-primary.hover{background:var(--nx-teal-h)}
+.btn-primary.active{background:var(--nx-teal-dd)}
+.btn-secondary{background:var(--nx-amber);color:#1a1205}
+.btn-secondary.hover{background:var(--nx-amber-h)}
+.btn-secondary.active{background:var(--nx-amber-a)}
+.btn-ghost{background:transparent;color:var(--nx-teal-d);border:1.5px solid var(--nx-teal-d)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.btnrow span{font-family:var(--mono);font-size:11px;color:var(--nx-muted);width:70px}
+
+/* tab bar (four tabs) */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--nx-line);flex-wrap:wrap}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:12px 20px;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--nx-muted);cursor:pointer;margin-bottom:-1px}
+.tabs button.on{color:var(--nx-teal-d);border-bottom-color:var(--nx-teal-d);font-weight:700}
+.tabs button:hover{color:var(--nx-ink)}
+
+/* dark panel sample with illustration behind text (muted) */
+.hero-samp{position:relative;border-radius:14px;overflow:hidden;background:var(--nx-panel);color:#eef4f2;padding:34px 30px;min-height:150px;display:flex;align-items:center}
+.hero-samp .bg{position:absolute;right:-10px;top:-20px;width:210px;height:210px;opacity:.14}
+.hero-samp .bg line,.hero-samp .bg circle{stroke:#14CFA0}
+.hero-samp .bg .amber{fill:#F5A623}
+.hero-samp .txt{position:relative;max-width:62%}
+.hero-samp h3{margin:0 0 8px;font-size:22px}
+.hero-samp p{margin:0;color:#b9c6c1;font-size:14px}
+
+.contrast{font-size:13px;color:var(--nx-muted);margin-top:8px}
+.pass{color:var(--nx-teal-d);font-weight:600}
+.ar{direction:rtl;text-align:right;font-family:'Geeza Pro',var(--serif)}
+.note{background:#fff;border:1px solid var(--nx-line);border-left:3px solid var(--nx-amber);border-radius:10px;padding:16px 18px;font-size:14px;color:#33373c;margin:10px 0}
+</style></head><body>
+<div class="wrap">
+
+  <div class="brand">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="nx-logo" role="img" aria-label="Nexus Institute of Technology planetary-gear logo">
+  <path d="M194.00 100.00 A94.00 94.00 0 1 1 6.00 100.00 A94.00 94.00 0 1 1 194.00 100.00 Z M183.76 93.63 L170.89 96.10 L170.89 103.90 L183.76 106.37 L182.55 115.52 L169.49 114.58 L167.47 122.12 L179.26 127.83 L175.72 136.36 L163.35 132.07 L159.44 138.83 L169.35 147.40 L163.73 154.72 L152.89 147.37 L147.37 152.89 L154.72 163.73 L147.40 169.35 L138.83 159.44 L132.07 163.35 L136.36 175.72 L127.83 179.26 L122.12 167.47 L114.58 169.49 L115.52 182.55 L106.37 183.76 L103.90 170.89 L96.10 170.89 L93.63 183.76 L84.48 182.55 L85.42 169.49 L77.88 167.47 L72.17 179.26 L63.64 175.72 L67.93 163.35 L61.17 159.44 L52.60 169.35 L45.28 163.73 L52.63 152.89 L47.11 147.37 L36.27 154.72 L30.65 147.40 L40.56 138.83 L36.65 132.07 L24.28 136.36 L20.74 127.83 L32.53 122.12 L30.51 114.58 L17.45 115.52 L16.24 106.37 L29.11 103.90 L29.11 96.10 L16.24 93.63 L17.45 84.48 L30.51 85.42 L32.53 77.88 L20.74 72.17 L24.28 63.64 L36.65 67.93 L40.56 61.17 L30.65 52.60 L36.27 45.28 L47.11 52.63 L52.63 47.11 L45.28 36.27 L52.60 30.65 L61.17 40.56 L67.93 36.65 L63.64 24.28 L72.17 20.74 L77.88 32.53 L85.42 30.51 L84.48 17.45 L93.63 16.24 L96.10 29.11 L103.90 29.11 L106.37 16.24 L115.52 17.45 L114.58 30.51 L122.12 32.53 L127.83 20.74 L136.36 24.28 L132.07 36.65 L138.83 40.56 L147.40 30.65 L154.72 36.27 L147.37 47.11 L152.89 52.63 L163.73 45.28 L169.35 52.60 L159.44 61.17 L163.35 67.93 L175.72 63.64 L179.26 72.17 L167.47 77.88 L169.49 85.42 L182.55 84.48 Z" fill="#0E1626" fill-rule="evenodd"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#14CFA0" stroke-width="1.4" stroke-dasharray="2 5" opacity="0.55"/>
+  <path d="M110.78 47.79 L119.79 47.08 L119.79 52.92 L110.78 52.21 L109.68 55.23 L117.03 60.48 L113.28 64.96 L106.83 58.62 L104.05 60.23 L106.31 68.98 L100.56 69.99 L99.69 61.00 L96.53 60.44 L92.64 68.60 L87.58 65.67 L92.70 58.23 L90.63 55.76 L82.41 59.51 L80.41 54.02 L89.12 51.61 L89.12 48.39 L80.41 45.98 L82.41 40.49 L90.63 44.24 L92.70 41.77 L87.58 34.33 L92.64 31.40 L96.53 39.56 L99.69 39.00 L100.56 30.01 L106.31 31.02 L104.05 39.77 L106.83 41.38 L113.28 35.04 L117.03 39.52 L109.68 44.77 Z" fill="#0E1626"/><circle cx="100.0" cy="50.0" r="6.5" fill="#FBFBF9"/><circle cx="100.0" cy="50.0" r="2.4" fill="#07785C"/><path d="M154.08 122.79 L163.09 122.08 L163.09 127.92 L154.08 127.21 L152.98 130.23 L160.34 135.48 L156.58 139.96 L150.13 133.62 L147.35 135.23 L149.61 143.98 L143.86 144.99 L142.99 136.00 L139.83 135.44 L135.94 143.60 L130.88 140.67 L136.00 133.23 L133.93 130.76 L125.71 134.51 L123.71 129.02 L132.42 126.61 L132.42 123.39 L123.71 120.98 L125.71 115.49 L133.93 119.24 L136.00 116.77 L130.88 109.33 L135.94 106.40 L139.83 114.56 L142.99 114.00 L143.86 105.01 L149.61 106.02 L147.35 114.77 L150.13 116.38 L156.58 110.04 L160.34 114.52 L152.98 119.77 Z" fill="#0E1626"/><circle cx="143.3" cy="125.0" r="6.5" fill="#FBFBF9"/><circle cx="143.3" cy="125.0" r="2.4" fill="#07785C"/><path d="M67.47 122.79 L76.48 122.08 L76.48 127.92 L67.47 127.21 L66.37 130.23 L73.73 135.48 L69.98 139.96 L63.53 133.62 L60.75 135.23 L63.01 143.98 L57.26 144.99 L56.39 136.00 L53.23 135.44 L49.34 143.60 L44.28 140.67 L49.40 133.23 L47.33 130.76 L39.11 134.51 L37.11 129.02 L45.82 126.61 L45.82 123.39 L37.11 120.98 L39.11 115.49 L47.33 119.24 L49.40 116.77 L44.28 109.33 L49.34 106.40 L53.23 114.56 L56.39 114.00 L57.26 105.01 L63.01 106.02 L60.75 114.77 L63.53 116.38 L69.98 110.04 L73.73 114.52 L66.37 119.77 Z" fill="#0E1626"/><circle cx="56.7" cy="125.0" r="6.5" fill="#FBFBF9"/><circle cx="56.7" cy="125.0" r="2.4" fill="#07785C"/>
+  <path d="M116.72 96.92 L127.76 96.32 L127.76 103.68 L116.72 103.08 L115.34 107.33 L124.62 113.33 L120.29 119.30 L111.71 112.32 L108.10 114.95 L112.08 125.26 L105.07 127.54 L102.24 116.85 L97.76 116.85 L94.93 127.54 L87.92 125.26 L91.90 114.95 L88.29 112.32 L79.71 119.30 L75.38 113.33 L84.66 107.33 L83.28 103.08 L72.24 103.68 L72.24 96.32 L83.28 96.92 L84.66 92.67 L75.38 86.67 L79.71 80.70 L88.29 87.68 L91.90 85.05 L87.92 74.74 L94.93 72.46 L97.76 83.15 L102.24 83.15 L105.07 72.46 L112.08 74.74 L108.10 85.05 L111.71 87.68 L120.29 80.70 L124.62 86.67 L115.34 92.67 Z" fill="#0E1626"/>
+  <circle cx="100" cy="100" r="17" fill="#FBFBF9"/>
+  <circle cx="100" cy="100" r="17" fill="none" stroke="#14CFA0" stroke-width="2"/>
+  <g stroke="#14CFA0" stroke-width="5.4" stroke-linecap="square" fill="none"><line x1="93" y1="110" x2="93" y2="90"/><line x1="93" y1="90" x2="107" y2="110"/><line x1="107" y1="110" x2="107" y2="90"/></g>
+</svg>
+    <h1><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</h1>
+    <div class="topnav"><a href="#" class="on">Mission</a><span class="pipe"> | </span><a href="#">Curriculum</a><span class="pipe"> | </span><a href="#">Career Paths</a></div>
+    <div class="stage">Stage 1 of 4 — Design System — for approval</div>
+  </div>
+
+  <div class="catch"><b>Fundamentals remain the anchor.</b> Technology expands the engineer's reach.</div>
+
+  <h2 class="sec">01 — Logo · Planetary Gear Hub</h2>
+  <div class="comp">
+    <div>
+      <p style="font-size:14px;color:var(--nx-muted)">Original flat-vector mark: an outer <b>ring gear</b> (internal teeth) frames three symmetrical <b>satellite gears</b> at 120°, orbiting a central <b>sun gear</b>. A geometric electric-teal <b>N</b> sits at the core as the connection point. Gear geometry is generated from real tooth math, not traced — no third-party or trademarked source.</p>
+    </div>
+    <div style="text-align:center"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="nx-logo" role="img" aria-label="Nexus Institute of Technology planetary-gear logo">
+  <path d="M194.00 100.00 A94.00 94.00 0 1 1 6.00 100.00 A94.00 94.00 0 1 1 194.00 100.00 Z M183.76 93.63 L170.89 96.10 L170.89 103.90 L183.76 106.37 L182.55 115.52 L169.49 114.58 L167.47 122.12 L179.26 127.83 L175.72 136.36 L163.35 132.07 L159.44 138.83 L169.35 147.40 L163.73 154.72 L152.89 147.37 L147.37 152.89 L154.72 163.73 L147.40 169.35 L138.83 159.44 L132.07 163.35 L136.36 175.72 L127.83 179.26 L122.12 167.47 L114.58 169.49 L115.52 182.55 L106.37 183.76 L103.90 170.89 L96.10 170.89 L93.63 183.76 L84.48 182.55 L85.42 169.49 L77.88 167.47 L72.17 179.26 L63.64 175.72 L67.93 163.35 L61.17 159.44 L52.60 169.35 L45.28 163.73 L52.63 152.89 L47.11 147.37 L36.27 154.72 L30.65 147.40 L40.56 138.83 L36.65 132.07 L24.28 136.36 L20.74 127.83 L32.53 122.12 L30.51 114.58 L17.45 115.52 L16.24 106.37 L29.11 103.90 L29.11 96.10 L16.24 93.63 L17.45 84.48 L30.51 85.42 L32.53 77.88 L20.74 72.17 L24.28 63.64 L36.65 67.93 L40.56 61.17 L30.65 52.60 L36.27 45.28 L47.11 52.63 L52.63 47.11 L45.28 36.27 L52.60 30.65 L61.17 40.56 L67.93 36.65 L63.64 24.28 L72.17 20.74 L77.88 32.53 L85.42 30.51 L84.48 17.45 L93.63 16.24 L96.10 29.11 L103.90 29.11 L106.37 16.24 L115.52 17.45 L114.58 30.51 L122.12 32.53 L127.83 20.74 L136.36 24.28 L132.07 36.65 L138.83 40.56 L147.40 30.65 L154.72 36.27 L147.37 47.11 L152.89 52.63 L163.73 45.28 L169.35 52.60 L159.44 61.17 L163.35 67.93 L175.72 63.64 L179.26 72.17 L167.47 77.88 L169.49 85.42 L182.55 84.48 Z" fill="#0E1626" fill-rule="evenodd"/>
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#14CFA0" stroke-width="1.4" stroke-dasharray="2 5" opacity="0.55"/>
+  <path d="M110.78 47.79 L119.79 47.08 L119.79 52.92 L110.78 52.21 L109.68 55.23 L117.03 60.48 L113.28 64.96 L106.83 58.62 L104.05 60.23 L106.31 68.98 L100.56 69.99 L99.69 61.00 L96.53 60.44 L92.64 68.60 L87.58 65.67 L92.70 58.23 L90.63 55.76 L82.41 59.51 L80.41 54.02 L89.12 51.61 L89.12 48.39 L80.41 45.98 L82.41 40.49 L90.63 44.24 L92.70 41.77 L87.58 34.33 L92.64 31.40 L96.53 39.56 L99.69 39.00 L100.56 30.01 L106.31 31.02 L104.05 39.77 L106.83 41.38 L113.28 35.04 L117.03 39.52 L109.68 44.77 Z" fill="#0E1626"/><circle cx="100.0" cy="50.0" r="6.5" fill="#FBFBF9"/><circle cx="100.0" cy="50.0" r="2.4" fill="#07785C"/><path d="M154.08 122.79 L163.09 122.08 L163.09 127.92 L154.08 127.21 L152.98 130.23 L160.34 135.48 L156.58 139.96 L150.13 133.62 L147.35 135.23 L149.61 143.98 L143.86 144.99 L142.99 136.00 L139.83 135.44 L135.94 143.60 L130.88 140.67 L136.00 133.23 L133.93 130.76 L125.71 134.51 L123.71 129.02 L132.42 126.61 L132.42 123.39 L123.71 120.98 L125.71 115.49 L133.93 119.24 L136.00 116.77 L130.88 109.33 L135.94 106.40 L139.83 114.56 L142.99 114.00 L143.86 105.01 L149.61 106.02 L147.35 114.77 L150.13 116.38 L156.58 110.04 L160.34 114.52 L152.98 119.77 Z" fill="#0E1626"/><circle cx="143.3" cy="125.0" r="6.5" fill="#FBFBF9"/><circle cx="143.3" cy="125.0" r="2.4" fill="#07785C"/><path d="M67.47 122.79 L76.48 122.08 L76.48 127.92 L67.47 127.21 L66.37 130.23 L73.73 135.48 L69.98 139.96 L63.53 133.62 L60.75 135.23 L63.01 143.98 L57.26 144.99 L56.39 136.00 L53.23 135.44 L49.34 143.60 L44.28 140.67 L49.40 133.23 L47.33 130.76 L39.11 134.51 L37.11 129.02 L45.82 126.61 L45.82 123.39 L37.11 120.98 L39.11 115.49 L47.33 119.24 L49.40 116.77 L44.28 109.33 L49.34 106.40 L53.23 114.56 L56.39 114.00 L57.26 105.01 L63.01 106.02 L60.75 114.77 L63.53 116.38 L69.98 110.04 L73.73 114.52 L66.37 119.77 Z" fill="#0E1626"/><circle cx="56.7" cy="125.0" r="6.5" fill="#FBFBF9"/><circle cx="56.7" cy="125.0" r="2.4" fill="#07785C"/>
+  <path d="M116.72 96.92 L127.76 96.32 L127.76 103.68 L116.72 103.08 L115.34 107.33 L124.62 113.33 L120.29 119.30 L111.71 112.32 L108.10 114.95 L112.08 125.26 L105.07 127.54 L102.24 116.85 L97.76 116.85 L94.93 127.54 L87.92 125.26 L91.90 114.95 L88.29 112.32 L79.71 119.30 L75.38 113.33 L84.66 107.33 L83.28 103.08 L72.24 103.68 L72.24 96.32 L83.28 96.92 L84.66 92.67 L75.38 86.67 L79.71 80.70 L88.29 87.68 L91.90 85.05 L87.92 74.74 L94.93 72.46 L97.76 83.15 L102.24 83.15 L105.07 72.46 L112.08 74.74 L108.10 85.05 L111.71 87.68 L120.29 80.70 L124.62 86.67 L115.34 92.67 Z" fill="#0E1626"/>
+  <circle cx="100" cy="100" r="17" fill="#FBFBF9"/>
+  <circle cx="100" cy="100" r="17" fill="none" stroke="#14CFA0" stroke-width="2"/>
+  <g stroke="#14CFA0" stroke-width="5.4" stroke-linecap="square" fill="none"><line x1="93" y1="110" x2="93" y2="90"/><line x1="93" y1="90" x2="107" y2="110"/><line x1="107" y1="110" x2="107" y2="90"/></g>
+</svg><div style="font-family:var(--mono);font-size:11px;color:var(--nx-muted)">scales cleanly 24px → any size</div></div>
+  </div>
+
+  <h2 class="sec">02 — Color palette (extracted from your reference artifact)</h2>
+  <div class="sw-grid">
+    <div class="sw"><div class="chip" style="background:#FBFBF9;border-bottom:1px solid var(--nx-line)"></div><div class="meta"><b>#FBFBF9</b><span>Page background — kept as-is</span></div></div>
+    <div class="sw"><div class="chip" style="background:#14CFA0"></div><div class="meta"><b>#14CFA0</b><span>Electric teal — brand fills, logo, borders</span></div></div>
+    <div class="sw"><div class="chip" style="background:#07785C"></div><div class="meta"><b>#07785C</b><span>Deep teal — links, buttons, tab active</span><span class="cr">4.9:1 on bg — AA ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F5A623"></div><div class="meta"><b>#F5A623</b><span>Amber — badges, credit counts, dividers</span></div></div>
+    <div class="sw"><div class="chip" style="background:#8A5A0F"></div><div class="meta"><b>#8A5A0F</b><span>Amber-deep — amber as text on white</span><span class="cr">5.3:1 on bg — AA ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:#0E1626"></div><div class="meta"><b>#0E1626</b><span>Navy panel — hero/dark blocks</span></div></div>
+    <div class="sw"><div class="chip" style="background:#14181F"></div><div class="meta"><b>#14181F</b><span>Ink — body text</span><span class="cr">15:1 on bg — AAA ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:#5B6672"></div><div class="meta"><b>#5B6672</b><span>Muted — secondary text</span><span class="cr">5.3:1 on bg — AA ✓</span></div></div>
+    <div class="sw"><div class="chip" style="background:linear-gradient(135deg,#14CFA0,#07785C)"></div><div class="meta"><b>Teal gradient</b><span>135° · buttons, accents</span></div></div>
+    <div class="sw"><div class="chip" style="background:linear-gradient(135deg,#0E1626,#0d3b31 60%,#07785C)"></div><div class="meta"><b>Hero gradient</b><span>navy → teal · dividers, heroes</span></div></div>
+  </div>
+
+  <h2 class="sec">03 — Typography</h2>
+  <div class="type">
+    <div><label>Display / H1 — sans 800</label><div class="t-h1">Foundations that hold under load</div></div>
+    <div><label>H2 — sans 700</label><div class="t-h2">The mechanics of balance</div></div>
+    <div><label>H3 — sans 600</label><div class="t-h3">Free-body diagrams, step by step</div></div>
+    <div><label>Body — serif 17px (long-form reading)</label><div class="t-body">A force is a vector; the sum of forces on a body in equilibrium is zero. Every worked example on this platform carries units through to the final line.</div></div>
+    <div><label>Small / caption — sans 13px muted</label><div class="t-small">Source: MIT OpenCourseWare 8.01 · Callister &amp; Rethwisch, Ch. 6</div></div>
+  </div>
+
+  <h2 class="sec">04 — Buttons &amp; states</h2>
+  <div class="btnrow"><span>Primary</span><a class="btn btn-primary">Default</a><a class="btn btn-primary hover">Hover</a><a class="btn btn-primary active">Active</a></div>
+  <div class="btnrow"><span>Secondary</span><a class="btn btn-secondary">Default</a><a class="btn btn-secondary hover">Hover</a><a class="btn btn-secondary active">Active</a></div>
+  <div class="btnrow"><span>Ghost</span><a class="btn btn-ghost">Default</a></div>
+
+  <h2 class="sec">05 — Lesson tab bar (four tabs)</h2>
+  <div class="tabs"><button class="on">Foundations</button><button>Lecture</button><button>Worked Examples</button><button>Library</button></div>
+  <p style="font-size:13px;color:var(--nx-muted);margin-top:10px">Active tab: deep-teal text + 3px teal underline. The third tab is labelled by content ("Worked Examples" / "Applied Cases") rather than a fixed shift-work term.</p>
+
+  <h2 class="sec">06 — Content cards (illustration-paired, original vectors)</h2>
+  <div class="comp">
+    <div class="card"><div class="cap"><svg viewBox="0 0 120 120" class="ill"><circle cx="60" cy="60" r="30" fill="none" stroke="var(--nx-teal-d)" stroke-width="6"/><g stroke="var(--nx-teal-d)" stroke-width="6" stroke-linecap="round"><line x1="60" y1="14" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="106"/><line x1="14" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="106" y2="60"/><line x1="28" y1="28" x2="39" y2="39"/><line x1="81" y1="81" x2="92" y2="92"/><line x1="92" y1="28" x2="81" y2="39"/><line x1="39" y1="81" x2="28" y2="92"/></g><circle cx="60" cy="60" r="10" fill="var(--nx-amber)"/></svg></div><div class="body"><span class="tag">MECHANICS</span><h4>Statics — Forces That Balance</h4><p>Rotating-gear motif marks mechanics lessons.</p></div></div>
+    <div class="card"><div class="cap"><svg viewBox="0 0 120 120" class="ill"><line x1="20" y1="16" x2="20" y2="104" stroke="var(--nx-teal-d)" stroke-width="5"/><line x1="100" y1="16" x2="100" y2="104" stroke="var(--nx-teal-d)" stroke-width="5"/><g stroke="var(--nx-ink)" stroke-width="4"><line x1="20" y1="38" x2="48" y2="38"/><line x1="72" y1="38" x2="100" y2="38"/><line x1="20" y1="72" x2="52" y2="72"/><line x1="68" y1="72" x2="100" y2="72"/></g><g stroke="var(--nx-teal-d)" stroke-width="4" fill="none"><line x1="48" y1="30" x2="48" y2="46"/><line x1="72" y1="30" x2="72" y2="46"/></g><circle cx="60" cy="72" r="9" fill="none" stroke="var(--nx-amber)" stroke-width="4"/></svg></div><div class="body"><span class="tag">AUTOMATION</span><h4>PLC Ladder Logic I</h4><p>Ladder-diagram motif marks automation lessons.</p></div></div>
+    <div class="card"><div class="cap"><svg viewBox="0 0 120 120" class="ill"><rect x="50" y="16" width="20" height="66" rx="10" fill="none" stroke="var(--nx-teal-d)" stroke-width="5"/><circle cx="60" cy="92" r="16" fill="var(--nx-amber)"/><rect x="56" y="40" width="8" height="52" fill="var(--nx-amber)"/><g stroke="var(--nx-ink)" stroke-width="3"><line x1="74" y1="30" x2="86" y2="30"/><line x1="74" y1="50" x2="86" y2="50"/><line x1="74" y1="70" x2="86" y2="70"/></g></svg></div><div class="body"><span class="tag">THERMOFLUIDS</span><h4>Thermodynamics I</h4><p>Instrument motif marks thermofluid lessons.</p></div></div>
+  </div>
+
+  <h2 class="sec">07 — Illustration behind text (muted for contrast)</h2>
+  <div class="hero-samp">
+    <svg viewBox="0 0 120 120" class="bg"><circle cx="60" cy="60" r="34" fill="none" stroke-width="6"/><g stroke-width="6"><line x1="60" y1="10" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="110"/><line x1="10" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="110" y2="60"/></g><circle cx="60" cy="60" r="12" class="amber"/></svg>
+    <div class="txt"><h3>Lesson 1 — Forces that balance</h3><p>Background illustration faded to 14% opacity so text keeps AA contrast on the navy panel. No real photography anywhere on the platform — every image is an original thematic vector.</p></div>
+  </div>
+
+  <h2 class="sec">08 — Bilingual · RTL Arabic</h2>
+  <div class="comp">
+    <div class="note"><b>English (LTR)</b><br>A force is a vector quantity with magnitude and direction. Equilibrium requires the vector sum of all forces to equal zero.</div>
+    <div class="note ar"><b>العربية (RTL)</b><br>القوة كمية متجهة لها مقدار واتجاه. يتطلب الاتزان أن يكون المجموع المتجهي لجميع القوى مساويًا للصفر. المصطلحات اللاتينية مثل<br><span dir="ltr" style="font-family:var(--mono);font-size:13px">PLC · NPSH · RPM</span><br>تُعزل على سطر مستقل حتى لا تكسر اتجاه النص.</div>
+  </div>
+
+  <h2 class="sec">09 — What this stage does &amp; doesn't include</h2>
+  <div class="note">This is <b>Stage 1 (design system) only</b>. Removed the "§" character from the system entirely. Not yet built, pending your approval: Stage 2 navigation / information architecture, Stage 3 one fully-built sample lesson (all four tabs), Stage 4 full rollout. PWA manifest + standalone install and the responsive phone layout are specified here and implemented starting Stage 2.</div>
+
+</div></body></html>
