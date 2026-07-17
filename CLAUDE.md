@@ -207,6 +207,22 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   SUPPLEMENTAL ONLY — never the primary frame; a dedicated
   "Supplemental/Arabic Resources" renderer block is still to be built
   before the first Arabic approval can ship.
+- CHECKPOINT: STATICS EDUCATIONAL UNIT COMPLETE (2026-07-18): first course
+  shipped under the approved Unit template. All 11 lessons: lectures
+  500-1000w (working-method sections added), foundations converted to
+  glossary TABLES, quizzes upgraded [s,m,m,s,m] → [s,s,s,m,m,m,m,m] (+11
+  authored solves, +22 authored MCs — every number Python-verified
+  pre-write; the 55 legacy items kept verbatim), applied-case vignettes
+  scrubbed company-free (11 replacements: steel mill / cable plant /
+  fabricated steel / petrochemical plant / dairy filling hall /
+  fabrication yard), Library = 11 approved Hanson embeds. E2
+  "Supplemental/Arabic Resources" renderer BUILT (lesson "arabic" list →
+  link cards under dedicated header; renders only when approved resources
+  exist — none approved yet). Career module attached (rotation: 
+  Construction/Contracting–Asico, Automotive & Heavy Equipment,
+  Specialized Mfg–Gulf Glass; distinct from math-1's sectors). NEXT per
+  approved order: materials-1 → physics-1 → computing → drawing-cad →
+  Y1S2 stream.
 - BATCH A+B APPROVED & EXECUTED (owner, 2026-07-18): embeds now 73.
   VERIFIED+EMBEDDED: materials-1 L7/L8 (Efficient Engineer stress-strain,
   strength/ductility/toughness); physics-1 L1–L9 (Engineering Deciphered
