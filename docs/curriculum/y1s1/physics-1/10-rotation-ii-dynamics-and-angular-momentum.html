@@ -54,7 +54,7 @@
     <h1>Rotation II: dynamics and angular momentum</h1>
     <p class="sub">Newton's second law for rotation, τ = Iα, with rotational work and kinetic energy. Angular momentum and its conservation. Flywheels as kinetic-energy banks — the physics the machinery course will engineer into presses and compressors.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/10">Mark as complete</button>
@@ -67,23 +67,79 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a flywheel's stored energy grow with the square of its speed?</li><li>A wheel spins down under constant friction torque: what does the linear speed-time trace look like?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a flywheel's stored energy grow with the square of its speed?</li><li>A wheel spins down under constant friction torque: what does the linear speed-time trace look like?</li></ul></div><div class="measure">
+<h3>01 · Moment of inertia: rotation's mass</h3>
+<p>Newton's second law rotates into \( \tau = I\alpha \), and the new character
+\( I = \int r^2\,dm \) — moment of inertia — is mass weighted by the SQUARE of its
+distance from the axis. The square is everything: the same kilograms placed twice as far
+resist spin-up four times harder. A solid disc carries \( I = \tfrac12 mr^2 \); a thin
+hoop, with all mass at the rim, carries \( I = mr^2 \) — double, at equal mass and
+radius. Distribution, not just quantity, decides rotational reluctance, which is why the
+statics course's area moment (resisting bending) and this mass moment (resisting angular
+acceleration) share a name and a square: same mathematics, different physics.</p>
+<h3>02 · Rotational energy and the flywheel</h3>
+<p>A spinning body banks kinetic energy \( KE = \tfrac12 I\omega^2 \), and the
+\( \omega^2 \) makes speed the cheap lever: doubling spin quadruples storage. That is the
+flywheel's entire business plan — presses and punches draw their violent, brief demands
+from a wheel kept spinning by a modest motor, smoothing the load the way the machinery
+course will later formalize. A body that rolls carries both accounts at once,
+translational \( \tfrac12 mv^2 \) plus rotational \( \tfrac12 I\omega^2 \), which is
+why rolling objects arrive at ramp bottoms slower than sliding ones: part of the height
+budget went into spin.</p>
+<h3>03 · Angular momentum and its conservation</h3>
+<p>Momentum's rotational sibling is \( L = I\omega \), conserved whenever no external
+torque acts. Because \( I \) depends on mass placement, a system that redistributes its
+own mass trades \( I \) against \( \omega \) at constant product — the figure skater's
+spin-up, and equally the reason a machine that throws a mass outward slows its own
+rotation. Torque is the rate of change of angular momentum,
+\( \tau = dL/dt \), completing the rotational translation dictionary: every linear law
+has now crossed over.</p>
+<h3>04 · The rotational dynamics working method</h3>
+<p>Solve rotating problems by the same audit sequence as linear ones, with the dictionary
+open. Identify the axis and get \( I \) about THAT axis — from the standard shapes, or by
+the parallel-axis transfer when the spin axis is offset. Sum torques about the axis, signs
+by a declared positive sense, and apply \( \tau_{net} = I\alpha \). Chain to angular
+kinematics for speeds and angles, and to \( \tfrac12 I\omega^2 \) when the question is
+energetic. Audit with limits — at \( \alpha = 0 \) the torque balance must collapse to
+statics — and with the distribution instinct: between two candidates of equal mass, the one
+with mass farther out always spins up slower, coasts longer, and stores more at speed. The
+machines this feeds are immediate: every motor start is \( \tau = I\alpha \) against the
+driven train's inertia, and every coast-down time is the same equation read backward —
+which is exactly how the condition-monitoring course will one day read it.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does a flywheel's stored energy grow with the square of its speed?</li><li>A wheel spins down under constant friction torque: what does the linear speed-time trace look like?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Rotational kinematics</b> (Lesson 9) — \( \omega, \alpha \), and the rpm border.</li>
+<li><b>Second law and energy</b> (Lessons 4, 6) — every law here is a translation.</li>
+<li><b>Moment of inertia of areas</b> (Statics) — same square, different integrand.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Rotational second law</td><td>\( \tau = I\alpha \)</td><td>Net torque about the axis produces angular acceleration.</td></tr>
+<tr><td>Moment of inertia</td><td>\( I = \int r^2\,dm \)</td><td>Mass times distance SQUARED; distribution decides.</td></tr>
+<tr><td>Standard shapes</td><td>disc \( \tfrac12 mr^2 \); hoop \( mr^2 \)</td><td>The two benchmarks bracketing most machine rotors.</td></tr>
+<tr><td>Rotational KE</td><td>\( \tfrac12 I\omega^2 \)</td><td>Flywheel storage; \( \omega^2 \) makes speed the cheap lever.</td></tr>
+<tr><td>Rolling energy</td><td>\( \tfrac12 mv^2 + \tfrac12 I\omega^2 \)</td><td>Rolling bodies pay both accounts from one height budget.</td></tr>
+<tr><td>Angular momentum</td><td>\( L = I\omega \); \( \tau = dL/dt \)</td><td>Conserved without external torque; the I–ω trade.</td></tr>
+<tr><td>Coast-down reading</td><td>\( \alpha = \tau_{friction}/I \)</td><td>Spin-down time measures drag torque — a field diagnostic.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Torque to spin up a disc</b></p>
+<p><b>Problem.</b> A solid 40 kg disc of radius 0.30 m must reach angular acceleration \( 10\ \mathrm{rad/s^2} \). <b>Find:</b> its moment of inertia and the required net torque.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( I = \tfrac12 mr^2 = 0.5 \times 40 \times 0.09 = 1.8\ \mathrm{kg\,m^2} \).
+(2) \( \tau = I\alpha = 1.8 \times 10 = 18\ \mathrm{N\,m} \).</p>
+<p><b>Answer:</b> \( I = 1.8\ \mathrm{kg\,m^2} \); 18 N·m.
+<b>Sanity check:</b> were the same 40 kg a rim-concentrated hoop, \( I \) would double to 3.6 and the torque with it — the distribution effect in one comparison. The audit limit holds too: zero α needs zero net torque, statics regained.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The flywheel's bank balance</b></p>
+<p><b>Problem.</b> A press flywheel has \( I = 2.5\ \mathrm{kg\,m^2} \) and spins at 150 rad/s. <b>Find:</b> its stored kinetic energy, and the energy released if a punch stroke drops it to 140 rad/s.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( KE = \tfrac12 I\omega^2 = 0.5 \times 2.5 \times 150^2 = 28.1\ \mathrm{kJ} \).
+(2) At 140 rad/s: \( 0.5 \times 2.5 \times 19600 = 24.5\ \mathrm{kJ} \); released: \( 3.6\ \mathrm{kJ} \).</p>
+<p><b>Answer:</b> ≈28 kJ banked; ≈3.6 kJ delivered per stroke for a 10 rad/s dip.
+<b>Sanity check:</b> a 6.7% speed dip released 13% of the energy — the \( \omega^2 \) working as designed, letting a small speed sag fund a large punch while the motor tops the account back up between strokes. That is the flywheel's entire economy.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Conservation in a rebalancing rotor</b></p>
+<p><b>Problem.</b> A rotating assembly at 20 rad/s has \( I = 1.2\ \mathrm{kg\,m^2} \). An internal mechanism draws its masses inward, reducing \( I \) to \( 0.8\ \mathrm{kg\,m^2} \), with no external torque. <b>Find:</b> the new angular velocity.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) No external torque → \( L = I\omega \) conserved.
+(2) \( \omega_2 = I_1\omega_1/I_2 = 1.2 \times 20/0.8 = 30\ \mathrm{rad/s} \).</p>
+<p><b>Answer:</b> 30 rad/s — a 50% spin-up from geometry alone.
+<b>Sanity check:</b> kinetic energy rose from 240 to 360 J — not a violation: the mechanism did work pulling mass inward against centrifugal tendency, and conservation of L (not of KE) governs torque-free rotation. The skater's spin and the governor's droop are this equation in opposite directions.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A solid disc and a thin hoop have equal mass and radius. Under the same torque, which spins up faster?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The disc — its mass sits closer to the axis, so its I is half</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The hoop</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Both equally</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Depends on the material</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( I_{disc} = \tfrac12 mr^2 \) versus \( I_{hoop} = mr^2 \): the disc's \( \alpha = \tau/I \) is double. Distribution, not just mass, sets rotational reluctance — the \( r^2 \) weighting means rim mass counts fourfold per doubling of distance. Material is irrelevant at fixed m and geometry. This one comparison is the mental model for every rotor, coupling, and flywheel decision after it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Doubling a flywheel's speed multiplies its stored energy by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>16</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( KE = \tfrac12 I\omega^2 \propto \omega^2 \): double speed, quadruple storage — the same square that governed vehicle kinetic energy, now in rotation. This is why energy-storage flywheels chase speed (and why burst containment becomes their design driver). Eight belongs to \( \omega^3 \), a fan-power law; sixteen to \( \omega^4 \), nothing in this chapter.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Angular momentum of a rotating system is conserved when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>No external torque acts about the axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>No forces act at all</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The rotation is slow</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The body is rigid</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \tau_{ext} = dL/dt \): zero external torque freezes L, whatever internal rearrangements occur — that is precisely how the skater and the rebalancing rotor trade I against ω. External FORCES through the axis exert no torque and are harmless; rigidity is not required (the skater isn't rigid). The conservation is the rotational twin of Lesson 8's, with torque replacing force at the gate.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A net torque of 24 N·m acts on a rotor with \( I = 1.5\ \mathrm{kg\,m^2} \). Its angular acceleration is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>16 rad/s²</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>36 rad/s²</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.0625 rad/s²</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>24 rad/s²</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \alpha = \tau/I = 24/1.5 = 16\ \mathrm{rad/s^2} \). Multiplying (36) and inverting (0.0625) are the arithmetic traps; forgetting I entirely (24) treats torque as acceleration. The equation is the second law wearing rotational clothes, and the same discipline applies: τ must be the NET torque, friction and load subtracted before dividing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A cylinder rolls (without slipping) down a ramp while an identical cylinder slides down frictionlessly. At the bottom:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The slider is faster — the roller spent part of its height budget on spin</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The roller is faster</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>They tie</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The heavier one wins</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Both convert \( mgh \), but the roller must fund two accounts — \( \tfrac12 mv^2 \) AND \( \tfrac12 I\omega^2 \) — so less lands in translation: the slider arrives faster. Mass cancels in both cases. The split depends only on the shape's \( I/mr^2 \) ratio, which is why rolling races between hoops and discs are decided at the starting line by geometry.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

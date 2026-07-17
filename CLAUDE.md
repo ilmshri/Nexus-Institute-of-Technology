@@ -234,6 +234,21 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   courses → Y1S1 → Y1S2 → Y2S1 onward; report per course; no lesson is
   Done below full Unit; video-only lessons get retrofitted. No more
   per-step permission requests — integrity gates are the authority.
+- CHECKPOINT: PHYSICS-1 EDUCATIONAL UNIT COMPLETE (2026-07-18): FIRST
+  FRESH-AUTHORED course under Mass Production Mode — no legacy content
+  existed; all 11 lessons written from scratch to the Unit template:
+  §1-§4 lectures 500-1000w (units/vectors, 1D+2D kinematics, Newton's
+  laws + applications, work-energy, conservation, momentum, rotation I/II,
+  oscillations — each with a working-method section), glossary TABLES,
+  quizzes 3 solves + 5 MCs per lesson (88 items, ~60 numeric checks
+  Python-verified pre-write), Library = 11 approved embeds already in
+  place (ED/Khan/MIT). Company-free by construction. Career module
+  (rotation: FMCG-KDD, Automotive & Heavy Equipment, Global OEM-Siemens
+  drives — trio distinct from all previous courses). Coverage 52→63/528
+  (12%). Commits: 9e9006c (L1-4), 96e825c (L5-8), this one (L9-11).
+  Y1S1 Unit scoreboard: math-1 ✓ statics ✓ materials-1 ✓ physics-1 ✓;
+  NEXT per approved order: computing → drawing-cad (incl. re-verifying its
+  drafts) → Y1S2 stream.
 - CHECKPOINT: MATERIALS-1 EDUCATIONAL UNIT COMPLETE (2026-07-18): second
   course under the Unit template. All 11 lessons: lectures 500-1000w
   (working-method sections: failure-reading, bond-reading, unit-cell

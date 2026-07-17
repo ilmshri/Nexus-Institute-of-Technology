@@ -54,7 +54,7 @@
     <h1>Oscillations first contact</h1>
     <p class="sub">Simple harmonic motion: the spring–mass system and the pendulum, with period formulas derived from F = ma. Natural frequency as a machine's fingerprint — the seed the vibrations course will grow. Waves in outline: propagation, frequency, wavelength.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 8.01SC Classical Mechanics</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/11">Mark as complete</button>
@@ -67,23 +67,82 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)</li><li>Why does a pendulum's period not care about its mass?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>PHY 107 · Engineering Physics I — Mechanics</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotation, and first oscillations — the physical foundation under statics, dynamics, thermodynamics, and vibrations.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)</li><li>Why does a pendulum's period not care about its mass?</li></ul></div><div class="measure">
+<h3>01 · The restoring recipe</h3>
+<p>Oscillation needs exactly two ingredients: a restoring force that pulls toward
+equilibrium in proportion to displacement, and inertia that overshoots it. The spring–mass
+system is the archetype — \( F = -kx \) feeding \( m\ddot{x} \) — and its motion is
+simple harmonic: \( x(t) = A\sin(\omega_n t) \), a sine forever, with amplitude \( A \)
+set by how the motion started and angular frequency set by the system itself:
+\( \omega_n = \sqrt{k/m} \). Stiffness accelerates the cycle; mass slows it; amplitude,
+remarkably, does not enter — small or large swings keep the same beat, which is what makes
+natural frequency a property of the MACHINE, not of the disturbance.</p>
+<h3>02 · The pendulum and the family of oscillators</h3>
+<p>The pendulum repeats the recipe with gravity as the spring:
+\( T = 2\pi\sqrt{L/g} \) for small swings — mass absent, length and gravity only. Every
+oscillator in the family carries the same signature quantities: period \( T = 2\pi/\omega_n \),
+frequency \( f = 1/T \) in hertz, and the energy sloshing between kinetic (maximum at
+equilibrium, where speed peaks at \( v_{max} = A\omega_n \)) and potential (maximum at
+the extremes, where motion pauses). Reading \( x(t) = A\sin(\omega t) \) fluently —
+amplitude from the coefficient, frequency from the argument — is reading the native
+language of every vibration trace the later courses will put on screen.</p>
+<h3>03 · Why machines care: resonance previewed</h3>
+<p>Every machine element has natural frequencies, and rotating machinery supplies periodic
+forcing at running speed and its multiples. When forcing frequency approaches natural
+frequency, amplitude grows dramatically — resonance — and structures that seemed rigid
+begin to breathe. This lesson only introduces the actors; the vibrations course will
+quantify their meeting. But the design instinct starts now: know your \( \omega_n \),
+know your running speeds, and keep them apart.</p>
+<h3>04 · The oscillation working method</h3>
+<p>Identify the stiffness and the inertia — every oscillator has both, whatever it looks
+like — and form \( \omega_n = \sqrt{k/m} \) (or the pendulum's \( \sqrt{g/L} \)).
+Convert consciously among \( \omega_n \), \( f \), and \( T \): the \( 2\pi \) that
+separates rad/s from Hz is this chapter's border crossing, as rpm's was the last one's.
+Extract amplitude and frequency from any given \( x(t) \) by inspection, and derive the
+speed and acceleration peaks as \( A\omega \) and \( A\omega^2 \). Audit with the
+scaling instincts: quadrupling stiffness only doubles frequency (the square root taxes
+enthusiasm), adding mass always slows the beat, and amplitude never changes the clock.
+Where a real trace disagrees with these instincts — frequency shifting with load, beat
+patterns, growth over time — the disagreement is information, and the vibrations course
+will teach you to read it. Here, the assignment is fluency with the clean case that all
+the diagnostics measure against — the sine every analyzer decomposes real signals into,
+and the natural frequency every balancing report quotes. First courses end where careers
+begin; this one ends on the exact frequency.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)</li><li>Why does a pendulum's period not care about its mass?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Newton's second law</b> (Lesson 4) — SHM is F = ma with a restoring F.</li>
+<li><b>Energy conservation</b> (Lesson 7) — the KE–PE slosh at constant total.</li>
+<li><b>Radian fluency</b> (Lesson 9) — \( \omega \), f, and T, converted consciously.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Restoring force</td><td>\( F = -kx \)</td><td>Proportional pull toward equilibrium — the oscillation ingredient.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n = \sqrt{k/m} \)</td><td>The machine's own beat; stiffness up, mass down.</td></tr>
+<tr><td>Period and frequency</td><td>\( T = 2\pi/\omega_n,\ f = 1/T \)</td><td>The 2π border between rad/s and Hz.</td></tr>
+<tr><td>Pendulum</td><td>\( T = 2\pi\sqrt{L/g} \)</td><td>Gravity as the spring; mass cancels, small swings only.</td></tr>
+<tr><td>SHM motion</td><td>\( x = A\sin(\omega_n t) \)</td><td>Amplitude from the start; frequency from the system.</td></tr>
+<tr><td>Peak speed</td><td>\( v_{max} = A\omega_n \) at equilibrium</td><td>Where the energy is all kinetic.</td></tr>
+<tr><td>Resonance (preview)</td><td>forcing ≈ \( \omega_n \) → growth</td><td>Keep running speeds and natural frequencies apart.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>The isolator's beat</b></p>
+<p><b>Problem.</b> A 2.0 kg instrument sits on a mount of stiffness 800 N/m. <b>Find:</b> the natural frequency in rad/s and Hz, and the period.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \omega_n = \sqrt{k/m} = \sqrt{800/2} = 20\ \mathrm{rad/s} \).
+(2) \( f = \omega_n/2\pi = 3.18\ \mathrm{Hz} \); \( T = 1/f = 0.314\ \mathrm{s} \).</p>
+<p><b>Answer:</b> 20 rad/s = 3.2 Hz; period ≈0.31 s.
+<b>Sanity check:</b> quadrupling the stiffness would only double the frequency (√), and doubling the mass would divide it by √2 — the square root damping every intuition of proportionality. A 3 Hz mount under a 24 Hz (1450 rpm) machine is comfortably clear of resonance: the design arithmetic in miniature.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The inspection pendulum</b></p>
+<p><b>Problem.</b> A 0.70 m lanyard with a small tool swings as a pendulum. <b>Find:</b> its period, and what changes if the tool is twice as heavy.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( T = 2\pi\sqrt{L/g} = 2\pi\sqrt{0.70/9.81} = 1.68\ \mathrm{s} \).
+(2) Mass does not appear: the heavier tool swings with exactly the same period.</p>
+<p><b>Answer:</b> ≈1.7 s, at any mass.
+<b>Sanity check:</b> gravity provides both the restoring pull AND acts on the inertia, so mass cancels — the same cancellation as free fall. Only length and gravity remain: to slow a pendulum, lengthen it (fourfold length for double period, the square root again).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Reading a vibration trace</b></p>
+<p><b>Problem.</b> A bearing housing's displacement follows \( x(t) = 0.030\sin(12t) \) (metres, seconds). <b>Find:</b> the amplitude, frequency in Hz, and peak velocity.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Amplitude by inspection: \( A = 0.030\ \mathrm{m} = 30\ \mathrm{mm} \).
+(2) \( \omega = 12\ \mathrm{rad/s} \Rightarrow f = 12/2\pi = 1.9\ \mathrm{Hz} \).
+(3) \( v_{max} = A\omega = 0.030 \times 12 = 0.36\ \mathrm{m/s} \).</p>
+<p><b>Answer:</b> 30 mm at 1.9 Hz; peak speed 0.36 m/s.
+<b>Sanity check:</b> peak velocity occurs at mid-swing where the trace crosses zero — displacement and velocity peaks alternate, a quarter-cycle apart. Reading A and ω off a sine by inspection is the exact skill vibration analyzers automate; learning it manually first is what makes their output meaningful.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>For small oscillations, increasing a pendulum's swing amplitude:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Leaves the period unchanged</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Increases the period</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Decreases the period</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Stops the swing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Amplitude independence is SHM's defining courtesy: larger swings travel farther but proportionally faster, and the clock holds — which is why pendulums could keep time. (At LARGE angles the approximation frays and the period does grow, but that correction belongs to a later course.) The natural frequency is the system's property; the amplitude merely reports how hard it was disturbed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>To raise a machine mount's natural frequency, you should:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Stiffen the mount or lighten the machine</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Soften the mount</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Add mass</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Increase the operating amplitude</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \omega_n = \sqrt{k/m} \): frequency rises with stiffness and falls with mass. Softening and adding mass LOWER it — which is itself a design tool (isolation mounts deliberately sit far below forcing frequencies). Amplitude has no vote. The k-and-m tuning of natural frequencies against running speeds is the first design instinct of vibration engineering.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>In SHM, the speed of the mass is greatest:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Passing through equilibrium</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the extremes of travel</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Constant throughout</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>At the quarter points</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>At the extremes the motion pauses (all energy potential); at equilibrium the restoring force has finished accelerating it and the energy is all kinetic: \( v_{max} = A\omega_n \). The energy slosh of Lesson 7 sets this geography — and vibration instruments exploit it, velocity sensors reading peak values a quarter-cycle from displacement peaks.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Quadrupling a spring's stiffness multiplies the oscillation frequency by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>16</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \sqrt{2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \omega_n \propto \sqrt{k} \): four times the stiffness, twice the frequency — the square root taxing the investment, exactly as it taxed grain refinement and case depth in other courses. Linear thinking (×4) overpays; the lesson's scaling instincts exist to prevent precisely that procurement conversation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A machine's natural frequency is 24 Hz and its rotor runs at 1440 rpm (24 Hz). The expected behavior is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Resonant amplitude growth — forcing sits on the natural frequency</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Perfect smoothness</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The machine cannot rotate</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing observable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Forcing at the natural frequency is the resonance condition: each cycle's push arrives in step with the motion, and amplitude climbs until damping or damage caps it. The numbers were chosen to collide — 1440 rpm IS 24 Hz. Real design keeps margins between running speeds and natural frequencies precisely to avoid this meeting; the vibrations course quantifies how much margin buys how much peace.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

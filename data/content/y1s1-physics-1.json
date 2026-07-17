@@ -646,5 +646,248 @@
     "solution": "<p>Momenta: \\( 1000\\times2 = 2000\\times1 = 2000\\ \\mathrm{kg\\,m/s} \\) — equal. Energies: \\( \\tfrac12\\times1000\\times4 = 2000\\ \\mathrm{J} \\) versus \\( \\tfrac12\\times2000\\times1 = 1000\\ \\mathrm{J} \\) — the faster cart carries double. Momentum scales with v, energy with \\( v^2 \\): two different currencies, and collisions settle accounts in both. The distinction is the entire reason Lessons 6 and 8 are separate lessons.</p>"
    }
   ]
+ },
+ "9": {
+  "lecture": "\n<h3>§1 · The angular vocabulary</h3>\n<p>Rotation replays kinematics with angular characters. Angular position \\( \\theta \\) is\nmeasured in radians — the natural unit, because it makes arc length \\( s = \\theta r \\)\nwith no conversion factor. Angular velocity \\( \\omega = d\\theta/dt \\) in rad/s, and\nangular acceleration \\( \\alpha = d\\omega/dt \\) in rad/s², chain exactly as their linear\nsiblings did, and the constant-\\( \\alpha \\) toolkit is Lesson 2's kit with letters\nswapped: \\( \\omega = \\omega_0 + \\alpha t \\),\n\\( \\theta = \\omega_0 t + \\tfrac12\\alpha t^2 \\),\n\\( \\omega^2 = \\omega_0^2 + 2\\alpha\\theta \\). The machine floor speaks rpm; physics\nspeaks rad/s; the exchange rate \\( \\omega = 2\\pi N/60 \\) is crossed so often it should\nbe reflex — 1450 rpm, the standard 4-pole motor speed, is 152 rad/s.</p>\n<h3>§2 · The rolling connection</h3>\n<p>Rotation meets translation at the rim: a point at radius \\( r \\) moves at\n\\( v = \\omega r \\) and, under angular acceleration, gains speed at \\( a_t = \\alpha r \\).\nThe relation runs every belt, chain, and traction drive: pulleys sharing a belt share rim\nspeed, so their angular velocities trade inversely with radius — the speed-ratio law of\nevery pulley pair and gear mesh. Radians earn their keep here: the formulas hold ONLY with\nangles in radians, and feeding degrees or rpm into \\( v = \\omega r \\) is the classic\nrotational unit error.</p>\n<h3>§3 · Torque: force's rotational agent</h3>\n<p>What force is to translation, torque is to rotation: \\( \\tau = Fr\\sin\\theta \\), the\nforce times its perpendicular lever arm, in newton-metres. The statics course built moments\nfor equilibrium; dynamics now lets them cause angular acceleration. On a belt drive, the\ntorque delivered is the TENSION DIFFERENCE times radius — \\( (T_1 - T_2)r \\) — because\nboth belt runs pull, in opposition; on a bolted coupling, torque is what the wrench and the\ntorque spec are negotiating. The moment of inertia \\( I \\), rotation's mass, waits one\nlesson ahead as torque's partner.</p>\n<h3>§4 · The rotational working method</h3>\n<p>Run rotation problems with a currency-exchange discipline. Convert everything to SI\nangular units at the border — rpm to rad/s, revolutions to radians — work entirely inside,\nand convert back only for the final answer if the floor wants rpm. Choose the angular\ntoolkit by the same known-versus-wanted matching as Lesson 2, and pass between the angular\nand linear worlds only through the radius: \\( v = \\omega r \\), \\( a_t = \\alpha r \\),\n\\( s = \\theta r \\). Audit with the two standard checks — units (a radian is\ndimensionless, so \\( \\omega r \\) lands in m/s cleanly) and magnitude sense (industrial\nmachines mostly live between 0.5 and 300 rad/s; an answer of 15,000 rad/s is a units error\nannouncing itself). The kinematics is deliberately familiar; fluency in the conversion\ndiscipline is what this lesson actually installs, because every machine after it — pumps,\ngearboxes, turbines — speaks both languages at once.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Linear kinematics</b> (Lesson 2) — the toolkit transfers letter-for-letter.</li>\n<li><b>Moments</b> (Statics) — torque as force times perpendicular arm.</li>\n<li><b>Radian measure</b> (Math I) — arc = radius × angle, the native unit.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Angular kinematics</td><td>\\( \\omega = \\omega_0 + \\alpha t \\), etc.</td><td>Lesson 2's kit with \\( \\theta, \\omega, \\alpha \\) — same selection rules.</td></tr>\n<tr><td>rpm ↔ rad/s</td><td>\\( \\omega = 2\\pi N/60 \\)</td><td>The border crossing every machine problem makes; 1450 rpm ≈ 152 rad/s.</td></tr>\n<tr><td>Rim speed</td><td>\\( v = \\omega r \\)</td><td>Belts, wheels, and cutting speeds; radians only.</td></tr>\n<tr><td>Tangential acceleration</td><td>\\( a_t = \\alpha r \\)</td><td>How rim speed changes during spin-up and coast-down.</td></tr>\n<tr><td>Torque</td><td>\\( \\tau = Fr\\sin\\theta \\)</td><td>Force's turning agent; N·m.</td></tr>\n<tr><td>Belt-drive torque</td><td>\\( \\tau = (T_1 - T_2)\\,r \\)</td><td>The tension DIFFERENCE does the work — both runs pull.</td></tr>\n<tr><td>Speed ratio</td><td>\\( \\omega_1 r_1 = \\omega_2 r_2 \\)</td><td>Shared rim speed across pulleys and meshing gears.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>From nameplate to belt speed</b></p>\n<p><b>Problem.</b> A motor runs at 1450 rpm carrying a 60 mm-radius pulley. <b>Find:</b> the angular velocity in rad/s and the belt speed.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( \\omega = 2\\pi N/60 = 2\\pi \\times 1450/60 = 152\\ \\mathrm{rad/s} \\).\n(2) \\( v = \\omega r = 152 \\times 0.060 = 9.1\\ \\mathrm{m/s} \\).</p>\n<p><b>Answer:</b> ≈152 rad/s; ≈9.1 m/s of belt.\n<b>Sanity check:</b> the rim of a 12 cm pulley at motor speed doing ~9 m/s (33 km/h) is entirely typical of belt drives — and the number is why guards exist. The rpm-to-rad/s crossing (×0.1047) is the single most repeated conversion in machine work; owning it cold is the lesson's toll.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Torque through a belt</b></p>\n<p><b>Problem.</b> A belt drives a 100 mm-radius pulley with 350 N tension in the tight side and 150 N in the slack side. <b>Find:</b> the torque delivered to the shaft.</p>",
+    "solution": "<p><b>Solution.</b> (1) Both runs pull the pulley rim in opposite rotational senses; the net turning agent is the difference.\n(2) \\( \\tau = (T_1 - T_2)\\,r = (350 - 150) \\times 0.100 = 20\\ \\mathrm{N\\,m} \\).</p>\n<p><b>Answer:</b> 20 N·m.\n<b>Sanity check:</b> using the tight side alone (35 N·m) forgets that the slack side fights back — the classic belt error; the 200 N difference is also exactly the net force the belt applies to the shaft bearings, which is why belt tension and bearing life are one conversation.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The fan's spin-up</b></p>\n<p><b>Problem.</b> A fan accelerates uniformly from rest to 1200 rpm in 8.0 s. <b>Find:</b> the angular acceleration and the number of revolutions completed during the spin-up.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( \\omega = 1200 \\times 2\\pi/60 = 125.7\\ \\mathrm{rad/s} \\); \\( \\alpha = 125.7/8 = 15.7\\ \\mathrm{rad/s^2} \\).\n(2) \\( \\theta = \\tfrac12\\alpha t^2 = 0.5 \\times 15.7 \\times 64 = 503\\ \\mathrm{rad} \\).\n(3) Revolutions: \\( 503/2\\pi = 80 \\).</p>\n<p><b>Answer:</b> ≈15.7 rad/s²; 80 revolutions.\n<b>Sanity check:</b> average speed during a uniform spin-up is half the final — 600 rpm = 10 rev/s — over 8 s: 80 revolutions ✓. The linear world's triangle-area logic transplants perfectly, which is the entire point of the shared toolkit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A machine spindle at 3000 rpm is turning at about:</p>",
+    "choices": [
+     "314 rad/s",
+     "50 rad/s",
+     "3000 rad/s",
+     "188,500 rad/s"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\omega = 2\\pi \\times 3000/60 = 314\\ \\mathrm{rad/s} \\). Treating rpm as rad/s (3000) skips the conversion; 50 is rev/s mistaken for rad/s (missing the \\( 2\\pi \\)); the huge option multiplies by 60 instead of dividing. The three distractors are precisely the three ways this conversion goes wrong in practice — one per forgotten factor.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two points on the same rotating disc, one at 50 mm radius and one at 150 mm, have:</p>",
+    "choices": [
+     "The same \\( \\omega \\), but the outer point moves three times faster",
+     "The same linear speed",
+     "Different angular velocities",
+     "Nothing in common"
+    ],
+    "answer": 0,
+    "solution": "<p>A rigid body shares one angular velocity — every point sweeps the same angle per second — while linear speed grows with radius: \\( v = \\omega r \\), so triple the radius is triple the speed. This is why cutting speed depends on workpiece diameter at fixed spindle rpm, and why rim damage on large rotors is a higher-energy affair than hub damage: same \\( \\omega \\), very different v.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>To maximize the torque from a 200 N pull on a 0.3 m wrench, the pull should be applied:</p>",
+    "choices": [
+     "Perpendicular to the wrench, giving 60 N·m",
+     "Along the wrench handle",
+     "At 45°, for balance",
+     "As close to the nut as possible"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\tau = Fr\\sin\\theta \\) peaks at \\( \\sin 90° = 1 \\): \\( 200 \\times 0.3 = 60\\ \\mathrm{N\\,m} \\). Pulling along the handle gives zero torque however hard; 45° delivers only 71%; and shrinking r shrinks everything. Statics taught this as moments — rotation now spends the same geometry on causing angular acceleration rather than preventing it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A shaft turns through 5 complete revolutions. In radians, that is about:</p>",
+    "choices": [
+     "31.4 rad",
+     "5 rad",
+     "1800 rad",
+     "0.8 rad"
+    ],
+    "answer": 0,
+    "solution": "<p>One revolution is \\( 2\\pi \\) radians: \\( 5 \\times 2\\pi = 31.4\\ \\mathrm{rad} \\). Calling a revolution one radian (5) is the quiet error that breaks every later formula; 1800 converts to degrees, a unit the rotational toolkit never uses. Radians are the native currency because they make \\( s = \\theta r \\) exact — everything else is exchange-rate arithmetic.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A small motor pulley (60 mm) drives a large fan pulley (180 mm) by belt. The fan turns:</p>",
+    "choices": [
+     "At one-third of the motor speed",
+     "At three times the motor speed",
+     "At the same speed",
+     "In reverse"
+    ],
+    "answer": 0,
+    "solution": "<p>The belt imposes one rim speed on both pulleys: \\( \\omega_1 r_1 = \\omega_2 r_2 \\), so the triple-radius fan turns at a third the angular speed — and, by the coming lessons, with triple the torque, power flowing through unchanged (minus losses). Every belt-drive speed reduction and every gear ratio is this one equality, applied at the point of contact.</p>"
+   }
+  ]
+ },
+ "10": {
+  "lecture": "\n<h3>§1 · Moment of inertia: rotation's mass</h3>\n<p>Newton's second law rotates into \\( \\tau = I\\alpha \\), and the new character\n\\( I = \\int r^2\\,dm \\) — moment of inertia — is mass weighted by the SQUARE of its\ndistance from the axis. The square is everything: the same kilograms placed twice as far\nresist spin-up four times harder. A solid disc carries \\( I = \\tfrac12 mr^2 \\); a thin\nhoop, with all mass at the rim, carries \\( I = mr^2 \\) — double, at equal mass and\nradius. Distribution, not just quantity, decides rotational reluctance, which is why the\nstatics course's area moment (resisting bending) and this mass moment (resisting angular\nacceleration) share a name and a square: same mathematics, different physics.</p>\n<h3>§2 · Rotational energy and the flywheel</h3>\n<p>A spinning body banks kinetic energy \\( KE = \\tfrac12 I\\omega^2 \\), and the\n\\( \\omega^2 \\) makes speed the cheap lever: doubling spin quadruples storage. That is the\nflywheel's entire business plan — presses and punches draw their violent, brief demands\nfrom a wheel kept spinning by a modest motor, smoothing the load the way the machinery\ncourse will later formalize. A body that rolls carries both accounts at once,\ntranslational \\( \\tfrac12 mv^2 \\) plus rotational \\( \\tfrac12 I\\omega^2 \\), which is\nwhy rolling objects arrive at ramp bottoms slower than sliding ones: part of the height\nbudget went into spin.</p>\n<h3>§3 · Angular momentum and its conservation</h3>\n<p>Momentum's rotational sibling is \\( L = I\\omega \\), conserved whenever no external\ntorque acts. Because \\( I \\) depends on mass placement, a system that redistributes its\nown mass trades \\( I \\) against \\( \\omega \\) at constant product — the figure skater's\nspin-up, and equally the reason a machine that throws a mass outward slows its own\nrotation. Torque is the rate of change of angular momentum,\n\\( \\tau = dL/dt \\), completing the rotational translation dictionary: every linear law\nhas now crossed over.</p>\n<h3>§4 · The rotational dynamics working method</h3>\n<p>Solve rotating problems by the same audit sequence as linear ones, with the dictionary\nopen. Identify the axis and get \\( I \\) about THAT axis — from the standard shapes, or by\nthe parallel-axis transfer when the spin axis is offset. Sum torques about the axis, signs\nby a declared positive sense, and apply \\( \\tau_{net} = I\\alpha \\). Chain to angular\nkinematics for speeds and angles, and to \\( \\tfrac12 I\\omega^2 \\) when the question is\nenergetic. Audit with limits — at \\( \\alpha = 0 \\) the torque balance must collapse to\nstatics — and with the distribution instinct: between two candidates of equal mass, the one\nwith mass farther out always spins up slower, coasts longer, and stores more at speed. The\nmachines this feeds are immediate: every motor start is \\( \\tau = I\\alpha \\) against the\ndriven train's inertia, and every coast-down time is the same equation read backward —\nwhich is exactly how the condition-monitoring course will one day read it.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Rotational kinematics</b> (Lesson 9) — \\( \\omega, \\alpha \\), and the rpm border.</li>\n<li><b>Second law and energy</b> (Lessons 4, 6) — every law here is a translation.</li>\n<li><b>Moment of inertia of areas</b> (Statics) — same square, different integrand.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Rotational second law</td><td>\\( \\tau = I\\alpha \\)</td><td>Net torque about the axis produces angular acceleration.</td></tr>\n<tr><td>Moment of inertia</td><td>\\( I = \\int r^2\\,dm \\)</td><td>Mass times distance SQUARED; distribution decides.</td></tr>\n<tr><td>Standard shapes</td><td>disc \\( \\tfrac12 mr^2 \\); hoop \\( mr^2 \\)</td><td>The two benchmarks bracketing most machine rotors.</td></tr>\n<tr><td>Rotational KE</td><td>\\( \\tfrac12 I\\omega^2 \\)</td><td>Flywheel storage; \\( \\omega^2 \\) makes speed the cheap lever.</td></tr>\n<tr><td>Rolling energy</td><td>\\( \\tfrac12 mv^2 + \\tfrac12 I\\omega^2 \\)</td><td>Rolling bodies pay both accounts from one height budget.</td></tr>\n<tr><td>Angular momentum</td><td>\\( L = I\\omega \\); \\( \\tau = dL/dt \\)</td><td>Conserved without external torque; the I–ω trade.</td></tr>\n<tr><td>Coast-down reading</td><td>\\( \\alpha = \\tau_{friction}/I \\)</td><td>Spin-down time measures drag torque — a field diagnostic.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Torque to spin up a disc</b></p>\n<p><b>Problem.</b> A solid 40 kg disc of radius 0.30 m must reach angular acceleration \\( 10\\ \\mathrm{rad/s^2} \\). <b>Find:</b> its moment of inertia and the required net torque.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( I = \\tfrac12 mr^2 = 0.5 \\times 40 \\times 0.09 = 1.8\\ \\mathrm{kg\\,m^2} \\).\n(2) \\( \\tau = I\\alpha = 1.8 \\times 10 = 18\\ \\mathrm{N\\,m} \\).</p>\n<p><b>Answer:</b> \\( I = 1.8\\ \\mathrm{kg\\,m^2} \\); 18 N·m.\n<b>Sanity check:</b> were the same 40 kg a rim-concentrated hoop, \\( I \\) would double to 3.6 and the torque with it — the distribution effect in one comparison. The audit limit holds too: zero α needs zero net torque, statics regained.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The flywheel's bank balance</b></p>\n<p><b>Problem.</b> A press flywheel has \\( I = 2.5\\ \\mathrm{kg\\,m^2} \\) and spins at 150 rad/s. <b>Find:</b> its stored kinetic energy, and the energy released if a punch stroke drops it to 140 rad/s.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( KE = \\tfrac12 I\\omega^2 = 0.5 \\times 2.5 \\times 150^2 = 28.1\\ \\mathrm{kJ} \\).\n(2) At 140 rad/s: \\( 0.5 \\times 2.5 \\times 19600 = 24.5\\ \\mathrm{kJ} \\); released: \\( 3.6\\ \\mathrm{kJ} \\).</p>\n<p><b>Answer:</b> ≈28 kJ banked; ≈3.6 kJ delivered per stroke for a 10 rad/s dip.\n<b>Sanity check:</b> a 6.7% speed dip released 13% of the energy — the \\( \\omega^2 \\) working as designed, letting a small speed sag fund a large punch while the motor tops the account back up between strokes. That is the flywheel's entire economy.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Conservation in a rebalancing rotor</b></p>\n<p><b>Problem.</b> A rotating assembly at 20 rad/s has \\( I = 1.2\\ \\mathrm{kg\\,m^2} \\). An internal mechanism draws its masses inward, reducing \\( I \\) to \\( 0.8\\ \\mathrm{kg\\,m^2} \\), with no external torque. <b>Find:</b> the new angular velocity.</p>",
+    "solution": "<p><b>Solution.</b> (1) No external torque → \\( L = I\\omega \\) conserved.\n(2) \\( \\omega_2 = I_1\\omega_1/I_2 = 1.2 \\times 20/0.8 = 30\\ \\mathrm{rad/s} \\).</p>\n<p><b>Answer:</b> 30 rad/s — a 50% spin-up from geometry alone.\n<b>Sanity check:</b> kinetic energy rose from 240 to 360 J — not a violation: the mechanism did work pulling mass inward against centrifugal tendency, and conservation of L (not of KE) governs torque-free rotation. The skater's spin and the governor's droop are this equation in opposite directions.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A solid disc and a thin hoop have equal mass and radius. Under the same torque, which spins up faster?</p>",
+    "choices": [
+     "The disc — its mass sits closer to the axis, so its I is half",
+     "The hoop",
+     "Both equally",
+     "Depends on the material"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( I_{disc} = \\tfrac12 mr^2 \\) versus \\( I_{hoop} = mr^2 \\): the disc's \\( \\alpha = \\tau/I \\) is double. Distribution, not just mass, sets rotational reluctance — the \\( r^2 \\) weighting means rim mass counts fourfold per doubling of distance. Material is irrelevant at fixed m and geometry. This one comparison is the mental model for every rotor, coupling, and flywheel decision after it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Doubling a flywheel's speed multiplies its stored energy by:</p>",
+    "choices": [
+     "4",
+     "2",
+     "8",
+     "16"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( KE = \\tfrac12 I\\omega^2 \\propto \\omega^2 \\): double speed, quadruple storage — the same square that governed vehicle kinetic energy, now in rotation. This is why energy-storage flywheels chase speed (and why burst containment becomes their design driver). Eight belongs to \\( \\omega^3 \\), a fan-power law; sixteen to \\( \\omega^4 \\), nothing in this chapter.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Angular momentum of a rotating system is conserved when:</p>",
+    "choices": [
+     "No external torque acts about the axis",
+     "No forces act at all",
+     "The rotation is slow",
+     "The body is rigid"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\tau_{ext} = dL/dt \\): zero external torque freezes L, whatever internal rearrangements occur — that is precisely how the skater and the rebalancing rotor trade I against ω. External FORCES through the axis exert no torque and are harmless; rigidity is not required (the skater isn't rigid). The conservation is the rotational twin of Lesson 8's, with torque replacing force at the gate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A net torque of 24 N·m acts on a rotor with \\( I = 1.5\\ \\mathrm{kg\\,m^2} \\). Its angular acceleration is:</p>",
+    "choices": [
+     "16 rad/s²",
+     "36 rad/s²",
+     "0.0625 rad/s²",
+     "24 rad/s²"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\alpha = \\tau/I = 24/1.5 = 16\\ \\mathrm{rad/s^2} \\). Multiplying (36) and inverting (0.0625) are the arithmetic traps; forgetting I entirely (24) treats torque as acceleration. The equation is the second law wearing rotational clothes, and the same discipline applies: τ must be the NET torque, friction and load subtracted before dividing.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cylinder rolls (without slipping) down a ramp while an identical cylinder slides down frictionlessly. At the bottom:</p>",
+    "choices": [
+     "The slider is faster — the roller spent part of its height budget on spin",
+     "The roller is faster",
+     "They tie",
+     "The heavier one wins"
+    ],
+    "answer": 0,
+    "solution": "<p>Both convert \\( mgh \\), but the roller must fund two accounts — \\( \\tfrac12 mv^2 \\) AND \\( \\tfrac12 I\\omega^2 \\) — so less lands in translation: the slider arrives faster. Mass cancels in both cases. The split depends only on the shape's \\( I/mr^2 \\) ratio, which is why rolling races between hoops and discs are decided at the starting line by geometry.</p>"
+   }
+  ]
+ },
+ "11": {
+  "lecture": "\n<h3>§1 · The restoring recipe</h3>\n<p>Oscillation needs exactly two ingredients: a restoring force that pulls toward\nequilibrium in proportion to displacement, and inertia that overshoots it. The spring–mass\nsystem is the archetype — \\( F = -kx \\) feeding \\( m\\ddot{x} \\) — and its motion is\nsimple harmonic: \\( x(t) = A\\sin(\\omega_n t) \\), a sine forever, with amplitude \\( A \\)\nset by how the motion started and angular frequency set by the system itself:\n\\( \\omega_n = \\sqrt{k/m} \\). Stiffness accelerates the cycle; mass slows it; amplitude,\nremarkably, does not enter — small or large swings keep the same beat, which is what makes\nnatural frequency a property of the MACHINE, not of the disturbance.</p>\n<h3>§2 · The pendulum and the family of oscillators</h3>\n<p>The pendulum repeats the recipe with gravity as the spring:\n\\( T = 2\\pi\\sqrt{L/g} \\) for small swings — mass absent, length and gravity only. Every\noscillator in the family carries the same signature quantities: period \\( T = 2\\pi/\\omega_n \\),\nfrequency \\( f = 1/T \\) in hertz, and the energy sloshing between kinetic (maximum at\nequilibrium, where speed peaks at \\( v_{max} = A\\omega_n \\)) and potential (maximum at\nthe extremes, where motion pauses). Reading \\( x(t) = A\\sin(\\omega t) \\) fluently —\namplitude from the coefficient, frequency from the argument — is reading the native\nlanguage of every vibration trace the later courses will put on screen.</p>\n<h3>§3 · Why machines care: resonance previewed</h3>\n<p>Every machine element has natural frequencies, and rotating machinery supplies periodic\nforcing at running speed and its multiples. When forcing frequency approaches natural\nfrequency, amplitude grows dramatically — resonance — and structures that seemed rigid\nbegin to breathe. This lesson only introduces the actors; the vibrations course will\nquantify their meeting. But the design instinct starts now: know your \\( \\omega_n \\),\nknow your running speeds, and keep them apart.</p>\n<h3>§4 · The oscillation working method</h3>\n<p>Identify the stiffness and the inertia — every oscillator has both, whatever it looks\nlike — and form \\( \\omega_n = \\sqrt{k/m} \\) (or the pendulum's \\( \\sqrt{g/L} \\)).\nConvert consciously among \\( \\omega_n \\), \\( f \\), and \\( T \\): the \\( 2\\pi \\) that\nseparates rad/s from Hz is this chapter's border crossing, as rpm's was the last one's.\nExtract amplitude and frequency from any given \\( x(t) \\) by inspection, and derive the\nspeed and acceleration peaks as \\( A\\omega \\) and \\( A\\omega^2 \\). Audit with the\nscaling instincts: quadrupling stiffness only doubles frequency (the square root taxes\nenthusiasm), adding mass always slows the beat, and amplitude never changes the clock.\nWhere a real trace disagrees with these instincts — frequency shifting with load, beat\npatterns, growth over time — the disagreement is information, and the vibrations course\nwill teach you to read it. Here, the assignment is fluency with the clean case that all\nthe diagnostics measure against — the sine every analyzer decomposes real signals into,\nand the natural frequency every balancing report quotes. First courses end where careers\nbegin; this one ends on the exact frequency.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Newton's second law</b> (Lesson 4) — SHM is F = ma with a restoring F.</li>\n<li><b>Energy conservation</b> (Lesson 7) — the KE–PE slosh at constant total.</li>\n<li><b>Radian fluency</b> (Lesson 9) — \\( \\omega \\), f, and T, converted consciously.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Restoring force</td><td>\\( F = -kx \\)</td><td>Proportional pull toward equilibrium — the oscillation ingredient.</td></tr>\n<tr><td>Natural frequency</td><td>\\( \\omega_n = \\sqrt{k/m} \\)</td><td>The machine's own beat; stiffness up, mass down.</td></tr>\n<tr><td>Period and frequency</td><td>\\( T = 2\\pi/\\omega_n,\\ f = 1/T \\)</td><td>The 2π border between rad/s and Hz.</td></tr>\n<tr><td>Pendulum</td><td>\\( T = 2\\pi\\sqrt{L/g} \\)</td><td>Gravity as the spring; mass cancels, small swings only.</td></tr>\n<tr><td>SHM motion</td><td>\\( x = A\\sin(\\omega_n t) \\)</td><td>Amplitude from the start; frequency from the system.</td></tr>\n<tr><td>Peak speed</td><td>\\( v_{max} = A\\omega_n \\) at equilibrium</td><td>Where the energy is all kinetic.</td></tr>\n<tr><td>Resonance (preview)</td><td>forcing ≈ \\( \\omega_n \\) → growth</td><td>Keep running speeds and natural frequencies apart.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The isolator's beat</b></p>\n<p><b>Problem.</b> A 2.0 kg instrument sits on a mount of stiffness 800 N/m. <b>Find:</b> the natural frequency in rad/s and Hz, and the period.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( \\omega_n = \\sqrt{k/m} = \\sqrt{800/2} = 20\\ \\mathrm{rad/s} \\).\n(2) \\( f = \\omega_n/2\\pi = 3.18\\ \\mathrm{Hz} \\); \\( T = 1/f = 0.314\\ \\mathrm{s} \\).</p>\n<p><b>Answer:</b> 20 rad/s = 3.2 Hz; period ≈0.31 s.\n<b>Sanity check:</b> quadrupling the stiffness would only double the frequency (√), and doubling the mass would divide it by √2 — the square root damping every intuition of proportionality. A 3 Hz mount under a 24 Hz (1450 rpm) machine is comfortably clear of resonance: the design arithmetic in miniature.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The inspection pendulum</b></p>\n<p><b>Problem.</b> A 0.70 m lanyard with a small tool swings as a pendulum. <b>Find:</b> its period, and what changes if the tool is twice as heavy.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( T = 2\\pi\\sqrt{L/g} = 2\\pi\\sqrt{0.70/9.81} = 1.68\\ \\mathrm{s} \\).\n(2) Mass does not appear: the heavier tool swings with exactly the same period.</p>\n<p><b>Answer:</b> ≈1.7 s, at any mass.\n<b>Sanity check:</b> gravity provides both the restoring pull AND acts on the inertia, so mass cancels — the same cancellation as free fall. Only length and gravity remain: to slow a pendulum, lengthen it (fourfold length for double period, the square root again).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a vibration trace</b></p>\n<p><b>Problem.</b> A bearing housing's displacement follows \\( x(t) = 0.030\\sin(12t) \\) (metres, seconds). <b>Find:</b> the amplitude, frequency in Hz, and peak velocity.</p>",
+    "solution": "<p><b>Solution.</b> (1) Amplitude by inspection: \\( A = 0.030\\ \\mathrm{m} = 30\\ \\mathrm{mm} \\).\n(2) \\( \\omega = 12\\ \\mathrm{rad/s} \\Rightarrow f = 12/2\\pi = 1.9\\ \\mathrm{Hz} \\).\n(3) \\( v_{max} = A\\omega = 0.030 \\times 12 = 0.36\\ \\mathrm{m/s} \\).</p>\n<p><b>Answer:</b> 30 mm at 1.9 Hz; peak speed 0.36 m/s.\n<b>Sanity check:</b> peak velocity occurs at mid-swing where the trace crosses zero — displacement and velocity peaks alternate, a quarter-cycle apart. Reading A and ω off a sine by inspection is the exact skill vibration analyzers automate; learning it manually first is what makes their output meaningful.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For small oscillations, increasing a pendulum's swing amplitude:</p>",
+    "choices": [
+     "Leaves the period unchanged",
+     "Increases the period",
+     "Decreases the period",
+     "Stops the swing"
+    ],
+    "answer": 0,
+    "solution": "<p>Amplitude independence is SHM's defining courtesy: larger swings travel farther but proportionally faster, and the clock holds — which is why pendulums could keep time. (At LARGE angles the approximation frays and the period does grow, but that correction belongs to a later course.) The natural frequency is the system's property; the amplitude merely reports how hard it was disturbed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>To raise a machine mount's natural frequency, you should:</p>",
+    "choices": [
+     "Stiffen the mount or lighten the machine",
+     "Soften the mount",
+     "Add mass",
+     "Increase the operating amplitude"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\omega_n = \\sqrt{k/m} \\): frequency rises with stiffness and falls with mass. Softening and adding mass LOWER it — which is itself a design tool (isolation mounts deliberately sit far below forcing frequencies). Amplitude has no vote. The k-and-m tuning of natural frequencies against running speeds is the first design instinct of vibration engineering.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In SHM, the speed of the mass is greatest:</p>",
+    "choices": [
+     "Passing through equilibrium",
+     "At the extremes of travel",
+     "Constant throughout",
+     "At the quarter points"
+    ],
+    "answer": 0,
+    "solution": "<p>At the extremes the motion pauses (all energy potential); at equilibrium the restoring force has finished accelerating it and the energy is all kinetic: \\( v_{max} = A\\omega_n \\). The energy slosh of Lesson 7 sets this geography — and vibration instruments exploit it, velocity sensors reading peak values a quarter-cycle from displacement peaks.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Quadrupling a spring's stiffness multiplies the oscillation frequency by:</p>",
+    "choices": [
+     "2",
+     "4",
+     "16",
+     "\\( \\sqrt{2} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\omega_n \\propto \\sqrt{k} \\): four times the stiffness, twice the frequency — the square root taxing the investment, exactly as it taxed grain refinement and case depth in other courses. Linear thinking (×4) overpays; the lesson's scaling instincts exist to prevent precisely that procurement conversation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A machine's natural frequency is 24 Hz and its rotor runs at 1440 rpm (24 Hz). The expected behavior is:</p>",
+    "choices": [
+     "Resonant amplitude growth — forcing sits on the natural frequency",
+     "Perfect smoothness",
+     "The machine cannot rotate",
+     "Nothing observable"
+    ],
+    "answer": 0,
+    "solution": "<p>Forcing at the natural frequency is the resonance condition: each cycle's push arrives in step with the motion, and amplitude climbs until damping or damage caps it. The numbers were chosen to collide — 1440 rpm IS 24 Hz. Real design keeps margins between running speeds and natural frequencies precisely to avoid this meeting; the vibrations course quantifies how much margin buys how much peace.</p>"
+   }
+  ]
  }
 }
