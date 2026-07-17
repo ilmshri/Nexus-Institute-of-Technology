@@ -187,11 +187,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   (18.01 Fall 2007 Lec 1,2,4,6,11,16,18,23,30,38, ids sourced from the
   official OCW video gallery and individually oEmbed-verified) + L1 marked
   "none" (no units/dimensional-analysis lecture exists in the approved
-  channels). QUEUE (verify-before-embed; TODO stays until verified —
-  NEVER mark "none" where a match likely exists unverified): statics →
-  Jeff Hanson statics series; computing → MIT OCW 6.0001; materials-1 →
-  MIT OCW 3.091; physics-1 → check MIT OCW (8.01 availability varies);
-  drawing-cad → likely "none" after search. Then Y1S2 onward with each
+  channels). DONE (session 2, commit aa44b4f): statics — 11 embeds, Jeff
+  Hanson statics series (playlist bulk-extracted via browser pass; ids
+  oEmbed-verified; best-fit mapping per owner rule: Hanson lessons
+  4/21/18/16/29/48/53/57/62/37/67 → our L1–L11). computing — 11 embeds,
+  MIT OCW 6.0001 (Lec 1,3,2,4,7,5,10) + 6.0002 (Lec 5,9,6,15), all
+  oEmbed-verified; L7/L8/L11 are declared best-fits, titled honestly.
+  Site embeds 32. REMAINING QUEUE (verify-before-embed; TODO stays until
+  verified — NEVER mark "none" where a match likely exists unverified):
+  materials-1 → MIT OCW 3.091 gallery; physics-1 → check MIT OCW 8.01
+  availability; drawing-cad → search once, likely "none". Then Y1S2 with each
   course build. BATCH SCALING ORDER (owner): after Y1S1 patch → full
   math-1-pipeline builds for Y1S2, Y2S1, Y2S2, with per-lesson video
   mapping from the approved channels and career-sector rotation per course.
