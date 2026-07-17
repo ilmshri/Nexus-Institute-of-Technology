@@ -230,8 +230,25 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   L10 Khan rigid-system rotational energy. Dynamics L10 (rotor balancing)
   stays continue-hunt per owner. physics-1 now 11/11; dynamics 10/11;
   embeds 86. Discarded at gate: John Wolbeck SHM (unapproved channel).
-  NEXT: Wave D proposals (strength + materials-2 via Efficient Engineer +
-  Hanson MoM playlist PLRqDfxcafc21wlI3E56IkDmRJ-33apMjv). QUEUED FOR NEXT PASS (owner-approved as
+  WAVE D APPROVED & EXECUTED (owner, 2026-07-18): strength 11/11 (Hanson
+  MoM lessons 9/21/23/31/62/44/50/41/55/66/22), materials-2 L1/L2 (EE
+  Understanding Metals + Steels/Heat Treatment), L7 (Hanson S-N fatigue),
+  L8/L9 (3.091 Polymers I + Glassy Solids best-fit); L3/4/5/6/10/11
+  continue-hunt per owner. Embeds 102.
+- EDUCATIONAL-UNIT PROTOCOL (owner, 2026-07-18, immediate + retroactive):
+  every lesson is a complete unit — A Theoretical Summary, B Key Concepts
+  & Formulas, C 2-3 Worked Examples, D Quick Quiz (3-5 questions),
+  E Supplemental Resources (primary technical embed + Arabic supplemental
+  block). This maps 1:1 onto the existing 4-tab architecture (Lecture =
+  A, Foundations glossary table = B, Examples and Quiz = C+D, Library =
+  E); the ONE new element is the "Supplemental/Arabic Resources" block in
+  Library (renderer + data field to build). math-1 is the live reference
+  implementation of A-D+primary-video. NO lesson counts as "Done" without
+  the full structure. RETROACTIVE ROLLOUT (gated): Full Lesson Template
+  presented to owner for approval; on approval, content-filling proceeds
+  course-by-course (Wave D courses + previous semesters first) with
+  checkpoint commits, Python-verified arithmetic, company-free scans, and
+  career-sector rotation — the established math-1 pipeline. QUEUED FOR NEXT PASS (owner-approved as
   queued): physics-1 L10 (rigid-body kinetics — Hanson Dynamics
   playlist), L11 (SHM — Less Boring Lectures); drawing-cad L1–L6,L8–L11
   (Husam's Mech Vision scoping + Ala Hijazi Arabic supplemental).
