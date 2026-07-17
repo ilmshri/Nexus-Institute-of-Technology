@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Internal forces: shear and bending moment — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will d">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 08 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Internal forces: shear and bending moment</h1>
     <p class="sub">Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -67,23 +67,19 @@
 <li><b>Moment diagram</b> — \( M(x) \); slope equals shear; extremal where \( V = 0 \).</li>
 <li><b>UDL</b> — uniformly distributed load, in kN/m.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — central point load</h4>
-<p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p>
-<p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Central point load</b></p>
+<p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
 (2) Shear: \( V = +4\ \mathrm{kN} \) from A to midspan, stepping down by 8 to \( -4\ \mathrm{kN} \) to B.
 (3) Moment: rises linearly (slope 4) to midspan, falls linearly after.
 (4) \( M_{max} = 4 \times 2 = 8\ \mathrm{kN\cdot m} \) — matching \( PL/4 = 8 \times 4/4 \).</p>
 <p><b>Answer:</b> \( V_{max} = 4\ \mathrm{kN} \), \( M_{max} = 8\ \mathrm{kN\cdot m} \) at midspan.
-<b>Sanity check:</b> \( M \) peaks exactly where \( V \) crosses zero (the load point). Diagram closes to zero at both ends — free ends carry no moment. ✓</p>
-<h4>Worked example 2 — uniform load</h4>
-<p><b>Problem.</b> Simply supported beam, \( L = 6\ \mathrm{m} \), UDL \( w = 3\ \mathrm{kN/m} \). <b>Find:</b> diagrams and \( M_{max} \).</p>
-<p><b>Solution.</b> (1) Reactions: \( R = wL/2 = 9\ \mathrm{kN} \) each.
+<b>Sanity check:</b> \( M \) peaks exactly where \( V \) crosses zero (the load point). Diagram closes to zero at both ends — free ends carry no moment. ✓</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>The bending moment in a beam is maximum where:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the load is largest</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the shear force crosses zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the beam is deepest</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>deflection is zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( dM/dx = V \): the moment's slope is the shear, so \( M \) turns where \( V = 0 \). The largest load and the moment peak often do coincide — but the shear-zero rule is the reason, and the reliable locator when loading is mixed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>A simply supported beam, span 10 m, carries 2 kN/m over its whole length. \( M_{max} \):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>20 kN·m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>25 kN·m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>50 kN·m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>100 kN·m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( M_{max} = wL^2/8 = 2 \times 100 / 8 = 25\ \mathrm{kN\cdot m} \) at midspan. 50 uses \( wL^2/4 \) (confusing it with \( PL/4 \)); 100 forgets the 8 entirely. The two canonical formulas — \( PL/4 \) and \( wL^2/8 \) — are worth keeping straight for standing-up estimates.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Uniform load</b></p>
+<p><b>Problem.</b> Simply supported beam, \( L = 6\ \mathrm{m} \), UDL \( w = 3\ \mathrm{kN/m} \). <b>Find:</b> diagrams and \( M_{max} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: \( R = wL/2 = 9\ \mathrm{kN} \) each.
 (2) Shear: \( V(x) = 9 - 3x \) — linear, zero at \( x = 3\ \mathrm{m} \).
 (3) Moment: parabolic, \( M(x) = 9x - 1.5x^2 \).
 (4) \( M_{max} = M(3) = 27 - 13.5 = 13.5\ \mathrm{kN\cdot m} \) — matching \( wL^2/8 = 3 \times 36/8 \).</p>
 <p><b>Answer:</b> \( V_{max} = 9\ \mathrm{kN} \) at the supports; \( M_{max} = 13.5\ \mathrm{kN\cdot m} \) at midspan.
-<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></section>
+<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a downward point load, the shear diagram:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>steps down by the load value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>slopes gradually downward</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unaffected</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>steps up by half the load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A concentrated load is a jump in \( V \) equal to its magnitude — the diagram is discontinuous there. Distributed loads produce the gradual slopes (\( dV/dx = -w \)); mixing up step versus slope is the fastest way to a wrong diagram.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the liquid-filled span.</b> You arrive at a piping review at EQUATE where a line's support span was set when the service was gas; a process change now runs it liquid-full, multiplying the weight per metre (figures representative). The pipe between supports is Lesson 8's beam under a UDL: \( M_{max} = wL^2/8 \) at mid-span, growing with the <em>square</em> of span. The review question — add a support or accept the sag — is answered by exactly this diagram: double the weight doubles the moment, but halving the span quarters it. The support goes in at the shear-zero point's worst span.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -120,6 +116,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

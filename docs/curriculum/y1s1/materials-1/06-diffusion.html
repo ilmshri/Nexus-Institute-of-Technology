@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Diffusion — Materials Science I — Sun Devil Factory</title>
 <meta name="description" content="Fick's first and second laws with the physical picture of jumping atoms. Temperature dependence through the Arrhenius form. Carburizing depth as a wor">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Diffusion</h1>
     <p class="sub">Fick's first and second laws with the physical picture of jumping atoms. Temperature dependence through the Arrhenius form. Carburizing depth as a worked application — the √Dt scaling that recurs everywhere.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -71,21 +71,17 @@
 <li><b>Case depth</b> — hardened skin thickness; scales as \( \sqrt{Dt} \).</li>
 <li><b>Activation energy \( Q_d \)</b> — the exponential's price of migration.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — case depth and the square root's tax</h4>
-<p><b>Problem.</b> Carburizing at 950 °C with \( D \approx 1.6 \times 10^{-11}\ \mathrm{m^2/s} \) (representative for carbon in austenite). <b>Find:</b> the \( \sqrt{Dt} \) penetration scale after 4 h, and the time to double it.</p>
-<p><b>Solution.</b> (1) \( t = 4 \times 3600 = 14\,400\ \mathrm{s} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Case depth and the square root's tax</b></p>
+<p><b>Problem.</b> Carburizing at 950 °C with \( D \approx 1.6 \times 10^{-11}\ \mathrm{m^2/s} \) (representative for carbon in austenite). <b>Find:</b> the \( \sqrt{Dt} \) penetration scale after 4 h, and the time to double it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( t = 4 \times 3600 = 14\,400\ \mathrm{s} \).
 (2) \( \sqrt{Dt} = \sqrt{1.6 \times 10^{-11} \times 14\,400} = \sqrt{2.30 \times 10^{-7}} = 4.8 \times 10^{-4}\ \mathrm{m} \approx 0.48\ \mathrm{mm} \).
 (3) Doubling depth requires \( 4t \): 16 h.</p>
 <p><b>Answer:</b> ≈0.5 mm scale at 4 h; 16 h to reach ≈1 mm.
-<b>Sanity check:</b> the second half-millimetre costs three times what the first did — the \( \sqrt{t} \) law is why deep cases are expensive and why specifications state case depth with tolerance, not ambition.</p>
-<h4>Worked example 2 — what 200 K buys</h4>
-<p><b>Problem.</b> Carbon in FCC iron: \( D_0 = 2.3 \times 10^{-5}\ \mathrm{m^2/s} \), \( Q_d = 148\ \mathrm{kJ/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> \( D \) at 1000 K and 1200 K.</p>
-<p><b>Solution.</b> (1) \( D_{1000} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1000)] = 4.3 \times 10^{-13}\ \mathrm{m^2/s} \).
+<b>Sanity check:</b> the second half-millimetre costs three times what the first did — the \( \sqrt{t} \) law is why deep cases are expensive and why specifications state case depth with tolerance, not ambition.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A carburizing cycle gives 0.5 mm case depth in 4 h. Reaching 1.0 mm at the same temperature takes about:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>8 h</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>16 h</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>6 h</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>32 h</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Depth scales as \( \sqrt{Dt} \): doubling depth quadruples time — 16 h. The linear instinct (8 h) is the classic furnace-scheduling error; deep cases are bought with disproportionate hours, which is why case depth is specified with tolerance, not generosity.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Carbon diffuses through iron much faster than nickel does because carbon:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is lighter</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>moves interstitially, without waiting for vacancies</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>forms carbides</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is more soluble</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Small interstitial atoms dart between lattice gaps; substitutional atoms like nickel must wait for a vacancy to arrive next door — a rarer event with a higher activation energy. Mechanism, not atomic weight, sets the pace.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>What 200 K buys</b></p>
+<p><b>Problem.</b> Carbon in FCC iron: \( D_0 = 2.3 \times 10^{-5}\ \mathrm{m^2/s} \), \( Q_d = 148\ \mathrm{kJ/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> \( D \) at 1000 K and 1200 K.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( D_{1000} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1000)] = 4.3 \times 10^{-13}\ \mathrm{m^2/s} \).
 (2) \( D_{1200} = 2.3 \times 10^{-5} \exp[-148\,000/(8.314 \times 1200)] = 8.3 \times 10^{-12}\ \mathrm{m^2/s} \).
 (3) Ratio: ≈19×.</p>
 <p><b>Answer:</b> a 200 K raise multiplies \( D \) by ~19.
-<b>Sanity check:</b> to match that with time at 1000 K you would need a 19× longer soak — days for hours. Temperature is the lever; time is the fine adjustment. (Distortion and grain growth are the counter-forces that keep furnaces from simply running hotter.)</p></div></section>
+<b>Sanity check:</b> to match that with time at 1000 K you would need a 19× longer soak — days for hours. Temperature is the lever; time is the fine adjustment. (Distortion and grain growth are the counter-forces that keep furnaces from simply running hotter.)</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>To speed a diffusion process meaningfully, the strongest single lever is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>more time</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>higher temperature</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a bigger furnace</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>finer surface finish</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( D = D_0 e^{-Q_d/RT} \): temperature sits in the exponent. In this course's worked example, +200 K multiplied \( D \) by ~19 — matching that with time means a 19× longer soak. Time enters only under a square root; temperature enters exponentially.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the replacement gear's thin skin.</b> You arrive at an EQUATE machine shop reviewing a failed spare: a case-hardened gear that pitted in months where the original ran years. Hardness traverse tells the story — the replacement's case reads 0.3 mm where the drawing calls for 0.8–1.0 mm (figures representative). Someone bought case depth with a short furnace cycle, and \( \sqrt{Dt} \) does not negotiate: half the depth means a quarter of the time, and the Hertzian contact stresses below the thin case found soft core. The purchasing lesson is Lesson 6: case depth is furnace hours, and certificates should say so.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -122,6 +118,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

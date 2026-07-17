@@ -190,6 +190,31 @@ figcaption .notice b{color:var(--ember);font-weight:600;letter-spacing:.12em;fon
 .check .a.open{display:block}
 .check .a p{font-size:15.5px}
 
+/* ---------- worked-example quiz ---------- */
+.quiz-intro{font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;color:var(--steel);border:1px dashed var(--line);padding:12px 16px;max-width:60ch}
+.quiz-item{border:1px solid var(--ink);margin:34px 0 0;background:var(--paper)}
+.quiz-item .q{padding:26px 30px 20px}
+.quiz-item .q .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ember);display:block;margin-bottom:12px}
+.quiz-item .q p{margin:0 0 8px;font-size:15.5px}
+.quiz-item .choices{border-top:1px solid var(--line);display:grid}
+.quiz-choice{display:flex;align-items:baseline;gap:14px;text-align:left;width:100%;border:0;border-bottom:1px solid var(--line);background:var(--paper);cursor:pointer;font:inherit;font-size:15px;line-height:1.55;padding:14px 30px;color:var(--ink)}
+.quiz-choice:last-child{border-bottom:0}
+.quiz-choice:hover:not(:disabled){background:#f4f3ee}
+.quiz-choice:disabled{cursor:default;opacity:.92}
+.quiz-choice .key{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--steel);border:1px solid var(--line);padding:2px 7px;flex:0 0 auto}
+.quiz-choice.right{background:#eef4ee;box-shadow:inset 3px 0 0 #2e6b46}
+.quiz-choice.right .key{border-color:#2e6b46;color:#2e6b46}
+.quiz-choice.wrong{background:#f7efef;box-shadow:inset 3px 0 0 var(--ember)}
+.quiz-choice.wrong .key{border-color:var(--ember);color:var(--ember)}
+.quiz-verdict{font-family:var(--sans);font-size:12px;letter-spacing:.08em;margin:0;padding:12px 30px;border-top:1px solid var(--line)}
+.quiz-verdict.ok{color:#2e6b46}
+.quiz-verdict.no{color:var(--ember)}
+.quiz-reveal{display:block;width:100%;border:0;border-top:1px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;font-family:var(--sans);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;padding:14px}
+.quiz-reveal:hover{background:#000}
+.quiz-sol{display:none;padding:24px 30px;border-top:1px solid var(--line);background:#f4f3ee}
+.quiz-sol.open{display:block}
+.quiz-sol p{font-size:15px}
+
 /* ---------- video cards ---------- */
 .vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
 .vid{background:var(--paper);padding:28px 26px 30px;text-decoration:none;color:var(--ink);display:block}

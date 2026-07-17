@@ -151,6 +151,20 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   y1s1/materials-1 (MAT 104, 2026-07-17) — 44 lessons full, all worked-example
   arithmetic machine-verified before writing. NEXT QUEUE: computing,
   then y1s2 onward. Every session: author as many complete courses as fit,
+  EXAMPLES FORMAT (owner order 2026-07-17, supersedes the 2-example blob):
+  every lesson's Worked Examples tab is a FIVE-problem interactive quiz —
+  content JSON key "quiz": list of 5 items, order [solve, mc, mc, solve, mc].
+  solve = {"type":"solve","q":html,"solution":html} (student attempts, then
+  reveals the full solution); mc = {"type":"mc","q":html,"choices":[4 html],
+  "answer":idx,"solution":html} (click → correct/wrong verdict + the correct
+  choice highlighted + explanation auto-opens; one attempt, buttons disable).
+  Rendered by quiz_html() in build.py; behavior in assets/js/site.js; styles
+  .quiz-* in site.css. Asset URLs carry ?v=<content-hash> (cache busting —
+  keep it). statics + materials-1 already converted (110 quiz problems, all
+  numeric answers machine-verified; distractors are classic errors, named in
+  the explanation). RETROFIT QUEUE: math-1 and drawing-cad still carry the
+  old 2-example "examples" blob (renderer still supports it) — convert both
+  to 5-problem quizzes before starting computing.
   rebuild, push (origin = sundevilfactory/asu, credential in keychain),
   verify live.
 
@@ -174,7 +188,12 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Library-tab embeds are generated ONLY from registry/card URLs that are
   embeddable YouTube watch/playlist links — all verified. Client search:
   docs/curriculum/search-index.json + JS on the curriculum index.
-  Deploy target: github.com/sundevilfactory/asu → sundevilfactory.github.io/asu/.
+  Deploy target (changed 2026-07-17: owner deleted the sundevilfactory org
+  by accident while renaming; full repo + history live locally):
+  github.com/nexusinstitute/nexusinstitute.github.io →
+  https://nexusinstitute.github.io/ (root URL, no /asu path). Owner creates
+  the org + empty public repo; push from this Mac; Pages = main:/docs.
+  The old sundevilfactory.github.io/asu URL is dead.
 
 - Preview questions ("preview" field, rendered above Taught-from): 522/522 —
   COMPLETE (Core 60 numeric micro-problems + all Tier-3 conceptual pairs,

@@ -16,6 +16,7 @@ ROOT = Path(__file__).parent
 OUT = ROOT / "docs"
 DATA = ROOT / "data"
 CONTENT = ROOT / "content"
+ASSETS = ROOT / "assets"
 SEMESTERS = ["y1s1", "y1s2", "y2s1", "y2s2", "y3s1", "y3s2", "y4s1", "y4s2"]
 
 CORE60_BLOCKS = {
@@ -44,7 +45,7 @@ PAGE = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="{prefix}assets/css/site.css">
+<link rel="stylesheet" href="{prefix}assets/css/site.css?v={asset_v}">
 {extra_head}</head>
 <body>
 <header class="hd">
@@ -84,7 +85,7 @@ PAGE = """<!doctype html>
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="{prefix}assets/js/site.js"></script>
+<script src="{prefix}assets/js/site.js?v={asset_v}"></script>
 </body>
 </html>
 """
@@ -243,10 +244,23 @@ def matched_sources(raw_text):
     return out
 
 
+def asset_version():
+    """Short content hash of css+js so every change busts browser caches."""
+    import hashlib
+    h = hashlib.sha256()
+    for rel in ("css/site.css", "js/site.js"):
+        h.update((ASSETS / rel).read_bytes())
+    return h.hexdigest()[:10]
+
+
+ASSET_V = None  # set in main() after assets exist
+
+
 def page(path, title, desc, body, prefix, active="", footer_next="", extra_head=""):
     html = PAGE.format(
         title=esc(title), desc=esc(desc), prefix=prefix, body=body,
         footer_next=footer_next, fork=FORK, extra_head=extra_head,
+        asset_v=ASSET_V,
         on_home=' class="on"' if active == "home" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
         on_career=' class="on"' if active == "career" else "",
@@ -361,6 +375,40 @@ def load_tab_content(sem, course):
     return json.loads(f.read_text(encoding="utf-8"))
 
 
+def quiz_html(items):
+    """Interactive worked-example quiz. Item kinds:
+    {"type":"solve","q":html,"solution":html}            — attempt, then reveal
+    {"type":"mc","q":html,"choices":[html,...],
+     "answer":int,"solution":html}                        — pick, get verdict
+    """
+    n = len(items)
+    parts = ['<div class="measure quiz">',
+             '<p class="quiz-intro">Attempt each problem before checking — '
+             'pick an answer or reveal the solution only after you have '
+             'worked it on paper.</p>']
+    for i, it in enumerate(items, 1):
+        kind = it["type"]
+        label = "multiple choice" if kind == "mc" else "solve, then check"
+        parts.append(f'<div class="quiz-item" data-kind="{kind}">')
+        parts.append(f'<div class="q"><span class="tag">Problem {i} of {n} · '
+                     f'{label}</span>{it["q"]}</div>')
+        if kind == "mc":
+            parts.append('<div class="choices">')
+            for j, ch in enumerate(it["choices"]):
+                ok = ' data-ok="1"' if j == it["answer"] else ""
+                key = chr(ord("A") + j)
+                parts.append(f'<button type="button" class="quiz-choice"{ok}>'
+                             f'<span class="key">{key}</span><span>{ch}</span>'
+                             f'</button>')
+            parts.append('</div><p class="quiz-verdict" hidden></p>')
+        else:
+            parts.append('<button type="button" class="quiz-reveal" '
+                         'aria-expanded="false">Show the full solution</button>')
+        parts.append(f'<div class="quiz-sol">{it["solution"]}</div></div>')
+    parts.append("</div>")
+    return "".join(parts)
+
+
 def build_lesson_page(sems, sem, course, les, prefix, tabs=None):
     """One page per lesson, five tabs, populated from what actually exists."""
     tabs = (tabs or {}).get(str(les["n"]), {})
@@ -417,7 +465,9 @@ def build_lesson_page(sems, sem, course, les, prefix, tabs=None):
 </div>"""
 
     # ---------- Worked examples ----------
-    if tabs.get("examples"):
+    if tabs.get("quiz"):
+        examples = quiz_html(tabs["quiz"])
+    elif tabs.get("examples"):
         examples = f'<div class="measure">{tabs["examples"]}</div>'
     elif frag and tier == 1:
         examples = ("<div class=\"measure\"><p>The worked examples for this "
@@ -517,7 +567,8 @@ def build_lesson_page(sems, sem, course, les, prefix, tabs=None):
 
     first_text = re.split(r"[—(;]", course.get("taught_from", [""])[0])[0].strip()[:44]
     n_q = len(les.get("preview", []))
-    assess = ("2 worked boards + hidden-answer check" if frag and tier == 1 else
+    assess = (f"{len(tabs['quiz'])}-problem interactive quiz" if tabs.get("quiz") else
+              "2 worked boards + hidden-answer check" if frag and tier == 1 else
               "worked examples + checkpoint questions" if tabs.get("examples") else
               f"{n_q} checkpoint questions" if n_q else "queued")
     hero = hero_block(
@@ -690,6 +741,9 @@ def main():
     OUT.mkdir(parents=True)
     (OUT / ".nojekyll").write_text("")
     shutil.copytree(ROOT / "assets", OUT / "assets")
+
+    global ASSET_V
+    ASSET_V = asset_version()
 
     global SOURCES
     SOURCES = load_sources()

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mechanical properties II: hardness and toughness — Materials Science I — Sun Devil Factory</title>
 <meta name="description" content="Hardness scales — Brinell, Vickers, Rockwell — and their conversions and abuses. Impact energy and the ductile-brittle transition. Hardness as the mai">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 08 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Mechanical properties II: hardness and toughness</h1>
     <p class="sub">Hardness scales — Brinell, Vickers, Rockwell — and their conversions and abuses. Impact energy and the ductile-brittle transition. Hardness as the maintenance engineer's field instrument.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -67,21 +67,17 @@
 <li><b>DBTT</b> — ductile–brittle transition temperature of BCC metals.</li>
 <li><b>Upper/lower shelf</b> — the tough and brittle plateaus flanking the transition.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — Brinell number to strength estimate</h4>
-<p><b>Problem.</b> A 10 mm ball under 3000 kgf leaves a 4.0 mm impression on a steel shaft. <b>Find:</b> HB and the estimated UTS.</p>
-<p><b>Solution.</b> (1) \( HB = \dfrac{2P}{\pi D \left( D - \sqrt{D^2 - d^2} \right)} = \dfrac{2 \times 3000}{\pi \times 10 \, (10 - \sqrt{100 - 16})} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Brinell number to strength estimate</b></p>
+<p><b>Problem.</b> A 10 mm ball under 3000 kgf leaves a 4.0 mm impression on a steel shaft. <b>Find:</b> HB and the estimated UTS.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( HB = \dfrac{2P}{\pi D \left( D - \sqrt{D^2 - d^2} \right)} = \dfrac{2 \times 3000}{\pi \times 10 \, (10 - \sqrt{100 - 16})} \).
 (2) \( \sqrt{84} = 9.165 \); denominator \( = \pi \times 10 \times 0.835 = 26.2 \).
 (3) \( HB = 6000/26.2 = 229 \).
 (4) Strength estimate, (1) of the lecture: \( UTS \approx 3.45 \times 229 = 790\ \mathrm{MPa} \).</p>
 <p><b>Answer:</b> HB 229; UTS ≈ 790 MPa.
-<b>Sanity check:</b> HB 229 sits in the plausible band for quenched-and-tempered shafting; had the dent been 2 mm (HB &gt; 900) or 8 mm (HB ≈ 50) the arithmetic itself would be flagging a bad test, not a remarkable material.</p>
-<h4>Worked example 2 — placing a transition temperature</h4>
-<p><b>Problem.</b> Charpy results for a structural steel (representative): upper shelf 120 J, lower shelf 5 J. Using the mean-shelf criterion, what energy defines the transition, and how is the DBTT then read?</p>
-<p><b>Solution.</b> (1) Mean-shelf energy: \( (120 + 5)/2 = 62.5\ \mathrm{J} \).
+<b>Sanity check:</b> HB 229 sits in the plausible band for quenched-and-tempered shafting; had the dent been 2 mm (HB &gt; 900) or 8 mm (HB ≈ 50) the arithmetic itself would be flagging a bad test, not a remarkable material.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A steel reads HB 200. Its tensile strength is roughly:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>200 MPa</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>690 MPa</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>345 MPa</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>2000 MPa</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>For steels, \( UTS \approx 3.45 \times HB = 690\ \mathrm{MPa} \). The correlation is empirical, steel-specific, and good enough to audit a heat treatment without destructive testing — but it is an estimate, and it does not transfer to aluminum or brass unmodified.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Which alloy family shows <em>no</em> ductile–brittle transition?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>ferritic carbon steels</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>austenitic (FCC) stainless steels</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>all steels</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>cast irons</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The transition belongs to BCC structures, whose slip is thermally assisted. FCC austenitics keep their close-packed slip systems working at any temperature — the reason LNG and cryogenic equipment is built from them while ordinary structural steel gets embrittlement clauses.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Placing a transition temperature</b></p>
+<p><b>Problem.</b> Charpy results for a structural steel (representative): upper shelf 120 J, lower shelf 5 J. Using the mean-shelf criterion, what energy defines the transition, and how is the DBTT then read?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mean-shelf energy: \( (120 + 5)/2 = 62.5\ \mathrm{J} \).
 (2) The DBTT is the temperature at which the fitted energy–temperature curve crosses 62.5 J; specifications alternatively fix an absolute floor (e.g., 27 J) at a stated service temperature.</p>
 <p><b>Answer:</b> 62.5 J crossing defines DBTT by the averaging method.
-<b>Sanity check:</b> both criteria exist because the transition is a band, not a line — a curve crossing 62.5 J at −20 °C can still fail a "27 J at −40 °C" purchase clause. Reading which criterion a spec invokes is half the job.</p></div></section>
+<b>Sanity check:</b> both criteria exist because the transition is a band, not a line — a curve crossing 62.5 J at −20 °C can still fail a "27 J at −40 °C" purchase clause. Reading which criterion a spec invokes is half the job.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A hardness reading on a decarburized (carbon-depleted) surface skin will:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>overstate the bulk strength</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>understate the bulk strength</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>equal the bulk value</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>be unreadable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Hardness samples the material within a fraction of a millimetre of the indenter — a soft skin reads soft regardless of what lies beneath. The proxy is local by nature: sometimes that locality is the feature (checking a HAZ), sometimes the trap (a skin-deep condition masquerading as bulk).</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the tester in the toolbag.</b> You arrive at a HEISCO repair bay where a pump shaft has been weld-overlaid and remachined. Before it ships, a portable hardness tester walks the repair: parent metal, overlay, and — the spot that matters — the heat-affected zone beside the weld, where fast cooling can leave a hard, brittle band (figures representative). Three dents, thirty seconds, and equation (1) turns them into strength estimates no one had to cut the shaft to get. When the HAZ reads far above the parent bar, the shaft goes back for a tempering cycle — a decision made entirely by Lesson 8's proxy.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

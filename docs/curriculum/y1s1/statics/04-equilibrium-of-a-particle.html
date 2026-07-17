@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Equilibrium of a particle — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 04 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Equilibrium of a particle</h1>
     <p class="sub">Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -66,22 +66,18 @@
 <li><b>Force triangle</b> — tip-to-tail closure of three equilibrium forces.</li>
 <li><b>Movable pulley</b> — sheave that translates with the load, splitting it between rope parts.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — two cables, one weight</h4>
-<p><b>Problem.</b> A 500 N weight hangs from a ring supported by cable A at \( 30^\circ \) above horizontal (up-left) and cable B at \( 45^\circ \) above horizontal (up-right). <b>Find:</b> both tensions.</p>
-<p><b>Solution.</b> (1) FBD of the ring: \( T_A \) up-left at 30°, \( T_B \) up-right at 45°, 500 N down.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Two cables, one weight</b></p>
+<p><b>Problem.</b> A 500 N weight hangs from a ring supported by cable A at \( 30^\circ \) above horizontal (up-left) and cable B at \( 45^\circ \) above horizontal (up-right). <b>Find:</b> both tensions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of the ring: \( T_A \) up-left at 30°, \( T_B \) up-right at 45°, 500 N down.
 (2) \( \Sigma F_x = 0 \): \( -T_A\cos 30^\circ + T_B\cos 45^\circ = 0 \Rightarrow T_A = 0.8165\,T_B \).
 (3) \( \Sigma F_y = 0 \): \( T_A\sin 30^\circ + T_B\sin 45^\circ = 500 \).
 (4) Substitute: \( T_B(0.8165 \times 0.5 + 0.7071) = 500 \Rightarrow T_B = 448.3\ \mathrm{N} \), \( T_A = 366.0\ \mathrm{N} \).</p>
 <p><b>Answer:</b> \( T_A = 366\ \mathrm{N} \), \( T_B = 448\ \mathrm{N} \).
-<b>Sanity check:</b> back-substitute: \( 366.0\sin 30^\circ + 448.3\sin 45^\circ = 183.0 + 317.0 = 500\ \mathrm{N} \). ✓ The steeper cable (B) carries more of the vertical — as its geometry says it must.</p>
-<h4>Worked example 2 — the movable pulley</h4>
-<p><b>Problem.</b> A 100 kg load hangs from a single frictionless movable pulley; one rope end is anchored, the other held by a worker, both rope parts vertical. <b>Find:</b> the holding force.</p>
-<p><b>Solution.</b> (1) Load weight: \( W = 100 \times 9.81 = 981\ \mathrm{N} \).
+<b>Sanity check:</b> back-substitute: \( 366.0\sin 30^\circ + 448.3\sin 45^\circ = 183.0 + 317.0 = 500\ \mathrm{N} \). ✓ The steeper cable (B) carries more of the vertical — as its geometry says it must.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>Three concurrent forces hold a particle in equilibrium. Drawn tip-to-tail they must:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>form a closed triangle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>be equal in magnitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>be mutually perpendicular</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>all pass through the ground</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \Sigma F = 0 \) means the vector chain returns to its start — a closed triangle. Magnitudes need not be equal (each opposes the resultant of the other two), and perpendicularity is a special case, not a requirement. The closed triangle is also the fast graphical solution route.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>A 1000 N load hangs symmetrically from two slings, each at \( 45^\circ \) above horizontal. Tension per sling:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>500 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>707 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1000 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1414 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( 2T\sin 45^\circ = 1000 \Rightarrow T = 1000/(2 \times 0.707) = 707\ \mathrm{N} \). Each sling carries more than half the load because only its vertical component supports weight. 500 N ignores the angle; 1414 N applies the factor twice.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>The movable pulley</b></p>
+<p><b>Problem.</b> A 100 kg load hangs from a single frictionless movable pulley; one rope end is anchored, the other held by a worker, both rope parts vertical. <b>Find:</b> the holding force.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Load weight: \( W = 100 \times 9.81 = 981\ \mathrm{N} \).
 (2) FBD of the pulley block: two rope parts up, each with the same tension \( T \) (frictionless sheave), \( W \) down.
 (3) \( 2T = 981 \Rightarrow T = 490.5\ \mathrm{N} \).</p>
 <p><b>Answer:</b> \( \approx 490\ \mathrm{N} \) — half the load.
-<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></section>
+<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A rope runs over a frictionless pulley. The pulley changes the rope's:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>tension only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>direction only</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>both tension and direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>With no friction at the sheave, the same tension runs through the whole rope — the pulley redirects it, nothing more. Mechanical advantage in pulley systems comes from the number of rope parts sharing the load, never from a single sheave altering tension.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the two-legged lift with unequal legs.</b> You arrive at a HEISCO fabrication yard lift where a vessel nozzle forces the two crane slings to different angles — one steep, one shallow. The rigger's question is Lesson 4 verbatim: which leg works harder? Isolate the hook ring, write \( \Sigma F_x = \Sigma F_y = 0 \), and the shallow leg comes out carrying the larger tension — it must generate the same vertical share through a smaller sine (figures representative). The lift plan swaps in a longer sling to steepen the shallow leg before the lift, not after.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

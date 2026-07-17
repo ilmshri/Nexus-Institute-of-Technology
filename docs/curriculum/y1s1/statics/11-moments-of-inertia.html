@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Moments of inertia — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stres">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 11 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Moments of inertia</h1>
     <p class="sub">Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -69,22 +69,18 @@
 <li><b>Neutral axis</b> — the unstressed fiber in bending; coincides with the centroidal axis for simple bending.</li>
 <li><b>Section modulus</b> — \( S = I/c \); one division away, and Strength of Materials' favorite number.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — I-section by composite parts</h4>
-<p><b>Problem.</b> An I-section: two flanges 100 × 10 mm (top and bottom), web 10 × 80 mm, overall depth 100 mm, symmetric. <b>Find:</b> \( I \) about the horizontal centroidal axis.</p>
-<p><b>Solution.</b> (1) Symmetry puts the centroid at mid-depth; each flange centroid sits \( d = 45\ \mathrm{mm} \) away.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>I-section by composite parts</b></p>
+<p><b>Problem.</b> An I-section: two flanges 100 × 10 mm (top and bottom), web 10 × 80 mm, overall depth 100 mm, symmetric. <b>Find:</b> \( I \) about the horizontal centroidal axis.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Symmetry puts the centroid at mid-depth; each flange centroid sits \( d = 45\ \mathrm{mm} \) away.
 (2) One flange: \( \bar{I} = \dfrac{100 \times 10^3}{12} = 8333\ \mathrm{mm^4} \); \( Ad^2 = 1000 \times 45^2 = 2\,025\,000\ \mathrm{mm^4} \).
 (3) Web (centroid on the axis, no transfer): \( \dfrac{10 \times 80^3}{12} = 426\,667\ \mathrm{mm^4} \).
 (4) Total: \( I = 2(8333 + 2\,025\,000) + 426\,667 = 4.49 \times 10^6\ \mathrm{mm^4} \).</p>
 <p><b>Answer:</b> \( I \approx 4.49 \times 10^6\ \mathrm{mm^4} \).
-<b>Sanity check:</b> the flanges' own \( \bar{I} \) (8,333 each) is 0.4% of their \( Ad^2 \) — the transfer term carries the section, as §2 promised.</p>
-<h4>Worked example 2 — same steel, different shape</h4>
-<p><b>Problem.</b> Reshape the I-section's area (\( A = 2 \times 1000 + 800 = 2800\ \mathrm{mm^2} \)) into a solid square. <b>Find:</b> its \( I \) and the comparison.</p>
-<p><b>Solution.</b> (1) Square side: \( s = \sqrt{2800} = 52.9\ \mathrm{mm} \).
+<b>Sanity check:</b> the flanges' own \( \bar{I} \) (8,333 each) is 0.4% of their \( Ad^2 \) — the transfer term carries the section, as §2 promised.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>The second moment of area \( I \) measures:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>how much area a section has</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>how far from the axis the area is deployed (distance squared)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the section's mass distribution</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the maximum stress it can carry</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( I = \int y^2 dA \): area counts by the <em>square</em> of its distance from the axis. Two sections of identical area can differ in \( I \) sevenfold — geometry, not quantity of material. Stress capacity involves \( I \) but also material strength; \( I \) itself is purely geometric.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>A 50 mm wide × 100 mm deep rectangle, about its horizontal centroidal axis: \( I \) =</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 1.04 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 4.17 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 8.33 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.42 \times 10^6\ \mathrm{mm^4} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( I = bh^3/12 = 50 \times 100^3/12 = 4.17 \times 10^6\ \mathrm{mm^4} \). Choice A swaps \( b \) and \( h \) (\( 100 \times 50^3/12 \)) — a factor of 4 penalty for laying the section on its side, which is the whole lesson about depth cubed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Same steel, different shape</b></p>
+<p><b>Problem.</b> Reshape the I-section's area (\( A = 2 \times 1000 + 800 = 2800\ \mathrm{mm^2} \)) into a solid square. <b>Find:</b> its \( I \) and the comparison.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Square side: \( s = \sqrt{2800} = 52.9\ \mathrm{mm} \).
 (2) \( I = \dfrac{s^4}{12} = \dfrac{52.9^4}{12} = 0.653 \times 10^6\ \mathrm{mm^4} \).
 (3) Ratio: \( 4.49/0.653 = 6.9 \).</p>
 <p><b>Answer:</b> the I-shape is ~6.9× stiffer in bending than a square of identical area.
-<b>Sanity check:</b> identical steel tonnage, sevenfold performance difference — pure geometry. This single ratio is why rolled sections exist, why racks are built from I-beams and channels, and why "add more steel" is the wrong first answer to a deflection problem.</p></div></section>
+<b>Sanity check:</b> identical steel tonnage, sevenfold performance difference — pure geometry. This single ratio is why rolled sections exist, why racks are built from I-beams and channels, and why "add more steel" is the wrong first answer to a deflection problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>The parallel-axis theorem \( I = \bar{I} + Ad^2 \) may be applied:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>between any two parallel axes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only transferring from a centroidal axis</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>only for symmetric sections</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only when \( d \) is small</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The theorem transfers from a part's own centroidal axis outward. Chaining it between two non-centroidal axes double-counts the offset — go back through the centroid instead. (Symmetry and the size of \( d \) are irrelevant to validity.)</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the purlin that sagged and the catalog that fixed it.</b> You arrive at a Kirby building retrofit where new cable trays load roof purlins beyond their original duty, and mid-span deflection is visible by eye (figures representative). The instinct on the floor is a heavier purlin; the catalog answer is a <em>deeper</em> one — \( I \) grows with depth cubed, so a modest depth increase outperforms a large weight increase. The engineer's comparison table is worked example 2 with real section numbers: same steel budget, different deployment of area, and the deflection problem disappears into \( bh^3/12 \).</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -121,6 +117,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

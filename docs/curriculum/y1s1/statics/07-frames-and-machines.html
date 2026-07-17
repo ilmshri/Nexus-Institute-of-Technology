@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Frames and machines — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and cla">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 07 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Frames and machines</h1>
     <p class="sub">Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and clamps.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -65,23 +65,19 @@
 <li><b>Action–reaction pair</b> — equal, opposite pin forces on the two joined members.</li>
 <li><b>Mechanical advantage</b> — output force ÷ input force.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — gripping tool</h4>
-<p><b>Problem.</b> A gripping tool's handles are squeezed with 150 N at 200 mm from the pivot pin; the jaws grip at 40 mm on the other side of the pivot. <b>Find:</b> the jaw force and mechanical advantage.</p>
-<p><b>Solution.</b> (1) FBD of one handle-jaw lever about the pivot.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Gripping tool</b></p>
+<p><b>Problem.</b> A gripping tool's handles are squeezed with 150 N at 200 mm from the pivot pin; the jaws grip at 40 mm on the other side of the pivot. <b>Find:</b> the jaw force and mechanical advantage.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of one handle-jaw lever about the pivot.
 (2) \( \Sigma M_{pivot} = 0 \): \( 150 \times 200 = F_{jaw} \times 40 \).
 (3) \( F_{jaw} = 30000/40 = 750\ \mathrm{N} \).
 (4) \( MA = 750/150 = 5 \) — equal to the arm ratio \( 200/40 \).</p>
 <p><b>Answer:</b> 750 N grip; mechanical advantage 5.
-<b>Sanity check:</b> arms ratio 5:1 must give force ratio 5:1 — the lever law in its plainest form; the pivot pin itself carries \( 150 + 750 = 900\ \mathrm{N} \), the largest force in the tool, which is why pivot pins wear first.</p>
-<h4>Worked example 2 — two-member frame under a side load</h4>
-<p><b>Problem.</b> Members AC and BC are pinned together at C \( (2, 3)\ \mathrm{m} \), with A \( (0,0) \) pinned and B \( (4,0) \) on a roller. A 6 kN horizontal force pushes at C. <b>Find:</b> reactions and member forces.</p>
-<p><b>Solution.</b> (1) Whole frame, \( \Sigma M_A = 0 \): \( B_y \times 4 - 6 \times 3 = 0 \Rightarrow B_y = 4.5\ \mathrm{kN} \) up.
+<b>Sanity check:</b> arms ratio 5:1 must give force ratio 5:1 — the lever law in its plainest form; the pivot pin itself carries \( 150 + 750 = 900\ \mathrm{N} \), the largest force in the tool, which is why pivot pins wear first.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A lever takes 100 N of hand force at 300 mm from the pivot; the output acts at 60 mm. Output force:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>20 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>100 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>500 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>3000 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Moment balance: \( 100 \times 300 = F \times 60 \Rightarrow F = 500\ \mathrm{N} \) — mechanical advantage 5, the arm ratio. 20 N inverts the ratio (that lever would be a force <em>reducer</em>, useful for delicate work, not gripping).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>What disqualifies a structure from truss analysis and makes it a frame?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>more than six members</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a member loaded at three or more points</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>supports on different levels</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>any inclined member</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Truss analysis rests on every member being two-force. A member loaded at a third point (or between its pins) carries shear and bending, so its force is no longer axial — dismemberment with action–reaction pin forces replaces the joint method.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Two-member frame under a side load</b></p>
+<p><b>Problem.</b> Members AC and BC are pinned together at C \( (2, 3)\ \mathrm{m} \), with A \( (0,0) \) pinned and B \( (4,0) \) on a roller. A 6 kN horizontal force pushes at C. <b>Find:</b> reactions and member forces.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Whole frame, \( \Sigma M_A = 0 \): \( B_y \times 4 - 6 \times 3 = 0 \Rightarrow B_y = 4.5\ \mathrm{kN} \) up.
 (2) \( \Sigma F_y = 0 \Rightarrow A_y = -4.5\ \mathrm{kN} \) (i.e., 4.5 kN down); \( \Sigma F_x = 0 \Rightarrow A_x = -6\ \mathrm{kN} \) (opposing the push).
 (3) Both members are two-force (loaded only at their end pins). At C, resolve along the member directions: each member's axis has length \( \sqrt{2^2+3^2} = 3.61\ \mathrm{m} \).
 (4) Solving joint C: \( F_{AC} = 5.41\ \mathrm{kN} \) tension, \( F_{BC} = 5.41\ \mathrm{kN} \) compression.</p>
 <p><b>Answer:</b> \( A = (6.0, 4.5)\ \mathrm{kN} \) resisting, \( B_y = 4.5\ \mathrm{kN} \); \( |F_{AC}| = |F_{BC}| = 5.41\ \mathrm{kN} \), tension and compression respectively.
-<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></section>
+<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>When a frame is dismembered at a pin, the forces drawn on the two separated members must be:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>equal and in the same direction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>equal and opposite</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>each equal to half the applied load</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>zero if the pin is frictionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Newton's third law: the pin force one member exerts on the other is mirrored exactly. Drawing the pair inconsistently — both components up on both members, say — silently violates equilibrium of the pin and corrupts every equation written afterward.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the toggle clamp that holds a filling line's pace.</b> You arrive at a KDD filling hall where a container-clamping fixture must hold product steady through a fill-and-cap cycle. The fixture is a toggle linkage: a small pneumatic cylinder input, links near dead-center at clamp, and a holding force many times the cylinder's output (figures representative). When a batch of misformed containers starts slipping, the maintenance question is Lesson 7's: has linkage wear moved the toggle geometry off dead-center, collapsing the mechanical advantage? A pin-by-pin dismemberment — not a bigger cylinder — locates the worn joint.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

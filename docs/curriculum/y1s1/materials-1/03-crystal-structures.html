@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Crystal structures — Materials Science I — Sun Devil Factory</title>
 <meta name="description" content="BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC —">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 03 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Crystal structures</h1>
     <p class="sub">BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC — a fact with cold-weather consequences.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -67,21 +67,17 @@
 <li><b>APF</b> — atomic packing factor; 0.74 FCC/HCP, 0.68 BCC.</li>
 <li><b>Allotropy</b> — one element, several structures (iron: BCC ↔ FCC with temperature).</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — packing factor of FCC</h4>
-<p><b>Problem.</b> Derive the FCC atomic packing factor.</p>
-<p><b>Solution.</b> (1) Face-diagonal touching: \( 4R = a\sqrt{2} \Rightarrow a = 2R\sqrt{2} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Packing factor of FCC</b></p>
+<p><b>Problem.</b> Derive the FCC atomic packing factor.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Face-diagonal touching: \( 4R = a\sqrt{2} \Rightarrow a = 2R\sqrt{2} \).
 (2) Atoms per cell: \( 8 \times \tfrac{1}{8} + 6 \times \tfrac{1}{2} = 4 \).
 (3) \( APF = \dfrac{4 \times \tfrac{4}{3}\pi R^3}{(2R\sqrt{2})^3} = \dfrac{16.76\,R^3}{22.63\,R^3} = 0.740 \).</p>
 <p><b>Answer:</b> 0.74 — the maximum possible for equal spheres.
-<b>Sanity check:</b> the same computation for BCC (\( a = 4R/\sqrt{3} \), 2 atoms) gives 0.68; FCC is measurably tighter, consistent with its higher coordination (12 vs 8).</p>
-<h4>Worked example 2 — density of copper from its lattice</h4>
-<p><b>Problem.</b> Copper: FCC, \( R = 0.128\ \mathrm{nm} \), \( A = 63.55\ \mathrm{g/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> the theoretical density.</p>
-<p><b>Solution.</b> (1) \( a = 2R\sqrt{2} = 0.362\ \mathrm{nm} = 3.62 \times 10^{-8}\ \mathrm{cm} \).
+<b>Sanity check:</b> the same computation for BCC (\( a = 4R/\sqrt{3} \), 2 atoms) gives 0.68; FCC is measurably tighter, consistent with its higher coordination (12 vs 8).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>Atomic packing factors of FCC and BCC are, respectively:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.68 and 0.74</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>0.74 and 0.68</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.52 and 0.74</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.74 and 0.74</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>FCC (and HCP) reach 0.74, the densest possible equal-sphere packing; BCC manages 0.68. The gap sounds small but carries consequences: FCC's close-packed planes slip easily at any temperature, while BCC's slip needs thermal help — the seed of the ductile–brittle transition.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Atoms per unit cell in FCC:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>14</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Eight corners shared eight ways (= 1) plus six faces shared two ways (= 3): 4 atoms. Counting 14 forgets the sharing; 2 is the BCC count. This little census feeds directly into the density formula \( \rho = nA/(V_C N_A) \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Density of copper from its lattice</b></p>
+<p><b>Problem.</b> Copper: FCC, \( R = 0.128\ \mathrm{nm} \), \( A = 63.55\ \mathrm{g/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> the theoretical density.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( a = 2R\sqrt{2} = 0.362\ \mathrm{nm} = 3.62 \times 10^{-8}\ \mathrm{cm} \).
 (2) \( V_C = a^3 = 4.75 \times 10^{-23}\ \mathrm{cm^3} \).
 (3) \( \rho = \dfrac{nA}{V_C N_A} = \dfrac{4 \times 63.55}{4.75 \times 10^{-23} \times 6.022 \times 10^{23}} = 8.90\ \mathrm{g/cm^3} \).</p>
 <p><b>Answer:</b> \( 8.90\ \mathrm{g/cm^3} \).
-<b>Sanity check:</b> the measured density of copper is 8.94 g/cm³ — agreement within half a percent, from nothing but an atomic radius, a molar mass, and geometry. The unit cell is bookkeeping that nature audits.</p></div></section>
+<b>Sanity check:</b> the measured density of copper is 8.94 g/cm³ — agreement within half a percent, from nothing but an atomic radius, a molar mass, and geometry. The unit cell is bookkeeping that nature audits.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Ferritic (BCC) steels turn brittle in the cold; austenitic (FCC) stainless does not. The root cause is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>carbon content</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>slip in BCC needs thermal activation; FCC slip does not</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>FCC is denser, hence tougher</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>grain size differences</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>BCC lacks truly close-packed planes, so its dislocations need thermal assistance; cool the steel and slip stalls before fracture does — the ductile–brittle transition. FCC's close-packed slip systems work at any temperature, which is why cryogenic plant is austenitic. Density itself (choice C) is not the mechanism.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the caster crosses a crystal boundary.</b> You arrive at the Kuwait Steel billet caster, where solidifying steel is FCC austenite — and by the time the billet reaches the cooling bed it has transformed to BCC ferrite (plus carbide), shedding volume and packing density on the way (figures representative). That allotropic change is not trivia: it drives the transformation stresses the caster's cooling practice must manage, and it is the switch that all of steel heat treatment will later throw on purpose. One element, two unit cells, and an entire industry operating in the gap between 0.74 and 0.68.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

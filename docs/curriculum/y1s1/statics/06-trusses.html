@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Trusses — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 06 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Trusses</h1>
     <p class="sub">Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -65,23 +65,19 @@
 <li><b>Method of sections</b> — a cut through ≤3 members analyzed as a rigid body.</li>
 <li><b>Zero-force member</b> — carries nothing under the given load case; still needed for stability and other cases.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — method of joints on a triangular truss</h4>
-<p><b>Problem.</b> A symmetric triangular truss spans 4 m with apex height 1.5 m; a 10 kN load hangs at the apex. <b>Find:</b> the forces in a sloping member and the bottom chord.</p>
-<p><b>Solution.</b> (1) By symmetry each support carries 5 kN.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Method of joints on a triangular truss</b></p>
+<p><b>Problem.</b> A symmetric triangular truss spans 4 m with apex height 1.5 m; a 10 kN load hangs at the apex. <b>Find:</b> the forces in a sloping member and the bottom chord.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) By symmetry each support carries 5 kN.
 (2) Slope angle: \( \theta = \tan^{-1}(1.5/2) = 36.87^\circ \).
 (3) Joint at left support — vertical: \( F_{slope}\sin\theta = 5 \Rightarrow F_{slope} = 5/0.6 = 8.33\ \mathrm{kN} \), pushing into the joint: <em>compression</em>.
 (4) Horizontal: \( F_{chord} = F_{slope}\cos\theta = 8.33 \times 0.8 = 6.67\ \mathrm{kN} \), pulling: <em>tension</em>.</p>
 <p><b>Answer:</b> sloping members 8.33 kN (C); bottom chord 6.67 kN (T).
-<b>Sanity check:</b> the sloped member must exceed the 5 kN vertical it carries (only its sine works vertically): 8.33 &gt; 5. ✓ Flatter trusses drive both numbers up — why shallow roofs need heavier members.</p>
-<h4>Worked example 2 — one member by sections</h4>
-<p><b>Problem.</b> A parallel-chord truss: span 8 m, height 2 m, four 2 m panels, 4 kN at each of the three interior bottom-chord joints. <b>Find:</b> the bottom-chord force in the second panel.</p>
-<p><b>Solution.</b> (1) Reactions: total 12 kN, symmetric, \( R = 6\ \mathrm{kN} \) each.
+<b>Sanity check:</b> the sloped member must exceed the 5 kN vertical it carries (only its sine works vertically): 8.33 &gt; 5. ✓ Flatter trusses drive both numbers up — why shallow roofs need heavier members.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>At an unloaded truss joint, two members meet at an angle (non-collinear). Their forces are:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>equal and opposite</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>both zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>proportional to their lengths</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>indeterminate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Resolve perpendicular to either member: only the other member has a component there, so it must be zero — and then the first must be zero too. This inspection rule prunes trusses before any arithmetic; the members still matter for stability and other load cases.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>A simply supported truss carries gravity loads. Typically its chords are:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>top in tension, bottom in compression</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>both in tension</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>top in compression, bottom in tension</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>both in compression</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The truss sags like a beam: the top shortens (compression), the bottom stretches (tension) — the same pattern a bending-moment diagram implies. Reading this without calculation is the \"load path\" habit; a cantilevered truss reverses it, which is the standard trap.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>One member by sections</b></p>
+<p><b>Problem.</b> A parallel-chord truss: span 8 m, height 2 m, four 2 m panels, 4 kN at each of the three interior bottom-chord joints. <b>Find:</b> the bottom-chord force in the second panel.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: total 12 kN, symmetric, \( R = 6\ \mathrm{kN} \) each.
 (2) Cut vertically through the second panel (between \( x = 2 \) and \( x = 4 \) m); keep the left portion.
 (3) Moment about the <em>top</em> joint at \( x = 2\ \mathrm{m} \) (height 2 m) — the cut top chord and diagonal pass through it, vanishing from the equation. The 4 kN load at \( x = 2 \) also has zero arm.
 (4) \( \Sigma M = 0 \): \( F_{BC} \times 2 = 6 \times 2 \Rightarrow F_{BC} = 6\ \mathrm{kN} \) (tension).</p>
 <p><b>Answer:</b> 6 kN, tension.
-<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></section>
+<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a support carrying 5 kN vertically, the only non-horizontal member is a diagonal at \( 30^\circ \) above horizontal. Its force is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2.5 kN</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>5 kN</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8.66 kN</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>10 kN</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The diagonal alone must supply the 5 kN vertical: \( F\sin 30^\circ = 5 \Rightarrow F = 10\ \mathrm{kN} \). The shallow angle is the punishment — at 30°, only half the member force works vertically. 8.66 kN mistakes sine for cosine; 2.5 kN multiplies instead of divides.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — reading the brace, not the drawing.</b> You arrive at a Kirby pre-engineered building bay where a fitter asks whether a wind-bay diagonal can be dropped to pass a duct. The frame drawing shows geometry; Lesson 6 reads it as a load path: under lateral load that diagonal is the tension path to the foundation, and several adjacent members are zero-force <em>only because</em> it is there (figures representative). Remove it and the zero-force members inherit work they were never sized for. The duct moves; the diagonal stays. The decision took a joint sketch, not software.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

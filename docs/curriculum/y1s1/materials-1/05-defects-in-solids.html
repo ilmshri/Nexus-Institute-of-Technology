@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Defects in solids — Materials Science I — Sun Devil Factory</title>
 <meta name="description" content="Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. ">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 05 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Defects in solids</h1>
     <p class="sub">Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries. The defect population as the true design variable. Perfect crystals are a textbook fiction — usefully so.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -67,20 +67,16 @@
 <li><b>Burgers vector</b> — the slip step one dislocation pass produces.</li>
 <li><b>Grain boundary</b> — interface between differently oriented crystals.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — vacancy census</h4>
-<p><b>Problem.</b> For a metal with vacancy formation energy \( Q_v = 0.9\ \mathrm{eV} \) (representative), compare the equilibrium vacancy fraction at 1000 K and at 500 K. \( k = 8.62 \times 10^{-5}\ \mathrm{eV/K} \).</p>
-<p><b>Solution.</b> (1) At 1000 K: \( N_v/N = \exp[-0.9/(8.62 \times 10^{-5} \times 1000)] = e^{-10.44} = 2.9 \times 10^{-5} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Vacancy census</b></p>
+<p><b>Problem.</b> For a metal with vacancy formation energy \( Q_v = 0.9\ \mathrm{eV} \) (representative), compare the equilibrium vacancy fraction at 1000 K and at 500 K. \( k = 8.62 \times 10^{-5}\ \mathrm{eV/K} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) At 1000 K: \( N_v/N = \exp[-0.9/(8.62 \times 10^{-5} \times 1000)] = e^{-10.44} = 2.9 \times 10^{-5} \).
 (2) At 500 K: \( N_v/N = e^{-20.88} = 8.5 \times 10^{-10} \).
 (3) Ratio: \( \approx 34{,}000 \times \) more vacancies at the higher temperature.</p>
 <p><b>Answer:</b> \( 2.9 \times 10^{-5} \) versus \( 8.5 \times 10^{-10} \).
-<b>Sanity check:</b> halving absolute temperature squares the (tiny) Boltzmann factor — the exponential's signature. This 34,000× swing in diffusion's vehicle fleet is why annealing happens in furnaces, not on benches.</p>
-<h4>Worked example 2 — weight percent to atom percent</h4>
-<p><b>Problem.</b> Cartridge brass is 70 wt% Cu, 30 wt% Zn (\( A_{Cu} = 63.55 \), \( A_{Zn} = 65.38\ \mathrm{g/mol} \)). <b>Find:</b> the composition in atom percent.</p>
-<p><b>Solution.</b> (1) Per 100 g: \( n_{Cu} = 70/63.55 = 1.101\ \mathrm{mol} \); \( n_{Zn} = 30/65.38 = 0.459\ \mathrm{mol} \).
+<b>Sanity check:</b> halving absolute temperature squares the (tiny) Boltzmann factor — the exponential's signature. This 34,000× swing in diffusion's vehicle fleet is why annealing happens in furnaces, not on benches.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>Raising temperature increases a metal's equilibrium vacancy fraction:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>linearly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>exponentially</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>not at all — vacancies are fixed at solidification</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only above the melting point</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( N_v/N = e^{-Q_v/kT} \) — a Boltzmann factor, hence exponential. Halving absolute temperature squares the (small) fraction. Vacancies are thermodynamically required, continuously created and annihilated, not frozen-in accidents.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Metals deform at stresses far below the theoretical bond-breaking strength because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>real metals contain vacancies</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>dislocations move bonds one row at a time</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>grain boundaries are weak</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the theory is wrong</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A dislocation localizes the slip event: only one row of bonds breaks and re-forms at each step — the carpet moved by running a wrinkle across it. This thousandfold discount is why plasticity exists at workshop stresses, and why <em>obstructing</em> dislocations is how alloys are strengthened.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Weight percent to atom percent</b></p>
+<p><b>Problem.</b> Cartridge brass is 70 wt% Cu, 30 wt% Zn (\( A_{Cu} = 63.55 \), \( A_{Zn} = 65.38\ \mathrm{g/mol} \)). <b>Find:</b> the composition in atom percent.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Per 100 g: \( n_{Cu} = 70/63.55 = 1.101\ \mathrm{mol} \); \( n_{Zn} = 30/65.38 = 0.459\ \mathrm{mol} \).
 (2) \( at\%\ Cu = \dfrac{1.101}{1.101 + 0.459} \times 100 = 70.6\% \); \( at\%\ Zn = 29.4\% \).</p>
 <p><b>Answer:</b> 70.6 at% Cu, 29.4 at% Zn.
-<b>Sanity check:</b> copper and zinc have nearly equal atomic masses, so weight and atom percent nearly coincide — the conversion only bites when masses differ strongly (carbon in iron: 0.4 wt% C is ~1.8 at%). Knowing when the distinction matters is the actual skill.</p></div></section>
+<b>Sanity check:</b> copper and zinc have nearly equal atomic masses, so weight and atom percent nearly coincide — the conversion only bites when masses differ strongly (carbon in iron: 0.4 wt% C is ~1.8 at%). Knowing when the distinction matters is the actual skill.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>With \( Q_v = 0.9 \) eV at 1000 K (\( k = 8.62 \times 10^{-5} \) eV/K), the vacancy fraction is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 3 \times 10^{-5} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 3 \times 10^{-2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 10^{-9} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.9 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \exp[-0.9/(8.62\times10^{-5} \times 1000)] = e^{-10.4} \approx 2.9 \times 10^{-5} \) — roughly one site in 34,000 empty. \( 10^{-9} \) is the 500 K answer: the exponential's steepness is the whole point.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — two kinds of defect, one inspection report.</b> You arrive at a HEISCO fabrication shop as an NDT crew sentences a weld: porosity beyond code, cut it out. On the same bench sits the metallurgical irony of Lesson 5 — the sound weld metal beside the pores is itself a carnival of defects: vacancies from solidification, dislocations by the billion from thermal contraction, fresh grain boundaries everywhere (figures representative). Those defects are why the weld metal has useful strength and ductility at all. NDT polices macro-defects; materials science engineers micro-defects. Same word, opposite verdicts — and an engineer should keep the two ledgers straight.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -117,6 +113,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Moments and couples — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 02 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Moments and couples</h1>
     <p class="sub">Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -66,19 +66,15 @@
 <li><b>Couple</b> — equal and opposite parallel forces; pure moment, same about every point.</li>
 <li><b>Equivalent system</b> — one force + one couple replacing a whole force set at a point.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — wrench moment, two ways</h4>
-<p><b>Problem.</b> A 500 N force acts at the end of a 0.6 m wrench, at \( 60^\circ \) to the handle axis. <b>Find:</b> the moment about the nut, by perpendicular arm and by Varignon.</p>
-<p><b>Solution.</b> (1) Perpendicular arm: \( d = 0.6\sin 60^\circ = 0.520\ \mathrm{m} \), so \( M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Wrench moment, two ways</b></p>
+<p><b>Problem.</b> A 500 N force acts at the end of a 0.6 m wrench, at \( 60^\circ \) to the handle axis. <b>Find:</b> the moment about the nut, by perpendicular arm and by Varignon.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Perpendicular arm: \( d = 0.6\sin 60^\circ = 0.520\ \mathrm{m} \), so \( M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m} \).
 (2) Varignon: the component across the handle is \( 500\sin 60^\circ = 433.0\ \mathrm{N} \) with arm 0.6 m: \( M = 433.0 \times 0.6 = 259.8\ \mathrm{N\cdot m} \). The along-handle component's line of action passes through the nut — zero arm, zero moment.</p>
 <p><b>Answer:</b> \( M = 259.8\ \mathrm{N\cdot m} \) by both routes.
-<b>Sanity check:</b> the perpendicular case bounds it: \( 500 \times 0.6 = 300\ \mathrm{N\cdot m} \) is the maximum possible, and \( 259.8 < 300 \). ✓</p>
-<h4>Worked example 2 — a couple on a valve handwheel</h4>
-<p><b>Problem.</b> Two hands apply equal and opposite 200 N forces at diametrically opposite points of a 0.3 m-diameter handwheel. <b>Find:</b> the moment, and the moment about a point 1 m away from the wheel's center.</p>
-<p><b>Solution.</b> (1) Couple moment: \( M = Fd = 200 \times 0.3 = 60\ \mathrm{N\cdot m} \).
+<b>Sanity check:</b> the perpendicular case bounds it: \( 500 \times 0.6 = 300\ \mathrm{N\cdot m} \) is the maximum possible, and \( 259.8 < 300 \). ✓</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A 400 N force acts perpendicular to a wrench, 0.25 m from the nut. The moment about the nut is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>100 N·m</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>400 N·m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1600 N·m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>25 N·m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( M = Fd = 400 \times 0.25 = 100\ \mathrm{N\cdot m} \). Perpendicular application means the full 0.25 m is the moment arm — no sine factor needed. 1600 N·m divides instead of multiplying; 25 N·m forgets the force entirely.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>A couple acting on a bracket is evaluated about a point 2 m away instead of at the bracket. Its moment:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>doubles</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>halves</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>is unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>drops to zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A couple's moment is the same about <em>every</em> point in the plane — its force resultant is zero, so moving the reference point adds equal and opposite contributions that cancel. That location-independence is what makes couples freely movable on a rigid body.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>A couple on a valve handwheel</b></p>
+<p><b>Problem.</b> Two hands apply equal and opposite 200 N forces at diametrically opposite points of a 0.3 m-diameter handwheel. <b>Find:</b> the moment, and the moment about a point 1 m away from the wheel's center.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Couple moment: \( M = Fd = 200 \times 0.3 = 60\ \mathrm{N\cdot m} \).
 (2) About the distant point: a couple's moment is identical about every point in the plane — still \( 60\ \mathrm{N\cdot m} \). The two forces' moments about that point differ individually, but their sum is unchanged.</p>
 <p><b>Answer:</b> \( 60\ \mathrm{N\cdot m} \), everywhere.
-<b>Sanity check:</b> the force resultant is \( 200 - 200 = 0 \) — the wheel is turned, not translated, which is exactly what a handwheel is for.</p></div></section>
+<b>Sanity check:</b> the force resultant is \( 200 - 200 = 0 \) — the wheel is turned, not translated, which is exactly what a handwheel is for.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Varignon's theorem lets you replace \"find the perpendicular distance\" with:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>summing the moments of the force's components</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>doubling the force and halving the arm</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>taking moments only about the centroid</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>ignoring forces through the reference point</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The moment of a force equals the sum of the moments of its components — so resolve at the point of application and use each component's easy rectangular arm. (Forces whose line of action passes through the moment point do contribute zero, but that is a corollary, not the theorem.)</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the cheater bar that ruined a stud.</b> You arrive at a bolted joint on a Kirby steel connection where a fitter has slipped a metre of pipe over a 300 mm wrench to break a seized nut — quadrupling the moment arm and taking the applied torque far beyond the stud's rating (figures representative). The stud yields, and the joint now needs drilling out. Lesson 2 is the whole story: \( M = Fd \) does not care whether the extra \( d \) came from an engineered tool or scavenged pipe. Torque wrenches exist to put a number on the moment; the calculation here is how you check that number is the right one.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -115,6 +111,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

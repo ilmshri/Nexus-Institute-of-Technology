@@ -6,19 +6,19 @@ be built on a server.
 
 ## Path A — GitHub Pages with gh CLI (recommended, ~60 seconds)
 
-Target: `https://sundevilfactory.github.io/asu/` (account `sundevilfactory`,
+Target: `https://nexusinstitute.github.io/` (org `nexusinstitute`,
 repo `asu`). Any account/repo works — the site is base-path independent.
 
 ```bash
 brew install gh                # if not installed
-gh auth login                  # one-time browser login (sundevilfactory account)
+gh auth login                  # one-time browser login (nexusinstitute org owner)
 cd "/Users/ilmshri/Social Media/sun-devil-factory"
 gh repo create asu --public --source=. --push
-gh api "repos/{owner}/asu/pages" -X POST \
+gh api "repos/{owner}/nexusinstitute.github.io/pages" -X POST \
   -f "source[branch]=main" -f "source[path]=/docs"
 ```
 
-Live URL: `https://sundevilfactory.github.io/asu/`
+Live URL: `https://nexusinstitute.github.io/`
 (first build takes a minute or two).
 
 ## Path B — GitHub web UI (no CLI)

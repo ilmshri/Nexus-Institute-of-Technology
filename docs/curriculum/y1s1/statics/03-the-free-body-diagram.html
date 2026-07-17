@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The free-body diagram — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a b">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 03 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>The free-body diagram</h1>
     <p class="sub">The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a bad FBD.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -64,23 +64,19 @@
 <li><b>Pin</b> — support giving two force components, no moment.</li>
 <li><b>Fixed support</b> — support giving two force components and a moment.</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — beam on a pin and a roller</h4>
-<p><b>Problem.</b> A 4 m beam is pinned at A and rests on a roller at B (right end). A 2 kN load acts 1.5 m from A. Neglect beam weight. <b>Find:</b> the reactions.</p>
-<p><b>Solution.</b> (1) FBD: pin at A gives \( A_x, A_y \); roller at B gives vertical \( R_B \); load 2 kN down at 1.5 m.
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Beam on a pin and a roller</b></p>
+<p><b>Problem.</b> A 4 m beam is pinned at A and rests on a roller at B (right end). A 2 kN load acts 1.5 m from A. Neglect beam weight. <b>Find:</b> the reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: pin at A gives \( A_x, A_y \); roller at B gives vertical \( R_B \); load 2 kN down at 1.5 m.
 (2) \( \Sigma F_x = 0 \Rightarrow A_x = 0 \) (no horizontal loads).
 (3) \( \Sigma M_A = 0 \): \( R_B \times 4 - 2 \times 1.5 = 0 \Rightarrow R_B = 0.75\ \mathrm{kN} \).
 (4) \( \Sigma F_y = 0 \): \( A_y = 2 - 0.75 = 1.25\ \mathrm{kN} \).</p>
 <p><b>Answer:</b> \( A_y = 1.25\ \mathrm{kN} \), \( R_B = 0.75\ \mathrm{kN} \), \( A_x = 0 \).
-<b>Sanity check:</b> the load sits nearer A, so A carries more — 1.25 &gt; 0.75, and the two sum to 2 kN. ✓</p>
-<h4>Worked example 2 — cantilever: the moment reaction earns its keep</h4>
-<p><b>Problem.</b> A bracket is built into a wall (fixed support) and carries 3 kN downward at 2 m from the wall. <b>Find:</b> the wall reactions.</p>
-<p><b>Solution.</b> (1) FBD: at the wall draw \( V \) (vertical force), \( H \) (horizontal force), and moment \( M_w \).
+<b>Sanity check:</b> the load sits nearer A, so A carries more — 1.25 &gt; 0.75, and the two sum to 2 kN. ✓</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>Which support supplies a moment reaction?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Roller</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Pin</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>Fixed (built-in) support</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Only the fixed support resists rotation, adding a moment to its two force components. A pin gives two force components but spins freely; a roller gives one normal force; a cable one axial pull. This menu is why a flagpole (fixed) stands while the same pole on a pin would fall.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>The most commonly <em>omitted</em> force on a free-body diagram is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the body's own weight</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the applied load</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the roller reaction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>wind load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Self-weight, acting at the center of gravity, is invisible on the sketch and therefore chronically forgotten — the first item to check on any suspect FBD. Applied loads and support reactions are at least prompted by the drawing; gravity prompts nothing.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Cantilever: the moment reaction earns its keep</b></p>
+<p><b>Problem.</b> A bracket is built into a wall (fixed support) and carries 3 kN downward at 2 m from the wall. <b>Find:</b> the wall reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: at the wall draw \( V \) (vertical force), \( H \) (horizontal force), and moment \( M_w \).
 (2) \( \Sigma F_x = 0 \Rightarrow H = 0 \).
 (3) \( \Sigma F_y = 0 \Rightarrow V = 3\ \mathrm{kN} \) upward.
 (4) \( \Sigma M_{wall} = 0 \Rightarrow M_w = 3 \times 2 = 6\ \mathrm{kN\cdot m} \), opposing the load's turning.</p>
 <p><b>Answer:</b> \( V = 3\ \mathrm{kN} \), \( M_w = 6\ \mathrm{kN\cdot m} \).
-<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></section>
+<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A taut cable attached to a body can exert on it:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a pull or a push along the cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only a pull along the cable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a force in any direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a pull plus a moment</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Cables carry tension only — they pull along their own axis and buckle rather than push. Drawing a cable force as a push (or at an angle to the cable) is an FBD error that no amount of correct algebra downstream can repair.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the pipe support that was drawn wrong before it was built wrong.</b> You arrive at a pipe-rack survey in a process unit at EQUATE where a spring hanger is topped out and a nearby rigid support is cold. The as-built review starts exactly where this lesson does: draw the pipe segment as a free body, put in weight, the hanger pull, and each support's actual reaction menu — a rigid shoe pushes only up, a guide only sideways, the spring a set force. The diagram shows one support was assumed to share load it geometrically cannot see (figures representative). The correction was decided on the FBD before anyone touched a wrench.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -117,6 +113,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

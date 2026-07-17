@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Friction — Engineering Statics — Sun Devil Factory</title>
 <meta name="description" content="Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios gover">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">STA 103 · LESSON 09 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Friction</h1>
     <p class="sub">Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 2.001 Mechanics &amp; Materials I</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: Mostafa Meraji — CC0, via Wikimedia Commons</div>
 </div>
@@ -69,23 +69,19 @@
 <li><b>Self-locking</b> — a screw or wedge that holds position without external effort.</li>
 <li><b>Wrap angle \( \beta \)</b> — belt contact arc, in radians, in \( T_2/T_1 = e^{\mu\beta} \).</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — dragging a crate, and why angle helps</h4>
-<p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p>
-<p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Dragging a crate, and why angle helps</b></p>
+<p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
 (2) Horizontal pull: \( P = \mu_s W = 0.35 \times 784.8 = 274.7\ \mathrm{N} \).
 (3) Angled pull: the vertical component unloads the floor. \( N = W - P\sin 20^\circ \), and impending motion demands \( P\cos 20^\circ = \mu_s N \).
 (4) \( P = \dfrac{\mu_s W}{\cos 20^\circ + \mu_s \sin 20^\circ} = \dfrac{274.7}{0.940 + 0.120} = 259.3\ \mathrm{N} \).</p>
 <p><b>Answer:</b> 274.7 N flat; 259.3 N at 20° — about 6% less.
-<b>Sanity check:</b> lifting-while-pulling reduces \( N \), hence friction; too steep an angle wastes pull on lift instead of advance, so an optimum angle exists (it equals the friction angle, \( \tan^{-1}0.35 \approx 19.3^\circ \) — our 20° is nearly optimal).</p>
-<h4>Worked example 2 — conveyor drive pulley</h4>
-<p><b>Problem.</b> A belt wraps a drive pulley \( 180^\circ \) with \( \mu = 0.3 \); the slack side runs at \( T_1 = 1.2\ \mathrm{kN} \). <b>Find:</b> the maximum tight-side tension and transmittable belt pull before slip.</p>
-<p><b>Solution.</b> (1) Wrap: \( \beta = \pi\ \mathrm{rad} \).
+<b>Sanity check:</b> lifting-while-pulling reduces \( N \), hence friction; too steep an angle wastes pull on lift instead of advance, so an optimum angle exists (it equals the friction angle, \( \tan^{-1}0.35 \approx 19.3^\circ \) — our 20° is nearly optimal).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A block presses on the floor with \( N = 200\ \mathrm{N} \), \( \mu_s = 0.4 \). A 50 N horizontal push is applied. The friction force is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>80 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>50 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>200 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>20 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Below the threshold, friction equals whatever equilibrium demands: 50 N. The ceiling \( \mu_s N = 80\ \mathrm{N} \) applies only at impending motion — quoting 80 N for a 50 N push is the single most common friction error, and it fails the sanity check that the block would accelerate backwards.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Doubling a belt's wrap angle on a drum multiplies its holding ratio \( T_2/T_1 \) by:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the original ratio again (it squares)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \mu \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing — wrap doesn't matter</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( T_2/T_1 = e^{\mu\beta} \), so \( \beta \to 2\beta \) squares the ratio: \( e^{\mu \cdot 2\beta} = (e^{\mu\beta})^2 \). Exponentials multiply where intuitions add — three turns on a bollard hold a ship precisely because each turn multiplies the previous total.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Conveyor drive pulley</b></p>
+<p><b>Problem.</b> A belt wraps a drive pulley \( 180^\circ \) with \( \mu = 0.3 \); the slack side runs at \( T_1 = 1.2\ \mathrm{kN} \). <b>Find:</b> the maximum tight-side tension and transmittable belt pull before slip.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Wrap: \( \beta = \pi\ \mathrm{rad} \).
 (2) Capstan: \( T_2/T_1 = e^{0.3\pi} = 2.566 \).
 (3) \( T_2 = 1.2 \times 2.566 = 3.08\ \mathrm{kN} \).
 (4) Transmittable pull: \( T_2 - T_1 = 1.88\ \mathrm{kN} \).</p>
 <p><b>Answer:</b> \( T_2 = 3.08\ \mathrm{kN} \); usable pull 1.88 kN.
-<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></section>
+<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A power screw is self-locking (holds its load with no applied torque) when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the friction angle exceeds the helix angle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the helix angle exceeds the friction angle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the load exceeds the friction force</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it is lubricated</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Self-locking requires friction to beat the thread's slope: \( \phi > \alpha \). A jack that stays up under load is exactly this inequality. Lubrication <em>reduces</em> \( \phi \) and can therefore un-lock a marginal screw — the opposite of choice D's instinct.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the capstan that is literally called a capstan.</b> You arrive at a Gulf Cable drawing line where wire is hauled through dies by motor-driven capstan drums — the machine's name is the equation's name. Tension into the die must stay controlled: too little grip and the wire slips and scores; the fix on the floor is more wrap, because \( T_2/T_1 = e^{\mu\beta} \) grows exponentially with each added turn (figures representative). When a worn drum surface drops \( \mu \), the symptom — slip at the same wrap — walks straight out of Lesson 9's derivation.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -122,6 +118,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

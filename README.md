@@ -32,9 +32,9 @@ python3 build.py     # reads data/*.json + content/, writes docs/ (~573 pages)
 
 ## Deploy — GitHub Pages
 
-Target URL: `https://sundevilfactory.github.io/asu/`
+Target URL: `https://nexusinstitute.github.io/`
 
-1. Create the GitHub account/org `sundevilfactory` (or use your own).
+1. Create the GitHub org `nexusinstitute` and an empty public repo `nexusinstitute.github.io`.
 2. Create a public repo named `asu` and push this repository to it.
 3. Repo → Settings → Pages → Deploy from a branch → `main`, folder `/docs`.
 

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mechanical properties I: elasticity and the tension test — Materials Science I — Sun Devil Factory</title>
 <meta name="description" content="Engineering stress and strain; modulus, yield, UTS, ductility from the tensile curve. True versus engineering quantities. The tension test as the indu">
-<link rel="stylesheet" href="../../../assets/css/site.css">
+<link rel="stylesheet" href="../../../assets/css/site.css?v=f1ce8c14d1">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -30,7 +30,7 @@
     <p class="eyebrow">MAT 104 · LESSON 07 OF 11 · YEAR 1 · SEMESTER 1</p>
     <h1>Mechanical properties I: elasticity and the tension test</h1>
     <p class="sub">Engineering stress and strain; modulus, yield, UTS, ductility from the tensile curve. True versus engineering quantities. The tension test as the industry's reference experiment.</p>
-    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>worked examples + checkpoint questions</b></div></div>
+    <div class="hero-meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>5-problem interactive quiz</b></div></div>
   </div>
   <div class="hero-credit">Photo: GenFM31 — CC BY-SA 4.0, Wikimedia Commons</div>
 </div>
@@ -67,21 +67,17 @@
 <li><b>Ductility (%EL, %RA)</b> — plastic strain accumulated by fracture.</li>
 <li><b>True stress/strain</b> — instantaneous-area quantities; equation (1).</li>
 </ul></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure">
-<h4>Worked example 1 — reading the test</h4>
-<p><b>Problem.</b> A standard bar, \( d_0 = 12.8\ \mathrm{mm} \), \( L_0 = 50.8\ \mathrm{mm} \): elastic point (150 MPa at \( \epsilon = 0.00075 \)); yield load 35 kN; final gauge length 60.14 mm. <b>Find:</b> \( E \), \( \sigma_y \), %EL.</p>
-<p><b>Solution.</b> (1) \( A_0 = \pi(12.8)^2/4 = 128.7\ \mathrm{mm^2} \).
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Reading the test</b></p>
+<p><b>Problem.</b> A standard bar, \( d_0 = 12.8\ \mathrm{mm} \), \( L_0 = 50.8\ \mathrm{mm} \): elastic point (150 MPa at \( \epsilon = 0.00075 \)); yield load 35 kN; final gauge length 60.14 mm. <b>Find:</b> \( E \), \( \sigma_y \), %EL.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( A_0 = \pi(12.8)^2/4 = 128.7\ \mathrm{mm^2} \).
 (2) \( E = 150/0.00075 = 200\,000\ \mathrm{MPa} = 200\ \mathrm{GPa} \).
 (3) \( \sigma_y = 35\,000/128.7 = 272\ \mathrm{MPa} \).
 (4) \( \%EL = \dfrac{60.14 - 50.8}{50.8} \times 100 = 18.4\% \).</p>
 <p><b>Answer:</b> \( E = 200\ \mathrm{GPa} \), \( \sigma_y = 272\ \mathrm{MPa} \), %EL = 18.4 — a garden-variety structural steel.
-<b>Sanity check:</b> \( E \) landing on 200 GPa flags the material as steel before anyone reads the cert header; a result of 70 GPa would have said aluminum, whatever the paperwork claimed.</p>
-<h4>Worked example 2 — engineering to true</h4>
-<p><b>Problem.</b> At its UTS a specimen shows engineering stress 400 MPa at engineering strain 0.15. <b>Find:</b> the true stress and true strain (uniform deformation, volume constant).</p>
-<p><b>Solution.</b> (1) \( \sigma_T = \sigma(1+\epsilon) = 400 \times 1.15 = 460\ \mathrm{MPa} \).
+<b>Sanity check:</b> \( E \) landing on 200 GPa flags the material as steel before anyone reads the cert header; a result of 70 GPa would have said aluminum, whatever the paperwork claimed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 2 of 5 · multiple choice</span><p>A 50 kN load on a 100 mm² bar produces an engineering stress of:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>50 MPa</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>500 MPa</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5 MPa</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>5000 MPa</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \sigma = F/A_0 = 50\,000\ \mathrm{N} / 100\ \mathrm{mm^2} = 500\ \mathrm{N/mm^2} = 500\ \mathrm{MPa} \). The N/mm² = MPa identity is the unit fluency this course assumes from here on.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 3 of 5 · multiple choice</span><p>Quenching and tempering a steel changes all of these <em>except</em>:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>yield strength</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>hardness</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>elastic modulus</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>ductility</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Modulus is bond stiffness — a property of the iron lattice itself, ~200 GPa for every steel regardless of heat treatment. Strength, hardness, and ductility all ride the microstructure, which is exactly what heat treatment rearranges. \"Stiffer steel via heat treat\" is a myth this question retires.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 4 of 5 · solve, then check</span><p class="qname"><b>Engineering to true</b></p>
+<p><b>Problem.</b> At its UTS a specimen shows engineering stress 400 MPa at engineering strain 0.15. <b>Find:</b> the true stress and true strain (uniform deformation, volume constant).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \sigma_T = \sigma(1+\epsilon) = 400 \times 1.15 = 460\ \mathrm{MPa} \).
 (2) \( \epsilon_T = \ln(1.15) = 0.140 \).</p>
 <p><b>Answer:</b> 460 MPa at true strain 0.140.
-<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></section>
+<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Past the UTS, the engineering stress–strain curve falls because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the material softens</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>necking shrinks the true area while \( A_0 \) stays in the formula</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the extensometer slips</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>dislocations annihilate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Deformation localizes into a neck; load drops, but true stress \( F/A \) keeps <em>rising</em> to fracture. The droop is an artifact of dividing by the original area — the material is still strain-hardening. True-stress conversion (\( \sigma_T = \sigma(1+\epsilon) \) while uniform) keeps the record honest.</p></div></div></div></section>
 <section class="tabpanel" id="t-kuwait"><h2 class="tabcap">Kuwait Floor</h2><div class="measure">
 <p><b>Vignette — the certificate is a tensile curve in a table.</b> You arrive at a Kirby receiving inspection where a plate delivery's mill certificate lists yield 355 MPa, UTS 510 MPa, elongation 22% (figures representative). Lesson 7 is the decoder: those three numbers are the tensile curve compressed for shipping. The estimator reads 355 for design margin, the press-brake foreman reads 22% for bendability, and the welding engineer reads the yield-to-UTS gap as work-hardening reserve. One test in a distant mill, one table, three trades making decisions from it — which is why certs are checked against the order, not filed unread.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
@@ -118,6 +114,6 @@
     company. Photography is openly licensed; credits on each image and in the repository.</p>
   </div>
 </footer>
-<script src="../../../assets/js/site.js"></script>
+<script src="../../../assets/js/site.js?v=f1ce8c14d1"></script>
 </body>
 </html>

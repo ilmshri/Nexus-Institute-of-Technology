@@ -27,6 +27,49 @@
 })();
 
 (function () {
+  // Worked-example quizzes: solve-then-reveal and multiple choice
+  document.querySelectorAll('.quiz-item').forEach(function (item) {
+    var sol = item.querySelector('.quiz-sol');
+    var verdict = item.querySelector('.quiz-verdict');
+
+    var rbtn = item.querySelector('.quiz-reveal');
+    if (rbtn && sol) {
+      rbtn.addEventListener('click', function () {
+        var open = sol.classList.toggle('open');
+        rbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        rbtn.textContent = open ? 'Hide the full solution' : 'Show the full solution';
+      });
+    }
+
+    var choices = item.querySelectorAll('.quiz-choice');
+    if (choices.length) {
+      choices.forEach(function (c) {
+        c.addEventListener('click', function () {
+          if (item.classList.contains('answered')) return;
+          item.classList.add('answered');
+          var right = c.getAttribute('data-ok') === '1';
+          c.classList.add(right ? 'right' : 'wrong');
+          if (!right) {
+            item.querySelectorAll('.quiz-choice[data-ok="1"]').forEach(function (k) {
+              k.classList.add('right');
+            });
+          }
+          if (verdict) {
+            verdict.textContent = right
+              ? '✓ Correct. The full explanation is below.'
+              : '✗ Not quite — the correct answer is highlighted. Read why below.';
+            verdict.className = 'quiz-verdict ' + (right ? 'ok' : 'no');
+            verdict.hidden = false;
+          }
+          if (sol) sol.classList.add('open');
+          choices.forEach(function (k) { k.disabled = true; });
+        });
+      });
+    }
+  });
+})();
+
+(function () {
   // Lesson-page tabs — progressive enhancement (no JS: all panels stacked)
   var bar = document.querySelector('.tabs');
   if (bar) {
