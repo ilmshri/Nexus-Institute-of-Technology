@@ -349,7 +349,20 @@ def library_tab(les, course):
                      for t in course.get("taught_from", []))
 
     video = ""
-    for s in legacy.matched_sources(src_raw):
+    # Per-lesson curated video (owner Library Patch, 2026-07-17): every id is
+    # oEmbed-verified against the approved channel before entry to data.
+    lv = les.get("video")
+    if lv == "none":
+        video = ('<div class="lib-video-todo">No relevant video found in the '
+                 'approved channel list</div>'
+                 '<p class="small">The approved channels were searched for this '
+                 'lesson\'s topic; nothing suitable was verified. Only videos '
+                 'from the approved list are ever embedded.</p>')
+    elif isinstance(lv, dict):
+        video = embed_card(f"https://www.youtube.com/watch?v={lv['id']}",
+                           lv["title"], lv.get("channel", ""))
+        assert video, f"lesson video failed approval gate: {lv}"
+    for s in ([] if video else legacy.matched_sources(src_raw)):
         for key, cap in (("watch", s["name"] + " — lecture videos"), ("url", s["name"])):
             u = s.get(key)
             if u:

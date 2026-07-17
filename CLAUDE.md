@@ -175,8 +175,26 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   numeric answers machine-verified pre-write; drafts for drawing-cad remain
   unverified in drafts/). Company-free scan of academic content PASS.
   STILL OWED for full Y1S1C1: Arabic lesson bodies (honest AR notice still
-  shows), Library curation (video/texts/certs — placeholder renders).
+  shows), Library texts/certs curation.
   Sector rotation and quiz pipeline are the template for Y1S1C2 onward.
+- Y1S1 LIBRARY PATCH (owner directive, 2026-07-17 PM; in progress):
+  per-lesson "video" field now supported in the lesson data — dict
+  {id,title,channel} embeds (channel must pass APPROVED_CHANNELS; build
+  asserts), the string "none" renders the honest "No relevant video found
+  in the approved channel list" marker. EVERY id is oEmbed-verified
+  (author_name + title checked via youtube.com/oembed) BEFORE entry — no
+  invented ids, ever. DONE: math-1 — 10 embeds from MIT OpenCourseWare
+  (18.01 Fall 2007 Lec 1,2,4,6,11,16,18,23,30,38, ids sourced from the
+  official OCW video gallery and individually oEmbed-verified) + L1 marked
+  "none" (no units/dimensional-analysis lecture exists in the approved
+  channels). QUEUE (verify-before-embed; TODO stays until verified —
+  NEVER mark "none" where a match likely exists unverified): statics →
+  Jeff Hanson statics series; computing → MIT OCW 6.0001; materials-1 →
+  MIT OCW 3.091; physics-1 → check MIT OCW (8.01 availability varies);
+  drawing-cad → likely "none" after search. Then Y1S2 onward with each
+  course build. BATCH SCALING ORDER (owner): after Y1S1 patch → full
+  math-1-pipeline builds for Y1S2, Y2S1, Y2S2, with per-lesson video
+  mapping from the approved channels and career-sector rotation per course.
 
 - 528 NORMALIZATION EXECUTED (2026-07-17, owner-approved): the catalog is now a
   strict 6×11 grid — 48 courses × 11 lessons = 528, verified at build
