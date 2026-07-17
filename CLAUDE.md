@@ -190,8 +190,8 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   docs/curriculum/search-index.json + JS on the curriculum index.
   Deploy target (changed 2026-07-17: owner deleted the sundevilfactory org
   by accident while renaming; full repo + history live locally):
-  github.com/nexusinstitute/nexusinstitute.github.io →
-  https://nexusinstitute.github.io/ (root URL, no /asu path). Owner creates
+  github.com/nexuskw/nexuskw.github.io →
+  https://nexuskw.github.io/ (root URL, no /asu path). Owner creates
   the org + empty public repo; push from this Mac; Pages = main:/docs.
   The old sundevilfactory.github.io/asu URL is dead.
 
