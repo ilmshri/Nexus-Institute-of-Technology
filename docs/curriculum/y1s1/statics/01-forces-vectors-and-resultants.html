@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div><div class="measure">
+<h3>01 · Force is a vector, and the arrow is the contract</h3>
+<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
+\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
+<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
+<h3>02 · Weight is not mass</h3>
+<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
+<h3>03 · Cables and struts resolve the same way</h3>
+<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and the Worked Examples tab drills it on a crane cable and a motor lift.</p>
+<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Weight</b> — the force \( W = mg \); never interchangeable with mass.</li>
 <li><b>Line of action</b> — the infinite line along which a force acts.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div><div class="measure">
-<h3>01 · Force is a vector, and the arrow is the contract</h3>
-<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
-\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
-<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
-<h3>02 · Weight is not mass</h3>
-<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
-<h3>03 · Cables and struts resolve the same way</h3>
-<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and the Worked Examples tab drills it on a crane cable and a motor lift.</p>
-<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Resolving a cable force</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Resolving a cable force</b></p>
 <p><b>Problem.</b> A crane cable applies \( F = 10\ \mathrm{kN} \) to a padeye, at \( 30^\circ \) above the horizontal. <b>Find:</b> the horizontal and vertical components.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN} \).
 (2) \( F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN} \).
 (3) Check by recomposition: \( \sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN} \) — the original magnitude returns.</p>
@@ -101,13 +102,23 @@
 (2) Vertical equilibrium, two legs sharing symmetrically: \( 2T\sin 60^\circ = W \).
 (3) \( T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N} \).</p>
 <p><b>Answer:</b> \( W \approx 2.45\ \mathrm{kN} \); each leg carries \( \approx 1.42\ \mathrm{kN} \).
-<b>Sanity check:</b> each leg carries more than \( W/2 = 1226\ \mathrm{N} \) because only the vertical component of the leg tension supports load — flattening the legs toward horizontal would drive \( T \) higher still, which is why rigging charts penalize shallow sling angles.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A crane load cell reads 500 (calibrated in kg). What force does the load apply to the hook?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>500 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( \approx 4.9\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \approx 50\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>500 kg is already a force</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN} \). Kilograms measure mass; the hook feels newtons. Writing \"500 N\" understates the load nearly tenfold — the exact unit slip Lesson 1's vignette catches in a lift plan.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> each leg carries more than \( W/2 = 1226\ \mathrm{N} \) because only the vertical component of the leg tension supports load — flattening the legs toward horizontal would drive \( T \) higher still, which is why rigging charts penalize shallow sling angles.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A crane load cell reads 500 (calibrated in kg). What force does the load apply to the hook?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>500 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( \approx 4.9\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \approx 50\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>500 kg is already a force</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN} \). Kilograms measure mass; the hook feels newtons. Writing \"500 N\" understates the load nearly tenfold — the exact unit slip Lesson 1's vignette catches in a lift plan.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the scale reads kilograms, the sling feels newtons.</b> You arrive at a scrap bay where the crane's load cell shows 4,800 on its display and a new engineer writes "4,800 N" into a lift plan for an electric-arc-furnace charge at Kuwait Steel. The display is calibrated in kilograms; the sling load is \( 4800 \times 9.81 \approx 47.1\ \mathrm{kN} \) (figures representative). One unit slip understates the rigging load by a factor of ten. The fix costs one line — \( W = mg \), units written beside every number — which is precisely Lesson 1 doing its job on a real lift.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="02-moments-and-couples.html">02 · Moments and couples →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

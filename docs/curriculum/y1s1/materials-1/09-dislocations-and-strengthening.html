@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div><div class="measure">
+<h3>01 · One enemy, many obstacles</h3>
+<p>Plastic flow is dislocation traffic (Lesson 5), so <em>all</em> strengthening is one strategy: obstruct the traffic. Every industrial method is a different obstacle wearing a different price tag — and each purchase of strength is paid for, almost always, in ductility. Four mechanisms cover the metallurgy you will meet in practice.</p>
+<h3>02 · The four mechanisms</h3>
+<p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
+\[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
+<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
+<h3>03 · Choosing among them</h3>
+<p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. the Worked Examples tab prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
+<p><strong>Closing.</strong> Strength is obstructed dislocation motion — by boundaries, solutes, tangles, or particles. Name the obstacle in any datasheet's "condition" column and you have read the alloy's biography.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>%CW</b> — percent cold work, \( (A_0 - A_d)/A_0 \times 100 \).</li>
 <li><b>Precipitation hardening</b> — fine particles as dislocation obstacles.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div><div class="measure">
-<h3>01 · One enemy, many obstacles</h3>
-<p>Plastic flow is dislocation traffic (Lesson 5), so <em>all</em> strengthening is one strategy: obstruct the traffic. Every industrial method is a different obstacle wearing a different price tag — and each purchase of strength is paid for, almost always, in ductility. Four mechanisms cover the metallurgy you will meet in practice.</p>
-<h3>02 · The four mechanisms</h3>
-<p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
-\[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
-<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
-<h3>03 · Choosing among them</h3>
-<p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. the Worked Examples tab prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
-<p><strong>Closing.</strong> Strength is obstructed dislocation motion — by boundaries, solutes, tangles, or particles. Name the obstacle in any datasheet's "condition" column and you have read the alloy's biography.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Hall–Petch, priced in microns</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Hall–Petch, priced in microns</b></p>
 <p><b>Problem.</b> For 70/30 brass, \( \sigma_0 = 70\ \mathrm{MPa} \), \( k_y = 0.74\ \mathrm{MPa \cdot m^{1/2}} \) (representative constants, Callister &amp; Rethwisch). <b>Find:</b> yield strength at grain sizes 25 µm and 8 µm.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( d = 25\ \mathrm{\mu m} = 2.5 \times 10^{-5}\ \mathrm{m} \): \( d^{-1/2} = 200\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
 (2) \( d = 8\ \mathrm{\mu m} \): \( d^{-1/2} = 354 \); \( \sigma_y = 70 + 0.74 \times 354 = 332\ \mathrm{MPa} \).</p>
 <p><b>Answer:</b> 218 → 332 MPa: a 3× grain refinement buys ~50% more yield strength.
@@ -99,13 +100,23 @@
 <p><b>Problem.</b> A rod is drawn from 10 mm to 8 mm diameter. <b>Find:</b> the percent cold work.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Areas scale with diameter squared: \( A_0 \propto 100 \), \( A_d \propto 64 \).
 (2) \( \%CW = \dfrac{100 - 64}{100} \times 100 = 36\% \).</p>
 <p><b>Answer:</b> 36% cold work.
-<b>Sanity check:</b> a 20% diameter reduction is a 36% area reduction — area, not diameter, is what the dislocation population responds to. At this level of cold work a brass or copper would show markedly higher strength and visibly less tensile ductility; whether that is product or problem depends on whether an anneal comes next — Lesson 10's question.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Percent cold work is computed from the change in:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>length</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>diameter</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>cross-sectional area</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>hardness</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \%CW = (A_0 - A_d)/A_0 \times 100 \). A 10 → 8 mm draw looks like \"20%\" by diameter but is 36% by area — and area is what the dislocation population responds to. Hardness rises <em>because of</em> cold work; it is the effect, not the measure.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> a 20% diameter reduction is a 36% area reduction — area, not diameter, is what the dislocation population responds to. At this level of cold work a brass or copper would show markedly higher strength and visibly less tensile ductility; whether that is product or problem depends on whether an anneal comes next — Lesson 10's question.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Percent cold work is computed from the change in:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>length</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>diameter</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>cross-sectional area</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>hardness</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \%CW = (A_0 - A_d)/A_0 \times 100 \). A 10 → 8 mm draw looks like \"20%\" by diameter but is 36% by area — and area is what the dislocation population responds to. Hardness rises <em>because of</em> cold work; it is the effect, not the measure.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — strength you can watch accumulating.</b> You arrive at a Gulf Cable drawing line where copper rod enters at one diameter and leaves several dies later markedly thinner, stiffer, and springier — strain hardening in real time, worked example 2 running continuously (figures representative). The wire must end soft for stranding and conductivity, yet every die pass hardens it: the line therefore alternates drawing with annealing, spending Lesson 9's mechanism and Lesson 10's cure in a scheduled rhythm. The process engineer's die schedule is, in effect, a %CW budget — spent, cleared, and spent again.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 7</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="08-mechanical-properties-ii-hardness-and-toughness.html">← 08 · Mechanical properties II: hardness and toughness</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="10-recovery-recrystallization-and-grain-growth.html">10 · Recovery, recrystallization, and grain growth →</a></nav>
@@ -127,6 +138,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

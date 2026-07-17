@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,19 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></div><div class="measure">
+<h3>01 · Frames are not trusses</h3>
+<p>A frame contains at least one <em>multi-force member</em> — a member loaded at three or more points, or loaded between its pins. Its members carry shear and bending, not just axial force, so the truss shortcut (force along the member) is off the table except for any genuine two-force members hiding inside. Identify those first: every one you spot replaces two unknowns with one.</p>
+<h3>02 · Dismember at the pins — and pay Newton his due</h3>
+<p>The method is systematic: draw an FBD of the whole frame for the external reactions, then <em>dismember</em> — separate the members at their connecting pins and draw each member alone. At every pin, the force one member exerts on the other appears on both diagrams, equal and opposite. The classic error is drawing pin components in inconsistent directions on the two sides, which silently violates \( \Sigma F = 0 \) for the pin itself. Adopt a convention, draw the action–reaction pair explicitly, and let negative answers correct your guesses.</p>
+<h3>03 · Machines: frames that multiply force</h3>
+<p>A machine is a frame with moving parts designed to transmit and transform force — pliers, clamps, linkages, toggles. The same dismemberment analysis yields the <em>mechanical advantage</em>: output force per input force, set by the lever arms. A toggle clamp near its dead-center position multiplies force enormously because the geometry sends the output arm toward zero — the reason a modest hand force can hold a workpiece against machining loads. the Worked Examples tab runs a gripping tool and a loaded two-member frame.</p>
+<p><strong>Closing.</strong> Spot the two-force members, dismember at pins with honest action–reaction pairs, and read machines as frames whose geometry is doing force arithmetic. Statics of frames is Newton's third law made procedural.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,15 +90,7 @@
 <li><b>Action–reaction pair</b> — equal, opposite pin forces on the two joined members.</li>
 <li><b>Mechanical advantage</b> — output force ÷ input force.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></div><div class="measure">
-<h3>01 · Frames are not trusses</h3>
-<p>A frame contains at least one <em>multi-force member</em> — a member loaded at three or more points, or loaded between its pins. Its members carry shear and bending, not just axial force, so the truss shortcut (force along the member) is off the table except for any genuine two-force members hiding inside. Identify those first: every one you spot replaces two unknowns with one.</p>
-<h3>02 · Dismember at the pins — and pay Newton his due</h3>
-<p>The method is systematic: draw an FBD of the whole frame for the external reactions, then <em>dismember</em> — separate the members at their connecting pins and draw each member alone. At every pin, the force one member exerts on the other appears on both diagrams, equal and opposite. The classic error is drawing pin components in inconsistent directions on the two sides, which silently violates \( \Sigma F = 0 \) for the pin itself. Adopt a convention, draw the action–reaction pair explicitly, and let negative answers correct your guesses.</p>
-<h3>03 · Machines: frames that multiply force</h3>
-<p>A machine is a frame with moving parts designed to transmit and transform force — pliers, clamps, linkages, toggles. The same dismemberment analysis yields the <em>mechanical advantage</em>: output force per input force, set by the lever arms. A toggle clamp near its dead-center position multiplies force enormously because the geometry sends the output arm toward zero — the reason a modest hand force can hold a workpiece against machining loads. the Worked Examples tab runs a gripping tool and a loaded two-member frame.</p>
-<p><strong>Closing.</strong> Spot the two-force members, dismember at pins with honest action–reaction pairs, and read machines as frames whose geometry is doing force arithmetic. Statics of frames is Newton's third law made procedural.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Gripping tool</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Gripping tool</b></p>
 <p><b>Problem.</b> A gripping tool's handles are squeezed with 150 N at 200 mm from the pivot pin; the jaws grip at 40 mm on the other side of the pivot. <b>Find:</b> the jaw force and mechanical advantage.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of one handle-jaw lever about the pivot.
 (2) \( \Sigma M_{pivot} = 0 \): \( 150 \times 200 = F_{jaw} \times 40 \).
 (3) \( F_{jaw} = 30000/40 = 750\ \mathrm{N} \).
@@ -101,13 +102,23 @@
 (3) Both members are two-force (loaded only at their end pins). At C, resolve along the member directions: each member's axis has length \( \sqrt{2^2+3^2} = 3.61\ \mathrm{m} \).
 (4) Solving joint C: \( F_{AC} = 5.41\ \mathrm{kN} \) tension, \( F_{BC} = 5.41\ \mathrm{kN} \) compression.</p>
 <p><b>Answer:</b> \( A = (6.0, 4.5)\ \mathrm{kN} \) resisting, \( B_y = 4.5\ \mathrm{kN} \); \( |F_{AC}| = |F_{BC}| = 5.41\ \mathrm{kN} \), tension and compression respectively.
-<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>When a frame is dismembered at a pin, the forces drawn on the two separated members must be:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>equal and in the same direction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>equal and opposite</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>each equal to half the applied load</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>zero if the pin is frictionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Newton's third law: the pin force one member exerts on the other is mirrored exactly. Drawing the pair inconsistently — both components up on both members, say — silently violates equilibrium of the pin and corrupts every equation written afterward.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> the side push tries to topple the frame toward B: the windward member (AC) stretches, the leeward (BC) squashes — signs agree with the picture.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>When a frame is dismembered at a pin, the forces drawn on the two separated members must be:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>equal and in the same direction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>equal and opposite</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>each equal to half the applied load</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>zero if the pin is frictionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Newton's third law: the pin force one member exerts on the other is mirrored exactly. Drawing the pair inconsistently — both components up on both members, say — silently violates equilibrium of the pin and corrupts every equation written afterward.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the toggle clamp that holds a filling line's pace.</b> You arrive at a KDD filling hall where a container-clamping fixture must hold product steady through a fill-and-cap cycle. The fixture is a toggle linkage: a small pneumatic cylinder input, links near dead-center at clamp, and a holding force many times the cylinder's output (figures representative). When a batch of misformed containers starts slipping, the maintenance question is Lesson 7's: has linkage wear moved the toggle geometry off dead-center, collapsing the mechanical advantage? A pin-by-pin dismemberment — not a bigger cylinder — locates the worn joint.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="06-trusses.html">← 06 · Trusses</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="08-internal-forces-shear-and-bending-moment.html">08 · Internal forces: shear and bending moment →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

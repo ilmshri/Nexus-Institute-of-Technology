@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A particle under three concurrent forces is in equilibrium: what geometric fact must the forces obey?</li><li>When do you solve by components versus by force triangle?</li></ul></div><div class="measure">
+<h3>01 · Concurrent forces, one point, two (or three) equations</h3>
+<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0 \tag{1} \]
+<p>(add \( \Sigma F_z = 0 \) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>
+<h3>02 · Components or geometry — choose deliberately</h3>
+<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>
+<h3>03 · Cables, rings, and pulleys</h3>
+<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \( T \) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. the Worked Examples tab solves the classic two-cable suspension and a movable-pulley hold.</p>
+<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -80,17 +91,7 @@
 <li><b>Force triangle</b> — tip-to-tail closure of three equilibrium forces.</li>
 <li><b>Movable pulley</b> — sheave that translates with the load, splitting it between rope parts.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A particle under three concurrent forces is in equilibrium: what geometric fact must the forces obey?</li><li>When do you solve by components versus by force triangle?</li></ul></div><div class="measure">
-<h3>01 · Concurrent forces, one point, two (or three) equations</h3>
-<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>
-\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0 \tag{1} \]
-<p>(add \( \Sigma F_z = 0 \) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>
-<h3>02 · Components or geometry — choose deliberately</h3>
-<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>
-<h3>03 · Cables, rings, and pulleys</h3>
-<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \( T \) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. the Worked Examples tab solves the classic two-cable suspension and a movable-pulley hold.</p>
-<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Two cables, one weight</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Two cables, one weight</b></p>
 <p><b>Problem.</b> A 500 N weight hangs from a ring supported by cable A at \( 30^\circ \) above horizontal (up-left) and cable B at \( 45^\circ \) above horizontal (up-right). <b>Find:</b> both tensions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of the ring: \( T_A \) up-left at 30°, \( T_B \) up-right at 45°, 500 N down.
 (2) \( \Sigma F_x = 0 \): \( -T_A\cos 30^\circ + T_B\cos 45^\circ = 0 \Rightarrow T_A = 0.8165\,T_B \).
 (3) \( \Sigma F_y = 0 \): \( T_A\sin 30^\circ + T_B\sin 45^\circ = 500 \).
@@ -101,13 +102,23 @@
 (2) FBD of the pulley block: two rope parts up, each with the same tension \( T \) (frictionless sheave), \( W \) down.
 (3) \( 2T = 981 \Rightarrow T = 490.5\ \mathrm{N} \).</p>
 <p><b>Answer:</b> \( \approx 490\ \mathrm{N} \) — half the load.
-<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A rope runs over a frictionless pulley. The pulley changes the rope's:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>tension only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>direction only</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>both tension and direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>With no friction at the sheave, the same tension runs through the whole rope — the pulley redirects it, nothing more. Mechanical advantage in pulley systems comes from the number of rope parts sharing the load, never from a single sheave altering tension.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A rope runs over a frictionless pulley. The pulley changes the rope's:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>tension only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>direction only</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>both tension and direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>With no friction at the sheave, the same tension runs through the whole rope — the pulley redirects it, nothing more. Mechanical advantage in pulley systems comes from the number of rope parts sharing the load, never from a single sheave altering tension.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the two-legged lift with unequal legs.</b> You arrive at a HEISCO fabrication yard lift where a vessel nozzle forces the two crane slings to different angles — one steep, one shallow. The rigger's question is Lesson 4 verbatim: which leg works harder? Isolate the hook ring, write \( \Sigma F_x = \Sigma F_y = 0 \), and the shallow leg comes out carrying the larger tension — it must generate the same vertical share through a smaller sine (figures representative). The lift plan swaps in a longer sling to steepen the shallow leg before the lift, not after.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="03-the-free-body-diagram.html">← 03 · The free-body diagram</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="05-equilibrium-of-rigid-bodies.html">05 · Equilibrium of rigid bodies →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

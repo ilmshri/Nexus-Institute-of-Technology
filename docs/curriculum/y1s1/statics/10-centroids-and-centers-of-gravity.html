@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a lifting hook need to sit over the center of gravity, and what happens if it doesn't?</li><li>Composite centroid: outline the tabular method for an L-section.</li></ul></div><div class="measure">
+<h3>01 · The average position of area or weight</h3>
+<p>The centroid is the area-weighted average position of a shape:</p>
+\[ \bar{x} = \frac{\int x\, dA}{\int dA}, \qquad \bar{y} = \frac{\int y\, dA}{\int dA} \tag{1} \]
+<p>The center of gravity is the same construction weighted by weight; for uniform density and gravity they coincide. Integration handles curved boundaries once; engineering practice handles everything else by <em>composite parts</em> — split the shape into rectangles, triangles, and circles whose centroids are known, then take the weighted average. Holes enter the sum as negative areas: same formula, signed.</p>
+<h3>02 · The tabular method</h3>
+<p>Composite work is done in a table: one row per part, columns for \( A \), \( \bar{x}_i \), \( \bar{y}_i \), \( A\bar{x}_i \), \( A\bar{y}_i \); sum the columns, divide. The discipline matters more than it looks — a consistent datum (pick one corner, state it) and signed areas prevent the classic errors: measuring one part from a different origin, or forgetting that a cut-out subtracts moment as well as area. The same table extends without modification to weights: replace \( A \) with \( W \) and the result is a center of gravity.</p>
+<h3>03 · Where the hook must sit</h3>
+<p>Lift any rigid load from a single hook and it hangs with its center of gravity vertically below the hook. If the CG is off the hook line, the load tilts until they align — swinging tools, spilling contents, and shifting sling angles on the way. A lifting plan therefore starts with a CG calculation: composite masses of pump, motor, and baseplate, exactly the table of 2 with kilograms in the area column. The hook, or the sling spread, is then placed to put the CG under the crane's line of pull. the Worked Examples tab runs one steel section and one equipment skid.</p>
+<p><strong>Closing.</strong> One averaging formula, executed by table, with signed areas and a declared datum. From steel sections to lifting plans, it is the same arithmetic wearing different units.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>First moment of area</b> — \( Q = A\bar{x} \); numerator of the centroid formula.</li>
 <li><b>Datum</b> — the declared origin all part positions are measured from.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a lifting hook need to sit over the center of gravity, and what happens if it doesn't?</li><li>Composite centroid: outline the tabular method for an L-section.</li></ul></div><div class="measure">
-<h3>01 · The average position of area or weight</h3>
-<p>The centroid is the area-weighted average position of a shape:</p>
-\[ \bar{x} = \frac{\int x\, dA}{\int dA}, \qquad \bar{y} = \frac{\int y\, dA}{\int dA} \tag{1} \]
-<p>The center of gravity is the same construction weighted by weight; for uniform density and gravity they coincide. Integration handles curved boundaries once; engineering practice handles everything else by <em>composite parts</em> — split the shape into rectangles, triangles, and circles whose centroids are known, then take the weighted average. Holes enter the sum as negative areas: same formula, signed.</p>
-<h3>02 · The tabular method</h3>
-<p>Composite work is done in a table: one row per part, columns for \( A \), \( \bar{x}_i \), \( \bar{y}_i \), \( A\bar{x}_i \), \( A\bar{y}_i \); sum the columns, divide. The discipline matters more than it looks — a consistent datum (pick one corner, state it) and signed areas prevent the classic errors: measuring one part from a different origin, or forgetting that a cut-out subtracts moment as well as area. The same table extends without modification to weights: replace \( A \) with \( W \) and the result is a center of gravity.</p>
-<h3>03 · Where the hook must sit</h3>
-<p>Lift any rigid load from a single hook and it hangs with its center of gravity vertically below the hook. If the CG is off the hook line, the load tilts until they align — swinging tools, spilling contents, and shifting sling angles on the way. A lifting plan therefore starts with a CG calculation: composite masses of pump, motor, and baseplate, exactly the table of 2 with kilograms in the area column. The hook, or the sling spread, is then placed to put the CG under the crane's line of pull. the Worked Examples tab runs one steel section and one equipment skid.</p>
-<p><strong>Closing.</strong> One averaging formula, executed by table, with signed areas and a declared datum. From steel sections to lifting plans, it is the same arithmetic wearing different units.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Centroid of an L-section</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Centroid of an L-section</b></p>
 <p><b>Problem.</b> An L-section: vertical leg 20 mm wide × 100 mm tall; horizontal leg 80 mm × 20 mm extending right from the vertical leg's base. Datum: outer bottom-left corner. <b>Find:</b> the centroid.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Part 1 (vertical): \( A_1 = 20 \times 100 = 2000\ \mathrm{mm^2} \), centroid (10, 50).
 (2) Part 2 (horizontal): \( A_2 = 80 \times 20 = 1600\ \mathrm{mm^2} \), centroid (60, 10).
 (3) \( \bar{x} = \dfrac{2000(10) + 1600(60)}{3600} = \dfrac{116000}{3600} = 32.2\ \mathrm{mm} \).
@@ -101,13 +102,23 @@
 <p><b>Problem.</b> A skid (masses representative): pump 320 kg centered at \( x = 0.5\ \mathrm{m} \), motor 260 kg at \( x = 1.6\ \mathrm{m} \), baseplate 140 kg at \( x = 1.1\ \mathrm{m} \), from the skid's left edge. <b>Find:</b> the CG and the single-hook pick point.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Total mass: \( 320 + 260 + 140 = 720\ \mathrm{kg} \).
 (2) \( \bar{x} = \dfrac{320(0.5) + 260(1.6) + 140(1.1)}{720} = \dfrac{160 + 416 + 154}{720} = \dfrac{730}{720} = 1.014\ \mathrm{m} \).</p>
 <p><b>Answer:</b> CG at 1.01 m from the left edge; hook (or sling resultant) goes there.
-<b>Sanity check:</b> the CG sits between pump and motor, slightly motor-side of the midpoint — the motor's greater distance nearly offsets the pump's greater mass. Hook it at midspan (≈0.8–0.9 m for this layout) and the motor end dips on pick.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Can a shape's centroid lie outside its material?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>never</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>only for curved shapes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>yes — an L-section's does</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only if density varies</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The centroid is an area-weighted average position, not an address in the metal — an L-section's centroid sits in the empty corner notch. Rings, channels, and angles all put it in air; slings and fixtures must still act through it.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> the CG sits between pump and motor, slightly motor-side of the midpoint — the motor's greater distance nearly offsets the pump's greater mass. Hook it at midspan (≈0.8–0.9 m for this layout) and the motor end dips on pick.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Can a shape's centroid lie outside its material?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>never</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>only for curved shapes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>yes — an L-section's does</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only if density varies</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The centroid is an area-weighted average position, not an address in the metal — an L-section's centroid sits in the empty corner notch. Rings, channels, and angles all put it in air; slings and fixtures must still act through it.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the trial pick.</b> You arrive at a HEISCO yard as a packaged pump skid is rigged for load-out. The lift plan's CG came from a table like worked example 2, but the vendor added a suction strainer after the plan was issued. The rigger's insurance is the <em>trial pick</em>: lift 100 mm, watch which end dips. It dips; the crew shifts the spreader one hole and re-picks level (figures representative). The table said where the CG was; the trial pick said where it is. Lesson 10 is both — the calculation, and the humility check the field wraps around it.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="09-friction.html">← 09 · Friction</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="11-moments-of-inertia.html">11 · Moments of inertia →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

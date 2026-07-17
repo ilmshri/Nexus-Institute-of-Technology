@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,19 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></div><div class="measure">
+<h3>01 · A truss is a set of two-force members</h3>
+<p>The truss idealization: straight members, frictionless pin joints, loads applied only at joints. Every member is then a two-force member — pure tension or pure compression along its axis. That single assumption converts a structure into bookkeeping: find each member's axial force and its sense. Real gusset-plated, bolted trusses are not pinned, but the idealization prices member forces remarkably well and is the standard first analysis of any roof truss or braced rack.</p>
+<h3>02 · Method of joints, method of sections</h3>
+<p>The <b>method of joints</b> isolates one pin at a time and applies particle equilibrium — two equations per joint, so start at a joint with at most two unknowns (usually a support) and walk the structure. The <b>method of sections</b> cuts clean through up to three members and treats one whole side as a rigid body; a moment taken about the intersection of two cut members isolates the third in a single line. Joints when you want everything; sections when you want <em>one</em> member deep inside the span without solving half the truss to reach it.</p>
+<h3>03 · Zero-force members and reading the load path</h3>
+<p>At an unloaded joint of two non-collinear members, both are zero-force; at an unloaded joint of three members where two are collinear, the third is zero-force. Spotting these by inspection prunes the work — and teaches the deeper habit: a truss is a <em>load path</em>. Follow the applied load through diagonals and chords to the supports and the force pattern (top chord compression, bottom chord tension in a simply supported truss under gravity load) stops being memorized and starts being seen.</p>
+<p><strong>Closing.</strong> Two-force members, joints for the census, sections for the surgical strike, zero-force members pruned on sight. A truss drawing is a picture of forces waiting to be read.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,15 +90,7 @@
 <li><b>Method of sections</b> — a cut through ≤3 members analyzed as a rigid body.</li>
 <li><b>Zero-force member</b> — carries nothing under the given load case; still needed for stability and other cases.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></div><div class="measure">
-<h3>01 · A truss is a set of two-force members</h3>
-<p>The truss idealization: straight members, frictionless pin joints, loads applied only at joints. Every member is then a two-force member — pure tension or pure compression along its axis. That single assumption converts a structure into bookkeeping: find each member's axial force and its sense. Real gusset-plated, bolted trusses are not pinned, but the idealization prices member forces remarkably well and is the standard first analysis of any roof truss or braced rack.</p>
-<h3>02 · Method of joints, method of sections</h3>
-<p>The <b>method of joints</b> isolates one pin at a time and applies particle equilibrium — two equations per joint, so start at a joint with at most two unknowns (usually a support) and walk the structure. The <b>method of sections</b> cuts clean through up to three members and treats one whole side as a rigid body; a moment taken about the intersection of two cut members isolates the third in a single line. Joints when you want everything; sections when you want <em>one</em> member deep inside the span without solving half the truss to reach it.</p>
-<h3>03 · Zero-force members and reading the load path</h3>
-<p>At an unloaded joint of two non-collinear members, both are zero-force; at an unloaded joint of three members where two are collinear, the third is zero-force. Spotting these by inspection prunes the work — and teaches the deeper habit: a truss is a <em>load path</em>. Follow the applied load through diagonals and chords to the supports and the force pattern (top chord compression, bottom chord tension in a simply supported truss under gravity load) stops being memorized and starts being seen.</p>
-<p><strong>Closing.</strong> Two-force members, joints for the census, sections for the surgical strike, zero-force members pruned on sight. A truss drawing is a picture of forces waiting to be read.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Method of joints on a triangular truss</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Method of joints on a triangular truss</b></p>
 <p><b>Problem.</b> A symmetric triangular truss spans 4 m with apex height 1.5 m; a 10 kN load hangs at the apex. <b>Find:</b> the forces in a sloping member and the bottom chord.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) By symmetry each support carries 5 kN.
 (2) Slope angle: \( \theta = \tan^{-1}(1.5/2) = 36.87^\circ \).
 (3) Joint at left support — vertical: \( F_{slope}\sin\theta = 5 \Rightarrow F_{slope} = 5/0.6 = 8.33\ \mathrm{kN} \), pushing into the joint: <em>compression</em>.
@@ -101,13 +102,23 @@
 (3) Moment about the <em>top</em> joint at \( x = 2\ \mathrm{m} \) (height 2 m) — the cut top chord and diagonal pass through it, vanishing from the equation. The 4 kN load at \( x = 2 \) also has zero arm.
 (4) \( \Sigma M = 0 \): \( F_{BC} \times 2 = 6 \times 2 \Rightarrow F_{BC} = 6\ \mathrm{kN} \) (tension).</p>
 <p><b>Answer:</b> 6 kN, tension.
-<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a support carrying 5 kN vertically, the only non-horizontal member is a diagonal at \( 30^\circ \) above horizontal. Its force is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2.5 kN</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>5 kN</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8.66 kN</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>10 kN</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The diagonal alone must supply the 5 kN vertical: \( F\sin 30^\circ = 5 \Rightarrow F = 10\ \mathrm{kN} \). The shallow angle is the punishment — at 30°, only half the member force works vertically. 8.66 kN mistakes sine for cosine; 2.5 kN multiplies instead of divides.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> one cut, one moment equation, one member — against walking three joints to reach the same number. Sections earn their keep exactly here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a support carrying 5 kN vertically, the only non-horizontal member is a diagonal at \( 30^\circ \) above horizontal. Its force is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2.5 kN</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>5 kN</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8.66 kN</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>10 kN</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The diagonal alone must supply the 5 kN vertical: \( F\sin 30^\circ = 5 \Rightarrow F = 10\ \mathrm{kN} \). The shallow angle is the punishment — at 30°, only half the member force works vertically. 8.66 kN mistakes sine for cosine; 2.5 kN multiplies instead of divides.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — reading the brace, not the drawing.</b> You arrive at a Kirby pre-engineered building bay where a fitter asks whether a wind-bay diagonal can be dropped to pass a duct. The frame drawing shows geometry; Lesson 6 reads it as a load path: under lateral load that diagonal is the tension path to the foundation, and several adjacent members are zero-force <em>only because</em> it is there (figures representative). Remove it and the zero-force members inherit work they were never sized for. The duct moves; the diagonal stays. The decision took a joint sketch, not software.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="05-equilibrium-of-rigid-bodies.html">← 05 · Equilibrium of rigid bodies</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="07-frames-and-machines.html">07 · Frames and machines →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

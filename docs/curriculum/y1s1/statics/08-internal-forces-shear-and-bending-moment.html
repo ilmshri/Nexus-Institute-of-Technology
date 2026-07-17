@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div><div class="measure">
+<h3>01 · Cut the beam, expose the invisible</h3>
+<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
+<h3>02 · Diagrams, and the calculus that draws them</h3>
+<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
+\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
+<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
+<h3>03 · Why these diagrams are the product</h3>
+<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. the Worked Examples tab builds both canonical cases: the central point load and the uniform load.</p>
+<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Moment diagram</b> — \( M(x) \); slope equals shear; extremal where \( V = 0 \).</li>
 <li><b>UDL</b> — uniformly distributed load, in kN/m.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div><div class="measure">
-<h3>01 · Cut the beam, expose the invisible</h3>
-<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
-<h3>02 · Diagrams, and the calculus that draws them</h3>
-<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
-\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
-<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
-<h3>03 · Why these diagrams are the product</h3>
-<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. the Worked Examples tab builds both canonical cases: the central point load and the uniform load.</p>
-<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Central point load</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Central point load</b></p>
 <p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
 (2) Shear: \( V = +4\ \mathrm{kN} \) from A to midspan, stepping down by 8 to \( -4\ \mathrm{kN} \) to B.
 (3) Moment: rises linearly (slope 4) to midspan, falls linearly after.
@@ -103,13 +104,23 @@
 (3) Moment: parabolic, \( M(x) = 9x - 1.5x^2 \).
 (4) \( M_{max} = M(3) = 27 - 13.5 = 13.5\ \mathrm{kN\cdot m} \) — matching \( wL^2/8 = 3 \times 36/8 \).</p>
 <p><b>Answer:</b> \( V_{max} = 9\ \mathrm{kN} \) at the supports; \( M_{max} = 13.5\ \mathrm{kN\cdot m} \) at midspan.
-<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a downward point load, the shear diagram:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>steps down by the load value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>slopes gradually downward</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unaffected</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>steps up by half the load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A concentrated load is a jump in \( V \) equal to its magnitude — the diagram is discontinuous there. Distributed loads produce the gradual slopes (\( dV/dx = -w \)); mixing up step versus slope is the fastest way to a wrong diagram.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>At a downward point load, the shear diagram:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>steps down by the load value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>slopes gradually downward</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unaffected</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>steps up by half the load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>A concentrated load is a jump in \( V \) equal to its magnitude — the diagram is discontinuous there. Distributed loads produce the gradual slopes (\( dV/dx = -w \)); mixing up step versus slope is the fastest way to a wrong diagram.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the liquid-filled span.</b> You arrive at a piping review at EQUATE where a line's support span was set when the service was gas; a process change now runs it liquid-full, multiplying the weight per metre (figures representative). The pipe between supports is Lesson 8's beam under a UDL: \( M_{max} = wL^2/8 \) at mid-span, growing with the <em>square</em> of span. The review question — add a support or accept the sag — is answered by exactly this diagram: double the weight doubles the moment, but halving the span quarters it. The support goes in at the shear-zero point's worst span.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="07-frames-and-machines.html">← 07 · Frames and machines</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="09-friction.html">09 · Friction →</a></nav>
@@ -131,6 +142,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

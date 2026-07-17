@@ -195,33 +195,66 @@
                                 : (ar ? 'إظهار الحل الكامل' : 'Show the full solution');
       });
     }
+    // MC items: select now, grade on Submit (Coursera-style)
     var choices = item.querySelectorAll('.quiz-choice');
     if (choices.length) {
       choices.forEach(function (c) {
         c.addEventListener('click', function () {
           if (item.classList.contains('answered')) return;
-          item.classList.add('answered');
-          var right = c.getAttribute('data-ok') === '1';
-          c.classList.add(right ? 'right' : 'wrong');
-          if (!right) {
-            item.querySelectorAll('.quiz-choice[data-ok="1"]').forEach(function (k) {
-              k.classList.add('right');
-            });
-          }
-          if (verdict) {
-            var ar = document.documentElement.lang === 'ar';
-            verdict.textContent = right
-              ? (ar ? '✓ إجابة صحيحة. الشرح الكامل أدناه.' : '✓ Correct. The full explanation is below.')
-              : (ar ? '✗ إجابة غير صحيحة — الإجابة الصحيحة مظلَّلة. اقرأ السبب أدناه.'
-                    : '✗ Not quite — the correct answer is highlighted. Read why below.');
-            verdict.className = 'quiz-verdict ' + (right ? 'ok' : 'no');
-            verdict.hidden = false;
-          }
-          if (sol) sol.classList.add('open');
-          choices.forEach(function (k) { k.disabled = true; });
+          choices.forEach(function (k) { k.classList.remove('sel'); });
+          c.classList.add('sel');
+          item.classList.remove('unanswered');
         });
       });
     }
+  });
+
+  /* ---------- quiz submit: grade every MC item at once ---------- */
+  document.querySelectorAll('.quiz-submit').forEach(function (sbtn) {
+    sbtn.addEventListener('click', function () {
+      var quiz = sbtn.closest('.quiz');
+      var items = quiz.querySelectorAll('.quiz-item[data-kind="mc"]');
+      var ar = document.documentElement.lang === 'ar';
+      var right = 0;
+      items.forEach(function (item) {
+        var sel = item.querySelector('.quiz-choice.sel');
+        var verdict = item.querySelector('.quiz-verdict');
+        var sol = item.querySelector('.quiz-sol');
+        item.classList.add('answered');
+        var ok = sel && sel.getAttribute('data-ok') === '1';
+        if (ok) { right++; sel.classList.add('right'); }
+        else {
+          if (sel) sel.classList.add('wrong');
+          else item.classList.add('unanswered');
+          item.querySelectorAll('.quiz-choice[data-ok="1"]').forEach(function (k) {
+            k.classList.add('right');
+          });
+        }
+        if (verdict) {
+          verdict.textContent = ok
+            ? (ar ? '✓ إجابة صحيحة. الشرح الكامل أدناه.' : '✓ Correct. The full explanation is below.')
+            : sel
+              ? (ar ? '✗ إجابة غير صحيحة — الإجابة الصحيحة مظلَّلة. اقرأ السبب أدناه.'
+                    : '✗ Not quite — the correct answer is highlighted. Read why below.')
+              : (ar ? 'لم تُجب — الإجابة الصحيحة مظلَّلة. اقرأ الشرح أدناه.'
+                    : 'Not answered — the correct answer is highlighted. Read the explanation below.');
+          verdict.className = 'quiz-verdict ' + (ok ? 'ok' : 'no');
+          verdict.hidden = false;
+        }
+        if (sol) sol.classList.add('open');
+        item.querySelectorAll('.quiz-choice').forEach(function (k) { k.disabled = true; });
+      });
+      var score = quiz.querySelector('.quiz-score');
+      if (score) {
+        score.textContent = ar
+          ? 'نتيجتك: ' + right + ' من ' + items.length
+          : 'Your score: ' + right + ' of ' + items.length;
+        score.className = 'quiz-score ' + (right === items.length ? 'ok' : 'mid');
+        score.hidden = false;
+      }
+      sbtn.disabled = true;
+      sbtn.textContent = ar ? '✓ تم الإرسال' : '✓ Submitted';
+    });
   });
 
   /* ---------- client-side lesson search ---------- */

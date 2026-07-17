@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do castings show chill, columnar, and equiaxed zones?</li><li>Where does microsegregation live, and why does it survive solidification?</li></ul></div><div class="measure">
+<h3>01 · Nucleation: the reluctant start</h3>
+<p>A melt below its freezing point does not freeze at once — a solid nucleus must first reach a critical size before growing is cheaper than redissolving. The balance of surface energy paid against volume energy won sets the critical radius:</p>
+\[ r^* = \frac{2\gamma T_m}{\Delta H_f\, \Delta T} \tag{1} \]
+<p>— inversely proportional to the undercooling \( \Delta T \). Homogeneous nucleation needs implausible undercoolings; real melts nucleate <em>heterogeneously</em> on mold walls and inoculant particles, which is why foundries seed melts deliberately: more nuclei, finer grains, better castings.</p>
+<h3>02 · The three zones of a casting</h3>
+<p>Read a sectioned billet or ingot and solidification history is written in its grains. <b>Chill zone</b>: a skin of fine equiaxed grains, nucleated in a rush against the cold mold. <b>Columnar zone</b>: long grains growing inward along the heat-flow direction, competing until the best-aligned survive. <b>Central equiaxed zone</b>: grains nucleated in the cooling interior liquid. The proportions are process knobs — pouring superheat, mold cooling, stirring — and they matter because columnar structures are anisotropic and their convergence planes are weak.</p>
+<h3>03 · Segregation: solidification's chemical fingerprint</h3>
+<p>Solids accept less solute than liquids, so a growing crystal rejects solute into the melt ahead of it. At dendrite scale this leaves <b>microsegregation</b> — solute-lean dendrite cores, solute-rich interdendritic pockets, quantified by the lever rule on the phase diagram and erasable only by homogenization (Lesson 6's \( \sqrt{Dt} \), with the arm spacing as the distance). At full-ingot scale, <b>macrosegregation</b> — centerline enrichment in continuously cast products — cannot be diffused away at any industrial timescale; it must be managed in the caster. Coring survives because solid-state diffusion is slow: the fingerprint outlives the process that made it.</p>
+<p><strong>Closing.</strong> Nucleation sets the grain count, growth writes the three zones, rejection writes the chemistry. A casting's cross-section is a recording — this lesson teaches you to play it back.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Dendrite</b> — the branched crystal form of metallic growth.</li>
 <li><b>Micro/macrosegregation</b> — solute nonuniformity at dendrite / ingot scale; coring.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do castings show chill, columnar, and equiaxed zones?</li><li>Where does microsegregation live, and why does it survive solidification?</li></ul></div><div class="measure">
-<h3>01 · Nucleation: the reluctant start</h3>
-<p>A melt below its freezing point does not freeze at once — a solid nucleus must first reach a critical size before growing is cheaper than redissolving. The balance of surface energy paid against volume energy won sets the critical radius:</p>
-\[ r^* = \frac{2\gamma T_m}{\Delta H_f\, \Delta T} \tag{1} \]
-<p>— inversely proportional to the undercooling \( \Delta T \). Homogeneous nucleation needs implausible undercoolings; real melts nucleate <em>heterogeneously</em> on mold walls and inoculant particles, which is why foundries seed melts deliberately: more nuclei, finer grains, better castings.</p>
-<h3>02 · The three zones of a casting</h3>
-<p>Read a sectioned billet or ingot and solidification history is written in its grains. <b>Chill zone</b>: a skin of fine equiaxed grains, nucleated in a rush against the cold mold. <b>Columnar zone</b>: long grains growing inward along the heat-flow direction, competing until the best-aligned survive. <b>Central equiaxed zone</b>: grains nucleated in the cooling interior liquid. The proportions are process knobs — pouring superheat, mold cooling, stirring — and they matter because columnar structures are anisotropic and their convergence planes are weak.</p>
-<h3>03 · Segregation: solidification's chemical fingerprint</h3>
-<p>Solids accept less solute than liquids, so a growing crystal rejects solute into the melt ahead of it. At dendrite scale this leaves <b>microsegregation</b> — solute-lean dendrite cores, solute-rich interdendritic pockets, quantified by the lever rule on the phase diagram and erasable only by homogenization (Lesson 6's \( \sqrt{Dt} \), with the arm spacing as the distance). At full-ingot scale, <b>macrosegregation</b> — centerline enrichment in continuously cast products — cannot be diffused away at any industrial timescale; it must be managed in the caster. Coring survives because solid-state diffusion is slow: the fingerprint outlives the process that made it.</p>
-<p><strong>Closing.</strong> Nucleation sets the grain count, growth writes the three zones, rejection writes the chemistry. A casting's cross-section is a recording — this lesson teaches you to play it back.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>The critical nucleus for iron</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>The critical nucleus for iron</b></p>
 <p><b>Problem.</b> For pure iron (representative values, Callister &amp; Rethwisch): \( \gamma = 0.255\ \mathrm{J/m^2} \), \( \Delta H_f = 1.85 \times 10^9\ \mathrm{J/m^3} \), \( T_m = 1811\ \mathrm{K} \), homogeneous undercooling \( \Delta T = 295\ \mathrm{K} \). <b>Find:</b> \( r^* \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( r^* = \dfrac{2 \times 0.255 \times 1811}{1.85 \times 10^9 \times 295} \).
 (2) Numerator: 923.6; denominator: \( 5.46 \times 10^{11} \).
 (3) \( r^* = 1.69 \times 10^{-9}\ \mathrm{m} \approx 1.7\ \mathrm{nm} \).</p>
@@ -100,13 +101,23 @@
 <p><b>Problem.</b> A Cu–35 wt% Ni alloy sits in the two-phase field where the liquid contains 32 wt% Ni and the solid 43 wt% Ni (compositions from the Cu–Ni diagram, Callister &amp; Rethwisch). <b>Find:</b> the phase fractions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Lever rule, liquid fraction: \( W_L = \dfrac{C_s - C_0}{C_s - C_L} = \dfrac{43 - 35}{43 - 32} = \dfrac{8}{11} = 0.73 \).
 (2) Solid: \( W_S = \dfrac{35 - 32}{11} = 0.27 \). Sum: 1.00. ✓</p>
 <p><b>Answer:</b> 73% liquid, 27% solid.
-<b>Sanity check:</b> the first solid (43% Ni) is markedly richer than the average (35%) — the rejection of 3 in numbers. Freeze fast and that difference is buried as coring in every dendrite; the lever rule is segregation's arithmetic before it becomes homogenization's problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>An alloy at 35 wt% Ni sits between liquid (32) and solid (43) on the Cu–Ni diagram. The liquid fraction is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>27%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>35%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>73%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>89%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Lever rule: \( W_L = (43-35)/(43-32) = 8/11 = 0.73 \). Note the arm you use is the one on the <em>far</em> side of the average — the commonest lever-rule slip is grabbing the near arm, which gives the 27% solid fraction instead.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> the first solid (43% Ni) is markedly richer than the average (35%) — the rejection of 3 in numbers. Freeze fast and that difference is buried as coring in every dendrite; the lever rule is segregation's arithmetic before it becomes homogenization's problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>An alloy at 35 wt% Ni sits between liquid (32) and solid (43) on the Cu–Ni diagram. The liquid fraction is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>27%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>35%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>73%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>89%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Lever rule: \( W_L = (43-35)/(43-32) = 8/11 = 0.73 \). Note the arm you use is the one on the <em>far</em> side of the average — the commonest lever-rule slip is grabbing the near arm, which gives the 27% solid fraction instead.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the macro-etch that explains the caster's settings.</b> You arrive at Kuwait Steel quality control as a billet cross-section comes out of the acid bath: a bright fine-grained rim, columnar grains marching inward, an equiaxed core — 2 rendered in steel — and, at dead center, the darker signature of centerline segregation (figures representative). The metallurgist reads it like a chart recorder: superheat a touch high (long columnar zone), stirring earning its keep (healthy equiaxed core), casting speed near the segregation limit. The knobs on the caster deck are the parameters in this lesson; the etch is the feedback loop.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 9; <a href="https://openlibrary.org/works/OL7199330W" title="Flemings — Solidification Processing (Open Library)" target="_blank" rel="noopener">Flemings</a>, Solidification Processing</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="10-recovery-recrystallization-and-grain-growth.html">← 10 · Recovery, recrystallization, and grain growth</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a></nav>
@@ -128,6 +139,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

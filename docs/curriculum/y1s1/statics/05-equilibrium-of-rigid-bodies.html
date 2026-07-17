@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></div><div class="measure">
+<h3>01 · The full toolkit</h3>
+<p>A rigid body in plane equilibrium obeys three independent equations:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0, \qquad \Sigma M_O = 0 \tag{1} \]
+<p>with the moment point \( O \) yours to choose — and choosing it <em>on</em> an unknown force's line of action removes that unknown from the equation. The craft of rigid-body statics is mostly the craft of choosing moment points that make equations fall apart into one-unknown pieces.</p>
+<h3>02 · Two- and three-force members</h3>
+<p>A member loaded at exactly two points carries force only along the line joining them — anything else would leave an unbalanced moment. Recognizing a two-force member converts a two-component unknown into a single magnitude along a known direction, which is a large discount. A three-force member's forces must be concurrent (or all parallel); that fact locates unknown directions geometrically. Both shortcuts come from \( \Sigma M = 0 \) applied with intent.</p>
+<h3>03 · Determinate or not</h3>
+<p>Three equations solve three unknowns. A beam on a pin and a roller (3 unknowns) is <em>statically determinate</em>: statics alone finishes it. Add a second pin (4 unknowns) and equilibrium no longer decides how the supports share — the structure is <em>statically indeterminate</em>, and the answer depends on stiffness, which is Strength of Materials' opening business. Recognizing indeterminacy early saves you from hunting for a fourth equation that does not exist.</p>
+<p><strong>Closing.</strong> Three equations, moment points chosen to kill unknowns, two-force members spotted on sight, and the determinacy count run before solving. That is rigid-body statics in one paragraph; the rest is practice.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Statically determinate</b> — unknowns solvable by equilibrium alone.</li>
 <li><b>Statically indeterminate</b> — more unknowns than equilibrium equations; stiffness decides.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></div><div class="measure">
-<h3>01 · The full toolkit</h3>
-<p>A rigid body in plane equilibrium obeys three independent equations:</p>
-\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0, \qquad \Sigma M_O = 0 \tag{1} \]
-<p>with the moment point \( O \) yours to choose — and choosing it <em>on</em> an unknown force's line of action removes that unknown from the equation. The craft of rigid-body statics is mostly the craft of choosing moment points that make equations fall apart into one-unknown pieces.</p>
-<h3>02 · Two- and three-force members</h3>
-<p>A member loaded at exactly two points carries force only along the line joining them — anything else would leave an unbalanced moment. Recognizing a two-force member converts a two-component unknown into a single magnitude along a known direction, which is a large discount. A three-force member's forces must be concurrent (or all parallel); that fact locates unknown directions geometrically. Both shortcuts come from \( \Sigma M = 0 \) applied with intent.</p>
-<h3>03 · Determinate or not</h3>
-<p>Three equations solve three unknowns. A beam on a pin and a roller (3 unknowns) is <em>statically determinate</em>: statics alone finishes it. Add a second pin (4 unknowns) and equilibrium no longer decides how the supports share — the structure is <em>statically indeterminate</em>, and the answer depends on stiffness, which is Strength of Materials' opening business. Recognizing indeterminacy early saves you from hunting for a fourth equation that does not exist.</p>
-<p><strong>Closing.</strong> Three equations, moment points chosen to kill unknowns, two-force members spotted on sight, and the determinacy count run before solving. That is rigid-body statics in one paragraph; the rest is practice.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Beam with mixed loading</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Beam with mixed loading</b></p>
 <p><b>Problem.</b> A 6 m beam, pin at A (left), roller at B (right), carries a uniform load of 2 kN/m across its full length plus a 5 kN point load 2 m from A. <b>Find:</b> the reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Replace the UDL by its resultant: \( 2 \times 6 = 12\ \mathrm{kN} \) at midspan (3 m).
 (2) \( \Sigma M_A = 0 \): \( 6R_B - 12(3) - 5(2) = 0 \Rightarrow R_B = 46/6 = 7.67\ \mathrm{kN} \).
 (3) \( \Sigma F_y = 0 \): \( R_A = 12 + 5 - 7.67 = 9.33\ \mathrm{kN} \).
@@ -103,13 +104,23 @@
 (3) \( \Sigma F_x = 0 \): \( A_x = T\cos 45^\circ = 6.67\ \mathrm{kN} \), directed toward the wall.
 (4) \( \Sigma F_y = 0 \): \( A_y = 4 - T\sin 45^\circ = 4 - 6.67 = -2.67\ \mathrm{kN} \) — the pin actually pulls the arm <em>down</em>.</p>
 <p><b>Answer:</b> strut 9.43 kN (compression); at A: 6.67 kN horizontal, 2.67 kN downward.
-<b>Sanity check:</b> the strut's vertical push (6.67 kN) exceeds the 4 kN load, so the pin must hold the arm down — a sign the arithmetic predicted and the negative \( A_y \) confirmed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A plane structure has four unknown reactions. Equilibrium alone:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>solves it if you use moments cleverly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>cannot decide the load shares — stiffness must</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>shows the structure is unstable</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>requires a fourth equation from friction</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Plane statics supplies exactly three independent equations; a fourth unknown makes the structure statically indeterminate. No choice of moment points manufactures new information — the missing equation comes from deformation compatibility, which is Strength of Materials' business.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> the strut's vertical push (6.67 kN) exceeds the 4 kN load, so the pin must hold the arm down — a sign the arithmetic predicted and the negative \( A_y \) confirmed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A plane structure has four unknown reactions. Equilibrium alone:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>solves it if you use moments cleverly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>cannot decide the load shares — stiffness must</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>shows the structure is unstable</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>requires a fourth equation from friction</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Plane statics supplies exactly three independent equations; a fourth unknown makes the structure statically indeterminate. No choice of moment points manufactures new information — the missing equation comes from deformation compatibility, which is Strength of Materials' business.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the rack beam that had four supports on paper and three in fact.</b> You arrive at a Kirby-fabricated pipe-rack beam bearing on four columns. Survey shows one bearing shimmed proud and a neighbor daylight-gapped: the beam is statically indeterminate, and fit-up — not the load table — decided how the columns share (figures representative). Lesson 5's determinacy count is the diagnostic: four vertical unknowns, three equations, so equilibrium alone never fixed the shares. The rectification is mechanical — re-shim to bearing — but the explanation of <em>why</em> a gap formed at all is this lesson's closing paragraph.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="04-equilibrium-of-a-particle.html">← 04 · Equilibrium of a particle</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="06-trusses.html">06 · Trusses →</a></nav>
@@ -131,6 +142,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

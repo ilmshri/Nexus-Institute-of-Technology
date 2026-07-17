@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?</li><li>Why does true stress keep rising while engineering stress falls after necking?</li></ul></div><div class="measure">
+<h3>01 · One test to rule them</h3>
+<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \), engineering strain \( \epsilon = \Delta L/L_0 \), both referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
+<h3>02 · What each number is for</h3>
+<p>\( E \) is a bonding property — recall Lesson 2's well curvature — essentially untouchable by heat treatment: all steels share ~200 GPa. \( \sigma_y \) is the designer's boundary; machines are sized so working stress stays below it with margin. UTS matters for what happens beyond intent — overload margins and, through empirical correlations, hardness checks. Ductility is the forgiveness budget: the plastic reserve that lets a part yield locally, redistribute, and warn before it breaks.</p>
+<h3>03 · True stress, and the necking illusion</h3>
+<p>Past the UTS the engineering curve droops — but the material is not softening. Necking has begun: area shrinks locally, and dividing load by the <em>original</em> area hides it. True stress \( \sigma_T = F/A \) (instantaneous area) keeps rising to fracture; with volume constancy the conversions in the plastic range are</p>
+\[ \sigma_T = \sigma(1+\epsilon), \qquad \epsilon_T = \ln(1+\epsilon) \tag{1} \]
+<p>Metal forming lives on true quantities — a rolling pass or a drawing die sees real areas, not test-report conventions. the Worked Examples tab extracts all four report numbers from raw data, then converts a point through (1).</p>
+<p><strong>Closing.</strong> One bar, one pull, four numbers, and one conversion that keeps the story honest after necking. Every mill certificate you will ever read is this lesson in tabular form.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Ductility (%EL, %RA)</b> — plastic strain accumulated by fracture.</li>
 <li><b>True stress/strain</b> — instantaneous-area quantities; equation (1).</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>From a tensile curve, extract modulus, yield, UTS, and ductility — where does each live?</li><li>Why does true stress keep rising while engineering stress falls after necking?</li></ul></div><div class="measure">
-<h3>01 · One test to rule them</h3>
-<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \), engineering strain \( \epsilon = \Delta L/L_0 \), both referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
-<h3>02 · What each number is for</h3>
-<p>\( E \) is a bonding property — recall Lesson 2's well curvature — essentially untouchable by heat treatment: all steels share ~200 GPa. \( \sigma_y \) is the designer's boundary; machines are sized so working stress stays below it with margin. UTS matters for what happens beyond intent — overload margins and, through empirical correlations, hardness checks. Ductility is the forgiveness budget: the plastic reserve that lets a part yield locally, redistribute, and warn before it breaks.</p>
-<h3>03 · True stress, and the necking illusion</h3>
-<p>Past the UTS the engineering curve droops — but the material is not softening. Necking has begun: area shrinks locally, and dividing load by the <em>original</em> area hides it. True stress \( \sigma_T = F/A \) (instantaneous area) keeps rising to fracture; with volume constancy the conversions in the plastic range are</p>
-\[ \sigma_T = \sigma(1+\epsilon), \qquad \epsilon_T = \ln(1+\epsilon) \tag{1} \]
-<p>Metal forming lives on true quantities — a rolling pass or a drawing die sees real areas, not test-report conventions. the Worked Examples tab extracts all four report numbers from raw data, then converts a point through (1).</p>
-<p><strong>Closing.</strong> One bar, one pull, four numbers, and one conversion that keeps the story honest after necking. Every mill certificate you will ever read is this lesson in tabular form.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Reading the test</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Reading the test</b></p>
 <p><b>Problem.</b> A standard bar, \( d_0 = 12.8\ \mathrm{mm} \), \( L_0 = 50.8\ \mathrm{mm} \): elastic point (150 MPa at \( \epsilon = 0.00075 \)); yield load 35 kN; final gauge length 60.14 mm. <b>Find:</b> \( E \), \( \sigma_y \), %EL.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( A_0 = \pi(12.8)^2/4 = 128.7\ \mathrm{mm^2} \).
 (2) \( E = 150/0.00075 = 200\,000\ \mathrm{MPa} = 200\ \mathrm{GPa} \).
 (3) \( \sigma_y = 35\,000/128.7 = 272\ \mathrm{MPa} \).
@@ -101,13 +102,23 @@
 <p><b>Problem.</b> At its UTS a specimen shows engineering stress 400 MPa at engineering strain 0.15. <b>Find:</b> the true stress and true strain (uniform deformation, volume constant).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \sigma_T = \sigma(1+\epsilon) = 400 \times 1.15 = 460\ \mathrm{MPa} \).
 (2) \( \epsilon_T = \ln(1.15) = 0.140 \).</p>
 <p><b>Answer:</b> 460 MPa at true strain 0.140.
-<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Past the UTS, the engineering stress–strain curve falls because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the material softens</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>necking shrinks the true area while \( A_0 \) stays in the formula</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the extensometer slips</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>dislocations annihilate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Deformation localizes into a neck; load drops, but true stress \( F/A \) keeps <em>rising</em> to fracture. The droop is an artifact of dividing by the original area — the material is still strain-hardening. True-stress conversion (\( \sigma_T = \sigma(1+\epsilon) \) while uniform) keeps the record honest.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> true stress exceeds engineering (the bar is thinner than \( A_0 \) pretends) while true strain trails engineering — both inequalities always hold in tension, a two-second validity test on any converted data point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Past the UTS, the engineering stress–strain curve falls because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the material softens</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>necking shrinks the true area while \( A_0 \) stays in the formula</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the extensometer slips</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>dislocations annihilate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Deformation localizes into a neck; load drops, but true stress \( F/A \) keeps <em>rising</em> to fracture. The droop is an artifact of dividing by the original area — the material is still strain-hardening. True-stress conversion (\( \sigma_T = \sigma(1+\epsilon) \) while uniform) keeps the record honest.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the certificate is a tensile curve in a table.</b> You arrive at a Kirby receiving inspection where a plate delivery's mill certificate lists yield 355 MPa, UTS 510 MPa, elongation 22% (figures representative). Lesson 7 is the decoder: those three numbers are the tensile curve compressed for shipping. The estimator reads 355 for design margin, the press-brake foreman reads 22% for bendability, and the welding engineer reads the yield-to-UTS gap as work-hardening reserve. One test in a distant mill, one table, three trades making decisions from it — which is why certs are checked against the order, not filed unread.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 6</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="06-diffusion.html">← 06 · Diffusion</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="08-mechanical-properties-ii-hardness-and-toughness.html">08 · Mechanical properties II: hardness and toughness →</a></nav>
@@ -129,6 +140,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

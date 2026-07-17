@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,23 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div><div class="measure">
+<h3>01 · Dry friction and the threshold</h3>
+<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
+\[ F \le \mu_s N \tag{1} \]
+<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
+<h3>02 · Wedges and screws</h3>
+<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
+<h3>03 · Belt friction: the exponential surprise</h3>
+<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
+\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
+<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
+<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,19 +94,7 @@
 <li><b>Self-locking</b> — a screw or wedge that holds position without external effort.</li>
 <li><b>Wrap angle \( \beta \)</b> — belt contact arc, in radians, in \( T_2/T_1 = e^{\mu\beta} \).</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div><div class="measure">
-<h3>01 · Dry friction and the threshold</h3>
-<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
-\[ F \le \mu_s N \tag{1} \]
-<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
-<h3>02 · Wedges and screws</h3>
-<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
-<h3>03 · Belt friction: the exponential surprise</h3>
-<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
-\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
-<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
-<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Dragging a crate, and why angle helps</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Dragging a crate, and why angle helps</b></p>
 <p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
 (2) Horizontal pull: \( P = \mu_s W = 0.35 \times 784.8 = 274.7\ \mathrm{N} \).
 (3) Angled pull: the vertical component unloads the floor. \( N = W - P\sin 20^\circ \), and impending motion demands \( P\cos 20^\circ = \mu_s N \).
@@ -105,13 +106,23 @@
 (3) \( T_2 = 1.2 \times 2.566 = 3.08\ \mathrm{kN} \).
 (4) Transmittable pull: \( T_2 - T_1 = 1.88\ \mathrm{kN} \).</p>
 <p><b>Answer:</b> \( T_2 = 3.08\ \mathrm{kN} \); usable pull 1.88 kN.
-<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A power screw is self-locking (holds its load with no applied torque) when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the friction angle exceeds the helix angle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the helix angle exceeds the friction angle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the load exceeds the friction force</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it is lubricated</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Self-locking requires friction to beat the thread's slope: \( \phi > \alpha \). A jack that stays up under load is exactly this inequality. Lubrication <em>reduces</em> \( \phi \) and can therefore un-lock a marginal screw — the opposite of choice D's instinct.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A power screw is self-locking (holds its load with no applied torque) when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the friction angle exceeds the helix angle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the helix angle exceeds the friction angle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the load exceeds the friction force</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it is lubricated</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Self-locking requires friction to beat the thread's slope: \( \phi > \alpha \). A jack that stays up under load is exactly this inequality. Lubrication <em>reduces</em> \( \phi \) and can therefore un-lock a marginal screw — the opposite of choice D's instinct.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the capstan that is literally called a capstan.</b> You arrive at a Gulf Cable drawing line where wire is hauled through dies by motor-driven capstan drums — the machine's name is the equation's name. Tension into the die must stay controlled: too little grip and the wire slips and scores; the fix on the floor is more wrap, because \( T_2/T_1 = e^{\mu\beta} \) grows exponentially with each added turn (figures representative). When a worn drum surface drops \( \mu \), the symptom — slip at the same wrap — walks straight out of Lesson 9's derivation.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="08-internal-forces-shear-and-bending-moment.html">← 08 · Internal forces: shear and bending moment</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="10-centroids-and-centers-of-gravity.html">10 · Centroids and centers of gravity →</a></nav>
@@ -133,6 +144,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

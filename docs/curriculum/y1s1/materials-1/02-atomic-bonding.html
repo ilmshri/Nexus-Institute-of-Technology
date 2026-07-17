@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,19 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do metals conduct and deform while ceramics insulate and shatter — from bonding alone?</li><li>What does a deep, narrow bond-energy well predict about stiffness and expansion?</li></ul></div><div class="measure">
+<h3>01 · Bonds are springs with a depth</h3>
+<p>Two atoms settle at the separation \( r_0 \) where attraction and repulsion balance — the bottom of the bond-energy well. Two features of that well govern macroscopic behavior. Its <em>curvature</em> at the bottom is the stiffness of the interatomic spring: deep, narrow wells give high elastic modulus. Its <em>depth</em> is the bond energy: deep wells mean high melting points and — because a deep well is also more symmetric near its floor — low thermal expansion. Modulus, melting point, and expansion coefficient travel together, and the bond-energy curve is why.</p>
+<h3>02 · The four bonding types</h3>
+<p><b>Metallic</b>: ion cores in a shared electron sea. The sea conducts (electrons free to drift) and the non-directional bonding lets planes of atoms slide without shattering — conductivity and ductility from one picture. <b>Ionic</b>: electron transfer, then Coulomb attraction between ions; strong but directionally rigid — slide a plane one spacing and like charges meet, so ceramics fracture rather than flow. <b>Covalent</b>: shared electron pairs, strongly directional; diamond's hardness and silicon's brittleness. <b>Secondary (van der Waals / hydrogen)</b>: weak dipole attractions — the reason polymer chains, strongly covalent along their backbones, still slide past each other at modest temperature.</p>
+<h3>03 · Mixed character, measured</h3>
+<p>Real compounds sit between poles. Electronegativity difference estimates the ionic fraction of a bond; Pauling's relation \( \%IC = [1 - e^{-0.25(X_A - X_B)^2}] \times 100 \) puts MgO at ~73% ionic while SiC is ~12% — one behaves as a classic ionic ceramic, the other as a covalent one, and their fracture and conduction behavior follow suit. the Worked Examples tab computes both, plus the raw Coulomb force inside an ion pair.</p>
+<p><strong>Closing.</strong> Stiffness, melting, and expansion live in the well's shape; ductility versus brittleness lives in whether the bonding forgives atomic-plane slide. Metals forgive; ceramics do not; polymers are covalent ropes held by weak handshakes.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,15 +90,7 @@
 <li><b>Ionic / covalent bond</b> — electron transfer / electron sharing; both directional in effect.</li>
 <li><b>Secondary bonds</b> — weak dipole attractions between molecules or chains.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why do metals conduct and deform while ceramics insulate and shatter — from bonding alone?</li><li>What does a deep, narrow bond-energy well predict about stiffness and expansion?</li></ul></div><div class="measure">
-<h3>01 · Bonds are springs with a depth</h3>
-<p>Two atoms settle at the separation \( r_0 \) where attraction and repulsion balance — the bottom of the bond-energy well. Two features of that well govern macroscopic behavior. Its <em>curvature</em> at the bottom is the stiffness of the interatomic spring: deep, narrow wells give high elastic modulus. Its <em>depth</em> is the bond energy: deep wells mean high melting points and — because a deep well is also more symmetric near its floor — low thermal expansion. Modulus, melting point, and expansion coefficient travel together, and the bond-energy curve is why.</p>
-<h3>02 · The four bonding types</h3>
-<p><b>Metallic</b>: ion cores in a shared electron sea. The sea conducts (electrons free to drift) and the non-directional bonding lets planes of atoms slide without shattering — conductivity and ductility from one picture. <b>Ionic</b>: electron transfer, then Coulomb attraction between ions; strong but directionally rigid — slide a plane one spacing and like charges meet, so ceramics fracture rather than flow. <b>Covalent</b>: shared electron pairs, strongly directional; diamond's hardness and silicon's brittleness. <b>Secondary (van der Waals / hydrogen)</b>: weak dipole attractions — the reason polymer chains, strongly covalent along their backbones, still slide past each other at modest temperature.</p>
-<h3>03 · Mixed character, measured</h3>
-<p>Real compounds sit between poles. Electronegativity difference estimates the ionic fraction of a bond; Pauling's relation \( \%IC = [1 - e^{-0.25(X_A - X_B)^2}] \times 100 \) puts MgO at ~73% ionic while SiC is ~12% — one behaves as a classic ionic ceramic, the other as a covalent one, and their fracture and conduction behavior follow suit. the Worked Examples tab computes both, plus the raw Coulomb force inside an ion pair.</p>
-<p><strong>Closing.</strong> Stiffness, melting, and expansion live in the well's shape; ductility versus brittleness lives in whether the bonding forgives atomic-plane slide. Metals forgive; ceramics do not; polymers are covalent ropes held by weak handshakes.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>The force inside an ion pair</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>The force inside an ion pair</b></p>
 <p><b>Problem.</b> Estimate the attractive Coulomb force between a Na⁺ and Cl⁻ ion pair at separation \( r_0 = 0.276\ \mathrm{nm} \) (representative).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F = \dfrac{k q_1 q_2}{r^2} \) with \( k = 8.99 \times 10^9\ \mathrm{N\,m^2/C^2} \), \( q = 1.602 \times 10^{-19}\ \mathrm{C} \).
 (2) \( F = \dfrac{8.99 \times 10^9 \times (1.602 \times 10^{-19})^2}{(2.76 \times 10^{-10})^2} \).
 (3) \( F = 3.03 \times 10^{-9}\ \mathrm{N} \).</p>
@@ -98,13 +99,23 @@
 <p><b>Problem.</b> Using Pauling electronegativities (Callister &amp; Rethwisch): Mg 1.2, O 3.5, Si 1.8, C 2.5. <b>Find:</b> the ionic character of MgO and SiC.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) MgO: \( \Delta X = 2.3 \); \( \%IC = [1 - e^{-0.25(2.3)^2}] \times 100 = [1 - e^{-1.32}] \times 100 = 73\% \).
 (2) SiC: \( \Delta X = 0.7 \); \( \%IC = [1 - e^{-0.25(0.7)^2}] \times 100 = [1 - e^{-0.123}] \times 100 = 12\% \).</p>
 <p><b>Answer:</b> MgO ≈ 73% ionic; SiC ≈ 12% ionic (88% covalent).
-<b>Sanity check:</b> oxygen sits far right of magnesium on the electronegativity scale, silicon and carbon are neighbors — the formula only quantifies what the periodic table already whispers. Both are "ceramics", but their bonding characters, and hence their oxidation and sintering behavior, differ usefully.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Electronegativity difference \( \Delta X = 2.3 \) (e.g., MgO). Percent ionic character, by \( 1 - e^{-0.25\,\Delta X^2} \):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>≈12%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>≈36%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>≈73%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>≈97%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( 1 - e^{-0.25 \times 5.29} = 1 - e^{-1.32} = 0.73 \) — MgO behaves as a classic ionic ceramic. For comparison, SiC's \( \Delta X = 0.7 \) gives only ~12%: both are \"ceramics\", but their bonding characters differ usefully.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> oxygen sits far right of magnesium on the electronegativity scale, silicon and carbon are neighbors — the formula only quantifies what the periodic table already whispers. Both are "ceramics", but their bonding characters, and hence their oxidation and sintering behavior, differ usefully.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Electronegativity difference \( \Delta X = 2.3 \) (e.g., MgO). Percent ionic character, by \( 1 - e^{-0.25\,\Delta X^2} \):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>≈12%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>≈36%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>≈73%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>≈97%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( 1 - e^{-0.25 \times 5.29} = 1 - e^{-1.32} = 0.73 \) — MgO behaves as a classic ionic ceramic. For comparison, SiC's \( \Delta X = 0.7 \) gives only ~12%: both are \"ceramics\", but their bonding characters differ usefully.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — conductor and insulation, one cable, two bonds.</b> You arrive at a Gulf Cable line where the product embodies this lesson in cross-section: a copper conductor — metallic bonding, the electron sea carrying both the current and the ductility that let it survive drawing — sheathed in crosslinked polyethylene, covalent chains whose crosslinks were added precisely because secondary bonds alone would let the insulation creep and soften in a Kuwaiti cable trench (figures representative). One product, two bonding families, each chosen for exactly what its well shape and directionality deliver.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 2</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="01-why-materials-fail-the-plant.html">← 01 · Why materials fail the plant</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="03-crystal-structures.html">03 · Crystal structures →</a></nav>
@@ -126,6 +137,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

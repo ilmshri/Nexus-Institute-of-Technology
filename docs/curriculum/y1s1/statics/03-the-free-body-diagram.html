@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,19 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name the three steps of a free-body diagram and the most common omission.</li><li>What reactions does a fixed support supply that a pin does not?</li></ul></div><div class="measure">
+<h3>01 · Isolate, replace, label</h3>
+<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>
+<h3>02 · Supports are force vocabularies</h3>
+<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>
+<h3>03 · Every equilibrium error is an FBD error</h3>
+<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. the Worked Examples tab applies the discipline to a simply supported beam and a cantilever.</p>
+<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \( \Sigma F = 0 \) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -80,15 +89,7 @@
 <li><b>Pin</b> — support giving two force components, no moment.</li>
 <li><b>Fixed support</b> — support giving two force components and a moment.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name the three steps of a free-body diagram and the most common omission.</li><li>What reactions does a fixed support supply that a pin does not?</li></ul></div><div class="measure">
-<h3>01 · Isolate, replace, label</h3>
-<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>
-<h3>02 · Supports are force vocabularies</h3>
-<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>
-<h3>03 · Every equilibrium error is an FBD error</h3>
-<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. the Worked Examples tab applies the discipline to a simply supported beam and a cantilever.</p>
-<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \( \Sigma F = 0 \) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Beam on a pin and a roller</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Beam on a pin and a roller</b></p>
 <p><b>Problem.</b> A 4 m beam is pinned at A and rests on a roller at B (right end). A 2 kN load acts 1.5 m from A. Neglect beam weight. <b>Find:</b> the reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: pin at A gives \( A_x, A_y \); roller at B gives vertical \( R_B \); load 2 kN down at 1.5 m.
 (2) \( \Sigma F_x = 0 \Rightarrow A_x = 0 \) (no horizontal loads).
 (3) \( \Sigma M_A = 0 \): \( R_B \times 4 - 2 \times 1.5 = 0 \Rightarrow R_B = 0.75\ \mathrm{kN} \).
@@ -100,13 +101,23 @@
 (3) \( \Sigma F_y = 0 \Rightarrow V = 3\ \mathrm{kN} \) upward.
 (4) \( \Sigma M_{wall} = 0 \Rightarrow M_w = 3 \times 2 = 6\ \mathrm{kN\cdot m} \), opposing the load's turning.</p>
 <p><b>Answer:</b> \( V = 3\ \mathrm{kN} \), \( M_w = 6\ \mathrm{kN\cdot m} \).
-<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A taut cable attached to a body can exert on it:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a pull or a push along the cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only a pull along the cable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a force in any direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a pull plus a moment</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Cables carry tension only — they pull along their own axis and buckle rather than push. Drawing a cable force as a push (or at an angle to the cable) is an FBD error that no amount of correct algebra downstream can repair.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A taut cable attached to a body can exert on it:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a pull or a push along the cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only a pull along the cable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a force in any direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a pull plus a moment</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Cables carry tension only — they pull along their own axis and buckle rather than push. Drawing a cable force as a push (or at an angle to the cable) is an FBD error that no amount of correct algebra downstream can repair.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the pipe support that was drawn wrong before it was built wrong.</b> You arrive at a pipe-rack survey in a process unit at EQUATE where a spring hanger is topped out and a nearby rigid support is cold. The as-built review starts exactly where this lesson does: draw the pipe segment as a free body, put in weight, the hanger pull, and each support's actual reaction menu — a rigid shoe pushes only up, a guide only sideways, the spring a set force. The diagram shows one support was assumed to share load it geometrically cannot see (figures representative). The correction was decided on the FBD before anyone touched a wrench.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="02-moments-and-couples.html">← 02 · Moments and couples</a><a href="index.html" data-ar="كل الدروس · STA 103">All lessons · STA 103</a><a href="04-equilibrium-of-a-particle.html">04 · Equilibrium of a particle →</a></nav>
@@ -128,6 +139,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

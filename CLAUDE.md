@@ -132,6 +132,50 @@ incrementally. Never trade correctness for speed — cut breadth instead.
 
 ### Content status ledger (update when you add content)
 
+- PHASE GATES REINSTATED (owner, 2026-07-17 PM — supersedes the zero-approval
+  rollout where they conflict): NO content generation until the owner approves
+  the Phase-1 design + logo. Phase 1 (SHIPPED, awaiting approval) = branding,
+  UI/UX shell, architecture. Phase 2 (GATED) = content: Year 1-2 full tabs,
+  math-1/drawing-cad quiz retrofits (unverified drafts preserved in
+  drafts/phase2-quiz-mc-drafts/ — generator ignores that dir), computing
+  course, mission-copy rewrite, per-lesson video curation, cert maps,
+  foundations glossary-table migration, 522→528 normalization decision.
+- MISSION REFRAME (owner): from-scratch online B.S. Mechanical Engineering
+  institute for ANYONE with zero background; classic ME core with Industry
+  4.0 / PLC / SCADA integrated in later stages. Mission-page copy still says
+  "one specific person" — rewrite is Phase-2 text work, gated.
+- LOGO v5 "Academic Shield" (nexus/logo.svg, PENDING owner approval): flat
+  navy shield, amber keyline, teal 8-tooth gear with amber hub, cream open
+  book; no gradients/filters. The v4 metallic gear-coin was NOT approved —
+  archived untouched at nexus/logo-v4-gear-coin-unapproved.svg. Palette
+  unchanged (v5 is built from the existing navy/teal/amber/cream tokens, so
+  the platform already harmonizes with it). App bar uses a serif lockup
+  ("Nexus Institute of Technology" + small-caps "Online Engineering
+  Education").
+- LESSON ARCHITECTURE (owner, STRICT, supersedes the earlier 4-tab spec):
+  tab order is Lecture | Foundations | Examples and Quiz | Library.
+  Lecture: 500-1000 words, textbook-style, NO solved examples. Foundations:
+  glossary TABLE Term | Equation | When to use (style ready:
+  table.glossary/.glossary-wrap; existing list-style foundations migrate in
+  Phase 2). Examples and Quiz: 3 solved examples + 5-question MCQ graded by
+  a Submit button (engine v2 LIVE: select-then-submit, per-question
+  verdicts + explanations + score; solve items keep reveal buttons).
+  Library: exactly ONE embedded video from the strict channel list below,
+  else the "TODO: Find approved video" placeholder; then Textbooks &
+  references (3 US-published texts per lesson in Phase 2; verified links
+  only); then Related certifications & licenses (2-3 per lesson, Phase 2,
+  verified links only — placeholders stay empty until verified).
+- STRICT EMBED CHANNELS (owner correction, 2026-07-17 PM — supersedes ALL
+  earlier embed policy; exactly these 15, enforced by APPROVED_CHANNELS in
+  nexus_build.py): MIT OpenCourseWare, Engineer4Free, The Efficient
+  Engineer, Jeff Hanson, Engineering Explained, Practical Engineering, The
+  Engineering Mindset, RealPars, SolisPLC, AutomationDirect, Plcprofessor,
+  GalcoTV, Hegamastery, Siemens Knowledge Hub, Schneider Electric Hub.
+  NPTEL and LearnChemE are BANNED from embedding (verified text links in
+  references only). Every URL still gets opened and verified before entry;
+  channels not yet in the registry (e.g. Hegamastery) must be verified to
+  exist before first use.
+
 - NEXUS IS THE PLATFORM (owner EXECUTION OVERRIDE, 2026-07-17 — supersedes
   the stage gates and the "separate platform" plan): the live site at
   https://nexuskw.github.io/ IS Nexus Institute of Technology, replacing the

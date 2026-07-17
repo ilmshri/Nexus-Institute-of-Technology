@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,19 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What makes close-packed planes the natural slip planes?</li><li>Why does rolled plate have direction-dependent properties?</li></ul></div><div class="measure">
+<h3>01 · Naming directions and planes</h3>
+<p>Crystals are anisotropic objects, so we need coordinates. <b>Directions</b> [uvw]: take the vector's components along the cell axes, clear fractions to smallest integers, wrap in square brackets, mark negatives with an overbar. <b>Planes</b> (hkl), the Miller indices: take the plane's intercepts on the axes in units of the lattice parameters, invert them, clear fractions, wrap in parentheses — an intercept at infinity (plane parallel to an axis) inverts to a clean zero. Families of equivalent directions and planes get angle and brace brackets: ⟨110⟩, {111}.</p>
+<h3>02 · Why these labels earn their keep</h3>
+<p>Slip — plastic deformation — happens on the densest planes along the densest directions, because those are the paths where atoms ride over each other with the least protest. In FCC that means {111} planes and ⟨110⟩ directions: 12 combinations, the slip systems that make copper and aluminum so obligingly ductile. Linear and planar densities (atoms per length, per area) are the quantitative versions, and computing them is how the claim "close-packed = slip-prone" stops being a slogan.</p>
+<h3>03 · Anisotropy leaves the lab</h3>
+<p>A single crystal's modulus can differ by a factor of two between directions. Polycrystals average this out — <em>unless processing lines the grains up</em>. Rolling does exactly that: plate develops a crystallographic texture plus elongated grains and aligned inclusions, so strength, ductility, and especially toughness differ between the rolling direction and the transverse. Standards respond by specifying test-bar orientation, and fabricators respond — or should — by orienting bends relative to the rolling direction. The Miller machinery of 1 is the language in which all of this is written.</p>
+<p><strong>Closing.</strong> Directions in brackets, planes in parentheses, slip on the close-packed combinations, and rolled products carrying their processing history as directionality. The labels are dry; what they index is not.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,15 +90,7 @@
 <li><b>Slip system</b> — a close-packed plane paired with a close-packed direction in it.</li>
 <li><b>Texture</b> — a preferred grain orientation imprinted by processing.</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What makes close-packed planes the natural slip planes?</li><li>Why does rolled plate have direction-dependent properties?</li></ul></div><div class="measure">
-<h3>01 · Naming directions and planes</h3>
-<p>Crystals are anisotropic objects, so we need coordinates. <b>Directions</b> [uvw]: take the vector's components along the cell axes, clear fractions to smallest integers, wrap in square brackets, mark negatives with an overbar. <b>Planes</b> (hkl), the Miller indices: take the plane's intercepts on the axes in units of the lattice parameters, invert them, clear fractions, wrap in parentheses — an intercept at infinity (plane parallel to an axis) inverts to a clean zero. Families of equivalent directions and planes get angle and brace brackets: ⟨110⟩, {111}.</p>
-<h3>02 · Why these labels earn their keep</h3>
-<p>Slip — plastic deformation — happens on the densest planes along the densest directions, because those are the paths where atoms ride over each other with the least protest. In FCC that means {111} planes and ⟨110⟩ directions: 12 combinations, the slip systems that make copper and aluminum so obligingly ductile. Linear and planar densities (atoms per length, per area) are the quantitative versions, and computing them is how the claim "close-packed = slip-prone" stops being a slogan.</p>
-<h3>03 · Anisotropy leaves the lab</h3>
-<p>A single crystal's modulus can differ by a factor of two between directions. Polycrystals average this out — <em>unless processing lines the grains up</em>. Rolling does exactly that: plate develops a crystallographic texture plus elongated grains and aligned inclusions, so strength, ductility, and especially toughness differ between the rolling direction and the transverse. Standards respond by specifying test-bar orientation, and fabricators respond — or should — by orienting bends relative to the rolling direction. The Miller machinery of 1 is the language in which all of this is written.</p>
-<p><strong>Closing.</strong> Directions in brackets, planes in parentheses, slip on the close-packed combinations, and rolled products carrying their processing history as directionality. The labels are dry; what they index is not.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Indexing a direction and a plane</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Indexing a direction and a plane</b></p>
 <p><b>Problem.</b> (a) Index the direction from the origin to the point \( (1, \tfrac{1}{2}, 1) \) in cell coordinates. (b) Index the plane with intercepts \( x = \tfrac{1}{2} \), \( y = 1 \), \( z = \infty \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a) Components \( (1, \tfrac{1}{2}, 1) \); clear fractions ×2 → [212].
 (b) Reciprocals: \( 1/\tfrac{1}{2} = 2 \), \( 1/1 = 1 \), \( 1/\infty = 0 \) → (210).</p>
 <p><b>Answer:</b> [212] and (210).
@@ -98,13 +99,23 @@
 (2) The face diagonal has length \( 4R \) and passes through 2 atom diameters' worth of centers: corner atom (½) + face atom (1) + corner atom (½) = 2 atoms.
 (3) \( LD = \dfrac{2}{4R} = \dfrac{1}{2R} = \dfrac{1}{0.256\ \mathrm{nm}} = 3.91\ \mathrm{atoms/nm} \).</p>
 <p><b>Answer:</b> 3.91 atoms/nm — the maximum possible for copper: atoms in contact the whole way.
-<b>Sanity check:</b> no direction can pack tighter than touching spheres, so every other direction in the crystal must come out below 3.91 — [100], for instance, carries \( 1/a = 2.76 \) atoms/nm. Slip picks the 3.91 highway, not the 2.76 side road.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Rolled plate is stronger and tougher along the rolling direction than across it because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is thinner at the edges</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>rolling aligns grains, texture, and inclusions directionally</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the mill heats it unevenly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Miller indices change during rolling</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Rolling elongates grains, develops crystallographic texture, and strings out inclusions along the rolling direction — the microstructure becomes directional, so properties follow. This is why specs fix test-bar orientation and why press-brake bends run across the grain where possible.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> no direction can pack tighter than touching spheres, so every other direction in the crystal must come out below 3.91 — [100], for instance, carries \( 1/a = 2.76 \) atoms/nm. Slip picks the 3.91 highway, not the 2.76 side road.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>Rolled plate is stronger and tougher along the rolling direction than across it because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is thinner at the edges</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>rolling aligns grains, texture, and inclusions directionally</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the mill heats it unevenly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Miller indices change during rolling</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Rolling elongates grains, develops crystallographic texture, and strings out inclusions along the rolling direction — the microstructure becomes directional, so properties follow. This is why specs fix test-bar orientation and why press-brake bends run across the grain where possible.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the bend that cracked across the grain.</b> You arrive at a Kirby press-brake station where identical flange bends crack on one batch of plate but only when the bend line runs parallel to the rolling direction (figures representative). The plate is anisotropic: rolling elongated its grains and strung out its inclusions, so bending <em>across</em> the grain flow stretches strong material while bending <em>along</em> it opens the weak, delaminating direction. The shop fix is layout discipline — mark the rolling direction on every sheet and orient bends across it — which is Lesson 4's anisotropy translated into chalk lines.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 3</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="03-crystal-structures.html">← 03 · Crystal structures</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="05-defects-in-solids.html">05 · Defects in solids →</a></nav>
@@ -126,6 +137,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

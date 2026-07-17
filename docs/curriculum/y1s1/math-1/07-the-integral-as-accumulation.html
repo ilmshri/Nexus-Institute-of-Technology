@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,26 +62,11 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>The derivative</b> (Lesson 3) — equation (2) runs it backwards.</li>
-<li><b>Limits of sums</b> (Lesson 2) — the rectangle stack converges by the same logic.</li>
-<li><b>Power rule</b> (Lesson 4) — reversed: \( \int x^n dx = x^{n+1}/(n{+}1) + C,\ n\neq -1 \).</li>
-</ul>
-<h4>Glossary</h4>
-<ul class="plain">
-<li><b>Definite integral</b> — a number: net accumulation between two limits.</li>
-<li><b>Antiderivative</b> — a function whose derivative is the integrand; unique up to \( +C \).</li>
-<li><b>Integrand</b> — the rate being accumulated.</li>
-<li><b>Totalizer</b> — an instrument computing equation (1) in real time.</li>
-</ul>
-</div></section>
 <section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Power drawn over a shift is a curve: what integral gives energy consumed, and in what units?</li><li>State the Fundamental Theorem in one sentence about rates and totals.</li></ul></div><div class="measure">
 <h3>01 · Accumulation is the other half of calculus</h3>
 <p>The derivative asks: how fast? The integral asks the inverse question: <em>how much,
@@ -106,7 +92,22 @@ which is Lesson 9's business. The concept is identical: total = area.</p>
 makes them computable from antiderivatives; and the plant's totalizers, energy meters, and
 inventory balances are integrals with tag numbers.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure">
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The derivative</b> (Lesson 3) — equation (2) runs it backwards.</li>
+<li><b>Limits of sums</b> (Lesson 2) — the rectangle stack converges by the same logic.</li>
+<li><b>Power rule</b> (Lesson 4) — reversed: \( \int x^n dx = x^{n+1}/(n{+}1) + C,\ n\neq -1 \).</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Definite integral</b> — a number: net accumulation between two limits.</li>
+<li><b>Antiderivative</b> — a function whose derivative is the integrand; unique up to \( +C \).</li>
+<li><b>Integrand</b> — the rate being accumulated.</li>
+<li><b>Totalizer</b> — an instrument computing equation (1) in real time.</li>
+</ul>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure">
 <h4>Worked example 1 — volume from a ramping flow</h4>
 <p><b>Problem.</b> During a transfer, flow ramps as \( Q(t) = 20 + 4t \) m³/h (\( t \) in
 hours) for six hours. <b>Find:</b> the total volume moved.</p>
@@ -135,10 +136,20 @@ instantaneous flow, undeniable to anyone who owns equation (1). The invoice stan
 trend chart attached.</p>
 </div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
   <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="06-extrema-curve-behavior-and-optimization.html">← 06 · Extrema, curve behavior, and optimization</a><a href="index.html" data-ar="كل الدروس · MTH 101">All lessons · MTH 101</a><a href="08-integration-techniques.html">08 · Integration techniques →</a></nav>
@@ -160,6 +171,6 @@ trend chart attached.</p>
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

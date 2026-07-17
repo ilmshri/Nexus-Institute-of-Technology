@@ -9,7 +9,7 @@
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=ea06a329f0">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da32fbcf60">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -18,7 +18,8 @@
   <div class="in">
     <a class="brand" href="../../../index.html" aria-label="معهد نيكسس للتكنولوجيا — Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html" data-ar="الرسالة">Mission</a>
@@ -61,11 +62,21 @@
 </div>
 <div class="lang-ar"><div class="ar-note">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="المحاضرة">Lecture</button>
-  <button data-tab="t-examples" data-ar="أمثلة محلولة">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="الأسس">Foundations</button>
+  <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does recrystallization undo, and what does its temperature roughly track?</li><li>Define hot working without mentioning absolute temperature.</li></ul></div><div class="measure">
+<h3>01 · What cold work leaves behind</h3>
+<p>A cold-worked metal is a loaded spring at the microscale: dislocation density up a thousandfold, grains flattened and rotated, a few percent of the deformation energy locked in as internal strain. That stored energy is the driving force for everything in this lesson — heat the metal and it will spend that energy reorganizing, in three acts.</p>
+<h3>02 · Recovery, recrystallization, grain growth</h3>
+<p><b>Recovery</b> (lowest temperatures): dislocations climb, annihilate, and tidy into low-energy walls. Residual stress falls and conductivity returns, but strength barely moves — the stress-relief anneal lives here. <b>Recrystallization</b>: new, strain-free grains nucleate in the deformed matrix and consume it wholesale; strength drops toward the annealed baseline and ductility floods back. The temperature where this completes in about an hour — the recrystallization temperature — runs roughly</p>
+\[ T_R \approx 0.4\, T_m \quad (\mathrm{in\ kelvins}) \tag{1} \]
+<p>and falls with heavier prior cold work (more stored energy, more driving force). <b>Grain growth</b>: left hot after recrystallization finishes, boundaries migrate to cut boundary area, grains coarsen, and Hall–Petch (Lesson 9) runs in reverse. Annealing schedules end when recrystallization does, not later, for exactly this reason.</p>
+<h3>03 · Hot working, defined properly</h3>
+<p>Hot working is deformation <em>above</em> the recrystallization temperature — the metal recrystallizes as fast as the rolls harden it, so it never accumulates cold work. Cold working is deformation below \( T_R \). The boundary is homologous, not absolute: by (1), lead recrystallizes below room temperature — a fitter bending lead sheet is hot-working it at 25 °C — while tungsten at a red-hot 800 °C can still be cold-working. "Hot" belongs to the metal's melting point, not the thermometer.</p>
+<p><strong>Closing.</strong> Stored strain energy drives three acts — tidy, replace, coarsen — and \( 0.4\,T_m \) marks the stage door. Every anneal on every line is a decision about which act to stop after.</p></div></section>
 <section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
 <h4>What this lesson assumes</h4>
 <ul class="plain">
@@ -81,17 +92,7 @@
 <li><b>Grain growth</b> — boundary-area-driven coarsening; strength's slow leak.</li>
 <li><b>Hot / cold working</b> — deformation above / below \( T_R \).</li>
 </ul></div></section>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does recrystallization undo, and what does its temperature roughly track?</li><li>Define hot working without mentioning absolute temperature.</li></ul></div><div class="measure">
-<h3>01 · What cold work leaves behind</h3>
-<p>A cold-worked metal is a loaded spring at the microscale: dislocation density up a thousandfold, grains flattened and rotated, a few percent of the deformation energy locked in as internal strain. That stored energy is the driving force for everything in this lesson — heat the metal and it will spend that energy reorganizing, in three acts.</p>
-<h3>02 · Recovery, recrystallization, grain growth</h3>
-<p><b>Recovery</b> (lowest temperatures): dislocations climb, annihilate, and tidy into low-energy walls. Residual stress falls and conductivity returns, but strength barely moves — the stress-relief anneal lives here. <b>Recrystallization</b>: new, strain-free grains nucleate in the deformed matrix and consume it wholesale; strength drops toward the annealed baseline and ductility floods back. The temperature where this completes in about an hour — the recrystallization temperature — runs roughly</p>
-\[ T_R \approx 0.4\, T_m \quad (\mathrm{in\ kelvins}) \tag{1} \]
-<p>and falls with heavier prior cold work (more stored energy, more driving force). <b>Grain growth</b>: left hot after recrystallization finishes, boundaries migrate to cut boundary area, grains coarsen, and Hall–Petch (Lesson 9) runs in reverse. Annealing schedules end when recrystallization does, not later, for exactly this reason.</p>
-<h3>03 · Hot working, defined properly</h3>
-<p>Hot working is deformation <em>above</em> the recrystallization temperature — the metal recrystallizes as fast as the rolls harden it, so it never accumulates cold work. Cold working is deformation below \( T_R \). The boundary is homologous, not absolute: by (1), lead recrystallizes below room temperature — a fitter bending lead sheet is hot-working it at 25 °C — while tungsten at a red-hot 800 °C can still be cold-working. "Hot" belongs to the metal's melting point, not the thermometer.</p>
-<p><strong>Closing.</strong> Stored strain energy drives three acts — tidy, replace, coarsen — and \( 0.4\,T_m \) marks the stage door. Every anneal on every line is a decision about which act to stop after.</p></div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="أمثلة محلولة">Worked Examples</h2><div class="measure quiz"><p class="quiz-intro">Attempt each problem before checking — pick an answer or reveal the solution only after you have worked it on paper.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Two metals, one rule of thumb</b></p>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 5 · solve, then check</span><p class="qname"><b>Two metals, one rule of thumb</b></p>
 <p><b>Problem.</b> Estimate recrystallization temperatures for copper (\( T_m = 1358\ \mathrm{K} \)) and lead (\( T_m = 601\ \mathrm{K} \)).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Copper: \( T_R \approx 0.4 \times 1358 = 543\ \mathrm{K} = 270\ \mathrm{^\circ C} \).
 (2) Lead: \( T_R \approx 0.4 \times 601 = 240\ \mathrm{K} = -33\ \mathrm{^\circ C} \).</p>
 <p><b>Answer:</b> Cu ≈ 270 °C; Pb ≈ −33 °C.
@@ -100,13 +101,23 @@
 (2) Homologous: \( T/T_m = 773/1188 = 0.65 \).
 (3) \( 0.65 > 0.4 \): comfortably above the recrystallization threshold — hot working.</p>
 <p><b>Answer:</b> \( T/T_m = 0.65 \); hot working.
-<b>Sanity check:</b> at 0.65 homologous the metal recrystallizes during deformation itself, so the press sees low, steady flow stress and the part emerges strain-free — the entire commercial point of working hot. The same 500 °C applied to tungsten (\( T_m = 3695\ \mathrm{K} \), homologous 0.21) would be cold work, restating 3: hot is a ratio, not a reading.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A fitter bends lead sheet at room temperature. Metallurgically, this is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>cold working</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>hot working — room temperature is above lead's \( T_R \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>impossible without heating</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>precipitation hardening</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Lead's \( T_R \approx 0.4 \times 601 = 240\ \mathrm{K} = -33\ \mathrm{^\circ C} \): any workshop is a hot-working mill for lead, which is why it never strain-hardens on the bench. \"Hot\" is homologous — a ratio to the melting point, not a thermometer reading.</p></div></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<b>Sanity check:</b> at 0.65 homologous the metal recrystallizes during deformation itself, so the press sees low, steady flow stress and the part emerges strain-free — the entire commercial point of working hot. The same 500 °C applied to tungsten (\( T_m = 3695\ \mathrm{K} \), homologous 0.21) would be cold work, restating 3: hot is a ratio, not a reading.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 5 · multiple choice</span><p>A fitter bends lead sheet at room temperature. Metallurgically, this is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>cold working</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>hot working — room temperature is above lead's \( T_R \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>impossible without heating</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>precipitation hardening</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Lead's \( T_R \approx 0.4 \times 601 = 240\ \mathrm{K} = -33\ \mathrm{^\circ C} \): any workshop is a hot-working mill for lead, which is why it never strain-hardens on the bench. \"Hot\" is homologous — a ratio to the melting point, not a thermometer reading.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
 <p><b>Vignette — the mill that anneals as it rolls.</b> You arrive at the Kuwait Steel rolling mill where reheated billets thread the stands glowing — deformation at well above half the melting temperature, recrystallizing between and during passes, which is why a bar can take enormous cumulative reduction without ever cracking (figures representative). The finishing stands and the cooling bed then double as heat treatment: roll temperatures and cooling rates are scheduled so the final recrystallized grain size lands where the rebar spec's strength and bendability need it. Lesson 10 is not adjacent to a rolling mill; it is the operating principle of one.</p></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 7</p>
   <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-  <p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide"></div></section>
 <nav class="prevnext"><a href="09-dislocations-and-strengthening.html">← 09 · Dislocations and strengthening</a><a href="index.html" data-ar="كل الدروس · MAT 104">All lessons · MAT 104</a><a href="11-solidification-and-cast-structure.html">11 · Solidification and cast structure →</a></nav>
@@ -128,6 +139,6 @@
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
-<script src="../../../assets/nx/nexus.js?v=ea06a329f0"></script>
+<script src="../../../assets/nx/nexus.js?v=da32fbcf60"></script>
 </body>
 </html>

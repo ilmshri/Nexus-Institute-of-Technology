@@ -29,9 +29,27 @@ MATHJAX = legacy.MATHJAX
 AR = {
     "Mission": "الرسالة", "Curriculum": "المنهج", "Career Paths": "المسارات المهنية",
     "Sections": "الأقسام", "Foundations": "الأسس", "Lecture": "المحاضرة",
-    "Worked Examples": "أمثلة محلولة", "Library": "المكتبة",
-    "Search": "ابحث", "All lessons": "كل الدروس",
+    "Worked Examples": "أمثلة محلولة", "Examples and Quiz": "الأمثلة والاختبار",
+    "Library": "المكتبة", "Search": "ابحث", "All lessons": "كل الدروس",
 }
+
+# Owner-approved embed channels — STRICT list of exactly 15 (owner correction,
+# 2026-07-17, supersedes ALL earlier embed policies). NPTEL and LearnChemE are
+# explicitly BANNED from embedding, even where the registry carries them; their
+# verified text links may remain in the references section only. A video embeds
+# ONLY if its verified source matches one of these channels; otherwise the
+# Library shows the honest "TODO: Find approved video" placeholder.
+APPROVED_CHANNELS = ("mit opencourseware", "mit ocw",   # one org, two spellings
+                     "engineer4free", "efficient engineer", "jeff hanson",
+                     "engineering explained", "practical engineering",
+                     "engineering mindset", "realpars", "solisplc",
+                     "automationdirect", "plcprofessor", "galcotv",
+                     "hegamastery", "siemens knowledge hub",
+                     "schneider electric hub")
+
+def channel_approved(name):
+    low = (name or "").lower()
+    return any(c in low for c in APPROVED_CHANNELS)
 BRAND_AR = "معهد نيكسس للتكنولوجيا"
 AR_LESSON_NOTE = ("محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة "
                   "العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة "
@@ -220,7 +238,8 @@ NX_PAGE = """<!doctype html>
   <div class="in">
     <a class="brand" href="{prefix}index.html" aria-label="{brand_ar} — Nexus Institute of Technology">
       <img src="{prefix}assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
+        <small data-ar="تعليم هندسي عبر الإنترنت">Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="{prefix}index.html"{on_home} data-ar="{ar_mission}">Mission</a>
@@ -292,12 +311,9 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
     out.write_text(html, encoding="utf-8")
 
 # ------------------------------------------------------------ library -----
-def is_nptel(text):
-    return "nptel" in (text or "").lower()
-
 def embed_card(url, caption, sub=""):
-    """YouTube-only embeds; NPTEL never embeds (Nexus policy)."""
-    if is_nptel(caption) or is_nptel(sub) or is_nptel(url):
+    """YouTube-only embeds, approved channels only (owner list, 2026-07-17)."""
+    if not channel_approved(caption) and not channel_approved(sub):
         return ""
     e = yt_embed_url(url)
     if not e:
@@ -310,13 +326,11 @@ def embed_card(url, caption, sub=""):
             f'<figcaption>{esc(caption)} {sub_html}</figcaption></figure>')
 
 def video_cards(course):
+    """Course-level courseware: link cards only — the lesson Library carries
+    at most ONE embedded video (owner architecture, 2026-07-17)."""
     cards = []
     for v in course.get("videos", []):
-        e = embed_card(v["url"], v["title"], v.get("src", ""))
-        if e:
-            cards.append(e)
-        else:
-            cards.append(f"""
+        cards.append(f"""
 <a class="vid" href="{esc(v['url'])}" target="_blank" rel="noopener">
   <span class="vtag">{esc(v.get('tag', 'COURSE VIDEO — VERIFIED'))}</span>
   <h4>{esc(v['title'])}</h4>
@@ -326,38 +340,65 @@ def video_cards(course):
     return cards
 
 def library_tab(les, course):
+    """Owner lesson architecture (2026-07-17): exactly ONE embedded video from
+    the approved-channel list (honest TODO placeholder otherwise), then
+    textbook references, then a certifications block (curated in Phase 2)."""
     src_raw = les.get("src", "")
     src_html = legacy.linkify(esc(src_raw))
     taught = "".join(f"<li>{legacy.linkify(esc(t))}</li>"
                      for t in course.get("taught_from", []))
-    embeds, seen = [], set()
+
+    video = ""
     for s in legacy.matched_sources(src_raw):
-        for key, cap in (("url", s["name"]), ("watch", s["name"] + " — lecture videos")):
+        for key, cap in (("watch", s["name"] + " — lecture videos"), ("url", s["name"])):
             u = s.get(key)
-            if u and u not in seen:
-                e = embed_card(u, cap)
-                if e:
-                    embeds.append(e)
-                    seen.add(u)
+            if u:
+                video = embed_card(u, cap)
+                if video:
+                    break
+        if video:
+            break
+    if not video:
+        for v in course.get("videos", []):
+            video = embed_card(v["url"], v["title"], v.get("src", ""))
+            if video:
+                break
+    if not video:
+        video = ('<div class="lib-video-todo">TODO: Find approved video</div>'
+                 '<p class="small">Only videos from the approved-channel list embed '
+                 'here; nothing is linked until it has been opened and verified.</p>')
+
     cards = video_cards(course)
-    cards_html = (f'<h3>Course-level courseware</h3><div class="vids">'
-                  f'{"".join(cards)}</div>') if cards else ""
+    cards_html = (f'<h3>Course-level courseware — verified links</h3>'
+                  f'<div class="vids">{"".join(cards)}</div>') if cards else ""
+
     return f"""
-<div class="measure">
+<div class="lib-block lib-video">
+  <h3 data-ar="فيديو الدرس">Lesson video</h3>
+  {video}
+</div>
+<div class="lib-block lib-books">
+  <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
   <p class="src"><b>Taught from</b> — {src_html}</p>
   <ul class="plain small">{taught}</ul>
-  {"".join(embeds) if embeds else
-   '<p class="small">No verified embeddable video is mapped to this specific lesson yet — the verified links above and the course-level courseware below are the study path.</p>'}
+</div>
+<div class="lib-block lib-certs">
+  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
+  <p class="queued-note">The per-lesson certification map (name, relevance,
+  issuing body, verified link) is curated in Phase 2 — placeholders are never
+  filled with unverified links.</p>
 </div>
 <div class="wide">{cards_html}</div>"""
 
 # ------------------------------------------------------------ quiz --------
 def quiz_html(items):
     n = len(items)
+    has_mc = any(it["type"] == "mc" for it in items)
     parts = ['<div class="measure quiz">',
-             '<p class="quiz-intro">Attempt each problem before checking — '
-             'pick an answer or reveal the solution only after you have '
-             'worked it on paper.</p>']
+             '<p class="quiz-intro">Work every problem on paper first. '
+             'Solved examples reveal their full solution; for the multiple-choice '
+             'questions, select your answers and press <b>Submit</b> to see '
+             'what was right, what was not, and why.</p>']
     for i, it in enumerate(items, 1):
         kind = it["type"]
         label = "multiple choice" if kind == "mc" else "solve, then check"
@@ -376,6 +417,12 @@ def quiz_html(items):
             parts.append('<button type="button" class="quiz-reveal" '
                          'aria-expanded="false">Show the full solution</button>')
         parts.append(f'<div class="quiz-sol">{it["solution"]}</div></div>')
+    if has_mc:
+        parts.append(
+            '<div class="quiz-actions">'
+            '<button type="button" class="quiz-submit btn btn-primary" '
+            'data-ar="إرسال الإجابات">Submit answers</button>'
+            '<p class="quiz-score" hidden></p></div>')
     parts.append("</div>")
     return "".join(parts)
 
@@ -559,14 +606,14 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
 </div>
 <div class="lang-ar"><div class="ar-note">{AR_LESSON_NOTE}</div></div>
 <div class="tabs" role="tablist">
-  <button data-tab="t-foundations" data-ar="{AR['Foundations']}">Foundations</button>
   <button class="on" data-tab="t-lecture" data-ar="{AR['Lecture']}">Lecture</button>
-  <button data-tab="t-examples" data-ar="{AR['Worked Examples']}">Worked Examples</button>
+  <button data-tab="t-foundations" data-ar="{AR['Foundations']}">Foundations</button>
+  <button data-tab="t-examples" data-ar="{AR['Examples and Quiz']}">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="{AR['Library']}">Library</button>
 </div>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="{AR['Foundations']}">Foundations</h2>{foundations}</section>
 <section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="{AR['Lecture']}">Lecture</h2>{lecture}</section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="{AR['Worked Examples']}">Worked Examples</h2>{examples}</section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="{AR['Foundations']}">Foundations</h2>{foundations}</section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="{AR['Examples and Quiz']}">Examples and Quiz</h2>{examples}</section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="{AR['Library']}">Library</h2>{library}</section>
 {nav}
 </div>
@@ -785,6 +832,7 @@ def main():
     h = hashlib.sha256()
     for rel in ("nexus.css", "nexus.js"):
         h.update((ASSETS_NX / rel).read_bytes())
+    h.update((ROOT / "nexus" / "logo.svg").read_bytes())
     NX_V = h.hexdigest()[:10]
 
     manifest = (ASSETS_NX / "manifest.webmanifest").read_text(encoding="utf-8")
