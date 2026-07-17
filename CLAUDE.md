@@ -223,6 +223,17 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Specialized Mfg–Gulf Glass; distinct from math-1's sectors). NEXT per
   approved order: materials-1 → physics-1 → computing → drawing-cad →
   Y1S2 stream.
+- MASS PRODUCTION MODE (owner Master Directive, 2026-07-18 — supersedes
+  the per-row video approval loop): the Chief Architect authors curriculum
+  autonomously. BINDING GATES UNCHANGED: 4-tab Educational Unit per lesson
+  (500-1000w §1-§4 lecture w/ working method; prerequisites + glossary
+  TABLE; 3 solves + 5 MCQs Python-verified pre-write; Library = E1 primary
+  English embed oEmbed-verified from the approved channel list, E2 Arabic
+  link-cards (supplemental only), E3/E4 placeholders); company-free scrub;
+  career-sector rotation per course. WORKFLOW: remaining gaps in current
+  courses → Y1S1 → Y1S2 → Y2S1 onward; report per course; no lesson is
+  Done below full Unit; video-only lessons get retrofitted. No more
+  per-step permission requests — integrity gates are the authority.
 - CHECKPOINT: MATERIALS-1 EDUCATIONAL UNIT COMPLETE (2026-07-18): second
   course under the Unit template. All 11 lessons: lectures 500-1000w
   (working-method sections: failure-reading, bond-reading, unit-cell
