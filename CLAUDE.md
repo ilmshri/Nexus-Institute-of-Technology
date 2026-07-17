@@ -223,6 +223,22 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Specialized Mfg–Gulf Glass; distinct from math-1's sectors). NEXT per
   approved order: materials-1 → physics-1 → computing → drawing-cad →
   Y1S2 stream.
+- CHECKPOINT: MATERIALS-1 EDUCATIONAL UNIT COMPLETE (2026-07-18): second
+  course under the Unit template. All 11 lessons: lectures 500-1000w
+  (working-method sections: failure-reading, bond-reading, unit-cell
+  bookkeeping, indexing, defect inventory, diffusion estimating, tension-
+  test reading, hardness honesty, strengthening decisions, annealing
+  decisions, cast-structure reading), glossary TABLES, quizzes
+  [s,m,m,s,m] → [s,s,s,m,m,m,m,m] (+11 solves +22 MCs, all Python-verified
+  pre-write: corroded-bolt stress, bond-energy conversion, Cu density from
+  FCC cell, linear density, vacancy exponential, carburizing time, modulus
+  from elastic leg, HB→UTS triage, Hall-Petch, grain growth, Chvorinov);
+  applied vignettes scrubbed company-free (11 replacements); Library = 7
+  approved 3.091/EE embeds + owner-approved "none"/continue-hunt markers.
+  Career module attached (rotation: Infrastructure/Utilities-Gulf Cable,
+  Automotive & Heavy Equipment, Global OEM-Schneider Electric — distinct
+  from math-1 and statics sectors). NEXT per approved order: physics-1
+  (fresh authoring) → computing → drawing-cad → Y1S2 stream.
 - BATCH A+B APPROVED & EXECUTED (owner, 2026-07-18): embeds now 73.
   VERIFIED+EMBEDDED: materials-1 L7/L8 (Efficient Engineer stress-strain,
   strength/ductility/toughness); physics-1 L1–L9 (Engineering Deciphered
