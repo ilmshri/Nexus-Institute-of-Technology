@@ -54,7 +54,7 @@
     <h1>Project: a maintenance data mini-analysis</h1>
     <p class="sub">End-to-end exercise: load a work-order export, clean it, compute simple KPIs, and plot the story. The habits of reproducible analysis. This project pattern returns in Reliability Engineering.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/11">Mark as complete</button>
@@ -67,23 +67,92 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>From a work-order export, which cleaning steps must precede any KPI?</li><li>Why should analysis scripts read raw data and never edit it?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>From a work-order export, which cleaning steps must precede any KPI?</li><li>Why should analysis scripts read raw data and never edit it?</li></ul></div><div class="measure">
+<h3>01 · One project, the whole course</h3>
+<p>The course closes the way real analysis begins: a work-order export lands — one CSV
+row per maintenance job, with machine tag, failure date, hours down, hours to repair, a
+cause code — and someone asks what it says. The pipeline that answers is this lesson:
+<em>load</em> the raw file, <em>clean</em> it defensively, <em>compute</em> a handful of
+KPIs, <em>plot</em> the story, and write four honest sentences on top. Every prior
+lesson reports for duty: files and dictionaries carry the records in, arrays vectorize
+the arithmetic, assertions pin the steps, plots make the argument. The deliverable is
+not a number — it is a SCRIPT that turns the raw file into the numbers, rerunnable by
+anyone, next month, unchanged.</p>
+<h3>02 · Cleaning: where the analysis is won or lost</h3>
+<p>Real exports are dirty in boringly predictable ways: duplicated rows from double
+entry, a duration keyed in minutes into an hours column, negative times from swapped
+dates, blank cause codes. Cleaning is not clerical — every fix is an engineering
+decision, and the discipline is to make each one explicit in code: drop exact
+duplicates and COUNT what was dropped; range-check every numeric column and quarantine
+violators rather than silently deleting them; log rows in versus rows out. The payoff
+is quantitative: one mis-keyed duration can multiply a mean by ten while the median
+barely moves — which is why the robust statistics of Lesson 7 are cleaning's
+instruments, and why "how many rows survived, and why" is the first line of any
+defensible report.</p>
+<h3>03 · KPIs with honest denominators</h3>
+<p>Three ratios summarize a machine's month. <em>MTBF</em> — uptime divided by failure
+count — how long it runs between stoppages. <em>MTTR</em> — downtime divided by failure
+count — how long a stoppage lasts. <em>Availability</em> — uptime over total period —
+the fraction of the calendar the machine was there when needed. Each is one line of
+arithmetic and one buried decision: the denominator. Calendar hours or scheduled hours?
+Do planned overhauls count as downtime? Neither answer is wrong; the UNSTATED answer is.
+The other closing instrument is the Pareto view: rank downtime by cause and the top two
+or three causes typically own most of the loss — the ranking that converts a data file
+into next month's priorities. A KPI without its denominator stated, or a ranking
+without its period, is decoration.</p>
+<h3>04 · The reproducibility working method</h3>
+<p>The habits that make the analysis an instrument rather than a performance: the raw
+file is READ-ONLY — the script loads it, transforms in memory, writes results to new
+files, and never edits the source, because the untouched original plus the script IS
+the audit trail; rerunning must reproduce every figure exactly. One script runs raw to
+figures with no manual steps in between — no hand-pasted cells, no "then I fixed one
+value in the editor", since a single silent hand-edit breaks the chain that lets a
+reviewer trust the output. Assertions stand guard at the borders: row counts after each
+cleaning stage, ranges on every computed KPI. Figures carry their period and filters in
+the caption. And the four sentences on top state what was computed, over what
+denominator, with what excluded — the analyst's equivalent of showing units. This
+pattern — raw, script, assertions, figures, statement — returns at full strength in
+Reliability Engineering, where the same work-order data feeds Weibull fits and failure
+forecasting. This project is the rehearsal, and the habits are the deliverable.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>From a work-order export, which cleaning steps must precede any KPI?</li><li>Why should analysis scripts read raw data and never edit it?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Files, lists, dictionaries</b> (Lesson 6) — the CSV comes in through these doors.</li>
+<li><b>Arrays and robust statistics</b> (Lesson 7) — means, medians, masks do the arithmetic.</li>
+<li><b>Plotting</b> (Lesson 8) — the KPI story lands as honest figures.</li>
+<li><b>Assertions</b> (Lesson 5) — row counts and ranges guard every stage.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Work-order export</td><td>one CSV row per job</td><td>The raw material of maintenance analysis.</td></tr>
+<tr><td>MTBF</td><td>\( \text{uptime} / N_{fail} \)</td><td>Mean run between stoppages — reliability's headline.</td></tr>
+<tr><td>MTTR</td><td>\( \text{downtime} / N_{fail} \)</td><td>Mean length of a stoppage — repair response in one number.</td></tr>
+<tr><td>Availability</td><td>\( \text{uptime} / \text{period} \)</td><td>Fraction of the period the machine was there when needed.</td></tr>
+<tr><td>Pareto ranking</td><td>sort causes by loss</td><td>The few causes owning most of the downtime — next month's priorities.</td></tr>
+<tr><td>Quarantine</td><td>flag, don't delete</td><td>Invalid rows set aside and counted, never silently dropped.</td></tr>
+<tr><td>Read-only raw</td><td>script reads, never edits</td><td>The untouched original + the script = the audit trail.</td></tr>
+<tr><td>Reproducibility</td><td>same file + same script → same figures</td><td>The property that makes analysis trustworthy at all.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>A machine's month in three KPIs</b></p>
+<p><b>Problem.</b> In a 720-hour month, a filling line logs 4 failures totaling 48 hours of downtime. Compute MTBF, MTTR, and availability.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Uptime = 720 − 48 = 672 h.
+(2) MTBF = 672 / 4 = 168 h; MTTR = 48 / 4 = 12 h.
+(3) Availability = 672 / 720 = 0.9333 → 93.3%.</p>
+<p><b>Answer:</b> MTBF 168 h, MTTR 12 h, availability 93.3%.
+<b>Sanity check:</b> the three interlock: MTBF/(MTBF + MTTR) = 168/180 = 93.3% — the same availability by the cycle view, so the arithmetic is consistent. The buried decision is the denominator: 720 h is the CALENDAR month; against scheduled hours the number differs, and only the stated choice makes the KPI comparable.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>One bad row versus the mean</b></p>
+<p><b>Problem.</b> Six repair durations arrive (hours): 6.0, 3.5, 480.0, 5.0, 2.5, 7.0. Investigation shows 480 was keyed in MINUTES. Compute mean and median before and after the fix, and state the lesson.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Raw: mean = 504/6 = 84.0 h; median = (5.0 + 6.0)/2 = 5.5 h.
+(2) Fix: 480 min = 8.0 h. Clean: mean = 32/6 = 5.33 h; median = (5.0 + 6.0)/2 = 5.5 h — unchanged.
+(3) One unit error inflated the mean ×16; the median never moved.</p>
+<p><b>Answer:</b> mean 84.0 → 5.33 h; median 5.5 → 5.5 h.
+<b>Sanity check:</b> the median's indifference is exactly why range checks matter: had the report led with "mean repair 84 h" — three and a half days to fix a filling line — the absurdity would have flagged the data. A mean wildly above its median is the classic signature of an outlier or unit mix, and the row that caused it goes to QUARANTINE with a note, never to silent deletion.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Pareto of a quarter's downtime</b></p>
+<p><b>Problem.</b> A quarter's downtime by cause: pump seal 32 h, motor bearing 18 h, coupling 9 h, instrument 5 h, other 4 h. What share of total loss do the top two causes own?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Total = 32 + 18 + 9 + 5 + 4 = 68 h.
+(2) Top two: 32 + 18 = 50 h.
+(3) Share = 50/68 = 0.735 → 73.5%.</p>
+<p><b>Answer:</b> 73.5% of all downtime sits in pump seals and motor bearings.
+<b>Sanity check:</b> two of five causes owning nearly three quarters of the loss is the Pareto shape in miniature — and it converts directly into a work plan: a seal-flushing review and a bearing-lubrication review attack 50 of the 68 hours; chasing "other" first would attack 4. The ranking, with its period stated, IS the recommendation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The analysis script must read the raw export and never edit it because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The untouched original plus the script is the audit trail — anyone can rerun and reproduce</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>CSV files cannot be modified once written</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Editing would make the script run slower</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Raw files are usually write-protected anyway</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Reproducibility is the product: same file + same script → same figures, verifiable by anyone. A single silent hand-edit breaks that chain permanently — nobody can distinguish correction from mistake afterward. Fixes belong IN the script, visible and commented, where the audit trail records them.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>First act on a freshly loaded export, before any KPI:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Look at it — row count, ranges, missing values, duplicates</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Compute MTBF immediately while the data is fresh</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Delete every row with any blank field</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Round all durations to whole hours</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Compute-first hands you confident numbers built on duplicates and unit mixes — the 84-hour mean repair. The inspection pass (counts, ranges, missing, duplicates) is minutes of work that decides whether every later number means anything. Blanket deletion is its own error: rows are quarantined with counts, not vaporized.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Repair times are strongly right-skewed. The single most honest "typical repair" number:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The median</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The mean</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The maximum</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The standard deviation</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Skewed data drags the mean toward its long tail — a few marathon repairs make the typical job look worse than it is (and one unit error makes it absurd, as the solve showed). The median reports the middle job faithfully. The mature report gives both and lets the gap between them SAY "skewed": that gap is information, not embarrassment.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>With uptime U, downtime D over a period P = U + D, availability is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>U / P</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>P / U</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>U / D</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>D / P</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Availability is the fraction of the period the machine was available: uptime over the whole period, 672/720 = 93.3% in the solve. U/D is a ratio of times (not a fraction), D/P is the UNavailability, and P/U exceeds 1 — a useful smell test, since no availability can. The load-bearing choice is what P counts: calendar or scheduled hours, stated every time.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The analysis counts as reproducible when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The same raw file and script yield the same numbers and figures with no manual steps</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It runs without printing warnings</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The plots look professional</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The script is shorter than 100 lines</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Reproducibility is a property of the PIPELINE: raw in, figures out, nothing by hand in between — so a colleague (or you, next quarter, on the new export) reruns it and gets the identical story. Warnings, aesthetics, and line counts are all beside the point; the no-manual-steps chain is the point.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

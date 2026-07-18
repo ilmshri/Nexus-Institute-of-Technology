@@ -646,5 +646,248 @@
     "solution": "<p>Bar charts encode value as LENGTH, and lengths compare honestly only from a common zero — a truncated baseline turns a 5% difference into a visual 3:1 ratio, the oldest chart trick in the persuasion business. (Line plots may zoom, with axes labeled, since they encode position, not length.) The skeptic's-eye pass of the working method looks for exactly this.</p>"
    }
   ]
+ },
+ "9": {
+  "lecture": "\n<h3>§1 · Two questions a table cannot answer alone</h3>\n<p>Engineering data arrives as points: rows of a steam table, samples on a pump test,\nreadings from a calibration bench. The questions arrive between the points — the head at\na flow the test never held, the transmitter output at a pressure between bench settings.\nTwo distinct operations close that gap. <em>Interpolation</em> reads between the rows of\ndata you trust, adding no opinion of its own. <em>Fitting</em> proposes a model — a line,\na low-order polynomial — and asks the data to vote on its parameters. Keeping the two\ndistinct is the first discipline of this lesson: interpolation honors every point;\nfitting deliberately smooths over their scatter, and each is wrong where the other is\nright.</p>\n<h3>§2 · Interpolation: reading between the rows</h3>\n<p>Between two table rows \\( (x_1, y_1) \\) and \\( (x_2, y_2) \\), linear interpolation\ndraws the chord: \\( y = y_1 + \\frac{x - x_1}{x_2 - x_1}\\,(y_2 - y_1) \\). The fraction is\njust \"how far across the interval x sits\", and the same fraction is applied to the\ny-interval. Property tables are published dense precisely so that this chord is an\nexcellent stand-in for the true curve; <code>np.interp(x, xs, ys)</code> does the row\nhunting and the arithmetic in one call, provided the sample points <code>xs</code>\nincrease monotonically. The method's honest boundary is the table's edge:\n<em>extrapolation</em> — reading beyond the last row — is a different act entirely,\nbecause past the data the curve owes you nothing. Worse, <code>np.interp</code> does not\nprotest at the edge: it silently returns the endpoint value, so the guard clause of\nLesson 3 — assert the query lies inside the table's range — is part of every lookup that\nmatters.</p>\n<h3>§3 · Least squares: the best line through scatter</h3>\n<p>Calibration data never lies on a line; it scatters around one. For each candidate\nline, every point carries a <em>residual</em> — measured minus predicted,\n\\( r_i = y_i - (m x_i + b) \\). Least squares chooses the \\( m, b \\) that minimize\n\\( \\sum r_i^2 \\), and for a straight line the answer is closed-form:\n\\( m = \\frac{n\\sum x y - \\sum x \\sum y}{n \\sum x^2 - (\\sum x)^2} \\), with\n\\( b = \\bar{y} - m\\bar{x} \\). <code>np.polyfit(x, y, 1)</code> evaluates exactly this.\nThe degree argument is a temptation: a degree-9 polynomial threads all ten of your\npoints exactly — residuals zero, \\( R^2 = 1 \\) — and swings wildly everywhere between\nthem. Adding parameters always improves the numbers and, past the physics, always\ndegrades the model; the fit stops summarizing the data and starts memorizing its\nnoise.</p>\n<h3>§4 · The fitting working method</h3>\n<p>The routine that keeps fits honest: PLOT the data before fitting anything — the eye\ncatches curvature, outliers, and regime changes that summary numbers hide. Fit the\nsimplest model the physics justifies, then plot the RESIDUALS: random scatter of roughly\nconstant width says the model has taken all the structure the data offers; any pattern —\na bow, a trend, a fan — is physics the model missed, an instruction to think, not to\nraise the degree. Distrust \\( R^2 \\) as a verdict: it measures variance explained, and\na badly bowed fit can still post 0.99; the residual plot, not the score, is the honesty\ncheck. Report parameters with their units and alongside the data's domain, because the\nfit is a summary of THAT range — using it outside is extrapolation wearing a\ncalculator's confidence. And when the goal is only to read between trusted rows, skip\nthe model entirely: interpolate. The habits are small, but they are the difference\nbetween a calibration you can defend and a curve that merely looks professional. Both\nreturn in force when Metrology fits gauge data and Reliability fits life data —\nthis lesson is their rehearsal.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Arrays and reductions</b> (Lesson 7) — data arrives vectorized; sums are one call.</li>\n<li><b>Plotting</b> (Lesson 8) — the data plot and the residual plot are the lesson's instruments.</li>\n<li><b>Assertions</b> (Lesson 5) — range guards on every table lookup.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Linear interpolation</td><td>\\( y = y_1 + \\frac{x-x_1}{x_2-x_1}(y_2-y_1) \\)</td><td>Reading between trusted table rows — steam tables, pump curves.</td></tr>\n<tr><td>Extrapolation</td><td>reading past the last row</td><td>Avoid without a physical model; the data owes nothing outside its range.</td></tr>\n<tr><td>Residual</td><td>\\( r_i = y_i - \\hat{y}_i \\)</td><td>Measured minus predicted — the fit's per-point report card.</td></tr>\n<tr><td>Least squares</td><td>minimize \\( \\sum r_i^2 \\)</td><td>Fitting a calibration or performance model to scattered data.</td></tr>\n<tr><td>Slope (closed form)</td><td>\\( m = \\frac{n\\sum xy - \\sum x \\sum y}{n\\sum x^2 - (\\sum x)^2} \\)</td><td>What <code>np.polyfit(x, y, 1)</code> computes for you.</td></tr>\n<tr><td>\\( R^2 \\)</td><td>variance explained</td><td>A screening number, never a verdict — check residuals instead.</td></tr>\n<tr><td>Overfitting</td><td>degree ≫ physics</td><td>Perfect residuals, useless predictions — the model memorized noise.</td></tr>\n<tr><td>Residual plot</td><td>\\( r_i \\) vs \\( x_i \\)</td><td>Random scatter = model adequate; any pattern = missing physics.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a pump curve between test points</b></p>\n<p><b>Problem.</b> A pump test reports head 42 m at 30 m³/h and 38 m at 40 m³/h. By linear interpolation, what head does the curve predict at 34 m³/h?</p>",
+    "solution": "<p><b>Solution.</b> (1) Fraction across the interval: \\( (34-30)/(40-30) = 0.4 \\).\n(2) Apply it to the head interval: \\( h = 42 + 0.4\\,(38 - 42) = 42 - 1.6 = 40.4 \\) m.</p>\n<p><b>Answer:</b> 40.4 m.\n<b>Sanity check:</b> 34 m³/h sits 40% of the way across the flow interval, so the head must sit 40% of the way down the 4-m drop — between 42 and 38, nearer 42. Any interpolated value OUTSIDE its bracketing rows is an arithmetic slip: the chord never leaves the interval.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Calibrating a pressure transmitter</b></p>\n<p><b>Problem.</b> A bench calibration of a 4–20 mA pressure transmitter records output y (mA) at applied pressure x (bar): (0, 4.1), (2, 7.2), (4, 10.4), (6, 13.3), (8, 16.5). Fit the least-squares line and state the predicted output at 5.0 bar.</p>",
+    "solution": "<p><b>Solution.</b> (1) The sums over the five points: \\( \\sum x = 20 \\), \\( \\sum y = 51.5 \\), \\( \\sum xy = 267.8 \\), \\( \\sum x^2 = 120 \\).\n(2) Slope: \\( m = \\frac{5(267.8) - 20(51.5)}{5(120) - 20^2} = \\frac{309}{200} = 1.545 \\) mA/bar; intercept: \\( b = (51.5 - 1.545 \\times 20)/5 = 4.12 \\) mA — exactly what <code>np.polyfit(x, y, 1)</code> returns.\n(3) At 5.0 bar: \\( y = 1.545(5.0) + 4.12 = 11.845 \\approx 11.85 \\) mA.</p>\n<p><b>Answer:</b> \\( y = 1.545x + 4.12 \\); predicted 11.85 mA at 5.0 bar.\n<b>Sanity check:</b> an ideal 4–20 mA device spanning 0–10 bar would give exactly 1.6 mA/bar from 4.0 mA — the fit (1.545 from 4.12) sits close, so the instrument is near nominal. The largest residual is 0.1 mA, scattered in sign — no structure, so the straight-line model is doing its job.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading residuals like an engineer</b></p>\n<p><b>Problem.</b> Flow-meter data at x = 0, 1, 2, 3, 4 gives y = 1.0, 3.15, 5.6, 8.35, 11.4. The least-squares line is \\( y = 2.6x + 0.7 \\) with \\( R^2 = 0.9954 \\). Compute the five residuals and give the verdict on the model.</p>",
+    "solution": "<p><b>Solution.</b> (1) Predictions at x = 0…4: 0.7, 3.3, 5.9, 8.5, 11.1.\n(2) Residuals (measured − predicted): <b>+0.30, −0.15, −0.30, −0.15, +0.30</b>.\n(3) The pattern is a symmetric U — positive at both ends, negative in the middle. That is CURVATURE the line cannot express: the data carries a quadratic term the model omitted.</p>\n<p><b>Answer:</b> residuals [+0.30, −0.15, −0.30, −0.15, +0.30] — reject the straight line; the data is curved.\n<b>Sanity check:</b> this is the lesson's central trap: \\( R^2 = 0.9954 \\) LOOKS like an endorsement, yet the residual plot convicts the model at a glance. Variance explained is not structure exhausted — the residual plot, not the score, is the honesty check.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A residual is:</p>",
+    "choices": [
+     "Measured value minus the model's prediction",
+     "The model's prediction minus zero",
+     "The uncertainty of the instrument",
+     "The slope error of the fit"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( r_i = y_i - \\hat{y}_i \\): what the data said minus what the model claims — each point's individual report on the fit. Everything diagnostic in this lesson (the U-pattern, the honesty check, the overfitting verdict) is read from these numbers, which is why they matter more than any single summary score.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Extrapolating a fitted calibration line far beyond the calibrated range is risky because:</p>",
+    "choices": [
+     "Outside its data range the model has no evidence — and the physics may change",
+     "The arithmetic becomes less precise at large numbers",
+     "Least squares only works inside the original interval",
+     "Residuals cannot be computed outside the range"
+    ],
+    "answer": 0,
+    "solution": "<p>The fit is a summary of the range that produced it. Beyond that range there is no data to vote, and real devices leave their linear region — sensors saturate, pumps run off-curve. The arithmetic extends happily; the EVIDENCE does not. That is why the working method reports a fit's domain right beside its coefficients.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A fit posts \\( R^2 = 0.99 \\). What does that establish?</p>",
+    "choices": [
+     "Little by itself — the residuals may still hold a systematic pattern",
+     "The model is correct",
+     "The residuals are random",
+     "The data contains no outliers"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( R^2 \\) reports variance explained — a bowed line through curved data can still score 0.99, as the solve problem showed at 0.9954. Model adequacy is read from the residual plot: random scatter passes, any structure fails. High \\( R^2 \\) with patterned residuals means \"good summary, wrong model\".</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A degree-9 polynomial fitted through 10 calibration points gives \\( R^2 = 1 \\). The model is:</p>",
+    "choices": [
+     "Overfitted — it memorized the noise and is untrustworthy between the points",
+     "Ideal — every point is matched exactly",
+     "Underfitted — more terms are needed",
+     "Correct if the residuals are all zero"
+    ],
+    "answer": 0,
+    "solution": "<p>Ten coefficients against ten points can thread every measurement exactly — including their noise — and oscillate wildly between them. Zero residuals here indict the model rather than endorse it. Parameters must be justified by physics, not by score-chasing: for a near-linear device, that means a line.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p><code>np.interp(x, xs, ys)</code> requires — and silently assumes — that:</p>",
+    "choices": [
+     "The sample points xs increase monotonically; outside their range it returns the endpoint values",
+     "The data is evenly spaced",
+     "The relationship is exactly linear everywhere",
+     "x appears exactly in xs"
+    ],
+    "answer": 0,
+    "solution": "<p>The function hunts for the bracketing rows, so <code>xs</code> must be sorted ascending — and beyond either end it CLAMPS to the edge value without warning, which turns an out-of-range query into a plausible-looking wrong answer. Hence the working method's guard: assert the query lies inside the table before trusting the lookup.</p>"
+   }
+  ]
+ },
+ "10": {
+  "lecture": "\n<h3>§1 · The equations engineers actually meet</h3>\n<p>Strip the plant to its rates and first-order differential equations appear everywhere:\na tank fills at the rate flow-in minus flow-out; a motor housing cools at a rate\nproportional to how far it sits above ambient; receiver pressure decays as the leak\nbleeds it down. Each says \\( dy/dt = f(y) \\): the state's rate of change depends on the\nstate itself. A few such equations have textbook solutions; most industrial variants —\nlevel-dependent outflow, staged inputs, valves that open mid-run — do not. Simulation\nsidesteps the impasse: instead of solving the equation, STEP it. March time forward in\nsmall increments, updating the state by its current rate, and the trajectory emerges\nnumerically. The computer becomes a cheap laboratory — one where a tank can overflow a\nhundred times before breakfast and nothing needs mopping.</p>\n<h3>§2 · Euler's method: the honest workhorse</h3>\n<p>The simplest march is Euler's: \\( y_{n+1} = y_n + \\Delta t \\cdot f(y_n) \\) — new state\nequals old state plus rate times step. It is nothing more than \"keep the rate constant\nfor a little while\", the same approximation a hand calculation makes, automated. Its\nprice is a per-step error that accumulates in proportion to \\( \\Delta t \\): halve the\nstep, roughly halve the error at a given time. That buys a wonderfully practical\nconvergence test needing no theory at all — run the simulation, halve \\( \\Delta t \\),\nrun again; if the answer you report did not change at the precision you report it,\nthe step is small enough. If it moved, halve again. The experiment IS the error\nanalysis, and it costs seconds.</p>\n<h3>§3 · When the step lies: stability</h3>\n<p>Take cooling toward ambient, \\( dT/dt = -k\\,(T - T_\\infty) \\). One Euler step\nmultiplies the deviation from ambient by the factor \\( (1 - k\\,\\Delta t) \\). For small\nsteps that factor sits just under 1 and the temperature relaxes exponentially, as\nphysics says. But let \\( k\\,\\Delta t \\) exceed 2 and the factor drops below −1: each\nstep OVERSHOOTS ambient farther than it started, flipping sign and growing — the\nsimulated temperature oscillates with expanding amplitude while the real housing simply\ncools. The boundary \\( \\Delta t < 2/k \\) is the stability limit, and it teaches the\nlesson's sharpest distinction: instability is not sloppiness, it is a qualitatively\nfalse solution. Between stable and accurate stands the time constant \\( \\tau = 1/k \\) —\nthe system's natural clock; steps around \\( \\tau/10 \\) resolve the physics, steps near\nthe limit merely avoid explosion.</p>\n<h3>§4 · The simulation working method</h3>\n<p>Write the rate as a named function <code>f(y)</code> — Lesson 4's contract — so the\nmodel sits in one testable place and the marching loop never changes. Anchor the code\nbefore trusting it: the plain cooling case has an exact solution, so assert your loop\nreproduces it; the tank has a steady state you can compute by setting the rates equal,\nso run long and assert the level settles there. Only then vary toward the case with no\nformula — the varying inflow, the staged setpoint — because a loop that reproduces the\nknown case has EARNED extrapolation to the unknown one. Run the halve-the-step\nexperiment as routine, plot whole trajectories rather than trusting endpoints (Lesson 8:\nthe plot is the argument), and keep the model's assumptions written beside the code.\nThat last habit is the deepest: a converged, stable simulation is faithful to its\nEQUATIONS, and if the equations omit real physics — the heat the sun adds, the second\nleak — the laboratory lies with perfect numerical composure. Step-size error you can\nhalve away; model error you can only think away. The distinction returns at full scale\nin Heat Transfer, System Dynamics, and every digital-twin conversation of the later\nautomation courses.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Loops and functions</b> (Lessons 3–4) — the march is a loop calling a named rate function.</li>\n<li><b>Assertions</b> (Lesson 5) — known cases pin the loop before it earns the unknown ones.</li>\n<li><b>Arrays and plotting</b> (Lessons 7–8) — trajectories are arrays; the plot is the readout.</li>\n<li><b>The derivative as a rate</b> (MTH 101) — \\( dy/dt \\) read as \"current rate of change\".</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>First-order ODE</td><td>\\( dy/dt = f(y) \\)</td><td>Tank level, cooling, pressure decay — rate depends on state.</td></tr>\n<tr><td>Euler step</td><td>\\( y_{n+1} = y_n + \\Delta t\\, f(y_n) \\)</td><td>The workhorse march: rate held constant across a small step.</td></tr>\n<tr><td>Convergence test</td><td>halve \\( \\Delta t \\), compare</td><td>Answer unchanged at reported precision → step small enough.</td></tr>\n<tr><td>Amplification factor</td><td>\\( 1 - k\\,\\Delta t \\)</td><td>What one Euler step does to the deviation in linear decay.</td></tr>\n<tr><td>Stability limit</td><td>\\( \\Delta t < 2/k \\)</td><td>Beyond it the march oscillates and grows — qualitatively false.</td></tr>\n<tr><td>Time constant</td><td>\\( \\tau = 1/k \\)</td><td>The system's clock; \\( \\Delta t \\approx \\tau/10 \\) resolves the physics.</td></tr>\n<tr><td>Steady state</td><td>\\( f(y^*) = 0 \\)</td><td>Rates balance; a hand-computable anchor for asserting the loop.</td></tr>\n<tr><td>Model vs numerical error</td><td>—</td><td>Numerics you halve away; wrong assumptions you can only think away.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Two Euler steps of a cooling motor housing</b></p>\n<p><b>Problem.</b> A housing at 90 °C cools toward 30 °C ambient with \\( dT/dt = -k(T - 30) \\), k = 0.1 min⁻¹. March two Euler steps with \\( \\Delta t = 1 \\) min. (Exact value at t = 2 min: 79.12 °C.)</p>",
+    "solution": "<p><b>Solution.</b> (1) Step 1: rate = −0.1 (90 − 30) = −6.0 °C/min, so \\( T_1 = 90 + 1(−6.0) = 84.0 \\) °C.\n(2) Step 2: rate = −0.1 (84 − 30) = −5.4 °C/min, so \\( T_2 = 84 + 1(−5.4) = 78.6 \\) °C.</p>\n<p><b>Answer:</b> 84.0 °C, then 78.6 °C.\n<b>Sanity check:</b> against the exact 79.12 °C the march is 0.52 °C low — Euler holds each interval's STARTING rate, which for cooling is always the steepest in the interval, so it systematically overshoots the drop. Halve the step and the miss roughly halves: that is the first-order signature, and the basis of the halve-and-compare test.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Tank level with level-dependent outflow</b></p>\n<p><b>Problem.</b> A 4 m² tank receives 1.2 m³/min while draining at 0.4·h m³/min: \\( dh/dt = (1.2 - 0.4h)/4 \\). From h = 1.0 m, march two Euler steps with \\( \\Delta t = 2 \\) min, and state the steady-state level.</p>",
+    "solution": "<p><b>Solution.</b> (1) Step 1: rate = (1.2 − 0.4)/4 = 0.2 m/min → \\( h_1 = 1.0 + 2(0.2) = 1.4 \\) m.\n(2) Step 2: rate = (1.2 − 0.56)/4 = 0.16 m/min → \\( h_2 = 1.4 + 2(0.16) = 1.72 \\) m.\n(3) Steady state: set inflow = outflow, 1.2 = 0.4·h* → h* = 3.0 m.</p>\n<p><b>Answer:</b> 1.4 m, 1.72 m; the level settles at 3.0 m.\n<b>Sanity check:</b> each step's rise is smaller than the last (0.40 m then 0.32 m) — as h climbs, outflow grows and the net rate shrinks: the approach to steady state decelerates, exactly the exponential-settling shape. The hand-computed 3.0 m is the assertion to pin on the loop: run long, and the simulated level must flatten there.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Watching a step go unstable</b></p>\n<p><b>Problem.</b> For the cooling law with k = 0.5 min⁻¹, ambient 30 °C, start 90 °C: state the Euler stability limit, then march two steps with \\( \\Delta t = 5 \\) min and describe what the numbers do.</p>",
+    "solution": "<p><b>Solution.</b> (1) Limit: \\( \\Delta t < 2/k = 4 \\) min — and 5 min exceeds it. The step factor is \\( 1 - k\\Delta t = 1 - 2.5 = -1.5 \\).\n(2) Step 1: \\( T_1 = 90 + 5(-0.5)(90-30) = 90 - 150 = -60 \\) °C. Step 2: \\( T_2 = -60 + 5(-0.5)(-60-30) = -60 + 225 = 165 \\) °C.\n(3) The deviation from ambient runs 60 → −90 → +135: sign flips every step, magnitude grows ×1.5 — oscillating divergence.</p>\n<p><b>Answer:</b> limit 4 min; with \\( \\Delta t = 5 \\) the march swings 90 → −60 → 165 °C and explodes.\n<b>Sanity check:</b> the real housing just cools quietly toward 30 °C — nothing physical oscillates. The explosion is pure numerics: each oversized step overshoots ambient farther than it started. Any simulated temperature that CROSSES its own ambient on a plain cooling problem is the step size confessing, not the physics.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Halving the step size in Euler's method roughly:</p>",
+    "choices": [
+     "Halves the accumulated error — the method is first-order",
+     "Quarters the error",
+     "Leaves the error unchanged",
+     "Doubles the run time but not the accuracy"
+    ],
+    "answer": 0,
+    "solution": "<p>Euler's accumulated error scales with \\( \\Delta t \\): half the step, about half the miss (the cooling solve showed 0.52 °C shrinking toward 0.26). That linear scaling is what makes the halve-and-compare experiment meaningful — and yes, half the step doubles the work, which is the honest price of the extra digit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The practical test that your step size is small enough:</p>",
+    "choices": [
+     "Halve \\( \\Delta t \\), rerun, and check the reported answer no longer changes",
+     "The simulation finishes without error",
+     "The trajectory looks smooth on the plot",
+     "The step is smaller than 1 second"
+    ],
+    "answer": 0,
+    "solution": "<p>Convergence is demonstrated, not assumed: if halving the step moves the answer at the precision you report, the previous step was too coarse — halve again. Smooth-looking plots and error-free runs prove nothing (the unstable case errors nowhere and looks dramatic), and no absolute step size is universally small: it is small relative to the system's time constant.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A converged, stable simulation can still mislead when:</p>",
+    "choices": [
+     "The model omits real physics — it solves the wrong equations exactly",
+     "The step size is below the stability limit",
+     "The trajectory is stored as an array",
+     "The rate is written as a named function"
+    ],
+    "answer": 0,
+    "solution": "<p>Convergence guarantees fidelity to the EQUATIONS, not to the plant. Leave the sun's heat load or the second leak out of \\( f(y) \\) and the laboratory lies with perfect numerical composure. Step-size error you halve away; model error you can only think away — which is why assumptions live written beside the code.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( dh/dt = (Q_{in} - c\\,h)/A \\), the correct Euler update is:</p>",
+    "choices": [
+     "<code>h = h + dt*(Qin - c*h)/A</code>",
+     "<code>h = dt*(Qin - c*h)/A</code>",
+     "<code>h = h + (Qin - c*h)/A</code>",
+     "<code>h = h + dt*Qin - c*h</code>"
+    ],
+    "answer": 0,
+    "solution": "<p>New state = old state + step × current rate — all three pieces, every step. Dropping <code>h +</code> forgets the state; dropping <code>dt</code> marches in units of one; mangling the parentheses changes the model itself. The update line is short enough to check by units: each term must be meters.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The steady state of \\( dT/dt = -k(T - T_\\infty) \\) is:</p>",
+    "choices": [
+     "\\( T = T_\\infty \\), regardless of the starting temperature",
+     "The starting temperature \\( T_0 \\)",
+     "It depends on the step size used",
+     "\\( T = T_\\infty + 1/k \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Steady state is where the rate vanishes: \\( f(T^*) = 0 \\) gives \\( T^* = T_\\infty \\). The start decides the journey, never the destination; and the step size belongs to the numerics, not the physics — if a simulated steady state MOVES when \\( \\Delta t \\) changes, the simulation is confessing, not the tank.</p>"
+   }
+  ]
+ },
+ "11": {
+  "lecture": "\n<h3>§1 · One project, the whole course</h3>\n<p>The course closes the way real analysis begins: a work-order export lands — one CSV\nrow per maintenance job, with machine tag, failure date, hours down, hours to repair, a\ncause code — and someone asks what it says. The pipeline that answers is this lesson:\n<em>load</em> the raw file, <em>clean</em> it defensively, <em>compute</em> a handful of\nKPIs, <em>plot</em> the story, and write four honest sentences on top. Every prior\nlesson reports for duty: files and dictionaries carry the records in, arrays vectorize\nthe arithmetic, assertions pin the steps, plots make the argument. The deliverable is\nnot a number — it is a SCRIPT that turns the raw file into the numbers, rerunnable by\nanyone, next month, unchanged.</p>\n<h3>§2 · Cleaning: where the analysis is won or lost</h3>\n<p>Real exports are dirty in boringly predictable ways: duplicated rows from double\nentry, a duration keyed in minutes into an hours column, negative times from swapped\ndates, blank cause codes. Cleaning is not clerical — every fix is an engineering\ndecision, and the discipline is to make each one explicit in code: drop exact\nduplicates and COUNT what was dropped; range-check every numeric column and quarantine\nviolators rather than silently deleting them; log rows in versus rows out. The payoff\nis quantitative: one mis-keyed duration can multiply a mean by ten while the median\nbarely moves — which is why the robust statistics of Lesson 7 are cleaning's\ninstruments, and why \"how many rows survived, and why\" is the first line of any\ndefensible report.</p>\n<h3>§3 · KPIs with honest denominators</h3>\n<p>Three ratios summarize a machine's month. <em>MTBF</em> — uptime divided by failure\ncount — how long it runs between stoppages. <em>MTTR</em> — downtime divided by failure\ncount — how long a stoppage lasts. <em>Availability</em> — uptime over total period —\nthe fraction of the calendar the machine was there when needed. Each is one line of\narithmetic and one buried decision: the denominator. Calendar hours or scheduled hours?\nDo planned overhauls count as downtime? Neither answer is wrong; the UNSTATED answer is.\nThe other closing instrument is the Pareto view: rank downtime by cause and the top two\nor three causes typically own most of the loss — the ranking that converts a data file\ninto next month's priorities. A KPI without its denominator stated, or a ranking\nwithout its period, is decoration.</p>\n<h3>§4 · The reproducibility working method</h3>\n<p>The habits that make the analysis an instrument rather than a performance: the raw\nfile is READ-ONLY — the script loads it, transforms in memory, writes results to new\nfiles, and never edits the source, because the untouched original plus the script IS\nthe audit trail; rerunning must reproduce every figure exactly. One script runs raw to\nfigures with no manual steps in between — no hand-pasted cells, no \"then I fixed one\nvalue in the editor\", since a single silent hand-edit breaks the chain that lets a\nreviewer trust the output. Assertions stand guard at the borders: row counts after each\ncleaning stage, ranges on every computed KPI. Figures carry their period and filters in\nthe caption. And the four sentences on top state what was computed, over what\ndenominator, with what excluded — the analyst's equivalent of showing units. This\npattern — raw, script, assertions, figures, statement — returns at full strength in\nReliability Engineering, where the same work-order data feeds Weibull fits and failure\nforecasting. This project is the rehearsal, and the habits are the deliverable.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Files, lists, dictionaries</b> (Lesson 6) — the CSV comes in through these doors.</li>\n<li><b>Arrays and robust statistics</b> (Lesson 7) — means, medians, masks do the arithmetic.</li>\n<li><b>Plotting</b> (Lesson 8) — the KPI story lands as honest figures.</li>\n<li><b>Assertions</b> (Lesson 5) — row counts and ranges guard every stage.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Work-order export</td><td>one CSV row per job</td><td>The raw material of maintenance analysis.</td></tr>\n<tr><td>MTBF</td><td>\\( \\text{uptime} / N_{fail} \\)</td><td>Mean run between stoppages — reliability's headline.</td></tr>\n<tr><td>MTTR</td><td>\\( \\text{downtime} / N_{fail} \\)</td><td>Mean length of a stoppage — repair response in one number.</td></tr>\n<tr><td>Availability</td><td>\\( \\text{uptime} / \\text{period} \\)</td><td>Fraction of the period the machine was there when needed.</td></tr>\n<tr><td>Pareto ranking</td><td>sort causes by loss</td><td>The few causes owning most of the downtime — next month's priorities.</td></tr>\n<tr><td>Quarantine</td><td>flag, don't delete</td><td>Invalid rows set aside and counted, never silently dropped.</td></tr>\n<tr><td>Read-only raw</td><td>script reads, never edits</td><td>The untouched original + the script = the audit trail.</td></tr>\n<tr><td>Reproducibility</td><td>same file + same script → same figures</td><td>The property that makes analysis trustworthy at all.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A machine's month in three KPIs</b></p>\n<p><b>Problem.</b> In a 720-hour month, a filling line logs 4 failures totaling 48 hours of downtime. Compute MTBF, MTTR, and availability.</p>",
+    "solution": "<p><b>Solution.</b> (1) Uptime = 720 − 48 = 672 h.\n(2) MTBF = 672 / 4 = 168 h; MTTR = 48 / 4 = 12 h.\n(3) Availability = 672 / 720 = 0.9333 → 93.3%.</p>\n<p><b>Answer:</b> MTBF 168 h, MTTR 12 h, availability 93.3%.\n<b>Sanity check:</b> the three interlock: MTBF/(MTBF + MTTR) = 168/180 = 93.3% — the same availability by the cycle view, so the arithmetic is consistent. The buried decision is the denominator: 720 h is the CALENDAR month; against scheduled hours the number differs, and only the stated choice makes the KPI comparable.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>One bad row versus the mean</b></p>\n<p><b>Problem.</b> Six repair durations arrive (hours): 6.0, 3.5, 480.0, 5.0, 2.5, 7.0. Investigation shows 480 was keyed in MINUTES. Compute mean and median before and after the fix, and state the lesson.</p>",
+    "solution": "<p><b>Solution.</b> (1) Raw: mean = 504/6 = 84.0 h; median = (5.0 + 6.0)/2 = 5.5 h.\n(2) Fix: 480 min = 8.0 h. Clean: mean = 32/6 = 5.33 h; median = (5.0 + 6.0)/2 = 5.5 h — unchanged.\n(3) One unit error inflated the mean ×16; the median never moved.</p>\n<p><b>Answer:</b> mean 84.0 → 5.33 h; median 5.5 → 5.5 h.\n<b>Sanity check:</b> the median's indifference is exactly why range checks matter: had the report led with \"mean repair 84 h\" — three and a half days to fix a filling line — the absurdity would have flagged the data. A mean wildly above its median is the classic signature of an outlier or unit mix, and the row that caused it goes to QUARANTINE with a note, never to silent deletion.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Pareto of a quarter's downtime</b></p>\n<p><b>Problem.</b> A quarter's downtime by cause: pump seal 32 h, motor bearing 18 h, coupling 9 h, instrument 5 h, other 4 h. What share of total loss do the top two causes own?</p>",
+    "solution": "<p><b>Solution.</b> (1) Total = 32 + 18 + 9 + 5 + 4 = 68 h.\n(2) Top two: 32 + 18 = 50 h.\n(3) Share = 50/68 = 0.735 → 73.5%.</p>\n<p><b>Answer:</b> 73.5% of all downtime sits in pump seals and motor bearings.\n<b>Sanity check:</b> two of five causes owning nearly three quarters of the loss is the Pareto shape in miniature — and it converts directly into a work plan: a seal-flushing review and a bearing-lubrication review attack 50 of the 68 hours; chasing \"other\" first would attack 4. The ranking, with its period stated, IS the recommendation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The analysis script must read the raw export and never edit it because:</p>",
+    "choices": [
+     "The untouched original plus the script is the audit trail — anyone can rerun and reproduce",
+     "CSV files cannot be modified once written",
+     "Editing would make the script run slower",
+     "Raw files are usually write-protected anyway"
+    ],
+    "answer": 0,
+    "solution": "<p>Reproducibility is the product: same file + same script → same figures, verifiable by anyone. A single silent hand-edit breaks that chain permanently — nobody can distinguish correction from mistake afterward. Fixes belong IN the script, visible and commented, where the audit trail records them.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>First act on a freshly loaded export, before any KPI:</p>",
+    "choices": [
+     "Look at it — row count, ranges, missing values, duplicates",
+     "Compute MTBF immediately while the data is fresh",
+     "Delete every row with any blank field",
+     "Round all durations to whole hours"
+    ],
+    "answer": 0,
+    "solution": "<p>Compute-first hands you confident numbers built on duplicates and unit mixes — the 84-hour mean repair. The inspection pass (counts, ranges, missing, duplicates) is minutes of work that decides whether every later number means anything. Blanket deletion is its own error: rows are quarantined with counts, not vaporized.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Repair times are strongly right-skewed. The single most honest \"typical repair\" number:</p>",
+    "choices": [
+     "The median",
+     "The mean",
+     "The maximum",
+     "The standard deviation"
+    ],
+    "answer": 0,
+    "solution": "<p>Skewed data drags the mean toward its long tail — a few marathon repairs make the typical job look worse than it is (and one unit error makes it absurd, as the solve showed). The median reports the middle job faithfully. The mature report gives both and lets the gap between them SAY \"skewed\": that gap is information, not embarrassment.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>With uptime U, downtime D over a period P = U + D, availability is:</p>",
+    "choices": [
+     "U / P",
+     "P / U",
+     "U / D",
+     "D / P"
+    ],
+    "answer": 0,
+    "solution": "<p>Availability is the fraction of the period the machine was available: uptime over the whole period, 672/720 = 93.3% in the solve. U/D is a ratio of times (not a fraction), D/P is the UNavailability, and P/U exceeds 1 — a useful smell test, since no availability can. The load-bearing choice is what P counts: calendar or scheduled hours, stated every time.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The analysis counts as reproducible when:</p>",
+    "choices": [
+     "The same raw file and script yield the same numbers and figures with no manual steps",
+     "It runs without printing warnings",
+     "The plots look professional",
+     "The script is shorter than 100 lines"
+    ],
+    "answer": 0,
+    "solution": "<p>Reproducibility is a property of the PIPELINE: raw in, figures out, nothing by hand in between — so a colleague (or you, next quarter, on the new export) reruns it and gets the identical story. Warnings, aesthetics, and line counts are all beside the point; the no-manual-steps chain is the point.</p>"
+   }
+  ]
  }
 }

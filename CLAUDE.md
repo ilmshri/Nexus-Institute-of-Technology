@@ -249,6 +249,30 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y1S1 Unit scoreboard: math-1 ✓ statics ✓ materials-1 ✓ physics-1 ✓;
   NEXT per approved order: computing → drawing-cad (incl. re-verifying its
   drafts) → Y1S2 stream.
+- CHECKPOINT: COMPUTING EDUCATIONAL UNIT COMPLETE (2026-07-18): fifth Y1S1
+  course under the Unit template; second fresh-authored (no legacy content).
+  Batches 1-2 (commits 785b322, debd9da) shipped L1-8; Batch 3 this commit:
+  L9 curve fitting/interpolation (642w), L10 small simulations/Euler (584w),
+  L11 maintenance-data project (584w) — each §1-§4 with working-method
+  closing, glossary TABLES, 3 solves + 5 MCs (24 new items; every number
+  Python-verified pre-write: pump-curve interpolation 40.4 m, transmitter
+  LS fit 1.545x+4.12, U-residuals [+0.30,-0.15,-0.30,-0.15,+0.30] at
+  R²=0.9954, Euler cooling 84.0/78.6 vs exact 79.12, tank march
+  1.4/1.72→h*=3.0, instability 90→-60→165 past dt=2/k, MTBF 168/MTTR 12/
+  avail 93.3%, unit-error mean 84.0→5.33 h with median 5.5 fixed, Pareto
+  73.5%). Company-free scan PASS (scan upgraded to word-boundary matching —
+  "adequate" no longer false-positives EQUATE). Library was already 11/11
+  approved MIT OCW embeds. Career module attached (rotation:
+  Infrastructure/Utilities-KNPC, Specialized Mfg-Kirby, Construction&EPC-
+  Bechtel — trio distinct from all four previous courses). RENDER GATES
+  VERIFIED in-browser on localhost: quiz engine graded 5/5 on L9/L10/L11
+  (answer keys independently confirmed), MathJax typeset (35/44/3
+  containers), glossary tables render, embeds live, zero "§", career block
+  renders with all three companies, all 11 lessons badged Full lesson.
+  Coverage 71→74/528 (14%). Y1S1 Unit scoreboard: math-1 ✓ statics ✓
+  materials-1 ✓ physics-1 ✓ computing ✓; NEXT per approved order:
+  drawing-cad (incl. re-verifying its drafts/ quiz items) → Y1S2 stream
+  (math-2 first).
 - CHECKPOINT: MATERIALS-1 EDUCATIONAL UNIT COMPLETE (2026-07-18): second
   course under the Unit template. All 11 lessons: lectures 500-1000w
   (working-method sections: failure-reading, bond-reading, unit-cell

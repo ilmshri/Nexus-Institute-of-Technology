@@ -54,7 +54,7 @@
     <h1>Curve fitting and interpolation</h1>
     <p class="sub">Least-squares fits to calibration and performance data. Interpolation for table lookups — steam tables and pump curves as targets. Residuals as the fit's honesty check.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/9">Mark as complete</button>
@@ -67,23 +67,94 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do residuals tell you that R² alone does not?</li><li>Interpolation versus extrapolation: why is one routine and the other risky?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do residuals tell you that R² alone does not?</li><li>Interpolation versus extrapolation: why is one routine and the other risky?</li></ul></div><div class="measure">
+<h3>01 · Two questions a table cannot answer alone</h3>
+<p>Engineering data arrives as points: rows of a steam table, samples on a pump test,
+readings from a calibration bench. The questions arrive between the points — the head at
+a flow the test never held, the transmitter output at a pressure between bench settings.
+Two distinct operations close that gap. <em>Interpolation</em> reads between the rows of
+data you trust, adding no opinion of its own. <em>Fitting</em> proposes a model — a line,
+a low-order polynomial — and asks the data to vote on its parameters. Keeping the two
+distinct is the first discipline of this lesson: interpolation honors every point;
+fitting deliberately smooths over their scatter, and each is wrong where the other is
+right.</p>
+<h3>02 · Interpolation: reading between the rows</h3>
+<p>Between two table rows \( (x_1, y_1) \) and \( (x_2, y_2) \), linear interpolation
+draws the chord: \( y = y_1 + \frac{x - x_1}{x_2 - x_1}\,(y_2 - y_1) \). The fraction is
+just "how far across the interval x sits", and the same fraction is applied to the
+y-interval. Property tables are published dense precisely so that this chord is an
+excellent stand-in for the true curve; <code>np.interp(x, xs, ys)</code> does the row
+hunting and the arithmetic in one call, provided the sample points <code>xs</code>
+increase monotonically. The method's honest boundary is the table's edge:
+<em>extrapolation</em> — reading beyond the last row — is a different act entirely,
+because past the data the curve owes you nothing. Worse, <code>np.interp</code> does not
+protest at the edge: it silently returns the endpoint value, so the guard clause of
+Lesson 3 — assert the query lies inside the table's range — is part of every lookup that
+matters.</p>
+<h3>03 · Least squares: the best line through scatter</h3>
+<p>Calibration data never lies on a line; it scatters around one. For each candidate
+line, every point carries a <em>residual</em> — measured minus predicted,
+\( r_i = y_i - (m x_i + b) \). Least squares chooses the \( m, b \) that minimize
+\( \sum r_i^2 \), and for a straight line the answer is closed-form:
+\( m = \frac{n\sum x y - \sum x \sum y}{n \sum x^2 - (\sum x)^2} \), with
+\( b = \bar{y} - m\bar{x} \). <code>np.polyfit(x, y, 1)</code> evaluates exactly this.
+The degree argument is a temptation: a degree-9 polynomial threads all ten of your
+points exactly — residuals zero, \( R^2 = 1 \) — and swings wildly everywhere between
+them. Adding parameters always improves the numbers and, past the physics, always
+degrades the model; the fit stops summarizing the data and starts memorizing its
+noise.</p>
+<h3>04 · The fitting working method</h3>
+<p>The routine that keeps fits honest: PLOT the data before fitting anything — the eye
+catches curvature, outliers, and regime changes that summary numbers hide. Fit the
+simplest model the physics justifies, then plot the RESIDUALS: random scatter of roughly
+constant width says the model has taken all the structure the data offers; any pattern —
+a bow, a trend, a fan — is physics the model missed, an instruction to think, not to
+raise the degree. Distrust \( R^2 \) as a verdict: it measures variance explained, and
+a badly bowed fit can still post 0.99; the residual plot, not the score, is the honesty
+check. Report parameters with their units and alongside the data's domain, because the
+fit is a summary of THAT range — using it outside is extrapolation wearing a
+calculator's confidence. And when the goal is only to read between trusted rows, skip
+the model entirely: interpolate. The habits are small, but they are the difference
+between a calibration you can defend and a curve that merely looks professional. Both
+return in force when Metrology fits gauge data and Reliability fits life data —
+this lesson is their rehearsal.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What do residuals tell you that R² alone does not?</li><li>Interpolation versus extrapolation: why is one routine and the other risky?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Arrays and reductions</b> (Lesson 7) — data arrives vectorized; sums are one call.</li>
+<li><b>Plotting</b> (Lesson 8) — the data plot and the residual plot are the lesson's instruments.</li>
+<li><b>Assertions</b> (Lesson 5) — range guards on every table lookup.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Linear interpolation</td><td>\( y = y_1 + \frac{x-x_1}{x_2-x_1}(y_2-y_1) \)</td><td>Reading between trusted table rows — steam tables, pump curves.</td></tr>
+<tr><td>Extrapolation</td><td>reading past the last row</td><td>Avoid without a physical model; the data owes nothing outside its range.</td></tr>
+<tr><td>Residual</td><td>\( r_i = y_i - \hat{y}_i \)</td><td>Measured minus predicted — the fit's per-point report card.</td></tr>
+<tr><td>Least squares</td><td>minimize \( \sum r_i^2 \)</td><td>Fitting a calibration or performance model to scattered data.</td></tr>
+<tr><td>Slope (closed form)</td><td>\( m = \frac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2} \)</td><td>What <code>np.polyfit(x, y, 1)</code> computes for you.</td></tr>
+<tr><td>\( R^2 \)</td><td>variance explained</td><td>A screening number, never a verdict — check residuals instead.</td></tr>
+<tr><td>Overfitting</td><td>degree ≫ physics</td><td>Perfect residuals, useless predictions — the model memorized noise.</td></tr>
+<tr><td>Residual plot</td><td>\( r_i \) vs \( x_i \)</td><td>Random scatter = model adequate; any pattern = missing physics.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Reading a pump curve between test points</b></p>
+<p><b>Problem.</b> A pump test reports head 42 m at 30 m³/h and 38 m at 40 m³/h. By linear interpolation, what head does the curve predict at 34 m³/h?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Fraction across the interval: \( (34-30)/(40-30) = 0.4 \).
+(2) Apply it to the head interval: \( h = 42 + 0.4\,(38 - 42) = 42 - 1.6 = 40.4 \) m.</p>
+<p><b>Answer:</b> 40.4 m.
+<b>Sanity check:</b> 34 m³/h sits 40% of the way across the flow interval, so the head must sit 40% of the way down the 4-m drop — between 42 and 38, nearer 42. Any interpolated value OUTSIDE its bracketing rows is an arithmetic slip: the chord never leaves the interval.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Calibrating a pressure transmitter</b></p>
+<p><b>Problem.</b> A bench calibration of a 4–20 mA pressure transmitter records output y (mA) at applied pressure x (bar): (0, 4.1), (2, 7.2), (4, 10.4), (6, 13.3), (8, 16.5). Fit the least-squares line and state the predicted output at 5.0 bar.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The sums over the five points: \( \sum x = 20 \), \( \sum y = 51.5 \), \( \sum xy = 267.8 \), \( \sum x^2 = 120 \).
+(2) Slope: \( m = \frac{5(267.8) - 20(51.5)}{5(120) - 20^2} = \frac{309}{200} = 1.545 \) mA/bar; intercept: \( b = (51.5 - 1.545 \times 20)/5 = 4.12 \) mA — exactly what <code>np.polyfit(x, y, 1)</code> returns.
+(3) At 5.0 bar: \( y = 1.545(5.0) + 4.12 = 11.845 \approx 11.85 \) mA.</p>
+<p><b>Answer:</b> \( y = 1.545x + 4.12 \); predicted 11.85 mA at 5.0 bar.
+<b>Sanity check:</b> an ideal 4–20 mA device spanning 0–10 bar would give exactly 1.6 mA/bar from 4.0 mA — the fit (1.545 from 4.12) sits close, so the instrument is near nominal. The largest residual is 0.1 mA, scattered in sign — no structure, so the straight-line model is doing its job.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Reading residuals like an engineer</b></p>
+<p><b>Problem.</b> Flow-meter data at x = 0, 1, 2, 3, 4 gives y = 1.0, 3.15, 5.6, 8.35, 11.4. The least-squares line is \( y = 2.6x + 0.7 \) with \( R^2 = 0.9954 \). Compute the five residuals and give the verdict on the model.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Predictions at x = 0…4: 0.7, 3.3, 5.9, 8.5, 11.1.
+(2) Residuals (measured − predicted): <b>+0.30, −0.15, −0.30, −0.15, +0.30</b>.
+(3) The pattern is a symmetric U — positive at both ends, negative in the middle. That is CURVATURE the line cannot express: the data carries a quadratic term the model omitted.</p>
+<p><b>Answer:</b> residuals [+0.30, −0.15, −0.30, −0.15, +0.30] — reject the straight line; the data is curved.
+<b>Sanity check:</b> this is the lesson's central trap: \( R^2 = 0.9954 \) LOOKS like an endorsement, yet the residual plot convicts the model at a glance. Variance explained is not structure exhausted — the residual plot, not the score, is the honesty check.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A residual is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Measured value minus the model's prediction</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The model's prediction minus zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The uncertainty of the instrument</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The slope error of the fit</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( r_i = y_i - \hat{y}_i \): what the data said minus what the model claims — each point's individual report on the fit. Everything diagnostic in this lesson (the U-pattern, the honesty check, the overfitting verdict) is read from these numbers, which is why they matter more than any single summary score.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Extrapolating a fitted calibration line far beyond the calibrated range is risky because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Outside its data range the model has no evidence — and the physics may change</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The arithmetic becomes less precise at large numbers</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Least squares only works inside the original interval</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Residuals cannot be computed outside the range</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The fit is a summary of the range that produced it. Beyond that range there is no data to vote, and real devices leave their linear region — sensors saturate, pumps run off-curve. The arithmetic extends happily; the EVIDENCE does not. That is why the working method reports a fit's domain right beside its coefficients.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A fit posts \( R^2 = 0.99 \). What does that establish?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Little by itself — the residuals may still hold a systematic pattern</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The model is correct</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The residuals are random</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The data contains no outliers</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( R^2 \) reports variance explained — a bowed line through curved data can still score 0.99, as the solve problem showed at 0.9954. Model adequacy is read from the residual plot: random scatter passes, any structure fails. High \( R^2 \) with patterned residuals means "good summary, wrong model".</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A degree-9 polynomial fitted through 10 calibration points gives \( R^2 = 1 \). The model is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Overfitted — it memorized the noise and is untrustworthy between the points</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Ideal — every point is matched exactly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Underfitted — more terms are needed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Correct if the residuals are all zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Ten coefficients against ten points can thread every measurement exactly — including their noise — and oscillate wildly between them. Zero residuals here indict the model rather than endorse it. Parameters must be justified by physics, not by score-chasing: for a near-linear device, that means a line.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p><code>np.interp(x, xs, ys)</code> requires — and silently assumes — that:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The sample points xs increase monotonically; outside their range it returns the endpoint values</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The data is evenly spaced</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The relationship is exactly linear everywhere</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>x appears exactly in xs</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The function hunts for the bracketing rows, so <code>xs</code> must be sorted ascending — and beyond either end it CLAMPS to the edge value without warning, which turns an out-of-range query into a plausible-looking wrong answer. Hence the working method's guard: assert the query lies inside the table before trusting the lookup.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

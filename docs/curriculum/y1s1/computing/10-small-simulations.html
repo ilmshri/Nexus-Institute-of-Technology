@@ -54,7 +54,7 @@
     <h1>Small simulations</h1>
     <p class="sub">Time-stepping a first-order ODE: tank level, cooling, simple reliability decay. Step size and stability observed experimentally. Simulation as a cheap laboratory.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 6.0001 Introduction to Computer Scie</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/10">Mark as complete</button>
@@ -67,23 +67,94 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Time-step a cooling ODE: what goes wrong when the step is too large?</li><li>Why is simulation a cheap laboratory — and when is it a lying one?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>CMP 106 · Engineering Computing</b>
-  (Year 1 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: Python as a plant engineer's calculator and data tool: scripts, arrays, plots, curve fits, and small simulations — enough computing to automate the analyses the rest of this curriculum assigns.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Time-step a cooling ODE: what goes wrong when the step is too large?</li><li>Why is simulation a cheap laboratory — and when is it a lying one?</li></ul></div><div class="measure">
+<h3>01 · The equations engineers actually meet</h3>
+<p>Strip the plant to its rates and first-order differential equations appear everywhere:
+a tank fills at the rate flow-in minus flow-out; a motor housing cools at a rate
+proportional to how far it sits above ambient; receiver pressure decays as the leak
+bleeds it down. Each says \( dy/dt = f(y) \): the state's rate of change depends on the
+state itself. A few such equations have textbook solutions; most industrial variants —
+level-dependent outflow, staged inputs, valves that open mid-run — do not. Simulation
+sidesteps the impasse: instead of solving the equation, STEP it. March time forward in
+small increments, updating the state by its current rate, and the trajectory emerges
+numerically. The computer becomes a cheap laboratory — one where a tank can overflow a
+hundred times before breakfast and nothing needs mopping.</p>
+<h3>02 · Euler's method: the honest workhorse</h3>
+<p>The simplest march is Euler's: \( y_{n+1} = y_n + \Delta t \cdot f(y_n) \) — new state
+equals old state plus rate times step. It is nothing more than "keep the rate constant
+for a little while", the same approximation a hand calculation makes, automated. Its
+price is a per-step error that accumulates in proportion to \( \Delta t \): halve the
+step, roughly halve the error at a given time. That buys a wonderfully practical
+convergence test needing no theory at all — run the simulation, halve \( \Delta t \),
+run again; if the answer you report did not change at the precision you report it,
+the step is small enough. If it moved, halve again. The experiment IS the error
+analysis, and it costs seconds.</p>
+<h3>03 · When the step lies: stability</h3>
+<p>Take cooling toward ambient, \( dT/dt = -k\,(T - T_\infty) \). One Euler step
+multiplies the deviation from ambient by the factor \( (1 - k\,\Delta t) \). For small
+steps that factor sits just under 1 and the temperature relaxes exponentially, as
+physics says. But let \( k\,\Delta t \) exceed 2 and the factor drops below −1: each
+step OVERSHOOTS ambient farther than it started, flipping sign and growing — the
+simulated temperature oscillates with expanding amplitude while the real housing simply
+cools. The boundary \( \Delta t < 2/k \) is the stability limit, and it teaches the
+lesson's sharpest distinction: instability is not sloppiness, it is a qualitatively
+false solution. Between stable and accurate stands the time constant \( \tau = 1/k \) —
+the system's natural clock; steps around \( \tau/10 \) resolve the physics, steps near
+the limit merely avoid explosion.</p>
+<h3>04 · The simulation working method</h3>
+<p>Write the rate as a named function <code>f(y)</code> — Lesson 4's contract — so the
+model sits in one testable place and the marching loop never changes. Anchor the code
+before trusting it: the plain cooling case has an exact solution, so assert your loop
+reproduces it; the tank has a steady state you can compute by setting the rates equal,
+so run long and assert the level settles there. Only then vary toward the case with no
+formula — the varying inflow, the staged setpoint — because a loop that reproduces the
+known case has EARNED extrapolation to the unknown one. Run the halve-the-step
+experiment as routine, plot whole trajectories rather than trusting endpoints (Lesson 8:
+the plot is the argument), and keep the model's assumptions written beside the code.
+That last habit is the deepest: a converged, stable simulation is faithful to its
+EQUATIONS, and if the equations omit real physics — the heat the sun adds, the second
+leak — the laboratory lies with perfect numerical composure. Step-size error you can
+halve away; model error you can only think away. The distinction returns at full scale
+in Heat Transfer, System Dynamics, and every digital-twin conversation of the later
+automation courses.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Time-step a cooling ODE: what goes wrong when the step is too large?</li><li>Why is simulation a cheap laboratory — and when is it a lying one?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Loops and functions</b> (Lessons 3–4) — the march is a loop calling a named rate function.</li>
+<li><b>Assertions</b> (Lesson 5) — known cases pin the loop before it earns the unknown ones.</li>
+<li><b>Arrays and plotting</b> (Lessons 7–8) — trajectories are arrays; the plot is the readout.</li>
+<li><b>The derivative as a rate</b> (MTH 101) — \( dy/dt \) read as "current rate of change".</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>First-order ODE</td><td>\( dy/dt = f(y) \)</td><td>Tank level, cooling, pressure decay — rate depends on state.</td></tr>
+<tr><td>Euler step</td><td>\( y_{n+1} = y_n + \Delta t\, f(y_n) \)</td><td>The workhorse march: rate held constant across a small step.</td></tr>
+<tr><td>Convergence test</td><td>halve \( \Delta t \), compare</td><td>Answer unchanged at reported precision → step small enough.</td></tr>
+<tr><td>Amplification factor</td><td>\( 1 - k\,\Delta t \)</td><td>What one Euler step does to the deviation in linear decay.</td></tr>
+<tr><td>Stability limit</td><td>\( \Delta t < 2/k \)</td><td>Beyond it the march oscillates and grows — qualitatively false.</td></tr>
+<tr><td>Time constant</td><td>\( \tau = 1/k \)</td><td>The system's clock; \( \Delta t \approx \tau/10 \) resolves the physics.</td></tr>
+<tr><td>Steady state</td><td>\( f(y^*) = 0 \)</td><td>Rates balance; a hand-computable anchor for asserting the loop.</td></tr>
+<tr><td>Model vs numerical error</td><td>—</td><td>Numerics you halve away; wrong assumptions you can only think away.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Two Euler steps of a cooling motor housing</b></p>
+<p><b>Problem.</b> A housing at 90 °C cools toward 30 °C ambient with \( dT/dt = -k(T - 30) \), k = 0.1 min⁻¹. March two Euler steps with \( \Delta t = 1 \) min. (Exact value at t = 2 min: 79.12 °C.)</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Step 1: rate = −0.1 (90 − 30) = −6.0 °C/min, so \( T_1 = 90 + 1(−6.0) = 84.0 \) °C.
+(2) Step 2: rate = −0.1 (84 − 30) = −5.4 °C/min, so \( T_2 = 84 + 1(−5.4) = 78.6 \) °C.</p>
+<p><b>Answer:</b> 84.0 °C, then 78.6 °C.
+<b>Sanity check:</b> against the exact 79.12 °C the march is 0.52 °C low — Euler holds each interval's STARTING rate, which for cooling is always the steepest in the interval, so it systematically overshoots the drop. Halve the step and the miss roughly halves: that is the first-order signature, and the basis of the halve-and-compare test.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Tank level with level-dependent outflow</b></p>
+<p><b>Problem.</b> A 4 m² tank receives 1.2 m³/min while draining at 0.4·h m³/min: \( dh/dt = (1.2 - 0.4h)/4 \). From h = 1.0 m, march two Euler steps with \( \Delta t = 2 \) min, and state the steady-state level.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Step 1: rate = (1.2 − 0.4)/4 = 0.2 m/min → \( h_1 = 1.0 + 2(0.2) = 1.4 \) m.
+(2) Step 2: rate = (1.2 − 0.56)/4 = 0.16 m/min → \( h_2 = 1.4 + 2(0.16) = 1.72 \) m.
+(3) Steady state: set inflow = outflow, 1.2 = 0.4·h* → h* = 3.0 m.</p>
+<p><b>Answer:</b> 1.4 m, 1.72 m; the level settles at 3.0 m.
+<b>Sanity check:</b> each step's rise is smaller than the last (0.40 m then 0.32 m) — as h climbs, outflow grows and the net rate shrinks: the approach to steady state decelerates, exactly the exponential-settling shape. The hand-computed 3.0 m is the assertion to pin on the loop: run long, and the simulated level must flatten there.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Watching a step go unstable</b></p>
+<p><b>Problem.</b> For the cooling law with k = 0.5 min⁻¹, ambient 30 °C, start 90 °C: state the Euler stability limit, then march two steps with \( \Delta t = 5 \) min and describe what the numbers do.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Limit: \( \Delta t < 2/k = 4 \) min — and 5 min exceeds it. The step factor is \( 1 - k\Delta t = 1 - 2.5 = -1.5 \).
+(2) Step 1: \( T_1 = 90 + 5(-0.5)(90-30) = 90 - 150 = -60 \) °C. Step 2: \( T_2 = -60 + 5(-0.5)(-60-30) = -60 + 225 = 165 \) °C.
+(3) The deviation from ambient runs 60 → −90 → +135: sign flips every step, magnitude grows ×1.5 — oscillating divergence.</p>
+<p><b>Answer:</b> limit 4 min; with \( \Delta t = 5 \) the march swings 90 → −60 → 165 °C and explodes.
+<b>Sanity check:</b> the real housing just cools quietly toward 30 °C — nothing physical oscillates. The explosion is pure numerics: each oversized step overshoots ambient farther than it started. Any simulated temperature that CROSSES its own ambient on a plain cooling problem is the step size confessing, not the physics.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Halving the step size in Euler's method roughly:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Halves the accumulated error — the method is first-order</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Quarters the error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Leaves the error unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Doubles the run time but not the accuracy</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Euler's accumulated error scales with \( \Delta t \): half the step, about half the miss (the cooling solve showed 0.52 °C shrinking toward 0.26). That linear scaling is what makes the halve-and-compare experiment meaningful — and yes, half the step doubles the work, which is the honest price of the extra digit.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The practical test that your step size is small enough:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Halve \( \Delta t \), rerun, and check the reported answer no longer changes</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The simulation finishes without error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The trajectory looks smooth on the plot</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The step is smaller than 1 second</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Convergence is demonstrated, not assumed: if halving the step moves the answer at the precision you report, the previous step was too coarse — halve again. Smooth-looking plots and error-free runs prove nothing (the unstable case errors nowhere and looks dramatic), and no absolute step size is universally small: it is small relative to the system's time constant.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A converged, stable simulation can still mislead when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The model omits real physics — it solves the wrong equations exactly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The step size is below the stability limit</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The trajectory is stored as an array</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The rate is written as a named function</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Convergence guarantees fidelity to the EQUATIONS, not to the plant. Leave the sun's heat load or the second leak out of \( f(y) \) and the laboratory lies with perfect numerical composure. Step-size error you halve away; model error you can only think away — which is why assumptions live written beside the code.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>For \( dh/dt = (Q_{in} - c\,h)/A \), the correct Euler update is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span><code>h = h + dt*(Qin - c*h)/A</code></span></button><button type="button" class="quiz-choice"><span class="key">B</span><span><code>h = dt*(Qin - c*h)/A</code></span></button><button type="button" class="quiz-choice"><span class="key">C</span><span><code>h = h + (Qin - c*h)/A</code></span></button><button type="button" class="quiz-choice"><span class="key">D</span><span><code>h = h + dt*Qin - c*h</code></span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>New state = old state + step × current rate — all three pieces, every step. Dropping <code>h +</code> forgets the state; dropping <code>dt</code> marches in units of one; mangling the parentheses changes the model itself. The update line is short enough to check by units: each term must be meters.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The steady state of \( dT/dt = -k(T - T_\infty) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( T = T_\infty \), regardless of the starting temperature</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The starting temperature \( T_0 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It depends on the step size used</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( T = T_\infty + 1/k \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Steady state is where the rate vanishes: \( f(T^*) = 0 \) gives \( T^* = T_\infty \). The start decides the journey, never the destination; and the step size belongs to the numerics, not the physics — if a simulated steady state MOVES when \( \Delta t \) changes, the simulation is confessing, not the tank.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
