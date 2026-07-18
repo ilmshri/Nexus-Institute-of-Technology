@@ -54,7 +54,7 @@
     <h1>Modeling with first-order equations</h1>
     <p class="sub">Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times. Time constants read directly from coefficients. Steady state as the equation's destination, transient as its journey.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 18.03 Differential Equations</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.03 Differential Equations</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/2">Mark as complete</button>
@@ -67,23 +67,62 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)</li><li>Why do a cooling casting and a discharging capacitor share one mathematics?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</b>
-  (Year 2 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)</li><li>Why do a cooling casting and a discharging capacitor share one mathematics?</li></ul></div><div class="measure">
+<h3>01 · One balance, three plants</h3>
+<p>First-order models arise the same way everywhere: write a balance for how a
+quantity accumulates. <b>Rate of change = rate in − rate out.</b> A mixing tank
+balances mass of solute; a cooling body balances heat; an RC circuit balances
+charge. Each yields \( \tau\,y' + y = y_{\text{in}} \), the same equation with
+different names on the symbols. Learning to read that common form means one piece
+of mathematics serves the thermal, fluid, and electrical courses at once.</p>
+<h3>02 · Newton cooling, end to end</h3>
+<p>A body at temperature \(T\) in surroundings at \(T_a\) loses heat at a rate
+proportional to the difference: \( T' = -k\,(T-T_a) \). This is linear; its
+solution is \( T(t)=T_a+(T_0-T_a)e^{-kt} \). For \(T_0=90^\circ\)C,
+\(T_a=20^\circ\)C, \(k=0.05\ \text{min}^{-1}\): \( T(10)=20+70e^{-0.5}\approx
+62.5^\circ\)C. The body forgets its start exponentially and approaches the
+ambient value — the steady state \(T_a\), reached in principle only at infinity,
+in practice after a few time constants.</p>
+<h3>03 · The time constant, read from the coefficient</h3>
+<p>Rewrite any of these as \( \tau y' + y = y_{\text{in}} \). The coefficient
+\( \tau \) is the <b>time constant</b> — the time to fall to \(1/e\) (about 37%)
+of the way to steady state. For cooling, \( \tau=1/k \). For an RC circuit,
+\( \tau=RC \): with \(R=1000\ \Omega\) and \(C=100\,\mu\text{F}\),
+\( \tau=0.1\)s, and the circuit is essentially settled after \(5\tau=0.5\)s. For
+a stirred tank of volume \(V\) with throughput \(Q\), \( \tau=V/Q \): a 200-L tank
+at 5 L/min has \( \tau=40 \) min. The coefficient is the physics; you rarely need
+the full solution to size a response.</p>
+<h3>04 · The modelling method</h3>
+<p>The reusable procedure: (1) name the accumulating quantity and write its
+balance; (2) put the equation in \( \tau y' + y = y_{\text{in}} \) form and read
+\( \tau \) and the steady state directly; (3) solve only if a full time history is
+needed. Units audit the model — every term in a balance must carry the same units,
+and \( \tau \) must come out in time. A model whose \( \tau \) has the wrong units
+has a wrong term, caught before any numbers are run. This discipline — balance,
+normalise, read — is exactly how reliability, controls, and process courses set up
+their own first-order responses later.</p>
+<h3>05 · Step response and superposition</h3>
+<p>Because the equation is linear, its responses add. If the input \(y_{\text{in}}\) jumps from one level to another — a <b>step</b> — the output slides from its old steady state to the new one along the same exponential \(1-e^{-t/\tau}\), scaled by the size of the jump. Two steps at different times give the sum of two such slides, each starting when its step arrives. This superposition is why a single measured step response characterises the whole system: read \(\tau\) from how fast it moves and the gain from how far, and every future input can be built from steps. Reliability and controls engineers lean on exactly this — the step test is the cheapest honest experiment a first-order plant allows, and its arithmetic is the arithmetic of this lesson.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)</li><li>Why do a cooling casting and a discharging capacitor share one mathematics?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Solving linear first-order ODEs</b> (Lesson 1) — the tool being applied.</li>
+<li><b>Conservation balances</b> — rate in minus rate out.</li>
+<li><b>Unit reasoning</b> — the fastest error check on any model.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Balance law</td><td>\( \dot y = \text{in}-\text{out} \)</td><td>The starting statement for every model.</td></tr>
+<tr><td>Newton cooling</td><td>\( T'=-k(T-T_a) \)</td><td>Body exchanging heat with surroundings.</td></tr>
+<tr><td>Time constant</td><td>\( \tau y'+y=y_{in} \)</td><td>\(\tau\) = time to reach \(1-1/e\) of the step.</td></tr>
+<tr><td>RC time constant</td><td>\( \tau=RC \)</td><td>Charging/discharging capacitor through a resistor.</td></tr>
+<tr><td>Tank time constant</td><td>\( \tau=V/Q \)</td><td>Well-mixed vessel with steady throughput.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Cooling to a target time</b></p><p><b>Problem.</b> A part at \(90^\circ\)C cools in \(20^\circ\)C air with \(k=0.05\ \text{min}^{-1}\). Find its temperature after 10 minutes.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( T(t)=T_a+(T_0-T_a)e^{-kt}=20+70e^{-0.05\cdot10}=20+70e^{-0.5} \). Since \(e^{-0.5}\approx0.6065\): \( T\approx20+42.5=62.5^\circ\)C. <b>Answer:</b> \(\approx62.5^\circ\)C. <b>Check:</b> above ambient, below start — as it must be.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Half-way time</b></p><p><b>Problem.</b> For the same part, when does it reach \(55^\circ\)C (half-way from 90 to 20)?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Need \(70e^{-0.05t}=35\Rightarrow e^{-0.05t}=0.5\Rightarrow t=\frac{\ln 2}{0.05}\approx13.86\) min. <b>Answer:</b> \(\approx13.9\) min. <b>Check:</b> this is \(\tau\ln2\) with \(\tau=1/k=20\) min — a half-life, independent of the start temperature.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Read a time constant</b></p><p><b>Problem.</b> A 200-L well-mixed tank is fed and drained at 5 L/min. State its time constant and an approximate settle time.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \tau=V/Q=200/5=40 \) min. It is essentially settled after \(5\tau=200\) min. <b>Answer:</b> \( \tau=40 \) min; settle \(\approx200\) min.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>An RC circuit has \(R=1000\,\Omega\), \(C=100\,\mu\text{F}\). Its time constant is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(0.1\) s</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(10\) s</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0.001\) s</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(100\) s</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \tau=RC=1000\times100\times10^{-6}=0.1 \) s. The micro (\(10^{-6}\)) prefix is the trap; \(1000\times100=10^5\) then \(\times10^{-6}=0.1\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>In \( \tau y'+y=y_{in} \), the time constant \( \tau \) is the time to reach about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>63% of the step</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>100% of the step</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>37% of the step</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>half of the step</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>After one \(\tau\) the response is \(1-1/e\approx0.63\) of the way to steady state. \(1/e\approx37\%\) is the fraction <em>remaining</em>, not reached.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Newton cooling drives a body toward:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The ambient temperature \(T_a\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Absolute zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Its initial temperature</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Twice \(T_a\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Steady state sets \(T'=0\Rightarrow T=T_a\). The transient \((T_0-T_a)e^{-kt}\) decays away, leaving \(T_a\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Two tanks have the same volume but tank B has double the flow rate. Tank B's time constant is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Half of tank A's</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Double tank A's</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The same</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Four times tank A's</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( \tau=V/Q \); doubling \(Q\) halves \(\tau\). More throughput flushes the vessel faster.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A first-order response is conventionally treated as essentially complete after about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>5 time constants</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1 time constant</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>half a time constant</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>100 time constants</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>After \(5\tau\) the response is within \(e^{-5}\approx0.7\%\) of steady state — the standard settling rule. One \(\tau\) reaches only 63%.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>

@@ -1,0 +1,326 @@
+{
+ "1": {
+  "lecture": "\n<h3>§1 · Two shapes of first-order equation</h3>\n<p>A first-order ordinary differential equation relates a function to its first\nderivative. Two shapes cover most engineering models. The <b>separable</b> form\n\\( \\frac{dy}{dx} = g(x)\\,h(y) \\) can be split so each variable sits with its own\ndifferential: \\( \\frac{dy}{h(y)} = g(x)\\,dx \\), then both sides are integrated.\nThe <b>linear</b> form \\( y' + p(x)\\,y = q(x) \\) cannot generally be separated —\nthe unknown appears both differentiated and undifferentiated — and needs the\nintegrating-factor method of §3. Recognising which shape you hold is the first\ndecision, because it selects the entire solution route.</p>\n<h3>§2 · Separable equations, worked as a method</h3>\n<p>For \\( \\frac{dy}{dx} = x y \\): divide by \\(y\\), multiply by \\(dx\\), and\nintegrate to get \\( \\ln|y| = \\tfrac{1}{2}x^2 + C \\), so \\( y = A e^{x^2/2} \\).\nThe constant \\(A\\) is fixed by one initial condition — with \\( y(0)=1 \\),\n\\( A=1 \\). The pattern is invariant: isolate, integrate both sides, then apply\nthe condition <em>last</em>. Watch the algebra of the constant: it is cleaner to\ncarry a single \\(C\\) through the integration and resolve it once, than to guess\nits final form.</p>\n<h3>§3 · The linear equation and its integrating factor</h3>\n<p>For \\( y' + p(x)y = q(x) \\), multiply through by\n\\( \\mu(x) = e^{\\int p\\,dx} \\). The left side collapses, by the product rule, into\n\\( \\frac{d}{dx}\\big(\\mu y\\big) \\) — this is the whole trick, and it is\n<em>derived</em>, not asserted: \\( \\frac{d}{dx}(\\mu y) = \\mu y' + \\mu' y \\), and\n\\( \\mu' = p\\mu \\), so \\( \\mu y' + p\\mu y = \\mu q \\) is exactly \\(\\mu\\) times the\nequation. Integrate once: \\( \\mu y = \\int \\mu q\\,dx + C \\). For\n\\( y' + 2y = 4 \\), \\( \\mu = e^{2x} \\), giving \\( e^{2x}y = 2e^{2x} + C \\), so\n\\( y = 2 + C e^{-2x} \\). The condition \\( y(0)=5 \\) fixes \\( C = 3 \\).</p>\n<h3>§4 · Reading the answer: transient and steady state</h3>\n<p>Every solution above splits the same way: a part that decays and a part that\nremains. In \\( y = 2 + 3e^{-2x} \\) the \\( 3e^{-2x} \\) is the <b>transient</b> —\nit vanishes as \\(x\\) grows — and the \\(2\\) is the <b>steady state</b>, the value\nthe system settles to. The steady state of \\( y' + p y = q \\) with constant\ncoefficients is simply \\( q/p \\) (set \\(y'=0\\)), a check worth doing before any\nintegration: it tells you the destination, so a solution that heads elsewhere is\nwrong. This transient-plus-steady structure returns in every modelling lesson\nthat follows, and is the reason first-order linear equations are the backbone of\nthe whole course.</p>\n<h3>§5 · When a solution exists, and why it matters</h3>\n<p>A practical caution closes the lesson. Separable and linear first-order equations with continuous coefficients have, by the existence–uniqueness theorem, exactly one solution through each initial point — so the single constant fixed by one condition is genuinely the whole answer, with no hidden alternatives. But the algebra can hide trouble: dividing by \\(h(y)\\) in a separable equation silently assumes \\(h(y)\\neq0\\), and any constant \\(y\\) making \\(h(y)=0\\) is itself an <em>equilibrium</em> solution the division discards. Always check those constant solutions separately. For the linear equation the danger is different — \\(p(x)\\) or \\(q(x)\\) blowing up (a coefficient with a pole) breaks continuity and the guarantee with it. Reading where the coefficients misbehave, before integrating, is the mark of an engineer who trusts a model only where it earns trust.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Integration</b> (Calculus I–II) — the engine of both methods.</li>\n<li><b>The product rule</b> — it is what makes the integrating factor collapse.</li>\n<li><b>Exponentials and logs</b> — the natural language of first-order decay.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Separable</td><td>\\( \\frac{dy}{dx}=g(x)h(y) \\)</td><td>Variables split; integrate each side alone.</td></tr>\n<tr><td>Linear first-order</td><td>\\( y'+p(x)y=q(x) \\)</td><td>Unknown both differentiated and not; use \\(\\mu\\).</td></tr>\n<tr><td>Integrating factor</td><td>\\( \\mu=e^{\\int p\\,dx} \\)</td><td>Multiplies the equation into an exact derivative.</td></tr>\n<tr><td>General solution</td><td>homogeneous + particular</td><td>Carries the arbitrary constant \\(C\\).</td></tr>\n<tr><td>Steady state</td><td>\\( q/p \\) (constant coeffs)</td><td>The destination; a fast sanity check.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Separable with a condition</b></p><p><b>Problem.</b> Solve \\( \\frac{dy}{dx}=xy \\) with \\( y(0)=1 \\), and evaluate at \\( x=2 \\).</p>",
+    "solution": "<p><b>Solution.</b> Separate: \\( \\frac{dy}{y}=x\\,dx \\Rightarrow \\ln|y|=\\tfrac12 x^2+C \\), so \\( y=Ae^{x^2/2} \\). The condition \\(y(0)=1\\) gives \\(A=1\\). At \\(x=2\\): \\( y=e^{2}\\approx 7.389 \\). <b>Answer:</b> \\( y=e^{x^2/2},\\ y(2)=e^2\\approx7.389 \\). <b>Check:</b> apply the condition last, after integrating.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Linear by integrating factor</b></p><p><b>Problem.</b> Solve \\( y'+2y=4 \\) with \\( y(0)=5 \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( \\mu=e^{2x} \\); the equation becomes \\( (e^{2x}y)'=4e^{2x} \\), so \\( e^{2x}y=2e^{2x}+C \\) and \\( y=2+Ce^{-2x} \\). \\( y(0)=5\\Rightarrow C=3 \\). <b>Answer:</b> \\( y=2+3e^{-2x} \\); at \\(x=1\\), \\( y=2+3e^{-2}\\approx2.406 \\). <b>Check:</b> steady state \\(q/p=4/2=2\\), matched by the constant term.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Steady state before integrating</b></p><p><b>Problem.</b> Without solving fully, state the steady state of \\( y'+3y=6 \\), and the integrating factor.</p>",
+    "solution": "<p><b>Solution.</b> Steady state: set \\(y'=0\\Rightarrow 3y=6\\Rightarrow y=2\\). Integrating factor: \\( \\mu=e^{\\int 3\\,dx}=e^{3x} \\). <b>Answer:</b> steady state \\(2\\), \\( \\mu=e^{3x} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which equation is separable but NOT linear in \\(y\\)?</p>",
+    "choices": [
+     "\\( \\frac{dy}{dx}=x y^2 \\)",
+     "\\( y'+2y=4 \\)",
+     "\\( y'+xy=x \\)",
+     "\\( y'=3y \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( y'=xy^2 \\) separates (\\( y^{-2}dy=x\\,dx \\)) but the \\(y^2\\) makes it nonlinear. \\(y'+2y=4\\) and \\(y'+xy=x\\) are linear; \\(y'=3y\\) is both linear and separable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The integrating factor for \\( y'+p(x)y=q(x) \\) is:</p>",
+    "choices": [
+     "\\( e^{\\int p\\,dx} \\)",
+     "\\( e^{\\int q\\,dx} \\)",
+     "\\( \\int p\\,dx \\)",
+     "\\( e^{-\\int p\\,dx} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Multiplying by \\( \\mu=e^{\\int p\\,dx} \\) makes the left side \\( (\\mu y)' \\) because \\( \\mu'=p\\mu \\). It uses \\(p\\), not \\(q\\), and is an exponential, not the bare integral.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( y=2+3e^{-2x} \\), the transient part is:</p>",
+    "choices": [
+     "\\( 3e^{-2x} \\)",
+     "\\( 2 \\)",
+     "\\( -2x \\)",
+     "\\( e^{-2x}+2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The transient decays to zero as \\(x\\to\\infty\\): that is \\(3e^{-2x}\\). The constant \\(2\\) is the steady state that remains.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A first-order linear equation needs how many initial conditions to fix its solution?</p>",
+    "choices": [
+     "One",
+     "Two",
+     "Zero",
+     "Depends on \\(q(x)\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>One arbitrary constant \\(C\\) appears, so one condition fixes it. Order equals the number of conditions; second-order needs two.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The steady state of \\( y'+5y=10 \\) is:</p>",
+    "choices": [
+     "\\(2\\)",
+     "\\(10\\)",
+     "\\(5\\)",
+     "\\(0\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Set \\(y'=0\\): \\(5y=10\\Rightarrow y=2\\). It is \\(q/p=10/5=2\\), not \\(q\\) or \\(p\\) alone.</p>"
+   }
+  ]
+ },
+ "2": {
+  "lecture": "\n<h3>§1 · One balance, three plants</h3>\n<p>First-order models arise the same way everywhere: write a balance for how a\nquantity accumulates. <b>Rate of change = rate in − rate out.</b> A mixing tank\nbalances mass of solute; a cooling body balances heat; an RC circuit balances\ncharge. Each yields \\( \\tau\\,y' + y = y_{\\text{in}} \\), the same equation with\ndifferent names on the symbols. Learning to read that common form means one piece\nof mathematics serves the thermal, fluid, and electrical courses at once.</p>\n<h3>§2 · Newton cooling, end to end</h3>\n<p>A body at temperature \\(T\\) in surroundings at \\(T_a\\) loses heat at a rate\nproportional to the difference: \\( T' = -k\\,(T-T_a) \\). This is linear; its\nsolution is \\( T(t)=T_a+(T_0-T_a)e^{-kt} \\). For \\(T_0=90^\\circ\\)C,\n\\(T_a=20^\\circ\\)C, \\(k=0.05\\ \\text{min}^{-1}\\): \\( T(10)=20+70e^{-0.5}\\approx\n62.5^\\circ\\)C. The body forgets its start exponentially and approaches the\nambient value — the steady state \\(T_a\\), reached in principle only at infinity,\nin practice after a few time constants.</p>\n<h3>§3 · The time constant, read from the coefficient</h3>\n<p>Rewrite any of these as \\( \\tau y' + y = y_{\\text{in}} \\). The coefficient\n\\( \\tau \\) is the <b>time constant</b> — the time to fall to \\(1/e\\) (about 37%)\nof the way to steady state. For cooling, \\( \\tau=1/k \\). For an RC circuit,\n\\( \\tau=RC \\): with \\(R=1000\\ \\Omega\\) and \\(C=100\\,\\mu\\text{F}\\),\n\\( \\tau=0.1\\)s, and the circuit is essentially settled after \\(5\\tau=0.5\\)s. For\na stirred tank of volume \\(V\\) with throughput \\(Q\\), \\( \\tau=V/Q \\): a 200-L tank\nat 5 L/min has \\( \\tau=40 \\) min. The coefficient is the physics; you rarely need\nthe full solution to size a response.</p>\n<h3>§4 · The modelling method</h3>\n<p>The reusable procedure: (1) name the accumulating quantity and write its\nbalance; (2) put the equation in \\( \\tau y' + y = y_{\\text{in}} \\) form and read\n\\( \\tau \\) and the steady state directly; (3) solve only if a full time history is\nneeded. Units audit the model — every term in a balance must carry the same units,\nand \\( \\tau \\) must come out in time. A model whose \\( \\tau \\) has the wrong units\nhas a wrong term, caught before any numbers are run. This discipline — balance,\nnormalise, read — is exactly how reliability, controls, and process courses set up\ntheir own first-order responses later.</p>\n<h3>§5 · Step response and superposition</h3>\n<p>Because the equation is linear, its responses add. If the input \\(y_{\\text{in}}\\) jumps from one level to another — a <b>step</b> — the output slides from its old steady state to the new one along the same exponential \\(1-e^{-t/\\tau}\\), scaled by the size of the jump. Two steps at different times give the sum of two such slides, each starting when its step arrives. This superposition is why a single measured step response characterises the whole system: read \\(\\tau\\) from how fast it moves and the gain from how far, and every future input can be built from steps. Reliability and controls engineers lean on exactly this — the step test is the cheapest honest experiment a first-order plant allows, and its arithmetic is the arithmetic of this lesson.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Solving linear first-order ODEs</b> (Lesson 1) — the tool being applied.</li>\n<li><b>Conservation balances</b> — rate in minus rate out.</li>\n<li><b>Unit reasoning</b> — the fastest error check on any model.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Balance law</td><td>\\( \\dot y = \\text{in}-\\text{out} \\)</td><td>The starting statement for every model.</td></tr>\n<tr><td>Newton cooling</td><td>\\( T'=-k(T-T_a) \\)</td><td>Body exchanging heat with surroundings.</td></tr>\n<tr><td>Time constant</td><td>\\( \\tau y'+y=y_{in} \\)</td><td>\\(\\tau\\) = time to reach \\(1-1/e\\) of the step.</td></tr>\n<tr><td>RC time constant</td><td>\\( \\tau=RC \\)</td><td>Charging/discharging capacitor through a resistor.</td></tr>\n<tr><td>Tank time constant</td><td>\\( \\tau=V/Q \\)</td><td>Well-mixed vessel with steady throughput.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Cooling to a target time</b></p><p><b>Problem.</b> A part at \\(90^\\circ\\)C cools in \\(20^\\circ\\)C air with \\(k=0.05\\ \\text{min}^{-1}\\). Find its temperature after 10 minutes.</p>",
+    "solution": "<p><b>Solution.</b> \\( T(t)=T_a+(T_0-T_a)e^{-kt}=20+70e^{-0.05\\cdot10}=20+70e^{-0.5} \\). Since \\(e^{-0.5}\\approx0.6065\\): \\( T\\approx20+42.5=62.5^\\circ\\)C. <b>Answer:</b> \\(\\approx62.5^\\circ\\)C. <b>Check:</b> above ambient, below start — as it must be.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Half-way time</b></p><p><b>Problem.</b> For the same part, when does it reach \\(55^\\circ\\)C (half-way from 90 to 20)?</p>",
+    "solution": "<p><b>Solution.</b> Need \\(70e^{-0.05t}=35\\Rightarrow e^{-0.05t}=0.5\\Rightarrow t=\\frac{\\ln 2}{0.05}\\approx13.86\\) min. <b>Answer:</b> \\(\\approx13.9\\) min. <b>Check:</b> this is \\(\\tau\\ln2\\) with \\(\\tau=1/k=20\\) min — a half-life, independent of the start temperature.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Read a time constant</b></p><p><b>Problem.</b> A 200-L well-mixed tank is fed and drained at 5 L/min. State its time constant and an approximate settle time.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\tau=V/Q=200/5=40 \\) min. It is essentially settled after \\(5\\tau=200\\) min. <b>Answer:</b> \\( \\tau=40 \\) min; settle \\(\\approx200\\) min.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An RC circuit has \\(R=1000\\,\\Omega\\), \\(C=100\\,\\mu\\text{F}\\). Its time constant is:</p>",
+    "choices": [
+     "\\(0.1\\) s",
+     "\\(10\\) s",
+     "\\(0.001\\) s",
+     "\\(100\\) s"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\tau=RC=1000\\times100\\times10^{-6}=0.1 \\) s. The micro (\\(10^{-6}\\)) prefix is the trap; \\(1000\\times100=10^5\\) then \\(\\times10^{-6}=0.1\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In \\( \\tau y'+y=y_{in} \\), the time constant \\( \\tau \\) is the time to reach about:</p>",
+    "choices": [
+     "63% of the step",
+     "100% of the step",
+     "37% of the step",
+     "half of the step"
+    ],
+    "answer": 0,
+    "solution": "<p>After one \\(\\tau\\) the response is \\(1-1/e\\approx0.63\\) of the way to steady state. \\(1/e\\approx37\\%\\) is the fraction <em>remaining</em>, not reached.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Newton cooling drives a body toward:</p>",
+    "choices": [
+     "The ambient temperature \\(T_a\\)",
+     "Absolute zero",
+     "Its initial temperature",
+     "Twice \\(T_a\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Steady state sets \\(T'=0\\Rightarrow T=T_a\\). The transient \\((T_0-T_a)e^{-kt}\\) decays away, leaving \\(T_a\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two tanks have the same volume but tank B has double the flow rate. Tank B's time constant is:</p>",
+    "choices": [
+     "Half of tank A's",
+     "Double tank A's",
+     "The same",
+     "Four times tank A's"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\tau=V/Q \\); doubling \\(Q\\) halves \\(\\tau\\). More throughput flushes the vessel faster.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A first-order response is conventionally treated as essentially complete after about:</p>",
+    "choices": [
+     "5 time constants",
+     "1 time constant",
+     "half a time constant",
+     "100 time constants"
+    ],
+    "answer": 0,
+    "solution": "<p>After \\(5\\tau\\) the response is within \\(e^{-5}\\approx0.7\\%\\) of steady state — the standard settling rule. One \\(\\tau\\) reaches only 63%.</p>"
+   }
+  ]
+ },
+ "3": {
+  "lecture": "\n<h3>§1 · From calculus to algebra</h3>\n<p>The homogeneous second-order equation with constant coefficients,\n\\( m x'' + c x' + k x = 0 \\), models every mass–spring–damper — and by analogy\nevery RLC circuit and every simple oscillator. Its solution is found by a guess\nthat turns calculus into algebra: try \\( x=e^{rt} \\). Substituting gives\n\\( (mr^2+cr+k)e^{rt}=0 \\), and since the exponential never vanishes, the\n<b>characteristic equation</b> \\( mr^2+cr+k=0 \\) must hold. The differential\nproblem is now a quadratic.</p>\n<h3>§2 · Three regimes, set by the discriminant</h3>\n<p>The discriminant \\( \\Delta=c^2-4mk \\) sorts the behaviour. If \\( \\Delta>0 \\),\ntwo real negative roots: \\( x=Ae^{r_1 t}+Be^{r_2 t} \\), a pure decay with no\noscillation — <b>overdamped</b>. If \\( \\Delta=0 \\), a repeated root \\(r\\):\n\\( x=(A+Bt)e^{rt} \\), the fastest non-oscillating return — <b>critically\ndamped</b>. If \\( \\Delta<0 \\), complex roots \\( r=-\\sigma\\pm i\\omega_d \\):\n\\( x=e^{-\\sigma t}(A\\cos\\omega_d t+B\\sin\\omega_d t) \\), a decaying oscillation —\n<b>underdamped</b>. For \\( x''+5x'+6x=0 \\), \\( \\Delta=25-24=1>0 \\), roots\n\\(-2,-3\\): overdamped. For \\( x''+2x'+5x=0 \\), \\( \\Delta=-16<0 \\), roots\n\\(-1\\pm2i\\): underdamped, oscillating at \\( \\omega_d=2 \\) while decaying at rate 1.</p>\n<h3>§3 · Natural frequency and damping ratio</h3>\n<p>Two derived numbers name the system independently of scale. The <b>natural\nfrequency</b> \\( \\omega_n=\\sqrt{k/m} \\) is how fast it would oscillate with no\ndamping; with \\(m=1,k=100\\), \\( \\omega_n=10 \\) rad/s. The <b>damping ratio</b>\n\\( \\zeta=\\dfrac{c}{2\\sqrt{mk}} \\) measures damping against the critical amount\n\\( c_c=2\\sqrt{mk} \\). Here \\( c_c=20 \\); a damper \\(c=8\\) gives \\( \\zeta=0.4 \\) —\nunderdamped, since \\( \\zeta<1 \\). The three regimes restate cleanly as\n\\( \\zeta<1,\\ =1,\\ >1 \\).</p>\n<h3>§4 · The reading method</h3>\n<p>Given \\( m x''+cx'+kx=0 \\): compute \\( \\Delta=c^2-4mk \\) first — its sign is\nthe whole qualitative story before a single root is found. Then read\n\\( \\omega_n=\\sqrt{k/m} \\) and \\( \\zeta=c/(2\\sqrt{mk}) \\) to quantify. This ordering\n— sign, then magnitudes — is how vibration and control engineers diagnose a system\nfrom its coefficients alone, and why \\( \\zeta \\) and \\( \\omega_n \\) are the two\nnumbers every datasheet reports. The forced version in Lesson 4 adds a\nparticular solution on top of exactly this homogeneous skeleton.</p>\n<h3>§5 · Why the regimes matter physically</h3>\n<p>The three regimes are not mathematical curiosities — each is a design choice. An <b>overdamped</b> system returns to rest slowly and never overshoots: right for a door closer or a heavy instrument that must not bounce. A <b>critically damped</b> system returns as fast as possible with no overshoot: the target for most positioning systems and vehicle suspensions. An <b>underdamped</b> system overshoots and rings: unavoidable in lightly-damped structures, and the reason a rotating machine passing through its natural frequency shakes. The damping ratio \\( \\zeta \\) is the single knob that moves between them, and reading it from \\(c\\), \\(m\\), and \\(k\\) tells you, before any test, whether a design will slam, settle, or ring. That diagnostic power — three coefficients to one verdict — is why this lesson underpins the vibrations and controls courses. One further reading is worth carrying forward: the roots always come in a conjugate pair when complex, so a single measured frequency and decay rate reconstruct both roots at once, and from them the effective \\(c\\), \\(m\\), and \\(k\\) of a black-box system. Engineers routinely run this backwards — strike a structure, measure the ring-down, and infer the stiffness and damping they never had a datasheet for. The homogeneous equation is therefore not only a solution method but a measurement principle.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>The quadratic formula</b> — the characteristic equation is a quadratic.</li>\n<li><b>Complex numbers</b> — \\(e^{i\\omega t}=\\cos\\omega t+i\\sin\\omega t\\) for the underdamped case.</li>\n<li><b>Exponential solutions</b> (Lessons 1–2) — the ansatz \\(x=e^{rt}\\).</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Characteristic eqn</td><td>\\( mr^2+cr+k=0 \\)</td><td>Roots set the whole response.</td></tr>\n<tr><td>Discriminant</td><td>\\( \\Delta=c^2-4mk \\)</td><td>Sign selects over/critical/under-damped.</td></tr>\n<tr><td>Natural frequency</td><td>\\( \\omega_n=\\sqrt{k/m} \\)</td><td>Undamped oscillation rate.</td></tr>\n<tr><td>Damping ratio</td><td>\\( \\zeta=\\frac{c}{2\\sqrt{mk}} \\)</td><td>\\(<1\\) under, \\(=1\\) critical, \\(>1\\) over.</td></tr>\n<tr><td>Critical damping</td><td>\\( c_c=2\\sqrt{mk} \\)</td><td>Fastest return without overshoot.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Classify and solve</b></p><p><b>Problem.</b> Classify \\( x''+5x'+6x=0 \\) and write its general solution.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta=5^2-4(1)(6)=1>0 \\Rightarrow \\) overdamped. Roots \\( r=\\frac{-5\\pm1}{2}=-2,-3 \\). <b>Answer:</b> \\( x=Ae^{-2t}+Be^{-3t} \\). <b>Check:</b> both roots negative, so \\(x\\to0\\) with no oscillation.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Underdamped read-off</b></p><p><b>Problem.</b> For \\( x''+2x'+5x=0 \\), give the decay rate and damped frequency.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta=4-20=-16<0 \\). Roots \\( r=\\frac{-2\\pm\\sqrt{-16}}{2}=-1\\pm2i \\). Decay rate \\( \\sigma=1 \\), damped frequency \\( \\omega_d=2 \\). <b>Answer:</b> \\( x=e^{-t}(A\\cos2t+B\\sin2t) \\), decay 1, \\( \\omega_d=2 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Natural frequency and damping ratio</b></p><p><b>Problem.</b> A system has \\(m=1,\\ k=100,\\ c=8\\). Find \\( \\omega_n \\), critical damping \\(c_c\\), and \\( \\zeta \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( \\omega_n=\\sqrt{k/m}=\\sqrt{100}=10 \\) rad/s. \\( c_c=2\\sqrt{mk}=2\\sqrt{100}=20 \\). \\( \\zeta=c/c_c=8/20=0.4 \\). <b>Answer:</b> \\( \\omega_n=10,\\ c_c=20,\\ \\zeta=0.4 \\) (underdamped).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The discriminant of \\( m x''+cx'+kx=0 \\) is \\( c^2-4mk \\). Overdamped means:</p>",
+    "choices": [
+     "\\( c^2-4mk>0 \\)",
+     "\\( c^2-4mk<0 \\)",
+     "\\( c^2-4mk=0 \\)",
+     "\\( c=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Positive discriminant gives two distinct real roots — pure decay, no oscillation. Negative is underdamped; zero is critical.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A repeated characteristic root \\(r\\) gives the solution form:</p>",
+    "choices": [
+     "\\( (A+Bt)e^{rt} \\)",
+     "\\( Ae^{rt}+Be^{-rt} \\)",
+     "\\( A\\cos rt \\)",
+     "\\( Ae^{rt} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>A double root needs the extra independent solution \\(t e^{rt}\\), giving \\((A+Bt)e^{rt}\\). A single \\(Ae^{rt}\\) is only one constant, too few for second order.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>With \\(m=1,k=100\\), the critical damping coefficient \\(c_c=2\\sqrt{mk}\\) equals:</p>",
+    "choices": [
+     "\\(20\\)",
+     "\\(10\\)",
+     "\\(200\\)",
+     "\\(100\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( c_c=2\\sqrt{1\\cdot100}=2\\times10=20 \\). Forgetting the factor 2 gives the common wrong answer 10.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A damping ratio \\( \\zeta=0.4 \\) describes a system that is:</p>",
+    "choices": [
+     "Underdamped (oscillates while decaying)",
+     "Overdamped",
+     "Critically damped",
+     "Undamped"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\zeta<1 \\) is underdamped — decaying oscillation. \\( \\zeta=1 \\) critical, \\( \\zeta>1 \\) overdamped, \\( \\zeta=0 \\) undamped.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Doubling the mass while holding stiffness fixed changes \\( \\omega_n=\\sqrt{k/m} \\) by a factor of:</p>",
+    "choices": [
+     "\\( 1/\\sqrt2 \\)",
+     "\\( \\sqrt2 \\)",
+     "\\( 1/2 \\)",
+     "\\( 2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\sqrt{k/(2m)}=\\omega_n/\\sqrt2 \\): more mass lowers the natural frequency, but by the square root, not linearly.</p>"
+   }
+  ]
+ },
+ "4": {
+  "lecture": "\n<h3>§1 · The structure theorem</h3>\n<p>A nonhomogeneous equation \\( m x''+cx'+kx=f(t) \\) has forcing on the right.\nIts general solution is always \\( x=x_h+x_p \\): the <b>homogeneous</b> solution\n\\(x_h\\) (Lesson 3, carrying the arbitrary constants) plus any single\n<b>particular</b> solution \\(x_p\\) that matches the forcing. This is not a\nconvenience but a theorem — the difference of any two full solutions solves the\nhomogeneous equation, so all solutions differ only by \\(x_h\\). Practically: solve\nthe homogeneous problem for the transient, find one \\(x_p\\) for the steady\nbehaviour, and add.</p>\n<h3>§2 · Undetermined coefficients</h3>\n<p>When \\(f(t)\\) is a constant, polynomial, exponential, or sinusoid, guess \\(x_p\\)\nof the same shape with unknown coefficients and solve for them. Constant forcing\n\\( x''+3x'+2x=10 \\): try \\(x_p=\\)const, so \\(x''=x'=0\\) and \\(2x_p=10\\Rightarrow\nx_p=5\\) — the steady state. Ramp forcing \\( x''+3x'+2x=2t \\): try\n\\(x_p=at+b\\); then \\(x'_p=a,\\ x''_p=0\\), giving \\(3a+2(at+b)=2t\\). Match powers:\n\\(2a=2\\Rightarrow a=1\\), and \\(3a+2b=0\\Rightarrow b=-1.5\\). So \\(x_p=t-1.5\\).</p>\n<h3>§3 · Transient versus steady state</h3>\n<p>For \\( x''+3x'+2x=10 \\) the homogeneous roots are \\(-1,-2\\) (both stable), so\n\\( x=Ae^{-t}+Be^{-2t}+5 \\). The exponentials are the transient — how the system\ngets there — and the \\(5\\) is the steady state — where it ends. After a few time\nconstants only the \\(5\\) survives, whatever the initial conditions. This is why a\nsteady-state calculation (Lesson 1's \\(q/p\\) idea, generalised) predicts the\nlong-run answer without solving the full transient, and why controls engineers\nseparate the two questions: <em>where</em> does it settle, and <em>how</em> does\nit get there.</p>\n<h3>§4 · Sinusoidal forcing and the working method</h3>\n<p>Sinusoidal forcing is the important case: \\(f(t)=F_0\\cos\\omega t\\) gives a\nsinusoidal \\(x_p\\) of the same frequency but shifted phase and scaled amplitude.\nThe amplitude depends on how close \\(\\omega\\) is to \\(\\omega_n\\) — the seed of\nresonance, developed in Lesson 5. The method is uniform: (1) solve homogeneous for\n\\(x_h\\); (2) guess \\(x_p\\) matching \\(f\\)'s form — and if that guess already solves\nthe homogeneous equation, multiply by \\(t\\); (3) fix constants from initial\nconditions <em>on the full</em> \\(x_h+x_p\\), never on \\(x_h\\) alone. That last rule\nis the most common error in the whole topic, and worth stating every time.</p>\n<h3>§5 · Why superposition holds</h3>\n<p>The whole method rests on <b>linearity</b>. Because the operator \\(L[x]=mx''+cx'+kx\\) satisfies \\(L[x_1+x_2]=L[x_1]+L[x_2]\\), a sum of forcings produces the sum of responses — so a complicated input can be broken into simple pieces (a constant, a ramp, each sinusoid), each solved by its own trial form, and the results added. This is the same superposition that lets Laplace transforms (Lessons 6–7) handle switched and combined inputs cleanly, and the same principle that makes the frequency response of Lesson 5 meaningful. Nonlinear equations forfeit all of it: there the responses to two inputs bear no simple relation to the response to their sum, and the tidy \\(x_h+x_p\\) split collapses. Recognising that this course lives inside the linear world — and where real systems leave it — is as important as any single technique in it, because it tells you exactly when these clean methods can be trusted and when a numerical solver becomes the only honest option.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Homogeneous solutions</b> (Lesson 3) — \\(x_h\\) is half the answer.</li>\n<li><b>Differentiating trial forms</b> — polynomials, exponentials, sinusoids.</li>\n<li><b>Matching coefficients</b> — the algebra that fixes \\(x_p\\).</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>General solution</td><td>\\( x=x_h+x_p \\)</td><td>Always: transient plus forced response.</td></tr>\n<tr><td>Particular solution</td><td>\\( x_p \\) matches \\(f(t)\\)</td><td>One solution capturing the forcing.</td></tr>\n<tr><td>Undetermined coeffs</td><td>guess same shape as \\(f\\)</td><td>\\(f\\) constant/poly/exp/sinusoid.</td></tr>\n<tr><td>Resonance rule</td><td>multiply guess by \\(t\\)</td><td>Trial form already solves homogeneous eqn.</td></tr>\n<tr><td>Steady state</td><td>\\( x_p \\) as \\(t\\to\\infty\\)</td><td>Where a stable system settles.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Constant forcing</b></p><p><b>Problem.</b> Solve \\( x''+3x'+2x=10 \\) for the general solution.</p>",
+    "solution": "<p><b>Solution.</b> Homogeneous: roots of \\(r^2+3r+2=0\\) are \\(-1,-2\\), so \\(x_h=Ae^{-t}+Be^{-2t}\\). Particular: try constant, \\(2x_p=10\\Rightarrow x_p=5\\). <b>Answer:</b> \\( x=Ae^{-t}+Be^{-2t}+5 \\). <b>Check:</b> steady state \\(10/2=5\\), matched.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Ramp forcing coefficients</b></p><p><b>Problem.</b> Find a particular solution of \\( x''+3x'+2x=2t \\).</p>",
+    "solution": "<p><b>Solution.</b> Try \\(x_p=at+b\\): \\(x'_p=a,\\ x''_p=0\\), so \\(3a+2(at+b)=2t\\). Match \\(t\\): \\(2a=2\\Rightarrow a=1\\). Match constant: \\(3a+2b=0\\Rightarrow b=-1.5\\). <b>Answer:</b> \\( x_p=t-1.5 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>First-order sinusoidal amplitude</b></p><p><b>Problem.</b> For \\( x'+2x=\\cos t \\), the steady sinusoid has amplitude \\( 1/\\sqrt{2^2+1^2} \\). Evaluate it.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\text{amp}=\\dfrac{1}{\\sqrt{4+1}}=\\dfrac{1}{\\sqrt5}\\approx0.447 \\). <b>Answer:</b> \\(\\approx0.447\\). <b>Check:</b> the coefficient of \\(x\\) (2) and the forcing frequency (1) set the denominator \\(\\sqrt{a^2+\\omega^2}\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The general solution of a forced linear ODE is:</p>",
+    "choices": [
+     "\\( x_h+x_p \\)",
+     "\\( x_h\\cdot x_p \\)",
+     "\\( x_p \\) only",
+     "\\( x_h \\) only"
+    ],
+    "answer": 0,
+    "solution": "<p>Homogeneous (transient, with constants) plus one particular (forced). Multiplying them or dropping either is wrong.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( x''+3x'+2x=10 \\), the steady-state value is:</p>",
+    "choices": [
+     "\\(5\\)",
+     "\\(10\\)",
+     "\\(0\\)",
+     "\\(2\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Set derivatives to zero: \\(2x=10\\Rightarrow x=5\\). The forcing 10 is divided by the stiffness coefficient 2.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Initial conditions for a forced second-order ODE are applied to:</p>",
+    "choices": [
+     "The full \\( x_h+x_p \\)",
+     "\\( x_h \\) alone",
+     "\\( x_p \\) alone",
+     "Neither"
+    ],
+    "answer": 0,
+    "solution": "<p>Constants live in \\(x_h\\), but the conditions constrain the actual solution \\(x_h+x_p\\). Applying them to \\(x_h\\) alone is the classic error.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>If the trial \\(x_p\\) already solves the homogeneous equation, you should:</p>",
+    "choices": [
+     "Multiply the trial by \\(t\\)",
+     "Give up — no solution exists",
+     "Use \\(x_p=0\\)",
+     "Double the forcing"
+    ],
+    "answer": 0,
+    "solution": "<p>The resonance rule: multiply by \\(t\\) (or \\(t^2\\) for a double root) to get an independent particular solution.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Under sinusoidal forcing \\( F_0\\cos\\omega t \\), the steady particular solution is:</p>",
+    "choices": [
+     "A sinusoid at frequency \\(\\omega\\), shifted in phase",
+     "A constant",
+     "A growing exponential",
+     "A sinusoid at the natural frequency \\(\\omega_n\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The forced response oscillates at the forcing frequency \\(\\omega\\) (not \\(\\omega_n\\)), with an amplitude and phase set by how close \\(\\omega\\) is to \\(\\omega_n\\).</p>"
+   }
+  ]
+ }
+}

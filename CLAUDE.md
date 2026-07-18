@@ -297,6 +297,36 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   centering both languages, gear off, shine band position sampled
   moving (~33px/1.2s). Earlier v1 (rotating gear at 60s/rev) superseded
   same-day by owner order "cancel this. discard the gear."
+- YEAR 2-4 AUTHORING STARTED (owner order 2026-07-18: full Educational
+  Units for all Y2S1-Y4S2 lessons + videos in empty lessons; 396 lessons
+  total, multi-session). BATCH 1 = math-3 (MTH 207) L1-L4: fresh-authored
+  units — 500-600w §1-§5 lectures (first-order separable/linear +
+  integrating-factor DERIVATION; first-order modelling w/ time constants;
+  second-order homogeneous + discriminant/ωn/ζ; nonhomogeneous +
+  undetermined coefficients), glossary TABLES, 3 solves + 5 MCs each (24
+  items, every number Python-verified pre-write: e^2, y=2+3e^-2,
+  Newton-cooling 62.5°C, half-life 13.9min, RC τ=0.1s, tank τ=40min,
+  roots -2/-3 & -1±2i, ωn=10, c_c=20, ζ=0.4, xp=5, ramp a=1/b=-1.5,
+  amp 0.447). Library already 11/11 approved MIT OCW embeds. Career
+  attached (rotation: Automotive-Toyota, Aerospace-Airbus, Industrial
+  controls-Rockwell — distinct trio). Company-free scan PASS. Render
+  verified in-browser: L3 quiz 5/5, glossary, MathJax 105, embed, zero §.
+  Coverage 74→78/528 (15%). NEXT: math-3 L5-L11, then Y2S1 course 2.
+- VIDEO POLICY v3 (owner directive 2026-07-18 — RELAXES the strict
+  APPROVED_CHANNELS allowlist): videos may now come from ANY channel, not
+  just the 21-item list, PROVIDED (a) the video is the best on-topic fit
+  for the lecture and (b) it has >3,000 views. Approved-list channels
+  remain preferred; text textbook links stay as alternatives. HARD
+  CONSTRAINTS UNCHANGED (integrity floor, NOT waived): every embedded id
+  is a REAL video looked up and confirmed live — no fabricated ids, no
+  invented view counts, ever; view-count and topic-fit verified before
+  entry; a lesson with no verifiable qualifying video keeps the honest
+  "none"/TODO marker rather than a guessed embed. Implementation: relax
+  the build's channel-gate assertion to accept a verified-non-approved
+  video carrying a recorded view count + source note; embed ONE best
+  video per lecture. Executed course-by-course as authoring reaches each
+  empty-video course (real per-video web verification) — NOT a blind bulk
+  pass. math-3 unaffected (already approved-list embeds).
 - HOMEPAGE ROBOT CREW (owner order 2026-07-18): four small flat-vector
   robot characters playing with mechanical tools, generated via Higgsfield
   (nano_banana jobs 9bf28329 wrench-on-bolt / 8ecc4264 gear-hoop /

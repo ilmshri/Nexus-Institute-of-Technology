@@ -54,7 +54,7 @@
     <h1>First-order equations revisited: separable and linear</h1>
     <p class="sub">Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.</p>
   </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>MIT OCW 18.03 Differential Equations</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>MIT OCW 18.03 Differential Equations</b></div><div>Assessment<b>8-problem interactive quiz</b></div></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/1">Mark as complete</button>
@@ -67,23 +67,65 @@
   <button data-tab="t-examples" data-ar="الأمثلة والاختبار">Examples and Quiz</button>
   <button data-tab="t-library" data-ar="المكتبة">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)</li><li>What exactly does the integrating factor multiply away?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</b>
-  (Year 2 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
-  <p class="small">Course context: The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap" data-ar="المحاضرة">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)</li><li>What exactly does the integrating factor multiply away?</li></ul></div><div class="measure">
+<h3>01 · Two shapes of first-order equation</h3>
+<p>A first-order ordinary differential equation relates a function to its first
+derivative. Two shapes cover most engineering models. The <b>separable</b> form
+\( \frac{dy}{dx} = g(x)\,h(y) \) can be split so each variable sits with its own
+differential: \( \frac{dy}{h(y)} = g(x)\,dx \), then both sides are integrated.
+The <b>linear</b> form \( y' + p(x)\,y = q(x) \) cannot generally be separated —
+the unknown appears both differentiated and undifferentiated — and needs the
+integrating-factor method of 3. Recognising which shape you hold is the first
+decision, because it selects the entire solution route.</p>
+<h3>02 · Separable equations, worked as a method</h3>
+<p>For \( \frac{dy}{dx} = x y \): divide by \(y\), multiply by \(dx\), and
+integrate to get \( \ln|y| = \tfrac{1}{2}x^2 + C \), so \( y = A e^{x^2/2} \).
+The constant \(A\) is fixed by one initial condition — with \( y(0)=1 \),
+\( A=1 \). The pattern is invariant: isolate, integrate both sides, then apply
+the condition <em>last</em>. Watch the algebra of the constant: it is cleaner to
+carry a single \(C\) through the integration and resolve it once, than to guess
+its final form.</p>
+<h3>03 · The linear equation and its integrating factor</h3>
+<p>For \( y' + p(x)y = q(x) \), multiply through by
+\( \mu(x) = e^{\int p\,dx} \). The left side collapses, by the product rule, into
+\( \frac{d}{dx}\big(\mu y\big) \) — this is the whole trick, and it is
+<em>derived</em>, not asserted: \( \frac{d}{dx}(\mu y) = \mu y' + \mu' y \), and
+\( \mu' = p\mu \), so \( \mu y' + p\mu y = \mu q \) is exactly \(\mu\) times the
+equation. Integrate once: \( \mu y = \int \mu q\,dx + C \). For
+\( y' + 2y = 4 \), \( \mu = e^{2x} \), giving \( e^{2x}y = 2e^{2x} + C \), so
+\( y = 2 + C e^{-2x} \). The condition \( y(0)=5 \) fixes \( C = 3 \).</p>
+<h3>04 · Reading the answer: transient and steady state</h3>
+<p>Every solution above splits the same way: a part that decays and a part that
+remains. In \( y = 2 + 3e^{-2x} \) the \( 3e^{-2x} \) is the <b>transient</b> —
+it vanishes as \(x\) grows — and the \(2\) is the <b>steady state</b>, the value
+the system settles to. The steady state of \( y' + p y = q \) with constant
+coefficients is simply \( q/p \) (set \(y'=0\)), a check worth doing before any
+integration: it tells you the destination, so a solution that heads elsewhere is
+wrong. This transient-plus-steady structure returns in every modelling lesson
+that follows, and is the reason first-order linear equations are the backbone of
+the whole course.</p>
+<h3>05 · When a solution exists, and why it matters</h3>
+<p>A practical caution closes the lesson. Separable and linear first-order equations with continuous coefficients have, by the existence–uniqueness theorem, exactly one solution through each initial point — so the single constant fixed by one condition is genuinely the whole answer, with no hidden alternatives. But the algebra can hide trouble: dividing by \(h(y)\) in a separable equation silently assumes \(h(y)\neq0\), and any constant \(y\) making \(h(y)=0\) is itself an <em>equilibrium</em> solution the division discards. Always check those constant solutions separately. For the linear equation the danger is different — \(p(x)\) or \(q(x)\) blowing up (a coefficient with a pole) breaks continuity and the guarantee with it. Reading where the coefficients misbehave, before integrating, is the mark of an engineer who trusts a model only where it earns trust.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)</li><li>What exactly does the integrating factor multiply away?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap" data-ar="الأسس">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Integration</b> (Calculus I–II) — the engine of both methods.</li>
+<li><b>The product rule</b> — it is what makes the integrating factor collapse.</li>
+<li><b>Exponentials and logs</b> — the natural language of first-order decay.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Separable</td><td>\( \frac{dy}{dx}=g(x)h(y) \)</td><td>Variables split; integrate each side alone.</td></tr>
+<tr><td>Linear first-order</td><td>\( y'+p(x)y=q(x) \)</td><td>Unknown both differentiated and not; use \(\mu\).</td></tr>
+<tr><td>Integrating factor</td><td>\( \mu=e^{\int p\,dx} \)</td><td>Multiplies the equation into an exact derivative.</td></tr>
+<tr><td>General solution</td><td>homogeneous + particular</td><td>Carries the arbitrary constant \(C\).</td></tr>
+<tr><td>Steady state</td><td>\( q/p \) (constant coeffs)</td><td>The destination; a fast sanity check.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="الأمثلة والاختبار">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Separable with a condition</b></p><p><b>Problem.</b> Solve \( \frac{dy}{dx}=xy \) with \( y(0)=1 \), and evaluate at \( x=2 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Separate: \( \frac{dy}{y}=x\,dx \Rightarrow \ln|y|=\tfrac12 x^2+C \), so \( y=Ae^{x^2/2} \). The condition \(y(0)=1\) gives \(A=1\). At \(x=2\): \( y=e^{2}\approx 7.389 \). <b>Answer:</b> \( y=e^{x^2/2},\ y(2)=e^2\approx7.389 \). <b>Check:</b> apply the condition last, after integrating.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Linear by integrating factor</b></p><p><b>Problem.</b> Solve \( y'+2y=4 \) with \( y(0)=5 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \mu=e^{2x} \); the equation becomes \( (e^{2x}y)'=4e^{2x} \), so \( e^{2x}y=2e^{2x}+C \) and \( y=2+Ce^{-2x} \). \( y(0)=5\Rightarrow C=3 \). <b>Answer:</b> \( y=2+3e^{-2x} \); at \(x=1\), \( y=2+3e^{-2}\approx2.406 \). <b>Check:</b> steady state \(q/p=4/2=2\), matched by the constant term.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Steady state before integrating</b></p><p><b>Problem.</b> Without solving fully, state the steady state of \( y'+3y=6 \), and the integrating factor.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Steady state: set \(y'=0\Rightarrow 3y=6\Rightarrow y=2\). Integrating factor: \( \mu=e^{\int 3\,dx}=e^{3x} \). <b>Answer:</b> steady state \(2\), \( \mu=e^{3x} \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Which equation is separable but NOT linear in \(y\)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{dy}{dx}=x y^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( y'+2y=4 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( y'+xy=x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( y'=3y \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>\( y'=xy^2 \) separates (\( y^{-2}dy=x\,dx \)) but the \(y^2\) makes it nonlinear. \(y'+2y=4\) and \(y'+xy=x\) are linear; \(y'=3y\) is both linear and separable.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The integrating factor for \( y'+p(x)y=q(x) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( e^{\int p\,dx} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( e^{\int q\,dx} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \int p\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( e^{-\int p\,dx} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Multiplying by \( \mu=e^{\int p\,dx} \) makes the left side \( (\mu y)' \) because \( \mu'=p\mu \). It uses \(p\), not \(q\), and is an exponential, not the bare integral.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>For \( y=2+3e^{-2x} \), the transient part is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 3e^{-2x} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 2 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( -2x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( e^{-2x}+2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>The transient decays to zero as \(x\to\infty\): that is \(3e^{-2x}\). The constant \(2\) is the steady state that remains.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A first-order linear equation needs how many initial conditions to fix its solution?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>One</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Two</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Depends on \(q(x)\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>One arbitrary constant \(C\) appears, so one condition fixes it. Order equals the number of conditions; second-order needs two.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The steady state of \( y'+5y=10 \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(2\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(10\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(5\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-sol"><p>Set \(y'=0\): \(5y=10\Rightarrow y=2\). It is \(q/p=10/5=2\), not \(q\) or \(p\) alone.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary" data-ar="إرسال الإجابات">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="المكتبة">Library</h2>
 <div class="lib-block lib-video">
   <h3 data-ar="فيديو الدرس">Lesson video</h3>
