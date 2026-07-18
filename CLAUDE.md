@@ -316,6 +316,17 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   z-index above, reduced-motion hides the video. The "zero photography"
   rule is intact (the loop is a stylized vector-look animation, owner-
   ordered). Verified: playback advancing/looping, scrim, chips, toggle.
+  v3.1 (owner iteration, same day): loop REPLACED with the centered-arm
+  cycle — new key frame job 240ff3f8 (robotic arm dead-center, gripper
+  holding amber-hub gear above the open slot of a gear train, dashed
+  motion arc, conveyor left / waveform+telemetry right, top half clean)
+  → seedance_2_0 job 3b23faf3: one 10s cause-and-effect cycle (arm
+  lowers gear → train meshes and spins up → waveform/telemetry react →
+  arm lifts back to exact start pose; seamless). Owner also ordered the
+  video visible across the WHOLE banner behind the text: scrim lightened
+  .55/.18 → .26/.08 and readability moved to .txt text-shadow. Verified:
+  video box == banner box exactly, playing, full-banner scene visible
+  behind the headline.
   tone pivot from transition-playbook to professional-institute voice.
   MISSION: eyebrow now "Mission · Advanced Industrial Systems & Engineering
   Mastery" (Free & bilingual removed from eyebrow only; meta chips keep
