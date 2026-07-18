@@ -297,7 +297,25 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   centering both languages, gear off, shine band position sampled
   moving (~33px/1.2s). Earlier v1 (rotating gear at 60s/rev) superseded
   same-day by owner order "cancel this. discard the gear."
-- INSTITUTE REBRAND EXECUTED (owner approval + addendum, 2026-07-18):
+- BANNER v3 + COST PURGE (owner orders 2026-07-18): (a) hero meta chips:
+  Languages and Cost REMOVED from the banner (Curriculum chip only);
+  the appbar language toggle (.lang-btn) STAYS — banner-only removal.
+  (b) COST RULE (binding): the site never mentions its own cost/"free"
+  anywhere — purged from hero chips (EN+AR), footer line (EN+AR), homepage
+  meta description, PWA manifest, README. Engineering-economics "cost"
+  content is unaffected (technical term). (c) HERO BACKGROUND ANIMATION
+  via Higgsfield MCP: style-key frame nano_banana 21:9 (brand navy→teal
+  gradient, thin teal line-art gear train / robot arm+conveyor /
+  centrifugal pump / vibration waveform / amber IoT telemetry, calm
+  center for headline; job 5733bbfa) → seedance_2_0 10s 720p loop with
+  the SAME frame as start_image+end_image for a seamless loop (job
+  6166ebd0 — owner-requested regeneration take; first take 58db4191
+  discarded), silent, non-photoreal. Shipped as assets/nx/hero-loop.mp4
+  (3.6 MB), <video autoplay muted loop playsinline> first child of both
+  heroes, radial scrim ::before for text readability, shine ::after
+  z-index above, reduced-motion hides the video. The "zero photography"
+  rule is intact (the loop is a stylized vector-look animation, owner-
+  ordered). Verified: playback advancing/looping, scrim, chips, toggle.
   tone pivot from transition-playbook to professional-institute voice.
   MISSION: eyebrow now "Mission · Advanced Industrial Systems & Engineering
   Mastery" (Free & bilingual removed from eyebrow only; meta chips keep

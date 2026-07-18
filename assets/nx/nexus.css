@@ -154,6 +154,12 @@ a:hover{color:var(--nx-teal-h)}
    Staggered rise-in of the hero stack + the gear motif slowly turning,
    like a plant coming up to speed. translateY only (RTL-safe); fully
    disabled under prefers-reduced-motion. */
+/* hero background loop (Industry 4.0 ambient animation) + readability scrim */
+.nx-hero video.hero-loop{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center bottom;pointer-events:none}
+.nx-hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 38%,rgba(14,22,38,.55),rgba(14,22,38,.18) 62%,rgba(14,22,38,0) 100%)}
+.nx-hero .txt{z-index:2}
 @keyframes nx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes nx-shine{0%{left:-45%}60%{left:115%}100%{left:115%}}
 .nx-hero .eyebrow{animation:nx-rise .65s cubic-bezier(.2,.7,.2,1) both .1s}
@@ -163,10 +169,11 @@ a:hover{color:var(--nx-teal-h)}
 /* banner shine: a soft skewed light band sweeping across the hero card */
 .nx-hero::after{content:"";position:absolute;top:-60%;bottom:-60%;width:34%;left:-45%;
   background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 30%,rgba(245,166,35,.12) 50%,rgba(255,255,255,.05) 70%,transparent 100%);
-  transform:skewX(-18deg);animation:nx-shine 5.5s ease-in-out infinite 1s;pointer-events:none}
+  transform:skewX(-18deg);animation:nx-shine 5.5s ease-in-out infinite 1s;pointer-events:none;z-index:3}
 @media(prefers-reduced-motion:reduce){
   .nx-hero .eyebrow,.nx-hero h1,.nx-hero .sub,.nx-hero .meta{animation:none}
   .nx-hero::after{display:none}
+  .nx-hero video.hero-loop{display:none}
 }
 
 /* ---------- structure ---------- */

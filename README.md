@@ -3,7 +3,7 @@
 **Learn Mechanical Engineering from Scratch to Industry 4.0.**
 Live site: **https://nexuskw.github.io/**
 
-A free, textbook-sourced online mechanical-engineering curriculum for anyone,
+A textbook-sourced online mechanical-engineering curriculum for anyone,
 starting from zero background: the classic ME core (mathematics, mechanics,
 materials, thermal-fluids, design) extended into Industry 4.0 — PLC, SCADA,
 condition monitoring, smart manufacturing.

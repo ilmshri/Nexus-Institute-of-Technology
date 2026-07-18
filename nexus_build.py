@@ -265,11 +265,11 @@ NX_PAGE = """<!doctype html>
     <a href="{prefix}curriculum/index.html" data-ar="{ar_curr}">Curriculum</a> ·
     <a href="{prefix}career/index.html" data-ar="{ar_career}">Career Paths</a>
   </nav>
-  <p class="lang-en">Free bilingual engineering education. Worked-example values are
+  <p class="lang-en">Bilingual engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-  <p class="lang-ar">تعليم هندسي مجاني ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
+  <p class="lang-ar">تعليم هندسي ثنائي اللغة. قيم الأمثلة المحلولة تعليمية؛
   والأرقام الصناعية التمثيلية موسومة بذلك وليست بيانات تشغيل منشورة لأي شركة مسماة.
   كل عنصر بصري رسم متجهي أصلي. والدروس التي لم تبلغ عمقها الكامل تصرّح بذلك بصدق.</p>
 </footer>
@@ -852,7 +852,7 @@ def build_static_pages():
     mission = fragment("pages/mission.html")
     nx_page("index.html",
             "Nexus Institute of Technology — Learn Mechanical Engineering from Scratch to Industry 4.0",
-            "A complete, free, bilingual B.S.-shaped mechanical engineering "
+            "A complete, bilingual B.S.-shaped mechanical engineering "
             "curriculum for anyone — from zero background to Industry 4.0.",
             mission, "", "home",
             menu=[("#premise", "The premise", "الفكرة", False, None),
