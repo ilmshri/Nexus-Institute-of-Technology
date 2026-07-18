@@ -282,6 +282,18 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Emitted docs/ scanned: ZERO old-brand residue. NOT purged, by rule:
   ledger history below (audit trail, verbatim), dead-path strings inside
   build.py (inert library internals), archived first-generation assets.
+- DUAL-REMOTE CONFIG (owner directive 2026-07-18, supersedes all earlier
+  "origin = nexuskw" notes): origin FETCH =
+  github.com/ilmshri/Nexus-Institute-of-Technology (the Nexus code home;
+  full 51-commit history imported 2026-07-18, replacing its stub README);
+  origin carries TWO PUSH URLs — the code home AND
+  github.com/nexuskw/nexuskw.github.io (the GitHub Pages repo that SERVES
+  https://nexuskw.github.io/; the URL is bound to that repo name). One
+  `git push origin main` updates both. NEVER drop the nexuskw push URL —
+  doing so silently stops live-site deploys. (Session evidence note: the
+  premise "pushes were going to ilmshri/asu" was checked and false — asu
+  is the dead 2026-07-13 first-deploy stub; all session pushes had gone
+  to nexuskw/nexuskw.github.io.)
 - CHECKPOINT: COMPUTING EDUCATIONAL UNIT COMPLETE (2026-07-18): fifth Y1S1
   course under the Unit template; second fresh-authored (no legacy content).
   Batches 1-2 (commits 785b322, debd9da) shipped L1-8; Batch 3 this commit:

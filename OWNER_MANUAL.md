@@ -58,7 +58,9 @@ git commit -m "describe what you changed"
 
 # 5. publish
 git push origin main
-#    the live site updates ~1 minute later.
+#    this one command pushes to BOTH Nexus repos: the code home
+#    (ilmshri/Nexus-Institute-of-Technology) and the live-site repo
+#    (nexuskw/nexuskw.github.io). The live site updates ~1 minute later.
 ```
 
 ---

@@ -4,10 +4,12 @@ The site is a fully static build committed to the repo. GitHub Pages serves the
 `docs/` folder of `main` directly — nothing runs on a server.
 
 - **Live URL:** https://nexuskw.github.io/
-- **Repo:** `github.com/nexuskw/nexuskw.github.io` (origin; credential in the
-  Mac's keychain)
-- **Pages config:** Settings → Pages → Deploy from a branch → `main`, `/docs`
-  (already configured)
+- **Code home:** `github.com/ilmshri/Nexus-Institute-of-Technology` (origin fetch URL)
+- **Live-site repo:** `github.com/nexuskw/nexuskw.github.io` — GitHub Pages serves
+  the site from THIS repo (`main`, `/docs`); the Pages URL is bound to its name,
+  so it must keep receiving pushes for the site to update
+- **Push config:** `origin` carries BOTH push URLs — one `git push origin main`
+  updates the code home *and* the live site (credential in the Mac's keychain)
 
 ## After any content change
 

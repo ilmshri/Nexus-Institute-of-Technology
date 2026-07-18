@@ -1,6 +1,7 @@
 # PROJECT MAP — Nexus Institute of Technology
 
-Live site: **https://nexuskw.github.io/** · Repo: `github.com/nexuskw/nexuskw.github.io`
+Live site: **https://nexuskw.github.io/** · Code home: `github.com/ilmshri/Nexus-Institute-of-Technology`
+Live-site repo: `github.com/nexuskw/nexuskw.github.io` (GitHub Pages source — one `git push origin main` updates both)
 Local folder: `/Users/ilmshri/Social Media/nexus-institute`
 Companion guide: **[OWNER_MANUAL.md](OWNER_MANUAL.md)** — step-by-step editing instructions.
 
