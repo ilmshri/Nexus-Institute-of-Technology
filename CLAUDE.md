@@ -249,6 +249,16 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y1S1 Unit scoreboard: math-1 ✓ statics ✓ materials-1 ✓ physics-1 ✓;
   NEXT per approved order: computing → drawing-cad (incl. re-verifying its
   drafts) → Y1S2 stream.
+- MAINTENANCE PHASE (owner, 2026-07-18 — content pipeline PAUSED after the
+  computing checkpoint; drawing-cad stays next in queue, untouched): pivot
+  to site maintenance & structure organization. SHIPPED THIS PHASE:
+  PROJECT_MAP.md (full repo audit; every file classified Editable Content
+  vs System Infrastructure/do-not-touch; no files renamed — names are
+  load-bearing wiring, documented instead) + OWNER_MANUAL.md (owner-facing
+  edit cycle, JSON lesson/quiz templates, catalog do's/don'ts, failure
+  table, git recovery). PENDING (gated on owner): design refinement —
+  owner will finalize visual style, then layout suggestions; NO animations
+  per explicit owner order.
 - CHECKPOINT: COMPUTING EDUCATIONAL UNIT COMPLETE (2026-07-18): fifth Y1S1
   course under the Unit template; second fresh-authored (no legacy content).
   Batches 1-2 (commits 785b322, debd9da) shipped L1-8; Batch 3 this commit:
