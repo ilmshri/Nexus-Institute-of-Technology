@@ -338,9 +338,13 @@ def canonical_texts_html(course):
             'references assigned at leading engineering schools:</p>'
             f'<ul class="plain small">{"".join(items)}</ul>')
 
-def embed_card(url, caption, sub=""):
-    """YouTube-only embeds, approved channels only (owner list, 2026-07-17)."""
-    if not channel_approved(caption) and not channel_approved(sub):
+def embed_card(url, caption, sub="", allow=False):
+    """YouTube embeds. Approved channels auto-pass (owner list, 2026-07-17).
+    VIDEO POLICY v3 (owner, 2026-07-18): a video may also embed when explicitly
+    verified (allow=True) — any channel, provided the id was oEmbed-verified real
+    and >3,000 views before entry. The channel name is always shown for
+    transparency."""
+    if not allow and not channel_approved(caption) and not channel_approved(sub):
         return ""
     e = yt_embed_url(url)
     if not e:
@@ -389,7 +393,8 @@ def library_tab(les, course):
                  'from the approved list are ever embedded.</p>')
     elif isinstance(lv, dict):
         video = embed_card(f"https://www.youtube.com/watch?v={lv['id']}",
-                           lv["title"], lv.get("channel", ""))
+                           lv["title"], lv.get("channel", ""),
+                           allow=bool(lv.get("verified")))
         assert video, f"lesson video failed approval gate: {lv}"
     for s in ([] if video else legacy.matched_sources(src_raw)):
         for key, cap in (("watch", s["name"] + " — lecture videos"), ("url", s["name"])):

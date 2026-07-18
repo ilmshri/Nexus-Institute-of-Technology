@@ -328,6 +328,23 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y2S1 status: math-3 4/11, strength 4/11 authored; both have full
   approved videos. NEXT (empty-video courses): fluids/statistics/etc.
   need the real per-video verification pass under video-policy v3.
+- VIDEO-POLICY v3 GATE + FLUIDS VIDEOS (owner directive "keep spreading
+  videos", 2026-07-18): build gate relaxed — embed_card() now takes
+  allow=; a lesson video dict with "verified":true embeds from ANY channel
+  (channel name always shown for transparency); approved channels still
+  auto-pass. FLUIDS (FLD 203) — 11/11 videos, each id oEmbed-verified REAL
+  before entry (title+author confirmed live, no fabricated ids): L1
+  Efficient Engineer viscosity, L2 Less Boring Lectures hydrostatic, L3
+  Fluid Matters Reynolds, L4 Efficient Engineer Bernoulli, L5 Fluid
+  Matters momentum, L6 Prof. Van Buren Buckingham-Pi, L7 Efficient
+  Engineer laminar/turbulent, L8 saVRee valves, L9 Fluid Matters venturi,
+  L10 HardHat Engineer pump curves, L11 CPPMechEngTutorials compressible.
+  4 approved-channel + 7 policy-v3 (each an established educational channel
+  reliably >3k views; exact count not machine-readable via oEmbed, so
+  recorded as a verification note, not a fabricated number). Embeds
+  102→113. Fluids content still to author (videos-first per owner breadth
+  order). Method proven: WebSearch → candidate ids → paced oEmbed verify
+  (2.5s spacing to avoid YT rate-limit) → embed verified only.
 - VIDEO POLICY v3 (owner directive 2026-07-18 — RELAXES the strict
   APPROVED_CHANNELS allowlist): videos may now come from ANY channel, not
   just the 21-item list, PROVIDED (a) the video is the best on-topic fit
