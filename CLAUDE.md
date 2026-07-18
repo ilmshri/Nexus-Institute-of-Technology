@@ -282,6 +282,42 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Emitted docs/ scanned: ZERO old-brand residue. NOT purged, by rule:
   ledger history below (audit trail, verbatim), dead-path strings inside
   build.py (inert library internals), archived first-generation assets.
+- INSTITUTE REBRAND EXECUTED (owner approval + addendum, 2026-07-18):
+  tone pivot from transition-playbook to professional-institute voice.
+  MISSION: eyebrow now "Mission · Advanced Industrial Systems & Engineering
+  Mastery" (Free & bilingual removed from eyebrow only; meta chips keep
+  Free/bilingual); owner's verbatim H1 KEPT; sub + premise elevated
+  optimistic/accessible in EN and AR. TONE RULE (owner): marketing surfaces
+  (mission/career) may use optimistic, encouraging language; ACADEMIC
+  content keeps the professor voice — unchanged. CAREER PAGES (EN+AR)
+  rebuilt: approved H1 "Careers in Advanced Industrial Systems — from
+  specialization to leadership"; sections = 01 all-roles landscape (10
+  specializations→curriculum spines), 02 CV translation (kept), 03 arena,
+  04 CERTIFICATION ARCHITECTURE (centralized; CSWA/CSWP, AutoCAD, CMRP,
+  ISO 18436, API 510/570/653, CWI, CQE, PMP, ISA, NEBOSH, ASME — every
+  link opened and verified live 2026-07-18; experience gates stated
+  honestly; NO literal "guaranteed employment" claims — integrity floor),
+  05 interview map (kept), 06 twelve-month plan (reframed as development
+  plan). LESSON LIBRARY: "Related certifications & licenses" block REMOVED
+  from all 528 lesson pages (was placeholder-only; now centralized on
+  Career Paths); "Textbooks & references" upgraded — new
+  data/textbooks.json registry (52 canonical university texts, 48 with
+  Open-Library-API-verified links, all 48 courses mapped; unverified
+  texts render as plain text). TEXTBOOK CANON EXPANDED (owner): the
+  Library references block may cite the standard university canon
+  (Hibbeler, Shigley, Incropera, Rao, Ogata, Montgomery, ...); the
+  SOURCES list still governs in-lesson citations. Course-page link label
+  "Full career playbook →" → "Explore career paths →".
+- CORPORATE NEUTRALITY POLICY v3 (owner addendum, 2026-07-18 — supersedes
+  the v2 career-page exception): (a) ACADEMIC tabs: company-free,
+  unchanged. (b) Course-page "Career outlook" blocks: PEDAGOGICAL —
+  specific company names (local + global) allowed and encouraged;
+  retained exactly as written. (c) CAREER STRATEGY / interview-prep /
+  job-seeking pages (career.html + career-ar.html): NO company names —
+  describe industry sector, business model, and engineering function
+  instead (six named anchors → six sector profiles; both languages;
+  scan verified zero names). Certification issuing bodies (SMRP, ASME,
+  API, ...) are not employer references and remain named + linked.
 - DUAL-REMOTE CONFIG (owner directive 2026-07-18, supersedes all earlier
   "origin = nexuskw" notes): origin FETCH =
   github.com/ilmshri/Nexus-Institute-of-Technology (the Nexus code home;

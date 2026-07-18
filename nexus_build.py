@@ -315,6 +315,29 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
     out.write_text(html, encoding="utf-8")
 
 # ------------------------------------------------------------ library -----
+# Canonical university-texts registry (owner directive 2026-07-18): the texts
+# used at top-tier engineering schools, per course. Links were verified via
+# the Open Library search API when the registry was built; texts without a
+# verified url render as plain text. See data/textbooks.json.
+TEXTBOOKS = json.loads((DATA / "textbooks.json").read_text(encoding="utf-8"))
+
+def canonical_texts_html(course):
+    keys = TEXTBOOKS["courses"].get(course["id"], [])
+    if not keys:
+        return ""
+    items = []
+    for k in keys:
+        t = TEXTBOOKS["texts"][k]
+        label = f'{esc(t["title"])}' + (f' — {esc(t["author"])}' if t["author"] else "")
+        if t.get("url"):
+            items.append(f'<li><a href="{esc(t["url"])}" target="_blank" '
+                         f'rel="noopener">{label}</a></li>')
+        else:
+            items.append(f"<li>{label}</li>")
+    return ('<p class="src"><b>The standard university texts</b> — the same '
+            'references assigned at leading engineering schools:</p>'
+            f'<ul class="plain small">{"".join(items)}</ul>')
+
 def embed_card(url, caption, sub=""):
     """YouTube-only embeds, approved channels only (owner list, 2026-07-17)."""
     if not channel_approved(caption) and not channel_approved(sub):
@@ -344,9 +367,11 @@ def video_cards(course):
     return cards
 
 def library_tab(les, course):
-    """Owner lesson architecture (2026-07-17): exactly ONE embedded video from
-    the approved-channel list (honest TODO placeholder otherwise), then
-    textbook references, then a certifications block (curated in Phase 2)."""
+    """Owner lesson architecture (2026-07-17, revised 2026-07-18): exactly ONE
+    embedded video from the approved-channel list (honest TODO placeholder
+    otherwise), then the canonical university texts (data/textbooks.json,
+    verified links only). Certifications are centralized on the Career Paths
+    page (owner directive 2026-07-18) — no per-lesson certs block."""
     src_raw = les.get("src", "")
     src_html = legacy.linkify(esc(src_raw))
     taught = "".join(f"<li>{legacy.linkify(esc(t))}</li>"
@@ -414,14 +439,9 @@ def library_tab(les, course):
 {arabic_html}
 <div class="lib-block lib-books">
   <h3 data-ar="الكتب والمراجع">Textbooks &amp; references</h3>
+  {canonical_texts_html(course)}
   <p class="src"><b>Taught from</b> — {src_html}</p>
   <ul class="plain small">{taught}</ul>
-</div>
-<div class="lib-block lib-certs">
-  <h3 data-ar="الشهادات والرخص ذات الصلة">Related certifications &amp; licenses</h3>
-  <p class="queued-note">The per-lesson certification map (name, relevance,
-  issuing body, verified link) is curated in Phase 2 — placeholders are never
-  filled with unverified links.</p>
 </div>
 <div class="wide">{cards_html}</div>"""
 
@@ -720,7 +740,7 @@ def build_course_page(sem, course, prefix, tabs_all):
     career = (f'<div class="career-block"><span class="tag">Career outlook — '
               f'where this course pays</span>{course["career"]}'
               f'<p class="small"><a href="{prefix}career/index.html">'
-              f'Full career playbook →</a></p></div>') if course.get("career") else ""
+              f'Explore career paths →</a></p></div>') if course.get("career") else ""
     n_core = sum(1 for l in course["lessons"] if l.get("core60"))
     n_depth = sum(1 for l in course["lessons"] if lesson_depth(l, tabs_all))
     n_quiz = sum(1 for l in course["lessons"]
@@ -846,10 +866,11 @@ def build_static_pages():
               f'<div class="lang-ar" dir="rtl">{career_ar}</div>')
     nx_page("career/index.html",
             "Career Paths — Nexus Institute of Technology",
-            "Tactical maintenance-to-manufacturing career plan: CV translation, "
-            "target employers, certifications, interview map, 12-month plan.",
+            "Careers in advanced industrial systems: the full role landscape, "
+            "the certification architecture, interview mastery, and a "
+            "twelve-month development plan.",
             career, "../", "career",
-            menu=[("#top", "Position", "الموقع", False, None)])
+            menu=[("#top", "The landscape", "الخريطة", False, None)])
 
 def build_search_index(sems):
     idx = []
