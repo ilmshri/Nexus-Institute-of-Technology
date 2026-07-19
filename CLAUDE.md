@@ -342,6 +342,9 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   owed): math-3 L2/L3/L4 lectures 484/398/450 words, slightly under the
   500-word floor — top-up owed; L1 547 OK. Video approval list was
   presented to owner and approved (fluids L1-L3 approve-all + alternates).
+  OWNER APPROVED (2026-07-19): the full fluids (11/11) + statistics (11/11)
+  video sets with all alternatives, AND math-3 L1-L4 content — confirmed,
+  no longer provisional. math-3 L2/L3/L4 lecture word-count top-up still owed.
 - VIDEO-POLICY v3 GATE + FLUIDS VIDEOS (owner directive "keep spreading
   videos", 2026-07-18): build gate relaxed — embed_card() now takes
   allow=; a lesson video dict with "verified":true embeds from ANY channel
