@@ -942,5 +942,359 @@
    }
   ],
   "kuwait": "\n<p>When a maintenance team tunes a machine mount or a vehicle suspension, they are\nchoosing the damping ratio \\( \\zeta \\). Too little damping (\\( \\zeta\\ll1 \\)) and the\nsystem rings for a long time after every bump — fatigue and noise; too much\n(\\( \\zeta>1 \\)) and it responds sluggishly. The sweet spot for most equipment sits a\nlittle below critical, giving a fast return with only slight overshoot, which is why\nsuspension and isolator datasheets quote a target \\( \\zeta \\) near \\(0.2\\)–\\(0.7\\)\nrather than raw damper values.</p>\n<p>The discriminant test is also a design guard on doors, actuators, and closers. A\nhydraulic door closer is deliberately set near critical damping so the door shuts\nquickly but does not slam or bounce — exactly \\( \\Delta\\approx0 \\). Reading a\nsystem's coefficients and computing \\( \\Delta \\) before building it lets an engineer\npredict whether the finished device will crawl, snap, or ring, without a single\nprototype.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Frequency response: response amplitude peaks near the natural frequency; lighter damping gives a taller, sharper resonance peak\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Response magnification vs frequency ratio r = ω/ωₙ</text><line x1=\"60\" y1=\"255\" x2=\"519\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"255\" x2=\"60\" y2=\"28\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"240\" y1=\"255\" x2=\"240\" y2=\"37\" stroke=\"#e8eef3\" stroke-width=\"1.5\"/><text x=\"232\" y=\"273\" fill=\"#16202e\" font-size=\"11\">1</text><text x=\"505\" y=\"273\" fill=\"#16202e\" font-size=\"12\">r</text><text x=\"34\" y=\"34\" fill=\"#16202e\" font-size=\"12\">M</text><polyline points=\"60.0,213.0 62.8,213.0 65.6,213.0 68.4,212.9 71.2,212.8 74.1,212.7 76.9,212.6 79.7,212.5 82.5,212.3 85.3,212.2 88.1,212.0 90.9,211.7 93.8,211.5 96.6,211.2 99.4,210.9 102.2,210.6 105.0,210.3 107.8,209.9 110.6,209.5 113.4,209.0 116.2,208.6 119.1,208.1 121.9,207.5 124.7,206.9 127.5,206.3 130.3,205.6 133.1,204.9 135.9,204.2 138.8,203.4 141.6,202.5 144.4,201.6 147.2,200.6 150.0,199.5 152.8,198.3 155.6,197.1 158.4,195.8 161.2,194.4 164.1,192.8 166.9,191.2 169.7,189.4 172.5,187.5 175.3,185.4 178.1,183.1 180.9,180.6 183.8,177.9 186.6,175.0 189.4,171.7 192.2,168.1 195.0,164.2 197.8,159.8 200.6,155.0 203.4,149.5 206.2,143.5 209.1,136.8 211.9,129.2 214.7,120.8 217.5,111.4 220.3,101.1 223.1,90.0 225.9,78.4 228.8,66.8 231.6,56.4 234.4,48.4 237.2,44.3 240.0,45.0 242.8,50.7 245.6,60.4 248.4,72.6 251.2,86.0 254.1,99.4 256.9,112.1 259.7,123.8 262.5,134.3 265.3,143.8 268.1,152.2 270.9,159.7 273.8,166.4 276.6,172.3 279.4,177.7 282.2,182.5 285.0,186.8 287.8,190.7 290.6,194.2 293.4,197.4 296.2,200.4 299.1,203.1 301.9,205.5 304.7,207.8 307.5,209.9 310.3,211.9 313.1,213.7 315.9,215.4 318.8,217.0 321.6,218.4 324.4,219.8 327.2,221.1 330.0,222.3 332.8,223.5 335.6,224.5 338.4,225.6 341.2,226.5 344.1,227.4 346.9,228.3 349.7,229.1 352.5,229.9 355.3,230.6 358.1,231.3 360.9,232.0 363.8,232.6 366.6,233.2 369.4,233.8 372.2,234.4 375.0,234.9 377.8,235.4 380.6,235.9 383.4,236.4 386.2,236.8 389.1,237.3 391.9,237.7 394.7,238.1 397.5,238.5 400.3,238.9 403.1,239.2 405.9,239.6 408.8,239.9 411.6,240.2 414.4,240.5 417.2,240.8 420.0,241.1 422.8,241.4 425.6,241.7 428.4,241.9 431.2,242.2 434.1,242.4 436.9,242.7 439.7,242.9 442.5,243.1 445.3,243.4 448.1,243.6 450.9,243.8 453.8,244.0 456.6,244.2 459.4,244.4 462.2,244.5 465.0,244.7 467.8,244.9 470.6,245.1 473.4,245.2 476.2,245.4 479.1,245.6 481.9,245.7 484.7,245.9 487.5,246.0 490.3,246.1 493.1,246.3 495.9,246.4 498.8,246.5 501.6,246.7 504.4,246.8 507.2,246.9 510.0,247.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"2.2\"/><polyline points=\"60.0,213.0 62.8,213.0 65.6,213.0 68.4,212.9 71.2,212.8 74.1,212.8 76.9,212.7 79.7,212.5 82.5,212.4 85.3,212.2 88.1,212.0 90.9,211.8 93.8,211.6 96.6,211.3 99.4,211.1 102.2,210.8 105.0,210.5 107.8,210.1 110.6,209.7 113.4,209.3 116.2,208.9 119.1,208.4 121.9,207.9 124.7,207.4 127.5,206.9 130.3,206.3 133.1,205.6 135.9,205.0 138.8,204.2 141.6,203.5 144.4,202.7 147.2,201.8 150.0,200.9 152.8,199.9 155.6,198.9 158.4,197.8 161.2,196.6 164.1,195.4 166.9,194.1 169.7,192.7 172.5,191.2 175.3,189.7 178.1,188.0 180.9,186.2 183.8,184.4 186.6,182.4 189.4,180.3 192.2,178.1 195.0,175.8 197.8,173.4 200.6,170.9 203.4,168.3 206.2,165.7 209.1,163.0 211.9,160.3 214.7,157.8 217.5,155.3 220.3,153.0 223.1,151.1 225.9,149.5 228.8,148.4 231.6,147.9 234.4,148.0 237.2,148.7 240.0,150.0 242.8,151.9 245.6,154.4 248.4,157.2 251.2,160.4 254.1,163.9 256.9,167.4 259.7,171.0 262.5,174.6 265.3,178.2 268.1,181.6 270.9,184.9 273.8,188.1 276.6,191.1 279.4,193.9 282.2,196.6 285.0,199.2 287.8,201.6 290.6,203.9 293.4,206.0 296.2,208.0 299.1,209.9 301.9,211.6 304.7,213.3 307.5,214.9 310.3,216.4 313.1,217.8 315.9,219.1 318.8,220.3 321.6,221.5 324.4,222.6 327.2,223.7 330.0,224.7 332.8,225.7 335.6,226.6 338.4,227.4 341.2,228.3 344.1,229.1 346.9,229.8 349.7,230.5 352.5,231.2 355.3,231.9 358.1,232.5 360.9,233.1 363.8,233.6 366.6,234.2 369.4,234.7 372.2,235.2 375.0,235.7 377.8,236.2 380.6,236.6 383.4,237.1 386.2,237.5 389.1,237.9 391.9,238.3 394.7,238.6 397.5,239.0 400.3,239.3 403.1,239.7 405.9,240.0 408.8,240.3 411.6,240.6 414.4,240.9 417.2,241.2 420.0,241.5 422.8,241.7 425.6,242.0 428.4,242.2 431.2,242.5 434.1,242.7 436.9,243.0 439.7,243.2 442.5,243.4 445.3,243.6 448.1,243.8 450.9,244.0 453.8,244.2 456.6,244.4 459.4,244.6 462.2,244.7 465.0,244.9 467.8,245.1 470.6,245.2 473.4,245.4 476.2,245.6 479.1,245.7 481.9,245.8 484.7,246.0 487.5,246.1 490.3,246.3 493.1,246.4 495.9,246.5 498.8,246.7 501.6,246.8 504.4,246.9 507.2,247.0 510.0,247.1\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2.2\"/><polyline points=\"60.0,213.0 62.8,213.0 65.6,213.0 68.4,213.0 71.2,212.9 74.1,212.9 76.9,212.8 79.7,212.7 82.5,212.7 85.3,212.6 88.1,212.5 90.9,212.4 93.8,212.3 96.6,212.1 99.4,212.0 102.2,211.9 105.0,211.7 107.8,211.6 110.6,211.4 113.4,211.2 116.2,211.0 119.1,210.8 121.9,210.6 124.7,210.4 127.5,210.2 130.3,210.0 133.1,209.8 135.9,209.5 138.8,209.3 141.6,209.1 144.4,208.9 147.2,208.6 150.0,208.4 152.8,208.2 155.6,208.0 158.4,207.8 161.2,207.6 164.1,207.4 166.9,207.2 169.7,207.0 172.5,206.9 175.3,206.8 178.1,206.7 180.9,206.6 183.8,206.5 186.6,206.5 189.4,206.5 192.2,206.6 195.0,206.6 197.8,206.7 200.6,206.9 203.4,207.1 206.2,207.3 209.1,207.6 211.9,207.9 214.7,208.2 217.5,208.6 220.3,209.1 223.1,209.5 225.9,210.0 228.8,210.6 231.6,211.1 234.4,211.7 237.2,212.4 240.0,213.0 242.8,213.7 245.6,214.3 248.4,215.0 251.2,215.8 254.1,216.5 256.9,217.2 259.7,217.9 262.5,218.7 265.3,219.4 268.1,220.1 270.9,220.9 273.8,221.6 276.6,222.3 279.4,223.0 282.2,223.7 285.0,224.4 287.8,225.0 290.6,225.7 293.4,226.3 296.2,227.0 299.1,227.6 301.9,228.2 304.7,228.8 307.5,229.4 310.3,229.9 313.1,230.5 315.9,231.0 318.8,231.5 321.6,232.0 324.4,232.5 327.2,233.0 330.0,233.5 332.8,233.9 335.6,234.4 338.4,234.8 341.2,235.2 344.1,235.7 346.9,236.0 349.7,236.4 352.5,236.8 355.3,237.2 358.1,237.5 360.9,237.9 363.8,238.2 366.6,238.5 369.4,238.9 372.2,239.2 375.0,239.5 377.8,239.8 380.6,240.1 383.4,240.3 386.2,240.6 389.1,240.9 391.9,241.1 394.7,241.4 397.5,241.6 400.3,241.9 403.1,242.1 405.9,242.3 408.8,242.5 411.6,242.7 414.4,242.9 417.2,243.2 420.0,243.4 422.8,243.5 425.6,243.7 428.4,243.9 431.2,244.1 434.1,244.3 436.9,244.4 439.7,244.6 442.5,244.8 445.3,244.9 448.1,245.1 450.9,245.2 453.8,245.4 456.6,245.5 459.4,245.7 462.2,245.8 465.0,246.0 467.8,246.1 470.6,246.2 473.4,246.3 476.2,246.5 479.1,246.6 481.9,246.7 484.7,246.8 487.5,246.9 490.3,247.1 493.1,247.2 495.9,247.3 498.8,247.4 501.6,247.5 504.4,247.6 507.2,247.7 510.0,247.8\" fill=\"none\" stroke=\"#16202e\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><rect x=\"360\" y=\"44\" width=\"14\" height=\"3\" fill=\"#1f7a5c\"/><text x=\"380\" y=\"50\" fill=\"#16202e\" font-size=\"11\">ζ = 0.1 (sharp)</text><rect x=\"360\" y=\"62\" width=\"14\" height=\"3\" fill=\"#c2820f\"/><text x=\"380\" y=\"68\" fill=\"#16202e\" font-size=\"11\">ζ = 0.2</text><rect x=\"360\" y=\"80\" width=\"14\" height=\"3\" fill=\"#16202e\"/><text x=\"380\" y=\"86\" fill=\"#16202e\" font-size=\"11\">ζ = 0.5 (broad)</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Peak near r=1 (resonance); lighter damping ⇒ taller, sharper peak</text></svg><figcaption>Drive a system at different frequencies and its steady amplitude traces this curve. It peaks sharply when the driving frequency approaches the natural frequency — resonance — and the peak's height is limited only by damping.</figcaption></figure>\n\n<h3>§1 · Forcing and the steady response</h3>\n<p>Add a driving force to the mass–spring–damper: \\( m x''+c x'+k x=F_0\\cos\\omega t \\). After the transient from the last lesson dies away, the system settles into a <b>steady oscillation at the driving frequency</b> \\( \\omega \\) — not its own natural frequency — but with a shifted phase and an amplitude that depends strongly on how \\( \\omega \\) compares with \\( \\omega_n \\). The full solution is transient plus steady state, \\( x=x_h+x_p \\); the transient sets how it starts, the steady state sets where it ends up. For sustained forcing it is the steady amplitude that matters, and finding it is the whole point of this lesson.</p>\n\n<h3>§2 · The amplitude curve and resonance</h3>\n<p>The steady amplitude is</p>\n\\[ X(\\omega)=\\frac{F_0}{\\sqrt{(k-m\\omega^2)^2+(c\\omega)^2}}. \\]\n<p>At low frequency this reduces to the static deflection \\( F_0/k \\); as \\( \\omega \\) climbs toward \\( \\omega_n \\), the term \\( (k-m\\omega^2) \\) collapses toward zero and the amplitude <b>peaks</b> — this is <b>resonance</b>. With no damping the peak is infinite; with damping it is finite but can be large. For \\( m=1,\\ k=100,\\ c=4,\\ F_0=10 \\) driven at \\( \\omega=\\omega_n=10 \\): \\( k-m\\omega^2=0 \\), so \\( X=F_0/(c\\omega)=10/40=0.25 \\) m — against a static deflection of \\( F_0/k=0.1 \\) m, a magnification of \\( 2.5\\times \\). Lighter damping gives a taller, sharper peak; that multiplier is why resonance destroys machines.</p>\n<div class=\"keybox\"><span class=\"tag\">Key result — resonance</span>\n<p>\\[ X(\\omega)=\\frac{F_0}{\\sqrt{(k-m\\omega^2)^2+(c\\omega)^2}},\\qquad \\text{peak near }\\omega=\\omega_n,\\quad X_{\\text{peak}}\\approx\\frac{F_0}{c\\,\\omega_n}. \\]</p></div>\n\n<h3>§3 · Phase, damping, and the peak</h3>\n<p>The response also lags the force by a phase that swings from near \\(0^\\circ\\) well below resonance, through \\(90^\\circ\\) exactly at \\( \\omega_n \\), toward \\(180^\\circ\\) far above it. Damping controls the whole picture: at resonance the amplitude is \\( F_0/(c\\omega) \\), inversely proportional to \\(c\\), so more damping means a lower, broader peak, and the sharpness of the peak scales roughly as \\( 1/(2\\zeta) \\). The two defences against resonance follow directly and are the only two that exist: <b>detune</b> — keep \\( \\omega \\) away from \\( \\omega_n \\) — or <b>damp</b> — raise \\(c\\) to cap the peak. Every vibration specification is a statement about one or both.</p>\n\n<h3>§4 · Why every vibration spectrum is this curve</h3>\n<p>A real machine is driven at many frequencies at once — by imbalance at its running speed, by gear-mesh, by blade passing — and its response at each is this same amplitude curve evaluated there. That is why a vibration analyst's spectrum shows tall lines exactly at the frequencies where a forcing coincides with a structural natural frequency: those are resonances being excited. The working method is uniform: read \\( \\omega_n=\\sqrt{k/m} \\) and \\( \\zeta \\) from the system, compute the frequency ratio \\( \\omega/\\omega_n \\), and evaluate \\( X(\\omega) \\) to see how near the peak you sit. Sit far from \\( \\omega_n \\), or add damping — the mathematics of this lesson is, in the end, a maintenance instruction.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Homogeneous second-order solutions</b> (Lesson 8) — the transient skeleton.</li><li><b>Natural frequency and damping ratio</b> \\( \\omega_n,\\zeta \\).</li><li><b>Sinusoids and phase</b> — the form of the forced response.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>\n<tr><td>Forced equation</td><td>\\( mx''+cx'+kx=F_0\\cos\\omega t \\)</td><td>Harmonic drive.</td></tr>\n<tr><td>Steady amplitude</td><td>\\( \\frac{F_0}{\\sqrt{(k-m\\omega^2)^2+(c\\omega)^2}} \\)</td><td>Size of the forced response.</td></tr>\n<tr><td>Static deflection</td><td>\\( F_0/k \\)</td><td>Zero-frequency limit.</td></tr>\n<tr><td>Resonance</td><td>\\( \\omega\\to\\omega_n \\)</td><td>Amplitude peaks.</td></tr>\n<tr><td>Peak amplitude</td><td>\\( \\approx F_0/(c\\omega_n) \\)</td><td>Limited by damping.</td></tr>\n<tr><td>Magnification</td><td>\\( 1/\\sqrt{(1-r^2)^2+(2\\zeta r)^2} \\)</td><td>\\( r=\\omega/\\omega_n \\); peak \\(\\approx 1/(2\\zeta)\\).</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Resonant amplitude</b></p><p><b>Problem.</b> A system \\( m=1,\\ k=100,\\ c=4 \\) is driven by \\( F_0=10 \\) N at \\( \\omega=\\omega_n \\). Find the steady amplitude and compare with the static deflection.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\omega_n=\\sqrt{k/m}=10 \\) rad/s. At \\( \\omega=\\omega_n \\), \\( k-m\\omega^2=0 \\), so \\( X=\\dfrac{F_0}{c\\omega}=\\dfrac{10}{4\\times10}=0.25 \\) m. Static deflection \\( F_0/k=0.1 \\) m, so resonance magnifies the response by \\( 0.25/0.1=2.5\\times \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Natural frequency</b></p><p><b>Problem.</b> A \\(4\\) kg mass on a spring of stiffness \\(10\\) kN/m is driven harmonically. At what frequency does resonance occur?</p>",
+    "solution": "<p><b>Solution.</b> Resonance is near \\( \\omega_n=\\sqrt{k/m}=\\sqrt{10000/4}=\\sqrt{2500}=50 \\) rad/s. Driving anywhere near \\(50\\) rad/s excites the large-amplitude response; the design must keep the operating frequency away from it.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Effect of damping</b></p><p><b>Problem.</b> For the system of Problem 1, what happens to the resonant amplitude if the damping \\(c\\) is doubled to \\(8\\)?</p>",
+    "solution": "<p><b>Solution.</b> At resonance \\( X=F_0/(c\\omega) \\), inversely proportional to \\(c\\). Doubling \\(c\\) from \\(4\\) to \\(8\\) halves the amplitude: \\( X=10/(8\\times10)=0.125 \\) m. More damping ⇒ a lower, broader peak.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>After the transient dies, a harmonically forced system oscillates at:</p>",
+    "choices": [
+     "the driving frequency \\( \\omega \\)",
+     "its natural frequency \\( \\omega_n \\)",
+     "zero frequency",
+     "twice \\( \\omega \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The steady forced response is at the driving frequency \\( \\omega \\), with shifted phase and scaled amplitude.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Resonance in a lightly damped system occurs when \\( \\omega \\) is:</p>",
+    "choices": [
+     "near \\( \\omega_n \\)",
+     "far below \\( \\omega_n \\)",
+     "exactly zero",
+     "far above \\( \\omega_n \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>As \\( \\omega\\to\\omega_n \\), \\( (k-m\\omega^2)\\to0 \\), minimising the denominator and peaking the amplitude.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The amplitude at resonance is approximately:</p>",
+    "choices": [
+     "\\( F_0/(c\\omega_n) \\)",
+     "\\( F_0/k \\)",
+     "\\( F_0 c\\omega_n \\)",
+     "\\( F_0 m \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>At \\( \\omega=\\omega_n \\) the stiffness term cancels, leaving \\( X=F_0/(c\\omega_n) \\) — set by damping.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Increasing the damping \\(c\\) of a resonating system:</p>",
+    "choices": [
+     "lowers and broadens the peak",
+     "raises the peak",
+     "removes \\( \\omega_n \\)",
+     "has no effect"
+    ],
+    "answer": 0,
+    "solution": "<p>Since \\( X_{\\text{peak}}\\propto1/c \\), more damping means a smaller, broader resonance.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The static deflection \\( F_0/k \\) for \\( F_0=10 \\) N, \\( k=100 \\) N/m is:</p>",
+    "choices": [
+     "0.1 m",
+     "1 m",
+     "10 m",
+     "0.25 m"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( F_0/k=10/100=0.1 \\) m — the zero-frequency limit of \\( X(\\omega) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The two defences against resonance are to:</p>",
+    "choices": [
+     "detune (move \\( \\omega \\) from \\( \\omega_n \\)) or add damping",
+     "increase mass only",
+     "increase the force",
+     "remove the spring"
+    ],
+    "answer": 0,
+    "solution": "<p>Either keep the drive frequency away from \\( \\omega_n \\), or raise damping to cap the peak — those are the only two levers.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A vibration spectrum shows a tall line at a frequency because:</p>",
+    "choices": [
+     "a forcing coincides with a natural frequency (resonance)",
+     "the sensor is broken",
+     "the machine is off",
+     "damping is infinite"
+    ],
+    "answer": 0,
+    "solution": "<p>Tall spectral lines mark frequencies where an excitation meets a structural natural frequency — a resonance being driven.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Far above resonance (\\( \\omega\\gg\\omega_n \\)), the steady response amplitude:</p>",
+    "choices": [
+     "becomes small (the mass cannot keep up)",
+     "grows without bound",
+     "equals the static deflection",
+     "stays at the resonant peak"
+    ],
+    "answer": 0,
+    "solution": "<p>The \\( m\\omega^2 \\) term dominates the denominator, so \\( X\\to0 \\): at high drive frequency the inertia cannot follow the forcing.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A rotating-equipment engineer balancing a pump or fan is fighting resonance\ndirectly. Residual imbalance forces the machine once per revolution, at exactly the\nrunning speed; if that speed sits near a natural frequency \\( \\omega_n \\), the\namplitude curve of this lesson peaks and vibration climbs to damaging levels. The\nstandard remedies are the two the mathematics allows — trim-balance and re-rate the\nspeed to <b>detune</b> away from \\( \\omega_n \\), or add a damped mount to cap the\npeak — and a machine is not accepted into service until its running speed is proven\nto sit on the flat part of this curve, not the peak.</p>\n<p>The same curve is read every day on a condition-monitoring screen. The\nanalyst's frequency spectrum is \\( X(\\omega) \\) sampled across frequencies, and a\ngrowing line at a bearing-defect or gear-mesh frequency is a forcing meeting a\nresonance — an early warning of a fault. Interpreting those peaks, and knowing that\ntheir height is governed by damping, is how a maintenance team schedules a repair\nbefore a failure rather than after.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 230\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"The Laplace method: transform the time-domain ODE to the s-domain, solve algebraically, then invert back to the time solution\"><rect width=\"560\" height=\"230\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The Laplace detour: hard calculus becomes easy algebra</text><rect x=\"30\" y=\"60\" width=\"150\" height=\"54\" rx=\"8\" fill=\"#fff\" stroke=\"#8a99a8\" stroke-width=\"1.8\"/><text x=\"105.0\" y=\"81.0\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">ODE in t</text><text x=\"105.0\" y=\"99.0\" text-anchor=\"middle\" fill=\"#8a99a8\" font-size=\"10\">differential — hard</text><rect x=\"205\" y=\"60\" width=\"150\" height=\"54\" rx=\"8\" fill=\"#fff\" stroke=\"#1f7a5c\" stroke-width=\"1.8\"/><text x=\"280.0\" y=\"81.0\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Algebra in s</text><text x=\"280.0\" y=\"99.0\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"10\">rational Y(s) — easy</text><rect x=\"380\" y=\"60\" width=\"150\" height=\"54\" rx=\"8\" fill=\"#fff\" stroke=\"#c2820f\" stroke-width=\"1.8\"/><text x=\"455.0\" y=\"81.0\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Solution x(t)</text><text x=\"455.0\" y=\"99.0\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">read from table</text><line x1=\"180\" y1=\"87\" x2=\"205\" y2=\"87\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><path d=\"M205,87 l-8,-4 M205,87 l-8,4\" stroke=\"#1f7a5c\" stroke-width=\"2\" fill=\"none\"/><text x=\"192.5\" y=\"79\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"10\" font-style=\"italic\">ℒ transform</text><line x1=\"280\" y1=\"114\" x2=\"280\" y2=\"150\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><text x=\"292\" y=\"140\" fill=\"#1f7a5c\" font-size=\"10\" font-style=\"italic\">solve for Y(s)</text><line x1=\"355\" y1=\"175\" x2=\"380\" y2=\"175\" stroke=\"#c2820f\" stroke-width=\"2\"/><path d=\"M380,175 l-8,-4 M380,175 l-8,4\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"367.5\" y=\"167\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\" font-style=\"italic\">ℒ⁻¹ invert</text><line x1=\"280\" y1=\"150\" x2=\"455\" y2=\"150\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><line x1=\"455\" y1=\"150\" x2=\"455\" y2=\"114\" stroke=\"#c2820f\" stroke-width=\"2\"/><path d=\"M455,114 l-4,8 M455,114 l4,8\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"16\" y=\"205\" fill=\"#16202e\" font-size=\"11\">Differentiation in t → multiplication by s: ℒ{y′} = sY − y(0)</text></svg><figcaption>The Laplace transform is a detour: convert a hard differential equation in time into an easy algebraic equation in the variable s, solve it by rearrangement, then convert back. Differentiation becomes multiplication.</figcaption></figure>\n\n<h3>§1 · What the transform is for</h3>\n<p>The <b>Laplace transform</b> \\( \\mathcal{L}\\{f\\}=F(s)=\\displaystyle\\int_0^\\infty e^{-st}f(t)\\,dt \\) trades a function of time for a function of a new variable \\( s \\). Its purpose is not the integral but its consequence: <b>differentiation in \\( t \\) becomes multiplication in \\( s \\)</b>. A differential equation therefore turns into an ordinary algebraic equation in \\( F(s) \\), which you solve by rearrangement rather than calculus. It is the same strategic move as the \\( e^{rt} \\) guess of Lesson 8, generalised — and it pays off most when the forcing is awkward: a switch thrown, a step applied, an impulse struck, all handled by the same bookkeeping.</p>\n\n<h3>§2 · The table and the derivative rule</h3>\n<p>A handful of transforms, plus two rules, cover most problems: \\( \\mathcal{L}\\{1\\}=\\tfrac1s \\), \\( \\mathcal{L}\\{e^{at}\\}=\\tfrac{1}{s-a} \\), \\( \\mathcal{L}\\{t\\}=\\tfrac{1}{s^2} \\), and \\( \\mathcal{L}\\{\\sin\\omega t\\}=\\tfrac{\\omega}{s^2+\\omega^2} \\), so \\( \\mathcal{L}\\{\\sin4t\\}=\\tfrac{4}{s^2+16} \\). <b>Linearity</b> lets you transform term by term, and the <b>derivative rule</b> is the engine:</p>\n\\[ \\mathcal{L}\\{y'\\}=sY-y(0),\\qquad \\mathcal{L}\\{y''\\}=s^2Y-sy(0)-y'(0). \\]\n<p>Read what this does: each derivative becomes a power of \\( s \\), and the initial conditions are folded in automatically at the transform step — no separate constant-fixing stage to forget.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — transform &amp; solve</span><p>Method: <b>transform</b> every term (\\( \\mathcal{L}\\{y'\\}=sY-y(0) \\)) → <b>solve</b> the algebra for \\( Y(s) \\) → <b>invert</b> with the table. Differentiation in \\(t\\) becomes multiplication by \\(s\\).</p></div>\n\n<h3>§3 · Solving an equation by algebra</h3>\n<p>The method is three steps: transform, solve for \\( Y(s) \\), invert. Take \\( y'+2y=0,\\ y(0)=3 \\): transforming gives \\( sY-3+2Y=0 \\), so \\( Y=\\tfrac{3}{s+2} \\), and the table inverts this to \\( y=3e^{-2t} \\). A forced example \\( y'+3y=6,\\ y(0)=0 \\): transforming gives \\( sY+3Y=\\tfrac6s \\), so \\( Y=\\tfrac{6}{s(s+3)} \\); splitting by partial fractions into \\( \\tfrac2s-\\tfrac{2}{s+3} \\) inverts to \\( y=2-2e^{-3t} \\). The constant \\(2\\) is the steady state, the \\(-2e^{-3t}\\) the transient — the whole solution, initial condition included, produced by algebra.</p>\n\n<h3>§4 · The s-domain and the method</h3>\n<p>The ratio of output transform to input transform, with zero initial conditions, is the <b>transfer function</b> — the compact description of a system in the \\( s \\)-domain that control engineering is built on. The location of its poles (the roots of the denominator) is the system's stability: poles with negative real part mean decay, imaginary poles mean oscillation, exactly the eigenvalue reading of Lesson 7 in another language. The working method never changes: (1) transform every term, folding in initial data; (2) solve the algebraic equation for \\( Y(s) \\); (3) break \\( Y(s) \\) into table pieces by partial fractions and invert. Master this on the smooth cases here, and the same recipe handles the switched and impulsive inputs that real systems face.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Improper integrals</b> — the transform is one.</li><li><b>Partial fractions</b> — for the inverse step.</li><li><b>Initial-value problems</b> (Lessons 8, 9) — what is being solved.</li></ul>\n<h4>Toolkit — transform pairs and rules</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Definition</td><td>\\( F(s)=\\int_0^\\infty e^{-st}f\\,dt \\)</td><td>The transform.</td></tr>\n<tr><td>Basic pairs</td><td>\\( 1\\!\\to\\!\\tfrac1s,\\ e^{at}\\!\\to\\!\\tfrac1{s-a},\\ t\\!\\to\\!\\tfrac1{s^2} \\)</td><td>Look-up table.</td></tr>\n<tr><td>Sine</td><td>\\( \\sin\\omega t\\to\\tfrac{\\omega}{s^2+\\omega^2} \\)</td><td>Oscillatory terms.</td></tr>\n<tr><td>Derivative rule</td><td>\\( \\mathcal{L}\\{y'\\}=sY-y(0) \\)</td><td>ODE → algebra.</td></tr>\n<tr><td>Method</td><td>transform · solve · invert</td><td>The three steps.</td></tr>\n<tr><td>Transfer function</td><td>output/input in \\(s\\)</td><td>System description; poles ⇒ stability.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>From the table</b></p><p><b>Problem.</b> Find \\( \\mathcal{L}\\{3+2t\\} \\) and \\( \\mathcal{L}\\{e^{3t}\\} \\).</p>",
+    "solution": "<p><b>Solution.</b> By linearity \\( \\mathcal{L}\\{3+2t\\}=\\dfrac{3}{s}+\\dfrac{2}{s^2} \\). From the exponential pair \\( \\mathcal{L}\\{e^{3t}\\}=\\dfrac{1}{s-3} \\) (for \\(s>3\\)).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Solve an IVP</b></p><p><b>Problem.</b> Solve \\( y'+2y=0 \\), \\( y(0)=3 \\) using the Laplace transform.</p>",
+    "solution": "<p><b>Solution.</b> Transform: \\( sY-3+2Y=0\\Rightarrow (s+2)Y=3 \\), so \\( Y=\\dfrac{3}{s+2} \\). Invert: \\( y=3e^{-2t} \\). Check: \\( y(0)=3 \\) ✓, \\( y'=-6e^{-2t}=-2y \\) ✓.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Forced first-order</b></p><p><b>Problem.</b> Solve \\( y'+3y=6 \\), \\( y(0)=0 \\), and identify the steady state.</p>",
+    "solution": "<p><b>Solution.</b> Transform: \\( sY+3Y=\\dfrac6s\\Rightarrow Y=\\dfrac{6}{s(s+3)} \\). Partial fractions: \\( \\dfrac{2}{s}-\\dfrac{2}{s+3} \\). Invert: \\( y=2-2e^{-3t} \\). Steady state \\(=2\\); the transient \\(-2e^{-3t}\\) carries \\(y\\) from \\(0\\) up to \\(2\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\mathcal{L}\\{e^{3t}\\} \\) equals:</p>",
+    "choices": [
+     "\\( \\frac{1}{s-3} \\)",
+     "\\( \\frac{1}{s+3} \\)",
+     "\\( \\frac{3}{s} \\)",
+     "\\( \\frac{1}{s^2-3} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathcal{L}\\{e^{at}\\}=1/(s-a) \\) with \\(a=3\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The derivative rule \\( \\mathcal{L}\\{y'\\} \\) equals:</p>",
+    "choices": [
+     "\\( sY-y(0) \\)",
+     "\\( Y/s \\)",
+     "\\( sY \\)",
+     "\\( Y-y(0) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathcal{L}\\{y'\\}=sY(s)-y(0) \\): each derivative becomes a factor of \\(s\\), initial value subtracted.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\mathcal{L}\\{t\\} \\) equals:</p>",
+    "choices": [
+     "\\( \\frac{1}{s^2} \\)",
+     "\\( \\frac{1}{s} \\)",
+     "\\( \\frac{2}{s^3} \\)",
+     "\\( s \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathcal{L}\\{t^n\\}=n!/s^{n+1} \\); with \\(n=1\\), \\( 1/s^2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The three Laplace steps for an IVP are:</p>",
+    "choices": [
+     "transform, solve for \\( Y(s) \\), invert",
+     "invert, solve, transform",
+     "guess, substitute, match",
+     "integrate, differentiate, check"
+    ],
+    "answer": 0,
+    "solution": "<p>Transform the ODE (with initial data), solve the algebraic equation for \\( Y(s) \\), invert with the table.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\mathcal{L}\\{\\sin 4t\\} \\) equals:</p>",
+    "choices": [
+     "\\( \\frac{4}{s^2+16} \\)",
+     "\\( \\frac{s}{s^2+16} \\)",
+     "\\( \\frac{4}{s^2-16} \\)",
+     "\\( \\frac{1}{s-4} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathcal{L}\\{\\sin\\omega t\\}=\\omega/(s^2+\\omega^2) \\) with \\( \\omega=4 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Transforming \\( y'+2y=0,\\ y(0)=3 \\) gives \\( Y(s)= \\):</p>",
+    "choices": [
+     "\\( \\frac{3}{s+2} \\)",
+     "\\( \\frac{3}{s-2} \\)",
+     "\\( \\frac{2}{s+3} \\)",
+     "\\( \\frac{3}{s} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( (s+2)Y=3\\Rightarrow Y=3/(s+2)\\Rightarrow y=3e^{-2t} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The inverse transform of \\( \\frac{1}{s^2+9} \\) is:</p>",
+    "choices": [
+     "\\( \\tfrac13\\sin 3t \\)",
+     "\\( \\cos 3t \\)",
+     "\\( \\sin 3t \\)",
+     "\\( \\tfrac13\\cos 3t \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Since \\( \\mathcal{L}\\{\\sin3t\\}=3/(s^2+9) \\), dividing by 3 gives \\( \\tfrac13\\sin3t \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Laplace transform turns differentiation into:</p>",
+    "choices": [
+     "multiplication by \\(s\\)",
+     "division by \\(s\\)",
+     "integration",
+     "addition of \\(s\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathcal{L}\\{y'\\}=sY-y(0) \\): a derivative becomes a factor of \\(s\\) — the whole point of the method.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A controls or instrumentation engineer lives in the s-domain. When tuning a\ntemperature loop or a level controller, the process and the controller are each\nwritten as transfer functions — output-over-input in \\(s\\) — and the loop's behaviour\nis read from where the combined poles sit. Poles in the left half-plane (negative\nreal part) mean the loop settles; a pole crossing to the right means it will hunt or\nrun away. The Laplace method is what turns a plant's differential equations into\nthose algebraic transfer functions in the first place, which is why every controller\ndatasheet and tuning rule is stated in \\(s\\).</p>\n<p>The step-input case is the everyday test. Bumping a setpoint and watching the\nresponse is applying a step \\( \\tfrac{1}{s} \\); the observed rise and settling are the\ninverse transform of the transfer function times that step. Reading whether the\nresponse is sluggish, snappy, or oscillatory — and adjusting the controller to fix\nit — is exactly the transform-solve-invert cycle of this lesson, run on real\nhardware.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A square wave built from harmonics: the fundamental, then adding the 3rd and 5th harmonics approaches the square shape\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Building a square wave from its harmonics</text><line x1=\"40\" y1=\"150\" x2=\"500\" y2=\"150\" stroke=\"#e8eef3\" stroke-width=\"1.2\"/><polyline points=\"40.0,90.0 270.0,90.0 270.0,210.0 500.0,210.0\" fill=\"none\" stroke=\"#16202e\" stroke-width=\"1.6\"/><polyline points=\"40.0,150.0 41.9,148.0 43.8,146.0 45.8,144.0 47.7,142.0 49.6,140.0 51.5,138.0 53.4,136.1 55.3,134.1 57.2,132.2 59.2,130.2 61.1,128.3 63.0,126.4 64.9,124.5 66.8,122.6 68.8,120.8 70.7,118.9 72.6,117.1 74.5,115.3 76.4,113.5 78.3,111.8 80.2,110.1 82.2,108.4 84.1,106.7 86.0,105.1 87.9,103.5 89.8,101.9 91.8,100.4 93.7,98.9 95.6,97.4 97.5,96.0 99.4,94.6 101.3,93.2 103.2,91.9 105.2,90.6 107.1,89.4 109.0,88.2 110.9,87.0 112.8,85.9 114.8,84.9 116.7,83.8 118.6,82.9 120.5,81.9 122.4,81.0 124.3,80.2 126.2,79.4 128.2,78.7 130.1,78.0 132.0,77.3 133.9,76.8 135.8,76.2 137.8,75.7 139.7,75.3 141.6,74.9 143.5,74.5 145.4,74.3 147.3,74.0 149.2,73.8 151.2,73.7 153.1,73.6 155.0,73.6 156.9,73.6 158.8,73.7 160.8,73.8 162.7,74.0 164.6,74.3 166.5,74.5 168.4,74.9 170.3,75.3 172.2,75.7 174.2,76.2 176.1,76.8 178.0,77.3 179.9,78.0 181.8,78.7 183.8,79.4 185.7,80.2 187.6,81.0 189.5,81.9 191.4,82.9 193.3,83.8 195.2,84.9 197.2,85.9 199.1,87.0 201.0,88.2 202.9,89.4 204.8,90.6 206.8,91.9 208.7,93.2 210.6,94.6 212.5,96.0 214.4,97.4 216.3,98.9 218.2,100.4 220.2,101.9 222.1,103.5 224.0,105.1 225.9,106.7 227.8,108.4 229.8,110.1 231.7,111.8 233.6,113.5 235.5,115.3 237.4,117.1 239.3,118.9 241.2,120.8 243.2,122.6 245.1,124.5 247.0,126.4 248.9,128.3 250.8,130.2 252.8,132.2 254.7,134.1 256.6,136.1 258.5,138.0 260.4,140.0 262.3,142.0 264.2,144.0 266.2,146.0 268.1,148.0 270.0,150.0 271.9,152.0 273.8,154.0 275.8,156.0 277.7,158.0 279.6,160.0 281.5,162.0 283.4,163.9 285.3,165.9 287.2,167.8 289.2,169.8 291.1,171.7 293.0,173.6 294.9,175.5 296.8,177.4 298.8,179.2 300.7,181.1 302.6,182.9 304.5,184.7 306.4,186.5 308.3,188.2 310.2,189.9 312.2,191.6 314.1,193.3 316.0,194.9 317.9,196.5 319.8,198.1 321.8,199.6 323.7,201.1 325.6,202.6 327.5,204.0 329.4,205.4 331.3,206.8 333.2,208.1 335.2,209.4 337.1,210.6 339.0,211.8 340.9,213.0 342.8,214.1 344.8,215.1 346.7,216.2 348.6,217.1 350.5,218.1 352.4,219.0 354.3,219.8 356.2,220.6 358.2,221.3 360.1,222.0 362.0,222.7 363.9,223.2 365.8,223.8 367.8,224.3 369.7,224.7 371.6,225.1 373.5,225.5 375.4,225.7 377.3,226.0 379.2,226.2 381.2,226.3 383.1,226.4 385.0,226.4 386.9,226.4 388.8,226.3 390.8,226.2 392.7,226.0 394.6,225.7 396.5,225.5 398.4,225.1 400.3,224.7 402.2,224.3 404.2,223.8 406.1,223.2 408.0,222.7 409.9,222.0 411.8,221.3 413.8,220.6 415.7,219.8 417.6,219.0 419.5,218.1 421.4,217.1 423.3,216.2 425.2,215.1 427.2,214.1 429.1,213.0 431.0,211.8 432.9,210.6 434.8,209.4 436.8,208.1 438.7,206.8 440.6,205.4 442.5,204.0 444.4,202.6 446.3,201.1 448.2,199.6 450.2,198.1 452.1,196.5 454.0,194.9 455.9,193.3 457.8,191.6 459.8,189.9 461.7,188.2 463.6,186.5 465.5,184.7 467.4,182.9 469.3,181.1 471.2,179.2 473.2,177.4 475.1,175.5 477.0,173.6 478.9,171.7 480.8,169.8 482.8,167.8 484.7,165.9 486.6,163.9 488.5,162.0 490.4,160.0 492.3,158.0 494.2,156.0 496.2,154.0 498.1,152.0 500.0,150.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><polyline points=\"40.0,150.0 41.9,146.0 43.8,142.0 45.8,138.1 47.7,134.1 49.6,130.3 51.5,126.5 53.4,122.8 55.3,119.1 57.2,115.6 59.2,112.2 61.1,108.9 63.0,105.8 64.9,102.8 66.8,99.9 68.8,97.2 70.7,94.7 72.6,92.4 74.5,90.2 76.4,88.2 78.3,86.3 80.2,84.7 82.2,83.2 84.1,82.0 86.0,80.9 87.9,80.0 89.8,79.2 91.8,78.7 93.7,78.3 95.6,78.1 97.5,78.0 99.4,78.0 101.3,78.3 103.2,78.6 105.2,79.1 107.1,79.6 109.0,80.3 110.9,81.1 112.8,81.9 114.8,82.9 116.7,83.8 118.6,84.9 120.5,85.9 122.4,87.0 124.3,88.1 126.2,89.2 128.2,90.2 130.1,91.3 132.0,92.3 133.9,93.3 135.8,94.2 137.8,95.1 139.7,95.9 141.6,96.6 143.5,97.2 145.4,97.8 147.3,98.2 149.2,98.6 151.2,98.9 153.1,99.0 155.0,99.1 156.9,99.0 158.8,98.9 160.8,98.6 162.7,98.2 164.6,97.8 166.5,97.2 168.4,96.6 170.3,95.9 172.2,95.1 174.2,94.2 176.1,93.3 178.0,92.3 179.9,91.3 181.8,90.2 183.8,89.2 185.7,88.1 187.6,87.0 189.5,85.9 191.4,84.9 193.3,83.8 195.2,82.9 197.2,81.9 199.1,81.1 201.0,80.3 202.9,79.6 204.8,79.1 206.8,78.6 208.7,78.3 210.6,78.0 212.5,78.0 214.4,78.1 216.3,78.3 218.2,78.7 220.2,79.2 222.1,80.0 224.0,80.9 225.9,82.0 227.8,83.2 229.8,84.7 231.7,86.3 233.6,88.2 235.5,90.2 237.4,92.4 239.3,94.7 241.2,97.2 243.2,99.9 245.1,102.8 247.0,105.8 248.9,108.9 250.8,112.2 252.8,115.6 254.7,119.1 256.6,122.8 258.5,126.5 260.4,130.3 262.3,134.1 264.2,138.1 266.2,142.0 268.1,146.0 270.0,150.0 271.9,154.0 273.8,158.0 275.8,161.9 277.7,165.9 279.6,169.7 281.5,173.5 283.4,177.2 285.3,180.9 287.2,184.4 289.2,187.8 291.1,191.1 293.0,194.2 294.9,197.2 296.8,200.1 298.8,202.8 300.7,205.3 302.6,207.6 304.5,209.8 306.4,211.8 308.3,213.7 310.2,215.3 312.2,216.8 314.1,218.0 316.0,219.1 317.9,220.0 319.8,220.8 321.8,221.3 323.7,221.7 325.6,221.9 327.5,222.0 329.4,222.0 331.3,221.7 333.2,221.4 335.2,220.9 337.1,220.4 339.0,219.7 340.9,218.9 342.8,218.1 344.8,217.1 346.7,216.2 348.6,215.1 350.5,214.1 352.4,213.0 354.3,211.9 356.2,210.8 358.2,209.8 360.1,208.7 362.0,207.7 363.9,206.7 365.8,205.8 367.8,204.9 369.7,204.1 371.6,203.4 373.5,202.8 375.4,202.2 377.3,201.8 379.2,201.4 381.2,201.1 383.1,201.0 385.0,200.9 386.9,201.0 388.8,201.1 390.8,201.4 392.7,201.8 394.6,202.2 396.5,202.8 398.4,203.4 400.3,204.1 402.2,204.9 404.2,205.8 406.1,206.7 408.0,207.7 409.9,208.7 411.8,209.8 413.8,210.8 415.7,211.9 417.6,213.0 419.5,214.1 421.4,215.1 423.3,216.2 425.2,217.1 427.2,218.1 429.1,218.9 431.0,219.7 432.9,220.4 434.8,220.9 436.8,221.4 438.7,221.7 440.6,222.0 442.5,222.0 444.4,221.9 446.3,221.7 448.2,221.3 450.2,220.8 452.1,220.0 454.0,219.1 455.9,218.0 457.8,216.8 459.8,215.3 461.7,213.7 463.6,211.8 465.5,209.8 467.4,207.6 469.3,205.3 471.2,202.8 473.2,200.1 475.1,197.2 477.0,194.2 478.9,191.1 480.8,187.8 482.8,184.4 484.7,180.9 486.6,177.2 488.5,173.5 490.4,169.7 492.3,165.9 494.2,161.9 496.2,158.0 498.1,154.0 500.0,150.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><polyline points=\"40.0,150.0 41.9,144.0 43.8,138.1 45.8,132.2 47.7,126.5 49.6,121.0 51.5,115.7 53.4,110.7 55.3,105.9 57.2,101.5 59.2,97.5 61.1,93.8 63.0,90.5 64.9,87.6 66.8,85.2 68.8,83.1 70.7,81.5 72.6,80.2 74.5,79.4 76.4,78.9 78.3,78.7 80.2,78.9 82.2,79.3 84.1,80.0 86.0,80.9 87.9,82.0 89.8,83.2 91.8,84.5 93.7,85.9 95.6,87.4 97.5,88.8 99.4,90.2 101.3,91.5 103.2,92.7 105.2,93.8 107.1,94.8 109.0,95.6 110.9,96.2 112.8,96.7 114.8,97.0 116.7,97.1 118.6,97.0 120.5,96.7 122.4,96.3 124.3,95.7 126.2,95.0 128.2,94.2 130.1,93.3 132.0,92.3 133.9,91.3 135.8,90.3 137.8,89.2 139.7,88.2 141.6,87.3 143.5,86.4 145.4,85.7 147.3,85.0 149.2,84.5 151.2,84.1 153.1,83.9 155.0,83.8 156.9,83.9 158.8,84.1 160.8,84.5 162.7,85.0 164.6,85.7 166.5,86.4 168.4,87.3 170.3,88.2 172.2,89.2 174.2,90.3 176.1,91.3 178.0,92.3 179.9,93.3 181.8,94.2 183.8,95.0 185.7,95.7 187.6,96.3 189.5,96.7 191.4,97.0 193.3,97.1 195.2,97.0 197.2,96.7 199.1,96.2 201.0,95.6 202.9,94.8 204.8,93.8 206.8,92.7 208.7,91.5 210.6,90.2 212.5,88.8 214.4,87.4 216.3,85.9 218.2,84.5 220.2,83.2 222.1,82.0 224.0,80.9 225.9,80.0 227.8,79.3 229.8,78.9 231.7,78.7 233.6,78.9 235.5,79.4 237.4,80.2 239.3,81.5 241.2,83.1 243.2,85.2 245.1,87.6 247.0,90.5 248.9,93.8 250.8,97.5 252.8,101.5 254.7,105.9 256.6,110.7 258.5,115.7 260.4,121.0 262.3,126.5 264.2,132.2 266.2,138.1 268.1,144.0 270.0,150.0 271.9,156.0 273.8,161.9 275.8,167.8 277.7,173.5 279.6,179.0 281.5,184.3 283.4,189.3 285.3,194.1 287.2,198.5 289.2,202.5 291.1,206.2 293.0,209.5 294.9,212.4 296.8,214.8 298.8,216.9 300.7,218.5 302.6,219.8 304.5,220.6 306.4,221.1 308.3,221.3 310.2,221.1 312.2,220.7 314.1,220.0 316.0,219.1 317.9,218.0 319.8,216.8 321.8,215.5 323.7,214.1 325.6,212.6 327.5,211.2 329.4,209.8 331.3,208.5 333.2,207.3 335.2,206.2 337.1,205.2 339.0,204.4 340.9,203.8 342.8,203.3 344.8,203.0 346.7,202.9 348.6,203.0 350.5,203.3 352.4,203.7 354.3,204.3 356.2,205.0 358.2,205.8 360.1,206.7 362.0,207.7 363.9,208.7 365.8,209.7 367.8,210.8 369.7,211.8 371.6,212.7 373.5,213.6 375.4,214.3 377.3,215.0 379.2,215.5 381.2,215.9 383.1,216.1 385.0,216.2 386.9,216.1 388.8,215.9 390.8,215.5 392.7,215.0 394.6,214.3 396.5,213.6 398.4,212.7 400.3,211.8 402.2,210.8 404.2,209.7 406.1,208.7 408.0,207.7 409.9,206.7 411.8,205.8 413.8,205.0 415.7,204.3 417.6,203.7 419.5,203.3 421.4,203.0 423.3,202.9 425.2,203.0 427.2,203.3 429.1,203.8 431.0,204.4 432.9,205.2 434.8,206.2 436.8,207.3 438.7,208.5 440.6,209.8 442.5,211.2 444.4,212.6 446.3,214.1 448.2,215.5 450.2,216.8 452.1,218.0 454.0,219.1 455.9,220.0 457.8,220.7 459.8,221.1 461.7,221.3 463.6,221.1 465.5,220.6 467.4,219.8 469.3,218.5 471.2,216.9 473.2,214.8 475.1,212.4 477.0,209.5 478.9,206.2 480.8,202.5 482.8,198.5 484.7,194.1 486.6,189.3 488.5,184.3 490.4,179.0 492.3,173.5 494.2,167.8 496.2,161.9 498.1,156.0 500.0,150.0\" fill=\"none\" stroke=\"#6d4aa0\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><rect x=\"360\" y=\"40\" width=\"14\" height=\"3\" fill=\"#16202e\"/><text x=\"380\" y=\"46\" fill=\"#16202e\" font-size=\"11\">target square</text><rect x=\"360\" y=\"58\" width=\"14\" height=\"3\" fill=\"#1f7a5c\"/><text x=\"380\" y=\"64\" fill=\"#16202e\" font-size=\"11\">fundamental (n=1)</text><rect x=\"360\" y=\"76\" width=\"14\" height=\"3\" fill=\"#c2820f\"/><text x=\"380\" y=\"82\" fill=\"#16202e\" font-size=\"11\">+ 3rd harmonic</text><rect x=\"360\" y=\"94\" width=\"14\" height=\"3\" fill=\"#6d4aa0\"/><text x=\"380\" y=\"100\" fill=\"#16202e\" font-size=\"11\">+ 5th harmonic</text><text x=\"16\" y=\"290\" fill=\"#16202e\" font-size=\"11\">Odd harmonics with amplitude 4/(nπ); more terms ⇒ sharper edges</text></svg><figcaption>Any periodic signal is a sum of sinusoids at multiples of its fundamental frequency. A square wave is the fundamental plus its odd harmonics; adding each one sharpens the corners toward the true shape.</figcaption></figure>\n\n<h3>§1 · Every periodic signal is a sum of sinusoids</h3>\n<p>A <b>Fourier series</b> expresses any reasonable periodic signal of period \\( T \\) as a sum of sinusoids at the fundamental frequency \\( \\omega_0=2\\pi/T \\) and its integer multiples — the <b>harmonics</b>: \\( f(t)=\\tfrac{a_0}{2}+\\sum_{n\\ge1}\\big(a_n\\cos n\\omega_0 t+b_n\\sin n\\omega_0 t\\big) \\). The claim is remarkable: a jagged square wave, a ramping sawtooth, the vibration of a gearbox — each is nothing but a stack of pure tones added in the right amounts. The coefficients \\( a_n,b_n \\) say how much of each harmonic is present, and the set of them is the signal's <b>spectrum</b> — the same object a frequency analyser plots.</p>\n\n<h3>§2 · Finding the amounts</h3>\n<p>Each coefficient is extracted by an integral over one period that isolates its harmonic: \\( a_n=\\tfrac2T\\int_0^T f\\cos n\\omega_0 t\\,dt \\) and \\( b_n=\\tfrac2T\\int_0^T f\\sin n\\omega_0 t\\,dt \\). The mechanism is <b>orthogonality</b> — different harmonics integrate to zero against each other over a period, so each integral picks out exactly one amount and ignores the rest. Symmetry shortcuts the work: an odd signal has only sine terms, an even signal only cosine terms, and a signal with half-wave symmetry has only odd harmonics. Reading the symmetry first tells you which coefficients can be nonzero before any integral is done.</p>\n\n<h3>§3 · The square wave and its spectrum</h3>\n<p>An odd square wave of amplitude \\(1\\) works out to \\( f(t)=\\dfrac{4}{\\pi}\\Big(\\sin\\omega_0 t+\\tfrac13\\sin3\\omega_0 t+\\tfrac15\\sin5\\omega_0 t+\\cdots\\Big) \\) — only <b>odd</b> harmonics, with amplitudes \\( b_n=\\dfrac{4}{n\\pi} \\). So \\( b_1=\\tfrac4\\pi\\approx1.27 \\), \\( b_3=\\tfrac{4}{3\\pi}\\approx0.42 \\), \\( b_5=\\tfrac{4}{5\\pi}\\approx0.25 \\): each higher harmonic is weaker, falling as \\( 1/n \\), which is why a few terms already capture the shape and the corners sharpen as more are added. The diagram shows exactly this convergence, including the small persistent overshoot at the jumps (the Gibbs phenomenon).</p>\n<div class=\"keybox\"><span class=\"tag\">Key result — square-wave spectrum</span>\n<p>\\[ f(t)=\\frac{4}{\\pi}\\sum_{n\\ \\text{odd}}\\frac{1}{n}\\sin n\\omega_0 t,\\qquad b_n=\\frac{4}{n\\pi}\\ (n\\ \\text{odd}). \\]</p></div>\n\n<h3>§4 · Why the FFT screen shows lines</h3>\n<p>A machine running at a steady speed produces a periodic vibration, so its spectrum is a set of discrete lines at the fundamental (the running speed) and its harmonics — precisely a Fourier series read off a screen. A healthy machine shows a clean fundamental; a developing fault adds energy at specific harmonics or sidebands — a cracked gear tooth, a worn bearing, a misalignment each has a signature line. The Fast Fourier Transform (FFT) is the algorithm that computes these coefficients from measured data in real time. The working method for any hand problem is the same three moves: read the symmetry to see which harmonics survive, integrate over one period for the coefficients, and keep as many harmonics as the required accuracy demands — the mathematics behind every condition-monitoring diagnosis.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Integration of sines and cosines</b> — the coefficient integrals.</li><li><b>Period and frequency</b> — \\( \\omega_0=2\\pi/T \\).</li><li><b>Sinusoids</b> — the harmonic building blocks.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>\n<tr><td>Fourier series</td><td>\\( \\tfrac{a_0}{2}+\\sum(a_n\\cos n\\omega_0 t+b_n\\sin n\\omega_0 t) \\)</td><td>Signal = sum of harmonics.</td></tr>\n<tr><td>Fundamental</td><td>\\( \\omega_0=2\\pi/T \\)</td><td>Lowest frequency present.</td></tr>\n<tr><td>Coefficients</td><td>\\( b_n=\\tfrac2T\\int_0^T f\\sin n\\omega_0 t\\,dt \\)</td><td>Amount of each harmonic.</td></tr>\n<tr><td>Orthogonality</td><td>harmonics integrate to 0</td><td>Why each integral isolates one term.</td></tr>\n<tr><td>Square wave</td><td>\\( b_n=4/(n\\pi) \\), \\(n\\) odd</td><td>Odd harmonics, amplitude \\(1/n\\).</td></tr>\n<tr><td>Spectrum</td><td>amplitudes vs harmonic</td><td>The FFT / vibration display.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Square-wave harmonics</b></p><p><b>Problem.</b> For an odd square wave of amplitude \\(1\\), find the amplitudes \\( b_1,b_3,b_5 \\) and the ratio \\( b_3/b_1 \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( b_n=\\dfrac{4}{n\\pi} \\) for odd \\(n\\): \\( b_1=\\dfrac{4}{\\pi}\\approx1.27 \\), \\( b_3=\\dfrac{4}{3\\pi}\\approx0.42 \\), \\( b_5=\\dfrac{4}{5\\pi}\\approx0.25 \\). The ratio \\( b_3/b_1=1/3 \\) — higher harmonics fall off as \\(1/n\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Fundamental frequency</b></p><p><b>Problem.</b> A machine vibration repeats every \\( T=0.02 \\) s. Find its fundamental frequency in rad/s and in Hz.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\omega_0=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{0.02}=100\\pi\\approx314 \\) rad/s. In hertz, \\( f_0=\\dfrac1T=\\dfrac{1}{0.02}=50 \\) Hz — so the spectrum's lowest line sits at \\(50\\) Hz (e.g. a machine turning at \\(3000\\) rpm).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Which harmonics survive?</b></p><p><b>Problem.</b> State which harmonics an odd square wave contains and why, and give the amplitude of the 3rd relative to the 1st.</p>",
+    "solution": "<p><b>Solution.</b> Only <b>odd</b> harmonics (1, 3, 5, …). Its half-wave symmetry makes all even coefficients integrate to zero, and being odd it has sine terms only. The 3rd harmonic has amplitude \\( b_3/b_1=1/3 \\) of the fundamental.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A Fourier series expresses a periodic signal as a sum of:</p>",
+    "choices": [
+     "harmonics (sinusoids at multiples of \\( \\omega_0 \\))",
+     "exponentials \\( e^{rt} \\)",
+     "polynomials",
+     "random noise"
+    ],
+    "answer": 0,
+    "solution": "<p>It is a sum of sinusoids at the fundamental \\( \\omega_0 \\) and its integer multiples.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The fundamental frequency of a signal of period \\(T\\) is:</p>",
+    "choices": [
+     "\\( 2\\pi/T \\)",
+     "\\( T/2\\pi \\)",
+     "\\( 1/2\\pi T \\)",
+     "\\( 2\\pi T \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\omega_0=2\\pi/T \\); in hertz \\( f_0=1/T \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fourier coefficients are found by:</p>",
+    "choices": [
+     "integrating the signal against each harmonic over one period",
+     "differentiating the signal",
+     "taking the maximum value",
+     "guessing"
+    ],
+    "answer": 0,
+    "solution": "<p>Orthogonality makes \\( b_n=\\tfrac2T\\int_0^T f\\sin n\\omega_0 t\\,dt \\) isolate exactly the \\(n\\)th amount.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An odd square wave contains:</p>",
+    "choices": [
+     "only odd harmonics",
+     "only even harmonics",
+     "all harmonics equally",
+     "no harmonics"
+    ],
+    "answer": 0,
+    "solution": "<p>Its half-wave symmetry kills the even harmonics; only 1, 3, 5, … remain.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The harmonic amplitudes of a square wave fall off as:</p>",
+    "choices": [
+     "\\( 1/n \\)",
+     "\\( 1/n^2 \\)",
+     "constant",
+     "\\( n \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( b_n=4/(n\\pi) \\), so amplitude \\(\\propto 1/n\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A vibration FFT shows discrete lines because the signal is:</p>",
+    "choices": [
+     "periodic (a sum of harmonics)",
+     "random",
+     "constant",
+     "zero"
+    ],
+    "answer": 0,
+    "solution": "<p>A periodic signal has energy only at the fundamental and its harmonics — those are the lines.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Adding more harmonics to a square-wave approximation:</p>",
+    "choices": [
+     "sharpens the corners (with slight Gibbs overshoot)",
+     "makes it smoother everywhere",
+     "removes the fundamental",
+     "changes the period"
+    ],
+    "answer": 0,
+    "solution": "<p>More terms sharpen the jumps toward the true square, leaving a small persistent overshoot at the discontinuities (Gibbs).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In machine diagnostics, a new spectral line at a fault frequency signals:</p>",
+    "choices": [
+     "a developing defect",
+     "a healthy machine",
+     "the machine is off",
+     "a sensor at rest"
+    ],
+    "answer": 0,
+    "solution": "<p>Extra energy at a bearing or gear-mesh harmonic is the Fourier signature of a growing fault.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A condition-monitoring technician stares at a Fourier spectrum for a living. The\nrunning speed of a pump or motor sets the fundamental line, and every fault has a\nharmonic fingerprint: imbalance shows at \\(1\\times\\) the speed, misalignment at\n\\(2\\times\\), a bearing defect at its own characteristic frequency, gear wear at the\nmesh frequency and its sidebands. Because the vibration is periodic, all of this\nenergy lands on discrete lines — exactly the Fourier coefficients of this lesson —\nso reading the heights and positions of those lines is reading the health of the\nmachine.</p>\n<p>The same decomposition underlies power quality on a plant's electrical supply.\nA distorted current waveform is a fundamental at \\(50\\) Hz plus harmonics, and the\nodd harmonics — the very ones a square-like waveform carries — are what overheat\ntransformers and trip protection. Measuring the harmonic amplitudes and keeping the\ndistortion within limits is a Fourier calculation turned into a maintenance and\ncompliance task.</p>\n"
  }
 }

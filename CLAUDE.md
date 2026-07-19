@@ -825,6 +825,30 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   drafts/mth207-content-review.html. NOT YET PUSHED to live — awaiting
   owner go-ahead. STILL OWED for the wider directive: Year-2 empty-video
   courses electronics-sensors, mfg-processes-2 (no videos/content yet).
+- MATH-2 (MTH 151, Y1S2) COURSE COMPLETE (2026-07-19, owner "keep going"): first
+  Year-1-Semester-2 course authored end-to-end to the UPGRADED spec. All 11 lessons
+  fresh full Educational Units: vectors/dot-cross; partial derivatives/gradient;
+  chain rule/total differential/error-propagation; multiple integrals/centroid/
+  moment-of-inertia; vector fields/flux/circulation/div/curl/Green; matrices &
+  Gaussian elimination; eigenvalues/eigenvectors; second-order ODEs (damping
+  regimes); forced oscillations/resonance; Laplace transforms; Fourier series.
+  Each: topic-sized lecture with .keybox callouts + a coordinate-accurate inline
+  SVG diagram (generated + verified in Python); foundations toolkit table; 3 solve
+  + 8 MC quiz (121 items total; ~110 numbers Python-verified pre-write incl. Laplace
+  by numerical integration); company-free applied-case (kuwait field). Videos
+  inherited from y1s2.json base data (MIT OCW 18.02/18.03 + 3Blue1Brown, pre-verified)
+  — none fabricated. Coverage 104->122/528 (23%). Commits: 7e7378b, cefc370, c407627,
+  a3611cf + this. NEW RENDERING STANDARDS (owner directives this session, now
+  permanent — see memory feedback_math_rendering / feedback_lecture_length):
+  (a) lecture length matches the topic — short topics may be <1000w, never pad;
+  (b) reading line-height 1.8; big blocks (.keybox 34px, figure.lesson-diagram 36px,
+  glossary 30px) spaced to breathe; (c) multi-row matrices ALWAYS display math, never
+  inline; multi-equation systems as stacked \begin{cases}; one matrix per display line;
+  column vectors as inline transposes; (d) display eqns + quiz stems/solutions +
+  glossary get overflow-x:auto — verified NO horizontal page scroll at 320px across
+  the course. CSS commits also fix the already-live math-3 pages' spacing/overflow.
+  STILL OWED for Year 1: Y1S2 dynamics, materials-2, thermo-1, electrical,
+  mfg-processes-1 (55 lessons) — then Year 1 closes.
 
 ### Writing rules (non-negotiable)
 
