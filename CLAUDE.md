@@ -328,6 +328,20 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   Y2S1 status: math-3 4/11, strength 4/11 authored; both have full
   approved videos. NEXT (empty-video courses): fluids/statistics/etc.
   need the real per-video verification pass under video-policy v3.
+- YEAR-2 VIDEO + CONTENT PUSH (owner, 2026-07-18/19): dual track. VIDEOS
+  (owner: embed-then-report, batches of 3, primary embed + verified
+  alternatives, finish all Year-2 empty-video courses): FLUIDS 11/11
+  (4 approved + 7 v3) + 32 alt links; STATISTICS 11/11 (StatQuest-tier,
+  all v3) + 19 alt links. New Library renderer "Alternative videos"
+  (primary embed + link list; each id oEmbed-verified real). Remaining
+  Y2 empty-video courses: electronics-sensors, mfg-processes-2, all six
+  Y2S2. CONTENT: math-3 (MTH 207) L1-L4 authored (first-order ODEs,
+  modelling, 2nd-order homogeneous, forced response) — glossary tables,
+  3 solve + 5 MC each, ALL arithmetic Python-verified pre-write;
+  company-free PASS; renders + counts (coverage 78→82). NOTE (polish
+  owed): math-3 L2/L3/L4 lectures 484/398/450 words, slightly under the
+  500-word floor — top-up owed; L1 547 OK. Video approval list was
+  presented to owner and approved (fluids L1-L3 approve-all + alternates).
 - VIDEO-POLICY v3 GATE + FLUIDS VIDEOS (owner directive "keep spreading
   videos", 2026-07-18): build gate relaxed — embed_card() now takes
   allow=; a lesson video dict with "verified":true embeds from ANY channel
