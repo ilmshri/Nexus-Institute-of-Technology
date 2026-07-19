@@ -412,8 +412,11 @@ table.nx-table tr:nth-child(even) td{background:#f8faf8}
 .work p,.work li{font-size:14.5px}
 .keybox{border:1.5px solid var(--nx-teal-d);border-radius:12px;background:#fff;padding:20px 22px;margin:34px 0}
 /* Big block components get extra room to breathe */
-.measure .lesson-diagram,figure.lesson-diagram{margin:36px 0;text-align:center}
-figure.lesson-diagram svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.measure .lesson-diagram,figure.lesson-diagram{margin:36px 0;text-align:center;overflow-x:auto;overflow-y:hidden}
+/* Diagrams are drawn on a 560-wide canvas; never shrink them below a legible size —
+   keep a minimum width and let the figure scroll horizontally on narrow screens,
+   so labels stay readable instead of collapsing onto the graphics. */
+figure.lesson-diagram svg{width:100%;min-width:500px;max-width:640px;height:auto;display:block;margin:0 auto}
 figure.lesson-diagram figcaption{font-family:var(--serif);font-size:14px;line-height:1.7;color:var(--nx-muted);
   max-width:70ch;margin:14px auto 0;text-align:center}
 .measure mjx-container[display="true"]{margin:22px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
