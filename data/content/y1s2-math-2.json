@@ -706,5 +706,241 @@
    }
   ],
   "kuwait": "\n<p>A structural engineer analysing a steel frame assembles a <b>stiffness matrix</b>\n\\(K\\) and solves \\( K\\mathbf{u}=\\mathbf{F} \\) for the joint displacements under load.\nThe determinant is checked first for a reason: if \\( \\det K=0 \\), the software returns\nno unique displacement, and that is not a numerical glitch — it means the frame, as\nmodelled, is a mechanism that would collapse or drift because a support or brace is\nmissing. The zero determinant on the screen is the algebra reporting a real\nbuildability defect before any steel is cut.</p>\n<p>The same \\( A\\mathbf{x}=\\mathbf{b} \\) governs a plant's mass balances and a\nbuilding's electrical load flow: nodes conserve what enters and leaves, producing one\nequation per node. Gaussian elimination is exactly what the balancing software runs,\nand a near-singular system — rows almost proportional — warns that two measurements\nare redundant or two loops are effectively the same, so the network is being\nover-described and cannot be pinned down uniquely.</p>\n"
+ },
+ "7": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An eigenvector is only scaled by A (stays on its line); a general vector is rotated off its line\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">A = diag(2,3): eigenvector only scaled; general vector rotated</text><line x1=\"90\" y1=\"220\" x2=\"90\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"220\" x2=\"258\" y2=\"220\" stroke=\"#e8eef3\"/><line x1=\"132\" y1=\"220\" x2=\"132\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"178\" x2=\"258\" y2=\"178\" stroke=\"#e8eef3\"/><line x1=\"174\" y1=\"220\" x2=\"174\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"136\" x2=\"258\" y2=\"136\" stroke=\"#e8eef3\"/><line x1=\"216\" y1=\"220\" x2=\"216\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"94\" x2=\"258\" y2=\"94\" stroke=\"#e8eef3\"/><line x1=\"258\" y1=\"220\" x2=\"258\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"52\" x2=\"258\" y2=\"52\" stroke=\"#e8eef3\"/><line x1=\"90\" y1=\"220\" x2=\"266\" y2=\"220\" stroke=\"#16202e\" stroke-width=\"1.4\"/><line x1=\"90\" y1=\"220\" x2=\"90\" y2=\"44\" stroke=\"#16202e\" stroke-width=\"1.4\"/><line x1=\"90.0\" y1=\"220.0\" x2=\"174.0\" y2=\"220.0\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><path d=\"M174.0,220.0 L167.1,216.0 M174.0,220.0 L167.1,224.0\" stroke=\"#1f7a5c\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"126\" y=\"240\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"700\">v</text><text x=\"144\" y=\"240\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"700\">Av = 2v</text><line x1=\"90.0\" y1=\"220.0\" x2=\"132.0\" y2=\"178.0\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><path d=\"M132.0,178.0 L124.3,180.1 M132.0,178.0 L129.9,185.7\" stroke=\"#c2820f\" stroke-width=\"2.4\" fill=\"none\"/><line x1=\"90.0\" y1=\"220.0\" x2=\"174.0\" y2=\"94.0\" stroke=\"#c2820f\" stroke-width=\"2.4\" stroke-dasharray=\"5 3\"/><path d=\"M174.0,94.0 L166.8,97.5 M174.0,94.0 L173.5,102.0\" stroke=\"#c2820f\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"138\" y=\"176\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"700\">w</text><text x=\"178\" y=\"94\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"700\">Aw (rotated)</text><text x=\"16\" y=\"288\" fill=\"#16202e\" font-size=\"11\">Eigenvector stays on its line (scaled ×λ); a general vector tilts off its line</text></svg><figcaption>Multiplying by a matrix usually turns a vector. The rare directions that are only stretched — not turned — are the eigenvectors, and the stretch factor is the eigenvalue. They are the natural axes of the transformation.</figcaption></figure>\n\n<h3>§1 · The directions a matrix leaves alone</h3>\n<p>When a matrix \\(A\\) acts on a vector it generally changes both its length and its direction. A special few vectors are only <em>scaled</em> — their direction survives untouched. These are the <b>eigenvectors</b>, and the scale factor is the <b>eigenvalue</b> \\( \\lambda \\), defined by \\( A\\mathbf{v}=\\lambda\\mathbf{v} \\) with \\( \\mathbf{v}\\neq\\mathbf{0} \\). Along an eigenvector the complicated action of \\(A\\) collapses to plain multiplication by a number. Finding these directions is finding the natural axes of the transformation — the coordinates in which the matrix does nothing but stretch — and it is why eigenvalues govern the natural frequencies of structures, the stability of systems, and the principal directions of stress.</p>\n\n<h3>§2 · The characteristic equation</h3>\n<p>Rearrange \\( A\\mathbf{v}=\\lambda\\mathbf{v} \\) into \\( (A-\\lambda I)\\mathbf{v}=\\mathbf{0} \\). A nonzero \\( \\mathbf{v} \\) exists only if \\( A-\\lambda I \\) is singular, i.e. \\( \\det(A-\\lambda I)=0 \\) — the <b>characteristic equation</b>. For any \\( 2\\times2 \\) matrix it takes the compact form</p>\n\\[ \\lambda^2-(\\operatorname{tr}A)\\,\\lambda+\\det A=0, \\]\n<p>using the trace (sum of the diagonal) and the determinant. For the matrix with rows \\( (4,1) \\) and \\( (2,3) \\), \\( \\operatorname{tr}A=7 \\) and \\( \\det A=10 \\), so \\( \\lambda^2-7\\lambda+10=0 \\), giving \\( \\lambda=2 \\) and \\( \\lambda=5 \\). Two checks are built in: the eigenvalues sum to the trace (\\(2+5=7\\)) and multiply to the determinant (\\(2\\times5=10\\)).</p>\n\n<h3>§3 · The eigenvectors</h3>\n<p>Each eigenvalue has its own direction, found by solving \\( (A-\\lambda I)\\mathbf{v}=\\mathbf{0} \\). For the matrix with rows \\( (0,1) \\) and \\( (-2,-3) \\), the characteristic equation is \\( \\lambda^2+3\\lambda+2=0 \\), so \\( \\lambda=-1,-2 \\). For \\( \\lambda=-1 \\), the equation \\( (A+I)\\mathbf{v}=\\mathbf{0} \\) reduces to \\( v_1+v_2=0 \\), giving the direction \\( \\mathbf{v}=(1,-1) \\). Check: \\( A(1,-1)^\\top=(-1,\\,1)=-1\\cdot(1,-1) \\) ✓. Eigenvectors are <em>directions</em>, not unique vectors — any nonzero multiple is equally an eigenvector — because the defining relation scales freely. What matters is the line the eigenvector picks out.</p>\n\n<h3>§4 · Why engineers compute them</h3>\n<p>The eigenvalues are the natural rates and frequencies of a system. A coupled system of differential equations \\( \\mathbf{x}'=A\\mathbf{x} \\) — the multi-variable successor to a single second-order equation — has solutions built from \\( e^{\\lambda t}\\mathbf{v} \\), one exponential mode per eigenvalue evolving along its eigenvector. The <b>sign</b> of each eigenvalue's real part then decides stability at a glance: all negative means every mode decays and the system is stable; any positive means a mode grows and it is unstable; imaginary parts set oscillation frequencies. In a structure these same eigenvectors become the <b>mode shapes</b> — the patterns in which a machine or building naturally vibrates — which the Vibrations course reads directly off the matrix.</p>\n<div class=\"keybox\"><span class=\"tag\">Key results — the eigenproblem</span>\n<p>\\( A\\mathbf{v}=\\lambda\\mathbf{v} \\); solve \\( \\det(A-\\lambda I)=0 \\). For \\(2\\times2\\): \\( \\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0 \\). Stability of \\( \\mathbf{x}'=A\\mathbf{x} \\): all \\( \\operatorname{Re}\\lambda<0 \\).</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Matrix–vector products and determinants</b> (Lesson 6).</li><li><b>The quadratic formula</b> — for the \\(2\\times2\\) characteristic equation.</li><li><b>Singular matrices</b> — \\( \\det(A-\\lambda I)=0 \\) is a singularity condition.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>\n<tr><td>Eigenvalue relation</td><td>\\( A\\mathbf{v}=\\lambda\\mathbf{v} \\)</td><td>Direction only scaled by \\(\\lambda\\).</td></tr>\n<tr><td>Characteristic equation</td><td>\\( \\det(A-\\lambda I)=0 \\)</td><td>Solve for the eigenvalues.</td></tr>\n<tr><td>2×2 shortcut</td><td>\\( \\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0 \\)</td><td>Fast eigenvalues + built-in checks.</td></tr>\n<tr><td>Eigenvector</td><td>\\( (A-\\lambda I)\\mathbf{v}=\\mathbf{0} \\)</td><td>Direction for each \\(\\lambda\\).</td></tr>\n<tr><td>Sum / product</td><td>\\( \\sum\\lambda=\\operatorname{tr}A,\\ \\prod\\lambda=\\det A \\)</td><td>Sanity checks.</td></tr>\n<tr><td>Stability of \\( \\mathbf{x}'=A\\mathbf{x} \\)</td><td>all \\( \\operatorname{Re}\\lambda<0 \\)</td><td>Every mode decays.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Eigenvalues by the shortcut</b></p><p><b>Problem.</b> Find the eigenvalues of the matrix with rows \\( (4,1) \\) and \\( (2,3) \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( \\operatorname{tr}A=4+3=7 \\), \\( \\det A=4(3)-1(2)=10 \\). The characteristic equation is \\( \\lambda^2-7\\lambda+10=0=(\\lambda-2)(\\lambda-5) \\), so \\( \\lambda=2,5 \\). Checks: sum \\(2+5=7=\\operatorname{tr}\\) ✓, product \\(2\\cdot5=10=\\det\\) ✓.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>An eigenvector</b></p><p><b>Problem.</b> The matrix with rows \\( (0,1) \\) and \\( (-2,-3) \\) has eigenvalues \\(-1,-2\\). Find an eigenvector for \\( \\lambda=-1 \\).</p>",
+    "solution": "<p><b>Solution.</b> \\( A-\\lambda I=A+I \\) has rows \\( (1,1) \\) and \\( (-2,-2) \\). The equation \\( v_1+v_2=0 \\) gives \\( \\mathbf{v}=(1,-1) \\). Verify: \\( A(1,-1)^\\top=(-1,\\,1)=-1\\cdot(1,-1) \\) ✓. Any nonzero multiple works.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Stability of a system</b></p><p><b>Problem.</b> The system \\( \\mathbf{x}'=A\\mathbf{x} \\) has \\(A\\) with rows \\( (0,1) \\) and \\( (-2,-3) \\). Is it stable?</p>",
+    "solution": "<p><b>Solution.</b> The eigenvalues solve \\( \\lambda^2+3\\lambda+2=0 \\), giving \\( \\lambda=-1,-2 \\). Both are negative, so every mode \\( e^{\\lambda t}\\mathbf{v} \\) decays and the system is <b>stable</b>. (This is the damped oscillator \\(m=1,c=3,k=2\\) written as a first-order system.)</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An eigenvector \\( \\mathbf{v} \\) of \\(A\\) satisfies:</p>",
+    "choices": [
+     "\\( A\\mathbf{v}=\\lambda\\mathbf{v} \\)",
+     "\\( A\\mathbf{v}=\\mathbf{0} \\) always",
+     "\\( \\mathbf{v}A=I \\)",
+     "\\( A\\mathbf{v}=\\mathbf{v}+\\lambda \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>By definition \\( A\\mathbf{v}=\\lambda\\mathbf{v} \\): the matrix only scales the eigenvector.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a \\(2\\times2\\) matrix the characteristic equation is:</p>",
+    "choices": [
+     "\\( \\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0 \\)",
+     "\\( \\lambda^2-\\det A=0 \\)",
+     "\\( \\lambda=\\operatorname{tr}A \\)",
+     "\\( \\lambda^2+\\det A=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\det(A-\\lambda I)=0 \\) expands to \\( \\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The eigenvalues of the matrix with rows \\( (4,1) \\) and \\( (2,3) \\) are:</p>",
+    "choices": [
+     "2 and 5",
+     "4 and 3",
+     "1 and 6",
+     "7 and 10"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\lambda^2-7\\lambda+10=0\\Rightarrow\\lambda=2,5 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A diagonal matrix \\( \\operatorname{diag}(2,3) \\) has eigenvalues:</p>",
+    "choices": [
+     "2 and 3",
+     "0 and 0",
+     "5 and 6",
+     "1 and 1"
+    ],
+    "answer": 0,
+    "solution": "<p>A diagonal matrix's eigenvalues are its diagonal entries: \\(2\\) and \\(3\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The system \\( \\mathbf{x}'=A\\mathbf{x} \\) is stable when every eigenvalue has:</p>",
+    "choices": [
+     "negative real part",
+     "positive real part",
+     "zero value",
+     "magnitude &gt; 1"
+    ],
+    "answer": 0,
+    "solution": "<p>Each mode is \\( e^{\\lambda t}\\mathbf{v} \\); a negative real part makes it decay. All negative ⇒ stable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The eigenvalues of a \\(2\\times2\\) matrix always sum to its:</p>",
+    "choices": [
+     "trace",
+     "determinant",
+     "rank",
+     "largest entry"
+    ],
+    "answer": 0,
+    "solution": "<p>From \\( \\lambda^2-(\\operatorname{tr}A)\\lambda+\\det A=0 \\), roots sum to \\( \\operatorname{tr}A \\) and multiply to \\( \\det A \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a vibrating structure, the eigenvectors of the system become the:</p>",
+    "choices": [
+     "mode shapes",
+     "damping ratios",
+     "applied loads",
+     "support reactions"
+    ],
+    "answer": 0,
+    "solution": "<p>Each eigenvector is a natural pattern of motion — a mode shape — vibrating at the frequency set by its eigenvalue.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Multiplying an eigenvector by a nonzero constant gives:</p>",
+    "choices": [
+     "another eigenvector (same eigenvalue)",
+     "a different eigenvalue",
+     "a non-eigenvector",
+     "the zero vector"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( A(c\\mathbf{v})=c\\,A\\mathbf{v}=c\\lambda\\mathbf{v}=\\lambda(c\\mathbf{v}) \\): scaling preserves the eigenvector property and the eigenvalue.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A rotating-equipment engineer commissioning a pump skid cares about the\nmachine's natural frequencies, and those are eigenvalues. Modelling the rotor and\nits supports as a small mass-and-stiffness system produces a matrix whose\neigenvalues are the squared natural frequencies and whose eigenvectors are the\nmode shapes — the patterns in which the machine flexes. If an eigenfrequency sits\nnear the running speed, the mode is excited and vibration spikes; the fix is to\nshift stiffness or mass to move that eigenvalue away, exactly the calculation of\n§4 turned into a maintenance decision.</p>\n<p>The stability reading is just as concrete. A control loop or a process unit\nmodelled as \\( \\mathbf{x}'=A\\mathbf{x} \\) is stable only if every eigenvalue of \\(A\\)\nhas a negative real part; a single eigenvalue crossing into the positive half-plane\nis the mathematical signature of a runaway — a surge, an oscillation that grows\ninstead of settling. Engineers therefore compute the spectrum of \\(A\\) before\ntrusting a design, because the signs of those numbers decide whether the plant\nsettles or shakes itself apart.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Three response curves: overdamped and critically damped decay without oscillating; underdamped oscillates as it decays\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Free response x(t), same start x(0)=1, x&#39;(0)=0</text><line x1=\"60\" y1=\"150\" x2=\"511\" y2=\"150\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"41\" x2=\"60\" y2=\"183\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"503\" y=\"168\" fill=\"#16202e\" font-size=\"12\">t</text><text x=\"36\" y=\"47\" fill=\"#16202e\" font-size=\"12\">x</text><polyline points=\"60.0,55.0 63.7,55.3 67.3,56.1 71.0,57.4 74.7,59.1 78.3,61.0 82.0,63.2 85.7,65.6 89.3,68.2 93.0,70.8 96.7,73.6 100.3,76.4 104.0,79.2 107.7,82.0 111.3,84.8 115.0,87.5 118.7,90.3 122.3,93.0 126.0,95.6 129.7,98.1 133.3,100.6 137.0,103.0 140.7,105.3 144.3,107.5 148.0,109.7 151.7,111.8 155.3,113.8 159.0,115.7 162.7,117.5 166.3,119.2 170.0,120.9 173.7,122.5 177.3,124.0 181.0,125.4 184.7,126.8 188.3,128.1 192.0,129.3 195.7,130.5 199.3,131.6 203.0,132.7 206.7,133.7 210.3,134.6 214.0,135.5 217.7,136.4 221.3,137.2 225.0,137.9 228.7,138.6 232.3,139.3 236.0,139.9 239.7,140.5 243.3,141.1 247.0,141.6 250.7,142.2 254.3,142.6 258.0,143.1 261.7,143.5 265.3,143.9 269.0,144.3 272.7,144.6 276.3,144.9 280.0,145.3 283.7,145.5 287.3,145.8 291.0,146.1 294.7,146.3 298.3,146.5 302.0,146.8 305.7,147.0 309.3,147.1 313.0,147.3 316.7,147.5 320.3,147.6 324.0,147.8 327.7,147.9 331.3,148.1 335.0,148.2 338.7,148.3 342.3,148.4 346.0,148.5 349.7,148.6 353.3,148.7 357.0,148.8 360.7,148.8 364.3,148.9 368.0,149.0 371.7,149.1 375.3,149.1 379.0,149.2 382.7,149.2 386.3,149.3 390.0,149.3 393.7,149.4 397.3,149.4 401.0,149.4 404.7,149.5 408.3,149.5 412.0,149.5 415.7,149.6 419.3,149.6 423.0,149.6 426.7,149.6 430.3,149.7 434.0,149.7 437.7,149.7 441.3,149.7 445.0,149.7 448.7,149.8 452.3,149.8 456.0,149.8 459.7,149.8 463.3,149.8 467.0,149.8 470.7,149.8 474.3,149.8 478.0,149.9 481.7,149.9 485.3,149.9 489.0,149.9 492.7,149.9 496.3,149.9 500.0,149.9\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"2.2\"/><polyline points=\"60.0,55.0 63.7,55.2 67.3,55.8 71.0,56.7 74.7,57.8 78.3,59.2 82.0,60.8 85.7,62.6 89.3,64.5 93.0,66.6 96.7,68.7 100.3,70.9 104.0,73.2 107.7,75.5 111.3,77.8 115.0,80.1 118.7,82.4 122.3,84.7 126.0,87.1 129.7,89.3 133.3,91.6 137.0,93.8 140.7,95.9 144.3,98.1 148.0,100.1 151.7,102.2 155.3,104.1 159.0,106.0 162.7,107.9 166.3,109.7 170.0,111.4 173.7,113.1 177.3,114.7 181.0,116.3 184.7,117.8 188.3,119.3 192.0,120.7 195.7,122.1 199.3,123.4 203.0,124.6 206.7,125.8 210.3,126.9 214.0,128.0 217.7,129.1 221.3,130.1 225.0,131.1 228.7,132.0 232.3,132.9 236.0,133.7 239.7,134.5 243.3,135.3 247.0,136.0 250.7,136.8 254.3,137.4 258.0,138.1 261.7,138.7 265.3,139.2 269.0,139.8 272.7,140.3 276.3,140.8 280.0,141.3 283.7,141.8 287.3,142.2 291.0,142.6 294.7,143.0 298.3,143.4 302.0,143.7 305.7,144.0 309.3,144.4 313.0,144.7 316.7,144.9 320.3,145.2 324.0,145.5 327.7,145.7 331.3,145.9 335.0,146.2 338.7,146.4 342.3,146.6 346.0,146.8 349.7,146.9 353.3,147.1 357.0,147.3 360.7,147.4 364.3,147.5 368.0,147.7 371.7,147.8 375.3,147.9 379.0,148.0 382.7,148.2 386.3,148.3 390.0,148.4 393.7,148.4 397.3,148.5 401.0,148.6 404.7,148.7 408.3,148.8 412.0,148.8 415.7,148.9 419.3,149.0 423.0,149.0 426.7,149.1 430.3,149.1 434.0,149.2 437.7,149.2 441.3,149.3 445.0,149.3 448.7,149.3 452.3,149.4 456.0,149.4 459.7,149.5 463.3,149.5 467.0,149.5 470.7,149.5 474.3,149.6 478.0,149.6 481.7,149.6 485.3,149.6 489.0,149.7 492.7,149.7 496.3,149.7 500.0,149.7\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2.2\"/><polyline points=\"60.0,55.0 63.7,55.3 67.3,56.0 71.0,57.2 74.7,58.8 78.3,60.9 82.0,63.2 85.7,65.9 89.3,68.8 93.0,72.0 96.7,75.5 100.3,79.1 104.0,82.8 107.7,86.7 111.3,90.6 115.0,94.6 118.7,98.7 122.3,102.7 126.0,106.8 129.7,110.8 133.3,114.8 137.0,118.7 140.7,122.6 144.3,126.3 148.0,129.9 151.7,133.4 155.3,136.8 159.0,140.0 162.7,143.0 166.3,145.9 170.0,148.7 173.7,151.2 177.3,153.6 181.0,155.8 184.7,157.9 188.3,159.7 192.0,161.4 195.7,163.0 199.3,164.3 203.0,165.5 206.7,166.5 210.3,167.4 214.0,168.1 217.7,168.7 221.3,169.2 225.0,169.5 228.7,169.7 232.3,169.7 236.0,169.7 239.7,169.6 243.3,169.3 247.0,169.0 250.7,168.6 254.3,168.1 258.0,167.6 261.7,166.9 265.3,166.3 269.0,165.6 272.7,164.8 276.3,164.1 280.0,163.3 283.7,162.4 287.3,161.6 291.0,160.8 294.7,159.9 298.3,159.1 302.0,158.2 305.7,157.4 309.3,156.6 313.0,155.8 316.7,155.0 320.3,154.3 324.0,153.5 327.7,152.8 331.3,152.2 335.0,151.5 338.7,150.9 342.3,150.3 346.0,149.8 349.7,149.3 353.3,148.8 357.0,148.4 360.7,148.0 364.3,147.7 368.0,147.3 371.7,147.1 375.3,146.8 379.0,146.6 382.7,146.4 386.3,146.2 390.0,146.1 393.7,146.0 397.3,146.0 401.0,145.9 404.7,145.9 408.3,145.9 412.0,145.9 415.7,146.0 419.3,146.0 423.0,146.1 426.7,146.2 430.3,146.3 434.0,146.5 437.7,146.6 441.3,146.7 445.0,146.9 448.7,147.1 452.3,147.2 456.0,147.4 459.7,147.6 463.3,147.7 467.0,147.9 470.7,148.1 474.3,148.3 478.0,148.4 481.7,148.6 485.3,148.8 489.0,148.9 492.7,149.1 496.3,149.2 500.0,149.4\" fill=\"none\" stroke=\"#6d4aa0\" stroke-width=\"2.2\" stroke-dasharray=\"5 4\"/><rect x=\"330\" y=\"40\" width=\"14\" height=\"3\" fill=\"#1f7a5c\"/><text x=\"350\" y=\"46\" fill=\"#16202e\" font-size=\"11\">overdamped (Δ&gt;0)</text><rect x=\"330\" y=\"60\" width=\"14\" height=\"3\" fill=\"#c2820f\"/><text x=\"350\" y=\"66\" fill=\"#16202e\" font-size=\"11\">critical (Δ=0)</text><rect x=\"330\" y=\"80\" width=\"14\" height=\"3\" fill=\"#6d4aa0\"/><text x=\"350\" y=\"86\" fill=\"#16202e\" font-size=\"11\">underdamped (Δ&lt;0)</text><text x=\"16\" y=\"290\" fill=\"#16202e\" font-size=\"11\">Δ = c²−4mk decides the regime; underdamped overshoots and rings</text></svg><figcaption>One equation, three behaviours. The discriminant of the characteristic equation decides whether a system crawls back (overdamped), returns as fast as possible without overshoot (critically damped), or rings as it settles (underdamped).</figcaption></figure>\n\n<h3>§1 · From calculus to a quadratic</h3>\n<p>The homogeneous second-order equation with constant coefficients, \\( m x''+c x'+k x=0 \\), is the mass–spring–damper — and by direct analogy every RLC circuit and simple oscillator you will meet. It is solved by a guess that converts calculus into algebra: try \\( x=e^{rt} \\). Then \\( x'=re^{rt} \\), \\( x''=r^2e^{rt} \\), and the equation becomes \\( (mr^2+cr+k)e^{rt}=0 \\). Since the exponential never vanishes, the bracket must — the <b>characteristic equation</b> \\( mr^2+cr+k=0 \\). A differential problem has become a quadratic, which is why the quadratic formula is the working tool of second-order dynamics.</p>\n\n<h3>§2 · Three regimes, set by the discriminant</h3>\n<p>The discriminant \\( \\Delta=c^2-4mk \\) sorts the behaviour completely. If \\( \\Delta>0 \\), two distinct real negative roots give \\( x=Ae^{r_1t}+Be^{r_2t} \\) — a pure decay, <b>overdamped</b>. If \\( \\Delta=0 \\), a repeated root gives \\( x=(A+Bt)e^{rt} \\) — the fastest return with no overshoot, <b>critically damped</b>. If \\( \\Delta<0 \\), complex roots \\( -\\sigma\\pm i\\omega_d \\) give \\( x=e^{-\\sigma t}(A\\cos\\omega_d t+B\\sin\\omega_d t) \\) — a decaying oscillation, <b>underdamped</b>. For \\( x''+5x'+6x=0 \\), \\( \\Delta=25-24=1>0 \\) with roots \\( -2,-3 \\): overdamped. For \\( x''+2x'+5x=0 \\), \\( \\Delta=4-20=-16<0 \\) with roots \\( -1\\pm2i \\): underdamped, oscillating at \\( \\omega_d=2 \\) while decaying at rate \\(1\\).</p>\n<div class=\"keybox\"><span class=\"tag\">Key test — the discriminant</span>\n<p>\\[ \\Delta=c^2-4mk:\\quad \\Delta>0\\ \\text{overdamped},\\ \\ \\Delta=0\\ \\text{critical},\\ \\ \\Delta<0\\ \\text{underdamped}. \\]</p></div>\n\n<h3>§3 · Natural frequency and damping ratio</h3>\n<p>Two derived numbers name the system independently of its scale. The <b>natural frequency</b> \\( \\omega_n=\\sqrt{k/m} \\) is the rate it would oscillate undamped; with \\( m=1,\\ k=100 \\), \\( \\omega_n=10 \\) rad/s. The <b>damping ratio</b> \\( \\zeta=\\dfrac{c}{2\\sqrt{mk}} \\) measures the actual damping against the critical amount \\( c_c=2\\sqrt{mk} \\); here \\( c_c=20 \\), so \\( c=8 \\) gives \\( \\zeta=0.4 \\) — underdamped, since \\( \\zeta<1 \\). The three regimes restate cleanly as \\( \\zeta<1 \\) (under), \\( \\zeta=1 \\) (critical), \\( \\zeta>1 \\) (over). This pair \\( (\\omega_n,\\zeta) \\) is scale-free, so two systems with the same \\( \\zeta \\) behave alike whatever their mass — which is why datasheets quote them.</p>\n<div class=\"keybox\"><span class=\"tag\">Key numbers — \\( \\omega_n \\) and \\( \\zeta \\)</span>\n<p>\\( \\omega_n=\\sqrt{k/m} \\); \\( \\zeta=\\dfrac{c}{2\\sqrt{mk}} \\). Regimes: \\( \\zeta<1 \\) under, \\( \\zeta=1 \\) critical, \\( \\zeta>1 \\) over.</p></div>\n\n<h3>§4 · The shape to memorise, and the method</h3>\n<p>Commit the underdamped shape to memory, because it is the response of almost every real machine: an oscillation at \\( \\omega_d=\\omega_n\\sqrt{1-\\zeta^2} \\) inside a decaying envelope \\( e^{-\\zeta\\omega_n t} \\). The disciplined method for any \\( mx''+cx'+kx=0 \\) is: (1) compute \\( \\Delta=c^2-4mk \\) first — its sign is the entire qualitative story before a single root is found; (2) read \\( \\omega_n=\\sqrt{k/m} \\) and \\( \\zeta=c/(2\\sqrt{mk}) \\) to put numbers on it; (3) fix the constants \\(A,B\\) from the initial conditions. Sign first, then magnitudes. This is exactly how vibration and control engineers diagnose a system from its coefficients — and the forced version, in the next lesson, adds a particular solution on top of this same skeleton.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The quadratic formula</b> — the characteristic roots.</li><li><b>Exponentials and sinusoids</b> — the solution building blocks.</li><li><b>Complex roots</b> — where oscillation comes from.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>\n<tr><td>Characteristic equation</td><td>\\( mr^2+cr+k=0 \\)</td><td>From the \\( e^{rt} \\) guess.</td></tr>\n<tr><td>Discriminant</td><td>\\( \\Delta=c^2-4mk \\)</td><td>Sign ⇒ the regime.</td></tr>\n<tr><td>Overdamped</td><td>\\( Ae^{r_1t}+Be^{r_2t} \\)</td><td>\\( \\Delta>0 \\): no oscillation.</td></tr>\n<tr><td>Critically damped</td><td>\\( (A+Bt)e^{rt} \\)</td><td>\\( \\Delta=0 \\): fastest, no overshoot.</td></tr>\n<tr><td>Underdamped</td><td>\\( e^{-\\sigma t}(A\\cos\\omega_d t+B\\sin\\omega_d t) \\)</td><td>\\( \\Delta<0 \\): decaying oscillation.</td></tr>\n<tr><td>Natural frequency</td><td>\\( \\omega_n=\\sqrt{k/m} \\)</td><td>Undamped ringing rate.</td></tr>\n<tr><td>Damping ratio</td><td>\\( \\zeta=\\frac{c}{2\\sqrt{mk}} \\)</td><td>Regime by \\( \\zeta \\lessgtr 1 \\).</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Classify the response</b></p><p><b>Problem.</b> For \\( x''+5x'+6x=0 \\), find the discriminant, the roots, and the regime.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta=c^2-4mk=25-24=1>0 \\). Roots: \\( r=\\dfrac{-5\\pm1}{2}=-2,\\,-3 \\). Two real negative roots ⇒ <b>overdamped</b>: \\( x=Ae^{-2t}+Be^{-3t} \\), a pure decay with no oscillation.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Natural frequency and damping</b></p><p><b>Problem.</b> For \\( m=1,\\ k=100,\\ c=8 \\), find \\( \\omega_n \\) and \\( \\zeta \\), and state the regime.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\omega_n=\\sqrt{k/m}=\\sqrt{100}=10 \\) rad/s. Critical damping \\( c_c=2\\sqrt{mk}=2\\sqrt{100}=20 \\), so \\( \\zeta=c/c_c=8/20=0.4 \\). Since \\( \\zeta<1 \\), the system is <b>underdamped</b> — it oscillates as it decays.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Complex roots</b></p><p><b>Problem.</b> For \\( x''+2x'+5x=0 \\), find the roots and the damped frequency.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta=4-20=-16<0 \\). Roots \\( r=\\dfrac{-2\\pm\\sqrt{-16}}{2}=-1\\pm2i \\). Underdamped: decay rate \\( \\sigma=1 \\), damped frequency \\( \\omega_d=2 \\), so \\( x=e^{-t}(A\\cos2t+B\\sin2t) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The characteristic equation of \\( mx''+cx'+kx=0 \\) is:</p>",
+    "choices": [
+     "\\( mr^2+cr+k=0 \\)",
+     "\\( mr^2+cr+k=x \\)",
+     "\\( r^2+r+1=0 \\)",
+     "\\( mr+c=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Substituting \\( x=e^{rt} \\) gives \\( (mr^2+cr+k)e^{rt}=0 \\), so \\( mr^2+cr+k=0 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The regime is decided by the sign of:</p>",
+    "choices": [
+     "\\( \\Delta=c^2-4mk \\)",
+     "\\( c \\)",
+     "\\( k \\)",
+     "\\( m \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The discriminant \\( \\Delta=c^2-4mk \\) sorts over/critical/under-damped.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\Delta>0 \\) (two real roots) gives a response that is:</p>",
+    "choices": [
+     "overdamped — no oscillation",
+     "underdamped — oscillating",
+     "undamped",
+     "unstable"
+    ],
+    "answer": 0,
+    "solution": "<p>Two real negative roots give a sum of decaying exponentials — a non-oscillating, overdamped return.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The natural frequency of a mass–spring system is:</p>",
+    "choices": [
+     "\\( \\sqrt{k/m} \\)",
+     "\\( \\sqrt{m/k} \\)",
+     "\\( c/2m \\)",
+     "\\( k/m \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\omega_n=\\sqrt{k/m} \\) — set by stiffness and mass only.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( m=1,k=100,c=8 \\), the damping ratio \\( \\zeta \\) is:</p>",
+    "choices": [
+     "0.4",
+     "4",
+     "0.08",
+     "2.5"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\zeta=c/(2\\sqrt{mk})=8/20=0.4 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Critical damping (\\( \\Delta=0 \\)) is the case that:</p>",
+    "choices": [
+     "returns fastest with no overshoot",
+     "oscillates forever",
+     "never returns",
+     "grows without bound"
+    ],
+    "answer": 0,
+    "solution": "<p>The repeated root gives the quickest non-oscillating return — the boundary between over- and under-damped.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The roots of \\( x''+5x'+6x=0 \\) are:</p>",
+    "choices": [
+     "\\(-2\\) and \\(-3\\)",
+     "\\(2\\) and \\(3\\)",
+     "\\(-1\\pm2i\\)",
+     "\\(-5\\) and \\(-6\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( r^2+5r+6=(r+2)(r+3)=0\\Rightarrow r=-2,-3 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An underdamped system (\\( \\zeta<1 \\)) responds by:</p>",
+    "choices": [
+     "oscillating inside a decaying envelope",
+     "decaying with no oscillation",
+     "growing",
+     "staying constant"
+    ],
+    "answer": 0,
+    "solution": "<p>Complex roots give \\( e^{-\\sigma t}(A\\cos\\omega_d t+B\\sin\\omega_d t) \\) — ringing that fades.</p>"
+   }
+  ],
+  "kuwait": "\n<p>When a maintenance team tunes a machine mount or a vehicle suspension, they are\nchoosing the damping ratio \\( \\zeta \\). Too little damping (\\( \\zeta\\ll1 \\)) and the\nsystem rings for a long time after every bump — fatigue and noise; too much\n(\\( \\zeta>1 \\)) and it responds sluggishly. The sweet spot for most equipment sits a\nlittle below critical, giving a fast return with only slight overshoot, which is why\nsuspension and isolator datasheets quote a target \\( \\zeta \\) near \\(0.2\\)–\\(0.7\\)\nrather than raw damper values.</p>\n<p>The discriminant test is also a design guard on doors, actuators, and closers. A\nhydraulic door closer is deliberately set near critical damping so the door shuts\nquickly but does not slam or bounce — exactly \\( \\Delta\\approx0 \\). Reading a\nsystem's coefficients and computing \\( \\Delta \\) before building it lets an engineer\npredict whether the finished device will crawl, snap, or ring, without a single\nprototype.</p>\n"
  }
 }
