@@ -234,5 +234,241 @@
    }
   ],
   "kuwait": "\n<p>A process engineer sizing a heat exchanger works with a duty that depends on\nseveral inputs at once — flow rate, inlet temperature, and area. Asking \"how\nmuch does the duty move if only the cooling-water flow rises by 5%?\" is exactly\na partial derivative: freeze every other variable and read the sensitivity. On\nthe plant floor this decides which input is worth controlling tightly and which\ncan drift; the variable with the largest partial derivative is the one the\ncontrol loop should watch, because its errors dominate the linear\nerror-propagation sum \\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y \\).</p>\n<p>The gradient's \"steepest ascent\" reading is just as practical. In a furnace or\na cast billet, heat flows down the steepest temperature drop — along \\( -\\nabla T \\),\nstraight across the isotherms — never along a line of constant temperature. A\nmaintenance thermographer reading a heat map is really reading level curves, and\nthe hot-spot risk is wherever those contours crowd together, because crowded\ncontours mean a large \\( |\\nabla T| \\) and a steep, stressful thermal gradient.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 270\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Chain-rule dependency tree: f depends on x and y, which each depend on t\"><rect width=\"560\" height=\"270\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"24\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Chain-rule dependency tree — sum the paths from f down to t</text><line x1=\"280\" y1=\"92\" x2=\"170\" y2=\"128\" stroke=\"#c7d2dc\" stroke-width=\"1.6\"/><text x=\"205\" y=\"110\" fill=\"#1f7a5c\" font-size=\"12\" font-style=\"italic\">∂f/∂x</text><line x1=\"280\" y1=\"92\" x2=\"390\" y2=\"128\" stroke=\"#c7d2dc\" stroke-width=\"1.6\"/><text x=\"330\" y=\"110\" fill=\"#1f7a5c\" font-size=\"12\" font-style=\"italic\">∂f/∂y</text><line x1=\"170\" y1=\"172\" x2=\"170\" y2=\"213\" stroke=\"#c7d2dc\" stroke-width=\"1.6\"/><text x=\"120\" y=\"195\" fill=\"#c2820f\" font-size=\"12\" font-style=\"italic\">dx/dt</text><line x1=\"390\" y1=\"172\" x2=\"390\" y2=\"213\" stroke=\"#c7d2dc\" stroke-width=\"1.6\"/><text x=\"395\" y=\"195\" fill=\"#c2820f\" font-size=\"12\" font-style=\"italic\">dy/dt</text><circle cx=\"280\" cy=\"70\" r=\"22\" fill=\"#fff\" stroke=\"#16202e\" stroke-width=\"2\"/><text x=\"280\" y=\"75\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"16\" font-weight=\"700\">f</text><circle cx=\"170\" cy=\"150\" r=\"22\" fill=\"#fff\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><text x=\"170\" y=\"155\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"16\" font-weight=\"700\">x</text><circle cx=\"390\" cy=\"150\" r=\"22\" fill=\"#fff\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><text x=\"390\" y=\"155\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"16\" font-weight=\"700\">y</text><circle cx=\"170\" cy=\"235\" r=\"22\" fill=\"#fff\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"170\" y=\"240\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"16\" font-weight=\"700\">t</text><circle cx=\"390\" cy=\"235\" r=\"22\" fill=\"#fff\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"390\" y=\"240\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"16\" font-weight=\"700\">t</text><text x=\"16\" y=\"262\" fill=\"#16202e\" font-size=\"11\">df/dt = (∂f/∂x)(dx/dt) + (∂f/∂y)(dy/dt)  — one term per path</text></svg><figcaption>When a quantity depends on variables that themselves depend on a common driver, the chain rule sums one contribution per path down the tree — each path a product of the links along it.</figcaption></figure>\n\n<h3>§1 · The total differential</h3>\n<p>The partials of the last lesson combine into the <b>total differential</b>, the exact statement of how a function changes when all its inputs move together: \\( df=f_x\\,dx+f_y\\,dy \\). It is the linear approximation written as an identity between infinitesimals, and it is the workhorse for everything that follows — chain rules, error analysis, and the exactness tests of differential equations all start here. Read it plainly: the change in \\( f \\) is the sum of each input's change times how strongly \\( f \\) responds to that input. For a cylinder volume \\( V=\\pi r^2h \\), \\( dV=2\\pi r h\\,dr+\\pi r^2\\,dh \\) — the first term is the volume gained by growing the radius, the second by growing the height.</p>\n\n<h3>§2 · The chain rule along one variable</h3>\n<p>When \\( x \\) and \\( y \\) are themselves functions of a single driver \\( t \\), the function \\( f(x,y) \\) becomes a function of \\( t \\) alone, and its rate is the sum over both paths in the tree above: \\( \\dfrac{df}{dt}=f_x\\dfrac{dx}{dt}+f_y\\dfrac{dy}{dt} \\). Each term is a path from \\( f \\) down to \\( t \\); you multiply the links along a path and add the paths. Take \\( f=xy \\) with \\( x=t,\\ y=t^2 \\): then \\( f_x=y=t^2,\\ f_y=x=t \\), and with \\( x'=1,\\ y'=2t \\), \\( \\dfrac{df}{dt}=t^2(1)+t(2t)=3t^2 \\). This matches differentiating \\( f=t\\cdot t^2=t^3 \\) directly, \\(=3t^2\\) — a built-in check that the path-sum bookkeeping is right.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — the chain rule</span>\n<p>\\[ \\frac{df}{dt}=\\frac{\\partial f}{\\partial x}\\frac{dx}{dt}+\\frac{\\partial f}{\\partial y}\\frac{dy}{dt} \\]</p>\n<p>One term per path from \\(f\\) to the driver; multiply the links along a path, sum the paths.</p></div>\n\n<h3>§3 · Several independent variables</h3>\n<p>If the intermediate variables depend on more than one driver — \\( x=x(s,t),\\ y=y(s,t) \\) — the same path-sum gives a <em>partial</em> derivative for each driver, holding the others fixed: \\( \\dfrac{\\partial z}{\\partial s}=f_x\\dfrac{\\partial x}{\\partial s}+f_y\\dfrac{\\partial y}{\\partial s} \\). For \\( z=x^2+y^2 \\) with \\( x=s+t,\\ y=s-t \\): \\( z_s=2x(1)+2y(1)=2(s+t)+2(s-t)=4s \\), and likewise \\( z_t=4t \\). The tree simply grows another level, but the rule is unchanged: enumerate the paths to the driver in question, and add. This is precisely how a change of coordinates — Cartesian to polar, say — propagates derivatives, which heat transfer and fluid mechanics lean on constantly.</p>\n\n<h3>§4 · Error propagation, the everyday payoff</h3>\n<p>The total differential is the engineer's error-propagation law. If each input carries an uncertainty, a <b>worst-case</b> bound adds the magnitudes: \\( |\\Delta f|\\le|f_x||\\Delta x|+|f_y||\\Delta y| \\). Dividing the cylinder's differential by \\( V \\) gives the tidy relative form \\( \\dfrac{dV}{V}=2\\dfrac{dr}{r}+\\dfrac{dh}{h} \\) — the radius counts double because it is squared. With \\( dr/r=0.5\\% \\) and \\( dh/h=0.4\\% \\), the volume is uncertain by \\( 2(0.5)+0.4=1.4\\% \\). But when the errors are <em>independent random</em> scatter rather than systematic, they combine <b>in quadrature</b> — root-sum-square — because unrelated errors partly cancel: \\( \\dfrac{\\sigma_V}{V}=\\sqrt{(2\\cdot0.5\\%)^2+(0.4\\%)^2}\\approx1.08\\% \\), smaller than the worst case. Knowing which combination applies is the difference between an honest tolerance and a padded one.</p>\n<div class=\"keybox\"><span class=\"tag\">Key formulas — error propagation</span>\n<p>Worst case: \\( |\\Delta f|\\le|f_x||\\Delta x|+|f_y||\\Delta y| \\).  Independent random: \\( \\sigma_f=\\sqrt{(f_x\\sigma_x)^2+(f_y\\sigma_y)^2} \\).</p></div>\n\n<h3>§5 · The working method</h3>\n<p>The routine is short. To differentiate a composite, draw the dependency tree, write one product-term per path from the function to the driver, and sum. To propagate uncertainty, take the total differential, divide by \\( f \\) if a relative error is wanted, and then either add magnitudes (worst case, correlated or unknown errors) or root-sum-square (independent random errors). The recurring engineering lesson is that a squared or cubed variable carries its exponent as a multiplier into the error budget — so the dimension measured least carefully, weighted by its exponent, is usually the one that dominates the tolerance, and the one worth a better instrument.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Partial derivatives and the gradient</b> (Lesson 2).</li><li><b>The single-variable chain rule</b> — this is its multivariable extension.</li><li><b>Relative vs absolute change</b> — the language of tolerances.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Total differential</td><td>\\( df=f_x\\,dx+f_y\\,dy \\)</td><td>Exact linear change from all inputs.</td></tr>\n<tr><td>Chain rule (1 driver)</td><td>\\( \\frac{df}{dt}=f_x x'+f_y y' \\)</td><td>Composite of one variable.</td></tr>\n<tr><td>Chain rule (many)</td><td>\\( z_s=f_x x_s+f_y y_s \\)</td><td>Intermediate vars depend on \\(s,t\\).</td></tr>\n<tr><td>Relative error</td><td>\\( \\frac{dV}{V}=2\\frac{dr}{r}+\\frac{dh}{h} \\) (cylinder)</td><td>Exponents become multipliers.</td></tr>\n<tr><td>Worst-case error</td><td>\\( |\\Delta f|\\le|f_x||\\Delta x|+|f_y||\\Delta y| \\)</td><td>Correlated / unknown errors.</td></tr>\n<tr><td>Quadrature (RSS)</td><td>\\( \\sigma_f=\\sqrt{(f_x\\sigma_x)^2+(f_y\\sigma_y)^2} \\)</td><td>Independent random errors.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Chain rule, one driver</b></p><p><b>Problem.</b> With \\( f=xy \\), \\( x=t \\), \\( y=t^2 \\), find \\( df/dt \\) two ways and evaluate at \\( t=2 \\).</p>",
+    "solution": "<p><b>Solution.</b> Chain rule: \\( f_x=y=t^2 \\), \\( f_y=x=t \\), \\( x'=1 \\), \\( y'=2t \\), so \\( df/dt=t^2(1)+t(2t)=3t^2 \\). Directly: \\( f=t\\cdot t^2=t^3 \\Rightarrow df/dt=3t^2 \\). At \\( t=2 \\), \\( df/dt=12 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Total differential of a volume</b></p><p><b>Problem.</b> A cylinder has \\( r=2 \\) m, \\( h=5 \\) m. Estimate \\( dV \\) for \\( dr=0.01 \\) m, \\( dh=0.02 \\) m, and give the relative change.</p>",
+    "solution": "<p><b>Solution.</b> \\( dV=2\\pi r h\\,dr+\\pi r^2\\,dh=2\\pi(2)(5)(0.01)+\\pi(4)(0.02)=0.2\\pi+0.08\\pi=0.28\\pi\\approx0.880 \\) m³. Relative: \\( \\dfrac{dV}{V}=2\\dfrac{dr}{r}+\\dfrac{dh}{h}=2(0.005)+0.004=0.014=1.4\\% \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Independent-error quadrature</b></p><p><b>Problem.</b> For the same cylinder, \\( r \\) and \\( h \\) are measured with independent random relative uncertainties \\(0.5\\%\\) and \\(0.4\\%\\). Find the resulting relative uncertainty in \\(V\\).</p>",
+    "solution": "<p><b>Solution.</b> The radius contributes with weight 2 (it is squared). Independent errors add in quadrature: \\( \\dfrac{\\sigma_V}{V}=\\sqrt{(2\\cdot0.5\\%)^2+(0.4\\%)^2}=\\sqrt{(1.0\\%)^2+(0.4\\%)^2}=\\sqrt{1.16}\\,\\%\\approx1.08\\% \\) — below the \\(1.4\\%\\) worst case, because unrelated errors partly cancel.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The total differential of \\( f(x,y) \\) is:</p>",
+    "choices": [
+     "\\( f_x\\,dx+f_y\\,dy \\)",
+     "\\( f_x\\,dy+f_y\\,dx \\)",
+     "\\( f_x f_y \\)",
+     "\\( f_x\\,dx-f_y\\,dy \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Each input's change times the sensitivity to it, summed: \\( df=f_x\\,dx+f_y\\,dy \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( f(x(t),y(t)) \\), the chain rule gives \\( df/dt= \\):</p>",
+    "choices": [
+     "\\( f_x x'+f_y y' \\)",
+     "\\( f_x+f_y \\)",
+     "\\( f_x x'\\,f_y y' \\)",
+     "\\( x'y' \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Sum one product per path from \\(f\\) to \\(t\\): \\( f_x\\frac{dx}{dt}+f_y\\frac{dy}{dt} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>With \\( f=xy \\), \\( x=t \\), \\( y=t^2 \\), \\( df/dt \\) at \\( t=2 \\) is:</p>",
+    "choices": [
+     "12",
+     "6",
+     "8",
+     "3"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( df/dt=3t^2 \\); at \\( t=2 \\), \\( 3(4)=12 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a cylinder \\( V=\\pi r^2h \\), the relative error is:</p>",
+    "choices": [
+     "\\( 2\\frac{dr}{r}+\\frac{dh}{h} \\)",
+     "\\( \\frac{dr}{r}+\\frac{dh}{h} \\)",
+     "\\( \\frac{dr}{r}+2\\frac{dh}{h} \\)",
+     "\\( 2\\frac{dr}{r}+2\\frac{dh}{h} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The exponent of each variable becomes its weight: \\(r\\) is squared (weight 2), \\(h\\) is linear (weight 1).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Independent random measurement errors combine by:</p>",
+    "choices": [
+     "root-sum-square (quadrature)",
+     "simple addition",
+     "multiplication",
+     "taking the largest only"
+    ],
+    "answer": 0,
+    "solution": "<p>Unrelated errors partly cancel, so they add in quadrature: \\( \\sigma_f=\\sqrt{\\sum (f_{x_i}\\sigma_{x_i})^2} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( z=x^2+y^2 \\) with \\( x=s+t,\\ y=s-t \\), \\( \\partial z/\\partial s \\) equals:</p>",
+    "choices": [
+     "\\( 4s \\)",
+     "\\( 4t \\)",
+     "\\( 2s \\)",
+     "\\( 4(s+t) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( z_s=2x(1)+2y(1)=2(s+t)+2(s-t)=4s \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The worst-case error bound for \\( f(x,y) \\) uses:</p>",
+    "choices": [
+     "absolute values \\( |f_x||\\Delta x|+|f_y||\\Delta y| \\)",
+     "signed sum \\( f_x\\Delta x+f_y\\Delta y \\)",
+     "only the larger term",
+     "the product of the errors"
+    ],
+    "answer": 0,
+    "solution": "<p>The worst case assumes errors reinforce, so magnitudes are summed: \\( |\\Delta f|\\le|f_x||\\Delta x|+|f_y||\\Delta y| \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a squared quantity, a 1% error in the base variable produces about:</p>",
+    "choices": [
+     "2% error in the result",
+     "1% error",
+     "0.5% error",
+     "4% error"
+    ],
+    "answer": 0,
+    "solution": "<p>The exponent multiplies the relative error: \\( d(x^2)/x^2=2\\,dx/x \\), so 1% becomes 2%.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A metrology technician certifying a machined shaft measures its diameter and\nlength to compute volume or mass. Because volume goes as the diameter\n<em>squared</em>, the total-differential rule \\( dV/V=2\\,dd/d+dL/L \\) warns that any\nerror in the diameter is doubled in the result — so the caliper on the diameter\nmust be twice as trustworthy as the tape on the length to reach the same volume\ntolerance. This is why inspection plans spend their tightest gauges on the\ndimensions that enter with the highest exponent; it is error propagation setting\nthe measurement budget, not guesswork.</p>\n<p>The quadrature rule decides how a stack of independent tolerances accumulates.\nWhen several machined parts assemble in series, their independent gap errors do\nnot simply add to a worst case — they combine root-sum-square, so a five-part\nstack of \\(\\pm0.1\\) mm features scatters by about \\( \\sqrt5\\times0.1\\approx0.22 \\)\nmm, not \\(0.5\\) mm. Designing to the honest statistical stack rather than the\npessimistic arithmetic one is what keeps assemblies both reliable and affordable.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 280\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Rectangular region of integration with a differential area element dA=dx dy\"><rect width=\"560\" height=\"280\" fill=\"#fbfdfe\"/><text x=\"14\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Double integral: sum f(x,y)·dA over the region</text><line x1=\"70\" y1=\"235\" x2=\"70\" y2=\"109\" stroke=\"#e8eef3\"/><line x1=\"112\" y1=\"235\" x2=\"112\" y2=\"109\" stroke=\"#e8eef3\"/><line x1=\"154\" y1=\"235\" x2=\"154\" y2=\"109\" stroke=\"#e8eef3\"/><line x1=\"196\" y1=\"235\" x2=\"196\" y2=\"109\" stroke=\"#e8eef3\"/><line x1=\"238\" y1=\"235\" x2=\"238\" y2=\"109\" stroke=\"#e8eef3\"/><line x1=\"70\" y1=\"235\" x2=\"238\" y2=\"235\" stroke=\"#e8eef3\"/><line x1=\"70\" y1=\"193\" x2=\"238\" y2=\"193\" stroke=\"#e8eef3\"/><line x1=\"70\" y1=\"151\" x2=\"238\" y2=\"151\" stroke=\"#e8eef3\"/><line x1=\"70\" y1=\"109\" x2=\"238\" y2=\"109\" stroke=\"#e8eef3\"/><rect x=\"70\" y=\"151\" width=\"126\" height=\"84\" fill=\"#1f7a5c\" fill-opacity=\"0.10\" stroke=\"#1f7a5c\" stroke-width=\"1.6\"/><rect x=\"154\" y=\"176\" width=\"17\" height=\"17\" fill=\"#c2820f\" fill-opacity=\"0.6\" stroke=\"#c2820f\" stroke-width=\"1.2\"/><text x=\"177\" y=\"182\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"700\">dA = dx·dy</text><line x1=\"70\" y1=\"235\" x2=\"251\" y2=\"235\" stroke=\"#16202e\" stroke-width=\"1.5\"/><line x1=\"70\" y1=\"235\" x2=\"70\" y2=\"96\" stroke=\"#16202e\" stroke-width=\"1.5\"/><text x=\"247\" y=\"253\" fill=\"#16202e\" font-size=\"12\">x</text><text x=\"54\" y=\"102\" fill=\"#16202e\" font-size=\"12\">y</text><text x=\"127\" y=\"253\" fill=\"#1f7a5c\" font-size=\"11\">b = 3</text><text x=\"202\" y=\"193\" fill=\"#1f7a5c\" font-size=\"11\">h = 2</text><text x=\"14\" y=\"270\" fill=\"#16202e\" font-size=\"11\">Area = ∬dA = 6 · Moment of inertia about base I = ∬y²dA = bh³/3 = 8</text></svg><figcaption>A double integral adds a quantity over a two-dimensional region, one differential tile dA at a time. The same machinery yields area, mass, centroid, and moment of inertia — only the weight inside the integral changes.</figcaption></figure>\n\n<h3>§1 · Integrating over a region</h3>\n<p>A single integral accumulates along a line; a <b>double integral</b> \\( \\iint_R f\\,dA \\) accumulates over a two-dimensional region \\( R \\), summing the value of \\( f \\) on every infinitesimal tile \\( dA=dx\\,dy \\). With \\( f=1 \\) it returns the plain area of \\( R \\); with \\( f \\) a height it returns a volume; with \\( f \\) a density it returns a mass. The practical key is <b>Fubini's theorem</b>: a double integral is computed as an <em>iterated</em> integral, one variable then the other, and for a well-behaved region the order may be swapped. Over a rectangle the two directions even separate: \\( \\iint_{[0,2]\\times[0,3]}xy\\,dA=\\Big(\\int_0^2 x\\,dx\\Big)\\Big(\\int_0^3 y\\,dy\\Big)=(2)(4.5)=9 \\).</p>\n\n<h3>§2 · Mass and centroid</h3>\n<p>Give the region a density \\( \\rho \\) and the same integral computes physical properties of a plate or lamina. The <b>mass</b> is \\( m=\\iint_R \\rho\\,dA \\), and the <b>centroid</b> — the balance point — is the density-weighted average position, \\( \\bar{x}=\\dfrac{1}{m}\\iint_R x\\,\\rho\\,dA \\), with \\( \\bar{y} \\) similar. For a uniform rectangle \\( [0,2]\\times[0,3] \\) the centroid sits at its geometric centre \\( (1,\\,1.5) \\), as symmetry demands. For a right triangle with legs \\( b,h \\) the area is \\( bh/2 \\) and the centroid lands at \\( (b/3,\\,h/3) \\) — one-third of the way from the right-angle along each leg, a result worth memorising because triangular cross-sections are everywhere in structures.</p>\n<div class=\"keybox\"><span class=\"tag\">Key formulas — mass &amp; centroid</span>\n<p>\\[ m=\\iint_R \\rho\\,dA,\\qquad \\bar{x}=\\frac{1}{m}\\iint_R x\\,\\rho\\,dA,\\qquad \\bar{y}=\\frac{1}{m}\\iint_R y\\,\\rho\\,dA \\]</p></div>\n\n<h3>§3 · Moment of inertia</h3>\n<p>Weight the area by the <em>square</em> of distance from an axis and the integral becomes the <b>second moment of area</b> (area moment of inertia) — the geometric quantity that sets a beam's stiffness and a shaft's resistance to twist. About its base, a rectangle of width \\( b \\) and height \\( h \\) has \\( I=\\iint y^2\\,dA=\\int_0^h\\!\\int_0^b y^2\\,dx\\,dy=\\dfrac{bh^3}{3} \\); for \\( b=3,\\ h=2 \\) this is \\( 8 \\). About the centroidal axis the value drops to \\( \\dfrac{bh^3}{12}=2 \\). The two are linked by the <b>parallel-axis theorem</b> \\( I=I_c+Ad^2 \\): here \\( I_c+Ad^2=2+6(1)^2=8 \\), recovering the base value. The cubic dependence on \\( h \\) is why depth, far more than width, buys bending stiffness.</p>\n<div class=\"keybox\"><span class=\"tag\">Key results — second moment of area</span>\n<p>Rectangle: \\( I_{\\text{base}}=\\dfrac{bh^3}{3},\\quad I_{\\text{centroid}}=\\dfrac{bh^3}{12} \\).  Parallel axis: \\( I=I_c+Ad^2 \\).</p></div>\n\n<h3>§4 · Triple integrals and the method</h3>\n<p>Adding a third direction gives the <b>triple integral</b> \\( \\iiint_V f\\,dV \\) over a solid: with \\( f=1 \\) it is the volume, with \\( f=\\rho \\) the mass, with \\( f=\\rho\\,r^2 \\) the mass moment of inertia of a real three-dimensional part. A box \\( [0,1]\\times[0,2]\\times[0,3] \\) has volume \\( 1\\cdot2\\cdot3=6 \\). The method for every case is one habit: decide what quantity sits inside the integral (\\(1\\), a height, a density, or a squared distance), set the limits by sweeping the region in a sensible order, integrate one variable at a time holding the rest fixed, and check the units of the answer. Choosing the integration order to match the region — and, in the next lesson, choosing the right coordinates — is what turns a hard region into an easy calculation.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Single-variable integration</b> — each iterated step is one of these.</li><li><b>Area and volume</b> as accumulated quantities.</li><li><b>Distance from an axis</b> — the \\(r\\) in a moment of inertia.</li></ul>\n<h4>Toolkit — laws and formulas</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Area</td><td>\\( A=\\iint_R dA \\)</td><td>Region measure (\\(f=1\\)).</td></tr>\n<tr><td>Iterated integral</td><td>\\( \\iint f\\,dA=\\int\\!\\!\\int f\\,dx\\,dy \\)</td><td>Fubini: one variable at a time.</td></tr>\n<tr><td>Mass</td><td>\\( m=\\iint \\rho\\,dA \\)</td><td>Plate with density \\(\\rho\\).</td></tr>\n<tr><td>Centroid</td><td>\\( \\bar x=\\frac1m\\iint x\\rho\\,dA \\)</td><td>Balance point.</td></tr>\n<tr><td>Second moment (rect.)</td><td>\\( I_{\\text{base}}=\\frac{bh^3}{3},\\ I_c=\\frac{bh^3}{12} \\)</td><td>Bending / torsion stiffness.</td></tr>\n<tr><td>Parallel axis</td><td>\\( I=I_c+Ad^2 \\)</td><td>Shift the reference axis.</td></tr>\n<tr><td>Volume (solid)</td><td>\\( V=\\iiint_V dV \\)</td><td>Triple integral, \\(f=1\\).</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A separable double integral</b></p><p><b>Problem.</b> Evaluate \\( \\displaystyle\\int_0^3\\!\\!\\int_0^2 xy\\,dx\\,dy \\).</p>",
+    "solution": "<p><b>Solution.</b> Inner: \\( \\int_0^2 xy\\,dx=y\\big[\\tfrac{x^2}{2}\\big]_0^2=2y \\). Outer: \\( \\int_0^3 2y\\,dy=\\big[y^2\\big]_0^3=9 \\). Over a rectangle the factors separate: \\( (\\int_0^2 x\\,dx)(\\int_0^3 y\\,dy)=(2)(4.5)=9 \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Second moment of area</b></p><p><b>Problem.</b> A rectangle has width \\( b=3 \\), height \\( h=2 \\). Find its second moment of area about the base and about the centroid, and check with the parallel-axis theorem.</p>",
+    "solution": "<p><b>Solution.</b> About the base \\( I=\\iint y^2\\,dA=\\dfrac{bh^3}{3}=\\dfrac{3\\cdot8}{3}=8 \\). About the centroid \\( I_c=\\dfrac{bh^3}{12}=\\dfrac{24}{12}=2 \\). Check: \\( A=6 \\), \\( d=h/2=1 \\), so \\( I_c+Ad^2=2+6(1)=8 \\) ✓.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Centroid of a triangle</b></p><p><b>Problem.</b> Find the area and centroid of a right triangle with legs \\( b=3 \\) (along \\(x\\)) and \\( h=6 \\) (along \\(y\\)), right angle at the origin.</p>",
+    "solution": "<p><b>Solution.</b> Area \\( =\\tfrac12 bh=\\tfrac12(3)(6)=9 \\). The centroid of a triangle is one-third of the way from the right angle along each leg: \\( \\bar x=b/3=1 \\), \\( \\bar y=h/3=2 \\). So \\( (\\bar x,\\bar y)=(1,2) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\iint_R dA \\) (with \\( f=1 \\)) gives:</p>",
+    "choices": [
+     "the area of \\(R\\)",
+     "the perimeter of \\(R\\)",
+     "zero",
+     "the centroid"
+    ],
+    "answer": 0,
+    "solution": "<p>Summing \\(1\\) over every tile \\(dA\\) accumulates the region's area.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\int_0^3\\!\\int_0^2 xy\\,dx\\,dy \\) equals:</p>",
+    "choices": [
+     "9",
+     "6",
+     "18",
+     "36"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( (\\int_0^2 x\\,dx)(\\int_0^3 y\\,dy)=(2)(4.5)=9 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fubini's theorem lets you:</p>",
+    "choices": [
+     "compute a double integral as two single integrals",
+     "differentiate under the integral",
+     "ignore the region",
+     "swap \\(f\\) for its derivative"
+    ],
+    "answer": 0,
+    "solution": "<p>It reduces \\( \\iint f\\,dA \\) to an iterated integral, and (for nice regions) the order may be swapped.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The mass of a plate of density \\( \\rho \\) is:</p>",
+    "choices": [
+     "\\( \\iint_R \\rho\\,dA \\)",
+     "\\( \\iint_R dA \\)",
+     "\\( \\rho\\,\\bar x \\)",
+     "\\( \\iint_R \\rho^2\\,dA \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Mass is density accumulated over the area: \\( m=\\iint_R\\rho\\,dA \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The second moment of area of a rectangle about its base is:</p>",
+    "choices": [
+     "\\( \\frac{bh^3}{3} \\)",
+     "\\( \\frac{bh^3}{12} \\)",
+     "\\( \\frac{b^3h}{3} \\)",
+     "\\( bh \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( I_{\\text{base}}=\\iint y^2\\,dA=\\frac{bh^3}{3} \\); the centroidal value is \\( \\frac{bh^3}{12} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The parallel-axis theorem states:</p>",
+    "choices": [
+     "\\( I=I_c+Ad^2 \\)",
+     "\\( I=I_c-Ad^2 \\)",
+     "\\( I=I_c/A \\)",
+     "\\( I=Ad^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Moving off the centroid adds \\( Ad^2 \\): \\( I=I_c+Ad^2 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The centroid of a right triangle with legs \\(b,h\\) (right angle at origin) is at:</p>",
+    "choices": [
+     "\\( (b/3,\\,h/3) \\)",
+     "\\( (b/2,\\,h/2) \\)",
+     "\\( (b/3,\\,h/2) \\)",
+     "\\( (b,\\,h) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>A triangle's centroid is one-third from the right angle along each leg: \\( (b/3,h/3) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Doubling a beam's depth \\(h\\) (width fixed) multiplies its base second moment \\( bh^3/3 \\) by:</p>",
+    "choices": [
+     "8",
+     "2",
+     "4",
+     "3"
+    ],
+    "answer": 0,
+    "solution": "<p>\\(I\\propto h^3\\), so \\( h\\to2h \\) gives \\( 2^3=8\\times \\) the stiffness — why depth dominates bending.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A structural draftsman selecting a floor beam relies directly on the second\nmoment of area: a beam's stiffness scales as \\( bh^3/12 \\), so the depth \\(h\\)\nenters cubed while the width \\(b\\) enters only linearly. Doubling the depth stiffens\nthe beam eightfold; doubling the width merely doubles it. That single integral\nresult is why rolled sections are deep and thin rather than square, and why an\nI-beam pushes its material as far from the neutral axis as the geometry allows —\nthe \\( y^2 \\) weight in \\( \\iint y^2\\,dA \\) rewards distance from the axis above all.</p>\n<p>The centroid integral does the balancing. When a fabricator lifts an irregular\nsteel plate with a single sling, the lift point must sit over the centroid\n\\( \\bar x=\\frac1A\\iint x\\,dA \\), or the plate swings and tilts. For composite plates\nthe same rule is applied piecewise — locate each simple piece's centroid, then take\nthe area-weighted average — which is the everyday shop version of evaluating the\nintegral without calculus.</p>\n"
  }
 }
