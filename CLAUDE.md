@@ -849,6 +849,23 @@ incrementally. Never trade correctness for speed — cut breadth instead.
   the course. CSS commits also fix the already-live math-3 pages' spacing/overflow.
   STILL OWED for Year 1: Y1S2 dynamics, materials-2, thermo-1, electrical,
   mfg-processes-1 (55 lessons) — then Year 1 closes.
+- DYNAMICS (DYN 152, Y1S2) COURSE COMPLETE (2026-07-19, owner "proceed"): second
+  Y1S2 course, all 11 lessons full Educational Units to the upgraded spec. Particle
+  block: L1 kinematics (normal-tangential), L2 Newton's 2nd law (incline FBD), L3
+  work-energy (energy bars), L4 impulse-momentum-impact (collision). Rigid-body block:
+  L5 systems/centre-of-mass/jet force, L6 rigid-body kinematics (rolling/instant
+  centre), L7 relative accel & Coriolis, L8 Newton-Euler kinetics (ΣM=Iα, parallel
+  axis), L9 rotational energy/momentum (flywheel/ang-momentum conservation), L10
+  balancing of rotors (mrω²), L11 intro to vibration (ωn, ζ, log decrement). Each:
+  topic-sized lecture + keybox callout + coordinate-accurate SVG diagram (all
+  Python-generated & verified); foundations toolkit; 3 solve + 8 MC (121 items,
+  ~75 numbers Python-verified); company-free applied case. Videos inherited from
+  y1s2.json (Jeff Hanson dynamics series + MIT/Khan/Eng.Deciphered). L10 has NO
+  base-data video -> renders the honest "video TODO" marker, ZERO fabricated embeds
+  (integrity floor held). Rendering rules from the math-2 session applied throughout.
+  Coverage 122->133/528 (25%). Commits a019b8b + this. Y1S2 status: math-2 ✓,
+  dynamics ✓; STILL OWED for Year 1: materials-2, thermo-1, electrical,
+  mfg-processes-1 (44 lessons) -> then Year 1 closes.
 
 ### Writing rules (non-negotiable)
 
