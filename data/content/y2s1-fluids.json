@@ -646,5 +646,248 @@
     "solution": "<p>It converts a fitting's \\(K\\) into a length of pipe giving the same loss, folding fittings into one friction calculation.</p>"
    }
   ]
+ },
+ "9": {
+  "lecture": "\n<h3>§1 · Measuring flow by measuring pressure</h3>\n<p>Most flow meters do not measure velocity directly — they measure a pressure difference and infer the flow from Bernoulli. Force the fluid through a known area change and it must speed up (continuity), so its pressure must drop (Bernoulli); read that drop and you have the flow. The <b>venturi</b>, <b>orifice plate</b>, and <b>flow nozzle</b> are all <b>differential-pressure</b> meters built on exactly this idea, differing only in how gracefully they make the fluid accelerate and how much pressure they permanently lose.</p>\n<h3>§2 · The Pitot tube and stagnation</h3>\n<p>The simplest velocity probe is the <b>Pitot tube</b>, which brings the flow to rest at its tip. The pressure rise from moving to stagnant is the dynamic pressure \\( \\tfrac12\\rho V^2 \\), so measuring the difference between stagnation and static pressure gives \\( V=\\sqrt{2\\,\\Delta p/\\rho} \\). For water with \\( \\Delta p=2000 \\) Pa, \\( V=\\sqrt{2\\times2000/1000}=\\sqrt4=2 \\) m/s. This is the same dynamic pressure met in Lesson 4, now put to work: an aircraft's airspeed indicator is a Pitot-static system reading exactly this difference.</p>\n<h3>§3 · Venturi and orifice meters</h3>\n<p>For pipe flow, a <b>venturi</b> smoothly contracts to a throat and expands back. Combining continuity and Bernoulli, the ideal flow is \\( Q=A_2\\sqrt{\\dfrac{2\\,\\Delta p}{\\rho\\,(1-(A_2/A_1)^2)}} \\). A meter with \\(D_1=0.1\\) m contracting to \\(D_2=0.05\\) m (so \\(A_2/A_1=0.25\\)) reading \\( \\Delta p=2000 \\) Pa passes an ideal \\( Q\\approx4.06\\times10^{-3} \\) m³/s. Real meters multiply this by a <b>discharge coefficient</b> \\(C_d\\) that corrects for friction and the vena contracta: a venturi's is near 0.98 (gentle, low permanent loss), while a cheap sharp-edged <b>orifice plate</b> runs about \\(C_d\\approx0.6\\) (abrupt, high permanent loss but simple and cheap). The engineer trades installed cost against pumping cost across that difference.</p>\n<h3>§4 · The measurement working method</h3>\n<p>To size or read a DP meter: pick the device by the loss the system can afford — venturi where pumping energy matters, orifice where cheapness wins; apply the venturi/orifice equation with the right \\(C_d\\); and always work in absolute, consistent units, keeping \\( \\Delta p \\) as the meter's differential, not a gauge reading against atmosphere. Remember that these meters read \\( \\sqrt{\\Delta p} \\), so flow resolution is poor at low flow and the turndown is limited — a real constraint on metering a widely varying line. Calibrate against a known flow when accuracy matters, because \\(C_d\\) drifts with Reynolds number and wear. The same Bernoulli-plus-continuity reasoning that sizes the meter also predicts its permanent pressure loss, closing the loop with the network losses of Lesson 8. It is worth knowing that these DP meters are only one family. <b>Positive-displacement</b> meters count fixed volumes and excel at low flows and viscous fluids; <b>turbine</b> meters spin a rotor whose speed tracks velocity; <b>electromagnetic</b> meters read the voltage a conductive fluid induces crossing a field, with no obstruction and no pressure loss at all; and <b>ultrasonic</b> meters time sound pulses with or against the flow. Each trades cost, accuracy, pressure loss, and fluid compatibility differently, but the DP meter remains the workhorse because it needs no moving parts and rests on the same Bernoulli physics the rest of this course has built.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Bernoulli & dynamic pressure</b> (Lesson 4).</li><li><b>Continuity</b> (Lesson 3) — the area–velocity link.</li><li><b>Head loss</b> (Lesson 8) — meters' permanent loss.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Pitot tube</td><td>\\( V=\\sqrt{2\\Delta p/\\rho} \\)</td><td>Point velocity from stagnation.</td></tr>\n<tr><td>Venturi/orifice</td><td>\\( Q=C_dA_2\\sqrt{\\frac{2\\Delta p}{\\rho(1-\\beta^4)}} \\)</td><td>Pipe flow from a pressure drop.</td></tr>\n<tr><td>Discharge coeff.</td><td>\\( C_d \\) (0.6 orifice, 0.98 venturi)</td><td>Correct ideal to real flow.</td></tr>\n<tr><td>Vena contracta</td><td>jet narrows past an orifice</td><td>Why \\(C_d<1\\) for an orifice.</td></tr>\n<tr><td>Turndown</td><td>\\( Q\\propto\\sqrt{\\Delta p} \\)</td><td>Poor low-flow resolution.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Pitot tube velocity</b></p><p><b>Problem.</b> A Pitot tube in water reads a stagnation-minus-static difference of \\( \\Delta p=2000 \\) Pa. Find the velocity.</p>",
+    "solution": "<p><b>Solution.</b> \\( V=\\sqrt{2\\Delta p/\\rho}=\\sqrt{2\\times2000/1000}=\\sqrt4=2 \\) m/s. <b>Answer:</b> 2 m/s.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Venturi ideal flow</b></p><p><b>Problem.</b> A venturi (\\(D_1=0.1\\) m, \\(D_2=0.05\\) m, so \\(A_2/A_1=0.25\\)) reads \\( \\Delta p=2000 \\) Pa in water. Find the ideal flow.</p>",
+    "solution": "<p><b>Solution.</b> \\( A_2=\\frac{\\pi}{4}(0.05)^2=1.96\\times10^{-3} \\) m²; \\( Q=A_2\\sqrt{\\frac{2\\Delta p}{\\rho(1-0.25^2)}}=1.96\\times10^{-3}\\sqrt{\\frac{4000}{1000\\times0.9375}}\\approx4.06\\times10^{-3} \\) m³/s. <b>Answer:</b> \\(\\approx4.06\\times10^{-3}\\) m³/s (before \\(C_d\\)).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Real flow with discharge coefficient</b></p><p><b>Problem.</b> If that orifice-type meter has \\(C_d=0.6\\), give the actual flow.</p>",
+    "solution": "<p><b>Solution.</b> \\( Q_{real}=C_d Q_{ideal}=0.6\\times4.06\\times10^{-3}\\approx2.43\\times10^{-3} \\) m³/s. <b>Answer:</b> \\(\\approx2.4\\times10^{-3}\\) m³/s.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A differential-pressure flow meter infers flow from:</p>",
+    "choices": [
+     "A measured pressure drop",
+     "A measured temperature",
+     "Direct velocity reading",
+     "The pipe colour"
+    ],
+    "answer": 0,
+    "solution": "<p>Continuity + Bernoulli turn a \\(\\Delta p\\) into a flow rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Pitot tube measures velocity via:</p>",
+    "choices": [
+     "Dynamic pressure \\(\\tfrac12\\rho V^2\\)",
+     "Hydrostatic head",
+     "Viscosity",
+     "Reynolds number"
+    ],
+    "answer": 0,
+    "solution": "<p>The stagnation-minus-static pressure is the dynamic pressure.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Compared with a venturi, a sharp orifice plate has:</p>",
+    "choices": [
+     "Lower \\(C_d\\), higher permanent loss",
+     "Higher \\(C_d\\), no loss",
+     "The same behaviour",
+     "No pressure drop"
+    ],
+    "answer": 0,
+    "solution": "<p>Orifice \\(C_d\\approx0.6\\) with large permanent loss; venturi \\(\\approx0.98\\), low loss.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Because \\( Q\\propto\\sqrt{\\Delta p} \\), a DP meter has:</p>",
+    "choices": [
+     "Poor low-flow resolution",
+     "Perfect resolution",
+     "No range limit",
+     "Linear output"
+    ],
+    "answer": 0,
+    "solution": "<p>The square-root relation compresses low-flow signal, limiting turndown.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The discharge coefficient \\(C_d\\) corrects for:</p>",
+    "choices": [
+     "Friction and the vena contracta",
+     "Gravity",
+     "Temperature",
+     "Pipe length"
+    ],
+    "answer": 0,
+    "solution": "<p>It brings the ideal Bernoulli flow down to the real value.</p>"
+   }
+  ]
+ },
+ "10": {
+  "lecture": "\n<h3>§1 · What a pump does, in heads</h3>\n<p>A pump adds mechanical energy to a fluid, and that energy is measured as <b>head</b> \\(H\\) — metres of fluid, the same currency as every loss in the system. The useful (hydraulic) power delivered is \\( P_{\\text{hyd}}=\\rho g Q H \\). A pump raising \\( Q=0.05 \\) m³/s of water by \\( H=30 \\) m delivers \\( P_{\\text{hyd}}=1000\\times9.81\\times0.05\\times30=14{,}715 \\) W \\(\\approx14.7\\) kW. No pump is perfect, so the shaft (brake) power it draws is larger: \\( P_{\\text{shaft}}=P_{\\text{hyd}}/\\eta \\). At \\( \\eta=0.75 \\) the shaft needs \\( 14{,}715/0.75=19{,}620 \\) W \\(\\approx19.6\\) kW — the difference is lost to internal friction and turbulence as heat.</p>\n<h3>§2 · The pump curve meets the system curve</h3>\n<p>A centrifugal pump does not deliver a fixed flow; it delivers whatever the system demands along its <b>pump curve</b>, on which head falls as flow rises. The <b>system curve</b> — static lift plus friction that grows as \\(Q^2\\) — rises with flow. They cross at exactly one <b>operating point</b>, the flow and head the installation will actually run at. This single intersection, introduced in Lesson 4 and completed here, is the master diagram of rotating-equipment engineering: move either curve (throttle a valve, change speed, foul a pipe) and the operating point slides along the other, which is how every pumped system responds to a change.</p>\n<h3>§3 · Affinity laws and cavitation</h3>\n<p>Change a pump's speed \\(N\\) and its curve scales by the <b>affinity laws</b>: flow \\( Q\\propto N \\), head \\( H\\propto N^2 \\), power \\( P\\propto N^3 \\). Double the speed and flow doubles, head quadruples, and power rises eightfold — the cubic power law is why variable-speed drives save so much energy at reduced flow, and why they are the modern alternative to throttling. The hard limit on the suction side is <b>cavitation</b>: if the pressure at the impeller eye falls below the fluid's vapour pressure, vapour bubbles form and collapse, eroding the impeller and collapsing head. The margin against it is the <b>net positive suction head</b>, and keeping the available NPSH above the pump's required NPSH is a non-negotiable installation constraint.</p>\n<h3>§4 · The turbomachinery working method</h3>\n<p>To specify a pump: build the system curve from static lift plus total losses (Lessons 7–8); overlay candidate pump curves and pick the one whose operating point sits near its best-efficiency flow, not far out on either side where efficiency collapses and vibration rises. Check NPSH available against required at the design flow, with margin. Use the affinity laws to trim speed rather than throttle where flow must vary, and size the motor from the shaft power \\( P_{\\text{hyd}}/\\eta \\) at the worst-case operating point. Turbines invert the same accounting — extracting head instead of adding it — so this one framework, head and efficiency about an operating point, serves pumps, fans, compressors, and hydro-turbines alike, which is why it anchors the whole rotating-equipment stream of the curriculum. Running two pumps <b>in parallel</b> adds their flows at a common head, while <b>in series</b> they add head at a common flow — the same series/parallel logic as pipe networks, applied to the machines instead of the pipes.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Head and the energy equation</b> (Lesson 4).</li><li><b>System head loss</b> (Lessons 7–8) — the system curve.</li><li><b>Vapour pressure</b> — the cavitation limit.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Hydraulic power</td><td>\\( P=\\rho g Q H \\)</td><td>Useful power delivered to fluid.</td></tr>\n<tr><td>Efficiency</td><td>\\( P_{shaft}=P_{hyd}/\\eta \\)</td><td>Sizing the motor.</td></tr>\n<tr><td>Operating point</td><td>pump curve ∩ system curve</td><td>Actual flow and head.</td></tr>\n<tr><td>Affinity laws</td><td>\\( Q\\!\\propto\\!N,H\\!\\propto\\!N^2,P\\!\\propto\\!N^3 \\)</td><td>Speed change effects.</td></tr>\n<tr><td>NPSH</td><td>available > required</td><td>Avoiding cavitation.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Hydraulic power</b></p><p><b>Problem.</b> A pump lifts \\( Q=0.05 \\) m³/s of water by \\( H=30 \\) m. Find the hydraulic power.</p>",
+    "solution": "<p><b>Solution.</b> \\( P=\\rho g Q H=1000\\times9.81\\times0.05\\times30=14{,}715 \\) W \\(\\approx14.7\\) kW. <b>Answer:</b> \\(\\approx14.7\\) kW.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Shaft power from efficiency</b></p><p><b>Problem.</b> If the pump is 75% efficient, what shaft power does it draw?</p>",
+    "solution": "<p><b>Solution.</b> \\( P_{shaft}=P_{hyd}/\\eta=14{,}715/0.75=19{,}620 \\) W \\(\\approx19.6\\) kW. <b>Answer:</b> \\(\\approx19.6\\) kW.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Affinity laws</b></p><p><b>Problem.</b> A pump's speed is doubled. By what factors do flow, head, and power change?</p>",
+    "solution": "<p><b>Solution.</b> \\( Q\\propto N\\Rightarrow\\times2 \\); \\( H\\propto N^2\\Rightarrow\\times4 \\); \\( P\\propto N^3\\Rightarrow\\times8 \\). <b>Answer:</b> flow ×2, head ×4, power ×8.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pump's useful (hydraulic) power is:</p>",
+    "choices": [
+     "\\( \\rho g Q H \\)",
+     "\\( \\rho Q \\)",
+     "\\( \\tfrac12\\rho V^2 \\)",
+     "\\( f L/D \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Weight flow \\(\\rho g Q\\) times head \\(H\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The operating point is where the pump curve crosses the:</p>",
+    "choices": [
+     "System curve",
+     "Efficiency axis",
+     "Reynolds line",
+     "NPSH line"
+    ],
+    "answer": 0,
+    "solution": "<p>Pump head (falling) meets system demand (rising) there.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>By the affinity laws, doubling speed multiplies power by:</p>",
+    "choices": [
+     "8",
+     "2",
+     "4",
+     "16"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( P\\propto N^3 \\), so \\(2^3=8\\) — why variable-speed drives save energy at low flow.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cavitation occurs when local pressure falls below:</p>",
+    "choices": [
+     "The vapour pressure",
+     "Atmospheric",
+     "Zero gauge",
+     "The discharge pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>Vapour bubbles form and collapse, eroding the impeller; NPSH margin prevents it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pump should be selected to operate near its:</p>",
+    "choices": [
+     "Best-efficiency flow",
+     "Shut-off head",
+     "Maximum flow",
+     "Zero flow"
+    ],
+    "answer": 0,
+    "solution": "<p>Away from BEP, efficiency drops and vibration rises.</p>"
+   }
+  ]
+ },
+ "11": {
+  "lecture": "\n<h3>§1 · When density stops being constant</h3>\n<p>Every lesson so far assumed constant density. That holds for liquids always and for gases at low speed, but as a gas approaches the speed of sound its density changes appreciably and a new regime — <b>compressible flow</b> — begins. The gatekeeper is the <b>Mach number</b> \\( M=V/a \\), the ratio of flow speed to the local <b>speed of sound</b>. Below about \\( M=0.3 \\) density changes are under a few percent and the incompressible tools of this course apply; above it, they do not, and the physics changes character. The change is not gradual bookkeeping but a genuine shift in behaviour: in subsonic flow, pressure signals travel upstream faster than the flow itself, so the fluid \"feels\" an obstacle coming and adjusts smoothly; once the flow is supersonic, no signal can outrun it, disturbances pile up, and the fluid meets changes abruptly through shocks. That single fact — whether information can travel upstream — is the deep reason compressible flow is a different subject rather than a corrected version of the incompressible one.</p>\n<h3>§2 · The speed of sound</h3>\n<p>Sound is a small pressure disturbance, and it travels at \\( a=\\sqrt{\\gamma R T} \\) for an ideal gas, where \\( \\gamma \\) is the specific-heat ratio (1.4 for air), \\(R\\) the specific gas constant (287 J/kg·K for air), and \\(T\\) the absolute temperature. In air at \\( 288 \\) K, \\( a=\\sqrt{1.4\\times287\\times288}\\approx340 \\) m/s. Crucially \\(a\\) depends on temperature alone for a given gas, so the speed of sound — and therefore the Mach number at a fixed speed — falls as a gas cools, which is why a jet at fixed airspeed has a higher Mach number in the cold upper atmosphere. The temperature dependence also warns against a common shortcut: the speed of sound is not a fixed 340 m/s but a local property that changes wherever the gas heats or cools along its path, so in a flow with large temperature swings — a nozzle, a combustor — the Mach number must be evaluated with the <em>local</em> \\(a\\), not a single free-stream value. Getting the reference temperature right is half of getting the Mach number right.</p>\n<h3>§3 · Regimes and the shock</h3>\n<p>Mach number sorts compressible flow into regimes: <b>subsonic</b> (\\(M<1\\)), <b>transonic</b> (near 1), <b>supersonic</b> (\\(M>1\\)), and hypersonic beyond. A flow at \\( V=170 \\) m/s in that air has \\( M=170/340\\approx0.5 \\) — subsonic but well into compressible territory. The defining feature of supersonic flow is the <b>shock wave</b>: a near-discontinuous jump in pressure, temperature, and density across which flow decelerates abruptly and mechanical energy is lost to heat. Shocks explain why a converging nozzle can accelerate a gas only to \\(M=1\\) at its throat, and why reaching supersonic speeds requires the converging–diverging (de Laval) nozzle of every rocket engine.</p>\n<h3>§4 · The compressible working method</h3>\n<p>The practical first step is always to compute the Mach number and decide whether compressibility even matters: if \\( M<0.3 \\), keep the incompressible Bernoulli and continuity of the earlier lessons and move on. If not, switch to compressible relations, carry temperature as a variable (it now changes with speed), and use absolute pressures and temperatures throughout. Watch for choking — a flow that has reached \\(M=1\\) at a restriction cannot be sped up by lowering downstream pressure further, a hard limit with no incompressible analogue that governs relief valves, gas pipelines, and nozzles. This lesson is a first contact, not a full treatment, but the discipline it installs — check the Mach number before choosing your equations — is exactly what keeps a thermal-systems or propulsion engineer from applying incompressible intuition where the physics has quietly changed. Two everyday consequences make the point concrete. In a high-pressure gas pipeline, the flow can choke at a valve or a rupture, capping the escape rate no matter how low the downstream pressure falls — a fact that safety-relief sizing depends on absolutely. And in a steam or gas turbine, the nozzles that accelerate the working fluid operate deep in the compressible regime, so their design is governed by Mach-number and choking limits that the incompressible relations of this course simply cannot express. Compressible flow is where fluid mechanics hands off to thermodynamics and propulsion, and recognising the handoff is itself the skill.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Ideal gas law</b> — \\(p=\\rho RT\\) from thermodynamics.</li><li><b>Bernoulli's limits</b> (Lesson 4) — where incompressibility fails.</li><li><b>Absolute temperature</b> — the speed of sound needs kelvin.</li></ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Mach number</td><td>\\( M=V/a \\)</td><td>Compressibility gatekeeper.</td></tr>\n<tr><td>Speed of sound</td><td>\\( a=\\sqrt{\\gamma R T} \\)</td><td>Depends on gas and temperature.</td></tr>\n<tr><td>Incompressible limit</td><td>\\( M<0.3 \\)</td><td>When earlier tools still apply.</td></tr>\n<tr><td>Shock wave</td><td>abrupt \\(p,T,\\rho\\) jump</td><td>Supersonic deceleration, energy loss.</td></tr>\n<tr><td>Choking</td><td>\\( M=1 \\) at a throat</td><td>Flow limit at a restriction.</td></tr></tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Speed of sound in air</b></p><p><b>Problem.</b> Find the speed of sound in air at \\(T=288\\) K (\\( \\gamma=1.4,\\ R=287 \\) J/kg·K).</p>",
+    "solution": "<p><b>Solution.</b> \\( a=\\sqrt{\\gamma R T}=\\sqrt{1.4\\times287\\times288}\\approx340 \\) m/s. <b>Answer:</b> \\(\\approx340\\) m/s.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Mach number</b></p><p><b>Problem.</b> A gas flows at \\(V=170\\) m/s in that air. Find the Mach number and regime.</p>",
+    "solution": "<p><b>Solution.</b> \\( M=V/a=170/340\\approx0.5 \\); subsonic, but \\(M>0.3\\) so compressibility matters. <b>Answer:</b> \\(M\\approx0.5\\), compressible-subsonic.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Compressibility check</b></p><p><b>Problem.</b> Air flows at \\(V=80\\) m/s (\\(a=340\\) m/s). May it be treated as incompressible?</p>",
+    "solution": "<p><b>Solution.</b> \\( M=80/340\\approx0.24<0.3 \\), so yes — density change is a few percent. <b>Answer:</b> \\(M\\approx0.24\\); incompressible tools are acceptable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The gatekeeper for compressibility is the:</p>",
+    "choices": [
+     "Mach number",
+     "Reynolds number",
+     "Froude number",
+     "Weber number"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( M=V/a \\); above ~0.3 density changes matter.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The speed of sound in an ideal gas depends on:</p>",
+    "choices": [
+     "Temperature (and the gas)",
+     "Pressure only",
+     "Density only",
+     "Velocity"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( a=\\sqrt{\\gamma R T} \\); for a given gas, temperature alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Incompressible flow tools are acceptable below about:</p>",
+    "choices": [
+     "\\(M=0.3\\)",
+     "\\(M=1\\)",
+     "\\(M=2\\)",
+     "\\(M=0.9\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Below \\(M\\approx0.3\\) density change is only a few percent.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A shock wave involves an abrupt:</p>",
+    "choices": [
+     "Jump in pressure, temperature, density",
+     "Drop in Mach to zero",
+     "Rise in viscosity",
+     "Change of fluid"
+    ],
+    "answer": 0,
+    "solution": "<p>Supersonic flow decelerates across a shock with an energy loss.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A converging nozzle can accelerate a gas at most to:</p>",
+    "choices": [
+     "\\(M=1\\) at the throat",
+     "\\(M=2\\)",
+     "any Mach number",
+     "\\(M=0.3\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Choking limits it to sonic; supersonic needs a converging–diverging nozzle.</p>"
+   }
+  ]
  }
 }
