@@ -1,0 +1,238 @@
+{
+ "1": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 640 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Dot product projection and cross-product parallelogram\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#fbfdfe\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"60.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"94.0\" y1=\"250.0\" x2=\"94.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"128.0\" y1=\"250.0\" x2=\"128.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"162.0\" y1=\"250.0\" x2=\"162.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"196.0\" y1=\"250.0\" x2=\"196.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"230.0\" y1=\"250.0\" x2=\"230.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"264.0\" y1=\"250.0\" x2=\"264.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"264.0\" y2=\"250.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"216.0\" x2=\"264.0\" y2=\"216.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"182.0\" x2=\"264.0\" y2=\"182.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"148.0\" x2=\"264.0\" y2=\"148.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"114.0\" x2=\"264.0\" y2=\"114.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"80.0\" x2=\"264.0\" y2=\"80.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"46.0\" x2=\"264.0\" y2=\"46.0\" stroke=\"#e8eef3\" stroke-width=\"1\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"270.8\" y2=\"250.0\" stroke=\"#16202e\" stroke-width=\"1.5\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"60.0\" y2=\"39.2\" stroke=\"#16202e\" stroke-width=\"1.5\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"230.0\" y2=\"216.0\" stroke=\"#c2820f\" stroke-width=\"3\"/><line x1=\"60.0\" y1=\"250.0\" x2=\"162.0\" y2=\"114.0\" stroke=\"#1f7a5c\" stroke-width=\"3\"/><line x1=\"162.0\" y1=\"114.0\" x2=\"184.2\" y2=\"225.2\" stroke=\"#16202e\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><circle cx=\"184.2\" cy=\"225.2\" r=\"3\" fill=\"#16202e\"/><text x=\"160.0\" y=\"106.0\" fill=\"#1f7a5c\" font-size=\"15\" font-weight=\"700\">a</text><text x=\"236.0\" y=\"220.0\" fill=\"#c2820f\" font-size=\"15\" font-weight=\"700\">b</text><text x=\"178.2\" y=\"243.2\" fill=\"#16202e\" font-size=\"11\">proj_b a</text><text x=\"60.0\" y=\"28\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Dot product = |a||b|cosθ  (projection)</text><line x1=\"380.0\" y1=\"250.0\" x2=\"572.0\" y2=\"250.0\" stroke=\"#16202e\" stroke-width=\"1.5\"/><line x1=\"380.0\" y1=\"250.0\" x2=\"380.0\" y2=\"58.0\" stroke=\"#16202e\" stroke-width=\"1.5\"/><polygon points=\"380.0,250.0 500.0,220.0 530.0,130.0 410.0,160.0\" fill=\"#1f7a5c\" fill-opacity=\"0.14\" stroke=\"#1f7a5c\" stroke-width=\"1.4\"/><line x1=\"380.0\" y1=\"250.0\" x2=\"500.0\" y2=\"220.0\" stroke=\"#1f7a5c\" stroke-width=\"3\"/><line x1=\"380.0\" y1=\"250.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"#c2820f\" stroke-width=\"3\"/><text x=\"504.0\" y=\"234.0\" fill=\"#1f7a5c\" font-size=\"15\" font-weight=\"700\">a</text><text x=\"394.0\" y=\"156.0\" fill=\"#c2820f\" font-size=\"15\" font-weight=\"700\">b</text><text x=\"425.0\" y=\"190.0\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">|a×b| = 11</text><path d=\"M 485.0 220.0 a 16 16 0 1 0 0.1 0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"473.0\" y=\"248.0\" fill=\"#c2820f\" font-size=\"11\">+z (RH rule)</text><text x=\"380.0\" y=\"28\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Cross product = area &amp; axis (moment r×F)</text></svg><figcaption>Two products, two physical readings: the dot product measures how much of one vector lies along another (a projection, giving work); the cross product measures the area they span and the axis normal to both (giving moment).</figcaption></figure>\n\n<h3>§1 · A vector is a magnitude with a direction</h3>\n<p>A vector carries two pieces of information at once — how much and which way — and in three dimensions it is written by its components \\( \\mathbf{a}=(a_1,a_2,a_3) \\). Its <b>magnitude</b> is the ordinary distance formula \\( |\\mathbf{a}|=\\sqrt{a_1^2+a_2^2+a_3^2} \\); for \\( \\mathbf{a}=(3,4,0) \\) this is \\( \\sqrt{9+16}=5 \\). Dividing a vector by its own length produces a <b>unit vector</b> \\( \\hat{\\mathbf{a}}=\\mathbf{a}/|\\mathbf{a}| \\) that keeps the direction but has length one, so \\( \\hat{\\mathbf{a}}=(0.6,\\,0.8,\\,0) \\) here. Unit vectors are the currency of direction in engineering: a pipe axis, a surface normal, a line of action are all specified by a unit vector, and every projection and angle calculation below is really a statement about them. The whole of 3-D statics — the force balances of the last course — rests on being fluent with components, magnitudes, and unit vectors.</p>\n\n<h3>§2 · The dot product measures alignment — and gives work</h3>\n<p>The <b>dot product</b> multiplies two vectors and returns a single number: \\( \\mathbf{a}\\cdot\\mathbf{b}=a_1b_1+a_2b_2+a_3b_3 \\), which equals \\( |\\mathbf{a}||\\mathbf{b}|\\cos\\theta \\). It measures how much the two vectors point the same way. When they are perpendicular the cosine is zero, so <em>a zero dot product is the algebraic test for a right angle</em> — the single most used fact in the entire subject. Its physical reading is <b>work</b>: a force \\( \\mathbf{F} \\) moving through a displacement \\( \\mathbf{d} \\) does work \\( W=\\mathbf{F}\\cdot\\mathbf{d} \\), counting only the part of the force along the motion. A force \\( \\mathbf{F}=(120,90,0) \\) N pushing a block through \\( \\mathbf{d}=(2,0,0) \\) m does \\( W=120(2)+90(0)=240 \\) J; the \\(90\\)-N cross-component, perpendicular to the motion, contributes nothing.</p>\n<div class=\"keybox\"><span class=\"tag\">Key identity — dot product</span>\n<p>\\[ \\mathbf{a}\\cdot\\mathbf{b}=a_1b_1+a_2b_2+a_3b_3=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta \\]</p>\n<p>Reads as <b>alignment</b>. \\( \\mathbf{a}\\cdot\\mathbf{b}=0 \\iff \\) the vectors are perpendicular. Physical use: work \\( W=\\mathbf{F}\\cdot\\mathbf{d} \\).</p></div>\n\n<h3>§3 · Angles and projections</h3>\n<p>Because \\( \\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta \\), the angle between two vectors is recovered directly: \\( \\cos\\theta=\\dfrac{\\mathbf{a}\\cdot\\mathbf{b}}{|\\mathbf{a}||\\mathbf{b}|} \\). For \\( \\mathbf{a}=(3,4,0) \\) and the \\(x\\)-axis \\( (1,0,0) \\), \\( \\cos\\theta=3/5=0.6 \\), so \\( \\theta\\approx53.13^\\circ \\). The related idea is the <b>projection</b> of \\( \\mathbf{a} \\) onto \\( \\mathbf{b} \\), the shadow \\( \\mathbf{a} \\) casts along \\( \\mathbf{b} \\): its length is \\( \\dfrac{\\mathbf{a}\\cdot\\mathbf{b}}{|\\mathbf{b}|} \\) and the vector itself is \\( \\operatorname{proj}_{\\mathbf{b}}\\mathbf{a}=\\dfrac{\\mathbf{a}\\cdot\\mathbf{b}}{\\mathbf{b}\\cdot\\mathbf{b}}\\,\\mathbf{b} \\). Projection is how a force is resolved along a chosen axis, how a velocity is split into along-track and cross-track parts, and how the \"component in a direction\" that statics kept asking for is computed honestly rather than by inspection.</p>\n\n<h3>§4 · The cross product measures area — and gives moment</h3>\n<p>The <b>cross product</b> of two 3-D vectors returns a third <em>vector</em>, perpendicular to both, with magnitude \\( |\\mathbf{a}\\times\\mathbf{b}|=|\\mathbf{a}||\\mathbf{b}|\\sin\\theta \\) equal to the area of the parallelogram they span, and direction set by the <b>right-hand rule</b>. Its supreme engineering use is the <b>moment</b> (torque) of a force about a point: \\( \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F} \\), where \\( \\mathbf{r} \\) is the position from the pivot to the force's line of action. A \\(200\\)-N force at \\( \\mathbf{r}=(0.5,0,0) \\) m, acting in the \\(+y\\) direction \\( (0,200,0) \\), produces \\( \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F}=(0,0,100) \\) N·m — a \\(100\\) N·m twist about the \\(z\\)-axis, turning counter-clockwise. Where the dot product discarded the perpendicular part, the cross product keeps <em>only</em> it: the two products are complementary halves of one geometry.</p>\n<div class=\"keybox\"><span class=\"tag\">Key identity — cross product &amp; moment</span>\n<p>\\[ |\\mathbf{a}\\times\\mathbf{b}|=|\\mathbf{a}||\\mathbf{b}|\\sin\\theta=\\text{area spanned};\\qquad \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F} \\]</p>\n<p>Direction ⟂ to both, by the right-hand rule. \\( \\mathbf{a}\\times\\mathbf{b}=\\mathbf{0} \\iff \\) the vectors are parallel.</p></div>\n\n<h3>§5 · Lines and planes in space</h3>\n<p>Vectors give the cleanest description of geometry. A <b>line</b> through a point \\( \\mathbf{r}_0 \\) along a direction \\( \\mathbf{v} \\) is the set \\( \\mathbf{r}=\\mathbf{r}_0+t\\,\\mathbf{v} \\) as the parameter \\( t \\) runs over all reals. A <b>plane</b> is fixed by a point \\( \\mathbf{r}_0 \\) and a <b>normal</b> vector \\( \\mathbf{n} \\) perpendicular to it: every in-plane displacement \\( \\mathbf{r}-\\mathbf{r}_0 \\) satisfies \\( \\mathbf{n}\\cdot(\\mathbf{r}-\\mathbf{r}_0)=0 \\), which expands to \\( n_1x+n_2y+n_3z=d \\). With \\( \\mathbf{n}=(2,-1,2) \\) through \\( (1,1,1) \\), \\( d=\\mathbf{n}\\cdot\\mathbf{r}_0=3 \\), giving \\( 2x-y+2z=3 \\). The perpendicular <b>distance</b> from any point \\( \\mathbf{q} \\) to that plane is \\( \\dfrac{|\\mathbf{n}\\cdot\\mathbf{q}-d|}{|\\mathbf{n}|} \\); the origin sits \\( |{-}3|/3=1 \\) unit away. Clearances, interference checks, and contact analysis in CAD are all this one formula.</p>\n<div class=\"keybox\"><span class=\"tag\">Key results — lines &amp; planes</span>\n<p>Line: \\( \\mathbf{r}=\\mathbf{r}_0+t\\mathbf{v} \\).  Plane: \\( \\mathbf{n}\\cdot(\\mathbf{r}-\\mathbf{r}_0)=0 \\Rightarrow n_1x+n_2y+n_3z=d \\).</p>\n<p>Point-to-plane distance: \\( \\dfrac{|\\mathbf{n}\\cdot\\mathbf{q}-d|}{|\\mathbf{n}|} \\).</p></div>\n\n<h3>§6 · The two products, side by side</h3>\n<p>Keep the division clean and every 3-D problem sorts itself. The dot product is a <em>number</em> that peaks when vectors align and vanishes at right angles — reach for it for work, for components, for testing perpendicularity, for angles. The cross product is a <em>vector</em> that vanishes when vectors align and peaks at right angles — reach for it for moment, for area, for a normal to two directions, for testing parallelism. Almost every quantity in statics, dynamics, and electromagnetism is one of these two contractions of a pair of vectors, and choosing the right one is usually the whole battle. The scalar triple product \\( \\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c}) \\) combines both to give the signed volume of the parallelepiped on three vectors — the determinant test for whether three directions are independent, which the linear-algebra lessons ahead build on directly.</p>\n<h3>§7 · Computing the cross product in practice</h3>\n<p>By hand, the cross product is read off a symbolic determinant with the unit vectors in the top row: \\( \\mathbf{a}\\times\\mathbf{b}=\\det\\begin{pmatrix}\\hat{\\imath}&\\hat{\\jmath}&\\hat{k}\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{pmatrix} \\), which expands to \\( (a_2b_3-a_3b_2,\\;a_3b_1-a_1b_3,\\;a_1b_2-a_2b_1) \\). This is the formula behind every moment in the lesson, and it is worth memorising as a pattern — each component skips its own index and cross-multiplies the other two. The determinant view also explains why \\( \\mathbf{a}\\times\\mathbf{b}=-\\,\\mathbf{b}\\times\\mathbf{a} \\): swapping two rows of a determinant flips its sign, so the cross product is <em>anti-commutative</em>, and the order of \\( \\mathbf{r} \\) and \\( \\mathbf{F} \\) in a moment therefore fixes the sense of the twist. Getting that order right is the difference between a bolt that tightens and one that loosens.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Pythagoras in 3-D</b> — the magnitude formula.</li><li><b>Right-triangle trigonometry</b> — where \\( \\cos\\theta \\) and \\( \\sin\\theta \\) come from.</li><li><b>Force components</b> from statics — the physical setting for projection and moment.</li></ul>\n<h4>Toolkit — laws, formulas, and constants</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Magnitude</td><td>\\( |\\mathbf{a}|=\\sqrt{a_1^2+a_2^2+a_3^2} \\)</td><td>Length of a vector.</td></tr>\n<tr><td>Unit vector</td><td>\\( \\hat{\\mathbf{a}}=\\mathbf{a}/|\\mathbf{a}| \\)</td><td>Direction alone, length 1.</td></tr>\n<tr><td>Dot product</td><td>\\( \\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta \\)</td><td>Alignment; work; components; ⟂ test.</td></tr>\n<tr><td>Angle</td><td>\\( \\cos\\theta=\\frac{\\mathbf{a}\\cdot\\mathbf{b}}{|\\mathbf{a}||\\mathbf{b}|} \\)</td><td>Angle between two vectors.</td></tr>\n<tr><td>Projection</td><td>\\( \\operatorname{proj}_{\\mathbf{b}}\\mathbf{a}=\\frac{\\mathbf{a}\\cdot\\mathbf{b}}{\\mathbf{b}\\cdot\\mathbf{b}}\\mathbf{b} \\)</td><td>Component of a along b.</td></tr>\n<tr><td>Cross product</td><td>\\( |\\mathbf{a}\\times\\mathbf{b}|=|\\mathbf{a}||\\mathbf{b}|\\sin\\theta \\)</td><td>Area; normal direction; ∥ test.</td></tr>\n<tr><td>Moment</td><td>\\( \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F} \\)</td><td>Torque of a force about a point.</td></tr>\n<tr><td>Plane</td><td>\\( \\mathbf{n}\\cdot(\\mathbf{r}-\\mathbf{r}_0)=0 \\)</td><td>Flat surface with normal n.</td></tr>\n<tr><td>Point→plane distance</td><td>\\( \\frac{|\\mathbf{n}\\cdot\\mathbf{q}-d|}{|\\mathbf{n}|} \\)</td><td>Clearance / interference.</td></tr>\n<tr><td>Scalar triple product</td><td>\\( \\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c}) \\)</td><td>Signed volume; independence test.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Work and angle from the dot product</b></p><p><b>Problem.</b> A force \\( \\mathbf{F}=(120,90,0) \\) N drags a skid through a displacement \\( \\mathbf{d}=(2,0,0) \\) m. Find (a) the work done, and (b) the angle between \\( \\mathbf{F} \\) and the motion.</p>",
+    "solution": "<p><b>Solution.</b> (a) \\( W=\\mathbf{F}\\cdot\\mathbf{d}=120(2)+90(0)+0=240 \\) J. (b) \\( |\\mathbf{F}|=\\sqrt{120^2+90^2}=\\sqrt{22500}=150 \\) N and \\( |\\mathbf{d}|=2 \\) m, so \\( \\cos\\theta=\\dfrac{W}{|\\mathbf{F}||\\mathbf{d}|}=\\dfrac{240}{300}=0.8 \\), giving \\( \\theta=36.87^\\circ \\). Only the \\(120\\)-N along-track component does work; the \\(90\\)-N cross-component is carried for free.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Moment by the cross product</b></p><p><b>Problem.</b> A \\(200\\) N force acts in the \\(+y\\) direction at position \\( \\mathbf{r}=(0.5,0,0) \\) m from a bolt. Find the moment about the bolt.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F}=(0.5,0,0)\\times(0,200,0) \\). Using \\( \\mathbf{M}=(r_2F_3-r_3F_2,\\;r_3F_1-r_1F_3,\\;r_1F_2-r_2F_1) \\): the first two components are \\(0\\), and \\( M_z=0.5(200)-0=100 \\). So \\( \\mathbf{M}=(0,0,100) \\) N·m — a \\(100\\) N·m torque about \\(z\\), counter-clockwise by the right-hand rule.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Plane and clearance</b></p><p><b>Problem.</b> A machined face passes through \\( (1,1,1) \\) with normal \\( \\mathbf{n}=(2,-1,2) \\). Write the plane's equation and find the perpendicular distance from the origin.</p>",
+    "solution": "<p><b>Solution.</b> \\( d=\\mathbf{n}\\cdot\\mathbf{r}_0=2(1)-1(1)+2(1)=3 \\), so the plane is \\( 2x-y+2z=3 \\). With \\( |\\mathbf{n}|=\\sqrt{2^2+(-1)^2+2^2}=\\sqrt{9}=3 \\), the distance from the origin is \\( \\dfrac{|\\mathbf{n}\\cdot\\mathbf{0}-d|}{|\\mathbf{n}|}=\\dfrac{|-3|}{3}=1 \\) unit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The magnitude of \\( (3,4,0) \\) is:</p>",
+    "choices": [
+     "5",
+     "7",
+     "\\( \\sqrt{7} \\)",
+     "12"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\sqrt{3^2+4^2+0^2}=\\sqrt{25}=5 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two nonzero vectors are perpendicular exactly when:</p>",
+    "choices": [
+     "\\( \\mathbf{a}\\cdot\\mathbf{b}=0 \\)",
+     "\\( \\mathbf{a}\\times\\mathbf{b}=\\mathbf{0} \\)",
+     "\\( \\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}| \\)",
+     "\\( |\\mathbf{a}|=|\\mathbf{b}| \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta \\); it is zero iff \\( \\cos\\theta=0 \\), i.e. \\( \\theta=90^\\circ \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The work done by \\( \\mathbf{F}=(120,90,0) \\) N over \\( \\mathbf{d}=(2,0,0) \\) m is:</p>",
+    "choices": [
+     "240 J",
+     "300 J",
+     "180 J",
+     "420 J"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( W=\\mathbf{F}\\cdot\\mathbf{d}=120(2)+90(0)=240 \\) J.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( |(2,0,0)\\times(0,3,0)| \\) equals:</p>",
+    "choices": [
+     "6",
+     "5",
+     "0",
+     "\\( \\sqrt{13} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The cross product is \\( (0,0,6) \\); its magnitude \\(6\\) is the area of the \\(2\\times3\\) rectangle they span.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>By the right-hand rule, \\( (1,0,0)\\times(0,1,0) \\) points in the direction:</p>",
+    "choices": [
+     "\\( +z \\) (out of the page)",
+     "\\( -z \\) (into the page)",
+     "\\( +x \\)",
+     "\\( +y \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\hat{\\imath}\\times\\hat{\\jmath}=\\hat{k} \\): fingers from \\(x\\) to \\(y\\), thumb points along \\(+z\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The unit vector in the direction of \\( (1,2,2) \\) is:</p>",
+    "choices": [
+     "\\( (\\tfrac13,\\tfrac23,\\tfrac23) \\)",
+     "\\( (1,2,2) \\)",
+     "\\( (\\tfrac12,1,1) \\)",
+     "\\( (\\tfrac15,\\tfrac25,\\tfrac25) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( |(1,2,2)|=\\sqrt{1+4+4}=3 \\), so \\( \\hat{\\mathbf{a}}=(1,2,2)/3=(\\tfrac13,\\tfrac23,\\tfrac23) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A normal vector to the plane \\( 2x-y+2z=3 \\) is:</p>",
+    "choices": [
+     "\\( (2,-1,2) \\)",
+     "\\( (1,1,1) \\)",
+     "\\( (3,3,3) \\)",
+     "\\( (2,1,2) \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The coefficients of \\(x,y,z\\) are the components of the normal: \\( \\mathbf{n}=(2,-1,2) \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which product would you use to find the torque of a force about a pivot?</p>",
+    "choices": [
+     "cross product \\( \\mathbf{r}\\times\\mathbf{F} \\)",
+     "dot product \\( \\mathbf{r}\\cdot\\mathbf{F} \\)",
+     "the magnitudes multiplied",
+     "the sum \\( \\mathbf{r}+\\mathbf{F} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Moment is \\( \\mathbf{M}=\\mathbf{r}\\times\\mathbf{F} \\): it keeps the perpendicular part and gives the axis of the twist.</p>"
+   }
+  ],
+  "kuwait": "\n<p>On a fabrication floor, a technician tightens a large flange bolt with a\n\\(0.5\\)-m breaker bar, pushing with about \\(200\\) N at the very end, square to\nthe bar. The moment delivered to the bolt is \\( M=rF=0.5\\times200=100 \\) N·m —\nthe exact cross-product calculation of Problem 2. If the same push is applied at\nan angle, only the perpendicular component \\( F\\sin\\theta \\) counts, which is why\na torque wrench is always pulled at right angles to its handle: any lean wastes\neffort into a useless along-bar dot-product component that does no turning.</p>\n<p>The dot product runs the other side of the same job. When a crane hoists a\nskid up a ramp, the useful work raising it is \\( \\mathbf{F}\\cdot\\mathbf{d} \\) —\nthe force resolved along the actual displacement. Estimating this correctly is\nwhat sizes the winch motor: counting the full cable tension instead of its\nalong-track projection over-specifies the drive and wastes capital. Two products,\ntwo everyday plant decisions — the twist you can apply, and the work you must pay\nfor.</p>\n"
+ },
+ "2": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Contour plot of f=x^2+y^2 with gradient arrows perpendicular to level curves\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><line x1=\"161\" y1=\"150\" x2=\"399\" y2=\"150\" stroke=\"#16202e\" stroke-width=\"1.2\"/><line x1=\"280\" y1=\"31\" x2=\"280\" y2=\"269\" stroke=\"#16202e\" stroke-width=\"1.2\"/><circle cx=\"280\" cy=\"150\" r=\"34.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-opacity=\"0.55\"/><circle cx=\"280\" cy=\"150\" r=\"51.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-opacity=\"0.55\"/><circle cx=\"280\" cy=\"150\" r=\"68.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-opacity=\"0.55\"/><circle cx=\"280\" cy=\"150\" r=\"85.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-opacity=\"0.55\"/><circle cx=\"280\" cy=\"150\" r=\"102.0\" fill=\"none\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-opacity=\"0.55\"/><text x=\"348\" y=\"146\" fill=\"#1f7a5c\" font-size=\"10\">f=16</text><line x1=\"331.0\" y1=\"150.0\" x2=\"354.8\" y2=\"150.0\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><circle cx=\"354.8\" cy=\"150.0\" r=\"2.6\" fill=\"#c2820f\"/><line x1=\"280.0\" y1=\"99.0\" x2=\"280.0\" y2=\"75.2\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><circle cx=\"280.0\" cy=\"75.2\" r=\"2.6\" fill=\"#c2820f\"/><line x1=\"244.3\" y1=\"114.3\" x2=\"227.5\" y2=\"97.5\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><circle cx=\"227.5\" cy=\"97.5\" r=\"2.6\" fill=\"#c2820f\"/><line x1=\"315.7\" y1=\"185.7\" x2=\"332.5\" y2=\"202.5\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><circle cx=\"332.5\" cy=\"202.5\" r=\"2.6\" fill=\"#c2820f\"/><line x1=\"229.0\" y1=\"150.0\" x2=\"205.2\" y2=\"150.0\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><circle cx=\"205.2\" cy=\"150.0\" r=\"2.6\" fill=\"#c2820f\"/><text x=\"12\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">∇f ⟂ level curves, points to steepest ascent</text><text x=\"12\" y=\"288\" fill=\"#16202e\" font-size=\"11\">Contours of f = x² + y² (circles); gradient arrows radial</text></svg><figcaption>The gradient of a function of several variables points straight uphill — perpendicular to the level curves — and its length is the steepest rate of climb. Every partial derivative is one slice of this picture.</figcaption></figure>\n\n<h3>§1 · Rates when there is more than one variable</h3>\n<p>Most engineering quantities depend on several inputs at once: the deflection of a beam depends on load and length; the efficiency of a cycle depends on two temperatures; the drag on a body depends on speed and area. A <b>function of several variables</b> \\( f(x,y) \\) has no single derivative, because \"the rate of change\" now depends on which input you vary. The device that answers the question one input at a time is the <b>partial derivative</b>: \\( \\partial f/\\partial x \\) is the ordinary derivative of \\( f \\) with respect to \\( x \\) while every other variable is <em>held constant</em>. That holding-constant is the whole idea — it isolates the sensitivity to one input, which is exactly what a designer needs when asking \"if I change only the wall thickness, how much does the stress move?\"</p>\n\n<h3>§2 · Computing partials is one-variable calculus, repeated</h3>\n<p>No new differentiation rules are needed. To get \\( \\partial f/\\partial x \\), treat \\( y \\) as a frozen number and differentiate as usual. For \\( f(x,y)=x^2y+3y \\): holding \\( y \\) fixed, \\( \\partial f/\\partial x=2xy \\); holding \\( x \\) fixed, \\( \\partial f/\\partial y=x^2+3 \\). Evaluated at the point \\( (2,1) \\) these are \\( f_x=2(2)(1)=4 \\) and \\( f_y=2^2+3=7 \\). The two numbers say the surface climbs at rate \\(4\\) if you step in the \\(x\\)-direction and rate \\(7\\) if you step in the \\(y\\)-direction from that point. Each partial is a slope of a slice — the curve you get by cutting the surface with a plane that keeps the other variable fixed.</p>\n<div class=\"keybox\"><span class=\"tag\">Definition — partial derivative</span>\n<p>\\[ \\frac{\\partial f}{\\partial x}=\\lim_{h\\to0}\\frac{f(x+h,y)-f(x,y)}{h} \\]</p>\n<p>Differentiate with respect to one variable, treating all others as constants. It is the sensitivity of \\( f \\) to that one input.</p></div>\n\n<h3>§3 · The gradient: assembling the partials into a direction</h3>\n<p>Collect the partials into a vector and something powerful appears — the <b>gradient</b> \\( \\nabla f=(f_x,\\,f_y) \\). It is not just bookkeeping: the gradient points in the direction of <em>steepest ascent</em> of the surface, and its length \\( |\\nabla f| \\) is the maximum rate of climb. At \\( (2,1) \\) above, \\( \\nabla f=(4,7) \\) and \\( |\\nabla f|=\\sqrt{4^2+7^2}=\\sqrt{65}\\approx8.06 \\) — so the fastest uphill direction there is along \\( (4,7) \\), climbing at rate \\(8.06\\), steeper than either axis-aligned slice alone. Crucially, the gradient is always perpendicular to the level curves (the contours of constant \\( f \\)), which is why water runs straight down a hillside across the contour lines rather than along them.</p>\n<div class=\"keybox\"><span class=\"tag\">Key idea — the gradient</span>\n<p>\\[ \\nabla f=\\left(\\frac{\\partial f}{\\partial x},\\,\\frac{\\partial f}{\\partial y}\\right);\\qquad |\\nabla f|=\\text{steepest rate},\\quad \\nabla f\\perp\\text{level curves} \\]</p></div>\n\n<h3>§4 · Second and mixed partials</h3>\n<p>Partials can be taken again. Differentiating \\( f_x \\) with respect to \\( x \\) gives \\( f_{xx} \\), the curvature along \\( x \\); differentiating \\( f_x \\) with respect to \\( y \\) gives the <b>mixed partial</b> \\( f_{xy} \\). A remarkable fact — <b>Clairaut's theorem</b> — is that for any smooth function the order does not matter: \\( f_{xy}=f_{yx} \\). Check it on \\( f=x^2y+3y \\): from \\( f_x=2xy \\), \\( f_{xy}=2x \\); from \\( f_y=x^2+3 \\), \\( f_{yx}=2x \\). They agree, \\(=4\\) at \\( x=2 \\). This symmetry is not a curiosity — it underlies the exactness conditions for differential equations, the existence of potential functions, and the reciprocity relations of thermodynamics, all of which are Clairaut's theorem wearing different clothes.</p>\n\n<h3>§5 · Linear approximation and error propagation</h3>\n<p>The partials give the best flat approximation to a surface near a point: \\( \\Delta f\\approx f_x\\,\\Delta x+f_y\\,\\Delta y \\). This is the engineer's <b>sensitivity</b> and <b>error-propagation</b> formula in one line. Near \\( (2,1) \\), a change \\( \\Delta x=0.1,\\ \\Delta y=0.05 \\) predicts \\( \\Delta f\\approx4(0.1)+7(0.05)=0.75 \\); the exact change is \\( f(2.1,1.05)-f(2,1)=0.7805 \\), so the linear estimate is right to a few percent for a step this size. When \\( x \\) and \\( y \\) are measured quantities with uncertainties, this same formula tells you how their errors combine into the uncertainty of \\( f \\) — the partial derivatives are precisely the weights each input's error carries into the result.</p>\n<div class=\"keybox\"><span class=\"tag\">Key formula — sensitivity / error</span>\n<p>\\[ \\Delta f\\approx \\frac{\\partial f}{\\partial x}\\,\\Delta x+\\frac{\\partial f}{\\partial y}\\,\\Delta y \\]</p>\n<p>The partials are the weights that turn input changes (or measurement errors) into the change (or uncertainty) of \\( f \\).</p></div>\n\n<h3>§6 · The working method</h3>\n<p>Faced with a multivariable function, the disciplined order is: (1) identify the variables and which are held constant for each question; (2) take the partials one variable at a time, reusing ordinary calculus; (3) assemble \\( \\nabla f \\) when a direction or a maximum rate is wanted, and read \\( |\\nabla f| \\) for the steepest slope; (4) for a small-change or uncertainty question, apply the linear formula \\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y \\) rather than recomputing \\( f \\) twice. This toolkit — partials, gradient, linearization — is the entire language in which heat transfer writes temperature fields, in which optimization finds minima by setting \\( \\nabla f=\\mathbf{0} \\), and in which control theory measures sensitivity. It is multivariable calculus reduced to a small set of moves you will use for the next three years.</p>\n<h3>§7 · The rate in any direction</h3>\n<p>The two partials give the slopes along the axes, but the slope in an <em>arbitrary</em> direction follows immediately from the gradient: the <b>directional derivative</b> in a unit direction \\( \\hat{\\mathbf{u}} \\) is \\( D_{\\hat{\\mathbf{u}}}f=\\nabla f\\cdot\\hat{\\mathbf{u}} \\), a dot product of the gradient with the way you intend to step. This single formula contains everything in the lesson — it is largest when \\( \\hat{\\mathbf{u}} \\) aligns with \\( \\nabla f \\) (steepest ascent, value \\( |\\nabla f| \\)), zero when \\( \\hat{\\mathbf{u}} \\) is perpendicular to \\( \\nabla f \\) (moving along a level curve, no change), and negative downhill. At \\( (2,1) \\) with \\( \\nabla f=(4,7) \\), stepping along \\( \\hat{\\mathbf{u}}=(1,0) \\) gives \\( D_{\\hat{\\mathbf{u}}}f=4 \\), recovering \\( f_x \\) as the special case it is. The gradient plus one dot product answers the rate-of-change question in every direction at once.</p>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Single-variable differentiation</b> — every partial is one of these.</li><li><b>Vectors and magnitude</b> (Lesson 1) — the gradient is a vector.</li><li><b>The idea of a slope</b> — extended to slices of a surface.</li></ul>\n<h4>Toolkit — laws, formulas, and constants</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>\n<tr><td>Partial derivative</td><td>\\( f_x=\\partial f/\\partial x \\) (hold \\(y\\) fixed)</td><td>Sensitivity to one input.</td></tr>\n<tr><td>Gradient</td><td>\\( \\nabla f=(f_x,f_y) \\)</td><td>Direction of steepest ascent.</td></tr>\n<tr><td>Steepest rate</td><td>\\( |\\nabla f| \\)</td><td>Maximum slope at a point.</td></tr>\n<tr><td>Level curve</td><td>\\( f(x,y)=c \\)</td><td>Contours; \\( \\nabla f \\perp \\) them.</td></tr>\n<tr><td>Mixed partial (Clairaut)</td><td>\\( f_{xy}=f_{yx} \\)</td><td>Order of differentiation is free (smooth \\(f\\)).</td></tr>\n<tr><td>Linear approximation</td><td>\\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y \\)</td><td>Small changes; error propagation.</td></tr>\n<tr><td>Stationary point</td><td>\\( \\nabla f=\\mathbf{0} \\)</td><td>Candidate maxima/minima (optimization).</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Partials and gradient</b></p><p><b>Problem.</b> For \\( f(x,y)=x^2y+3y \\), find \\( f_x \\) and \\( f_y \\), then the gradient and its magnitude at \\( (2,1) \\).</p>",
+    "solution": "<p><b>Solution.</b> Holding \\(y\\) fixed, \\( f_x=2xy \\); holding \\(x\\) fixed, \\( f_y=x^2+3 \\). At \\( (2,1) \\): \\( f_x=4 \\), \\( f_y=7 \\). So \\( \\nabla f=(4,7) \\) and \\( |\\nabla f|=\\sqrt{4^2+7^2}=\\sqrt{65}\\approx8.06 \\). The steepest climb at that point is along \\( (4,7) \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Clairaut's theorem</b></p><p><b>Problem.</b> Verify \\( f_{xy}=f_{yx} \\) for \\( f=x^2y+3y \\).</p>",
+    "solution": "<p><b>Solution.</b> From \\( f_x=2xy \\), differentiate in \\(y\\): \\( f_{xy}=2x \\). From \\( f_y=x^2+3 \\), differentiate in \\(x\\): \\( f_{yx}=2x \\). They are equal (\\(=4\\) at \\(x=2\\)), as Clairaut's theorem guarantees for a smooth function.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Error propagation</b></p><p><b>Problem.</b> Near \\( (2,1) \\), estimate the change in \\( f=x^2y+3y \\) when \\( x \\) rises by \\(0.1\\) and \\( y \\) by \\(0.05\\), using the linear approximation. Compare with the exact change.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y=4(0.1)+7(0.05)=0.4+0.35=0.75 \\). Exact: \\( f(2.1,1.05)-f(2,1)=7.7805-7=0.7805 \\). The linear estimate \\(0.75\\) is within about 4% — accurate for a small step, and the basis of uncertainty analysis.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\dfrac{\\partial}{\\partial x}(x^2y+3y) \\) equals:</p>",
+    "choices": [
+     "\\( 2xy \\)",
+     "\\( x^2+3 \\)",
+     "\\( 2xy+3 \\)",
+     "\\( x^2 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Treat \\(y\\) as constant: \\( \\partial(x^2y)/\\partial x=2xy \\) and \\( \\partial(3y)/\\partial x=0 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\\( \\dfrac{\\partial}{\\partial y}(x^2y+3y) \\) equals:</p>",
+    "choices": [
+     "\\( x^2+3 \\)",
+     "\\( 2xy \\)",
+     "\\( x^2 \\)",
+     "\\( 3 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Treat \\(x\\) as constant: \\( \\partial(x^2y)/\\partial y=x^2 \\) and \\( \\partial(3y)/\\partial y=3 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The gradient \\( \\nabla f \\) points in the direction of:</p>",
+    "choices": [
+     "steepest ascent",
+     "steepest descent",
+     "a level curve",
+     "the \\(x\\)-axis"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\nabla f \\) points uphill fastest; \\( -\\nabla f \\) is steepest descent, and it is perpendicular to the level curves.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For \\( g=x^2+y^2 \\), the magnitude \\( |\\nabla g| \\) at \\( (1,2) \\) is:</p>",
+    "choices": [
+     "\\( 2\\sqrt{5} \\)",
+     "\\( 5 \\)",
+     "\\( \\sqrt5 \\)",
+     "\\( 6 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\nabla g=(2x,2y)=(2,4) \\); \\( |\\nabla g|=\\sqrt{4+16}=\\sqrt{20}=2\\sqrt5\\approx4.47 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Clairaut's theorem states that for a smooth function:</p>",
+    "choices": [
+     "\\( f_{xy}=f_{yx} \\)",
+     "\\( f_x=f_y \\)",
+     "\\( f_{xx}=f_{yy} \\)",
+     "\\( \\nabla f=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The mixed second partials are equal regardless of the order of differentiation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The partial derivative \\( \\partial f/\\partial x \\) is computed by:</p>",
+    "choices": [
+     "holding all other variables constant",
+     "setting \\(y=0\\)",
+     "differentiating \\(f\\) twice",
+     "integrating over \\(y\\)"
+    ],
+    "answer": 0,
+    "solution": "<p>By definition every other variable is treated as a constant while differentiating with respect to \\(x\\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The linear change estimate \\( \\Delta f \\) for \\( f=x^2y+3y \\) at \\( (2,1) \\) with \\( \\Delta x=0.1,\\ \\Delta y=0.05 \\) is:</p>",
+    "choices": [
+     "0.75",
+     "0.40",
+     "0.35",
+     "1.15"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y=4(0.1)+7(0.05)=0.75 \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>To find candidate maxima and minima of \\( f(x,y) \\), one solves:</p>",
+    "choices": [
+     "\\( \\nabla f=\\mathbf{0} \\)",
+     "\\( f=0 \\)",
+     "\\( |\\nabla f|=1 \\)",
+     "\\( f_{xy}=0 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>At an interior extremum every partial vanishes, so \\( \\nabla f=\\mathbf{0} \\) — the multivariable analogue of \\( f'(x)=0 \\).</p>"
+   }
+  ],
+  "kuwait": "\n<p>A process engineer sizing a heat exchanger works with a duty that depends on\nseveral inputs at once — flow rate, inlet temperature, and area. Asking \"how\nmuch does the duty move if only the cooling-water flow rises by 5%?\" is exactly\na partial derivative: freeze every other variable and read the sensitivity. On\nthe plant floor this decides which input is worth controlling tightly and which\ncan drift; the variable with the largest partial derivative is the one the\ncontrol loop should watch, because its errors dominate the linear\nerror-propagation sum \\( \\Delta f\\approx f_x\\Delta x+f_y\\Delta y \\).</p>\n<p>The gradient's \"steepest ascent\" reading is just as practical. In a furnace or\na cast billet, heat flows down the steepest temperature drop — along \\( -\\nabla T \\),\nstraight across the isotherms — never along a line of constant temperature. A\nmaintenance thermographer reading a heat map is really reading level curves, and\nthe hot-spot risk is wherever those contours crowd together, because crowded\ncontours mean a large \\( |\\nabla T| \\) and a steep, stressful thermal gradient.</p>\n"
+ }
+}
