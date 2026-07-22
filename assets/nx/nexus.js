@@ -181,79 +181,162 @@
     });
   });
 
-  /* ---------- quiz engine ---------- */
+  /* ---------- quiz engine (dynamic swap on wrong answer, owner #4) ----------
+     On a wrong MC answer the engine does NOT immediately reveal: it swaps the
+     question for a same-concept variant and grants a retry. An authored variant
+     (data-variants) is used first; otherwise the same question is re-posed with
+     its options reshuffled — a genuine re-pose that invents no new physics.
+     After the retry (or Reveal answer) the correct choice + solution show. */
+  function qtxt(ar, en) { return document.documentElement.lang === 'ar' ? ar : en; }
+
+  function reletter(item) {
+    var keys = item.querySelectorAll('.choices .quiz-choice .key');
+    keys.forEach(function (k, i) { k.textContent = String.fromCharCode(65 + i); });
+  }
+  function shuffleChoices(item) {
+    var box = item.querySelector('.choices');
+    var arr = Array.prototype.slice.call(box.children);
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    arr.forEach(function (node) { box.appendChild(node); });
+    reletter(item);
+  }
+  function wireChoices(item) {
+    item.querySelectorAll('.quiz-choice').forEach(function (c) {
+      c.disabled = false;
+      c.classList.remove('sel', 'right', 'wrong');
+      c.addEventListener('click', function () {
+        if (item.dataset.locked === '1') return;
+        item.querySelectorAll('.quiz-choice').forEach(function (k) { k.classList.remove('sel'); });
+        c.classList.add('sel');
+      });
+    });
+  }
+  function loadVariant(item, v) {
+    var q = item.querySelector('.q');
+    var tag = q.querySelector('.tag');
+    q.innerHTML = (tag ? tag.outerHTML : '') + v.q;
+    var box = item.querySelector('.choices');
+    box.innerHTML = '';
+    v.choices.forEach(function (ch, j) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'quiz-choice';
+      if (j === v.answer) b.setAttribute('data-ok', '1');
+      b.innerHTML = '<span class="key">' + String.fromCharCode(65 + j) + '</span><span>' + ch + '</span>';
+      box.appendChild(b);
+    });
+    if (v.solution) item.querySelector('.quiz-sol').innerHTML = v.solution;
+    wireChoices(item);
+    if (window.MathJax && MathJax.typesetPromise) { MathJax.typesetPromise([item]); }
+  }
+  function gradeSel(item) {
+    var sel = item.querySelector('.quiz-choice.sel');
+    return { sel: sel, ok: !!(sel && sel.getAttribute('data-ok') === '1') };
+  }
+  function settleCorrect(item) {
+    var sel = item.querySelector('.quiz-choice.sel');
+    if (sel) sel.classList.add('right');
+    var verdict = item.querySelector('.quiz-verdict');
+    if (verdict) {
+      verdict.textContent = qtxt('✓ إجابة صحيحة. الشرح الكامل أدناه.',
+                                 '✓ Correct. The full explanation is below.');
+      verdict.className = 'quiz-verdict ok'; verdict.hidden = false;
+    }
+    item.querySelector('.quiz-sol').classList.add('open');
+    item.querySelectorAll('.quiz-choice').forEach(function (k) { k.disabled = true; });
+    item.dataset.locked = '1';
+    var actions = item.querySelector('.quiz-item-actions');
+    if (actions) actions.hidden = true;
+  }
+  function revealItem(item, msg) {
+    item.querySelectorAll('.quiz-choice[data-ok="1"]').forEach(function (k) { k.classList.add('right'); });
+    var sel = item.querySelector('.quiz-choice.sel');
+    if (sel && sel.getAttribute('data-ok') !== '1') sel.classList.add('wrong');
+    var verdict = item.querySelector('.quiz-verdict');
+    if (verdict) { verdict.textContent = msg; verdict.className = 'quiz-verdict no'; verdict.hidden = false; }
+    item.querySelector('.quiz-sol').classList.add('open');
+    item.querySelectorAll('.quiz-choice').forEach(function (k) { k.disabled = true; });
+    item.dataset.locked = '1';
+    var actions = item.querySelector('.quiz-item-actions');
+    if (actions) actions.hidden = true;
+  }
+  function enterRetry(item) {
+    var verdict = item.querySelector('.quiz-verdict');
+    var used = parseInt(item.dataset.vused || '0', 10);
+    var variants = [];
+    try { variants = JSON.parse(item.getAttribute('data-variants') || '[]'); } catch (e) {}
+    if (variants.length > used) {
+      loadVariant(item, variants[used]);
+      item.dataset.vused = (used + 1);
+      verdict.textContent = qtxt('✗ ليس بعد — إليك صيغة أخرى للمفهوم نفسه. حاول مرة أخرى.',
+                                 '✗ Not quite — here is another version of the same idea. Try it, then Check again.');
+    } else {
+      item.querySelectorAll('.quiz-choice').forEach(function (k) {
+        k.disabled = false; k.classList.remove('sel', 'right', 'wrong');
+      });
+      shuffleChoices(item);
+      verdict.textContent = qtxt('✗ ليس بعد — نفس السؤال بترتيب جديد. اختر وتحقّق مرة أخرى.',
+                                 '✗ Not quite — same question, options reordered. Pick again, then Check again.');
+    }
+    verdict.className = 'quiz-verdict retry'; verdict.hidden = false;
+    var actions = item.querySelector('.quiz-item-actions');
+    if (actions) actions.hidden = false;
+  }
+
   document.querySelectorAll('.quiz-item').forEach(function (item) {
     var sol = item.querySelector('.quiz-sol');
-    var verdict = item.querySelector('.quiz-verdict');
     var rbtn = item.querySelector('.quiz-reveal');
     if (rbtn && sol) {
       rbtn.addEventListener('click', function () {
         var open = sol.classList.toggle('open');
         rbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        var ar = document.documentElement.lang === 'ar';
-        rbtn.textContent = open ? (ar ? 'إخفاء الحل الكامل' : 'Hide the full solution')
-                                : (ar ? 'إظهار الحل الكامل' : 'Show the full solution');
+        rbtn.textContent = open ? qtxt('إخفاء الحل الكامل', 'Hide the full solution')
+                                : qtxt('إظهار الحل الكامل', 'Show the full solution');
       });
     }
-    // MC items: select now, grade on Submit (Coursera-style)
-    var choices = item.querySelectorAll('.quiz-choice');
-    if (choices.length) {
-      choices.forEach(function (c) {
-        c.addEventListener('click', function () {
-          if (item.classList.contains('answered')) return;
-          choices.forEach(function (k) { k.classList.remove('sel'); });
-          c.classList.add('sel');
-          item.classList.remove('unanswered');
-        });
+    if (item.querySelector('.quiz-choice')) {
+      wireChoices(item);
+      var recheck = item.querySelector('.quiz-recheck');
+      if (recheck) recheck.addEventListener('click', function () {
+        var g = gradeSel(item);
+        if (!g.sel) return;
+        if (g.ok) settleCorrect(item);
+        else revealItem(item, qtxt('✗ لا يزال غير صحيح — الحل الكامل أدناه.',
+                                   '✗ Still not right — here is the full worked solution below.'));
+      });
+      var give = item.querySelector('.quiz-reveal-ans');
+      if (give) give.addEventListener('click', function () {
+        revealItem(item, qtxt('الإجابة الصحيحة مظلَّلة، والحل الكامل أدناه.',
+                              'The correct answer is highlighted; the full solution is below.'));
       });
     }
   });
 
-  /* ---------- quiz submit: grade every MC item at once ---------- */
+  /* ---------- quiz submit: grade all; wrong items swap + offer a retry ---------- */
   document.querySelectorAll('.quiz-submit').forEach(function (sbtn) {
     sbtn.addEventListener('click', function () {
       var quiz = sbtn.closest('.quiz');
       var items = quiz.querySelectorAll('.quiz-item[data-kind="mc"]');
-      var ar = document.documentElement.lang === 'ar';
       var right = 0;
       items.forEach(function (item) {
-        var sel = item.querySelector('.quiz-choice.sel');
-        var verdict = item.querySelector('.quiz-verdict');
-        var sol = item.querySelector('.quiz-sol');
-        item.classList.add('answered');
-        var ok = sel && sel.getAttribute('data-ok') === '1';
-        if (ok) { right++; sel.classList.add('right'); }
-        else {
-          if (sel) sel.classList.add('wrong');
-          else item.classList.add('unanswered');
-          item.querySelectorAll('.quiz-choice[data-ok="1"]').forEach(function (k) {
-            k.classList.add('right');
-          });
-        }
-        if (verdict) {
-          verdict.textContent = ok
-            ? (ar ? '✓ إجابة صحيحة. الشرح الكامل أدناه.' : '✓ Correct. The full explanation is below.')
-            : sel
-              ? (ar ? '✗ إجابة غير صحيحة — الإجابة الصحيحة مظلَّلة. اقرأ السبب أدناه.'
-                    : '✗ Not quite — the correct answer is highlighted. Read why below.')
-              : (ar ? 'لم تُجب — الإجابة الصحيحة مظلَّلة. اقرأ الشرح أدناه.'
-                    : 'Not answered — the correct answer is highlighted. Read the explanation below.');
-          verdict.className = 'quiz-verdict ' + (ok ? 'ok' : 'no');
-          verdict.hidden = false;
-        }
-        if (sol) sol.classList.add('open');
-        item.querySelectorAll('.quiz-choice').forEach(function (k) { k.disabled = true; });
+        if (item.dataset.locked === '1') return;
+        var g = gradeSel(item);
+        if (g.ok) { right++; settleCorrect(item); }
+        else { enterRetry(item); }
       });
       var score = quiz.querySelector('.quiz-score');
       if (score) {
-        score.textContent = ar
-          ? 'نتيجتك: ' + right + ' من ' + items.length
-          : 'Your score: ' + right + ' of ' + items.length;
+        score.textContent = qtxt('نتيجة المحاولة الأولى: ' + right + ' من ' + items.length,
+                                 'First-attempt score: ' + right + ' of ' + items.length);
         score.className = 'quiz-score ' + (right === items.length ? 'ok' : 'mid');
         score.hidden = false;
       }
       sbtn.disabled = true;
-      sbtn.textContent = ar ? '✓ تم الإرسال' : '✓ Submitted';
+      sbtn.textContent = right === items.length
+        ? qtxt('✓ تم الإرسال', '✓ All correct — submitted')
+        : qtxt('✓ تم الإرسال', '✓ Submitted — retry each missed question above');
     });
   });
 

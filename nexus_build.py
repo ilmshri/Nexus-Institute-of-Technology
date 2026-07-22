@@ -508,7 +508,15 @@ def quiz_html(items):
     for i, it in enumerate(items, 1):
         kind = it["type"]
         label = "multiple choice" if kind == "mc" else "solve, then check"
-        parts.append(f'<div class="quiz-item" data-kind="{kind}">')
+        # Owner directive #4: optional authored variants — same concept, restated —
+        # that the engine swaps in on a wrong answer. Shape per variant:
+        # {"q": html, "choices": [...], "answer": int, "solution"?: html}.
+        var_attr = ""
+        if kind == "mc" and it.get("variants"):
+            vj = json.dumps(it["variants"], ensure_ascii=False)
+            vj = vj.replace("&", "&amp;").replace("'", "&#39;").replace("<", "&lt;")
+            var_attr = f" data-variants='{vj}'"
+        parts.append(f'<div class="quiz-item" data-kind="{kind}"{var_attr}>')
         parts.append(f'<div class="q"><span class="tag">Problem {i} of {n} · '
                      f'{label}</span>{it["q"]}</div>')
         if kind == "mc":
@@ -519,6 +527,10 @@ def quiz_html(items):
                 parts.append(f'<button type="button" class="quiz-choice"{ok}>'
                              f'<span class="key">{key}</span><span>{ch}</span></button>')
             parts.append('</div><p class="quiz-verdict" hidden></p>')
+            parts.append('<div class="quiz-item-actions" hidden>'
+                         '<button type="button" class="quiz-recheck btn btn-sm">Check again</button>'
+                         '<button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">'
+                         'Reveal answer</button></div>')
         else:
             parts.append('<button type="button" class="quiz-reveal" '
                          'aria-expanded="false">Show the full solution</button>')
