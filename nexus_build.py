@@ -554,7 +554,23 @@ def hero(course, eyebrow, title, sub, meta):
   <div class="meta">{meta_html}</div>
 </div>"""
 
-def build_lesson_page(sem, course, les, prefix, tabs_all):
+def next_course_footer(next_course):
+    """Owner directive #6 (2026-07-22): every lesson and course-completion state
+    offers a direct 'Next course' link alongside the existing next-lesson pager.
+    `next_course` is a (sem, course) tuple or None. The href is relative from a
+    course-level directory (curriculum/<sem>/<course>/…)."""
+    if not next_course:
+        return ('<nav class="coursenav coursenav-end">'
+                '<span class="cn-label">End of pathway</span>'
+                '<span class="cn-done">Final course in the curriculum.</span></nav>')
+    nsem, ncourse = next_course
+    href = f"../../{nsem['id']}/{ncourse['id']}/index.html"
+    return (f'<nav class="coursenav">'
+            f'<span class="cn-label">Next course</span>'
+            f'<a class="cn-link" href="{href}">'
+            f'{esc(ncourse["code"])} · {esc(ncourse["title"])} →</a></nav>')
+
+def build_lesson_page(sem, course, les, prefix, tabs_all, next_course=None):
     tabs = tabs_all.get(str(les["n"]), {})
     n_total = len(course["lessons"])
     tier = les.get("tier", 3)
@@ -666,6 +682,7 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
         nav += (f'<a href="{lesson_page_name(course, next_l)}">'
                 f'{next_l["n"]:02d} · {esc(next_l["t"])} →</a>')
     nav += "</nav>"
+    course_nav = next_course_footer(next_course)
 
     core_chip = (f'<span class="badge amber">CORE 60 · {esc(core)}</span>'
                  if core else "")
@@ -721,6 +738,7 @@ def build_lesson_page(sem, course, les, prefix, tabs_all):
 <section class="tabpanel" id="t-examples"><h2 class="tabcap" data-ar="{AR['Examples and Quiz']}">Examples and Quiz</h2>{examples}</section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap" data-ar="{AR['Library']}">Library</h2>{library}</section>
 {nav}
+{course_nav}
 </div>
 </div>"""
 
@@ -747,7 +765,7 @@ def tier_badge(les, tabs_all):
         return '<span class="badge queued">Core 60 · in production</span>'
     return ""
 
-def build_course_page(sem, course, prefix, tabs_all):
+def build_course_page(sem, course, prefix, tabs_all, next_course=None):
     rows = []
     for les in course["lessons"]:
         href = lesson_page_name(course, les)
@@ -832,6 +850,7 @@ def build_course_page(sem, course, prefix, tabs_all):
     {career}
   </div>
 </section>"""
+    body += next_course_footer(next_course)
     nx_page(f"curriculum/{sem['id']}/{course['id']}/index.html",
             f"{course['title']} — Nexus Institute of Technology",
             course["summary"][:150], body, prefix, "curriculum")
@@ -994,15 +1013,23 @@ def main():
         for c in sem["courses"]:
             tabs_by_course[(sem["id"], c["id"])] = load_tab_content(sem, c)
 
+    # global curriculum order → next-course map (owner directive #6, 2026-07-22)
+    flat_courses = [(s, c) for s in sems for c in s["courses"]]
+    next_course_of = {}
+    for i, (s, c) in enumerate(flat_courses):
+        next_course_of[(s["id"], c["id"])] = (
+            flat_courses[i + 1] if i + 1 < len(flat_courses) else None)
+
     n_pages = 1  # curriculum index
     total, depth = build_curriculum_index(sems, tabs_by_course, "../")
     for sem in sems:
         for c in sem["courses"]:
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
-            build_course_page(sem, c, "../../../", tabs_all)
+            nxt = next_course_of[(sem["id"], c["id"])]
+            build_course_page(sem, c, "../../../", tabs_all, nxt)
             n_pages += 1
             for les in c["lessons"]:
-                build_lesson_page(sem, c, les, "../../../", tabs_all)
+                build_lesson_page(sem, c, les, "../../../", tabs_all, nxt)
                 n_pages += 1
     build_static_pages(sems, tabs_by_course)
     n_pages += 2
