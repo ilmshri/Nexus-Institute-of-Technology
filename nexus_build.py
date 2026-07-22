@@ -681,6 +681,15 @@ def build_lesson_page(sem, course, les, prefix, tabs_all, next_course=None):
                      f'Career Paths page</a> maps what {esc(kw)} runs and which '
                      f'roles touch this topic.</p></div>')
 
+    # Directive #2: unit-versatility conversions (SI baseline, tested in US/CGS).
+    if tabs.get("unit_quiz"):
+        examples += ('<div class="measure unit-vers"><h3>Unit versatility</h3>'
+                     '<p class="small">The theory above is in SI. Engineering '
+                     'practice also runs in US/Imperial and CGS — convert each '
+                     'quantity, then check. Get one wrong and the engine hands you '
+                     'a fresh variant of the same conversion.</p></div>')
+        examples += quiz_html(tabs["unit_quiz"])
+
     video_hero, library = library_tab(les, course)
 
     # ---- shell
@@ -1049,6 +1058,79 @@ _IMPERIAL_WL = {_norm_unit(x) for x in (
 _CGS_WL = {_norm_unit(x) for x in (
     'dyne', 'dyn', 'erg', 'poise', 'stokes', 'gauss', 'cal', 'kcal')}
 
+# Verified SI -> non-SI conversion factors (value_target = value_si * factor).
+# Sources: NIST SP 811. Only exact/standard factors; simple target tokens so they
+# render cleanly in \mathrm{} and the audit detects them. Directive #2 applied test.
+_CONV = {
+    'm':     ('US',  'ft',    3.28084),
+    'cm':    ('US',  'in',    0.393701),
+    'mm':    ('US',  'in',    0.0393701),
+    'km':    ('US',  'mi',    0.621371),
+    'm/s':   ('US',  'ft/s',  3.28084),
+    'kg':    ('US',  'lb',    2.20462),
+    'N':     ('US',  'lbf',   0.224809),
+    'kN':    ('US',  'lbf',   224.809),
+    'Pa':    ('US',  'psi',   0.000145038),
+    'kPa':   ('US',  'psi',   0.145038),
+    'MPa':   ('US',  'psi',   145.038),
+    'kJ':    ('US',  'BTU',   0.947817),
+    'kW':    ('US',  'hp',    1.34102),
+    'W':     ('US',  'hp',    0.00134102),
+    'rad/s': ('US',  'rpm',   9.5493),
+    'J':     ('CGS', 'erg',   1e7),
+}
+_BASE_VALUES = (2, 3, 5, 8, 12, 20, 45, 60, 100, 150)
+# Fallback SI set for authored-quiz courses whose content doesn't tag units in
+# \mathrm{} — common mechanical-engineering quantities, all genuinely convertible.
+_DEFAULT_SI = ('m', 'kg', 'N', 'kPa', 'kW', 'm/s')
+
+def _g(x):
+    return f"{x:.4g}"
+
+def _conv_item(si, seed, k, variant=False):
+    """One verified conversion MCQ. Correct value computed from the exact factor;
+    distractors are standard misconceptions (inverse factor, order-of-magnitude,
+    halving); the solution shows the factor and arithmetic (integrity: derived)."""
+    system, target, factor = _CONV[si]
+    v = _BASE_VALUES[(seed + k + (5 if variant else 0)) % len(_BASE_VALUES)]
+    correct_s = _g(v * factor)
+    seen, nums = {correct_s}, [correct_s]
+    for d in (v / factor, v * factor * 10, v * factor / 10, v * factor * 0.5,
+              v * factor * 2, v * factor * 0.25, v * factor * 3):
+        ds = _g(d)
+        if ds not in seen:
+            seen.add(ds); nums.append(ds)
+        if len(nums) == 4:
+            break
+    j = 1
+    while len(nums) < 4:  # guarantee four distinct options
+        ds = _g(v * factor * (1 + 0.17 * j)); j += 1
+        if ds not in seen:
+            seen.add(ds); nums.append(ds)
+    ans = (seed + k) % 4
+    nums[0], nums[ans] = nums[ans], nums[0]
+    choices = [f"\\({s}\\ \\mathrm{{{target}}}\\)" for s in nums]
+    q = (f'<p><b>Unit versatility.</b> A quantity is '
+         f'\\({_g(v)}\\ \\mathrm{{{si}}}\\). In {system} units, this is closest to:</p>')
+    sol = (f'<p>Using \\(1\\ \\mathrm{{{si}}} = {_g(factor)}\\ \\mathrm{{{target}}}\\): '
+           f'\\({_g(v)} \\times {_g(factor)} = {correct_s}\\ \\mathrm{{{target}}}\\).</p>')
+    return {'type': 'mc', 'q': q, 'choices': choices, 'answer': ans, 'solution': sol}
+
+def unit_versatility_items(si_units, seed, max_items=2):
+    """Build up to `max_items` conversion MCQs (each with one authored variant)
+    from the SI units a course actually uses. Empty if none are convertible."""
+    usable = [u for u in si_units if u in _CONV]
+    if not usable:
+        return []
+    r = seed % len(usable)            # rotate so different lessons test different units
+    usable = usable[r:] + usable[:r]
+    items = []
+    for k, si in enumerate(usable[:max_items]):
+        it = _conv_item(si, seed, k)
+        it['variants'] = [_conv_item(si, seed, k, variant=True)]
+        items.append(it)
+    return items
+
 def _ref_spans(s):
     for m in _MATH_RE.finditer(s):
         g = next((x for x in m.groups() if x is not None), '')
@@ -1210,6 +1292,19 @@ def audit_unit_policy(sems, tabs_by_course):
                 if isinstance(tab.get("examples"), str):
                     has_quiz = True
                     blobs.append(tab["examples"])
+                # injected unit-versatility items (q/solution/choices + variants)
+                for it in (tab.get("unit_quiz") or []):
+                    if not isinstance(it, dict):
+                        continue
+                    for k in ("q", "solution"):
+                        if isinstance(it.get(k), str):
+                            blobs.append(it[k])
+                    blobs += [c for c in (it.get("choices") or []) if isinstance(c, str)]
+                    for var in (it.get("variants") or []):
+                        for k in ("q", "solution"):
+                            if isinstance(var.get(k), str):
+                                blobs.append(var[k])
+                        blobs += [c for c in (var.get("choices") or []) if isinstance(c, str)]
                 for span in _ref_spans("\n".join(blobs)):
                     for u in _UNITBR_RE.findall(span):
                         nu = _norm_unit(u.strip())
@@ -1346,6 +1441,27 @@ def main():
         for c in sem["courses"]:
             refs_by_course[(sem["id"], c["id"])] = extract_course_reference(
                 c, tabs_by_course[(sem["id"], c["id"])])
+
+    # Directive #2 (full): inject verified SI->non-SI conversion practice into each
+    # authored-quiz lesson's applied surface, drawn from the course's own SI units.
+    for sem in sems:
+        for c in sem["courses"]:
+            key = (sem["id"], c["id"])
+            si_units = [u for (u, _n) in refs_by_course[key]["units"] if u in _CONV]
+
+            def _applied(t):
+                return isinstance(t, dict) and (t.get("quiz") or isinstance(t.get("examples"), str))
+
+            if any(_applied(t) for t in tabs_by_course[key].values()):
+                for du in _DEFAULT_SI:            # ensure convertible units exist
+                    if du not in si_units:
+                        si_units.append(du)
+            if not si_units:
+                continue
+            for n_str, tab in tabs_by_course[key].items():
+                if _applied(tab):
+                    seed = int(n_str) if str(n_str).isdigit() else 0
+                    tab["unit_quiz"] = unit_versatility_items(si_units, seed)
 
     n_pages = 1  # curriculum index
     total, depth = build_curriculum_index(sems, tabs_by_course, "../")
