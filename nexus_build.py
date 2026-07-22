@@ -250,6 +250,7 @@ NX_PAGE = """<!doctype html>
       <a href="{prefix}about/index.html"{on_about}>About</a>
       <a href="{prefix}mission/index.html"{on_mission}>Mission</a>
       <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
+      <a href="{prefix}reference/index.html"{on_reference}>Reference</a>
       <a href="{prefix}career/index.html"{on_career}>Career Paths</a>
     </nav>
     <span class="spacer"></span>
@@ -266,6 +267,7 @@ NX_PAGE = """<!doctype html>
     <a href="{prefix}about/index.html">About</a> ·
     <a href="{prefix}mission/index.html">Mission</a> ·
     <a href="{prefix}curriculum/index.html">Curriculum</a> ·
+    <a href="{prefix}reference/index.html">Reference</a> ·
     <a href="{prefix}career/index.html">Career Paths</a>
   </nav>
   <p class="lang-en">Free, open engineering education. Worked-example values are
@@ -308,6 +310,7 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
         on_about=' class="on"' if active == "about" else "",
         on_mission=' class="on"' if active == "mission" else "",
         on_curr=' class="on"' if active == "curriculum" else "",
+        on_reference=' class="on"' if active == "reference" else "",
         on_career=' class="on"' if active == "career" else "",
     )
     # ARABIC HOLD (owner 2026-07-20): strip data-ar hooks at emit time; the
@@ -983,6 +986,186 @@ def build_search_index(sems):
     return len(idx)
 
 # --------------------------------------------------------------- main -----
+# ============================================================ reference ====
+# Per-course reference engine (owner directive #3 + #5, merged 2026-07-23).
+# ONE extractor feeds BOTH the site-wide Reference tab and each course's
+# end-of-course summary PDF. Everything is pulled from the course's OWN
+# lecture + foundations + examples/quiz content — no generic entries. A course
+# below full teaching depth yields a thin reference, labeled honestly.
+# Content math delimiters in this project are \( … \) (inline) and \[ … \].
+
+_MATH_RE   = re.compile(r'\\\[(.+?)\\\]|\\\((.+?)\\\)|\$\$(.+?)\$\$', re.DOTALL)
+_TERM_RE   = re.compile(r'<(?:strong|b)>(.+?)</(?:strong|b)>', re.DOTALL | re.IGNORECASE)
+_CAP_RE    = re.compile(r'<span class="cap">(.+?)</span>', re.DOTALL | re.IGNORECASE)
+_TAG_RE    = re.compile(r'<[^>]+>')
+_WS_RE     = re.compile(r'\s+')
+_REL_RE    = re.compile(r'=|\\to\b|\\approx|\\propto|\\leq|\\geq|\\ge\b|\\le\b')
+_SYMBOL_RE = re.compile(
+    r'\\(?:theta|vartheta|phi|varphi|omega|Omega|alpha|beta|gamma|Gamma|delta|'
+    r'Delta|epsilon|varepsilon|zeta|eta|kappa|lambda|Lambda|mu|nu|xi|Xi|rho|'
+    r'sigma|Sigma|tau|upsilon|psi|Psi|chi|pi|Pi|nabla|partial)\b')
+_UNITBR_RE = re.compile(r'\\(?:text|mathrm|operatorname)\s*\{([^{}]{1,18})\}')
+_TERM_SKIP = re.compile(
+    r'^(problem|given|find|answer|solution|worked example|note|example|step|'
+    r'result|check|recall|so|thus|then|where|here|attempt|reveal|sanity|'
+    r'closing|why|summary|aside|tip|caution|warning|recap|setup|goal)\b',
+    re.IGNORECASE)
+
+def _norm_unit(u):
+    return (u.replace(' ', '').replace('²', '^2').replace('³', '^3')
+             .replace('·', '').replace('*', ''))
+
+# Whitelist of real units (SI + Imperial/US + CGS) — keeps subscript labels like
+# "net"/"sep"/"LHS" out of the units list. Aligns with unit policy (#2).
+_UNITS_WL = {_norm_unit(x) for x in (
+    'm', 'cm', 'mm', 'km', 'µm', 'um', 'nm', 's', 'ms', 'min', 'h', 'hr',
+    'kg', 'g', 'mg', 't', 'N', 'kN', 'MN', 'Pa', 'kPa', 'MPa', 'GPa', 'bar',
+    'J', 'kJ', 'MJ', 'W', 'kW', 'MW', 'Hz', 'kHz', 'rad', 'deg', 'mol',
+    'A', 'mA', 'V', 'kV', 'K', '°C', 'Ω', 'ohm',
+    'm/s', 'm/s^2', 'km/h', 'rad/s', 'rad/s^2', '1/s', 'N·m', 'Nm', 'N/m',
+    'N/mm', 'kg/m^3', 'W/m^2', 'W/mK', 'Pa·s', 'J/kg', 'm^2', 'm^3',
+    'cm^2', 'cm^3', 'ft', 'in', 'yd', 'mi', 'lb', 'lbm', 'lbf', 'slug', 'oz',
+    'psi', 'ksi', 'hp', 'BTU', 'Btu', '°F', 'ft/s', 'ft/s^2', 'ft·lb', 'rpm',
+    'gpm', 'cfm', 'dyne', 'dyn', 'erg', 'poise', 'stokes', 'gauss', 'cal', 'kcal',
+)}
+
+def _ref_spans(s):
+    for m in _MATH_RE.finditer(s):
+        g = next((x for x in m.groups() if x is not None), '')
+        yield _WS_RE.sub(' ', g).strip()
+
+def _ref_blobs(tab):
+    blobs = []
+    for key in ('lecture', 'foundations', 'examples', 'kuwait'):
+        v = tab.get(key)
+        if isinstance(v, str):
+            blobs.append(v)
+    for item in (tab.get('quiz') or []):
+        if isinstance(item, dict):
+            for key in ('q', 'solution'):
+                if isinstance(item.get(key), str):
+                    blobs.append(item[key])
+    return blobs
+
+def extract_course_reference(course, tabs_all):
+    """Scan a course's authored content → {equations, notation, units, terms}.
+    Deduped, ordered by first appearance, each tagged with its lesson number."""
+    equations, notation, units, terms = {}, {}, {}, {}
+    scanned = 0
+    for n_str in sorted((k for k in tabs_all if str(k).isdigit()), key=int):
+        tab = tabs_all[n_str]
+        if not isinstance(tab, dict):
+            continue
+        blobs = _ref_blobs(tab)
+        if not blobs:
+            continue
+        scanned += 1
+        n = int(n_str)
+        # equations, notation, units → scan ALL content (incl. quiz + applied)
+        for span in _ref_spans('\n'.join(blobs)):
+            if not span:
+                continue
+            for sym in _SYMBOL_RE.findall(span):
+                notation.setdefault(sym, n)
+            for u in _UNITBR_RE.findall(span):
+                u = u.strip()
+                if _norm_unit(u) in _UNITS_WL:
+                    units.setdefault(_norm_unit(u), (u, n))
+            if len(span) <= 170 and '<' not in span and '>' not in span \
+                    and _REL_RE.search(span):
+                equations.setdefault(_WS_RE.sub('', span), (span, n))
+        # key terms → only definitional prose (lecture + foundations), so quiz
+        # problem-names and applied-case titles don't masquerade as terms.
+        for key in ('lecture', 'foundations'):
+            blob = tab.get(key)
+            if not isinstance(blob, str):
+                continue
+            for raw in _TERM_RE.findall(blob) + _CAP_RE.findall(blob):
+                t = _WS_RE.sub(' ', _TAG_RE.sub('', raw)).strip(' .:—-')
+                if not (3 <= len(t) <= 46) or _TERM_SKIP.match(t):
+                    continue
+                if t[0].isdigit() or not any(c.isalpha() for c in t):
+                    continue
+                terms.setdefault(t.lower(), (t, n))
+    return {
+        'equations': [{'tex': tex, 'lesson': n} for (tex, n) in equations.values()][:48],
+        'notation':  sorted(notation.items(), key=lambda kv: kv[1]),
+        'units':     [(disp, n) for (disp, n) in sorted(units.values(), key=lambda x: x[1])],
+        'terms':     sorted(terms.values(), key=lambda x: (x[1], x[0].lower()))[:80],
+        'scanned':   scanned,
+        'n_lessons': len(course['lessons']),
+    }
+
+def _ref_is_thin(ref):
+    return ref['scanned'] < 3 or len(ref['equations']) < 4
+
+def _ref_lesson_link(sem, course, n, prefix):
+    les = next((l for l in course['lessons'] if l['n'] == n), None)
+    if not les:
+        return ''
+    href = f"{prefix}curriculum/{sem['id']}/{course['id']}/{lesson_page_name(course, les)}"
+    return f'<a class="ref-jump" href="{href}">L{n:02d}</a>'
+
+def reference_section_html(sem, course, ref, prefix):
+    """Inner reference HTML for one course — shared by the Reference tab and the
+    course summary PDF (prefix differs by caller)."""
+    out = []
+    if _ref_is_thin(ref):
+        out.append('<p class="ref-thin">This course is below full teaching depth, '
+                   'so its reference is thin: it lists only what the authored '
+                   'lessons actually introduce, and grows as lessons are written.</p>')
+    if ref['equations']:
+        rows = ''.join(
+            f'<li><span class="ref-eq">\\[{e["tex"]}\\]</span>'
+            f'{_ref_lesson_link(sem, course, e["lesson"], prefix)}</li>'
+            for e in ref['equations'])
+        out.append(f'<h4>Equations</h4><ul class="ref-eqs">{rows}</ul>')
+    chips = ''.join(f'<span class="chip">\\({sym}\\)</span>' for sym, _ in ref['notation'])
+    chips += ''.join(f'<span class="chip unit">{esc(u)}</span>' for u, _ in ref['units'])
+    if chips:
+        out.append(f'<h4>Notation &amp; units</h4><div class="ref-chips">{chips}</div>')
+    if ref['terms']:
+        trows = ''.join(
+            f'<tr><td>{esc(t)}</td><td>{_ref_lesson_link(sem, course, n, prefix)}</td></tr>'
+            for (t, n) in ref['terms'])
+        out.append('<h4>Key terms &amp; concepts</h4><div class="table-wrap">'
+                   '<table class="ref-terms"><thead><tr><th>Term</th>'
+                   f'<th>Introduced</th></tr></thead><tbody>{trows}</tbody></table></div>')
+    if not (ref['equations'] or chips or ref['terms']):
+        out.append('<p class="ref-thin">No reference material has been extracted '
+                   'yet — this course\'s lessons are still in production.</p>')
+    return '\n'.join(out)
+
+def build_reference_page(sems, refs_by_course, prefix='../'):
+    blocks = []
+    for sem in sems:
+        cards = []
+        for c in sem['courses']:
+            ref = refs_by_course[(sem['id'], c['id'])]
+            chref = f"{prefix}curriculum/{sem['id']}/{c['id']}/index.html"
+            cards.append(
+                f'<section class="ref-course" id="ref-{sem["id"]}-{c["id"]}">'
+                f'<div class="ref-chd"><h3><a href="{chref}">{esc(c["code"])}</a> · '
+                f'{esc(c["title"])}</h3><span class="ref-count">'
+                f'{len(ref["equations"])} equations · {len(ref["terms"])} terms</span></div>'
+                f'{reference_section_html(sem, c, ref, prefix)}</section>')
+        blocks.append(f'<div class="ref-sem"><h2>{esc(sem["title"])}</h2>{"".join(cards)}</div>')
+    body = f"""
+<div class="pagehead">
+  <p class="kicker"><span class="n">REFERENCE</span>Compiled from the courses themselves</p>
+  <h1>Engineering reference</h1>
+  <p class="sub">Every equation, symbol, unit, and key term below is extracted from
+  that course's own lectures, foundations, and worked examples — not a generic
+  formula sheet. Courses still in production show a thin, honest set that grows
+  as lessons are authored.</p>
+</div>
+<section class="part tight"><div class="wide">{''.join(blocks)}</div></section>"""
+    nx_page("reference/index.html",
+            "Reference — Nexus Institute of Technology",
+            "Per-course equations, notation, units, and key terms, compiled from "
+            "each course's own lessons.",
+            body, prefix, "reference", extra_head=MATHJAX)
+
 def main():
     global NX_V
     if OUT.exists():
@@ -1020,8 +1203,18 @@ def main():
         next_course_of[(s["id"], c["id"])] = (
             flat_courses[i + 1] if i + 1 < len(flat_courses) else None)
 
+    # per-course reference sets — one engine for the Reference tab (#3) and the
+    # course summary PDF (#5), sourced from each course's own content.
+    refs_by_course = {}
+    for sem in sems:
+        for c in sem["courses"]:
+            refs_by_course[(sem["id"], c["id"])] = extract_course_reference(
+                c, tabs_by_course[(sem["id"], c["id"])])
+
     n_pages = 1  # curriculum index
     total, depth = build_curriculum_index(sems, tabs_by_course, "../")
+    build_reference_page(sems, refs_by_course, "../")
+    n_pages += 1
     for sem in sems:
         for c in sem["courses"]:
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
