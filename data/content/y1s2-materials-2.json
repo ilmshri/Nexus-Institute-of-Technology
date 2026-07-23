@@ -470,5 +470,241 @@
    }
   ],
   "kuwait": "\n<p>A procurement request that specifies \"4140\" instead of \"1040\" for a heavy shaft is not asking for a harder steel at the surface — a heat-treater can get both to nearly the same surface HRC. It is asking for a steel that stays hard deep enough into a thick section to carry load without a soft, fatigue-prone core. Reading a Jominy curve, or even just recognizing the alloy-family digits on a mill certificate, is how a maintenance or design engineer checks that the grade delivered actually matches the section size it has to survive in.</p>\n<p>Substitution decisions run into this constantly: a store only has 1045 in stock where the drawing calls for 4140. For a small-diameter pin the substitution may be harmless — both harden through at that size. For a large shaft it is not, however similar the two grades look on a hardness tester at the surface; the core of the 1045 shaft will stay soft. The Jominy curve, not the spec sheet's single hardness number, is what settles whether a substitution is safe.</p>\n"
+ },
+ "5": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Chromium content versus distance across a welded grain boundary, showing bulk chromium at 18 percent dipping to about 8 percent right at the boundary, below the roughly 12 percent threshold needed for a passive film\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Sensitization: chromium depletion at a welded grain boundary</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">distance across the boundary (schematic) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">local Cr content (%) →</text><line x1=\"66\" y1=\"161.4\" x2=\"540\" y2=\"161.4\" stroke=\"#c2820f\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><text x=\"404\" y=\"156\" fill=\"#c2820f\" font-size=\"11\">~12% — passivity threshold</text><polyline points=\"66.0,69.9 77.8,71.0 89.7,72.5 101.5,74.7 113.4,77.6 125.2,81.5 137.1,86.6 148.9,92.9 160.8,100.7 172.7,110.0 184.5,120.8 196.4,132.8 208.2,146.0 220.1,159.7 231.9,173.5 243.8,186.9 255.6,199.0 267.4,209.4 279.3,217.2 291.1,222.1 303.0,223.8 314.9,222.1 326.7,217.2 338.5,209.4 350.4,199.0 362.2,186.9 374.1,173.5 386.0,159.7 397.8,146.0 409.6,132.8 421.5,120.8 433.4,110.0 445.2,100.7 457.0,92.9 468.9,86.6 480.8,81.5 492.6,77.6 504.5,74.7 516.3,72.5 528.1,71.0 540.0,69.9\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"303.0\" cy=\"223.8\" r=\"3.5\" fill=\"#1f7a5c\"/><line x1=\"303.0\" y1=\"223.8\" x2=\"303.0\" y2=\"255\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"308\" y=\"240\" fill=\"#1f7a5c\" font-size=\"10\">grain boundary — Cr₂₃C₆ forms here</text><text x=\"80\" y=\"90\" fill=\"#3a6ea5\" font-size=\"11\">bulk: 18% Cr</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Right at the boundary, local Cr drops below the passive-film threshold — even though the bulk plate is untouched</text></svg><figcaption>Welding heats the heat-affected zone through the sensitizing range long enough for chromium carbides to precipitate at grain boundaries, pulling chromium out of the immediately adjacent matrix — a narrow band around every boundary drops below the ~12% needed for passivity, while the bulk stays at 18%.</figcaption></figure>\n\n<h3>§1 · The stainless families</h3>\n<p>Any steel with roughly \\(10.5\\)–\\(12\\)% chromium or more forms a thin, adherent, self-healing chromium-oxide film — <b>passivity</b> — and stops rusting the way plain carbon steel does. Above that composition floor, four structural families cover almost every application. <b>Austenitic</b> stainless (the 300 series: Cr + Ni, FCC, non-magnetic) gives the best combination of corrosion resistance, ductility, and weldability, but cannot be hardened by heat treatment — only by cold work. <b>Ferritic</b> stainless (Cr only, BCC, magnetic) is cheaper and adequate where corrosion demands are moderate. <b>Martensitic</b> stainless carries enough carbon to quench-harden exactly like a plain carbon steel — traded corrosion resistance for the ability to reach real hardness, used for cutlery, shafts, and valve trim. <b>Duplex</b> stainless is a roughly 50/50 austenite–ferrite structure, combining ferritic-level strength with corrosion resistance that rivals or beats austenitic grades in chloride-rich environments.</p>\n\n<h3>§2 · Sensitization — reading the diagram</h3>\n<p>Welding heats the metal beside the weld — the heat-affected zone — through the <b>sensitizing range</b>, roughly \\(450\\)–\\(850^\\circ\\)C, for long enough that chromium carbides (\\(\\text{Cr}_{23}\\text{C}_6\\)) precipitate directly onto grain boundaries. Forming those carbides pulls chromium out of the matrix immediately next to the boundary — not from the bulk, which stays fully alloyed, but from a narrow band exactly where the carbides sit. If that local concentration drops below the passivity threshold, the boundary loses its protective film while the surrounding grains keep theirs, and corrosion attacks precisely along the grain boundaries — <b>intergranular corrosion</b>, sometimes called weld decay. The working method: find the heat-affected zone, confirm it passed through the sensitizing range, and treat every grain boundary there as the weak point, not the plate as a whole.</p>\n<p>Three fixes address it directly: low-carbon \"L\" grades (304L, 316L, \\(C<0.03\\)%) simply have too little carbon to form much \\(\\text{Cr}_{23}\\text{C}_6\\); <b>stabilized</b> grades (321, 347) add titanium or niobium, which forms TiC or NbC preferentially and leaves the chromium in solution; and a post-weld solution anneal (reheat above \\(\\sim\\!1050^\\circ\\)C, then quench) redissolves any carbides that did form and re-homogenizes the chromium before the part enters service.</p>\n\n<h3>§3 · Cast irons — one base metal, three graphite shapes</h3>\n<p>Cast iron is iron with \\(2\\)–\\(4\\)% carbon, and its mechanical character comes almost entirely from what shape the excess carbon takes as graphite. <b>Gray iron</b> lets graphite grow as sharp, interconnected <em>flakes</em>; each flake is a built-in crack, so gray iron is brittle with near-zero elongation — but it is cheap, castable, an excellent vibration damper, and strong in compression, which is exactly what a machine base or engine block needs. <b>Ductile</b> (nodular) iron adds a trace of magnesium or cerium before pouring, which forces the graphite into <em>spheroids</em> instead of flakes; spheroids concentrate far less stress, so ductile iron reaches real tensile strength and real elongation (typically \\(10\\)–\\(18\\)%) — strong enough for crankshafts, gears, and pressure-piping fittings. <b>White iron</b> is cooled fast enough (or alloyed) that the carbon stays locked as cementite and never forms graphite at all — extremely hard, extremely brittle, used only where pure abrasive wear resistance matters and impact loading does not, such as mill liners and crusher jaws.</p>\n\n<h3>§4 · Selecting a family — the working method</h3>\n<p>For stainless: default to austenitic unless a specific constraint rules it out — need to heat-treat-harden the part, go martensitic; need maximum strength with strong chloride resistance, go duplex; need to hold cost down where corrosion demands are mild, ferritic is enough. For cast iron: a non-critical, compressively-loaded, vibration-damped part is gray iron's job; anything that must also survive tension or shock — a crankshaft, a gear, a pipe fitting — needs ductile iron instead, even though it costs more than gray; a purely abrasive, low-impact wear surface is the one place white iron's brittleness is an acceptable price for its hardness. Both decisions run the same way: name the dominant load the part actually sees, then pick the family built for that load, not the cheapest one that merely looks similar on a datasheet.</p>\n<div class=\"keybox\"><span class=\"tag\">Key mechanism — sensitization</span>\n<p>Welding drives the HAZ through 450–850°C long enough for Cr₂₃C₆ to precipitate at grain boundaries, pulling local Cr below the ~12% passivity floor right at the boundary — while the bulk alloy is untouched.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>BCC / FCC crystal structures</b> (Materials I) — the structural difference between ferritic and austenitic stainless.</li><li><b>Grain boundaries</b> (Materials I) — where sensitization happens.</li><li>Corrosion mechanisms return in more depth in Lesson 10 and in Year 3's full corrosion course — this lesson previews only what welding does to a grain boundary.</li></ul>\n<h4>Toolkit — families and the sensitization mechanism</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Austenitic stainless</td><td>FCC, Cr+Ni, non-magnetic</td><td>Best corrosion resistance + weldability.</td></tr>\n<tr><td>Ferritic stainless</td><td>BCC, Cr only, magnetic</td><td>Economical, moderate resistance.</td></tr>\n<tr><td>Martensitic stainless</td><td>hardens by quenching</td><td>Where hardness/wear matters most.</td></tr>\n<tr><td>Duplex stainless</td><td>~50/50 austenite + ferrite</td><td>High strength + chloride resistance.</td></tr>\n<tr><td>Sensitization</td><td>Cr₂₃C₆ at grain boundaries, 450–850°C</td><td>Weld-decay risk; use L-grade or stabilized.</td></tr>\n<tr><td>Gray / ductile / white iron</td><td>flake / nodule / no-graphite carbon</td><td>Damping vs. toughness vs. pure wear.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Is the heat-affected zone still passive?</b></p><p><b>Problem.</b> A 304 stainless weld\\'s heat-affected zone measures \\(9\\)% Cr immediately next to a grain boundary; the bulk plate is \\(18\\)% Cr. Is that boundary region protected by a passive film? What repair grade avoids this?</p>",
+    "solution": "<p><b>Solution.</b> No — \\(9\\)% is below the \\(\\sim\\!12\\)% passivity threshold, so that narrow band is unprotected even though the bulk plate is fine. Re-welding in 304L (low-carbon) or a stabilized grade like 321/347 avoids re-forming enough \\(\\text{Cr}_{23}\\text{C}_6\\) to deplete the boundary again.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a fracture back to the alloy</b></p><p><b>Problem.</b> A crankshaft snapped in service. The fracture surface is dull gray, and measured elongation at failure was near \\(0\\)%. Ductile iron of similar composition normally shows \\(10\\)–\\(18\\)% elongation. Which iron was this, and was it the right choice for a crankshaft?</p>",
+    "solution": "<p><b>Solution.</b> The dull-gray, near-zero-elongation fracture is gray iron's signature — its graphite flakes give it essentially no tensile ductility. It was the wrong choice: a crankshaft carries cyclic bending and torsional shock, exactly the load gray iron's flake graphite cannot survive. Ductile (nodular) iron, or forged steel, is the correct specification.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a stainless family for seawater service</b></p><p><b>Problem.</b> A chloride-laden seawater cooling line needs a stainless pipe with both high strength (to reduce wall thickness) and strong resistance to chloride pitting. Which family fits, and why?</p>",
+    "solution": "<p><b>Solution.</b> Duplex. Its mixed austenite-ferrite structure gives it higher strength than austenitic grades (thinner walls for the same pressure rating) while matching or beating austenitic chloride-pitting resistance — the combination plain austenitic or ferritic grades cannot offer alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A stainless steel's passive film is formed by:</p>",
+    "choices": [
+     "Chromium forming a thin, self-healing chromium-oxide layer",
+     "Nickel content alone",
+     "A painted or plated coating",
+     "Carbon content"
+    ],
+    "answer": 0,
+    "solution": "<p>Chromium above ~10.5–12% forms the adherent oxide film that makes the steel \"stainless.\"</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Austenitic stainless steel (e.g. 304, 316) is best identified by:</p>",
+    "choices": [
+     "FCC structure, non-magnetic, Cr + Ni alloyed",
+     "BCC structure, magnetic, Cr only",
+     "Hardens fully by quenching",
+     "Highest carbon content of the stainless families"
+    ],
+    "answer": 0,
+    "solution": "<p>Austenitic grades are FCC and non-magnetic — the family with Ni added alongside Cr.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which stainless family can be hardened by quenching, like a plain-carbon steel?</p>",
+    "choices": [
+     "Martensitic",
+     "Austenitic",
+     "Ferritic",
+     "Duplex"
+    ],
+    "answer": 0,
+    "solution": "<p>Martensitic stainless carries enough carbon to quench-harden, trading some corrosion resistance for hardness.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Duplex stainless is chosen over plain austenitic grades mainly because it offers:</p>",
+    "choices": [
+     "Higher strength with chloride-pitting resistance that matches or beats austenitic grades",
+     "Lower cost with no corrosion resistance",
+     "Full heat-treat hardenability like a martensitic grade",
+     "Better performance only in freshwater, never chlorides"
+    ],
+    "answer": 0,
+    "solution": "<p>The mixed austenite-ferrite structure gives duplex grades both higher strength and strong chloride resistance at once.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Sensitization happens when:</p>",
+    "choices": [
+     "Cr₂₃C₆ precipitates at grain boundaries during welding, depleting nearby Cr",
+     "The entire part loses all of its chromium",
+     "It only ever affects ferritic stainless",
+     "The steel is left at room temperature too long"
+    ],
+    "answer": 0,
+    "solution": "<p>Carbide precipitation at boundaries — not bulk chromium loss — is the mechanism.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Low-carbon \"L\" grades (304L, 316L) resist sensitization mainly because:</p>",
+    "choices": [
+     "Less carbon means far less Cr₂₃C₆ forms, leaving more Cr in solution",
+     "They contain no chromium to deplete",
+     "They are never welded",
+     "They form carbides faster, using up the carbon safely"
+    ],
+    "answer": 0,
+    "solution": "<p>Starving the carbide-forming reaction of carbon is the direct fix.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Gray iron's low tensile ductility comes from:</p>",
+    "choices": [
+     "Graphite flakes acting as built-in stress risers",
+     "Having more iron than ductile iron",
+     "Never being fully melted during casting",
+     "A magnesium addition before pouring"
+    ],
+    "answer": 0,
+    "solution": "<p>Sharp interconnected flakes concentrate stress and initiate cracks early; ductile iron avoids this with nodules instead.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ductile (nodular) iron gets its toughness from:</p>",
+    "choices": [
+     "A small Mg or Ce addition that makes graphite form as rounded nodules",
+     "Having zero carbon content",
+     "Fast cooling that forms cementite instead of graphite",
+     "Being forged rather than cast"
+    ],
+    "answer": 0,
+    "solution": "<p>Nodules, unlike flakes, do not concentrate stress nearly as badly — real elongation follows.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A coastal process plant's seawater cooling piping is a standing materials-selection problem: chlorides attack austenitic stainless by pitting given enough time, which is why duplex grades increasingly win that specification despite costing more per meter — the thinner wall duplex allows can offset some of the premium. Field-welded repairs on any stainless line raise the sensitization question immediately: a repair welded in standard 316 without an L-grade or a post-weld anneal leaves every grain boundary in the heat-affected zone exposed to exactly the intergranular attack this lesson describes, often invisible until the pipe leaks along a ring around the weld.</p>\n<p>Pump casings and valve bodies across a plant are commonly gray or ductile iron, and a cracked casing pulled during a shutdown is read the same way a fracture is read in the lab: a dull, flat, no-warning break is gray iron behaving exactly as gray iron does under a load it was never rated for; a break showing visible deformation before final fracture points to ductile iron that failed from a real overload or a missed defect, not from the material being the wrong choice.</p>\n"
+ },
+ "6": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Strength versus aging time for an aluminum-copper alloy, rising from the solution-treated value through underaged to a peak at T6, then falling as the alloy overages\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Age hardening: strength rises to a peak (T6), then falls</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">aging time (schematic) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">strength →</text><polyline points=\"66.0,248.3 75.9,208.7 85.8,175.8 95.6,148.6 105.5,126.6 115.4,108.9 125.2,95.0 135.1,84.4 145.0,76.7 154.9,71.5 164.8,68.3 174.6,66.9 184.5,66.9 194.4,68.3 204.2,70.7 214.1,73.9 224.0,77.9 233.9,82.4 243.8,87.4 253.6,92.7 263.5,98.2 273.4,103.9 283.2,109.7 293.1,115.5 303.0,121.4 312.9,127.2 322.8,132.9 332.6,138.5 342.5,143.9 352.4,149.3 362.2,154.4 372.1,159.4 382.0,164.2 391.9,168.9 401.8,173.3 411.6,177.6 421.5,181.7 431.4,185.5 441.2,189.2 451.1,192.8 461.0,196.1 470.9,199.3 480.8,202.3 490.6,205.1 500.5,207.8 510.4,210.4 520.2,212.8 530.1,215.1 540.0,217.2\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"178.9\" cy=\"66.7\" r=\"3.5\" fill=\"#1f7a5c\"/><text x=\"150\" y=\"55\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">peak — T6</text><circle cx=\"111.1\" cy=\"116.0\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"60\" y=\"112\" fill=\"#c2820f\" font-size=\"10\">underaged</text><circle cx=\"348.1\" cy=\"147.0\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"352\" y=\"140\" fill=\"#c2820f\" font-size=\"10\">overaged</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Past the peak, coarsening precipitates make the alloy WEAKER — more aging time is not always better</text></svg><figcaption>Solution-treated aluminum starts soft; aging grows fine precipitates that block dislocations, raising strength to a peak (T6). Held longer, those same precipitates coarsen and space out — the alloy overages, and strength falls again.</figcaption></figure>\n\n<h3>§1 · Aluminum and its temper system</h3>\n<p>Wrought aluminum alloys are named by a four-digit code whose first digit gives the principal alloying element — 2xxx is Al-Cu, 5xxx is Al-Mg, 6xxx is Al-Mg-Si, 7xxx is Al-Zn — the same logic as a steel designation's family digits, applied to a different metal. A <b>temper</b> suffix then says what was done to it: F is as-fabricated, O is fully annealed (softest), H covers strain-hardened tempers used on alloys that cannot be heat-treated to strengthen, and T covers thermally treated tempers. Of the T-series, <b>T4</b> means solution heat treated and naturally aged at room temperature over days to weeks; <b>T6</b> means solution heat treated and <em>artificially</em> aged at a moderate elevated temperature to reach peak strength in hours.</p>\n\n<h3>§2 · Reading the age-hardening curve</h3>\n<p>Solution treatment heats an Al-Cu alloy hot enough to dissolve its copper fully into solid solution, then quenches fast enough to trap that copper in a supersaturated, still-soft state. <b>Aging</b> — holding at a moderate temperature — lets that trapped copper begin precipitating as extremely fine particles distributed through the matrix; those fine particles block dislocation motion far more effectively than the same copper sitting dissolved in solution, so strength climbs as aging proceeds. <b>Underaged</b> material simply hasn't aged long enough — precipitates are still too small and sparse. At the <b>peak</b> (T6), precipitate size and spacing are exactly tuned to obstruct dislocations most effectively. Held longer still, the precipitates keep growing — <b>overaging</b> — becoming fewer, larger, and more widely spaced, which dislocations can bypass more easily again, so strength falls even though the alloy spent more time at temperature, not less.</p>\n\n<h3>§3 · Copper and nickel alloys</h3>\n<p>Copper's defining property is conductivity, and its central engineering trade-off follows directly: anything that strengthens copper — alloying or cold work — also degrades that conductivity. Conductor-grade copper is drawn through a series of dies to final wire size, and each pass work-hardens it, piling up dislocations and using up the ductility needed for the next pass; drawn far enough without relief, it cracks instead of continuing to draw down. An interpass <b>anneal</b> — a recrystallization heat treatment — restores ductility between passes so drawing can continue. <b>Brass</b> (Cu-Zn) is cheaper and more machinable; <b>bronze</b> (Cu-Sn or Cu-Al) is tougher and more wear- and corrosion-resistant; both are prized in hazardous atmospheres for being non-sparking. <b>Nickel alloys</b> hold their strength at temperatures where steel and aluminum have both lost most of theirs, and resist corrosion in chemical environments that attack stainless steel outright — earning their considerable cost premium only where nothing cheaper survives.</p>\n\n<h3>§4 · Choosing a nonferrous family — the working method</h3>\n<p>Where weight and moderate strength matter most, aluminum wins — then the temper is chosen for the job: T6 for a structural part, O or an H-temper for sheet that still needs to be formed afterward. Where electrical or thermal conductivity is the actual requirement, copper is the answer, and the specification states plainly whether annealed (soft, most conductive, most formable) or hard-drawn (stronger, still adequately conductive) is needed. Where the service temperature or the chemical environment would defeat steel or stainless outright, a nickel alloy is the only real option, and its cost is simply the price of the part surviving at all. Each family earns its premium over plain steel by solving one specific problem steel cannot — the working method is naming that problem before naming the alloy.</p>\n<div class=\"keybox\"><span class=\"tag\">Key curve — age hardening</span>\n<p>Strength rises as fine, coherent precipitates form and block dislocations (underaged → peak, T6) — then FALLS as those same precipitates coarsen (overaged). More time at temperature is not always better.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Dislocations and strengthening mechanisms</b> (Materials I) — precipitates block dislocation motion the same way grain boundaries and solute atoms do.</li><li><b>Quenching and supersaturation</b> (Lesson 2) — the same \"trap a non-equilibrium state, then let it evolve\" idea used for steel's martensite.</li><li><b>Work hardening</b> (Materials I) — why copper needs interpass annealing.</li></ul>\n<h4>Toolkit — designations and the age-hardening states</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>2xxx / 5xxx / 6xxx / 7xxx</td><td>Al family digit = principal alloying element</td><td>Cu / Mg / Mg-Si / Zn respectively.</td></tr>\n<tr><td>T4</td><td>solution treat + natural age</td><td>Room-temperature aging, days–weeks.</td></tr>\n<tr><td>T6</td><td>solution treat + artificial age</td><td>Peak strength, hours at temperature.</td></tr>\n<tr><td>Underaged / overaged</td><td>before / past the strength peak</td><td>Read directly off the aging curve.</td></tr>\n<tr><td>Brass / bronze</td><td>Cu-Zn / Cu-Sn or Cu-Al</td><td>Machinability vs. toughness &amp; wear.</td></tr>\n<tr><td>Nickel alloys</td><td>retain strength at high T</td><td>Where steel/stainless fail outright.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading the aging curve</b></p><p><b>Problem.</b> An Al-Cu alloy ages from \\(150\\ \\text{MPa}\\) (solution-treated) toward a T6 peak of \\(420\\ \\text{MPa}\\) at aging time \\(t=100\\). At \\(t=40\\) it measures about \\(347\\ \\text{MPa}\\); at \\(t=250\\) it measures about \\(301\\ \\text{MPa}\\). Is the \\(t=250\\) part underaged, peak-aged, or overaged — and what should change about its aging cycle?</p>",
+    "solution": "<p><b>Solution.</b> \\(t=250\\) is far past the peak at \\(t=100\\), so it is overaged — and its \\(301\\ \\text{MPa}\\) is even <em>below</em> the \\(t=40\\) underaged value of \\(347\\ \\text{MPa}\\). The aging cycle should be shortened, stopping near \\(t=100\\), not extended: more time at temperature made this part weaker, not stronger.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why the copper wire cracked</b></p><p><b>Problem.</b> A copper wire is cold-drawn through several dies with no anneal step between passes and begins cracking on the final pass. What metallurgical process caused this, and what single step would have prevented it?</p>",
+    "solution": "<p><b>Solution.</b> Work hardening: each pass piles up more dislocations and uses up the ductility available for the next draw. An interpass anneal — a recrystallization heat treatment restoring soft, ductile grains — between passes would have let drawing continue without cracking.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Family selection for a 650°C bracket</b></p><p><b>Problem.</b> A turbine hot-section bracket must survive continuous service at \\(650^\\circ\\)C, a temperature at which both aluminum and most steels have lost the bulk of their strength. Which alloy family is appropriate, and what is the trade-off?</p>",
+    "solution": "<p><b>Solution.</b> A nickel alloy (superalloy) — it retains useful strength at temperatures that defeat steel and aluminum outright. The trade-off is cost: nickel alloys carry a significant premium, justified only because no cheaper family survives that service temperature.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In an aluminum temper code, \"T6\" means:</p>",
+    "choices": [
+     "Solution heat treated and artificially aged to peak strength",
+     "Fully annealed, softest state",
+     "Strain-hardened by cold work only",
+     "As-fabricated, no treatment"
+    ],
+    "answer": 0,
+    "solution": "<p>T6 is the peak-strength artificially-aged temper.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On the age-hardening curve, strength eventually falls with continued aging time because:</p>",
+    "choices": [
+     "Precipitates coarsen — fewer, larger, more widely spaced — making dislocation motion easier again",
+     "The alloy loses copper",
+     "The part cools down",
+     "Aging always stops working after a fixed time regardless of temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>Overaging coarsens the precipitates rather than removing them, and dislocations move around larger, sparser particles more easily.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\"Underaged\" aluminum has:</p>",
+    "choices": [
+     "Strength below the T6 peak because precipitates haven't finished forming",
+     "Strength above the T6 peak",
+     "No copper in solution",
+     "Already overaged and weakened"
+    ],
+    "answer": 0,
+    "solution": "<p>Underaged simply means aging stopped before reaching the strength peak.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Copper conductor drawn through several dies with no interpass anneal will:</p>",
+    "choices": [
+     "Work-harden and eventually crack",
+     "Get softer with every pass",
+     "Lose all electrical conductivity immediately",
+     "Melt from friction"
+    ],
+    "answer": 0,
+    "solution": "<p>Cold work piles up dislocations pass after pass until ductility runs out.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The main engineering trade-off in strengthening copper (by alloying or cold work) is:</p>",
+    "choices": [
+     "Strength rises while electrical conductivity falls",
+     "Strength rises with no other cost",
+     "Conductivity rises with strength",
+     "Copper cannot be strengthened at all"
+    ],
+    "answer": 0,
+    "solution": "<p>Whatever raises copper's strength also degrades the conductivity that is its main reason for use.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Nickel alloys are specified over steel mainly when:</p>",
+    "choices": [
+     "The application needs strength retention at very high temperature or resistance in a very aggressive chemical environment",
+     "Cost must be minimized",
+     "The part must be as light as possible",
+     "Electrical conductivity is the main requirement"
+    ],
+    "answer": 0,
+    "solution": "<p>Nickel alloys earn their premium only where steel or stainless would fail outright.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In an aluminum designation such as 6061, the family digit (\"6\") mainly indicates:</p>",
+    "choices": [
+     "The principal alloying element (here, magnesium-silicon)",
+     "The temper state",
+     "The year the alloy was introduced",
+     "The supplier"
+    ],
+    "answer": 0,
+    "solution": "<p>The first digit names the alloy family by its principal alloying addition; temper is a separate suffix (O, H, T…).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An overaged T6-family part, compared to its own peak-aged state, is:</p>",
+    "choices": [
+     "Weaker, because its precipitates have coarsened past the optimum size and spacing",
+     "Stronger, because it spent more time at temperature",
+     "Identical — aging time beyond T6 has no effect",
+     "Softer only at the surface"
+    ],
+    "answer": 0,
+    "solution": "<p>Coarsened precipitates are easier for dislocations to bypass, so measured strength drops below the T6 peak.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A structural bracket specified as 6061-T6 versus the same shape supplied as 6061-O is the temper system doing real engineering work: the O-temper sheet forms easily into shape without cracking, then a solution-and-age cycle afterward brings it up to T6 strength for service — ordering the wrong temper for the stage of fabrication is a common, avoidable mistake on a shop floor. Copper busbar and cable runs in a plant's electrical distribution show the conductivity trade-off directly: hard-drawn copper is used where mechanical strength in the run matters, annealed (soft) copper where maximum conductivity and flexibility matter more, and the two are not interchangeable even though both are \"just copper.\"</p>\n<p>Nickel-alloy components appear only where the budget for anything cheaper has already failed: furnace fixtures, high-temperature process piping, and hardware in aggressive chemical service that would pit or crack a stainless equivalent within a maintenance cycle or two. Recognizing a nickel-alloy part on a bill of materials is usually a signal that an earlier steel or stainless version of that same part failed in service — the specification upgraded because the environment demanded it, not by preference.</p>\n"
  }
 }

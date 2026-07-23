@@ -17,7 +17,7 @@ Compliant: 13/13 authored-quiz courses.
 | CMP 106 Engineering Computing | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | MTH 151 Engineering Mathematics II | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | DYN 152 Engineering Dynamics | ft, ft/s, hp, in, lb, lbf, psi, rpm | ✅ tests non-SI |
-| MAT 153 Materials Science II | ft, hp, lb, lbf, psi | ✅ tests non-SI |
+| MAT 153 Materials Science II | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | MTH 207 Engineering Mathematics III — Differential Equations & Linear Algebra | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | SOM 201 Strength of Materials | ft, lb, psi, rpm | ✅ tests non-SI |
 | FLD 203 Fluid Mechanics | ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
