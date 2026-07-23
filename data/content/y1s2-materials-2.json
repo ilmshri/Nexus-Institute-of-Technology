@@ -1060,5 +1060,241 @@
    }
   ],
   "kuwait": "\n<p>Furnace and ladle relining is a scheduled, budgeted event precisely because refractories are consumed by exactly the two mechanisms in §3: chemical attack from the slag they contact, and thermal cycling that cracks a lining even when the chemistry is fine. A maintenance plan that tracks lining wear by both signs — not melting point alone — schedules relines before a breakthrough happens rather than after.</p>\n<p>Fiberglass piping and tanks show up across process plants specifically where corrosion resistance matters more than raw strength — chemical dosing lines, tank linings — and a maintenance engineer inspecting one needs to remember the material is a composite, not a metal: a scratch or impact that would just dent steel can delaminate the fiber-matrix bond locally, weakening the part in a way that is not visible from the outside and does not show up as simple corrosion.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A galvanic series ladder from noble metals at the top to active metals at the bottom, with graphite and passive stainless near the top and magnesium at the bottom, showing that steel connected to stainless corrodes as the anode\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The galvanic series: who corrodes when two metals touch</text><line x1=\"150\" y1=\"60\" x2=\"150\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.6\"/><text x=\"80\" y=\"52\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">NOBLE (cathode, protected)</text><text x=\"60\" y=\"270\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">ACTIVE (anode, corrodes)</text><circle cx=\"150\" cy=\"71.7\" r=\"3.5\" fill=\"#16202e\"/><text x=\"160\" y=\"75\" fill=\"#16202e\" font-size=\"11\">Graphite / carbon</text><circle cx=\"150\" cy=\"91.2\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"160\" y=\"95\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">Stainless steel (passive)</text><circle cx=\"150\" cy=\"122.4\" r=\"3.5\" fill=\"#16202e\"/><text x=\"160\" y=\"126\" fill=\"#16202e\" font-size=\"11\">Copper / bronze</text><circle cx=\"150\" cy=\"180.9\" r=\"4\" fill=\"#c2820f\"/><text x=\"160\" y=\"184\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Steel, cast iron</text><circle cx=\"150\" cy=\"212.1\" r=\"3.5\" fill=\"#16202e\"/><text x=\"160\" y=\"216\" fill=\"#16202e\" font-size=\"11\">Aluminum alloys</text><circle cx=\"150\" cy=\"235.5\" r=\"3.5\" fill=\"#16202e\"/><text x=\"160\" y=\"239\" fill=\"#16202e\" font-size=\"11\">Zinc</text><circle cx=\"150\" cy=\"251.1\" r=\"3.5\" fill=\"#16202e\"/><text x=\"160\" y=\"253\" fill=\"#16202e\" font-size=\"11\">Magnesium</text><path d=\"M150,180.9 L150,91.2\" stroke=\"#3a6ea5\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\" fill=\"none\"/><text x=\"330\" y=\"130\" fill=\"#3a6ea5\" font-size=\"11\">bolted together in water:</text><text x=\"330\" y=\"148\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">steel is the anode — it corrodes</text><text x=\"330\" y=\"166\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">stainless is the cathode — protected</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Position is relative and electrolyte-dependent — the RANKING is what matters, not exact voltages</text></svg><figcaption>In any galvanic couple, the less noble (more active, lower on this ladder) metal becomes the anode and corrodes; the more noble metal becomes the cathode and is protected. Steel bolted to stainless steel in a wet environment puts the steel at risk, not the stainless.</figcaption></figure>\n\n<h3>§1 · Oxidation and aqueous corrosion</h3>\n<p><b>Oxidation</b> is a metal reacting directly with oxygen (or another oxidizing gas) at its surface, forming an oxide layer. Some oxides are protective: aluminum's natural \\(\\text{Al}_2\\text{O}_3\\) and chromium's \\(\\text{Cr}_2\\text{O}_3\\) (stainless steel's passive film, from Lesson 5) are thin, dense, and tightly adherent, and effectively stop further oxidation once formed. Iron's oxide is the opposite — porous and poorly adherent, so it keeps flaking away, exposing fresh metal to keep oxidizing indefinitely. Whether an oxide protects or not comes down to how well it adheres and how completely it covers the surface, not simply whether one forms.</p>\n<p><b>Aqueous corrosion</b> is fundamentally electrochemical: an <b>anode</b> reaction dissolves metal, releasing electrons; a <b>cathode</b> reaction (commonly oxygen and water forming hydroxide, or hydrogen ions forming hydrogen gas) consumes those electrons elsewhere on the same or a connected surface. The metal itself carries the electron path, the surrounding water or moisture carries the ion path — a corroding part is, electrically, a small spontaneous battery.</p>\n\n<h3>§2 · Galvanic couples and the area-ratio trap — reading the diagram</h3>\n<p>Connect two <em>different</em> metals electrically in the same electrolyte and one becomes the anode, the other the cathode — read directly off a <b>galvanic series</b>, a ranked list of relative nobility (exact voltages shift with the electrolyte, but the ranking of common metals is broadly consistent). The less noble metal corrodes faster than it would alone; the more noble metal is actually protected, corroding slower than it would alone — the working principle behind galvanizing (a sacrificial zinc coating protects the steel beneath it) and cathodic protection.</p>\n<p>How badly the anode suffers depends heavily on the <b>area ratio</b> between the two metals. A <em>small</em> anode area next to a <em>large</em> cathode area is the dangerous combination: the same total corrosion current concentrates onto the small anode, driving a high local corrosion rate there. A <em>large</em> anode next to a small cathode is comparatively safe — the same current spreads over far more area, so the corrosion rate per unit area stays low. A small stainless-steel fastener in a large steel plate is fine; a small steel fastener in a large stainless plate is exactly the dangerous case — the size of the part, not just which metal is \"better,\" decides the outcome.</p>\n\n<h3>§3 · Passivity: both shield and trap</h3>\n<p>Stainless steel's passivity (Lesson 5) depends on a continuous supply of oxygen to maintain and self-heal its protective film. In a crevice — under a gasket, under a deposit, inside a thread — oxygen is starved, the film cannot repair itself there, and that narrow spot becomes a small, localized anode surrounded by the still-passive (and now cathodic) surface around it: the area-ratio trap of §2, this time inflicted by the material's own protective mechanism. This is <b>crevice corrosion</b>, a close cousin of pitting corrosion, and it is often more dangerous than corrosion on a \"worse\" material like plain steel — plain steel corrodes visibly and roughly uniformly, while passive-film breakdown is invisible until the damage is already deep and localized.</p>\n<p><b>Hydrogen embrittlement</b> is flagged here rather than developed in full: atomic hydrogen — introduced by a corrosion reaction, an electroplating step, or a poorly applied cathodic-protection system — can diffuse into a susceptible high-strength steel and cause sudden, low-stress, brittle cracking with no warning. It is a distinct mechanism from the fatigue and fracture of Lesson 7, and gets full treatment in Year 3's corrosion course.</p>\n\n<h3>§4 · Screening a corrosion risk — the working method</h3>\n<p>At this preview depth, three questions cover most real situations: (1) Is more than one metal in electrical contact in a wet or damp environment? Check each metal's position on the galvanic series and, critically, the area ratio — a small anode is the danger sign. (2) Is there a crevice, a stagnant pocket, or a deposit anywhere on a \"corrosion-resistant\" material? Suspect local passive-film breakdown even where the bulk surface looks fine. (3) Is hydrogen present — pickling, plating, sour service, or cathodic protection — on a high-strength steel? Flag it for specialist review rather than dismissing it. This is a screening checklist, not a full design method; building the design method is Year 3's job.</p>\n<div class=\"keybox\"><span class=\"tag\">Key trap — area ratio</span>\n<p>A SMALL anode next to a LARGE cathode corrodes fast (concentrated current). A LARGE anode next to a small cathode is comparatively safe (the same current, spread thin).</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Passivity and the Cr threshold</b> (Lesson 5).</li><li><b>Grain boundaries as local weak points</b> (Lessons 1, 5) — the same \"small localized region behaves differently from the bulk\" logic.</li><li>Full corrosion mechanisms, kinetics, and mitigation return in Year 3's dedicated course — this lesson previews the vocabulary only.</li></ul>\n<h4>Toolkit — corrosion vocabulary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Anode / cathode</td><td>metal dissolves / reaction consumes electrons</td><td>The two halves of any corrosion cell.</td></tr>\n<tr><td>Galvanic series</td><td>ranked relative nobility</td><td>Predicts which metal corrodes in a couple.</td></tr>\n<tr><td>Area ratio</td><td>anode area vs. cathode area</td><td>Small anode/large cathode = dangerous.</td></tr>\n<tr><td>Crevice corrosion</td><td>local passive-film breakdown</td><td>Risk even on \"resistant\" stainless.</td></tr>\n<tr><td>Hydrogen embrittlement</td><td>H diffuses into high-strength steel</td><td>Sudden brittle cracking; flagged for Year 3.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Bolt and plates — which corrodes?</b></p><p><b>Problem.</b> A small steel bolt fastens two large stainless-steel plates together in a damp environment. Using the galvanic series and the area-ratio rule, which metal corrodes, and is this combination dangerous or comparatively safe?</p>",
+    "solution": "<p><b>Solution.</b> Steel is less noble than stainless, so steel is the anode and corrodes; the stainless plates are the cathode and are protected. The area ratio makes it worse: a SMALL anode (the bolt) next to a LARGE cathode (the plates) concentrates the corrosion current onto the small bolt — the dangerous combination, not the safe one.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The crevice under the gasket</b></p><p><b>Problem.</b> A stainless-steel pipe flange is bolted with a gasket, creating a tight crevice at the joint. Explain why this crevice is a corrosion risk even though the bulk stainless surface is passive and shiny.</p>",
+    "solution": "<p><b>Solution.</b> The crevice is starved of oxygen, so the passive film cannot self-heal there; that small spot becomes an active anode, surrounded by the still-passive (cathodic) surface just outside the crevice — a small anode next to a large cathode, the same dangerous area-ratio trap, this time caused by the material's own protective mechanism rather than by a second metal.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why one oxide protects and the other does not</b></p><p><b>Problem.</b> The natural rust layer on iron keeps flaking off, exposing fresh metal to keep oxidizing. The natural oxide layer on aluminum stays thin, tight, and stops further oxidation almost completely. What single difference between the two oxide layers explains this?</p>",
+    "solution": "<p><b>Solution.</b> Adherence and coverage. Aluminum's oxide is thin, dense, and tightly bonded to the metal beneath it, sealing the surface off from further reaction. Iron's oxide is porous and poorly adherent, so it does not block oxygen from reaching fresh metal — it simply keeps growing and flaking, never becoming protective.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a galvanic couple, the less noble (more active) metal:</p>",
+    "choices": [
+     "Becomes the anode and corrodes preferentially",
+     "Becomes the cathode and is protected",
+     "Is unaffected by the couple",
+     "Always corrodes slower than alone"
+    ],
+    "answer": 0,
+    "solution": "<p>The active metal gives up electrons and dissolves — it is the anode.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The more noble metal in a galvanic couple:</p>",
+    "choices": [
+     "Becomes the cathode and is comparatively protected",
+     "Becomes the anode and corrodes",
+     "Corrodes faster than it would alone",
+     "Dissolves into the electrolyte"
+    ],
+    "answer": 0,
+    "solution": "<p>The noble metal hosts the cathode reaction and is shielded rather than consumed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The most dangerous area-ratio combination is:</p>",
+    "choices": [
+     "A small anode next to a large cathode",
+     "A large anode next to a small cathode",
+     "Equal anode and cathode area, always",
+     "Area ratio has no effect on corrosion rate"
+    ],
+    "answer": 0,
+    "solution": "<p>Concentrating the total corrosion current onto a small anode area drives a high local rate there.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Passivity depends on:</p>",
+    "choices": [
+     "A continuous supply of oxygen to maintain the protective film",
+     "The metal never contacting water",
+     "A second, more active metal being present",
+     "High temperature only"
+    ],
+    "answer": 0,
+    "solution": "<p>Without oxygen to repair it, the passive film cannot maintain itself.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A crevice or stagnant pocket on a passive material is dangerous because:</p>",
+    "choices": [
+     "Oxygen starvation there breaks down the passive film locally, creating a small active anode",
+     "Crevices always cool the metal below its melting point",
+     "It removes all chromium from the alloy everywhere",
+     "It has no effect if the bulk surface is passive"
+    ],
+    "answer": 0,
+    "solution": "<p>Local film breakdown inside the crevice creates exactly the small-anode/large-cathode trap.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Hydrogen embrittlement is best described as:</p>",
+    "choices": [
+     "Hydrogen diffusing into a susceptible steel and causing sudden brittle cracking",
+     "A form of rust",
+     "A type of fatigue that only occurs above 500°C",
+     "A coating defect with no structural effect"
+    ],
+    "answer": 0,
+    "solution": "<p>Diffused atomic hydrogen embrittles susceptible high-strength steels, often with little warning.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Aqueous corrosion is fundamentally:</p>",
+    "choices": [
+     "An electrochemical process with an anode reaction and a cathode reaction",
+     "A purely mechanical wearing-away process",
+     "Only possible above 100°C",
+     "Unrelated to electron transfer"
+    ],
+    "answer": 0,
+    "solution": "<p>Metal dissolution at the anode and electron consumption at the cathode define the process.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A protective oxide layer, like aluminum's, differs from a non-protective one, like iron's rust, mainly by being:</p>",
+    "choices": [
+     "Thin, dense, and tightly adherent to the metal surface",
+     "Thicker than any non-protective oxide",
+     "A different color",
+     "Formed only at low temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>Adherence and density — not thickness or color — determine whether an oxide seals the surface.</p>"
+   }
+  ],
+  "kuwait": "\n<p>Fastener selection on a plant with mixed metals is a direct §2 exercise: a small stainless bolt in a large steel structural member is a safe, common, deliberate choice, while the reverse — a small steel fastener holding stainless equipment together — is a known failure pattern that shows up as fasteners corroding away years before the structure they hold ever will. Cooling-water systems, seawater intakes, and any equipment mixing carbon steel with stainless or copper alloys are read the same way: identify every metal pair in electrical contact, then check which one is the small piece.</p>\n<p>Crevice corrosion under gaskets, pipe supports, and insulation cladding is one of the more common \"invisible until it leaks\" failures a maintenance program encounters — the bulk of a vessel or pipe run looks perfectly passive right up until a support point or flange face is opened up and found pitted through. Inspection programs that specifically check under supports, gaskets, and insulation — not just the visible, freely-exposed surface — exist because of exactly this mechanism.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Log-log plot of Young's modulus versus density for steel, titanium, aluminum, carbon-fiber composite, and wood, with a guideline of constant stiffness-to-weight index for a bending beam passing through aluminum; wood and the composite lie above the line, steel lies below it\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Material index for a stiff, light beam: E^0.5/ρ</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">density, ρ (log scale) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">modulus, E (log scale) →</text><line x1=\"66.0\" y1=\"255.0\" x2=\"540.0\" y2=\"60.0\" stroke=\"#1f7a5c\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><text x=\"380\" y=\"80\" fill=\"#1f7a5c\" font-size=\"10\">constant E^0.5/ρ (through aluminum)</text><circle cx=\"507.3\" cy=\"90.8\" r=\"4\" fill=\"#c2820f\"/><text x=\"470\" y=\"82\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Steel</text><circle cx=\"432.1\" cy=\"117.4\" r=\"4\" fill=\"#16202e\"/><text x=\"395\" y=\"110\" fill=\"#16202e\" font-size=\"11\">Titanium</text><circle cx=\"363.0\" cy=\"137.6\" r=\"4\" fill=\"#3a6ea5\"/><text x=\"330\" y=\"130\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Aluminum</text><circle cx=\"292.3\" cy=\"106.7\" r=\"4\" fill=\"#3a6ea5\"/><text x=\"255\" y=\"98\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">CFRP</text><circle cx=\"135.1\" cy=\"216.0\" r=\"4\" fill=\"#3a6ea5\"/><text x=\"85\" y=\"205\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Wood</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Above the guideline beats aluminum's index; below it (steel) loses despite higher E</text></svg><figcaption>Points above and left of the guideline have a higher E^0.5/ρ than aluminum — a lighter beam for the same bending stiffness. Wood and carbon-fiber composite beat every metal here despite far lower absolute stiffness, because the index rewards low density much more heavily than high modulus.</figcaption></figure>\n\n<h3>§1 · Property indices — screening by ratio, not by one number</h3>\n<p>Comparing candidate materials on a single property — just stiffness, or just weight — routinely picks the wrong material for a real structural task, because the part's actual performance depends on a <em>combination</em> of properties tied to how it is loaded. A <b>property index</b> combines properties into one ratio matched to the specific failure mode and loading. For a <b>stiff, light beam</b> in bending, free to vary its cross-section, the index that falls out of minimizing mass for a given stiffness is \\( E^{1/2}/\\rho \\) — modulus to the one-half power, over density. Comparing steel (\\(E=200\\ \\text{GPa}\\), \\(\\rho=7850\\ \\text{kg/m}^3\\)) against aluminum (\\(E=70\\ \\text{GPa}\\), \\(\\rho=2700\\ \\text{kg/m}^3\\)): steel's index is about \\(57\\), aluminum's about \\(98\\) — aluminum wins by roughly \\(70\\)%, despite steel's modulus being nearly three times higher, because the index rewards low density far more than it rewards high stiffness for this loading case.</p>\n\n<h3>§2 · Building the index — the working method</h3>\n<p>Any index is built the same way: identify what is <b>fixed</b> (a performance requirement — stiffness, or strength, for a given geometry) and what is <b>free</b> (usually the cross-sectional dimensions, which can be scaled up or down), then derive which combination of material properties, raised to which powers, minimizes mass subject to that constraint. The exponent changes with the loading mode: a <b>tie</b> in simple tension gives index \\(E/\\rho\\); a <b>beam</b> in bending with free cross-section gives \\(E^{1/2}/\\rho\\); a <b>panel</b> loaded in bending gives \\(E^{1/3}/\\rho\\). This is exactly why \"just compare \\(E\\)\" is the wrong instinct for a real structural screening problem — the correct comparison depends on how the part is loaded and what is allowed to change, not on the raw property alone.</p>\n\n<h3>§3 · Cost, availability, and substitution</h3>\n<p>A property index screens candidates on performance alone; a real specification always adds two more first-class constraints. <b>Cost</b> matters most as cost per unit of the property actually needed — cost per unit stiffness delivered, not cost per kilogram in isolation. <b>Availability</b> asks whether the specified grade can actually be procured, in the needed form, quantity, and lead time — a technically ideal material that cannot be delivered on schedule has already failed the specification. When the specified grade is genuinely unobtainable, a <b>substitution</b> decision must <em>prove</em>, not merely assert, that the replacement satisfies every property the original was specified for — not just the one property that happens to look similar at a glance.</p>\n\n<h3>§4 · Documenting a selection — the working method</h3>\n<p>A defensible selection record, one an auditor can follow, states in order: (1) the governing constraint and the free variable — what had to stay fixed, what was allowed to vary; (2) the property index derived from that constraint, and why that index fits the loading; (3) the shortlist of candidates screened by that index, with real property values and their sources, not estimates; (4) the cost and availability check on the leading candidate(s); (5) the final selection, with an explicit statement of which requirement each rejected candidate failed to meet. A substitution memo follows the identical shape: the original specification and why each key property mattered, the substitute's documented value for each of those same properties, and an explicit statement of any property where the substitute falls short and why that is — or is not — acceptable for this specific application.</p>\n<div class=\"keybox\"><span class=\"tag\">Key indices — minimum mass at fixed stiffness</span>\n<p>Tie (tension): maximize \\(E/\\rho\\). Beam (bending, free shape): maximize \\(E^{1/2}/\\rho\\). Panel (bending): maximize \\(E^{1/3}/\\rho\\).</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Modulus and density</b> as basic material properties (Materials I).</li><li><b>Every family from Lessons 1–10</b> as the candidate pool being screened.</li><li>This closes the course: selection is where all prior lessons' properties get used together.</li></ul>\n<h4>Toolkit — indices and the selection record</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Property index</td><td>property ratio matched to loading</td><td>Correct screening tool, not raw E or ρ alone.</td></tr>\n<tr><td>Tie index</td><td>\\( E/\\rho \\)</td><td>Minimum mass, fixed stiffness, tension.</td></tr>\n<tr><td>Beam index</td><td>\\( E^{1/2}/\\rho \\)</td><td>Minimum mass, fixed stiffness, bending (free shape).</td></tr>\n<tr><td>Panel index</td><td>\\( E^{1/3}/\\rho \\)</td><td>Minimum mass, fixed stiffness, bending panel.</td></tr>\n<tr><td>Substitution memo</td><td>proves, not asserts, equivalence</td><td>Required when a specified grade is unobtainable.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The beam index, computed</b></p><p><b>Problem.</b> Write the property index for a stiff, light beam (bending, free cross-section) and compute it for steel (\\(E=200\\ \\text{GPa}\\), \\(\\rho=7850\\ \\text{kg/m}^3\\)) and aluminum (\\(E=70\\ \\text{GPa}\\), \\(\\rho=2700\\ \\text{kg/m}^3\\)). Which is more mass-efficient?</p>",
+    "solution": "<p><b>Solution.</b> Index \\(=E^{1/2}/\\rho\\). Steel: \\(\\sqrt{200\\times10^9}/7850\\approx57.0\\). Aluminum: \\(\\sqrt{70\\times10^9}/2700\\approx98.0\\). The aluminum index is about 1.7× the steel index — for a beam free to change cross-section, an aluminum beam reaches the same bending stiffness at noticeably lower mass, despite steel having nearly 3× the modulus.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>What a substitution memo must prove</b></p><p><b>Problem.</b> A drawing specifies AISI 4140 steel for a shaft, but the mill can only supply 4340 on the current lead time. What must a substitution memo demonstrate before this swap is approved?</p>",
+    "solution": "<p><b>Solution.</b> It must show, with documented property values (not assumptions), that 4340 meets or exceeds every property 4140 was specified for on this part — strength, hardenability for the section size, toughness — and explicitly flag any property where 4340 differs, with a stated reason that difference is acceptable for this specific application. Similarity in name or general family is not proof.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing the right index</b></p><p><b>Problem.</b> A tie rod carries pure axial tension and must meet a stiffness target at minimum mass; its cross-section is free to vary. Which property index applies — the tie index or the beam index — and why does it matter that the loading is axial, not bending?</p>",
+    "solution": "<p><b>Solution.</b> The tie index, \\(E/\\rho\\), applies — axial tension is a fundamentally different loading mode from bending, and minimizing mass under that constraint derives a different power of E than bending does. Using the beam index (\\(E^{1/2}/\\rho\\)) here would rank candidate materials incorrectly, because it answers a different structural question than the one the tie rod actually poses.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A property index is used instead of comparing a single property because:</p>",
+    "choices": [
+     "Real performance depends on a combination of properties tied to the specific loading mode",
+     "Single properties are never measurable",
+     "Indices are always higher numbers, which is easier to read",
+     "Cost is the only property that ever matters"
+    ],
+    "answer": 0,
+    "solution": "<p>The correct combination of properties — and their exponents — depends on how the part is actually loaded.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a stiff, light beam in bending with a free cross-section, the correct index is:</p>",
+    "choices": [
+     "E^(1/2)/ρ",
+     "E/ρ",
+     "E^(1/3)/ρ",
+     "ρ/E"
+    ],
+    "answer": 0,
+    "solution": "<p>The beam-in-bending case gives the one-half power of E over density.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a simple tie rod in axial tension at minimum mass and fixed stiffness, the correct index is:</p>",
+    "choices": [
+     "E/ρ",
+     "E^(1/2)/ρ",
+     "E^(1/3)/ρ",
+     "1/(Eρ)"
+    ],
+    "answer": 0,
+    "solution": "<p>Axial tension gives the simplest index, E over density, directly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Aluminum beats steel on the beam bending index mainly because:</p>",
+    "choices": [
+     "The index rewards low density more heavily than high modulus for this loading case",
+     "Aluminum has a higher modulus than steel",
+     "Steel cannot be shaped into a beam",
+     "The index ignores density entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>The square-root relationship on E means density dominates the comparison here.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cost is best compared, for selection purposes, as:</p>",
+    "choices": [
+     "Cost per unit of the actual property needed (e.g. per unit stiffness delivered)",
+     "Cost per kilogram only, regardless of application",
+     "Purchase price alone, ignoring the property required",
+     "Irrelevant once a material passes the property index screen"
+    ],
+    "answer": 0,
+    "solution": "<p>Cost per unit of delivered performance is the meaningful comparison, not raw price per mass.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Availability, as a selection constraint, asks whether:</p>",
+    "choices": [
+     "The specified grade can actually be procured in the needed form, quantity, and lead time",
+     "The material exists anywhere in the world in any form",
+     "The material was used in a previous project",
+     "The supplier's catalog lists a price"
+    ],
+    "answer": 0,
+    "solution": "<p>A technically ideal but undeliverable material fails the specification in practice.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A defensible substitution memo must, above all:</p>",
+    "choices": [
+     "Prove the substitute meets every property the original was specified for, not just the obvious one",
+     "Simply state that the substitute is \"similar\"",
+     "Only compare purchase cost",
+     "Be approved verbally without documentation"
+    ],
+    "answer": 0,
+    "solution": "<p>Proof against every required property — documented, not asserted — is what makes the substitution defensible.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a panel loaded in bending, minimizing mass at fixed stiffness gives the index:</p>",
+    "choices": [
+     "E^(1/3)/ρ",
+     "E/ρ",
+     "E^(1/2)/ρ",
+     "ρ×E"
+    ],
+    "answer": 0,
+    "solution": "<p>A bending panel gives a different exponent again — one-third power of E — distinct from the tie and the beam cases.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A procurement engineer choosing between two mill-certified steel heats for the same drawing is running §4's five-step record in miniature: both heats may carry the same grade designation, but the actual selection should still confirm the properties the design depends on are documented for the batch actually being bought, not assumed from the grade name alone. When a specified grade genuinely cannot be sourced in time for a shutdown, the substitution memo is what protects the decision — a documented, property-by-property justification an auditor or a future engineer can follow, rather than a verbal \"this should be close enough\" that nobody can defend after the fact.</p>\n<p>Weight-critical equipment — lifting attachments, portable structures, anything moved or lifted repeatedly — is where the property-index logic in §1 earns its keep over \"just use steel, it's strongest\": a structural member sized by stiffness, not ultimate strength, is very often lighter in aluminum or even in a well-chosen composite, exactly as the diagram shows, even though steel wins on almost every single-property comparison taken alone.</p>\n"
  }
 }
