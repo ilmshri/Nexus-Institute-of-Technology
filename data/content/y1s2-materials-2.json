@@ -706,5 +706,359 @@
    }
   ],
   "kuwait": "\n<p>A structural bracket specified as 6061-T6 versus the same shape supplied as 6061-O is the temper system doing real engineering work: the O-temper sheet forms easily into shape without cracking, then a solution-and-age cycle afterward brings it up to T6 strength for service — ordering the wrong temper for the stage of fabrication is a common, avoidable mistake on a shop floor. Copper busbar and cable runs in a plant's electrical distribution show the conductivity trade-off directly: hard-drawn copper is used where mechanical strength in the run matters, annealed (soft) copper where maximum conductivity and flexibility matter more, and the two are not interchangeable even though both are \"just copper.\"</p>\n<p>Nickel-alloy components appear only where the budget for anything cheaper has already failed: furnace fixtures, high-temperature process piping, and hardware in aggressive chemical service that would pit or crack a stainless equivalent within a maintenance cycle or two. Recognizing a nickel-alloy part on a bill of materials is usually a signal that an earlier steel or stainless version of that same part failed in service — the specification upgraded because the environment demanded it, not by preference.</p>\n"
+ },
+ "7": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"S-N fatigue curves: stress amplitude versus cycles to failure on a log scale, steel flattening to an endurance limit near 400 megapascals while aluminum keeps declining with no true limit\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">S–N curves: steel's endurance limit vs. aluminum's no-limit decline</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">cycles to failure, N (log scale, 10³ to 10⁸) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">stress amplitude (MPa) →</text><polyline points=\"66.0,71.0 77.8,80.8 89.7,89.6 101.5,97.4 113.4,104.3 125.2,110.4 137.1,115.8 148.9,120.7 160.8,125.0 172.7,128.8 184.5,132.1 196.4,135.1 208.2,137.8 220.1,140.2 231.9,142.3 243.8,144.1 255.6,145.8 267.4,147.3 279.3,148.6 291.1,149.7 303.0,150.7 314.9,151.7 326.7,152.5 338.5,153.2 350.4,153.8 362.2,154.4 374.1,154.9 386.0,155.3 397.8,155.7 409.6,156.1 421.5,156.4 433.4,156.7 445.2,156.9 457.0,157.1 468.9,157.3 480.8,157.5 492.6,157.7 504.5,157.8 516.3,157.9 528.1,158.0 540.0,158.1\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><polyline points=\"66.0,147.9 77.8,152.4 89.7,156.7 101.5,160.8 113.4,164.7 125.2,168.4 137.1,172.0 148.9,175.4 160.8,178.6 172.7,181.7 184.5,184.6 196.4,187.4 208.2,190.0 220.1,192.6 231.9,195.0 243.8,197.3 255.6,199.5 267.4,201.6 279.3,203.6 291.1,205.5 303.0,207.3 314.9,209.0 326.7,210.6 338.5,212.2 350.4,213.7 362.2,215.1 374.1,216.5 386.0,217.8 397.8,219.0 409.6,220.2 421.5,221.3 433.4,222.4 445.2,223.4 457.0,224.3 468.9,225.3 480.8,226.1 492.6,227.0 504.5,227.8 516.3,228.5 528.1,229.3 540.0,230.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><line x1=\"66\" y1=\"158.1\" x2=\"540\" y2=\"158.1\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"404\" y=\"153\" fill=\"#1f7a5c\" font-size=\"11\">S_e ≈ 400 MPa — steel's endurance limit</text><text x=\"90\" y=\"80\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Steel — flattens (true limit)</text><text x=\"380\" y=\"200\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Aluminum — keeps declining</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Below S_e, steel can in principle run infinite cycles; aluminum never gets that guarantee</text></svg><figcaption>Steel's S–N curve flattens to an endurance limit near half its UTS — stay below it and fatigue life is, in principle, infinite. Aluminum and most non-ferrous alloys have no such floor; their curve keeps declining, so their \"fatigue strength\" is only ever quoted at a stated number of cycles.</figcaption></figure>\n\n<h3>§1 · Fatigue and the S–N curve</h3>\n<p><b>Fatigue</b> is failure under repeated, cyclic stress — often at amplitudes far below the material's static strength — and it is the dominant failure mode in any rotating or vibrating part: shafts, bearings, gears, piping under pulsation. The <b>S–N curve</b> plots stress amplitude against cycles to failure on a log scale and is the fundamental fatigue chart. For steel, the curve bends and flattens near \\(10^6\\)–\\(10^7\\) cycles into an <b>endurance limit</b> \\(S_e\\): stay below it and the steel can, in principle, survive indefinitely. A useful first-cut estimate is \\( S_e\\approx 0.5\\times\\text{UTS} \\) — for a \\(800\\ \\text{MPa}\\) UTS steel, roughly \\(400\\ \\text{MPa}\\) — but this is a starting point only, always reduced by knockdown factors for surface finish, size, notches, temperature, and required reliability before it is trusted as a design number.</p>\n\n<h3>§2 · Fracture mechanics — the simplest honest version</h3>\n<p>Every real part contains flaws — inclusions, porosity, machining marks, corrosion pits — and fracture mechanics asks a direct question: given a flaw of size \\(a\\) under applied stress \\(\\sigma\\), will it grow catastrophically? The <b>stress-intensity factor</b> \\( K=Y\\sigma\\sqrt{\\pi a} \\) (with \\(Y\\), a geometry factor, near \\(1\\) for simple cases) measures how strongly the crack tip is loaded. Fracture occurs when \\(K\\) reaches the material's <b>fracture toughness</b> \\(K_{IC}\\) — a measured, tabulated property. This is why a part can pass a smooth, unflawed tensile test and still fail in service at half that stress: the tensile specimen had no crack to grow, but a flawed in-service part can reach \\(K_{IC}\\) at a stress far below its own tensile strength. Toughness, not strength alone, sets the real limit once a flaw exists.</p>\n\n<h3>§3 · Reading a fracture surface, and creep</h3>\n<p>A fatigue fracture surface carries two classic tells: <b>beach marks</b> (macroscopic concentric arcs, from crack growth pausing and resuming under varying load) and, under magnification, <b>striations</b> — one per load cycle. Neither appears on a ductile overload fracture, which instead shows necking, shear lips, and a fibrous, dimpled surface; a brittle overload fracture is flat, grainy, with little visible deformation. Reading which of these a fracture surface shows is the fastest diagnostic step in any failure investigation.</p>\n<p><b>Creep</b> is slow, time-dependent permanent deformation under sustained stress at elevated temperature — a practical concern once service temperature exceeds roughly \\(0.4\\) times the absolute melting temperature (the same homologous-temperature idea from Materials I). It runs in three stages: primary (decelerating strain rate), secondary or steady-state (constant, minimum rate — the regime used for life estimates), and tertiary (accelerating strain rate to rupture). Furnace hardware, turbine blades, and high-temperature piping running hot for years are creep-life designs, not simple strength designs.</p>\n\n<h3>§4 · Reading a failure — the working method</h3>\n<p>Given a failed part: (1) read the fracture surface first — beach marks or striations mean fatigue; necking and dimples mean ductile overload; a flat, grainy surface with no deformation means brittle overload; heavy deformation with intergranular voids means creep. (2) If fatigue, find the initiation site — almost always a surface flaw or stress concentration, since fatigue cracks start where local stress is highest. (3) Compare the operating stress against the S–N curve (was this a foreseeable number of cycles at this amplitude) and, if a flaw is visible, against \\(K_{IC}\\) (was the flaw large enough to explain failure at this stress). That sequence is exactly how a failure investigation moves from \"it broke\" to a defensible reason why.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — first-cut endurance limit</span>\n<p>\\[ S_e \\approx 0.5\\times\\text{UTS}\\quad\\text{(steel; before knockdown factors)}. \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>UTS and the stress-strain curve</b> (Materials I).</li><li><b>Homologous temperature</b> \\(T/T_m\\) (Materials I) — sets when creep becomes relevant.</li><li><b>Grain boundaries and flaws</b> (Lessons 1, 5) as crack-initiation sites.</li></ul>\n<h4>Toolkit — fatigue, fracture, and creep</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Endurance limit \\(S_e\\)</td><td>\\( \\approx 0.5\\times\\text{UTS} \\) (steel, first cut)</td><td>Stress below which fatigue life is (in principle) infinite.</td></tr>\n<tr><td>Stress intensity \\(K\\)</td><td>\\( K=Y\\sigma\\sqrt{\\pi a} \\)</td><td>Loading at a crack tip.</td></tr>\n<tr><td>Fracture toughness \\(K_{IC}\\)</td><td>material property</td><td>Fracture when \\(K=K_{IC}\\).</td></tr>\n<tr><td>Beach marks / striations</td><td>macro / micro fatigue marks</td><td>Diagnose fatigue on a fracture surface.</td></tr>\n<tr><td>Secondary creep</td><td>constant, minimum strain rate</td><td>Used for creep-life estimates.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>First-cut endurance limit</b></p><p><b>Problem.</b> A polished steel has \\(\\text{UTS}=800\\ \\text{MPa}\\). What first-cut endurance limit does the \\(0.5\\times\\text{UTS}\\) rule suggest, before knockdown factors?</p>",
+    "solution": "<p><b>Solution.</b> \\( S_e\\approx0.5\\times800=400\\ \\text{MPa}\\). This is a starting estimate only — surface finish, size, notch, temperature, and reliability knockdown factors would all reduce it before it is used as a design value.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Does the flaw control failure?</b></p><p><b>Problem.</b> A pressure-vessel steel has \\(\\text{UTS}=800\\ \\text{MPa}\\) and \\(K_{IC}=100\\ \\text{MPa}\\sqrt{\\text{m}}\\). Inspection finds a surface flaw \\(a=6\\ \\text{mm}\\), geometry factor \\(Y\\approx1\\). Find the fracture stress and say whether the flaw or general yielding controls failure.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\sigma=\\dfrac{K_{IC}}{Y\\sqrt{\\pi a}}=\\dfrac{100}{\\sqrt{\\pi\\times0.006}}=\\dfrac{100}{0.1373}\\approx728\\ \\text{MPa}\\). Since \\(728\\ \\text{MPa} < 800\\ \\text{MPa}\\) (UTS), the flaw controls: the vessel fractures at the flaw before it would ever reach general tensile failure.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Creep life from the steady-state rate</b></p><p><b>Problem.</b> A turbine blade shows a steady-state (secondary) creep strain rate of \\(2\\times10^{-6}\\) per hour. The design allows a maximum accumulated creep strain of \\(1\\)% before replacement. Estimate the design life, ignoring the primary and tertiary stages.</p>",
+    "solution": "<p><b>Solution.</b> \\( t=\\dfrac{0.01}{2\\times10^{-6}}=5000\\ \\text{hours} \\). Real designs also budget for the shorter, accelerating tertiary stage as a safety margin, but the steady-state rate gives the working estimate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The first-cut rule of thumb for a steel's endurance limit is:</p>",
+    "choices": [
+     "S_e ≈ 0.5 × UTS, before knockdown factors",
+     "S_e ≈ UTS exactly",
+     "S_e ≈ 2 × UTS",
+     "Steel has no endurance limit"
+    ],
+    "answer": 0,
+    "solution": "<p>0.5×UTS is the standard first-cut estimate, always reduced further by real-world knockdown factors.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which alloys generally have NO true endurance limit?</p>",
+    "choices": [
+     "Aluminum and most non-ferrous alloys",
+     "Plain-carbon steels",
+     "Alloy steels",
+     "All metals have one"
+    ],
+    "answer": 0,
+    "solution": "<p>Aluminum's S-N curve keeps declining slowly with no flat asymptote, unlike steel's.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Beach marks and striations on a fracture surface indicate:</p>",
+    "choices": [
+     "Fatigue failure",
+     "Ductile overload",
+     "Brittle overload only",
+     "Creep only"
+    ],
+    "answer": 0,
+    "solution": "<p>These are the two classic macro/micro signatures of cyclic crack growth.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A ductile overload fracture surface typically shows:</p>",
+    "choices": [
+     "Necking and a fibrous, dimpled surface",
+     "Beach marks",
+     "Striations under magnification",
+     "A flat, mirror-smooth surface"
+    ],
+    "answer": 0,
+    "solution": "<p>Visible plastic deformation and a dimpled, fibrous texture mark a ductile overload break.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The stress-intensity factor K depends on:</p>",
+    "choices": [
+     "Applied stress, flaw size, and geometry",
+     "Only the applied stress",
+     "Only the flaw size",
+     "Temperature alone"
+    ],
+    "answer": 0,
+    "solution": "<p>K = Yσ√(πa) combines all three.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fracture occurs when:</p>",
+    "choices": [
+     "K reaches the material's fracture toughness K_IC",
+     "The part reaches its endurance limit",
+     "Creep strain reaches 1%",
+     "The part is cyclically loaded even once"
+    ],
+    "answer": 0,
+    "solution": "<p>K=K_IC is the fracture criterion in this simplified treatment.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Secondary (steady-state) creep is the design-relevant stage because:</p>",
+    "choices": [
+     "It has a constant, minimum strain rate usable for life estimation",
+     "It is the fastest stage",
+     "It never actually occurs in real parts",
+     "It only matters below room temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>Its constant rate is what makes a simple life estimate possible.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Creep becomes a practical concern roughly when:</p>",
+    "choices": [
+     "Service temperature exceeds about 0.4 times the absolute melting temperature",
+     "The part is loaded even briefly",
+     "Temperature drops below freezing",
+     "The part is made of aluminum specifically"
+    ],
+    "answer": 0,
+    "solution": "<p>The homologous-temperature threshold (~0.4 T_m) is the standard rule of thumb for when creep matters.</p>"
+   }
+  ],
+  "kuwait": "\n<p>Rotating equipment — pump shafts, compressor rotors, fan blades — lives or dies by the S–N curve: a shaft sized to keep vibration-induced stress amplitude under its endurance limit can run for years, while the same shaft nudged above that line by a growing misalignment or an unbalanced load is now accumulating fatigue damage on every single rotation, invisibly, until it snaps. A shutdown investigation into a broken shaft starts exactly at §3: beach marks radiating from a keyway or fillet almost always mean fatigue from a stress concentration the design underestimated, not a one-time overload.</p>\n<p>High-temperature plant hardware — furnace rolls, superheater tubing, anything running hot under sustained load for years — is a creep problem as much as a strength problem. A component pulled during a turnaround showing measurable permanent elongation, well before any fracture, is exhibiting secondary creep exactly as described above; tracking that accumulated strain against the 1% (or whatever the design allows) is how a reliability engineer decides whether the component gets one more run or gets replaced now.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Modulus versus temperature for an elastomer on a log scale, showing a stiff glassy plateau at low temperature, a steep drop through the glass transition, and a low rubbery plateau at high temperature with a practical service-temperature ceiling marked further along\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Modulus vs. temperature: the glass transition and the rubbery plateau</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">temperature (°C) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">modulus, log scale →</text><polyline points=\"66.0,67.4 76.8,68.4 87.5,70.2 98.3,73.4 109.1,79.2 119.9,88.9 130.6,104.1 141.4,125.5 152.2,151.2 163.0,176.9 173.7,198.3 184.5,213.5 195.3,223.2 206.0,228.9 216.8,232.2 227.6,234.0 238.4,234.9 249.1,235.5 259.9,235.7 270.7,235.9 281.5,236.0 292.2,236.0 303.0,236.0 313.8,236.0 324.5,236.1 335.3,236.1 346.1,236.1 356.9,236.1 367.6,236.1 378.4,236.1 389.2,236.1 400.0,236.1 410.7,236.1 421.5,236.1 432.3,236.1 443.0,236.1 453.8,236.1 464.6,236.1 475.4,236.1 486.1,236.1 496.9,236.1 507.7,236.1 518.5,236.1 529.2,236.1 540.0,236.1\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"152.2\" cy=\"151.2\" r=\"3.5\" fill=\"#1f7a5c\"/><line x1=\"152.2\" y1=\"151.2\" x2=\"152.2\" y2=\"255\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"60\" y=\"146\" fill=\"#1f7a5c\" font-size=\"10\">Tg ≈ −20°C (representative)</text><text x=\"80\" y=\"90\" fill=\"#16202e\" font-size=\"11\">glassy — stiff, brittle</text><text x=\"330\" y=\"228\" fill=\"#16202e\" font-size=\"11\">rubbery plateau — the seal's working state</text><circle cx=\"518.5\" cy=\"236.1\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"400\" y=\"222\" fill=\"#c2820f\" font-size=\"10\">~150°C — practical thermal/oxidative ceiling (not Tg)</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">In Gulf heat, the high-T ceiling on the right is the real risk — Tg on the left rarely is</text></svg><figcaption>Below Tg the polymer is glassy and stiff; through Tg its modulus falls roughly two to three orders of magnitude; above Tg a crosslinked elastomer levels off at a low, resilient rubbery plateau — the state a seal must stay in to work. A second, separate limit at high temperature comes from thermal/oxidative degradation, not from Tg.</figcaption></figure>\n\n<h3>§1 · Thermoplastics versus thermosets</h3>\n<p><b>Thermoplastics</b> are chains — linear or branched — held together only by weak secondary (van der Waals, entanglement) forces between neighboring chains. Heat overcomes those weak forces, so a thermoplastic softens and melts, and can be re-melted and reshaped repeatedly: PE, PP, PVC, nylon, and PTFE all work this way. <b>Thermosets</b> instead cure through an irreversible chemical reaction that links chains together with strong covalent bonds into a single connected network. Heating a cured thermoset does not remelt it — there is no weak bond left to overcome — it chars or decomposes at high enough temperature instead. Epoxy, phenolic resin, and cured polyurethane are thermosets; vulcanized rubber behaves the same way, since vulcanization crosslinks its chains exactly as curing does.</p>\n\n<h3>§2 · The glass transition — reading the diagram</h3>\n<p>Below the <b>glass transition temperature</b> \\(T_g\\), an amorphous polymer's chain segments are essentially frozen — too little thermal energy for them to rotate or slide past one another — and the material is glassy: stiff, and often brittle. Above \\(T_g\\), segments gain enough mobility to move, and modulus falls dramatically, often two to three orders of magnitude over a narrow temperature range. A <b>crosslinked</b> elastomer levels off above \\(T_g\\) at a low <b>rubbery plateau</b> — the crosslinks stop it from simply flowing away — and that rubbery, resilient state is exactly what makes an elastomer useful as a seal: it can be compressed and spring back. An uncrosslinked thermoplastic above its own \\(T_g\\) has no such plateau; it keeps softening toward viscous flow instead.</p>\n\n<h3>§3 · Elastomers for seals — the O-ring, and the Gulf's real risk</h3>\n<p>An O-ring seals by staying elastically compressed between two mating surfaces, which only works while it remains in its rubbery state. Drop it below \\(T_g\\) and it goes glassy and stiff, loses its ability to spring back into the groove, and leaks — a cold-start O-ring failure is one of the most famous documented failure modes in engineering history, from a well-known spacecraft accident where an unusually cold morning stiffened the seals past their working range. In Gulf-region service, ambient and process heat sit well <em>above</em> almost any common elastomer's \\(T_g\\), so cold-embrittlement is rarely the practical risk — except where the equipment itself runs cold regardless of climate: refrigeration lines, cryogenic or LNG-adjacent service, chilled process streams. The diagram's other landmark, at the <em>high</em>-temperature end, is the one that actually bites in sustained Gulf heat: a practical service-temperature ceiling set by thermal and oxidative degradation — chain scission, hardening, cracking — a completely different mechanism from \\(T_g\\), reached from the opposite direction. A seal compound must also resist the specific fluid it contacts; one rated for water may swell or soften in a hydrocarbon it was never qualified for.</p>\n\n<h3>§4 · Selecting a polymer or elastomer — the working method</h3>\n<p>Given a service temperature window and a chemical environment: (1) confirm the low end sits safely above the candidate's \\(T_g\\), with real margin, not right at the line; (2) confirm the high end stays below its practical thermal/oxidative service limit; (3) confirm chemical compatibility with the actual process fluid, not \"elastomer\" as a generic category; (4) choose thermoplastic (needs to be formed or re-formed) versus a crosslinked thermoset or elastomer (needs to flex and recover its shape). Skipping any one of these four checks is how the wrong seal compound ends up in service.</p>\n<div class=\"keybox\"><span class=\"tag\">Key states</span>\n<p>Below \\(T_g\\): glassy, stiff, brittle. Through \\(T_g\\): modulus falls 2–3 orders of magnitude. Above \\(T_g\\) (crosslinked): rubbery plateau — the state a seal must stay in to function.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Covalent vs. secondary bonding</b> (Materials I) — the difference between a thermoset's crosslinks and a thermoplastic's chain-to-chain forces.</li><li><b>Modulus as a stiffness measure</b> (Materials I).</li><li><b>Reading a property-vs-temperature diagram</b>, as in Lessons 1–7.</li></ul>\n<h4>Toolkit — polymer states</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Thermoplastic</td><td>weak inter-chain forces</td><td>Re-meltable, re-formable.</td></tr>\n<tr><td>Thermoset</td><td>covalent crosslink network</td><td>Chars/decomposes, never re-melts.</td></tr>\n<tr><td>Glass transition \\(T_g\\)</td><td>chain-mobility onset</td><td>Below: glassy. Above: soft/rubbery.</td></tr>\n<tr><td>Rubbery plateau</td><td>crosslinked, above \\(T_g\\)</td><td>The working state of an elastomer seal.</td></tr>\n<tr><td>Thermal/oxidative ceiling</td><td>high-T degradation, ≠ \\(T_g\\)</td><td>The Gulf-relevant high-end limit.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Will the O-ring seal?</b></p><p><b>Problem.</b> An O-ring compound has \\(T_g=-20^\\circ\\)C (representative). A refrigerant line it seals runs at \\(-30^\\circ\\)C during startup. Will it seal reliably at that moment? What about the same line at \\(40^\\circ\\)C Gulf ambient?</p>",
+    "solution": "<p><b>Solution.</b> At \\(-30^\\circ\\)C, the compound is below its \\(-20^\\circ\\)C \\(T_g\\) — glassy and stiff, so it will <em>not</em> seal reliably. At \\(40^\\circ\\)C, well above \\(T_g\\), it is in its rubbery working state and seals fine, assuming that temperature is also below its high-temperature service ceiling.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Same fire, two different polymers</b></p><p><b>Problem.</b> A cured epoxy housing and a polyethylene (thermoplastic) housing of similar size are both heated to \\(300^\\circ\\)C in a fire. Describe what happens to each, and why they differ.</p>",
+    "solution": "<p><b>Solution.</b> Polyethylene melts and flows well before \\(300^\\circ\\)C (its melting point is roughly \\(130\\)–\\(140^\\circ\\)C) because heat alone overcomes the weak forces between its chains. The epoxy will not melt at any temperature — its covalent crosslink network can only be undone by chemical decomposition, not simple heating — so it chars and degrades in place while roughly holding its shape until decomposition proceeds far enough.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading the modulus drop</b></p><p><b>Problem.</b> Reading the diagram, modulus falls from about \\(1000\\ \\text{MPa}\\) glassy to about \\(2\\ \\text{MPa}\\) in the rubbery plateau. Express this drop as a ratio and in orders of magnitude.</p>",
+    "solution": "<p><b>Solution.</b> Ratio \\( = 1000/2 = 500\\). \\( \\log_{10}(500)\\approx2.7 \\), so the modulus falls by roughly \\(2.5\\)–\\(3\\) orders of magnitude through the transition — consistent with the \"two to three orders of magnitude\" describing the glass transition generally.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Thermoplastics can be re-melted and reshaped because:</p>",
+    "choices": [
+     "Their chains are held only by weak secondary forces, not covalent crosslinks",
+     "They contain no carbon",
+     "They are always amorphous",
+     "Heat has no effect on their structure"
+    ],
+    "answer": 0,
+    "solution": "<p>Weak inter-chain forces, not a permanent network, is what allows repeated melting.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Thermosets do NOT re-melt when heated because:</p>",
+    "choices": [
+     "Curing forms a permanent covalent crosslink network",
+     "They contain no polymer chains",
+     "They are always liquid at room temperature",
+     "Heat strengthens their secondary bonds"
+    ],
+    "answer": 0,
+    "solution": "<p>A covalent network cannot be undone by heat alone — only chemical decomposition breaks it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Below its glass transition temperature, an amorphous polymer is:</p>",
+    "choices": [
+     "Glassy, stiff, and often brittle",
+     "Soft and rubbery",
+     "Molten",
+     "Fully decomposed"
+    ],
+    "answer": 0,
+    "solution": "<p>Frozen chain segments below Tg give the glassy, stiff, brittle state.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Through the glass transition, a polymer's modulus typically:</p>",
+    "choices": [
+     "Falls by roughly 2–3 orders of magnitude over a narrow temperature range",
+     "Stays exactly constant",
+     "Rises sharply",
+     "Falls to exactly zero"
+    ],
+    "answer": 0,
+    "solution": "<p>The dramatic modulus drop through Tg is the defining feature of the transition.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An O-ring must stay in its ___ state to seal reliably:</p>",
+    "choices": [
+     "Rubbery (above Tg)",
+     "Glassy (below Tg)",
+     "Molten",
+     "Fully cured but unstressed"
+    ],
+    "answer": 0,
+    "solution": "<p>Only the rubbery, resilient state lets an O-ring stay compressed and spring back.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a hot Gulf process environment, an elastomer seal's more common practical failure mode is:</p>",
+    "choices": [
+     "Thermal/oxidative degradation at the high-temperature end, not Tg embrittlement",
+     "Tg embrittlement is always the dominant Gulf risk",
+     "Elastomers never fail from heat",
+     "Only UV exposure causes failure"
+    ],
+    "answer": 0,
+    "solution": "<p>Gulf ambient sits well above Tg for most compounds; the high-temperature ceiling is the mechanism that actually bites.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Selecting a seal compound requires checking chemical compatibility with:</p>",
+    "choices": [
+     "The actual process fluid it will contact",
+     "Only its manufacturer's country of origin",
+     "Only its purchase cost",
+     "Only its color"
+    ],
+    "answer": 0,
+    "solution": "<p>A compound rated for one fluid can swell or degrade in another it was never qualified against.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Vulcanized rubber behaves like a thermoset because:</p>",
+    "choices": [
+     "Vulcanization crosslinks its chains, similar to curing",
+     "It has no chains at all",
+     "It melts and reforms easily",
+     "It contains no sulfur or crosslinking agent"
+    ],
+    "answer": 0,
+    "solution": "<p>Vulcanization builds the same kind of permanent crosslink network that curing builds in a thermoset.</p>"
+   }
+  ],
+  "kuwait": "\n<p>Gasket and O-ring specification on a process plant is a §4 checklist applied line by line: a seal qualified for one process stream is not automatically safe in another, and the two failure directions are genuinely different — a chilled or refrigerant line risks the cold, glassy side of the diagram, while the great majority of hot process piping and static seals risk the thermal-degradation side, hardening and cracking after months in service rather than failing suddenly on a cold morning. Reading a field-returned O-ring that has gone hard and cracked, versus one that simply lost its spring-back, points a maintenance engineer toward which end of the diagram actually failed.</p>\n<p>Housings and covers on the same plant are a live thermoplastic-versus-thermoset decision: a thermoplastic enclosure can be repaired by local heating and reshaping in a pinch, while a cracked thermoset housing cannot be re-melted back into shape by any amount of heat — it can only be replaced. Knowing which family a given part is, before reaching for a heat gun, is the difference between a five-minute field fix and a part destroyed by the attempt.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Weibull cumulative failure probability versus applied stress for a ceramic, an S-shaped curve rising from near zero to near one over a narrow stress range around the characteristic strength\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Ceramic strength is a distribution, not a number</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">applied stress, σ (MPa) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">probability of failure, P_f →</text><polyline points=\"66.0,255.0 75.9,255.0 85.8,254.9 95.6,254.9 105.5,254.8 115.4,254.7 125.2,254.6 135.1,254.4 145.0,254.1 154.9,253.7 164.8,253.2 174.6,252.6 184.5,251.8 194.4,250.7 204.2,249.3 214.1,247.5 224.0,245.4 233.9,242.7 243.8,239.4 253.6,235.4 263.5,230.6 273.4,224.9 283.2,218.2 293.1,210.6 303.0,201.8 312.9,192.1 322.8,181.3 332.6,169.6 342.5,157.3 352.4,144.6 362.2,131.7 372.1,119.2 382.0,107.3 391.9,96.5 401.7,87.0 411.6,79.1 421.5,72.8 431.4,68.1 441.3,64.8 451.1,62.6 461.0,61.3 470.9,60.6 480.8,60.3 490.6,60.1 500.5,60.0 510.4,60.0 520.2,60.0 530.1,60.0 540.0,60.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"288.2\" cy=\"214.5\" r=\"3.5\" fill=\"#1f7a5c\"/><text x=\"220\" y=\"205\" fill=\"#1f7a5c\" font-size=\"10\">250 MPa → P_f ≈ 21%</text><circle cx=\"436.3\" cy=\"66.3\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"350\" y=\"55\" fill=\"#c2820f\" font-size=\"10\">350 MPa → P_f ≈ 97%</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">A 40% stress increase swings failure probability from ~1-in-5 to near-certain</text></svg><figcaption>The Weibull curve gives the probability that a randomly chosen sample fails at or below a given stress. The rise is steep and narrow — a modest increase in applied stress moves failure probability from unlikely to near-certain, which is why one \"strength\" number is not enough for a ceramic.</figcaption></figure>\n\n<h3>§1 · Why ceramics fail statistically</h3>\n<p>Ceramics are strong in <b>compression</b> but weak and unreliable in <b>tension</b>, and the reason is the same in both cases: strength is controlled by the largest flaw — a micro-crack or pore — present in the stressed volume, not by an intrinsic bulk property the way a ductile metal's yield strength is. Every sample carries a different largest flaw, placed randomly by the manufacturing process, so identical samples tested identically fail at <em>different</em> stresses — strength is a distribution, not a single number. Under tension, a flaw concentrates stress at its tip and, with essentially no ductility available to blunt or redistribute that stress, can grow catastrophically; the same flaw under compression tends to close rather than open, which is why \"tension is the enemy\" for any ceramic component.</p>\n\n<h3>§2 · The Weibull distribution — reading the diagram</h3>\n<p>The probability that a sample fails at or below stress \\(\\sigma\\) follows the <b>Weibull distribution</b>, \\( P_f(\\sigma)=1-\\exp\\!\\left[-(\\sigma/\\sigma_0)^m\\right] \\). \\(\\sigma_0\\), the <b>characteristic strength</b>, is the stress at which about \\(63\\)% of samples are expected to have failed. \\(m\\), the <b>Weibull modulus</b>, describes the spread: a high \\(m\\) gives a narrow, predictable strength distribution (a well-controlled process); a low \\(m\\) gives a wide, unpredictable one, where some samples fail at far lower stress than others. Reading the curve directly answers why ceramic strength is statistical: at \\(\\sigma=250\\ \\text{MPa}\\), roughly \\(21\\)% of identical samples are already expected to have failed; raise the stress by a modest \\(40\\)% to \\(350\\ \\text{MPa}\\) and failure probability jumps to about \\(97\\)%. That is an extremely narrow, unforgiving safe-operating window compared to a ductile metal — which is why ceramic components carry large safety margins and are often <b>proof-tested</b>: loaded once to a screening stress before service, specifically to break off the weak tail of the distribution before it can fail in the field.</p>\n\n<h3>§3 · Refractories and fiber composites</h3>\n<p><b>Refractories</b> are ceramics engineered specifically to survive sustained high temperature — furnace, kiln, and ladle linings — without melting, softening, or reacting with what they contain. A high melting point alone is not enough: the lining must also have low thermal conductivity (to insulate the steel shell behind it) and chemical compatibility with the slag or metal it contacts, since an incompatible refractory can be chemically attacked and dissolved over time well below its own melting point. <b>Fiber composites</b> pair a strong, stiff <b>fiber</b> (glass, carbon, aramid) that carries the load with a <b>matrix</b> — usually polymer — that holds the fibers in position, transfers load between them, and protects them from the environment. Neither material alone reaches the composite's combination of stiffness, strength, and low weight; industrial hardware built this way includes fiberglass piping and tanks in corrosive service and carbon-fiber components wherever weight is a genuine constraint.</p>\n\n<h3>§4 · Working with ceramics and composites — the working method</h3>\n<p>For ceramics: design for compression wherever the geometry allows it, keep tensile stresses low with generous safety factors, avoid sharp corners or point contacts that locally raise tension, and proof-test when reliability truly matters. For composites: identify the direction the load actually travels — a composite is strongly directional, strong along the fiber and comparatively weak across it, unlike an isotropic metal — and orient plies to carry that load; then treat the matrix's temperature and chemical limits, usually lower than the fiber's own, as the real service ceiling for the whole part.</p>\n<div class=\"keybox\"><span class=\"tag\">Key tool — Weibull strength distribution</span>\n<p>\\[ P_f(\\sigma)=1-\\exp\\!\\left[-(\\sigma/\\sigma_0)^m\\right]. \\]</p><p>High \\(m\\): narrow, predictable strength. Low \\(m\\): wide, unpredictable strength.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Flaws and stress concentration</b> (Lesson 7) — the same idea, applied to a material with no ductility to blunt it.</li><li><b>Basic probability</b> (reading a cumulative distribution).</li><li><b>Composite behavior as directional</b>, unlike the isotropic metals of Lessons 1–7.</li></ul>\n<h4>Toolkit — statistics and composite structure</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Weibull failure probability</td><td>\\( P_f=1-e^{-(\\sigma/\\sigma_0)^m} \\)</td><td>Probability of failure at stress σ.</td></tr>\n<tr><td>Characteristic strength \\(\\sigma_0\\)</td><td>stress at ~63% failure</td><td>Scale of the distribution.</td></tr>\n<tr><td>Weibull modulus \\(m\\)</td><td>high = narrow spread</td><td>Reliability/consistency indicator.</td></tr>\n<tr><td>Proof test</td><td>one-time screening load</td><td>Removes the weak tail before service.</td></tr>\n<tr><td>Fiber / matrix</td><td>load-carrier / load-transferrer</td><td>Composite is strong along fiber, weak across.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Failure probability at two stresses</b></p><p><b>Problem.</b> A ceramic has Weibull modulus \\(m=8\\) and characteristic strength \\(\\sigma_0=300\\ \\text{MPa}\\). Find the failure probability at \\(\\sigma=250\\ \\text{MPa}\\) and at \\(\\sigma=350\\ \\text{MPa}\\), and compare.</p>",
+    "solution": "<p><b>Solution.</b> \\( P_f(250)=1-\\exp[-(250/300)^8]=1-\\exp(-0.2325)\\approx0.207 \\) (about 21%). \\( P_f(350)=1-\\exp[-(350/300)^8]=1-\\exp(-3.43)\\approx0.968 \\) (about 97%). A 40% increase in stress moves failure probability from roughly 1-in-5 to near-certain.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why melting point alone is not enough</b></p><p><b>Problem.</b> A furnace lining must survive contact with molten steel slag at high temperature. Beyond simply having a high melting point, what two properties determine whether the refractory actually survives, and why is melting point alone insufficient?</p>",
+    "solution": "<p><b>Solution.</b> Low thermal conductivity (to insulate the steel shell behind the lining) and chemical compatibility with the slag (resistance to being dissolved or attacked). Melting point alone says nothing about chemical attack — an incompatible refractory can be eaten away by slag at temperatures well below its own melting point.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why the tube fails off-axis</b></p><p><b>Problem.</b> A carbon-fiber tube has all fibers running along its length. It performs excellently under axial tension but cracks easily when squeezed radially or twisted. Explain why, using how a composite carries load.</p>",
+    "solution": "<p><b>Solution.</b> Fibers carry load only along their own length; loaded axially, the strong, stiff fibers do the work. Loaded radially or in torsion, the load runs largely across or around the fiber direction, where only the much weaker polymer matrix resists it — so the tube needs fibers oriented off-axis (hoop or angled plies) if it must also resist radial or torsional loads, not axial tension alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ceramics are much stronger in compression than in tension mainly because:</p>",
+    "choices": [
+     "Flaws concentrate stress and grow under tension, but tend to close under compression",
+     "Compression removes all flaws",
+     "Tension always heats the material",
+     "Ceramics contain no flaws in compression"
+    ],
+    "answer": 0,
+    "solution": "<p>The same flaw behaves oppositely under tension versus compression.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A HIGH Weibull modulus (m) indicates:</p>",
+    "choices": [
+     "A narrow, predictable strength distribution",
+     "A wide, unpredictable strength distribution",
+     "Zero strength",
+     "Infinite strength"
+    ],
+    "answer": 0,
+    "solution": "<p>High m means most samples fail in a tight stress band — a well-controlled process.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Proof-testing a ceramic component means:</p>",
+    "choices": [
+     "Loading it once to a screening stress to remove the weak tail of the distribution before service",
+     "Testing it to complete destruction as routine QC on every part",
+     "Only checking its dimensions",
+     "Heating it to its melting point"
+    ],
+    "answer": 0,
+    "solution": "<p>A one-time screening load weeds out the weakest samples before they can fail in service.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A refractory lining is chosen mainly for:</p>",
+    "choices": [
+     "High melting point, low thermal conductivity, and chemical compatibility with the material it contacts",
+     "Low cost only",
+     "High electrical conductivity",
+     "Bright color"
+    ],
+    "answer": 0,
+    "solution": "<p>All three properties together determine whether a lining actually survives service.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a fiber composite, the fiber's job is to:</p>",
+    "choices": [
+     "Carry the load along its length",
+     "Protect the matrix from UV",
+     "Transfer load between matrix regions",
+     "Provide color and surface finish"
+    ],
+    "answer": 0,
+    "solution": "<p>The fiber is the stiff, strong, load-carrying element.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a fiber composite, the matrix's job is to:</p>",
+    "choices": [
+     "Hold fibers in position, transfer load between them, and protect them from the environment",
+     "Carry all of the tensile load alone",
+     "Replace the need for fibers entirely",
+     "Increase the part's weight for stability"
+    ],
+    "answer": 0,
+    "solution": "<p>The matrix supports and connects the fibers; it does not carry the load alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A fiber composite is generally:</p>",
+    "choices": [
+     "Strong along the fiber direction and comparatively weak transverse to it",
+     "Equally strong in all directions",
+     "Weakest along the fiber direction",
+     "Isotropic, like a metal"
+    ],
+    "answer": 0,
+    "solution": "<p>Composites are strongly directional — a key difference from the isotropic metals of earlier lessons.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ceramic component strength is best described as:</p>",
+    "choices": [
+     "A statistical distribution, not a single fixed value",
+     "A single fixed value, like a metal's yield strength",
+     "Always equal to the compressive strength",
+     "Independent of flaw size"
+    ],
+    "answer": 0,
+    "solution": "<p>The Weibull distribution, not one number, is what actually describes ceramic strength.</p>"
+   }
+  ],
+  "kuwait": "\n<p>Furnace and ladle relining is a scheduled, budgeted event precisely because refractories are consumed by exactly the two mechanisms in §3: chemical attack from the slag they contact, and thermal cycling that cracks a lining even when the chemistry is fine. A maintenance plan that tracks lining wear by both signs — not melting point alone — schedules relines before a breakthrough happens rather than after.</p>\n<p>Fiberglass piping and tanks show up across process plants specifically where corrosion resistance matters more than raw strength — chemical dosing lines, tank linings — and a maintenance engineer inspecting one needs to remember the material is a composite, not a metal: a scratch or impact that would just dent steel can delaminate the fiber-matrix bond locally, weakening the part in a way that is not visible from the outside and does not show up as simple corrosion.</p>\n"
  }
 }
