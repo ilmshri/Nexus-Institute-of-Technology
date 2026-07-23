@@ -1,0 +1,710 @@
+{
+ "1": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A closed system boundary crossed only by heat and work, next to an open system or control volume boundary crossed by mass as well as heat and work\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Closed system vs. open system (control volume)</text><text x=\"160\" y=\"92\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">CLOSED SYSTEM</text><rect x=\"90\" y=\"102\" width=\"140\" height=\"110\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><text x=\"160\" y=\"162\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">gas</text><line x1=\"60\" y1=\"120\" x2=\"90\" y1=\"120\" x2=\"90\" y2=\"120\" stroke=\"#c2820f\" stroke-width=\"2\"/><path d=\"M60,120 L88,120 M80,113 L90,120 L80,127\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"20\" y=\"115\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Q</text><path d=\"M230,190 L260,190 M250,183 L260,190 L250,197\" stroke=\"#1f7a5c\" stroke-width=\"2\" fill=\"none\"/><text x=\"266\" y=\"195\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">W</text><text x=\"160\" y=\"230\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">no mass crosses the boundary</text><text x=\"420\" y=\"92\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">OPEN SYSTEM (CV)</text><rect x=\"350\" y=\"102\" width=\"140\" height=\"110\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><text x=\"420\" y=\"150\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">control</text><text x=\"420\" y=\"164\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">volume</text><path d=\"M300,140 L348,140 M338,133 L348,140 L338,147\" stroke=\"#16202e\" stroke-width=\"2\" fill=\"none\"/><text x=\"304\" y=\"132\" fill=\"#16202e\" font-size=\"10\">mass in</text><path d=\"M490,178 L538,178 M528,171 L538,178 L528,185\" stroke=\"#16202e\" stroke-width=\"2\" fill=\"none\"/><text x=\"492\" y=\"170\" fill=\"#16202e\" font-size=\"10\">mass out</text><path d=\"M320,113 L348,113 M338,106 L348,113 L338,120\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"280\" y=\"108\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Q</text><path d=\"M490,205 L520,205 M510,198 L520,205 L510,212\" stroke=\"#1f7a5c\" stroke-width=\"2\" fill=\"none\"/><text x=\"524\" y=\"210\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">W</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Almost every real piece of plant equipment is an open system — Lesson 5 builds its energy balance</text></svg><figcaption>A closed system's boundary is crossed by energy alone. An open system — a control volume, the type used for almost all real equipment — is crossed by mass as well as energy, in both directions.</figcaption></figure>\n\n<h3>§1 · Systems and their boundaries</h3>\n<p>A <b>system</b> is whatever is under study; everything else is the <b>surroundings</b>, separated by a <b>boundary</b>. A <b>closed system</b> has a boundary that energy may cross, but mass may not — gas trapped in a sealed piston-cylinder is the standard example. An <b>open system</b>, or <b>control volume</b>, has a boundary crossed by both mass and energy — a pump, a length of pipe, a compressor. Almost every real piece of plant equipment is a control volume, which is why its own energy balance (Lesson 5) carries most of the weight for the rest of this course. An <b>isolated system</b> is the idealization where neither mass nor energy crosses at all — a useful limit case for the second law later in Lesson 8.</p>\n\n<h3>§2 · Properties: intensive versus extensive</h3>\n<p>An <b>extensive</b> property depends on how much of the system is present — mass, volume, and total internal energy all double if the system doubles. An <b>intensive</b> property does not — temperature, pressure, and density are the same everywhere in a uniform system regardless of how much of it is being examined. Dividing an extensive property by mass produces its <b>specific</b> (intensive) counterpart: specific volume \\(v=V/m\\), specific internal energy \\(u=U/m\\), specific enthalpy \\(h=H/m\\). This lower-case convention — capital for the total (extensive) quantity, lower-case for the per-unit-mass (intensive) quantity — is used without further comment for the rest of the course.</p>\n\n<h3>§3 · Equilibrium, process paths, and the state postulate</h3>\n<p>A system is in <b>equilibrium</b> when no unbalanced thermal, mechanical, or chemical potential remains to drive further change; only then does every property have one well-defined value throughout the system. A <b>process</b> is the change from one equilibrium state to another, and the specific sequence of states passed through along the way is its <b>path</b> — different paths can connect the same two endpoints, a fact Lesson 3 uses directly. The <b>state postulate</b>, for the simple compressible substances this course works with, says that any <em>two</em> independent intensive properties fix the state completely — every other property then follows. This single idea is why steam tables are organized the way they are: look up two known properties, read everything else.</p>\n\n<h3>§4 · Units and sign conventions — fixed once, forever</h3>\n<p>This course works in SI: kg, m, s, K for the base quantities; kJ for energy; kPa or bar for pressure; kJ/kg and kJ/(kg·K) for specific quantities. The sign convention, stated once so it never needs restating: heat transfer <em>into</em> the system is positive (\\(+Q\\)); work done <em>by</em> the system (output) is positive (\\(+W\\)) — the standard engineering convention. Under it, the first law (Lesson 4) reads \\( \\Delta U = Q - W \\): heat in helps the balance, work out costs it. Inconsistent sign conventions across sources are a classic, avoidable source of error — this one is fixed here and used throughout.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — the state postulate</span>\n<p>For a simple compressible substance, any TWO independent intensive properties fix the state completely.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li>Basic mechanics units (kg, m, s, N) from Physics I.</li><li>The idea of a \"state\" from earlier courses' equilibrium concepts.</li><li>No prior thermodynamics — this lesson fixes vocabulary and conventions used for the rest of the course.</li></ul>\n<h4>Toolkit — systems and properties</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Closed system</td><td>energy crosses, mass does not</td><td>Piston-cylinder problems (Lesson 4).</td></tr>\n<tr><td>Open system / CV</td><td>mass and energy both cross</td><td>Almost all real equipment (Lesson 5).</td></tr>\n<tr><td>Extensive / intensive</td><td>depends on amount / does not</td><td>Sorts every property into one of two kinds.</td></tr>\n<tr><td>Specific property</td><td>extensive ÷ mass (v, u, h)</td><td>The intensive form used in tables.</td></tr>\n<tr><td>State postulate</td><td>2 independent intensive properties fix the state</td><td>Basis of every steam-table lookup.</td></tr>\n<tr><td>Sign convention</td><td>+Q in, +W out</td><td>\\(\\Delta U = Q - W\\) (Lesson 4).</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Classifying three systems</b></p><p><b>Problem.</b> Classify each as closed, open, or isolated: (a) a sealed pressure cooker before the valve opens; (b) a running centrifugal pump; (c) a perfectly insulated rigid tank, valve shut, nothing stirring.</p>",
+    "solution": "<p><b>Solution.</b> (a) Closed — heat may cross the sealed pot, but no mass does. (b) Open (control volume) — fluid flows continuously through it. (c) Isolated — with the valve shut and perfect insulation, neither mass nor energy crosses its boundary.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Applying the sign convention</b></p><p><b>Problem.</b> A gas in a piston-cylinder absorbs 40 kJ of heat and does 25 kJ of work pushing the piston outward. Using \\(\\Delta U = Q - W\\), find the change in internal energy.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta U = 40 - 25 = 15\\ \\text{kJ} \\) — the internal energy increases by 15 kJ; the gas kept more energy than it gave up as work.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Which properties differ, which do not</b></p><p><b>Problem.</b> Tank A holds 2 kg of water; Tank B holds 4 kg of the same water at the identical temperature and pressure. Which properties differ between the tanks, and which are identical?</p>",
+    "solution": "<p><b>Solution.</b> Extensive properties differ — total volume, total internal energy, and mass are roughly double in Tank B. Intensive properties are identical in both — temperature, pressure, specific volume, and specific internal energy do not depend on how much material is present.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A closed system's boundary may be crossed by:</p>",
+    "choices": [
+     "Energy, but not mass",
+     "Mass, but not energy",
+     "Neither mass nor energy",
+     "Both mass and energy freely"
+    ],
+    "answer": 0,
+    "solution": "<p>Closed means mass-tight; energy can still cross as heat or work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An open system (control volume) boundary may be crossed by:</p>",
+    "choices": [
+     "Both mass and energy",
+     "Energy only",
+     "Mass only",
+     "Neither"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the defining feature of a control volume, and the reason Lesson 5's balance is written the way it is.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An isolated system is one where:</p>",
+    "choices": [
+     "Neither mass nor energy crosses the boundary",
+     "Only mass crosses",
+     "Only energy crosses",
+     "The system has zero volume"
+    ],
+    "answer": 0,
+    "solution": "<p>Isolated is the strictest case — a useful idealization for the second law.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Specific volume v = V/m is:</p>",
+    "choices": [
+     "An intensive property",
+     "An extensive property",
+     "Neither intensive nor extensive",
+     "Only defined for gases"
+    ],
+    "answer": 0,
+    "solution": "<p>Dividing an extensive property by mass produces its intensive, specific form.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Under the sign convention fixed in this lesson, heat transfer INTO the system is:</p>",
+    "choices": [
+     "Positive",
+     "Negative",
+     "Always zero",
+     "Undefined"
+    ],
+    "answer": 0,
+    "solution": "<p>+Q in is the convention this course uses throughout.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Under the same convention, work done BY the system (output) is:</p>",
+    "choices": [
+     "Positive",
+     "Negative",
+     "Always zero",
+     "Only defined for closed systems"
+    ],
+    "answer": 0,
+    "solution": "<p>+W out pairs with +Q in to give ΔU = Q − W.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The state postulate for a simple compressible substance says the state is fixed by:</p>",
+    "choices": [
+     "Any two independent intensive properties",
+     "One property alone",
+     "All extensive properties simultaneously",
+     "Temperature alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Two independent intensive properties are enough — the basis of every steam-table lookup.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A property has a single, well-defined value throughout a system only when:</p>",
+    "choices": [
+     "The system is in equilibrium",
+     "The system is closed",
+     "The system is being heated",
+     "The system has constant volume"
+    ],
+    "answer": 0,
+    "solution": "<p>Away from equilibrium, a property can vary from point to point within the same system.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities engineer reading a plant P&amp;ID applies §1 before touching any calculation: a boiler drum with the valves shut for maintenance is a closed system; the same drum in normal service, with feedwater in and steam out continuously, is an open system, and only the control-volume balance of Lesson 5 applies to it while running. Misclassifying which type of system is on the page is the single most common setup error in an energy-balance problem, well before any arithmetic goes wrong.</p>\n<p>The sign convention of §4 is not a formality — a utilities log or a vendor datasheet that silently flips it (work-in positive instead of work-out positive, a real difference between some manufacturer conventions) produces energy balances that look plausible but are wrong by a sign, and a wrong-sign balance can make a losing piece of equipment look like it is performing normally. Fixing the convention once, in writing, before any numbers are entered is standard engineering discipline, not pedantry.</p>\n"
+ },
+ "2": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"The saturation dome on a temperature-entropy diagram, with a tie line inside the dome showing saturated liquid and saturated vapor endpoints and a quality x equals 0.85 point between them\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The saturation dome: reading quality x = 0.85</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">entropy, s →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">temperature →</text><polyline points=\"151.3,255.0 156.7,248.5 162.1,242.0 167.4,235.5 172.8,229.0 178.2,222.5 183.6,216.0 188.9,209.5 194.3,203.0 199.7,196.5 205.0,190.0 210.4,183.5 215.8,177.0 221.2,170.5 226.5,164.0 231.9,157.5 237.3,151.0 242.6,144.5 248.0,138.0 253.4,131.5 258.8,125.0 264.1,118.5 269.5,112.0 274.9,105.5 280.2,99.0 285.6,92.5 291.0,86.0 296.4,79.5 301.7,73.0 307.1,66.5 312.5,60.0 318.8,66.5 325.1,73.0 331.4,79.5 337.8,86.0 344.1,92.5 350.4,99.0 356.7,105.5 363.0,112.0 369.4,118.5 375.7,125.0 382.0,131.5 388.3,138.0 394.6,144.5 401.0,151.0 407.3,157.5 413.6,164.0 419.9,170.5 426.2,177.0 432.6,183.5 438.9,190.0 445.2,196.5 451.5,203.0 457.8,209.5 464.2,216.0 470.5,222.5 476.8,229.0 483.1,235.5 489.4,242.0 495.8,248.5 502.1,255.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><text x=\"300\" y=\"55\" fill=\"#3a6ea5\" font-size=\"11\">critical point</text><line x1=\"239.96\" y1=\"147.75\" x2=\"397.8\" y2=\"147.75\" stroke=\"#16202e\" stroke-width=\"1.6\"/><circle cx=\"239.96\" cy=\"147.75\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"200\" y=\"142\" fill=\"#c2820f\" font-size=\"10\">sat. liquid (x=0)</text><circle cx=\"397.8\" cy=\"147.75\" r=\"3.5\" fill=\"#c2820f\"/><text x=\"405\" y=\"142\" fill=\"#c2820f\" font-size=\"10\">sat. vapor (x=1)</text><circle cx=\"374.1\" cy=\"147.75\" r=\"4.5\" fill=\"#1f7a5c\"/><text x=\"330\" y=\"168\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">x = 0.85</text><text x=\"105\" y=\"160\" fill=\"#16202e\" font-size=\"11\">compressed liquid</text><text x=\"430\" y=\"110\" fill=\"#16202e\" font-size=\"11\">superheated vapor</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Same quality-weighted-average idea as the lever rule — read the tie line, not a formula</text></svg><figcaption>Inside the dome, a horizontal tie line at constant pressure connects saturated liquid (x=0) to saturated vapor (x=1). Quality x = 0.85 sits 85% of the way from liquid to vapor along that line — 85% of the mass is vapor, 15% still liquid, both at the same saturation temperature.</figcaption></figure>\n\n<h3>§1 · The three regions</h3>\n<p>A pure substance's property chart has three regions. To the left of the dome: <b>compressed</b> (or subcooled) <b>liquid</b> — liquid below its saturation temperature at that pressure. Under the dome: the <b>saturated mixture</b> region, liquid and vapor coexisting at the saturation temperature for that pressure. To the right: <b>superheated vapor</b> — vapor above its saturation temperature, with no liquid present at all. The dome's peak is the <b>critical point</b>, where the distinction between liquid and vapor disappears entirely.</p>\n\n<h3>§2 · Quality — reading a point inside the dome</h3>\n<p><b>Quality</b> \\(x\\) is the vapor mass fraction, \\(x=m_{\\text{vapor}}/m_{\\text{total}}\\), and it is defined only <em>inside</em> the dome — it is meaningless anywhere else on the chart. \\(x=0\\) is saturated liquid, the dome's left edge; \\(x=1\\) is saturated vapor, its right edge. \\(x=0.85\\) means \\(85\\)% of the mass is saturated vapor and the remaining \\(15\\)% is still saturated liquid, both sitting at the same saturation temperature and pressure. Any property \\(y\\) (specific volume, internal energy, enthalpy, entropy) at that quality is a quality-weighted average between its saturated-liquid and saturated-vapor values, \\( y=y_f+x(y_g-y_f) \\) — the same lever-rule idea used for a two-phase metal alloy, applied here to a boiling substance instead.</p>\n\n<h3>§3 · Superheat, subcooling, and why turbines want it</h3>\n<p><b>Superheat</b> measures how far above the saturation temperature for its pressure the vapor actually sits; superheated vapor carries no liquid at all. <b>Subcooling</b> is the mirror case for a liquid below its saturation temperature. Turbines are supplied with superheated steam, not steam sitting inside the dome, because wet (two-phase) steam carries liquid droplets that strike the moving blades at high speed and erode them over years of service — keeping the steam superheated at inlet, and the expansion path through the turbine as dry as practical, protects the hardware.</p>\n\n<h3>§4 · Steam-table fluency — the working method</h3>\n<p>Given any two independent intensive properties (the state postulate, Lesson 1), the method is always the same three steps. (1) Identify which two properties are known. (2) Locate the region: compare the known values against the saturation values at that pressure or temperature — between \\(v_f\\) and \\(v_g\\) places the state inside the dome; below \\(v_f\\), compressed liquid; above \\(v_g\\), superheated. (3) Read or interpolate the remaining properties from the matching table — the saturation table with quality if inside the dome, the superheated table directly otherwise. This three-step method, not memorized numbers, is the actual skill a steam table drill is building.</p>\n<div class=\"keybox\"><span class=\"tag\">Key tool — quality-weighted average</span>\n<p>\\[ y = y_f + x\\,(y_g - y_f) \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The state postulate</b> (Lesson 1) — why two properties are always enough.</li><li><b>The lever rule</b> (Materials Science II, Lesson 1) — the same weighted-average idea, different physics.</li><li>No prior exposure to steam tables assumed.</li></ul>\n<h4>Toolkit — regions and quality</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Compressed liquid</td><td>T below saturation T at that P</td><td>Left of the dome.</td></tr>\n<tr><td>Saturated mixture</td><td>liquid + vapor coexisting</td><td>Inside the dome; needs quality x.</td></tr>\n<tr><td>Superheated vapor</td><td>T above saturation T at that P</td><td>Right of the dome; no liquid present.</td></tr>\n<tr><td>Quality x</td><td>\\( m_{vapor}/m_{total} \\)</td><td>0 = sat. liquid, 1 = sat. vapor.</td></tr>\n<tr><td>Property at quality x</td><td>\\( y=y_f+x(y_g-y_f) \\)</td><td>Reads v, u, h, s inside the dome.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>What is physically in the vessel?</b></p><p><b>Problem.</b> A rigid vessel contains a saturated liquid-vapor mixture of water at quality \\(x=0.85\\). What is physically inside the vessel, in plain terms?</p>",
+    "solution": "<p><b>Solution.</b> 85% of the mass inside is saturated vapor and 15% is still saturated liquid, both coexisting at the boiling temperature that corresponds to the vessel's pressure — not a homogeneous gas, and not all liquid.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading specific volume at a given quality</b></p><p><b>Problem.</b> At a certain pressure, saturated liquid water has \\(v_f=0.001\\ \\text{m}^3/\\text{kg}\\) and saturated vapor has \\(v_g=0.194\\ \\text{m}^3/\\text{kg}\\). Find the specific volume of a mixture at quality \\(x=0.85\\).</p>",
+    "solution": "<p><b>Solution.</b> \\( v=v_f+x(v_g-v_f)=0.001+0.85(0.194-0.001)=0.001+0.85(0.193)\\approx0.165\\ \\text{m}^3/\\text{kg} \\). Notice how close this is to the pure-vapor value — a small liquid fraction still occupies almost no volume compared to the vapor.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Superheated or still wet?</b></p><p><b>Problem.</b> Steam at a certain pressure has a saturation temperature of \\(250^\\circ\\)C. It is measured at \\(320^\\circ\\)C at that same pressure. Is it superheated or still inside the two-phase dome, and why does this matter for turbine blades?</p>",
+    "solution": "<p><b>Solution.</b> \\(320^\\circ\\text{C} > 250^\\circ\\text{C}\\), so the steam is superheated — no liquid droplets present. This matters because wet steam inside the dome carries liquid droplets that erode turbine blades on impact at high velocity; superheat keeps the entering steam liquid-free.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Quality x is defined:</p>",
+    "choices": [
+     "Only inside the two-phase (saturated mixture) dome",
+     "Everywhere on the property chart",
+     "Only for superheated vapor",
+     "Only for compressed liquid"
+    ],
+    "answer": 0,
+    "solution": "<p>Outside the dome, there is no liquid-vapor split for x to describe.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>x = 0 corresponds to:</p>",
+    "choices": [
+     "Saturated liquid",
+     "Saturated vapor",
+     "The critical point",
+     "Superheated vapor"
+    ],
+    "answer": 0,
+    "solution": "<p>x=0 is the dome's liquid edge.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>x = 1 corresponds to:</p>",
+    "choices": [
+     "Saturated vapor",
+     "Saturated liquid",
+     "Compressed liquid",
+     "Subcooled liquid"
+    ],
+    "answer": 0,
+    "solution": "<p>x=1 is the dome's vapor edge.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A property inside the dome at quality x is found by:</p>",
+    "choices": [
+     "y = y_f + x(y_g − y_f)",
+     "y = y_f × x",
+     "y = y_g − y_f",
+     "y = (y_f + y_g)/2 always"
+    ],
+    "answer": 0,
+    "solution": "<p>The quality-weighted average between the saturated-liquid and saturated-vapor values.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Superheated vapor is:</p>",
+    "choices": [
+     "Above the saturation temperature for its pressure, with no liquid present",
+     "Below the saturation temperature",
+     "Always at the critical point",
+     "A mixture of liquid and vapor"
+    ],
+    "answer": 0,
+    "solution": "<p>Superheat means clear of the dome entirely, on the vapor side.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Turbines are supplied with superheated (not wet) steam mainly to:</p>",
+    "choices": [
+     "Avoid liquid-droplet erosion of the blades",
+     "Increase the steam's quality to exactly 1.5",
+     "Reduce the boiler's pressure",
+     "Save on fuel cost only"
+    ],
+    "answer": 0,
+    "solution": "<p>Liquid droplets in wet steam strike blades at speed and erode them over time.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The critical point is where:</p>",
+    "choices": [
+     "The distinction between liquid and vapor disappears",
+     "Quality always equals 0.5",
+     "Superheat begins at any pressure",
+     "Pressure is always atmospheric"
+    ],
+    "answer": 0,
+    "solution": "<p>Above the critical point there is no boiling transition to speak of.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Given two independent intensive properties, the working method for a steam table starts by:</p>",
+    "choices": [
+     "Determining which region those two properties place the state in",
+     "Guessing the quality first",
+     "Assuming the state is always superheated",
+     "Looking up entropy only"
+    ],
+    "answer": 0,
+    "solution": "<p>Region identification comes first; which table (and whether quality is needed) follows from it.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities operator reading a boiler drum's pressure and a downstream temperature gauge is running the working method of §4 without necessarily naming it: comparing the measured temperature against the saturation temperature at that pressure is exactly how a shift engineer confirms the plant is actually delivering superheated steam to the turbine, not wet steam that will quietly erode blades over years of otherwise normal-looking operation.</p>\n<p>Quality shows up constantly in condensate and flash-steam calculations: water throttled from a high-pressure boiler drum to a lower-pressure vessel partially flashes to steam, landing at some quality x between 0 and 1 rather than staying fully liquid — sizing a flash tank or a condensate return line without accounting for that quality-weighted specific volume is a common and avoidable undersizing mistake.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Pressure versus volume diagram showing a constant-pressure process as a horizontal line, with the rectangular area beneath it, between the initial and final volumes, shaded as the boundary work\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Boundary work = the area under the P–v curve</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">volume, V →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">pressure, P →</text><polygon points=\"160.8,255 160.8,134.1 407.28,134.1 407.28,255\" fill=\"#3a6ea5\" fill-opacity=\"0.16\" stroke=\"none\"/><line x1=\"160.8\" y1=\"134.1\" x2=\"407.28\" y2=\"134.1\" stroke=\"#c2820f\" stroke-width=\"2.2\"/><line x1=\"160.8\" y1=\"134.1\" x2=\"160.8\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><line x1=\"407.28\" y1=\"134.1\" x2=\"407.28\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"150\" y=\"270\" fill=\"#16202e\" font-size=\"10\">V₁</text><text x=\"400\" y=\"270\" fill=\"#16202e\" font-size=\"10\">V₂</text><text x=\"220\" y=\"122\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">constant-pressure process</text><text x=\"280\" y=\"205\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">W = P(V₂−V₁) = shaded area</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">A different path between the same two endpoints encloses a different area — work is path-dependent</text></svg><figcaption>For a quasi-equilibrium process, boundary work equals the area under the process curve on a P–v diagram. For a constant-pressure process this is simply P(V₂−V₁), the shaded rectangle — but the shape of that area, and so the work, changes with the path taken between the same two states.</figcaption></figure>\n\n<h3>§1 · Boundary work — path-dependent, and why</h3>\n<p><b>Boundary (moving-boundary) work</b> is \\( W=\\int P\\,dV \\) for a quasi-equilibrium process — the area under the process curve on a P–v diagram. Because different paths between the same two states can trace different curves, and therefore enclose different areas, work is <em>path-dependent</em>: it is not a property fixed by the state alone, only by the specific route taken to get there. This is the direct contrast with internal energy, which is fixed entirely by the state and does not care how that state was reached. Standard processes give simple results: isobaric (constant \\(P\\)), \\(W=P(V_2-V_1)\\); isochoric (constant \\(V\\)), \\(W=0\\); isothermal ideal gas, \\(W=mRT\\ln(V_2/V_1)\\); polytropic (\\(PV^n=\\text{const}\\)), \\(W=\\dfrac{P_2V_2-P_1V_1}{1-n}\\) for \\(n\\neq1\\).</p>\n\n<h3>§2 · Heat — energy in transit, not a substance</h3>\n<p><b>Heat</b> is energy crossing a boundary because of a temperature difference alone. A system does not \"contain\" heat the way it contains internal energy — heat, like work, is a path-dependent quantity describing how energy crosses the boundary, not a property of the state itself. An <b>adiabatic</b> process or boundary is one with \\(Q=0\\) — either perfectly insulated, or fast enough that meaningful heat transfer has no time to occur.</p>\n\n<h3>§3 · Reading work from the diagram — the working method</h3>\n<p>The area between a process curve and the volume axis, bounded by the initial and final volumes, is the boundary work for that process. A curve running higher in pressure encloses more area for the same volume change, meaning more work. A <b>cycle</b> — a closed loop on the P–v diagram, returning to its starting state — has net work equal to the area enclosed by the loop; this is the exact idea Lesson 11's engine cycles build on.</p>\n\n<h3>§4 · Working method for a work-and-heat problem</h3>\n<p>(1) Identify the process type — isobaric, isochoric, isothermal, polytropic, or a curve given directly — since that identification selects which formula or graphical area applies. (2) Compute or read off the boundary work. (3) If both work and an energy quantity are needed, combine with the first law (Lesson 4) to find whichever of heat or internal-energy change remains unknown. In a well-posed problem, work and heat are never both unknowns at once — one is always computable directly, and the first law supplies the other.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — boundary work</span>\n<p>\\[ W=\\int P\\,dV = \\text{area under the process curve (P–v)}. \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The state postulate and P–v/T–s style charts</b> (Lessons 1–2).</li><li>Basic integration as \"area under a curve\" (Math I/II).</li><li>No prior first-law exposure — that arrives next lesson.</li></ul>\n<h4>Toolkit — work and heat</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Process</th><th>Boundary work</th><th>Use</th></tr></thead><tbody>\n<tr><td>Isobaric (const. P)</td><td>\\( W=P(V_2-V_1) \\)</td><td>Piston-cylinder at constant external P.</td></tr>\n<tr><td>Isochoric (const. V)</td><td>\\( W=0 \\)</td><td>Rigid tank, any process.</td></tr>\n<tr><td>Isothermal (ideal gas)</td><td>\\( W=mRT\\ln(V_2/V_1) \\)</td><td>Slow, constant-T expansion/compression.</td></tr>\n<tr><td>Polytropic (\\(PV^n\\)=const)</td><td>\\( W=\\dfrac{P_2V_2-P_1V_1}{1-n} \\)</td><td>Real compressions/expansions, \\(n\\neq1\\).</td></tr>\n<tr><td>Adiabatic</td><td>\\(Q=0\\)</td><td>Insulated or very fast processes.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Isobaric boundary work</b></p><p><b>Problem.</b> A gas expands at a constant pressure of \\(300\\ \\text{kPa}\\) from \\(V_1=0.02\\ \\text{m}^3\\) to \\(V_2=0.05\\ \\text{m}^3\\). Find the boundary work.</p>",
+    "solution": "<p><b>Solution.</b> \\( W=P(V_2-V_1)=300\\times(0.05-0.02)=300\\times0.03=9\\ \\text{kJ} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Work in a rigid tank</b></p><p><b>Problem.</b> A gas is heated in a rigid, sealed tank from \\(20^\\circ\\)C to \\(80^\\circ\\)C. What boundary work is done, and why?</p>",
+    "solution": "<p><b>Solution.</b> \\(W=0\\). The tank's boundary never moves, so no \\(P\\,dV\\) work occurs regardless of how much the temperature or pressure changes inside.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Two paths, same endpoints, different work</b></p><p><b>Problem.</b> Two reversible paths connect \\(P_1=400\\ \\text{kPa},\\,V_1=0.01\\ \\text{m}^3\\) to \\(P_2=200\\ \\text{kPa},\\,V_2=0.03\\ \\text{m}^3\\). Path A: isobaric at \\(400\\ \\text{kPa}\\) (\\(V\\): \\(0.01\\to0.03\\)), then isochoric (\\(P\\): \\(400\\to200\\)). Path B: isochoric first (\\(P\\): \\(400\\to200\\) at \\(V=0.01\\)), then isobaric at \\(200\\ \\text{kPa}\\) (\\(V\\): \\(0.01\\to0.03\\)). Compute the work for each path.</p>",
+    "solution": "<p><b>Solution.</b> Path A: \\(400\\times(0.03-0.01)+0=8\\ \\text{kJ}\\). Path B: \\(0+200\\times(0.03-0.01)=4\\ \\text{kJ}\\). Same two endpoint states, different work — 8 kJ versus 4 kJ — confirming work depends on the path, not just the states.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Boundary work for a quasi-equilibrium process equals:</p>",
+    "choices": [
+     "The area under the process curve on a P–v diagram",
+     "The area under the T–s curve always",
+     "The change in internal energy",
+     "The change in enthalpy"
+    ],
+    "answer": 0,
+    "solution": "<p>W = ∫P dV is read directly as the area under the P–v curve.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Work is:</p>",
+    "choices": [
+     "Path-dependent, not a state property",
+     "A state property, like internal energy",
+     "Always positive",
+     "Always zero for a gas"
+    ],
+    "answer": 0,
+    "solution": "<p>Unlike U, work depends on the specific path taken between two states.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For an isochoric (constant-volume) process, boundary work is:</p>",
+    "choices": [
+     "Zero, since the boundary never moves",
+     "Equal to P(V2−V1)",
+     "Always negative",
+     "Equal to the heat transferred"
+    ],
+    "answer": 0,
+    "solution": "<p>No volume change means no PdV work, whatever else changes.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For an isobaric process, boundary work equals:</p>",
+    "choices": [
+     "P(V2 − V1)",
+     "V(P2 − P1)",
+     "Zero always",
+     "mRT ln(V2/V1)"
+    ],
+    "answer": 0,
+    "solution": "<p>Constant pressure factors straight out of the integral.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Heat transfer is best described as:</p>",
+    "choices": [
+     "Energy in transit due to a temperature difference, not a substance a system contains",
+     "A property stored inside a system",
+     "Identical to work in every case",
+     "Always positive by convention"
+    ],
+    "answer": 0,
+    "solution": "<p>A system has internal energy, not \"heat content\" — heat only exists while crossing a boundary.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An adiabatic process is one where:</p>",
+    "choices": [
+     "Q = 0",
+     "W = 0",
+     "ΔU = 0",
+     "P is constant"
+    ],
+    "answer": 0,
+    "solution": "<p>Adiabatic specifically means no heat transfer, whether by insulation or by speed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cycle's net work on a P–v diagram equals:</p>",
+    "choices": [
+     "The area enclosed by the loop",
+     "Zero, always",
+     "The area under the highest-pressure leg only",
+     "The sum of all pressures"
+    ],
+    "answer": 0,
+    "solution": "<p>Positive-work and negative-work legs net out to the enclosed loop area — the basis of Lesson 11's cycles.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two different reversible paths between the same two states generally:</p>",
+    "choices": [
+     "Give different boundary work values",
+     "Give identical boundary work always",
+     "Are physically impossible",
+     "Only differ in heat, never in work"
+    ],
+    "answer": 0,
+    "solution": "<p>Different areas under different curves mean different work, even for identical endpoints.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A compressor's indicator diagram — pressure plotted against cylinder volume over one stroke — is a live P–v diagram, and the enclosed loop area a technician reads off it is literally the net work the compressor is doing per cycle. A worn valve or a leaking piston ring changes the shape of that loop, and an engineer trained to read the area rather than just a single pressure gauge reading catches the efficiency loss well before it shows up as a bigger utility bill.</p>\n<p>Path-dependence is not just theory on a shutdown or startup sequence: bringing a pressure vessel up to operating pressure slowly (a long, gentle path) versus quickly (a short, steep path) can do noticeably different boundary work on any gas or vapor inside, even between the identical start and end pressures — a detail that matters when a startup procedure specifies rate limits, not just a final target.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Temperature versus heat added for the same gas in a rigid tank compared to a piston-cylinder at constant pressure, the rigid-tank line rising more steeply because none of the heat is diverted into boundary work\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Same heat added, two confinements: which ends hotter?</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">heat added, Q (kJ/kg) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">temperature →</text><polyline points=\"66.0,255.0 89.7,245.2 113.4,235.5 137.1,225.8 160.8,216.0 184.5,206.2 208.2,196.5 231.9,186.8 255.6,177.0 279.3,167.2 303.0,157.5 326.7,147.8 350.4,138.0 374.1,128.2 397.8,118.5 421.5,108.8 445.2,99.0 468.9,89.3 492.6,79.5 516.3,69.8 540.0,60.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2\"/><polyline points=\"66.0,255.0 89.7,248.0 113.4,241.1 137.1,234.1 160.8,227.1 184.5,220.2 208.2,213.2 231.9,206.2 255.6,199.3 279.3,192.3 303.0,185.3 326.7,178.4 350.4,171.4 374.1,164.4 397.8,157.5 421.5,150.5 445.2,143.5 468.9,136.6 492.6,129.6 516.3,122.7 540.0,115.7\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><text x=\"420\" y=\"90\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">rigid tank (constant V) — uses cv</text><text x=\"420\" y=\"150\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">piston-cylinder (constant P) — uses cp</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Same Q, same starting T — the rigid tank always ends hotter, by exactly the factor cp/cv</text></svg><figcaption>All of the heat added to a rigid tank raises its internal energy (temperature); some of the heat added at constant pressure instead does boundary work pushing the piston out. Because cp is always greater than cv, the same heat input produces a smaller temperature rise at constant pressure.</figcaption></figure>\n\n<h3>§1 · The energy balance, stated once</h3>\n<p>For a closed system, \\( \\Delta U = Q - W \\) (using the sign convention fixed in Lesson 1). When kinetic and potential energy changes are negligible — true for almost every closed-system problem in this course — this is the entire first law needed. Every problem in this lesson is a variation on filling in this one equation.</p>\n\n<h3>§2 · Internal energy versus enthalpy — when each applies</h3>\n<p><b>Internal energy</b> \\(U\\) is the natural variable at <b>constant volume</b>: a rigid tank does no boundary work (\\(W=0\\)), so \\(Q=\\Delta U\\) directly — all the heat added raises internal energy. <b>Enthalpy</b>, \\(H=U+PV\\), is the natural variable at <b>constant pressure</b>: it can be shown that \\(Q=\\Delta H\\) directly there, because the definition of \\(H\\) already absorbs the \\(P\\Delta V\\) boundary-work term. This is exactly why enthalpy exists as a defined property — it is the energy accounting tool built for constant-pressure processes, the way \\(U\\) is built for constant-volume ones. For an ideal gas, both depend on temperature alone: \\( \\Delta U=mc_v\\Delta T \\), \\( \\Delta H=mc_p\\Delta T \\).</p>\n\n<h3>§3 · Rigid tank versus piston-cylinder, heated equally</h3>\n<p>Add the same heat \\(Q\\) to the same gas from the same starting temperature, in two different confinements. In a rigid tank, all of \\(Q\\) raises internal energy: \\( \\Delta T=Q/(mc_v) \\). In a piston-cylinder held at constant pressure, part of \\(Q\\) does boundary work pushing the piston, leaving less to raise temperature: \\( \\Delta T=Q/(mc_p) \\). Because \\(c_p>c_v\\) always (\\(c_p=c_v+R\\) for an ideal gas), the same heat produces a <em>smaller</em> temperature rise at constant pressure. For \\(1\\ \\text{kg}\\) of air at \\(300\\ \\text{K}\\) receiving \\(50\\ \\text{kJ}\\) (\\(c_v=0.718\\), \\(c_p=1.005\\ \\text{kJ/(kg·K)}\\)): the rigid tank reaches \\(369.6\\ \\text{K}\\), the piston-cylinder reaches only \\(349.8\\ \\text{K}\\) — the rigid tank ends hotter, by exactly the factor \\(c_p/c_v\\approx1.4\\).</p>\n\n<h3>§4 · Working method for a first-law closed-system problem</h3>\n<p>(1) Identify the confinement: rigid means constant volume, use \\(U\\) and \\(c_v\\); a piston free against a constant external pressure means constant pressure, use \\(H\\) and \\(c_p\\); anything else, use the general \\( \\Delta U=Q-W \\) with the boundary work computed separately, as in Lesson 3. (2) Write the energy balance with the fixed sign convention. (3) Substitute the ideal-gas relation for \\(\\Delta U\\) or \\(\\Delta H\\). (4) Solve for whichever single quantity — \\(Q\\), \\(W\\), or the temperature change — is unknown.</p>\n<div class=\"keybox\"><span class=\"tag\">Key rule — U vs. H</span>\n<p>Constant \\(V\\): \\(Q=\\Delta U=mc_v\\Delta T\\). Constant \\(P\\): \\(Q=\\Delta H=mc_p\\Delta T\\). This is the reason enthalpy is a defined property.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Boundary work</b> (Lesson 3) — what the constant-pressure case diverts heat into.</li><li><b>The sign convention</b> (Lesson 1).</li><li><b>Ideal-gas relations</b> from Physics I / Math background.</li></ul>\n<h4>Toolkit — the first law, closed systems</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>First law (closed)</td><td>\\( \\Delta U = Q-W \\)</td><td>General closed-system balance.</td></tr>\n<tr><td>Constant volume</td><td>\\( Q=\\Delta U=mc_v\\Delta T \\)</td><td>Rigid tank, sealed.</td></tr>\n<tr><td>Constant pressure</td><td>\\( Q=\\Delta H=mc_p\\Delta T \\)</td><td>Free piston, constant external P.</td></tr>\n<tr><td>\\(c_p\\) vs. \\(c_v\\)</td><td>\\( c_p=c_v+R \\) (ideal gas)</td><td>Explains why constant-P heating is \"less efficient\" at raising T.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Rigid tank vs. piston-cylinder, real numbers</b></p><p><b>Problem.</b> 1 kg of air at 300 K receives 50 kJ of heat: (a) in a rigid, sealed tank; (b) in a piston-cylinder at constant pressure. Using \\(c_v=0.718\\), \\(c_p=1.005\\ \\text{kJ/(kg·K)}\\), find the final temperature in each case and say which ends hotter.</p>",
+    "solution": "<p><b>Solution.</b> Rigid: \\( \\Delta T=50/0.718\\approx69.6\\ \\text{K}\\to T_2\\approx369.6\\ \\text{K}\\). Piston: \\( \\Delta T=50/1.005\\approx49.8\\ \\text{K}\\to T_2\\approx349.8\\ \\text{K}\\). The rigid tank ends hotter — none of its heat is diverted into boundary work.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing U or H</b></p><p><b>Problem.</b> A piston-cylinder holds air at constant pressure while \\(30\\ \\text{kJ/kg}\\) of heat is added. Which specific-heat relation applies directly, and why is internal energy alone not the right tool?</p>",
+    "solution": "<p><b>Solution.</b> \\(c_p\\) applies directly: \\(q=\\Delta h=c_p\\Delta T\\). Internal energy alone is not enough because, at constant pressure, part of the added heat does boundary work rather than raising U directly — enthalpy is defined precisely to absorb that boundary-work term.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Same heat, different confinement — reasoning without numbers</b></p><p><b>Problem.</b> A rigid tank of air rises 40 K for a given heat input. If the same heat input were applied instead at constant pressure to the same mass, would the resulting temperature rise be larger, smaller, or the same? Explain.</p>",
+    "solution": "<p><b>Solution.</b> Smaller. Since \\(c_p>c_v\\), the same heat input produces a smaller \\(\\Delta T\\) at constant pressure — part of the heat is diverted into boundary work pushing the piston, rather than entirely raising internal energy as it does in the rigid tank.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>At constant volume, boundary work is zero, so:</p>",
+    "choices": [
+     "Q = ΔU directly",
+     "Q = ΔH directly",
+     "Q is always zero too",
+     "W = Q always"
+    ],
+    "answer": 0,
+    "solution": "<p>With W=0, the first law collapses to Q=ΔU.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>At constant pressure, the boundary-work term is absorbed by defining:</p>",
+    "choices": [
+     "Enthalpy, H = U + PV",
+     "A new form of work",
+     "A second sign convention",
+     "A different first law entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>H is built specifically so Q=ΔH works at constant pressure.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For an ideal gas, internal energy depends on:</p>",
+    "choices": [
+     "Temperature alone",
+     "Pressure alone",
+     "Volume alone",
+     "Pressure and volume, but not temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>U=U(T) only, for an ideal gas — the basis of ΔU=mcvΔT.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>cp is always:</p>",
+    "choices": [
+     "Greater than cv, by the amount R",
+     "Less than cv",
+     "Equal to cv for every gas",
+     "Unrelated to cv"
+    ],
+    "answer": 0,
+    "solution": "<p>cp = cv + R for an ideal gas — cp is always the larger of the two.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Given the same heat input, a rigid tank versus a piston-cylinder at constant pressure:</p>",
+    "choices": [
+     "The rigid tank reaches a higher final temperature",
+     "The piston-cylinder reaches a higher final temperature",
+     "Both reach exactly the same temperature",
+     "Neither temperature can be predicted"
+    ],
+    "answer": 0,
+    "solution": "<p>No heat is diverted to boundary work in the rigid tank, so it ends hotter.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>ΔH = m·cp·ΔT applies directly to:</p>",
+    "choices": [
+     "A constant-pressure process",
+     "A constant-volume process",
+     "Any process whatsoever",
+     "Only isothermal processes"
+    ],
+    "answer": 0,
+    "solution": "<p>The constant-pressure case is exactly what enthalpy was defined for.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The physical reason cp is greater than cv is:</p>",
+    "choices": [
+     "At constant pressure, some heat must also do boundary work, not just raise temperature",
+     "Pressure always adds energy for free",
+     "Volume has no effect on heat capacity",
+     "cv only applies to liquids"
+    ],
+    "answer": 0,
+    "solution": "<p>The \"extra\" heat capacity in cp is exactly the boundary-work share.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The general closed-system energy balance, under this course's sign convention, is:</p>",
+    "choices": [
+     "ΔU = Q − W",
+     "ΔU = Q + W",
+     "ΔU = W − Q",
+     "ΔU = 0 always"
+    ],
+    "answer": 0,
+    "solution": "<p>+Q in, +W out, matching Lesson 1's fixed convention.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A relief-valve or overpressure study on a sealed, rigid vessel exposed to fire is a direct §3 application: with no way for the gas inside to expand and do work, every bit of absorbed heat drives temperature (and therefore pressure) up faster than the same heat would in an equivalent vessel with a free-moving boundary — a real reason rigid, fully-enclosed vessels are treated as a more severe fire case in relief-system sizing than a vented or piston-type system.</p>\n<p>Choosing whether to model a heating or cooling step as constant-volume or constant-pressure is a routine first step before any plant energy balance is run, and getting it backward — using cv where cp applies, or the reverse — produces a temperature or heat-duty estimate that is wrong by roughly the cp/cv ratio, about 40% for air, which is large enough to matter in an equipment sizing calculation.</p>\n"
+ },
+ "5": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A control volume box with mass flow entering and leaving, plus heat and work crossing the boundary, illustrating every term of the steady flow energy equation\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The steady-flow energy equation, term by term</text><rect x=\"220\" y=\"110\" width=\"140\" height=\"90\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><text x=\"290\" y=\"150\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">control</text><text x=\"290\" y=\"164\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">volume</text><path d=\"M100,140 L218,140 M208,133 L218,140 L208,147\" stroke=\"#16202e\" stroke-width=\"2\" fill=\"none\"/><text x=\"102\" y=\"130\" fill=\"#16202e\" font-size=\"10\">ṁ in — h₁, V₁, z₁</text><path d=\"M362,170 L480,170 M470,163 L480,170 L470,177\" stroke=\"#16202e\" stroke-width=\"2\" fill=\"none\"/><text x=\"364\" y=\"196\" fill=\"#16202e\" font-size=\"10\">ṁ out — h₂, V₂, z₂</text><path d=\"M290,60 L290,108 M283,98 L290,108 L297,98\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"298\" y=\"80\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"600\">Q</text><path d=\"M330,200 L330,248 M323,238 L330,248 L337,238\" stroke=\"#1f7a5c\" stroke-width=\"2\" fill=\"none\"/><text x=\"338\" y=\"235\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"600\">W</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Cross out whichever terms a device's description rules out — one equation, five devices</text></svg><figcaption>The SFEE balances everything crossing the control volume: mass carrying enthalpy, kinetic energy, and potential energy in and out, plus heat and work. Every one of Lesson 5's five devices is this same equation with most of its terms crossed out.</figcaption></figure>\n\n<h3>§1 · The steady-flow energy equation, term by term</h3>\n<p>For a steady, single-inlet/single-outlet control volume, per unit mass: \\[ q - w = (h_2-h_1) + \\frac{V_2^2-V_1^2}{2} + g(z_2-z_1). \\] Heat and work (\\(q\\), \\(w\\)) cross the boundary the same way they do in a closed system. Enthalpy \\(h\\), not internal energy alone, is the natural variable here because it automatically carries the flow work that mass brings with it as it crosses the boundary — extending the constant-pressure insight from Lesson 4 to a continuously flowing stream. \\(V\\) is velocity (the kinetic-energy term) and \\(z\\) is elevation (the potential-energy term). \"Steady\" means nothing inside the control volume changes with time — the same mass flow rate in as out, the same properties at every point, moment to moment; steady does not mean nothing is happening, only that nothing is changing.</p>\n\n<h3>§2 · The five one-line devices</h3>\n<p>A <b>nozzle</b> or <b>diffuser</b> does no work and is usually adiabatic; it trades enthalpy for kinetic energy (nozzle) or the reverse (diffuser): \\( \\Delta h\\approx-\\Delta KE \\). A <b>turbine</b> produces work, is usually adiabatic, and its KE/PE changes are typically negligible next to its enthalpy drop, so \\( w\\approx h_1-h_2 \\) — the enthalpy drop across a real turbine is commonly hundreds of kJ/kg, while velocity changes contribute only a few kJ/kg, which is why KE is routinely dropped without changing the answer meaningfully. A <b>compressor</b> or <b>pump</b> consumes work with the same simplifications, energy flowing the other way: \\( w\\approx h_2-h_1 \\). A <b>throttle</b> does no work, transfers negligible heat, and has negligible KE/PE change, leaving \\(h_1=h_2\\) exactly — an <b>isenthalpic</b> device. A <b>heat exchanger</b> does no work, has negligible KE/PE change, and reduces to \\( q=h_2-h_1 \\) for each stream.</p>\n\n<h3>§3 · Reading a device — the working method</h3>\n<p>For any of these five: (1) start from the full SFEE; (2) cross out whatever the device's physical description rules out — no work means \\(w=0\\); adiabatic means \\(q=0\\); a large flow area and low speed mean \\( \\Delta KE\\) is negligible; no elevation change means \\( \\Delta PE=0\\); (3) whatever survives is the device's governing equation. This is not five separate formulas to memorize — it is one equation, specialized five different ways by exactly the same logic each time.</p>\n\n<h3>§4 · Why this equation dominates the next four years</h3>\n<p>Pumps, compressors, turbines, heat exchangers, control valves, HVAC coils — nearly every piece of process, rotating, or thermal equipment a mechanical engineer touches reduces to some simplified form of this one balance. Fast, confident simplification, the three steps of §3, is the single most repeatedly used skill this course builds, and it is used weekly for the rest of a working career in this field.</p>\n<div class=\"keybox\"><span class=\"tag\">Key result — the throttle</span>\n<p>No work, negligible heat, negligible ΔKE/ΔPE ⇒ \\( h_1=h_2 \\). The sharpest example of \"cross out what does not apply.\"</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Enthalpy</b> (Lesson 4) — why it, not u, is the flow-energy variable.</li><li><b>Open systems / control volumes</b> (Lesson 1).</li><li><b>Steady-state</b> as \"unchanging in time,\" not \"nothing happening.\"</li></ul>\n<h4>Toolkit — the SFEE and its five devices</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Device</th><th>Governing form</th><th>Use</th></tr></thead><tbody>\n<tr><td>Nozzle / diffuser</td><td>\\( \\Delta h\\approx-\\Delta KE \\)</td><td>No work; converts h ↔ KE.</td></tr>\n<tr><td>Turbine</td><td>\\( w\\approx h_1-h_2 \\)</td><td>Work out; KE/PE usually negligible.</td></tr>\n<tr><td>Compressor / pump</td><td>\\( w\\approx h_2-h_1 \\)</td><td>Work in.</td></tr>\n<tr><td>Throttle</td><td>\\( h_1=h_2 \\)</td><td>Isenthalpic; no work, no significant heat.</td></tr>\n<tr><td>Heat exchanger</td><td>\\( q=h_2-h_1 \\) per stream</td><td>No work; KE/PE negligible.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The throttle, from the full SFEE</b></p><p><b>Problem.</b> Write the SFEE for a throttle (valve) and state which terms survive and which vanish.</p>",
+    "solution": "<p><b>Solution.</b> No work (\\(w=0\\)), no significant heat (\\(q\\approx0\\)), negligible \\(\\Delta KE\\) and \\(\\Delta PE\\) — the SFEE collapses to \\(0=h_2-h_1\\), i.e. \\(h_1=h_2\\). A throttle is isenthalpic.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>How small is ΔKE, really?</b></p><p><b>Problem.</b> A steam turbine has an enthalpy drop of \\(600\\ \\text{kJ/kg}\\). Inlet velocity is \\(60\\ \\text{m/s}\\), exit velocity is \\(120\\ \\text{m/s}\\). Compute the kinetic-energy change per unit mass and compare it to the enthalpy drop.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\Delta KE=\\dfrac{V_2^2-V_1^2}{2}=\\dfrac{120^2-60^2}{2}=\\dfrac{10800}{2}=5400\\ \\text{J/kg}=5.4\\ \\text{kJ/kg} \\). Against \\( \\Delta h=600\\ \\text{kJ/kg}\\), that is under 1% — confirming ΔKE is routinely negligible next to a turbine enthalpy drop.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Balancing a two-stream heat exchanger</b></p><p><b>Problem.</b> In a two-stream heat exchanger with no heat loss to the surroundings, the hot stream enthalpy drops by \\(80\\ \\text{kJ/kg}\\) at \\(2\\ \\text{kg/s}\\). The cold stream flows at \\(4\\ \\text{kg/s}\\). What enthalpy rise does the cold stream receive?</p>",
+    "solution": "<p><b>Solution.</b> Energy given up equals energy received: \\( \\dot m_{hot}\\Delta h_{hot}=\\dot m_{cold}\\Delta h_{cold} \\Rightarrow 2\\times80=4\\times\\Delta h_{cold} \\Rightarrow \\Delta h_{cold}=40\\ \\text{kJ/kg} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A throttle is best described as:</p>",
+    "choices": [
+     "Isenthalpic — no work, negligible heat, h1 = h2",
+     "A device that always raises enthalpy",
+     "Identical to a turbine",
+     "A device with large KE change"
+    ],
+    "answer": 0,
+    "solution": "<p>Everything cancels except the enthalpy balance itself.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A turbine's work output is well approximated by:</p>",
+    "choices": [
+     "w ≈ h1 − h2",
+     "w ≈ h2 − h1",
+     "w ≈ ΔKE only",
+     "w ≈ q always"
+    ],
+    "answer": 0,
+    "solution": "<p>Enthalpy drops as the turbine extracts work; KE/PE are usually negligible beside it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A compressor's work input is well approximated by:</p>",
+    "choices": [
+     "w ≈ h2 − h1",
+     "w ≈ h1 − h2",
+     "w ≈ 0 always",
+     "w ≈ ΔPE only"
+    ],
+    "answer": 0,
+    "solution": "<p>Work in raises enthalpy — the opposite sign convention from a turbine.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A nozzle converts:</p>",
+    "choices": [
+     "Enthalpy drop into kinetic-energy rise",
+     "Kinetic-energy drop into enthalpy rise",
+     "Work into heat",
+     "Mass into energy"
+    ],
+    "answer": 0,
+    "solution": "<p>A diffuser does the reverse conversion.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>\"Steady\" flow means:</p>",
+    "choices": [
+     "Properties at each point in the control volume do not change with time",
+     "Nothing is happening inside the device",
+     "Mass flow rate is always zero",
+     "Only heat can cross the boundary"
+    ],
+    "answer": 0,
+    "solution": "<p>Plenty is happening — it just is not changing moment to moment.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Enthalpy, not internal energy alone, is the natural variable for control volumes because:</p>",
+    "choices": [
+     "It automatically includes the flow work carried by mass crossing the boundary",
+     "Internal energy does not exist for flowing streams",
+     "Enthalpy is always larger than internal energy",
+     "It removes the need for a sign convention"
+    ],
+    "answer": 0,
+    "solution": "<p>The PV term flowing mass carries is exactly what enthalpy adds to internal energy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The working method for any SFEE device is:</p>",
+    "choices": [
+     "Start from the full equation and cross out terms the device's description rules out",
+     "Memorize five unrelated equations",
+     "Always assume all terms are significant",
+     "Ignore enthalpy entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>One equation, five specializations — not five separate formulas.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A heat exchanger (no work, negligible KE/PE) reduces the SFEE to:</p>",
+    "choices": [
+     "q = h2 − h1 for each stream",
+     "w = h2 − h1",
+     "h1 = h2 exactly",
+     "q = 0 always"
+    ],
+    "answer": 0,
+    "solution": "<p>Heat crosses the boundary of each stream separately, with no shaft work involved.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A control-room operator watching a steam turbine's inlet and outlet pressure gauges is implicitly relying on §2's approximation every shift: the turbine's power output is read almost entirely from the enthalpy drop across it, with velocity and elevation changes assumed away — which is exactly why a sudden, unexplained drop in output at the same steam conditions is read as an internal problem (blade wear, seal leakage) rather than a change in some KE or PE term nobody is tracking, because those terms were never significant to begin with.</p>\n<p>Pressure-reducing stations on a steam or gas distribution line are throttles in the strict sense of §2, and the isenthalpic result explains a genuinely counter-intuitive field observation: throttled steam can come out measurably colder (or, for some gases, warmer) than it went in, at the same enthalpy, purely from the pressure drop — a fact worth knowing before assuming a temperature change downstream of a valve means something is leaking or malfunctioning.</p>\n"
+ },
+ "6": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Bar chart comparing the air supply line temperature of 300 kelvin to the final temperature of an evacuated insulated tank after charging, 420 kelvin, showing the tank ends far hotter than the line it was filled from\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Charging an evacuated tank: it ends HOTTER than the supply line</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">temperature (K) →</text><rect x=\"180\" y=\"125.0\" width=\"90\" height=\"130\" fill=\"#3a6ea5\" fill-opacity=\"0.55\" stroke=\"#3a6ea5\" stroke-width=\"1.5\"/><text x=\"225\" y=\"115\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"12\" font-weight=\"600\">300 K</text><text x=\"225\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">supply line</text><rect x=\"346\" y=\"73.0\" width=\"90\" height=\"182\" fill=\"#c2820f\" fill-opacity=\"0.55\" stroke=\"#c2820f\" stroke-width=\"1.5\"/><text x=\"391\" y=\"63\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"600\">420 K</text><text x=\"391\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">tank, after charging</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">T₂ = k·T_line for an evacuated, insulated, rigid tank (k = cp/cv ≈ 1.4 for air) — no heater involved</text></svg><figcaption>An evacuated, insulated, rigid tank charged from a 300 K air line ends up near 420 K — almost 120°C hotter than the line — because the entering gas carries flow work as well as internal energy, and that flow work has nowhere to go but into raising the temperature of the gas now sitting inside.</figcaption></figure>\n\n<h3>§1 · Why steady-flow breaks down</h3>\n<p>The SFEE of Lesson 5 assumes nothing inside the control volume changes with time. Charging or discharging a tank violates that directly: the mass and stored energy inside change continuously as it fills or empties. The standard fix is the <b>uniform-state, uniform-flow</b> (USUF) model — the properties of fluid crossing the boundary are taken as uniform throughout the process, and the state inside the control volume is uniform at any given instant, even though it changes from instant to instant. This keeps the mass and energy balances tractable while still capturing the transient honestly.</p>\n\n<h3>§2 · The transient energy balance</h3>\n<p>Mass balance: \\( m_2-m_1=m_{in}-m_{out} \\) — the final mass inside minus the initial mass equals the net mass that crossed the boundary. Energy balance: \\( m_2u_2-m_1u_1=Q-W+m_{in}h_{in}-m_{out}h_{out} \\). Mass flowing in or out carries <b>enthalpy</b> — it is moving, so it carries flow work exactly as in Lesson 5 — while mass already inside, or accumulating inside, is accounted with <b>internal energy</b>, since it is not flowing anywhere and so carries no flow-work term.</p>\n\n<h3>§3 · Charging an evacuated, insulated tank</h3>\n<p>The sharpest special case: an evacuated tank (\\(m_1=0\\)), perfectly insulated (\\(Q=0\\)), rigid (\\(W=0\\)), charged from a supply line at constant state \\(h_{in}\\). The balances reduce to \\(m_2=m_{in}\\) and \\( m_2u_2=m_{in}h_{in} \\), so simply \\( u_2=h_{in} \\). For an ideal gas, \\(u=c_vT\\) and \\(h=c_pT\\), giving \\( c_vT_2=c_pT_{in}\\Rightarrow T_2=(c_p/c_v)T_{in}=kT_{in} \\). For air (\\(k\\approx1.4\\)) charged from a \\(300\\ \\text{K}\\) (\\(27^\\circ\\)C) line, the tank ends at \\(420\\ \\text{K}\\) (\\(147^\\circ\\)C) — nearly \\(120^\\circ\\)C hotter than the line it was filled from, with no heater anywhere in the picture. The entering gas carries flow work in addition to its internal energy; once inside the tank, that flow work has nowhere to go except into raising the internal energy — the temperature — of the gas now sitting still. This is a real, measurable effect: rapid receiver filling genuinely runs hotter than the supply, occasionally hot enough to matter for downstream components rated to the supply-line temperature alone.</p>\n\n<h3>§4 · Where steady-flow honestly fails — the working method</h3>\n<p>Ask: does anything inside the control volume's boundary change measurably over the timescale being studied? A pump or turbine running continuously at a fixed load: no — steady-flow is safe. A tank filling or draining, a startup or shutdown, a batch step: yes — the transient (USUF) balance is required instead. A slow transient can often be treated as a sequence of steady states (\"quasi-steady\"), but a genuinely fast charge or discharge, like this lesson's tank, needs the full transient treatment to avoid a real, sometimes large, error.</p>\n<div class=\"keybox\"><span class=\"tag\">Key result — charging an evacuated tank</span>\n<p>\\[ T_2 = \\frac{c_p}{c_v}\\,T_{line} = k\\,T_{line}\\qquad(\\text{insulated, rigid, initially evacuated}). \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The SFEE and why mass carries enthalpy</b> (Lesson 5).</li><li><b>cp, cv, and k=cp/cv</b> (Lesson 4).</li><li><b>Mass and energy balances</b> generally, from earlier lessons.</li></ul>\n<h4>Toolkit — transient flow</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>USUF model</td><td>uniform state, uniform flow</td><td>Standard transient-flow idealization.</td></tr>\n<tr><td>Mass balance</td><td>\\( m_2-m_1=m_{in}-m_{out} \\)</td><td>Tracks accumulated mass.</td></tr>\n<tr><td>Energy balance</td><td>\\( m_2u_2-m_1u_1=Q-W+m_{in}h_{in}-m_{out}h_{out} \\)</td><td>In/out streams use h; contents use u.</td></tr>\n<tr><td>Evacuated-tank charging</td><td>\\( T_2=(c_p/c_v)T_{in} \\)</td><td>Tank ends hotter than the supply line.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Charging temperature, computed</b></p><p><b>Problem.</b> An evacuated, well-insulated rigid tank is opened to an air supply line at 300 K until pressures equalize, then shut. Using \\(k=c_p/c_v=1.4\\) for air, find the final tank temperature and explain in one sentence why it exceeds the supply line temperature.</p>",
+    "solution": "<p><b>Solution.</b> \\( T_2=1.4\\times300=420\\ \\text{K}\\ (147^\\circ\\text{C}) \\), nearly 120°C above the 300 K (27°C) line — because the entering gas carries flow work in addition to its internal energy, and that flow work has nowhere to go but into raising the internal energy of the now-stationary gas inside the tank.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A direct mass balance</b></p><p><b>Problem.</b> A 0.5 m³ tank initially holds 0.2 kg of a gas. After a valve is opened and gas flows in, the tank ends up holding 0.9 kg. How much mass entered through the valve?</p>",
+    "solution": "<p><b>Solution.</b> \\( m_{in}=m_2-m_1=0.9-0.2=0.7\\ \\text{kg} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Steady or transient?</b></p><p><b>Problem.</b> State whether the steady-flow assumption is appropriate for: (a) a compressor running continuously at a fixed load; (b) a compressed-air receiver being filled from empty over 30 seconds. Justify each.</p>",
+    "solution": "<p><b>Solution.</b> (a) Steady-flow is appropriate — nothing inside the compressor's control volume changes with time once it runs at a fixed load. (b) Steady-flow is not appropriate — the receiver's mass and internal energy change continuously as it fills, exactly the transient (USUF) case this lesson develops.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The uniform-state, uniform-flow model is used when:</p>",
+    "choices": [
+     "Mass and energy inside the control volume change with time",
+     "The process is perfectly steady",
+     "Only heat crosses the boundary",
+     "The system is closed"
+    ],
+    "answer": 0,
+    "solution": "<p>USUF is the standard fix for exactly the case steady-flow cannot handle.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In the transient energy balance, mass flowing in or out is accounted with:</p>",
+    "choices": [
+     "Enthalpy (h)",
+     "Internal energy (u) only",
+     "Entropy",
+     "Neither h nor u"
+    ],
+    "answer": 0,
+    "solution": "<p>Flowing mass carries flow work, so enthalpy is the correct accounting variable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Mass already inside (or accumulating inside) the control volume is accounted with:</p>",
+    "choices": [
+     "Internal energy (u)",
+     "Enthalpy (h)",
+     "Entropy only",
+     "Neither"
+    ],
+    "answer": 0,
+    "solution": "<p>Stationary mass carries no flow-work term, so u is the correct variable for it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For an evacuated, insulated, rigid tank charged from a line at constant state, the balances reduce to:</p>",
+    "choices": [
+     "u2 = h_in",
+     "u2 = u_in",
+     "h2 = h_in",
+     "u2 = 2×h_in"
+    ],
+    "answer": 0,
+    "solution": "<p>With m1=0, Q=0, W=0, the energy balance simplifies to exactly this.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Charging such a tank from a 300 K air supply (k=1.4) leaves the tank at approximately:</p>",
+    "choices": [
+     "420 K",
+     "300 K",
+     "214 K",
+     "600 K"
+    ],
+    "answer": 0,
+    "solution": "<p>T2 = k×T_line = 1.4×300 = 420 K.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The tank ends up hotter than the supply line because:</p>",
+    "choices": [
+     "The entering flow work has nowhere to go but into raising the internal energy of the gas now inside",
+     "The tank is heated externally",
+     "Compressing the incoming gas releases chemical energy",
+     "The supply line is actually hotter than measured"
+    ],
+    "answer": 0,
+    "solution": "<p>No external heater is involved — the effect is purely from flow work converting to internal energy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Steady-flow is a safe assumption when:</p>",
+    "choices": [
+     "Nothing measurable inside the control volume changes over the timescale of interest",
+     "The device is small",
+     "The fluid is a liquid, never a gas",
+     "The process lasts under one second"
+    ],
+    "answer": 0,
+    "solution": "<p>The test is whether internal conditions change over the timescale being studied, not the device's size or fluid type.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A tank filling from empty over a short time is best modeled with:</p>",
+    "choices": [
+     "The transient (USUF) balance, not the steady-flow energy equation",
+     "The steady-flow energy equation directly",
+     "No energy balance is needed",
+     "The closed-system first law only"
+    ],
+    "answer": 0,
+    "solution": "<p>Changing internal mass and energy is exactly what steady-flow cannot represent.</p>"
+   }
+  ],
+  "kuwait": "\n<p>Compressed-air receivers filling quickly after a compressor starts, or after a large downstream demand empties and then refills a header, genuinely run measurably hotter than the compressor's discharge line temperature alone would suggest — an instrumentation or safety review that only checks the compressor's rated discharge temperature, without accounting for this transient charging effect on a receiver downstream, can under-rate what a fitting or gauge near that receiver actually experiences during a fast refill.</p>\n<p>Nitrogen or inert-gas purge systems, filled quickly into an evacuated or near-empty vessel before a maintenance entry, show the identical effect: the vessel can read noticeably warmer than the supply cylinder immediately after a fast fill, a detail worth knowing before assuming a warm gauge means a leak or a fault rather than simple, expected thermodynamics.</p>\n"
+ }
+}
