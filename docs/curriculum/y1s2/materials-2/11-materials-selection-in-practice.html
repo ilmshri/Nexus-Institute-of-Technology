@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
 <title>Materials selection in practice — Materials Science II — Nexus Institute of Technology</title>
 <meta name="description" content="Property indices and screening; cost and availability as first-class constraints. Substitution decisions when the specified grade is unobtainable — a ">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=1ff9abf54a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=b68cf87567">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -28,8 +32,10 @@
       <a href="../../../curriculum/index.html" class="on">Curriculum</a>
       <a href="../../../reference/index.html">Reference</a>
       <a href="../../../career/index.html">Career Paths</a>
+      <a href="../../../feedback/index.html">Feedback</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 
@@ -48,15 +54,11 @@
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <a href="index.html">MAT 153</a> /
 <span>Lesson 11 of 11</span></nav>
-
-<div class="nx-hero">
-  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="30" r="7"/><circle cx="90" cy="30" r="7"/><circle cx="30" cy="90" r="7"/><circle cx="90" cy="90" r="7"/><circle cx="60" cy="60" r="8" class="amb"/><line x1="37" y1="30" x2="83" y2="30"/><line x1="37" y1="90" x2="83" y2="90"/><line x1="30" y1="37" x2="30" y2="83"/><line x1="90" y1="37" x2="90" y2="83"/><line x1="36" y1="36" x2="52" y2="52"/><line x1="84" y1="36" x2="68" y2="52"/><line x1="36" y1="84" x2="52" y2="68"/><line x1="84" y1="84" x2="68" y2="68"/></svg></div>
-  <div class="txt">
-    <p class="eyebrow">MAT 153 · LESSON 11 OF 11 · YEAR 1 · SEMESTER 2</p>
-    <h1>Materials selection in practice</h1>
-    <p class="sub">Property indices and screening; cost and availability as first-class constraints. Substitution decisions when the specified grade is unobtainable — a real procurement scenario. Documenting a selection so an auditor can follow it.</p>
-  </div>
-  <div class="meta"><div>Format<b>Full lesson</b></div><div>Primary text<b>Callister &amp; Rethwisch, Materials Science and</b></div><div>Assessment<b>11-problem interactive quiz</b></div></div>
+<div class="lesson-head">
+  <p class="eyebrow">MAT 153 · Lesson 11 of 11 · Year 1 · Semester 2</p>
+  <h1>Materials selection in practice</h1>
+  <p class="sub">Property indices and screening; cost and availability as first-class constraints. Substitution decisions when the specified grade is unobtainable — a real procurement scenario. Documenting a selection so an auditor can follow it.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Callister &amp; Rethwisch, Materials Science and</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y1s2/materials-2/11">Mark as complete</button>
@@ -64,7 +66,7 @@
 </div>
 <div class="src-strip"><span class="t">SOURCED FROM</span>
   <b>Callister &amp; Rethwisch, Materials Science and Engineering: An Introduction (Wiley)</b></div>
-<div class="video-hero"><div class="vh-frame vh-empty"><div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p></div><div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">Lecture</button>
   <button data-tab="t-foundations">Foundations</button>
@@ -107,7 +109,7 @@
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
-  
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
   
 </div>
 
@@ -123,21 +125,26 @@
 </div>
 </div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
   <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Reference</a> ·
+    <a href="../../../index.html">Home</a>
+    <a href="../../../about/index.html">About</a>
+    <a href="../../../mission/index.html">Mission</a>
+    <a href="../../../curriculum/index.html">Curriculum</a>
+    <a href="../../../reference/index.html">Reference</a>
     <a href="../../../career/index.html">Career Paths</a>
+    <a href="../../../feedback/index.html">Feedback</a>
   </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
+  <p class="proto">Preliminary open release — a prototype published so learners can try it
+  and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the
+  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
+  target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="lang-en">Open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=1ff9abf54a"></script>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=b68cf87567"></script>
 </body>
 </html>

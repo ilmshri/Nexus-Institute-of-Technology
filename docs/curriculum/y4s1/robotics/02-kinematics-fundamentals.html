@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
 <title>Kinematics fundamentals — Industrial Robotics — Nexus Institute of Technology</title>
 <meta name="description" content="Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mat">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=1ff9abf54a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=b68cf87567">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -28,8 +32,10 @@
       <a href="../../../curriculum/index.html" class="on">Curriculum</a>
       <a href="../../../reference/index.html">Reference</a>
       <a href="../../../career/index.html">Career Paths</a>
+      <a href="../../../feedback/index.html">Feedback</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 
@@ -48,15 +54,11 @@
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <a href="index.html">ROB 353</a> /
 <span>Lesson 02 of 11</span></nav>
-
-<div class="nx-hero">
-  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="92" width="40" height="12" rx="4"/><line x1="38" y1="92" x2="38" y2="66"/><line x1="38" y1="66" x2="66" y2="42"/><line x1="66" y1="42" x2="92" y2="52"/><circle cx="38" cy="66" r="6" class="amb"/><circle cx="66" cy="42" r="6" class="amb"/><path d="M92 44 L102 40 M92 60 L102 64"/></svg></div>
-  <div class="txt">
-    <p class="eyebrow">ROB 353 · LESSON 02 OF 11 · YEAR 4 · SEMESTER 1</p>
-    <h1>Kinematics fundamentals</h1>
-    <p class="sub">Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.</p>
-  </div>
-  <div class="meta"><div>Format<b>Scope + sources (in production)</b></div><div>Primary text<b>NPTEL: Industrial Robotics</b></div><div>Assessment<b>2 checkpoint questions</b></div></div>
+<div class="lesson-head">
+  <p class="eyebrow">ROB 353 · Lesson 02 of 11 · Year 4 · Semester 1</p>
+  <h1>Kinematics fundamentals</h1>
+  <p class="sub">Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.</p>
+  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Industrial Robotics</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y4s1/robotics/2">Mark as complete</button>
@@ -64,7 +66,7 @@
 </div>
 <div class="src-strip"><span class="t">SOURCED FROM</span>
   <b>NPTEL: Industrial Robotics (nptel.ac.in)</b></div>
-<div class="video-hero"><div class="vh-frame vh-empty"><div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p></div><div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">Lecture</button>
   <button data-tab="t-foundations">Foundations</button>
@@ -91,7 +93,7 @@
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
-  
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
   
 </div>
 
@@ -107,21 +109,26 @@
 </div>
 </div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
   <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Reference</a> ·
+    <a href="../../../index.html">Home</a>
+    <a href="../../../about/index.html">About</a>
+    <a href="../../../mission/index.html">Mission</a>
+    <a href="../../../curriculum/index.html">Curriculum</a>
+    <a href="../../../reference/index.html">Reference</a>
     <a href="../../../career/index.html">Career Paths</a>
+    <a href="../../../feedback/index.html">Feedback</a>
   </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
+  <p class="proto">Preliminary open release — a prototype published so learners can try it
+  and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the
+  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
+  target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="lang-en">Open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=1ff9abf54a"></script>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=b68cf87567"></script>
 </body>
 </html>

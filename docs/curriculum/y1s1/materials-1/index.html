@@ -3,13 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
 <title>Materials Science I — Nexus Institute of Technology</title>
 <meta name="description" content="Atoms to microstructure: bonding, crystal structures, defects, diffusion, and mechanical behavior — the vocabulary in which every later conversation a">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=1ff9abf54a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=b68cf87567">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
@@ -26,13 +32,17 @@
       <a href="../../../curriculum/index.html" class="on">Curriculum</a>
       <a href="../../../reference/index.html">Reference</a>
       <a href="../../../career/index.html">Career Paths</a>
+      <a href="../../../feedback/index.html">Feedback</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
+<div class="course-shell">
+<div class="course-main">
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <span>MAT 104</span></nav>
 
@@ -51,10 +61,8 @@
   <a class="btn btn-ghost" href="../../../curriculum/index.html">Full curriculum</a>
 </div>
 <div class="learn"><h3>What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Materials classes — metals, ceramics, polymers, composites — and what each trades away.</span></div><div><span class="ck">✓</span><span>Metallic, ionic, covalent, and secondary bonding.</span></div><div><span class="ck">✓</span><span>BCC, FCC, and HCP cells; coordination and packing factors.</span></div><div><span class="ck">✓</span><span>Miller indices for directions and planes.</span></div><div><span class="ck">✓</span><span>Vacancies, interstitials, and substitutional atoms; dislocations edge and screw; grain boundaries.</span></div><div><span class="ck">✓</span><span>Fick's first and second laws with the physical picture of jumping atoms.</span></div></div></div>
-<section class="part tight">
-  <div class="wide">
-    <h3>Syllabus</h3>
-    <div class="lessons">
+<h3>Syllabus</h3>
+<div class="lessons">
 <div class="syl" data-key="y1s1/materials-1/1" data-href="01-why-materials-fail-the-plant.html">
   <span class="tick"></span>
   <div class="no">01</div>
@@ -165,9 +173,12 @@
     <details><summary>Checkpoint questions</summary><ul><li>Why do castings show chill, columnar, and equiaxed zones?</li><li>Where does microsegregation live, and why does it survive solidification?</li></ul></details>
   </div>
 </div></div>
-    <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
-    
-    <div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Materials literacy — reading certificates, hardness numbers, and microstructures — is the
+<ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
+
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MAT 104</b></div><div class="frow"><span>Placement</span><b>Year 1 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Materials literacy — reading certificates, hardness numbers, and microstructures — is the
 quiet qualification behind quality, inspection, and plant-engineering roles across sectors:</p>
 <ul>
 <li><b>Infrastructure &amp; utilities</b> — conductor and insulation metallurgy is the daily
@@ -184,24 +195,30 @@ supplier quality — roles where a certificate audit and a density check are day
 <p><b>Interview angle:</b> the recurring test is a part on the table and the question "why did
 this fail, and what would you check first?" — the failure-mode-first method of Lesson 1,
 spoken aloud. Candidates who name the mode before naming an alloy pass.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
-  </div>
-</section><nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/computing/index.html">CMP 106 · Engineering Computing →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/computing/index.html">CMP 106 · Engineering Computing →</a></nav>
+</aside>
+</div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
   <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Reference</a> ·
+    <a href="../../../index.html">Home</a>
+    <a href="../../../about/index.html">About</a>
+    <a href="../../../mission/index.html">Mission</a>
+    <a href="../../../curriculum/index.html">Curriculum</a>
+    <a href="../../../reference/index.html">Reference</a>
     <a href="../../../career/index.html">Career Paths</a>
+    <a href="../../../feedback/index.html">Feedback</a>
   </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
+  <p class="proto">Preliminary open release — a prototype published so learners can try it
+  and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the
+  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
+  target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="lang-en">Open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=1ff9abf54a"></script>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=b68cf87567"></script>
 </body>
 </html>

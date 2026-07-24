@@ -3,13 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
 <title>Thermodynamics I — Nexus Institute of Technology</title>
 <meta name="description" content="Energy accounting with consequences: properties, the first law for closed systems and control volumes, the second law, and entropy — taught toward boi">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=1ff9abf54a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=b68cf87567">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
@@ -26,13 +32,17 @@
       <a href="../../../curriculum/index.html" class="on">Curriculum</a>
       <a href="../../../reference/index.html">Reference</a>
       <a href="../../../career/index.html">Career Paths</a>
+      <a href="../../../feedback/index.html">Feedback</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
+<div class="course-shell">
+<div class="course-main">
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <span>THM 155</span></nav>
 
@@ -51,10 +61,8 @@
   <a class="btn btn-ghost" href="../../../curriculum/index.html">Full curriculum</a>
 </div>
 <div class="learn"><h3>What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Closed and open systems; intensive and extensive properties; equilibrium and process paths.</span></div><div><span class="ck">✓</span><span>Phase regions, quality, and the P–v and T–s diagrams.</span></div><div><span class="ck">✓</span><span>Boundary work computed for standard processes; heat as energy in transit, not a substance.</span></div><div><span class="ck">✓</span><span>Energy balance for closed systems with internal energy and enthalpy distinguished.</span></div><div><span class="ck">✓</span><span>Steady-flow energy equation term by term.</span></div><div><span class="ck">✓</span><span>Charging and discharging tanks; the uniform-state, uniform-flow model.</span></div></div></div>
-<section class="part tight">
-  <div class="wide">
-    <h3>Syllabus</h3>
-    <div class="lessons">
+<h3>Syllabus</h3>
+<div class="lessons">
 <div class="syl" data-key="y1s2/thermo-1/1" data-href="01-systems-properties-and-state.html">
   <span class="tick"></span>
   <div class="no">01</div>
@@ -165,33 +173,42 @@
     <details><summary>Checkpoint questions</summary><ul><li>Why does the Brayton cycle's back-work ratio matter so much?</li><li>What does mean effective pressure summarize about a piston engine?</li></ul></details>
   </div>
 </div></div>
-    <ul class="plain small"><li>Çengel (with Boles), Thermodynamics: An Engineering Approach (McGraw-Hill) — via MIT OCW/NPTEL equivalents</li><li>NPTEL: Basic Thermodynamics (nptel.ac.in)</li></ul>
-    
-    <div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Thermodynamics I is the discipline behind every turbine, compressor, boiler, and chiller a mechanical engineer will ever touch. Three snapshots for this course:</p>
+<ul class="plain small"><li>Çengel (with Boles), Thermodynamics: An Engineering Approach (McGraw-Hill) — via MIT OCW/NPTEL equivalents</li><li>NPTEL: Basic Thermodynamics (nptel.ac.in)</li></ul>
+
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>THM 155</b></div><div class="frow"><span>Placement</span><b>Year 1 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Thermodynamics I is the discipline behind every turbine, compressor, boiler, and chiller a mechanical engineer will ever touch. Three snapshots for this course:</p>
 <ul>
 <li><b>Power generation and turbomachinery</b> &mdash; performance and commissioning engineers at OEMs such as <b>GE</b> run Lessons 5, 7, and 11 daily: simplifying the steady-flow energy equation for a specific turbine or compressor, checking a Brayton cycle's back-work ratio, and comparing a real machine's isentropic efficiency against its as-commissioned baseline.</li>
 <li><b>Upstream oil and gas processing</b> &mdash; process and utilities engineers at operators such as <b>Kuwait Oil Company</b> apply Lessons 2, 6, and 9 directly: reading steam-table quality on separator and boiler systems, sizing receivers and knockout drums with the transient charging result in mind, and tracking compressor isentropic efficiency as a condition-monitoring number, not just a design spec.</li>
 <li><b>HVAC and refrigeration</b> &mdash; systems engineers at manufacturers such as <b>Carrier</b> live in Lesson 7's coefficient-of-performance definitions and Carnot COP ceiling every working day, sizing chillers and heat pumps against the theoretical limit for the actual evaporator and condenser temperatures involved.</li>
 </ul>
 <p><b>Interview angle:</b> across all three sectors, expect a diagram-reading question over a definition question &mdash; sketch the T&ndash;s or h&ndash;s path, mark where entropy is generated, and say what that gap costs in real work. The working-method habit this course builds &mdash; start from the full balance, cross out what a device's description rules out &mdash; is exactly what that question is testing.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
-  </div>
-</section><nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/electrical/index.html">ELE 156 · Electrical Fundamentals for Mechanical Engineers →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/electrical/index.html">ELE 156 · Electrical Fundamentals for Mechanical Engineers →</a></nav>
+</aside>
+</div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
   <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Reference</a> ·
+    <a href="../../../index.html">Home</a>
+    <a href="../../../about/index.html">About</a>
+    <a href="../../../mission/index.html">Mission</a>
+    <a href="../../../curriculum/index.html">Curriculum</a>
+    <a href="../../../reference/index.html">Reference</a>
     <a href="../../../career/index.html">Career Paths</a>
+    <a href="../../../feedback/index.html">Feedback</a>
   </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
+  <p class="proto">Preliminary open release — a prototype published so learners can try it
+  and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the
+  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
+  target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="lang-en">Open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=1ff9abf54a"></script>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=b68cf87567"></script>
 </body>
 </html>

@@ -229,12 +229,16 @@ NX_PAGE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="manifest" href="{prefix}manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="{prefix}assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="{prefix}assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
 <link rel="stylesheet" href="{prefix}assets/nx/nexus.css?v={v}">
 {extra_head}</head>
 <body{body_attrs}>
@@ -252,29 +256,36 @@ NX_PAGE = """<!doctype html>
       <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
       <a href="{prefix}reference/index.html"{on_reference}>Reference</a>
       <a href="{prefix}career/index.html"{on_career}>Career Paths</a>
+      <a href="{prefix}feedback/index.html"{on_feedback}>Feedback</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="{prefix}curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 {sidemenu}
 <main{main_class}>
 {body}
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
   <nav>
-    <a href="{prefix}index.html">Home</a> ·
-    <a href="{prefix}about/index.html">About</a> ·
-    <a href="{prefix}mission/index.html">Mission</a> ·
-    <a href="{prefix}curriculum/index.html">Curriculum</a> ·
-    <a href="{prefix}reference/index.html">Reference</a> ·
+    <a href="{prefix}index.html">Home</a>
+    <a href="{prefix}about/index.html">About</a>
+    <a href="{prefix}mission/index.html">Mission</a>
+    <a href="{prefix}curriculum/index.html">Curriculum</a>
+    <a href="{prefix}reference/index.html">Reference</a>
     <a href="{prefix}career/index.html">Career Paths</a>
+    <a href="{prefix}feedback/index.html">Feedback</a>
   </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
+  <p class="proto">Preliminary open release — a prototype published so learners can try it
+  and reflect. <a href="{prefix}feedback/index.html">Leave a review</a> — it shapes the
+  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
+  target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="lang-en">Open engineering education. Worked-example values are
   pedagogical; representative industrial figures are labeled as such and are not
   published operating data of any named company. Every visual is an original vector
   illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
+</div></footer>
 <script src="{prefix}assets/nx/nexus.js?v={v}"></script>
 </body>
 </html>
@@ -312,6 +323,7 @@ def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None
         on_curr=' class="on"' if active == "curriculum" else "",
         on_reference=' class="on"' if active == "reference" else "",
         on_career=' class="on"' if active == "career" else "",
+        on_feedback=' class="on"' if active == "feedback" else "",
     )
     # ARABIC HOLD (owner 2026-07-20): strip data-ar hooks at emit time; the
     # bilingual layer returns when a translation toolkit is chosen.
@@ -476,9 +488,12 @@ def library_tab(les, course):
         lib_video_slot = ('<p class="small">The lesson video plays at the top of '
                           'this page. Alternatives and references below.</p>')
     else:
-        video_hero = (f'<div class="video-hero"><div class="vh-frame vh-empty">{video}</div>'
-                      f'<div class="vh-bar"><span class="n">LECTURE VIDEO — IN PRODUCTION</span></div></div>')
-        lib_video_slot = ""
+        # Atlas redesign (owner direction 2026-07-24): no giant empty panel at the
+        # top of unfinished lessons — a compact honest status chip instead; the
+        # full explanation (TODO / "none" marker) lives in the Library tab.
+        video_hero = ('<div class="video-status"><span class="dot"></span>'
+                      'Lecture video — in production. Only verified embeds ship.</div>')
+        lib_video_slot = video
 
     library = f"""
 <div class="lib-block lib-video">
@@ -741,9 +756,12 @@ def build_lesson_page(sem, course, les, prefix, tabs_all, next_course=None):
 <nav class="crumbs"><a href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Curriculum</a> /
 <a href="index.html">{esc(course['code'])}</a> /
 <span>Lesson {les['n']:02d} of {n_total}</span></nav>
-{hero(course, f"{esc(course['code'])} · LESSON {les['n']:02d} OF {n_total} · {esc(sem['title'].upper())}",
-      les["t"], les.get("scope", ""),
-      [("Format", fmt), ("Primary text", first_text), ("Assessment", assess)])}
+<div class="lesson-head">
+  <p class="eyebrow">{esc(course['code'])} · Lesson {les['n']:02d} of {n_total} · {esc(sem['title'])}</p>
+  <h1>{esc(les["t"])}</h1>
+  <p class="sub">{esc(les.get("scope", ""))}</p>
+  <div class="metachips"><span class="mchip">Format <b>{esc(fmt)}</b></span><span class="mchip">Primary text <b>{esc(first_text)}</b></span><span class="mchip">Assessment <b>{esc(assess)}</b></span></div>
+</div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="{lesson_key}">Mark as complete</button>
   {core_chip}
@@ -856,7 +874,22 @@ def build_course_page(sem, course, prefix, tabs_all, next_course=None):
   <div class="metachips">{chips_html}</div>
 </div>"""
 
+    facts_rows = [("Course code", esc(course["code"])),
+                  ("Placement", esc(sem["title"])),
+                  ("Lessons", f"{len(course['lessons'])}" +
+                   (" · all full depth" if n_depth == len(course["lessons"]) else
+                    f" · {n_depth} at full depth" if n_depth else " · in production"))]
+    if n_quiz:
+        facts_rows.append(("Assessment", f"{n_quiz} interactive quizzes"))
+    if n_core:
+        facts_rows.append(("Core-60 lessons", str(n_core)))
+    facts = ('<div class="facts"><h3>Course facts</h3>' +
+             "".join(f'<div class="frow"><span>{k}</span><b>{v}</b></div>'
+                     for k, v in facts_rows) + '</div>')
+
     body = f"""
+<div class="course-shell">
+<div class="course-main">
 <nav class="crumbs"><a href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Curriculum</a> /
 <span>{esc(course['code'])}</span></nav>
 {hero_html}
@@ -866,19 +899,24 @@ def build_course_page(sem, course, prefix, tabs_all, next_course=None):
   <a class="btn btn-ghost" href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Full curriculum</a>
 </div>
 {learn_html}
-<section class="part tight">
-  <div class="wide">
-    <h3 data-ar="المنهج الدراسي">Syllabus</h3>
-    <div class="lessons">{''.join(rows)}</div>
-    <ul class="plain small">{taught}</ul>
-    {vids}
-    {career}
-  </div>
-</section>"""
-    body += next_course_footer(next_course)
+<h3 data-ar="المنهج الدراسي">Syllabus</h3>
+<div class="lessons">{''.join(rows)}</div>
+<ul class="plain small">{taught}</ul>
+{vids}
+</div>
+<aside class="rail">
+{facts}
+{career}
+{next_course_footer(next_course)}
+</aside>
+</div>"""
+    # MathJax on course pages too: career blocks may carry inline math
+    # (e.g. the Nyquist criterion on ELX 205) — without it the raw \( .. \)
+    # delimiters leak to readers.
     nx_page(f"curriculum/{sem['id']}/{course['id']}/index.html",
             f"{course['title']} — Nexus Institute of Technology",
-            course["summary"][:150], body, prefix, "curriculum")
+            course["summary"][:150], body, prefix, "curriculum", wrap=False,
+            extra_head=MATHJAX)
 
 # ----------------------------------------------------- curriculum index ---
 def build_curriculum_index(sems, tabs_by_course, prefix):
@@ -886,29 +924,40 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
     depth = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
                 if lesson_depth(l, tabs_by_course[(s["id"], c["id"])]))
     pct = round(100 * depth / total)
-    cards = []
     chips = ['<button type="button" class="chip on" data-sem="all" data-ar="الكل">All</button>']
+    groups = []
     for sem in sems:
         chips.append(f'<button type="button" class="chip" data-sem="{sem["id"]}">'
                      f'{esc(sem["title"])}</button>')
+        cards = []
+        n_done_courses = 0
         for c in sem["courses"]:
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
             n_depth = sum(1 for l in c["lessons"] if lesson_depth(l, tabs_all))
+            if n_depth == len(c["lessons"]):
+                n_done_courses += 1
             depth_txt = ('<b>complete</b> · ' if n_depth == len(c["lessons"])
                          else f'<b>{n_depth} built</b> · ' if n_depth else "")
+            blurb = c["summary"][:110]
+            if len(c["summary"]) > 110:
+                blurb = blurb.rsplit(" ", 1)[0] + "…"
             cards.append(f"""
 <a class="course-card" href="{sem['id']}/{c['id']}/index.html" data-sem="{sem['id']}"
    data-key="{sem['id']}/{c['id']}" data-n="{len(c['lessons'])}">
   <span class="cap">{illo(c['id'])}</span>
-  <span class="code">{esc(c['code'])} · {esc(sem['title'])}</span>
+  <span class="code">{esc(c['code'])}</span>
   <h4>{esc(c['title'])}</h4>
-  <p>{esc(c['summary'][:110])}…</p>
+  <p>{esc(blurb)}</p>
   <span class="meta">{depth_txt}{len(c['lessons'])} lessons</span>
   <span class="pbar"><i></i></span>
   <span class="pnote"></span>
 </a>""")
-    parts = [f'<div class="chips" id="semChips">{"".join(chips)}</div>',
-             f'<div class="course-grid">{"".join(cards)}</div>']
+        groups.append(f"""
+<section class="semgroup" data-semgroup="{sem['id']}">
+  <div class="semgroup-head"><h3>{esc(sem['title'])}</h3><div class="rule"></div>
+  <span class="count">{n_done_courses} of {len(sem['courses'])} courses complete</span></div>
+  <div class="course-grid">{''.join(cards)}</div>
+</section>""")
     body = f"""
 <div class="pagehead">
   <p class="kicker"><span class="n">CURRICULUM</span>4 years · 8 semesters</p>
@@ -926,15 +975,18 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
     <p class="small">Full depth = complete lecture + foundations + five-problem interactive
     quiz (or a Tier-1 lecture / Core-60 study guide).</p>
   </div>
+</div>
+<div class="toolbar">
   <div class="searchbox">
     <input type="search" id="lessonSearch" placeholder="Search all {total} lessons — title, course, keywords…"
       data-ar-placeholder="ابحث في كل الدروس — العنوان أو المقرر أو الكلمات المفتاحية…"
       aria-label="Search lessons" data-index="search-index.json">
     <div id="searchResults" class="search-results" hidden></div>
   </div>
+  <div class="chips" id="semChips">{''.join(chips)}</div>
 </div>
 <div class="catch"><b>Depth you can audit.</b> Every claim on this page is recomputed from the content at build time.</div>
-<section class="part tight"><div class="wide">{''.join(parts)}</div></section>"""
+{''.join(groups)}"""
     nx_page("curriculum/index.html", "Curriculum — Nexus Institute of Technology",
             f"48 courses, {total} lessons: the complete mechanical-engineering map "
             f"from first principles to Industry 4.0; {depth} at full depth.",
@@ -955,13 +1007,13 @@ def build_static_pages(sems, tabs_by_course):
     nx_page("index.html",
             "Nexus Institute of Technology — Learn Mechanical Engineering from Scratch to Industry 4.0",
             "A complete B.S.-shaped mechanical engineering curriculum for "
-            "anyone — from zero background to Industry 4.0. Free, forever.",
+            "anyone — from zero background to Industry 4.0. Preliminary open release.",
             home, "", "home")
 
     # ---- ABOUT (new tab)
     nx_page("about/index.html",
             "About — Nexus Institute of Technology",
-            "Why Nexus exists: a free, world-class mechanical engineering "
+            "Why Nexus exists: a world-class mechanical engineering "
             "education for anyone willing to work for it.",
             fragment("pages/about.html"), "../", "about")
 
@@ -978,7 +1030,7 @@ def build_static_pages(sems, tabs_by_course):
     nx_page("mission/index.html",
             "Mission — Nexus Institute of Technology",
             "The Nexus mission: a complete mechanical-engineering pathway from "
-            "first principles to Industry 4.0, free and honestly labeled.",
+            "first principles to Industry 4.0, honestly labeled.",
             mission_head + mission_body, "../", "mission",
             menu=[("#premise", "The premise", None, False, None),
                   ("#method", "How content is built", None, False, None),
@@ -994,6 +1046,58 @@ def build_static_pages(sems, tabs_by_course):
             "twelve-month development plan.",
             career, "../", "career",
             menu=[("#top", "The landscape", None, False, None)])
+
+    # ---- FEEDBACK (owner order 2026-07-24): the prototype-phase review section.
+    # Static site, no backend — reviews are composed here and posted by the
+    # visitor to the project's public GitHub (prefilled issue), or copied.
+    # No fabricated reviews are ever displayed; nothing is stored server-side.
+    feedback_body = """
+<div class="pagehead">
+  <p class="kicker"><span class="n">FEEDBACK</span>Prototype phase · Open review</p>
+  <h1>Tell us what to build next.</h1>
+  <p class="sub">Nexus is a preliminary open release — real learners trying it and
+  reflecting on it is the whole point of this phase. Write your reaction below: what you
+  tried, what worked, what should change. Your review goes straight into the planning of
+  the final, tailored releases.</p>
+</div>
+<form class="review-composer" id="reviewForm" data-repo="nexuskw/nexuskw.github.io">
+  <fieldset class="rev-rating">
+    <legend>Overall reaction</legend>
+    <div class="rate-row">
+      <label><input type="radio" name="revRating" value="1"><span>1</span></label>
+      <label><input type="radio" name="revRating" value="2"><span>2</span></label>
+      <label><input type="radio" name="revRating" value="3"><span>3</span></label>
+      <label><input type="radio" name="revRating" value="4"><span>4</span></label>
+      <label><input type="radio" name="revRating" value="5" checked><span>5</span></label>
+    </div>
+    <p class="small">1 = needs a rethink · 5 = exactly right</p>
+  </fieldset>
+  <label class="rev-field">What did you try?
+    <input type="text" id="revTried" maxlength="120"
+      placeholder="e.g. the Fluid Mechanics course, a few quizzes, the phone experience…"></label>
+  <label class="rev-field">What worked for you?
+    <textarea id="revGood" rows="3" maxlength="1200"
+      placeholder="What felt right — content, design, anything."></textarea></label>
+  <label class="rev-field">What should change for future releases?
+    <textarea id="revChange" rows="4" maxlength="1200"
+      placeholder="Rough edges, missing pieces, ideas — be blunt, it helps."></textarea></label>
+  <label class="rev-field">Name or handle <span class="small">(optional)</span>
+    <input type="text" id="revName" maxlength="60" placeholder="How to credit you"></label>
+  <div class="cta-row">
+    <button type="submit" class="btn btn-primary">Post review on GitHub →</button>
+    <button type="button" id="revCopy" class="btn btn-ghost">Copy review text</button>
+    <span class="small" id="revMsg" role="status"></span>
+  </div>
+  <p class="small">Posting opens GitHub with your review pre-filled — it publishes under
+  your GitHub account, publicly, on the project repository. No account? Use
+  <b>Copy review text</b> and share it through any channel on the
+  <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">project page</a>.</p>
+</form>"""
+    nx_page("feedback/index.html",
+            "Feedback — Nexus Institute of Technology",
+            "Review the Nexus prototype: what you tried, what worked, and what "
+            "should change — your feedback shapes the final releases.",
+            feedback_body, "../", "feedback")
 
 def build_search_index(sems):
     idx = []

@@ -395,6 +395,13 @@
     if (lastX !== null) vel += (e.clientX - lastX) * 0.12;
     lastX = e.clientX;
   }, { passive: true });
+  /* scroll-driven motion (owner direction 2026-07-24): the gear train also
+     spins with page scroll, so the illustration travels with the reader. */
+  var lastScroll = window.scrollY;
+  window.addEventListener('scroll', function () {
+    vel += (window.scrollY - lastScroll) * 0.22;
+    lastScroll = window.scrollY;
+  }, { passive: true });
   (function tick() {
     cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08;
     vel *= 0.93; spin += 0.12 + vel * 0.02;
@@ -409,4 +416,118 @@
     }
     requestAnimationFrame(tick);
   })();
+})();
+
+/* ---------- ATLAS additions (owner-selected direction, 2026-07-24) ---------- */
+
+/* Scroll story — homepage sections slide in as they enter the viewport.
+   Classes are added by JS only (no-JS users see everything, unmoved); CSS
+   scroll-driven animations take over where supported; IntersectionObserver
+   covers the rest. Fully disabled under prefers-reduced-motion. */
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  if (document.documentElement.getAttribute('data-root') !== '') return; // homepage only
+  var picks = [
+    ['.nx-stats .stat', 'reveal'],
+    ['#workshop .fig-panel', 'reveal-left'],
+    ['#workshop ~ .part .fig-panel, .overview-stage', 'reveal-right'],
+    ['.feat-card', 'reveal'],
+    ['.track', 'reveal'],
+    ['.note', 'reveal'],
+    ['.cta-band', 'reveal']
+  ];
+  var els = [];
+  picks.forEach(function (p) {
+    document.querySelectorAll(p[0]).forEach(function (el, i) {
+      if (el.classList.contains('reveal') || el.classList.contains('reveal-left') ||
+          el.classList.contains('reveal-right')) return;
+      el.classList.add(p[1]);
+      el.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+      els.push(el);
+    });
+  });
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in-view'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+/* Curriculum: hide a semester group when the chip filter empties it. */
+(function () {
+  var chipRow = document.getElementById('semChips');
+  if (!chipRow) return;
+  function sync() {
+    document.querySelectorAll('[data-semgroup]').forEach(function (g) {
+      g.hidden = !g.querySelector('.course-card:not([hidden])');
+    });
+  }
+  chipRow.addEventListener('click', function () { setTimeout(sync, 0); });
+})();
+
+/* ⌘K / Ctrl-K — jump to (or focus) the lesson search. */
+(function () {
+  document.addEventListener('keydown', function (e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      var s = document.getElementById('lessonSearch');
+      e.preventDefault();
+      if (s) { s.focus(); s.select(); }
+      else {
+        var root = document.documentElement.getAttribute('data-root') || '';
+        window.location.href = root + 'curriculum/index.html#lessonSearch';
+      }
+    }
+  });
+})();
+
+/* Feedback page — review composer. Static site, no backend: the visitor's
+   review is composed locally and either posted by THEM to the project's
+   public GitHub (prefilled issue) or copied to the clipboard. Nothing is
+   stored here; no reviews are ever fabricated or displayed unsourced. */
+(function () {
+  var form = document.getElementById('reviewForm');
+  if (!form) return;
+  function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function compose() {
+    var r = form.querySelector('input[name="revRating"]:checked');
+    var rating = r ? r.value : '–';
+    var name = val('revName');
+    var lines = [
+      '## Prototype review — ' + rating + '/5',
+      '',
+      '**What I tried:** ' + (val('revTried') || '—'),
+      '',
+      '**What worked:**', (val('revGood') || '—'),
+      '',
+      '**What should change for future releases:**', (val('revChange') || '—'),
+      '',
+      '—' + (name ? ' ' + name + ' ·' : '') + ' submitted from the Nexus prototype feedback page'
+    ];
+    return { title: 'Review: ' + rating + '/5 — prototype feedback', body: lines.join('\n') };
+  }
+  var msg = document.getElementById('revMsg');
+  function say(t) { if (msg) { msg.textContent = t; setTimeout(function () { msg.textContent = ''; }, 4000); } }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var r = compose();
+    var repo = form.getAttribute('data-repo');
+    var url = 'https://github.com/' + repo + '/issues/new?title=' +
+      encodeURIComponent(r.title) + '&body=' + encodeURIComponent(r.body);
+    window.open(url, '_blank', 'noopener');
+  });
+  var copy = document.getElementById('revCopy');
+  if (copy) copy.addEventListener('click', function () {
+    var r = compose();
+    var text = r.title + '\n\n' + r.body;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { say('Copied — thank you.'); },
+        function () { say('Could not copy automatically — select and copy the fields.'); });
+    } else { say('Copying is not available in this browser.'); }
+  });
 })();
