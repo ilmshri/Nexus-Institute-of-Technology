@@ -987,7 +987,29 @@ overflowed the 560-unit viewBox and were visually clipped in the browser
 which does not measure rendered text width) — fixed by shortening or
 repositioning. Worth a quick visual scan of any new free-floating diagram
 label whose x-position plus estimated width sits past ~500-520.
-NEXT (approved order, unstarted): mfg-processes-2 (MFG 154, closes Y2S1),
-then Y2S2 (thermo-2, heat-transfer, machine-design-1, kinematics-machinery,
-metrology, mfg-processes-3) — 33 courses remain empty across Years 2-4
-site-wide.
+
+CHECKPOINT — Y2S1 COMPLETE (2026-07-24, same session continued):
+mfg-processes-2 (MFG 154) authored fresh, all 11 lessons + career block
+(Sandvik Coromant / Lincoln Electric / Stratasys — fresh rotation).
+Orthogonal cutting/Merchant's circle, tool wear modes, turning-milling-
+drilling arithmetic, CNC/G-code and machine-health quantities, grinding
+specific energy, Ra/Rz and residual stress, EDM/ECM/laser/waterjet,
+arc welding heat input, resistance/brazing/thermal cutting, bolt preload
+and torque-tension, and an AM capstone tying the whole course together —
+all Python-verified (self-consistent Merchant's-circle force example,
+verified Ra=h/4 for an idealized triangular profile, verified heat-input
+and torque-tension arithmetic including a real "unexpectedly lubricated
+bolt" 33%-overtightening example). Adopted this pass's diagram-label
+lesson proactively: labels kept short and generously margined from the
+start, plus a pre-build Python overflow scanner (x-position + estimated
+text width vs. the 560-unit viewBox) added to the verification pipeline
+before every build — caught one real overflow (L9) before it ever
+reached the browser. Coverage 188→199/528 (36%→38%). Y2S1 (strength,
+electronics-sensors, mfg-processes-2, plus previously-complete
+electrical/thermo-1/materials-2/mfg-processes-1 from Y1) is now fully
+authored — every Year 1 and Year 2 Semester 1 course is a complete
+Educational Unit.
+NEXT (approved order, unstarted): Y2S2 — thermo-2, heat-transfer,
+machine-design-1, kinematics-machinery, metrology, mfg-processes-3 —
+then Y3S1, Y3S2, Y4S1, Y4S2. 32 courses remain empty across Years 3-4
+plus the six Y2S2 courses just named.

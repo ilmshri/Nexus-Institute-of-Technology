@@ -1,0 +1,1300 @@
+{
+ "1": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Orthogonal cutting geometry showing the workpiece surface, the tool tip, the shear plane rising from the tip into the material at the shear angle, and the rake face along which the chip flows at the rake angle from vertical\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Orthogonal cutting: one shear plane, one clean idealization</text><rect x=\"66\" y=\"200\" width=\"334\" height=\"55\" fill=\"#c2820f\" fill-opacity=\"0.12\" stroke=\"#c2820f\" stroke-width=\"1.2\"/><text x=\"120\" y=\"238\" fill=\"#16202e\" font-size=\"10\">workpiece</text><path d=\"M250,200 L340,200 L310,255 L250,255 Z\" fill=\"#16202e\" fill-opacity=\"0.15\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"290\" y=\"240\" fill=\"#16202e\" font-size=\"9\">tool</text><line x1=\"250\" y1=\"200\" x2=\"118\" y2=\"129\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><text x=\"100\" y=\"120\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">shear plane</text><text x=\"155\" y=\"175\" fill=\"#3a6ea5\" font-size=\"11\">φ = 28.3°</text><line x1=\"250\" y1=\"200\" x2=\"271\" y2=\"82\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><path d=\"M255,200 C275,170 285,130 271,82\" stroke=\"#1f7a5c\" stroke-width=\"1.6\" fill=\"none\" stroke-dasharray=\"4 3\"/><text x=\"278\" y=\"110\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">chip</text><line x1=\"250\" y1=\"140\" x2=\"250\" y2=\"200\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"256\" y=\"150\" fill=\"#16202e\" font-size=\"10\">rake α = 10°</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Rake angle sets chip flow; shear angle sets chip thickness and cutting force</text></svg><figcaption>The uncut layer shears across one idealized plane at angle φ from the cutting direction, then slides up the tool's rake face — the two angles, both measurable, drive the forces and chip geometry that follow.</figcaption></figure>\n\n<h3>§1 · The orthogonal cutting model</h3>\n<p>Orthogonal cutting simplifies real machining to two dimensions: a straight cutting edge perpendicular to the direction of motion, removing a layer of uncut thickness \\(t_o\\) and producing a chip of thickness \\(t_c\\). Chip formation is idealized as shear across a single <b>shear plane</b>, at angle \\(\\phi\\) from the cutting direction — everything ahead of that plane is still workpiece; everything behind it is chip. The <b>chip thickness ratio</b> \\(r=t_o/t_c\\) is always less than 1 (the chip thickens as it forms, since it must move slower than the uncut layer approached the tool, by conservation of mass at steady state), and relates directly to the shear angle and the tool's <b>rake angle</b> \\(\\alpha\\) (the angle of the tool's cutting face from the normal to the work surface): \\[ \\tan\\phi = \\frac{r\\cos\\alpha}{1-r\\sin\\alpha}. \\] A higher rake angle, for the same chip thickness ratio, increases the shear angle — a thinner, more efficiently formed chip and lower cutting force, which is exactly why rake angle is a first lever a machinist or tool designer reaches for.</p>\n\n<h3>§2 · Cutting forces and Merchant's circle</h3>\n<p>The tool applies a resultant force to the chip, conventionally decomposed into a <b>cutting force</b> \\(F_c\\) (in the direction of tool travel) and a <b>thrust force</b> \\(F_t\\) (perpendicular to it) — both directly measurable with a dynamometer. That same resultant, viewed from the shear plane's own geometry, decomposes instead into a <b>shear force</b> \\(F_s\\) along the shear plane (doing the actual work of separating the chip) and a normal force across it; viewed from the rake face, it decomposes into a friction force along the chip-tool interface and a normal force against the rake face. <b>Merchant's circle</b> is the construction that relates all of these to each other and to the two governing angles, \\(\\phi\\) and \\(\\alpha\\), plus the friction angle \\(\\beta\\) (with \\(\\tan\\beta=\\mu\\), the tool-chip friction coefficient) — once any one force and the geometry are known, the rest follow.</p>\n\n<h3>§3 · Where cutting temperature and tool wear begin</h3>\n<p>Essentially all of the mechanical work done in cutting — shearing the chip plus overcoming friction on the rake face — converts to heat, concentrated in a small volume at the tool-chip interface and along the shear plane. Temperatures there commonly exceed several hundred degrees Celsius for ordinary steels, well into the range where a tool material's own hardness begins to fall off (previewed here, developed fully in Lesson 2). This is the direct mechanical link between cutting theory and tool wear: higher cutting speed means more heat generated per unit time in roughly the same small volume, which is the single biggest lever on how fast a tool wears out.</p>\n\n<h3>§4 · Taylor's tool-life equation, read as economics</h3>\n<p>Tool life \\(T\\) (time to a defined wear failure) falls sharply as cutting speed \\(V\\) rises — captured empirically by the <b>Taylor equation</b>, \\[ VT^n=C, \\] where \\(n\\) and \\(C\\) are constants for a given tool-work material pair, found by cutting at several speeds and measuring life at each. Because \\(n\\) is typically small (often \\(0.1\\)–\\(0.3\\) for high-speed steel and carbide tools), a modest speed increase produces a disproportionately large tool-life reduction — the equation is less a physics law than a compact economic statement: pushing speed trades tool cost and changeover time against material removed per hour, and \\(n\\) tells you exactly how unfavorable that trade becomes.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — chip geometry to shear angle</span>\n<p>\\[ \\tan\\phi = \\frac{r\\cos\\alpha}{1-r\\sin\\alpha}, \\qquad r=\\frac{t_o}{t_c} \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li>Basic trigonometry and force resolution.</li><li><b>Shear stress and strain</b> (Strength of Materials) — the shear plane is a direct application.</li></ul>\n<h4>Toolkit — orthogonal cutting</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Chip thickness ratio</td><td>\\( r=t_o/t_c \\), always &lt;1</td><td>Links measured chip to shear angle.</td></tr>\n<tr><td>Shear angle</td><td>\\( \\tan\\phi=\\frac{r\\cos\\alpha}{1-r\\sin\\alpha} \\)</td><td>Sets chip thickness and force.</td></tr>\n<tr><td>Rake angle, α</td><td>tool face angle from surface normal</td><td>Higher α → higher φ → lower force.</td></tr>\n<tr><td>Taylor equation</td><td>\\( VT^n=C \\)</td><td>Speed vs. tool-life trade-off.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Shear angle from measured chip</b></p><p><b>Problem.</b> A turning cut removes a layer of uncut thickness 0.25 mm with a tool of rake angle 10°. The resulting chip measures 0.50 mm thick. Find the chip thickness ratio and the shear angle.</p>",
+    "solution": "<p><b>Solution.</b> \\( r=t_o/t_c=0.25/0.50=0.5 \\). \\[ \\tan\\phi=\\frac{0.5\\cos10^\\circ}{1-0.5\\sin10^\\circ}=\\frac{0.492}{0.913}=0.540 \\Rightarrow \\phi=28.3^\\circ. \\]</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Cutting and thrust force from shear strength</b></p><p><b>Problem.</b> For the cut in the previous problem (φ=28.3°, α=10°), the work material has shear strength 400 MPa, width of cut 5 mm, and the tool-chip friction coefficient is 0.5. Find the shear force, then the cutting and thrust forces.</p>",
+    "solution": "<p><b>Solution.</b> Shear plane area \\(A_s=t_o b/\\sin\\phi=0.25\\times5/\\sin28.3^\\circ=2.63\\ \\text{mm}^2\\). Shear force \\(F_s=\\tau_s A_s=400\\times2.63\\approx1053\\ \\text{N}\\). Friction angle \\(\\beta=\\tan^{-1}(0.5)=26.6^\\circ\\). Resolving through the shear-plane and rake-face geometry gives \\(F_c\\approx1426\\ \\text{N}\\) and \\(F_t\\approx424\\ \\text{N}\\) — the cutting force does most of the work; the thrust force is the smaller, radial component.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Taylor equation — the cost of pushing speed</b></p><p><b>Problem.</b> A tool-work pair has Taylor constants \\(n=0.25\\), \\(C=350\\ \\text{m/min}\\). Find the tool life at 100 m/min and at 130 m/min, and state the percentage change in life for a 30% increase in speed.</p>",
+    "solution": "<p><b>Solution.</b> \\( T=(C/V)^{1/n} \\). At \\(V=100\\): \\(T=(3.5)^4=150\\ \\text{min}\\). At \\(V=130\\): \\(T=(2.69)^4\\approx52.5\\ \\text{min}\\). A 30% speed increase cuts tool life by about 65% — the small exponent \\(n\\) makes tool life extremely sensitive to speed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The chip thickness ratio r=to/tc is always:</p>",
+    "choices": [
+     "Less than 1, since the chip must thicken as it forms",
+     "Greater than 1",
+     "Exactly equal to 1",
+     "Independent of rake angle entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>Conservation of mass at steady state requires the chip to thicken and slow relative to the uncut layer.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Increasing the tool's rake angle, for a given chip thickness ratio:</p>",
+    "choices": [
+     "Increases the shear angle, thinning the chip and lowering cutting force",
+     "Always increases cutting force",
+     "Has no effect on shear angle",
+     "Only affects thrust force, never cutting force"
+    ],
+    "answer": 0,
+    "solution": "<p>A higher rake angle promotes a more efficient shearing action.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The cutting force Fc and thrust force Ft are:</p>",
+    "choices": [
+     "Directly measurable with a dynamometer, resolved along and perpendicular to tool travel",
+     "Only theoretical, never directly measured",
+     "The same quantity under different names",
+     "Independent of the shear plane geometry"
+    ],
+    "answer": 0,
+    "solution": "<p>These are the practical, measured quantities Merchant's circle relates to the shear-plane forces.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Merchant's circle relates:</p>",
+    "choices": [
+     "Cutting/thrust forces to shear and friction forces via the governing angles",
+     "Only cutting speed to tool life",
+     "Surface finish to cutting fluid type",
+     "Workpiece hardness to machine horsepower directly"
+    ],
+    "answer": 0,
+    "solution": "<p>It is a force-geometry construction linking all these quantities together.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Nearly all the mechanical work done in cutting:</p>",
+    "choices": [
+     "Converts to heat concentrated at the shear plane and tool-chip interface",
+     "Leaves the system as sound energy",
+     "Is stored elastically in the chip permanently",
+     "Has no thermal consequence"
+    ],
+    "answer": 0,
+    "solution": "<p>This heat is the direct mechanical origin of tool wear.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Higher cutting speed, for the same cut geometry, mainly:</p>",
+    "choices": [
+     "Generates more heat per unit time in roughly the same small volume",
+     "Reduces cutting temperature",
+     "Has no effect on tool wear rate",
+     "Only affects surface finish, not temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the direct link between speed and wear rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Taylor tool-life equation is:</p>",
+    "choices": [
+     "VT^n = C, an empirical relation between cutting speed and tool life",
+     "A theoretical law derived purely from first principles",
+     "Only applicable to grinding, not cutting",
+     "Independent of tool and work material"
+    ],
+    "answer": 0,
+    "solution": "<p>n and C are found experimentally for a given tool-work material pair.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A small Taylor exponent n means:</p>",
+    "choices": [
+     "Tool life is highly sensitive to small changes in cutting speed",
+     "Tool life is insensitive to cutting speed",
+     "Cutting speed has no economic trade-off",
+     "Tool material no longer matters"
+    ],
+    "answer": 0,
+    "solution": "<p>Small n makes the speed-life trade-off steep, exactly why it matters economically.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A shop pushing spindle speed on a difficult job to hit a delivery date, without checking the Taylor relationship for that specific tool-work pairing, routinely discovers the true cost only when tools start failing mid-shift far more often than planned — the tool-life equation's small exponent means the trade was much steeper than a linear \"10% faster, 10% more tools\" intuition would suggest.</p>\n<p>A programmer troubleshooting an unexpectedly rough or torn finish on a new job checks rake angle and chip thickness ratio before blaming the machine — per §1, a chip that is not forming and flowing the way the geometry predicts is often the first visible symptom of a wrong insert grade or a rake angle poorly matched to the material, well before it shows up as a dimensional or tool-life problem.</p>\n"
+ },
+ "2": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Flank wear versus cutting time showing three stages, a rapid initial break in wear, a long steady state region of slow near linear wear, and a rapid final rise to failure\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Tool wear has three stages — only the middle one is predictable</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">cutting time →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">flank wear, VB →</text><polyline points=\"66.0,239.4 77.8,226.3 89.7,219.5 101.5,214.0 113.4,211.6 125.2,209.9 137.1,208.2 148.9,206.5 160.8,204.7 172.7,203.0 184.5,201.3 196.4,199.6 208.2,197.9 220.1,196.2 231.9,194.5 243.8,192.7 255.6,191.0 267.4,189.3 279.3,187.6 291.1,185.9 303.0,184.2 314.9,182.4 326.7,180.7 338.5,179.0 350.4,177.3 362.2,175.6 374.1,173.9 386.0,172.2 397.8,170.4 409.6,168.7 421.5,167.0 433.4,165.3 445.2,163.6 457.0,161.9 468.9,160.1 480.8,158.6 492.6,153.1 504.5,142.9 516.3,127.7 528.1,107.1 540.0,80.9\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"104\" y1=\"60\" x2=\"104\" y2=\"255\" stroke=\"#c2820f\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"469\" y1=\"60\" x2=\"469\" y2=\"255\" stroke=\"#c2820f\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"70\" y=\"72\" fill=\"#c2820f\" font-size=\"10\">break-in</text><text x=\"230\" y=\"72\" fill=\"#1f7a5c\" font-size=\"10\">steady state</text><text x=\"475\" y=\"72\" fill=\"#c2820f\" font-size=\"10\">failure</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">A tool-change interval lives in the steady-state region — never in the failure zone</text></svg><figcaption>Flank wear rises quickly as new cutting edges seat in, then climbs slowly and predictably for most of the tool's life, then rises rapidly once wear removes enough material to change the cutting geometry itself.</figcaption></figure>\n\n<h3>§1 · Tool materials: the hardness-toughness trade</h3>\n<p>Every tool material sits somewhere on a trade-off between hot hardness (retaining cutting-edge hardness at the high temperatures Lesson 1 introduced) and toughness (resisting chipping and fracture under interrupted or shock loading). <b>High-speed steel (HSS)</b> is tough and inexpensive but loses hardness above roughly 600°C. <b>Cemented carbides</b> (tungsten carbide in a cobalt binder) hold hardness to much higher temperatures, enabling far higher cutting speeds, at some cost in toughness. <b>Coated carbides</b> — a thin, hard ceramic layer (titanium nitride, titanium carbonitride, aluminum oxide, among others) deposited on a tougher carbide substrate — combine a wear-resistant surface with a fracture-resistant core, and now dominate most general steel-turning work. <b>Ceramics</b> (aluminum oxide, silicon nitride based) push hot hardness further still, at further cost in toughness, reserved for high-speed finishing on hard, stable materials.</p>\n\n<h3>§2 · Wear modes and what each one signals</h3>\n<p><b>Flank wear</b> — a wear land on the tool's clearance face, measured as its width \\(VB\\) — is the everyday, expected wear mode, driven by abrasion and adhesion against the newly cut surface; it is what Taylor's equation (Lesson 1) actually tracks. <b>Crater wear</b> — a pocket worn into the rake face by the flowing chip, measured by depth \\(KT\\) — is driven primarily by diffusion and chemical wear at the high temperatures of the tool-chip interface, and signals a tool material or coating poorly matched to the temperature the cut is generating. <b>Notch wear</b> — a localized groove at the depth-of-cut line, where the tool meets the original work surface or a hardened scale — signals a work material or prior-pass condition attacking the tool at one specific point rather than uniformly.</p>\n\n<h3>§3 · Insert geometry and grade, read from a catalog</h3>\n<p>A carbide insert's <b>grade</b> (an ISO-style code, roughly ranging from tougher/lower-hardness grades for interrupted or rough cuts to harder/more wear-resistant grades for continuous finishing cuts) is the manufacturer's own position on the hardness-toughness trade from §1, chosen to match the specific operation. <b>Nose radius</b> — the rounded tip connecting the two cutting edges — trades two things directly: a larger radius gives a smoother theoretical surface finish and a stronger tip, but increases the radial (thrust-like) force component and the tendency to chatter on a less rigid setup; a smaller radius cuts more freely but leaves a rougher theoretical finish and a weaker tip. Reading an insert catalog well means matching grade to the cut's continuity and grade-appropriate speed range, and nose radius to the finish requirement and the setup's rigidity — not simply picking the hardest grade or largest radius available.</p>\n\n<h3>§4 · Cutting fluids</h3>\n<p>A cutting fluid serves two distinct functions that do not always point the same direction: <b>cooling</b> (removing heat from the cutting zone, favoring a fluid with good thermal properties, typically water-based) and <b>lubrication</b> (reducing friction at the tool-chip interface, favoring an oil-based fluid). Most industrial fluids are a formulated compromise — water-based emulsions and semi-synthetics for predominantly cooling-driven operations, straight or heavy-duty oils where friction reduction dominates, such as tapping and broaching. Fluid also serves a third, often underrated function: flushing chips clear of the cutting zone, especially in drilling and deep-hole operations where chip evacuation, not heat, is the limiting factor. Mist and fluid exposure carry real health considerations — inhalation of fine mist and skin contact with used fluid (which accumulates tramp oil, bacteria, and fines over service life) are managed through enclosure, extraction, and fluid maintenance, not treated as an unavoidable cost of the process.</p>\n<div class=\"keybox\"><span class=\"tag\">Key distinction — wear modes</span>\n<p>Flank wear (VB) — the expected, tracked wear. Crater wear (KT) — thermal/chemical, signals a material/coating mismatch. Notch wear — localized, signals a specific attack point.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Cutting temperature origin and Taylor's equation</b> (Lesson 1).</li><li>No prior materials-selection coursework beyond Materials Science.</li></ul>\n<h4>Toolkit — tool materials and wear</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Hot hardness</td><td>hardness retained at temperature</td><td>Sets usable cutting speed.</td></tr>\n<tr><td>Flank wear, VB</td><td>wear land on the clearance face</td><td>The expected, Taylor-tracked wear.</td></tr>\n<tr><td>Crater wear, KT</td><td>pocket worn into the rake face</td><td>Signals thermal/chemical mismatch.</td></tr>\n<tr><td>Nose radius</td><td>rounded tip, cutting-edge junction</td><td>Trades finish/strength vs. force/chatter.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a wear mode</b></p><p><b>Problem.</b> A tool is scrapped early with a deep, localized groove exactly at the depth-of-cut line, while the rest of the flank and rake face look nearly new. Which wear mode is this, and what does it suggest about the cause?</p>",
+    "solution": "<p><b>Solution.</b> This is notch wear — a localized attack at one specific point (the depth-of-cut line) rather than the general flank or rake face. It suggests something specific is attacking the tool at exactly that location: commonly a hardened surface scale, a work-hardened prior pass, or oxide layer being cut through repeatedly at that one depth.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a grade and radius</b></p><p><b>Problem.</b> A job requires roughing a forged part with an uneven, scaled surface and interrupted cuts across cored holes. Should the insert grade favor toughness or hardness, and should the nose radius be relatively large or small? Explain.</p>",
+    "solution": "<p><b>Solution.</b> Toughness should be favored — interrupted cuts and an uneven scaled surface both risk edge chipping and shock loading, which a harder, more brittle grade would not survive well. Nose radius should be moderate rather than pushed large, since roughing does not need a fine theoretical finish and a very large radius on an interrupted cut increases both force and chatter risk on what is likely a less rigid, uneven engagement.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Cooling or lubrication?</b></p><p><b>Problem.</b> A tapping operation in a blind hole is having trouble with torque and tap breakage, not with heat. Should the cutting fluid strategy favor cooling or lubrication, and why?</p>",
+    "solution": "<p><b>Solution.</b> Lubrication. Tapping generates high friction and torque at the thread-forming interface with limited cutting speed and therefore limited heat generation; an oil-based, friction-reducing fluid directly addresses the torque/breakage problem, whereas a water-based coolant optimized for heat removal would do comparatively little for it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The fundamental trade-off across tool materials is:</p>",
+    "choices": [
+     "Hot hardness versus toughness",
+     "Cost versus color",
+     "Weight versus size only",
+     "Electrical conductivity versus cost"
+    ],
+    "answer": 0,
+    "solution": "<p>Every tool material sits somewhere on this trade-off curve.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Coated carbide inserts combine:</p>",
+    "choices": [
+     "A wear-resistant surface coating with a tougher carbide substrate",
+     "Two layers of identical material for redundancy",
+     "A ceramic core with a steel coating",
+     "Maximum toughness with minimum hardness"
+    ],
+    "answer": 0,
+    "solution": "<p>The coating and substrate serve complementary roles.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flank wear (VB) is:</p>",
+    "choices": [
+     "The expected wear mode tracked by Taylor's tool-life equation",
+     "Always a sign of an imminent catastrophic failure",
+     "Only relevant to grinding wheels",
+     "Unrelated to cutting speed"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the everyday, predictable wear mode from Lesson 1's equation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Crater wear is primarily driven by:</p>",
+    "choices": [
+     "Diffusion and chemical wear at high tool-chip interface temperatures",
+     "Mechanical impact only",
+     "Corrosion from cutting fluid",
+     "Vibration alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Thermal/chemical mechanisms distinguish crater wear from flank wear's abrasion.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A larger nose radius, all else equal:</p>",
+    "choices": [
+     "Improves theoretical finish and tip strength but increases radial force and chatter tendency",
+     "Only improves finish with no other effect",
+     "Always reduces cutting force",
+     "Has no effect on surface finish"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a genuine trade-off, not a free improvement.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cutting fluid's cooling and lubrication functions:</p>",
+    "choices": [
+     "Favor different fluid formulations and do not always point the same direction",
+     "Are always achieved identically by any fluid",
+     "Are the same function under different names",
+     "Only matter for grinding, not cutting"
+    ],
+    "answer": 0,
+    "solution": "<p>Water-based fluids favor cooling; oil-based fluids favor lubrication.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In deep-hole drilling, the limiting factor for fluid selection is often:</p>",
+    "choices": [
+     "Chip evacuation from the cutting zone",
+     "Color of the fluid",
+     "Fluid cost alone",
+     "Electrical conductivity"
+    ],
+    "answer": 0,
+    "solution": "<p>Flushing chips clear is critical where heat is not the dominant issue.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cutting fluid health considerations are best managed by:</p>",
+    "choices": [
+     "Enclosure, extraction, and fluid maintenance",
+     "Ignoring them as an unavoidable cost",
+     "Eliminating all fluid use regardless of process need",
+     "Only wearing gloves, with no other controls"
+    ],
+    "answer": 0,
+    "solution": "<p>Mist inhalation and used-fluid skin contact are manageable, not unavoidable, risks.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A production cell tracking flank wear (VB) against a fixed limit and changing inserts on a schedule derived from that limit — rather than running tools until they audibly or visibly fail — is applying §2's distinction directly: a tool pulled during the predictable steady-state region costs one insert change, while the same tool run into the failure region risks a scrapped part, a damaged surface finish, or in the worst case a broken insert damaging the workholding.</p>\n<p>A shop noticing that inserts on one specific job keep failing at the same wear mode, in the same location, run after run, treats that as a diagnostic clue rather than routine wear — per §2 and §3, a repeatable failure pattern points at a specific fixable cause (grade mismatch, notch-inducing scale, wrong nose radius for the setup's rigidity), not at ordinary tool consumption.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A turning operation schematic showing a cylindrical workpiece rotating at speed N, a single point tool advancing along its length at feed f and cutting to depth d, with diameter D labeled\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Turning: the arithmetic that sizes every cut</text><ellipse cx=\"150\" cy=\"150\" rx=\"26\" ry=\"70\" fill=\"#c2820f\" fill-opacity=\"0.18\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><rect x=\"150\" y=\"80\" width=\"230\" height=\"140\" fill=\"#c2820f\" fill-opacity=\"0.18\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><ellipse cx=\"380\" cy=\"150\" rx=\"10\" ry=\"70\" fill=\"#c2820f\" fill-opacity=\"0.25\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><path d=\"M150,150 A26,70 0 0 1 150,80\" stroke=\"#16202e\" stroke-width=\"1\" fill=\"none\" stroke-dasharray=\"2 2\"/><text x=\"150\" y=\"70\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">N (rev/min)</text><path d=\"M400,110 L430,80 L440,110 L420,140 Z\" fill=\"#16202e\" fill-opacity=\"0.2\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"450\" y=\"110\" fill=\"#16202e\" font-size=\"10\">tool</text><line x1=\"380\" y1=\"230\" x2=\"380\" y2=\"245\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"150\" y1=\"230\" x2=\"150\" y2=\"245\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"150\" y1=\"240\" x2=\"380\" y2=\"240\" stroke=\"#16202e\" stroke-width=\"1.2\"/><text x=\"265\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">L (length of cut)</text><line x1=\"150\" y1=\"80\" x2=\"150\" y2=\"220\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"90\" y=\"150\" fill=\"#16202e\" font-size=\"10\">D</text><path d=\"M400,110 L420,140\" stroke=\"#1f7a5c\" stroke-width=\"3\"/><text x=\"420\" y=\"150\" fill=\"#1f7a5c\" font-size=\"9\">f, d per pass</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Every speeds-and-feeds number below reduces to reading this picture correctly</text></svg><figcaption>Cutting speed depends on diameter and rotational speed; material removal rate and machining time depend on feed, depth of cut, and the length to be traversed — the same handful of variables sizes every turning, milling, and drilling job.</figcaption></figure>\n\n<h3>§1 · Turning arithmetic</h3>\n<p>For a workpiece of diameter \\(D\\) rotating at \\(N\\) rev/min, the surface — where cutting actually happens — moves at <b>cutting speed</b> \\[ V=\\pi D N. \\] The tool advances axially at <b>feed</b> \\(f\\) (distance per revolution) to a <b>depth of cut</b> \\(d\\) (radial engagement). <b>Material removal rate</b> is \\[ MRR = V f d \\] (consistent units throughout), and <b>machining time</b> for a cut of length \\(L\\) is \\[ T_m = \\frac{L}{fN}. \\] These four relations are the entire arithmetic core of turning — everything else is choosing \\(V\\), \\(f\\), and \\(d\\) sensibly for the material, tool, and machine at hand.</p>\n\n<h3>§2 · Milling arithmetic</h3>\n<p>Milling's version of the same bookkeeping replaces single-point feed with <b>feed per tooth</b> \\(f_z\\), scaled by the number of teeth \\(n_t\\) and spindle speed \\(N\\) into a <b>table feed rate</b> \\[ f_r = f_z\\, n_t\\, N. \\] Material removal rate follows the same shape as turning, \\(MRR = f_r\\, w\\, d\\) (width of cut \\(w\\) replacing diameter's role), and machining time is again length of cut divided by feed rate. The practical difference from turning is mostly bookkeeping — more variables (number of teeth, feed per tooth) feeding the identical underlying logic of speed, feed, depth, and time.</p>\n\n<h3>§3 · Drilling arithmetic</h3>\n<p>Drilling scales the turning relations to a rotating tool cutting into stationary stock: cutting speed is still \\(V=\\pi DN\\) using the drill's own diameter, feed \\(f\\) is axial advance per revolution, and machining time for a hole of depth \\(L\\) is again \\(T_m=L/(fN)\\) (with an allowance commonly added for the drill point's own geometry reaching full diameter). Material removal rate follows the full-circle cross-section swept, \\(MRR=\\frac{\\pi D^2}{4}fN\\). Drilling's practical complication is less the arithmetic and more chip evacuation and heat — the cutting zone is buried inside the hole, which is exactly why cutting fluid delivery (Lesson 2) matters more here than almost anywhere else in machining.</p>\n\n<h3>§4 · Workholding and one job worked end to end</h3>\n<p>None of the above arithmetic matters if the part is not held rigidly and accurately enough to survive the resulting forces: a three-jaw chuck for round stock in turning, vises and fixtures in milling, drill chucks or collets for the tool itself — each chosen for the required accuracy, the forces the operation generates, and how many parts must be loaded and unloaded per hour. Consider a shaft: 40 mm diameter, 200 mm length of cut, turned at \\(V=120\\) m/min, feed \\(f=0.3\\) mm/rev, depth of cut \\(d=2\\) mm per pass, two passes to size. Spindle speed \\(N=V/(\\pi D)=120{,}000/(\\pi\\times40)\\approx955\\) rev/min. Machining time per pass \\(T_m=L/(fN)=200/(0.3\\times955)\\approx0.70\\) min; two passes, roughly \\(1.4\\) min of cutting time — the number a planner turns into a cycle-time estimate and, ultimately, a quoted price.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — turning</span>\n<p>\\[ V=\\pi DN, \\qquad MRR=Vfd, \\qquad T_m=\\frac{L}{fN} \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Orthogonal cutting geometry and forces</b> (Lesson 1) — this lesson is the practical arithmetic layer on top.</li><li>Unit consistency (mm, m/min, rev/min) across a multi-step calculation.</li></ul>\n<h4>Toolkit — machining arithmetic</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Cutting speed</td><td>\\( V=\\pi DN \\)</td><td>Turning and drilling.</td></tr>\n<tr><td>MRR (turning)</td><td>\\( Vfd \\)</td><td>Sizes horsepower and cycle time.</td></tr>\n<tr><td>Machining time</td><td>\\( T_m=L/(fN) \\)</td><td>The basis of a cycle-time estimate.</td></tr>\n<tr><td>Table feed (milling)</td><td>\\( f_r=f_z n_t N \\)</td><td>Multi-tooth version of feed.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Spindle speed and machining time</b></p><p><b>Problem.</b> A 40 mm diameter shaft is turned at V=120 m/min with feed f=0.3 mm/rev over a 200 mm length of cut. Find the spindle speed and the machining time.</p>",
+    "solution": "<p><b>Solution.</b> \\( N=V/(\\pi D)=120{,}000/(\\pi\\times40)\\approx955\\ \\text{rev/min} \\). \\( T_m=L/(fN)=200/(0.3\\times955)\\approx0.70\\ \\text{min} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Material removal rate comparison</b></p><p><b>Problem.</b> Two turning passes remove material at V=120 m/min, f=0.3 mm/rev, d=2 mm. Find the MRR for one pass, then find the depth of cut that would double the MRR at the same V and f.</p>",
+    "solution": "<p><b>Solution.</b> \\( MRR=Vfd=(120{,}000\\ \\text{mm/min})\\times0.3\\times2=72{,}000\\ \\text{mm}^3/\\text{min} \\). Doubling MRR at the same V and f requires doubling depth of cut to \\(d=4\\ \\text{mm}\\), since MRR is linear in d.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Drilling time</b></p><p><b>Problem.</b> A 12 mm hole, 30 mm deep, is drilled at N=800 rev/min with feed f=0.15 mm/rev. Find the cutting speed and the machining time (ignoring the drill point allowance).</p>",
+    "solution": "<p><b>Solution.</b> \\( V=\\pi DN=\\pi\\times12\\times800\\approx30{,}159\\ \\text{mm/min}\\approx30.2\\ \\text{m/min} \\). \\( T_m=L/(fN)=30/(0.15\\times800)=0.25\\ \\text{min} \\).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cutting speed in turning is given by:</p>",
+    "choices": [
+     "V = πDN",
+     "V = fN",
+     "V = Dd",
+     "V = πD/N"
+    ],
+    "answer": 0,
+    "solution": "<p>Surface speed depends on diameter and rotational speed together.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Material removal rate in turning is:</p>",
+    "choices": [
+     "MRR = Vfd",
+     "MRR = V/f",
+     "MRR = D/N",
+     "MRR = fd/V"
+    ],
+    "answer": 0,
+    "solution": "<p>Speed, feed, and depth of cut all directly scale removal rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Machining time for a cut of length L is:</p>",
+    "choices": [
+     "Tm = L/(fN)",
+     "Tm = fNL",
+     "Tm = L/V",
+     "Tm = V/(fN)"
+    ],
+    "answer": 0,
+    "solution": "<p>Time depends on how fast the tool advances axially, fN (feed per revolution × revolutions per minute).</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In milling, table feed rate is:</p>",
+    "choices": [
+     "fr = fz · nt · N",
+     "fr = fz / nt",
+     "fr = N / fz",
+     "fr = nt / N"
+    ],
+    "answer": 0,
+    "solution": "<p>Feed per tooth, number of teeth, and spindle speed combine multiplicatively.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Drilling's practical complication, beyond the arithmetic, is mainly:</p>",
+    "choices": [
+     "Chip evacuation and heat, since the cutting zone is buried inside the hole",
+     "Excess surface finish quality",
+     "Lack of any cutting force",
+     "Absence of any need for cutting fluid"
+    ],
+    "answer": 0,
+    "solution": "<p>This is why fluid delivery matters especially in deep-hole drilling.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Workholding choice is driven primarily by:</p>",
+    "choices": [
+     "Required accuracy, forces generated, and production rate",
+     "Only the color of the material",
+     "Random selection among available fixtures",
+     "The operator's personal preference alone"
+    ],
+    "answer": 0,
+    "solution": "<p>These three factors genuinely drive a correct workholding decision.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Doubling feed f, with V and d unchanged, in turning:</p>",
+    "choices": [
+     "Doubles MRR and halves machining time for a given length",
+     "Has no effect on MRR",
+     "Quadruples MRR",
+     "Only affects surface finish, not MRR or time"
+    ],
+    "answer": 0,
+    "solution": "<p>MRR is linear in f, and Tm is inversely proportional to f.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cycle-time estimate for quoting a job is built from:</p>",
+    "choices": [
+     "Summing machining time across all passes and operations required",
+     "Guessing based on part size alone",
+     "Using only the material's cost per kilogram",
+     "Ignoring number of passes entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>This is exactly the worked example's logic — passes and Tm per pass sum to a usable estimate.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A planner quoting a new turned part reconstructs the same worked example as §4 — spindle speed from the target cutting speed, machining time from feed and length, passes from total stock to remove — before ever committing to a price or a delivery date; a job quoted from a rough guess instead of this arithmetic is a common, avoidable source of margin loss when the actual cycle time turns out longer than assumed.</p>\n<p>A machinist noticing that MRR-driven horsepower demand is approaching the machine's rated limit, on a roughing pass pushed for maximum removal rate, checks §1's MRR formula directly rather than by trial and error — feed, depth, and speed each contribute linearly, so any one of them can be dialed back precisely to bring load back within the machine's real capability.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A milling machine table with its three linear axes X, Y, and Z labeled, X and Y in the horizontal table plane and Z vertical along the spindle, the coordinate system every G-code program is written against\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Three axes, one coordinate system, every program</text><path d=\"M120,220 L360,220 L410,190 L170,190 Z\" fill=\"#c2820f\" fill-opacity=\"0.18\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"240\" y=\"242\" fill=\"#16202e\" font-size=\"10\">table</text><rect x=\"330\" y=\"70\" width=\"40\" height=\"110\" fill=\"#16202e\" fill-opacity=\"0.15\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"350\" y=\"65\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">spindle</text><line x1=\"150\" y1=\"205\" x2=\"290\" y2=\"205\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><text x=\"295\" y=\"209\" fill=\"#3a6ea5\" font-size=\"12\" font-weight=\"700\">X</text><line x1=\"150\" y1=\"205\" x2=\"200\" y2=\"160\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><text x=\"205\" y=\"158\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"700\">Y</text><line x1=\"150\" y1=\"205\" x2=\"150\" y2=\"95\" stroke=\"#c2820f\" stroke-width=\"2.4\"/><text x=\"156\" y=\"95\" fill=\"#c2820f\" font-size=\"12\" font-weight=\"700\">Z</text><circle cx=\"150\" cy=\"205\" r=\"3.5\" fill=\"#16202e\"/><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">X and Y move in the table plane; Z moves the spindle toward or away from the work</text></svg><figcaption>Every G-code coordinate is a position along these three axes from a defined origin — the physical layout differs across machines, but the coordinate logic is identical.</figcaption></figure>\n\n<h3>§1 · Lathe anatomy</h3>\n<p>A lathe holds the workpiece and rotates it (the spindle, in the headstock), while the tool — held in a turret or tool post on the carriage — is fed along two axes: \\(Z\\), parallel to the spindle axis (controlling length of cut), and \\(X\\), radial (controlling diameter). A tailstock, at the opposite end from the headstock, supports the free end of a long or slender workpiece against the significant radial force cutting can generate. This two-axis logic (Z along the work, X radial) is the lathe's entire coordinate world — everything programmed or dialed in reduces to positions along these two directions.</p>\n\n<h3>§2 · Machining center anatomy</h3>\n<p>A vertical machining center holds the tool in a rotating spindle and moves the workpiece (via the table) or the spindle itself along three linear axes: \\(X\\) and \\(Y\\) in the horizontal table plane, \\(Z\\) vertical, toward or away from the work. A tool changer, holding a magazine of pre-set tools, lets a single program call up a new tool automatically between operations — turning what would be a sequence of manual tool swaps into one continuous, unattended cycle.</p>\n\n<h3>§3 · What G-code actually commands</h3>\n<p><b>G-code</b> is a coordinate-and-motion instruction language: each block specifies a motion type and a target position. \\(G00\\) commands a rapid, non-cutting positioning move at maximum machine speed; \\(G01\\) commands a linear feed move at a programmed feed rate — the actual cutting motion; \\(G02\\)/\\(G03\\) command circular interpolation, clockwise and counterclockwise. A block such as <code>G01 X50.0 Z-30.0 F0.3</code> commands a linear feed move to \\(X=50.0\\), \\(Z=-30.0\\), at feed \\(0.3\\) (units and axis interpretation depending on the controller's active mode) — every dimension in the print, translated into exactly this kind of coordinate instruction, is what a CAM system (or a programmer, for simple work) actually produces.</p>\n\n<h3>§4 · Accuracy, repeatability, and backlash — machine health a maintenance engineer owns</h3>\n<p><b>Accuracy</b> is how close the machine's actual position comes to the commanded position — affected by calibration, thermal growth, and wear, and correctable to a degree by offsets. <b>Repeatability</b> is how consistently the machine returns to the same commanded position across repeated moves — a tighter, more fundamental limit than accuracy, since a position that is merely wrong-but-consistent can be compensated for, while a position that is inconsistent cannot. <b>Backlash</b> — play in a leadscrew or drive train that shows up as a small position error specifically when an axis reverses direction — is a repeatability problem with a mechanical origin, distinguishable by that specific direction-reversal signature, and is exactly the kind of machine-health quantity a maintenance engineer measures and trends over a machine's life, not something a part programmer can compensate around reliably.</p>\n<div class=\"keybox\"><span class=\"tag\">Key distinction — accuracy vs. repeatability</span>\n<p>Accuracy: how close to commanded. Repeatability: how consistent, position to position. A repeatability problem cannot be reliably offset away; an accuracy problem often can.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Turning arithmetic and axis logic</b> (Lesson 3).</li><li>No prior CNC programming coursework — this lesson fixes vocabulary.</li></ul>\n<h4>Toolkit — machine tools and CNC</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>G00 / G01</td><td>rapid move / linear feed move</td><td>Non-cutting vs. cutting motion.</td></tr>\n<tr><td>G02 / G03</td><td>circular interpolation, CW / CCW</td><td>Arc and circle programming.</td></tr>\n<tr><td>Accuracy</td><td>closeness to commanded position</td><td>Often correctable via offsets.</td></tr>\n<tr><td>Repeatability</td><td>consistency across repeated moves</td><td>Not reliably offset-correctable.</td></tr>\n<tr><td>Backlash</td><td>drive-train play at direction reversal</td><td>A specific, trackable repeatability cause.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading a G-code block</b></p><p><b>Problem.</b> Explain what the block <code>G01 X50.0 Z-30.0 F0.3</code> commands, distinguishing it from what <code>G00 X50.0 Z-30.0</code> would command instead.</p>",
+    "solution": "<p><b>Solution.</b> G01 commands a linear feed move to the position X=50.0, Z=-30.0 at the programmed feed rate F0.3 — an actual cutting motion. G00 would command a rapid, non-cutting positioning move to the same coordinates at the machine's maximum traverse speed, used to get the tool into position quickly before cutting begins, not to remove material.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a repeatability problem</b></p><p><b>Problem.</b> A machined feature is consistently 0.05 mm oversize whenever an axis approaches its final position from one direction, but correct when approached from the other direction. Is this an accuracy problem or a repeatability problem, and what is the likely mechanical cause?</p>",
+    "solution": "<p><b>Solution.</b> This is a repeatability problem with a direction-reversal signature — the classic symptom of backlash in the axis's leadscrew or drive train. It is not a simple accuracy offset, because the error depends on approach direction rather than being a constant, correctable bias.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why backlash cannot simply be offset away</b></p><p><b>Problem.</b> Explain why a constant position offset, of the kind used to correct an accuracy problem, cannot reliably fix a backlash-driven repeatability problem.</p>",
+    "solution": "<p><b>Solution.</b> An offset shifts every commanded position by the same fixed amount, which works when the error itself is fixed and consistent (an accuracy problem). Backlash's error depends on the direction of approach — sometimes present, sometimes not, depending on the immediately preceding move — so a single constant offset would overcorrect in one direction and undercorrect in the other, rather than fixing the error consistently.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On a lathe, the Z axis is:</p>",
+    "choices": [
+     "Parallel to the spindle axis, controlling length of cut",
+     "Radial, controlling diameter",
+     "Always vertical regardless of orientation",
+     "Used only for tool changes"
+    ],
+    "answer": 0,
+    "solution": "<p>X is the radial axis on a lathe; Z runs along the spindle.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On a vertical machining center, the Z axis is:</p>",
+    "choices": [
+     "Vertical, moving the spindle toward or away from the work",
+     "In the horizontal table plane",
+     "Only used for rapid moves",
+     "Identical in function to a lathe's X axis"
+    ],
+    "answer": 0,
+    "solution": "<p>X and Y form the horizontal table plane; Z is vertical.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>G00 commands:</p>",
+    "choices": [
+     "A rapid, non-cutting positioning move",
+     "A linear feed cutting move",
+     "Circular interpolation",
+     "A tool change"
+    ],
+    "answer": 0,
+    "solution": "<p>G01 is the linear feed (cutting) move; G00 is rapid positioning only.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A tool changer's main benefit is:</p>",
+    "choices": [
+     "Automating tool swaps into one continuous, unattended program cycle",
+     "Eliminating the need for any tooling",
+     "Increasing spindle speed",
+     "Replacing the need for workholding"
+    ],
+    "answer": 0,
+    "solution": "<p>Manual tool swaps become automatic, programmed events instead.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Accuracy is best described as:</p>",
+    "choices": [
+     "How close the machine's actual position comes to the commanded position",
+     "How consistently the machine repeats a position",
+     "The machine's maximum spindle speed",
+     "The number of axes a machine has"
+    ],
+    "answer": 0,
+    "solution": "<p>Repeatability, by contrast, measures consistency across repeated moves.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Repeatability problems are generally:</p>",
+    "choices": [
+     "Not reliably correctable with a simple constant offset",
+     "Always fixed by any accuracy offset",
+     "Irrelevant to part quality",
+     "Only a concern for manual machines"
+    ],
+    "answer": 0,
+    "solution": "<p>Inconsistent error resists the fixed-offset correction that works for accuracy problems.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Backlash specifically shows up as an error:</p>",
+    "choices": [
+     "When an axis reverses direction",
+     "Only during rapid moves",
+     "Only at the start of a program",
+     "Independent of motion direction"
+    ],
+    "answer": 0,
+    "solution": "<p>This direction-reversal signature is what distinguishes backlash from other error sources.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Tracking backlash and repeatability over a machine's life is primarily the responsibility of:</p>",
+    "choices": [
+     "Maintenance, as a machine-health quantity",
+     "The part programmer, via code changes alone",
+     "The material supplier",
+     "The tool coating manufacturer"
+    ],
+    "answer": 0,
+    "solution": "<p>This is mechanical machine condition, not something programming alone can compensate for reliably.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A maintenance program that periodically measures backlash and repeatability on critical machines, trending the numbers over time rather than only reacting to a scrapped part, catches a wearing leadscrew or worn bearing while it is still a scheduled adjustment — not an emergency machine-down call in the middle of a production run, discovered only after enough parts have already been scrapped to notice a pattern.</p>\n<p>A programmer troubleshooting a feature that is intermittently out of tolerance checks the direction of approach and the machine's known repeatability figures before assuming the program itself is wrong — per §4, a program that is logically correct can still produce inconsistent parts if it is fighting a real, uncorrected mechanical repeatability problem underneath it.</p>\n"
+ },
+ "5": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A bar comparison of specific cutting energy between turning and grinding, showing grinding requiring roughly ten to fifty times more energy per unit volume removed than turning of the same steel\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Grinding removes far less material per unit of energy spent</text><line x1=\"66\" y1=\"255\" x2=\"480\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><rect x=\"120\" y=\"230\" width=\"40\" height=\"25\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1.6\"/><text x=\"140\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">turning</text><text x=\"140\" y=\"222\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"10\">~1–3 J/mm³</text><rect x=\"320\" y=\"90\" width=\"40\" height=\"165\" fill=\"#c2820f\" fill-opacity=\"0.25\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"340\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">grinding</text><text x=\"340\" y=\"82\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">~10–50× turning</text><text x=\"16\" y=\"285\" fill=\"#16202e\" font-size=\"11\">Same steel, same idea of \"energy per mm³ removed\" — a very different number</text></svg><figcaption>Grinding's tiny, negative-rake abrasive grains mostly plow and rub rather than shear cleanly — far less efficient per unit volume removed than single-point cutting, which is exactly why grinding heat management is unforgiving.</figcaption></figure>\n\n<h3>§1 · Abrasive mechanics</h3>\n<p>A grinding wheel's cutting edges are its abrasive grains — geometrically ill-defined, randomly oriented, and engaging the work at a strongly negative effective rake angle compared to a single-point tool. Each grain's individual <b>depth of cut</b> is tiny, often only a few micrometers, and a meaningful fraction of grains plow or rub against the surface rather than cleanly shearing a chip — fundamentally less efficient, per unit volume of material actually removed, than the orthogonal cutting of Lesson 1.</p>\n\n<h3>§2 · Specific energy — why grinding burns parts when abused</h3>\n<p><b>Specific energy</b> \\(u=P_c/MRR\\) (power consumed per unit volume removed per unit time) captures this inefficiency numerically: where ordinary turning of steel runs roughly \\(1\\)–\\(3\\ \\text{J/mm}^3\\), grinding the same material commonly runs one to two orders of magnitude higher — a direct consequence of the plowing and rubbing in §1. Nearly all of that energy still ends up as heat, concentrated in an extremely thin surface layer with almost none of the mass a turning chip carries away with it. Pushed too hard — too high a wheel speed relative to feed, too little coolant, a dull or loaded wheel — that heat concentration produces visible surface discoloration (burn) and, more seriously, metallurgical damage (untempered martensite, softening, or re-hardening) reaching well below the visible surface, exactly the reliability risk Lesson 6 develops further.</p>\n\n<h3>§3 · Reading a wheel designation</h3>\n<p>A grinding wheel's marking encodes, in sequence, its abrasive type (aluminum oxide for steels; silicon carbide for cast iron, non-ferrous, and non-metallics; superabrasives — CBN, diamond — for hardened steel and carbide respectively), grit size (coarser numbers cut faster and cooler but leave a rougher finish; finer numbers the reverse), grade (a letter indicating bond hardness — how readily worn grains release to expose fresh cutting edges), and structure (grain spacing, denser or more open). Selecting a wheel is matching each of these to the work material, stock removal required, and finish target — the same kind of grade-to-application matching Lesson 2 developed for cutting tool inserts.</p>\n\n<h3>§4 · Surface and cylindrical grinding, dressing, and balancing</h3>\n<p><b>Surface grinding</b> (a reciprocating or rotary table beneath a horizontal wheel) produces flat surfaces; <b>cylindrical grinding</b> (workpiece rotating between centers or in a chuck, wheel traversing along its length) produces precision round features — both typically a finishing operation following rougher machining, given grinding's low material removal rate relative to its cost per unit volume removed. <b>Dressing</b> restores a wheel's cutting ability and geometric profile by fracturing away dulled grains and any embedded (loaded) chip material, using a diamond dresser or similar tool — a wheel left un-dressed rubs more than it cuts, driving exactly the specific-energy and burn risk of §2. <b>Balancing</b> corrects any mass eccentricity in the wheel itself, since an out-of-balance wheel running at typical grinding speeds — often tens of thousands of surface feet per minute — vibrates enough to degrade both finish and wheel life, and in the worst case risks the wheel itself.</p>\n<div class=\"keybox\"><span class=\"tag\">Key comparison — specific energy</span>\n<p>Turning: ~1–3 J/mm³. Grinding: roughly 10–50× higher for the same material — mostly plowing and rubbing, not clean shear.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Specific cutting energy and MRR</b> (Lessons 1 and 3).</li><li><b>Heat generation at the cutting zone</b> (Lesson 1, §3).</li></ul>\n<h4>Toolkit — grinding</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Specific energy, u</td><td>\\( P_c/MRR \\), J/mm³</td><td>Grinding runs far higher than cutting.</td></tr>\n<tr><td>Grade (wheel)</td><td>bond hardness — how readily grains release</td><td>Matched to work hardness and stock removal.</td></tr>\n<tr><td>Dressing</td><td>restores sharp grains and profile</td><td>Prevents rubbing-driven burn.</td></tr>\n<tr><td>Balancing</td><td>corrects wheel mass eccentricity</td><td>Prevents vibration at high wheel speed.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why grinding needs so much more energy</b></p><p><b>Problem.</b> Explain, in terms of abrasive grain geometry, why grinding requires roughly an order of magnitude more specific energy than turning to remove the same volume of steel.</p>",
+    "solution": "<p><b>Solution.</b> Grinding's cutting edges are randomly oriented abrasive grains engaging at a strongly negative effective rake angle, each removing only a tiny depth of cut — a meaningful fraction of grains plow or rub the surface rather than cleanly shearing a chip the way a single-point tool's well-defined edge does. That plowing and rubbing consumes energy without efficiently removing material, driving specific energy far higher than orthogonal cutting's cleaner shear mechanism.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a burn risk</b></p><p><b>Problem.</b> A cylindrical grinding operation on hardened steel is running with a dull, loaded wheel and reduced coolant flow to save cycle time. Explain the mechanism by which this risks metallurgical burn, and why the risk is worse than it would be in turning under similar neglect.</p>",
+    "solution": "<p><b>Solution.</b> A dull, loaded wheel plows and rubs even more than a normal grinding wheel already does, raising specific energy and heat generation further, while reduced coolant removes less of that heat. Because grinding already concentrates its heat in an extremely thin surface layer with little chip mass carrying energy away, the risk of surface temperature reaching transformation-relevant levels (producing untempered martensite or softening) is much higher than in turning, where the chip itself removes a large share of the generated heat.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Dressing versus balancing</b></p><p><b>Problem.</b> A ground surface shows chatter marks (regular waviness) but no burn discoloration. Is this more likely a dressing problem or a balancing problem? Explain.</p>",
+    "solution": "<p><b>Solution.</b> More likely a balancing problem. Chatter/waviness without burn points toward a vibration source — most commonly wheel imbalance — rather than a wheel that has lost its cutting ability, which would more typically show up as excess heat and burn discoloration from increased rubbing, not a regular waviness pattern.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Grinding's specific cutting energy, compared to turning the same material, is typically:</p>",
+    "choices": [
+     "One to two orders of magnitude higher",
+     "About the same",
+     "Lower",
+     "Only relevant for non-metals"
+    ],
+    "answer": 0,
+    "solution": "<p>The plowing/rubbing mechanism of abrasive grains drives this large difference.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An individual abrasive grain's depth of cut is:</p>",
+    "choices": [
+     "Very small, often only a few micrometers",
+     "Comparable to a turning tool's depth of cut",
+     "Always zero",
+     "Only relevant to dressing, not cutting"
+    ],
+    "answer": 0,
+    "solution": "<p>This small scale is part of why grinding achieves fine finishes but at high specific energy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Grinding burn is caused primarily by:</p>",
+    "choices": [
+     "Heat concentrated in a thin surface layer with little material carrying it away",
+     "Excess coolant flow",
+     "Too coarse a grit size only",
+     "Insufficient wheel speed"
+    ],
+    "answer": 0,
+    "solution": "<p>Unlike a turning chip, grinding swarf carries away comparatively little of the generated heat.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A wheel's grade refers to:</p>",
+    "choices": [
+     "Bond hardness — how readily worn grains release to expose fresh edges",
+     "The abrasive's chemical composition only",
+     "The wheel's physical diameter",
+     "The workpiece material being ground"
+    ],
+    "answer": 0,
+    "solution": "<p>Grade is specifically about bond strength, not abrasive type or grit size.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Dressing a grinding wheel primarily:</p>",
+    "choices": [
+     "Restores sharp grains and geometric profile by fracturing away dulled material",
+     "Corrects the wheel's mass balance",
+     "Changes the wheel's abrasive type",
+     "Increases the wheel's rotational speed"
+    ],
+    "answer": 0,
+    "solution": "<p>Balancing, not dressing, addresses mass eccentricity.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An out-of-balance grinding wheel primarily risks:</p>",
+    "choices": [
+     "Vibration degrading finish and wheel life at typical high wheel speeds",
+     "Improved surface finish",
+     "Reduced specific energy",
+     "No measurable effect on the process"
+    ],
+    "answer": 0,
+    "solution": "<p>High rotational speed makes even small imbalance a real vibration source.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Surface grinding and cylindrical grinding are typically used as:</p>",
+    "choices": [
+     "Finishing operations following rougher machining",
+     "The first roughing operation on raw stock",
+     "A replacement for turning entirely",
+     "Only used on non-metallic materials"
+    ],
+    "answer": 0,
+    "solution": "<p>Grinding's low removal rate relative to cost favors finishing, not bulk stock removal.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Aluminum oxide abrasive wheels are typically selected for:</p>",
+    "choices": [
+     "Steels",
+     "Cast iron and non-ferrous metals primarily",
+     "Hardened steel exclusively, in place of CBN",
+     "Non-metallic materials only"
+    ],
+    "answer": 0,
+    "solution": "<p>Silicon carbide, by contrast, suits cast iron and non-ferrous/non-metallic work.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A bearing manufacturer's final grinding operation runs coolant flow and wheel dressing intervals as tightly controlled, audited parameters rather than operator judgment calls, precisely because §2's burn mechanism can produce metallurgical damage with no visible surface sign an inspector would catch by eye — the reliability consequence shows up much later, as a bearing failing well short of its expected life, with the grinding operation itself long forgotten as a suspect.</p>\n<p>A grinding department tracking wheel life and dressing frequency against the specific parts and materials run — rather than dressing on a fixed calendar interval regardless of actual wear — is applying §3 and §4's logic directly: a wheel dulling faster than expected on a given job is worth investigating (wrong grade, wrong grit, or a work-material change) rather than simply dressing more often and accepting the extra cycle time as normal.</p>\n"
+ },
+ "6": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An idealized triangular surface roughness profile with a mean line drawn through it, illustrating that Ra averages the absolute deviation from that line across the whole sampling length\" role=\"img\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Ra averages the profile away — Rz remembers the worst of it</text><line x1=\"66\" y1=\"157.5\" x2=\"540\" y2=\"157.5\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"480\" y=\"152\" fill=\"#16202e\" font-size=\"10\">mean line</text><polyline points=\"66.0,219.9 68.0,216.8 70.0,213.7 71.9,210.5 73.9,207.4 75.9,204.3 77.8,201.2 79.8,198.1 81.8,194.9 83.8,191.8 85.8,188.7 87.7,185.6 89.7,182.5 91.7,179.3 93.7,176.2 95.6,173.1 97.6,170.0 99.6,166.9 101.5,163.7 103.5,160.6 105.5,157.5 107.5,154.4 109.4,151.3 111.4,148.1 113.4,145.0 115.4,141.9 117.3,138.8 119.3,135.7 121.3,132.5 123.3,129.4 125.2,126.3 127.2,123.2 129.2,120.1 131.2,116.9 133.1,113.8 135.1,110.7 137.1,107.6 139.1,104.5 141.1,101.3 143.0,98.2 145.0,95.1 147.0,98.2 148.9,101.3 150.9,104.5 152.9,107.6 154.9,110.7 156.9,113.8 158.8,116.9 160.8,120.1 162.8,123.2 164.8,126.3 166.7,129.4 168.7,132.5 170.7,135.7 172.7,138.8 174.6,141.9 176.6,145.0 178.6,148.1 180.6,151.3 182.5,154.4 184.5,157.5 186.5,160.6 188.5,163.7 190.4,166.9 192.4,170.0 194.4,173.1 196.4,176.2 198.3,179.3 200.3,182.5 202.3,185.6 204.2,188.7 206.2,191.8 208.2,194.9 210.2,198.1 212.2,201.2 214.1,204.3 216.1,207.4 218.1,210.5 220.1,213.7 222.0,216.8 224.0,219.9 226.0,216.8 228.0,213.7 229.9,210.5 231.9,207.4 233.9,204.3 235.8,201.2 237.8,198.1 239.8,194.9 241.8,191.8 243.8,188.7 245.7,185.6 247.7,182.5 249.7,179.3 251.7,176.2 253.6,173.1 255.6,170.0 257.6,166.9 259.5,163.7 261.5,160.6 263.5,157.5 265.5,154.4 267.4,151.3 269.4,148.1 271.4,145.0 273.4,141.9 275.4,138.8 277.3,135.7 279.3,132.5 281.3,129.4 283.2,126.3 285.2,123.2 287.2,120.1 289.2,116.9 291.1,113.8 293.1,110.7 295.1,107.6 297.1,104.5 299.0,101.3 301.0,98.2 303.0,95.1 305.0,98.2 306.9,101.3 308.9,104.5 310.9,107.6 312.9,110.7 314.9,113.8 316.8,116.9 318.8,120.1 320.8,123.2 322.8,126.3 324.7,129.4 326.7,132.5 328.7,135.7 330.7,138.8 332.6,141.9 334.6,145.0 336.6,148.1 338.5,151.3 340.5,154.4 342.5,157.5 344.5,160.6 346.4,163.7 348.4,166.9 350.4,170.0 352.4,173.1 354.3,176.2 356.3,179.3 358.3,182.5 360.3,185.6 362.2,188.7 364.2,191.8 366.2,194.9 368.2,198.1 370.2,201.2 372.1,204.3 374.1,207.4 376.1,210.5 378.1,213.7 380.0,216.8 382.0,219.9 384.0,216.8 386.0,213.7 387.9,210.5 389.9,207.4 391.9,204.3 393.8,201.2 395.8,198.1 397.8,194.9 399.8,191.8 401.8,188.7 403.7,185.6 405.7,182.5 407.7,179.3 409.6,176.2 411.6,173.1 413.6,170.0 415.6,166.9 417.6,163.7 419.5,160.6 421.5,157.5 423.5,154.4 425.4,151.3 427.4,148.1 429.4,145.0 431.4,141.9 433.4,138.8 435.3,135.7 437.3,132.5 439.3,129.4 441.2,126.3 443.2,123.2 445.2,120.1 447.2,116.9 449.2,113.8 451.1,110.7 453.1,107.6 455.1,104.5 457.0,101.3 459.0,98.2 461.0,95.1 463.0,98.2 464.9,101.3 466.9,104.5 468.9,107.6 470.9,110.7 472.8,113.8 474.8,116.9 476.8,120.1 478.8,123.2 480.8,126.3 482.7,129.4 484.7,132.5 486.7,135.7 488.7,138.8 490.6,141.9 492.6,145.0 494.6,148.1 496.6,151.3 498.5,154.4 500.5,157.5 502.5,160.6 504.5,163.7 506.4,166.9 508.4,170.0 510.4,173.1 512.3,176.2 514.3,179.3 516.3,182.5 518.3,185.6 520.2,188.7 522.2,191.8 524.2,194.9 526.2,198.1 528.1,201.2 530.1,204.3 532.1,207.4 534.1,210.5 536.0,213.7 538.0,216.8 540.0,219.9\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><line x1=\"66\" y1=\"95\" x2=\"66\" y2=\"220\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"40\" y=\"160\" fill=\"#c2820f\" font-size=\"10\">h</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Idealized triangular profile, peak-to-valley h — Ra = h/4 for this exact shape</text></svg><figcaption>Ra is the average absolute deviation from the mean line — one deep scratch barely moves it. Rz tracks peak-to-valley extremes directly, which is why the two numbers can tell different stories about the same surface.</figcaption></figure>\n\n<h3>§1 · Ra and Rz defined</h3>\n<p><b>Ra</b> (arithmetic average roughness) is the mean of the absolute deviation of the surface profile from its own mean line, measured over a defined sampling length — an averaging measure, which means a single unusually deep scratch or peak barely moves it, since it is diluted across the whole sampled length. <b>Rz</b>, by contrast, is built from peak-to-valley extremes (the specific averaging convention varies by standard, but the shared idea is the same) — far more sensitive to occasional deep features that Ra would average away. Both are measured with a profilometer, a stylus or optical instrument tracing the actual surface profile.</p>\n\n<h3>§2 · Finish versus process capability</h3>\n<p>Each process has a characteristic achievable Ra range: rough turning or milling typically several micrometers Ra; fine turning or milling roughly \\(0.8\\)–\\(3\\ \\mu\\text{m}\\); grinding roughly \\(0.1\\)–\\(0.8\\ \\mu\\text{m}\\); lapping and honing well under \\(0.1\\ \\mu\\text{m}\\) where required. Specifying a finish tighter than a process can reliably achieve forces an unnecessary second operation (typically grinding, following rougher machining) — reading a process-capability chart before specifying a finish on a drawing is what prevents that avoidable cost, exactly the same discipline Lesson 2's insert-grade selection and Lesson 5's grinding-wheel selection both apply to their own decisions.</p>\n\n<h3>§3 · Residual stresses from machining and grinding</h3>\n<p>Cutting and grinding both leave a thin near-surface layer in a state of residual stress — compressive or tensile, depending on process parameters (aggressive grinding conditions, for instance, tend to leave tensile residual stress from the localized thermal expansion-and-cooling cycle of §2 in Lesson 5, while properly controlled conditions or processes like shot peening deliberately induce compressive stress instead). This matters directly for fatigue life (Strength of Materials): a near-surface tensile residual stress adds to any applied tensile stress, accelerating crack initiation at exactly the location fatigue cracks start; a compressive residual stress does the reverse, actively resisting crack initiation. Two parts with identical Ra and identical geometry can have meaningfully different fatigue lives purely from this residual-stress difference — a fact no surface-finish number alone reveals.</p>\n\n<h3>§4 · Why a ground bearing journal's finish is a reliability parameter</h3>\n<p>A bearing journal's surface finish is not merely cosmetic: too rough a finish accelerates wear and can disrupt the lubricant film a rolling-element or journal bearing depends on to separate its surfaces; too aggressive a grind, chasing an ever-finer Ra without controlling heat and residual stress, risks exactly the tensile-residual-stress and metallurgical-damage problem of §3 and Lesson 5 — a journal that looks better on a profilometer printout while being mechanically worse underneath it. Specifying and verifying a critical journal therefore means controlling both the Ra number and the process conditions that produced it, not the Ra number alone.</p>\n<div class=\"keybox\"><span class=\"tag\">Key distinction — Ra vs. Rz</span>\n<p>Ra: average deviation — smooths over outliers. Rz: peak-to-valley — catches the occasional deep feature Ra hides.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Grinding specific energy and burn risk</b> (Lesson 5).</li><li><b>Fatigue crack initiation at a surface</b> (Strength of Materials, fatigue lesson).</li></ul>\n<h4>Toolkit — surface finish and integrity</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Ra</td><td>mean absolute deviation from the mean line</td><td>Averages away isolated outliers.</td></tr>\n<tr><td>Rz</td><td>peak-to-valley based measure</td><td>Sensitive to occasional deep features.</td></tr>\n<tr><td>Residual stress</td><td>locked-in near-surface stress</td><td>Tensile hurts fatigue life; compressive helps.</td></tr>\n<tr><td>Process capability (finish)</td><td>achievable Ra range per process</td><td>Avoids over-specifying and forcing an extra operation.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Ra of an idealized profile</b></p><p><b>Problem.</b> A turned surface is idealized as a symmetric triangular profile with peak-to-valley height 8 μm. For this exact shape, Ra = h/4. Find Ra.</p>",
+    "solution": "<p><b>Solution.</b> \\( R_a = h/4 = 8/4 = 2.0\\ \\mu\\text{m} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a process for a finish spec</b></p><p><b>Problem.</b> A drawing calls for Ra 0.4 μm on a steel shaft. Fine turning achieves roughly 0.8–3 μm; grinding achieves roughly 0.1–0.8 μm. Which process should be specified, and what does specifying fine turning instead risk?</p>",
+    "solution": "<p><b>Solution.</b> Grinding should be specified — 0.4 μm falls within grinding's achievable range but below fine turning's best achievable Ra. Specifying fine turning risks the part failing inspection regardless of how carefully it is turned, since the process is not capable of reliably reaching that finish at all.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Same Ra, different fatigue life</b></p><p><b>Problem.</b> Two identical shafts are ground to the same Ra, but one was ground aggressively (leaving tensile residual stress) and the other under controlled conditions (leaving compressive residual stress). Which shaft is expected to have the better fatigue life, and why does the Ra number alone not reveal this?</p>",
+    "solution": "<p><b>Solution.</b> The compressively-stressed shaft is expected to have the better fatigue life — compressive residual stress resists crack initiation, while tensile residual stress adds to applied stress and accelerates it. Ra alone does not reveal this because it is a geometric measure of the surface profile, entirely independent of the internal residual stress state left by the process that produced it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ra is defined as:</p>",
+    "choices": [
+     "The mean absolute deviation of the profile from its own mean line",
+     "The single deepest valley in the profile",
+     "The highest peak in the profile",
+     "The total sampling length"
+    ],
+    "answer": 0,
+    "solution": "<p>This averaging is exactly why Ra smooths over isolated outliers.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Rz, compared to Ra, is:</p>",
+    "choices": [
+     "More sensitive to occasional deep peak-to-valley features",
+     "Always numerically identical to Ra",
+     "Only used for non-metallic surfaces",
+     "Independent of the actual profile shape"
+    ],
+    "answer": 0,
+    "solution": "<p>Rz's peak-to-valley basis catches what Ra's averaging can hide.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Specifying a finish tighter than a process can achieve:</p>",
+    "choices": [
+     "Forces an unnecessary additional operation, typically grinding",
+     "Has no practical cost",
+     "Always improves fatigue life automatically",
+     "Is only a concern for plastic parts"
+    ],
+    "answer": 0,
+    "solution": "<p>This is an avoidable cost caught by checking process capability before specifying.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Tensile residual stress near a surface:</p>",
+    "choices": [
+     "Accelerates fatigue crack initiation",
+     "Always improves fatigue life",
+     "Has no effect on fatigue behavior",
+     "Only matters for compressive loading"
+    ],
+    "answer": 0,
+    "solution": "<p>It adds to applied tensile stress at the exact location cracks tend to start.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Compressive residual stress near a surface:</p>",
+    "choices": [
+     "Resists fatigue crack initiation",
+     "Accelerates fatigue crack initiation",
+     "Is identical in effect to tensile residual stress",
+     "Only occurs in non-metals"
+    ],
+    "answer": 0,
+    "solution": "<p>This is why shot peening and controlled grinding are used deliberately to induce it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two surfaces with identical Ra can have different fatigue lives because:</p>",
+    "choices": [
+     "Residual stress state, not captured by Ra, also affects fatigue life",
+     "Ra always fully determines fatigue life",
+     "Fatigue life is unrelated to surface condition",
+     "Ra measurement is inherently random"
+    ],
+    "answer": 0,
+    "solution": "<p>Ra is a geometric measure; residual stress is a separate, independently important factor.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A bearing journal's surface finish matters because:</p>",
+    "choices": [
+     "Too rough disrupts the lubricant film; too aggressively achieved risks residual-stress damage",
+     "Only the Ra number matters, regardless of how it was produced",
+     "Surface finish is purely cosmetic for bearings",
+     "Any finish under 5 μm is equally acceptable"
+    ],
+    "answer": 0,
+    "solution": "<p>Both the number and the process behind it matter for a reliability-critical surface.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A profilometer is used to:</p>",
+    "choices": [
+     "Trace and measure the actual surface profile",
+     "Measure residual stress directly",
+     "Measure cutting force",
+     "Determine tool wear mode"
+    ],
+    "answer": 0,
+    "solution": "<p>Residual stress requires a separate measurement technique (e.g., X-ray diffraction), not a profilometer.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A drawing that specifies Ra 0.4 μm on every dimension by default, rather than only where the function actually requires it, is quietly forcing grinding operations (and their cost and cycle time) onto surfaces that a controlled turning or milling operation could have satisfied — per §2, checking process capability against the real functional requirement before specifying a finish is a genuine cost lever, not a formality.</p>\n<p>A failure investigation on a fatigue-cracked shaft that measured Ra and found it within spec, then stopped, is missing exactly what §3 describes: a within-spec Ra tells the investigator the geometry was fine, but says nothing about the residual stress state the finishing process actually left behind — a root-cause investigation on a fatigue failure that never checks residual stress is only half the story.</p>\n"
+ },
+ "7": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Electrical discharge machining principle showing a shaped tool electrode above the workpiece separated by a small gap filled with dielectric fluid, a spark crossing the gap and eroding a crater in the workpiece, with no direct mechanical contact between tool and work\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">EDM: erosion by spark, not by a sharp edge</text><rect x=\"200\" y=\"70\" width=\"160\" height=\"60\" fill=\"#16202e\" fill-opacity=\"0.18\" stroke=\"#16202e\" stroke-width=\"1.6\"/><text x=\"280\" y=\"105\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">tool electrode</text><rect x=\"140\" y=\"200\" width=\"280\" height=\"60\" fill=\"#c2820f\" fill-opacity=\"0.15\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"280\" y=\"235\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">workpiece (conductive)</text><rect x=\"140\" y=\"130\" width=\"280\" height=\"70\" fill=\"#3a6ea5\" fill-opacity=\"0.10\" stroke=\"#3a6ea5\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"150\" y=\"145\" fill=\"#3a6ea5\" font-size=\"10\">dielectric fluid</text><path d=\"M280,130 L272,155 L285,158 L275,200\" stroke=\"#1f7a5c\" stroke-width=\"2.2\" fill=\"none\"/><text x=\"330\" y=\"160\" fill=\"#1f7a5c\" font-size=\"10\" font-weight=\"600\">spark crosses the gap</text><ellipse cx=\"278\" cy=\"200\" rx=\"18\" ry=\"6\" fill=\"#c2820f\" fill-opacity=\"0.5\"/><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">No mechanical contact — tool and work never touch, so hardness never limits the cut</text></svg><figcaption>A controlled spark, repeated thousands of times a second across a fluid-filled gap, erodes a tiny crater in the workpiece with each discharge — the tool never touches the work, so its own hardness relative to the workpiece never enters the equation.</figcaption></figure>\n\n<h3>§1 · Electrical discharge machining (EDM)</h3>\n<p><b>EDM</b> removes material by repeated electrical sparks between a shaped tool electrode and a conductive workpiece, separated by a small gap filled with <b>dielectric fluid</b> that normally insulates the gap and breaks down momentarily at each spark. Each discharge melts and vaporizes a tiny crater of material, flushed away by the circulating dielectric; the tool electrode is fed down to maintain a constant gap as material erodes. Because removal is thermal and electrical rather than mechanical, <b>EDM works on any electrically conductive material regardless of hardness</b> — hardened tool steel and carbide, both difficult or impossible to machine conventionally once hardened, cut exactly as readily as soft steel, which is precisely why EDM is the standard way to finish a hardened die cavity after heat treatment.</p>\n\n<h3>§2 · Wire EDM</h3>\n<p><b>Wire EDM</b> replaces the shaped electrode with a continuously traveling thin wire (commonly brass or coated wire), acting like an electrically eroding band saw guided along a programmed 2D (or tapered) path through the workpiece. It excels at contour-cutting — extrusion dies, stamping punches, gears — profiles that would need an expensive custom-shaped electrode in sinker EDM, since the wire itself is the simple, constantly-renewed \"tool.\"</p>\n\n<h3>§3 · Electrochemical machining (ECM)</h3>\n<p><b>ECM</b> works by controlled anodic dissolution — essentially electroplating run in reverse: the workpiece is the anode, the shaped tool is the cathode, and an electrolyte flows through the gap carrying dissolved workpiece material away as current passes. Like EDM, there is no mechanical contact and no tool wear in the conventional sense, and hardness is irrelevant — ECM is well suited to very hard, exotic, or difficult-to-machine alloys (nickel superalloys, for instance) where conventional cutting tools would wear unacceptably fast, with the added benefit of leaving no thermally affected layer, since the process is chemical/electrical rather than thermal.</p>\n\n<h3>§4 · Laser and abrasive-waterjet cutting, and selecting among all four</h3>\n<p><b>Laser cutting</b> uses a focused, intense beam to melt or vaporize material along a path, fast and precise on thinner sections but leaving a heat-affected zone the other nonconventional processes largely avoid. <b>Abrasive-waterjet cutting</b> uses a high-pressure water stream carrying abrasive particles to erode a path mechanically — cold-cutting, with no heat-affected zone at all, at the cost of a wider kerf and generally lower precision than laser or wire EDM. Selecting among EDM, wire EDM, ECM, laser, and waterjet is a genuine engineering decision, not a default: hardened or intricate die cavities favor sinker EDM; contour profiles in tool steel favor wire EDM; hard exotic alloys where thermal damage is unacceptable favor ECM; fast, thin-section production cutting favors laser; and thick sections or heat-sensitive materials where any heat-affected zone is unacceptable favor waterjet.</p>\n<div class=\"keybox\"><span class=\"tag\">Key idea — why these processes exist</span>\n<p>Each nonconventional process removes a specific constraint conventional cutting has (tool hardness limit, sharp-edge requirement, heat sensitivity) — matched by which constraint the job actually faces.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Why conventional cutting tools wear and fail</b> (Lesson 2).</li><li>Basic electrochemistry (anode/cathode) is helpful but not required — introduced here.</li></ul>\n<h4>Toolkit — nontraditional machining</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Process</th><th>Mechanism</th><th>Best fit</th></tr></thead><tbody>\n<tr><td>EDM (sinker)</td><td>spark erosion, dielectric fluid</td><td>Hardened die cavities.</td></tr>\n<tr><td>Wire EDM</td><td>traveling-wire spark erosion</td><td>Contour profiles in hardened tool steel.</td></tr>\n<tr><td>ECM</td><td>anodic dissolution (reverse plating)</td><td>Hard exotic alloys, no HAZ.</td></tr>\n<tr><td>Laser</td><td>focused beam, melt/vaporize</td><td>Fast thin-section cutting.</td></tr>\n<tr><td>Abrasive waterjet</td><td>abrasive-laden high-pressure jet</td><td>No HAZ, thick or heat-sensitive sections.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why EDM ignores hardness</b></p><p><b>Problem.</b> Explain why EDM can cut a fully hardened tool-steel die cavity just as readily as soft steel, when conventional milling or turning cannot.</p>",
+    "solution": "<p><b>Solution.</b> EDM removes material by melting and vaporizing it with electrical discharges, not by a mechanical cutting edge shearing chips. Since there is no cutting edge engaging the material's mechanical hardness, the workpiece's hardness is irrelevant to the removal mechanism — only its electrical conductivity matters. Conventional cutting, by contrast, relies on a tool edge harder than the work, which a fully hardened die cavity would rapidly destroy.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a process for a hard, thermally sensitive alloy</b></p><p><b>Problem.</b> A precision feature must be cut into a nickel superalloy part where any heat-affected zone would compromise the part’s required properties. Which of EDM, wire EDM, ECM, laser, or waterjet best fits, and why?</p>",
+    "solution": "<p><b>Solution.</b> ECM. It removes material by anodic dissolution rather than melting, leaving no thermally affected layer, and handles hard exotic alloys — exactly the combination this job needs. EDM and wire EDM both involve local melting (a real, if often small, heat-affected zone); laser is thermal by definition; waterjet avoids heat but is typically less suited to this kind of precision, hard-alloy feature than ECM.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Wire EDM versus sinker EDM</b></p><p><b>Problem.</b> A shop needs to cut a complex 2D gear profile through a piece of hardened tool steel. Explain why wire EDM is the more economical choice over sinker EDM for this specific job.</p>",
+    "solution": "<p><b>Solution.</b> Sinker EDM would require machining a custom shaped electrode matching the gear profile — an extra manufacturing step and cost, and a new electrode for every different profile. Wire EDM instead guides a simple, continuously-renewed wire along the programmed gear-tooth path directly, with no custom electrode needed, making it far more economical for contour profiles like this.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>EDM removes material by:</p>",
+    "choices": [
+     "Repeated electrical discharges melting and vaporizing tiny craters",
+     "A sharp mechanical cutting edge",
+     "Chemical dissolution alone",
+     "High-pressure water erosion"
+    ],
+    "answer": 0,
+    "solution": "<p>This thermal/electrical mechanism is what makes EDM hardness-independent.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Dielectric fluid in EDM serves to:</p>",
+    "choices": [
+     "Insulate the gap until spark breakdown and flush away eroded material",
+     "Cool the electrode only",
+     "Provide the cutting mechanism directly",
+     "Prevent any current from flowing"
+    ],
+    "answer": 0,
+    "solution": "<p>It normally insulates, then breaks down momentarily at each controlled spark.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Wire EDM is best suited to:</p>",
+    "choices": [
+     "Contour-cutting profiles without needing a custom shaped electrode",
+     "Only cutting non-conductive materials",
+     "Removing large volumes of stock quickly",
+     "Producing internal spherical cavities"
+    ],
+    "answer": 0,
+    "solution": "<p>The traveling wire itself acts as the simple, renewable tool.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>ECM removes material through:</p>",
+    "choices": [
+     "Controlled anodic dissolution — essentially reverse electroplating",
+     "Melting and vaporization",
+     "Mechanical abrasion",
+     "Focused light energy"
+    ],
+    "answer": 0,
+    "solution": "<p>The workpiece is the anode; current-driven dissolution removes material.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A key advantage of ECM over EDM for certain applications is:</p>",
+    "choices": [
+     "No thermally affected layer is left behind",
+     "It works on non-conductive materials",
+     "It requires no electrolyte",
+     "It always cuts faster than EDM"
+    ],
+    "answer": 0,
+    "solution": "<p>ECM's chemical/electrical mechanism avoids the local melting EDM inherently involves.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Laser cutting, compared to abrasive-waterjet cutting, typically:</p>",
+    "choices": [
+     "Cuts faster on thin sections but leaves a heat-affected zone",
+     "Never leaves any heat-affected zone",
+     "Is always more precise on thick sections",
+     "Requires no focusing optics"
+    ],
+    "answer": 0,
+    "solution": "<p>Waterjet is the cold-cutting alternative, avoiding HAZ at the cost of kerf width and precision.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Abrasive-waterjet cutting's main trade-off is:</p>",
+    "choices": [
+     "Wider kerf and generally lower precision than laser or wire EDM",
+     "Producing significant heat-affected zones",
+     "Being limited to conductive materials only",
+     "Requiring a dielectric fluid"
+    ],
+    "answer": 0,
+    "solution": "<p>Its cold-cutting mechanism avoids HAZ but costs precision and kerf width.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Selecting among nonconventional machining processes should be based on:</p>",
+    "choices": [
+     "Which specific constraint of conventional cutting the job actually faces",
+     "Always choosing the fastest process available",
+     "Picking whichever process is cheapest per hour regardless of fit",
+     "Using EDM by default for every hard-material job"
+    ],
+    "answer": 0,
+    "solution": "<p>Each process removes a different specific limitation — matching that to the job is the real decision.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A die shop routinely heat-treating a cavity to full hardness and then finishing the fine detail with sinker or wire EDM, rather than trying to machine the final geometry before hardening and living with the resulting distortion, is applying §1's core insight as standard practice: EDM's hardness-independence turns \"machine soft, then finish after heat treatment\" into a reliable, everyday sequence rather than a special-case workaround.</p>\n<p>An engineer specifying a cutting process for a new job walks §4's selection logic explicitly — material, feature geometry, and thermal sensitivity — before defaulting to whichever nonconventional machine happens to be available in-house; a wrong-process choice here is rarely fatal to the part, but it is a routine, avoidable source of unnecessary cost or a compromised feature.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"The arc welding circuit showing a power source connected by a cable to an electrode holder or torch, the arc bridging the gap between the electrode and the workpiece, and a ground return cable completing the circuit back to the power source\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Every arc process shares the same circuit</text><rect x=\"66\" y=\"110\" width=\"90\" height=\"60\" fill=\"#16202e\" fill-opacity=\"0.15\" stroke=\"#16202e\" stroke-width=\"1.6\"/><text x=\"111\" y=\"145\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">power source</text><path d=\"M156,120 C230,90 300,90 340,115\" stroke=\"#3a6ea5\" stroke-width=\"2\" fill=\"none\"/><text x=\"220\" y=\"90\" fill=\"#3a6ea5\" font-size=\"10\">electrode cable</text><line x1=\"340\" y1=\"115\" x2=\"360\" y2=\"175\" stroke=\"#16202e\" stroke-width=\"3\"/><text x=\"368\" y=\"150\" fill=\"#16202e\" font-size=\"10\">electrode</text><path d=\"M358,178 C363,188 368,183 373,193\" stroke=\"#c2820f\" stroke-width=\"2.4\" fill=\"none\"/><text x=\"380\" y=\"200\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">arc</text><rect x=\"230\" y=\"200\" width=\"220\" height=\"30\" fill=\"#c2820f\" fill-opacity=\"0.12\" stroke=\"#c2820f\" stroke-width=\"1.4\"/><text x=\"340\" y=\"220\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">workpiece</text><path d=\"M230,215 C170,215 130,180 156,155\" stroke=\"#1f7a5c\" stroke-width=\"2\" fill=\"none\"/><text x=\"130\" y=\"190\" fill=\"#1f7a5c\" font-size=\"10\">ground return</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">SMAW, GMAW, FCAW, GTAW, SAW differ in electrode and shielding — not in this basic loop</text></svg><figcaption>Current flows from the power source through the electrode, across the arc, through the workpiece, and back — every arc welding process shares this same circuit, differing mainly in how the electrode is fed and how the arc and molten metal are shielded from air.</figcaption></figure>\n\n<h3>§1 · The arc welding circuit</h3>\n<p>Every arc welding process shares the same basic circuit: a power source drives current through a cable to an electrode, across a small arc gap (an intensely hot, ionized-gas plasma), through the workpiece, and back to the power source via a ground return. The arc's heat melts both the electrode (in consumable-electrode processes) and the base metal locally, forming a shared molten pool that solidifies into the weld as the arc moves on. What distinguishes one arc process from another is almost entirely how the electrode is fed and consumed, and how the arc and molten metal are shielded from atmospheric oxygen and nitrogen — not this underlying circuit.</p>\n\n<h3>§2 · Consumable-electrode processes — SMAW, GMAW, FCAW</h3>\n<p><b>SMAW</b> (shielded metal arc welding, \"stick\" welding) uses a flux-coated consumable electrode rod, manually fed as it melts, with the flux coating decomposing to shield the arc and forming a slag layer that must be chipped off afterward — simple, portable equipment, well suited to field work and all positions, at a lower deposition rate than the wire-fed processes. <b>GMAW</b> (gas metal arc welding, \"MIG\") continuously feeds a bare wire electrode through a torch, shielded by an externally supplied gas (commonly argon, CO₂, or a mixture) — faster, cleaner (no slag), and more easily automated, but more sensitive to wind and drafts blowing the shielding gas away, making it primarily a shop process. <b>FCAW</b> (flux-cored arc welding) feeds a tubular wire filled with flux, either self-shielding (the flux alone providing shielding, tolerant of wind, suited to field and structural work) or gas-shielded (higher quality, shop-oriented) — a genuine hybrid combining SMAW's field robustness with GMAW's continuous-wire productivity.</p>\n\n<h3>§3 · Non-consumable and submerged processes — GTAW, SAW</h3>\n<p><b>GTAW</b> (gas tungsten arc welding, \"TIG\") uses a non-consumable tungsten electrode, with filler metal (if used) added separately by hand, shielded by inert gas — slow, requiring real operator skill, but producing the highest quality, cleanest welds of any common arc process, standard for thin sections, precision work, and demanding materials (stainless steel, aluminum, exotic alloys). <b>SAW</b> (submerged arc welding) feeds a continuous bare wire electrode beneath a blanket of granular flux that fully covers and shields the arc (the arc is genuinely not visible during welding) — very high deposition rates and deep penetration, but restricted to flat or near-flat positions by the flux blanket's dependence on gravity, standard for long, straight, heavy welds such as structural plate and large-diameter pipe seams.</p>\n\n<h3>§4 · Heat input and typical defects</h3>\n<p><b>Heat input</b> quantifies energy delivered per unit length of weld: \\[ HI = \\frac{\\eta VI}{v}, \\] where \\(V\\) is arc voltage, \\(I\\) is welding current, \\(v\\) is travel speed, and \\(\\eta\\) is arc efficiency (process-dependent, commonly \\(0.7\\)–\\(0.9\\) for the processes above). Too little heat input risks <b>lack of fusion</b> (the weld metal fails to properly bond to the base metal) and <b>porosity</b> (trapped gas, often from inadequate shielding or moisture); too much heat input risks excessive grain growth and distortion, and in some materials, unwanted metallurgical changes in the heat-affected zone. Travel speed is often the most immediately controllable lever — slowing down at fixed voltage and current increases heat input roughly in inverse proportion, which is exactly why an inconsistent travel speed is one of the most common sources of inconsistent weld quality along a single joint.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — heat input</span>\n<p>\\[ HI = \\frac{\\eta VI}{v} \\]</p><p>Slower travel at the same voltage/current means proportionally higher heat input.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Basic electrical circuits</b> (V, I, power) — Electrical Fundamentals.</li><li>No prior welding coursework — this lesson fixes vocabulary for the rest of the welding sequence.</li></ul>\n<h4>Toolkit — arc welding processes</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Process</th><th>Electrode / shielding</th><th>Best fit</th></tr></thead><tbody>\n<tr><td>SMAW (stick)</td><td>flux-coated rod, manual</td><td>Field work, all positions.</td></tr>\n<tr><td>GMAW (MIG)</td><td>bare wire, gas shielded</td><td>Fast shop production.</td></tr>\n<tr><td>FCAW</td><td>flux-cored wire, self- or gas-shielded</td><td>Field-capable, high productivity.</td></tr>\n<tr><td>GTAW (TIG)</td><td>tungsten, inert gas, manual filler</td><td>Highest quality, thin/precision work.</td></tr>\n<tr><td>SAW</td><td>wire under granular flux</td><td>Flat-position, heavy structural welds.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Computing heat input</b></p><p><b>Problem.</b> A GMAW weld runs at 24 V, 180 A, travel speed 4 mm/s, arc efficiency 0.8. Find the heat input.</p>",
+    "solution": "<p><b>Solution.</b> \\[ HI=\\frac{\\eta VI}{v}=\\frac{0.8\\times24\\times180}{4}=864\\ \\text{J/mm} \\approx 0.86\\ \\text{kJ/mm}. \\]</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Travel speed and heat input</b></p><p><b>Problem.</b> For the weld in the previous problem, the welder slows travel speed to 2.5 mm/s while holding voltage and current constant. Find the new heat input and the percentage increase.</p>",
+    "solution": "<p><b>Solution.</b> \\[ HI=\\frac{0.8\\times24\\times180}{2.5}\\approx1382\\ \\text{J/mm}. \\] This is a 60% increase (1382/864 ≈ 1.60) from slowing travel speed alone — heat input rises in inverse proportion to travel speed at fixed voltage and current.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing a process for field structural work</b></p><p><b>Problem.</b> A structural steel fabrication job must be welded outdoors, in a windy site, in multiple positions including overhead. Recommend a process from §2–§3 and explain your reasoning against the alternatives.</p>",
+    "solution": "<p><b>Solution.</b> Self-shielded FCAW (or SMAW) fits best. GMAW's externally supplied shielding gas is easily disrupted by wind, ruling it out outdoors. GTAW is far too slow for structural production work. SAW is restricted to flat or near-flat positions by its gravity-dependent flux blanket, ruling out overhead work entirely. Self-shielded FCAW combines wind tolerance with continuous-wire productivity across all positions, which SMAW alone cannot match in deposition rate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Every arc welding process shares:</p>",
+    "choices": [
+     "The same basic circuit — power source, electrode, arc, workpiece, ground return",
+     "Identical shielding methods",
+     "Identical electrode feed mechanisms",
+     "Identical achievable deposition rates"
+    ],
+    "answer": 0,
+    "solution": "<p>Processes differ mainly in electrode feed and shielding, not the underlying circuit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>SMAW (stick welding) shields the arc using:</p>",
+    "choices": [
+     "Flux coating on the electrode, decomposing during welding",
+     "An externally supplied shielding gas only",
+     "A granular flux blanket covering the arc",
+     "No shielding at all"
+    ],
+    "answer": 0,
+    "solution": "<p>This is what makes SMAW tolerant of wind and suited to field work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>GMAW (MIG) is most sensitive to:</p>",
+    "choices": [
+     "Wind and drafts disrupting its externally supplied shielding gas",
+     "Excessive slag formation",
+     "Lack of continuous wire feed",
+     "Requiring flux-coated electrodes"
+    ],
+    "answer": 0,
+    "solution": "<p>This is why GMAW is primarily a shop, not field, process.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>GTAW (TIG) is generally chosen for:</p>",
+    "choices": [
+     "The highest quality, cleanest welds on thin or precision work",
+     "The highest possible deposition rate",
+     "Field structural work in windy conditions",
+     "Fully automated high-volume production only"
+    ],
+    "answer": 0,
+    "solution": "<p>Quality and control come at the cost of speed and required operator skill.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>SAW (submerged arc welding) is restricted to:</p>",
+    "choices": [
+     "Flat or near-flat positions, due to its gravity-dependent flux blanket",
+     "Only thin-section precision work",
+     "Field work exclusively",
+     "Non-ferrous materials only"
+    ],
+    "answer": 0,
+    "solution": "<p>The flux blanket must stay in place, which gravity only reliably allows near-flat.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Heat input is calculated as:</p>",
+    "choices": [
+     "HI = ηVI/v",
+     "HI = V/I",
+     "HI = v/(VI)",
+     "HI = ηV + I"
+    ],
+    "answer": 0,
+    "solution": "<p>Voltage, current, and arc efficiency scale it up; travel speed scales it down.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Too little heat input in a weld risks:</p>",
+    "choices": [
+     "Lack of fusion and porosity",
+     "Excessive grain growth",
+     "Excessive distortion only",
+     "Guaranteed defect-free welds regardless of other factors"
+    ],
+    "answer": 0,
+    "solution": "<p>Excessive heat input, by contrast, risks grain growth and distortion.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Inconsistent travel speed along a single weld joint is a common cause of:</p>",
+    "choices": [
+     "Inconsistent heat input and therefore inconsistent weld quality",
+     "No measurable effect on the weld",
+     "Only cosmetic appearance changes",
+     "Guaranteed porosity regardless of other conditions"
+    ],
+    "answer": 0,
+    "solution": "<p>Heat input depends directly on travel speed, so speed variation directly varies weld quality.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A structural fabrication floor running FCAW for field erection welds and GMAW for shop sub-assembly welds — rather than one process everywhere — is applying §2's wind-sensitivity and productivity trade-offs as a matter of routine process planning, not an ad-hoc daily decision left to whichever welder is available.</p>\n<p>A welding inspector reviewing a joint with visible lack-of-fusion indications checks the logged travel speed and amperage against the procedure's specified heat input range before assuming a training or technique problem — per §4, a genuinely correct technique executed at the wrong travel speed produces exactly this defect, and the heat input arithmetic is often the fastest way to confirm or rule out that specific cause.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Brazing shown as filler metal drawn by capillary action into a small, controlled gap between two overlapping base metal plates, without melting the base metal itself, contrasted conceptually with fusion welding which melts the base metal directly\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Brazing joins by capillary action — the base metal never melts</text><rect x=\"120\" y=\"150\" width=\"220\" height=\"24\" fill=\"#16202e\" fill-opacity=\"0.15\" stroke=\"#16202e\" stroke-width=\"1.4\"/><rect x=\"120\" y=\"130\" width=\"220\" height=\"20\" fill=\"#16202e\" fill-opacity=\"0.15\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"230\" y=\"120\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">two overlapping base-metal plates</text><rect x=\"120\" y=\"148\" width=\"220\" height=\"4\" fill=\"#c2820f\"/><text x=\"130\" y=\"195\" fill=\"#c2820f\" font-size=\"10\" font-weight=\"600\">filler drawn in by capillary action</text><path d=\"M340,148 C400,148 420,160 430,190\" stroke=\"#c2820f\" stroke-width=\"1.6\" fill=\"none\" stroke-dasharray=\"3 3\"/><text x=\"16\" y=\"230\" fill=\"#16202e\" font-size=\"11\">Joint gap is small and controlled — too wide and capillary action stops working</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Filler melts below the base metal's melting point; the base metal stays solid throughout</text></svg><figcaption>A properly sized gap pulls molten filler metal through it by capillary action alone, wetting and bonding both surfaces — the base metal itself never reaches its melting point, unlike fusion welding.</figcaption></figure>\n\n<h3>§1 · Resistance welding — spot and seam</h3>\n<p><b>Resistance spot welding</b> clamps two sheets between copper electrodes and passes a large current briefly through the stack; resistance is highest at the interface between the sheets (not through the sheets themselves, which conduct comparatively well), so \\(I^2R\\) heating is concentrated exactly there, melting a small \"nugget\" that fuses the sheets locally as it cools under the electrodes' clamping force — no filler metal, no external shielding, and a cycle time measured in a fraction of a second. <b>Resistance seam welding</b> replaces the point electrodes with rotating wheel electrodes, producing a continuous, overlapping series of nuggets — effectively a continuous leak-tight seam. Both are standard for high-volume sheet-metal assembly (automotive bodies are the classic example) precisely because of that speed and the complete absence of filler metal or shielding gas consumables.</p>\n\n<h3>§2 · Friction, explosion, and oxyfuel welding, in outline</h3>\n<p><b>Friction welding</b> joins two parts (commonly round, rotationally symmetric ones) by pressing them together while one rotates against the other, generating heat by friction alone at the interface, then forging them together under pressure as rotation stops — no filler metal, no arc, no melting in the conventional sense, well suited to joining dissimilar metals that would form brittle compounds if fusion-welded. <b>Explosion welding</b> uses a controlled explosive charge to slam one plate into another at extremely high velocity, creating a metallurgical bond through the resulting jetting and plastic deformation at the interface, without significant melting — a niche but genuinely important process for cladding large plates with a dissimilar corrosion-resistant metal. <b>Oxyfuel welding</b> burns a fuel gas (commonly acetylene) with oxygen to produce a flame hot enough to melt the base metal directly, with filler rod added by hand — largely superseded by arc processes for structural welding today, but still used for its portability and, differently sized to concentrate heat rather than melt broadly, for oxyfuel cutting (§4).</p>\n\n<h3>§3 · Brazing and soldering — properly distinguished from welding</h3>\n<p><b>Brazing</b> and <b>soldering</b> join metals by melting only a filler metal (never the base metal), which is drawn into a small, controlled joint gap by <b>capillary action</b> and wets both surfaces on cooling — a fundamentally different mechanism from welding's fusion of the base metals themselves. The distinction between the two is purely one of filler melting temperature: brazing uses filler melting above \\(450^\\circ\\text{C}\\) (commonly a copper or silver alloy), soldering below it (commonly tin-based) — both rely on the same capillary-action principle and both require a joint gap sized correctly for that capillary action to actually work, since too wide a gap simply will not draw filler metal through it. Neither process melts the base metal, which is exactly why both can join dissimilar metals, and thin sections, that fusion welding would distort or damage.</p>\n\n<h3>§4 · Thermal cutting, and joint prep as the quiet variable</h3>\n<p><b>Oxyfuel cutting</b> uses a torch to preheat steel to ignition temperature, then a jet of pure oxygen to exothermically burn (not melt) a kerf through it — cheap and portable, but limited to materials that oxidize this way (essentially plain carbon steel) and producing a relatively wide kerf and heat-affected zone. <b>Plasma cutting</b> uses a constricted, superheated ionized-gas jet to melt and blow away material, cutting any electrically conductive material faster than oxyfuel with a narrower kerf, at higher equipment cost. <b>Laser cutting</b> (Lesson 7) gives the narrowest kerf and smallest heat-affected zone of the three, at the highest capital cost, typically reserved for thinner sections where precision matters most. Underlying every welding process covered in this lesson and the last, <b>joint type</b> (butt, lap, tee, corner, edge), <b>edge preparation geometry</b> (square-cut, beveled, root gap), and <b>fit-up</b> (how accurately the prepared edges actually align before welding begins) are the quiet variable behind weld quality that no amount of correct process selection or heat input control can compensate for — a joint with poor fit-up forces the welder to either bridge a gap the procedure never anticipated or leave a defect, regardless of how correctly every other parameter in Lesson 8 was set.</p>\n<div class=\"keybox\"><span class=\"tag\">Key distinction — welding vs. brazing/soldering</span>\n<p>Welding melts the base metal. Brazing and soldering melt only the filler, drawn in by capillary action — the base metal stays solid throughout.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Arc welding processes and heat input</b> (Lesson 8).</li><li><b>I²R heating</b> (Electrical Fundamentals) — the direct basis of resistance welding.</li></ul>\n<h4>Toolkit — joining and thermal cutting</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Resistance spot/seam welding</td><td>I²R nugget at the interface</td><td>High-volume sheet-metal assembly.</td></tr>\n<tr><td>Brazing / soldering</td><td>filler-only melt, capillary action</td><td>Distinguished by filler melt temperature (450°C).</td></tr>\n<tr><td>Oxyfuel / plasma cutting</td><td>oxidation burn / ionized-gas jet</td><td>Kerf and HAZ trade-off vs. laser.</td></tr>\n<tr><td>Fit-up</td><td>accuracy of prepared-edge alignment</td><td>Underlies weld quality regardless of process.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Where resistance spot welding heat concentrates</b></p><p><b>Problem.</b> Explain why resistance spot welding forms a nugget specifically at the interface between two sheets, rather than heating the sheets themselves uniformly along the current path.</p>",
+    "solution": "<p><b>Solution.</b> The electrical resistance at the interface between the two sheets (an imperfect, higher-resistance contact) is much higher than the resistance through the bulk of either sheet (a good conductor). Since I²R heating concentrates wherever resistance is highest for a given current, the interface heats and melts locally into a nugget while the bulk sheet material, carrying the same current at much lower resistance, stays comparatively cool.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Brazing or welding?</b></p><p><b>Problem.</b> A thin-walled dissimilar-metal assembly (copper tubing joined to a brass fitting) must be joined without distorting the thin copper wall. Should this be welded or brazed, and why?</p>",
+    "solution": "<p><b>Solution.</b> Brazed. Welding would melt the base metals directly, risking distortion or burn-through of the thin copper wall and complicating the dissimilar-metal combination. Brazing melts only a filler metal well below either base metal's melting point, drawn into a controlled gap by capillary action, joining the two without the base metal ever reaching its melting point — exactly what a thin, dissimilar-metal joint needs.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a fit-up problem</b></p><p><b>Problem.</b> A weld procedure with correct, previously-qualified heat input settings produces an unacceptable defect on a specific joint, while the same procedure works fine on identical joints elsewhere on the same job. What is a likely cause worth checking before questioning the procedure itself?</p>",
+    "solution": "<p><b>Solution.</b> Poor fit-up on that specific joint — an excessive or inconsistent root gap, misalignment, or edge preparation that does not match what the procedure was actually qualified for. Since the procedure works correctly elsewhere, the procedure itself is not the primary suspect; the physical condition of this particular joint, before welding even began, is the more likely cause.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Resistance spot welding joins material using:</p>",
+    "choices": [
+     "I²R heating concentrated at the interface between clamped sheets",
+     "An externally supplied filler metal",
+     "A shielding gas",
+     "Capillary action"
+    ],
+    "answer": 0,
+    "solution": "<p>No filler metal or shielding gas is used in resistance spot welding.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Friction welding is particularly well suited to:</p>",
+    "choices": [
+     "Joining dissimilar metals without fusion-welding's brittle-compound risk",
+     "Joining flat sheet metal in high volume",
+     "Cutting thick plate",
+     "Producing the widest possible heat-affected zone deliberately"
+    ],
+    "answer": 0,
+    "solution": "<p>Its non-fusion mechanism avoids the brittle intermetallic compounds fusion welding risks.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The distinction between brazing and soldering is based on:</p>",
+    "choices": [
+     "Filler metal melting temperature, above or below 450°C",
+     "Whether the base metal melts",
+     "Whether capillary action is used",
+     "The joint type only"
+    ],
+    "answer": 0,
+    "solution": "<p>Both rely on the same capillary-action mechanism; only the filler temperature threshold differs.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Brazing and soldering, unlike welding:</p>",
+    "choices": [
+     "Never melt the base metal, only the filler metal",
+     "Always require an arc",
+     "Melt the base metal directly",
+     "Cannot join dissimilar metals"
+    ],
+    "answer": 0,
+    "solution": "<p>This is exactly why they suit thin sections and dissimilar-metal joints.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Oxyfuel cutting works by:</p>",
+    "choices": [
+     "Preheating steel then burning a kerf with a pure oxygen jet",
+     "Melting material with a focused laser beam",
+     "Mechanical abrasive erosion",
+     "Anodic dissolution"
+    ],
+    "answer": 0,
+    "solution": "<p>It is an oxidation (burning) process, limited essentially to materials like plain carbon steel.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Plasma cutting, compared to oxyfuel cutting, offers:</p>",
+    "choices": [
+     "Faster cutting and a narrower kerf on any conductive material",
+     "Lower equipment cost",
+     "The ability to cut non-conductive materials only",
+     "A wider heat-affected zone in every case"
+    ],
+    "answer": 0,
+    "solution": "<p>Plasma trades higher equipment cost for speed, kerf width, and material flexibility.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fit-up refers to:</p>",
+    "choices": [
+     "How accurately prepared joint edges align before welding begins",
+     "The welding current setting",
+     "The type of shielding gas selected",
+     "The post-weld inspection method"
+    ],
+    "answer": 0,
+    "solution": "<p>Fit-up is a physical, pre-welding condition of the joint itself.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Poor fit-up on an otherwise correctly executed weld procedure:</p>",
+    "choices": [
+     "Can force a defect regardless of correct heat input and technique",
+     "Has no effect if heat input is correctly set",
+     "Is always caught and corrected automatically by the welding process",
+     "Only matters for resistance welding, not arc welding"
+    ],
+    "answer": 0,
+    "solution": "<p>This is exactly why fit-up is called the quiet variable — it undermines quality independent of process parameters.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A fabrication shop that inspects and signs off on joint fit-up as a distinct, documented step before welding begins — not simply trusting whatever the cutting and fitting crew handed off — is treating §4's \"quiet variable\" as the real quality gate it is: correcting a root-gap or misalignment problem before the arc ever strikes is a fitter's adjustment, while catching the same problem after welding is a repair, a cut-out, or a rejected weld.</p>\n<p>A maintenance team choosing between brazing a small dissimilar-metal repair and welding it outright checks whether the assembly can tolerate the base metal actually melting before defaulting to whichever process the shop happens to use more often — per §3, that single question usually settles the choice correctly on its own, well before considering equipment availability or welder preference.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A bolted flange joint cross section showing the bolt clamping two flanges together with a gasket between them, the preload force path running through the bolt shank, the flanges, and the gasket in one continuous loop\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Preload is a clamping force, not just a torque number</text><rect x=\"200\" y=\"70\" width=\"30\" height=\"35\" fill=\"#16202e\" fill-opacity=\"0.2\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"215\" y=\"65\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">bolt head</text><rect x=\"207\" y=\"105\" width=\"16\" height=\"120\" fill=\"#16202e\" fill-opacity=\"0.2\" stroke=\"#16202e\" stroke-width=\"1.4\"/><rect x=\"195\" y=\"225\" width=\"40\" height=\"20\" fill=\"#16202e\" fill-opacity=\"0.2\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"215\" y=\"260\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">nut</text><rect x=\"120\" y=\"130\" width=\"90\" height=\"35\" fill=\"#3a6ea5\" fill-opacity=\"0.15\" stroke=\"#3a6ea5\" stroke-width=\"1.4\"/><rect x=\"120\" y=\"165\" width=\"90\" height=\"35\" fill=\"#3a6ea5\" fill-opacity=\"0.15\" stroke=\"#3a6ea5\" stroke-width=\"1.4\"/><text x=\"90\" y=\"152\" text-anchor=\"end\" fill=\"#3a6ea5\" font-size=\"10\">flange</text><rect x=\"220\" y=\"162\" width=\"90\" height=\"6\" fill=\"#c2820f\"/><text x=\"330\" y=\"167\" fill=\"#c2820f\" font-size=\"10\" font-weight=\"600\">gasket</text><path d=\"M215,105 L215,225\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"240\" y=\"115\" fill=\"#1f7a5c\" font-size=\"10\">preload, F</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Too little preload: the joint separates under load. Too much: the gasket crushes.</text></svg><figcaption>Torque is only a proxy for the clamping force (preload) actually holding the joint together — the same torque produces very different preload depending on friction under the bolt head and threads.</figcaption></figure>\n\n<h3>§1 · Preload — why a bolted joint holds</h3>\n<p>A bolted joint does not hold primarily by shear resistance in the bolt shank — it holds because the bolt, stretched slightly elastically when tightened, clamps the joined parts together with a <b>preload</b> force \\(F\\), and that clamping friction resists the parts sliding or separating under service load. Too little preload and the joint can separate or work loose under load (and, for a dynamically loaded joint, fatigue the bolt far sooner, since a poorly preloaded bolt sees the full cyclic load itself rather than the load being absorbed by a reduction in clamp force). Too much preload risks yielding the bolt or crushing whatever is clamped — a gasket, most consequentially, as developed in §3.</p>\n\n<h3>§2 · The torque-tension relationship</h3>\n<p>Since preload itself is not directly measurable with a simple hand tool, torque is used as an indirect, practical proxy: \\[ T = K D F, \\] where \\(T\\) is applied torque, \\(D\\) is the bolt's nominal diameter, \\(F\\) is the resulting preload, and \\(K\\) is the <b>nut factor</b> — an empirical number (typically \\(0.15\\)–\\(0.20\\) for as-received steel fasteners) that lumps together thread friction and under-head friction. \\(K\\) is not a fundamental constant; it depends strongly on surface condition, plating, and especially lubrication — which is exactly why torque-tension is only as reliable as the assumption about \\(K\\) it was calculated from.</p>\n\n<h3>§3 · Why gasketed flanges leak when torqued wrong</h3>\n<p>A gasket seals by being compressed to a specific stress the joint's design assumes — controlled indirectly through preload, and therefore through torque and the assumed \\(K\\). If a bolt is actually lubricated but torqued using a dry-\\(K\\) assumption, the same commanded torque produces significantly more preload than intended (a lower \\(K\\) means less torque is lost to friction, so more of it converts to clamping force) — over-compressing and potentially damaging the gasket, or over-stressing the flange. If instead a bolt is drier or more corroded than assumed, the same torque under-clamps the joint, leaving insufficient gasket compression to seal — the joint leaks not because it was under-torqued in some absolute sense, but because the torque delivered less preload than the seal actually needed. Both failure directions trace back to the same root cause: torque is not preload, and \\(K\\) is an assumption, not a guarantee.</p>\n\n<h3>§4 · Riveting, adhesive bonding, and the maintenance view</h3>\n<p><b>Riveting</b> joins by deforming a soft metal pin through aligned holes, clamping the parts by the resulting deformed head — permanent, vibration-resistant, and still standard in aircraft structures and some sheet-metal assembly. <b>Adhesive bonding</b> joins by a cured polymer layer distributing load over the entire bonded area rather than concentrating it at discrete points — excellent for joining dissimilar materials and distributing stress evenly, at the cost of surface preparation sensitivity and generally poorer performance under peel loading than shear. Bolted joints stand apart from both specifically because they are <b>designed to be remade</b>: a maintenance program built around scheduled disassembly, inspection, and reassembly depends entirely on that reversibility — which is exactly why a maintenance engineer's real interest in bolting is not just \"is it tight,\" but \"will it torque back to a known, correct preload the next time this joint is opened.\"</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — torque-tension</span>\n<p>\\[ T = KDF \\]</p><p>K is an assumption about friction — verify it, don't assume it, on anything gasketed or fatigue-critical.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Elastic stretch under axial load</b> (Strength of Materials, Lesson 1).</li><li><b>Fatigue loading</b> (Strength of Materials) — for the preload/fatigue connection in §1.</li></ul>\n<h4>Toolkit — mechanical joining</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Preload, F</td><td>clamping force from bolt stretch</td><td>What actually holds the joint.</td></tr>\n<tr><td>Torque-tension</td><td>\\( T=KDF \\)</td><td>Practical, indirect preload control.</td></tr>\n<tr><td>Nut factor, K</td><td>empirical, friction-dependent (~0.15–0.20)</td><td>Depends on lubrication and surface condition.</td></tr>\n<tr><td>Riveting / adhesive bonding</td><td>permanent joining alternatives</td><td>Contrasted with bolting's remake-ability.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Torque for a target preload</b></p><p><b>Problem.</b> An M20 bolt (D=20 mm) needs a target preload of 100 kN, with nut factor K=0.20 for its as-received condition. Find the required tightening torque.</p>",
+    "solution": "<p><b>Solution.</b> \\( T=KDF=0.20\\times0.020\\ \\text{m}\\times100{,}000\\ \\text{N}=400\\ \\text{N·m}. \\)</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The cost of an unexpectedly lubricated bolt</b></p><p><b>Problem.</b> The same bolt from the previous problem is actually lubricated (K=0.15) but is tightened to the dry-assumption torque of 400 N·m. Find the actual resulting preload, and the percentage by which the joint is overtightened relative to the intended 100 kN.</p>",
+    "solution": "<p><b>Solution.</b> \\( F=T/(KD)=400/(0.15\\times0.020)=133{,}333\\ \\text{N}\\approx133\\ \\text{kN} \\) — about 33% higher than the intended 100 kN, since the lower friction converts more of the same torque into clamping force.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a leaking flange</b></p><p><b>Problem.</b> A gasketed flange, torqued to its specified value using standard dry-K assumptions, leaks after commissioning. A check reveals the bolts were actually installed with an anti-seize lubricant not accounted for in the specified torque. Explain the leak in terms of preload, and state whether the joint was actually over- or under-torqued in preload terms.</p>",
+    "solution": "<p><b>Solution.</b> Anti-seize lowers the effective nut factor K. If the specified torque assumed a dry, unlubricated K but was applied to lubricated bolts, the resulting actual preload would be higher than intended, not lower — this specific scenario, by itself, would tend to over-compress the gasket rather than under-clamp it. (A leak from under-clamping would instead point to the opposite mismatch — a higher actual friction than assumed, or a torque wrench applied incorrectly.) Either way, the root cause is the same: the assumed K did not match the actual installed condition, so the specified torque did not deliver the preload the seal design required.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A bolted joint primarily holds together because of:</p>",
+    "choices": [
+     "Clamping friction from bolt preload",
+     "The bolt's shear strength alone",
+     "The nut's weight",
+     "Thermal expansion of the flange"
+    ],
+    "answer": 0,
+    "solution": "<p>Preload-driven clamping friction, not shear in the shank, is the primary holding mechanism.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The torque-tension relationship is:</p>",
+    "choices": [
+     "T = KDF",
+     "T = F/D",
+     "T = D/F",
+     "T = K/(DF)"
+    ],
+    "answer": 0,
+    "solution": "<p>Torque scales with nut factor, diameter, and target preload together.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The nut factor K primarily accounts for:</p>",
+    "choices": [
+     "Thread and under-head friction",
+     "The bolt's material strength",
+     "The gasket's thickness",
+     "The flange's diameter"
+    ],
+    "answer": 0,
+    "solution": "<p>K is an empirical friction-lumping factor, not a strength property.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An unexpectedly lubricated bolt, torqued using a dry-K assumption, results in:</p>",
+    "choices": [
+     "Higher actual preload than intended",
+     "Lower actual preload than intended",
+     "No change in preload",
+     "Immediate bolt failure regardless of load"
+    ],
+    "answer": 0,
+    "solution": "<p>Lower friction converts more of the same torque into clamping force.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Too little preload on a dynamically loaded bolted joint mainly risks:</p>",
+    "choices": [
+     "The bolt seeing the full cyclic load and fatiguing sooner",
+     "Immediate gasket crushing",
+     "No effect on fatigue life",
+     "Excessive clamping force"
+    ],
+    "answer": 0,
+    "solution": "<p>Adequate preload normally absorbs cyclic load; without it, the bolt itself sees more of the cycling.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A gasket seals by being compressed to:</p>",
+    "choices": [
+     "A specific stress the joint design assumes, controlled via preload",
+     "Whatever stress happens to result from any torque applied",
+     "Zero stress, relying on adhesion alone",
+     "A stress unrelated to bolt preload"
+    ],
+    "answer": 0,
+    "solution": "<p>Gasket sealing performance is directly tied to the compressive stress from preload.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Riveted joints, compared to bolted joints, are:</p>",
+    "choices": [
+     "Permanent, not designed to be disassembled and remade",
+     "Always weaker in shear",
+     "Only used in electronics",
+     "Impossible to use with sheet metal"
+    ],
+    "answer": 0,
+    "solution": "<p>This permanence is the key contrast with bolting's designed reversibility.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A maintenance engineer's real interest in a bolted joint is best described as:</p>",
+    "choices": [
+     "Whether it will torque back to a known, correct preload when reopened",
+     "Only whether it is currently tight",
+     "The joint's original purchase cost",
+     "The color of the fastener coating"
+    ],
+    "answer": 0,
+    "solution": "<p>Reliable remake-ability, not just current tightness, is the maintenance-relevant property.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A plant standardizing on a documented torque value <em>and</em> a specified lubrication condition together on every gasketed-flange procedure — rather than a torque number alone — is applying §2 and §3 directly: a torque spec with no stated friction assumption is not actually a complete preload specification, and a maintenance crew substituting a different lubricant (or none) on reassembly can silently turn a correct-looking procedure into a leaking or overstressed joint.</p>\n<p>A reliability team investigating a pattern of repeat bolt failures on a vibration-loaded joint checks preload adequacy — not just whether the bolts were torqued to spec — before concluding the fastener grade was wrong; per §1, an underclamped joint on a cyclically loaded machine fatigues its bolts even when every bolt was nominally torqued to the correct number, if the assumed nut factor did not match the joint's actual installed friction.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An additive manufacturing part built up as a stack of thin horizontal layers, each bonded to the one below it, with a build direction arrow pointing upward, illustrating why mechanical properties often differ between the in layer direction and the build direction\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Every AM process builds the same way: one bonded layer at a time</text><g>\n<rect x=\"200\" y=\"220\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"206\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.20\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"192\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"178\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.20\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"164\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"150\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.20\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"136\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n<rect x=\"200\" y=\"122\" width=\"160\" height=\"14\" fill=\"#3a6ea5\" fill-opacity=\"0.20\" stroke=\"#3a6ea5\" stroke-width=\"1\"/>\n</g>\n<line x1=\"400\" y1=\"234\" x2=\"400\" y2=\"110\" stroke=\"#c2820f\" stroke-width=\"2.2\"/>\n<path d=\"M393,120 L400,108 L407,120\" stroke=\"#c2820f\" stroke-width=\"2.2\" fill=\"none\"/>\n<text x=\"410\" y=\"120\" fill=\"#c2820f\" font-size=\"10\" font-weight=\"600\">build direction</text>\n<text x=\"130\" y=\"180\" fill=\"#16202e\" font-size=\"10\">in-layer strength</text>\n<text x=\"130\" y=\"196\" fill=\"#16202e\" font-size=\"10\">≠ between-layer</text>\n<text x=\"130\" y=\"212\" fill=\"#16202e\" font-size=\"10\">strength</text>\n<text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Layer-to-layer bonding is rarely as strong as the material within a single layer</text></svg><figcaption>Powder bed fusion, directed energy deposition, material extrusion, and binder jetting all build this same way — one thin layer bonded to the one before it — which is why as-built AM parts are often anisotropic, weaker between layers than within one.</figcaption></figure>\n\n<h3>§1 · The AM process families, in one pass</h3>\n<p><b>Powder bed fusion (PBF)</b> spreads a thin layer of metal or polymer powder, then selectively melts or sinters it with a laser or electron beam, layer after layer — good geometric freedom and reasonable accuracy, used for both prototypes and end-use metal parts. <b>Directed energy deposition (DED)</b> feeds powder or wire directly into a focused energy beam at a moving nozzle, building up (or repairing) material where directed — well suited to large features and repair/cladding work, at coarser resolution than PBF. <b>Material extrusion (FDM/FFF)</b> deposits a molten polymer filament through a moving nozzle, layer by layer — the cheapest, most widespread AM technology, standard for polymer prototypes, jigs, and fixtures. <b>Binder jetting</b> selectively deposits a liquid binder into a powder bed to build a green part, later sintered (for metals) or infiltrated/cured — fast, and free of the residual thermal stress that laser-based processes can leave, at the cost of a separate post-processing step to reach final properties.</p>\n\n<h3>§2 · Where AM already earns its keep</h3>\n<p><b>Jigs and fixtures</b> — shop-floor tooling with low volume and high geometric customization per application — are a genuinely strong AM fit today, since a fixture only needs to be functional, not certified to aerospace-grade properties. <b>Obsolete spare parts</b> — a component no longer manufactured, with no economical tooling remaining, needed in small quantity — is another strong fit, since AM's near-zero tooling cost matters most exactly when conventional manufacturing's tooling cost cannot be justified for a handful of parts. <b>Prototypes</b> remain AM's original and still most common use: rapid geometric iteration, checking fit and form, well before final material properties or production process matter.</p>\n\n<h3>§3 · Honest limits</h3>\n<p><b>Surface finish</b> as-built is typically rough compared to machined surfaces — commonly requiring secondary finishing (machining, bead blasting, polishing) for functional or aesthetic surfaces, a real added cost and step, not a footnote. <b>Mechanical properties</b> are frequently anisotropic — different in the build direction versus within a layer, exactly the effect the diagram above illustrates — and can carry porosity or residual stress depending on process control, both of which matter directly for fatigue-loaded parts (Strength of Materials). <b>Qualification</b> — the testing and certification burden to trust an AM part in a safety- or performance-critical application — is substantial and process-and-machine-specific; a process qualified on one machine, one material lot, and one parameter set does not automatically transfer to another, which is precisely why AM adoption in genuinely critical aerospace and medical applications has been careful and incremental rather than immediate, despite the technology's real capability.</p>\n\n<h3>§4 · Choosing across the whole course — a capstone view</h3>\n<p>Every process this course has covered — machining, grinding, nontraditional processes, welding and joining, and now additive manufacturing — removes or adds material by a different mechanism, with a different cost structure, geometric freedom, and property outcome. Machining remains unmatched for tight tolerances and known, predictable mechanical properties at moderate to high volume; welding and mechanical joining remain how most large or assembled structures are actually built; AM earns its place specifically where geometric complexity, low volume, or tooling elimination matter more than achieving machining-grade surface finish and properties directly off the machine. Specifying a manufacturing process for a real part means weighing all of this together — exactly the kind of judgment this course has built lesson by lesson, not a single \"best\" process that wins in every case.</p>\n<div class=\"keybox\"><span class=\"tag\">Key honesty — AM's real position</span>\n<p>Strong fit: low-volume, complex-geometry, tooling-free parts (jigs, obsolete spares, prototypes). Real limits: surface finish, anisotropic properties, and a genuine qualification burden for critical applications.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Fatigue and anisotropic material behavior</b> (Strength of Materials).</li><li>No prior additive manufacturing coursework — this lesson is a first, honest introduction.</li></ul>\n<h4>Toolkit — additive manufacturing</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Family</th><th>Mechanism</th><th>Typical use</th></tr></thead><tbody>\n<tr><td>PBF</td><td>selective laser/e-beam melt of a powder bed</td><td>Prototypes, end-use metal parts.</td></tr>\n<tr><td>DED</td><td>powder/wire fed into a moving energy beam</td><td>Large features, repair/cladding.</td></tr>\n<tr><td>Material extrusion (FDM)</td><td>molten polymer filament, layer by layer</td><td>Cheap polymer prototypes, jigs.</td></tr>\n<tr><td>Binder jetting</td><td>binder into a powder bed, sintered after</td><td>Fast, low residual stress.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing an AM family</b></p><p><b>Problem.</b> A shop needs a low-volume, custom-shaped fixture for holding an odd-geometry part during inspection — cheap, fast, and functional, not load-bearing or precision-critical. Which AM family fits best, and why?</p>",
+    "solution": "<p><b>Solution.</b> Material extrusion (FDM). It is the cheapest and most widespread AM technology, well suited to exactly this kind of low-cost, low-precision, functional shop tooling — the fixture only needs to hold its shape and the part, not meet certified mechanical properties.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Anisotropy and fatigue</b></p><p><b>Problem.</b> An AM metal bracket will see cyclic loading primarily along its build direction. Explain why its as-built mechanical properties in that direction deserve specific scrutiny before the part is put into service.</p>",
+    "solution": "<p><b>Solution.</b> AM parts are frequently anisotropic — layer-to-layer bonding is often weaker than the material's strength within a single layer. If the cyclic load acts primarily along the build direction, it is loading the part in exactly the direction most likely to be its weakest, which combined with any porosity or residual stress from the process makes fatigue performance in that direction the specific property that needs verification, not simply an average or in-layer property.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why qualification does not transfer automatically</b></p><p><b>Problem.</b> A part qualified for flight use, built on one specific AM machine with one specific powder lot, needs to be reproduced on a different machine at a different facility. Explain why the original qualification does not automatically cover the new build.</p>",
+    "solution": "<p><b>Solution.</b> AM part properties depend on the specific combination of machine, process parameters, and material lot used to build them — differences in laser calibration, powder chemistry or particle size distribution, chamber atmosphere, or build parameters between machines and facilities can produce meaningfully different properties even nominally following the same process. Because qualification certifies the specific process-machine-material combination actually tested, a new machine or material lot represents an unverified combination requiring its own qualification, not an automatic extension of the original one.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Powder bed fusion (PBF) works by:</p>",
+    "choices": [
+     "Selectively melting or sintering a spread powder layer with a laser or electron beam",
+     "Depositing molten polymer filament through a nozzle",
+     "Feeding wire into a moving energy beam at a nozzle",
+     "Depositing liquid binder into a powder bed"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the PBF mechanism, distinct from DED's nozzle-fed approach.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Directed energy deposition (DED) is particularly well suited to:</p>",
+    "choices": [
+     "Large features and repair or cladding work",
+     "The cheapest possible polymer prototypes",
+     "Eliminating all post-processing steps",
+     "Only non-metallic materials"
+    ],
+    "answer": 0,
+    "solution": "<p>DED's nozzle-fed, moving energy beam approach suits large-scale addition and repair.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Binder jetting's key advantage is:</p>",
+    "choices": [
+     "Avoiding the residual thermal stress laser-based processes can leave",
+     "Requiring no post-processing whatsoever",
+     "Producing the smoothest as-built surface of any AM process",
+     "Eliminating the need for any powder material"
+    ],
+    "answer": 0,
+    "solution": "<p>It still requires sintering or infiltration afterward — the advantage is specifically the avoided thermal stress.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>AM's strongest current fit is with applications that are:</p>",
+    "choices": [
+     "Low-volume, geometrically complex, and tooling-cost-sensitive",
+     "High-volume, simple-geometry, and cost-per-part-sensitive",
+     "Always safety-critical and highly regulated",
+     "Exclusively large structural components"
+    ],
+    "answer": 0,
+    "solution": "<p>Jigs, obsolete spares, and prototypes all share this profile.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>As-built AM surface finish, compared to machined surfaces, is typically:</p>",
+    "choices": [
+     "Rougher, often requiring secondary finishing",
+     "Smoother in every case",
+     "Identical regardless of process",
+     "Irrelevant to part function"
+    ],
+    "answer": 0,
+    "solution": "<p>Secondary finishing is a real, common added step for functional AM surfaces.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>AM mechanical properties are frequently:</p>",
+    "choices": [
+     "Anisotropic, differing between the build direction and within a layer",
+     "Perfectly isotropic in every process",
+     "Unaffected by porosity or residual stress",
+     "Identical to wrought material by default"
+    ],
+    "answer": 0,
+    "solution": "<p>Layer-to-layer bonding is often the weaker direction, unlike wrought or cast isotropic material.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>AM qualification for critical applications is best described as:</p>",
+    "choices": [
+     "Process-and-machine-specific, not automatically transferable",
+     "A one-time certification valid for any machine running the same process type",
+     "Unnecessary for metal AM parts",
+     "Identical in effort to qualifying a machined part"
+    ],
+    "answer": 0,
+    "solution": "<p>Machine, parameters, and material lot all affect the specific properties actually achieved.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Choosing a manufacturing process for a real part, across this whole course's coverage, should weigh:</p>",
+    "choices": [
+     "Tolerance, volume, geometric complexity, and required properties together",
+     "Only the lowest per-part material cost",
+     "Whichever process is newest or most advanced",
+     "A single universally best process regardless of application"
+    ],
+    "answer": 0,
+    "solution": "<p>No single process wins in every case — this course's whole arc is about that judgment.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A maintenance department 3D-printing a jig or an obsolete plastic bracket in-house, rather than waiting weeks for a low-volume conventional order (or discovering the original tooling no longer exists at all), is exactly §2's strongest AM fit in practice — the value is speed and tooling elimination on a non-critical part, not a claim that the printed part matches a machined one in every property.</p>\n<p>An engineering team evaluating whether to qualify an AM process for a flight-critical bracket budgets real time and cost for process-specific testing — not treating a vendor's general AM capability claim as sufficient — precisely because §3's qualification burden is genuine and does not shortcut based on the technology's broader reputation or another program's prior success with a different machine.</p>\n"
+ }
+}
