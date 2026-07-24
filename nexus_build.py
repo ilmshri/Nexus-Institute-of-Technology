@@ -229,8 +229,7 @@ NX_PAGE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFB">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1115">
+<meta name="theme-color" content="#FAFAFB">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="manifest" href="{prefix}manifest.webmanifest">

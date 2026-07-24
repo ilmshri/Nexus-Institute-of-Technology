@@ -26,18 +26,6 @@
   --nx-grad:linear-gradient(135deg,var(--accent) 0%,var(--accent-deep) 100%);
   --nx-grad-hero:linear-gradient(135deg,#0E1626 0%,#0d3b31 60%,#07785C 100%);
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0F1115; --surface:#161920; --sunken:#1C2029; --overlay:#1C2029;
-    --ink:#E9EBEF; --soft:#C3C8D1; --muted:#8B929E; --faint:#5D6470;
-    --line:#262B34; --line-strong:#343B47;
-    --accent:#2BC59A; --accent-deep:#4AD3AC; --accent-ink:#7ADEC2;
-    --tint:#12251F; --tint-line:#1E4437;
-    --amber:#E5A24A; --amber-tint:#2A2013;
-    --ok:#3FBF7F; --bad:#E06B5E; --bad-tint:#2B1815;
-    --shadow:0 1px 2px rgba(0,0,0,.4);
-  }
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);margin:0;
@@ -88,7 +76,6 @@ a:hover{color:var(--accent-deep)}
 .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
 .btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line-strong)}
 .btn-ghost:hover{background:var(--sunken);color:var(--ink)}
-@media (prefers-color-scheme: dark){.btn-primary{color:#07130E}.btn-primary:hover{color:#07130E}}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:20px 0 6px}
 
 /* ---------- learning player (lesson pages) ---------- */
@@ -456,7 +443,6 @@ table.glossary tr:nth-child(even) td{background:color-mix(in srgb,var(--sunken) 
   box-shadow:0 6px 24px rgba(23,24,28,.12);width:max-content;max-width:100%}
 .quiz-submit{border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;
   font-family:var(--sans);font-size:12.5px;font-weight:650;border-radius:999px;padding:9px 20px}
-@media (prefers-color-scheme: dark){.quiz-submit{color:#07130E}}
 .quiz-submit:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 .quiz-score{font-family:var(--mono);font-size:12px;font-weight:500;margin:0;padding-inline-end:6px}
 .quiz-score.ok{color:var(--ok)}
@@ -560,10 +546,6 @@ figure.lesson-diagram{border:1px solid var(--line);border-radius:var(--r);backgr
 figure.lesson-diagram svg{width:100%;min-width:500px;max-width:640px;height:auto;display:block;margin:0 auto}
 figure.lesson-diagram figcaption{font-family:var(--sans);font-size:12.5px;line-height:1.65;color:var(--muted);
   max-width:70ch;margin:12px auto 2px;text-align:start}
-@media (prefers-color-scheme: dark){
-  figure.lesson-diagram{background:#F2F3F0;border-color:var(--line-strong)}
-  figure.lesson-diagram figcaption{color:#5B6370}
-}
 .measure mjx-container[display="true"]{margin:22px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
 .keybox mjx-container[display="true"]{margin:8px 0 12px}
 .check{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);margin:32px 0 0;overflow:hidden}
@@ -641,9 +623,6 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 .scene-stage,.overview-stage{position:relative;overflow:hidden;
   background:repeating-linear-gradient(0deg,rgba(11,138,104,.05) 0 1px,transparent 1px 40px),
              repeating-linear-gradient(90deg,rgba(11,138,104,.05) 0 1px,transparent 1px 40px),var(--surface)}
-@media (prefers-color-scheme: dark){.scene-stage,.overview-stage{background:
-  repeating-linear-gradient(0deg,rgba(43,197,154,.06) 0 1px,transparent 1px 40px),
-  repeating-linear-gradient(90deg,rgba(43,197,154,.06) 0 1px,transparent 1px 40px),var(--surface)}}
 .scene-stage svg,.overview-stage svg{display:block;width:100%;height:auto}
 .overview-stage a.node{cursor:pointer}
 .overview-stage a.node circle{transition:stroke .2s,stroke-width .2s}
@@ -739,7 +718,6 @@ html.no-js .reveal,html.no-js .reveal-left,html.no-js .reveal-right{opacity:1;tr
   font-weight:500;color:var(--muted);background:var(--surface)}
 .rate-row label:hover span{border-color:var(--accent);color:var(--ink)}
 .rate-row input:checked + span{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
-@media (prefers-color-scheme: dark){.rate-row input:checked + span{color:#07130E}}
 .rate-row input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
 .rev-field{display:block;margin:0 0 16px;font-size:13px;font-weight:650;color:var(--ink)}
 .rev-field input,.rev-field textarea{display:block;width:100%;margin-top:7px;padding:10px 13px;
