@@ -975,6 +975,30 @@ still the pre-quiz-engine "examples" text blob — a format retrofit, not
 new authoring — tracked separately, not blocking Year 1 closure.
 Coverage 133→170/528 lessons at full depth (25%→32%) across this session.
 
+ATLAS REDESIGN APPLIED — design-drafts branch (owner directives 2026-07-24;
+commits 2abe4d3f → 352d6026): the owner-gated "design refinement" milestone
+executed via a three-draft process. (1) Verified market study + honest site
+audit (design-previews/RESEARCH.md, AUDIT.md). (2) Three isolated full drafts
+built from REAL content (design-previews/: Foundry industrial / Press
+editorial / Atlas console). (3) OWNER CHOSE: Atlas base system everywhere
+(Geist + Geist Mono, zinc + emerald, adaptive dark theme), scroll-driven
+homepage motion ("sliding illustrations" — reveals + scroll-linked gear
+train; all off under prefers-reduced-motion), PWA kept (manifest recolored).
+(4) PROTOTYPE POSITIONING (binding, extends the cost rule): the site is a
+"preliminary open release" for trial and reflection — never "free", no
+paywall wording; prototype line in every footer. Homepage cost-rule
+violations from the v3 era purged (Free forever / no paywalls / meta descs).
+(5) REVIEW SECTION (owner order): feedback/index.html + nav entry — review
+composer (reaction 1-5, tried/worked/change, optional name) that opens a
+PREFILLED GitHub issue on nexuskw/nexuskw.github.io or copies the text; no
+fabricated reviews ever displayed. GATE FOR OWNER: enable public issue
+creation on that repo before deploy, else visitors see "creation
+restricted". (6) Course pages now load MathJax (fixes raw \( \) leak in
+career blocks). Build b68cf87567: 628 pages, all gates pass, coverage
+188/528 + 124 embeds UNCHANGED (content untouched). Verified across every
+page type + mobile + dark. NOT merged to main, NOT pushed — awaiting owner
+review of the applied result. Drafts A/B preserved for reference.
+
 CHECKPOINT — Y2S1 THREE OF FOUR DONE (2026-07-24, same session continued):
 strength (SOM 201) finished L5-11 (7 lessons — L1-4 pre-existed in an
 older 8-item-quiz/no-kuwait format and were left as-is, not retrofitted).
