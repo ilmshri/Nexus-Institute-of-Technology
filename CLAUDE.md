@@ -1013,3 +1013,46 @@ NEXT (approved order, unstarted): Y2S2 — thermo-2, heat-transfer,
 machine-design-1, kinematics-machinery, metrology, mfg-processes-3 —
 then Y3S1, Y3S2, Y4S1, Y4S2. 32 courses remain empty across Years 3-4
 plus the six Y2S2 courses just named.
+
+CHECKPOINT — Y2S2 STARTED (2026-07-24, same session continued): thermo-2
+(THM 202, "Cycles & Utilities") authored fresh, all 11 lessons + career
+block (Mitsubishi Power / Carrier / Atlas Copco — fresh rotation, none
+reused from an earlier course). Rankine cycle (self-consistent worked example: chip-thickness-style
+state-property chain verified through pump/boiler/turbine/condenser),
+reheat/regeneration/isentropic efficiency/heat rate, industrial steam
+systems (flash-steam quality, failed-trap SFEE costing), Brayton cycle
+and pressure-ratio trade-offs, vapor-compression refrigeration COP,
+psychrometrics (a Gulf-climate cooling example verified at ~48% latent
+share — directly on-theme for this Kuwait-context site), cooling towers
+(range/approach/cycles-of-concentration mass balance), compressed air
+(isothermal vs. adiabatic vs. intercooled specific work, leak-cost
+economics), combustion stoichiometry (methane AFR derived from the
+balanced equation and air's 21% O2 content, not recalled from memory),
+exergy analysis (Gouy-Stodola), and a capstone utility-audit lesson.
+
+Standing-directive note worth recording: steam and refrigerant property
+tables were treated as a "don't guess precise values from memory" case
+per the owner's original instruction — worked examples use round,
+clearly-representative state properties presented as GIVEN problem
+inputs (exactly how real thermodynamics textbooks structure these
+problems), never as a claimed precise steam-table lookup recalled from
+memory. Everything else (Merchant-circle-style force chains, Brayton
+efficiency, COP, moist-air enthalpy, compression work, stoichiometry,
+Gouy-Stodola) was independently first-principles-derived and
+Python-verified, same standard as every course so far.
+
+Process improvement, this pass: added a same-diagram text-collision
+scanner (checks y-proximity + x-range overlap between every pair of
+`<text>` elements inside a `<figure>`, correctly handling
+text-anchor="middle") to the verification pipeline, after finding that
+the overflow-only scanner from the previous course did not catch an
+x-axis label colliding with the standard bottom-caption line. Caught
+and fixed 5 real collisions (L1, L3, L4, L5, L8) before they ever
+reached the browser. Recommend running both the overflow scanner and
+the collision scanner as standard pre-build steps on every future
+diagram batch.
+
+Coverage: 199→210/528 lessons at full depth (38%→40%).
+NEXT (approved order, unstarted): heat-transfer, then machine-design-1,
+kinematics-machinery, metrology, mfg-processes-3 — closing Y2S2. 32
+courses remain empty across Years 3-4 after that.
