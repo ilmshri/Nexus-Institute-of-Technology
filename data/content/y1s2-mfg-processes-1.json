@@ -824,5 +824,477 @@
    }
   ],
   "kuwait": "\n<p>A rolling mill's pass schedule is built around the bite condition from §1 before anything else — each stand's maximum draft is checked against μ²R for that pass, and a schedule that ignores this limit simply will not run, regardless of how the force and power numbers downstream might otherwise look on paper.</p>\n<p>Stand force estimates from §2 size more than the rolls themselves: the same numbers set bearing and gearbox loads, which is exactly why a rolling mill's reliability program tracks these same forces as condition-monitoring inputs, not just design-stage calculations — a stand drawing noticeably more force than its schedule predicts, at the same draft and speed, is usually flagging a roll or bearing problem before it becomes a stoppage.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Upsetting force versus height as a cylinder is compressed from seventy to forty millimeters, rising steeply near the end of the stroke as both flow stress and the friction multiplier increase\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Upsetting force rises fastest at the END of the stroke</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">height reduction, h₀ → h (70 → 40 mm) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">upsetting force, F →</text><polyline points=\"66.0,255.0 81.8,213.3 97.6,204.5 113.4,198.1 129.2,192.7 145.0,187.9 160.8,183.4 176.6,179.2 192.4,175.0 208.2,170.9 224.0,166.9 239.8,162.9 255.6,158.8 271.4,154.7 287.2,150.5 303.0,146.3 318.8,141.9 334.6,137.5 350.4,132.9 366.2,128.1 382.0,123.2 397.8,118.1 413.6,112.8 429.4,107.2 445.2,101.4 461.0,95.4 476.8,89.0 492.6,82.3 508.4,75.3 524.2,67.9 540.0,60.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"540.0\" cy=\"60.0\" r=\"4\" fill=\"#c2820f\"/><text x=\"420\" y=\"52\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">final: h=40mm, F≈1.73 MN (peak)</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Both Yf (strain hardening) and Kf (friction, as D/h grows) rise together</text></svg><figcaption>As a cylinder upsets, both its flow stress (strain hardening) and its friction multiplier (as diameter-to-height ratio grows) rise — so upsetting force climbs fastest right at the end of the stroke, where a press must deliver its peak capacity.</figcaption></figure>\n\n<h3>§1 · Open-die, impression-die, and flashless forging</h3>\n<p><b>Open-die</b> forging uses simple, largely flat or lightly contoured dies that do not enclose the workpiece — metal flows outward freely as it compresses, good for large, simple shapes and preliminary shaping, with limited dimensional control. <b>Impression-die</b> (closed-die) forging constrains flow into a shaped cavity, giving far better dimensional control and complex shapes — but the excess metal has to go somewhere, which is what flash is for. <b>Flashless</b> forging matches starting billet volume precisely to the cavity so no flash forms at all, at the cost of needing tightly controlled billet volume and greater die and press investment.</p>\n\n<h3>§2 · Upsetting analysis — force including friction's barreling penalty</h3>\n<p>For a cylinder upset from \\(h_0\\) to \\(h\\), true strain is \\( \\varepsilon=\\ln(h_0/h) \\) and flow stress follows the familiar \\( Y_f=K\\varepsilon^{n} \\). Friction at the die faces resists the metal's outward radial flow near the platens more than at mid-height, producing the classic bulge — <b>barreling</b>. This friction penalty is captured by a multiplier \\[ K_f = 1+\\frac{0.4\\mu D}{h}, \\] which <em>grows</em> as the part gets shorter and wider (\\(D/h\\) increases) — the force penalty from friction worsens as upsetting proceeds, it does not stay constant. With the current cross-section \\(A=V/h\\) from volume conservation, force is \\( F=K_f\\,Y_f\\,A \\).</p>\n\n<h3>§3 · Reading the numbers</h3>\n<p>Cold-upsetting a low-carbon steel slug, \\(d_0=50\\ \\text{mm}\\), \\(h_0=70\\ \\text{mm}\\to h=40\\ \\text{mm}\\), \\(K=500\\ \\text{MPa}\\), \\(n=0.25\\), \\(\\mu=0.25\\): volume \\(V=137{,}400\\ \\text{mm}^3\\), final area \\(A=V/h=3{,}436\\ \\text{mm}^2\\), diameter \\(D=66.1\\ \\text{mm}\\), strain \\(\\varepsilon=\\ln(70/40)\\approx0.56\\), \\( Y_f=500\\times0.56^{0.25}\\approx432\\ \\text{MPa} \\), \\( K_f=1+0.4\\times0.25\\times66.1/40\\approx1.17 \\), giving \\( F\\approx1.17\\times432\\times3{,}436\\times10^{-3}\\approx1.73\\ \\text{MN} \\) — roughly 176 tonnes-force, and this is the <em>peak</em> force, occurring at the end of the stroke where both \\(Y_f\\) and \\(K_f\\) are largest.</p>\n\n<h3>§4 · Grain flow and flash — what they genuinely buy</h3>\n<p>Forging refines structure, closes internal porosity, and — critically — aligns inclusion stringers and grain flow along the part's contour, rather than cutting across it the way machining from bar stock would. Properties improve specifically <em>along</em> the direction grain flow follows, particularly fatigue resistance; the advantage shrinks, and can even reverse, across the flow — so \"forged is always stronger than cast or machined\" is an oversimplification that ignores loading direction. Flash in impression-die forging is not wasted metal by accident: the thin flash land deliberately chokes outward flow, building the internal cavity pressure that forces metal into the last, hardest-to-fill corners of the die — engineered waste, trimmed off afterward, not an oversight.</p>\n<div class=\"keybox\"><span class=\"tag\">Key multiplier — friction in upsetting</span>\n<p>\\[ K_f = 1+\\frac{0.4\\mu D}{h} \\]</p><p>Grows as the part shortens and widens — peak force lands at the end of the stroke, not the start.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Flow stress and the flow curve, Yf=Kε^n</b> (Lesson 6).</li><li><b>Volume conservation</b> under plastic deformation.</li></ul>\n<h4>Toolkit — forging</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>True strain (upsetting)</td><td>\\( \\varepsilon=\\ln(h_0/h) \\)</td><td>Feeds the flow curve.</td></tr>\n<tr><td>Friction multiplier</td><td>\\( K_f=1+0.4\\mu D/h \\)</td><td>Grows as the part shortens/widens.</td></tr>\n<tr><td>Upsetting force</td><td>\\( F=K_f\\,Y_f\\,A \\)</td><td>Peaks at the end of the stroke.</td></tr>\n<tr><td>Flash land</td><td>engineered restriction</td><td>Builds cavity-filling pressure.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Upsetting force, computed</b></p><p><b>Problem.</b> A cylinder, \\(d_0=50\\ \\text{mm}\\), \\(h_0=70\\ \\text{mm}\\), is upset to \\(h=40\\ \\text{mm}\\). Using \\(K=500\\ \\text{MPa}\\), \\(n=0.25\\), \\(\\mu=0.25\\), find the final flow stress, friction multiplier, and upsetting force.</p>",
+    "solution": "<p><b>Solution.</b> \\(V=137{,}400\\ \\text{mm}^3\\), \\(A=3{,}436\\ \\text{mm}^2\\), \\(D=66.1\\ \\text{mm}\\). \\( \\varepsilon=\\ln(70/40)\\approx0.56 \\), \\( Y_f=500\\times0.56^{0.25}\\approx432\\ \\text{MPa} \\). \\( K_f=1+0.4\\times0.25\\times66.1/40\\approx1.17 \\). \\( F\\approx1.17\\times432\\times3436\\times10^{-3}\\approx1.73\\ \\text{MN} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why a machined hook is not equivalent</b></p><p><b>Problem.</b> A forged crane hook is loaded primarily by tension pulling along its curved shape. Explain why a machined-from-bar replacement, cut to the identical outer geometry, is not automatically equivalent in fatigue strength.</p>",
+    "solution": "<p><b>Solution.</b> The forged hook's grain flow follows the curved contour, aligned with the primary load path, giving superior fatigue resistance along that path. A hook machined from straight bar cuts across that natural flow wherever the part's curve departs from the bar's original grain direction, leaving grain boundaries and inclusions crossing the load path — potential fatigue-crack initiation sites the forged part's aligned flow avoids.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Fixing an underfilled die corner</b></p><p><b>Problem.</b> An impression-die forging comes out with an incompletely filled corner. Is increasing the starting billet volume or decreasing the flash-land thickness more likely to fix the underfill, and why?</p>",
+    "solution": "<p><b>Solution.</b> Decreasing the flash-land thickness is more likely to help: a thinner land chokes outward flow more strongly, building higher internal cavity pressure that forces metal into the unfilled corner. Simply adding billet volume without changing the flash geometry mostly produces more flash — more waste — not necessarily higher fill pressure at the specific corner that is underfilled.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Open-die forging:</p>",
+    "choices": [
+     "Uses simple dies that let metal flow outward, unconstrained",
+     "Always produces flash",
+     "Requires a fully enclosed cavity",
+     "Is only used for flashless parts"
+    ],
+    "answer": 0,
+    "solution": "<p>Unconstrained flow is what limits open-die forging's dimensional control.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Impression-die forging:</p>",
+    "choices": [
+     "Constrains metal flow into a shaped cavity, needing flash to fill it fully",
+     "Never uses a die cavity at all",
+     "Cannot produce complex shapes",
+     "Is identical to open-die forging"
+    ],
+    "answer": 0,
+    "solution": "<p>The cavity gives dimensional control; flash is the pressure-building byproduct.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flashless forging requires:</p>",
+    "choices": [
+     "Precise starting billet volume, matched to the cavity",
+     "Excess billet volume, to guarantee full fill",
+     "No die at all",
+     "Only hot working, never cold"
+    ],
+    "answer": 0,
+    "solution": "<p>Without flash to absorb excess volume, the billet volume must match the cavity closely.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The friction multiplier Kf in upsetting:</p>",
+    "choices": [
+     "Increases as the part gets shorter and wider (D/h grows)",
+     "Stays constant throughout the stroke",
+     "Decreases as the part shortens",
+     "Is unrelated to friction"
+    ],
+    "answer": 0,
+    "solution": "<p>Kf = 1 + 0.4μD/h grows directly with the diameter-to-height ratio.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Peak upsetting force typically occurs:</p>",
+    "choices": [
+     "Near the end of the stroke, as both flow stress and the friction multiplier are highest",
+     "At the very start of the stroke",
+     "At a constant value throughout",
+     "Only during flashless forging"
+    ],
+    "answer": 0,
+    "solution": "<p>Both rising factors compound toward the end of the stroke.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Forged parts show improved fatigue resistance specifically:</p>",
+    "choices": [
+     "Along the direction grain flow follows, not necessarily across it",
+     "In every direction equally",
+     "Only in compression, never in tension",
+     "Only for cast alloys"
+    ],
+    "answer": 0,
+    "solution": "<p>Direction matters — the advantage is not uniform in all loading directions.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flash in impression-die forging exists to:</p>",
+    "choices": [
+     "Build internal pressure that forces metal into the last, hardest-to-fill cavity corners",
+     "Reduce the forging's final weight",
+     "Eliminate the need for a press",
+     "Cool the part faster"
+    ],
+    "answer": 0,
+    "solution": "<p>Choking outward flow is what builds the fill-completing pressure.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Barreling in upsetting occurs because:</p>",
+    "choices": [
+     "Friction at the die faces resists outward flow more near the platens than at mid-height",
+     "The material is too cold to deform",
+     "The press capacity was exceeded",
+     "The billet was machined off-center"
+    ],
+    "answer": 0,
+    "solution": "<p>Mid-height, farthest from the friction-constrained die faces, bulges out more.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A fabrication or repair shop deciding between a forged and a machined-from-bar replacement for a critical lifting component — a hook, a shackle pin, a lifting lug — is running §4's grain-flow argument directly: for a part loaded primarily along a curved or bent load path, the forged original's aligned grain flow is a real fatigue-life advantage a machined replacement of identical outer geometry does not automatically match, and specifying \"forged, not machined\" on a critical lifting-gear replacement is a defensible engineering position, not a formality.</p>\n<p>A press shop tracking peak tonnage per part, rather than only average tonnage, is applying §2's own logic: since upsetting force peaks at the very end of the stroke, a press must be sized to that peak, not to some average figure across the whole stroke — under-sizing a press based on an average-force estimate is a common, avoidable capacity-planning mistake.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Drawing stress versus area reduction, rising steeply and approaching a theoretical sixty three percent ceiling, with the worked example point marked well below both the ceiling and the drawn wire's own flow stress\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Drawing stress vs. area reduction — a hard theoretical ceiling</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">area reduction fraction →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">drawing stress, σd →</text><polyline points=\"66.0,255.0 81.8,251.1 97.6,247.2 113.4,243.1 129.2,239.0 145.0,234.7 160.8,230.4 176.6,226.0 192.4,221.4 208.2,216.8 224.0,212.0 239.8,207.0 255.6,202.0 271.4,196.8 287.2,191.4 303.0,185.9 318.8,180.2 334.6,174.4 350.4,168.3 366.2,162.0 382.0,155.5 397.8,148.8 413.6,141.8 429.4,134.6 445.2,127.0 461.0,119.1 476.8,110.8 492.6,102.2 508.4,93.1 524.2,83.6 540.0,73.5\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"254.1\" cy=\"202.5\" r=\"4\" fill=\"#c2820f\"/><text x=\"150\" y=\"195\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">worked example: 25% reduction, σd≈54 MPa</text><line x1=\"540\" y1=\"255\" x2=\"540\" y2=\"60\" stroke=\"#1f7a5c\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"420\" y=\"52\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">63% — ideal frictionless ceiling</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">The wire's own flow stress (161 MPa here) is the real, binding limit — far below the ceiling</text></svg><figcaption>Drawing stress rises with area reduction and approaches a hard theoretical ceiling near 63%, even for an ideal frictionless pass — real passes stay well below it, limited by the drawn wire's own rising flow stress, not the die.</figcaption></figure>\n\n<h3>§1 · Two die processes, opposite stress states</h3>\n<p><b>Extrusion</b> pushes metal through a die under compression — a ram compresses the billet, forcing it through a reducing opening. That compressive state tolerates enormous single-pass strains (extrusion ratios of 40 or more for aluminum) and can even improve workability, since compression tends to close internal voids rather than open them. <b>Wire and rod drawing</b> pulls metal through a die instead — the already-reduced material downstream of the die supplies the pulling force, which means the drawn material itself must survive that tensile stress without yielding. That one difference in sign — compression versus tension — explains both processes' products: massive sections from extrusion, kilometres of fine wire from drawing.</p>\n\n<h3>§2 · Extrusion: ratio, empirical strain, pressure</h3>\n<p>Extrusion ratio is \\( r_x=A_0/A_f \\). Johnson's empirical extrusion strain folds ideal work, friction, and redundant shear into one number, \\( \\varepsilon_x=a+b\\ln r_x \\) (typically \\(a\\approx0.8\\), \\(b\\approx1.2\\)–\\(1.5\\)), giving a ram pressure estimate \\( p=\\bar Y_f\\,\\varepsilon_x \\).</p>\n\n<h3>§3 · Drawing: stress, and the survival check</h3>\n<p>Drawing stress is \\[ \\sigma_d=\\bar Y_f\\left(1+\\frac{\\mu}{\\alpha}\\right)\\phi\\ln\\!\\left(\\frac{A_0}{A_f}\\right), \\] with \\(\\mu\\) the die friction, \\(\\alpha\\) the die half-angle in radians, and \\(\\phi\\geq1\\) a redundant-work factor. The absolute constraint: \\(\\sigma_d\\) must stay well below the drawn wire's own flow stress at that exit strain, or the wire yields and necks at the die exit instead of drawing cleanly through. This gives the classical result that even a perfectly frictionless, ideal pass cannot exceed roughly \\(63\\)% area reduction (\\(\\varepsilon=1\\)); real passes, carrying friction and redundant work, run well below that. For a copper drawing pass, \\(3.50\\to3.03\\ \\text{mm}\\) (\\(25\\)% area reduction), \\(K=300\\ \\text{MPa}\\), \\(n=0.50\\), \\(\\mu=0.07\\), \\(\\alpha=6^\\circ\\): \\(\\bar Y_f\\approx107\\ \\text{MPa}\\), \\(\\phi\\approx1.05\\), giving \\( \\sigma_d\\approx54\\ \\text{MPa} \\) — comfortably below the drawn wire's own flow stress of \\(\\approx161\\ \\text{MPa}\\), a safe pass with real margin.</p>\n\n<h3>§4 · Tandem drawing — the working method</h3>\n<p>Because a single pass is capped well below the theoretical ceiling by real friction and redundant-work margins, producing fine wire from a much larger rod requires many passes in sequence — <b>tandem</b> drawing. Each pass is re-checked against its own \\(\\sigma_d\\)-versus-flow-stress safety margin; because strain hardening accumulates pass over pass, that margin shrinks as drawing proceeds, which is exactly why intermediate anneals are scheduled partway through a tandem sequence — resetting accumulated hardening so later passes still have a comfortable margin, rather than letting it shrink toward zero and risking a break.</p>\n<div class=\"keybox\"><span class=\"tag\">Key constraint — drawing stress</span>\n<p>\\(\\sigma_d\\) must stay below the drawn wire's own flow stress — the real, binding limit, well short of the ideal 63% ceiling.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Flow stress and strain hardening, Yf=Kε^n</b> (Lesson 6).</li><li><b>Workability and stress state (compression vs. tension)</b> (Lesson 6).</li></ul>\n<h4>Toolkit — extrusion and drawing</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Extrusion ratio</td><td>\\( r_x=A_0/A_f \\)</td><td>Feeds Johnson's strain estimate.</td></tr>\n<tr><td>Extrusion strain (Johnson)</td><td>\\( \\varepsilon_x=a+b\\ln r_x \\)</td><td>Ram pressure: \\(p=\\bar Y_f\\varepsilon_x\\).</td></tr>\n<tr><td>Drawing stress</td><td>\\( \\sigma_d=\\bar Y_f(1+\\mu/\\alpha)\\phi\\ln(A_0/A_f) \\)</td><td>Must stay below the drawn wire's flow stress.</td></tr>\n<tr><td>Ideal drawing ceiling</td><td>~63% area reduction (ε=1)</td><td>Theoretical, frictionless limit.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Checking a drawing pass for safety</b></p><p><b>Problem.</b> Copper wire is drawn from 3.50 to 3.03 mm (25% area reduction), \\(K=300\\ \\text{MPa}\\), \\(n=0.50\\), \\(\\mu=0.07\\), \\(\\alpha=6^\\circ\\). Given \\(\\bar Y_f\\approx107\\ \\text{MPa}\\) and \\(\\phi\\approx1.05\\), find the drawing stress and confirm the pass is safe.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\sigma_d=107\\times(1+0.07/0.105)\\times1.05\\times\\ln(1/0.75)\\approx54\\ \\text{MPa} \\). The drawn wire’s own flow stress is \\(300\\times0.288^{0.5}\\approx161\\ \\text{MPa}\\), far above 54 MPa — a safe pass with real margin.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Estimating extrusion pressure</b></p><p><b>Problem.</b> A 200 mm diameter aluminum billet is extruded to 50 mm diameter. Find the extrusion ratio, and using \\(a=0.8\\), \\(b=1.5\\), \\(\\bar Y_f\\approx70\\ \\text{MPa}\\), estimate the ram pressure.</p>",
+    "solution": "<p><b>Solution.</b> \\( r_x=(200/50)^2=16 \\). \\( \\varepsilon_x=0.8+1.5\\ln16\\approx0.8+4.16\\approx4.96 \\). \\( p\\approx70\\times4.96\\approx347\\ \\text{MPa} \\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>How many passes, and why anneal?</b></p><p><b>Problem.</b> A wire must go from 10 mm to 3 mm diameter (91% area reduction total), but each pass is limited to about 30% area reduction before the safety margin runs thin. Estimate the number of passes needed, and explain why anneals are scheduled partway through.</p>",
+    "solution": "<p><b>Solution.</b> Each pass leaves 70% of the entering area; reaching \\((3/10)^2\\approx9\\)% of the original area needs \\(n\\) where \\(0.70^n\\approx0.09\\), giving \\(n\\approx6.7\\), so about 7 passes. Anneals are scheduled partway through because strain hardening accumulates pass over pass, raising the wire's flow stress and shrinking the safety margin between drawing stress and that flow stress — an anneal resets the accumulated hardening so later passes keep a workable margin instead of drawing toward a break.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Extrusion imposes a:</p>",
+    "choices": [
+     "Compressive stress state",
+     "Tensile stress state",
+     "Pure shear state with no normal stress",
+     "Identical stress state to drawing"
+    ],
+    "answer": 0,
+    "solution": "<p>A ram compresses the billet through the die.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Wire drawing imposes a:</p>",
+    "choices": [
+     "Tensile stress state",
+     "Compressive stress state",
+     "No stress at the die at all",
+     "Identical stress state to extrusion"
+    ],
+    "answer": 0,
+    "solution": "<p>The drawn wire itself supplies the pulling force through the die.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The pulling force in wire drawing comes from:</p>",
+    "choices": [
+     "The already-drawn wire downstream of the die",
+     "A ram pushing from behind",
+     "Gravity alone",
+     "The die itself generating force"
+    ],
+    "answer": 0,
+    "solution": "<p>This is exactly why the drawn wire must survive the stress without yielding.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Extrusion can achieve much higher single-pass strains than drawing mainly because:</p>",
+    "choices": [
+     "Compression tolerates far more strain without necking or failure",
+     "Extrusion dies have no friction",
+     "Drawing always runs at higher temperature",
+     "Extrusion uses a different class of material"
+    ],
+    "answer": 0,
+    "solution": "<p>The stress state, not the material, explains the difference.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The theoretical maximum area reduction for an ideal, frictionless single drawing pass is approximately:</p>",
+    "choices": [
+     "63%",
+     "10%",
+     "99%",
+     "25%"
+    ],
+    "answer": 0,
+    "solution": "<p>Corresponding to a true strain of about 1.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Drawing stress must stay below:</p>",
+    "choices": [
+     "The drawn wire's own flow stress at the exit strain",
+     "The die's melting point",
+     "Zero, always",
+     "The extrusion ratio"
+    ],
+    "answer": 0,
+    "solution": "<p>Exceeding it means the wire yields and necks rather than drawing through cleanly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Real drawing passes run well below the theoretical ideal limit mainly because:</p>",
+    "choices": [
+     "Friction and redundant (non-ideal) work add to the required drawing stress",
+     "The theoretical limit is simply wrong",
+     "Real dies have no friction at all",
+     "Real wire has no flow stress"
+    ],
+    "answer": 0,
+    "solution": "<p>Both effects raise the actual stress needed above the frictionless ideal.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Tandem drawing machines with intermediate anneals exist because:</p>",
+    "choices": [
+     "Accumulated strain hardening shrinks the safety margin pass over pass",
+     "A single die can never reduce wire diameter at all",
+     "Annealing increases the theoretical 63% ceiling",
+     "Cold-drawn wire has no commercial value"
+    ],
+    "answer": 0,
+    "solution": "<p>Resetting hardening periodically keeps every pass within a safe margin.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A wire-drawing line's die-wear and lubricant-condition log is a direct read on §3's safety-margin logic: a die wearing out of round, or a lubricant breaking down under pressure, raises effective friction and redundant work, which raises drawing stress at the same nominal reduction — narrowing the margin against the wire's own flow stress until a wire break interrupts the line, often before any other symptom shows up on a routine visual inspection.</p>\n<p>Extrusion tooling for aluminum sections is chosen and maintained around §2's pressure estimate: a die designed for a modest extrusion ratio pressed into service for a much higher ratio than it was rated for is a predictable, avoidable cause of premature die wear or failure, traceable directly back to the ram-pressure number a design review should have checked before the tooling order was placed.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Sintered density versus sintering temperature, rising from a green density near eighty percent and approaching but never quite reaching full theoretical density as temperature increases\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Sintered density approaches, but never reaches, 100%</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">sintering temperature (fraction of Tm) →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">density (% of theoretical) →</text><polyline points=\"66.0,216.0 81.8,203.4 97.6,192.0 113.4,181.6 129.2,172.3 145.0,163.8 160.8,156.2 176.6,149.2 192.4,143.0 208.2,137.3 224.0,132.2 239.8,127.5 255.6,123.3 271.4,119.5 287.2,116.1 303.0,113.0 318.8,110.2 334.6,107.6 350.4,105.3 366.2,103.2 382.0,101.3 397.8,99.6 413.6,98.1 429.4,96.7 445.2,95.4 461.0,94.3 476.8,93.2 492.6,92.3 508.4,91.5 524.2,90.7 540.0,90.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><circle cx=\"66.0\" cy=\"216.0\" r=\"4\" fill=\"#c2820f\"/><text x=\"72\" y=\"230\" fill=\"#c2820f\" font-size=\"10\">green compact: ~80%</text><circle cx=\"540.0\" cy=\"90.0\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"420\" y=\"82\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">sintered: ~96%, never 100%</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Residual pores are the reason PM properties never quite match wrought material</text></svg><figcaption>Compaction alone leaves a fragile, porous green compact. Sintering closes much of that porosity through diffusion bonding, but density approaches full theoretical density asymptotically — never quite reaching it, which is why residual porosity remains the controlling variable for PM part properties.</figcaption></figure>\n\n<h3>§1 · The three-step process</h3>\n<p><b>Powder production</b> — most commonly atomization, spraying molten metal into fine droplets that solidify as powder — sets particle size and shape, which strongly affects how well the powder compacts and flows. <b>Compaction</b> presses powder in a rigid die under high pressure into a <b>green compact</b>: a fragile, porous shape held together only by mechanical interlocking and cold welding at particle contact points, typically around \\(80\\)–\\(85\\)% of theoretical density — not yet a real structural part. <b>Sintering</b> heats that compact, below its melting point (typically \\(70\\)–\\(90\\)% of \\(T_m\\), Lesson 6's homologous-temperature logic returning here), in a controlled atmosphere, letting atomic diffusion bond particles together, close pores, and build real mechanical strength.</p>\n\n<h3>§2 · Density is the controlling quality variable</h3>\n<p>Nearly every mechanical property of a PM part — strength, ductility, fatigue life, corrosion resistance — scales with its final density relative to the fully-dense wrought material of the same composition. A part at \\(90\\)% density can fall meaningfully short of wrought strength and ductility, because residual pores act as stress concentrators and crack-initiation sites — the same flaw logic that governs fracture mechanics generally. Density is set primarily by compaction pressure and sintering temperature and time, both pushing the compact closer to full density with diminishing returns; it approaches, but never quite reaches, \\(100\\)%. Secondary operations — repressing, infiltration with a lower-melting metal, resin impregnation — can push density and properties higher still, at added cost, used only when base sintered properties fall short of the target.</p>\n\n<h3>§3 · Where PM wins</h3>\n<p>PM excels at small, complex parts at <b>high volume</b>: powder goes from raw material to near-net shape in one compaction step, needing little or no machining — the same volume-justifies-tooling economics as die casting. PM also uniquely delivers <b>engineered porosity</b>: a self-lubricating bronze or iron bearing is deliberately made at less than full density, then oil-impregnated into the connected pore network, so the part itself becomes a distributed oil reservoir — a property a fully-dense machined bearing simply cannot provide. Finally, PM handles materials no other route can: tungsten's melting point defeats casting, and a cemented-carbide cutting insert — hard tungsten-carbide particles bonded in a tougher cobalt matrix — is a composite structure that cannot be created by casting or by machining a homogeneous bar at all.</p>\n\n<h3>§4 · Working method — selecting or specifying a PM part</h3>\n<p>(1) Translate the property target into a required density, or deliberately accept a lower density if porosity itself is the desired feature, as in a self-lubricating bearing. (2) Confirm volume justifies compaction die tooling cost, the same volume logic as Lesson 5's casting comparison. (3) Confirm the geometry is genuinely PM-favorable — no deep re-entrant features the die cannot eject — and that the material is either economical or genuinely hard to process any other way. (4) Decide sintered-only versus a secondary densification step based on whether base sintered properties actually meet the target.</p>\n<div class=\"keybox\"><span class=\"tag\">Key fact — density controls properties</span>\n<p>PM mechanical properties scale with final density relative to fully-dense material. Density is set by compaction pressure and sintering temperature/time — approaching, never reaching, 100%.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Homologous temperature</b> (Lesson 6) — sintering temperature is stated relative to Tm the same way.</li><li><b>Flaws as stress concentrators</b> (Materials Science II) — the reason porosity limits strength.</li></ul>\n<h4>Toolkit — powder metallurgy</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Green compact</td><td>pressed, pre-sintered, ~80-85% density</td><td>Fragile; not yet structural.</td></tr>\n<tr><td>Sintering</td><td>diffusion bonding below Tm</td><td>Builds real strength, closes pores.</td></tr>\n<tr><td>Density (relative)</td><td>vs. fully-dense wrought material</td><td>The controlling PM property variable.</td></tr>\n<tr><td>Engineered porosity</td><td>deliberately sub-full density</td><td>Self-lubricating bearings.</td></tr>\n<tr><td>Cemented carbide</td><td>hard particles + tough binder</td><td>A PM-only composite structure.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Density and expected strength</b></p><p><b>Problem.</b> A PM iron part is compacted to 82% density (green), then sintered to 93% density. Would this part be expected to match the tensile strength of a fully-dense wrought iron of the same composition? Explain.</p>",
+    "solution": "<p><b>Solution.</b> No — at 93% density, roughly 7% of the cross-section is porosity, and those pores act as stress concentrators and crack-initiation sites. Strength, and especially ductility, will fall meaningfully short of the fully-dense wrought material, even though sintering has closed much of the original green porosity.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why a solid bearing cannot do the same job</b></p><p><b>Problem.</b> A self-lubricating bronze bearing is specified at 80% density with the remaining pore volume oil-impregnated. Explain why a fully-dense (100%) bronze bearing, machined to the identical external shape, could not deliver the same function.</p>",
+    "solution": "<p><b>Solution.</b> A fully-dense bearing has no connected internal pore network to hold and slowly release oil during operation. Self-lubrication comes specifically from the engineered porosity acting as a distributed oil reservoir — a feature only a deliberately sub-full-density PM part provides; a solid bearing would need external lubrication instead.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why PM, not casting or machining</b></p><p><b>Problem.</b> A cutting-tool insert must combine extreme hardness (tungsten carbide) with enough toughness to survive interrupted cuts (a cobalt binder). Explain why this combination is made by powder metallurgy rather than casting or machining from a wrought bar.</p>",
+    "solution": "<p><b>Solution.</b> Tungsten carbide's melting point is far too high for casting, and the hard carbide phase and tougher cobalt binder cannot be combined by machining a homogeneous wrought bar, since no such wrought two-phase material exists. PM presses and sinters the two powders directly into a hard-particle-in-tough-matrix composite that cannot be created by any other route.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The three basic PM steps, in order, are:</p>",
+    "choices": [
+     "Powder production, compaction, sintering",
+     "Sintering, compaction, powder production",
+     "Compaction, powder production, sintering",
+     "Powder production, sintering, compaction"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the standard PM process sequence.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A \"green compact\" refers to:</p>",
+    "choices": [
+     "The pressed, pre-sintered shape, held together mechanically and fragile",
+     "The fully finished, sintered part",
+     "A part that has failed inspection",
+     "A part infiltrated with a second metal"
+    ],
+    "answer": 0,
+    "solution": "<p>\"Green\" here means unsintered, not a color.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Sintering temperature is typically:</p>",
+    "choices": [
+     "Below the material's melting point, allowing diffusion bonding without melting",
+     "Above the material's melting point",
+     "Irrelevant to the process",
+     "Always exactly 0.5 Tm for every material"
+    ],
+    "answer": 0,
+    "solution": "<p>Sintering relies on solid-state diffusion, not melting.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The single controlling quality variable in most PM parts is:</p>",
+    "choices": [
+     "Final density relative to the fully-dense material",
+     "Powder color",
+     "Compaction die cost",
+     "Furnace brand"
+    ],
+    "answer": 0,
+    "solution": "<p>Nearly every mechanical property tracks relative density.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Residual pores in a PM part act as:</p>",
+    "choices": [
+     "Stress concentrators and crack-initiation sites, lowering strength and ductility",
+     "Reinforcement, raising strength",
+     "A source of extra hardness",
+     "Irrelevant to mechanical properties"
+    ],
+    "answer": 0,
+    "solution": "<p>Pores behave as flaws, exactly as in fracture-mechanics reasoning generally.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A self-lubricating PM bearing works by:</p>",
+    "choices": [
+     "Deliberately retaining connected porosity, then impregnating it with oil",
+     "Being pressed to full theoretical density",
+     "Using a special lubricant-infused powder alloy alone",
+     "Avoiding sintering entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>The porosity itself is the engineered feature, not a defect to eliminate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>PM is well suited to high-volume production of small, complex parts because:</p>",
+    "choices": [
+     "Near-net shape is achieved directly from compaction, with little or no machining needed",
+     "PM tooling is always cheaper than any other process regardless of volume",
+     "PM parts never need any secondary operation",
+     "PM only works for very large parts"
+    ],
+    "answer": 0,
+    "solution": "<p>Volume justifies the compaction tooling cost, the same logic as die casting.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cemented carbide cutting-tool inserts are made by PM because:</p>",
+    "choices": [
+     "The hard-phase/binder-phase combination cannot be created by casting or machining a homogeneous bar",
+     "PM is simply the cheapest option available",
+     "Carbide tools require no hardness at all",
+     "Casting tungsten carbide is straightforward"
+    ],
+    "answer": 0,
+    "solution": "<p>No wrought or cast route can produce this specific two-phase composite structure.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A maintenance store stocking PM bronze bushings for pump and fan applications is relying on §3's engineered-porosity property directly: those bushings run without a separate lubrication line specifically because they are oil-impregnated PM parts, and substituting a solid machined bronze bushing of the same outer dimension for a \"quick fix\" removes that self-lubricating capability entirely, often leading to premature wear the substitution was never designed to survive.</p>\n<p>A batch of PM gears or small structural parts failing inspection on dimensional or density grounds is usually traced back to §1's process chain in reverse: a density shortfall points first to compaction pressure or sintering time/temperature records, not to the powder supplier, since the raw powder itself rarely varies as much as the pressing and sintering parameters that convert it into a finished part.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Total cost versus production volume for two processes, process A with low fixed cost and high variable cost per part, process B with high fixed cost and low variable cost per part, the two lines crossing at the break even volume of three thousand units\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Break-even volume: where the cheaper process switches</text><line x1=\"66\" y1=\"255\" x2=\"540\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1.3\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1.3\"/><text x=\"303\" y=\"277\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"11\">production volume, Q →</text><text x=\"20\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 20 180)\">total cost →</text><line x1=\"66\" y1=\"247.2\" x2=\"540\" y2=\"60.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><text x=\"380\" y=\"90\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"600\">Process A: low fixed, high variable ($2,000 + $8/part)</text><line x1=\"66\" y1=\"177.0\" x2=\"540\" y2=\"130.2\" stroke=\"#c2820f\" stroke-width=\"2.2\"/><text x=\"380\" y=\"155\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"600\">Process B: high fixed, low variable ($20,000 + $2/part)</text><circle cx=\"303.0\" cy=\"153.6\" r=\"4.5\" fill=\"#1f7a5c\"/><text x=\"230\" y=\"175\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"600\">break-even: Q = 3,000</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Below 3,000, A is cheaper. Above it, B is cheaper — by a widening margin</text></svg><figcaption>Total cost is fixed cost plus variable cost times quantity. Two processes with different cost structures cross at a break-even volume — below it the low-tooling process wins, above it the high-tooling, low-per-part process wins by an increasing margin.</figcaption></figure>\n\n<h3>§1 · Property indices meet fixed vs. variable cost</h3>\n<p><b>Fixed cost</b> — tooling, dies, molds, setup — is paid once (or per changeover) regardless of how many parts are made. <b>Variable cost</b> — material, energy, direct labor per cycle — scales directly with quantity. Total cost for a quantity \\(Q\\) is \\[ C(Q) = \\text{Fixed} + \\text{Variable}\\times Q. \\] Two processes capable of making the identical part generally carry very different fixed and variable costs — a process with cheap tooling but a high per-part cost (sand casting) against one with expensive tooling but a low per-part cost (die casting) is exactly the volume logic Lessons 5 and 10 already touched, now made explicit and quantitative.</p>\n\n<h3>§2 · Break-even volume — the working method</h3>\n<p>Setting two processes' total-cost lines equal and solving for \\(Q\\) gives the <b>break-even volume</b>: below it, the low-fixed-cost process is cheaper; above it, the low-variable-cost process is cheaper, by a widening margin as volume grows further. This single number is genuinely decision-driving, not academic — comparing a customer's actual expected volume against it is, in practice, how a manufacturing engineer chooses between competing processes more often than any single technical merit argument alone.</p>\n\n<h3>§3 · Reading a real decision</h3>\n<p>Process A: \\(\\$2{,}000\\) fixed, \\(\\$8\\)/part. Process B: \\(\\$20{,}000\\) fixed, \\(\\$2\\)/part. Break-even: \\( Q_{be}=(20{,}000-2{,}000)/(8-2)=3{,}000 \\) units. Below \\(3{,}000\\) units, Process A wins; above it, Process B wins, and the gap widens quickly — at \\(10{,}000\\) units, Process A costs \\(\\$2{,}000+\\$80{,}000=\\$82{,}000\\) against Process B's \\(\\$20{,}000+\\$20{,}000=\\$40{,}000\\), roughly half. The method generalizes past two processes: with three or more candidates, compute every pair's break-even volume, and the cheapest process at any target volume is whichever line sits lowest at that specific \\(Q\\) — not necessarily the same process across the whole volume range.</p>\n\n<h3>§4 · Beyond the break-even number</h3>\n<p>Break-even analysis assumes cost is the only criterion — a real decision still needs Lesson 5's and Lesson 10's technical screening first: can the process even achieve the required geometry, tolerance, finish, and material at all? Comparing costs between two processes that cannot both actually make the part is a wasted exercise. The analysis also assumes static per-part costs, ignoring that variable cost itself can fall with cumulative volume through learning-curve effects, and that any demand forecast carries real uncertainty. A decision made right at a razor-thin break-even margin is riskier than the arithmetic alone suggests — a prudent engineer builds in margin rather than committing to whichever process wins by a small amount at the forecast volume alone.</p>\n<div class=\"keybox\"><span class=\"tag\">Key formula — break-even volume</span>\n<p>\\[ C(Q)=\\text{Fixed}+\\text{Variable}\\times Q,\\qquad Q_{be}=\\frac{\\text{Fixed}_B-\\text{Fixed}_A}{\\text{Variable}_A-\\text{Variable}_B}. \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Process selection by volume</b> (Lesson 5, casting; Lesson 10, PM) — this lesson makes that logic explicit and quantitative.</li><li>Basic linear-equation algebra (solving for a crossing point).</li></ul>\n<h4>Toolkit — cost and process selection</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Fixed cost</td><td>tooling, setup — independent of Q</td><td>Paid once, regardless of volume.</td></tr>\n<tr><td>Variable cost</td><td>per-part cost</td><td>Scales directly with quantity.</td></tr>\n<tr><td>Total cost</td><td>\\( C(Q)=\\text{Fixed}+\\text{Variable}\\times Q \\)</td><td>Compares any two processes.</td></tr>\n<tr><td>Break-even volume</td><td>\\( Q_{be}=(F_B-F_A)/(V_A-V_B) \\)</td><td>Where the cheaper choice switches.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Break-even volume, computed</b></p><p><b>Problem.</b> Process A costs \\(\\$2{,}000\\) fixed plus \\(\\$8\\)/part. Process B costs \\(\\$20{,}000\\) fixed plus \\(\\$2\\)/part. Find the break-even volume, and state which process is cheaper below it.</p>",
+    "solution": "<p><b>Solution.</b> \\( Q_{be}=(20{,}000-2{,}000)/(8-2)=18{,}000/6=3{,}000 \\) units. Below 3,000 units, Process A (lower fixed cost) is cheaper.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Comparing total cost at a forecast volume</b></p><p><b>Problem.</b> At a forecast volume of 10,000 units per year, compute the total cost of both processes from the previous problem and state which should be selected on cost grounds alone.</p>",
+    "solution": "<p><b>Solution.</b> Cost A \\(=2{,}000+8\\times10{,}000=\\$82{,}000\\). Cost B \\(=20{,}000+2\\times10{,}000=\\$40{,}000\\). Process B is cheaper by a wide margin at this volume — select B on cost grounds, subject to confirming it can actually make the part to spec first.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>A third process, and a second break-even point</b></p><p><b>Problem.</b> A third process, C, has fixed cost \\(\\$50{,}000\\) and variable cost \\(\\$1\\)/part. At what volume does Process C become cheaper than Process B (fixed \\(\\$20{,}000\\), variable \\(\\$2\\)/part)?</p>",
+    "solution": "<p><b>Solution.</b> \\( Q_{be}=(50{,}000-20{,}000)/(2-1)=30{,}000 \\) units. Below 30,000 units, B is cheaper than C; above it, C becomes cheaper.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fixed cost is:</p>",
+    "choices": [
+     "Cost that does not depend on production quantity",
+     "Cost per part, scaling with quantity",
+     "Always higher than variable cost",
+     "Only relevant to die casting"
+    ],
+    "answer": 0,
+    "solution": "<p>Tooling, dies, and setup are paid once, regardless of how many parts follow.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Variable cost is:</p>",
+    "choices": [
+     "Cost per part, scaling directly with quantity",
+     "A one-time tooling charge",
+     "Independent of production quantity",
+     "Always lower than fixed cost"
+    ],
+    "answer": 0,
+    "solution": "<p>Material, energy, and per-cycle labor scale with how many parts are made.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Total cost for quantity Q is given by:</p>",
+    "choices": [
+     "C(Q) = Fixed + Variable × Q",
+     "C(Q) = Fixed × Variable × Q",
+     "C(Q) = Fixed − Variable × Q",
+     "C(Q) = Fixed / Q"
+    ],
+    "answer": 0,
+    "solution": "<p>A straight line in Q, with Fixed as the intercept and Variable as the slope.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Break-even volume is:</p>",
+    "choices": [
+     "The quantity at which two processes' total costs are equal",
+     "The quantity at which a single process's cost reaches zero",
+     "Always equal to the higher fixed cost",
+     "Irrelevant to process selection"
+    ],
+    "answer": 0,
+    "solution": "<p>Where the two cost lines cross.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Below the break-even volume, the process with lower fixed cost:</p>",
+    "choices": [
+     "Is the cheaper choice",
+     "Is always the more expensive choice",
+     "Has no cost advantage at all",
+     "Cannot be determined without more data"
+    ],
+    "answer": 0,
+    "solution": "<p>Its cost advantage from lower tooling outweighs its higher per-part cost at low volume.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Above the break-even volume, the process with lower variable cost:</p>",
+    "choices": [
+     "Becomes the cheaper choice, by a widening margin",
+     "Becomes more expensive",
+     "Ties exactly with the other process forever",
+     "Is irrelevant to the decision"
+    ],
+    "answer": 0,
+    "solution": "<p>Its lower per-part cost compounds as volume grows further past break-even.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cost comparison between two candidate processes is only meaningful if:</p>",
+    "choices": [
+     "Both processes can actually achieve the required geometry, tolerance, and material first",
+     "The cheaper process is always automatically correct",
+     "Fixed cost is identical for both",
+     "Variable cost is identical for both"
+    ],
+    "answer": 0,
+    "solution": "<p>Technical feasibility must be confirmed before cost comparison means anything.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A decision made right at a razor-thin break-even margin:</p>",
+    "choices": [
+     "Carries more risk than the arithmetic alone suggests, given demand forecast uncertainty",
+     "Is always perfectly safe, since the math is exact",
+     "Should always default to the higher-fixed-cost process",
+     "Eliminates the need for any further judgment"
+    ],
+    "answer": 0,
+    "solution": "<p>Real forecasts carry uncertainty the break-even number itself does not capture.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A quoting engineer comparing sand casting against die casting for a new bracket order is running §3's exact arithmetic before naming a price: the customer's stated annual volume, checked against the break-even point between the two processes' actual fixed and variable costs, decides which process gets quoted — and a customer whose volume forecast sits close to that break-even point is worth a direct conversation about forecast confidence before committing to expensive die tooling on a volume that might not materialize.</p>\n<p>A plant evaluating whether to bring a currently outsourced part in-house is running the identical break-even logic in a different guise: in-house production usually looks like Process B (higher fixed cost for equipment/tooling, lower variable cost per part) against the outsourced supplier's per-part quote acting as Process A (zero fixed cost to the plant, but a higher effective per-part price) — the same Q_be arithmetic, applied to a make-or-buy decision rather than a choice between two manufacturing processes.</p>\n"
  }
 }
