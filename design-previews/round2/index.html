@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nexus — Round 2 · Five Bright Drafts</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="../shared/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..750&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+:root{--bg:#FBFBF8;--surface:#fff;--sunken:#F2F4F1;--ink:#16181B;--muted:#68707B;--faint:#98A0AB;
+  --line:#E5E8E4;--line2:#D2D6D1;--accent:#0B8A68;--accent-deep:#076B50;--tint:#E7F5EF;--tint-line:#C5E5D7;
+  --warn:#B4690E;--warn-tint:#FBF1E3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 'Geist',ui-sans-serif,sans-serif;padding:0 0 90px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header.top{padding:52px 0 8px}
+.k{font:11px 'Geist Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1{font-size:clamp(28px,4vw,42px);letter-spacing:-.03em;margin:10px 0 8px;font-weight:700}
+p.lead{color:var(--muted);max-width:72ch;margin:8px 0 0;font-size:15.5px}
+.note{margin:22px 0 0;border:1px solid var(--tint-line);background:var(--tint);border-radius:12px;padding:13px 18px;font-size:13px;color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;margin:34px 0 0}
+.draft{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 2px rgba(22,24,27,.05);overflow:hidden}
+.draft .head{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sw{display:flex;gap:5px}
+.sw i{width:20px;height:20px;border-radius:6px;border:1px solid rgba(0,0,0,.12)}
+.draft h2{margin:0;font-size:19px;letter-spacing:-.015em}
+.draft .tag{font:10.5px 'Geist Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.draft .head .aux{margin-inline-start:auto;font-size:12.5px;color:var(--faint)}
+.draft .body{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;padding:16px 20px}
+@media(max-width:860px){.draft .body{grid-template-columns:1fr}}
+.draft p.desc{margin:0;font-size:13.5px;color:var(--muted);line-height:1.7}
+.links{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+@media(max-width:640px){.links{grid-template-columns:1fr 1fr}}
+.links a{display:block;text-align:center;border:1px solid var(--line2);border-radius:9px;color:var(--ink);
+  text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 6px}
+.links a:hover{border-color:var(--accent);color:var(--accent-deep)}
+.rate{border:1px solid var(--line);border-radius:12px;background:var(--sunken);padding:14px 16px}
+.rate .rl{font-size:12px;font-weight:650;margin:0 0 8px}
+.stars{display:flex;gap:6px}
+.stars label{position:relative;cursor:pointer}
+.stars input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.stars span{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--line2);
+  border-radius:9px;font:14px 'Geist Mono',monospace;color:var(--muted);background:var(--surface)}
+.stars label:hover span{border-color:var(--accent);color:var(--ink)}
+.stars input:checked + span{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+.rate textarea{width:100%;margin-top:10px;border:1px solid var(--line2);border-radius:9px;background:var(--surface);
+  color:var(--ink);font:13px/1.6 'Geist',sans-serif;padding:9px 12px;resize:vertical;min-height:58px}
+.rate textarea::placeholder{color:var(--faint)}
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(251,251,248,.92);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);padding:12px 24px;display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
+.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;font:600 13.5px 'Geist',sans-serif;
+  border-radius:999px;padding:11px 22px;cursor:pointer}
+.btn:hover{background:var(--accent-deep)}
+#msg{font-size:12.5px;color:var(--accent-deep);font-weight:600}
+.docs{margin:30px 0 0;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:13px}
+.docs a{color:var(--accent-deep);text-decoration:none;border-bottom:1px solid var(--tint-line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="k">Nexus · design-drafts branch · Round 2 — the bright collection</div>
+  <h1>Five full designs. All luminous. Rate each one.</h1>
+  <p class="lead">Per your direction: nothing dark, nothing dim — five genuinely different bright directions,
+  each applied across the same four real surfaces (homepage, curriculum, ELX&nbsp;205 course + career outlook,
+  Lesson&nbsp;08 with all four tabs and the working quiz). Motion is on everywhere: sections glide in, plates
+  draw themselves, gears spin with your scroll. Experience each, score it 1–5, note what you'd keep or change,
+  then press <b>Copy my ratings</b> at the bottom and paste the result back to me.</p>
+  <p class="note"><b>Also in this round:</b> a freshly generated bright hero animation (your vector recipe,
+  daylight edition) leads Draft E — and the same clip is available to whichever direction wins.</p>
+</header>
+
+<div class="grid">
+  <section class="draft" id="rate-aurora">
+    <div class="head"><span class="sw"><i style="background:#FBFBF8"></i><i style="background:#0B8A68"></i><i style="background:#2380E8"></i><i style="background:#F5A623"></i></span>
+      <div><h2>A — Aurora</h2><span class="tag">The bright learning console</span></div>
+      <span class="aux">Geist · emerald on warm zinc</span></div>
+    <div class="body">
+      <div><p class="desc">The applied direction, evolved and permanently luminous: a soft aurora wash behind
+      the hero, the learner console with live progress, calm density everywhere. The safest, most product-like
+      of the five — pick this if the current site is already close and just needs more light and life.</p>
+      <div class="links"><a href="a-aurora/index.html">Homepage</a><a href="a-aurora/curriculum.html">Curriculum</a>
+      <a href="a-aurora/course.html">Course + career</a><a href="a-aurora/lesson.html">Lesson + quiz</a></div></div>
+      <div class="rate" data-draft="Aurora"><p class="rl">Your score</p>
+        <div class="stars">
+          <label><input type="radio" name="r-aurora" value="1"><span>1</span></label>
+          <label><input type="radio" name="r-aurora" value="2"><span>2</span></label>
+          <label><input type="radio" name="r-aurora" value="3"><span>3</span></label>
+          <label><input type="radio" name="r-aurora" value="4"><span>4</span></label>
+          <label><input type="radio" name="r-aurora" value="5"><span>5</span></label>
+        </div>
+        <textarea placeholder="What would you keep? What would you change?"></textarea></div>
+    </div>
+  </section>
+
+  <section class="draft" id="rate-meridian">
+    <div class="head"><span class="sw"><i style="background:#FBF8F1"></i><i style="background:#1D1A15"></i><i style="background:#8E2F22"></i><i style="background:#F4EBDD"></i></span>
+      <div><h2>B — Meridian</h2><span class="tag">The bright press — editorial daylight</span></div>
+      <span class="aux">Fraunces serif · paper, ink, one crimson</span></div>
+    <div class="body">
+      <div><p class="desc">A university-press journal at noon: warm paper, hanging numerals, chapters with
+      Roman folios — and now motion: the gear plate draws itself as you arrive, chapters glide in. The most
+      distinguished and reading-focused direction; typography does all the work.</p>
+      <div class="links"><a href="b-meridian/index.html">Homepage</a><a href="b-meridian/curriculum.html">Curriculum</a>
+      <a href="b-meridian/course.html">Course + career</a><a href="b-meridian/lesson.html">Lesson + quiz</a></div></div>
+      <div class="rate" data-draft="Meridian"><p class="rl">Your score</p>
+        <div class="stars">
+          <label><input type="radio" name="r-meridian" value="1"><span>1</span></label>
+          <label><input type="radio" name="r-meridian" value="2"><span>2</span></label>
+          <label><input type="radio" name="r-meridian" value="3"><span>3</span></label>
+          <label><input type="radio" name="r-meridian" value="4"><span>4</span></label>
+          <label><input type="radio" name="r-meridian" value="5"><span>5</span></label>
+        </div>
+        <textarea placeholder="What would you keep? What would you change?"></textarea></div>
+    </div>
+  </section>
+
+  <section class="draft" id="rate-beacon">
+    <div class="head"><span class="sw"><i style="background:#FFFDF6"></i><i style="background:#F59E0B"></i><i style="background:#0D9488"></i><i style="background:#F4633A"></i></span>
+      <div><h2>C — Beacon</h2><span class="tag">Encouragement as a design system</span></div>
+      <span class="aux">Bricolage Grotesque · sunshine amber + teal</span></div>
+    <div class="body">
+      <div><p class="desc">Your words made visible: learning as bright, supported, encouraged. Sunrise hero,
+      warm amber leading, the robot crew back as guides, friendly rounded cards — while the lectures and
+      quizzes keep their serious professor voice. The most optimistic and welcoming direction.</p>
+      <div class="links"><a href="c-beacon/index.html">Homepage</a><a href="c-beacon/curriculum.html">Curriculum</a>
+      <a href="c-beacon/course.html">Course + career</a><a href="c-beacon/lesson.html">Lesson + quiz</a></div></div>
+      <div class="rate" data-draft="Beacon"><p class="rl">Your score</p>
+        <div class="stars">
+          <label><input type="radio" name="r-beacon" value="1"><span>1</span></label>
+          <label><input type="radio" name="r-beacon" value="2"><span>2</span></label>
+          <label><input type="radio" name="r-beacon" value="3"><span>3</span></label>
+          <label><input type="radio" name="r-beacon" value="4"><span>4</span></label>
+          <label><input type="radio" name="r-beacon" value="5"><span>5</span></label>
+        </div>
+        <textarea placeholder="What would you keep? What would you change?"></textarea></div>
+    </div>
+  </section>
+
+  <section class="draft" id="rate-blueprint">
+    <div class="head"><span class="sw"><i style="background:#F4F8FB"></i><i style="background:#1D63B8"></i><i style="background:#C77F0A"></i><i style="background:#152433"></i></span>
+      <div><h2>D — Blueprint Day</h2><span class="tag">The drawing office at noon</span></div>
+      <span class="aux">Archivo · drafting blue on grid paper</span></div>
+    <div class="body">
+      <div><p class="desc">The engineering soul in full daylight: blueprint paper with a fine cyan grid,
+      title-block sheet hero, dimension-line dividers, squared machined corners — and figures that draw
+      themselves stroke by stroke. The most technical identity, entirely bright.</p>
+      <div class="links"><a href="d-blueprint/index.html">Homepage</a><a href="d-blueprint/curriculum.html">Curriculum</a>
+      <a href="d-blueprint/course.html">Course + career</a><a href="d-blueprint/lesson.html">Lesson + quiz</a></div></div>
+      <div class="rate" data-draft="Blueprint Day"><p class="rl">Your score</p>
+        <div class="stars">
+          <label><input type="radio" name="r-blueprint" value="1"><span>1</span></label>
+          <label><input type="radio" name="r-blueprint" value="2"><span>2</span></label>
+          <label><input type="radio" name="r-blueprint" value="3"><span>3</span></label>
+          <label><input type="radio" name="r-blueprint" value="4"><span>4</span></label>
+          <label><input type="radio" name="r-blueprint" value="5"><span>5</span></label>
+        </div>
+        <textarea placeholder="What would you keep? What would you change?"></textarea></div>
+    </div>
+  </section>
+
+  <section class="draft" id="rate-skyline">
+    <div class="head"><span class="sw"><i style="background:#F7FAFE"></i><i style="background:#2380E8"></i><i style="background:#0B8A68"></i><i style="background:#FBFAF5"></i></span>
+      <div><h2>E — Skyline</h2><span class="tag">The open-sky, video-led showcase</span></div>
+      <span class="aux">Space Grotesk · sky blue, light glass</span></div>
+    <div class="body">
+      <div><p class="desc">The effects showcase on a luminous sky gradient: the newly generated bright hero
+      animation front and center, floating glass chips, gradient headline, cards that lift, sections that
+      glide. The most cinematic, most "launch-day product" direction of the five.</p>
+      <div class="links"><a href="e-skyline/index.html">Homepage</a><a href="e-skyline/curriculum.html">Curriculum</a>
+      <a href="e-skyline/course.html">Course + career</a><a href="e-skyline/lesson.html">Lesson + quiz</a></div></div>
+      <div class="rate" data-draft="Skyline"><p class="rl">Your score</p>
+        <div class="stars">
+          <label><input type="radio" name="r-skyline" value="1"><span>1</span></label>
+          <label><input type="radio" name="r-skyline" value="2"><span>2</span></label>
+          <label><input type="radio" name="r-skyline" value="3"><span>3</span></label>
+          <label><input type="radio" name="r-skyline" value="4"><span>4</span></label>
+          <label><input type="radio" name="r-skyline" value="5"><span>5</span></label>
+        </div>
+        <textarea placeholder="What would you keep? What would you change?"></textarea></div>
+    </div>
+  </section>
+</div>
+
+<div class="docs">
+  <a href="../index.html">Round 1 drafts (reference)</a>
+  <a href="../RESEARCH.md">Market study</a>
+  <a href="../AUDIT.md">Site audit</a>
+</div>
+</div>
+
+<div class="sticky-bar">
+  <button class="btn" id="copyRatings" type="button">Copy my ratings</button>
+  <span id="msg" role="status"></span>
+</div>
+
+<script>
+document.getElementById('copyRatings').addEventListener('click', function () {
+  var lines = ['NEXUS ROUND-2 DRAFT RATINGS', ''];
+  document.querySelectorAll('.rate').forEach(function (r) {
+    var name = r.getAttribute('data-draft');
+    var sel = r.querySelector('input:checked');
+    var note = r.querySelector('textarea').value.trim();
+    lines.push('• ' + name + ': ' + (sel ? sel.value + '/5' : 'unrated') + (note ? ' — ' + note : ''));
+  });
+  var text = lines.join('\n');
+  var msg = document.getElementById('msg');
+  function say(t){ msg.textContent = t; setTimeout(function(){ msg.textContent=''; }, 4000); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){ say('Copied — paste it back to me in chat.'); },
+      function(){ say('Could not copy — select and copy manually.'); });
+  } else say('Clipboard unavailable in this browser.');
+});
+</script>
+</body>
+</html>

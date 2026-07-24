@@ -975,6 +975,15 @@ still the pre-quiz-engine "examples" text blob — a format retrofit, not
 new authoring — tracked separately, not blocking Year 1 closure.
 Coverage 133→170/528 lessons at full depth (25%→32%) across this session.
 
+BRIGHTNESS VALUE (owner, 2026-07-24, BINDING, supersedes any dark-first
+styling): backgrounds are NEVER dark or dim — "learning and being productive
+shouldn't be dark; it's actually bright and fully supported and encouraged."
+No dark mode, no dark-first drafts; dark pixels only inside bounded approved
+media (e.g. the hero video panel). Adaptive dark theme REMOVED from the
+applied Atlas build (commit bf9fb635). Round-2 directive in the same order:
+present 3-5 FULL bright design drafts for owner rating; automations/effects/
+video generation explicitly permitted for field-relevant polish.
+
 ATLAS REDESIGN APPLIED — design-drafts branch (owner directives 2026-07-24;
 commits 2abe4d3f → 352d6026): the owner-gated "design refinement" milestone
 executed via a three-draft process. (1) Verified market study + honest site

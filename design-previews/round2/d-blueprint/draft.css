@@ -1,0 +1,100 @@
+/* ROUND-2 DRAFT D — "BLUEPRINT DAY": the engineering soul, in daylight.
+   The technical register rebuilt on a bright drawing office: blueprint
+   paper with a fine cyan grid, drafting-blue + safety-amber accents,
+   squared corners, dimension-line details, sheets that draw themselves.
+   Archivo (incl. Expanded display) + IBM Plex Mono. */
+@import url("../base.css");
+:root{
+  --bg:#F4F8FB; --surface:#FFFFFF; --sunken:#EAF1F7;
+  --ink:#152433; --soft:#3C4C5C; --muted:#64778A; --faint:#93A5B6;
+  --line:#D8E4EE; --line2:#BECFDE;
+  --accent:#1D63B8; --accent-deep:#164E92; --accent-ink:#194F8E;
+  --tint:#E7F0FA; --tint-line:#C6DAF0;
+  --accent2:#0B8A68; --warn:#C77F0A; --warn-tint:#FBF0DA;
+  --ok:#1B7F4D; --bad:#BE3B2E; --bad-tint:#FAEAE6;
+  --shadow:0 1px 2px rgba(21,36,51,.07);
+  --disp:'Archivo',ui-sans-serif,sans-serif;
+  --sans:'Archivo',ui-sans-serif,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r:3px; --r-sm:2px;
+}
+body{background:
+  repeating-linear-gradient(0deg,rgba(29,99,184,.045) 0 1px,transparent 1px 28px),
+  repeating-linear-gradient(90deg,rgba(29,99,184,.045) 0 1px,transparent 1px 28px),
+  var(--bg)}
+h1,h2{font-stretch:112%}
+h1{font-weight:700;letter-spacing:-.015em;text-transform:uppercase}
+h1{font-size:clamp(28px,4vw,46px)}
+.eyebrow{letter-spacing:.2em}
+/* title-block app bar */
+.appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,#FFFFFF 92%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.appbar .in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:14px;height:56px;padding:0 24px}
+.appbar .brand{display:flex;align-items:center;gap:11px;color:var(--ink)}
+.appbar .brand img{width:26px;height:31px}
+.appbar .brand .txt{font-size:14px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;font-stretch:110%}
+.appbar .brand .txt em{font-style:normal;color:var(--accent)}
+.appbar nav{display:flex;gap:0;margin-inline-start:10px;overflow-x:auto;scrollbar-width:none}
+.appbar nav::-webkit-scrollbar{display:none}
+.appbar nav a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  padding:8px 12px;border-radius:0;border-inline-end:1px solid var(--line);flex:0 0 auto}
+.appbar nav a:hover{color:var(--ink);background:var(--sunken)}
+.appbar nav a.on{color:var(--accent);background:var(--tint);font-weight:600}
+/* sheet hero with title block */
+.hero{padding:54px 0 22px}
+.hero .sheet{position:relative;background:var(--surface);border:2px solid var(--ink);box-shadow:var(--shadow);padding:0}
+.hero .sheet-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid var(--ink);
+  padding:9px 22px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.hero .sheet-head b{color:var(--accent);font-weight:500}
+.hero .sheet-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center;padding:40px 40px 34px}
+@media(max-width:960px){.hero .sheet-body{grid-template-columns:1fr;gap:28px;padding:26px 22px}}
+.hero h1{max-width:18ch}
+.hero h1 .hl{color:var(--accent)}
+.hero .sub{margin:18px 0 0}
+.statline{display:flex;gap:8px 22px;flex-wrap:wrap;margin:24px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.statline b{color:var(--accent);font-weight:600}
+.hero-fig{border:1px solid var(--line2);background:
+  repeating-linear-gradient(0deg,rgba(29,99,184,.05) 0 1px,transparent 1px 24px),
+  repeating-linear-gradient(90deg,rgba(29,99,184,.05) 0 1px,transparent 1px 24px),#FDFEFF;padding:16px}
+.hero-fig svg{display:block;width:100%;height:auto}
+.hero-fig .figcap{border-top:1px solid var(--line2);margin-top:12px;padding-top:8px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+/* dimension-line section dividers */
+.sect-head{position:relative;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.sect-head::before,.sect-head::after{content:"";position:absolute;bottom:-4px;width:1px;height:9px;background:var(--ink)}
+.sect-head::before{left:0}.sect-head::after{right:0}
+.sect-head h2{text-transform:uppercase;font-size:clamp(19px,2.4vw,25px);letter-spacing:.02em}
+/* cards: drafting sheets */
+.card,.ccard,.stat,.quiz-item,.lib-block,.applied,.tracker-strip{border-radius:var(--r)}
+.ccard .glyph{border-radius:2px;background:var(--tint);border-color:var(--tint-line)}
+.ccard .code{color:var(--accent);font-weight:500}
+.ccard:hover{border-color:var(--accent)}
+.stat b{color:var(--accent)}
+.badge,.chip-status,.mchip,.video-status,.complete-btn,.chip,.btn,.quiz-submit,.quiz-actions,.btn-sm{border-radius:2px}
+.btn{background:var(--accent);border-color:var(--accent);font-family:var(--mono);font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn-ghost{background:var(--surface);color:var(--accent);border-color:var(--accent)}
+.btn-ghost:hover{background:var(--tint);color:var(--accent-deep)}
+/* tabs: machined squares */
+.tabs{background:var(--surface);border:1px solid var(--ink);border-radius:2px;padding:0;gap:0;box-shadow:none}
+.tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  border-radius:0;border-inline-end:1px solid var(--line);padding:10px 16px}
+.tabs button:last-child{border-inline-end:0}
+.tabs button.on{background:var(--accent);color:#fff;box-shadow:none;font-weight:600}
+/* content: sheet framing */
+figure.lesson-diagram{border:1px solid var(--ink);border-radius:2px}
+.glossary-wrap{border-radius:2px}
+table.glossary th{background:var(--ink);color:#EAF1F7}
+.keybox{background:var(--warn-tint);border-color:#EDD9B0;border-inline-start:3px solid var(--warn);border-radius:0 2px 2px 0}
+.keybox .tag{color:var(--warn)}
+.preview{border-radius:2px;background:var(--tint);border-color:var(--tint-line)}
+.career-block{border-radius:2px;background:var(--warn-tint);border:1px solid #EDD9B0}
+.career-block .tag,.career-block b{color:var(--warn)}
+.quiz-choice{border-radius:2px}
+.quiz-choice .key{border-radius:2px}
+.searchbox{border-radius:2px}
+.searchbox .kbd{border-radius:2px}
+.foot{background:var(--surface);border-top:2px solid var(--ink)}
+.foot .mark{text-transform:uppercase;letter-spacing:.04em;font-stretch:110%}
+.foot .mark em{color:var(--accent)}

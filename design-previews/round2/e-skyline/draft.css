@@ -1,0 +1,78 @@
+/* ROUND-2 DRAFT E — "SKYLINE": the open-sky showcase.
+   Video-led, motion-forward product register on a luminous sky gradient:
+   the new bright hero loop front and center, light-glass cards, kinetic
+   stats, sections that glide. The most effects-rich direction — still
+   100% bright. Space Grotesk display + Inter body + Space Mono data. */
+@import url("../base.css");
+:root{
+  --bg:#F7FAFE; --surface:#FFFFFF; --sunken:#EDF3FA;
+  --ink:#101B29; --soft:#39485A; --muted:#61728A; --faint:#8FA0B5;
+  --line:#DFE8F2; --line2:#C6D5E6;
+  --accent:#2380E8; --accent-deep:#1B66BC; --accent-ink:#1A5CA9;
+  --tint:#E8F1FC; --tint-line:#C9DDF5;
+  --accent2:#0B8A68; --warn:#D08A0B; --warn-tint:#FCF2DC;
+  --ok:#188A52; --bad:#C23B2E; --bad-tint:#FAECEA;
+  --shadow:0 2px 10px rgba(16,27,41,.06);
+  --disp:'Space Grotesk',ui-sans-serif,sans-serif;
+  --sans:'Inter',ui-sans-serif,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+  --r:14px; --r-sm:9px;
+}
+body{background:linear-gradient(180deg,#FDFEFF 0%,#F0F6FD 22%,var(--bg) 55%)}
+h1{font-weight:700;letter-spacing:-.03em}
+h2{font-weight:640}
+/* glass-light app bar */
+.appbar{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.6);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);
+  border-bottom:1px solid rgba(198,213,230,.6)}
+.appbar .in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:14px;height:58px;padding:0 24px}
+.appbar .brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.appbar .brand img{width:27px;height:32px}
+.appbar .brand .txt{font-family:var(--disp);font-size:15.5px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.appbar .brand .txt em{font-style:normal;color:var(--accent)}
+.appbar nav{display:flex;gap:2px;margin-inline-start:8px;overflow-x:auto;scrollbar-width:none}
+.appbar nav::-webkit-scrollbar{display:none}
+.appbar nav a{font-size:13px;font-weight:550;color:var(--muted);padding:7px 12px;border-radius:999px;flex:0 0 auto}
+.appbar nav a:hover{color:var(--ink);background:rgba(237,243,250,.8)}
+.appbar nav a.on{color:var(--accent-ink);background:var(--tint);font-weight:600}
+/* hero: the bright loop leads */
+.hero{padding:56px 0 24px;text-align:center}
+.hero h1{font-size:clamp(34px,5.4vw,60px);max-width:20ch;margin:0 auto}
+.hero h1 .hl{background:linear-gradient(100deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{margin:20px auto 0}
+.hero .cta-row{justify-content:center}
+.statline{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center;margin:24px 0 0;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.statline b{color:var(--ink);font-weight:700}
+.hero-media{position:relative;margin:38px auto 0;max-width:1020px;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(198,213,230,.8);box-shadow:0 24px 60px -28px rgba(16,27,41,.25);background:#FBFAF5}
+.hero-media video,.hero-media img{display:block;width:100%;height:auto}
+.hero-media .hm-bar{position:absolute;inset:auto 14px 14px auto;display:flex;gap:8px;
+  background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.9);border-radius:999px;padding:6px 13px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+/* floating glass chips over the hero media */
+.float-chip{position:absolute;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.78);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);
+  border-radius:999px;padding:8px 15px;font-size:12px;font-weight:600;color:var(--soft);
+  box-shadow:0 8px 24px -10px rgba(16,27,41,.25)}
+.float-chip .ic{color:var(--accent);font-weight:800}
+@media(max-width:760px){.float-chip{display:none}}
+/* glass-light cards */
+.card,.ccard,.stat,.tracklist,.note{background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.ccard:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 34px -16px rgba(35,128,232,.35)}
+.stat b{color:var(--accent-ink)}
+.sect-head h2{font-family:var(--disp)}
+/* tabs default segmented but glassy */
+.tabs{background:rgba(237,243,250,.85);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.tabs button.on{background:#fff;color:var(--accent-ink)}
+.keybox{background:var(--tint);border-color:var(--tint-line);border-inline-start-color:var(--accent)}
+.keybox .tag{color:var(--accent-ink)}
+.preview{background:var(--tint);border-color:var(--tint-line)}
+.preview b{color:var(--accent-ink)}
+.career-block{background:linear-gradient(140deg,var(--tint),#EAF7F1);border-color:var(--tint-line)}
+.career-block .tag,.career-block b{color:var(--accent-ink)}
+.cta-band{background:linear-gradient(120deg,var(--tint),#EAF7F1);border-color:var(--tint-line)}
+.foot{background:rgba(255,255,255,.7);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.foot .mark em{color:var(--accent)}

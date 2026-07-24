@@ -1,0 +1,96 @@
+/* ROUND-2 DRAFT C — "BEACON": learning as encouragement, made visible.
+   The owner's words as a design system: bright, supported, encouraged.
+   Sunshine amber leads, teal seconds, coral cheers; big warm display
+   type, generous rounding, chunky friendly borders, the robot crew as
+   section guides. Serious content, warm room.
+   Bricolage Grotesque display + Inter body + JetBrains Mono data. */
+@import url("../base.css");
+:root{
+  --bg:#FFFDF6; --surface:#FFFFFF; --sunken:#FBF4E4;
+  --ink:#231F18; --soft:#4A443A; --muted:#786F60; --faint:#A69C8A;
+  --line:#F0E6D2; --line2:#E3D5B8;
+  --accent:#F59E0B; --accent-deep:#D97706; --accent-ink:#8A5A0F;
+  --tint:#FEF3DD; --tint-line:#F5DFB4;
+  --accent2:#0D9488; --coral:#F4633A;
+  --warn:#B45309; --warn-tint:#FEF3DD;
+  --ok:#15803D; --bad:#C2410C; --bad-tint:#FDEBE3;
+  --shadow:0 2px 0 rgba(35,31,24,.05);
+  --disp:'Bricolage Grotesque',ui-sans-serif,sans-serif;
+  --sans:'Inter',ui-sans-serif,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --r:16px; --r-sm:11px; --border-w:1.5px;
+}
+h1{font-weight:700;letter-spacing:-.03em}
+h2{font-weight:680}
+.eyebrow{color:var(--accent-ink)}
+/* buttons: warm and confident */
+.btn{background:var(--accent);border-color:var(--accent);color:#231F18;border-radius:999px;font-weight:700}
+.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line2)}
+.btn-ghost:hover{background:var(--sunken);color:var(--ink)}
+/* app bar */
+.appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1.5px solid var(--line2)}
+.appbar .in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:14px;height:60px;padding:0 24px}
+.appbar .brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.appbar .brand img{width:28px;height:33px}
+.appbar .brand .txt{font-family:var(--disp);font-size:16px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.appbar .brand .txt em{font-style:normal;color:var(--accent-deep)}
+.appbar nav{display:flex;gap:2px;margin-inline-start:8px;overflow-x:auto;scrollbar-width:none}
+.appbar nav::-webkit-scrollbar{display:none}
+.appbar nav a{font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 13px;border-radius:999px;flex:0 0 auto}
+.appbar nav a:hover{color:var(--ink);background:var(--sunken)}
+.appbar nav a.on{color:var(--accent-ink);background:var(--tint)}
+/* hero: sunrise band + robot crew */
+.hero{position:relative;padding:60px 0 26px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -10% -70% -10%;height:150%;z-index:-1;
+  background:radial-gradient(58% 54% at 50% 100%,rgba(245,158,11,.14),rgba(245,158,11,.05) 55%,transparent 78%)}
+.hero .in{text-align:center;max-width:820px;margin:0 auto}
+.hero h1{font-size:clamp(34px,5.2vw,58px)}
+.hero h1 .hl{color:var(--accent-deep)}
+.hero .sub{margin:20px auto 0}
+.hero .cta-row{justify-content:center}
+.statline{display:flex;gap:10px 26px;flex-wrap:wrap;justify-content:center;margin:26px 0 0;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.statline b{color:var(--ink);font-weight:700}
+.bot{width:112px;height:112px;background:center/contain no-repeat;position:absolute;pointer-events:none}
+@media(max-width:1100px){.bot{display:none}}
+.bot-wrench{background-image:url(../../../assets/nx/bots/bot-wrench.png);left:4%;top:110px}
+.bot-gear{background-image:url(../../../assets/nx/bots/bot-gear.png);right:3%;top:70px;width:126px;height:126px}
+.bot-caliper{background-image:url(../../../assets/nx/bots/bot-caliper.png);right:6%;bottom:-10px}
+.bot-oil{background-image:url(../../../assets/nx/bots/bot-oil.png);left:6%;bottom:-24px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.bot{animation:bob 5.5s ease-in-out infinite}
+.bot-gear{animation-delay:1.2s}.bot-caliper{animation-delay:2.1s}.bot-oil{animation-delay:3s}
+@media (prefers-reduced-motion: reduce){.bot{animation:none}}
+/* encouraging chips row */
+.cheer-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:30px 0 0}
+.cheer{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line2);
+  border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--soft);box-shadow:var(--shadow)}
+.cheer .ic{color:var(--accent-deep);font-weight:800}
+/* cards: friendly */
+.ccard{border-width:1.5px}
+.ccard:hover{transform:translateY(-4px) rotate(-.3deg);border-color:var(--accent)}
+.ccard .glyph{border-radius:12px}
+.ccard .glyph svg *{stroke:var(--accent2)}
+.stat b{color:var(--accent-deep)}
+.sect-head h2{font-size:clamp(22px,3vw,30px)}
+/* tabs: chunky pills */
+.tabs{background:var(--sunken);border-width:1.5px;padding:4px}
+.tabs button{font-weight:700;font-size:13px;padding:9px 18px}
+.tabs button.on{background:var(--surface);color:var(--accent-ink)}
+/* content warm-ups */
+.preview{background:var(--tint);border-color:var(--tint-line)}
+.preview b{color:var(--accent-ink)}
+.keybox{background:#EDF7F5;border-color:#C9E7E2;border-inline-start-color:var(--accent2)}
+.keybox .tag{color:#0B6A61}
+.career-block{background:#EDF7F5;border-color:#C9E7E2}
+.career-block .tag,.career-block b{color:#0B6A61}
+.quiz-choice.sel{border-color:var(--accent2);background:#EDF7F5}
+.quiz-choice.sel .key{border-color:var(--accent2);color:#0B6A61}
+.quiz-submit{background:var(--accent);border-color:var(--accent);color:#231F18}
+.quiz-submit:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.quiz-verdict.ok{color:var(--ok)}
+.chip.on{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.cta-band{background:var(--tint);border-color:var(--tint-line)}
+.foot{background:var(--surface);border-top:1.5px solid var(--line2)}
+.foot .mark em{color:var(--accent-deep)}

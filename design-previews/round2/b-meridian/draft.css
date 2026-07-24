@@ -1,0 +1,109 @@
+/* ROUND-2 DRAFT B — "MERIDIAN": the bright press.
+   Warm paper, ink, one crimson — the editorial register in permanent
+   daylight, now with motion: plates draw themselves, chapters glide in.
+   Fraunces display + Source Serif text + Plex Mono folios. */
+@import url("../base.css");
+:root{
+  --bg:#FBF8F1; --surface:#FFFEFA; --sunken:#F3EEE3;
+  --ink:#1D1A15; --soft:#453F36; --muted:#6F6759; --faint:#9C9486;
+  --line:#E5DDCD; --line2:#CDC4B1;
+  --accent:#8E2F22; --accent-deep:#6E241A; --accent-ink:#8E2F22;
+  --tint:#F4EBDD; --tint-line:#E2D5BE;
+  --accent2:#274060; --warn:#A87407; --warn-tint:#F6EBD5;
+  --ok:#2F6B46; --bad:#9C2F2F; --bad-tint:#F5E8E4;
+  --shadow:none;
+  --disp:'Fraunces',Georgia,serif;
+  --sans:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --r:2px; --r-sm:2px;
+}
+body{font-size:16px}
+h1{font-weight:560;letter-spacing:-.015em}
+h2{font-weight:520}
+.eyebrow{color:var(--accent);letter-spacing:.22em}
+/* editorial de-carding: rules instead of boxes */
+.card,.ccard,.stat,.tracker-strip,.note,.tracklist,.coursenav,.quiz-intro{box-shadow:none}
+.note,.stat{border:0;border-top:2px solid var(--ink);border-radius:0;background:transparent;padding-inline:2px}
+.notegrid,.statgrid{gap:26px}
+.stat{text-align:start;padding:14px 2px}
+.stat b{color:var(--accent);font-size:clamp(24px,3vw,36px)}
+/* masthead */
+.appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 94%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+.appbar .in{max-width:1160px;margin:0 auto;display:flex;align-items:flex-end;gap:20px;padding:16px 24px 10px;flex-wrap:wrap}
+.appbar .brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.appbar .brand img{width:30px;height:36px}
+.appbar .brand .txt{font-family:var(--disp);font-weight:560;font-size:19px;letter-spacing:-.01em}
+.appbar .brand .txt em{font-style:normal}
+.appbar nav{margin-inline-start:auto;display:flex;gap:4px 22px;flex-wrap:wrap}
+.appbar nav a{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);
+  padding:4px 0;border-bottom:2px solid transparent;border-radius:0}
+.appbar nav a:hover{color:var(--accent)}
+.appbar nav a.on{color:var(--accent);border-bottom-color:var(--accent)}
+/* front page */
+.hero{padding:58px 0 26px}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:start}
+@media(max-width:920px){.hero .grid{grid-template-columns:1fr;gap:32px}}
+.hero h1{font-size:clamp(38px,5vw,58px)}
+.hero h1 .it{font-style:italic;font-weight:480;color:var(--accent)}
+.hero .sub{font-size:19px;margin:24px 0 0;color:var(--soft)}
+.statline{display:flex;gap:8px 22px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--line2);
+  margin:34px 0 0;padding:12px 2px;font-family:var(--mono);font-size:11.5px;color:var(--soft)}
+.statline b{color:var(--accent);font-weight:500}
+.hero-plate{border:1px solid var(--ink);background:var(--surface);padding:20px 20px 12px;margin:0}
+.hero-plate svg{display:block;width:100%;height:auto}
+.hero-plate svg *{stroke:var(--ink)}
+.hero-plate svg .amb{fill:var(--accent);stroke:none}
+.hero-plate figcaption{border-top:1px solid var(--line2);margin-top:14px;padding-top:10px;font-size:12.5px;color:var(--muted);line-height:1.6;font-style:italic}
+.hero-plate figcaption b{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;font-weight:500;font-style:normal}
+/* sections as chapters */
+.sect-head{border-bottom:3px double var(--ink);padding-bottom:10px}
+.sect-head h2{font-size:clamp(23px,3vw,31px)}
+/* catalog entries: editorial */
+.ccard{border:0;border-top:1px solid var(--line2);border-radius:0;background:transparent;padding:16px 2px 18px}
+.ccard:hover{border-color:var(--line2);transform:none}
+.ccard:hover h3,.ccard:hover h4{color:var(--accent)}
+.ccard .glyph{background:transparent;border:1px solid var(--line2);border-radius:0}
+.ccard .glyph svg *{stroke:var(--accent)}
+.ccard .code{color:var(--accent);font-weight:500}
+.ccard h3,.ccard h4{font-family:var(--disp);font-weight:520;font-size:19px}
+.ccard .bar{background:var(--sunken)}
+.ccard .bar i{background:var(--accent)}
+/* tabs: slim small-caps underline */
+.tabs{position:sticky;top:64px;background:color-mix(in srgb,var(--bg) 96%,transparent);border:0;border-bottom:1px solid var(--ink);
+  border-radius:0;box-shadow:none;padding:10px 0 0;display:flex;gap:26px;width:100%}
+.tabs button{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  padding:0 0 11px;border-radius:0;border-bottom:3px solid transparent;background:none}
+.tabs button.on{background:none;box-shadow:none;color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+@media(max-width:640px){.tabs{gap:16px;flex-wrap:wrap}.tabs button{flex:0 0 auto}}
+/* reading */
+.tabpanel h3{font-family:var(--disp);font-weight:520;font-size:23px}
+.quiz-choice .key{font-family:var(--sans);font-style:italic;background:transparent;border:0;font-size:14px}
+.glossary-wrap{border:0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);border-radius:0;background:transparent}
+table.glossary th{background:transparent;border-bottom:1px solid var(--ink);font-family:var(--sans);letter-spacing:.16em}
+figure.lesson-diagram{border:1px solid var(--ink);border-radius:0;box-shadow:none}
+.keybox{border:0;border-inline-start:3px solid var(--accent);border-radius:0;background:transparent;padding:6px 0 6px 24px}
+.preview{border:0;border-top:3px solid var(--accent);border-radius:0;background:var(--sunken)}
+.career-block{border:0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);border-radius:0;background:var(--sunken)}
+.career-block .tag{color:var(--accent)}
+.career-block b{color:var(--accent-deep)}
+.btn{border-radius:0;background:var(--ink);border-color:var(--ink);font-family:var(--sans);
+  letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+.chip{border-radius:0;background:transparent;border:0;border-bottom:2px solid transparent;
+  font-family:var(--sans);letter-spacing:.12em;text-transform:uppercase;font-size:11.5px;padding:4px 2px}
+.chip.on{background:transparent;color:var(--accent);border-bottom-color:var(--accent)}
+.searchbox{border:0;border-bottom:2px solid var(--ink);border-radius:0;background:transparent;box-shadow:none}
+.searchbox input{font-family:var(--sans);font-size:16px;font-style:italic}
+.quiz-actions{border-radius:0}
+.quiz-submit{border-radius:0;background:var(--ink);border-color:var(--ink)}
+.quiz-submit:hover{background:var(--accent);border-color:var(--accent)}
+.mchip,.chip-status,.badge,.video-status,.complete-btn{border-radius:0}
+.foot{background:transparent;border-top:3px double var(--ink)}
+.foot .in{display:block;text-align:center}
+.foot .mark{font-family:var(--disp);font-weight:560;font-size:18px}
+.foot nav{justify-content:center;margin:14px 0 0}
+.foot nav a{letter-spacing:.16em;text-transform:uppercase;font-size:11px}
+.foot p{font-style:italic;text-align:center}

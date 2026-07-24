@@ -80,7 +80,11 @@ lesson = {
     "eyebrow": first(r'<p class="eyebrow">(.*?)</p>', L),
     "title":   first(r'<h1>(.*?)</h1>', L),
     "sub":     first(r'<p class="sub">(.*?)</p>', L),
-    "meta":    re.findall(r'<div>([^<]+)<b>(.*?)</b></div>', block(L, '<div class="meta">')[1]),
+    # meta pairs: pre-redesign lessons used a .meta div; the applied Atlas
+    # build emits .mchip spans instead — support both source generations
+    "meta":    (re.findall(r'<div>([^<]+)<b>(.*?)</b></div>', block(L, '<div class="meta">')[1])
+                if '<div class="meta">' in L else
+                re.findall(r'<span class="mchip">([^<]+?)\s*<b>(.*?)</b></span>', L)),
     "source":  first(r'<div class="src-strip">.*?<b>(.*?)</b>', L),
     "panels":  {m.group(1): m.group(2) for m in
                 re.finditer(r'<section class="tabpanel(?: on)?" id="(t-\w+)">(.*?)</section>', L, re.S)},
@@ -88,7 +92,8 @@ lesson = {
     "prev":    first(r'<nav class="prevnext"><a href="[^"]*">(.*?)</a>', L),
     "next":    re.findall(r'<a href="[^"]*">([^<]*?)</a></nav>', L),
 }
-lesson["video_todo"] = "lib-video-todo" in first(r'(<div class="video-hero">.*?)<div class="tabs"', L)
+lesson["video_todo"] = ('class="video-status"' in L or
+                        "lib-video-todo" in first(r'(<div class="video-hero">.*?)<div class="tabs"', L))
 
 # ---- course ----------------------------------------------------------------
 C = read(COURSE_SRC)

@@ -1,0 +1,68 @@
+/* ROUND-2 DRAFT A — "AURORA": the bright learning console.
+   The applied Atlas direction, evolved and permanently luminous: warmer
+   ground, livelier emerald, a soft aurora gradient in the hero, progress
+   everywhere. Geist + Geist Mono. */
+@import url("../base.css");
+:root{
+  --bg:#FBFBF8; --surface:#FFFFFF; --sunken:#F2F4F1;
+  --ink:#16181B; --soft:#3E444C; --muted:#68707B; --faint:#98A0AB;
+  --line:#E5E8E4; --line2:#D2D6D1;
+  --accent:#0B8A68; --accent-deep:#076B50; --accent-ink:#0A5C45;
+  --tint:#E7F5EF; --tint-line:#C5E5D7;
+  --accent2:#2380E8; --warn:#B4690E; --warn-tint:#FBF1E3;
+  --disp:'Geist',ui-sans-serif,sans-serif;
+  --sans:'Geist',ui-sans-serif,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+  --r:12px; --r-sm:8px;
+}
+/* app bar */
+.appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.appbar .in{max-width:1160px;margin:0 auto;display:flex;align-items:center;gap:14px;height:56px;padding:0 24px}
+.appbar .brand{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.appbar .brand img{width:26px;height:31px}
+.appbar .brand .txt{font-size:14.5px;font-weight:650;letter-spacing:-.01em;white-space:nowrap}
+.appbar .brand .txt em{font-style:normal;color:var(--accent-ink)}
+.appbar nav{display:flex;gap:2px;margin-inline-start:8px;overflow-x:auto;scrollbar-width:none}
+.appbar nav::-webkit-scrollbar{display:none}
+.appbar nav a{font-size:13px;font-weight:550;color:var(--muted);padding:7px 12px;border-radius:999px;flex:0 0 auto}
+.appbar nav a:hover{color:var(--ink);background:var(--sunken)}
+.appbar nav a.on{color:var(--accent-ink);background:var(--tint);font-weight:600}
+/* hero: split console over a soft aurora wash */
+.hero{position:relative;padding:64px 0 24px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -20% auto;height:130%;z-index:-1;
+  background:radial-gradient(50% 60% at 18% 30%,rgba(11,138,104,.10),transparent 70%),
+             radial-gradient(44% 58% at 82% 16%,rgba(35,128,232,.08),transparent 70%),
+             radial-gradient(40% 52% at 60% 80%,rgba(245,166,35,.07),transparent 70%)}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:52px;align-items:center}
+@media(max-width:960px){.hero .grid{grid-template-columns:1fr;gap:34px}}
+.hero h1{max-width:16ch}
+.hero .sub{margin:20px 0 0}
+.statline{display:flex;gap:10px 24px;flex-wrap:wrap;margin:26px 0 0;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.statline b{color:var(--ink);font-weight:600}
+.console{padding:0;overflow:hidden}
+.console .rowhead{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--line);
+  background:linear-gradient(120deg,var(--tint),transparent 70%)}
+.console .rowhead b{font-size:13px;font-weight:650}
+.console .rowhead span{font-family:var(--mono);font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em}
+.console .citem{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.console .citem:last-child{border-bottom:0}
+.console .glyph{width:34px;height:34px;border-radius:9px;background:var(--tint);border:1px solid var(--tint-line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.console .glyph svg{width:20px;height:20px}
+.console .glyph svg *{stroke:var(--accent)}
+.console .glyph svg .amb{fill:var(--warn);stroke:none}
+.console .cmeta{flex:1;min-width:0}
+.console .cmeta b{display:block;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.console .cmeta span{display:block;font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:2px}
+.console .cbar{width:104px;flex:0 0 auto}
+.console .cbar .bar{height:5px;border-radius:3px;background:var(--sunken);overflow:hidden}
+.console .cbar .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#2BB78F);border-radius:3px}
+.console .cbar span{display:block;font-family:var(--mono);font-size:10px;color:var(--faint);margin-top:4px;text-align:end}
+.console .cfoot{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--sunken)}
+.console .cfoot span{font-size:12px;color:var(--muted)}
+.console .cfoot a{font-size:12.5px;font-weight:600}
+/* personality touches */
+.ccard:hover{transform:translateY(-3px)}
+.sect-head h2 .hl{color:var(--accent-ink)}
+.foot{border-top:1px solid var(--line)}
