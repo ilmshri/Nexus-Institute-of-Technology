@@ -939,3 +939,42 @@ proactively to all future content, regardless of any future rebrand.
    BOTH "Next Lesson" and "Next Course" (direct progression to the next course).
 
 Build order this pass (owner, 2026-07-22): #1 → #6 → #3 → #4 → #2 → #5.
+
+## CONTENT-COMPLETION MODE + YEAR 1 COMPLETE (owner, 2026-07-24)
+
+STANDING DIRECTIVE (owner, 2026-07-24, supersedes the per-lesson video-approval
+protocol for the duration of this pass): author full Educational Units for
+every remaining lesson site-wide — Lecture/Foundations/Examples-and-Quiz/
+Kuwait-applied-case — and leave the video field untouched (honest "TODO"
+marker) on every lesson that does not already have one. The owner will
+research and supply `{id,title,channel}` candidates in a later pass for a
+batched embed; no video-sourcing (WebSearch/oEmbed) work is to be done
+meanwhile. Content must be original — no reproducing textbook passages or
+real exam problems verbatim (copyright; also lower-integrity than an
+independently Python-verified original problem, which is the binding
+standard regardless). Pace note (owner asked directly): a full 528-lesson
+site in one sitting is not realistic at this quality bar without cutting
+verification corners, which the owner does not want — work continues
+course-by-course, curriculum order, with honest progress reporting, not a
+promised completion time.
+
+CHECKPOINT — YEAR 1 COMPLETE (2026-07-24): every Y1S1 + Y1S2 course is now
+a full Educational Unit (computed SVG diagram, topic-sized §1-§4 lecture +
+keybox, foundations glossary table, 3 solve + 8 MC Python-verified quiz,
+company-free applied case, career block). This session: materials-2
+(finished L3-11 + career), thermo-1 (fresh, all 11 + career), electrical
+(fresh, all 11 + career), mfg-processes-1 (all 11 + career — L1-4/7-9
+upgraded the project's original "gold standard" first-era fragments in
+content/lessons/y1s1-mp1-*.html from the legacy template to the current
+one, preserving their derivations — Chvorinov's rule, Bernoulli sprue
+design, Sievert's law, the rolling/forging/drawing equations — L5/L6/L10/L11
+authored fresh). 42 lessons total this pass, ~290 quiz items, every
+number Python-verified pre-write. One gap remains from Y1: drawing-cad
+(DRW 102) has full lecture+foundations content but its Examples tab is
+still the pre-quiz-engine "examples" text blob — a format retrofit, not
+new authoring — tracked separately, not blocking Year 1 closure.
+Coverage 133→170/528 lessons at full depth (25%→32%) across this session.
+NEXT (approved order, unstarted): Year 2 — strength (finish L5-11, already
+4/11), electronics-sensors, mfg-processes-2, then Y2S2 (thermo-2,
+heat-transfer, machine-design-1, kinematics-machinery, metrology,
+mfg-processes-3) — 34 courses remain empty across Years 2-4 site-wide.
