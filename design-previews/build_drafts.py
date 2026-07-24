@@ -32,7 +32,8 @@ SEM_NAMES = {"y1s1":"Year 1 · Semester 1","y1s2":"Year 1 · Semester 2",
              "y4s1":"Year 4 · Semester 1","y4s2":"Year 4 · Semester 2"}
 ROMAN = {"y1s1":"I","y1s2":"II","y2s1":"III","y2s2":"IV","y3s1":"V","y3s2":"VI","y4s1":"VII","y4s2":"VIII"}
 
-FOOT_TEXT = ("Open engineering education. Worked-example values are pedagogical; "
+FOOT_TEXT = ("Open engineering education — preliminary prototype release; learner feedback "
+             "shapes the final, tailored releases. Worked-example values are pedagogical; "
              "representative industrial figures are labeled as such and are not published "
              "operating data of any named company. Every visual is an original vector "
              "illustration. Lessons not yet at full depth say so honestly.")
@@ -150,6 +151,14 @@ for outer, inner in blocks_all(H, '<div class="track">'):
     })
 # chrome-copy compliance (owner cost rule) — chrome only, never lesson content
 home["notes"] = [(cap, h3, p.replace("No paywalls, no accounts.", "No accounts needed.")) for cap, h3, p in home["notes"]]
+# prototype-phase positioning (owner directive 2026-07-24): the site is a
+# preliminary open release for trial and reflection, not the final product
+if len(home["notes"]) >= 3:
+    cap3, _h3, p3 = home["notes"][2]
+    home["notes"][2] = (cap3, "Open prototype",
+        "A preliminary release, public so real learners can try it and reflect — that feedback "
+        "tunes the final, tailored releases. No accounts needed; every equation derived or "
+        "sourced, every number machine-verified, every depth label honest.")
 
 # ---------------------------------------------------------------- link rewiring
 COURSE_HTML = "y2s1/electronics-sensors/index.html"
@@ -270,7 +279,7 @@ def build_a_home():
   <p class="d-eyebrow">{home['eyebrow']}</p>
   <h1>Learn Mechanical Engineering <span class="amber">from Scratch to Industry&nbsp;4.0.</span></h1>
   <p class="d-sub">{home['sub']}</p>
-  <div class="spec-chips"><div>Curriculum<b>{home['chips']}</b></div><div>Assessment<b>Machine-verified quizzes</b></div><div>Depth ledger<b>{tr_n} / {tr_total} lessons · {tr_pct}%</b></div></div>
+  <div class="spec-chips"><div>Phase<b>Prototype · Open build</b></div><div>Curriculum<b>{home['chips']}</b></div><div>Assessment<b>Machine-verified quizzes</b></div><div>Depth ledger<b>{tr_n} / {tr_total} lessons · {tr_pct}%</b></div></div>
   <div class="cta-row"><a class="btn" href="curriculum.html">Explore the curriculum &rarr;</a>
   <a class="btn btn-ghost" href="#" title="Outside this preview">About the institute</a></div>
 </div></section>
@@ -437,7 +446,7 @@ def build_b_home():
 <div><div class="kick"><span class="folio">Vol. I — The Complete Curriculum</span></div>
 <h1>Learn Mechanical Engineering <span class="it">from scratch</span> to Industry&nbsp;4.0.</h1>
 <p class="standfirst">{home['sub']}</p>
-<div class="colophon-line"><span><b>{home['chips']}</b></span><span>·</span><span><b>{tr_n} of {tr_total}</b> lessons at full depth ({tr_pct}%)</span><span>·</span><span>every number machine-verified</span></div>
+<div class="colophon-line"><span><b>Preliminary edition</b> — issued openly for review</span><span>·</span><span><b>{home['chips']}</b></span><span>·</span><span><b>{tr_n} of {tr_total}</b> lessons at full depth ({tr_pct}%)</span><span>·</span><span>every number machine-verified</span></div>
 <div class="cta-row"><a class="btn" href="curriculum.html">Open the catalogue</a><a class="btn btn-ghost" href="course.html">Sample a course</a></div></div>
 <div class="contents"><h3>In this catalogue</h3>{idx_entries}
 <div style="margin-top:34px">{B_PLATE}</div></div>
@@ -602,7 +611,8 @@ def build_c_home():
 <p class="sub">{home['sub']}</p>
 <div class="cta-row"><a class="btn" href="curriculum.html">Explore the curriculum &rarr;</a>
 <a class="btn btn-ghost" href="course.html">Sample a course</a></div>
-<div class="statline">{stats}</div></div>
+<div class="statline">{stats}</div>
+<div class="statline"><span class="chip-status prog" style="text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:11.5px">Open prototype — your feedback shapes the final releases</span></div></div>
 <div class="card console"><div class="rowhead"><b>Your program</b><span>Learner console</span></div>
 {console_rows}
 <div class="cfoot"><span><b style="color:var(--accent-ink)">{tr_n} of {tr_total}</b> lessons at full depth · recomputed every build</span><a href="curriculum.html">Open &rarr;</a></div></div>

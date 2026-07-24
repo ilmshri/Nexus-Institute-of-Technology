@@ -56,6 +56,18 @@ cost/"free"), which the current live homepage violates:
 - Footer "**Free,** open engineering education." → "Open engineering education."
 - NOTE 03 "**No paywalls,** no accounts." → "No accounts needed."
 
+Per the owner's prototype-phase directive (2026-07-24: the project is a preliminary open
+release for trial and reflection, not the final product — never described as "free"):
+- Every footer: "Open engineering education — **preliminary prototype release; learner feedback
+  shapes the final, tailored releases.**"
+- Homepage NOTE 03 → "**Open prototype** — A preliminary release, public so real learners can
+  try it and reflect — that feedback tunes the final, tailored releases…"
+- Hero-level marker in each register: Foundry spec chip "Phase — Prototype · Open build";
+  Press colophon "Preliminary edition — issued openly for review"; Atlas status chip
+  "Open prototype — your feedback shapes the final releases."
+- No feedback link is shown yet — the channel (GitHub Issues / email / none) is an open
+  owner decision.
+
 Other chrome notes: the "7 of 11 complete — preview state" progress shown in course/lesson rails
 is demo state (labeled as such on-page); Draft B's masthead "Est. MMXXVI" is a removable flourish;
 fonts load from the Google Fonts CDN (same pattern as the existing MathJax CDN dependency —
