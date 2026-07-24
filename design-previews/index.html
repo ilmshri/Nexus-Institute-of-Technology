@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nexus — Design Draft Hub</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="shared/logo.svg">
+<style>
+:root{--bg:#101318;--panel:#171C23;--line:#2A323E;--ink:#E9ECF1;--muted:#98A2B0;
+  --amber:#F5A623;--teal:#14CFA0;--crimson:#C05B4B;--emerald:#2BC59A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 ui-sans-serif,system-ui,sans-serif;padding:40px 24px 80px}
+.wrap{max-width:1060px;margin:0 auto}
+h1{font-size:30px;letter-spacing:-.02em;margin:6px 0 8px}
+.k{font:11px ui-monospace,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+p.lead{color:var(--muted);max-width:70ch;margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0 0}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:8px}
+.card .tag{font:10.5px ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+.card h2{margin:0;font-size:21px;letter-spacing:-.01em}
+.card p{margin:2px 0 10px;font-size:13.5px;color:var(--muted);flex:1}
+.card .sw{display:flex;gap:6px;margin-bottom:12px}
+.card .sw i{width:22px;height:22px;border-radius:5px;border:1px solid rgba(255,255,255,.14)}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.links a{display:block;text-align:center;border:1px solid var(--line);border-radius:8px;color:var(--ink);
+  text-decoration:none;font-size:12.5px;font-weight:600;padding:9px 6px}
+.links a:hover{border-color:currentColor}
+.links a.primary{grid-column:1/3;background:rgba(255,255,255,.05)}
+.a .tag,.a .links a:hover{color:var(--amber)}
+.b .tag,.b .links a:hover{color:var(--crimson)}
+.c .tag,.c .links a:hover{color:var(--emerald)}
+.docs{margin:34px 0 0;display:flex;gap:10px 22px;flex-wrap:wrap;font-size:13px}
+.docs a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(20,207,160,.35)}
+.note{margin:26px 0 0;border:1px dashed var(--line);border-radius:10px;padding:14px 18px;font-size:12.5px;color:var(--muted);max-width:78ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="k">Nexus Institute of Technology · design-drafts branch</div>
+  <h1>Three full design drafts, side by side</h1>
+  <p class="lead">Each draft applies one distinct visual direction across the same four real surfaces —
+  homepage, curriculum index, the ELX&nbsp;205 course page with its career outlook, and Lesson&nbsp;08 with all
+  four tabs live (quiz engine included). Same content everywhere; only the design changes. Open them in
+  separate windows to compare.</p>
+
+  <div class="grid">
+    <div class="card a">
+      <span class="tag">Draft A</span>
+      <div class="sw"><i style="background:#0C0F13"></i><i style="background:#F7F6F1"></i><i style="background:#F5A623"></i><i style="background:#14CFA0"></i></div>
+      <h2>Foundry</h2>
+      <p>Industrial / workshop register. Dark graphite control-room chrome; lessons read on white
+      "drawing sheets" with title blocks; safety-amber accents, condensed stencil display type,
+      monospace telemetry. The depth ledger presented like plant instrumentation.</p>
+      <div class="links">
+        <a class="primary" href="draft-a-foundry/index.html">Open homepage &rarr;</a>
+        <a href="draft-a-foundry/curriculum.html">Curriculum</a>
+        <a href="draft-a-foundry/course.html">Course + career</a>
+        <a href="draft-a-foundry/lesson.html">Lesson (4 tabs)</a>
+        <a href="draft-a-foundry/lesson.html#t-examples">Quiz</a>
+      </div>
+    </div>
+    <div class="card b">
+      <span class="tag">Draft B</span>
+      <div class="sw"><i style="background:#FAF7F0"></i><i style="background:#1C1914"></i><i style="background:#8E2F22"></i><i style="background:#F1ECE1"></i></div>
+      <h2>Press</h2>
+      <p>Academic / technical-editorial register. Warm paper, ink, one crimson; Fraunces display
+      serif with hanging numerals, hairline rules, chapters and folios. The curriculum as a
+      university-press catalogue; lessons as journal articles with a margin table of contents.</p>
+      <div class="links">
+        <a class="primary" href="draft-b-press/index.html">Open homepage &rarr;</a>
+        <a href="draft-b-press/curriculum.html">Curriculum</a>
+        <a href="draft-b-press/course.html">Course + career</a>
+        <a href="draft-b-press/lesson.html">Lesson (4 tabs)</a>
+        <a href="draft-b-press/lesson.html#t-examples">Quiz</a>
+      </div>
+    </div>
+    <div class="card c">
+      <span class="tag">Draft C</span>
+      <div class="sw"><i style="background:#FAFAFB;border-color:#999"></i><i style="background:#17181C"></i><i style="background:#0B8A68"></i><i style="background:#E9F5F0"></i></div>
+      <h2>Atlas</h2>
+      <p>Learning-console register. The curriculum as a product: app shell, persistent course rail,
+      progress-first cards, segmented tabs, &#8984;K search, one emerald accent on zinc neutrals —
+      plus a genuinely adapted dark theme (follows your system setting).</p>
+      <div class="links">
+        <a class="primary" href="draft-c-atlas/index.html">Open homepage &rarr;</a>
+        <a href="draft-c-atlas/curriculum.html">Curriculum</a>
+        <a href="draft-c-atlas/course.html">Course + career</a>
+        <a href="draft-c-atlas/lesson.html">Lesson (4 tabs)</a>
+        <a href="draft-c-atlas/lesson.html#t-examples">Quiz</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs">
+    <a href="RESEARCH.md">Market study (RESEARCH.md)</a>
+    <a href="AUDIT.md">Site audit (AUDIT.md)</a>
+    <a href="README.md">How these previews work (README.md)</a>
+  </div>
+
+  <p class="note">Previews are assembled by <code>build_drafts.py</code> from the real generated pages in
+  <code>docs/</code> — lesson bodies, quiz items, and career copy are byte-identical to the live content
+  and were not edited. Only site chrome differs per draft (and chrome copy was brought back into
+  compliance with the no-cost-mentions rule). Links outside the four preview surfaces are inert.</p>
+</div>
+</body>
+</html>
