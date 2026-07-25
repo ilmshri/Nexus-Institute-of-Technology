@@ -48,29 +48,59 @@ The genuine defect pattern is narrower than "symbol used before introduced"
 (which mostly catches the normal equation-then-where-clause order). It is
 **symbols that are never named anywhere in the lesson**.
 
-## Fixed so far
+## Fixed (all read in full context before editing)
 
-- **`math-1` L1** — the first equation of the entire curriculum,
-  \( P = \rho g Q H \), named none of its five symbols, in a lesson whose
-  subject is unit discipline. Now names power, density, gravitational
-  acceleration, volumetric flow and head before the units are substituted.
-  (4 undefined symbols → 1, and that one is `e` in `e^x`.)
-- **`math-1` L7** — `V`, `T` and `Q` first appeared inside the accumulation
-  integral \( V = \int_0^T Q(t)\,dt \). Now named in the lead-in sentence.
+**`math-1`** — L1: the first equation of the entire curriculum,
+\( P = \rho g Q H \), named none of its five symbols, in the lesson whose
+subject is unit discipline; now names power, density, gravitational
+acceleration, volumetric flow and head. L4: the fan law \( P = kN^3 \) now
+names shaft power, rotational speed and the machine constant. L7: `V`, `T`,
+`Q` named before the accumulation integral. L9: `\rho`, `g`, `A` named in the
+layer-weight expression. L10: `V/Q` given as tank volume over volumetric flow.
 
-## Still to do
+**`statics`** — L8: `w(x)`, the distributed load intensity, appeared cold in
+the shear/moment differential relations while `N`, `V` and `M` right above it
+were all properly named. Now names `w` (a force per unit length, N/m — the
+distinction that actually trips students) and `x`.
 
-Hand-review the remaining reading list, course by course, and fix the genuine
-never-named cases:
+**`materials-1`** — the course with the densest real gaps, matching the plan's
+description. L1: `\sigma = F/A` in the course opener named nothing. L2:
+Pauling's relation used `X_A`, `X_B` with no mention of electronegativity.
+L5: the vacancy relation's `N_v`, `N`, `Q_v`, `k`, `T`. L6: Fick's laws —
+`C`, `x`, `t` unnamed (`J` and `D` were fine). L7: `F`, `A_0`, `\Delta L`,
+`L_0` behind the named stress and strain. L9: Hall–Petch named none of its
+four symbols. L10: `T_R`, `T_m`. L11: the critical-radius symbols and
+Chvorinov's mould constant `B`.
 
-| Course | Raw hits | Notes |
-|---|---|---|
-| math-1 | ~32 left | L4's `u, v` are false positives (prose says "functions u, v"); check `N` in `P = kN^3` |
-| statics | 14 | plan wrongly called this clean |
-| materials-1 | 29 | L3 verified fine; rest unread |
-| physics-1 | 23 | never actually measured before this pass |
-| computing | 18 | many hits are code identifiers inside `\texttt{}`, likely mostly noise |
-| drawing-cad | 0 | almost no math; genuinely low risk |
+**`physics-1`** — L6: `\theta` and `d` in \( W = Fd\cos\theta \). L11: `L` is
+the pendulum length here, having been angular momentum in L10 — the collision
+is now called out explicitly in the text.
 
-Do this **before** authoring the per-lesson `recap` fields and before the
-Arabic translation, so neither is written twice.
+## Judged and deliberately NOT changed
+
+- **`materials-1` L3** and **`physics-1` L4** read as violations to the tool
+  but are good writing: both state the equation and name every symbol in the
+  very next clause ("the net force … produces acceleration … scaled inversely
+  by the mass"). Editing them would make the prose worse.
+- **`computing`** (18 raw hits) is essentially all noise. Its "symbols" are
+  code identifiers inside `\texttt{}` (`abs(a - b)`, `flow_m3h`) and the
+  generic table coordinates of L9's interpolation lesson, which the prose
+  introduces as "two table rows \( (x_1,y_1) \) and \( (x_2,y_2) \)".
+- Conventional symbols left alone throughout: `e` in `e^x`, integration
+  dummies and limits (`a`, `b`, `x`), the generic exponent `n`.
+
+## Status
+
+Raw hits 118 → 89, but **the raw number is a poor progress metric** and should
+not be read as "89 defects left": the counter cannot see a definition written
+without an article, so several of the fixes above still show up as hits (e.g.
+"shaft power \( P \) rising with…"). What matters is that every hit in every
+Y1S1 course has now been read in context and either fixed or judged sound.
+
+Remaining genuinely-unread surface: none in Y1S1. The lower-value tail
+(cross-lesson symbols defined in an earlier lesson of the same course, e.g.
+`d` for grain diameter reused in materials-1 L10 from L9) was judged
+acceptable — the courses are taken in order.
+
+Done **before** the per-lesson `recap` fields and before the Arabic
+translation, so neither is written against text that was about to change.

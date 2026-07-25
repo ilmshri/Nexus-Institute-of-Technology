@@ -196,7 +196,7 @@ make: how much does discharge pressure move per percent of speed? Differentiate 
 chain of dependencies and multiply the local sensitivities.</p>
 <h3>03 · Relative rates — the engineer's favorite</h3>
 <p>Divide a derivative by its function and you get relative sensitivity. For a fan law
-\( P = kN^3 \), logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
+\( P = kN^3 \) — shaft power \( P \) rising with the cube of rotational speed \( N \), \( k \) a constant for the machine and duty — logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
 speed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or
 pump slightly is the cheapest energy project in any plant — the cube works for you on the way
 down.</p>
@@ -427,7 +427,7 @@ RMS tracks energy, and energy does the damage.</p>
 <h3>03 · Work by integration</h3>
 <p>When force varies along the path, work is accumulated force-times-distance:
 \( W = \int F\,dx \). Pumping a tank empty is the signature case: each layer of liquid at
-depth \( y \) has weight \( \rho g A\,dy \) and must rise a different height. Summing layers
+depth \( y \) has weight \( \rho g A\,dy \) — density \( \rho \) times gravitational acceleration \( g \) times the tank's cross-sectional area \( A \) times the layer's own thickness \( dy \) — and must rise a different height. Summing layers
 is an integral, executed in the Worked Examples tab for a real tank. The same layer-summing pattern
 computes hydrostatic forces on gates and centroids of plates — one method, many billables.</p>
 
@@ -481,7 +481,7 @@ them; the solving builds the reading instinct.</p>
 out. <em>Express each rate in the state variable:</em> outflow proportional to level, heat
 loss proportional to excess temperature, contaminant leaving at concentration times flow.
 <em>Divide through</em> until the equation reads \( \dot{y} = -(y - y_\infty)/\tau \),
-and read \( \tau \) directly from the coefficients — \( V/Q \) for a flushed tank,
+and read \( \tau \) directly from the coefficients — tank volume \( V \) over volumetric flow \( Q \) for a flushed tank,
 thermal mass over loss coefficient for a cooling body. The physics enters in the rates; the
 mathematics is the same three lines every time.</p>
 <p>Respect the sign conventions and the model's edges. A negative rate coefficient decays
@@ -954,7 +954,7 @@ wrong. When in doubt, solve both regimes and let the comparison with the ceiling
 truth — two short calculations beat one plausible guess every time.</p>
 </div></section><section class="sum-lesson"><h3>Lesson 06 · Work and energy</h3><div class="measure">
 <h3>01 · Work: force through distance, honestly counted</h3>
-<p>Work is energy in transit by force: \( W = Fd\cos\theta \) — only the component of
+<p>Work is energy in transit by force: \( W = Fd\cos\theta \), where \( F \) is the applied force, \( d \) the distance moved and \( \theta \) the angle between them — only the component of
 force ALONG the motion counts, and the dot product of Lesson 1 was built for exactly this
 accounting. Force perpendicular to motion does nothing (the normal force on a rolling cart,
 the centripetal pull of a curve); force opposing motion does negative work, withdrawing
@@ -1164,7 +1164,7 @@ remarkably, does not enter — small or large swings keep the same beat, which i
 natural frequency a property of the MACHINE, not of the disturbance.</p>
 <h3>02 · The pendulum and the family of oscillators</h3>
 <p>The pendulum repeats the recipe with gravity as the spring:
-\( T = 2\pi\sqrt{L/g} \) for small swings — mass absent, length and gravity only. Every
+\( T = 2\pi\sqrt{L/g} \) for small swings, with \( L \) the pendulum length (not Lesson 10's angular momentum) and \( g \) the acceleration due to gravity — mass absent, length and gravity only. Every
 oscillator in the family carries the same signature quantities: period \( T = 2\pi/\omega_n \),
 frequency \( f = 1/T \) in hertz, and the energy sloshing between kinetic (maximum at
 equilibrium, where speed peaks at \( v_{max} = A\omega_n \)) and potential (maximum at
@@ -2005,7 +2005,7 @@ were, and real tools deliver a little less than the statics promises.</p>
 <h3>01 · Cut the beam, expose the invisible</h3>
 <p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
 <h3>02 · Diagrams, and the calculus that draws them</h3>
-<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
+<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing, in which \( x \) is the distance along the span from a chosen origin and \( w(x) \) is the intensity of the distributed load there &mdash; a force per unit length, N/m, not a force:</p>
 \[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
 <p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
 <h3>03 · Why these diagrams are the product</h3>
@@ -2333,7 +2333,7 @@ a stronger material if the problem is a sharp shoulder. <em>Walk the causal chai
 backward:</em> performance failed → which property fell short → which structure produced
 that property → which processing produced that structure. The chain runs in both directions,
 and every lesson in this course adds one link. <em>Quantify before judging:</em>
-\( \sigma = F/A \) turns "the bolt looked thin" into a number — a 20% section loss is a
+\( \sigma = F/A \) &mdash; stress \( \sigma \) is the force \( F \) a section carries divided by the cross-sectional area \( A \) carrying it &mdash; turns "the bolt looked thin" into a number — a 20% section loss is a
 25% stress rise at constant load, because the divisor shrank — and numbers survive meetings
 that adjectives do not.</p>
 <p>Close every reading with the honest questions: what environment, what load spectrum, what
@@ -2352,7 +2352,7 @@ the book.</p>
 <h3>02 · The four bonding types</h3>
 <p><b>Metallic</b>: ion cores in a shared electron sea. The sea conducts (electrons free to drift) and the non-directional bonding lets planes of atoms slide without shattering — conductivity and ductility from one picture. <b>Ionic</b>: electron transfer, then Coulomb attraction between ions; strong but directionally rigid — slide a plane one spacing and like charges meet, so ceramics fracture rather than flow. <b>Covalent</b>: shared electron pairs, strongly directional; diamond's hardness and silicon's brittleness. <b>Secondary (van der Waals / hydrogen)</b>: weak dipole attractions — the reason polymer chains, strongly covalent along their backbones, still slide past each other at modest temperature.</p>
 <h3>03 · Mixed character, measured</h3>
-<p>Real compounds sit between poles. Electronegativity difference estimates the ionic fraction of a bond; Pauling's relation \( \%IC = [1 - e^{-0.25(X_A - X_B)^2}] \times 100 \) puts MgO at ~73% ionic while SiC is ~12% — one behaves as a classic ionic ceramic, the other as a covalent one, and their fracture and conduction behavior follow suit. the Worked Examples tab computes both, plus the raw Coulomb force inside an ion pair.</p>
+<p>Real compounds sit between poles. Electronegativity difference estimates the ionic fraction of a bond; Pauling's relation \( \%IC = [1 - e^{-0.25(X_A - X_B)^2}] \times 100 \), in which \( X_A \) and \( X_B \) are the electronegativities of the two bonded atoms, puts MgO at ~73% ionic while SiC is ~12% — one behaves as a classic ionic ceramic, the other as a covalent one, and their fracture and conduction behavior follow suit. the Worked Examples tab computes both, plus the raw Coulomb force inside an ion pair.</p>
 
 <h3>04 · Reading properties off the bond</h3>
 <p>The bond-energy curve is a property-prediction machine if read with method. <em>Well
@@ -2426,7 +2426,7 @@ are the language; slip is the sentence they were invented to write.</p>
 <h3>02 · Vacancies obey thermodynamics</h3>
 <p>Vacancies are not accidents; equilibrium demands them. Their fraction rises exponentially with temperature:</p>
 \[ \frac{N_v}{N} = \exp\!\left(-\frac{Q_v}{kT}\right) \tag{1} \]
-<p>Near the melting point roughly one site in ten thousand is empty; at room temperature the fraction is astronomically smaller. This matters because vacancies are diffusion's vehicle — atoms move mainly by hopping into adjacent empty sites — so (1) is the deep reason every diffusion-controlled process in Lesson 6 accelerates exponentially with temperature.</p>
+<p>Here \( N_v \) is the number of vacant sites, \( N \) the total number of lattice sites, \( Q_v \) the energy needed to form one vacancy, \( k \) Boltzmann's constant and \( T \) the absolute temperature. Near the melting point roughly one site in ten thousand is empty; at room temperature the fraction is astronomically smaller. This matters because vacancies are diffusion's vehicle — atoms move mainly by hopping into adjacent empty sites — so (1) is the deep reason every diffusion-controlled process in Lesson 6 accelerates exponentially with temperature.</p>
 <h3>03 · Dislocations: why metals are a thousand times weaker than they should be</h3>
 <p>Shearing a perfect crystal means breaking every bond across a plane simultaneously — the theoretical strength, orders of magnitude above anything measured. A dislocation breaks the bonds <em>one row at a time</em>, like moving a carpet by running a wrinkle across it rather than dragging the whole rug. Metals deform at realistic stresses because dislocations exist; they strengthen when we obstruct dislocation motion — with solutes, boundaries, and other dislocations, the entire agenda of Lesson 9. Grain boundaries, meanwhile, are both obstacles (strength) and fast-diffusion highways (creep, corrosion sensitivity): planar defects always charge rent both ways.</p>
 
@@ -2453,7 +2453,7 @@ Materials behavior is routinely governed by its rarest constituents, which is wh
 them, rather than rounding them to zero, is a professional skill.</p>
 <p><strong>Closing.</strong> Point defects carry diffusion, line defects carry plasticity, planar defects referee both. "Defect" is the field's least fortunate word — these are the control knobs.</p></div></section><section class="sum-lesson"><h3>Lesson 06 · Diffusion</h3><div class="measure">
 <h3>01 · Fick's laws, with atoms attached</h3>
-<p>Diffusion is atoms hopping site to site, biased downhill in concentration. Steady state is Fick's first law, \( J = -D\, dC/dx \): flux proportional to gradient, \( D \) the diffusion coefficient. Transient cases — the plant's usual reality — obey Fick's second law:</p>
+<p>Diffusion is atoms hopping site to site, biased downhill in concentration. Steady state is Fick's first law, \( J = -D\, dC/dx \): flux proportional to gradient, with \( J \) the atoms crossing unit area per unit time, \( D \) the diffusion coefficient, \( C \) the concentration and \( x \) the distance measured along the diffusion direction. Transient cases — the plant's usual reality, in which \( t \) is the elapsed time — obey Fick's second law:</p>
 \[ \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2} \tag{1} \]
 <p>whose solutions for a surface held at constant concentration follow the error function. The engineering headline hiding in those solutions: any characteristic penetration depth scales as</p>
 \[ x \sim \sqrt{Dt} \tag{2} \]
@@ -2487,7 +2487,7 @@ declared or measuring generously — and \( \sqrt{Dt} \), evaluated on the back 
 certificate itself, is enough to ask the question with numbers instead of suspicion.</p>
 <p><strong>Closing.</strong> Gradient drives, \( \sqrt{Dt} \) paces, Arrhenius accelerates. Three relations, and most furnace-floor arithmetic is already in hand.</p></div></section><section class="sum-lesson"><h3>Lesson 07 · Mechanical properties I: elasticity and the tension test</h3><div class="measure">
 <h3>01 · One test to rule them</h3>
-<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \), engineering strain \( \epsilon = \Delta L/L_0 \), both referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
+<p>Pull a standard bar to fracture, record load and elongation, and normalize away the geometry: engineering stress \( \sigma = F/A_0 \) and engineering strain \( \epsilon = \Delta L/L_0 \), where \( F \) is the applied load, \( A_0 \) the original cross-sectional area, \( \Delta L \) the elongation and \( L_0 \) the original gauge length &mdash; both measures referred to <em>original</em> dimensions. The resulting curve is the most quoted document in mechanical engineering, and four numbers summarize it: the elastic modulus \( E \) (initial slope, Hooke's law \( \sigma = E\epsilon \)); the yield strength \( \sigma_y \) (0.2% offset, where permanent set begins); the ultimate tensile strength (the curve's peak); and ductility, as percent elongation or reduction of area.</p>
 <h3>02 · What each number is for</h3>
 <p>\( E \) is a bonding property — recall Lesson 2's well curvature — essentially untouchable by heat treatment: all steels share ~200 GPa. \( \sigma_y \) is the designer's boundary; machines are sized so working stress stays below it with margin. UTS matters for what happens beyond intent — overload margins and, through empirical correlations, hardness checks. Ductility is the forgiveness budget: the plastic reserve that lets a part yield locally, redistribute, and warn before it breaks.</p>
 <h3>03 · True stress, and the necking illusion</h3>
@@ -2546,7 +2546,7 @@ room-temperature result.</p>
 <h3>02 · The four mechanisms</h3>
 <p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
 \[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
-<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
+<p>with \( \sigma_y \) the yield strength, \( \sigma_0 \) the lattice friction stress a single crystal would show, \( k_y \) the grain-boundary strengthening coefficient of the material and \( d \) the average grain diameter &mdash; fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
 <h3>03 · Choosing among them</h3>
 <p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. the Worked Examples tab prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
 
@@ -2575,7 +2575,7 @@ lesson trains.</p>
 <h3>02 · Recovery, recrystallization, grain growth</h3>
 <p><b>Recovery</b> (lowest temperatures): dislocations climb, annihilate, and tidy into low-energy walls. Residual stress falls and conductivity returns, but strength barely moves — the stress-relief anneal lives here. <b>Recrystallization</b>: new, strain-free grains nucleate in the deformed matrix and consume it wholesale; strength drops toward the annealed baseline and ductility floods back. The temperature where this completes in about an hour — the recrystallization temperature — runs roughly</p>
 \[ T_R \approx 0.4\, T_m \quad (\mathrm{in\ kelvins}) \tag{1} \]
-<p>and falls with heavier prior cold work (more stored energy, more driving force). <b>Grain growth</b>: left hot after recrystallization finishes, boundaries migrate to cut boundary area, grains coarsen, and Hall–Petch (Lesson 9) runs in reverse. Annealing schedules end when recrystallization does, not later, for exactly this reason.</p>
+<p>where \( T_R \) is that recrystallization temperature and \( T_m \) the melting temperature, both on the absolute scale. It falls with heavier prior cold work (more stored energy, more driving force). <b>Grain growth</b>: left hot after recrystallization finishes, boundaries migrate to cut boundary area, grains coarsen, and Hall–Petch (Lesson 9) runs in reverse. Annealing schedules end when recrystallization does, not later, for exactly this reason.</p>
 <h3>03 · Hot working, defined properly</h3>
 <p>Hot working is deformation <em>above</em> the recrystallization temperature — the metal recrystallizes as fast as the rolls harden it, so it never accumulates cold work. Cold working is deformation below \( T_R \). The boundary is homologous, not absolute: by (1), lead recrystallizes below room temperature — a fitter bending lead sheet is hot-working it at 25 °C — while tungsten at a red-hot 800 °C can still be cold-working. "Hot" belongs to the metal's melting point, not the thermometer.</p>
 
@@ -2599,7 +2599,7 @@ designations on certificates are precisely this cycle's bookkeeping.</p>
 <h3>01 · Nucleation: the reluctant start</h3>
 <p>A melt below its freezing point does not freeze at once — a solid nucleus must first reach a critical size before growing is cheaper than redissolving. The balance of surface energy paid against volume energy won sets the critical radius:</p>
 \[ r^* = \frac{2\gamma T_m}{\Delta H_f\, \Delta T} \tag{1} \]
-<p>— inversely proportional to the undercooling \( \Delta T \). Homogeneous nucleation needs implausible undercoolings; real melts nucleate <em>heterogeneously</em> on mold walls and inoculant particles, which is why foundries seed melts deliberately: more nuclei, finer grains, better castings.</p>
+<p>in which \( r^* \) is that critical radius, \( \gamma \) the solid&ndash;liquid surface energy, \( T_m \) the melting temperature and \( \Delta H_f \) the latent heat of fusion per unit volume &mdash; inversely proportional to the undercooling \( \Delta T \). Homogeneous nucleation needs implausible undercoolings; real melts nucleate <em>heterogeneously</em> on mold walls and inoculant particles, which is why foundries seed melts deliberately: more nuclei, finer grains, better castings.</p>
 <h3>02 · The three zones of a casting</h3>
 <p>Read a sectioned billet or ingot and solidification history is written in its grains. <b>Chill zone</b>: a skin of fine equiaxed grains, nucleated in a rush against the cold mold. <b>Columnar zone</b>: long grains growing inward along the heat-flow direction, competing until the best-aligned survive. <b>Central equiaxed zone</b>: grains nucleated in the cooling interior liquid. The proportions are process knobs — pouring superheat, mold cooling, stirring — and they matter because columnar structures are anisotropic and their convergence planes are weak.</p>
 <h3>03 · Segregation: solidification's chemical fingerprint</h3>
@@ -2615,7 +2615,7 @@ the last, slowest-cooling liquid. Alongside the zones, read the defects as verbs
 centerline shrinkage means feeding failed; segregation bands mean solute was pushed ahead
 of the fronts; gas porosity's round voids mean dissolved gas came out of solution.</p>
 <p>Then run the arithmetic that controls all of it: Chvorinov's rule,
-\( t = B(V/A)^2 \), prices each region's solidification time by its modulus \( V/A \) —
+\( t = B(V/A)^2 \) — where \( t \) is the solidification time and \( B \) the mould constant, a property of the mould material and pouring conditions rather than of the casting — prices each region's solidification time by its modulus \( V/A \), the ratio of its volume to its cooling surface area —
 and the whole craft of risering is making the riser's modulus larger than the casting's, so
 the riser freezes LAST and feeds shrinkage instead of hosting it. The same square law says
 thin sections freeze fast and fine, heavy bosses freeze slow and coarse — so properties

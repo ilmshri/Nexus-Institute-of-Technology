@@ -195,7 +195,7 @@ make: how much does discharge pressure move per percent of speed? Differentiate 
 chain of dependencies and multiply the local sensitivities.</p>
 <h3>03 · Relative rates — the engineer's favorite</h3>
 <p>Divide a derivative by its function and you get relative sensitivity. For a fan law
-\( P = kN^3 \), logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
+\( P = kN^3 \) — shaft power \( P \) rising with the cube of rotational speed \( N \), \( k \) a constant for the machine and duty — logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
 speed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or
 pump slightly is the cheapest energy project in any plant — the cube works for you on the way
 down.</p>
@@ -426,7 +426,7 @@ RMS tracks energy, and energy does the damage.</p>
 <h3>03 · Work by integration</h3>
 <p>When force varies along the path, work is accumulated force-times-distance:
 \( W = \int F\,dx \). Pumping a tank empty is the signature case: each layer of liquid at
-depth \( y \) has weight \( \rho g A\,dy \) and must rise a different height. Summing layers
+depth \( y \) has weight \( \rho g A\,dy \) — density \( \rho \) times gravitational acceleration \( g \) times the tank's cross-sectional area \( A \) times the layer's own thickness \( dy \) — and must rise a different height. Summing layers
 is an integral, executed in the Worked Examples tab for a real tank. The same layer-summing pattern
 computes hydrostatic forces on gates and centroids of plates — one method, many billables.</p>
 
@@ -480,7 +480,7 @@ them; the solving builds the reading instinct.</p>
 out. <em>Express each rate in the state variable:</em> outflow proportional to level, heat
 loss proportional to excess temperature, contaminant leaving at concentration times flow.
 <em>Divide through</em> until the equation reads \( \dot{y} = -(y - y_\infty)/\tau \),
-and read \( \tau \) directly from the coefficients — \( V/Q \) for a flushed tank,
+and read \( \tau \) directly from the coefficients — tank volume \( V \) over volumetric flow \( Q \) for a flushed tank,
 thermal mass over loss coefficient for a cooling body. The physics enters in the rates; the
 mathematics is the same three lines every time.</p>
 <p>Respect the sign conventions and the model's edges. A negative rate coefficient decays
