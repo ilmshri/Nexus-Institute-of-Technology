@@ -1,0 +1,38 @@
+/* MAJLIS — the Kuwaiti heritage dial: warmer cream, gold more present, an
+   original Sadu-INSPIRED geometric band in functional slots (footer crown,
+   pagehead motif, active-tab thread), pearl progress ticks. All bands are
+   original CSS geometry — never copied weaving (Al Sadu is UNESCO-listed
+   heritage; original vector interpretation only). Always bright. */
+:root{
+  --bg:#FAF6EE; --sunken:#F3EDE0;
+  --line:#E9E1CE; --line-strong:#D9CEB4;
+  --gold:#C29A4B; --gold-soft:#E3C077; --gold-tint:#F6EEDC;
+  --sadu:#8E3B2F;
+}
+/* footer crown: navy diamond band on gold, sadu-red thread beneath */
+.nx-foot{border-top:0;position:relative;padding-top:46px}
+.nx-foot::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;
+  background:
+    linear-gradient(135deg,var(--navy) 25%,transparent 25%) -6px 0,
+    linear-gradient(225deg,var(--navy) 25%,transparent 25%) -6px 0,
+    linear-gradient(315deg,var(--navy) 25%,transparent 25%),
+    linear-gradient(45deg,var(--navy) 25%,transparent 25%);
+  background-size:12px 12px;background-color:var(--gold-soft);
+  box-shadow:0 2px 0 var(--sadu)}
+/* short motif strip over page heads (not full width — a signature, not wallpaper) */
+.pagehead{position:relative;padding-top:40px}
+.pagehead::before{content:"";position:absolute;top:22px;inset-inline-start:0;width:84px;height:8px;
+  background:
+    linear-gradient(135deg,var(--navy) 25%,transparent 25%) -4px 0,
+    linear-gradient(225deg,var(--navy) 25%,transparent 25%) -4px 0,
+    linear-gradient(315deg,var(--navy) 25%,transparent 25%),
+    linear-gradient(45deg,var(--navy) 25%,transparent 25%);
+  background-size:8px 8px;background-color:var(--gold-soft)}
+/* sadu-red thread on the active tab */
+.tabs button.on{box-shadow:inset 0 -2px 0 var(--sadu),0 1px 3px rgba(26,39,66,.12)}
+.appbar nav a.on::after{background:var(--sadu)}
+/* pearl-strand progress: completed lessons are pearls */
+.done>.tick,.tick.on{background:radial-gradient(circle at 35% 30%,#FFFDF7,#EFE7D2 55%,#CDBA8E);
+  border-color:var(--gold);color:#7A5E2B}
+.outline .oh .bar i{background:linear-gradient(90deg,var(--gold),var(--gold-soft))}
+.kicker .n{background:var(--gold-tint);color:var(--sadu)}

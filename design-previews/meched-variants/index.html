@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MechEd — three visual variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&display=swap">
+<style>
+  :root{--bg:#FAF8F4;--ink:#1C2C4F;--soft:#44506B;--navy:#14294B;--gold:#C9A45C;--line:#E7E2D6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.65}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 5vw 80px}
+  h1{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(26px,4vw,38px);letter-spacing:.02em;margin:0 0 6px}
+  .sub{color:var(--soft);max-width:64ch}
+  .k{font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .card{background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:10px;
+        padding:22px 24px;margin:22px 0}
+  .card h2{font-family:'Source Serif 4',serif;margin:0 0 4px;font-size:22px}
+  .card p{margin:6px 0 12px;color:var(--soft);font-size:14.5px}
+  .links a{display:inline-block;margin:0 12px 6px 0;font-weight:600;color:var(--navy);text-decoration:none;
+           border-bottom:2px solid var(--gold);padding-bottom:1px;font-size:14px}
+  .links a:hover{color:#2D5397}
+  .note{font-size:12.5px;color:var(--soft);border-inline-start:3px solid var(--gold);padding:10px 14px;background:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="k">MECHED · Visual variants · 2026-07-26</p>
+  <h1>Three dials on the same prestige system.</h1>
+  <p class="sub">Same fonts, same layout, same navy-and-gold family — three distinct voices.
+  Each variant shows three real pages (Homepage · Course · Lesson) with a small override
+  stylesheet on top of the committed MechEd system. Tell me in chat which voice wins —
+  or which pieces to combine.</p>
+
+  <div class="card">
+    <h2>1 · Charter</h2>
+    <p>The committed baseline, gold voice slightly raised. The control — judge the others against it.</p>
+    <div class="links"><a href="charter/home.html">Homepage</a><a href="charter/course.html">Course</a><a href="charter/lesson.html">Lesson</a></div>
+  </div>
+
+  <div class="card">
+    <h2>2 · Gallery</h2>
+    <p>The airy dial: whiter paper, royal blue leads, larger serif display, thinner rules, more breathing room.</p>
+    <div class="links"><a href="gallery/home.html">Homepage</a><a href="gallery/course.html">Course</a><a href="gallery/lesson.html">Lesson</a></div>
+  </div>
+
+  <div class="card">
+    <h2>3 · Majlis</h2>
+    <p>The heritage dial: warmer cream, original Sadu-inspired geometric bands in functional slots
+    (footer crown, page-head motif, active-tab thread), pearl progress ticks. Always bright.</p>
+    <div class="links"><a href="majlis/home.html">Homepage</a><a href="majlis/course.html">Course</a><a href="majlis/lesson.html">Lesson</a></div>
+  </div>
+
+  <p class="note">Preview copies of real built pages — the live site build and the Arabic tree are untouched
+  by this folder. Sadu bands are original CSS geometry, never copied weavings.</p>
+</div>
+</body>
+</html>
