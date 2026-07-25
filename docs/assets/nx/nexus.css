@@ -311,7 +311,21 @@ html.js .tabpanel.on{display:block}
   text-transform:uppercase;color:var(--nx-muted)}
 .ref-terms td:last-child{width:1%;white-space:nowrap}
 /* ---------- course summary / print (owner directive #5) ---------- */
-.sum-doc{max-width:1060px;margin:0 auto;padding:0 4vw 40px}
+/* Summary pages are emitted with wrap=False, so they have no .wrap ancestor to
+   centre them — the header block must carry its own box. Matches .sum-doc's
+   max-width and inline padding exactly so header and body align on one edge.
+   padding-inline (not shorthand) keeps .pagehead's own vertical rhythm. */
+.sum-head{max-width:1060px;margin:0 auto;padding-inline:4vw}
+/* .part.sum-doc, not .sum-doc: these pages are <article class="part tight
+   sum-doc">, and .part.tight (0,2,0) outranks a bare .sum-doc (0,1,0), which
+   silently killed the intended side padding and let body text run into the
+   screen edge on narrow viewports. Match the specificity to restore it. */
+.part.sum-doc{max-width:1060px;margin:0 auto;padding:0 4vw 40px}
+/* Lesson pages give a diagram a 500px floor and let it scroll horizontally —
+   right for one diagram read in context. A compiled summary stacks many with
+   no such affordance, and in print there is no scrolling at all, so the floor
+   silently clips them off the page. Drop it in the summary/print contexts. */
+.sum-doc figure.lesson-diagram svg{min-width:0}
 .sum-part{font-size:15px;letter-spacing:.02em;border-bottom:2px solid var(--nx-ink);
   padding-bottom:8px;margin:40px 0 22px}
 .sum-lesson{margin:0 0 30px}
@@ -322,7 +336,8 @@ html.js .tabpanel.on{display:block}
   body{background:#fff;color:#000}
   main.wrap,main{padding:0;margin:0}
   .pagehead{padding:0 0 12px;max-width:none}
-  .sum-doc{max-width:none;padding:0}
+  .part.sum-doc{max-width:none;padding:0}
+  figure.lesson-diagram svg{min-width:0;max-width:100%}
   .sum-lesson,.ref-course,.keybox,figure{break-inside:avoid}
   .sum-part{break-before:page}
   .sum-part:first-of-type{break-before:auto}
@@ -487,6 +502,12 @@ figure.lesson-diagram svg{width:100%;min-width:500px;max-width:640px;height:auto
 figure.lesson-diagram figcaption{font-family:var(--serif);font-size:14px;line-height:1.7;color:var(--nx-muted);
   max-width:70ch;margin:14px auto 0;text-align:center}
 .measure mjx-container[display="true"]{margin:22px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
+/* Tagged equations (\tag{...}) render with width="full" and an INLINE
+   min-width from MathJax. Inline min-width beats max-width:100%, so the
+   equation pushes the whole PAGE into horizontal scroll on a phone instead of
+   scrolling inside its own box. An inline style can only be overridden with
+   !important; this restores the overflow-x:auto behaviour intended above. */
+.measure mjx-container[display="true"][width="full"]{min-width:0 !important}
 .keybox mjx-container[display="true"]{margin:8px 0 12px}
 .check{border:1px solid var(--nx-line);border-radius:14px;background:#fff;margin:34px 0 0;overflow:hidden}
 .check .q{padding:24px 26px 18px}
