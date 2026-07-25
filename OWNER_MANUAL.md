@@ -1,7 +1,7 @@
-# OWNER'S MANUAL — editing Nexus content yourself
+# OWNER'S MANUAL — editing MechEd content yourself
 
 Companion to **[PROJECT_MAP.md](PROJECT_MAP.md)** (which files are safe). This manual
-covers *how* to edit the safe ones without breaking the Nexus site.
+covers *how* to edit the safe ones without breaking the MechEd site.
 
 ---
 
@@ -42,7 +42,7 @@ keychain). There is nothing to install.
 
 # 2. rebuild the site
 python3 nexus_build.py
-#    success looks like:   NEXUS build <hash>
+#    success looks like:   MECHED build <hash>
 #                          pages: 579 | search index: 528 | embeds: 102
 #                          coverage: 74/528 lessons at full depth (14%)
 #    an error (long "AssertionError: ...") means: nothing was deployed,
@@ -58,8 +58,8 @@ git commit -m "describe what you changed"
 
 # 5. publish
 git push origin main
-#    this one command pushes to BOTH Nexus repos: the code home
-#    (ilmshri/Nexus-Institute-of-Technology) and the live-site repo
+#    this one command pushes to BOTH MechEd repos: the code home
+#    (ilmshri/MechEd-Institute-of-Technology) and the live-site repo
 #    (nexuskw/nexuskw.github.io). The live site updates ~1 minute later.
 ```
 

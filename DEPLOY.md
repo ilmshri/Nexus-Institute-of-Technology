@@ -1,10 +1,10 @@
-# Deploy — Nexus Institute of Technology
+# Deploy — MechEd
 
 The site is a fully static build committed to the repo. GitHub Pages serves the
 `docs/` folder of `main` directly — nothing runs on a server.
 
 - **Live URL:** https://nexuskw.github.io/
-- **Code home:** `github.com/ilmshri/Nexus-Institute-of-Technology` (origin fetch URL)
+- **Code home:** `github.com/ilmshri/MechEd-Institute-of-Technology` (origin fetch URL)
 - **Live-site repo:** `github.com/nexuskw/nexuskw.github.io` — GitHub Pages serves
   the site from THIS repo (`main`, `/docs`); the Pages URL is bound to its name,
   so it must keep receiving pushes for the site to update

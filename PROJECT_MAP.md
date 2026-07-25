@@ -1,11 +1,11 @@
-# PROJECT MAP — Nexus Institute of Technology
+# PROJECT MAP — MechEd
 
-Live site: **https://nexuskw.github.io/** · Code home: `github.com/ilmshri/Nexus-Institute-of-Technology`
+Live site: **https://nexuskw.github.io/** · Code home: `github.com/ilmshri/MechEd-Institute-of-Technology`
 Live-site repo: `github.com/nexuskw/nexuskw.github.io` (GitHub Pages source — one `git push origin main` updates both)
 Local folder: `/Users/ilmshri/Social Media/nexus-institute`
 Companion guide: **[OWNER_MANUAL.md](OWNER_MANUAL.md)** — step-by-step editing instructions.
 
-This map lists every file and folder in the Nexus repository, split into two categories:
+This map lists every file and folder in the MechEd repository, split into two categories:
 
 - 🟢 **EDITABLE CONTENT** — safe for you to modify. Worst case, a mistake here shows
   wrong text on one page; it will not take the site down.
@@ -64,7 +64,7 @@ number. Their text is editable; the build adapts their figures automatically.
 
 ### `assets/img/` — archived photo pool (inert)
 
-Eight `.jpg` photos + `CREDITS.md`. **Not used by the live site** (Nexus is
+Eight `.jpg` photos + `CREDITS.md`. **Not used by the live site** (MechEd is
 vector-only). Kept as archive; harmless either way.
 
 ### Documentation (plain reading/writing, no build impact)
@@ -75,7 +75,7 @@ vector-only). Kept as archive; harmless either way.
 | `DEPLOY.md` | Deployment reference |
 | `PROJECT_MAP.md` | This file |
 | `OWNER_MANUAL.md` | Your editing manual |
-| `CLAUDE.md` | ⚠️ Special: the Nexus master brief + decision ledger. Editable *by agreement* — it is the continuation contract every future working session obeys. Add decisions; never delete history (older entries keep their original wording as the audit trail). |
+| `CLAUDE.md` | ⚠️ Special: the MechEd master brief + decision ledger. Editable *by agreement* — it is the continuation contract every future working session obeys. Add decisions; never delete history (older entries keep their original wording as the audit trail). |
 
 ---
 
@@ -85,7 +85,7 @@ vector-only). Kept as archive; harmless either way.
 
 | File | Why it's critical |
 |---|---|
-| `nexus_build.py` | **The Nexus build system.** Reads everything above, emits the whole site into `docs/`. All quality gates (no company names in lessons, verified videos only, etc.) are enforced here. |
+| `nexus_build.py` | **The MechEd build system.** Reads everything above, emits the whole site into `docs/`. All quality gates (no company names in lessons, verified videos only, etc.) are enforced here. |
 | `build.py` | **Library the build system imports.** Previous-generation generator retained as the data-loading core of `nexus_build.py`. Deleting or renaming it kills every build. Never deploy from it directly. |
 
 ### The live site's engine room
@@ -93,7 +93,7 @@ vector-only). Kept as archive; harmless either way.
 | Path | Why it's critical |
 |---|---|
 | `docs/` (8.6 MB, ~579 pages) | **Generated output — the actual live site.** Never edit by hand: the next build overwrites everything in it. All changes go through the green files + a rebuild. |
-| `assets/nx/` | The live Nexus design system: `nexus.css` (all styling), `nexus.js` (tabs, quiz engine, language toggle, progress), `manifest.webmanifest` + `sw.js` + `icons/` (the installable-app machinery). A typo in `nexus.js` breaks every quiz on the site. |
+| `assets/nx/` | The live MechEd design system: `nexus.css` (all styling), `nexus.js` (tabs, quiz engine, language toggle, progress), `manifest.webmanifest` + `sw.js` + `icons/` (the installable-app machinery). A typo in `nexus.js` breaks every quiz on the site. |
 | `nexus/logo.svg` | The approved v5 Academic Shield logo, copied into the site at build. |
 | `nexus/logo-v4-gear-coin-unapproved.svg` | Archived unapproved logo draft — keep as record. |
 | `nexus/design-system.html` | Stage-1 design reference artifact. |
@@ -102,7 +102,7 @@ vector-only). Kept as archive; harmless either way.
 
 | Path | Why it stays |
 |---|---|
-| `assets/css/site.css`, `assets/js/site.js` | The retired first-generation design. Not shipped by the Nexus build; kept for history/rollback. |
+| `assets/css/site.css`, `assets/js/site.js` | The retired first-generation design. Not shipped by the MechEd build; kept for history/rollback. |
 
 ### Working directories
 

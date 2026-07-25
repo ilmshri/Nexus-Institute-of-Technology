@@ -1,4 +1,4 @@
-# Nexus Institute of Technology
+# MechEd
 
 **Learn Mechanical Engineering from Scratch to Industry 4.0.**
 Live site: **https://nexuskw.github.io/**
