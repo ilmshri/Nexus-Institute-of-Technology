@@ -98,3 +98,37 @@ homepages, mega-menu navigation, catalog-as-plain-list.
 6. Search deserves ⌘K-class prominence on a 528-lesson catalog.
 7. Honest depth labels stay in ALL drafts (integrity floor) — styled as status chips/telemetry, not
    apologies. No cost/"free" mentions anywhere (binding owner rule).
+
+## 5. Owner-referenced bilingual model: itqan.edu.sa (added 2026-07-25)
+
+Owner directive 2026-07-25: use ITQAN Institute's site as a design reference, especially its
+English/Arabic handling. Reference = pattern study only; no assets or copy are copied. (Unrelated
+to the naming track: the ITQAN name-collision finding there stands.)
+
+Verified firsthand by browser inspection, 2026-07-25:
+- **Stack**: WordPress 7.0.2 + Elementor (irrelevant to us — we stay static).
+- **Type**: Gill Sans (EN) + **GE SS** (AR) — one humanist sans paired with the classic Gulf
+  corporate Arabic face; identical hierarchy and weights in both languages.
+- **Color**: one deep institutional green `#005B2E` on white; flat, no gradients.
+- **Bilingual architecture**: SEPARATE URL TREES `/en/` + `/ar/` (WPML pattern), document-level
+  `lang` + `dir=rtl`; **full 1:1 content parity** (every homepage section translated, same order);
+  complete RTL mirror (logo docks right, nav reverses, CTA pill flips side); language toggle
+  labeled in the DESTINATION language ("العربية" on EN pages; "English" + flag on AR pages).
+- **Logo lockup is bilingual by construction**: Arabic إتقان + Latin ITQAN stacked in one mark,
+  dual descriptor lines beneath (AR full institutional name + EN full name). One logo serves both
+  trees unchanged — no logo swapping.
+- **Homepage register**: hero video, mission headlines, program cards, career pitch, news,
+  stakeholders/accreditations bands, count-up counters.
+
+ADOPT when the Arabic layer returns (all gated with that owner decision):
+1. **Emit-two-trees** bilingual architecture from `nexus_build.py` (`/` + `/ar/`) — replaces the
+   retired in-page data-ar/localStorage toggle; real per-language URLs, shareable, honest.
+2. Toggle labeled in the destination language — the owner's "non-confusing" bilingual instinct.
+3. **Bilingual logo lockup** (Latin brand word + designed Arabic script line + dual descriptors) —
+   the owner's stated wordmark treatment, validated in the wild here.
+4. A deliberate AR type partner for the winning draft's EN face (IBM Plex Sans Arabic earmarked;
+   final pairing chosen per-draft at apply time).
+5. 1:1 parity discipline (the standing BILINGUAL RULE already requires it).
+
+NOT adopted: their green (palette comes from the round-2 winner), photography-led content
+(vector-only rule), the WordPress stack.
