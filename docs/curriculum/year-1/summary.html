@@ -58,7 +58,7 @@ so this document is the full compiled text in the meantime.</p>
 <p>Engineering mathematics begins one step before calculus: every quantity you will ever
 differentiate or integrate carries a <em>unit</em>, and the units obey algebra just as the
 numbers do. When a pump curve says head is 42 m, that number is meaningless until you know it
-multiplies through \( P = \rho g Q H \) to give watts:</p>
+multiplies through the hydraulic-power relation \( P = \rho g Q H \) to give watts. Every letter in it is a named physical quantity: \( P \) is the power delivered to the fluid, \( \rho \) the fluid's density, \( g \) the acceleration due to gravity, \( Q \) the volumetric flow rate, and \( H \) the head the pump adds. Substitute the units of each and the result must come out in watts:</p>
 \[ [P] = \frac{\mathrm{kg}}{\mathrm{m}^3}\cdot\frac{\mathrm{m}}{\mathrm{s}^2}\cdot\frac{\mathrm{m}^3}{\mathrm{s}}\cdot \mathrm{m} = \frac{\mathrm{kg\,m^2}}{\mathrm{s}^3} = \mathrm{W} \tag{1} \]
 <p>Check the units first and half of all calculation errors die before they are born. This is
 the <em>dimensional analysis</em> discipline: both sides of any physical equation must carry
@@ -321,7 +321,7 @@ attached.</p>
 <h3>01 · Accumulation is the other half of calculus</h3>
 <p>The derivative asks: how fast? The integral asks the inverse question: <em>how much,
 in total?</em> A flow meter reads m³/h instant by instant; the invoice wants m³. Adding up a
-changing rate over time is integration:</p>
+changing rate over time is integration &mdash; the total volume \( V \) that passes in the time from \( 0 \) to \( T \), accumulated from the instantaneous volumetric flow rate \( Q(t) \):</p>
 \[ V = \int_{0}^{T} Q(t)\,dt \tag{1} \]
 <p>Geometrically this is the area under the \( Q(t) \) curve — approximated by stacking thin
 rectangles \( Q \cdot \Delta t \) and letting \( \Delta t \to 0 \). Every totalizer in the
