@@ -1438,14 +1438,13 @@ def write_unit_policy_report(rows):
                                                           encoding="utf-8")
     return len(ok), len(in_scope), [r for r in in_scope if not r["compliant"]]
 
-def course_summary_fragment(sem, course, prefix, tabs_all, ref):
-    """The printable content for ONE course: every authored lecture, then the
-    foundations/toolkits, then the compiled course reference (same engine as
-    the course page's own Reference tab). Lessons still in production are named
-    honestly, not faked. Shared by that course's own summary.html AND the
-    combined semester/year summaries — a course-identifying heading precedes
-    Part 1 (not itself a .sum-part) so it always rides along on Part 1's own
-    page break instead of forcing an extra near-blank page before it."""
+def _legacy_compiled_fragment(course, tabs_all):
+    """Pre-recap summary body: every authored lecture, then every foundations
+    toolkit. Retained ONLY as the fallback for courses whose per-lesson recaps
+    are not authored yet (see course_summary_fragment). The old
+    "Part 3 — Course reference" section is gone for good — since the Resources
+    restructure that material lives on the course page's own Reference tab, and
+    reprinting it here was pure duplication."""
     lectures, foundations, miss_lec, miss_fnd = [], [], [], []
     for les in course['lessons']:
         n = les['n']
@@ -1470,18 +1469,71 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
         return (f'<p class="ref-thin">Lessons {", ".join("%02d" % n for n in nums)} '
                 f'are still in production and are omitted from the {what} section.</p>')
 
+    if not lectures and not foundations:
+        return ('<p class="ref-thin">This course is still in production — there is '
+                'no authored content to compile yet.</p>')
+
     p1 = ''.join(lectures) or '<p class="ref-thin">No lecture content is authored for this course yet.</p>'
     p2 = ''.join(foundations) or '<p class="ref-thin">No foundations content is authored for this course yet.</p>'
+    # Part 1 carries .sum-nobreak: the course heading above it already forces the
+    # page break, so letting .sum-part break again would emit a near-blank page.
     return f"""
-<h2 id="sum-{course['id']}">{esc(course['code'])} — {esc(course['title'])}</h2>
-<h2 class="sum-part">Part 1 — Lectures</h2>
+<p class="ref-thin">Condensed per-lesson recaps are not written for this course yet,
+so this document is the full compiled text in the meantime.</p>
+<h2 class="sum-part sum-nobreak">Part 1 — Lectures</h2>
 {omitted(miss_lec, 'lectures')}
 {p1}
 <h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
 {omitted(miss_fnd, 'foundations')}
-{p2}
-<h2 class="sum-part">Part 3 — Course reference</h2>
-<div class="wide">{reference_section_html(sem, course, ref, prefix)}</div>"""
+{p2}"""
+
+def course_summary_fragment(sem, course, prefix, tabs_all, ref):
+    """The printable content for ONE course, shared by that course's own
+    summary.html AND the combined semester/year summaries.
+
+    PREFERRED FORM (owner, 2026-07-26): a genuine per-lesson RECAP — the short,
+    plain-language bullet summary authored in each lesson's `recap` field. This
+    document used to be a verbatim second copy of every lecture, which is
+    exactly what the owner asked us to stop shipping: a summary you can revise
+    from in ten minutes is a different artefact from the lectures, not a
+    reprint of them.
+
+    FALLBACK: a course with no authored recaps yet keeps the legacy compiled
+    lecture+foundations document, labelled honestly, rather than degrading to an
+    empty placeholder. Those PDFs already ship and are still useful; silently
+    emptying them would be a regression. Courses migrate to the recap form as
+    their recaps get written, one course at a time.
+
+    `prefix`/`ref` are no longer read (the reference section is gone). They stay
+    in the signature deliberately — this is a shared interface with two callers
+    plus the ctx tuples in main(), and a parallel branch is rebasing against it;
+    reshaping it now would buy nothing and cost a merge conflict."""
+    heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
+               f'{esc(course["code"])} — {esc(course["title"])}</h2>')
+
+    recaps, no_recap = [], []
+    for les in course['lessons']:
+        tab = tabs_all.get(str(les['n']))
+        rec = tab.get('recap') if isinstance(tab, dict) else None
+        head = f"Lesson {les['n']:02d} · {esc(les['t'])}"
+        if isinstance(rec, str) and rec.strip():
+            recaps.append(f'<section class="sum-lesson"><h3>{head}</h3>'
+                          f'<div class="sum-recap">{rec}</div></section>')
+        else:
+            no_recap.append(les['n'])
+
+    if not recaps:
+        return heading + _legacy_compiled_fragment(course, tabs_all)
+
+    gap = ''
+    if no_recap:
+        plural = len(no_recap) > 1
+        gap = (f'<p class="ref-thin">No recap is authored yet for '
+               f'lesson{"s" if plural else ""} '
+               f'{", ".join("%02d" % n for n in no_recap)} — read '
+               f'{"those lessons" if plural else "that lesson"} in full on the '
+               f'course page.</p>')
+    return f"{heading}\n{gap}\n{''.join(recaps)}"
 
 def build_course_summary(sem, course, prefix, tabs_all, ref):
     """Owner directive #5: end-of-course summary, print-optimized so the browser's
@@ -1492,9 +1544,9 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>
   <h1>{esc(course['code'])} — {esc(course['title'])}</h1>
-  <p class="sub">One compiled document: every authored lecture, then the foundations
-  toolkits, then this course's own equation-and-term reference. Use
-  <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <p class="sub">A condensed revision summary: the key points of every lesson in
+  this course, in brief. Not a copy of the lectures — read those on the course
+  page. Use <b>Print / Save as PDF</b> for a downloadable copy.</p>
   <div class="cta-row no-print">
     <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
     <a class="btn btn-ghost" href="index.html">Back to course</a>
@@ -1505,7 +1557,7 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 </article>"""
     nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
             f"Course summary — {course['title']} — Nexus Institute of Technology",
-            f"Compiled lectures, foundations, and reference for "
+            f"Condensed per-lesson revision summary for "
             f"{course['code']} {course['title']}.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 
@@ -1526,9 +1578,9 @@ def build_grouped_summary(title, courses_ctx, out_path, prefix):
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COMBINED SUMMARY</span>{n} course{'s' if n != 1 else ''}</p>
   <h1>{esc(title)}</h1>
-  <p class="sub">One compiled document across {n} course{'s' if n != 1 else ''}: every
-  authored lecture, foundations toolkit, and reference, course by course in
-  curriculum order. Use <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <p class="sub">A condensed revision summary across {n} course{'s' if n != 1 else ''}:
+  the key points of every lesson, course by course in curriculum order. Use
+  <b>Print / Save as PDF</b> for a downloadable copy.</p>
   <div class="cta-row no-print">
     <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
     <a class="btn btn-ghost" href="{prefix}reference/index.html">Back to Resources</a>
@@ -1539,7 +1591,7 @@ def build_grouped_summary(title, courses_ctx, out_path, prefix):
 {frags}
 </article>"""
     nx_page(out_path, f"{title} — Nexus Institute of Technology",
-            f"Compiled lectures, foundations, and reference across {n} courses.",
+            f"Condensed per-lesson revision summary across {n} courses.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 
 def main():

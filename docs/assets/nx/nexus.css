@@ -331,6 +331,12 @@ html.js .tabpanel.on{display:block}
 .sum-lesson{margin:0 0 30px}
 .sum-lesson>h3{font-size:16px;color:var(--nx-teal-d);margin:0 0 12px;
   padding-top:6px;border-top:1px solid var(--nx-line)}
+/* per-lesson recap: the summary document's actual content (owner 2026-07-26).
+   Reading rhythm matches .measure — same serif, same 1.8 line-height. */
+.sum-recap{max-width:75ch}
+.sum-recap ul{margin:6px 0 0;padding-inline-start:20px}
+.sum-recap li{font-family:var(--serif);font-size:15.5px;line-height:1.8;margin:7px 0}
+.sum-recap p{font-family:var(--serif);line-height:1.8}
 @media print{
   .appbar,.nx-foot,.sidemenu,.no-print,.coursenav,.prevnext,.crumbs{display:none !important}
   body{background:#fff;color:#000}
@@ -341,6 +347,14 @@ html.js .tabpanel.on{display:block}
   .sum-lesson,.ref-course,.keybox,figure{break-inside:avoid}
   .sum-part{break-before:page}
   .sum-part:first-of-type{break-before:auto}
+  /* Each course starts a fresh page in the combined semester/year documents.
+     This used to be Part 1's job; the recap form has no Part headings, so the
+     course heading itself carries the break. .sum-nobreak then suppresses the
+     legacy fallback's Part 1 break so it does not emit a near-blank page
+     directly after the heading that just broke. */
+  .sum-course{break-before:page}
+  .sum-course:first-of-type{break-before:auto}
+  .sum-nobreak{break-before:auto}
   a{color:#000;text-decoration:none}
   .ref-jump{display:none}
 }
