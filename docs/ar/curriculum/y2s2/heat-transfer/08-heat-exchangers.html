@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Heat exchangers — Heat Transfer — MechEd</title>
+<meta name="description" content="Shell-and-tube and plate architectures; overall coefficient built from resistances, fouling included. LMTD design and effectiveness-NTU rating methods">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/8">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/08-heat-exchangers.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol cur" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 08 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 08 of 11 · Year 2 · Semester 2</p>
+  <h1>Heat exchangers</h1>
+  <p class="sub">Shell-and-tube and plate architectures; overall coefficient built from resistances, fouling included. LMTD design and effectiveness-NTU rating methods, each derived, each worked once. Fouling monitoring as the maintenance engineer's stake in this lesson.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/8">Mark as complete</button>
+  <span class="badge amber">CORE 60 · B6</span>
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Counterflow exchanger: hot stream 150→90 °C, cold 30→70 °C. Compute the LMTD.</li><li>Fouling resistance doubles: what happens to U and to the outlet temperatures, qualitatively?</li><li>When is effectiveness-NTU the only honest method, and why does LMTD fail there?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An idealized counterflow heat exchanger temperature profile, hot stream falling from 150 to 90 degrees left to right, cold stream rising from 30 to 70 degrees right to left, with the temperature gap at each end marked separately since these two gaps together set the log mean temperature difference"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Counterflow: the two ΔT gaps at each end set the LMTD</text><line x1="70" y1="250" x2="480" y2="250" stroke="#16202e" stroke-width="1"/><text x="275" y="272" text-anchor="middle" fill="#16202e" font-size="10.5">normalized position along exchanger</text><polyline points="70.0,80.0 480.0,165.0" fill="none" stroke="#c2820f" stroke-width="2.6"/><polyline points="70.0,193.3 480.0,250.0" fill="none" stroke="#3a6ea5" stroke-width="2.6"/><line x1="70.0" y1="80.0" x2="70.0" y2="193.3" stroke="#1f7a5c" stroke-width="1.4" stroke-dasharray="3,2"/><text x="80.0" y="136.7" text-anchor="start" fill="#1f7a5c" font-size="10">ΔT₁=80°C</text><line x1="480.0" y1="165.0" x2="480.0" y2="250.0" stroke="#1f7a5c" stroke-width="1.4" stroke-dasharray="3,2"/><text x="470.0" y="207.5" text-anchor="end" fill="#1f7a5c" font-size="10">ΔT₂=60°C</text><text x="76" y="72" fill="#c2820f" font-size="9.5">hot 150→90°C</text><text x="76" y="209" fill="#3a6ea5" font-size="9.5">cold 30←70°C</text></svg><figcaption>An idealized (linear) counterflow profile — real profiles curve according to the differential energy balance, and are only exactly linear when both streams' capacity rates are equal — but the two end gaps ΔT₁ and ΔT₂ are exact regardless, and they are all the LMTD formula needs.</figcaption></figure>
+
+<h3>01 · Architectures, and one overall coefficient</h3>
+<p>Shell-and-tube and plate exchangers both do the same job through different geometry — plates
+pack far more area into a given volume, shell-and-tube handles a wider range of pressures and
+fouling tendencies. Either way, the overall coefficient \(U\) is built exactly like Lesson 1's
+resistance chain: hot-side convection, tube-wall conduction, cold-side convection, in series — and
+in a real, aged exchanger, two more series terms as well: a fouling resistance on each side,
+\(R_{f,h}\) and \(R_{f,c}\), that only grow over an operating campaign.</p>
+
+<h3>02 · Two design methods, and what fouling does to each</h3>
+<p>The <b>LMTD method</b> uses \(q=UA\,\Delta T_{lm}\), with
+\(\Delta T_{lm}=(\Delta T_1-\Delta T_2)/\ln(\Delta T_1/\Delta T_2)\) built from the
+temperature gap at each end. The <b>effectiveness–NTU method</b> instead defines
+\(\varepsilon=q/q_{max}\), \(q_{max}=C_{min}(T_{h,in}-T_{c,in})\), and
+\(NTU=UA/C_{min}\), with closed-form \(\varepsilon(NTU,C_r)\) relations for each flow
+arrangement — for the special case \(C_r=0\) (one stream condensing or evaporating, so its
+capacity rate is effectively infinite), \(\varepsilon=1-e^{-NTU}\) regardless of flow
+arrangement. Fouling resistance added in series lowers \(U\) directly; for a fixed area and
+inlet conditions, a lower \(U\) means less heat exchanged — outlet temperatures drift back
+toward their inlet values on both sides, not just one.</p>
+
+<h3>03 · When effectiveness–NTU is the only honest method</h3>
+<p>LMTD needs the outlet temperatures to compute \(\Delta T_{lm}\) in the first place — fine
+for a <b>sizing</b> problem, where the duty and desired outlets are already specified and the
+question is how much area to buy. For a <b>rating</b> problem — a piece of hardware already
+exists, \(UA\) is known, and the question is what outlet temperatures it will actually deliver —
+the outlets are the unknown, and LMTD would need an iterative guess-and-check loop to use at all.
+Effectiveness–NTU solves directly from \(UA\), \(C_{min}\), \(C_{max}\), and the inlet
+temperatures, with no iteration — the only honest method once the outlets are what you are
+actually trying to find.</p>
+
+<h3>04 · A worked LMTD, an NTU check, and a fouling number</h3>
+<p>A counterflow exchanger runs hot 150→90°C against cold
+30→70°C. \(\Delta T_1=T_{h,in}-T_{c,out}=80\)°C,
+\(\Delta T_2=T_{h,out}-T_{c,in}=60\)°C,
+\(\Delta T_{lm}=(80-60)/\ln(80/60)=69.52\)°C. Separately, a
+condenser (\(C_r\approx0\)) sized to \(NTU=2\) delivers
+\(\varepsilon=1-e^{-2}=86.5\%\) of its maximum possible duty. And on
+fouling: a clean \(U_{clean}=800\ \text{W/m}^2\text{K}\) exchanger picking up
+just \(R_f=0.0005\ \text{m}^2\text{K/W}\) of combined fouling resistance drops to
+\(U_{fouled}=1/(1/U_{clean}+R_f)=571.4\ \text{W/m}^2\text{K}\) — a
+29% loss in overall coefficient from a single, modest fouling term, exactly the
+kind of number a fouling-monitoring program exists to catch before it grows further.</p>
+<div class="keybox"><span class="tag">Key relation — LMTD</span>
+<p>\[ \Delta T_{lm}=\frac{\Delta T_1-\Delta T_2}{\ln(\Delta T_1/\Delta T_2)}, \qquad
+q=UA\,\Delta T_{lm} \]</p>
+<p>Valid for sizing; switch to effectiveness–NTU the moment the outlets become the unknown.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Thermal resistance networks</b> (Lesson 1) — U is literally the same
+series-resistance idea, now with two convection films, a wall, and (in service) two fouling
+terms.</li></ul>
+<h4>Toolkit — heat exchangers</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>LMTD</td><td>\( \Delta T_{lm}=(\Delta T_1-\Delta T_2)/\ln(\Delta T_1/\Delta T_2) \)</td><td>Sizing, outlets known.</td></tr>
+<tr><td>Effectiveness</td><td>\( \varepsilon=q/q_{max} \)</td><td>Rating, outlets unknown.</td></tr>
+<tr><td>NTU</td><td>\( NTU=UA/C_{min} \)</td><td>Dimensionless size.</td></tr>
+<tr><td>Cr=0 special case</td><td>\( \varepsilon=1-e^{-NTU} \)</td><td>Condensing/evaporating stream.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The worked LMTD</b></p><p><b>Problem.</b> A counterflow exchanger runs hot 150→90°C against cold 30→70°C. Find \(\Delta T_1\), \(\Delta T_2\), and the LMTD.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(\Delta T_1=T_{h,in}-T_{c,out}=80\)°C, \(\Delta T_2=T_{h,out}-T_{c,in}=60\)°C. \(\Delta T_{lm}=(80-60)/\ln(80/60)=69.52\)°C.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>An NTU rating check</b></p><p><b>Problem.</b> A condenser (\(C_r\approx0\), one stream condensing) is sized to \(NTU=2\). Find its effectiveness, and the physical meaning of \(C_r\approx0\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(C_r=C_{min}/C_{max}\approx0\) because a condensing stream's effective heat capacity rate is enormous (it changes phase at essentially constant temperature). \(\varepsilon=1-e^{-NTU}=1-e^{-2}=86.5\%\) of the maximum possible duty is delivered.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>A fouling-derated U</b></p><p><b>Problem.</b> A clean exchanger has \(U_{clean}=800\ \text{W/m}^2\text{K}\). In service, it accumulates a combined fouling resistance of \(R_f=0.0005\ \text{m}^2\text{K/W}\). Find the fouled overall coefficient, and the percent drop from clean.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(U_{fouled}=1/(1/U_{clean}+R_f)=1/(1/800+0.0005)=571.4\ \text{W/m}^2\text{K}\), a \((1-571.4/800)\times100=29\%\) drop from a single, modest fouling term.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The overall coefficient U in a heat exchanger is best understood as:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>A single empirical constant unrelated to the exchanger's construction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>A series-resistance network — hot film, wall, cold film, plus fouling — exactly like Lesson 1's resistance chain</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Always equal to the higher of the two film coefficients</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Independent of fouling by definition</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>U is built from the same series-resistance bookkeeping introduced in Lesson 1, now with two convection films, a wall, and (in service) fouling terms.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The LMTD method requires which piece of information that effectiveness–NTU does not strictly need to start from?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The overall coefficient U</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The inlet temperatures</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>The outlet temperatures — needed to compute ΔT₁ and ΔT₂ in the first place</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The heat exchanger's area A</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\Delta T_{lm}\) is built directly from the outlet temperatures; effectiveness–NTU instead solves for those same outlets from UA and the inlets alone.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A heat exchanger already installed has a known UA. Its outlet temperatures at an off-design flow rate are unknown and need to be predicted. Which method is appropriate?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>LMTD, solved directly with no iteration</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Effectiveness–NTU — outlets are the unknown, exactly the case it is built for</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Neither method applies once flow rate changes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Zuber's correlation from Lesson 7</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>This is a rating problem (hardware fixed, outlets unknown) — the case 3 identifies as effectiveness–NTU's own, direct-solution territory.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Adding fouling resistance in series, area and inlet conditions held fixed, does what to U and to the heat duty q?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Both increase</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>U decreases, and q decreases with it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>U decreases but q increases to compensate</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Neither changes — fouling only affects pressure drop</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Fouling resistance adds directly to the series network, lowering U; for fixed A and similar ΔT, that lowers q as well — verified numerically in this lesson's third solve problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>For a condensing or evaporating stream, \(C_r=C_{min}/C_{max}\approx0\) because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The stream has zero mass flow rate</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>A phase-changing stream's effective heat capacity rate is enormous — it absorbs or releases heat at essentially constant temperature</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The stream's specific heat is exactly zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Cr is undefined for any two-phase flow</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Latent heat exchange at essentially one temperature makes the effective \(C\) of that stream enormous compared to the other, single-phase stream — hence \(C_r\approx0\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>In this lesson's condenser example, \(NTU=2\) and \(C_r\approx0\) gives an effectiveness of roughly:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>86%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>50%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>100%, exactly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It cannot be found without U and A separately</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\varepsilon=1-e^{-NTU}=1-e^{-2}=86.5\%\), the direct closed form for \(C_r=0\), any flow arrangement.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Why is a plate exchanger often chosen over shell-and-tube for a given duty?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It always tolerates more fouling and higher pressure than shell-and-tube</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>It packs more heat-transfer area into a given volume, at the cost of being less tolerant of high pressure or heavy fouling in many designs</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It requires no U calculation at all</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It cannot be used in counterflow</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Plates trade compactness (more area per volume) for typically lower pressure and fouling tolerance than shell-and-tube — a real design trade-off, not a strict improvement.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The idealized straight-line temperature profile in this lesson's own diagram is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Exact for any counterflow exchanger, regardless of flow rates</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>An approximation, exactly linear only when both streams' capacity rates are equal — the ΔT₁ and ΔT₂ endpoint values themselves are still exact</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Only valid for parallel flow, never counterflow</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Physically impossible and never used</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Real profiles curve according to the differential energy balance; the linear sketch is a simplification, honestly captioned as such — but the two end-gap values it starts and ends at are exact.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>An engineer commissioning a new exchanger uses LMTD to confirm the specified area delivers the
+contracted duty at the design terminal temperatures — a sizing question with the outlets already
+fixed by contract. The same engineer, months later, asked what outlet temperatures the same
+installed hardware delivers at an off-design flow rate, switches to effectiveness–NTU without a
+second thought — per 3, the outlets are now the unknown, and LMTD would need to be iterated
+blind.</p>
+<p>A reliability engineer tracking a fouling-monitoring program treats a modest, single fouling
+resistance reading as a real, quantifiable loss in overall coefficient, not a rounding error —
+per 4's own number, well under a millimetre-scale fouling resistance cut this lesson's example
+exchanger's U by over a quarter, which is exactly why fouling factors get tracked as a trended
+number rather than checked once at commissioning and forgotten.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.16\\ \\mathrm{psi}\\)", "\\(55.16\\ \\mathrm{psi}\\)", "\\(11.6\\ \\mathrm{psi}\\)", "\\(0.116\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(8 \\times 0.145 = 1.16\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(14.5\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(689.5\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(145\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.45\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(100 \times 0.145 = 14.5\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(3.658\\ \\mathrm{ft}\\)", "\\(39.37\\ \\mathrm{ft}\\)", "\\(393.7\\ \\mathrm{ft}\\)", "\\(3.937\\ \\mathrm{ft}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(12 \\times 3.281 = 39.37\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(45.72\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(492.1\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4921\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(49.21\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(150 \times 3.281 = 492.1\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 11; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="07-boiling-and-condensation.html">← 07 · Boiling and condensation</a><a href="index.html">كل الدروس · HTX 253</a><a href="09-radiation-fundamentals-and-exchange.html">09 · Radiation: fundamentals and exchange →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

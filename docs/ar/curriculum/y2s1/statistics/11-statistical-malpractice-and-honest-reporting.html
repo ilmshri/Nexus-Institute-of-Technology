@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Statistical malpractice and honest reporting — Engineering Statistics — MechEd</title>
+<meta name="description" content="P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present da">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/statistics/11">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/statistics/11-statistical-malpractice-and-honest-reporting.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STS 206 · Engineering Statistics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-describing-data.html" class="ol" data-key="y2s1/statistics/1"><span class="tick"></span><span>01 · Describing data</span></a><a href="02-probability-rules.html" class="ol" data-key="y2s1/statistics/2"><span class="tick"></span><span>02 · Probability rules</span></a><a href="03-discrete-distributions.html" class="ol" data-key="y2s1/statistics/3"><span class="tick"></span><span>03 · Discrete distributions</span></a><a href="04-continuous-distributions.html" class="ol" data-key="y2s1/statistics/4"><span class="tick"></span><span>04 · Continuous distributions</span></a><a href="05-sampling-distributions-and-the-clt.html" class="ol" data-key="y2s1/statistics/5"><span class="tick"></span><span>05 · Sampling distributions and the CLT</span></a><a href="06-estimation-and-confidence-intervals.html" class="ol" data-key="y2s1/statistics/6"><span class="tick"></span><span>06 · Estimation and confidence intervals</span></a><a href="07-hypothesis-testing.html" class="ol" data-key="y2s1/statistics/7"><span class="tick"></span><span>07 · Hypothesis testing</span></a><a href="08-regression.html" class="ol" data-key="y2s1/statistics/8"><span class="tick"></span><span>08 · Regression</span></a><a href="09-design-of-experiments-first-contact.html" class="ol" data-key="y2s1/statistics/9"><span class="tick"></span><span>09 · Design of experiments first contact</span></a><a href="10-reliability-statistics-preview.html" class="ol" data-key="y2s1/statistics/10"><span class="tick"></span><span>10 · Reliability statistics preview</span></a><a href="11-statistical-malpractice-and-honest-reporting.html" class="ol cur" data-key="y2s1/statistics/11"><span class="tick"></span><span>11 · Statistical malpractice and honest reporting</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STS 206</a> /
+<span>Lesson 11 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STS 206 · Lesson 11 of 11 · Year 2 · Semester 1</p>
+  <h1>Statistical malpractice and honest reporting</h1>
+  <p class="sub">P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.05 Introduction to Probability an</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/statistics/11">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/hgp91KvbJV4" title="How to Lie with Data | Misleading Graphs" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>How to Lie with Data | Misleading Graphs <span class="src">Alex The Analyst</span></figcaption></figure></div><div class="vh-bar"><span class="n">How to Lie with Data | Misleading Graphs</span><span class="c">ALEX THE ANALYST</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name two chart crimes that flatter a KPI.</li><li>What must an honest uncertainty statement accompany?</li></ul></div><div class="measure">
+<h3>01 · How statistics goes wrong</h3>
+<p>Statistics is as easily used to mislead as to inform, usually without outright lying. This closing lesson catalogues the common failures — some honest mistakes, some motivated — so that an engineer can produce and demand honest analysis. The theme is that every technique in this course has an integrity condition attached, and violating it quietly produces numbers that are precise, confident, and wrong. Recognising the failure modes is as much a professional skill as computing the statistics themselves.</p>
+<h3>02 · P-hacking and multiple comparisons</h3>
+<p>The most corrosive abuse is <b>p-hacking</b>: trying many analyses and reporting only the one that reached significance. Its engine is the <b>multiple-comparisons</b> problem. A single test at \( \alpha=0.05 \) has a 5% false-alarm rate, but run many and false positives become nearly certain: with 20 independent tests, the chance of at least one spurious "significant" result is \( 1-0.95^{20}\approx0.64 \) — about a two-in-three chance of a false discovery even when nothing is real. The honest defences are to fix the hypothesis before the data, to correct the threshold for the number of tests, and to report all analyses run, not just the flattering one.</p>
+<h3>03 · Base rates, confounding, and Simpson's paradox</h3>
+<p>Ignoring the <b>base rate</b> is the classic probability error. A test that is 99% sensitive and 95% specific for a fault present in 1% of parts, applied to a positive result, gives \( P(\text{fault}\mid\text{positive})=\dfrac{0.01\times0.99}{0.01\times0.99+0.99\times0.05}\approx0.167 \) — only a 17% chance the flagged part is actually faulty, because the rare condition is swamped by false positives. <b>Confounding</b> — a lurking variable driving both an apparent cause and effect — turns correlation into false causation, and its dramatic form is <b>Simpson's paradox</b>, where a trend that holds in every subgroup reverses when the groups are pooled. All three are failures to condition on the right information, and all three are invisible to anyone who trusts a single summary number.</p>
+<h3>04 · The honest-reporting working method</h3>
+<p>Report to inform, not to persuade. State the hypothesis and analysis plan before collecting data; report the sample size, the effect size, and a confidence interval, not just a p-value; and disclose every analysis performed. Draw graphs honestly — a truncated or inverted axis, a cherry-picked time window, or a mismatched scale can make a trivial change look dramatic or hide a real one, and misleading graphs are the most common statistical deception precisely because they bypass the arithmetic. Distinguish statistical from practical significance, correlation from causation, and the sample from the population. This is the integrity floor of the whole discipline, and it is the same floor this platform is built on: every number verified, every claim sourced, nothing precise-but-false. An engineer who can compute a statistic and also refuse to misuse it is the one this course aims to produce. A short checklist captures the defences: was the hypothesis fixed before the data, or fished from them; is the significance corrected for how many things were tested; does the claimed cause survive the obvious confounders; is the effect large enough to matter, not merely detectable; and does every graph use an honest scale. A result that passes all five is worth acting on; one that fails any of them is, at best, a lead to investigate rather than a conclusion to ship. Carrying that checklist is the mark of a professional, and it is the note this statistics course deliberately ends on.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Hypothesis testing</b> (Lesson 7) — p-values and \( \alpha \).</li><li><b>Bayes / conditional probability</b> (Lesson 2) — base rates.</li><li><b>Regression cautions</b> (Lesson 8) — correlation vs causation.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>P-hacking</td><td>report only \(p<\alpha\)</td><td>Manufactured significance.</td></tr>
+<tr><td>Multiple comparisons</td><td>\( 1-(1-\alpha)^m \)</td><td>False positives across \(m\) tests.</td></tr>
+<tr><td>Base-rate fallacy</td><td>Bayes with rare events</td><td>Ignoring prevalence.</td></tr>
+<tr><td>Confounding</td><td>lurking variable</td><td>Correlation ≠ causation.</td></tr>
+<tr><td>Simpson's paradox</td><td>trend reverses on pooling</td><td>Aggregating heterogeneous groups.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Multiple comparisons</b></p><p><b>Problem.</b> With 20 independent tests each at \( \alpha=0.05 \), find the probability of at least one false positive when nothing is real.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( P=1-(1-0.05)^{20}=1-0.95^{20}\approx1-0.358=0.64 \). <b>Answer:</b> \(\approx0.64\) — false discovery is likely, the reason to correct for multiplicity.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Base-rate fallacy</b></p><p><b>Problem.</b> A test 99% sensitive, 95% specific, for a fault in 1% of parts, returns positive. Find the probability the part is actually faulty.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( P(\text{fault}\mid+)=\frac{0.01\times0.99}{0.01\times0.99+0.99\times0.05}=\frac{0.0099}{0.0594}\approx0.167 \). <b>Answer:</b> \(\approx0.167\) — only 17%, because the fault is rare.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Reading a p-hacked study</b></p><p><b>Problem.</b> A team ran 20 analyses and reports the one with \(p=0.03\). Why is this weak evidence?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Across 20 tests a false positive is ~64% likely by chance, so a single \(p=0.03\) chosen from many is not the 3% it appears — it must be corrected for the number of comparisons. <b>Answer:</b> selective reporting inflates significance; correct for multiplicity or pre-register.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>P-hacking is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Reporting only the analysis that reached significance</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A computation error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A type of graph</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A large sample</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Trying many analyses and cherry-picking the significant one.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Running 20 tests at \( \alpha=0.05 \) makes at least one false positive:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Likely (~64%)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Impossible</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Exactly 5%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Certain</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(1-0.95^{20}\approx0.64\) — multiplicity inflates false discovery.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Ignoring the base rate when a condition is rare tends to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Overstate the chance it is present</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Understate it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Have no effect</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Fix confounding</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>False positives swamp true positives for rare conditions (Bayes).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Simpson's paradox is when a trend:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Reverses when subgroups are pooled</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Is always linear</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Has no p-value</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Is a graph error</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Aggregating heterogeneous groups can flip the apparent direction.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A truncated y-axis on a chart can:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Exaggerate a trivial change</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Only clarify data</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Fix p-hacking</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Increase the sample</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Misleading axes are the most common visual deception; draw scales honestly.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(14.76\\ \\mathrm{ft/s}\\)", "\\(13.72\\ \\mathrm{ft/s}\\)", "\\(1476\\ \\mathrm{ft/s}\\)", "\\(147.6\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9843\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.9144\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(9.843\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(3 \times 3.281 = 9.843\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(196.9\\ \\mathrm{ft}\\)", "\\(18.29\\ \\mathrm{ft}\\)", "\\(1969\\ \\mathrm{ft}\\)", "\\(19.69\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(16.4\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(164\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(5 \times 3.281 = 16.4\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  <div class="lib-alts"><h4>فيديوهات بديلة</h4><ul class="plain small"><li><a href="https://www.youtube.com/watch?v=f4yZJVdJCG4" target="_blank" rel="noopener">How to Lie With Statistics (and get away with it)</a> <span class="src">Unsolicited advice</span></li><li><a href="https://www.youtube.com/watch?v=1NIW1Ia8M2U" target="_blank" rel="noopener">Misleading Graphs</a> <span class="src">Dan Kernler</span></li></ul></div>
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="10-reliability-statistics-preview.html">← 10 · Reliability statistics preview</a><a href="index.html">كل الدروس · STS 206</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>PLC II &amp; Industrial Networks — MechEd</title>
+<meta name="description" content="Beyond single-rack thinking: structured programming, analog and PID in the PLC, fieldbuses and industrial Ethernet, drives integration, and the networ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s2/plc-2/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>PLC 303</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="24" y1="14" x2="24" y2="106"/><line x1="96" y1="14" x2="96" y2="106"/><line x1="24" y1="38" x2="50" y2="38"/><line x1="70" y1="38" x2="96" y2="38"/><line x1="50" y1="30" x2="50" y2="46"/><line x1="70" y1="30" x2="70" y2="46"/><line x1="24" y1="74" x2="52" y2="74"/><line x1="68" y1="74" x2="96" y2="74"/><circle cx="60" cy="74" r="9" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">PLC 303 · YEAR 3 · SEMESTER 2</p>
+    <h1>PLC II &amp; Industrial Networks</h1>
+    <p class="sub">Beyond single-rack thinking: structured programming, analog and PID in the PLC, fieldbuses and industrial Ethernet, drives integration, and the networked architecture of a modern line.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-structured-programming-and-iec-languages.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Function blocks, structured text, and sequential function charts beside ladder.</span></div><div><span class="ck">✓</span><span>Modes, states, and transitions designed before coding.</span></div><div><span class="ck">✓</span><span>Scaling, filtering, and alarm limits on analog channels.</span></div><div><span class="ck">✓</span><span>Why networks replaced point wiring; topology, addressing, and determinism.</span></div><div><span class="ck">✓</span><span>EtherNet/IP and PROFINET in outline; switches, VLANs, and segmentation for machine networks.</span></div><div><span class="ck">✓</span><span>Drive parameters, control words, and status words over the network.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s2/plc-2/1" data-href="01-structured-programming-and-iec-languages.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-structured-programming-and-iec-languages.html">Structured programming and IEC languages</a></h4>
+    <p class="scope">Function blocks, structured text, and sequential function charts beside ladder. Choosing a language per task. Code organization for machines with modes.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Pick a language per task: sequence, math block, interlock — and justify.</li><li>What does a function block encapsulate that ladder rungs scatter?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/2" data-href="02-state-machines-for-sequential-control.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-state-machines-for-sequential-control.html">State machines for sequential control</a></h4>
+    <p class="scope">Modes, states, and transitions designed before coding. Auto/manual/maintenance mode architecture. The pattern that makes complex machines debuggable.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Design states for auto/manual/maintenance: what transitions need guarding?</li><li>Why do state machines make faults recoverable?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/3" data-href="03-analog-processing-and-pid-in-the-plc.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-analog-processing-and-pid-in-the-plc.html">Analog processing and PID in the PLC</a></h4>
+    <p class="scope">Scaling, filtering, and alarm limits on analog channels. The PLC PID instruction configured and tuned. Temperature and flow loops closed in logic.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why filter an analog input, and what does over-filtering cost?</li><li>Configure PID in the PLC: which three parameters first?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/4" data-href="04-industrial-networks-i-fieldbus-fundamentals.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-industrial-networks-i-fieldbus-fundamentals.html">Industrial networks I: fieldbus fundamentals</a></h4>
+    <p class="scope">Why networks replaced point wiring; topology, addressing, and determinism. Modbus RTU/TCP as the lingua franca. Reading a network architecture drawing.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does determinism mean on a fieldbus?</li><li>Why did Modbus survive forty years?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/5" data-href="05-industrial-networks-ii-industrial-ethernet.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-industrial-networks-ii-industrial-ethernet.html">Industrial networks II: industrial Ethernet</a></h4>
+    <p class="scope">EtherNet/IP and PROFINET in outline; switches, VLANs, and segmentation for machine networks. Diagnostics from port LEDs to managed-switch counters. When the 'PLC fault' is a network fault.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What do managed-switch diagnostics reveal that ping cannot?</li><li>Why segment machine networks from office networks?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/6" data-href="06-vfds-and-motion-integration.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-vfds-and-motion-integration.html">VFDs and motion integration</a></h4>
+    <p class="scope">Drive parameters, control words, and status words over the network. Speed and torque references from logic. Commissioning a networked drive without folklore.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What do control and status words exchange with a drive?</li><li>Commission a networked VFD: which parameters are non-negotiable?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/7" data-href="07-data-handling-and-recipes.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-data-handling-and-recipes.html">Data handling and recipes</a></h4>
+    <p class="scope">Arrays, structures, and recipe management for product changeovers. Batch parameters downloaded safely. Production data captured at source for OEE.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do recipes beat hand-entered setpoints at changeover?</li><li>What data should logic capture at the moment of a fault?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/8" data-href="08-hmi-design-for-operators.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-hmi-design-for-operators.html">HMI design for operators</a></h4>
+    <p class="scope">Screen hierarchy and navigation designed around the operator's tasks, not the tag database. High-performance HMI principles: gray backgrounds, analog context, and alarms that stand out because nothing else shouts. Binding displays to PLC data and testing the interface against abnormal situations, not just the happy path.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do high-performance HMIs keep most of the screen gray?</li><li>What should an overview screen let an operator judge in five seconds?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/9" data-href="09-alarm-management-and-diagnostics-design.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-alarm-management-and-diagnostics-design.html">Alarm management and diagnostics design</a></h4>
+    <p class="scope">Alarm philosophy applied in logic: priority, deadband, and state-based suppression. First-out capture for trips. Designing the diagnostics you will want during the outage.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Design first-out capture for a trip chain: what does it answer?</li><li>Which alarms deserve priority 1, and what does that imply for the rest?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/10" data-href="10-ot-cybersecurity-basics.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-ot-cybersecurity-basics.html">OT cybersecurity basics</a></h4>
+    <p class="scope">Why plant networks are attacked and how they are segmented, patched, and backed up. Remote access done with adult supervision. The maintenance engineer's cyber hygiene responsibilities.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three OT-security practices a maintenance engineer owns.</li><li>Why is remote vendor access both necessary and dangerous?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/plc-2/11" data-href="11-integration-project-a-two-station-line.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-integration-project-a-two-station-line.html">Integration project: a two-station line</a></h4>
+    <p class="scope">Two PLC stations, one network, shared interlocks, one HMI: specify, program, and fault-test the pair. Handshake design under failure conditions. The systems view PLC I could not yet teach.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the two-station project, what handshake failure did you design against?</li><li>Why does the HMI show line state, not just device state?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span> (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>PLC 303</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/maintenance-fundamentals/index.html">MNT 306 · Maintenance Engineering Fundamentals →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

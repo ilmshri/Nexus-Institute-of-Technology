@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Reliability Engineering II — MechEd</title>
+<meta name="description" content="From analysis to institution: RCM implementation and root cause analysis in practice, bad-actor elimination, reliability KPIs, and the design of a pla">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y4s2/reliability-2/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>REL 455</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="16" y1="14" x2="16" y2="100"/><line x1="16" y1="100" x2="108" y2="100"/><path d="M20 30 C 32 66, 40 70, 58 70 C 80 70, 88 64, 100 30"/><circle cx="58" cy="70" r="5" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">REL 455 · YEAR 4 · SEMESTER 2</p>
+    <h1>Reliability Engineering II</h1>
+    <p class="sub">From analysis to institution: RCM implementation and root cause analysis in practice, bad-actor elimination, reliability KPIs, and the design of a plant reliability program that survives management changes.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span><span class="mchip">3 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-rcm-implementation-and-rca.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Running a real RCM study: team composition, facilitation discipline, and the information the analysis eats.</span></div><div><span class="ck">✓</span><span>Pareto analysis of failure records to find the vital few; bad-actor teams with closure discipline.</span></div><div><span class="ck">✓</span><span>The program architecture: criticality analysis feeding strategy development, PdM routes, planning integration, and a living KPI system — sequenced as a realistic multi-year roadmap with early wins funding later phases.</span></div><div><span class="ck">✓</span><span>FRACAS logic: capture, code, analyze, act.</span></div><div><span class="ck">✓</span><span>Reliability input to procurement specs; maintainability reviews of vendor drawings.</span></div><div><span class="ck">✓</span><span>Life testing and accelerated testing in outline; reliability growth tracking during commissioning.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y4s2/reliability-2/1" data-href="01-rcm-implementation-and-rca.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-rcm-implementation-and-rca.html">RCM implementation and RCA</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Running a real RCM study: team composition, facilitation discipline, and the information the analysis eats. Then root cause analysis as its operational partner — evidence preservation, causal-factor charting, and the 5-why's honest limits. The condensed example: an RCA on a repeat seal failure, from timeline to verified systemic cause.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C6</b> · <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span>; <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three pieces of evidence to preserve before a failed seal is torn down.</li><li>What class of causes does five-why analysis systematically miss?</li><li>What evidence standard closes an RCA — when may you say 'the fix worked'?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/2" data-href="02-bad-actor-programs-and-reliability-kpis.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-bad-actor-programs-and-reliability-kpis.html">Bad-actor programs and reliability KPIs</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Pareto analysis of failure records to find the vital few; bad-actor teams with closure discipline. The reliability KPI set — MTBF by asset class, top-loss trending, PM effectiveness — built from CMMS data with its coding sins acknowledged. One bad-actor case tracked from data to eliminated failure mode.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C7</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Ten assets drive 60% of maintenance cost: which analysis showed this, and who closes it out?</li><li>Overall uptime is flat while MTBF of one asset class falls: how can both be true?</li><li>Which single KPI proves a bad-actor program delivered, and over what horizon?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/3" data-href="03-building-a-plant-reliability-program.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-building-a-plant-reliability-program.html">Building a plant reliability program</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">The program architecture: criticality analysis feeding strategy development, PdM routes, planning integration, and a living KPI system — sequenced as a realistic multi-year roadmap with early wins funding later phases. Organizational design: where reliability engineers report and why it matters. The lesson that turns this curriculum into a job plan.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C8</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Sequence the first three moves of a multi-year plant reliability roadmap and justify the order.</li><li>Where should reliability engineering report, and what goes wrong under the alternative?</li><li>Why fund later program phases from the early phases' verified savings?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/4" data-href="04-failure-reporting-and-analysis-systems.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-failure-reporting-and-analysis-systems.html">Failure reporting and analysis systems</a></h4>
+    <p class="scope">FRACAS logic: capture, code, analyze, act. Failure coding taxonomies that analysts can actually use. The data pipeline that makes Weibull analysis possible years later.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does FRACAS close that work orders leave open?</li><li>Why do failure codes fail, and what fixes them?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/5" data-href="05-life-cycle-reliability-design-for-maintainability.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-life-cycle-reliability-design-for-maintainability.html">Life-cycle reliability: design for maintainability</a></h4>
+    <p class="scope">Reliability input to procurement specs; maintainability reviews of vendor drawings. Access, isolation, and monitoring provisions bought cheaply at design time. The capital-project seat reliability engineers must claim.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three maintainability features to demand on vendor drawings.</li><li>Why is design-stage reliability input so cheap?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/6" data-href="06-reliability-testing-and-growth.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-reliability-testing-and-growth.html">Reliability testing and growth</a></h4>
+    <p class="scope">Life testing and accelerated testing in outline; reliability growth tracking during commissioning. Burn-in's logic and limits. Evidence standards for 'the fix worked'.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does reliability growth tracking during commissioning reveal?</li><li>Burn-in: what does it remove, and from which bathtub region?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/7" data-href="07-spares-optimization-with-reliability-data.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-spares-optimization-with-reliability-data.html">Spares optimization with reliability data</a></h4>
+    <p class="scope">Failure distributions driving stocking levels; Monte Carlo thinking for insurance spares. Pooling and vendor-held options. The reliability–inventory interface quantified.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span>; MPL 452 foundations</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does Monte Carlo add to an insurance-spare decision?</li><li>When does vendor-held stock beat owning?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/8" data-href="08-operational-reliability-procedures-and-precision.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-operational-reliability-procedures-and-precision.html">Operational reliability: procedures and precision</a></h4>
+    <p class="scope">Operating-envelope discipline and startup/shutdown stress; precision-maintenance standards as failure prevention. Operator care integrated with PdM findings. Reliability as everyone's output, engineered.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do startups and shutdowns concentrate failures?</li><li>What does an operating envelope discipline protect?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/9" data-href="09-management-of-change-for-reliability.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-management-of-change-for-reliability.html">Management of change for reliability</a></h4>
+    <p class="scope">MOC review of modifications for reliability impact; temporary equipment and its expiry. Documentation updates as part of the change, not afterthought. The quiet failures MOC exists to prevent.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which changes sneak past MOC most often?</li><li>Why must documentation updates ride inside the change?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/10" data-href="10-economics-of-reliability-programs.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-economics-of-reliability-programs.html">Economics of reliability programs</a></h4>
+    <p class="scope">Program costs against avoided losses; the credibility problem of counting non-events. Baseline construction and honest attribution. Selling year three of a program in year one's budget cycle.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a>; ECO 406 foundations</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is counting non-events the program's credibility problem?</li><li>What baseline construction makes avoided losses believable?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s2/reliability-2/11" data-href="11-reliability-program-capstone.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-reliability-program-capstone.html">Reliability program capstone</a></h4>
+    <p class="scope">Design the complete reliability program for a described plant: assessment, roadmap, organization, KPIs, and first-year plan with budget. Presented as to a plant manager. The portfolio piece for reliability-engineer interviews.</p>
+    <p class="src"><b>Taught from</b> — Course synthesis</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which first-year move funds year two in your capstone program?</li><li>What did you put in the plant manager's one-page summary?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span> (nptel.ac.in)</li><li><a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a> (practitioner curriculum)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>REL 455</b></div><div class="frow"><span>Placement</span><b>Year 4 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>3</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y4s2/capstone/index.html">CAP 456 · Capstone — Integrated Plant Project →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

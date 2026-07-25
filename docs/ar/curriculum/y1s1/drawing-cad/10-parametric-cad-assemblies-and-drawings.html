@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Parametric CAD: assemblies and drawings — Engineering Drawing &amp; CAD — MechEd</title>
+<meta name="description" content="Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/drawing-cad/10">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/drawing-cad/10-parametric-cad-assemblies-and-drawings.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">DRW 102 · Engineering Drawing &amp; CAD</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-drawings-rule-the-plant.html" class="ol" data-key="y1s1/drawing-cad/1"><span class="tick"></span><span>01 · Why drawings rule the plant</span></a><a href="02-projection-theory-and-orthographic-views.html" class="ol" data-key="y1s1/drawing-cad/2"><span class="tick"></span><span>02 · Projection theory and orthographic views</span></a><a href="03-isometric-and-pictorial-views.html" class="ol" data-key="y1s1/drawing-cad/3"><span class="tick"></span><span>03 · Isometric and pictorial views</span></a><a href="04-sections-and-conventions.html" class="ol" data-key="y1s1/drawing-cad/4"><span class="tick"></span><span>04 · Sections and conventions</span></a><a href="05-dimensioning-practice.html" class="ol" data-key="y1s1/drawing-cad/5"><span class="tick"></span><span>05 · Dimensioning practice</span></a><a href="06-tolerances-fits-and-limits.html" class="ol" data-key="y1s1/drawing-cad/6"><span class="tick"></span><span>06 · Tolerances, fits, and limits</span></a><a href="07-gd-t-essentials.html" class="ol" data-key="y1s1/drawing-cad/7"><span class="tick"></span><span>07 · GD&amp;T essentials</span></a><a href="08-fasteners-welds-and-surface-symbols.html" class="ol" data-key="y1s1/drawing-cad/8"><span class="tick"></span><span>08 · Fasteners, welds, and surface symbols</span></a><a href="09-parametric-cad-parts.html" class="ol" data-key="y1s1/drawing-cad/9"><span class="tick"></span><span>09 · Parametric CAD: parts</span></a><a href="10-parametric-cad-assemblies-and-drawings.html" class="ol cur" data-key="y1s1/drawing-cad/10"><span class="tick"></span><span>10 · Parametric CAD: assemblies and drawings</span></a><a href="11-reading-plant-drawings.html" class="ol" data-key="y1s1/drawing-cad/11"><span class="tick"></span><span>11 · Reading plant drawings</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">DRW 102</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">DRW 102 · Lesson 10 of 11 · Year 1 · Semester 1</p>
+  <h1>Parametric CAD: assemblies and drawings</h1>
+  <p class="sub">Mates and degrees of freedom in assemblies. Generating dimensioned drawings from models. Bills of materials and balloon callouts — the bridge to spare-parts thinking.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW / NPTEL: Engineering Drawing and Com</b></span><span class="mchip">Assessment <b>worked examples + checkpoint questions</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/drawing-cad/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do assembly mates remove, and what should remain free?</li><li>Why do balloons and BOM line numbers matter to a storeroom?</li></ul></div><div class="measure">
+<h3>01 · Assemblies — constraints as kinematics</h3>
+<p>An assembly model positions parts with <em>mates</em>: coincident faces, concentric axes,
+distance offsets. Every mate removes degrees of freedom; the art is removing exactly the
+right ones. A shaft concentric to a bore and seated on a shoulder should still spin — leave
+that freedom alive and the model tells you how the machine moves; over-constrain it and the
+model fights itself with warnings that mean nothing and hide the one that does.</p>
+<h3>02 · The BOM is the assembly's ledger</h3>
+<p>The bill of materials — item numbers ballooned on the drawing, quantities, part numbers,
+materials — is what stores, procurement, and the fitter actually consume. Balloon 7 on the
+exploded view <em>is</em> line 7 in the table <em>is</em> the box on the shelf. Structure
+matters: sub-assemblies roll up (a bearing unit is one line here, four lines in its own BOM),
+and phantom items (bulk grease, thread-locker) appear where policy puts them. A drawing whose
+balloons and BOM disagree is a stores error factory.</p>
+<h3>03 · Drawings from models — still a craft</h3>
+<p>CAD auto-generates views, but choosing them is still Lesson 2's judgment: which section
+shows the fits, where the BOM table sits, which dimensions the fitter needs at the machine
+(coupling gap, seal compression, bolt torque table). Auto-ballooning follows assembly
+structure; verify it — a regenerated drawing can renumber balloons silently between
+revisions, and a fitter working from memory of "item 3" will draw the wrong part.</p>
+<p><strong>Closing.</strong> Mates encode kinematics, BOMs encode logistics, and the assembly
+drawing binds them for the person with the spanner. Model the motion, audit the balloons.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Part modeling</b> (Lesson 9) — assemblies consume disciplined parts.</li>
+<li><b>Exploded views</b> (Lesson 3) — the assembly drawing's teaching view.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Mate/constraint</b> — a positional relation removing degrees of freedom.</li>
+<li><b>Degrees of freedom</b> — the six motions a free rigid body owns.</li>
+<li><b>BOM</b> — the ballooned parts ledger of an assembly.</li>
+<li><b>Sub-assembly</b> — a rolled-up unit with its own BOM.</li>
+<li><b>Interference check</b> — the assembly's clash audit before metal exists.</li>
+</ul>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure">
+<h4>Worked example 1 — count the freedoms</h4>
+<p><b>Problem.</b> A pump shaft is mated into an assembly: concentric to the bearing bore,
+face-coincident at the shaft shoulder. <b>Find:</b> the remaining degrees of freedom, and
+state whether the assembly is correctly constrained for a rotating machine model.</p>
+<p><b>Solution.</b> (1) Free body: 6 DOF. (2) Concentric (axis-to-axis): removes 4 — two
+translations and two rotations transverse to the axis. (3) Face coincidence at the shoulder:
+removes axial translation (1 more). (4) Remaining: rotation about the axis — exactly the
+freedom a shaft must keep.</p>
+<p><b>Answer:</b> 1 DOF (spin) — correctly constrained.
+<b>Sanity check:</b> add a keyway parallel mate and DOF drops to 0: right for a static check,
+wrong for motion studies — constraint choice follows the question being asked.</p>
+<h4>Worked example 2 — the balloon audit</h4>
+<p><b>Problem.</b> Rev F of a gearbox drawing ballooned the input seal as item 9; stores
+stocked shelf 9 accordingly. Rev G inserted a spacer as item 5, shifting the seal to item 10,
+and the drawing was reissued without a change note on numbering. <b>Find:</b> the failure
+mode and the two-line fix.</p>
+<p><b>Solution.</b> (1) Failure: fitters ordering "item 9" now receive the spacer's neighbor —
+wrong part at 2 a.m., the classic renumbering trap. (2) Fix line 1: BOMs reference immutable
+<em>part numbers</em>, balloons are per-revision pointers only — train and enforce.
+(3) Fix line 2: revision note must state "items renumbered" whenever structure changes, and
+stores cross-references by part number, never balloon.</p>
+<p><b>Answer:</b> renumbered balloons + part-number-blind ordering; enforce part-number
+ordering and renumbering notes. <b>Sanity check:</b> the failure needs no bad actor — two
+correct documents, one missing sentence.</p>
+</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the 2 a.m. wrong seal.</b> You arrive the morning after a night crew rebuilt
+a filler gearbox with "item 9 per the wall drawing" — an uncontrolled Rev F print (Lesson 1's
+ghost returns) whose numbering Rev G had shifted. The machine ran eight hours before the
+too-narrow seal let go. Root cause is boring and structural: balloon-ordering culture plus an
+uncontrolled print. The fix package: register-only prints in the shop, part-number ordering
+policy, and a BOM audit of the five most-rebuilt assets. Nobody gets named; the system does.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(268.2\\ \\mathrm{hp}\\)", "\\(14.91\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(20 \\times 1.341 = 26.82\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.491\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(2.682\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(2 \times 1.341 = 2.682\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(14.76\\ \\mathrm{ft/s}\\)", "\\(13.72\\ \\mathrm{ft/s}\\)", "\\(1476\\ \\mathrm{ft/s}\\)", "\\(147.6\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9843\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.9144\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(9.843\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(3 \times 3.281 = 9.843\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL18611004W" target="_blank" rel="noopener">Technical Drawing with Engineering Graphics — Giesecke et al.</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing and Computer Graphics</p>
+  <ul class="plain small"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-parametric-cad-parts.html">← 09 · Parametric CAD: parts</a><a href="index.html">كل الدروس · DRW 102</a><a href="11-reading-plant-drawings.html">11 · Reading plant drawings →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/statics/index.html">STA 103 · Engineering Statics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

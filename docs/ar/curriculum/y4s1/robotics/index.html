@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Industrial Robotics — MechEd</title>
+<meta name="description" content="Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y4s1/robotics/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>ROB 353</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="92" width="40" height="12" rx="4"/><line x1="38" y1="92" x2="38" y2="66"/><line x1="38" y1="66" x2="66" y2="42"/><line x1="66" y1="42" x2="92" y2="52"/><circle cx="38" cy="66" r="6" class="amb"/><circle cx="66" cy="42" r="6" class="amb"/><path d="M92 44 L102 40 M92 60 L102 64"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">ROB 353 · YEAR 4 · SEMESTER 1</p>
+    <h1>Industrial Robotics</h1>
+    <p class="sub">Robots as production equipment: kinematics enough to reason, plus the practical layer — end effectors, safety systems, palletizing and welding cells, and what a robot cell demands from maintenance.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-robot-anatomy-and-types.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Articulated, SCARA, delta, and cartesian architectures with their sweet spots.</span></div><div><span class="ck">✓</span><span>Frames and transformations; forward kinematics in concept.</span></div><div><span class="ck">✓</span><span>Servo axes, gearing, and absolute encoders; mastering and calibration procedures.</span></div><div><span class="ck">✓</span><span>Grippers — pneumatic, servo, vacuum, magnetic — matched to product.</span></div><div><span class="ck">✓</span><span>Jogging, frames, and point teaching; motion types and speed/approximation trade-offs.</span></div><div><span class="ck">✓</span><span>Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y4s1/robotics/1" data-href="01-robot-anatomy-and-types.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-robot-anatomy-and-types.html">Robot anatomy and types</a></h4>
+    <p class="scope">Articulated, SCARA, delta, and cartesian architectures with their sweet spots. Axes, envelopes, and payload ratings read from datasheets. Repeatability versus accuracy — the specification that matters.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Repeatability versus accuracy: which does a robot datasheet promise?</li><li>Match SCARA, delta, and articulated arms to their natural tasks.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/2" data-href="02-kinematics-fundamentals.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-kinematics-fundamentals.html">Kinematics fundamentals</a></h4>
+    <p class="scope">Frames and transformations; forward kinematics in concept. The inverse problem and singularities — why some poses are unreachable at speed. Enough mathematics to respect the controller.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What is a singularity, and why does the wrist flip near one?</li><li>Forward versus inverse kinematics: which is the hard direction, and why?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/3" data-href="03-drives-encoders-and-calibration.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-drives-encoders-and-calibration.html">Drives, encoders, and calibration</a></h4>
+    <p class="scope">Servo axes, gearing, and absolute encoders; mastering and calibration procedures. Backlash and its symptoms in path quality. The maintenance anatomy of an arm.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do absolute encoders remove homing?</li><li>What does mastering restore after a crash?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/4" data-href="04-end-effectors-and-tooling.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-end-effectors-and-tooling.html">End effectors and tooling</a></h4>
+    <p class="scope">Grippers — pneumatic, servo, vacuum, magnetic — matched to product. Tool changers and dress packs, the wear items nobody budgets. Payload and center-of-gravity arithmetic.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does payload include the gripper and its cable dress?</li><li>Vacuum versus servo gripper: pick per product and defend.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/5" data-href="05-programming-and-teaching.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-programming-and-teaching.html">Programming and teaching</a></h4>
+    <p class="scope">Jogging, frames, and point teaching; motion types and speed/approximation trade-offs. Program structure for cells with variants. Offline programming in outline.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does motion blending (approximation) trade for cycle time?</li><li>Why teach frames instead of points?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/6" data-href="06-robot-safety-systems.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-robot-safety-systems.html">Robot safety systems</a></h4>
+    <p class="scope">Guarding, light curtains, and safety-rated monitored stops; collaborative modes with their real limits. Risk assessment for a cell. Safety as the cell's first design input.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does a safety-rated monitored stop guarantee?</li><li>Why are collaborative speeds so low in practice?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/7" data-href="07-palletizing-and-material-handling-cells.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-palletizing-and-material-handling-cells.html">Palletizing and material-handling cells</a></h4>
+    <p class="scope">End-of-line palletizing patterns and cycle-time budgets. Conveyor tracking basics. The robot cell most likely to appear at the end of a KDD-style packaging line.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What makes palletizing patterns a solved problem — and mixed cases not?</li><li>Why does conveyor tracking need an encoder?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/8" data-href="08-machine-tending-and-assembly-cells.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-machine-tending-and-assembly-cells.html">Machine tending and assembly cells</a></h4>
+    <p class="scope">Robots loading machine tools: door, chuck, and cycle-start interlocks, with the machine as the cell's real master. Part presentation — trays, bowl feeders, and vision in outline — as the make-or-break engineering. Assembly tasks: insertion, torque, and the compliance problem rigid parts pose.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is part presentation usually harder engineering than the robot motion itself?</li><li>What interlocks must exist before a robot reaches into a CNC machine?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/9" data-href="09-robotic-welding-cells.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-robotic-welding-cells.html">Robotic welding cells</a></h4>
+    <p class="scope">Torch packages, seam paths, and weave parameters; positioners as the second robot. Consumable and TCP maintenance. Robotic arc welding on structural work of the Kirby kind.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does a positioner add to a welding cell's reach and quality?</li><li>Why is TCP calibration the weld path's foundation?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/10" data-href="10-cell-integration.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-cell-integration.html">Cell integration</a></h4>
+    <p class="scope">The robot inside the PLC's state machine: handshakes, permissives, and fault recovery paths. Peripheral devices and fixturing. Cycle-time analysis against the line's takt.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Design the PLC–robot handshake for a jam: who recovers whom?</li><li>Why does fixturing rank above the robot in cell accuracy?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/robotics/11" data-href="11-robot-maintenance-and-diagnostics.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-robot-maintenance-and-diagnostics.html">Robot maintenance and diagnostics</a></h4>
+    <p class="scope">Preventive tasks: lubrication, belts, batteries, dress-pack inspection. Error logs and drift trends as early warnings. What a robot's reliability program looks like on paper.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Robotics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which preventive tasks keep an arm's accuracy — name three.</li><li>What do error logs trend before failures announce themselves?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Industrial Robotics (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>ROB 353</b></div><div class="frow"><span>Placement</span><b>Year 4 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y4s1/scada-iiot/index.html">SCA 404 · SCADA, DCS &amp; IIoT →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

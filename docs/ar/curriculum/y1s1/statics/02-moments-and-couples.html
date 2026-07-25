@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Moments and couples — Engineering Statics — MechEd</title>
+<meta name="description" content="Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/2">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/statics/02-moments-and-couples.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol cur" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 02 of 11 · Year 1 · Semester 1</p>
+  <h1>Moments and couples</h1>
+  <p class="sub">Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/2">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/39MoPdlSzl8" title="Statics: Lesson 21 - Introduction to Moments: The r x F Method" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 21 - Introduction to Moments: The r x F Method <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 21 - Introduction to Moments: The r x F Method</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does a couple do that a single force cannot?</li><li>State Varignon's theorem and one situation where it saves work.</li></ul></div><div class="measure">
+<h3>01 · Moment: the turning effect of a force</h3>
+<p>The moment of a force about a point measures its tendency to rotate a body about that point:</p>
+\[ M = F d \tag{1} \]
+<p>where \( d \) is the <em>perpendicular</em> distance from the point to the force's line of action — not the distance to where the force happens to be applied. A 500 N pull on a 0.6 m wrench gives 300 N·m only if the pull is perpendicular to the handle; at \( 60^\circ \) to it, the effective arm shrinks and \( M = 500 \times 0.6 \sin 60^\circ = 259.8\ \mathrm{N \cdot m} \). Sign convention: pick counterclockwise positive and never renegotiate mid-problem.</p>
+<h3>02 · Varignon's theorem</h3>
+<p>The moment of a force equals the sum of the moments of its components. This is not a curiosity — it is the standard labor-saving device. Rather than hunt for a perpendicular distance through awkward geometry, resolve the force into \( F_x \) and \( F_y \) at its point of application and take each component's moment with its own easy arm. The wrench case above: \( F_y = 500\sin 60^\circ \) acting 0.6 m from the nut gives the same 259.8 N·m in one line.</p>
+<h3>03 · Couples: pure rotation</h3>
+<p>Two equal, opposite, non-collinear forces form a <em>couple</em>. Their force resultant is zero — a couple does not push a body anywhere — but their moment \( M = Fd \) (\( d \) the separation) is the same about <em>every</em> point in the plane. That free-floating property is why we may slide a couple anywhere on a rigid body, and why any force system reduces to one force plus one couple at a chosen point — the standard equivalent system used from here to machine design.</p>
+
+<h3>04 · The moment working method</h3>
+<p>Moments punish improvisation, so fix the routine. <em>Declare the convention first</em> —
+counterclockwise positive, written at the top of the page — and never renegotiate it
+mid-problem. <em>Choose the moment center tactically:</em> the point that kills the most
+unknowns, usually where reaction lines cross; the moment of a force through the chosen point
+is zero, and that choice is free information. <em>Pick the computation route per force:</em>
+if the perpendicular distance is visible, \( M = Fd \) is fastest; if the geometry is
+angled and awkward, split the force into components at its point of application and let
+Varignon's theorem sum the pieces — components times their own clean arms beat one force
+times a distance you can't see.</p>
+<p>Treat couples as the privileged objects they are: a couple's moment is the same about
+every point, so it moves freely around the diagram without recalculation — the one moment
+that never asks "about where?". And keep the units honest: newton-metres, force times
+length, always stated. A moment reported as a bare number is an invitation to the classic
+error of adding it to a force — dimensional homogeneity, learned in the mathematics course,
+polices this line for free.</p>
+<p><strong>Closing.</strong> Moment is force times perpendicular arm; Varignon converts geometry into components; couples turn without pushing and belong to no particular point. These three facts carry every equilibrium equation that follows.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Force components</b> (Lesson 1) — Varignon's theorem is useless without quick resolution.</li>
+<li><b>Perpendicular distance</b> — reading the shortest distance from a point to a line off a sketch.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Moment of a force</td><td>\( M = F\,d \)</td><td>Turning effect about a point; \( d \) is the PERPENDICULAR distance.</td></tr>
+<tr><td>Cross-product form</td><td>\( \mathbf{M} = \mathbf{r} \times \mathbf{F} \)</td><td>3-D moments, or when the perpendicular distance is awkward to see.</td></tr>
+<tr><td>Angled-force moment</td><td>\( M = F\,r\sin\theta \)</td><td>Force not perpendicular to the arm — the general planar case.</td></tr>
+<tr><td>Couple</td><td>\( M = F\,s \) (force pair, spacing \( s \))</td><td>Pure turning with zero net force; the same moment about EVERY point.</td></tr>
+<tr><td>Varignon's theorem</td><td>\( M_O(\mathbf{F}) = \Sigma M_O(\text{components}) \)</td><td>Splitting an awkward force into components and summing their moments.</td></tr>
+<tr><td>Sign convention</td><td>CCW positive (declare it)</td><td>One declared convention per problem, kept to the end.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Wrench moment, two ways</b></p>
+<p><b>Problem.</b> A 500 N force acts at the end of a 0.6 m wrench, at \( 60^\circ \) to the handle axis. <b>Find:</b> the moment about the nut, by perpendicular arm and by Varignon.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Perpendicular arm: \( d = 0.6\sin 60^\circ = 0.520\ \mathrm{m} \), so \( M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m} \).
+(2) Varignon: the component across the handle is \( 500\sin 60^\circ = 433.0\ \mathrm{N} \) with arm 0.6 m: \( M = 433.0 \times 0.6 = 259.8\ \mathrm{N\cdot m} \). The along-handle component's line of action passes through the nut — zero arm, zero moment.</p>
+<p><b>Answer:</b> \( M = 259.8\ \mathrm{N\cdot m} \) by both routes.
+<b>Sanity check:</b> the perpendicular case bounds it: \( 500 \times 0.6 = 300\ \mathrm{N\cdot m} \) is the maximum possible, and \( 259.8 < 300 \). ✓</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>A couple on a valve handwheel</b></p>
+<p><b>Problem.</b> Two hands apply equal and opposite 200 N forces at diametrically opposite points of a 0.3 m-diameter handwheel. <b>Find:</b> the moment, and the moment about a point 1 m away from the wheel's center.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Couple moment: \( M = Fd = 200 \times 0.3 = 60\ \mathrm{N\cdot m} \).
+(2) About the distant point: a couple's moment is identical about every point in the plane — still \( 60\ \mathrm{N\cdot m} \). The two forces' moments about that point differ individually, but their sum is unchanged.</p>
+<p><b>Answer:</b> \( 60\ \mathrm{N\cdot m} \), everywhere.
+<b>Sanity check:</b> the force resultant is \( 200 - 200 = 0 \) — the wheel is turned, not translated, which is exactly what a handwheel is for.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The angled pull on a valve wrench</b></p>
+<p><b>Problem.</b> A 250 N pull is applied at the end of a 0.6 m wrench arm, at 40° to the arm. <b>Find:</b> the moment about the pivot, and the pull angle that would maximize it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Only the component perpendicular to the arm turns it: \( M = F\,r\sin\theta = 250 \times 0.6 \times \sin 40° = 150 \times 0.643 = 96.4\ \mathrm{N\,m} \).
+(2) The maximum comes at \( \theta = 90° \): \( M_{max} = 250 \times 0.6 = 150\ \mathrm{N\,m} \) — pulling square to the arm.</p>
+<p><b>Answer:</b> 96.4 N·m; maximum 150 N·m at 90°.
+<b>Sanity check:</b> \( \sin 40° = 0.643 \) means the angled pull delivers 64% of the perpendicular pull's moment — exactly the fraction computed, and exactly why a fitter instinctively squares up on a stubborn valve.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A 400 N force acts perpendicular to a wrench, 0.25 m from the nut. The moment about the nut is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>100 N·m</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>400 N·m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1600 N·m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>25 N·m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( M = Fd = 400 \times 0.25 = 100\ \mathrm{N\cdot m} \). Perpendicular application means the full 0.25 m is the moment arm — no sine factor needed. 1600 N·m divides instead of multiplying; 25 N·m forgets the force entirely.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A couple acting on a bracket is evaluated about a point 2 m away instead of at the bracket. Its moment:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>doubles</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>halves</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>is unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>drops to zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A couple's moment is the same about <em>every</em> point in the plane — its force resultant is zero, so moving the reference point adds equal and opposite contributions that cancel. That location-independence is what makes couples freely movable on a rigid body.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Two 80 N forces form a couple with 0.5 m between their lines of action. The couple's moment about a point 3 m away from the pair is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>40 N·m — a couple's moment is the same about every point</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>240 N·m — moment grows with distance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>20 N·m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Cannot be found without the exact point</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( M = F s = 80 \times 0.5 = 40\ \mathrm{N\,m} \), and the defining property of a couple is that this value is identical about <em>every</em> point — the two forces' individual moments change with the point, but their sum never does. Growing the moment with distance imports single-force thinking; that is exactly the habit the couple concept exists to break.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Varignon's theorem lets you replace \"find the perpendicular distance\" with:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>summing the moments of the force's components</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>doubling the force and halving the arm</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>taking moments only about the centroid</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>ignoring forces through the reference point</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The moment of a force equals the sum of the moments of its components — so resolve at the point of application and use each component's easy rectangular arm. (Forces whose line of action passes through the moment point do contribute zero, but that is a corollary, not the theorem.)</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Varignon's theorem lets you compute a force's moment by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Summing the moments of the force's components about the same point</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Multiplying the force by any convenient distance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Averaging the moments about two points</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Replacing the force with its resultant</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The moment of a force about a point equals the sum of the moments of its components about that point — which is why splitting an angled force at its point of application and using each component's clean perpendicular arm is both legal and usually faster. "Any convenient distance" is the classic error the theorem prevents: the arm must be perpendicular to each force line, and components make those arms visible.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the cheater bar that ruined a stud.</b> You arrive at a bolted joint on a fabricated steel connection where a fitter has slipped a metre of pipe over a 300 mm wrench to break a seized nut — quadrupling the moment arm and taking the applied torque far beyond the stud's rating (figures representative). The stud yields, and the joint now needs drilling out. Lesson 2 is the whole story: \( M = Fd \) does not care whether the extra \( d \) came from an engineered tool or scavenged pipe. Torque wrenches exist to put a number on the moment; the calculation here is how you check that number is the right one.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft}\\)", "\\(18.29\\ \\mathrm{ft}\\)", "\\(196.9\\ \\mathrm{ft}\\)", "\\(19.69\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(5 \times 3.281 = 16.4\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.3937\\ \\mathrm{in}\\)", "\\(2540\\ \\mathrm{in}\\)", "\\(39.37\\ \\mathrm{in}\\)", "\\(3.937\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(100 \\times 0.03937 = 3.937\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.0315\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(203.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3.15\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.315\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(8 \times 0.03937 = 0.315\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-forces-vectors-and-resultants.html">← 01 · Forces, vectors, and resultants</a><a href="index.html">كل الدروس · STA 103</a><a href="03-the-free-body-diagram.html">03 · The free-body diagram →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

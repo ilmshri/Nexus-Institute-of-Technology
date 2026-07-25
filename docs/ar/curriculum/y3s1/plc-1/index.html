@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>PLC Fundamentals I — MechEd</title>
+<meta name="description" content="The plant's reflexes: PLC hardware, scan cycle, ladder logic, timers and counters, and disciplined I/O wiring — taught to read-and-troubleshoot level ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s1/plc-1/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>PLC 255</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="24" y1="14" x2="24" y2="106"/><line x1="96" y1="14" x2="96" y2="106"/><line x1="24" y1="38" x2="50" y2="38"/><line x1="70" y1="38" x2="96" y2="38"/><line x1="50" y1="30" x2="50" y2="46"/><line x1="70" y1="30" x2="70" y2="46"/><line x1="24" y1="74" x2="52" y2="74"/><line x1="68" y1="74" x2="96" y2="74"/><circle cx="60" cy="74" r="9" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">PLC 255 · YEAR 3 · SEMESTER 1</p>
+    <h1>PLC Fundamentals I</h1>
+    <p class="sub">The plant's reflexes: PLC hardware, scan cycle, ladder logic, timers and counters, and disciplined I/O wiring — taught to read-and-troubleshoot level first, author level second.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span><span class="mchip">1 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-control-before-plcs-relay-logic.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Contactors, control relays, and hardwired interlocks.</span></div><div><span class="ck">✓</span><span>CPU, I/O, rack, and power supply; the read–execute–write scan and its timing consequences.</span></div><div><span class="ck">✓</span><span>Contacts, coils, seal-in circuits, and interlocks — the core patterns of industrial logic, each drawn and traced.</span></div><div><span class="ck">✓</span><span>On-delay, off-delay, and retentive timers; up/down counters.</span></div><div><span class="ck">✓</span><span>Sinking/sourcing, wet and dry contacts, and field-device interfacing.</span></div><div><span class="ck">✓</span><span>4–20 mA and 0–10 V channels; raw counts to engineering units scaled correctly.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s1/plc-1/1" data-href="01-control-before-plcs-relay-logic.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-control-before-plcs-relay-logic.html">Control before PLCs: relay logic</a></h4>
+    <p class="scope">Contactors, control relays, and hardwired interlocks. Reading a motor-starter schematic fluently. The relay heritage that ladder logic still speaks.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Read a DOL starter schematic: trace the seal-in path.</li><li>What does a control relay isolate?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/2" data-href="02-plc-architecture-and-the-scan-cycle.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-plc-architecture-and-the-scan-cycle.html">PLC architecture and the scan cycle</a></h4>
+    <p class="scope">CPU, I/O, rack, and power supply; the read–execute–write scan and its timing consequences. Why outputs update when they do. Watchdogs and fault states.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Order the scan cycle's three phases and their consequence for fast pulses.</li><li>What does the watchdog timer catch?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/3" data-href="03-ladder-logic-essentials.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-ladder-logic-essentials.html">Ladder logic essentials</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Contacts, coils, seal-in circuits, and interlocks — the core patterns of industrial logic, each drawn and traced. Start/stop of a motor with safety interlocks built the standard way. Reading unfamiliar ladder cold: the transition engineer's most bankable automation skill.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · G1</b> · <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In a seal-in rung, what keeps the motor contactor energized after Start is released — and what breaks it?</li><li>Why are stop functions wired through NC contacts: which failure does that choice survive?</li><li>Within one scan cycle, at what point do physical outputs actually change state?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/4" data-href="04-timers-and-counters.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-timers-and-counters.html">Timers and counters</a></h4>
+    <p class="scope">On-delay, off-delay, and retentive timers; up/down counters. Debounce, staging, and timeout patterns. A star-delta starter sequence programmed and traced.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>On-delay versus off-delay: give one use each.</li><li>Why do retentive timers survive power cycles — and when is that dangerous?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/5" data-href="05-digital-i-o-wiring.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-digital-i-o-wiring.html">Digital I/O wiring</a></h4>
+    <p class="scope">Sinking/sourcing, wet and dry contacts, and field-device interfacing. Fusing and commons in the I/O rack. The wiring faults behind most 'PLC problems'.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Wire an NPN sensor to a sinking input: what goes where?</li><li>Why do I/O commons trip up mixed-vendor panels?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/6" data-href="06-analog-i-o-and-scaling.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-analog-i-o-and-scaling.html">Analog I/O and scaling</a></h4>
+    <p class="scope">4–20 mA and 0–10 V channels; raw counts to engineering units scaled correctly. Resolution and out-of-range handling. A transmitter read into a displayed value end to end.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Scale 4–20 mA to 0–100 °C: write the two-point formula.</li><li>What should logic do with an out-of-range analog value?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/7" data-href="07-program-structure-and-documentation.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-program-structure-and-documentation.html">Program structure and documentation</a></h4>
+    <p class="scope">Rungs into routines; tags and comments that survive personnel turnover. State-based thinking for sequences. Programs written to be troubleshot at 3 a.m.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What makes a program troubleshootable at 3 a.m.?</li><li>Why do state machines beat scattered interlocks for sequences?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/8" data-href="08-troubleshooting-with-a-live-plc.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-troubleshooting-with-a-live-plc.html">Troubleshooting with a live PLC</a></h4>
+    <p class="scope">Online monitoring, forcing with fear, and cross-referencing. A systematic fault-finding method from symptom to rung to field device. The lesson maintenance hiring managers actually test.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is forcing an output dangerous, and what discipline governs it?</li><li>From symptom to rung to field device: sketch the fault-finding path.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/9" data-href="09-safety-circuits-and-the-plc-s-limits.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-safety-circuits-and-the-plc-s-limits.html">Safety circuits and the PLC's limits</a></h4>
+    <p class="scope">E-stops, safety relays, and why safety functions live outside standard PLC logic. Categories of safety architecture in outline. The boundary every integrator must respect.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do safety functions live outside the standard PLC?</li><li>What does an E-stop circuit guarantee that logic cannot?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/10" data-href="10-hmi-basics.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-hmi-basics.html">HMI basics</a></h4>
+    <p class="scope">Operator screens: tags, alarms, and navigation that helps at 3 a.m. Alarm philosophy — fewer, truer alarms. The HMI as the machine's public face.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three alarm-philosophy rules that keep HMIs useful.</li><li>What belongs on a machine's overview screen?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/plc-1/11" data-href="11-mini-project-a-conveyor-segment.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-mini-project-a-conveyor-segment.html">Mini-project: a conveyor segment</a></h4>
+    <p class="scope">Program a conveyor start-up with permissives, timers, and fault latching; document it; then troubleshoot three injected faults. The full loop: specify, program, verify. PLC II builds from here.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span>; supplementary video: <a href="https://www.youtube.com/@realpars" title="RealPars — supplementary PLC and industrial automation training videos (independent channel)" target="_blank" rel="noopener">RealPars</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLStdzQ7kTz1Ifhmxz668PJfywGWuUPnwl" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the conveyor project, what fault states did you latch, and why latch at all?</li><li>Which permissives gate the start, and in what order?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://nptel.ac.in/courses/108105062" title="NPTEL — Industrial Automation and Control (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Automation and Control</a> <span class="srcnote">alternative (enable captions)</span> (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>PLC 255</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>1</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s1/hydraulics-pneumatics/index.html">HYD 304 · Hydraulics &amp; Pneumatics →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

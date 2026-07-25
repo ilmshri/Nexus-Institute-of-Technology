@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Transient conduction — Heat Transfer — MechEd</title>
+<meta name="description" content="Lumped capacitance with its Biot-number entry ticket, then the semi-infinite solid and one-term chart solutions. Heating and quench times estimated ho">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/3">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/03-transient-conduction.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol cur" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 03 of 11 · Year 2 · Semester 2</p>
+  <h1>Transient conduction</h1>
+  <p class="sub">Lumped capacitance with its Biot-number entry ticket, then the semi-infinite solid and one-term chart solutions. Heating and quench times estimated honestly. The physics already met in Chvorinov's rule, now in its own right.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/3">Mark as complete</button>
+  <span class="badge amber">CORE 60 · B5</span>
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Biot number 0.05 for a quenched pin: is lumped capacitance legitimate, and what does τ = ρVc/hA mean physically?</li><li>Why does the surface heat flux into a semi-infinite solid fall as 1/√t?</li><li>Roughly how does doubling a plate's thickness change its one-term-model cooling time?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An exponential decay curve of normalized temperature excess against time for a lumped-capacitance body, marked at one time constant tau where the excess has fallen to 1 over e, and again at the time where the excess has fallen to five percent of its initial value"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Lumped capacitance: one exponential, one time constant τ</text><line x1="70" y1="250" x2="480" y2="250" stroke="#16202e" stroke-width="1"/><line x1="70" y1="250" x2="70" y2="65" stroke="#16202e" stroke-width="1"/><text x="24" y="60" fill="#16202e" font-size="10.5">θ*(t)/θ*(0)</text><text x="275" y="272" text-anchor="middle" fill="#16202e" font-size="10.5">time, t (s)</text><polyline points="70.0,80.0 76.8,89.3 83.7,98.2 90.5,106.5 97.3,114.4 104.2,121.8 111.0,128.9 117.8,135.5 124.7,141.8 131.5,147.7 138.3,153.3 145.2,158.7 152.0,163.7 158.8,168.4 165.7,172.9 172.5,177.1 179.3,181.1 186.2,184.9 193.0,188.5 199.8,191.9 206.7,195.0 213.5,198.1 220.3,200.9 227.2,203.6 234.0,206.2 240.8,208.6 247.7,210.8 254.5,213.0 261.3,215.0 268.2,216.9 275.0,218.8 281.8,220.5 288.7,222.1 295.5,223.6 302.3,225.1 309.2,226.4 316.0,227.7 322.8,229.0 329.7,230.1 336.5,231.2 343.3,232.2 350.2,233.2 357.0,234.1 363.8,235.0 370.7,235.8 377.5,236.6 384.3,237.3 391.2,238.0 398.0,238.7 404.8,239.3 411.7,239.9 418.5,240.5 425.3,241.0 432.2,241.5 439.0,241.9 445.8,242.4 452.7,242.8 459.5,243.2 466.3,243.6 473.2,243.9 480.0,244.3" fill="none" stroke="#3a6ea5" stroke-width="2.4"/><line x1="191.0" y1="250" x2="191.0" y2="187.5" stroke="#c2820f" stroke-width="1" stroke-dasharray="3,3"/><circle cx="191.0" cy="187.5" r="4" fill="#c2820f"/><text x="199.0" y="179.5" fill="#c2820f" font-size="9.5">τ=14.8s, 1/e=0.37</text><circle cx="432.5" cy="241.5" r="4" fill="#1f7a5c"/><text x="424.5" y="231.5" text-anchor="end" fill="#1f7a5c" font-size="9.5">5% at t=44s</text></svg><figcaption>Once a body qualifies for lumped capacitance, its entire thermal history is this one curve — no shape, no internal gradient, just one exponential set by τ=ρVc/(hA).</figcaption></figure>
+
+<h3>01 · Lumped capacitance, and its entry ticket</h3>
+<p>If a body's own internal conduction is fast enough that it stays at one uniform temperature
+while it heats or cools, an energy balance on the whole body — stored energy lost to convection,
+\(\rho V c\,dT/dt=-hA(T-T_\infty)\) — integrates directly to
+\(\dfrac{T-T_\infty}{T_i-T_\infty}=e^{-t/\tau}\), a single exponential set by one time
+constant \(\tau=\rho V c/(hA)\). The entry ticket for this shortcut is the <b>Biot number</b>,
+\(Bi=hL_c/k\) with \(L_c=V/A\): it is a ratio of internal conduction resistance
+\((L_c/k)\) to external convection resistance \((1/h)\), and the common rule of thumb is
+\(Bi<0.1\) — internal resistance small enough next to the external bottleneck that "uniform
+temperature" is a good approximation, not merely a convenient one.</p>
+
+<h3>02 · When lumped fails: the semi-infinite solid and one-term charts</h3>
+<p>When \(Bi\) is not small — a thick section, a highly conductive-but-large body, or simply the
+first instants after a sudden surface change, before the interior has had time to feel it — a body
+is better modeled as a <b>semi-infinite solid</b>: an error-function temperature profile spreading
+in from the surface, whose surface heat flux falls as \(1/\sqrt{t}\), because the depth the
+disturbance has reached keeps growing while the local gradient keeps relaxing. For finite shapes
+(a plane wall, a long cylinder, a sphere) once enough time has passed that a single mode dominates
+(\(Fo=\alpha t/L_c^2\gtrsim0.2\)), a <b>one-term solution</b>
+\(\theta^*=C_1 e^{-\lambda_1^2 Fo}\) (times a position function), with \(\lambda_1\) and
+\(C_1\) tabulated against \(Bi\) and geometry, replaces the full infinite series — the same
+role Heisler charts play by hand.</p>
+
+<h3>03 · The same V/A ratio, a different exponent</h3>
+<p>Both \(\tau=\rho V c/(hA)\) here and Chvorinov's rule for casting solidification time
+(\(t\propto(V/A)^2\), covered in this curriculum's manufacturing-processes course) are governed
+by the same geometric ratio, \(V/A\) — a body's volume against the surface it must lose or gain
+heat through. The exponent differs because the limiting resistance differs: lumped capacitance's
+\(\tau\) is <i>externally</i> convection-limited, and \(V/A\) enters linearly through the
+energy balance; Chvorinov's rule describes a growing solid shell whose <i>own</i> conduction
+resistance is what's controlling, and that internally-limited problem is what pushes the exponent
+to two. Estimating a real time honestly means checking \(Bi\) <i>first</i> and picking the model
+that ticket actually admits — never assuming lumped capacitance applies just because it is the
+easier formula to reach for.</p>
+
+<h3>04 · A worked quench, checked before it is trusted</h3>
+<p>A 12 mm-diameter steel pin (\(k=45\ \text{W/mK}\),
+\(\rho=7850\ \text{kg/m}^3\), \(c=470\ \text{J/kgK}\)) is quenched in agitated
+oil, \(h=750\ \text{W/m}^2\text{K}\). For a long cylinder, \(L_c=V/A=r/2=3.0\
+\ \text{mm}\), so \(Bi=hL_c/k=0.05\) — comfortably under 0.1, lumped capacitance is
+legitimate. \(\tau=\rho L_c c/h=14.76\ \text{s}\): physically, the time for the excess
+temperature to fall to \(1/e\approx37\%\) of its start. Reaching 5% of the initial excess takes
+\(t=\tau\ln(20)=44.2\ \text{s}\); reaching 10% takes \(t=\tau\ln(10)=34.0\
+\ \text{s}\). Had the same pin instead been quenched in water
+(\(h=5000\ \text{W/m}^2\text{K}\)), \(Bi\) would climb to 0.33 — over the 0.1
+line, meaning the lumped shortcut is no longer legitimate for that case, exactly the honest check
+3 insists on before trusting any of these numbers.</p>
+<div class="keybox"><span class="tag">Key relation — lumped capacitance</span>
+<p>\[ \frac{T-T_\infty}{T_i-T_\infty}=e^{-t/\tau}, \qquad \tau=\frac{\rho V c}{hA},
+\qquad Bi=\frac{hL_c}{k}<0.1 \]</p>
+<p>Check \(Bi\) before trusting \(\tau\) — the formula does not warn you when it stops
+applying.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Fourier's law and thermal resistance</b> (Lesson 1) — the Biot number
+is literally a ratio of two resistances already introduced there, internal conduction against
+external convection.</li></ul>
+<h4>Toolkit — transient conduction</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Biot number</td><td>\( Bi=hL_c/k \)</td><td>Entry ticket for lumped capacitance (\(Bi&lt;0.1\)).</td></tr>
+<tr><td>Characteristic length</td><td>\( L_c=V/A \)</td><td>Same ratio behind Chvorinov's rule.</td></tr>
+<tr><td>Lumped time constant</td><td>\( \tau=\rho V c/(hA) \)</td><td>Time to fall to 1/e of initial excess.</td></tr>
+<tr><td>Fourier number</td><td>\( Fo=\alpha t/L_c^2 \)</td><td>Dimensionless time for one-term/chart solutions.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The quenched pin, checked and timed</b></p><p><b>Problem.</b> A 12 mm-diameter steel pin (\(k=45\ \text{W/mK}\), \(\rho=7850\ \text{kg/m}^3\), \(c=470\ \text{J/kgK}\)) is quenched in oil at \(h=750\ \text{W/m}^2\text{K}\). Check the Biot number, then find \(\tau\) and the time to reach 5% of the initial excess.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(L_c=r/2=3.0\ \text{mm}\), \(Bi=hL_c/k=0.05<0.1\): lumped is valid. \(\tau=\rho L_c c/h=14.76\ \text{s}\). \(t_{5\%}=\tau\ln(20)=44.2\ \text{s}\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>The same pin, quenched in water instead</b></p><p><b>Problem.</b> The identical pin is quenched in water, \(h=5000\ \text{W/m}^2\text{K}\), instead of oil. Check whether lumped capacitance is still legitimate.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(Bi=h L_c/k=5000\times0.0030/45=0.33\) — over the 0.1 threshold. Lumped capacitance is no longer a legitimate model for this case; a one-term or chart-based solution (2) is required instead.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Doubling the pin's radius</b></p><p><b>Problem.</b> A second pin, identical material and quench (\(h=750\ \text{W/m}^2\text{K}\)), has twice the diameter (24 mm instead of 12 mm). Find its Biot number and time constant, and compare \(\tau\) to the original pin's.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(L_c=r/2=6\ \text{mm}\), \(Bi=hL_c/k=0.10\) — right at the 0.1 boundary, lumped capacitance is only just still defensible. \(\tau=\rho L_c c/h=29.52\ \text{s}\), exactly \(2\times\) the original 14.76 s — \(\tau\) scales linearly with \(L_c=V/A\), not with its square as Chvorinov's rule does.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The Biot number \(Bi=hL_c/k\) is best understood as a ratio of which two quantities?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>External convection resistance to internal conduction resistance</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Internal conduction resistance to external convection resistance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Stored thermal energy to heat lost per second</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Surface area to volume, with no resistance interpretation</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(Bi=(L_c/k)/(1/h)\) — internal conduction resistance in the numerator, external convection resistance in the denominator.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A body's Biot number is 0.6. Which model should be used for its transient response?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Lumped capacitance — Bi is small enough</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>A one-term (chart-based) or full-series solution — Bi is too large for lumped capacitance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Neither model applies to any body with Bi above zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The semi-infinite solid solution, forever, regardless of elapsed time</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(Bi=0.6\) is well above the \(0.1\) rule-of-thumb line; internal conduction resistance is not negligible, so lumped capacitance is not a legitimate shortcut here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Near the surface of a suddenly-heated semi-infinite solid, the surface heat flux behaves as time proceeds:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It stays constant forever</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It rises without bound</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>It falls, proportional to \(1/\sqrt{t}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It falls to exactly zero after one time constant</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>As the affected depth grows, the local temperature gradient at the surface relaxes, and the semi-infinite solid solution gives a surface flux falling as \(1/\sqrt{t}\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Both this lesson's lumped time constant and casting's Chvorinov's rule are governed by the same geometric ratio. Which one?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Surface area alone</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Volume alone</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(V/A\), the volume-to-surface-area ratio</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Density times specific heat</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both \(\tau=\rho Vc/(hA)\) and Chvorinov's \(t\propto(V/A)^2\) are built on \(V/A\) — but with different exponents, per 3.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Why does Chvorinov's rule use \((V/A)^2\) while this lesson's lumped \(\tau\) uses \(V/A\) to the first power?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It is an arbitrary historical convention with no physical cause</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Because Chvorinov's problem is limited by the growing solid shell's own internal conduction resistance, not by external convection</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Because casting always involves larger volumes than quenching</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Because Chvorinov's rule is only an approximation and the exponent is not meaningful</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Lumped capacitance is externally (convection) limited, linear in V/A; Chvorinov's solidifying shell is internally (conduction) limited, which is what pushes the exponent to two — a real physical distinction, not a coincidence.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>In this lesson's worked pin, what does reaching \(t=\tau\) specifically correspond to?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The temperature excess has fallen to zero</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The temperature excess has fallen to \(1/e\approx37\%\) of its initial value</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The part has reached exactly the ambient temperature</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The Biot number has changed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>By definition of the exponential solution, one time constant is the time for the excess to fall to \(1/e\) of its starting value — visible directly on this lesson's diagram.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Doubling a lumped body's characteristic length \(L_c\) (same material, same h) changes \(Bi\) and \(\tau\) how?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Both double</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Bi halves, τ doubles</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Both are unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Bi doubles, τ quadruples</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both \(Bi=hL_c/k\) and \(\tau=\rho L_c c/h\) are directly proportional to \(L_c\); doubling \(L_c\) doubles both, exactly as this lesson's third solve problem shows numerically.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A one-term (Heisler-chart-style) solution is appropriate once which condition is met?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Immediately at t=0, before anything else is checked</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Once the Fourier number \(Fo=\alpha t/L_c^2\) is roughly 0.2 or larger</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Only when Bi is exactly zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Never — the full infinite series is always required</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Once \(Fo\gtrsim0.2\), the series solution is dominated by its first term, and the one-term/chart approximation becomes accurate enough for engineering use.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>A technician estimating quench or preheat duration for a batch of small parts checks the Biot
+number before reaching for the lumped-capacitance formula at all — per 1 and 4, the same part
+can sit comfortably under the \(Bi<0.1\) line in one quench medium and clear it entirely in a
+more aggressive one, and applying the easy formula regardless of which medium is in use would
+misestimate the time by a real, checkable margin.</p>
+<p>An engineer estimating how long a hot component in a shut-down process line takes to reach a
+safe-to-touch temperature uses the same time-constant idea, once \(Bi\) is confirmed small, as a
+first-pass lockout-duration estimate — a legitimate, quick engineering number precisely because
+the check in 1 was not skipped first.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(32.81\\ \\mathrm{ft/s}\\)", "\\(30.48\\ \\mathrm{ft/s}\\)", "\\(3281\\ \\mathrm{ft/s}\\)", "\\(328.1\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(100 \\times 3.281 = 328.1\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2.625\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2.438\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(262.5\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(26.25\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(8 \times 3.281 = 26.25\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{cm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(59.06\\ \\mathrm{in}\\)", "\\(381\\ \\mathrm{in}\\)", "\\(590.6\\ \\mathrm{in}\\)", "\\(5.906\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{cm} = 0.3937\\ \\mathrm{in}\\): \\(150 \\times 0.3937 = 59.06\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{cm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(4.724\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(47.24\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.4724\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{cm} = 0.3937\ \mathrm{in}\): \(12 \times 0.3937 = 4.724\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 4; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-steady-conduction-and-fins.html">← 02 · Steady conduction and fins</a><a href="index.html">كل الدروس · HTX 253</a><a href="04-forced-convection-external.html">04 · Forced convection: external →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

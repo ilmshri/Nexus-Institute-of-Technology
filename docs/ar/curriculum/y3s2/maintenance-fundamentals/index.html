@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Maintenance Engineering Fundamentals — MechEd</title>
+<meta name="description" content="The discipline you came from, rebuilt as engineering: failure behavior over time, the P–F interval, maintenance strategy types, and the vocabulary — a">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s2/maintenance-fundamentals/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>MNT 306</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="16" width="72" height="88" rx="8"/><line x1="36" y1="38" x2="66" y2="38"/><rect x="36" y="50" width="48" height="8" class="amb" stroke="none"/><rect x="36" y="66" width="32" height="8" class="amb" stroke="none"/><rect x="36" y="82" width="40" height="8" class="amb" stroke="none"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">MNT 306 · YEAR 3 · SEMESTER 2</p>
+    <h1>Maintenance Engineering Fundamentals</h1>
+    <p class="sub">The discipline you came from, rebuilt as engineering: failure behavior over time, the P–F interval, maintenance strategy types, and the vocabulary — availability, MTBF, criticality — used precisely instead of loosely.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span><span class="mchip">1 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-why-equipment-fails.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Failure as a process, not an event: load versus capability over time.</span></div><div><span class="ck">✓</span><span>The six classic failure patterns and the uncomfortable evidence that most failures are not age-related.</span></div><div><span class="ck">✓</span><span>Run-to-failure, time-based, condition-based, and proactive strategies — each legitimate somewhere.</span></div><div><span class="ck">✓</span><span>MTBF, MTTR, availability, and utilization defined with equations and abused-examples.</span></div><div><span class="ck">✓</span><span>Ranking equipment by consequence and likelihood; criticality matrices built honestly.</span></div><div><span class="ck">✓</span><span>PM tasks written against failure modes, not habits.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s2/maintenance-fundamentals/1" data-href="01-why-equipment-fails.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-why-equipment-fails.html">Why equipment fails</a></h4>
+    <p class="scope">Failure as a process, not an event: load versus capability over time. Failure modes, mechanisms, and causes distinguished rigorously. The language that makes failure discussable.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; NPTEL maintenance courses</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Failure mode versus mechanism versus cause: sort a seized bearing into all three.</li><li>Why is 'load exceeded capability' the universal failure sentence?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/2" data-href="02-failure-patterns-and-the-p-f-curve.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-failure-patterns-and-the-p-f-curve.html">Failure patterns and the P–F curve</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">The six classic failure patterns and the uncomfortable evidence that most failures are not age-related. The P–F curve derived as a concept: potential failure, functional failure, and the inspection window between them. The single most consequential diagram in modern maintenance.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C1</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; RCM literature as surveyed in NPTEL reliability courses</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Classic studies found most failure modes are not age-related: what does that do to time-based overhauls?</li><li>Define P and F on the P–F curve, and state the rule for a legitimate inspection interval between them.</li><li>A defect is detectable ~3 months before functional failure: what is the longest defensible monitoring interval?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/3" data-href="03-maintenance-strategy-types.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-maintenance-strategy-types.html">Maintenance strategy types</a></h4>
+    <p class="scope">Run-to-failure, time-based, condition-based, and proactive strategies — each legitimate somewhere. Strategy selection by failure pattern and consequence. Why 'more PM' is not a strategy.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Match each strategy to the failure pattern it suits.</li><li>Why is run-to-failure a legitimate strategy and not neglect?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/4" data-href="04-reliability-vocabulary-with-numbers.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-reliability-vocabulary-with-numbers.html">Reliability vocabulary with numbers</a></h4>
+    <p class="scope">MTBF, MTTR, availability, and utilization defined with equations and abused-examples. Inherent versus operational availability. Calculating them from real work-order data, including the data's lies.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; NPTEL reliability courses</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Compute availability from MTBF 400 h and MTTR 8 h.</li><li>Inherent versus operational availability: what does the gap contain?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/5" data-href="05-criticality-analysis.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-criticality-analysis.html">Criticality analysis</a></h4>
+    <p class="scope">Ranking equipment by consequence and likelihood; criticality matrices built honestly. The 10% of assets that deserve 60% of engineering attention. Criticality as the master key to every later prioritization.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Build a criticality matrix: which axes, and who scores?</li><li>Why does criticality drive every later prioritization?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/6" data-href="06-preventive-maintenance-engineering.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-preventive-maintenance-engineering.html">Preventive maintenance engineering</a></h4>
+    <p class="scope">PM tasks written against failure modes, not habits. Intervals from failure data and P–F logic. The PM review: deleting tasks as a legitimate outcome.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Write a PM task against a specific failure mode — what makes it effective?</li><li>Why is deleting PMs sometimes the right outcome of a review?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/7" data-href="07-lubrication-fundamentals.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-lubrication-fundamentals.html">Lubrication fundamentals</a></h4>
+    <p class="scope">Lubrication regimes from journal-bearing theory; grease versus oil decisions. Selection, storage, and contamination control. Lubrication as the cheapest reliability program in the plant.</p>
+    <p class="src"><b>Taught from</b> — NPTEL tribology-related content; <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which lubrication regime protects at startup, and why is startup the danger?</li><li>Grease versus oil: name two deciding factors.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/8" data-href="08-precision-maintenance-practices.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-precision-maintenance-practices.html">Precision maintenance practices</a></h4>
+    <p class="scope">Alignment, balancing, fastener torque, and installation standards as failure-prevention engineering. The craftsmanship–reliability link quantified where possible. Why 'fitted and ran' is not a completion standard.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does precision alignment extend seal and bearing life?</li><li>What does 'fitted and ran' fail to verify?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/9" data-href="09-operator-care-and-autonomous-maintenance.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-operator-care-and-autonomous-maintenance.html">Operator care and autonomous maintenance</a></h4>
+    <p class="scope">CLAIR-style operator tasks: clean, lubricate, adjust, inspect, report. The operations–maintenance interface designed, not fought over. TPM origins acknowledged without the cult.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which operator tasks genuinely prevent failures?</li><li>Why does the operations–maintenance interface need design, not goodwill?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/10" data-href="10-maintenance-economics.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-maintenance-economics.html">Maintenance economics</a></h4>
+    <p class="scope">Cost of downtime versus cost of maintenance; direct, indirect, and consequence costs. The optimum that moves with criticality. Making a maintenance budget argument management can audit.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which downtime costs never appear on the maintenance budget?</li><li>Why does the maintenance optimum move with criticality?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/maintenance-fundamentals/11" data-href="11-the-maintenance-function-in-the-organization.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-the-maintenance-function-in-the-organization.html">The maintenance function in the organization</a></h4>
+    <p class="scope">Roles: technician, planner, supervisor, reliability engineer — who owns what. Centralized versus area maintenance. Where the transitioning maintenance engineer's experience already maps onto this course's language.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Map your current maintenance experience onto the roles in this lesson.</li><li>Which role owns strategy, and which owns this week's schedule?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Maintenance and reliability-related engineering courses (nptel.ac.in)</li><li>Practitioner curriculum structured against the <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP body-of-knowledge</a> domains (framework, not a textbook)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MNT 306</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>1</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

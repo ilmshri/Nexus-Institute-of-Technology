@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Machine Design II — Machine Elements — MechEd</title>
+<meta name="description" content="The rotating-equipment bill of materials designed properly: gears, rolling and journal bearings, belts and chains, clutches, brakes, and couplings — e">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s1/machine-design-2/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>MDN 301</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="30"/><g><line x1="60" y1="14" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="106"/><line x1="14" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="106" y2="60"/><line x1="28" y1="28" x2="39" y2="39"/><line x1="81" y1="81" x2="92" y2="92"/><line x1="92" y1="28" x2="81" y2="39"/><line x1="39" y1="81" x2="28" y2="92"/></g><circle cx="60" cy="60" r="10" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">MDN 301 · YEAR 3 · SEMESTER 1</p>
+    <h1>Machine Design II — Machine Elements</h1>
+    <p class="sub">The rotating-equipment bill of materials designed properly: gears, rolling and journal bearings, belts and chains, clutches, brakes, and couplings — every element a maintenance engineer has replaced, now sized from first principles.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-spur-gear-design-bending.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Lewis bending analysis with velocity and geometry factors.</span></div><div><span class="ck">✓</span><span>Contact stress by Hertzian logic; pitting as the surface fatigue mode.</span></div><div><span class="ck">✓</span><span>Helical geometry and axial thrust; bevel basics; worm-drive efficiency and its heat problem.</span></div><div><span class="ck">✓</span><span>Bearing types and the L10 life equation used honestly.</span></div><div><span class="ck">✓</span><span>Hydrodynamic action from Reynolds-equation reasoning in outline; Sommerfeld thinking and minimum film thickness.</span></div><div><span class="ck">✓</span><span>V-belt mechanics from the capstan relation; power ratings and service factors.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s1/machine-design-2/1" data-href="01-spur-gear-design-bending.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-spur-gear-design-bending.html">Spur gear design: bending</a></h4>
+    <p class="scope">Lewis bending analysis with velocity and geometry factors. Module and face width chosen against tooth breakage. Where root cracks start and why.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which two velocity-dependent factors modify Lewis bending stress?</li><li>Why do gear root cracks start on the tension side?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/2" data-href="02-spur-gear-design-surface-durability.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-spur-gear-design-surface-durability.html">Spur gear design: surface durability</a></h4>
+    <p class="scope">Contact stress by Hertzian logic; pitting as the surface fatigue mode. Bending versus pitting as competing failure budgets. The design meaning of gear micropitting found in an oil sample.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Bending versus pitting: which failure budget wears out and which breaks?</li><li>What does micropitting in an oil report imply about film thickness?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/3" data-href="03-helical-bevel-and-worm-gearing.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-helical-bevel-and-worm-gearing.html">Helical, bevel, and worm gearing</a></h4>
+    <p class="scope">Helical geometry and axial thrust; bevel basics; worm-drive efficiency and its heat problem. Selection logic across gear types. Thrust-bearing consequences of helix choices.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do helical gears thrust axially, and who pays for it?</li><li>Where does a worm drive's efficiency go?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/4" data-href="04-rolling-element-bearings.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-rolling-element-bearings.html">Rolling-element bearings</a></h4>
+    <p class="scope">Bearing types and the L10 life equation used honestly. Equivalent loads with combined radial and thrust. Fits, preload, and mounting — where installed life is won or lost.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does bearing life follow a cube (or 10/3) law in load?</li><li>What does preload buy a spindle bearing and cost it?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/5" data-href="05-journal-bearings-and-lubrication-theory.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-journal-bearings-and-lubrication-theory.html">Journal bearings and lubrication theory</a></h4>
+    <p class="scope">Hydrodynamic action from Reynolds-equation reasoning in outline; Sommerfeld thinking and minimum film thickness. Viscosity selection and clearance. The bearings under every large turbine and compressor.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What builds the oil wedge in a journal bearing?</li><li>Why is minimum film thickness the design's real deliverable?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/6" data-href="06-belt-drives.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-belt-drives.html">Belt drives</a></h4>
+    <p class="scope">V-belt mechanics from the capstan relation; power ratings and service factors. Tensioning — the maintenance variable that decides belt life. Multi-belt sets and matching.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do V-belts grip more than flat belts at the same tension?</li><li>What does incorrect tension do to belt and bearing life simultaneously?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/7" data-href="07-chain-drives.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-chain-drives.html">Chain drives</a></h4>
+    <p class="scope">Roller-chain geometry and chordal action. Ratings, lubrication regimes, and elongation limits. Sprocket wear read as a diagnostic.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What is chordal action and what does it do at high speed?</li><li>When does chain elongation condemn the sprockets too?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/8" data-href="08-clutches-and-brakes.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-clutches-and-brakes.html">Clutches and brakes</a></h4>
+    <p class="scope">Friction clutch and brake torque from pressure assumptions — uniform wear versus uniform pressure derived. Energy dissipation and thermal sizing. Where brakes fade and clutches slip.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Uniform pressure versus uniform wear: which assumption is conservative for clutch torque?</li><li>What sizes a brake thermally rather than frictionally?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/9" data-href="09-couplings-and-shaft-alignment-tolerances.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-couplings-and-shaft-alignment-tolerances.html">Couplings and shaft alignment tolerances</a></h4>
+    <p class="scope">Rigid, elastomeric, gear, and disc couplings; what misalignment each tolerates and transmits. Coupling selection against torque and misalignment spectra. The design basis under alignment standards used in the field.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Match coupling types to the misalignment each forgives.</li><li>Why does a rigid coupling turn misalignment into bearing load?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/10" data-href="10-flywheels-and-rotating-part-integrity.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-flywheels-and-rotating-part-integrity.html">Flywheels and rotating-part integrity</a></h4>
+    <p class="scope">Rotating-disc stresses and burst margins. Flywheel energy sizing revisited with stress limits. Overspeed as a design case, not an accident report.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Where is a spinning disc's stress maximum, and why does overspeed test matter?</li><li>What margin does a burst test demonstrate?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/machine-design-2/11" data-href="11-design-review-a-gearbox-teardown-on-paper.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-design-review-a-gearbox-teardown-on-paper.html">Design review: a gearbox teardown on paper</a></h4>
+    <p class="scope">A complete gearbox audited element by element: gears, bearings, shafts, seals, housing. Each element's failure budget identified. The design-side twin of a maintenance teardown report.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the gearbox teardown, which element's failure budget was thinnest?</li><li>What would you inspect first at overhaul, and on what design grounds?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Machine Design (nptel.ac.in)</li><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MDN 301</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s1/vibrations/index.html">VIB 351 · Mechanical Vibrations →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

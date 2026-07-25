@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="Compiled lectures, foundations, and reference for PHY 107 Engineering Physics I — Mechanics.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/physics-1/summary.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div lang="en" dir="ltr" class="en-body">
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>PHY 107 · Year 1 · Semester 1</p>
+  <h1>PHY 107 — Engineering Physics I — Mechanics</h1>
+  <p class="sub">One compiled document: every authored lecture, then the foundations
+  toolkits, then this course's own equation-and-term reference. Use
+  <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+
+<h2 id="sum-physics-1">PHY 107 — Engineering Physics I — Mechanics</h2>
+<h2 class="sum-part">Part 1 — Lectures</h2>
+
+<section class="sum-lesson"><h3>Lesson 01 · Measurement, units, and vectors</h3><div class="measure">
+<h3>01 · Measurement is a contract</h3>
+<p>Physics begins where opinion ends: at measurement. A physical quantity is a number, a
+unit, and an uncertainty, and all three are part of the value. The SI system supplies seven
+base units, of which mechanics uses three — the metre, the kilogram, and the second — and
+builds everything else from them: newtons are \( \mathrm{kg\,m/s^2} \), joules are
+newton-metres, watts are joules per second. Because derived units are built by algebra, they
+can be CHECKED by algebra — both sides of any physical equation must carry identical units,
+and an equation that fails this test is wrong before any numbers enter. Significant figures
+carry the honesty further: a value written as 4.80 m promises more than 4.8 m does, and the
+professional habit is to promise no more than the instrument delivered.</p>
+<h3>02 · Vectors carry direction</h3>
+<p>Some quantities are complete as bare numbers — temperature, mass, energy. Mechanics'
+central quantities are not: force, velocity, acceleration, and displacement all point, and a
+number without its direction is half a fact. A vector is specified either by magnitude and
+angle or by components on chosen axes, and the two descriptions convert through the triangle:
+\( A_x = A\cos\theta \), \( A_y = A\sin\theta \), with
+\( A = \sqrt{A_x^2 + A_y^2} \) returning the magnitude. Addition happens component by
+component — never magnitude by magnitude — which is the single most consequential sentence
+in this lesson: two 100 N forces can sum to anything from 0 to 200 N depending on their
+directions.</p>
+<h3>03 · Two products, two meanings</h3>
+<p>Vectors multiply in two distinct ways, each answering a physical question. The dot
+product, \( \mathbf{A}\cdot\mathbf{B} = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z \),
+measures alignment and produces a scalar — work is force dotted with displacement, and a
+force at right angles to motion does none. The cross product,
+\( |\mathbf{A}\times\mathbf{B}| = AB\sin\theta \), measures turning capacity and
+produces a vector along the axis of turn — torque is position crossed with force, the
+right-hand rule assigning its sense. Choosing the wrong product is not a small error; it is
+answering a different question.</p>
+<h3>04 · The component working method</h3>
+<p>Every vector calculation in this course runs one procedure. Choose axes deliberately and
+draw them. Resolve every vector into components with a small sign table, committing each
+sine and cosine once, visibly. Do all arithmetic on components. Recompose at the end —
+magnitude from Pythagoras, direction from the arctangent WITH a quadrant check from the
+component signs, because the calculator's arctangent is wrong half the time on its own.
+Then run the two audits: units on both sides of every line, and magnitude inside the
+possible band (never more than the sum of the parts, never less than their difference).
+The method is mechanical on purpose — statics, dynamics, and every field theory after them
+will run it thousands of times, and a procedure executed identically is a procedure whose
+errors are findable. Speed comes later and automatically; correctness is the habit being
+installed here.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 02 · Kinematics in one dimension</h3><div class="measure">
+<h3>01 · The three siblings: position, velocity, acceleration</h3>
+<p>Kinematics describes motion without asking why it happens, and its entire vocabulary is
+three quantities chained by calculus. Position \( x(t) \) says where; velocity
+\( v = dx/dt \) says how fast where is changing; acceleration \( a = dv/dt \) says how
+fast how-fast is changing. The chain runs both directions: differentiate to go from position
+toward acceleration, integrate to come back — and the mathematics course's slogan that
+"slopes and areas are inverses" becomes physical here. On a velocity–time graph, the slope
+at any instant is the acceleration and the area under the curve is the displacement; an
+engineer who can read those two facts off a trend owns most of kinematics.</p>
+<h3>02 · The constant-acceleration toolkit</h3>
+<p>When acceleration is constant — winch starts, braking runs, free fall — integration
+yields the standard kit: \( v = v_0 + at \), \( x = v_0t + \tfrac12 at^2 \), and the
+time-free combination \( v^2 = v_0^2 + 2ax \). Derive them once from the definitions and
+they stop being formulas to memorize and become consequences to trust. Each answers its own
+question — the first about speed at a time, the second about distance in a time, the third
+about speed after a distance — and choosing the one whose variables match the givens is the
+entire selection skill. Free fall is the same kit with \( a = g = 9.81\ \mathrm{m/s^2} \)
+downward, air resistance ignored until a later course chooses to price it.</p>
+<h3>03 · Signs carry the physics</h3>
+<p>One axis, declared positive in one direction, governs every sign in the problem.
+Velocity opposite the axis is negative; acceleration opposite the VELOCITY is braking, but
+acceleration opposite the AXIS is just negative — the two statements differ, and conflating
+them is the classic kinematics error. A car moving in +x while slowing has negative
+acceleration; the same car reversing and speeding up ALSO has negative acceleration. The
+sign belongs to the axis, not to the feeling of speeding up or slowing down.</p>
+<h3>04 · The kinematics working method</h3>
+<p>Solve every problem the same way. Draw the axis and mark positive. List the knowns and
+the wanted symbolically — \( v_0, v, a, t, x \) — and strike what the problem doesn't
+mention. Pick the ONE equation containing exactly the knowns and the wanted; if none fits,
+the problem has two phases, so split it where the acceleration changes and chain the phases,
+the final state of one becoming the initial state of the next. Solve symbolically first,
+substitute numbers last, and audit twice: units through every line, and magnitude against
+experience — a forklift does not brake at \( 40\ \mathrm{m/s^2} \), and an answer
+claiming so is a decimal slip announcing itself. The two-phase discipline matters most:
+most real motions — lift, travel, lower; accelerate, cruise, brake — are chains of simple
+segments, and the method scales to any chain length without changing shape.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 03 · Kinematics in two dimensions</h3><div class="measure">
+<h3>01 · Two motions sharing one clock</h3>
+<p>The deepest fact of two-dimensional motion is independence: the horizontal and vertical
+motions of a projectile do not consult each other. Gravity acts only vertically, so the
+horizontal velocity is untouched — constant from launch to landing — while the vertical
+motion is ordinary free fall. The only thing the two share is the clock. Every projectile
+problem therefore splits into two one-dimensional problems solved with Lesson 2's toolkit,
+joined by the time variable: usually the vertical motion sets the time (how long until it
+lands?) and the horizontal motion spends it (how far did it get?).</p>
+<h3>02 · The projectile's arithmetic</h3>
+<p>Launched horizontally from height \( h \) with speed \( v_0 \): the fall time is
+\( t = \sqrt{2h/g} \) — identical to a dropped object, regardless of \( v_0 \) — and
+the reach is \( x = v_0 t \). Launched at angle \( \theta \): the initial velocity
+splits into \( v_0\cos\theta \) horizontal and \( v_0\sin\theta \) vertical, the
+apex arrives when the vertical velocity runs out, and the level-ground range is
+\( R = v_0^2 \sin 2\theta / g \), maximized at 45°. At the apex the vertical velocity
+is zero but the horizontal velocity is untouched — the projectile is still moving, a fact
+the classic "zero velocity at the top" error forgets.</p>
+<h3>03 · Relative motion: velocities add like vectors</h3>
+<p>Velocity is always measured relative to a frame, and frames stack by vector addition:
+the velocity of A relative to ground equals A relative to B plus B relative to ground. A
+worker walking at 1.0 m/s against a conveyor doing 1.5 m/s moves at 0.5 m/s over the floor;
+a part carried on a moving belt leaves the belt end with the belt's velocity as its
+inheritance. In one dimension this is signed addition; in two, components — nothing new,
+just Lesson 1's machinery applied to velocities.</p>
+<h3>04 · The two-column working method</h3>
+<p>Solve every 2-D motion with two columns and one clock. Write the horizontal column:
+constant velocity, \( x = v_x t \), nothing else. Write the vertical column: free fall
+with the full constant-acceleration kit. Identify which column the question interrogates
+and which column supplies the time, and pass \( t \) between them explicitly. Keep signs
+by one declared axis pair (right and up positive is conventional), and audit at the seams:
+the landing condition is a VERTICAL statement (height reaches zero), the reach is a
+HORIZONTAL one, and mixing the columns — using the launch speed where a component belongs —
+is the error the layout exists to prevent. The same two-column habit will return, upgraded,
+as normal-and-tangential components in the dynamics course; learning its discipline now on
+projectiles is the cheap rehearsal.</p>
+<p>The applications are nearer than they look: discharge trajectories off conveyor heads set
+guard and bin positions, falling-object times set interlock reaction budgets, and every
+"how far can it reach" safety question — spray, jet, or dropped tool — is a projectile
+problem wearing overalls. The two columns answer all of them.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 04 · Newton's laws of motion</h3><div class="measure">
+<h3>01 · The three laws, stated for work</h3>
+<p>Newton's laws are the constitution of mechanics, and each earns a working translation.
+<em>First law:</em> a body's velocity is constant unless a net force acts — so anything at
+rest OR cruising steadily has balanced forces, and the interesting engineering question is
+always "balanced by what?" <em>Second law:</em> \( \mathbf{F}_{net} = m\mathbf{a} \) —
+the net force, the vector sum of everything acting, produces acceleration in its own
+direction, scaled inversely by the mass. <em>Third law:</em> forces come in pairs, equal and
+opposite, acting on DIFFERENT bodies — the floor pushes the crate up exactly as hard as the
+crate pushes the floor down, and the pair never meets on one free-body diagram. The third
+law is bookkeeping; the second is the engine; the first is the second at
+\( \mathbf{a} = 0 \), which is the entire statics course in four symbols.</p>
+<h3>02 · Mass versus weight, permanently</h3>
+<p>Mass measures inertia — the reluctance to accelerate — in kilograms, identical everywhere
+in the universe. Weight is the gravitational FORCE on that mass, \( W = mg \), in newtons,
+local to the gravity that produces it. The distinction stops being pedantry the moment
+anything accelerates vertically: in a lift accelerating upward, the floor must push harder
+than \( mg \) — the scale reads more — and in a dropping lift it reads less, while the
+mass never changes. Load cells, crane scales, and accelerating machinery all live on this
+distinction.</p>
+<h3>03 · Using the second law on systems</h3>
+<p>\( F = ma \) applies to any body you choose to isolate — a whole train of carts or any
+single cart within it. The professional trick is choosing wisely: the whole system hides
+internal forces and yields the acceleration cheaply; a single member exposes the internal
+force you actually want. Solve the system for \( a \), then isolate one piece and let its
+own second law reveal the coupling force. Connected bodies share the acceleration magnitude
+whenever their connection is inextensible — the rope constraint that makes multi-body
+problems solvable at all.</p>
+<h3>04 · The second-law working method</h3>
+<p>The procedure is Lesson 3's FBD checklist with one upgrade: the right side of the
+equation is no longer zero. Draw the free body. Choose axes — align one with the
+acceleration when its direction is known, and the algebra thanks you. Write
+\( \Sigma F_x = ma_x \) and \( \Sigma F_y = ma_y \) with the sign table. Solve
+symbolically, substitute, and audit: units (newtons throughout), limits (set \( a = 0 \)
+and the answer must collapse to the statics result), and magnitude sense (accelerations of
+industrial machinery are typically fractions of \( g \); an answer of \( 40\ \mathrm{m/s^2} \)
+for a forklift is a flag, not a finding). When several bodies connect, write one second law
+per body plus the constraint, and count equations against unknowns before solving —
+exactly the bookkeeping the statics course taught, now with motion.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 05 · Applying Newton's laws</h3><div class="measure">
+<h3>01 · Friction joins the diagram</h3>
+<p>Newton's laws meet real surfaces through friction, and the rules carry over from statics
+with one upgrade: motion. Static friction adapts — it supplies exactly what equilibrium
+demands, up to the ceiling \( \mu_s N \) — while kinetic friction, once sliding begins,
+holds the steady lower value \( \mu_k N \). The normal force is never assumed: on an
+incline it is \( mg\cos\theta \), under a downward push it grows, under an angled pull
+it shrinks, and every friction calculation begins by solving for \( N \) from the
+perpendicular equation. The incline is the standard stage: gravity resolves into
+\( mg\sin\theta \) along the slope and \( mg\cos\theta \) into it, and the contest
+between \( mg\sin\theta \) and \( \mu_s mg\cos\theta \) — that is, between
+\( \tan\theta \) and \( \mu_s \) — decides whether anything moves at all.</p>
+<h3>02 · Ropes, pulleys, and shared fates</h3>
+<p>An ideal rope is inextensible and massless: it transmits one tension throughout its
+length, and it forces connected bodies to share one acceleration magnitude. Those two facts
+turn multi-body problems into systems of simple equations — one second law per body, plus
+the constraint. An ideal pulley redirects the rope without changing its tension; the
+hanging-mass-drags-sliding-mass arrangement is the archetype, and its logic reappears in
+every counterweight, hoist, and tensioning system built since.</p>
+<h3>03 · Friction as the transmitter of motion</h3>
+<p>Friction does not only resist motion — it CAUSES most of it. A box accelerates with its
+conveyor belt only because static friction drags it along; the maximum acceleration friction
+can transmit is \( a_{max} = \mu_s g \), and a belt that accelerates harder leaves its
+cargo sliding behind. The same ceiling governs tires on tarmac and shoes on floors: traction
+is static friction employed, and the μ-times-g budget is the hard limit on every start and
+every stop that relies on it.</p>
+<h3>04 · The applying-Newton working method</h3>
+<p>The procedure composes everything so far. Draw the free body; solve the perpendicular
+axis first to capture \( N \); decide the friction regime honestly — compute the force
+equilibrium would require, compare with \( \mu_s N \), and only then choose static
+(adaptive, at the required value) or kinetic (fixed, at \( \mu_k N \), opposing the
+sliding). Align one axis with the acceleration, write the second law per axis, add the
+rope constraint when bodies connect, and count equations against unknowns before solving.
+Audit with limits: set \( \mu = 0 \) and the answer must collapse to the frictionless
+case; set \( a = 0 \) and it must collapse to statics. The regime decision is where the
+marks — and the real machines — are won or lost: assuming sliding when the part actually
+grips, or grip when it actually slides, produces answers that are precisely and confidently
+wrong. When in doubt, solve both regimes and let the comparison with the ceiling name the
+truth — two short calculations beat one plausible guess every time.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 06 · Work and energy</h3><div class="measure">
+<h3>01 · Work: force through distance, honestly counted</h3>
+<p>Work is energy in transit by force: \( W = Fd\cos\theta \) — only the component of
+force ALONG the motion counts, and the dot product of Lesson 1 was built for exactly this
+accounting. Force perpendicular to motion does nothing (the normal force on a rolling cart,
+the centripetal pull of a curve); force opposing motion does negative work, withdrawing
+energy (friction, always); and a force with no motion under it does no work at all, however
+hard it strains — the crane holding a load stationary spends money, not joules. The unit is
+the joule, one newton-metre, and keeping work's sign honest is keeping the energy books
+balanced.</p>
+<h3>02 · Kinetic energy and the theorem that shortcuts dynamics</h3>
+<p>A moving mass carries kinetic energy \( KE = \tfrac12 mv^2 \), and the work–energy
+theorem states the exchange rate: the NET work done on a body equals its change in kinetic
+energy, \( W_{net} = \Delta KE \). The theorem is a derived consequence of
+\( F = ma \), but as a tool it routinely beats its parent: it needs no timeline, no
+acceleration bookkeeping — just states, before and after. The \( v^2 \) matters more than
+any other exponent in safety engineering: doubling speed quadruples the energy to be
+absorbed, which is why impact severity, braking distances, and guard designs all scale on
+the square of speed.</p>
+<h3>03 · Power: the rate that sizes machines</h3>
+<p>Machines are bought by the rate they can move energy: power, \( P = W/t \), in watts —
+joules per second. For a force moving at speed, \( P = Fv \); for a hoist lifting steadily,
+\( P = mgv \); and the same energy delivered faster demands proportionally more machine.
+The kilowatt-hour on the invoice is a unit of ENERGY (a kilowatt sustained for an hour,
+3.6 MJ), and keeping power and energy distinct — the rate versus the total — is the
+first literacy test of every utilities conversation.</p>
+<h3>04 · The energy-accounting working method</h3>
+<p>Solve energy problems as an audit, not a story. Choose the system and the interval —
+initial state, final state. List every force that acts, and classify: does it do positive
+work, negative work, or none (perpendicular or unmoving)? Write the theorem,
+\( W_{net} = \Delta KE \), with each work term signed, and solve for the unknown. Audit
+by units (joules throughout, watts only when time enters) and by sign sense: a body that
+sped up must have received positive net work; one that slowed must have paid energy out
+somewhere the ledger can point to. The method's power is its indifference to detail —
+it never asks HOW the velocity varied in between — and its discipline is completeness:
+a force forgotten is energy silently created or destroyed, which nature forbids and
+examiners notice. Run the classification aloud on every new problem — works, opposes,
+ignores — until the sorting is reflex; the next lesson adds stored energy to the same
+ledger, and the audit habit carries over unchanged.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 07 · Potential energy and conservation</h3><div class="measure">
+<h3>01 · Stored work: potential energy</h3>
+<p>Some forces give back what work puts in. Lift a mass and gravity stores the effort:
+potential energy \( PE = mgh \), recoverable in full on the way down. Compress or stretch
+a spring and it banks \( PE = \tfrac12 kx^2 \). Forces with this repayment property —
+gravity, springs — are conservative: the work they do depends only on endpoints, not on the
+path, and that is what makes a stored-energy bookkeeping possible at all. The reference
+height for \( mgh \) is yours to choose; only DIFFERENCES in potential energy ever enter
+the physics, so the floor, the bench, or sea level serve equally, provided the choice is
+made once and kept.</p>
+<h3>02 · Conservation: the ledger balances</h3>
+<p>When only conservative forces do work, mechanical energy is conserved:
+\( KE_1 + PE_1 = KE_2 + PE_2 \). Height converts to speed and back without loss — the
+falling pallet, the swinging hammer, the cam follower riding its profile. The equation
+answers speed-from-height questions in one line: \( v = \sqrt{2gh} \) for a drop from
+rest, with mass canceling entirely — a heavy tool and a light one arrive at the same speed,
+though not, as the momentum lesson will insist, with the same consequences.</p>
+<h3>03 · When friction joins: the ledger still balances</h3>
+<p>Friction does not break energy accounting; it opens a new account. With friction acting,
+\( KE_1 + PE_1 = KE_2 + PE_2 + E_{lost} \), where the loss term — friction force times
+sliding distance — leaves the mechanical books and arrives as heat. The equation turns
+observed shortfalls into measurements: a crate that arrives slower than the frictionless
+prediction has told you exactly how much energy friction collected en route. Nothing
+disappears; it changes accounts, and the engineer's job is reading which account.</p>
+<h3>04 · The conservation working method</h3>
+<p>Choose two states — where the question starts and where it asks. Set the height
+reference and declare it. Write the full ledger for each state: kinetic, gravitational,
+spring if present. Ask the gatekeeper question — does anything non-conservative do work
+between the states? If no, equate the ledgers; if yes, add the loss term and route it
+honestly. Solve, then audit: mass should cancel in pure gravity problems (if it doesn't,
+a term is misplaced); speeds must come from energy DIFFERENCES, never absolute heights; and
+the frictionless answer should always bound the frictional one. The method's reach is its
+reward: trajectory shape, path curvature, and time all drop out of the accounting, which is
+why energy methods solve in one line what force methods solve in a page — whenever the
+question asks about states rather than histories.</p>
+<p>The ledger habit is also a diagnostic instrument in the field: measure the arrival speed
+a machine element actually achieves, compare with the frictionless prediction, and the
+shortfall prices the losses without a single coefficient measured. Energy accounting reads
+machines the way the trend-reading of the mathematics course read signals — by what the
+books say is missing.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 08 · Momentum, impulse, and collisions</h3><div class="measure">
+<h3>01 · Momentum: motion's currency</h3>
+<p>Momentum, \( \mathbf{p} = m\mathbf{v} \), is the quantity of motion — a vector, in
+kilogram-metres per second. Newton's second law in its original and most general form says
+force is the RATE of change of momentum: \( \mathbf{F} = d\mathbf{p}/dt \). Integrated
+over a contact, this becomes the impulse–momentum theorem:
+\( \mathbf{F}\Delta t = \Delta\mathbf{p} \) — the product of force and its duration
+equals the momentum change it produces. The product is the point: the same momentum change
+can be bought with a large force briefly or a small force at leisure, and nearly all impact
+engineering — packaging, bumpers, crash padding, soft-landing programs — is the deliberate
+purchase of more \( \Delta t \) to shrink \( F \).</p>
+<h3>02 · Conservation: the system keeps its total</h3>
+<p>When no net EXTERNAL force acts on a system, its total momentum cannot change — the
+internal pushes and pulls cancel in third-law pairs. Collisions, couplings, and separations
+all obey it: \( m_1v_1 + m_2v_2 \) before equals the same sum after, signs carried by
+direction. The law holds regardless of how violent, brief, or lossy the interaction is —
+which is what makes it the collision analyst's first equation, written before anything is
+known about the forces themselves.</p>
+<h3>03 · Collisions: what momentum keeps, energy may lose</h3>
+<p>Momentum is conserved in every collision; kinetic energy is not. A perfectly INELASTIC
+collision — the bodies couple and move together — conserves momentum while converting the
+maximum possible kinetic energy to deformation and heat. An ELASTIC collision conserves
+both, an idealization that hard steel balls and billiards approach. Real impacts live
+between the limits. The two conservation questions are therefore always asked separately,
+and the energy shortfall in a sticking collision is not an error — it is the crumple, the
+dent, and the noise, priced exactly.</p>
+<h3>04 · The impulse–momentum working method</h3>
+<p>Define the system so the interesting forces become internal — both carts, hammer plus
+pile — and check that external forces are absent, negligible, or perpendicular during the
+brief event. Declare the positive direction and carry every velocity's sign. Write momentum
+conservation across the event; solve; then, if energies matter, audit the kinetic-energy
+books separately and route any loss honestly to deformation and heat. For contact-force
+questions, use the theorem in its \( F = \Delta p/\Delta t \) form and respect its
+sensitivity: halving the stopping time doubles the average force, which is why hard
+surfaces break what padded ones spare. The method's discipline is the system boundary —
+drawn well, the messy contact forces never need computing at all; drawn badly, nothing
+conserves and everything confuses.</p>
+<p>Momentum and energy together complete the collision toolkit: momentum answers the
+velocities, energy names the damage, and the pair of audits — run separately, never
+merged — resolves every impact question this course will pose. The dynamics course will
+add rotation to both ledgers; the bookkeeping discipline installed here is the part that
+does not change.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 09 · Rotation I: kinematics and torque</h3><div class="measure">
+<h3>01 · The angular vocabulary</h3>
+<p>Rotation replays kinematics with angular characters. Angular position \( \theta \) is
+measured in radians — the natural unit, because it makes arc length \( s = \theta r \)
+with no conversion factor. Angular velocity \( \omega = d\theta/dt \) in rad/s, and
+angular acceleration \( \alpha = d\omega/dt \) in rad/s², chain exactly as their linear
+siblings did, and the constant-\( \alpha \) toolkit is Lesson 2's kit with letters
+swapped: \( \omega = \omega_0 + \alpha t \),
+\( \theta = \omega_0 t + \tfrac12\alpha t^2 \),
+\( \omega^2 = \omega_0^2 + 2\alpha\theta \). The machine floor speaks rpm; physics
+speaks rad/s; the exchange rate \( \omega = 2\pi N/60 \) is crossed so often it should
+be reflex — 1450 rpm, the standard 4-pole motor speed, is 152 rad/s.</p>
+<h3>02 · The rolling connection</h3>
+<p>Rotation meets translation at the rim: a point at radius \( r \) moves at
+\( v = \omega r \) and, under angular acceleration, gains speed at \( a_t = \alpha r \).
+The relation runs every belt, chain, and traction drive: pulleys sharing a belt share rim
+speed, so their angular velocities trade inversely with radius — the speed-ratio law of
+every pulley pair and gear mesh. Radians earn their keep here: the formulas hold ONLY with
+angles in radians, and feeding degrees or rpm into \( v = \omega r \) is the classic
+rotational unit error.</p>
+<h3>03 · Torque: force's rotational agent</h3>
+<p>What force is to translation, torque is to rotation: \( \tau = Fr\sin\theta \), the
+force times its perpendicular lever arm, in newton-metres. The statics course built moments
+for equilibrium; dynamics now lets them cause angular acceleration. On a belt drive, the
+torque delivered is the TENSION DIFFERENCE times radius — \( (T_1 - T_2)r \) — because
+both belt runs pull, in opposition; on a bolted coupling, torque is what the wrench and the
+torque spec are negotiating. The moment of inertia \( I \), rotation's mass, waits one
+lesson ahead as torque's partner.</p>
+<h3>04 · The rotational working method</h3>
+<p>Run rotation problems with a currency-exchange discipline. Convert everything to SI
+angular units at the border — rpm to rad/s, revolutions to radians — work entirely inside,
+and convert back only for the final answer if the floor wants rpm. Choose the angular
+toolkit by the same known-versus-wanted matching as Lesson 2, and pass between the angular
+and linear worlds only through the radius: \( v = \omega r \), \( a_t = \alpha r \),
+\( s = \theta r \). Audit with the two standard checks — units (a radian is
+dimensionless, so \( \omega r \) lands in m/s cleanly) and magnitude sense (industrial
+machines mostly live between 0.5 and 300 rad/s; an answer of 15,000 rad/s is a units error
+announcing itself). The kinematics is deliberately familiar; fluency in the conversion
+discipline is what this lesson actually installs, because every machine after it — pumps,
+gearboxes, turbines — speaks both languages at once.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 10 · Rotation II: dynamics and angular momentum</h3><div class="measure">
+<h3>01 · Moment of inertia: rotation's mass</h3>
+<p>Newton's second law rotates into \( \tau = I\alpha \), and the new character
+\( I = \int r^2\,dm \) — moment of inertia — is mass weighted by the SQUARE of its
+distance from the axis. The square is everything: the same kilograms placed twice as far
+resist spin-up four times harder. A solid disc carries \( I = \tfrac12 mr^2 \); a thin
+hoop, with all mass at the rim, carries \( I = mr^2 \) — double, at equal mass and
+radius. Distribution, not just quantity, decides rotational reluctance, which is why the
+statics course's area moment (resisting bending) and this mass moment (resisting angular
+acceleration) share a name and a square: same mathematics, different physics.</p>
+<h3>02 · Rotational energy and the flywheel</h3>
+<p>A spinning body banks kinetic energy \( KE = \tfrac12 I\omega^2 \), and the
+\( \omega^2 \) makes speed the cheap lever: doubling spin quadruples storage. That is the
+flywheel's entire business plan — presses and punches draw their violent, brief demands
+from a wheel kept spinning by a modest motor, smoothing the load the way the machinery
+course will later formalize. A body that rolls carries both accounts at once,
+translational \( \tfrac12 mv^2 \) plus rotational \( \tfrac12 I\omega^2 \), which is
+why rolling objects arrive at ramp bottoms slower than sliding ones: part of the height
+budget went into spin.</p>
+<h3>03 · Angular momentum and its conservation</h3>
+<p>Momentum's rotational sibling is \( L = I\omega \), conserved whenever no external
+torque acts. Because \( I \) depends on mass placement, a system that redistributes its
+own mass trades \( I \) against \( \omega \) at constant product — the figure skater's
+spin-up, and equally the reason a machine that throws a mass outward slows its own
+rotation. Torque is the rate of change of angular momentum,
+\( \tau = dL/dt \), completing the rotational translation dictionary: every linear law
+has now crossed over.</p>
+<h3>04 · The rotational dynamics working method</h3>
+<p>Solve rotating problems by the same audit sequence as linear ones, with the dictionary
+open. Identify the axis and get \( I \) about THAT axis — from the standard shapes, or by
+the parallel-axis transfer when the spin axis is offset. Sum torques about the axis, signs
+by a declared positive sense, and apply \( \tau_{net} = I\alpha \). Chain to angular
+kinematics for speeds and angles, and to \( \tfrac12 I\omega^2 \) when the question is
+energetic. Audit with limits — at \( \alpha = 0 \) the torque balance must collapse to
+statics — and with the distribution instinct: between two candidates of equal mass, the one
+with mass farther out always spins up slower, coasts longer, and stores more at speed. The
+machines this feeds are immediate: every motor start is \( \tau = I\alpha \) against the
+driven train's inertia, and every coast-down time is the same equation read backward —
+which is exactly how the condition-monitoring course will one day read it.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 11 · Oscillations first contact</h3><div class="measure">
+<h3>01 · The restoring recipe</h3>
+<p>Oscillation needs exactly two ingredients: a restoring force that pulls toward
+equilibrium in proportion to displacement, and inertia that overshoots it. The spring–mass
+system is the archetype — \( F = -kx \) feeding \( m\ddot{x} \) — and its motion is
+simple harmonic: \( x(t) = A\sin(\omega_n t) \), a sine forever, with amplitude \( A \)
+set by how the motion started and angular frequency set by the system itself:
+\( \omega_n = \sqrt{k/m} \). Stiffness accelerates the cycle; mass slows it; amplitude,
+remarkably, does not enter — small or large swings keep the same beat, which is what makes
+natural frequency a property of the MACHINE, not of the disturbance.</p>
+<h3>02 · The pendulum and the family of oscillators</h3>
+<p>The pendulum repeats the recipe with gravity as the spring:
+\( T = 2\pi\sqrt{L/g} \) for small swings — mass absent, length and gravity only. Every
+oscillator in the family carries the same signature quantities: period \( T = 2\pi/\omega_n \),
+frequency \( f = 1/T \) in hertz, and the energy sloshing between kinetic (maximum at
+equilibrium, where speed peaks at \( v_{max} = A\omega_n \)) and potential (maximum at
+the extremes, where motion pauses). Reading \( x(t) = A\sin(\omega t) \) fluently —
+amplitude from the coefficient, frequency from the argument — is reading the native
+language of every vibration trace the later courses will put on screen.</p>
+<h3>03 · Why machines care: resonance previewed</h3>
+<p>Every machine element has natural frequencies, and rotating machinery supplies periodic
+forcing at running speed and its multiples. When forcing frequency approaches natural
+frequency, amplitude grows dramatically — resonance — and structures that seemed rigid
+begin to breathe. This lesson only introduces the actors; the vibrations course will
+quantify their meeting. But the design instinct starts now: know your \( \omega_n \),
+know your running speeds, and keep them apart.</p>
+<h3>04 · The oscillation working method</h3>
+<p>Identify the stiffness and the inertia — every oscillator has both, whatever it looks
+like — and form \( \omega_n = \sqrt{k/m} \) (or the pendulum's \( \sqrt{g/L} \)).
+Convert consciously among \( \omega_n \), \( f \), and \( T \): the \( 2\pi \) that
+separates rad/s from Hz is this chapter's border crossing, as rpm's was the last one's.
+Extract amplitude and frequency from any given \( x(t) \) by inspection, and derive the
+speed and acceleration peaks as \( A\omega \) and \( A\omega^2 \). Audit with the
+scaling instincts: quadrupling stiffness only doubles frequency (the square root taxes
+enthusiasm), adding mass always slows the beat, and amplitude never changes the clock.
+Where a real trace disagrees with these instincts — frequency shifting with load, beat
+patterns, growth over time — the disagreement is information, and the vibrations course
+will teach you to read it. Here, the assignment is fluency with the clean case that all
+the diagnostics measure against — the sine every analyzer decomposes real signals into,
+and the natural frequency every balancing report quotes. First courses end where careers
+begin; this one ends on the exact frequency.</p>
+</div></section>
+<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
+
+<section class="sum-lesson"><h3>Lesson 01 · Measurement, units, and vectors</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently.</li>
+<li><b>Calculus I (concurrent)</b> — derivatives arrive in Lesson 2; only algebra is needed here.</li>
+<li><b>Scientific notation</b> — powers of ten as the language of scale.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>SI base trio (mechanics)</td><td>m, kg, s</td><td>Every mechanical quantity is built from these three.</td></tr>
+<tr><td>Derived units</td><td>\( \mathrm{N = kg\,m/s^2},\ \mathrm{J = N\,m},\ \mathrm{W = J/s} \)</td><td>Unit algebra — and the free correctness check on every equation.</td></tr>
+<tr><td>Vector components</td><td>\( A_x = A\cos\theta,\ A_y = A\sin\theta \)</td><td>Splitting a vector onto working axes; the reverse of Pythagoras + arctangent.</td></tr>
+<tr><td>Vector addition</td><td>component by component</td><td>Never add magnitudes unless the vectors are collinear.</td></tr>
+<tr><td>Dot product</td><td>\( \mathbf{A}\cdot\mathbf{B} = AB\cos\theta \)</td><td>Alignment questions: work, power, projections. Result is a scalar.</td></tr>
+<tr><td>Cross product</td><td>\( |\mathbf{A}\times\mathbf{B}| = AB\sin\theta \)</td><td>Turning questions: torque, angular momentum. Result is a vector (right-hand rule).</td></tr>
+<tr><td>Significant figures</td><td>promise ≤ instrument</td><td>Reporting honesty; the decimal places are part of the claim.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 02 · Kinematics in one dimension</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Vectors and axes</b> (Lesson 1) — signs come from the declared axis.</li>
+<li><b>Derivatives and areas</b> (Math I, concurrent) — slope and area read off graphs.</li>
+<li><b>Unit discipline</b> (Lesson 1) — m, m/s, m/s² kept straight throughout.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Velocity</td><td>\( v = dx/dt \)</td><td>The slope of position–time; instantaneous, signed.</td></tr>
+<tr><td>Acceleration</td><td>\( a = dv/dt \)</td><td>The slope of velocity–time; braking is a opposite v, not 'negative'.</td></tr>
+<tr><td>Speed at a time</td><td>\( v = v_0 + at \)</td><td>Constant a; knowns include time.</td></tr>
+<tr><td>Distance in a time</td><td>\( x = v_0t + \tfrac12 at^2 \)</td><td>Constant a; displacement from a clock reading.</td></tr>
+<tr><td>Speed after a distance</td><td>\( v^2 = v_0^2 + 2ax \)</td><td>Constant a with no time given — the time-free workhorse.</td></tr>
+<tr><td>Free fall</td><td>\( a = g = 9.81\ \mathrm{m/s^2} \) down</td><td>Dropped and thrown objects, air resistance ignored.</td></tr>
+<tr><td>Graph reading</td><td>slope of v–t = a; area = Δx</td><td>Trend literacy — half of kinematics without an equation.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 03 · Kinematics in two dimensions</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>1-D kinematics</b> (Lesson 2) — the constant-acceleration kit, fluently.</li>
+<li><b>Vector components</b> (Lesson 1) — splitting a launch velocity by angle.</li>
+<li><b>The shared-clock idea</b> — time is the only variable both axes see.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Independence principle</td><td>gravity touches only the vertical</td><td>The license to split any 2-D problem into two 1-D columns.</td></tr>
+<tr><td>Horizontal column</td><td>\( x = v_x t \), \( v_x \) constant</td><td>No horizontal force → no horizontal acceleration.</td></tr>
+<tr><td>Fall time from height</td><td>\( t = \sqrt{2h/g} \)</td><td>Horizontal launch or plain drop — same clock either way.</td></tr>
+<tr><td>Velocity split</td><td>\( v_x = v_0\cos\theta,\ v_y = v_0\sin\theta \)</td><td>Angled launches; the components live separate lives after this line.</td></tr>
+<tr><td>Level-ground range</td><td>\( R = v_0^2\sin 2\theta/g \)</td><td>Quick reach estimates; maximum at 45°.</td></tr>
+<tr><td>Apex condition</td><td>\( v_y = 0 \), \( v_x \) unchanged</td><td>The top of the arc — moving horizontally, not stopped.</td></tr>
+<tr><td>Relative velocity</td><td>\( \mathbf{v}_{A/G} = \mathbf{v}_{A/B} + \mathbf{v}_{B/G} \)</td><td>Belts, streams, moving platforms — frames stack by vector addition.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 04 · Newton's laws of motion</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Free-body diagrams</b> (Statics, Lesson 3 there) — the isolation discipline, unchanged.</li>
+<li><b>Vector components</b> (Lesson 1) — the second law is applied by axis.</li>
+<li><b>Kinematics</b> (Lessons 2–3) — a found here feeds the motion equations there.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>First law</td><td>\( \mathbf{F}_{net} = 0 \Leftrightarrow \mathbf{v} \) constant</td><td>Rest AND steady cruise are the same condition: balanced forces.</td></tr>
+<tr><td>Second law</td><td>\( \mathbf{F}_{net} = m\mathbf{a} \)</td><td>The engine: net force, by axis, equals mass times acceleration.</td></tr>
+<tr><td>Third law</td><td>pairs on DIFFERENT bodies</td><td>Bookkeeping across bodies; never both partners on one FBD.</td></tr>
+<tr><td>Mass</td><td>kg — inertia</td><td>Universal; the m in every equation.</td></tr>
+<tr><td>Weight</td><td>\( W = mg \) — a force</td><td>Local; what scales, cranes, and floors actually feel.</td></tr>
+<tr><td>Apparent weight</td><td>\( N = m(g + a) \) accelerating up</td><td>Lifts, hoists, and load cells under vertical acceleration.</td></tr>
+<tr><td>System vs member</td><td>isolate whole OR part</td><td>Whole hides internal forces; the part exposes the one you want.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 05 · Applying Newton's laws</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The second law by axis</b> (Lesson 4) — the engine this lesson feeds.</li>
+<li><b>Friction fundamentals</b> (Statics) — adaptive static ceiling, fixed kinetic value.</li>
+<li><b>Incline components</b> — \( mg\sin\theta \) along, \( mg\cos\theta \) into the slope.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Static friction</td><td>\( F_s \le \mu_s N \)</td><td>Adaptive grip before sliding; equality only at the slip threshold.</td></tr>
+<tr><td>Kinetic friction</td><td>\( F_k = \mu_k N \)</td><td>Fixed drag once sliding; always below the static ceiling.</td></tr>
+<tr><td>Normal on an incline</td><td>\( N = mg\cos\theta \)</td><td>Never assume N = W off the horizontal.</td></tr>
+<tr><td>Slide condition</td><td>\( \tan\theta > \mu_s \)</td><td>The incline holds or releases on this comparison alone.</td></tr>
+<tr><td>Rope constraint</td><td>one tension, one acceleration magnitude</td><td>Ideal cords make multi-body systems solvable.</td></tr>
+<tr><td>Traction ceiling</td><td>\( a_{max} = \mu_s g \)</td><td>The most acceleration friction can transmit — belts, tires, shoes.</td></tr>
+<tr><td>Limit audits</td><td>\( \mu \to 0 \), \( a \to 0 \)</td><td>Answers must collapse to frictionless and static cases.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 06 · Work and energy</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Dot product</b> (Lesson 1) — work is its flagship application.</li>
+<li><b>Second law</b> (Lesson 4) — the theorem is its integral along the path.</li>
+<li><b>Kinematics</b> (Lesson 2) — states and speeds, before and after.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Work</td><td>\( W = Fd\cos\theta \)</td><td>Force through distance, along-motion component only; signed.</td></tr>
+<tr><td>Kinetic energy</td><td>\( KE = \tfrac12 mv^2 \)</td><td>The energy of motion; the \( v^2 \) drives all impact scaling.</td></tr>
+<tr><td>Work–energy theorem</td><td>\( W_{net} = \Delta KE \)</td><td>State-to-state shortcut past acceleration bookkeeping.</td></tr>
+<tr><td>Zero-work forces</td><td>\( \perp \) to motion, or no motion</td><td>Normal forces, centripetal pulls, static holds — effort without joules.</td></tr>
+<tr><td>Power</td><td>\( P = W/t = Fv \)</td><td>The rate that sizes motors, hoists, and drives.</td></tr>
+<tr><td>Hoist power</td><td>\( P = mgv \)</td><td>Steady lifting; the crane-sizing one-liner.</td></tr>
+<tr><td>Kilowatt-hour</td><td>\( 1\ \mathrm{kWh} = 3.6\ \mathrm{MJ} \)</td><td>Energy on the invoice; power is the rate, energy is the bill.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 07 · Potential energy and conservation</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Work and the theorem</b> (Lesson 6) — potential energy is work pre-paid.</li>
+<li><b>Free fall</b> (Lesson 2) — \( v = \sqrt{2gh} \) should already feel familiar.</li>
+<li><b>Sign discipline</b> — energy gained somewhere is energy paid from somewhere.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Gravitational PE</td><td>\( PE = mgh \)</td><td>Stored lift; only differences matter — declare the reference once.</td></tr>
+<tr><td>Spring PE</td><td>\( PE = \tfrac12 kx^2 \)</td><td>Banked compression or stretch; x from the free length.</td></tr>
+<tr><td>Conservative force</td><td>path-independent work</td><td>Gravity and springs repay in full; friction does not qualify.</td></tr>
+<tr><td>Conservation</td><td>\( KE_1 + PE_1 = KE_2 + PE_2 \)</td><td>No non-conservative work between states.</td></tr>
+<tr><td>Speed from height</td><td>\( v = \sqrt{2gh} \)</td><td>Drop from rest; mass cancels.</td></tr>
+<tr><td>With losses</td><td>\( E_1 = E_2 + F_f d \)</td><td>Friction's collection routed to heat, explicitly.</td></tr>
+<tr><td>Audit rules</td><td>mass cancels (pure gravity); frictionless bounds frictional</td><td>The two checks that catch misplaced terms.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 08 · Momentum, impulse, and collisions</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Second and third laws</b> (Lesson 4) — conservation is their joint consequence.</li>
+<li><b>Vectors and signs</b> (Lesson 1) — momentum is direction-carrying.</li>
+<li><b>Kinetic energy</b> (Lesson 6) — the second, separate audit in collisions.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Momentum</td><td>\( \mathbf{p} = m\mathbf{v} \)</td><td>The motion currency; vector, kg·m/s.</td></tr>
+<tr><td>Impulse–momentum theorem</td><td>\( F\,\Delta t = \Delta p \)</td><td>Trading force against time at fixed momentum change.</td></tr>
+<tr><td>Conservation</td><td>\( \Sigma p \) constant, no net external force</td><td>Collisions, couplings, separations — the first equation written.</td></tr>
+<tr><td>Perfectly inelastic</td><td>bodies couple; max KE loss</td><td>Coupling wagons, catching parts, sticking impacts.</td></tr>
+<tr><td>Elastic</td><td>momentum AND KE conserved</td><td>The hard-ball idealization; real impacts sit between.</td></tr>
+<tr><td>Impact force estimate</td><td>\( F = \Delta p/\Delta t \)</td><td>Why stopping time, not speed alone, decides damage.</td></tr>
+<tr><td>System boundary</td><td>choose so contact forces are internal</td><td>The move that makes the messy forces irrelevant.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 09 · Rotation I: kinematics and torque</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Linear kinematics</b> (Lesson 2) — the toolkit transfers letter-for-letter.</li>
+<li><b>Moments</b> (Statics) — torque as force times perpendicular arm.</li>
+<li><b>Radian measure</b> (Math I) — arc = radius × angle, the native unit.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Angular kinematics</td><td>\( \omega = \omega_0 + \alpha t \), etc.</td><td>Lesson 2's kit with \( \theta, \omega, \alpha \) — same selection rules.</td></tr>
+<tr><td>rpm ↔ rad/s</td><td>\( \omega = 2\pi N/60 \)</td><td>The border crossing every machine problem makes; 1450 rpm ≈ 152 rad/s.</td></tr>
+<tr><td>Rim speed</td><td>\( v = \omega r \)</td><td>Belts, wheels, and cutting speeds; radians only.</td></tr>
+<tr><td>Tangential acceleration</td><td>\( a_t = \alpha r \)</td><td>How rim speed changes during spin-up and coast-down.</td></tr>
+<tr><td>Torque</td><td>\( \tau = Fr\sin\theta \)</td><td>Force's turning agent; N·m.</td></tr>
+<tr><td>Belt-drive torque</td><td>\( \tau = (T_1 - T_2)\,r \)</td><td>The tension DIFFERENCE does the work — both runs pull.</td></tr>
+<tr><td>Speed ratio</td><td>\( \omega_1 r_1 = \omega_2 r_2 \)</td><td>Shared rim speed across pulleys and meshing gears.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 10 · Rotation II: dynamics and angular momentum</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Rotational kinematics</b> (Lesson 9) — \( \omega, \alpha \), and the rpm border.</li>
+<li><b>Second law and energy</b> (Lessons 4, 6) — every law here is a translation.</li>
+<li><b>Moment of inertia of areas</b> (Statics) — same square, different integrand.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Rotational second law</td><td>\( \tau = I\alpha \)</td><td>Net torque about the axis produces angular acceleration.</td></tr>
+<tr><td>Moment of inertia</td><td>\( I = \int r^2\,dm \)</td><td>Mass times distance SQUARED; distribution decides.</td></tr>
+<tr><td>Standard shapes</td><td>disc \( \tfrac12 mr^2 \); hoop \( mr^2 \)</td><td>The two benchmarks bracketing most machine rotors.</td></tr>
+<tr><td>Rotational KE</td><td>\( \tfrac12 I\omega^2 \)</td><td>Flywheel storage; \( \omega^2 \) makes speed the cheap lever.</td></tr>
+<tr><td>Rolling energy</td><td>\( \tfrac12 mv^2 + \tfrac12 I\omega^2 \)</td><td>Rolling bodies pay both accounts from one height budget.</td></tr>
+<tr><td>Angular momentum</td><td>\( L = I\omega \); \( \tau = dL/dt \)</td><td>Conserved without external torque; the I–ω trade.</td></tr>
+<tr><td>Coast-down reading</td><td>\( \alpha = \tau_{friction}/I \)</td><td>Spin-down time measures drag torque — a field diagnostic.</td></tr>
+</tbody></table></div>
+</div></section><section class="sum-lesson"><h3>Lesson 11 · Oscillations first contact</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Newton's second law</b> (Lesson 4) — SHM is F = ma with a restoring F.</li>
+<li><b>Energy conservation</b> (Lesson 7) — the KE–PE slosh at constant total.</li>
+<li><b>Radian fluency</b> (Lesson 9) — \( \omega \), f, and T, converted consciously.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Restoring force</td><td>\( F = -kx \)</td><td>Proportional pull toward equilibrium — the oscillation ingredient.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n = \sqrt{k/m} \)</td><td>The machine's own beat; stiffness up, mass down.</td></tr>
+<tr><td>Period and frequency</td><td>\( T = 2\pi/\omega_n,\ f = 1/T \)</td><td>The 2π border between rad/s and Hz.</td></tr>
+<tr><td>Pendulum</td><td>\( T = 2\pi\sqrt{L/g} \)</td><td>Gravity as the spring; mass cancels, small swings only.</td></tr>
+<tr><td>SHM motion</td><td>\( x = A\sin(\omega_n t) \)</td><td>Amplitude from the start; frequency from the system.</td></tr>
+<tr><td>Peak speed</td><td>\( v_{max} = A\omega_n \) at equilibrium</td><td>Where the energy is all kinetic.</td></tr>
+<tr><td>Resonance (preview)</td><td>forcing ≈ \( \omega_n \) → growth</td><td>Keep running speeds and natural frequencies apart.</td></tr>
+</tbody></table></div>
+</div></section>
+<h2 class="sum-part">Part 3 — Course reference</h2>
+<div class="wide"><h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[A_x = A\cos\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[A_y = A\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[A = \sqrt{A_x^2 + A_y^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{A}\cdot\mathbf{B} = AB\cos\theta = A_xB_x + A_yB_y + A_zB_z\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[|\mathbf{A}\times\mathbf{B}| = AB\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathrm{N = kg\,m/s^2},\ \mathrm{J = N\,m},\ \mathrm{W = J/s}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[A_x = A\cos\theta,\ A_y = A\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{A}\cdot\mathbf{B} = AB\cos\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[F_x = 100\cos 37° = 79.9\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[F_y = 100\sin 37° = 60.2\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\sqrt{79.9^2 + 60.2^2} = 100.0\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\tan^{-1}(60.2/79.9) = 37.0°\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{F} = (300, 150)\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{d} = (2, -1)\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[W = \mathbf{F}\cdot\mathbf{d} = F_xd_x + F_yd_y = 300\times2 + 150\times(-1)\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[W = 600 - 150 = 450\ \mathrm{J}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{r} = (0.4, 0, 0)\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\boldsymbol{\tau} = \mathbf{r}\times\mathbf{F}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[rF\sin 90° = 0.4 \times 250 = 100\ \mathrm{N\,m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\boldsymbol{\tau} = (0, 0, 100)\ \mathrm{N\,m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[(\sin 90° = 1)\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\sqrt{3^2+4^2} = 5\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\mathbf{A}\cdot\mathbf{B} = AB\cos 90° = 0\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[(\cos 0° = 1)\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[W = mg = 10 \times 9.81 = 98\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[\sqrt{6^2 + 8^2} = \sqrt{100} = 10\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></li><li><span class="ref-eq">\[v = dx/dt\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[a = dv/dt\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[v = v_0 + at\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[x = v_0t + \tfrac12 at^2\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[v^2 = v_0^2 + 2ax\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[a = g = 9.81\ \mathrm{m/s^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[v = v_0 + at = 0 + 0.5 \times 6 = 3.0\ \mathrm{m/s}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[x = v_0t + \tfrac12 at^2 = 0 + 0.5 \times 0.5 \times 36 = 9.0\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[0 = 20 - 4t \Rightarrow t = 5\ \mathrm{s}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[0 = 20^2 - 2 \times 4 \times x \Rightarrow x = 400/8 = 50\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[v = 2 \times 5 = 10\ \mathrm{m/s}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[x_1 = \tfrac12 \times 2 \times 25 = 25\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[x_2 = 10 \times 10 = 100\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[v^2 = 0 + 2 \times 2 \times 16 = 64 \Rightarrow v = 8\ \mathrm{m/s}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[x = \tfrac12 g t^2 = 0.5 \times 9.81 \times 4 = 19.6\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></li><li><span class="ref-eq">\[t = \sqrt{2h/g}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[x = v_0 t\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[R = v_0^2 \sin 2\theta / g\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[x = v_x t\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[v_x = v_0\cos\theta,\ v_y = v_0\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[v_y = 0\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li><li><span class="ref-eq">\[\mathbf{v}_{A/G} = \mathbf{v}_{A/B} + \mathbf{v}_{B/G}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\theta\)</span><span class="chip">\(\tau\)</span><span class="chip">\(\Sigma\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\Delta\)</span><span class="chip">\(\omega\)</span><span class="chip">\(\alpha\)</span><span class="chip">\(\pi\)</span><span class="chip unit">N</span><span class="chip unit">m</span><span class="chip unit">J</span><span class="chip unit">m/s^2</span><span class="chip unit">m/s</span><span class="chip unit">s</span><span class="chip unit">kg</span><span class="chip unit">MJ</span><span class="chip unit">kJ</span><span class="chip unit">kW</span><span class="chip unit">N/m</span><span class="chip unit">rad/s</span><span class="chip unit">rad/s^2</span><span class="chip unit">rad</span><span class="chip unit">Hz</span><span class="chip unit">mm</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Calculus I (concurrent)</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></td></tr><tr><td>Scientific notation</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></td></tr><tr><td>Trigonometry</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/01-measurement-units-and-vectors.html">L01</a></td></tr><tr><td>Derivatives and areas</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></td></tr><tr><td>Unit discipline</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></td></tr><tr><td>Vectors and axes</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/02-kinematics-in-one-dimension.html">L02</a></td></tr><tr><td>The shared-clock idea</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></td></tr><tr><td>Vector components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html">L03</a></td></tr><tr><td>Free-body diagrams</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/04-newton-s-laws-of-motion.html">L04</a></td></tr><tr><td>Kinematics</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/04-newton-s-laws-of-motion.html">L04</a></td></tr><tr><td>Friction fundamentals</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/05-applying-newton-s-laws.html">L05</a></td></tr><tr><td>Incline components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/05-applying-newton-s-laws.html">L05</a></td></tr><tr><td>The second law by axis</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/05-applying-newton-s-laws.html">L05</a></td></tr><tr><td>Dot product</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/06-work-and-energy.html">L06</a></td></tr><tr><td>Second law</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/06-work-and-energy.html">L06</a></td></tr><tr><td>Free fall</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/07-potential-energy-and-conservation.html">L07</a></td></tr><tr><td>Sign discipline</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/07-potential-energy-and-conservation.html">L07</a></td></tr><tr><td>Work and the theorem</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/07-potential-energy-and-conservation.html">L07</a></td></tr><tr><td>Kinetic energy</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/08-momentum-impulse-and-collisions.html">L08</a></td></tr><tr><td>Second and third laws</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/08-momentum-impulse-and-collisions.html">L08</a></td></tr><tr><td>Vectors and signs</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/08-momentum-impulse-and-collisions.html">L08</a></td></tr><tr><td>Linear kinematics</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/09-rotation-i-kinematics-and-torque.html">L09</a></td></tr><tr><td>Moments</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/09-rotation-i-kinematics-and-torque.html">L09</a></td></tr><tr><td>Radian measure</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/09-rotation-i-kinematics-and-torque.html">L09</a></td></tr><tr><td>Moment of inertia of areas</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/10-rotation-ii-dynamics-and-angular-momentum.html">L10</a></td></tr><tr><td>Rotational kinematics</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/10-rotation-ii-dynamics-and-angular-momentum.html">L10</a></td></tr><tr><td>Second law and energy</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/10-rotation-ii-dynamics-and-angular-momentum.html">L10</a></td></tr><tr><td>Energy conservation</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/11-oscillations-first-contact.html">L11</a></td></tr><tr><td>Newton's second law</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/11-oscillations-first-contact.html">L11</a></td></tr><tr><td>Radian fluency</td><td><a class="ref-jump" href="../../../curriculum/y1s1/physics-1/11-oscillations-first-contact.html">L11</a></td></tr></tbody></table></div></div>
+</article></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

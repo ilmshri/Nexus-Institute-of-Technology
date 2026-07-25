@@ -2,7 +2,7 @@
 """NEXUS INSTITUTE OF TECHNOLOGY — static site generator (Stages 2–4).
 
 Zero dependencies. Reuses the data layer and verified-link machinery from
-build.py (the retained previous-generation library) and emits the full Nexus
+build.py (the retained previous-generation library) and emits the full MechEd
 platform into docs/: centered brand chrome with Mission | Curriculum |
 Career Paths, four-tab lesson pages (Foundations / Lecture / Worked
 Examples / Library), interactive quiz engine, side drop-down section menu,
@@ -54,11 +54,13 @@ APPROVED_CHANNELS = ("mit opencourseware", "mit ocw",   # one org, two spellings
 def channel_approved(name):
     low = (name or "").lower()
     return any(c in low for c in APPROVED_CHANNELS)
-BRAND_AR = "معهد نيكسس للتكنولوجيا"
+BRAND_AR = "MechEd"   # owner constraint 2026-07-25: the brand word stays Latin in both trees
 AR_LESSON_NOTE = ("محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة "
                   "العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة "
                   "المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية "
                   "كاملة اليوم.")
+AR_PAGE_NOTE = ("محتوى هذه الصفحة متاح حاليًا باللغة الإنجليزية — واجهة المنصة "
+                "متاحة بالعربية بالكامل، والترجمة الكاملة للمحتوى قيد الإعداد.")
 
 # ------------------------------------------------- vector illustrations ----
 def _svg(inner):
@@ -199,7 +201,7 @@ def illo(course_id):
 SECTION_SIGN = "§"
 
 def nx_text(html):
-    """Nexus content transform: retire the section sign everywhere."""
+    """MechEd content transform: retire the section sign everywhere."""
     html = html.replace(f"{SECTION_SIGN}Worked Examples", "the Worked Examples tab")
     html = re.sub(rf"<h3>{SECTION_SIGN}(\d) · ", lambda m: f"<h3>0{m.group(1)} · ", html)
     html = re.sub(rf"{SECTION_SIGN}\s?(\d+)", r"\1", html)
@@ -225,40 +227,33 @@ def nx_fragment(frag):
 
 # ------------------------------------------------------------ chrome ------
 NX_PAGE = """<!doctype html>
-<html lang="en" dir="ltr" data-root="{prefix}">
+<html lang="{lang}" dir="{dir}" data-root="{aprefix}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#FAFAFB">
+<meta name="theme-color" content="#FAF8F4">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="manifest" href="{prefix}manifest.webmanifest">
-<link rel="icon" type="image/svg+xml" href="{prefix}assets/nx/logo.svg">
-<link rel="apple-touch-icon" href="{prefix}assets/nx/icons/icon-192.png">
+<link rel="manifest" href="{aprefix}manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="{aprefix}assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="{aprefix}assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="{prefix}assets/nx/nexus.css?v={v}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="{aprefix}assets/nx/nexus.css?v={v}">
 {extra_head}</head>
 <body{body_attrs}>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="{prefix}index.html" aria-label="Nexus Institute of Technology">
-      <img src="{prefix}assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small>Online Engineering Education</small></span>
+    <a class="brand" href="{prefix}index.html" aria-label="MechEd — {brand_small}">
+      <img src="{aprefix}assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>{brand_small}</small></span>
     </a>
-    <nav aria-label="Site">
-      <a href="{prefix}index.html"{on_home}>Home</a>
-      <a href="{prefix}about/index.html"{on_about}>About</a>
-      <a href="{prefix}mission/index.html"{on_mission}>Mission</a>
-      <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
-      <a href="{prefix}reference/index.html"{on_reference}>Resources</a>
-      <a href="{prefix}career/index.html"{on_career}>Career Paths</a>
-      <a href="{prefix}feedback/index.html"{on_feedback}>Feedback</a>
-    </nav>
+    {navblock}
     <span class="spacer"></span>
-    <a class="kbtn" href="{prefix}curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="kbtn" href="{prefix}curriculum/index.html#lessonSearch">{search_label} <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="{toggle_href}" lang="{toggle_lang}" dir="{toggle_dir}">{toggle_label}</a>
   </div>
 </header>
 {sidemenu}
@@ -266,29 +261,121 @@ NX_PAGE = """<!doctype html>
 {body}
 </main>
 <footer class="nx-foot"><div class="in">
-  <div class="mark"><span class="teal">Nexus</span> Institute of Technology</div>
-  <nav>
-    <a href="{prefix}index.html">Home</a>
-    <a href="{prefix}about/index.html">About</a>
-    <a href="{prefix}mission/index.html">Mission</a>
-    <a href="{prefix}curriculum/index.html">Curriculum</a>
-    <a href="{prefix}reference/index.html">Resources</a>
-    <a href="{prefix}career/index.html">Career Paths</a>
-    <a href="{prefix}feedback/index.html">Feedback</a>
-  </nav>
-  <p class="proto">Preliminary open release — a prototype published so learners can try it
-  and reflect. <a href="{prefix}feedback/index.html">Leave a review</a> — it shapes the
-  final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io"
-  target="_blank" rel="noopener">Source on GitHub</a>.</p>
-  <p class="lang-en">Open engineering education. Worked-example values are
-  pedagogical; representative industrial figures are labeled as such and are not
-  published operating data of any named company. Every visual is an original vector
-  illustration. Lessons not yet at full depth say so honestly.</p>
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">{slogan}</span></div>
+  {footnav}
+  <p class="proto">{proto_line}</p>
+  <p>{integrity_line}</p>
 </div></footer>
-<script src="{prefix}assets/nx/nexus.js?v={v}"></script>
+<script src="{aprefix}assets/nx/nexus.js?v={v}"></script>
 </body>
 </html>
 """
+
+# ------------------------------------------------ bilingual chrome (i18n) --
+# Two-tree model (owner reference: itqan.edu.sa — RESEARCH.md §5): every page
+# is emitted twice, EN at its path and AR at ar/<path>, full RTL chrome, with
+# the language toggle labeled in the destination language. The brand word
+# stays Latin "MECHED" in both trees (owner constraint 2026-07-25).
+SLOGAN_EN = "Engineered for Mastery"
+SLOGAN_AR = "هندسة الإتقان"
+BRAND_SMALL_EN = "Online Engineering Education"
+BRAND_SMALL_AR = "التعليم الهندسي عبر الإنترنت"
+
+L_EN = {
+    "Home": "Home", "About": "About", "Mission": "Mission",
+    "Curriculum": "Curriculum", "Resources": "Resources",
+    "Career Paths": "Career Paths", "Feedback": "Feedback",
+    "About the institute": "About the institute",
+    "Our standards": "Our standards",
+    "Full curriculum": "Full curriculum",
+    "Year summary": "Year {n} — compiled summary",
+    "Tools & Software": "Tools &amp; Software",
+    "Compiled summaries": "Compiled summaries",
+    "Search lessons": "Search lessons",
+    "Sections": "Sections",
+}
+L_AR = {
+    "Home": "الرئيسية", "About": "عن المعهد", "Mission": "الرسالة",
+    "Curriculum": "المنهج", "Resources": "الموارد",
+    "Career Paths": "المسارات المهنية", "Feedback": "الملاحظات",
+    "About the institute": "عن المعهد",
+    "Our standards": "معاييرنا",
+    "Full curriculum": "المنهج الكامل",
+    "Year summary": "ملخص السنة {n}",
+    "Tools & Software": "الأدوات والبرمجيات",
+    "Compiled summaries": "الملخصات المجمّعة",
+    "Search lessons": "ابحث في الدروس",
+    "Sections": "الأقسام",
+}
+PROTO_EN = ('Preliminary open release — a prototype published so learners can try it '
+            'and reflect. <a href="{prefix}feedback/index.html">Leave a review</a> — it shapes the '
+            'final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" '
+            'target="_blank" rel="noopener">Source on GitHub</a>.')
+PROTO_AR = ('إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. '
+            '<a href="{prefix}feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. '
+            '<a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">'
+            '<span dir="ltr">المصدر على GitHub</span></a>.')
+INTEG_EN = ('Open engineering education. Worked-example values are pedagogical; '
+            'representative industrial figures are labeled as such and are not published '
+            'operating data of any named company. Every visual is an original vector '
+            'illustration. Lessons not yet at full depth say so honestly.')
+INTEG_AR = ('تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية '
+            'مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية '
+            'متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.')
+
+def _caret():
+    return '<span class="caret" aria-hidden="true"></span>'
+
+def _navblock(prefix, active, L):
+    """Top navigation with dropdown groups (owner order 2026-07-26)."""
+    def on(*keys):
+        return ' class="on"' if active in keys else ""
+    def grp_on(*keys):
+        return ' class="grp on"' if active in keys else ' class="grp"'
+    years = "".join(
+        f'<a href="{prefix}curriculum/year-{n}/summary.html">'
+        + L["Year summary"].format(n=n) + "</a>" for n in (1, 2, 3, 4))
+    return f'''<nav aria-label="Site">
+      <a href="{prefix}index.html"{on("home")}>{L["Home"]}</a>
+      <div class="navgrp">
+        <a href="{prefix}about/index.html"{grp_on("about", "feedback")}>{L["About"]}{_caret()}</a>
+        <div class="drop">
+          <a href="{prefix}about/index.html">{L["About the institute"]}</a>
+          <a href="{prefix}about/index.html#standards">{L["Our standards"]}</a>
+          <a href="{prefix}feedback/index.html">{L["Feedback"]}</a>
+        </div>
+      </div>
+      <a href="{prefix}mission/index.html"{on("mission")}>{L["Mission"]}</a>
+      <div class="navgrp">
+        <a href="{prefix}curriculum/index.html"{grp_on("curriculum")}>{L["Curriculum"]}{_caret()}</a>
+        <div class="drop">
+          <a href="{prefix}curriculum/index.html">{L["Full curriculum"]}</a>
+          {years}
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="{prefix}reference/index.html"{grp_on("reference")}>{L["Resources"]}{_caret()}</a>
+        <div class="drop">
+          <a href="{prefix}reference/index.html#tools">{L["Tools & Software"]}</a>
+          <a href="{prefix}reference/index.html#summaries">{L["Compiled summaries"]}</a>
+        </div>
+      </div>
+      <a href="{prefix}career/index.html"{on("career")}>{L["Career Paths"]}</a>
+    </nav>'''
+
+def _footnav(prefix, L):
+    keys = [("index.html", "Home"), ("about/index.html", "About"),
+            ("mission/index.html", "Mission"), ("curriculum/index.html", "Curriculum"),
+            ("reference/index.html", "Resources"), ("career/index.html", "Career Paths"),
+            ("feedback/index.html", "Feedback")]
+    links = "".join(f'<a href="{prefix}{h}">{L[k]}</a>' for h, k in keys)
+    return f"<nav>{links}</nav>"
+
+# Leaf translation: swap an element's inner text with its data-ar value when
+# the element has no child tags (same contract as the old JS toggle).
+AR_LEAF_RE = re.compile(r'(<(\w+)\b[^>]*?\sdata-ar="([^"]*)"[^>]*>)([^<]*)(</\2>)')
+def arabize(html):
+    return AR_LEAF_RE.sub(lambda m: m.group(1) + m.group(3) + m.group(5), html)
 
 NX_V = None
 
@@ -307,30 +394,59 @@ def sidemenu_html(items):
             f'<div class="panel"><p data-ar="{AR["Sections"]}">Sections</p>'
             f'{"".join(rows)}</div></div>')
 
-def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None,
-            wrap=True, body_attrs=""):
-    body = nx_text(body)
-    html = NX_PAGE.format(
-        title=esc(title), desc=esc(desc), prefix=prefix, body=body,
-        extra_head=extra_head, v=NX_V,
-        sidemenu=sidemenu_html(menu or []),
-        main_class=' class="wrap"' if wrap else "",
-        body_attrs=body_attrs,
-        on_home=' class="on"' if active == "home" else "",
-        on_about=' class="on"' if active == "about" else "",
-        on_mission=' class="on"' if active == "mission" else "",
-        on_curr=' class="on"' if active == "curriculum" else "",
-        on_reference=' class="on"' if active == "reference" else "",
-        on_career=' class="on"' if active == "career" else "",
-        on_feedback=' class="on"' if active == "feedback" else "",
-    )
-    # ARABIC HOLD (owner 2026-07-20): strip data-ar hooks at emit time; the
-    # bilingual layer returns when a translation toolkit is chosen.
+def _emit(path, html):
     html = re.sub(r'\s+data-ar(?:-placeholder)?="[^"]*"', "", html)
     assert SECTION_SIGN not in html, f"section sign leaked into {path}"
     out = OUT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
+
+def nx_page(path, title, desc, body, prefix, active="", extra_head="", menu=None,
+            wrap=True, body_attrs="", ar_body=None, title_ar=None, ar_note=False):
+    """Emit the page twice: EN at <path>, AR at ar/<path> (two-tree bilingual
+    model, owner order 2026-07-26 — full RTL chrome; academic bodies that have
+    no Arabic source yet ship under AR chrome with the honest AR_LESSON_NOTE,
+    never a machine-mangled translation). Page-to-page links use {prefix} and
+    stay inside each tree (the ar/ mirror shares the same relative shape);
+    root assets use {aprefix}, which gains one level inside ar/."""
+    body = nx_text(body)
+    sidemenu = sidemenu_html(menu or [])
+    common = dict(desc=esc(desc), prefix=prefix, extra_head=extra_head, v=NX_V,
+                  main_class=' class="wrap"' if wrap else "", body_attrs=body_attrs)
+    # ---- EN tree ----
+    _emit(path, NX_PAGE.format(
+        lang="en", dir="ltr", aprefix=prefix, title=esc(title),
+        brand_small=BRAND_SMALL_EN, navblock=_navblock(prefix, active, L_EN),
+        search_label=L_EN["Search lessons"],
+        toggle_href=f"{prefix}ar/{path}", toggle_lang="ar", toggle_dir="rtl",
+        toggle_label="العربية",
+        slogan=SLOGAN_EN, footnav=_footnav(prefix, L_EN),
+        proto_line=PROTO_EN.format(prefix=prefix),
+        integrity_line=INTEG_EN, sidemenu=sidemenu, body=body, **common))
+    # ---- AR tree (ar/<path>) ----
+    aprefix = "../" + prefix
+    abody = nx_text(ar_body) if ar_body is not None else body
+    # Root-asset references baked into the body (hero video, posters) gain one
+    # level inside the ar/ mirror; page-to-page links stay mirror-relative.
+    for attr in ("src", "href", "poster"):
+        abody = abody.replace(f'{attr}="{prefix}assets/', f'{attr}="{aprefix}assets/')
+    if ar_body is None:
+        # English body under Arabic chrome: bidi-isolate it so EN punctuation
+        # and numbers read correctly (the honest presentation of untranslated
+        # content — never a machine-mangled translation).
+        abody = f'<div lang="en" dir="ltr" class="en-body">{abody}</div>'
+    if ar_note:
+        note = AR_PAGE_NOTE if ar_note == "page" else AR_LESSON_NOTE
+        abody = f'<div class="ar-note" dir="rtl">{note}</div>' + abody
+    _emit("ar/" + path, arabize(NX_PAGE.format(
+        lang="ar", dir="rtl", aprefix=aprefix, title=esc(title_ar or title),
+        brand_small=BRAND_SMALL_AR, navblock=_navblock(prefix, active, L_AR),
+        search_label=L_AR["Search lessons"],
+        toggle_href=f"{aprefix}{path}", toggle_lang="en", toggle_dir="ltr",
+        toggle_label="English",
+        slogan=SLOGAN_AR, footnav=_footnav(prefix, L_AR),
+        proto_line=PROTO_AR.format(prefix=prefix),
+        integrity_line=INTEG_AR, sidemenu=sidemenu, body=abody, **common)))
 
 # ------------------------------------------------------------ library -----
 # Canonical university-texts registry (owner directive 2026-07-18): the texts
@@ -810,10 +926,10 @@ def build_lesson_page(sem, course, les, prefix, tabs_all, next_course=None):
 </div>"""
 
     nx_page(f"curriculum/{sem['id']}/{course['id']}/{name}",
-            f"{les['t']} — {course['title']} — Nexus Institute of Technology",
+            f"{les['t']} — {course['title']} — MechEd",
             les.get("scope", "")[:150], body, prefix, "curriculum",
             extra_head=MATHJAX, wrap=False,
-            body_attrs=f' data-key="{lesson_key}"')
+            body_attrs=f' data-key="{lesson_key}"', ar_note=True)
 
 # --------------------------------------------------------- course page ----
 def lesson_depth(les, tabs_all):
@@ -954,9 +1070,9 @@ def build_course_page(sem, course, prefix, tabs_all, ref, next_course=None):
     # (e.g. the Nyquist criterion on ELX 205) — without it the raw \( .. \)
     # delimiters leak to readers.
     nx_page(f"curriculum/{sem['id']}/{course['id']}/index.html",
-            f"{course['title']} — Nexus Institute of Technology",
+            f"{course['title']} — MechEd",
             course["summary"][:150], body, prefix, "curriculum", wrap=False,
-            extra_head=MATHJAX)
+            extra_head=MATHJAX, ar_note=True)
 
 # ----------------------------------------------------- curriculum index ---
 def build_curriculum_index(sems, tabs_by_course, prefix):
@@ -1027,17 +1143,17 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
 </div>
 <div class="catch"><b>Depth you can audit.</b> Every claim on this page is recomputed from the content at build time.</div>
 {''.join(groups)}"""
-    nx_page("curriculum/index.html", "Curriculum — Nexus Institute of Technology",
+    nx_page("curriculum/index.html", "Curriculum — MechEd",
             f"48 courses, {total} lessons: the complete mechanical-engineering map "
             f"from first principles to Industry 4.0; {depth} at full depth.",
-            body, prefix, "curriculum")
+            body, prefix, "curriculum", title_ar="المنهج — MechEd", ar_note="page")
     return total, depth
 
 # ------------------------------------------------------------- statics ----
 def build_static_pages(sems, tabs_by_course):
     # ---- HOME (redesign 2026-07-20): banner preserved; structure mirrors the
     # approved reference (stats / FIG panels / featured / tracks / notes) in the
-    # Nexus LIGHT identity. No robots (.nx-bot), no Arabic.
+    # light identity. No robots (.nx-bot) on the homepage.
     total = sum(len(c["lessons"]) for s in sems for c in s["courses"])
     depth = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
                 if lesson_depth(l, tabs_by_course[(s["id"], c["id"])]))
@@ -1045,21 +1161,28 @@ def build_static_pages(sems, tabs_by_course):
             .replace("{{DEPTH}}", str(depth))
             .replace("{{PCT}}", str(round(100 * depth / total))))
     nx_page("index.html",
-            "Nexus Institute of Technology — Learn Mechanical Engineering from Scratch to Industry 4.0",
+            "MechEd — Learn Mechanical Engineering from Scratch to Industry 4.0",
             "A complete B.S.-shaped mechanical engineering curriculum for "
             "anyone — from zero background to Industry 4.0. Preliminary open release.",
-            home, "", "home")
+            home, "", "home",
+            title_ar="MechEd — تعلَّم الهندسة الميكانيكية من الصفر إلى الصناعة 4.0",
+            ar_note="page")
 
     # ---- ABOUT (new tab)
     nx_page("about/index.html",
-            "About — Nexus Institute of Technology",
-            "Why Nexus exists: a world-class mechanical engineering "
+            "About — MechEd",
+            "Why MechEd exists: a world-class mechanical engineering "
             "education for anyone willing to work for it.",
-            fragment("pages/about.html"), "../", "about")
+            fragment("pages/about.html"), "../", "about",
+            title_ar="عن المعهد — MechEd", ar_note="page")
 
-    # ---- MISSION (own tab, content kept as-is below its hero, which now
-    # lives on the homepage)
-    mission_en = fragment("pages/mission.html").split('<div class="lang-ar"')[0]
+    # ---- MISSION (own tab; the fragment embeds BOTH language blocks —
+    # the EN page uses the lang-en extraction, the AR twin gets the full
+    # lang-ar block, which carries its own Arabic headings)
+    mission_full = fragment("pages/mission.html")
+    parts = mission_full.split('<div class="lang-ar"')
+    mission_en = parts[0]
+    mission_ar_block = ('<div class="lang-ar"' + parts[1]) if len(parts) > 1 else None
     mission_body = mission_en[mission_en.find('<div class="catch">'):]
     if mission_body.rstrip().endswith('</div>'):        # drop the lang-en close
         mission_body = mission_body.rstrip()[:-6]
@@ -1068,24 +1191,27 @@ def build_static_pages(sems, tabs_by_course):
   <h1>Learn Mechanical Engineering from Scratch to Industry 4.0.</h1>
 </div>"""
     nx_page("mission/index.html",
-            "Mission — Nexus Institute of Technology",
-            "The Nexus mission: a complete mechanical-engineering pathway from "
+            "Mission — MechEd",
+            "The MechEd mission: a complete mechanical-engineering pathway from "
             "first principles to Industry 4.0, honestly labeled.",
             mission_head + mission_body, "../", "mission",
             menu=[("#premise", "The premise", None, False, None),
                   ("#method", "How content is built", None, False, None),
                   ("#start", "Where to start", None, False, None),
-                  ("#integrity", "The integrity floor", None, False, None)])
+                  ("#integrity", "The integrity floor", None, False, None)],
+            ar_body=mission_ar_block, title_ar="الرسالة — MechEd")
 
-    # ---- CAREER (EN only while the Arabic layer is on hold)
+    # ---- CAREER (bilingual: career.html EN + career-ar.html as the AR body)
     career = f'<div class="lang-en">{fragment("pages/career.html")}</div>'
+    career_ar = fragment("pages/career-ar.html")
     nx_page("career/index.html",
-            "Career Paths — Nexus Institute of Technology",
+            "Career Paths — MechEd",
             "Careers in advanced industrial systems: the full role landscape, "
             "the certification architecture, interview mastery, and a "
             "twelve-month development plan.",
             career, "../", "career",
-            menu=[("#top", "The landscape", None, False, None)])
+            menu=[("#top", "The landscape", None, False, None)],
+            ar_body=career_ar, title_ar="المسارات المهنية — MechEd")
 
     # ---- FEEDBACK (owner order 2026-07-24): the prototype-phase review section.
     # Static site, no backend — reviews are composed here and posted by the
@@ -1095,7 +1221,7 @@ def build_static_pages(sems, tabs_by_course):
 <div class="pagehead">
   <p class="kicker"><span class="n">FEEDBACK</span>Prototype phase · Open review</p>
   <h1>Tell us what to build next.</h1>
-  <p class="sub">Nexus is a preliminary open release — real learners trying it and
+  <p class="sub">MechEd is a preliminary open release — real learners trying it and
   reflecting on it is the whole point of this phase. Write your reaction below: what you
   tried, what worked, what should change. Your review goes straight into the planning of
   the final, tailored releases.</p>
@@ -1134,10 +1260,11 @@ def build_static_pages(sems, tabs_by_course):
   <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">project page</a>.</p>
 </form>"""
     nx_page("feedback/index.html",
-            "Feedback — Nexus Institute of Technology",
-            "Review the Nexus prototype: what you tried, what worked, and what "
+            "Feedback — MechEd",
+            "Review the MechEd prototype: what you tried, what worked, and what "
             "should change — your feedback shapes the final releases.",
-            feedback_body, "../", "feedback")
+            feedback_body, "../", "feedback",
+            title_ar="الملاحظات — MechEd", ar_note="page")
 
 def build_search_index(sems):
     idx = []
@@ -1458,19 +1585,20 @@ def build_resources_page(sems, prefix='../'):
   semester, or a whole year.</p>
 </div>
 <section class="part tight"><div class="wide">
-<h2>Tools &amp; software directory</h2>
+<h2 id="tools">Tools &amp; software directory</h2>
 {tools_html}
-<h2>Compiled summaries</h2>
+<h2 id="summaries">Compiled summaries</h2>
 <p class="sub">Every course already has its own "Course summary (PDF)" button on
 its own page. The links below additionally compile a whole semester or year into
 one printable document — open a link and use your browser's Print / Save as PDF.</p>
 {summaries_html}
 </div></section>"""
     nx_page("reference/index.html",
-            "Resources — Nexus Institute of Technology",
+            "Resources — MechEd",
             "Course tools and software, plus compiled semester and year summary "
             "downloads.",
-            body, prefix, "reference", extra_head=MATHJAX)
+            body, prefix, "reference", extra_head=MATHJAX,
+            title_ar="الموارد — MechEd", ar_note="page")
 
 def audit_unit_policy(sems, tabs_by_course):
     """Directive #2: SI is the theory baseline, but worked examples and quizzes
@@ -1607,7 +1735,7 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 {course_summary_fragment(sem, course, prefix, tabs_all, ref)}
 </article>"""
     nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
-            f"Course summary — {course['title']} — Nexus Institute of Technology",
+            f"Course summary — {course['title']} — MechEd",
             f"Compiled lectures, foundations, and reference for "
             f"{course['code']} {course['title']}.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
@@ -1641,7 +1769,7 @@ def build_grouped_summary(title, courses_ctx, out_path, prefix):
 <article class="part tight sum-doc">
 {frags}
 </article>"""
-    nx_page(out_path, f"{title} — Nexus Institute of Technology",
+    nx_page(out_path, f"{title} — MechEd",
             f"Compiled lectures, foundations, and reference across {n} courses.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 

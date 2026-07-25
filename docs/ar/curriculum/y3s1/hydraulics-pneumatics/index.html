@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Hydraulics &amp; Pneumatics — MechEd</title>
+<meta name="description" content="Fluid power for people who will maintain it: pumps, valves, actuators, and circuits read from schematics; pressure, flow, and force sized; and the con">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s1/hydraulics-pneumatics/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>HYD 304</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M14 40 L66 40 C 84 40, 84 64, 100 64"/><path d="M14 56 L60 56 C 74 56, 76 78, 100 78"/><path d="M14 72 L52 72 C 62 72, 64 92, 100 92"/><circle cx="100" cy="40" r="5" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">HYD 304 · YEAR 3 · SEMESTER 1</p>
+    <h1>Hydraulics &amp; Pneumatics</h1>
+    <p class="sub">Fluid power for people who will maintain it: pumps, valves, actuators, and circuits read from schematics; pressure, flow, and force sized; and the contamination control that decides hydraulic life.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-fluid-power-principles.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Pascal's law to force multiplication; power as pressure times flow.</span></div><div><span class="ck">✓</span><span>Fluid functions and properties; ISO cleanliness codes read and specified.</span></div><div><span class="ck">✓</span><span>Gear, vane, and piston pumps; fixed versus variable displacement.</span></div><div><span class="ck">✓</span><span>Cylinder sizing for force and speed; cushioning and seal packages.</span></div><div><span class="ck">✓</span><span>Relief, reducing, and sequence valves; flow controls and meter-in/meter-out logic.</span></div><div><span class="ck">✓</span><span>Spool centers and their consequences; ISO 1219 symbols read fluently.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/1" data-href="01-fluid-power-principles.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-fluid-power-principles.html">Fluid power principles</a></h4>
+    <p class="scope">Pascal's law to force multiplication; power as pressure times flow. Where fluid power beats electromechanical drives. The efficiency price paid for force density.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does fluid power win on force density and lose on efficiency?</li><li>Compute-style: pressure times flow gives what, in what units?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/2" data-href="02-hydraulic-fluids-and-contamination-control.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-hydraulic-fluids-and-contamination-control.html">Hydraulic fluids and contamination control</a></h4>
+    <p class="scope">Fluid functions and properties; ISO cleanliness codes read and specified. Filtration placement and beta ratios. Contamination as the leading cause of hydraulic failure — treated with due respect.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Read ISO 4406 18/16/13: what does each number count?</li><li>Why does contamination, not wear, head the hydraulic failure list?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/3" data-href="03-hydraulic-pumps.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-hydraulic-pumps.html">Hydraulic pumps</a></h4>
+    <p class="scope">Gear, vane, and piston pumps; fixed versus variable displacement. Volumetric efficiency measured and trended. Pressure-compensated control explained without mystery.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Gear versus piston pump: efficiency, cost, and cleanliness sensitivity.</li><li>What does a pressure-compensated pump hold constant?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/4" data-href="04-actuators.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-actuators.html">Actuators</a></h4>
+    <p class="scope">Cylinder sizing for force and speed; cushioning and seal packages. Hydraulic motors in brief. Rod buckling and mounting classes — statics put to work.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Size a cylinder for force: which area does retraction use?</li><li>Why does rod buckling limit long strokes?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/5" data-href="05-pressure-and-flow-control-valves.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-pressure-and-flow-control-valves.html">Pressure and flow control valves</a></h4>
+    <p class="scope">Relief, reducing, and sequence valves; flow controls and meter-in/meter-out logic. Cracking pressure and override characterized. The valves that shape a circuit's personality.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Relief versus reducing valve: which protects, which regulates?</li><li>What does cracking pressure mean for system heat?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/6" data-href="06-directional-valves-and-circuit-reading.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-directional-valves-and-circuit-reading.html">Directional valves and circuit reading</a></h4>
+    <p class="scope">Spool centers and their consequences; ISO 1219 symbols read fluently. Standard circuits: regenerative, counterbalance, unloading. Schematic-to-machine correspondence drilled.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Read a spool symbol's center condition: what happens de-energized?</li><li>Meter-in versus meter-out: which controls an overrunning load?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/7" data-href="07-accumulators-and-system-dynamics.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-accumulators-and-system-dynamics.html">Accumulators and system dynamics</a></h4>
+    <p class="scope">Gas-charged accumulators: sizing, precharge, and safety. Shock suppression and supplementary flow. Stored energy respected during maintenance.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does accumulator precharge decide its usable volume?</li><li>Name the stored-energy hazard before maintenance.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/8" data-href="08-hydraulic-system-troubleshooting.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-hydraulic-system-troubleshooting.html">Hydraulic system troubleshooting</a></h4>
+    <p class="scope">Heat, noise, and slow motion as the three complaints; a diagnostic tree for each. Test-point measurements against the schematic. Case-based practice on press and mobile circuits.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Heat, noise, slow motion: give one cause chain for each complaint.</li><li>Why measure at test points instead of trusting gauges on the schematic?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/9" data-href="09-pneumatic-systems.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-pneumatic-systems.html">Pneumatic systems</a></h4>
+    <p class="scope">Air preparation — filter, regulator, lubricator; valve and cylinder families; sizing with compressibility acknowledged. Where pneumatics wins: speed, cleanliness, simplicity. Leakage economics revisited from Thermo II.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does compressibility make pneumatics springy?</li><li>What does the FRL unit condition, and in what order?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/10" data-href="10-electro-pneumatics-and-machine-motion.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-electro-pneumatics-and-machine-motion.html">Electro-pneumatics and machine motion</a></h4>
+    <p class="scope">Solenoid valves, reed sensors, and PLC-driven pneumatic sequences. Grippers and pick-and-place motions. The actuation layer of packaging machinery.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Sequence a pick-and-place with two cylinders: what feedback confirms motion?</li><li>Why do reed sensors fail, and what replaces them?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s1/hydraulics-pneumatics/11" data-href="11-proportional-and-servo-systems-first-contact.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-proportional-and-servo-systems-first-contact.html">Proportional and servo systems first contact</a></h4>
+    <p class="scope">Proportional valves and closed-loop positioning in outline. Where servo-hydraulics still rules: presses and test rigs. The control-systems course connected to oil.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Industrial Oil Hydraulics and Pneumatics</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does a proportional valve add over bang-bang control?</li><li>Where does servo-hydraulics still beat electric servos?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Fundamentals of Industrial Oil Hydraulics and Pneumatics (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>HYD 304</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s1/welding-ndt/index.html">WLD 305 · Welding Engineering &amp; NDT →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

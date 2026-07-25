@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — t">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/math-3/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>MTH 207</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="30"/><g><line x1="60" y1="14" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="106"/><line x1="14" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="106" y2="60"/><line x1="28" y1="28" x2="39" y2="39"/><line x1="81" y1="81" x2="92" y2="92"/><line x1="92" y1="28" x2="81" y2="39"/><line x1="39" y1="81" x2="28" y2="92"/></g><circle cx="60" cy="60" r="10" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">MTH 207 · YEAR 2 · SEMESTER 1</p>
+    <h1>Engineering Mathematics III — Differential Equations &amp; Linear Algebra</h1>
+    <p class="sub">The mathematics of dynamic systems: first- and second-order differential equations, Laplace transforms, and the matrix language of coupled systems — the toolset vibrations, controls, and heat transfer stand on.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">11 of 11 at full depth</span><span class="mchip">11 interactive quizzes</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-first-order-equations-revisited-separable-and-linear.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed.</span></div><div><span class="ck">✓</span><span>Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times.</span></div><div><span class="ck">✓</span><span>The characteristic equation turns a differential equation into algebra.</span></div><div><span class="ck">✓</span><span>Undetermined coefficients for constant, ramp, and sinusoidal forcing.</span></div><div><span class="ck">✓</span><span>The mass–spring–damper equation solved end to end.</span></div><div><span class="ck">✓</span><span>The transform defined and a working table built by direct integration.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y2s1/math-3/1" data-href="01-first-order-equations-revisited-separable-and-linear.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-first-order-equations-revisited-separable-and-linear.html">First-order equations revisited: separable and linear</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)</li><li>What exactly does the integrating factor multiply away?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/2" data-href="02-modeling-with-first-order-equations.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-modeling-with-first-order-equations.html">Modeling with first-order equations</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Mixing tanks, thermal soak, and RC circuits: one balance statement each, and the same equation three times. Time constants read directly from coefficients. Steady state as the equation's destination, transient as its journey.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Write the ODE for a 5 m³ well-mixed tank flushed at 0.25 m³/min, and read off τ. (20 min)</li><li>Why do a cooling casting and a discharging capacitor share one mathematics?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/3" data-href="03-second-order-equations-the-homogeneous-story.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-second-order-equations-the-homogeneous-story.html">Second-order equations: the homogeneous story</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The characteristic equation turns a differential equation into algebra. Overdamped, critically damped, and underdamped responses classified by the discriminant. Why the damping ratio will become the vibration engineer's favorite number.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Classify y'' + 4y' + 3y = 0 by its roots. (−1 and −3: overdamped)</li><li>What does a complex-conjugate root pair mean physically?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/4" data-href="04-nonhomogeneous-equations-and-forced-response.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-nonhomogeneous-equations-and-forced-response.html">Nonhomogeneous equations and forced response</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient versus steady-state response — the vocabulary the controls course inherits whole.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does the transient die out while the forced response persists?</li><li>What particular-solution form do you try for a constant force input?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/5" data-href="05-free-and-forced-oscillations.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-free-and-forced-oscillations.html">Free and forced oscillations</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The mass–spring–damper equation solved end to end. Resonance: why amplitude grows when forcing approaches the natural frequency, and why machines care at one-times running speed. Beats in brief.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Compute ωn for m = 4 kg, k = 10 kN/m. (50 rad/s)</li><li>What limits the resonant amplitude in a real machine?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/6" data-href="06-laplace-transforms-i.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-laplace-transforms-i.html">Laplace transforms I</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The transform defined and a working table built by direct integration. Transforms of derivatives: calculus becomes algebra, and initial conditions walk in automatically. Linearity as the property that makes the method industrial.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What is the transform of e^(−3t)? (1/(s+3))</li><li>How do initial conditions enter a transformed equation without extra work?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/7" data-href="07-laplace-transforms-ii-solving-problems.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-laplace-transforms-ii-solving-problems.html">Laplace transforms II: solving problems</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Inverse transforms by partial fractions; step inputs and switched forcing handled cleanly. Initial-value problems solved entirely in the s-domain. The transfer-function idea planted for the controls course.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Invert 6/(s(s+3)). (2 − 2e^(−3t))</li><li>What does dividing by s do to a signal in the time domain?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/8" data-href="08-systems-of-equations-the-matrix-view.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-systems-of-equations-the-matrix-view.html">Systems of equations: the matrix view</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Coupled tanks and coupled masses written as x' = Ax. Why coupled dynamics needs matrices rather than more calculus. The eigenvalue preview: a system's tempo hides in A itself.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Write the two-tank mixing problem as a matrix equation.</li><li>What plays the characteristic equation's role for a system of equations?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/9" data-href="09-matrices-and-linear-systems.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-matrices-and-linear-systems.html">Matrices and linear systems</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and engineering data is never clean. Where matrix solving hides inside every simulation tool.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Solve a 3×3 system by elimination, tracking each pivot.</li><li>What does a near-zero determinant warn you about the answer?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/10" data-href="10-eigenvalues-and-eigenvectors.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-eigenvalues-and-eigenvectors.html">Eigenvalues and eigenvectors</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its mode shapes. The modal language of the vibrations course is born here.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)</li><li>Why do the signs of eigenvalues decide stability?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/math-3/11" data-href="11-numerical-solution-of-differential-equations.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-numerical-solution-of-differential-equations.html">Numerical solution of differential equations</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Euler's method and Runge–Kutta; step size traded against accuracy and stability, observed live on the cooling equation. When numerical solution is the only honest route — and how to distrust it productively. Closes the loop with the computing course.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Take two Euler steps of y' = −y, y(0) = 1, h = 0.5. (0.25)</li><li>Why can too large a step make a stable equation explode numerically?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[\frac{dy}{dx}=g(x)\,h(y)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\frac{dy}{h(y)}=g(x)\,dx\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'+p(x)y=q(x)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\frac{dy}{dx}=xy\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\ln|y|=\tfrac12 x^2+C\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y=Ae^{x^2/2}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y(0)=1\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[A=1\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu(x)=e^{\int p\,dx}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\frac{d}{dx}(\mu y)=\mu y'+\mu' y\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu'=p\mu\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu y'+p\mu y=\mu q\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu y=\int \mu q\,dx+C\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'+2y=4\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu=e^{2x}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[(e^{2x}y)'=4e^{2x}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[e^{2x}y=2e^{2x}+C\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y=2+Ce^{-2x}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y(0)=5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[C=3\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y=2+3e^{-2x}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'+py=q\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'=0\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\frac{dy}{dx}=g(x)h(y)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu=e^{\int p\,dx}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[x=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\frac{dy}{y}=x\,dx\Rightarrow\ln|y|=\tfrac12 x^2+C\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y(0)=1\Rightarrow A=1\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y=e^{2}\approx7.389\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y=e^{x^2/2},\ y(2)=e^2\approx7.389\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y(0)=5\Rightarrow C=3\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[4/2=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'+3y=6\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'=0\Rightarrow3y=6\Rightarrow y=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\mu=e^{3x}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'=xy^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[y'+5y=10\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[5y=10\Rightarrow y=2=q/p\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></li><li><span class="ref-eq">\[\tau y'+y=y_{\text{in}}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[T'=-k(T-T_a)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[T(t)=T_a+(T_0-T_a)e^{-kt}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[T_0=90^\circ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[T_a=20^\circ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[k=0.05\ \text{min}^{-1}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[T(10)=20+70e^{-0.5}\approx62.5^\circ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[\tau=1/k\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[\tau=RC\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li><li><span class="ref-eq">\[R=1000\,\Omega\]</span><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\mu\)</span><span class="chip">\(\tau\)</span><span class="chip">\(\Omega\)</span><span class="chip">\(\Delta\)</span><span class="chip">\(\sigma\)</span><span class="chip">\(\zeta\)</span><span class="chip">\(\omega\)</span><span class="chip">\(\pi\)</span><span class="chip">\(\lambda\)</span><span class="chip unit">in</span><span class="chip unit">min</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Exponentials and logs</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>Integration</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>linear</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>separable</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>steady state</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>The product rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>transient</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html">L01</a></td></tr><tr><td>Conservation balances</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></td></tr><tr><td>rate of change = rate in − rate out</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></td></tr><tr><td>Solving linear first-order ODEs</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></td></tr><tr><td>time constant</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></td></tr><tr><td>Unit reasoning</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/02-modeling-with-first-order-equations.html">L02</a></td></tr><tr><td>characteristic equation</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>Complex numbers</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>critically damped</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>damping ratio</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>Exponential solutions</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>natural frequency</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>overdamped</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>The quadratic formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>underdamped</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/03-second-order-equations-the-homogeneous-story.html">L03</a></td></tr><tr><td>Differentiating trial forms</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html">L04</a></td></tr><tr><td>homogeneous</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html">L04</a></td></tr><tr><td>Homogeneous solutions</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html">L04</a></td></tr><tr><td>Matching coefficients</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html">L04</a></td></tr><tr><td>particular</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html">L04</a></td></tr><tr><td>beats</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>Damp</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>damped frequency</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>Detune</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>resonance</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>Second-order homogeneous solutions</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>Trigonometric addition</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>Undetermined coefficients</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/05-free-and-forced-oscillations.html">L05</a></td></tr><tr><td>derivative rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>Exponentials</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>first shifting theorem</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>Improper integrals</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>Integration by parts</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>Linearity</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/06-laplace-transforms-i.html">L06</a></td></tr><tr><td>Initial-value problems</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>Invert</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>Partial fractions</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>Solve algebraically</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>The transform table and derivative rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>Transform</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/07-laplace-transforms-ii-solving-problems.html">L07</a></td></tr><tr><td>Arithmetic of rows and columns</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>determinant</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>inverse</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>Simultaneous equations</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>singular</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>Vectors</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/08-systems-of-equations-the-matrix-view.html">L08</a></td></tr><tr><td>Back-substitution</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>Determinants</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>Gaussian elimination</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>Matrix form \( A\mathbf{x}=\mathbf{b} \)</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>pivots</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>rank</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/09-matrices-and-linear-systems.html">L09</a></td></tr><tr><td>eigenvalue</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html">L10</a></td></tr><tr><td>eigenvectors</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html">L10</a></td></tr><tr><td>Matrix–vector products</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html">L10</a></td></tr><tr><td>sign</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html">L10</a></td></tr><tr><td>spectrum</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html">L10</a></td></tr><tr><td>Derivative as slope</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>Euler's method</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>first-order</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>fourth-order Runge–Kutta</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>Improved Euler</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>numerically</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>stiff</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr><tr><td>The exponential \( e^x \)</td><td><a class="ref-jump" href="../../../curriculum/y2s1/math-3/11-numerical-solution-of-differential-equations.html">L11</a></td></tr></tbody></table></div>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="src"><b>Software used in this course</b> — see the <a href="../../../reference/index.html">Resources</a> page for the full directory grouped by category:</p><ul class="plain small"><li><a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener"><b>MATLAB</b> (MathWorks) — Free student-priced license at most universities; the standard numerical/matrix computing environment for engineering coursework.</a></li><li><a href="https://www.python.org/" target="_blank" rel="noopener"><b>Python (NumPy / SciPy / Jupyter)</b> (Python Software Foundation) — Free and open source; NumPy/SciPy/Matplotlib cover the same numerical ground as MATLAB at zero license cost.</a></li></ul>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MTH 207</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Differential equations are the native language of every engineer who predicts how
+a system behaves over time — the sector only changes the system:</p>
+<ul>
+<li><b>Automotive &amp; heavy equipment</b> — ride and driveline engineers at manufacturers
+such as <b>Toyota</b> tune suspensions and mounts as mass–spring–damper systems, reading
+\( \zeta \) and \( \omega_n \) straight off this course to decide whether a chassis slams,
+settles, or rings.</li>
+<li><b>Aerospace &amp; defense</b> — flight-control and structures engineers at houses such as
+<b>Airbus</b> live in second-order dynamics and Laplace transforms: every actuator loop and
+flutter margin is the forced-response and eigenvalue mathematics of Lessons 4–10.</li>
+<li><b>Industrial technology &amp; controls</b> — automation engineers at suppliers such as
+<b>Rockwell Automation</b> size every servo, filter, and PID loop from time constants and
+pole locations — the state-space and eigenvalue view of Lessons 8–10 is their daily model.</li>
+</ul>
+<p><b>Interview angle:</b> the recurring probe is qualitative — "sketch the response of this
+system without solving it." The discriminant, \( \omega_n \), and \( \zeta \) drilled here are
+the expected instant answer, before any integration.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/strength/index.html">SOM 201 · Strength of Materials →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Differentiation rules and the chain rule — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-ra">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/math-1/4">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/math-1/04-differentiation-rules-and-the-chain-rule.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol cur" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 04 of 11 · Year 1 · Semester 1</p>
+  <h1>Differentiation rules and the chain rule</h1>
+  <p class="sub">Product, quotient, and chain rules with mechanical fluency as the goal. Implicit differentiation. The chain rule as the engine behind every related-rates problem in plant contexts.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/4sTKcvYMNxk" title="Lec 4 | MIT 18.01 Single Variable Calculus, Fall 2007 — Chain Rule" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lec 4 | MIT 18.01 Single Variable Calculus, Fall 2007 — Chain Rule <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lec 4 | MIT 18.01 Single Variable Calculus, Fall 2007 — Chain Rule</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Tank level depends on flow, flow on valve position: which rule chains the sensitivities together?</li><li>Differentiate x·e^x and explain which rule did the work.</li></ul></div><div class="measure">
+<h3>01 · The rules — machinery for slopes</h3>
+<p>Yesterday's limit definition is correct and slow. Today we industrialize it. For
+constants \(c\), functions \(u, v\):</p>
+\[ (cu)' = cu', \qquad (u+v)' = u' + v', \qquad (x^n)' = nx^{n-1} \tag{1} \]
+\[ (uv)' = u'v + uv', \qquad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2} \tag{2} \]
+<p>Each is proved once from the limit and used forever. The power rule follows from expanding
+\( (x+\Delta x)^n \) and watching every term above first order vanish with \( \Delta x \) —
+the same "higher-order terms die" argument that engineering approximation lives on.</p>
+<h3>02 · The chain rule — rates through a chain of causes</h3>
+<p>Plant variables cause each other in chains: valve position sets flow, flow sets level,
+level sets pressure. If \( y = f(u) \) and \( u = g(x) \):</p>
+\[ \frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx} \tag{3} \]
+<p>Rates multiply along the chain. This single rule powers every sensitivity argument you will
+make: how much does discharge pressure move per percent of speed? Differentiate through the
+chain of dependencies and multiply the local sensitivities.</p>
+<h3>03 · Relative rates — the engineer's favorite</h3>
+<p>Divide a derivative by its function and you get relative sensitivity. For a fan law
+\( P = kN^3 \), logarithmic differentiation gives \( \frac{dP}{P} = 3\frac{dN}{N} \): a 2%
+speed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or
+pump slightly is the cheapest energy project in any plant — the cube works for you on the way
+down.</p>
+
+<h3>04 · Choosing the rule — structure before symbols</h3>
+<p>Differentiation errors rarely come from forgetting a rule; they come from misreading the
+<em>structure</em> of the expression. So classify before you differentiate. Is the expression
+a sum of powers? The power rule handles each term independently — after rewriting roots and
+reciprocals as powers, \( \sqrt{x} = x^{1/2} \), \( 1/x = x^{-1} \). Is it two varying
+quantities multiplied — force times velocity, pressure times flow? That is a genuine product:
+product rule. A ratio with the variable in the denominator? Quotient rule, with the
+subtraction order fixed. A function <em>of</em> a function — something raised to a power,
+an exponential of an expression? Chain rule, differentiating outer times inner, working from
+the outside in.</p>
+<p>For the power laws that fill engineering — \( P = kN^3 \), \( \Delta P = kQ^2 \) —
+logarithmic differentiation earns its keep: take logs, differentiate, and relative rates
+appear directly, \( dP/P = n\,dN/N \). That one line is the professional's sensitivity
+language: percent out per percent in. Keep the honest distinction from 3 visible — the
+relative-rate figure is a first-order estimate, exact only in the limit; for large changes,
+compute the ratio exactly and let the linear estimate serve as its sanity check.</p>
+<p>Finally, make numerical verification a reflex. Any symbolic derivative can be audited in
+ten seconds: evaluate the function at \( x \) and at \( x + 0.001 \), divide the difference
+by 0.001, and compare with the formula's prediction. Agreement to three figures means the
+algebra survived; disagreement means a dropped inner derivative or a sign error is hiding in
+the work. Professionals check their derivatives the way welders check their fit-up — before
+the error is buried under everything built on top of it.</p>
+<p><strong>Closing.</strong> Rules (1)–(2) mechanize differentiation; the chain rule (3) walks
+rates through cause-and-effect; relative rates turn calculus into percentage talk that
+managers act on.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The derivative as limit</b> (Lesson 3) — today's rules are shortcuts to that limit.</li>
+<li><b>Exponent algebra</b> — \( x^{-1} \), \( x^{1/2} \) so the power rule covers roots and reciprocals.</li>
+<li><b>Composite functions</b> — recognizing \( f(g(x)) \) before differentiating it.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Power rule</td><td>\( (x^n)' = n\,x^{n-1} \)</td><td>Sums of powers — after rewriting roots and reciprocals as powers.</td></tr>
+<tr><td>Product rule</td><td>\( (uv)' = u'v + uv' \)</td><td>Two varying factors multiplied: force × velocity, pressure × flow.</td></tr>
+<tr><td>Quotient rule</td><td>\( (u/v)' = (u'v - uv')/v^2 \)</td><td>Ratios with the variable below the line; the subtraction order is fixed.</td></tr>
+<tr><td>Chain rule</td><td>\( \tfrac{dy}{dx} = \tfrac{dy}{du}\cdot\tfrac{du}{dx} \)</td><td>Nested dependence; rates multiply along the cause chain.</td></tr>
+<tr><td>Relative sensitivity</td><td>\( \tfrac{dP}{P} = n\,\tfrac{dN}{N} \) for \( P = kN^n \)</td><td>Percent-per-percent talk; affinity-law estimates and energy arguments.</td></tr>
+<tr><td>Exact vs first-order</td><td>\( (1+r)^n \) vs \( 1+nr \)</td><td>Deciding when the linear estimate is honest enough — and checking it when it isn't.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Chain rule, straight up</b></p>
+<p><b>Problem.</b> \( y = (3x^2+2)^4 \). <b>Find:</b> \( y'(1) \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Outer: \( \frac{d}{du}u^4 = 4u^3 \) with \( u = 3x^2+2 \).
+(2) Inner: \( u' = 6x \). (3) Chain: \( y' = 4(3x^2+2)^3 \cdot 6x = 24x(3x^2+2)^3 \).
+(4) At \( x=1 \): \( 24 \times 5^3 = 24 \times 125 = 3000 \).</p>
+<p><b>Answer:</b> 3000. <b>Sanity check:</b> numerically, \( y(1.001) - y(1) \approx
+628.0\!-\!625 = 3.0 \) over \( \Delta x = 0.001 \) → slope ≈ 3000. Confirmed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The affinity-law energy argument</b></p>
+<p><b>Problem.</b> A 90 kW cooling fan runs at fixed speed with dampers throttling. A VFD
+retrofit would slow it 10%. Using the fan law \( P = kN^3 \), <b>find</b> the approximate and
+exact power saving.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Relative rates: \( dP/P = 3\,dN/N = 3 \times (-10\%) = -30\% \)
+(first-order estimate). (2) Exact: \( (0.9)^3 = 0.729 \) → 27.1% saving.
+(3) Power: \( 90 \times 0.271 = 24.4\ \mathrm{kW} \) saved continuously.</p>
+<p><b>Answer:</b> ≈24 kW (exact 27.1%, linear estimate 30%). <b>Sanity check:</b> the linear
+estimate overshoots because the cube curve bends — for a 10% change the two agree within a few
+points, exactly what a first-order method promises.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Power through the product rule</b></p>
+<p><b>Problem.</b> During a controlled winch lower-away, cable tension falls as \( F(t) = 200 - 5t \) N while payout speed rises as \( v(t) = 2 + 0.3t \) m/s. Mechanical power is \( P = Fv \). <b>Find:</b> \( P'(10) \) and interpret its sign.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Product rule: \( P' = F'v + Fv' = (-5)(2 + 0.3t) + (200 - 5t)(0.3) \).
+(2) At \( t = 10 \): \( (-5)(5) + (150)(0.3) = -25 + 45 = +20 \) W/s.
+(3) Interpretation: tension is falling, but the speed growth outweighs it — power is still rising at 20 watts per second.</p>
+<p><b>Answer:</b> \( P'(10) = +20 \) W/s; power increasing.
+<b>Sanity check:</b> \( P(10) = 150 \times 5 = 750 \) W and \( P(11) = 145 \times 5.3 = 768.5 \) W — a rise of 18.5 W over the next second, consistent with a +20 W/s instantaneous rate that is itself easing off.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Let \( y = (2x^3 + 1)^5 \). Compute \( y'(1) \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>405</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>2430</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>648</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>7290</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>By the chain rule, the outer derivative is \( 5u^4 \) with \( u = 2x^3 + 1 \) and the inner derivative is \( 6x^2 \), so \( y' = 30x^2(2x^3+1)^4 \), which at \( x = 1 \) gives \( 30 \times 3^4 = 2430 \). The distractor 405 is the classic error of differentiating only the outer power and forgetting to multiply by the inner derivative \( 6x^2 \). Writing the outer derivative as \( 5u^5 \) instead of \( 5u^4 \) — failing to reduce the exponent — produces 7290.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>For differentiable functions \( u(x) \) and \( v(x) \) with \( v(x) \neq 0 \), which expression equals \( \left( \dfrac{u}{v} \right)' \)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \dfrac{u v' - u' v}{v^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \dfrac{u'}{v'} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( \dfrac{u' v - u v'}{v^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \dfrac{u' v + u v'}{v^2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The quotient rule is \( (u/v)' = (u'v - uv')/v^2 \): the term with the differentiated numerator comes first, and the subtraction order is fixed. Reversing the numerator to \( uv' - u'v \) is the classic sign error and yields exactly the negative of the true derivative. The plus-sign version transplants the product-rule pattern where it does not apply, and \( u'/v' \) — differentiating top and bottom separately — already fails on a case as simple as \( x/x^2 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Let \( f(x) = 4x^{3/2} \). What is \( f'(9) \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>18</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>12</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>162</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>108</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Rewrite and apply the power rule: \( f'(x) = 4 \cdot \tfrac{3}{2}x^{1/2} = 6\sqrt{x} \), so \( f'(9) = 6 \times 3 = 18 \). Choosing 12 drops the \( 3/2 \) exponent factor; 162 forgets to lower the power (using \( x^{3/2} \) instead of \( x^{1/2} \)); 108 is \( f(9) \) itself — the value-versus-slope confusion. The power rule covers roots the moment you write them as fractional powers.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A centrifugal pump absorbs shaft power according to the affinity law \( P = kN^3 \), where \( N \) is rotational speed. A variable-frequency drive slows the pump by 8%. What is the <em>exact</em> percentage reduction in absorbed power?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>8.0%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>15.4%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>24.0%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>22.1%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The exact power ratio is \( (0.92)^3 = 0.7787 \), so the saving is \( 1 - 0.7787 = 22.1\% \). The relative-rate estimate \( dP/P = 3\,dN/N = 24\% \) is only a first-order linearization; quoting it as the exact value is the classic error behind that distractor, and it overshoots because the cubic curve bends. Using the square law (which governs head, \( \propto N^2 \)) instead of the cube law for power gives 15.4%, while assuming power simply proportional to speed gives 8%.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Tank level responds to volume as \( dL/dV = 0.14 \) m per m³, and volume grows at \( dV/dt = 2.5 \) m³/min. How fast is level rising?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.35 m/min</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>17.9 m/min</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>2.64 m/min</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.056 m/min</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The chain rule multiplies rates along the dependency chain: \( dL/dt = (dL/dV)(dV/dt) = 0.14 \times 2.5 = 0.35 \) m/min. Dividing (17.9) or adding (2.64) the sensitivities are the classic chain-rule confusions; 0.056 inverts one factor. When causes chain — valve to flow, flow to volume, volume to level — their local sensitivities multiply, which is the entire content of equation (3).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — selling the VFD with one line of calculus.</b> You arrive at an energy review
+where a utilities fan farm runs throttled year-round. Management wants payback numbers, not
+mathematics. You write one line on the whiteboard — <em>power moves three percent for every
+percent of speed</em> — and translate: 10% slower ≈ 25–30% less power, per fan, forever. The
+chain rule and the cube law did the argument; the spreadsheet that follows merely confirms
+what equation (3) already promised. The retrofit gets scoped that week.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{Pa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.02176\\ \\mathrm{psi}\\)", "\\(1.034e+06\\ \\mathrm{psi}\\)", "\\(0.2176\\ \\mathrm{psi}\\)", "\\(0.002176\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{Pa} = 0.000145\\ \\mathrm{psi}\\): \\(150 \\times 0.000145 = 0.02176\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{Pa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(0.00174\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.274e+04\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0.0174\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.000174\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{Pa} = 0.000145\ \mathrm{psi}\): \(12 \times 0.000145 = 0.00174\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.491\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(0.2682\\ \\mathrm{hp}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(2 \\times 1.341 = 2.682\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(14.91\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(268.2\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(20 \times 1.341 = 26.82\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-the-derivative-as-a-rate.html">← 03 · The derivative as a rate</a><a href="index.html">كل الدروس · MTH 101</a><a href="05-exponentials-logarithms-and-growth-decay.html">05 · Exponentials, logarithms, and growth/decay →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

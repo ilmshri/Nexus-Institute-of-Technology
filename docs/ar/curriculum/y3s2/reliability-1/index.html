@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Reliability Engineering I — MechEd</title>
+<meta name="description" content="Quantified failure: reliability mathematics, Weibull analysis of real data, system modeling, and FMEA/FMECA — the analytical core of the reliability e">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s2/reliability-1/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>REL 354</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="16" y1="14" x2="16" y2="100"/><line x1="16" y1="100" x2="108" y2="100"/><path d="M20 30 C 32 66, 40 70, 58 70 C 80 70, 88 64, 100 30"/><circle cx="58" cy="70" r="5" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">REL 354 · YEAR 3 · SEMESTER 2</p>
+    <h1>Reliability Engineering I</h1>
+    <p class="sub">Quantified failure: reliability mathematics, Weibull analysis of real data, system modeling, and FMEA/FMECA — the analytical core of the reliability engineer role this pathway targets.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span><span class="mchip">4 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-reliability-functions.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Reliability, CDF, PDF, and hazard rate defined and interrelated with derivations.</span></div><div><span class="ck">✓</span><span>Constant hazard rate and its memoryless consequence proven.</span></div><div><span class="ck">✓</span><span>The Weibull distribution with shape and scale parameters read as physics: β&lt;1 infant mortality, β≈1 random, β&gt;1 wearout.</span></div><div><span class="ck">✓</span><span>Data collection sins: mixed failure modes, missing suspensions, bad timestamps.</span></div><div><span class="ck">✓</span><span>Series, parallel, and k-out-of-n structures derived from probability first principles; reliability block diagrams of real equipment trains.</span></div><div><span class="ck">✓</span><span>Repairable-system measures; availability from failure and repair distributions.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y3s2/reliability-1/1" data-href="01-reliability-functions.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-reliability-functions.html">Reliability functions</a></h4>
+    <p class="scope">Reliability, CDF, PDF, and hazard rate defined and interrelated with derivations. The bathtub curve as hazard-rate biography. Reading each function's story from the others.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Relate R(t), F(t), f(t), and h(t): which pair determines the rest?</li><li>What does the bathtub curve's middle actually claim?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/2" data-href="02-the-exponential-model.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-the-exponential-model.html">The exponential model</a></h4>
+    <p class="scope">Constant hazard rate and its memoryless consequence proven. MTBF's honest meaning under the exponential. Where the model applies — and the electronics-versus-wearout boundary.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Prove memorylessness for the exponential in one line.</li><li>Why is MTBF alone a misleading purchase criterion?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/3" data-href="03-weibull-analysis.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-weibull-analysis.html">Weibull analysis</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">The Weibull distribution with shape and scale parameters read as physics: β&lt;1 infant mortality, β≈1 random, β&gt;1 wearout. Median-rank plotting of a real failure dataset, censored points handled correctly. The analysis that turns a failure log into a maintenance strategy argument.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C2</b> · <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A seal population fits Weibull β = 0.7: what regime is that, and is scheduled replacement justified?</li><li>β = 3.2, η = 18 months: why plan intervention well before the MTBF, and roughly when?</li><li>Why must suspensions (censored units) enter the fit rather than being discarded?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/4" data-href="04-fitting-and-interpreting-failure-data.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-fitting-and-interpreting-failure-data.html">Fitting and interpreting failure data</a></h4>
+    <p class="scope">Data collection sins: mixed failure modes, missing suspensions, bad timestamps. Goodness of fit with judgment. Confidence bounds that keep conclusions honest.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three data sins that corrupt Weibull fits.</li><li>What do confidence bounds add to a fitted line?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/5" data-href="05-system-reliability-models.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-system-reliability-models.html">System reliability models</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Series, parallel, and k-out-of-n structures derived from probability first principles; reliability block diagrams of real equipment trains. Redundancy's diminishing returns and common-cause caveat. A pumping station modeled end to end as the condensed example.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C3</b> · <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Two pumps in parallel, each R = 0.90, either sufficient: system reliability?</li><li>Three series components at R = 0.95 each: system reliability?</li><li>Why does adding redundancy do nothing against common-cause failures?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/6" data-href="06-availability-and-maintainability-analysis.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-availability-and-maintainability-analysis.html">Availability and maintainability analysis</a></h4>
+    <p class="scope">Repairable-system measures; availability from failure and repair distributions. Maintainability as design property — access, modularity, error-proofing. Where MTTR is really spent, measured.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Availability versus reliability: a machine with poor MTBF but great MTTR — what results?</li><li>Where does maintainability get designed in?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/7" data-href="07-fmea-fmeca.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-fmea-fmeca.html">FMEA/FMECA</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Failure modes and effects analysis built properly: functions, functional failures, modes, effects, severity–occurrence–detection scoring, and the RPN's known abuses. Criticality analysis as the FMECA extension. One equipment FMEA worked as the condensed example — the template interviews ask you to narrate.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C4</b> · <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Two failure modes both score RPN 72 — one from severity 9, one from occurrence 9. Why must they be treated differently?</li><li>For a leaking mechanical seal, give one failure mode, one cause, and one effect — correctly sorted.</li><li>What does a detection score of 9 actually assert about your monitoring capability?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/8" data-href="08-fault-tree-analysis.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-fault-tree-analysis.html">Fault tree analysis</a></h4>
+    <p class="scope">Top events, gates, and minimal cut sets; quantification with basic-event probabilities. FTA versus FMEA — deductive versus inductive. Protective-system failures as the classic application.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Build a fault tree for 'pump fails to start': first two gates?</li><li>What does a minimal cut set expose?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/9" data-href="09-rcm-principles.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-rcm-principles.html">RCM principles</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Reliability-centered maintenance's seven questions and its decision logic: condition-based first, time-based where age matters, run-to-failure where consequences permit, redesign where nothing works. Hidden failures and failure-finding intervals. The framework that disciplines every PM program worth the name.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · C5</b> · <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span>; <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does RCM route hidden failures to failure-finding tasks, and what makes a failure 'hidden'?</li><li>Under what two conditions does RCM legitimately assign run-to-failure?</li><li>Explain how a blanket monthly-PM policy over- and under-maintains the same plant simultaneously.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/10" data-href="10-human-factors-in-reliability.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-human-factors-in-reliability.html">Human factors in reliability</a></h4>
+    <p class="scope">Maintenance-induced failures: the uncomfortable data. Error-provocative designs and procedures. Designing tasks so the night shift succeeds.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do maintenance-induced failures spike after intrusive PMs?</li><li>Name two error-provocative designs you have met.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y3s2/reliability-1/11" data-href="11-reliability-data-project.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-reliability-data-project.html">Reliability data project</a></h4>
+    <p class="scope">From a provided failure log: clean, classify, Weibull-fit, model the system, and recommend strategy changes with quantified backing. The full Reliability I toolkit exercised once. Deliverable formatted as a plant engineering report.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the data project, what did cleaning change about the conclusion?</li><li>Which recommendation survived the confidence bounds?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://nptel.ac.in/courses/127105234" title="NPTEL — Introduction to Reliability Engineering (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Reliability Engineering</a> <span class="srcnote">alternative (enable captions)</span> (nptel.ac.in)</li><li>Engineering Statistics course as prerequisite</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>REL 354</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>4</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/corrosion/index.html">COR 355 · Corrosion &amp; Degradation →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Thermodynamics II — Cycles &amp; Utilities — MechEd</title>
+<meta name="description" content="The plant utilities course wearing a thermodynamics badge: steam cycles, gas turbines, refrigeration, compressed air, and psychrometrics — sized, audi">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/thermo-2/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>THM 202</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="64" r="34"/><line x1="60" y1="64" x2="78" y2="46"/><line x1="34" y1="88" x2="26" y2="96"/><line x1="86" y1="88" x2="94" y2="96"/><circle cx="60" cy="64" r="6" class="amb"/><line x1="40" y1="40" x2="44" y2="46"/><line x1="60" y1="30" x2="60" y2="37"/><line x1="80" y1="40" x2="76" y2="46"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">THM 202 · YEAR 2 · SEMESTER 2</p>
+    <h1>Thermodynamics II — Cycles &amp; Utilities</h1>
+    <p class="sub">The plant utilities course wearing a thermodynamics badge: steam cycles, gas turbines, refrigeration, compressed air, and psychrometrics — sized, audited, and read from the utility deck of a real factory.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">11 of 11 at full depth</span><span class="mchip">11 interactive quizzes</span><span class="mchip">1 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-rankine-cycle.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>The ideal Rankine cycle on T–s coordinates with each device audited by the steady-flow energy equation.</span></div><div><span class="ck">✓</span><span>Reheat and feedwater heating and why plants pay for them.</span></div><div><span class="ck">✓</span><span>Boilers, headers, PRVs, steam traps, and condensate return as one thermodynamic system.</span></div><div><span class="ck">✓</span><span>Brayton cycle with real component efficiencies.</span></div><div><span class="ck">✓</span><span>The refrigeration cycle on P–h coordinates; COP computed from enthalpies.</span></div><div><span class="ck">✓</span><span>Moist-air properties and the psychrometric chart worked fluently.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y2s2/thermo-2/1" data-href="01-rankine-cycle.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-rankine-cycle.html">Rankine cycle</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The ideal Rankine cycle on T–s coordinates with each device audited by the steady-flow energy equation. Efficiency levers: pressure, superheat, condenser vacuum. The backbone of every steam utility system.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Trace steam through the four Rankine devices on a T–s diagram.</li><li>Why does condenser vacuum matter so much to cycle efficiency?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/2" data-href="02-real-steam-cycles-reheat-regeneration-losses.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-real-steam-cycles-reheat-regeneration-losses.html">Real steam cycles: reheat, regeneration, losses</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Reheat and feedwater heating and why plants pay for them. Component irreversibilities located on the h–s diagram. Heat rate as the operator's efficiency language.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does reheat buy besides efficiency?</li><li>Why does feedwater heating raise cycle efficiency at all?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/3" data-href="03-industrial-steam-systems.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-industrial-steam-systems.html">Industrial steam systems</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Boilers, headers, PRVs, steam traps, and condensate return as one thermodynamic system. Steam quality, flash steam, and trap failure modes costed with the SFEE. The utilities lesson KDD-scale food plants and EQUATE-scale process plants both live by.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · B8</b> · NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A trap fails open on a 10 bar header: name the two distinct loss mechanisms it creates.</li><li>Why is hot condensate worth far more returned than its water value alone?</li><li>Explain flash steam: why does condensate partially vaporize crossing into low pressure?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/4" data-href="04-gas-turbines-and-brayton-cycle.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-gas-turbines-and-brayton-cycle.html">Gas turbines and Brayton cycle</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Brayton cycle with real component efficiencies. Pressure ratio trade-offs; intercooling and regeneration in outline. The prime mover behind Gulf power and large compression trains.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does gas-turbine efficiency climb with pressure ratio — and what stops it?</li><li>What fraction-scale of turbine work does the compressor consume, and why does it matter?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/5" data-href="05-vapor-compression-refrigeration.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-vapor-compression-refrigeration.html">Vapor-compression refrigeration</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The refrigeration cycle on P–h coordinates; COP computed from enthalpies. Superheat and subcooling as health indicators. Chillers and cold stores — refrigeration as a food plant's beating heart.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Read a refrigeration cycle on P–h: where are the four processes?</li><li>Why do superheat and subcooling numbers diagnose charge and health?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/6" data-href="06-psychrometrics-and-hvac-loads.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-psychrometrics-and-hvac-loads.html">Psychrometrics and HVAC loads</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Moist-air properties and the psychrometric chart worked fluently. Cooling-and-dehumidification processes traced. Gulf-summer design conditions and what they do to equipment ratings.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What two properties fix a moist-air state on the psychrometric chart?</li><li>Why does Gulf summer humidity punish cooling coils twice?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/7" data-href="07-cooling-towers-and-cooling-water-systems.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-cooling-towers-and-cooling-water-systems.html">Cooling towers and cooling water systems</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Evaporative cooling read straight off the psychrometric chart: range, approach, and why wet-bulb temperature sets the floor. Cycles of concentration, makeup, and blowdown arithmetic. The condenser cooling loop as the plant's other utility — sized, fouled, and chemically managed.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why can a cooling tower cool water below the ambient dry-bulb temperature?</li><li>What does raising cycles of concentration save, and what does it risk?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/8" data-href="08-compressed-air-systems.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-compressed-air-systems.html">Compressed air systems</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Compression work, multistaging, and intercooling derived and priced. Receivers, dryers, and dew point. Leak economics — why compressed air is the plant's most expensive utility per joule.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does multistaging with intercooling approach isothermal compression?</li><li>Price a 1 mm leak conceptually: what makes compressed air so expensive?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/9" data-href="09-combustion-fundamentals.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-combustion-fundamentals.html">Combustion fundamentals</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Stoichiometry, excess air, and flue-gas analysis. Heating values and combustion efficiency from stack measurements. Boiler tuning as applied chemistry.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does excess air do for combustion and against efficiency?</li><li>Which flue-gas measurements reveal a burner running rich?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/10" data-href="10-exergy-analysis-of-utilities.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-exergy-analysis-of-utilities.html">Exergy analysis of utilities</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Second-law accounting applied to boilers, heat exchangers, and throttles. Exergy destruction rankings as an audit's priority list. Where the utility bill actually leaks.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is a throttle an exergy bonfire while being energy-neutral?</li><li>Rank boiler, exchanger, throttle by typical exergy destruction.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/thermo-2/11" data-href="11-utility-system-audit-project.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-utility-system-audit-project.html">Utility system audit project</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">A guided paper audit of a representative factory utility deck: steam, air, chilled water. Balances closed, losses ranked, fixes proposed with payback estimates. The Tier-2 utilities lesson practiced end to end.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Applied Thermodynamics; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — applied thermo</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which three utility systems does a factory audit balance first, and why?</li><li>What makes a payback claim from a utility audit credible?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Applied Thermodynamics (nptel.ac.in)</li><li>Çengel-tradition cycle analysis via MIT OCW 2.005/2.006 materials</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[q-w=h_{out}-h_{in}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_p=h_2-h_1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[q_{in}=h_3-h_2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_t=h_3-h_4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[q_{out}=h_4-h_1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta=\frac{w_t-w_p}{q_{in}}.\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[h_1=192.0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[h_2=195.0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[h_3=3115.0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[h_4=2297.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_p=h_2-h_1=3.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[q_{in}=h_3-h_2=2920.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_t=h_3-h_4=818.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_{net}=815.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta=w_{net}/q_{in}=27.9\%\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta=\frac{(h_3-h_4)-(h_2-h_1)}{h_3-h_2}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta=(w_t-w_p)/q_{in}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[w_{net}=w_t-w_p=815.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta=w_{net}/q_{in}=815.0/2920.0=27.9\%\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[q_{out}=h_4-h_1=2297.0-192.0=2105.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[q_{in}-q_{out}=2920.0-2105.0=815.0\ \text{kJ/kg}=w_{net}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></li><li><span class="ref-eq">\[\eta_t=(h_3-h_4)/(h_3-h_{4s})\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[1\ \text{kWh}=3600\ \text{kJ}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[\text{heat rate}=\frac{3600}{\eta}\ \text{kJ/kWh}.\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[\eta_t=\frac{h_3-h_4}{h_3-h_{4s}}, \qquad \text{heat rate}=\frac{3600}{\eta}\ \text{kJ/kWh}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[=3115.0-2297.0=818.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[=3115.0-2350.0=765.0\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[\eta_t=765.0/818.0=93.5\%\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[\text{heat rate}=3600/0.279\approx12{,}903\ \text{kJ/kWh}.\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></li><li><span class="ref-eq">\[h\approx721\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[h_f\approx419\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[h_{fg}\approx2257\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[x=\frac{h-h_f}{h_{fg}}=\frac{721-419}{2257}\approx0.134 —\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[h\approx2775\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[h\approx420\ \text{kJ/kg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[\dot{Q}_{loss}=\dot{m}(h_{steam}-h_{cond})\approx0.03\times(2775-420)\approx71\ \text{kW} —\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[x=\frac{h-h_f}{h_{fg}} \quad \text{(evaluated at the downstream pressure)}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[h_{in}=h_{out}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[x=(h-h_f)/h_{fg}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[\dot{Q}_{loss}=\dot{m}(h_{steam}-h_{cond})\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[x=(h-h_f)/h_{fg}=(721-419)/2257\approx0.134\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[\dot{Q}_{loss}=\dot{m}(h_{steam}-h_{cond})=0.03\times(2775-420)=70.65\approx71\ \text{kW}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[71\ \text{kW}\times8760\ \text{h}\times3600\ \text{s/h}\div10^6\approx2237\ \text{GJ}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></li><li><span class="ref-eq">\[\eta=1-\frac{1}{r_p^{(\gamma-1)/\gamma}},\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></li><li><span class="ref-eq">\[\gamma\approx1.4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></li><li><span class="ref-eq">\[r_p=8\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></li><li><span class="ref-eq">\[\eta\approx44.8\%\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></li><li><span class="ref-eq">\[r_p=16\]</span><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\eta\)</span><span class="chip">\(\gamma\)</span><span class="chip unit">kPa</span><span class="chip unit">kJ</span><span class="chip unit">kW</span><span class="chip unit">h</span><span class="chip unit">bar</span><span class="chip unit">K</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Entropy and isentropic processes</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>lowering condenser pressure</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>raising boiler pressure</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>raising superheat temperature</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>steady-flow energy equation</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>The steady-flow energy equation</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/01-rankine-cycle.html">L01</a></td></tr><tr><td>Entropy generation and the second law</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>heat rate</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>Isentropic efficiency</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>Regeneration</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>Reheat</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>The ideal Rankine cycle and SFEE</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/02-real-steam-cycles-reheat-regeneration-losses.html">L02</a></td></tr><tr><td>failed closed</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>failed open</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>flash steam</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>isenthalpic</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>one thermodynamic system</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>PRV</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>SFEE and steam properties</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>steam trap</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>Throttling as a constant-enthalpy process</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/03-industrial-steam-systems.html">L03</a></td></tr><tr><td>Brayton cycle</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></td></tr><tr><td>Intercooling</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></td></tr><tr><td>Isentropic efficiency for turbomachinery</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/04-gas-turbines-and-brayton-cycle.html">L04</a></td></tr><tr><td>chiller</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>coefficient of performance</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>cold store</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>compressor</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>condenser</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>evaporator</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>expansion valve</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>Isenthalpic throttling</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>SFEE applied device by device</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>Subcooling</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>Superheat</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/05-vapor-compression-refrigeration.html">L05</a></td></tr><tr><td>dew point</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>humidity ratio</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>psychrometric chart</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>relative humidity</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>Sensible vs. latent heat</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>wet-bulb temperature</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/06-psychrometrics-and-hvac-loads.html">L06</a></td></tr><tr><td>Approach</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>Blowdown</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>Cycles of concentration</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>Fouling</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>makeup</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>Range</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>Wet-bulb temperature and moist air</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/07-cooling-towers-and-cooling-water-systems.html">L07</a></td></tr><tr><td>adiabatic</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>air dryer</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>Isentropic vs. real compression</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>isothermal</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>Multistaging</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>receiver</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/08-compressed-air-systems.html">L08</a></td></tr><tr><td>excess air</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>Heat input and combustion basics</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>Higher heating value</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>lower heating value</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>stack loss method</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>stoichiometric air-fuel ratio</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/09-combustion-fundamentals.html">L09</a></td></tr><tr><td>Exergy</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/10-exergy-analysis-of-utilities.html">L10</a></td></tr><tr><td>Gouy-Stodola theorem</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/10-exergy-analysis-of-utilities.html">L10</a></td></tr><tr><td>heat exchanger</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/10-exergy-analysis-of-utilities.html">L10</a></td></tr><tr><td>throttle</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/10-exergy-analysis-of-utilities.html">L10</a></td></tr><tr><td>simple payback period</td><td><a class="ref-jump" href="../../../curriculum/y2s2/thermo-2/11-utility-system-audit-project.html">L11</a></td></tr></tbody></table></div>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="src"><b>Software used in this course</b> — see the <a href="../../../reference/index.html">Resources</a> page for the full directory grouped by category:</p><ul class="plain small"><li><a href="https://fchartsoftware.com/ees/" target="_blank" rel="noopener"><b>EES (Engineering Equation Solver)</b> (F-Chart Software) — Built-in thermodynamic and transport property tables — the standard tool for cycle and heat-transfer coursework.</a></li><li><a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener"><b>MATLAB</b> (MathWorks) — Free student-priced license at most universities; the standard numerical/matrix computing environment for engineering coursework.</a></li></ul>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>THM 202</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div><div class="frow"><span>Core-60 lessons</span><b>1</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Thermodynamics II is the plant-utilities course wearing a cycles textbook's clothes — the
+sector picks which utility dominates:</p>
+<ul>
+<li><b>Power generation and steam turbines</b> — utilities and performance engineers at turbine
+manufacturers such as <b>Mitsubishi Power</b> size and tune exactly the Rankine cycle, reheat, and
+isentropic-efficiency accounting of Lessons 1-2 — heat rate, not raw efficiency, is the number they
+report daily, exactly as Lesson 2 teaches.</li>
+<li><b>Industrial refrigeration and HVAC</b> — applications engineers at manufacturers such as
+<b>Carrier</b> build the chillers and cooling-coil equipment behind Lesson 5's COP and Lesson 6's
+sensible/latent split — a Gulf-climate cooling load genuinely running close to half latent is exactly
+the design condition their equipment is rated against.</li>
+<li><b>Compressed air systems</b> — applications engineers at manufacturers such as <b>Atlas
+Copco</b> build the multistage, intercooled compressors of Lesson 8 — the isothermal-vs-adiabatic
+work trade-off and leak-cost economics this course derives are the same numbers their own sizing and
+audit tools compute.</li>
+</ul>
+<p><b>Interview angle:</b> the classic probe is an audit scenario — "here is a utility deck with N
+loss sources, rank them and propose a fix with payback" — expecting the same close-the-balance,
+rank-by-common-basis, cost-with-payback method this course's own capstone project practices, not a
+single memorized efficiency number.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/heat-transfer/index.html">HTX 253 · Heat Transfer →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Condition Monitoring &amp; Predictive Maintenance — MechEd</title>
+<meta name="description" content="Reading machines before they fail: PdM strategy on P–F economics, vibration analysis from sensor to spectrum diagnosis, thermography, oil analysis, an">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y4s1/condition-monitoring/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>CDM 403</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="60" x2="106" y2="60" stroke-dasharray="3 7"/><path d="M14 60 C 22 26, 34 26, 42 60 S 60 96, 70 60 S 86 30, 94 52"/><rect x="98" y="44" width="6" height="16" class="amb" stroke="none"/><rect x="88" y="88" width="6" height="14" class="amb" stroke="none"/><rect x="76" y="94" width="6" height="8" class="amb" stroke="none"/><line x1="70" y1="102" x2="106" y2="102"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">CDM 403 · YEAR 4 · SEMESTER 1</p>
+    <h1>Condition Monitoring &amp; Predictive Maintenance</h1>
+    <p class="sub">Reading machines before they fail: PdM strategy on P–F economics, vibration analysis from sensor to spectrum diagnosis, thermography, oil analysis, and ultrasound — all eight Core-60 lessons, the vibration analyst's foundation.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span><span class="mchip">8 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-pdm-strategy-and-p-f-economics.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-early versus run-to-wreck.</span></div><div><span class="ck">✓</span><span>Amplitude, frequency, and phase as the analyst's three currencies; displacement, velocity, and acceleration with their frequency emphases and unit conversions.</span></div><div><span class="ck">✓</span><span>Accelerometer mounting and its frequency ceiling; Fmax, resolution, averaging, and windowing chosen deliberately.</span></div><div><span class="ck">✓</span><span>The first diagnostic trio: 1× dominant radial for unbalance; 2× and axial content for misalignment; harmonic families and raised floors for looseness.</span></div><div><span class="ck">✓</span><span>Rolling-element defect frequencies computed from geometry; the enveloping/demodulation technique and why early bearing damage hides from ordinary spectra.</span></div><div><span class="ck">✓</span><span>Radiation physics from the heat-transfer course made practical: emissivity, reflection, and why shiny metal lies to the camera.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y4s1/condition-monitoring/1" data-href="01-pdm-strategy-and-p-f-economics.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-pdm-strategy-and-p-f-economics.html">PdM strategy and P–F economics</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Condition monitoring justified from the P–F curve: detection windows, inspection intervals at a fraction of P–F, and the money mathematics of caught-early versus run-to-wreck. Technology-to-failure-mode mapping as the program design act. The strategy lesson that keeps PdM from becoming gadget collecting.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D1</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A failure mode has a 4-month P–F interval: make the economic case for a monthly route.</li><li>Match technologies to failure modes: bearing spall, misalignment, hot electrical joint, degraded oil.</li><li>Why is owning an analyzer not the same as having a PdM program? Name the missing pieces.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/2" data-href="02-vibration-fundamentals-for-analysts.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-vibration-fundamentals-for-analysts.html">Vibration fundamentals for analysts</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Amplitude, frequency, and phase as the analyst's three currencies; displacement, velocity, and acceleration with their frequency emphases and unit conversions. Overall levels and ISO-style zone thinking versus spectral analysis. The vibration course's theory recast into measurement language.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D2</b> · NPTEL: Mechanical Vibrations; ISO 18436-aligned content; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute — vibration</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PL5P9-IPjYzZ76w1y6uNAB59SFRDUpVNuS" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Convert 4 mm/s RMS at 100 Hz to a displacement amplitude — order of magnitude.</li><li>Why velocity for general severity, acceleration for bearings and gears, displacement for low-speed machines?</li><li>What does a commissioning baseline buy that absolute ISO-zone limits cannot?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/3" data-href="03-measurement-and-the-fft.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-measurement-and-the-fft.html">Measurement and the FFT</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Accelerometer mounting and its frequency ceiling; Fmax, resolution, averaging, and windowing chosen deliberately. The FFT's gifts and traps — leakage, aliasing already met in Electronics. A measurement setup specified for a motor-pump train as the condensed example.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D3</b> · NPTEL: Mechanical Vibrations; signal content from ELX 205; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute — vibration</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PL5P9-IPjYzZ76w1y6uNAB59SFRDUpVNuS" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>With Fmax 1,000 Hz and 1,600 lines, what is the spectral resolution per line?</li><li>Why does a loose magnet mount silently cap your usable Fmax?</li><li>What does a Hanning window trade away, and what does it buy?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/4" data-href="04-spectrum-analysis-i-unbalance-misalignment-looseness.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-spectrum-analysis-i-unbalance-misalignment-looseness.html">Spectrum analysis I: unbalance, misalignment, looseness</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">The first diagnostic trio: 1× dominant radial for unbalance; 2× and axial content for misalignment; harmonic families and raised floors for looseness. Phase analysis as the disambiguator. Case spectra read line by line, the way the certification practicals do.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D4</b> · ISO 18436-aligned content; NPTEL: Mechanical Vibrations; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute — vibration</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PL5P9-IPjYzZ76w1y6uNAB59SFRDUpVNuS" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Dominant 1× radial, little axial, stable phase: unbalance or misalignment — and what confirms it?</li><li>A harmonic forest 1×–10× over a raised floor: which fault family, and what mechanical check follows?</li><li>Why is phase measured before any field balancing attempt?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/5" data-href="05-spectrum-analysis-ii-bearings-and-gears.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-spectrum-analysis-ii-bearings-and-gears.html">Spectrum analysis II: bearings and gears</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Rolling-element defect frequencies computed from geometry; the enveloping/demodulation technique and why early bearing damage hides from ordinary spectra. Gear mesh frequencies and sidebands as the gearbox's confession. Severity staging from first detection to removal decision.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D5</b> · ISO 18436-aligned content; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute — vibration</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PL5P9-IPjYzZ76w1y6uNAB59SFRDUpVNuS" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>BPFO factor 3.58 at 1,480 rpm: what frequency line do you hunt?</li><li>Why does early bearing damage appear in enveloped spectra long before ordinary velocity spectra?</li><li>In a gearbox spectrum, sideband spacing around GMF identifies what?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/6" data-href="06-infrared-thermography.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-infrared-thermography.html">Infrared thermography</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Radiation physics from the heat-transfer course made practical: emissivity, reflection, and why shiny metal lies to the camera. Electrical and mechanical survey practice; delta-T severity conventions. The condensed example: an MCC survey with three findings graded and reported.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D6</b> · <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 12 foundations; ISO 18436-aligned practice; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A shiny bus bar with emissivity ~0.2 reads 45 °C: why might it be far hotter, and what fixes the reading?</li><li>Why must electrical thermography surveys run under meaningful load?</li><li>One phase of a three-phase connection runs 25 K hotter than its siblings: severity logic?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/7" data-href="07-oil-analysis-and-wear-debris.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-oil-analysis-and-wear-debris.html">Oil analysis and wear debris</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">The three questions of oil analysis — fluid health, contamination, machine wear — with the tests behind each: viscosity, TAN, particle counts, elements, ferrography in outline. Sampling technique as the program's real quality gate. Reading a gearbox report against its history.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D7</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a>; tribology content from MNT 306; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Viscosity up 20% and TAN doubled: what has happened to the oil, and what typically drove it?</li><li>Iron and chromium rising together in a gearbox sample: what does the pairing suggest?</li><li>Why does the sampling point decide whether an oil-analysis trend means anything?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/8" data-href="08-ultrasound-mca-and-building-routes.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-ultrasound-mca-and-building-routes.html">Ultrasound, MCA, and building routes</a><span class="badge queued">Core 60 · in production</span></h4>
+    <p class="scope">Airborne and structure-borne ultrasound for leaks, bearings, and electrical faults; motor current analysis in outline for rotor-bar and load diagnostics. Building PdM routes: what, where, how often, and who closes the loop. The program-assembly lesson that turns four technologies into one system.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · D8</b> · <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What makes a 40 kHz ultrasound sensor find leaks your ears cannot?</li><li>In motor current analysis, broken rotor bars appear as sidebands spaced by what quantity?</li><li>Name three consistency disciplines that keep a monthly route's data comparable.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/9" data-href="09-diagnostics-case-marathon.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-diagnostics-case-marathon.html">Diagnostics case marathon</a></h4>
+    <p class="scope">A dozen anonymized cases across the four technologies read cold, then debriefed. Differential diagnosis practice: competing explanations ranked. The pattern library a working analyst carries.</p>
+    <p class="src"><b>Taught from</b> — Course synthesis; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the case marathon, which two cases shared symptoms but not causes?</li><li>What does differential diagnosis discipline prevent?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/10" data-href="10-pdm-data-management-and-trending.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-pdm-data-management-and-trending.html">PdM data management and trending</a></h4>
+    <p class="scope">Baselines, alarm limits, and trend curation; false-alarm discipline. Integrating PdM findings into the CMMS work flow. The administrative half that makes the technical half matter.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP framework</a>; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do alarm limits need curation as machines age?</li><li>What closes the loop between a PdM finding and the CMMS?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y4s1/condition-monitoring/11" data-href="11-pdm-program-design-project.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-pdm-program-design-project.html">PdM program design project</a></h4>
+    <p class="scope">For a given equipment list: criticality-based technology assignment, routes, intervals, and KPI set, costed and staffed. The deliverable a reliability engineer presents to justify the program. Course capstone.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a>; video: <a href="https://www.mobiusinstitute.com/youtube-videos/" title="Mobius Institute — vibration analysis and condition monitoring videos (ISO 18436 training body)" target="_blank" rel="noopener">Mobius Institute</a> <a class="watch" href="https://www.youtube.com/watch?v=DUznmZvSQOU" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which criticality tier got online monitoring in your design, and why?</li><li>How did you cost-justify the route frequencies?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li>NPTEL: Mechanical Vibrations (prerequisite); ISO 18436-aligned practice content</li><li><a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP framework</a></li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>CDM 403</b></div><div class="frow"><span>Placement</span><b>Year 4 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>8</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y4s1/robotics/index.html">ROB 353 · Industrial Robotics →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

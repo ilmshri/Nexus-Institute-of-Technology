@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>P&amp;ID reading — Instrumentation &amp; Process Control — MechEd</title>
+<meta name="description" content="ISA-style symbols and tag grammar decoded — the identification letters, loop numbers, and line conventions that make a P&amp;ID legible. Equipment, instru">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y3s2/instrumentation/2">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y3s2/instrumentation/02-p-id-reading.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">INS 352 · Instrumentation &amp; Process Control</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-the-process-control-loop-end-to-end.html" class="ol" data-key="y3s2/instrumentation/1"><span class="tick"></span><span>01 · The process control loop end to end</span></a><a href="02-p-id-reading.html" class="ol cur" data-key="y3s2/instrumentation/2"><span class="tick"></span><span>02 · P&amp;ID reading</span></a><a href="03-control-valves.html" class="ol" data-key="y3s2/instrumentation/3"><span class="tick"></span><span>03 · Control valves</span></a><a href="04-transmitter-engineering-in-the-field.html" class="ol" data-key="y3s2/instrumentation/4"><span class="tick"></span><span>04 · Transmitter engineering in the field</span></a><a href="05-loop-tuning-in-practice.html" class="ol" data-key="y3s2/instrumentation/5"><span class="tick"></span><span>05 · Loop tuning in practice</span></a><a href="06-multiloop-structures.html" class="ol" data-key="y3s2/instrumentation/6"><span class="tick"></span><span>06 · Multiloop structures</span></a><a href="07-dcs-and-control-room-architecture.html" class="ol" data-key="y3s2/instrumentation/7"><span class="tick"></span><span>07 · DCS and control-room architecture</span></a><a href="08-safety-instrumented-systems.html" class="ol" data-key="y3s2/instrumentation/8"><span class="tick"></span><span>08 · Safety instrumented systems</span></a><a href="09-analyzers-and-special-measurements.html" class="ol" data-key="y3s2/instrumentation/9"><span class="tick"></span><span>09 · Analyzers and special measurements</span></a><a href="10-instrument-maintenance-and-reliability.html" class="ol" data-key="y3s2/instrumentation/10"><span class="tick"></span><span>10 · Instrument maintenance and reliability</span></a><a href="11-loop-package-project.html" class="ol" data-key="y3s2/instrumentation/11"><span class="tick"></span><span>11 · Loop package project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">INS 352</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">INS 352 · Lesson 02 of 11 · Year 3 · Semester 2</p>
+  <h1>P&amp;ID reading</h1>
+  <p class="sub">ISA-style symbols and tag grammar decoded — the identification letters, loop numbers, and line conventions that make a P&amp;ID legible. Equipment, instruments, and interlocks traced through a real sheet. The drawing a process plant hands you on day one, read without flinching.</p>
+  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Industrial Instrumentation</b></span><span class="mchip">Assessment <b>3 checkpoint questions</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y3s2/instrumentation/2">Mark as complete</button>
+  <span class="badge amber">CORE 60 · G3</span>
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Industrial Instrumentation; Process Control (nptel.ac.in)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Decode the tag FIC-201: what does each letter say, and what does the number point to?</li><li>How does a P&amp;ID tell you a control valve's failure position, and why does it matter in a trip?</li><li>What distinguishes instrument signal lines from process lines on the drawing?</li></ul></div><p class="queued-note">This is a Core 60 lesson — its full study guide is in production and will replace this page's skeleton.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
+<div class="measure">
+  
+  <p>This lesson belongs to <b>INS 352 · Instrumentation &amp; Process Control</b>
+  (Year 3 · Semester 2). It stands on the course's primary texts:</p>
+  <ul class="plain"><li><a href="https://nptel.ac.in/courses/108105064" title="NPTEL — Industrial Instrumentation (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Instrumentation</a> <span class="srcnote">alternative (enable captions)</span>; Process Control (nptel.ac.in)</li></ul>
+  <p class="small">Course context: The control loop as plumbing and paperwork: P&amp;ID literacy, transmitters and control valves, loop tuning in the field, and the safety instrumented systems that sit above regulation — EQUATE-style process-plant territory.</p>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
+<div class="measure">
+  <p>The five-problem interactive quiz for this lesson is in production. Until
+  it lands, use the lesson's checkpoint questions as practice prompts —
+  attempt them from the cited source before reading on:</p>
+  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
+  <ul><li>Decode the tag FIC-201: what does each letter say, and what does the number point to?</li><li>How does a P&amp;ID tell you a control valve's failure position, and why does it matter in a trip?</li><li>What distinguishes instrument signal lines from process lines on the drawing?</li></ul></div>
+</div><div class="applied"><span class="tag">Applied case</span><p>Industry anchor for this lesson: <b>EQUATE</b>. The full applied case is written when this lesson reaches full depth; the <a href="../../../career/index.html">Career Paths page</a> maps what EQUATE runs and which roles touch this topic.</p></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL21115369W" target="_blank" rel="noopener">Instrumentation and Control Systems — W. Bolton</a></li><li><a href="https://openlibrary.org/works/OL2717669W" target="_blank" rel="noopener">Modern Control Engineering — Katsuhiko Ogata</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Process Control; Industrial Instrumentation</p>
+  <ul class="plain small"><li><a href="https://nptel.ac.in/courses/108105064" title="NPTEL — Industrial Instrumentation (IIT Kharagpur)" target="_blank" rel="noopener">NPTEL: Industrial Instrumentation</a> <span class="srcnote">alternative (enable captions)</span>; Process Control (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-the-process-control-loop-end-to-end.html">← 01 · The process control loop end to end</a><a href="index.html">كل الدروس · INS 352</a><a href="03-control-valves.html">03 · Control valves →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/plc-2/index.html">PLC 303 · PLC II &amp; Industrial Networks →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

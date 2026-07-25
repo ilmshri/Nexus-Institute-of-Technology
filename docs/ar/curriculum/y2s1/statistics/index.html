@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Engineering Statistics — MechEd</title>
+<meta name="description" content="Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, mea">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/statistics/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>STS 206</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="14" x2="18" y2="100"/><line x1="18" y1="100" x2="106" y2="100"/><rect x="28" y="70" width="12" height="30" class="amb" stroke="none"/><rect x="46" y="46" width="12" height="54" class="amb" stroke="none"/><rect x="64" y="34" width="12" height="66" class="amb" stroke="none"/><rect x="82" y="58" width="12" height="42" class="amb" stroke="none"/><path d="M26 76 C 46 30, 74 22, 100 62"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">STS 206 · YEAR 2 · SEMESTER 1</p>
+    <h1>Engineering Statistics</h1>
+    <p class="sub">Data with judgment: probability, distributions, estimation, hypothesis tests, and regression — the quiet prerequisite under SPC, Weibull analysis, measurement uncertainty, and every reliability claim you will ever audit.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">11 of 11 at full depth</span><span class="mchip">11 interactive quizzes</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-describing-data.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Location, spread, and shape; histograms and box plots that don't lie.</span></div><div><span class="ck">✓</span><span>Sample spaces, independence, and conditional probability.</span></div><div><span class="ck">✓</span><span>Binomial and Poisson models with their assumptions audited.</span></div><div><span class="ck">✓</span><span>The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure.</span></div><div><span class="ck">✓</span><span>Why averages behave better than individuals.</span></div><div><span class="ck">✓</span><span>Point estimates and confidence intervals for means and proportions.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y2s1/statistics/1" data-href="01-describing-data.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-describing-data.html">Describing data</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Location, spread, and shape; histograms and box plots that don't lie. Outliers treated as evidence, not embarrassment. Plant data pathologies previewed.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Mean versus median on skewed repair times: which tells the truer story?</li><li>What does a box plot show that a bar of averages hides?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/2" data-href="02-probability-rules.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-probability-rules.html">Probability rules</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Bayes in one line: why do false alarms dominate rare-event detection?</li><li>Independence: what does assuming it wrongly do to risk estimates?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/3" data-href="03-discrete-distributions.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-discrete-distributions.html">Discrete distributions</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Binomial and Poisson models with their assumptions audited. Defect counts and rare-event arrivals. When the Poisson approximation earns its keep.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>When is Poisson the right model for failure counts?</li><li>What assumptions does a binomial defect model make?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/4" data-href="04-continuous-distributions.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-continuous-distributions.html">Continuous distributions</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The normal distribution and its z-arithmetic; lognormal for repair times; exponential for memoryless failure. Choosing a model from data shape and physics. The exponential's constant hazard flagged for Reliability I.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why are repair times often lognormal?</li><li>What does the exponential's memoryless property claim — and when is it false?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/5" data-href="05-sampling-distributions-and-the-clt.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-sampling-distributions-and-the-clt.html">Sampling distributions and the CLT</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Why averages behave better than individuals. Standard error and the central limit theorem demonstrated numerically. The statistical footing under control charts.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do averages of n samples scatter less by √n?</li><li>What does the CLT let you assume about sample means?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/6" data-href="06-estimation-and-confidence-intervals.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-estimation-and-confidence-intervals.html">Estimation and confidence intervals</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Point estimates and confidence intervals for means and proportions. Interpretation without the classic misreadings. Sample-size arithmetic before the test campaign, not after.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Interpret a 95% confidence interval without the classic misreading.</li><li>Why compute sample size before the test campaign?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/7" data-href="07-hypothesis-testing.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-hypothesis-testing.html">Hypothesis testing</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Null logic, p-values, and both error types with plant-decision stakes. One- and two-sample t-tests. 'Statistically significant' versus 'operationally meaningful' — a distinction with budget consequences.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What do Type I and Type II errors cost in a plant decision?</li><li>Statistically significant but operationally meaningless: give an example.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/8" data-href="08-regression.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-regression.html">Regression</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Least squares fitting with residual diagnostics. Interpretation of slope, intercept, and R² without overclaiming. Degradation trends and calibration curves as the working examples.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What pattern in residuals invalidates a straight-line fit?</li><li>Why does R² alone never justify a model?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/9" data-href="09-design-of-experiments-first-contact.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-design-of-experiments-first-contact.html">Design of experiments first contact</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What is an interaction, and why does one-factor-at-a-time miss it?</li><li>Read main effects from a 2² experiment table.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/10" data-href="10-reliability-statistics-preview.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-reliability-statistics-preview.html">Reliability statistics preview</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Censored data — the defining feature of failure records. Hazard and survival functions introduced gently. The bridge lesson into Weibull analysis in Reliability I.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What is censored data, and why do failure logs teem with it?</li><li>Hazard versus failure rate: what does each function describe?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/statistics/11" data-href="11-statistical-malpractice-and-honest-reporting.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-statistical-malpractice-and-honest-reporting.html">Statistical malpractice and honest reporting</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">P-hacking, survivorship bias, and cherry-picked baselines — recognized and named. Uncertainty statements as professional obligation. How to present data to management without lying by chart.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name two chart crimes that flatter a KPI.</li><li>What must an honest uncertainty statement accompany?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[\bar x=\frac{1}{n}\sum x_i\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[40/8=5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[(4+5)/2=4.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[32/8=4\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[\sigma=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[32/7\approx4.57\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[s\approx2.14\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[\bar x=\frac1n\sum x_i\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[s^2=\frac{\sum(x-\bar x)^2}{n-1}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[s=\sqrt{s^2}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[=40/8=5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[=(4+5)/2=4.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[=4\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[\bar x=5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[s^2=\frac{32}{n-1}=\frac{32}{7}\approx4.57\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[s=\sqrt{4.57}\approx2.14\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[n=8\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[\sigma^2=32/8=4\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[\sigma^2=4,\ \sigma=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></li><li><span class="ref-eq">\[3/6=0.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\cup B)=P(A)+P(B)-P(A\cap B)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A)=0.5,\ P(B)=0.4,\ P(A\cap B)=0.2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\cup B)=0.5+0.4-0.2=0.7\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\cap B)=P(A)P(B)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[0.5\times0.5=0.25\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\cap B)=0.2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(B)=0.4\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=0.2/0.4=0.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=\dfrac{P(B\mid A)P(A)}{P(B)}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(\text{not }A)=1-P(A)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=P(A)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A)=0.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P=0.5\times0.5=0.25\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{0.2}{0.4}=0.5\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></li><li><span class="ref-eq">\[P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[\mu=np\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[\sigma^2=np(1-p)\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[n=10\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[p=0.2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[np=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[10\times0.2\times0.8=1.6\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[\sqrt{1.6}\approx1.26\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[P(X=0)=0.8^{10}\approx0.107\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[P(X=k)=\dfrac{\lambda^k e^{-\lambda}}{k!}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li><li><span class="ref-eq">\[\lambda=3\]</span><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\sigma\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\lambda\)</span><span class="chip">\(\alpha\)</span><span class="chip">\(\beta\)</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Bessel's correction</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>coefficient of variation</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>descriptive</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>inferential</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>interquartile range</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>mean</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>median</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>mode</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>Ordering data</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>population</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>range</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>sample</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>Squares and roots</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>standard deviation</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>Summation notation</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>variance</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/01-describing-data.html">L01</a></td></tr><tr><td>addition rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>Bayes' theorem</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>combine</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>Complementary</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>conditional probability</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>Counting outcomes</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>distributions</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>Fractions and ratios</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>independent</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>law of total probability</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>multiplication rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>probability</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>Sets</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/02-probability-rules.html">L02</a></td></tr><tr><td>binomial</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>Combinations</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>discrete</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>Factorials and \(e\)</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>geometric</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>Poisson</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>probability distribution</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>Probability rules</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>random variable</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/03-discrete-distributions.html">L03</a></td></tr><tr><td>Area as probability</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>continuous</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>empirical (68–95–99.7) rule</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>exponential</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>lognormal</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>Mean and standard deviation</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>normal</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>probability density function</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>Reading a table</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>standard normal</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>uniform</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>Weibull</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>z-score</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/04-continuous-distributions.html">L04</a></td></tr><tr><td>central limit theorem</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>finite-population correction</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>proportion</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>sampling distribution</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>standard error</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>The normal distribution</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>z-scores</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/05-sampling-distributions-and-the-clt.html">L05</a></td></tr><tr><td>confidence interval</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>degrees of freedom</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>margin of error</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>plan a sample size</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>point estimate</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>Standard error &amp; the CLT</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>Student's t-distribution</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/06-estimation-and-confidence-intervals.html">L06</a></td></tr><tr><td>alternative</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>Confidence intervals</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>hypothesis test</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>null hypothesis</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>p-value</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>power</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>significance level</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>Standard error &amp; CLT</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>test statistic</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>Type I error</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>Type II error</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>z-scores and tails</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/07-hypothesis-testing.html">L07</a></td></tr><tr><td>coefficient of determination</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/08-regression.html">L08</a></td></tr><tr><td>Coordinate geometry</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/08-regression.html">L08</a></td></tr><tr><td>correlation coefficient</td><td><a class="ref-jump" href="../../../curriculum/y2s1/statistics/08-regression.html">L08</a></td></tr></tbody></table></div>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="src"><b>Software used in this course</b> — see the <a href="../../../reference/index.html">Resources</a> page for the full directory grouped by category:</p><ul class="plain small"><li><a href="https://www.minitab.com/en-us/" target="_blank" rel="noopener"><b>Minitab</b> (Minitab) — The standard statistical software in industrial quality and Six Sigma programs.</a></li><li><a href="https://www.python.org/" target="_blank" rel="noopener"><b>Python (NumPy / SciPy / Jupyter)</b> (Python Software Foundation) — Free and open source; NumPy/SciPy/Matplotlib cover the same numerical ground as MATLAB at zero license cost.</a></li></ul>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>STS 206</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

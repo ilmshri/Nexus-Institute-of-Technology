@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>GD&amp;T essentials — Engineering Drawing &amp; CAD — MechEd</title>
+<meta name="description" content="Feature control frames, datums, flatness, position, runout. What GD&amp;T buys over coordinate tolerances. Runout callouts as the language of rotating-equ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/drawing-cad/7">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/drawing-cad/07-gd-t-essentials.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">DRW 102 · Engineering Drawing &amp; CAD</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-drawings-rule-the-plant.html" class="ol" data-key="y1s1/drawing-cad/1"><span class="tick"></span><span>01 · Why drawings rule the plant</span></a><a href="02-projection-theory-and-orthographic-views.html" class="ol" data-key="y1s1/drawing-cad/2"><span class="tick"></span><span>02 · Projection theory and orthographic views</span></a><a href="03-isometric-and-pictorial-views.html" class="ol" data-key="y1s1/drawing-cad/3"><span class="tick"></span><span>03 · Isometric and pictorial views</span></a><a href="04-sections-and-conventions.html" class="ol" data-key="y1s1/drawing-cad/4"><span class="tick"></span><span>04 · Sections and conventions</span></a><a href="05-dimensioning-practice.html" class="ol" data-key="y1s1/drawing-cad/5"><span class="tick"></span><span>05 · Dimensioning practice</span></a><a href="06-tolerances-fits-and-limits.html" class="ol" data-key="y1s1/drawing-cad/6"><span class="tick"></span><span>06 · Tolerances, fits, and limits</span></a><a href="07-gd-t-essentials.html" class="ol cur" data-key="y1s1/drawing-cad/7"><span class="tick"></span><span>07 · GD&amp;T essentials</span></a><a href="08-fasteners-welds-and-surface-symbols.html" class="ol" data-key="y1s1/drawing-cad/8"><span class="tick"></span><span>08 · Fasteners, welds, and surface symbols</span></a><a href="09-parametric-cad-parts.html" class="ol" data-key="y1s1/drawing-cad/9"><span class="tick"></span><span>09 · Parametric CAD: parts</span></a><a href="10-parametric-cad-assemblies-and-drawings.html" class="ol" data-key="y1s1/drawing-cad/10"><span class="tick"></span><span>10 · Parametric CAD: assemblies and drawings</span></a><a href="11-reading-plant-drawings.html" class="ol" data-key="y1s1/drawing-cad/11"><span class="tick"></span><span>11 · Reading plant drawings</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">DRW 102</a> /
+<span>Lesson 07 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">DRW 102 · Lesson 07 of 11 · Year 1 · Semester 1</p>
+  <h1>GD&amp;T essentials</h1>
+  <p class="sub">Feature control frames, datums, flatness, position, runout. What GD&amp;T buys over coordinate tolerances. Runout callouts as the language of rotating-equipment repair standards.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW / NPTEL: Engineering Drawing and Com</b></span><span class="mchip">Assessment <b>worked examples + checkpoint questions</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/drawing-cad/7">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/G7wnGeR_69k" title="Understanding GD&amp;T" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Understanding GD&amp;T <span class="src">The Efficient Engineer</span></figcaption></figure></div><div class="vh-bar"><span class="n">Understanding GD&amp;T</span><span class="c">THE EFFICIENT ENGINEER</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does total runout control that circular runout does not?</li><li>Why does GD&amp;T's datum system beat coordinate tolerancing for function?</li></ul></div><div class="measure">
+<h3>01 · Why coordinates aren't enough</h3>
+<p>Plus-minus tolerances on coordinates control a hole's X and Y separately — but function
+cares about the hole's <em>position as a whole</em>, its axis attitude, the flatness of the
+face it lives on. Geometric Dimensioning & Tolerancing (GD&T) tolerances geometry directly:
+form (flatness, straightness), orientation (perpendicularity, parallelism), location
+(position, concentricity-family), and runout. Each control is a feature-control frame: symbol,
+tolerance zone, and the datums it's measured from.</p>
+<h3>02 · Datums — the measurement contract</h3>
+<p>A datum reference frame (A|B|C) declares the exact sequence of surfaces the part sits on
+during measurement: primary A arrests three degrees of freedom, secondary B two, tertiary C
+one. The same part, gauged from different datums, yields different verdicts — so the drawing
+fixes the frame once, and design, manufacture, and inspection all argue inside it. Datums are
+chosen from function: the faces that seat, the bores that locate.</p>
+<h3>03 · Runout — the rotating machine's own control</h3>
+<p><em>Circular runout</em> limits the wobble of each circular element as the part turns on
+its datum axis — one dial reading per section. <em>Total runout</em> sweeps the whole surface
+axially and radially at once, controlling taper and coning that circular runout cannot see.
+For couplings, sleeves, and seal faces, runout tolerances are the drawing's way of promising
+your dial indicator a quiet needle — and Lesson 6's fits plus today's runout are the complete
+language of a shaft drawing.</p>
+<p><strong>Closing.</strong> GD&T tolerances what function feels — form, orientation,
+location, runout — from declared datums. Read the frame, find the datums, and the drawing
+tells you exactly how the inspector will set the part up.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Limits and fits</b> (Lesson 6) — GD&T rides on toleranced features.</li>
+<li><b>Datum thinking</b> (Lesson 5) — formalized here into A|B|C frames.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Feature-control frame</b> — the boxed callout: symbol | zone | datums.</li>
+<li><b>Datum reference frame</b> — the seating sequence that arrests the part for measurement.</li>
+<li><b>Position tolerance</b> — a zone (usually ⌀) the feature's axis must live in.</li>
+<li><b>MMC</b> — maximum material condition; enables bonus tolerance and functional gauging.</li>
+<li><b>Circular vs total runout</b> — per-section wobble vs whole-surface sweep.</li>
+</ul>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure">
+<h4>Worked example 1 — position beats coordinates</h4>
+<p><b>Problem.</b> A hole is located X = 50±0.1, Y = 50±0.1. <b>Find:</b> the worst-case
+radial position error, and the equivalent GD&T callout that controls it directly.</p>
+<p><b>Solution.</b> (1) Worst case: both coordinates off by 0.1 → radial error
+\( \sqrt{0.1^2 + 0.1^2} = 0.141 \) mm; the coordinate scheme actually permits a square zone
+whose corners stick out 41% farther than its sides.
+(2) GD&T equivalent: basic dimensions 50, 50 with position ⌀0.28 (A|B|C) — a round zone of
+the same worst-case radius, uniform in all directions.
+(3) Bonus: add Ⓜ and the zone grows as the hole departs MMC — functional gauging becomes
+possible.</p>
+<p><b>Answer:</b> ±0.1 coordinates permit 0.141 radial error; position ⌀0.28 controls the
+same function honestly. <b>Sanity check:</b> the diagonal of a square vs its side — the 41%
+is pure Pythagoras.</p>
+<h4>Worked example 2 — circular passes, total fails</h4>
+<p><b>Problem.</b> A seal sleeve shows circular runout 0.02 at every measured section, yet
+total runout measures 0.09. <b>Find:</b> what geometry explains this, and which control the
+seal cares about.</p>
+<p><b>Solution.</b> (1) Each section is individually round about the axis (0.02) but the
+sections don't line up: the surface is <em>tapered or coned</em> — radius drifts along the
+length. (2) Total runout sweeps axially and accumulates that drift (0.09).
+(3) A lip seal riding that sleeve sees a changing interference along its width — total runout
+is the functional control for seal tracks and coupling rims.</p>
+<p><b>Answer:</b> taper/coning; specify total runout for seal surfaces.
+<b>Sanity check:</b> circular runout at many sections plus a straightness check ≈ total
+runout — the 0.07 gap is the taper the single-section dial could never see.</p>
+</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the coupling that "passed" and still shook.</b> You arrive at a pump train
+that vibrates at 1× despite laser alignment certificates. The coupling hub's rim runout was
+checked — circular, mid-face, 0.02, pass. Swept across the full rim face, total runout comes
+in at 0.11: the hub face is coned from a previous overheat, and the alignment laser has been
+faithfully aligning to a lie. The hub is refaced; the 1× drops by two-thirds. Your close-out
+adds one line to the site's alignment procedure: <em>face runout means total, swept, per the
+drawing's GD&T — not one ring at one radius</em>.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.102\\ \\mathrm{lb}\\)", "\\(2.268\\ \\mathrm{lb}\\)", "\\(110.2\\ \\mathrm{lb}\\)", "\\(11.02\\ \\mathrm{lb}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(5 \\times 2.205 = 11.02\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(13.23\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(27.22\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1323\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(132.3\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(60 \times 2.205 = 132.3\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.798\\ \\mathrm{lbf}\\)", "\\(35.59\\ \\mathrm{lbf}\\)", "\\(17.98\\ \\mathrm{lbf}\\)", "\\(0.1798\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(8 \\times 0.2248 = 1.798\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(22.48\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(444.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(224.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.248\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(100 \times 0.2248 = 22.48\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL18611004W" target="_blank" rel="noopener">Technical Drawing with Engineering Graphics — Giesecke et al.</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>
+  <ul class="plain small"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="06-tolerances-fits-and-limits.html">← 06 · Tolerances, fits, and limits</a><a href="index.html">كل الدروس · DRW 102</a><a href="08-fasteners-welds-and-surface-symbols.html">08 · Fasteners, welds, and surface symbols →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/statics/index.html">STA 103 · Engineering Statics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

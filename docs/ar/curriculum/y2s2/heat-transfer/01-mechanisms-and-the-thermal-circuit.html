@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Mechanisms and the thermal circuit — Heat Transfer — MechEd</title>
+<meta name="description" content="Conduction, convection, and radiation rate equations side by side. Thermal resistance networks for walls and cylinders. Insulation economics and the c">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/1">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/01-mechanisms-and-the-thermal-circuit.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol cur" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 01 of 11 · Year 2 · Semester 2</p>
+  <h1>Mechanisms and the thermal circuit</h1>
+  <p class="sub">Conduction, convection, and radiation rate equations side by side. Thermal resistance networks for walls and cylinders. Insulation economics and the critical-radius surprise.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Series thermal resistances: which layer dominates and why?</li><li>What does the critical insulation radius warn about thin pipes?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Four thermal resistances in series between outdoor and indoor air: an outdoor convection film, a brick layer, an insulation layer, and an indoor convection film, drawn as an electrical-circuit-style chain of resistor symbols carrying the same heat flux through every link"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">A wall is a resistor chain: same q’’ through every layer in series</text><path d="M 55.0,168.0 L 68.2,168.0 L 78.7,177.0 L 89.1,159.0 L 99.6,177.0 L 110.0,159.0 L 120.5,177.0 L 130.9,159.0 L 141.4,177.0 L 151.8,168.0 L 165.0,168.0" stroke="#3a6ea5" stroke-width="2" fill="none"/><text x="110.0" y="144" text-anchor="middle" fill="#3a6ea5" font-size="10">R₁=0.040</text><path d="M 165.0,168.0 L 178.2,168.0 L 188.6,177.0 L 199.1,159.0 L 209.6,177.0 L 220.0,159.0 L 230.4,177.0 L 240.9,159.0 L 251.4,177.0 L 261.8,168.0 L 275.0,168.0" stroke="#c2820f" stroke-width="2" fill="none"/><text x="220.0" y="144" text-anchor="middle" fill="#c2820f" font-size="10">R₂=0.278</text><path d="M 275.0,168.0 L 288.2,168.0 L 298.6,177.0 L 309.1,159.0 L 319.6,177.0 L 330.0,159.0 L 340.4,177.0 L 350.9,159.0 L 361.4,177.0 L 371.8,168.0 L 385.0,168.0" stroke="#c2820f" stroke-width="2" fill="none"/><text x="330.0" y="144" text-anchor="middle" fill="#c2820f" font-size="10">R₃=1.250</text><path d="M 385.0,168.0 L 398.2,168.0 L 408.6,177.0 L 419.1,159.0 L 429.6,177.0 L 440.0,159.0 L 450.4,177.0 L 460.9,159.0 L 471.4,177.0 L 481.8,168.0 L 495.0,168.0" stroke="#3a6ea5" stroke-width="2" fill="none"/><text x="440.0" y="144" text-anchor="middle" fill="#3a6ea5" font-size="10">R₄=0.125</text><circle cx="55" cy="168" r="4" fill="#16202e"/><text x="55" y="190" text-anchor="middle" fill="#16202e" font-size="9.5" font-weight="700">T∞,out = 45.0°C</text><text x="55" y="204" text-anchor="middle" fill="#16202e" font-size="8.5">outdoor air</text><circle cx="165" cy="168" r="4" fill="#16202e"/><text x="165" y="190" text-anchor="middle" fill="#16202e" font-size="9.5" font-weight="700">T = 44.5°C</text><text x="165" y="204" text-anchor="middle" fill="#16202e" font-size="8.5">outer surface</text><circle cx="275" cy="168" r="4" fill="#16202e"/><text x="275" y="190" text-anchor="middle" fill="#16202e" font-size="9.5" font-weight="700">T = 41.1°C</text><text x="275" y="204" text-anchor="middle" fill="#16202e" font-size="8.5">brick–insulation</text><circle cx="385" cy="168" r="4" fill="#16202e"/><text x="385" y="190" text-anchor="middle" fill="#16202e" font-size="9.5" font-weight="700">T = 25.6°C</text><text x="385" y="204" text-anchor="middle" fill="#16202e" font-size="8.5">insulation–inner</text><circle cx="495" cy="168" r="4" fill="#16202e"/><text x="495" y="190" text-anchor="middle" fill="#16202e" font-size="9.5" font-weight="700">T∞,in = 24.0°C</text><text x="495" y="204" text-anchor="middle" fill="#16202e" font-size="8.5">indoor air</text><text x="16" y="66" fill="#16202e" font-size="10.5">outdoor 45.0°C → indoor 24.0°C, same q’’ = 12.41 W/m² at every step</text><text x="16" y="278" fill="#16202e" font-size="11">Insulation (R₃) alone carries 74% of the wall’s total resistance</text></svg><figcaption>Every conduction and convection layer a heat-transfer engineer stacks between two temperatures is one more resistor in this same series chain — the same bookkeeping that will carry straight through to fins, exchangers, and radiation networks later in this course.</figcaption></figure>
+
+<h3>01 · Three rate laws, one job</h3>
+<p>Heat moves by exactly three physical mechanisms, and this course is organized around learning
+each one's rate law well enough to design against it. <b>Conduction</b>, Fourier's law,
+\(q=-kA\frac{dT}{dx}\): a rate set by a material property \(k\) (thermal conductivity), the
+area it acts through, and the steepness of the temperature gradient it opposes. <b>Convection</b>,
+Newton's law of cooling, \(q=hA(T_s-T_\infty)\): a rate set by a convection coefficient \(h\)
+that is not a material property at all — it is a lumped stand-in for an entire boundary-layer
+flow field that Lessons 4–6 exist to unpack. <b>Radiation</b>, \(q=\varepsilon\sigma
+A(T_s^4-T_{surr}^4)\): the only mode that needs no material medium whatsoever, and the only one
+that is fundamentally nonlinear in temperature rather than linear in a temperature difference.</p>
+
+<h3>02 · The thermal resistance network</h3>
+<p>Despite their different physics, all three rate laws can be rearranged into the same shape —
+a driving temperature difference divided by a resistance: \(q=\Delta T/R\). For convection,
+\(R_{conv}=1/(hA)\), read directly off Newton's law. For conduction through a plane wall,
+\(R_{wall}=L/(kA)\). For conduction through a cylindrical shell (a pipe wall, a wrapped cable),
+\(R_{cyl}=\ln(r_2/r_1)/(2\pi k L)\) — a ratio of radii rather than a thickness, because the
+area available for conduction grows with radius, so a fixed radial increment does not carry a
+fixed resistance increment the way a fixed-thickness plane-wall increment does. Layers encountered
+in series carry the same heat flow through each one, so their resistances simply add:
+\(R_{tot}=\sum_i R_i\), exactly like resistors in a DC circuit, with temperature standing in
+for voltage and heat rate for current.</p>
+
+<h3>03 · Insulation economics, and the critical-radius surprise</h3>
+<p>Adding insulation to a <i>plane</i> wall always adds resistance and always reduces heat loss
+— area is fixed, so more thickness is pure gain. Wrapping insulation around a <i>small-diameter
+cylinder</i> — a wire, a small instrument line — does two things at once: it adds conduction
+resistance (wanted) but it also adds surface area for the outer convection film (unwanted, since
+\(R_{conv}=1/(hA)\) falls as area rises). The total resistance as a function of wrap radius
+\(r\) has a genuine extremum at the <b>critical radius</b> \(r_{cr}=k_{ins}/h\): for a bare
+radius smaller than \(r_{cr}\), adding insulation up to \(r_{cr}\) can <i>increase</i> total
+heat loss before it starts decreasing it. A windier site (higher \(h\)) shrinks \(r_{cr}\) and
+shrinks the zone this trap can occur in; a bare conductor already thicker than \(r_{cr}\) never
+sees it — insulation helps it immediately, as expected.</p>
+
+<h3>04 · A worked resistance chain, and a worked critical radius</h3>
+<p>A building envelope carries four layers in series, per square metre of wall: an outdoor film at
+\(h_{out}=25\ \text{W/m}^2\text{K}\), a 20 mm brick layer at
+\(k=0.72\ \text{W/mK}\), a 50 mm insulation layer at
+\(k=0.04\ \text{W/mK}\), and an indoor film at
+\(h_{in}=8\ \text{W/m}^2\text{K}\), between a 45 °C outdoor design
+day and a 24 °C indoor setpoint. The four resistances are
+\(R_1=0.040\), \(R_2=0.278\), \(R_3=1.250\), \(R_4=0.125\
+\ \text{m}^2\text{K/W}\), summing to \(R_{tot}=1.693\ \text{m}^2\text{K/W}\)
+and a flux \(q''=\Delta T/R_{tot}=12.41\ \text{W/m}^2\) — the same 12.41 W/m²
+through every layer, stepping the temperature down 45 → 44.50 → 41.06 →
+25.55 → 24.0 °C, the last figure closing the loop back to the indoor setpoint
+exactly. The insulation alone carries 74% of the total — the layer worth
+upgrading first. Separately: a cable insulated with \(k_{ins}=0.15\
+\ \text{W/mK}\) material in \(h=15\ \text{W/m}^2\text{K}\) still air has
+\(r_{cr}=k_{ins}/h=10\ \text{mm}\) — smaller than many real bare-cable
+radii, so a thin wrap on such a cable can genuinely raise its heat loss before enough insulation
+is added to lower it again.</p>
+<div class="keybox"><span class="tag">Key relation — series thermal resistance</span>
+<p>\[ R_{tot}=\sum_i R_i, \qquad q=\frac{\Delta T_{overall}}{R_{tot}} \]</p>
+<p>Every later lesson's exchangers, fins, and radiation networks are this same sum, extended.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The steady-flow energy equation and first-law balances</b>
+(Thermodynamics I–II) — those courses established how much energy moves; this course
+establishes how fast, and through which physical mechanism.</li></ul>
+<h4>Toolkit — rate laws and resistances</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Fourier's law</td><td>\( q=-kA\,dT/dx \)</td><td>Conduction rate.</td></tr>
+<tr><td>Newton's law of cooling</td><td>\( q=hA(T_s-T_\infty) \)</td><td>Convection rate.</td></tr>
+<tr><td>Stefan–Boltzmann (gray surface)</td><td>\( q=\varepsilon\sigma A(T_s^4-T_{surr}^4) \)</td><td>Radiation rate.</td></tr>
+<tr><td>Conduction resistance, plane wall</td><td>\( R=L/(kA) \)</td><td>Series network term.</td></tr>
+<tr><td>Conduction resistance, cylinder</td><td>\( R=\ln(r_2/r_1)/(2\pi k L) \)</td><td>Pipes, wrapped cables.</td></tr>
+<tr><td>Convection resistance</td><td>\( R=1/(hA) \)</td><td>Series network term.</td></tr>
+<tr><td>Critical radius of insulation</td><td>\( r_{cr}=k_{ins}/h \)</td><td>Small-cylinder insulation check.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The building-envelope resistance chain</b></p><p><b>Problem.</b> An exterior wall carries, in series per m²: an outdoor film \(h_{out}=25\ \text{W/m}^2\text{K}\), a 20 mm brick layer (\(k=0.72\ \text{W/mK}\)), a 50 mm insulation layer (\(k=0.04\ \text{W/mK}\)), and an indoor film \(h_{in}=8\ \text{W/m}^2\text{K}\), between 45°C outdoors and 24°C indoors. Find each resistance, the total, and the heat flux.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(R_1=1/25=0.040\), \(R_2=0.2/0.72=0.278\), \(R_3=0.05/0.04=1.250\), \(R_4=1/8=0.125\ \text{m}^2\text{K/W}\). \(R_{tot}=1.693\ \text{m}^2\text{K/W}\). \(q''=(45-24)/1.693=12.41\ \text{W/m}^2\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Doubling the insulation thickness</b></p><p><b>Problem.</b> For the same wall, the insulation is upgraded from 50 mm to 100 mm (same \(k=0.04\ \text{W/mK}\), all else unchanged). Find the new total resistance and heat flux, and the percent reduction in q''.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(R_3'=0.1/0.04=2.500\ \text{m}^2\text{K/W}\), replacing \(R_3=1.250\). \(R_{tot}'=0.040+0.278+2.500+0.125=2.943\ \text{m}^2\text{K/W}\). \(q''=(45-24)/2.943=7.14\ \text{W/m}^2\), down from 12.41 — a 42% reduction from doubling one layer's thickness.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>A second critical-radius check</b></p><p><b>Problem.</b> A different cable insulation has \(k_{ins}=0.20\ \text{W/mK}\), installed where the surrounding air convection coefficient is \(h=12\ \text{W/m}^2\text{K}\). Find the critical radius, and state what it means for a bare conductor of radius 12 mm.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(r_{cr}=k_{ins}/h=0.2/12.0=16.7\ \text{mm}\). Since the bare radius (12 mm) already exceeds \(r_{cr}\) (16.7 mm), this conductor is past the extremum — any insulation added immediately reduces heat loss; there is no backfire zone left to cross.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Which of the three rate laws in 1 is the only one that can transport heat with no material medium present at all?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Conduction</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Convection</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>Radiation</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>All three require a medium</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Radiation is carried by electromagnetic waves and crosses a vacuum; conduction and convection both require a material medium.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Fourier's law, Newton's law of cooling, and the Stefan–Boltzmann law all rearrange into which common structural form?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>A driving temperature difference divided by a thermal resistance</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A pressure difference divided by a flow resistance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A mass flow rate times a specific heat</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>An entropy generation term times an ambient temperature</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Every rate law in 2 becomes \(q=\Delta T/R\) once rearranged — the thermal-circuit analogy this whole course leans on.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Why is a cylindrical shell's conduction resistance written as \(\ln(r_2/r_1)/(2\pi k L)\) rather than a plane-wall-style thickness over area?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Because cylindrical conductivity is direction-dependent</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Because the area available for conduction grows with radius, so a fixed radial increment does not carry a fixed resistance increment</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Because heat cannot conduct radially, only axially</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Because pipes are always thinner than plane walls</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Area grows as \(2\pi r L\), so the resistance contributed by each additional radial increment shrinks as r grows — hence the logarithmic form.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Doubling the convection coefficient \(h\) at a surface, area held fixed, does what to \(R_{conv}=1/(hA)\)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Doubles it</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Halves it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Leaves it unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Squares it</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(R_{conv}\) is inversely proportional to \(h\); doubling \(h\) halves the resistance.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A windier installation site (higher external \(h\)) does what to the critical radius \(r_{cr}=k_{ins}/h\)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Increases it, widening the insulation-backfire zone</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Decreases it, shrinking the insulation-backfire zone</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Leaves it unchanged — \(r_{cr}\) depends only on the insulation</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Makes the critical-radius effect disappear entirely regardless of bare radius</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(r_{cr}\) is inversely proportional to \(h\); a higher \(h\) shrinks \(r_{cr}\) and with it the range of bare radii vulnerable to the effect.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A bare conductor's radius is already larger than \(r_{cr}\). What happens when insulation is added?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Heat loss rises before it falls, exactly as for a thinner conductor</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Heat loss falls immediately — this conductor is already past the extremum</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Heat loss is unaffected by any amount of insulation</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The critical-radius concept does not apply to conductors, only to plane walls</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The backfire zone only exists for bare radii below \(r_{cr}\); above it, \(R_{tot}\) is already increasing with added radius, so insulation helps immediately.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>In 4's worked wall, roughly what share of the total resistance does the insulation layer alone carry?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>About 25%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>About 50%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>About 74%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Exactly 100% — the films and brick contribute nothing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(R_3/R_{tot}=1.250/1.693=74\%\) — by far the largest single share, which is why insulation is the first place a real audit looks.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A new layer is added in series to an existing resistance network, with perfect contact and no new convection surface created. What happens to \(R_{tot}\) and \(q\)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(R_{tot}\) increases, \(q\) decreases</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(R_{tot}\) decreases, \(q\) increases</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Neither changes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(R_{tot}\) increases, \(q\) also increases</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Series resistances simply add; one more strictly-positive term always raises \(R_{tot}\), and for a fixed overall \(\Delta T\) that always lowers \(q=\Delta T/R_{tot}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>A facilities engineer auditing a building envelope's heat gain checks which single layer
+dominates the resistance chain before recommending any upgrade — per 4's own numbers, a
+well-built wall's insulation layer alone can carry roughly three-quarters of the total resistance,
+so an audit that finds thin or missing insulation has found the highest-leverage fix, while
+re-specifying the indoor air film or the brick thickness would be a low-return distraction.</p>
+<p>A technician insulating a small-diameter instrument-tracing line or control cable checks the
+critical radius before assuming that any added wrap helps — per 3, a modest layer on a thin
+enough conductor can raise, not lower, its heat loss until the wrap passes \(r_{cr}\), a
+genuinely counter-intuitive result worth a two-line check before insulating small-diameter lines
+as a matter of routine practice.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1143\\ \\mathrm{in}\\)", "\\(1.772\\ \\mathrm{in}\\)", "\\(17.72\\ \\mathrm{in}\\)", "\\(0.1772\\ \\mathrm{in}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(45 \\times 0.03937 = 1.772\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(76.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(0.1181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.01181\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(3 \times 0.03937 = 0.1181\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{W}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.8046\\ \\mathrm{hp}\\)", "\\(4.474e+04\\ \\mathrm{hp}\\)", "\\(0.08046\\ \\mathrm{hp}\\)", "\\(0.008046\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{W} = 0.001341\\ \\mathrm{hp}\\): \\(60 \\times 0.001341 = 0.08046\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{W}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.06705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3729\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.006705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.0006705\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{W} = 0.001341\ \mathrm{hp}\): \(5 \times 0.001341 = 0.006705\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 1–3; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">كل الدروس · HTX 253</a><a href="02-steady-conduction-and-fins.html">02 · Steady conduction and fins →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

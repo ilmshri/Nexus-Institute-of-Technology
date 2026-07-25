@@ -507,7 +507,7 @@
       '',
       '**What should change for future releases:**', (val('revChange') || '—'),
       '',
-      '—' + (name ? ' ' + name + ' ·' : '') + ' submitted from the Nexus prototype feedback page'
+      '—' + (name ? ' ' + name + ' ·' : '') + ' submitted from the MechEd prototype feedback page'
     ];
     return { title: 'Review: ' + rating + '/5 — prototype feedback', body: lines.join('\n') };
   }

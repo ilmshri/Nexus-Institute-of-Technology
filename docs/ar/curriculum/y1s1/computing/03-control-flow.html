@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Control flow — Engineering Computing — MechEd</title>
+<meta name="description" content="Conditionals and loops for case logic and iteration. Guard clauses for invalid inputs. Translating a calculation procedure into control flow.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/computing/3">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/computing/03-control-flow.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">CMP 106 · Engineering Computing</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-engineers-script.html" class="ol" data-key="y1s1/computing/1"><span class="tick"></span><span>01 · Why engineers script</span></a><a href="02-variables-types-and-expressions.html" class="ol" data-key="y1s1/computing/2"><span class="tick"></span><span>02 · Variables, types, and expressions</span></a><a href="03-control-flow.html" class="ol cur" data-key="y1s1/computing/3"><span class="tick"></span><span>03 · Control flow</span></a><a href="04-functions.html" class="ol" data-key="y1s1/computing/4"><span class="tick"></span><span>04 · Functions</span></a><a href="05-testing-and-debugging-engineering-code.html" class="ol" data-key="y1s1/computing/5"><span class="tick"></span><span>05 · Testing and debugging engineering code</span></a><a href="06-lists-dictionaries-and-files.html" class="ol" data-key="y1s1/computing/6"><span class="tick"></span><span>06 · Lists, dictionaries, and files</span></a><a href="07-arrays-and-numerical-work.html" class="ol" data-key="y1s1/computing/7"><span class="tick"></span><span>07 · Arrays and numerical work</span></a><a href="08-plotting-engineering-data.html" class="ol" data-key="y1s1/computing/8"><span class="tick"></span><span>08 · Plotting engineering data</span></a><a href="09-curve-fitting-and-interpolation.html" class="ol" data-key="y1s1/computing/9"><span class="tick"></span><span>09 · Curve fitting and interpolation</span></a><a href="10-small-simulations.html" class="ol" data-key="y1s1/computing/10"><span class="tick"></span><span>10 · Small simulations</span></a><a href="11-project-a-maintenance-data-mini-analysis.html" class="ol" data-key="y1s1/computing/11"><span class="tick"></span><span>11 · Project: a maintenance data mini-analysis</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">CMP 106</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">CMP 106 · Lesson 03 of 11 · Year 1 · Semester 1</p>
+  <h1>Control flow</h1>
+  <p class="sub">Conditionals and loops for case logic and iteration. Guard clauses for invalid inputs. Translating a calculation procedure into control flow.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 6.0001 Introduction to Computer Scie</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 6.0001 Introduction to Computer Science and Programming in Python (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/0jljZRnHwOI" title="MIT 6.0001 Lec 2 — Branching and Iteration" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MIT 6.0001 Lec 2 — Branching and Iteration <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">MIT 6.0001 Lec 2 — Branching and Iteration</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Turn 'if the reading exceeds limit, flag it' into control flow — what guards the invalid-input case?</li><li>When is a while loop honest and a for loop not?</li></ul></div><div class="measure">
+<h3>01 · Decisions: if, elif, else</h3>
+<p>Programs earn their keep when behavior depends on data, and the instrument is the
+conditional. An <code>if</code> tests a boolean expression; <code>elif</code> chains
+further tests in order; <code>else</code> catches the remainder. Order matters and is a
+design decision: an alarm classifier tests the most severe threshold first, so a reading of
+95 °C reports "trip" rather than the also-true "warning". Comparisons
+(\( \texttt{< <= == >= >} \)) and the boolean connectives (\( \texttt{and, or, not} \))
+compose the tests; indentation — four spaces — is not decoration but syntax, defining
+exactly which lines each branch owns.</p>
+<h3>02 · Repetition: for and while</h3>
+<p>The <code>for</code> loop walks a known collection — every reading in a list, every
+line in a file, every integer in <code>range(n)</code> (which yields 0 through
+\( n-1 \)) — and is the workhorse of data processing: initialize an accumulator, add
+each item, report. The <code>while</code> loop repeats as long as a condition holds and
+serves the open-ended questions: keep compounding the filter's pressure drop until it
+crosses the alarm line, and report how many weeks that took. Choose by the question's
+shape — known collection, <code>for</code>; unknown horizon, <code>while</code> — and give
+every <code>while</code> a guaranteed exit, because a condition that never turns false
+runs forever.</p>
+<h3>03 · Guard clauses: refusing bad input early</h3>
+<p>Real calculations meet impossible inputs — negative flows, zero efficiencies, text where
+numbers belong — and the professional pattern rejects them at the door:
+<code>if eta <= 0: raise ValueError("efficiency must be positive")</code>. The guard
+clause converts a silent wrong answer into a loud, named failure at the exact line where
+the assumption broke. The mathematics course called this domain discipline — functions
+have domains, and \( \eta = 0 \) is not in this one; the guard writes the domain into
+the code.</p>
+<h3>04 · The control-flow working method</h3>
+<p>Translate procedures the way you would explain them aloud. Write the decision table
+first — conditions in severity order, outcomes named — then transcribe it as an
+if/elif/else chain and test EVERY branch once, including the else. For loops, name the
+accumulator for what it accumulates (<code>total_kwh</code>, not <code>s</code>),
+initialize it visibly, and hand-trace the first two iterations on paper before trusting a
+thousand — the two-minute trace that catches off-by-one and wrong-order errors while they
+are still cheap. Guard first, compute second, report third: scripts organized in that
+order read as procedures, fail loudly at their borders, and hold up when the data turns
+hostile, which production data always eventually does.</p>
+<p>Two loop hygienes complete the method. Keep the loop body honest about what it touches —
+a loop that both accumulates a total AND mutates the list it walks is two jobs tangled, and
+tangled jobs breed the subtle bugs; split them. And when a while-loop's exit depends on a
+computed quantity, add a hard iteration cap as a guard — <code>if weeks > 1000: raise
+RuntimeError(...)</code> — so a modeling mistake produces a named failure in milliseconds
+instead of a silent forever. Loops are where scripts spend their lives; discipline there
+is discipline everywhere.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Booleans and comparisons</b> (Lesson 2) — conditions are boolean expressions.</li>
+<li><b>The exponential model</b> (Math I) — today's while-loop example compounds it.</li>
+<li><b>Named variables</b> (Lesson 1) — accumulators with honest names.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>if / elif / else</td><td>first true branch wins</td><td>Decision chains; order encodes priority.</td></tr>
+<tr><td>Comparison operators</td><td>\( \texttt{< <= == >= > !=} \)</td><td>The tests; == compares, = assigns — never confuse them.</td></tr>
+<tr><td>for loop</td><td>\( \texttt{for x in collection:} \)</td><td>Known collections: readings, lines, range(n) = 0…n−1.</td></tr>
+<tr><td>while loop</td><td>\( \texttt{while condition:} \)</td><td>Unknown horizons — with a guaranteed exit.</td></tr>
+<tr><td>Accumulator pattern</td><td>init, add per item, report</td><td>Totals, counts, maxima across any dataset.</td></tr>
+<tr><td>Guard clause</td><td>\( \texttt{if bad: raise ValueError(...)} \)</td><td>Reject impossible inputs loudly, at the border.</td></tr>
+<tr><td>break</td><td>exit the loop now</td><td>Early exit when the answer is found.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Trace the alarm classifier</b></p>
+<p><b>Problem.</b> Trace this classifier for readings of 85, then 96 (°C):</p>
+<pre><code>if t >= 95:
+    level = "TRIP"
+elif t >= 80:
+    level = "ALARM"
+elif t >= 70:
+    level = "WARNING"
+else:
+    level = "NORMAL"</code></pre></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) t = 85: the 95-test fails, the 80-test passes → <code>"ALARM"</code>; the 70-test is never reached.
+(2) t = 96: the FIRST test passes → <code>"TRIP"</code>, chain exits immediately.</p>
+<p><b>Answer:</b> 85 → ALARM; 96 → TRIP.
+<b>Sanity check:</b> reverse the order — test 70 first — and a 96 °C reading would report "WARNING", since 96 ≥ 70 is also true and the first true branch wins. Severity-descending order is not style; it is the logic. This is why the working method writes the decision table before the code.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The accumulator, traced</b></p>
+<p><b>Problem.</b> Trace the total across the loop:</p>
+<pre><code>readings = [4, 7, 2, 9]
+total = 0
+for r in readings:
+    total = total + r</code></pre></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) total starts 0.
+(2) After each pass: 0+4=4; 4+7=11; 11+2=13; 13+9=22.
+(3) Final: <code>total = 22</code>.</p>
+<p><b>Answer:</b> 22.
+<b>Sanity check:</b> hand-tracing the first two iterations (4, then 11) is the working method's cheap audit — if those match expectation, the pattern is sound for four items or four million. Forgetting the initialization line, the classic slip, would crash on the first pass rather than silently corrupt: Python's favor to beginners.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>How many weeks to the alarm?</b></p>
+<p><b>Problem.</b> A filter's ΔP starts at 0.30 bar and compounds 5% weekly; the alarm is 0.60 bar. Write the while loop that counts the weeks, and state its result.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>dp = 0.30; weeks = 0</code>
+<code>while dp &lt; 0.60:</code>
+<code>    weeks += 1</code>
+<code>    dp = 0.30 * 1.05 ** weeks</code>
+(2) Week 14: \( 0.30 \times 1.05^{14} = 0.594 \) — still under. Week 15: \( 0.624 \) — crossed.
+(3) Result: <code>weeks = 15</code>.</p>
+<p><b>Answer:</b> 15 weeks.
+<b>Sanity check:</b> the mathematics course's logarithm gave 14.2 weeks for the exact crossing — the loop answers the OPERATIONAL question (first whole week past the line), hence 15. Same physics, two honest answers to two subtly different questions; knowing which one you asked is the engineering.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p><code>range(5)</code> iterates over:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0, 1, 2, 3, 4</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1, 2, 3, 4, 5</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0, 1, 2, 3, 4, 5</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>5 copies of nothing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>range(n) starts at 0 and stops BEFORE n: five values, 0 through 4. The zero-start convention aligns with list indexing (Lesson 6) so <code>range(len(data))</code> walks every index — and the off-by-one instincts imported from 1-counting are the classic loop bug this fact retires. When 1 through 5 is genuinely wanted: <code>range(1, 6)</code>.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The difference between <code>=</code> and <code>==</code> is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Assignment versus comparison</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>They are interchangeable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>== is for numbers only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>= compares, == assigns</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p><code>x = 5</code> stores; <code>x == 5</code> asks. Python refuses plain assignment inside an if-condition, converting the classic typo into a visible syntax error — a kindness not all languages extend. Reading them aloud differently ('gets' versus 'equals') keeps the two straight in review, where the eye alone glides past a single missing character.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A guard clause like <code>if eta <= 0: raise ValueError(...)</code> exists to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Turn an impossible input into a loud, located failure instead of a silent wrong answer</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Speed up the calculation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Handle only user typos</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Avoid writing an else branch</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Fed η = 0, the unguarded script divides by zero somewhere downstream — or worse, a negative η produces a plausible-looking negative power that travels into a report. The guard names the broken assumption at the exact border where it entered. It is the code form of a domain statement, and auditors read guards as the script's declared operating envelope.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>After <code>total = 0</code> and <code>for i in range(3): total += i</code>, total equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>3</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>6</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The loop adds 0, 1, 2 — sum 3. Answering 6 adds 1+2+3, the off-by-one imported from 1-counting; range's zero-start (previous question) decides it. The two-iteration hand trace — total: 0, then 1, then 3 — settles such questions in seconds, which is why the working method makes it a reflex before any loop is trusted at scale.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Inside a loop scanning readings for the first value above a limit, the statement that exits immediately upon finding it is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>break</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>stop</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>exit the interpreter</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>else</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p><code>break</code> leaves the loop at once — the found-it exit that saves scanning the rest. (<code>continue</code>, its sibling, skips to the next iteration instead.) There is no <code>stop</code>; killing the interpreter to end a loop is surgery with a hammer. Early exits also document intent: a reader sees the loop is a SEARCH, not a full sweep.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.248\\ \\mathrm{lbf}\\)", "\\(444.8\\ \\mathrm{lbf}\\)", "\\(224.8\\ \\mathrm{lbf}\\)", "\\(22.48\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(100 \\times 0.2248 = 22.48\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1798\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(35.59\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(8 \times 0.2248 = 1.798\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(21.76\\ \\mathrm{psi}\\)", "\\(1034\\ \\mathrm{psi}\\)", "\\(217.6\\ \\mathrm{psi}\\)", "\\(2.176\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(150 \\times 0.145 = 21.76\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(1.74\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(82.74\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.4\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.174\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(12 \times 0.145 = 1.74\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL17575152W" target="_blank" rel="noopener">Introduction to Computation and Programming Using Python — John V. Guttag (MIT Press)</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-variables-types-and-expressions.html">← 02 · Variables, types, and expressions</a><a href="index.html">كل الدروس · CMP 106</a><a href="04-functions.html">04 · Functions →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/math-2/index.html">MTH 151 · Engineering Mathematics II →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

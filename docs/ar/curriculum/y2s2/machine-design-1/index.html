@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Machine Design I — MechEd</title>
+<meta name="description" content="From stress analysis to sized hardware: static and fatigue design methodology, shafts, keys, fasteners, and welded joints — the course where strength ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/index.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>MDN 251</span></nav>
+
+<div class="nx-hero">
+  <div class="bg"><svg viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke-width="5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="30"/><g><line x1="60" y1="14" x2="60" y2="30"/><line x1="60" y1="90" x2="60" y2="106"/><line x1="14" y1="60" x2="30" y2="60"/><line x1="90" y1="60" x2="106" y2="60"/><line x1="28" y1="28" x2="39" y2="39"/><line x1="81" y1="81" x2="92" y2="92"/><line x1="92" y1="28" x2="81" y2="39"/><line x1="39" y1="81" x2="28" y2="92"/></g><circle cx="60" cy="60" r="10" class="amb"/></svg></div>
+  <div class="txt">
+    <p class="eyebrow">MDN 251 · YEAR 2 · SEMESTER 2</p>
+    <h1>Machine Design I</h1>
+    <p class="sub">From stress analysis to sized hardware: static and fatigue design methodology, shafts, keys, fasteners, and welded joints — the course where strength of materials starts buying parts.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">0 of 11 at full depth</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-design-methodology-and-factors-of-safety.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Load cases, failure modes, and design margins chosen with reasons attached.</span></div><div><span class="ck">✓</span><span>Von Mises and Tresca applied to component sizing.</span></div><div><span class="ck">✓</span><span>Endurance limits and the modification factors — surface, size, load, temperature, reliability.</span></div><div><span class="ck">✓</span><span>Goodman and Gerber treatments of mean stress.</span></div><div><span class="ck">✓</span><span>Combined bending and torsion under fatigue; deflection and critical-speed checks.</span></div><div><span class="ck">✓</span><span>Key sizing by shear and bearing.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y2s2/machine-design-1/1" data-href="01-design-methodology-and-factors-of-safety.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-design-methodology-and-factors-of-safety.html">Design methodology and factors of safety</a></h4>
+    <p class="scope">Load cases, failure modes, and design margins chosen with reasons attached. Codes and standards as encoded experience. The difference between analysis and design stated plainly.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is a factor of safety a statement about ignorance, not strength?</li><li>Analysis versus design: what reverses between them?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/2" data-href="02-static-failure-design.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-static-failure-design.html">Static failure design</a></h4>
+    <p class="scope">Von Mises and Tresca applied to component sizing. Stress concentrations included honestly. A bracket designed from load to drawing callout.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Apply von Mises to a bracket's worst point: what inputs do you need?</li><li>Why include Kt in static design of brittle parts but often not ductile ones?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/3" data-href="03-fatigue-design-i-the-s-n-method.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-fatigue-design-i-the-s-n-method.html">Fatigue design I: the S–N method</a></h4>
+    <p class="scope">Endurance limits and the modification factors — surface, size, load, temperature, reliability. Where the knockdowns come from and why they stack. Infinite-life design for steel done properly.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design; <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 8</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name three endurance-limit knockdown factors and what each punishes.</li><li>Why does a ground surface out-live a machined one in fatigue?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/4" data-href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html">Fatigue design II: mean stress and cumulative damage</a></h4>
+    <p class="scope">Goodman and Gerber treatments of mean stress. Miner's rule with its known dishonesty acknowledged. Fluctuating-load components assessed end to end.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does the Goodman line trade between mean and alternating stress?</li><li>State Miner's rule and its known dishonesty.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/5" data-href="05-shaft-design.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-shaft-design.html">Shaft design</a></h4>
+    <p class="scope">Combined bending and torsion under fatigue; deflection and critical-speed checks. Shoulders, keyways, and their concentration costs. A pump shaft sized and detailed — the pathway's signature component.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Which loads combine on a pump shaft, and which failure mode usually governs?</li><li>Why do shoulders and keyways decide a shaft's fatigue life?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/6" data-href="06-keys-splines-and-retaining-hardware.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-keys-splines-and-retaining-hardware.html">Keys, splines, and retaining hardware</a></h4>
+    <p class="scope">Key sizing by shear and bearing. Splines and interference fits as torque paths. Retaining rings and their groove-stress fine print.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Size a key: which two failure checks apply?</li><li>When does an interference fit beat a key for torque?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/7" data-href="07-threaded-fasteners-and-bolted-joints.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-threaded-fasteners-and-bolted-joints.html">Threaded fasteners and bolted joints</a></h4>
+    <p class="scope">Bolt mechanics: preload, joint stiffness, and the load-sharing triangle. Torque–preload relations and their scatter. Gasketed-joint implications for every flange a plant owns.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does preload protect a bolt from fatigue?</li><li>What fraction of external load does a stiff joint's bolt actually see?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/8" data-href="08-welded-joint-design.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-welded-joint-design.html">Welded joint design</a></h4>
+    <p class="scope">Fillet weld sizing under direct and torsional shear. Weld groups treated like bolt groups. Fatigue of welds — why the toe is where cracks start.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why do fillet welds fail at the throat, and what area do you size?</li><li>Why do weld toes start fatigue cracks?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/9" data-href="09-springs.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-springs.html">Springs</a></h4>
+    <p class="scope">Helical spring stress and rate derived; solid height and buckling checks. Fatigue of springs under fluctuating load. Valve and relief springs as working examples.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What stress does a helical spring's wire actually carry?</li><li>What does solid height check against?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/10" data-href="10-power-screws.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-power-screws.html">Power screws</a></h4>
+    <p class="scope">Torque to raise and lower; efficiency and self-locking conditions derived from the friction analysis. Acme threads and collar friction. Jacks, actuators, and valve stems quantified.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Derive when a power screw self-locks.</li><li>Why is a screw jack's efficiency so poor — and why is that useful?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s2/machine-design-1/11" data-href="11-design-project-a-driven-shaft-assembly.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-design-project-a-driven-shaft-assembly.html">Design project: a driven shaft assembly</a></h4>
+    <p class="scope">Integrative project: size the shaft, keys, bolts, and welds of a belt-driven assembly against static and fatigue criteria. Calculations documented for review. The pattern of defensible design work.</p>
+    <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+    <details><summary>أسئلة التحقق</summary><ul><li>In the shaft-assembly project, which element failed first on paper, and what did you change?</li><li>What must design documentation let a reviewer do?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+<p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MDN 251</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>

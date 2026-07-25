@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Dislocations and strengthening — Materials Science I — MechEd</title>
+<meta name="description" content="Slip as dislocation motion. Strengthening by grain refinement, solid solution, strain hardening, and precipitates — all as obstacles to dislocations. ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/materials-1/9">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MECHED</span>
+        <small>التعليم الهندسي عبر الإنترنت</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a><a href="../../../curriculum/year-2/summary.html">ملخص السنة 2</a><a href="../../../curriculum/year-3/summary.html">ملخص السنة 3</a><a href="../../../curriculum/year-4/summary.html">ملخص السنة 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/materials-1/09-dislocations-and-strengthening.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح حاليًا باللغة الإنجليزية. الترجمة العربية للدروس تصل تباعًا مع اكتمال المحتوى — وواجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة اليوم.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MAT 104 · Materials Science I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-materials-fail-the-plant.html" class="ol" data-key="y1s1/materials-1/1"><span class="tick"></span><span>01 · Why materials fail the plant</span></a><a href="02-atomic-bonding.html" class="ol" data-key="y1s1/materials-1/2"><span class="tick"></span><span>02 · Atomic bonding</span></a><a href="03-crystal-structures.html" class="ol" data-key="y1s1/materials-1/3"><span class="tick"></span><span>03 · Crystal structures</span></a><a href="04-crystallographic-directions-and-planes.html" class="ol" data-key="y1s1/materials-1/4"><span class="tick"></span><span>04 · Crystallographic directions and planes</span></a><a href="05-defects-in-solids.html" class="ol" data-key="y1s1/materials-1/5"><span class="tick"></span><span>05 · Defects in solids</span></a><a href="06-diffusion.html" class="ol" data-key="y1s1/materials-1/6"><span class="tick"></span><span>06 · Diffusion</span></a><a href="07-mechanical-properties-i-elasticity-and-the-tension-test.html" class="ol" data-key="y1s1/materials-1/7"><span class="tick"></span><span>07 · Mechanical properties I: elasticity and the tension test</span></a><a href="08-mechanical-properties-ii-hardness-and-toughness.html" class="ol" data-key="y1s1/materials-1/8"><span class="tick"></span><span>08 · Mechanical properties II: hardness and toughness</span></a><a href="09-dislocations-and-strengthening.html" class="ol cur" data-key="y1s1/materials-1/9"><span class="tick"></span><span>09 · Dislocations and strengthening</span></a><a href="10-recovery-recrystallization-and-grain-growth.html" class="ol" data-key="y1s1/materials-1/10"><span class="tick"></span><span>10 · Recovery, recrystallization, and grain growth</span></a><a href="11-solidification-and-cast-structure.html" class="ol" data-key="y1s1/materials-1/11"><span class="tick"></span><span>11 · Solidification and cast structure</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MAT 104</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MAT 104 · Lesson 09 of 11 · Year 1 · Semester 1</p>
+  <h1>Dislocations and strengthening</h1>
+  <p class="sub">Slip as dislocation motion. Strengthening by grain refinement, solid solution, strain hardening, and precipitates — all as obstacles to dislocations. Why 'harder' usually costs 'tougher'.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Callister &amp; Rethwisch, Materials Science and</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/materials-1/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Callister &amp; Rethwisch, Materials Science and Engineering: An Introduction (Wiley)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/7_IoLAXtQ3k" title="MIT 3.091 Lec 24 — Point and Line Defects II (dislocations)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MIT 3.091 Lec 24 — Point and Line Defects II (dislocations) <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">MIT 3.091 Lec 24 — Point and Line Defects II (dislocations)</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Explain grain-boundary strengthening in one sentence about dislocations.</li><li>Why does strain hardening raise strength but cost ductility?</li></ul></div><div class="measure">
+<h3>01 · One enemy, many obstacles</h3>
+<p>Plastic flow is dislocation traffic (Lesson 5), so <em>all</em> strengthening is one strategy: obstruct the traffic. Every industrial method is a different obstacle wearing a different price tag — and each purchase of strength is paid for, almost always, in ductility. Four mechanisms cover the metallurgy you will meet in practice.</p>
+<h3>02 · The four mechanisms</h3>
+<p><b>Grain refinement.</b> A boundary forces slip to renegotiate direction; more boundaries, more negotiations. Quantitatively, the Hall–Petch relation:</p>
+\[ \sigma_y = \sigma_0 + k_y\, d^{-1/2} \tag{1} \]
+<p>— fine grains strengthen, and (uniquely among the four) usually improve toughness too, which is why fine grain is the closest metallurgy comes to a free lunch. <b>Solid solution.</b> Solute atoms strain the lattice locally; dislocations wade through the strain fields. Every alloying addition does some of this. <b>Strain hardening.</b> Deform the metal and dislocations multiply until they obstruct each other — quantified by percent cold work, spent by every rolling pass and drawing die. <b>Precipitation.</b> Fine second-phase particles force dislocations to cut or bow around them; the strongest aluminum alloys and nickel superalloys live here.</p>
+<h3>03 · Choosing among them</h3>
+<p>The mechanisms stack — a drawn, alloyed, fine-grained wire uses three at once — but they differ in temperature stability (strain hardening anneals away; precipitates coarsen), in cost, and in what they do to toughness and conductivity. A copper conductor is the cautionary tale: solutes that strengthen it also scatter electrons, so cable copper is strengthened by drawing, not doping. the Worked Examples tab prices mechanism one with real Hall–Petch constants and mechanism three on a drawn rod.</p>
+
+<h3>04 · The strengthening decision method</h3>
+<p>Every strengthening mechanism is the same sentence with a different subject: something
+obstructs dislocations. The engineering skill is choosing WHICH something, and the choice
+runs on three questions. <em>What temperature will the part see?</em> Strain hardening
+anneals away — it cannot serve hot; grain-boundary strengthening fades as boundaries begin
+to slide at creep temperatures; solid-solution and precipitation strengthening hold higher.
+<em>What process route is available?</em> Cold work arrives free with rolling and drawing;
+fine grain arrives through controlled rolling and normalizing; precipitates demand the full
+solution-quench-age cycle of the heat-treatment lessons ahead. <em>What does the trade
+cost?</em> Every mechanism buys strength with ductility — the strengthened metal forms less
+willingly, and a drawing schedule that ignores this snaps wire.</p>
+<p>Run Hall–Petch as the worked example of quantitative thinking:
+\( \sigma_y = \sigma_0 + k\,d^{-1/2} \) turns a micrograph's grain size into a yield
+prediction, and its inverse square root explains why halving grain size buys a meaningful
+but diminishing return. The mechanisms stack — commercial alloys routinely deploy three at
+once — and reading a datasheet is recognizing which levers its producer pulled. A dual-phase
+automotive steel, for instance, runs fine grains, solute, and a hard second phase
+simultaneously; its certificate is a three-lever chord, and hearing the chord is what this
+lesson trains.</p>
+<p><strong>Closing.</strong> Strength is obstructed dislocation motion — by boundaries, solutes, tangles, or particles. Name the obstacle in any datasheet's "condition" column and you have read the alloy's biography.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Dislocations as strength's agent</b> (Lesson 5) — obstacles only make sense against traffic.</li>
+<li><b>Yield strength</b> (Lesson 7) — the number every mechanism moves.</li>
+<li><b>Solute atoms</b> (Lesson 5) — substitutional and interstitial, now weaponized.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Dislocation motion</td><td>slip under shear</td><td>Plasticity's mechanism; block it and the metal strengthens.</td></tr>
+<tr><td>Strain hardening</td><td>dislocations multiply and entangle</td><td>Cold work: stronger, harder, less ductile — the rolling-mill trade.</td></tr>
+<tr><td>Solid-solution strengthening</td><td>solute atoms strain the lattice</td><td>Alloying elements as speed bumps for dislocations.</td></tr>
+<tr><td>Grain-boundary strengthening</td><td>\( \sigma_y = \sigma_0 + k\,d^{-1/2} \)</td><td>Hall–Petch: finer grains, higher yield — at service temperatures.</td></tr>
+<tr><td>Precipitation strengthening</td><td>fine particles pin dislocations</td><td>The aerospace-alloy mechanism; preview of heat treatment.</td></tr>
+<tr><td>The common thread</td><td>every mechanism obstructs dislocations</td><td>One idea, four levers — pick by cost, temperature, and process.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Hall–Petch, priced in microns</b></p>
+<p><b>Problem.</b> For 70/30 brass, \( \sigma_0 = 70\ \mathrm{MPa} \), \( k_y = 0.74\ \mathrm{MPa \cdot m^{1/2}} \) (representative constants, Callister &amp; Rethwisch). <b>Find:</b> yield strength at grain sizes 25 µm and 8 µm.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( d = 25\ \mathrm{\mu m} = 2.5 \times 10^{-5}\ \mathrm{m} \): \( d^{-1/2} = 200\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
+(2) \( d = 8\ \mathrm{\mu m} \): \( d^{-1/2} = 354 \); \( \sigma_y = 70 + 0.74 \times 354 = 332\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> 218 → 332 MPa: a 3× grain refinement buys ~50% more yield strength.
+<b>Sanity check:</b> the square root means returns diminish — the next 50% costs refining toward the micron scale, which is why Hall–Petch is a strategy, not an infinite staircase.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Cold work in a drawing die</b></p>
+<p><b>Problem.</b> A rod is drawn from 10 mm to 8 mm diameter. <b>Find:</b> the percent cold work.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Areas scale with diameter squared: \( A_0 \propto 100 \), \( A_d \propto 64 \).
+(2) \( \%CW = \dfrac{100 - 64}{100} \times 100 = 36\% \).</p>
+<p><b>Answer:</b> 36% cold work.
+<b>Sanity check:</b> a 20% diameter reduction is a 36% area reduction — area, not diameter, is what the dislocation population responds to. At this level of cold work a brass or copper would show markedly higher strength and visibly less tensile ductility; whether that is product or problem depends on whether an anneal comes next — Lesson 10's question.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Yield strength from a micrograph</b></p>
+<p><b>Problem.</b> A steel follows Hall–Petch with \( \sigma_0 = 70\ \mathrm{MPa} \) and \( k = 0.74\ \mathrm{MPa\sqrt{m}} \). Metallography shows 25 µm grains. <b>Find:</b> the yield strength, and the value if processing refines the grains to 6.25 µm.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( d^{-1/2} = (25\times10^{-6})^{-1/2} = 200\ \mathrm{m^{-1/2}} \).
+(2) \( \sigma_y = 70 + 0.74 \times 200 = 218\ \mathrm{MPa} \).
+(3) At 6.25 µm: \( d^{-1/2} = 400 \Rightarrow \sigma_y = 70 + 296 = 366\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> ≈218 MPa; refining grains fourfold lifts yield to ≈366 MPa.
+<b>Sanity check:</b> quartering the grain size doubles \( d^{-1/2} \) — the square root working exactly as written — and the gain (+148 MPa) exceeds the base lattice strength itself: grain refinement is the one strengthening lever that also IMPROVES toughness, which is why structural steels chase it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Every metallic strengthening mechanism works by:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>stiffening the atomic bonds</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>obstructing dislocation motion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>removing all defects</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>increasing density</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Plastic flow is dislocation traffic; boundaries, solute strain fields, dislocation tangles, and precipitates are four kinds of roadblock. Bond stiffness (modulus) barely moves — which is why strengthened alloys are stronger but not stiffer, echoing Lesson 7's modulus question.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>With \( \sigma_0 = 70 \) MPa and \( k_y = 0.74\ \mathrm{MPa\sqrt{m}} \), refining grains to 10 µm gives a yield strength of about:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>74 MPa</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>304 MPa</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>141 MPa</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>700 MPa</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( d^{-1/2} = (10^{-5})^{-1/2} = 316\ \mathrm{m^{-1/2}} \); \( \sigma_y = 70 + 0.74 \times 316 = 304\ \mathrm{MPa} \). Hall–Petch rewards fine grains through the square root — and uniquely among the mechanisms it usually improves toughness at the same time.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Cold-rolled sheet is stronger than annealed sheet of the same steel because rolling:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Multiplies and entangles dislocations, obstructing further slip</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Removes all defects</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Refines the atoms themselves</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Adds carbon</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Plastic deformation manufactures dislocations by the billions; they tangle and block one another, so further slip needs more stress — strain hardening. The intuition that working metal 'removes defects' is exactly backwards: cold work is defect FARMING, on purpose. Composition is untouched; the strengthening lives entirely in the defect population, which is why an anneal can erase it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Percent cold work is computed from the change in:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>length</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>diameter</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>cross-sectional area</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>hardness</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \%CW = (A_0 - A_d)/A_0 \times 100 \). A 10 → 8 mm draw looks like \"20%\" by diameter but is 36% by area — and area is what the dislocation population responds to. Hardness rises <em>because of</em> cold work; it is the effect, not the measure.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>According to Hall–Petch, at room temperature a finer grain size makes a metal:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Stronger — boundaries obstruct dislocation motion</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Weaker — boundaries are defects</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Unchanged — grain size is cosmetic</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>More brittle, always</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Each boundary forces dislocations to stop and restart in the next grain, so more boundary per volume means higher yield: \( \sigma_y = \sigma_0 + k d^{-1/2} \). The 'defects weaken' instinct inverts at room temperature — though it returns at creep temperatures, where boundaries slide. Uniquely among strengthening levers, grain refinement usually improves toughness too, which is why it is the structural-steel favorite.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — strength you can watch accumulating.</b> You arrive at a cable plant's wire-drawing line where copper rod enters at one diameter and leaves several dies later markedly thinner, stiffer, and springier — strain hardening in real time, worked example 2 running continuously (figures representative). The wire must end soft for stranding and conductivity, yet every die pass hardens it: the line therefore alternates drawing with annealing, spending Lesson 9's mechanism and Lesson 10's cure in a scheduled rhythm. The process engineer's die schedule is, in effect, a %CW budget — spent, cleared, and spent again.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(3.658\\ \\mathrm{ft/s}\\)", "\\(39.37\\ \\mathrm{ft/s}\\)", "\\(393.7\\ \\mathrm{ft/s}\\)", "\\(3.937\\ \\mathrm{ft/s}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(12 \\times 3.281 = 39.37\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(45.72\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(492.1\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4921\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(49.21\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(150 \times 3.281 = 492.1\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.901e+04\\ \\mathrm{psi}\\)", "\\(0.1379\\ \\mathrm{psi}\\)", "\\(2901\\ \\mathrm{psi}\\)", "\\(290.1\\ \\mathrm{psi}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(20 \\times 145 = 2901\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.01379\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(290.1\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(29.01\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(2 \times 145 = 290.1\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3268933W" target="_blank" rel="noopener">Materials Science and Engineering: An Introduction — Callister &amp; Rethwisch</a></li><li><a href="https://openlibrary.org/works/OL3927645W" target="_blank" rel="noopener">The Science and Engineering of Materials — Askeland</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 7</p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-mechanical-properties-ii-hardness-and-toughness.html">← 08 · Mechanical properties II: hardness and toughness</a><a href="index.html">كل الدروس · MAT 104</a><a href="10-recovery-recrystallization-and-grain-growth.html">10 · Recovery, recrystallization, and grain growth →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/computing/index.html">CMP 106 · Engineering Computing →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+</body>
+</html>
