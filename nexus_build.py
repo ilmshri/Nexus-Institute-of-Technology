@@ -253,7 +253,7 @@ NX_PAGE = """<!doctype html>
       <a href="{prefix}about/index.html"{on_about}>About</a>
       <a href="{prefix}mission/index.html"{on_mission}>Mission</a>
       <a href="{prefix}curriculum/index.html"{on_curr}>Curriculum</a>
-      <a href="{prefix}reference/index.html"{on_reference}>Reference</a>
+      <a href="{prefix}reference/index.html"{on_reference}>Resources</a>
       <a href="{prefix}career/index.html"{on_career}>Career Paths</a>
       <a href="{prefix}feedback/index.html"{on_feedback}>Feedback</a>
     </nav>
@@ -272,7 +272,7 @@ NX_PAGE = """<!doctype html>
     <a href="{prefix}about/index.html">About</a>
     <a href="{prefix}mission/index.html">Mission</a>
     <a href="{prefix}curriculum/index.html">Curriculum</a>
-    <a href="{prefix}reference/index.html">Reference</a>
+    <a href="{prefix}reference/index.html">Resources</a>
     <a href="{prefix}career/index.html">Career Paths</a>
     <a href="{prefix}feedback/index.html">Feedback</a>
   </nav>
@@ -354,6 +354,32 @@ def canonical_texts_html(course):
             items.append(f"<li>{label}</li>")
     return ('<p class="src"><b>The standard university texts</b> — the same '
             'references assigned at leading engineering schools:</p>'
+            f'<ul class="plain small">{"".join(items)}</ul>')
+
+# Course tools/software registry (added 2026-07-24): mirrors TEXTBOOKS exactly —
+# see data/tools.json's own _comment for what was live-verified vs. not. A
+# course absent from TOOLS["courses"] renders an honest placeholder, never an
+# error — same convention as a thin reference or an unauthored career block.
+TOOLS = json.loads((DATA / "tools.json").read_text(encoding="utf-8"))
+
+def canonical_tools_html(course, prefix):
+    keys = TOOLS["courses"].get(course["id"], [])
+    if not keys:
+        return ('<p class="ref-thin">Course-specific software recommendations are '
+                'not compiled yet for this course — they are added as each '
+                'course reaches full teaching depth.</p>')
+    items = []
+    for k in keys:
+        t = TOOLS["tools"][k]
+        label = f'<b>{esc(t["name"])}</b> ({esc(t["vendor"])}) — {esc(t["note"])}'
+        if t.get("url"):
+            items.append(f'<li><a href="{esc(t["url"])}" target="_blank" '
+                         f'rel="noopener">{label}</a></li>')
+        else:
+            items.append(f"<li>{label}</li>")
+    return ('<p class="src"><b>Software used in this course</b> — see the '
+            f'<a href="{prefix}reference/index.html">Resources</a> page for the '
+            'full directory grouped by category:</p>'
             f'<ul class="plain small">{"".join(items)}</ul>')
 
 def embed_card(url, caption, sub="", allow=False):
@@ -806,7 +832,7 @@ def tier_badge(les, tabs_all):
         return '<span class="badge queued">Core 60 · in production</span>'
     return ""
 
-def build_course_page(sem, course, prefix, tabs_all, next_course=None):
+def build_course_page(sem, course, prefix, tabs_all, ref, next_course=None):
     rows = []
     for les in course["lessons"]:
         href = lesson_page_name(course, les)
@@ -898,10 +924,25 @@ def build_course_page(sem, course, prefix, tabs_all, next_course=None):
   <a class="btn btn-ghost" href="{prefix}curriculum/index.html" data-ar="{AR['Curriculum']}">Full curriculum</a>
 </div>
 {learn_html}
-<h3 data-ar="المنهج الدراسي">Syllabus</h3>
-<div class="lessons">{''.join(rows)}</div>
-<ul class="plain small">{taught}</ul>
-{vids}
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3 data-ar="المنهج الدراسي">Syllabus</h3>
+  <div class="lessons">{''.join(rows)}</div>
+  <ul class="plain small">{taught}</ul>
+  {vids}
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  {reference_section_html(sem, course, ref, prefix)}
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  {canonical_tools_html(course, prefix)}
+</section>
 </div>
 <aside class="rail">
 {facts}
@@ -1341,34 +1382,94 @@ def reference_section_html(sem, course, ref, prefix):
                    'yet — this course\'s lessons are still in production.</p>')
     return '\n'.join(out)
 
-def build_reference_page(sems, refs_by_course, prefix='../'):
-    blocks = []
-    for sem in sems:
+def build_resources_page(sems, prefix='../'):
+    """Owner directive (2026-07-24): each course's own equations/notation/terms
+    now live on that course's own Reference tab (build_course_page) — this page
+    no longer duplicates them. What genuinely spans courses lives here instead:
+    a tools/software directory and compiled semester/year summary downloads."""
+    course_by_id = {c["id"]: (sem, c) for sem in sems for c in sem["courses"]}
+
+    # ---- Tools & software directory, grouped by category ----
+    by_cat = {}
+    for tid, t in TOOLS["tools"].items():
+        by_cat.setdefault(t["category"], []).append((tid, t))
+    tool_courses = {}
+    for cid, tids in TOOLS["courses"].items():
+        for tid in tids:
+            tool_courses.setdefault(tid, []).append(cid)
+
+    cat_blocks = []
+    for cat in sorted(by_cat):
         cards = []
-        for c in sem['courses']:
-            ref = refs_by_course[(sem['id'], c['id'])]
-            chref = f"{prefix}curriculum/{sem['id']}/{c['id']}/index.html"
+        for tid, t in sorted(by_cat[cat], key=lambda kv: kv[1]["name"]):
+            used_links = []
+            for cid in tool_courses.get(tid, []):
+                if cid not in course_by_id:
+                    continue
+                csem, c = course_by_id[cid]
+                href = f"{prefix}curriculum/{csem['id']}/{c['id']}/index.html#ct-tools"
+                used_links.append(f'<a href="{href}">{esc(c["code"])}</a>')
+            used_html = (f'<p class="small">Used in: {", ".join(used_links)}</p>' if used_links
+                        else '<p class="ref-thin">Not yet assigned to a course.</p>')
+            name_html = (f'<a href="{esc(t["url"])}" target="_blank" rel="noopener">'
+                        f'{esc(t["name"])}</a>' if t.get("url") else esc(t["name"]))
             cards.append(
-                f'<section class="ref-course" id="ref-{sem["id"]}-{c["id"]}">'
-                f'<div class="ref-chd"><h3><a href="{chref}">{esc(c["code"])}</a> · '
-                f'{esc(c["title"])}</h3><span class="ref-count">'
-                f'{len(ref["equations"])} equations · {len(ref["terms"])} terms</span></div>'
-                f'{reference_section_html(sem, c, ref, prefix)}</section>')
-        blocks.append(f'<div class="ref-sem"><h2>{esc(sem["title"])}</h2>{"".join(cards)}</div>')
+                f'<section class="ref-course"><div class="ref-chd"><h3>{name_html}</h3>'
+                f'<span class="ref-count">{esc(t["vendor"])}</span></div>'
+                f'<p class="src">{esc(t["note"])}</p>{used_html}</section>')
+        cat_blocks.append(f'<div class="ref-sem"><h2>{esc(cat)}</h2>{"".join(cards)}</div>')
+    tools_html = "".join(cat_blocks)
+
+    # ---- Compiled summaries, Year -> Semester -> Course ----
+    years = {}
+    for sem in sems:
+        m = re.match(r"y(\d)s\d", sem["id"])
+        years.setdefault(int(m.group(1)) if m else 0, []).append(sem)
+
+    year_blocks = []
+    for yr in sorted(years):
+        sem_cards = []
+        for sem in years[yr]:
+            course_rows = "".join(
+                f'<li><a href="{prefix}curriculum/{sem["id"]}/{c["id"]}/summary.html">'
+                f'{esc(c["code"])} · {esc(c["title"])}</a></li>'
+                for c in sem["courses"])
+            sem_href = f"{prefix}curriculum/{sem['id']}/summary.html"
+            sem_cards.append(
+                f'<section class="ref-course"><div class="ref-chd"><h3>{esc(sem["title"])}</h3>'
+                f'<span class="ref-count"><a href="{sem_href}">Combined semester '
+                f'summary →</a></span></div><ul class="plain small">{course_rows}</ul>'
+                f'</section>')
+        year_href = f"{prefix}curriculum/year-{yr}/summary.html"
+        year_blocks.append(
+            f'<div class="ref-sem"><h2>Year {yr}</h2>'
+            f'<p class="small"><a href="{year_href}">Download the combined Year {yr} '
+            f'summary →</a></p>{"".join(sem_cards)}</div>')
+    summaries_html = "".join(year_blocks)
+
     body = f"""
 <div class="pagehead">
-  <p class="kicker"><span class="n">REFERENCE</span>Compiled from the courses themselves</p>
-  <h1>Engineering reference</h1>
-  <p class="sub">Every equation, symbol, unit, and key term below is extracted from
-  that course's own lectures, foundations, and worked examples — not a generic
-  formula sheet. Courses still in production show a thin, honest set that grows
-  as lessons are authored.</p>
+  <p class="kicker"><span class="n">RESOURCES</span>Tools, downloads, and study material</p>
+  <h1>Resources</h1>
+  <p class="sub">Each course's own equations, notation, and key terms now live on
+  that course's own Reference tab, right alongside its syllabus. This page compiles
+  the two things that genuinely span courses: the software this curriculum actually
+  uses, and printable summaries at whatever scope you need — one course, one
+  semester, or a whole year.</p>
 </div>
-<section class="part tight"><div class="wide">{''.join(blocks)}</div></section>"""
+<section class="part tight"><div class="wide">
+<h2>Tools &amp; software directory</h2>
+{tools_html}
+<h2>Compiled summaries</h2>
+<p class="sub">Every course already has its own "Course summary (PDF)" button on
+its own page. The links below additionally compile a whole semester or year into
+one printable document — open a link and use your browser's Print / Save as PDF.</p>
+{summaries_html}
+</div></section>"""
     nx_page("reference/index.html",
-            "Reference — Nexus Institute of Technology",
-            "Per-course equations, notation, units, and key terms, compiled from "
-            "each course's own lessons.",
+            "Resources — Nexus Institute of Technology",
+            "Course tools and software, plus compiled semester and year summary "
+            "downloads.",
             body, prefix, "reference", extra_head=MATHJAX)
 
 def audit_unit_policy(sems, tabs_by_course):
@@ -1440,12 +1541,14 @@ def write_unit_policy_report(rows):
                                                           encoding="utf-8")
     return len(ok), len(in_scope), [r for r in in_scope if not r["compliant"]]
 
-def build_course_summary(sem, course, prefix, tabs_all, ref):
-    """Owner directive #5: end-of-course summary, print-optimized so the browser's
-    'Save as PDF' yields the downloadable document (no server-side PDF dependency
-    on a static host). Part 1 = all authored lectures in order; Part 2 = the
-    foundations/toolkits; Part 3 = the compiled course reference (same engine as
-    the Reference tab). Lessons still in production are named honestly, not faked."""
+def course_summary_fragment(sem, course, prefix, tabs_all, ref):
+    """The printable content for ONE course: every authored lecture, then the
+    foundations/toolkits, then the compiled course reference (same engine as
+    the course page's own Reference tab). Lessons still in production are named
+    honestly, not faked. Shared by that course's own summary.html AND the
+    combined semester/year summaries — a course-identifying heading precedes
+    Part 1 (not itself a .sum-part) so it always rides along on Part 1's own
+    page break instead of forcing an extra near-blank page before it."""
     lectures, foundations, miss_lec, miss_fnd = [], [], [], []
     for les in course['lessons']:
         n = les['n']
@@ -1472,6 +1575,22 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 
     p1 = ''.join(lectures) or '<p class="ref-thin">No lecture content is authored for this course yet.</p>'
     p2 = ''.join(foundations) or '<p class="ref-thin">No foundations content is authored for this course yet.</p>'
+    return f"""
+<h2 id="sum-{course['id']}">{esc(course['code'])} — {esc(course['title'])}</h2>
+<h2 class="sum-part">Part 1 — Lectures</h2>
+{omitted(miss_lec, 'lectures')}
+{p1}
+<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
+{omitted(miss_fnd, 'foundations')}
+{p2}
+<h2 class="sum-part">Part 3 — Course reference</h2>
+<div class="wide">{reference_section_html(sem, course, ref, prefix)}</div>"""
+
+def build_course_summary(sem, course, prefix, tabs_all, ref):
+    """Owner directive #5: end-of-course summary, print-optimized so the browser's
+    'Save as PDF' yields the downloadable document (no server-side PDF dependency
+    on a static host). Content is course_summary_fragment; this just adds the
+    page chrome + print button."""
     body = f"""
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>
@@ -1485,19 +1604,45 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
   </div>
 </div>
 <article class="part tight sum-doc">
-  <h2 class="sum-part">Part 1 — Lectures</h2>
-  {omitted(miss_lec, 'lectures')}
-  {p1}
-  <h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
-  {omitted(miss_fnd, 'foundations')}
-  {p2}
-  <h2 class="sum-part">Part 3 — Course reference</h2>
-  <div class="wide">{reference_section_html(sem, course, ref, prefix)}</div>
+{course_summary_fragment(sem, course, prefix, tabs_all, ref)}
 </article>"""
     nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
             f"Course summary — {course['title']} — Nexus Institute of Technology",
             f"Compiled lectures, foundations, and reference for "
             f"{course['code']} {course['title']}.",
+            body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
+
+def build_grouped_summary(title, courses_ctx, out_path, prefix):
+    """One printable document combining several courses' own summary content
+    (course_summary_fragment), reusing the existing print CSS's
+    .sum-part{break-before:page} as-is — zero new print CSS needed. Each
+    course's Part 1 forces a fresh page, and that course's own heading rides
+    along on it (see course_summary_fragment's own docstring).
+    courses_ctx: list of (sem, course, tabs_all, ref) tuples, curriculum order."""
+    frags = "".join(course_summary_fragment(sem, course, prefix, tabs_all, ref)
+                    for (sem, course, tabs_all, ref) in courses_ctx)
+    jump = "".join(f'<li><a href="#sum-{course["id"]}">{esc(course["code"])} · '
+                   f'{esc(course["title"])}</a></li>'
+                   for (sem, course, tabs_all, ref) in courses_ctx)
+    n = len(courses_ctx)
+    body = f"""
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COMBINED SUMMARY</span>{n} course{'s' if n != 1 else ''}</p>
+  <h1>{esc(title)}</h1>
+  <p class="sub">One compiled document across {n} course{'s' if n != 1 else ''}: every
+  authored lecture, foundations toolkit, and reference, course by course in
+  curriculum order. Use <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="{prefix}reference/index.html">Back to Resources</a>
+  </div>
+  <ul class="plain small no-print">{jump}</ul>
+</div>
+<article class="part tight sum-doc">
+{frags}
+</article>"""
+    nx_page(out_path, f"{title} — Nexus Institute of Technology",
+            f"Compiled lectures, foundations, and reference across {n} courses.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 
 def main():
@@ -1568,13 +1713,14 @@ def main():
 
     n_pages = 1  # curriculum index
     total, depth = build_curriculum_index(sems, tabs_by_course, "../")
-    build_reference_page(sems, refs_by_course, "../")
+    build_resources_page(sems, "../")
     n_pages += 1
     for sem in sems:
         for c in sem["courses"]:
             tabs_all = tabs_by_course[(sem["id"], c["id"])]
             nxt = next_course_of[(sem["id"], c["id"])]
-            build_course_page(sem, c, "../../../", tabs_all, nxt)
+            build_course_page(sem, c, "../../../", tabs_all,
+                              refs_by_course[(sem["id"], c["id"])], nxt)
             n_pages += 1
             build_course_summary(sem, c, "../../../", tabs_all,
                                  refs_by_course[(sem["id"], c["id"])])
@@ -1582,6 +1728,28 @@ def main():
             for les in c["lessons"]:
                 build_lesson_page(sem, c, les, "../../../", tabs_all, nxt)
                 n_pages += 1
+
+    # Combined summaries (owner directive, 2026-07-24): one per semester and one
+    # per year, reusing course_summary_fragment + the existing print CSS as-is.
+    def ctx_for(course_list):
+        return [(sem, c, tabs_by_course[(sem["id"], c["id"])],
+                 refs_by_course[(sem["id"], c["id"])]) for (sem, c) in course_list]
+
+    years = {}
+    for sem in sems:
+        m = re.match(r"y(\d)s\d", sem["id"])
+        yr = int(m.group(1)) if m else 0
+        years.setdefault(yr, []).append(sem)
+        build_grouped_summary(f"{sem['title']} — Combined Summary",
+                              ctx_for([(sem, c) for c in sem["courses"]]),
+                              f"curriculum/{sem['id']}/summary.html", "../../")
+        n_pages += 1
+    for yr, yr_sems in years.items():
+        build_grouped_summary(f"Year {yr} — Combined Summary",
+                              ctx_for([(sem, c) for sem in yr_sems for c in sem["courses"]]),
+                              f"curriculum/year-{yr}/summary.html", "../../")
+        n_pages += 1
+
     build_static_pages(sems, tabs_by_course)
     n_pages += 2
     n_idx = build_search_index(sems)

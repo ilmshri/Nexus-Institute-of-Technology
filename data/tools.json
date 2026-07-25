@@ -1,0 +1,118 @@
+{
+  "_comment": "Course tools/software registry (added 2026-07-24, mirrors textbooks.json/sources.json's schema and honesty rule). Each url is the vendor's own official product or homepage. mathworks.com (MATLAB, Simulink), fchartsoftware.com/ees, mastercam.com, minitab.com, and python.org were live-fetched and confirmed reachable at authoring time. Autodesk (AutoCAD, Fusion 360), ANSYS (Mechanical, Fluent, Granta EduPack), Dassault (SolidWorks), and Analog Devices (LTspice) returned bot-protection blocks (403/timeout) to automated fetch, not evidence of an incorrect URL — these are the current, long-stable product URLs for well-known commercial products; re-verify manually if a vendor restructures its site. 'courses' is populated only for courses already at full teaching depth; a course absent from 'courses' has no tools listed yet and the renderer must show an honest 'in production' placeholder, not an error — same convention as career blocks and the reference extractor.",
+  "tools": {
+    "matlab": {
+      "name": "MATLAB",
+      "vendor": "MathWorks",
+      "category": "Numerical Computing",
+      "url": "https://www.mathworks.com/products/matlab.html",
+      "note": "Free student-priced license at most universities; the standard numerical/matrix computing environment for engineering coursework."
+    },
+    "simulink": {
+      "name": "Simulink",
+      "vendor": "MathWorks",
+      "category": "Numerical Computing",
+      "url": "https://www.mathworks.com/products/simulink.html",
+      "note": "Block-diagram simulation on top of MATLAB — circuits, controls, and dynamic systems without writing code."
+    },
+    "python": {
+      "name": "Python (NumPy / SciPy / Jupyter)",
+      "vendor": "Python Software Foundation",
+      "category": "Numerical Computing",
+      "url": "https://www.python.org/",
+      "note": "Free and open source; NumPy/SciPy/Matplotlib cover the same numerical ground as MATLAB at zero license cost."
+    },
+    "autocad": {
+      "name": "AutoCAD",
+      "vendor": "Autodesk",
+      "category": "CAD",
+      "url": "https://www.autodesk.com/products/autocad/overview",
+      "note": "2D/3D drafting standard; free for verified students via Autodesk's education plan."
+    },
+    "solidworks": {
+      "name": "SolidWorks",
+      "vendor": "Dassault Systèmes",
+      "category": "CAD",
+      "url": "https://www.solidworks.com/",
+      "note": "Parametric 3D mechanical design; the CSWA/CSWP certifications are recognized industry-wide."
+    },
+    "fusion360": {
+      "name": "Fusion 360",
+      "vendor": "Autodesk",
+      "category": "CAD",
+      "url": "https://www.autodesk.com/products/fusion-360/overview",
+      "note": "CAD, CAM, and basic simulation in one package; free education license."
+    },
+    "ansys-mechanical": {
+      "name": "ANSYS Mechanical",
+      "vendor": "ANSYS",
+      "category": "FEA & Simulation",
+      "url": "https://www.ansys.com/products/structures/ansys-mechanical",
+      "note": "The standard structural finite-element analysis package — stress, fatigue, and vibration simulation."
+    },
+    "ansys-fluent": {
+      "name": "ANSYS Fluent",
+      "vendor": "ANSYS",
+      "category": "FEA & Simulation",
+      "url": "https://www.ansys.com/products/fluids/ansys-fluent",
+      "note": "The standard CFD package for fluid flow and convective/conductive heat-transfer simulation."
+    },
+    "granta-edupack": {
+      "name": "Granta EduPack",
+      "vendor": "ANSYS (Granta)",
+      "category": "Materials Selection",
+      "url": "https://www.ansys.com/products/materials/granta-edupack",
+      "note": "The standard materials-selection and Ashby-chart teaching tool used across materials science courses."
+    },
+    "ees": {
+      "name": "EES (Engineering Equation Solver)",
+      "vendor": "F-Chart Software",
+      "category": "Thermal Systems",
+      "url": "https://fchartsoftware.com/ees/",
+      "note": "Built-in thermodynamic and transport property tables — the standard tool for cycle and heat-transfer coursework."
+    },
+    "ltspice": {
+      "name": "LTspice",
+      "vendor": "Analog Devices",
+      "category": "Circuit Simulation",
+      "url": "https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html",
+      "note": "Free SPICE circuit simulator — the de facto standard for student and professional circuit analysis alike."
+    },
+    "mastercam": {
+      "name": "Mastercam",
+      "vendor": "CNC Software",
+      "category": "CAM & Manufacturing",
+      "url": "https://www.mastercam.com/",
+      "note": "The most widely installed CAM package for generating CNC toolpaths from a 3D model."
+    },
+    "minitab": {
+      "name": "Minitab",
+      "vendor": "Minitab",
+      "category": "Statistics",
+      "url": "https://www.minitab.com/en-us/",
+      "note": "The standard statistical software in industrial quality and Six Sigma programs."
+    }
+  },
+  "courses": {
+    "math-1": ["matlab", "python"],
+    "math-2": ["matlab", "python"],
+    "math-3": ["matlab", "python"],
+    "physics-1": ["matlab", "python"],
+    "statics": ["matlab", "ansys-mechanical"],
+    "dynamics": ["matlab", "python"],
+    "strength": ["matlab", "ansys-mechanical"],
+    "materials-1": ["granta-edupack"],
+    "materials-2": ["granta-edupack", "ansys-mechanical"],
+    "drawing-cad": ["autocad", "solidworks", "fusion360"],
+    "computing": ["python", "matlab"],
+    "electrical": ["ltspice", "simulink"],
+    "electronics-sensors": ["ltspice", "simulink"],
+    "thermo-1": ["ees", "matlab"],
+    "thermo-2": ["ees", "matlab"],
+    "heat-transfer": ["ees", "ansys-fluent", "matlab"],
+    "fluids": ["ansys-fluent", "ees", "matlab"],
+    "statistics": ["minitab", "python"],
+    "mfg-processes-1": ["solidworks", "ansys-mechanical"],
+    "mfg-processes-2": ["mastercam", "solidworks", "fusion360"]
+  }
+}

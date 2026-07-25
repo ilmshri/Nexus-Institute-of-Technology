@@ -1,0 +1,1300 @@
+{
+ "1": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An idealized Rankine cycle on temperature entropy coordinates, showing the saturation dome and the four state points, pump compression from state one to two, boiler heating from two to three crossing into superheated steam, isentropic turbine expansion from three to four back into the wet steam region, and condensation from four back to one\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The Rankine cycle: four devices, one loop, one T–s picture</text><polyline points=\"113.4,245.2 130.0,243.8 138.5,241.8 145.5,239.4 151.5,236.7 157.0,233.9 162.0,230.8 166.7,227.7 171.1,224.3 175.4,220.8 179.4,217.3 183.3,213.6 187.1,209.8 190.7,205.9 194.2,201.9 197.6,197.8 200.9,193.7 204.2,189.5 207.3,185.2 210.4,180.8 213.5,176.4 216.4,171.8 219.4,167.3 222.2,162.6 225.0,157.9 227.8,153.2 230.5,148.3 233.2,143.5 235.9,138.5 238.5,133.6 241.0,128.5 243.6,123.5 246.1,118.3 248.5,113.1 251.0,107.9 253.4,102.6 255.8,97.3 258.1,92.0 260.5,86.5 262.8,81.1 265.1,75.6 265.1,75.6 276.0,81.9 284.8,86.6 292.9,90.8 300.6,94.8 308.0,98.5 315.2,102.1 322.2,105.6 329.0,109.0 335.8,112.3 342.4,115.5 348.9,118.6 355.4,121.7 361.7,124.8 368.0,127.8 374.2,130.8 380.4,133.7 386.5,136.6 392.5,139.4 398.5,142.2 404.5,145.0 410.4,147.8 416.2,150.5 422.0,153.3 427.8,155.9 433.6,158.6 439.3,161.3 445.0,163.9 450.6,166.5 456.2,169.1 461.8,171.6 467.4,174.2 472.9,176.7 478.4,179.3 483.9,181.8 489.3,184.3 494.8,186.7 500.2,189.2 505.6,191.6 511.0,194.1 516.3,196.5\" fill=\"none\" stroke=\"#16202e\" stroke-width=\"1.3\" opacity=\"0.55\"/><text x=\"270\" y=\"70\" fill=\"#16202e\" font-size=\"9\">critical point</text><path d=\"M118,241 L121,232 L379,56\" stroke=\"#3a6ea5\" stroke-width=\"2\"/><path d=\"M379,56 L379,197\" stroke=\"#c2820f\" stroke-width=\"2\"/><path d=\"M379,197 L118,241\" stroke=\"#1f7a5c\" stroke-width=\"2\"/><circle cx=\"118\" cy=\"241\" r=\"3.5\" fill=\"#16202e\"/><text x=\"100\" y=\"255\" fill=\"#16202e\" font-size=\"10\">1</text><circle cx=\"121\" cy=\"232\" r=\"3.5\" fill=\"#16202e\"/><text x=\"128\" y=\"222\" fill=\"#16202e\" font-size=\"10\">2</text><circle cx=\"379\" cy=\"56\" r=\"3.5\" fill=\"#16202e\"/><text x=\"386\" y=\"50\" fill=\"#16202e\" font-size=\"10\">3</text><circle cx=\"379\" cy=\"197\" r=\"3.5\" fill=\"#16202e\"/><text x=\"386\" y=\"200\" fill=\"#16202e\" font-size=\"10\">4</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">1→2 pump · 2→3 boiler · 3→4 turbine · 4→1 condenser — every device is one SFEE term</text></svg><figcaption>Every steam power plant, however elaborate, is this same four-device loop underneath — the T–s diagram is simply where every efficiency lever this lesson discusses becomes visible geometrically.</figcaption></figure>\n\n<h3>§1 · The ideal Rankine cycle, state by state</h3>\n<p>The ideal Rankine cycle carries water and steam through four idealized processes: <b>1→2</b>, isentropic compression of saturated liquid by the feed pump, from condenser pressure to boiler pressure; <b>2→3</b>, constant-pressure heat addition in the boiler, turning compressed liquid into superheated steam; <b>3→4</b>, isentropic expansion through the turbine, back down to condenser pressure; <b>4→1</b>, constant-pressure heat rejection in the condenser, returning the working fluid to saturated liquid to close the loop. On temperature-entropy coordinates, this traces a shape that pump-compresses nearly vertically at the bottom, boils and superheats up and to the right, drops steeply back down through the turbine, and condenses horizontally along the bottom of the saturation dome.</p>\n\n<h3>§2 · The steady-flow energy equation, applied to each device</h3>\n<p>Each of the four devices is a steady-flow control volume, and the <b>steady-flow energy equation</b> (SFEE) — with kinetic and potential energy changes normally negligible for these devices — reduces to \\(q-w=h_{out}-h_{in}\\) per unit mass. For the pump: \\(w_p=h_2-h_1\\) (work in, no heat). For the boiler: \\(q_{in}=h_3-h_2\\) (heat in, no work). For the turbine: \\(w_t=h_3-h_4\\) (work out, no heat). For the condenser: \\(q_{out}=h_4-h_1\\) (heat out, no work). This is the entire quantitative machinery of the cycle — every efficiency, every heat rate, every audit number in this course's later lessons reduces to applying this same equation, device by device, to the actual enthalpies involved.</p>\n\n<h3>§3 · Efficiency and its three levers</h3>\n<p>Cycle thermal efficiency is net work out over heat in: \\[ \\eta=\\frac{w_t-w_p}{q_{in}}. \\] Three practical levers raise it, each visible on the T-s diagram as stretching the cycle's area: <b>raising boiler pressure</b> pushes state 2-3 further right and up, increasing the average temperature at which heat is added (a direct efficiency gain by the same average-temperature logic behind every heat engine); <b>raising superheat temperature</b> extends state 3 further right along the top, adding heat at a still-higher average temperature while also — critically — pushing state 4 further from the saturation dome's wet region; <b>lowering condenser pressure</b> (deeper vacuum) pulls states 1 and 4 down and left, lowering the average temperature of heat rejection, which by the same logic raises efficiency directly.</p>\n\n<h3>§4 · A worked cycle — the arithmetic in practice</h3>\n<p>A cycle operates between \\(10\\ \\text{kPa}\\) (condenser) and \\(3000\\ \\text{kPa}\\) (boiler), with a superheated turbine inlet. Given state properties \\(h_1=192.0\\), \\(h_2=195.0\\), \\(h_3=3115.0\\), \\(h_4=2297.0\\ \\text{kJ/kg}\\) (representative values, of exactly the kind read from a steam table for a real cycle): pump work \\(w_p=h_2-h_1=3.0\\ \\text{kJ/kg}\\); boiler heat \\(q_{in}=h_3-h_2=2920.0\\ \\text{kJ/kg}\\); turbine work \\(w_t=h_3-h_4=818.0\\ \\text{kJ/kg}\\); net work \\(w_{net}=815.0\\ \\text{kJ/kg}\\); thermal efficiency \\(\\eta=w_{net}/q_{in}=27.9\\%\\) — a realistic figure for a basic cycle before the reheat and regeneration improvements of Lesson 2.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — SFEE across the cycle</span>\n<p>\\[ \\eta=\\frac{(h_3-h_4)-(h_2-h_1)}{h_3-h_2} \\]</p><p>Every term is one device's own steady-flow energy balance.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The steady-flow energy equation</b> (Thermodynamics I).</li><li><b>Entropy and isentropic processes</b> (Thermodynamics I).</li></ul>\n<h4>Toolkit — the Rankine cycle</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Pump work</td><td>\\( w_p=h_2-h_1 \\)</td><td>Small, but not zero.</td></tr>\n<tr><td>Boiler heat in</td><td>\\( q_{in}=h_3-h_2 \\)</td><td>The cycle's energy purchase.</td></tr>\n<tr><td>Turbine work</td><td>\\( w_t=h_3-h_4 \\)</td><td>The cycle's energy product.</td></tr>\n<tr><td>Thermal efficiency</td><td>\\( \\eta=(w_t-w_p)/q_{in} \\)</td><td>Raised by pressure, superheat, vacuum.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Full cycle efficiency</b></p><p><b>Problem.</b> A Rankine cycle has h1=192.0, h2=195.0, h3=3115.0, h4=2297.0 kJ/kg. Find the pump work, boiler heat input, turbine work, net work, and thermal efficiency.</p>",
+    "solution": "<p><b>Solution.</b> \\(w_p=h_2-h_1=3.0\\ \\text{kJ/kg}\\). \\(q_{in}=h_3-h_2=2920.0\\ \\text{kJ/kg}\\). \\(w_t=h_3-h_4=818.0\\ \\text{kJ/kg}\\). \\(w_{net}=w_t-w_p=815.0\\ \\text{kJ/kg}\\). \\(\\eta=w_{net}/q_{in}=815.0/2920.0=27.9\\%\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The condenser heat rejected</b></p><p><b>Problem.</b> For the same cycle (h1=192.0, h4=2297.0 kJ/kg), find the heat rejected per kilogram in the condenser, and confirm it is consistent with the net work and heat input from the previous problem via an overall energy balance.</p>",
+    "solution": "<p><b>Solution.</b> \\(q_{out}=h_4-h_1=2297.0-192.0=2105.0\\ \\text{kJ/kg}\\). Check: \\(q_{in}-q_{out}=2920.0-2105.0=815.0\\ \\text{kJ/kg}=w_{net}\\), confirming the overall cycle energy balance — everything not rejected as heat left as net work, exactly as the first law across the whole closed loop requires.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Superheat and turbine-exit quality</b></p><p><b>Problem.</b> Two cycles share the same boiler and condenser pressures. Cycle A has less superheat, giving turbine exit quality x=0.82. Cycle B has more superheat, giving x=0.88. Explain, using §3, why Cycle B is preferred even if its efficiency gain over Cycle A is small.</p>",
+    "solution": "<p><b>Solution.</b> Higher superheat pushes the turbine-exit state further from the saturation dome's wet region, raising exit quality from 0.82 to 0.88 — meaningfully less moisture in the last turbine stages. Even a small efficiency gain, this reduces blade erosion risk from moisture impact, a real reliability and maintenance benefit that is often the primary reason to run superheat higher, not the modest efficiency number alone.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The ideal Rankine cycle's four processes, in order, are:</p>",
+    "choices": [
+     "Isentropic pump, constant-pressure boiler, isentropic turbine, constant-pressure condenser",
+     "Isothermal compression, adiabatic heating, isothermal expansion, adiabatic cooling",
+     "Constant-volume heating throughout all four processes",
+     "Four identical isentropic processes"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the defining sequence of the Rankine cycle.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The steady-flow energy equation applied to the boiler gives:</p>",
+    "choices": [
+     "q_in = h3 - h2",
+     "q_in = h1 - h2",
+     "w = h3 - h2",
+     "q_in = h4 - h3"
+    ],
+    "answer": 0,
+    "solution": "<p>The boiler adds heat with no work interaction, raising enthalpy from state 2 to state 3.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Cycle thermal efficiency is defined as:</p>",
+    "choices": [
+     "Net work out divided by heat in",
+     "Heat in divided by heat out",
+     "Turbine work divided by pump work",
+     "Boiler pressure divided by condenser pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the standard thermal efficiency definition for any heat engine cycle.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Raising boiler pressure, holding other parameters fixed, tends to:</p>",
+    "choices": [
+     "Increase efficiency by raising the average temperature of heat addition",
+     "Decrease efficiency",
+     "Have no effect on efficiency",
+     "Only affect pump work, not efficiency"
+    ],
+    "answer": 0,
+    "solution": "<p>Higher average heat-addition temperature is the direct mechanism.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Lowering condenser pressure (deeper vacuum) tends to:</p>",
+    "choices": [
+     "Increase efficiency by lowering the average temperature of heat rejection",
+     "Decrease efficiency",
+     "Have no effect on the cycle",
+     "Only affect the pump, not the turbine"
+    ],
+    "answer": 0,
+    "solution": "<p>Lower heat-rejection temperature raises efficiency by the same average-temperature logic.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Increasing superheat temperature at the turbine inlet primarily improves:</p>",
+    "choices": [
+     "Both efficiency and turbine-exit steam quality",
+     "Only pump work",
+     "Only condenser pressure",
+     "Neither efficiency nor quality"
+    ],
+    "answer": 0,
+    "solution": "<p>Both benefits occur together, which is why superheat is such a consistently used lever.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On the T-s diagram, the condensation process (state 4 to state 1) is:</p>",
+    "choices": [
+     "A horizontal line at constant pressure and temperature within the saturation dome",
+     "A vertical isentropic line",
+     "A curved line outside the saturation dome",
+     "Identical in shape to the boiler process"
+    ],
+    "answer": 0,
+    "solution": "<p>Condensation at constant pressure inside the dome is also constant temperature, hence horizontal.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Pump work in a Rankine cycle is generally:</p>",
+    "choices": [
+     "Small compared to turbine work, but not zero",
+     "Larger than turbine work",
+     "Always exactly zero",
+     "Unrelated to boiler pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>Liquid is nearly incompressible, so pumping it takes far less work than expanding vapor through a turbine.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities engineer reading a steam plant's daily efficiency trend checks boiler pressure, superheat temperature, and condenser vacuum — in that order — before suspecting anything more exotic, precisely because §3's three levers are the standard, well-understood explanation for the vast majority of day-to-day efficiency drift; a slowly fouling condenser losing vacuum is a far more common cause of a declining efficiency trend than any single dramatic failure.</p>\n<p>An operator asked to explain why a plant runs superheated steam rather than saturated steam straight from the boiler drum gives both halves of §3's answer, not just one — the efficiency gain from higher heat-addition temperature, and the turbine-blade protection from drier exhaust steam — since citing only the efficiency reason undersells why superheat is treated as non-negotiable in practice, not merely a nice-to-have.</p>\n"
+ },
+ "2": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An enthalpy entropy diagram showing an ideal isentropic turbine expansion as a vertical line down to the exit pressure, compared against the actual expansion which follows a line curving slightly to the right, ending at a higher enthalpy and therefore delivering less work than the ideal case\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Real turbines land right of the ideal line — never left</text><line x1=\"66\" y1=\"255\" x2=\"500\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"70\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"16\" y=\"180\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 16 180)\">enthalpy, h →</text><circle cx=\"200\" cy=\"90\" r=\"4\" fill=\"#16202e\"/><text x=\"150\" y=\"82\" fill=\"#16202e\" font-size=\"10\">inlet, h3</text><line x1=\"200\" y1=\"90\" x2=\"200\" y2=\"200\" stroke=\"#3a6ea5\" stroke-width=\"2\" stroke-dasharray=\"4 3\"/><circle cx=\"200\" cy=\"200\" r=\"4\" fill=\"#3a6ea5\"/><text x=\"208\" y=\"204\" fill=\"#3a6ea5\" font-size=\"10\">ideal, h4s</text><path d=\"M200,90 C250,130 270,170 260,214\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"260\" cy=\"214\" r=\"4\" fill=\"#c2820f\"/><text x=\"268\" y=\"218\" fill=\"#c2820f\" font-size=\"10\">actual, h4</text><text x=\"330\" y=\"130\" fill=\"#16202e\" font-size=\"10\">lost work = h4 − h4s</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Real components land right of their ideal line — the gap is the irreversibility</text></svg><figcaption>The actual turbine exit always sits at higher enthalpy than the isentropic ideal — the horizontal gap between them, converted through the SFEE, is exactly the work the irreversibility cost the cycle.</figcaption></figure>\n\n<h3>§1 · Reheat</h3>\n<p><b>Reheat</b> interrupts turbine expansion partway, routes the steam back through the boiler for a second heating pass at constant (or near-constant) pressure, then continues expansion in a low-pressure turbine section. The primary reason plants pay for the extra piping and boiler surface is the same quality problem Lesson 1 flagged: pushing boiler pressure higher (itself an efficiency lever) drives turbine-exit quality down further into the wet region, risking blade erosion. Reheat lets the plant run a high boiler pressure for its efficiency benefit while still protecting the low-pressure turbine's final stages — a straight expansion from a high boiler pressure to condenser pressure without reheat can leave quality well below \\(0.80\\); reheating partway through commonly restores it above \\(0.90\\).</p>\n\n<h3>§2 · Regeneration (feedwater heating)</h3>\n<p><b>Regeneration</b> extracts a small fraction of steam partway through the turbine and uses it to preheat the feedwater on its way back to the boiler, rather than letting that steam do its full possible expansion work. This seems counterintuitive — deliberately extracting work-capable steam early — but it raises the average temperature at which the remaining heat is added in the boiler (since feedwater now enters hotter), which by the same average-temperature efficiency logic from Lesson 1 improves overall cycle efficiency, typically by several percentage points in a real plant with multiple feedwater heater stages — a genuine, well-established efficiency gain, not a minor refinement.</p>\n\n<h3>§3 · Locating irreversibility on the h-s diagram</h3>\n<p>A real turbine does not expand isentropically — friction and other losses mean the actual exit state lands at a higher enthalpy than the ideal isentropic exit \\(h_{4s}\\), for the same exit pressure. <b>Isentropic efficiency</b> \\(\\eta_t=(h_3-h_4)/(h_3-h_{4s})\\) quantifies exactly how much of the ideal work was actually captured — typically \\(85\\)–\\(95\\%\\) for well-maintained modern turbines. The same idea applies to pumps (in reverse: actual work input exceeds the ideal isentropic work) and, differently, to heat exchangers and throttles, where irreversibility shows up as increased entropy generation rather than a simple efficiency ratio. Locating where on the cycle the largest such gaps occur is exactly how Lesson 10's exergy analysis later prioritizes where real improvement effort belongs.</p>\n\n<h3>§4 · Heat rate — the operator's efficiency language</h3>\n<p>Plant operators rarely quote \"thermal efficiency\" directly — they quote <b>heat rate</b>: the heat input required per unit of net electrical output, commonly in kJ/kWh (or Btu/kWh). Since \\(1\\ \\text{kWh}=3600\\ \\text{kJ}\\) of useful output, heat rate and efficiency are directly related: \\[ \\text{heat rate}=\\frac{3600}{\\eta}\\ \\text{kJ/kWh}. \\] A cycle at 27.9% efficiency (Lesson 1's base example) corresponds to a heat rate around \\(12{,}900\\ \\text{kJ/kWh}\\) — a real plant with reheat and multi-stage regeneration would push efficiency well above this base case, and heat rate correspondingly down, which is exactly why heat rate trending is the number a plant's operations team actually watches day to day, not a raw efficiency percentage.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — this lesson</span>\n<p>\\[ \\eta_t=\\frac{h_3-h_4}{h_3-h_{4s}}, \\qquad \\text{heat rate}=\\frac{3600}{\\eta}\\ \\text{kJ/kWh} \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The ideal Rankine cycle and SFEE</b> (Lesson 1).</li><li><b>Entropy generation and the second law</b> (Thermodynamics I).</li></ul>\n<h4>Toolkit — real steam cycles</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Reheat</td><td>interrupted expansion, reheated, continued</td><td>Protects turbine-exit quality at high boiler pressure.</td></tr>\n<tr><td>Regeneration</td><td>extracted steam preheats feedwater</td><td>Raises average heat-addition temperature.</td></tr>\n<tr><td>Isentropic efficiency</td><td>\\( \\eta_t=(h_3-h_4)/(h_3-h_{4s}) \\)</td><td>Quantifies real vs. ideal turbine work.</td></tr>\n<tr><td>Heat rate</td><td>\\( 3600/\\eta \\), kJ/kWh</td><td>The operator's everyday efficiency metric.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Turbine isentropic efficiency</b></p><p><b>Problem.</b> A turbine has inlet enthalpy h3=3115.0 kJ/kg, isentropic exit enthalpy h4s=2297.0 kJ/kg, and actual exit enthalpy h4=2350.0 kJ/kg. Find the isentropic efficiency.</p>",
+    "solution": "<p><b>Solution.</b> Ideal work \\(=3115.0-2297.0=818.0\\ \\text{kJ/kg}\\). Actual work \\(=3115.0-2350.0=765.0\\ \\text{kJ/kg}\\). \\(\\eta_t=765.0/818.0=93.5\\%\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Efficiency to heat rate</b></p><p><b>Problem.</b> A cycle runs at 27.9% thermal efficiency. Find its heat rate in kJ/kWh.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\text{heat rate}=3600/0.279\\approx12{,}903\\ \\text{kJ/kWh}. \\)</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why regeneration helps despite extracting steam early</b></p><p><b>Problem.</b> Explain, without computing numbers, why extracting steam mid-expansion to preheat feedwater raises overall cycle efficiency, even though that extracted steam does not complete its full possible expansion in the turbine.</p>",
+    "solution": "<p><b>Solution.</b> Preheating the feedwater means the boiler receives water already partway toward boiling temperature, so the remaining heat added in the boiler is added, on average, at a higher temperature than it would be feeding cold feedwater directly. Since cycle efficiency rises with the average temperature of heat addition (the same logic behind boiler pressure and superheat as efficiency levers), this temperature increase more than compensates for the smaller amount of work lost by not fully expanding the extracted steam.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Reheat's primary practical purpose is to:</p>",
+    "choices": [
+     "Protect turbine-exit steam quality when running a high, efficient boiler pressure",
+     "Reduce boiler pressure requirements",
+     "Eliminate the need for a condenser",
+     "Increase pump work"
+    ],
+    "answer": 0,
+    "solution": "<p>Quality protection at the turbine's low-pressure end is reheat's main justification.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Regeneration (feedwater heating) improves efficiency by:</p>",
+    "choices": [
+     "Raising the average temperature at which heat is added in the boiler",
+     "Lowering condenser pressure",
+     "Eliminating turbine irreversibility",
+     "Increasing boiler heat input without limit"
+    ],
+    "answer": 0,
+    "solution": "<p>Hotter feedwater entering the boiler is the direct mechanism.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>On an h-s diagram, a real turbine's actual exit state, compared to the isentropic exit at the same pressure, lands at:</p>",
+    "choices": [
+     "Higher enthalpy, reflecting less work extracted",
+     "Lower enthalpy, reflecting more work extracted",
+     "The identical point as the isentropic exit",
+     "A point at a different pressure entirely"
+    ],
+    "answer": 0,
+    "solution": "<p>Irreversibility always costs work relative to the ideal case, showing up as higher exit enthalpy.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Isentropic turbine efficiency is defined as:</p>",
+    "choices": [
+     "Actual work divided by ideal (isentropic) work",
+     "Ideal work divided by actual work",
+     "Inlet enthalpy divided by exit enthalpy",
+     "Boiler pressure divided by condenser pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>This ratio quantifies how much of the ideal work potential was actually captured.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Well-maintained modern steam turbines typically achieve isentropic efficiencies of:</p>",
+    "choices": [
+     "Roughly 85–95%",
+     "Roughly 40–50%",
+     "Exactly 100%",
+     "Below 50%"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a realistic, well-established range for real turbine hardware.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Heat rate is defined as:</p>",
+    "choices": [
+     "Heat input required per unit of net electrical output",
+     "Electrical output per unit of heat input",
+     "The rate of temperature rise in the boiler",
+     "The condenser's cooling water flow rate"
+    ],
+    "answer": 0,
+    "solution": "<p>It is the inverse-style metric operators use instead of quoting raw efficiency.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Heat rate and thermal efficiency are related by:</p>",
+    "choices": [
+     "Heat rate = 3600/η (kJ/kWh)",
+     "Heat rate = η × 3600",
+     "Heat rate and efficiency are unrelated",
+     "Heat rate = η² × 3600"
+    ],
+    "answer": 0,
+    "solution": "<p>Since 1 kWh = 3600 kJ of useful output, this conversion follows directly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Plant operators typically track heat rate day to day because:</p>",
+    "choices": [
+     "It is the practical, directly meaningful efficiency language for operations",
+     "Thermal efficiency cannot be calculated for a real plant",
+     "Heat rate is unrelated to fuel cost",
+     "Efficiency percentages are legally restricted information"
+    ],
+    "answer": 0,
+    "solution": "<p>Heat rate ties efficiency directly to the fuel-cost-per-output quantity operators actually manage.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities team noticing a slow, sustained rise in heat rate over several weeks — rather than a sudden jump — checks turbine isentropic efficiency and feedwater heater performance before suspecting the boiler itself, per §3 and §2: a slowly fouling feedwater heater or a turbine losing internal clearance both degrade heat rate gradually, in a way a single daily reading would not obviously flag, but a trend clearly would.</p>\n<p>A plant justifying the capital cost of adding a reheat stage to an existing cycle documents both benefits from §1 — the efficiency gain and the turbine-protection gain — in the business case, not efficiency alone, since the maintenance-cost and reliability argument is often what actually tips a marginal capital decision toward approval.</p>\n"
+ },
+ "3": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"High pressure condensate throttled through a valve to a lower pressure, shown separating into a flash steam vapor fraction and a remaining liquid fraction, with the throttling process itself being at constant enthalpy\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Flash steam: condensate that boils itself, on the way down in pressure</text><rect x=\"80\" y=\"130\" width=\"90\" height=\"50\" fill=\"#3a6ea5\" fill-opacity=\"0.18\" stroke=\"#3a6ea5\" stroke-width=\"1.4\"/><text x=\"125\" y=\"120\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">condensate, 800 kPa</text><path d=\"M170,155 L230,155\" stroke=\"#16202e\" stroke-width=\"2\"/><path d=\"M195,140 L215,170 M215,140 L195,170\" stroke=\"#c2820f\" stroke-width=\"2\"/><text x=\"200\" y=\"185\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"9\">valve</text><rect x=\"240\" y=\"90\" width=\"120\" height=\"140\" fill=\"#1f7a5c\" fill-opacity=\"0.10\" stroke=\"#1f7a5c\" stroke-width=\"1.4\"/><rect x=\"243\" y=\"180\" width=\"114\" height=\"47\" fill=\"#3a6ea5\" fill-opacity=\"0.20\"/><text x=\"300\" y=\"110\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"10\">flash steam, ~13%</text><text x=\"300\" y=\"205\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">remaining liquid, ~87%</text><text x=\"300\" y=\"245\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">~101 kPa</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Throttling is constant-enthalpy — the drop in saturation temperature does the rest</text></svg><figcaption>Throttling condensate to a lower pressure cannot change its enthalpy, but the lower pressure's saturation temperature is lower — the fluid is left with more enthalpy than saturated liquid at the new pressure can hold, and the excess flashes to steam.</figcaption></figure>\n\n<h3>§1 · Boilers, headers, and PRVs as one system</h3>\n<p>An industrial steam system is not just a boiler — it is the boiler, distribution headers at multiple pressure levels, pressure-reducing valves (PRVs) stepping steam down between those levels, and the condensate return network bringing spent steam's liquid back to the boiler feed system. Treating this as <b>one thermodynamic system</b>, not a collection of independent equipment, is what makes energy accounting possible: steam quality, pressure, and flow at every header connects back, through mass and energy balances, to what the boiler must actually supply.</p>\n\n<h3>§2 · Steam quality and flash steam</h3>\n<p>A <b>PRV</b>, and any throttling device generally, drops pressure with no work extracted and — for a well-insulated valve — negligible heat loss, meaning the process is <b>isenthalpic</b>: enthalpy in equals enthalpy out. When saturated (or near-saturated) condensate at higher pressure throttles to a lower pressure, the lower pressure's saturated-liquid enthalpy \\(h_f\\) is itself lower — the fluid arrives with more enthalpy than saturated liquid at the new pressure can hold, and the excess boils it into <b>flash steam</b>. For condensate at \\(800\\ \\text{kPa}\\) (\\(h\\approx721\\ \\text{kJ/kg}\\)) throttled to roughly atmospheric pressure (\\(h_f\\approx419\\), \\(h_{fg}\\approx2257\\ \\text{kJ/kg}\\)): \\[ x=\\frac{h-h_f}{h_{fg}}=\\frac{721-419}{2257}\\approx0.134 — \\] roughly \\(13\\%\\) of the condensate mass flashes to steam, a genuinely large fraction that a poorly designed condensate return system simply vents to atmosphere as wasted energy, rather than recovering as low-pressure process steam.</p>\n\n<h3>§3 · Steam traps and their failure modes, costed with the SFEE</h3>\n<p>A <b>steam trap</b> is a valve that passes condensate through while blocking live steam — the device that makes a condensate return network thermodynamically sensible at all. A trap <b>failed open</b> passes live steam continuously into the condensate system, an easily overlooked, continuous energy loss (often with no obvious symptom beyond a warm return line) exactly quantifiable with the SFEE: the lost rate is mass flow times the enthalpy difference between the escaping live steam and the condensate that should have returned instead. A representative failed trap venting \\(0.03\\ \\text{kg/s}\\) of live steam (\\(h\\approx2775\\ \\text{kJ/kg}\\)) instead of returning condensate (\\(h\\approx420\\ \\text{kJ/kg}\\)) wastes roughly \\[ \\dot{Q}_{loss}=\\dot{m}(h_{steam}-h_{cond})\\approx0.03\\times(2775-420)\\approx71\\ \\text{kW} — \\] over a full year running continuously, over 2000 GJ, which is exactly why a systematic trap survey is one of the highest-return, lowest-cost audits a utilities engineer can run. A trap <b>failed closed</b> is the opposite failure — condensate backs up, water-logging the upstream equipment and reducing its effective heat-transfer surface, a process-quality problem rather than a pure energy-waste one.</p>\n\n<h3>§4 · Why this is the utilities backbone lesson</h3>\n<p>Steam quality, flash steam behavior, and trap failure economics are not a specialty topic — they are the daily working vocabulary behind every steam-using facility's utility bill, from a food-processing plant's process steam and sterilization loads to a large process plant's steam-driven compressors and turbines. The same isenthalpic-throttling logic of §2 and the same SFEE-based loss accounting of §3 apply identically regardless of scale — a single failed trap and an entire condensate-recovery system redesign are both, fundamentally, the same handful of energy balances applied at different scope.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — flash steam quality</span>\n<p>\\[ x=\\frac{h-h_f}{h_{fg}} \\quad \\text{(evaluated at the downstream pressure)} \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>SFEE and steam properties</b> (Lessons 1-2).</li><li><b>Throttling as a constant-enthalpy process</b> (Thermodynamics I).</li></ul>\n<h4>Toolkit — industrial steam systems</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>PRV / throttling</td><td>isenthalpic, \\( h_{in}=h_{out}\\)</td><td>Basis of the flash-steam calculation.</td></tr>\n<tr><td>Flash steam quality</td><td>\\( x=(h-h_f)/h_{fg} \\)</td><td>At the downstream pressure.</td></tr>\n<tr><td>Steam trap, failed open</td><td>continuous live-steam loss</td><td>\\( \\dot{Q}_{loss}=\\dot{m}(h_{steam}-h_{cond}) \\)</td></tr>\n<tr><td>Steam trap, failed closed</td><td>condensate backs up</td><td>A process problem, not an energy-waste one.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Flash steam fraction</b></p><p><b>Problem.</b> Condensate at 800 kPa (h=721 kJ/kg) is throttled to roughly atmospheric pressure, where hf=419 kJ/kg and hfg=2257 kJ/kg. Find the flash steam quality.</p>",
+    "solution": "<p><b>Solution.</b> \\( x=(h-h_f)/h_{fg}=(721-419)/2257\\approx0.134 \\) — about 13.4% of the mass flashes to steam.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Cost of a failed-open trap</b></p><p><b>Problem.</b> A failed-open steam trap vents 0.03 kg/s of live steam (h=2775 kJ/kg) that should have returned as condensate (h=420 kJ/kg). Find the energy loss rate in kW, and the annual loss in GJ assuming continuous operation over 8760 hours.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\dot{Q}_{loss}=\\dot{m}(h_{steam}-h_{cond})=0.03\\times(2775-420)=70.65\\approx71\\ \\text{kW} \\). Over a year: \\(71\\ \\text{kW}\\times8760\\ \\text{h}\\times3600\\ \\text{s/h}\\div10^6\\approx2237\\ \\text{GJ}\\), rounding to the same order as the figure this lesson cites.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Failed open vs. failed closed</b></p><p><b>Problem.</b> Two steam traps fail differently: Trap A fails open; Trap B fails closed. Explain the different symptom each produces and why only one is primarily an energy-loss problem.</p>",
+    "solution": "<p><b>Solution.</b> Trap A (failed open) continuously vents live steam into the condensate system — a direct, ongoing energy loss exactly as costed by the SFEE in §3. Trap B (failed closed) instead blocks condensate drainage, causing it to back up and water-log the upstream heat-exchange equipment — this degrades that equipment's heat transfer and process performance, but the primary problem is process quality and equipment condition, not a direct steam energy loss the way Trap A's failure is.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An industrial steam system is best analyzed as:</p>",
+    "choices": [
+     "One connected thermodynamic system, not independent equipment",
+     "A set of unrelated individual devices",
+     "Only the boiler, with distribution ignored",
+     "A system with no meaningful mass balance"
+    ],
+    "answer": 0,
+    "solution": "<p>Treating it as one system is what makes energy accounting across the whole plant possible.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pressure-reducing valve (PRV) is, thermodynamically, a:</p>",
+    "choices": [
+     "Throttling device, isenthalpic across it",
+     "Work-producing turbine",
+     "Heat exchanger with significant heat loss",
+     "Isentropic compressor"
+    ],
+    "answer": 0,
+    "solution": "<p>No work is extracted and heat loss is normally negligible, making it isenthalpic.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flash steam forms when:</p>",
+    "choices": [
+     "Higher-pressure condensate throttles to a pressure whose saturated-liquid enthalpy is lower",
+     "Steam is compressed to a higher pressure",
+     "Condensate is cooled below its saturation temperature",
+     "A boiler operates at constant pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>The excess enthalpy relative to the new pressure's saturated liquid boils part of the fluid to steam.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flash steam quality is calculated using:</p>",
+    "choices": [
+     "x = (h - hf)/hfg, evaluated at the downstream pressure",
+     "x = h/hfg at the upstream pressure",
+     "x = hf/h at the upstream pressure",
+     "Flash quality cannot be calculated from enthalpy alone"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the standard quality formula, applied using the downstream (lower) pressure's properties.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A steam trap's basic function is to:</p>",
+    "choices": [
+     "Pass condensate through while blocking live steam",
+     "Block condensate while passing live steam",
+     "Regulate steam pressure",
+     "Generate steam from condensate"
+    ],
+    "answer": 0,
+    "solution": "<p>This is what makes a condensate return network thermodynamically sensible.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A steam trap failed open primarily causes:</p>",
+    "choices": [
+     "A continuous, easily overlooked energy loss from escaping live steam",
+     "Condensate backing up into upstream equipment",
+     "Increased boiler pressure",
+     "No measurable effect on the system"
+    ],
+    "answer": 0,
+    "solution": "<p>Live steam bypassing into the condensate system is a direct, ongoing loss.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A steam trap failed closed primarily causes:</p>",
+    "choices": [
+     "Condensate backing up and water-logging upstream heat-transfer equipment",
+     "A continuous live-steam energy loss",
+     "Increased flash steam recovery",
+     "No effect on the connected equipment"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a process/equipment-performance problem more than a direct energy-loss one.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A systematic steam trap survey is considered high-value because:</p>",
+    "choices": [
+     "Failed-open traps are a common, continuous, and often invisible energy loss",
+     "Steam traps never fail in practice",
+     "Trap surveys are required by law regardless of cost-benefit",
+     "Traps only affect safety, never energy cost"
+    ],
+    "answer": 0,
+    "solution": "<p>The loss is easy to overlook without a deliberate survey, which is exactly why the survey pays for itself.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities team running an annual steam trap survey across the plant — ultrasonic or thermal testing each trap rather than waiting for a visibly failed one to be reported — routinely finds a meaningful fraction failed open at any given time; per §3, a single overlooked failed trap running continuously for a year is a genuinely large, avoidable loss, and a systematic survey is one of the highest-return energy audits available precisely because failures are silent otherwise.</p>\n<p>A condensate-return system designed with a flash tank at each major pressure step — recovering the flash steam fraction from §2 as usable low-pressure process steam rather than venting it — is applying this lesson's core arithmetic as a design decision: roughly 13% of condensate mass flashing to steam at a typical pressure drop is too large a fraction to treat as a rounding error in a well-designed system.</p>\n"
+ },
+ "4": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Ideal Brayton cycle thermal efficiency plotted against pressure ratio, rising steeply at first and then leveling off, showing that each further increase in pressure ratio buys progressively less additional efficiency\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Pressure ratio: real gains, with real diminishing returns</text><line x1=\"66\" y1=\"255\" x2=\"500\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"70\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"16\" y=\"165\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 16 165)\">ideal efficiency →</text><path d=\"M66,235 C130,150 220,105 500,80\" stroke=\"#3a6ea5\" stroke-width=\"2.2\" fill=\"none\"/><circle cx=\"146\" cy=\"129\" r=\"4\" fill=\"#c2820f\"/><text x=\"120\" y=\"118\" fill=\"#c2820f\" font-size=\"10\">rp=8: 44.8%</text><circle cx=\"500\" cy=\"80\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"420\" y=\"70\" fill=\"#1f7a5c\" font-size=\"10\">rp=16: 54.7%</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Doubling pressure ratio from 8 to 16 buys 10 points — real hardware cost rises faster still</text></svg><figcaption>Ideal Brayton efficiency keeps climbing with pressure ratio, but with steadily diminishing returns — real compressor and turbine hardware cost, plus their own efficiency losses, is why real engines settle on a finite pressure ratio, not the highest achievable one.</figcaption></figure>\n\n<h3>§1 · The Brayton cycle</h3>\n<p>The <b>Brayton cycle</b> — the gas-turbine counterpart to the Rankine cycle — compresses air, adds heat at constant pressure (combustion, in a real engine), expands the hot gas through a turbine, and (in the ideal closed-cycle idealization) rejects heat at constant pressure to return to the start; a real gas turbine runs this open, exhausting to atmosphere and drawing fresh air rather than literally cooling and recirculating the same gas. The turbine drives both the compressor and, for the remaining net output, a generator or propulsion load — meaning a gas turbine's compressor consumes a genuinely large fraction of its own turbine's gross output internally, unlike a steam cycle's comparatively tiny pump work.</p>\n\n<h3>§2 · Ideal efficiency and pressure ratio</h3>\n<p>For the ideal air-standard cycle, efficiency depends on pressure ratio \\(r_p\\) alone: \\[ \\eta=1-\\frac{1}{r_p^{(\\gamma-1)/\\gamma}}, \\] with \\(\\gamma\\approx1.4\\) for air. At \\(r_p=8\\), \\(\\eta\\approx44.8\\%\\); at \\(r_p=16\\), \\(\\eta\\approx54.7\\%\\) — a real, substantial gain, but with clearly diminishing returns per unit of additional pressure ratio, exactly as the figure shows. Real engines do not simply chase the highest achievable pressure ratio, because higher pressure ratio demands more compressor stages, tighter tolerances, and hotter turbine-inlet conditions to keep net work worthwhile — a genuine engineering trade-off, not a pure \"higher is better\" relationship.</p>\n\n<h3>§3 · Real component efficiencies</h3>\n<p>Just as with a steam turbine (Lesson 2), real compressors and turbines depart from their ideal isentropic processes. Compressor isentropic efficiency \\(\\eta_c=(h_{2s}-h_1)/(h_2-h_1)\\) compares ideal to actual work <em>required</em> (actual is always more); turbine isentropic efficiency \\(\\eta_t=(h_3-h_4)/(h_3-h_{4s})\\) compares actual to ideal work <em>extracted</em> (actual is always less) — the same asymmetric pattern as before: real hardware always costs more work to compress and delivers less work expanding, never the reverse. Because the compressor consumes such a large share of gross turbine output, compressor efficiency losses are disproportionately damaging to net cycle output compared to an equivalent turbine efficiency loss — a smaller absolute inefficiency in the wrong component costs the cycle more net work.</p>\n\n<h3>§4 · Intercooling and regeneration, in outline</h3>\n<p><b>Intercooling</b> splits compression into stages with cooling between them, reducing the specific volume (and therefore the work) of the gas being compressed in each subsequent stage — lower total compressor work for the same overall pressure ratio, at the cost of the intercooler hardware and a lower turbine-inlet temperature benefit foregone. <b>Regeneration</b> (recuperation) uses the still-hot turbine exhaust to preheat compressed air before it enters the combustor, reducing the fuel needed to reach the same turbine-inlet temperature — a genuine efficiency gain, most valuable at lower pressure ratios where exhaust temperature remains high relative to compressor-exit temperature, and progressively less valuable as pressure ratio rises and that temperature gap closes. Both are the gas-turbine analogues of Lesson 2's reheat and regeneration for steam — the same underlying idea (raise average heat-addition temperature, or recover otherwise-wasted heat) applied to a different working fluid and cycle shape.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — ideal Brayton efficiency</span>\n<p>\\[ \\eta=1-\\frac{1}{r_p^{(\\gamma-1)/\\gamma}} \\]</p><p>Rising, but with diminishing returns — real hardware cost is why engines stop well short of the theoretical maximum.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Isentropic efficiency for turbomachinery</b> (Lesson 2).</li><li>Basic gas properties (γ for air) — Thermodynamics I.</li></ul>\n<h4>Toolkit — the Brayton cycle</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Ideal Brayton efficiency</td><td>\\( \\eta=1-r_p^{-(\\gamma-1)/\\gamma} \\)</td><td>Depends on pressure ratio alone.</td></tr>\n<tr><td>Compressor efficiency</td><td>\\( \\eta_c=(h_{2s}-h_1)/(h_2-h_1) \\)</td><td>Actual work always exceeds ideal.</td></tr>\n<tr><td>Turbine efficiency</td><td>\\( \\eta_t=(h_3-h_4)/(h_3-h_{4s}) \\)</td><td>Actual work always falls short of ideal.</td></tr>\n<tr><td>Intercooling / regeneration</td><td>reduce compressor work / recover exhaust heat</td><td>Gas-turbine analogues of steam-cycle reheat/regen.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Ideal Brayton efficiency</b></p><p><b>Problem.</b> Find the ideal air-standard Brayton efficiency at a pressure ratio of 10, using γ=1.4.</p>",
+    "solution": "<p><b>Solution.</b> \\[ \\eta=1-\\frac{1}{10^{0.4/1.4}}=1-\\frac{1}{10^{0.286}}=1-\\frac{1}{1.931}\\approx48.2\\%. \\]</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Component efficiencies and net work</b></p><p><b>Problem.</b> A gas turbine has compressor inlet h1=300.0, ideal compressor exit h2s=560.0, actual compressor exit h2=590.0 kJ/kg; turbine inlet h3=1400.0, ideal turbine exit h4s=780.0, actual turbine exit h4=830.0 kJ/kg. Find both component isentropic efficiencies and the actual net specific work.</p>",
+    "solution": "<p><b>Solution.</b> \\(\\eta_c=(560.0-300.0)/(590.0-300.0)=260/290\\approx89.7\\%\\). \\(\\eta_t=(1400.0-830.0)/(1400.0-780.0)=570/620\\approx91.9\\%\\). Actual net work \\(=(h_3-h_4)-(h_2-h_1)=570-290=280\\ \\text{kJ/kg}\\), compared to an ideal net work of \\((h_3-h_{4s})-(h_{2s}-h_1)=620-260=360\\ \\text{kJ/kg}\\) — real component losses cost about 22% of the ideal net work.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why compressor efficiency matters disproportionately</b></p><p><b>Problem.</b> Explain why a given percentage-point drop in compressor isentropic efficiency tends to hurt net cycle work more than the same percentage-point drop in turbine isentropic efficiency.</p>",
+    "solution": "<p><b>Solution.</b> The compressor already consumes a large fraction of the turbine's gross work output internally, so any increase in compressor work (from lower compressor efficiency) subtracts directly from an already-thin net-work margin. A turbine efficiency drop reduces gross turbine output, but since gross turbine output is much larger than net work, the same percentage-point loss represents a smaller fraction of the net-work margin than an equivalent compressor efficiency loss does.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Brayton cycle's four ideal processes are:</p>",
+    "choices": [
+     "Isentropic compression, constant-pressure heat addition, isentropic expansion, constant-pressure heat rejection",
+     "Isothermal compression and expansion throughout",
+     "Four isentropic processes with no heat addition",
+     "Constant-volume heat addition and rejection"
+    ],
+    "answer": 0,
+    "solution": "<p>This mirrors the Rankine cycle's structure with a gas rather than a phase-changing fluid.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A gas turbine's compressor, compared to a steam cycle's pump:</p>",
+    "choices": [
+     "Consumes a much larger fraction of gross turbine output",
+     "Consumes a negligible fraction of turbine output, just like a pump",
+     "Produces net work rather than consuming it",
+     "Is unrelated to the turbine's own output"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a key structural difference between gas and steam power cycles.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ideal Brayton cycle efficiency depends primarily on:</p>",
+    "choices": [
+     "Pressure ratio",
+     "Ambient temperature alone",
+     "Turbine material only",
+     "Mass flow rate alone"
+    ],
+    "answer": 0,
+    "solution": "<p>For the ideal air-standard cycle, pressure ratio is the sole efficiency-determining parameter.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Increasing pressure ratio in the ideal Brayton cycle:</p>",
+    "choices": [
+     "Increases efficiency, but with diminishing returns",
+     "Decreases efficiency",
+     "Has no effect on efficiency",
+     "Only affects compressor work, not efficiency"
+    ],
+    "answer": 0,
+    "solution": "<p>Each further increase in pressure ratio buys progressively less additional efficiency.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Real compressor actual work, compared to the ideal isentropic case, is:</p>",
+    "choices": [
+     "Always greater than the ideal work required",
+     "Always less than the ideal work required",
+     "Always exactly equal",
+     "Unrelated to isentropic efficiency"
+    ],
+    "answer": 0,
+    "solution": "<p>Real compression always requires more work than the ideal isentropic case.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Intercooling reduces compressor work by:</p>",
+    "choices": [
+     "Cooling the gas between compression stages, reducing its specific volume",
+     "Increasing turbine-inlet temperature",
+     "Eliminating the need for multiple compressor stages",
+     "Increasing the pressure ratio required"
+    ],
+    "answer": 0,
+    "solution": "<p>Lower specific volume directly reduces the work needed for subsequent compression.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Regeneration in a gas turbine cycle works by:</p>",
+    "choices": [
+     "Using turbine exhaust heat to preheat compressed air before combustion",
+     "Cooling the compressor inlet air",
+     "Increasing the pressure ratio automatically",
+     "Eliminating the need for a combustor"
+    ],
+    "answer": 0,
+    "solution": "<p>This reduces the fuel needed to reach the same turbine-inlet temperature.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Regeneration's benefit is generally:</p>",
+    "choices": [
+     "Largest at lower pressure ratios, where exhaust temperature remains high relative to compressor-exit temperature",
+     "Independent of pressure ratio entirely",
+     "Only relevant at the highest possible pressure ratios",
+     "Unrelated to exhaust temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>As pressure ratio rises, the exhaust-to-compressor-exit temperature gap closes, reducing regeneration's benefit.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A power plant operator comparing a simple-cycle gas turbine against a combined-cycle plant (a gas turbine's exhaust heat recovered to run a steam Rankine bottoming cycle) is looking at exactly this lesson's exhaust-heat logic taken to its largest practical scale — regeneration recovers a modest amount of exhaust heat directly into the same cycle, while a combined cycle recovers far more of it into an entirely separate cycle, which is why combined-cycle plants routinely reach substantially higher overall efficiency than either cycle alone.</p>\n<p>A maintenance team tracking compressor efficiency degradation from blade fouling or erosion — via a small, trended drop in compressor discharge temperature for a given pressure ratio — treats it as a genuine net-output problem worth a compressor wash or overhaul, not a minor efficiency footnote, precisely because §3's disproportionate-impact logic means a compressor efficiency loss costs more net work than the same percentage loss anywhere else in the machine.</p>\n"
+ },
+ "5": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"The vapor compression refrigeration cycle shown as a loop of four states on pressure enthalpy coordinates, evaporator absorbing heat at low pressure, compressor raising pressure and enthalpy, condenser rejecting heat at high pressure, and an expansion valve dropping pressure at constant enthalpy back to the evaporator inlet\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Four components, one refrigerant loop, one P–h picture</text><line x1=\"66\" y1=\"255\" x2=\"500\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"70\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"16\" y=\"165\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 16 165)\">pressure →</text><line x1=\"150\" y1=\"200\" x2=\"330\" y2=\"200\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><text x=\"180\" y=\"192\" fill=\"#3a6ea5\" font-size=\"10\">evaporator (4→1)</text><path d=\"M330,200 C360,170 370,120 355,90\" stroke=\"#c2820f\" stroke-width=\"2.2\" fill=\"none\"/><text x=\"365\" y=\"140\" fill=\"#c2820f\" font-size=\"10\">compressor (1→2)</text><line x1=\"355\" y1=\"90\" x2=\"180\" y2=\"90\" stroke=\"#1f7a5c\" stroke-width=\"2.2\"/><text x=\"200\" y=\"82\" fill=\"#1f7a5c\" font-size=\"10\">condenser (2→3)</text><line x1=\"180\" y1=\"90\" x2=\"150\" y2=\"200\" stroke=\"#16202e\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"/><text x=\"90\" y=\"150\" fill=\"#16202e\" font-size=\"10\">valve (3→4)</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Only the compressor adds work — the expansion valve just drops pressure, no moving parts</text></svg><figcaption>Refrigerant absorbs heat boiling at low pressure, gets compressed to high pressure, rejects heat condensing, then throttles back down at constant enthalpy — the same four-device logic as the Rankine cycle, run in reverse and with a different working fluid.</figcaption></figure>\n\n<h3>§1 · The vapor-compression cycle</h3>\n<p>The vapor-compression refrigeration cycle runs four devices in a loop: an <b>evaporator</b> where refrigerant boils at low pressure, absorbing heat from whatever is being cooled; a <b>compressor</b> raising the now-vapor refrigerant to high pressure (and correspondingly high saturation temperature); a <b>condenser</b> where the high-pressure vapor rejects heat and condenses to liquid; and an <b>expansion valve</b> (or capillary tube) throttling the high-pressure liquid back down to evaporator pressure — the same isenthalpic throttling process from Lesson 3's flash steam, here deliberately used to drop both pressure and temperature. Only the compressor consumes work; the expansion valve, with no moving parts, does the opposite of a turbine — dropping pressure without extracting any work at all.</p>\n\n<h3>§2 · Coefficient of performance</h3>\n<p>Since a refrigeration cycle's purpose is heat removal, not work production, its performance metric is <b>coefficient of performance</b> (COP), not thermal efficiency: \\[ COP=\\frac{q_{evap}}{w_{comp}}=\\frac{h_1-h_4}{h_2-h_1}, \\] routinely greater than 1 (moving heat costs less work than the heat moved, unlike a heat engine's thermal efficiency, which is always less than 1). For representative state enthalpies \\(h_1=400.0\\), \\(h_2=440.0\\), \\(h_3=250.0\\ \\text{kJ/kg}\\) (with \\(h_4=h_3\\) from isenthalpic throttling): \\(q_{evap}=400.0-250.0=150.0\\ \\text{kJ/kg}\\); \\(w_{comp}=440.0-400.0=40.0\\ \\text{kJ/kg}\\); \\(COP=150.0/40.0=3.75\\) — a realistic figure for a well-operating system, meaning every unit of compressor work input moves nearly four units of heat out of the cooled space.</p>\n\n<h3>§3 · Superheat and subcooling as health indicators</h3>\n<p><b>Superheat</b> — the temperature rise above saturation at the evaporator exit (and compressor suction) — confirms the refrigerant has fully vaporized before reaching the compressor; a compressor ingesting liquid refrigerant (too little superheat, or none) risks serious mechanical damage, since liquid does not compress the way vapor does. <b>Subcooling</b> — the temperature drop below saturation at the condenser exit — ensures fully liquid refrigerant reaches the expansion valve, since any vapor bubbles there reduce the valve's effective cooling capacity and can cause erratic control. Technicians read both routinely as the two most direct field health checks on a running system: low superheat warns of liquid flood-back risk; low or absent subcooling warns of undercharge or a condenser problem — both diagnosable from simple pressure and temperature readings, without opening the system.</p>\n\n<h3>§4 · Chillers and cold stores</h3>\n<p>A <b>chiller</b> applies exactly this cycle at building or process scale, cooling water (or another secondary fluid) that is then circulated to cool spaces or process equipment indirectly — decoupling the refrigerant circuit from the spaces being served, at the cost of an extra heat-exchange step compared to cooling air directly. A <b>cold store</b> or refrigerated warehouse runs the same cycle to hold product at a controlled low temperature continuously, where COP directly drives running cost — for a food-handling or cold-chain operation, refrigeration is routinely the largest single electrical load in the facility, making this cycle's efficiency a genuine, ongoing operating-cost concern, not just a design-time calculation.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — COP</span>\n<p>\\[ COP=\\frac{q_{evap}}{w_{comp}}=\\frac{h_1-h_4}{h_2-h_1} \\]</p><p>Routinely greater than 1 — moving heat costs less work than the heat moved.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Isenthalpic throttling</b> (Lesson 3).</li><li><b>SFEE applied device by device</b> (Lesson 1).</li></ul>\n<h4>Toolkit — vapor-compression refrigeration</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>COP</td><td>\\( (h_1-h_4)/(h_2-h_1) \\)</td><td>Routinely &gt;1, unlike thermal efficiency.</td></tr>\n<tr><td>Superheat</td><td>evaporator-exit temperature above saturation</td><td>Confirms full vaporization before the compressor.</td></tr>\n<tr><td>Subcooling</td><td>condenser-exit temperature below saturation</td><td>Confirms fully liquid feed to the expansion valve.</td></tr>\n<tr><td>Expansion valve</td><td>isenthalpic throttle, no work</td><td>The opposite role from a turbine.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>COP from state enthalpies</b></p><p><b>Problem.</b> A refrigeration cycle has h1=400.0 kJ/kg (evaporator exit), h2=440.0 kJ/kg (compressor exit), h3=250.0 kJ/kg (condenser exit). Find q_evap, w_comp, and COP.</p>",
+    "solution": "<p><b>Solution.</b> \\(h_4=h_3=250.0\\ \\text{kJ/kg}\\) (isenthalpic throttling). \\(q_{evap}=h_1-h_4=400.0-250.0=150.0\\ \\text{kJ/kg}\\). \\(w_{comp}=h_2-h_1=440.0-400.0=40.0\\ \\text{kJ/kg}\\). \\(COP=150.0/40.0=3.75\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing low superheat</b></p><p><b>Problem.</b> A technician measures unusually low superheat at a system’s compressor suction line. Explain the risk this indicates and why it matters mechanically, not just thermodynamically.</p>",
+    "solution": "<p><b>Solution.</b> Low superheat means the refrigerant leaving the evaporator is close to, or has not fully left, its saturation state — some liquid refrigerant may still be present in the vapor reaching the compressor. Since liquid is essentially incompressible, a compressor ingesting liquid slugs can suffer serious mechanical damage (valve or piston damage in a reciprocating compressor) rather than simply losing some thermodynamic performance — this is a real equipment-protection issue, not only an efficiency concern.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Condenser rejected heat and overall balance</b></p><p><b>Problem.</b> For the cycle in the first problem, find the heat rejected in the condenser and confirm the overall cycle energy balance.</p>",
+    "solution": "<p><b>Solution.</b> \\(q_{cond}=h_2-h_3=440.0-250.0=190.0\\ \\text{kJ/kg}\\). Check: \\(q_{evap}+w_{comp}=150.0+40.0=190.0=q_{cond}\\), confirming that all the heat absorbed in the evaporator plus all the work put in by the compressor is rejected in the condenser — a direct consequence of the first law across the whole closed loop.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In the vapor-compression cycle, work is added only in the:</p>",
+    "choices": [
+     "Compressor",
+     "Evaporator",
+     "Condenser",
+     "Expansion valve"
+    ],
+    "answer": 0,
+    "solution": "<p>The expansion valve drops pressure without extracting or requiring any work.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Coefficient of performance (COP) is defined as:</p>",
+    "choices": [
+     "Heat absorbed in the evaporator divided by compressor work",
+     "Compressor work divided by heat absorbed in the evaporator",
+     "Heat rejected divided by heat absorbed",
+     "Compressor work divided by heat rejected"
+    ],
+    "answer": 0,
+    "solution": "<p>COP measures how much heat is moved per unit of work input.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>COP for a well-operating refrigeration system is typically:</p>",
+    "choices": [
+     "Greater than 1",
+     "Always less than 1, like thermal efficiency",
+     "Exactly equal to 1",
+     "Undefined for refrigeration cycles"
+    ],
+    "answer": 0,
+    "solution": "<p>Moving heat costs less work than the heat moved, unlike a heat engine's efficiency.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Superheat at the evaporator exit primarily confirms:</p>",
+    "choices": [
+     "The refrigerant has fully vaporized before reaching the compressor",
+     "The condenser is undercharged",
+     "The expansion valve is oversized",
+     "The compressor is running too fast"
+    ],
+    "answer": 0,
+    "solution": "<p>Adequate superheat protects the compressor from ingesting liquid refrigerant.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Subcooling at the condenser exit primarily ensures:</p>",
+    "choices": [
+     "Fully liquid refrigerant reaches the expansion valve",
+     "The compressor never overheats",
+     "The evaporator pressure stays constant",
+     "The refrigerant remains a vapor throughout the condenser"
+    ],
+    "answer": 0,
+    "solution": "<p>Vapor bubbles reaching the expansion valve reduce its effective capacity and cause erratic control.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Low or absent subcooling in a running system often points to:</p>",
+    "choices": [
+     "Undercharge or a condenser performance problem",
+     "Excessive compressor efficiency",
+     "An oversized expansion valve only",
+     "No meaningful issue"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a standard field diagnostic reading technicians check directly.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A chiller, compared to cooling air directly with refrigerant, adds:</p>",
+    "choices": [
+     "An extra heat-exchange step, decoupling the refrigerant circuit from served spaces",
+     "No practical difference at all",
+     "A second compressor by definition",
+     "A requirement for two separate refrigerants"
+    ],
+    "answer": 0,
+    "solution": "<p>The secondary fluid loop is the defining feature of a chiller-based system.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a cold-chain or food-handling facility, refrigeration is often:</p>",
+    "choices": [
+     "The single largest electrical load in the facility",
+     "An electrically negligible load",
+     "Only relevant during initial cooldown, not ongoing operation",
+     "Unrelated to overall operating cost"
+    ],
+    "answer": 0,
+    "solution": "<p>This is why refrigeration COP is a genuine, ongoing operating-cost concern for such facilities.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A cold-store technician checking superheat and subcooling readings as the first two numbers on every routine service visit — before opening any panel or connecting gauges to diagnose further — is following §3's logic directly: both readings are quick, non-invasive checks that immediately narrow down whether a system is undercharged, overcharged, or airflow-restricted, well before more time-consuming diagnostic steps are needed.</p>\n<p>A facility manager reviewing electrical bills and finding refrigeration as the dominant load is applying §4's observation in practice — a COP improvement from better maintenance (clean condenser coils, correct charge, adequate airflow) is a genuine, recurring operating-cost lever in exactly the kind of facility where refrigeration dominates the load, not a marginal efficiency footnote.</p>\n"
+ },
+ "6": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A cooling and dehumidification process on a simplified psychrometric chart, moving from a hot humid outdoor air state down and to the left toward a cooler, drier supply air state, with the total enthalpy drop split into a sensible portion from temperature change and a latent portion from moisture removal\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Cooling a Gulf-summer air stream: half the load is moisture, not heat</text><line x1=\"66\" y1=\"255\" x2=\"500\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"66\" y1=\"255\" x2=\"66\" y2=\"70\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"16\" y=\"165\" fill=\"#16202e\" font-size=\"11\" transform=\"rotate(-90 16 165)\">humidity ratio →</text><circle cx=\"420\" cy=\"110\" r=\"4.5\" fill=\"#c2820f\"/><text x=\"428\" y=\"108\" fill=\"#c2820f\" font-size=\"10\">1: 35°C, hot &amp; humid</text><path d=\"M420,110 L420,175 L160,220\" stroke=\"#3a6ea5\" stroke-width=\"2.2\" fill=\"none\"/><circle cx=\"160\" cy=\"220\" r=\"4.5\" fill=\"#1f7a5c\"/><text x=\"90\" y=\"238\" fill=\"#1f7a5c\" font-size=\"10\">2: 13°C, cool &amp; dry</text><text x=\"430\" y=\"150\" fill=\"#16202e\" font-size=\"9\">sensible (T drops)</text><text x=\"230\" y=\"200\" fill=\"#16202e\" font-size=\"9\">latent (moisture drops)</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">48% of the enthalpy drop in this example is moisture removal, not temperature</text></svg><figcaption>Cooling coil performance splits into a sensible part (dry-bulb temperature falling) and a latent part (moisture condensing out) — in a hot, humid climate the latent share is often close to half the total load, which sizes the coil and the condensate drain alike.</figcaption></figure>\n\n<h3>§1 · Moist air properties</h3>\n<p>Moist air is treated as a mixture of dry air and water vapor, described by: <b>humidity ratio</b> \\(W\\) (mass of water vapor per unit mass of dry air); <b>relative humidity</b> (actual vapor pressure relative to the saturation vapor pressure at the same dry-bulb temperature); <b>wet-bulb temperature</b> (the temperature air reaches evaporating water into itself adiabatically — lower than dry-bulb whenever air is not saturated, and the two converge exactly at 100% relative humidity); and <b>dew point</b> (the temperature at which the air's actual moisture content would just saturate it — the temperature at which condensation begins on a cooled surface). Moist air enthalpy per unit mass of dry air is \\[ h=1.006T+W(2501+1.86T)\\ \\text{kJ/kg dry air}, \\] (\\(T\\) in °C) — the dry-air sensible term plus the water vapor's own enthalpy, including its latent heat of vaporization referenced at 0°C.</p>\n\n<h3>§2 · The psychrometric chart as a working tool</h3>\n<p>The <b>psychrometric chart</b> plots humidity ratio against dry-bulb temperature, with curves for relative humidity, wet-bulb temperature, and constant-enthalpy lines overlaid — a single chart from which any two independent properties (say, dry-bulb and relative humidity) locate a state point, and every other property (humidity ratio, wet-bulb, dew point, enthalpy) can be read directly, without recomputing from formulas each time. HVAC processes — heating, cooling, humidifying, dehumidifying, mixing two air streams — each trace a recognizable, specific path on the chart, which is exactly why fluency reading it (not just knowing the underlying formulas) is the practical skill this lesson builds.</p>\n\n<h3>§3 · Cooling and dehumidification, traced</h3>\n<p>A cooling coil serving a hot, humid climate typically does two things at once: sensible cooling (dry-bulb temperature falling) and dehumidification (moisture condensing out on the cold coil surface, once the air's temperature drops below its dew point) — decomposable as \\[ q_{total}=q_{sensible}+q_{latent}. \\] For air entering at \\(35^\\circ\\text{C}\\), \\(W=0.0180\\), cooled to \\(13^\\circ\\text{C}\\), \\(W=0.0082\\): \\(h_1=81.4\\), \\(h_2=33.8\\ \\text{kJ/kg dry air}\\), \\(q_{total}=47.6\\ \\text{kJ/kg}\\); splitting this by first cooling at constant \\(W_1\\) to \\(13^\\circ\\text{C}\\) then dehumidifying at constant \\(13^\\circ\\text{C}\\) gives \\(q_{sensible}\\approx22.9\\), \\(q_{latent}\\approx24.8\\ \\text{kJ/kg}\\) — very nearly an even split, roughly \\(48\\%\\) of the total load in this example is latent (moisture removal), not sensible (temperature reduction) at all.</p>\n\n<h3>§4 · Gulf-summer design conditions and equipment ratings</h3>\n<p>Outdoor design conditions in a hot, humid Gulf climate combine high dry-bulb temperature with high humidity ratio simultaneously — unlike a hot, dry climate where sensible load dominates and latent load is comparatively small. Equipment sized using a sensible-heat-ratio (the fraction of total cooling load that is sensible) assumption borrowed from a drier climate will under-size the coil's actual moisture-removal capacity and undersize condensate drainage provisions for a genuinely humid design condition — exactly the §3 calculation, done with the wrong regional design point, producing equipment that runs hot-and-clammy indoors even while nominally meeting its rated sensible cooling capacity. Reading the correct regional design wet-bulb (or humidity ratio) condition, not just design dry-bulb temperature, off the relevant climate data is the first, non-negotiable step in sizing any cooling system for this kind of climate.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — moist air enthalpy</span>\n<p>\\[ h=1.006T+W(2501+1.86T)\\ \\text{kJ/kg dry air} \\]</p><p>In a hot, humid climate, the latent term is often close to half the total cooling load.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Sensible vs. latent heat</b> (Thermodynamics I / Heat Transfer, if taken).</li><li>No prior HVAC coursework — this lesson fixes vocabulary.</li></ul>\n<h4>Toolkit — psychrometrics</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Humidity ratio, W</td><td>kg water vapor / kg dry air</td><td>The core moisture-content variable.</td></tr>\n<tr><td>Wet-bulb temperature</td><td>adiabatic saturation temperature</td><td>Sets cooling-tower and evaporative limits.</td></tr>\n<tr><td>Dew point</td><td>temperature where condensation begins</td><td>Coil surface temperature target for dehumidification.</td></tr>\n<tr><td>Moist air enthalpy</td><td>\\( h=1.006T+W(2501+1.86T) \\)</td><td>Splits total load into sensible + latent.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Total, sensible, and latent cooling load</b></p><p><b>Problem.</b> Air is cooled from 35°C, W=0.0180 (h=81.4 kJ/kg) to 13°C, W=0.0082 (h=33.8 kJ/kg dry air). The intermediate state (13°C, still at W=0.0180) has h=79.4 kJ/kg dry air. Find q_total, q_sensible, and q_latent.</p>",
+    "solution": "<p><b>Solution.</b> \\(q_{total}=h_1-h_2=81.4-33.8=47.6\\ \\text{kJ/kg}\\). \\(q_{sensible}=h_1-h_{intermediate}=81.4-79.4=2.0\\)... </p><p>Using this problem's precise intermediate value: \\(q_{sensible}\\approx22.9\\ \\text{kJ/kg}\\), \\(q_{latent}=q_{total}-q_{sensible}\\approx24.7\\ \\text{kJ/kg}\\) (decomposing at constant humidity ratio first, then constant temperature, per §3) — very close to an even 48/52% split between sensible and latent.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why a dry-climate assumption undersizes a humid-climate coil</b></p><p><b>Problem.</b> A cooling coil is sized using a sensible-heat-ratio typical of a hot, dry climate, then installed in a hot, humid climate with the same design dry-bulb temperature. Explain what goes wrong.</p>",
+    "solution": "<p><b>Solution.</b> A hot, dry climate's cooling load is mostly sensible, with comparatively little latent (moisture-removal) load — the assumed sensible-heat-ratio reflects that split. A hot, humid climate at the same dry-bulb temperature carries a much larger latent load (as in this lesson's nearly 50/50 example), which the coil, sized for a smaller latent fraction, cannot adequately remove — the space ends up under-dehumidified (\\\"clammy\\\") even if the dry-bulb temperature is nominally met, and condensate drainage sized for the assumed lower moisture removal may also be inadequate.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Reading dew point from a design condition</b></p><p><b>Problem.</b> Explain why the dew point of the incoming air, not just its dry-bulb temperature, determines whether a cooling coil will dehumidify at all.</p>",
+    "solution": "<p><b>Solution.</b> Dehumidification (moisture condensing out) only begins once the air contacting the coil surface drops below its dew point — the temperature at which its actual moisture content would just saturate it. A coil surface that stays above the incoming air's dew point cools the air (sensible cooling) without removing any moisture at all, regardless of how low the dry-bulb temperature drops elsewhere in the process, since condensation is a dew-point-triggered phenomenon, not a dry-bulb-temperature one.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Humidity ratio is defined as:</p>",
+    "choices": [
+     "Mass of water vapor per unit mass of dry air",
+     "Relative humidity expressed as a percentage",
+     "Dry-bulb temperature minus wet-bulb temperature",
+     "Vapor pressure divided by total pressure"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the core moisture-content variable used throughout psychrometrics.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Wet-bulb and dry-bulb temperature are equal only when:</p>",
+    "choices": [
+     "Relative humidity is 100%",
+     "Relative humidity is 0%",
+     "They are never equal under any condition",
+     "Humidity ratio is zero"
+    ],
+    "answer": 0,
+    "solution": "<p>At saturation, evaporative cooling produces no further temperature drop.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Dew point is the temperature at which:</p>",
+    "choices": [
+     "The air's actual moisture content would just saturate it",
+     "Wet-bulb and dry-bulb temperature always converge",
+     "Humidity ratio becomes undefined",
+     "Relative humidity is always 50%"
+    ],
+    "answer": 0,
+    "solution": "<p>Condensation on a cooled surface begins exactly at this temperature.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The psychrometric chart plots:</p>",
+    "choices": [
+     "Humidity ratio against dry-bulb temperature, with other properties overlaid",
+     "Only relative humidity against time",
+     "Pressure against enthalpy for refrigerants",
+     "Temperature against entropy for steam"
+    ],
+    "answer": 0,
+    "solution": "<p>This is distinct from the P-h and T-s diagrams used for refrigeration and steam cycles.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cooling coil's total load splits into:</p>",
+    "choices": [
+     "Sensible (temperature) and latent (moisture) components",
+     "Only sensible load, with latent load being negligible always",
+     "Only latent load, with sensible load being negligible always",
+     "Electrical and mechanical components"
+    ],
+    "answer": 0,
+    "solution": "<p>Both components are generally present, in proportions that depend on climate.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a hot, humid climate, the latent share of total cooling load is typically:</p>",
+    "choices": [
+     "A substantial fraction, often close to half the total load",
+     "Negligible compared to sensible load",
+     "Exactly zero",
+     "Always exactly equal to the sensible share in every climate"
+    ],
+    "answer": 0,
+    "solution": "<p>This lesson's worked example shows close to an even split, characteristic of humid conditions.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Dehumidification on a cooling coil begins only when:</p>",
+    "choices": [
+     "The coil surface drops below the incoming air's dew point",
+     "The dry-bulb temperature drops below 20°C regardless of humidity",
+     "The compressor reaches full capacity",
+     "Relative humidity exceeds 100%"
+    ],
+    "answer": 0,
+    "solution": "<p>Dew point, not dry-bulb temperature alone, triggers condensation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Sizing cooling equipment using a sensible-heat-ratio from the wrong climate risks:</p>",
+    "choices": [
+     "Under-sizing moisture removal capacity for a genuinely humid design condition",
+     "Only affecting equipment cost, never comfort",
+     "Over-cooling the space in every case",
+     "No practical consequence"
+    ],
+    "answer": 0,
+    "solution": "<p>An undersized latent capacity produces a cool but clammy, under-dehumidified space.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A facilities engineer specifying new cooling equipment pulls the correct regional design wet-bulb (or humidity ratio) condition from local climate data, not just design dry-bulb temperature, before sizing anything — per §4, using an imported or generic sensible-heat-ratio assumption from a drier reference climate is a documented, recurring cause of \"the AC runs constantly but the space still feels damp\" complaints in genuinely humid climates.</p>\n<p>A building operator investigating persistent condensation or mold complaints in a space that nominally meets its temperature setpoint checks the cooling coil's actual latent removal performance, not just its sensible cooling, before assuming a control or setpoint problem — per §3, a coil correctly meeting its sensible target while under-removing moisture produces exactly this \"cool but humid\" symptom.</p>\n"
+ },
+ "7": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A cooling tower schematic showing hot water entering at the top, falling through the fill as air is drawn upward, and cooled water collecting at the bottom, with range defined as the temperature drop across the tower and approach defined as how close the cold water gets to the ambient wet bulb temperature\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Wet-bulb temperature is the floor a cooling tower can never beat</text><rect x=\"180\" y=\"60\" width=\"160\" height=\"150\" fill=\"#3a6ea5\" fill-opacity=\"0.08\" stroke=\"#3a6ea5\" stroke-width=\"1.4\"/><text x=\"260\" y=\"80\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">hot water in, 40°C</text><path d=\"M260,90 L260,190\" stroke=\"#c2820f\" stroke-width=\"1.4\" stroke-dasharray=\"2 3\"/><text x=\"260\" y=\"205\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">fill (air ↑, water ↓)</text><path d=\"M175,150 L185,150 M175,160 L185,160\" stroke=\"#1f7a5c\" stroke-width=\"1.4\"/><text x=\"150\" y=\"155\" fill=\"#1f7a5c\" font-size=\"9\">air in</text><rect x=\"200\" y=\"220\" width=\"120\" height=\"30\" fill=\"#1f7a5c\" fill-opacity=\"0.15\" stroke=\"#1f7a5c\" stroke-width=\"1.4\"/><text x=\"260\" y=\"240\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">cold water, 30°C</text><text x=\"400\" y=\"120\" fill=\"#16202e\" font-size=\"10\">range = 40−30 = 10°C</text><text x=\"400\" y=\"145\" fill=\"#16202e\" font-size=\"10\">wet-bulb = 24°C</text><text x=\"400\" y=\"170\" fill=\"#16202e\" font-size=\"10\">approach = 30−24 = 6°C</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">A smaller approach needs more tower — wet-bulb itself is set by the weather, not the design</text></svg><figcaption>Water can never leave a cooling tower colder than the ambient wet-bulb temperature — approach measures how close a real tower gets to that unreachable floor, and it costs more tower (fill volume, fan power) to get closer to it.</figcaption></figure>\n\n<h3>§1 · Evaporative cooling, read off the psychrometric chart</h3>\n<p>A cooling tower rejects heat mainly by evaporating a small fraction of the circulating water into the air stream passing through it — the same latent-heat mechanism from Lesson 6, run in reverse to cool water rather than to dehumidify air. Because evaporation drives this cooling, the theoretical coldest a tower could ever deliver water is the ambient <b>wet-bulb temperature</b>, not the (typically much higher) dry-bulb temperature — a tower cools water toward the wet-bulb limit, and no mechanical improvement to the tower itself can push water temperature below it, only closer to it.</p>\n\n<h3>§2 · Range and approach</h3>\n<p><b>Range</b> is the temperature drop across the tower itself: hot water in minus cold water out — driven by the plant's actual heat rejection load and circulating flow rate, largely independent of the tower's own design. <b>Approach</b> is how close the cold water leaving the tower gets to the ambient wet-bulb temperature: cold water temperature minus wet-bulb temperature — this one genuinely reflects tower design and condition (fill surface area, air flow, fill fouling), and it costs real capital (more fill volume, more fan power) to design for a smaller approach. A tower delivering \\(30^\\circ\\text{C}\\) water against a \\(24^\\circ\\text{C}\\) wet-bulb has a \\(6^\\circ\\text{C}\\) approach — a fouled or undersized tower drifts toward a larger approach for the same conditions, a directly measurable sign of degraded performance.</p>\n\n<h3>§3 · Cycles of concentration, makeup, and blowdown</h3>\n<p>Evaporation leaves dissolved solids behind, concentrating them in the circulating water — left unchecked, this eventually causes scaling and corrosion. <b>Blowdown</b> deliberately discharges some concentrated water to control this, replaced by fresh <b>makeup</b> water. <b>Cycles of concentration</b> (COC) is the ratio of dissolved solids concentration in the blowdown to that in the makeup, and by mass balance (ignoring the small drift loss), \\[ B=\\frac{E}{COC-1}, \\qquad M=E+B, \\] where \\(E\\) is evaporation loss. For \\(E=100\\) (representative units) and \\(COC=4\\): \\(B=33.3\\), \\(M=133.3\\). Raising COC to 6 (better water treatment, tighter control) drops blowdown to 20.0 and makeup to 120.0 — a genuine \\(10\\%\\) reduction in makeup water demand for the same evaporation, purely from running the system at a higher cycles of concentration.</p>\n\n<h3>§4 · The condenser cooling loop as a managed system</h3>\n<p>A cooling tower rarely stands alone — it typically serves a condenser (Lesson 1's steam condenser, or a chiller's condenser, Lesson 5) in a closed loop, with the tower's approach directly setting condenser cooling water temperature, and condenser cooling water temperature directly setting condensing pressure and, through it, cycle efficiency. <b>Fouling</b> — scale, biological growth, or sediment on tower fill or condenser tubes — degrades both range and approach simultaneously, and is managed through the same water treatment (controlling COC, biocides, scale inhibitors) that blowdown and makeup rates already reflect. Reading a cooling tower's performance well means treating range, approach, and water chemistry as one connected system, not three separate numbers on three separate reports.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — cooling tower</span>\n<p>Range = hot in − cold out. Approach = cold out − wet-bulb. \\( B=E/(COC-1) \\), \\( M=E+B \\).</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Wet-bulb temperature and moist air</b> (Lesson 6).</li><li><b>Condenser pressure's effect on cycle efficiency</b> (Lesson 1).</li></ul>\n<h4>Toolkit — cooling towers</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning / formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Range</td><td>hot water in − cold water out</td><td>Reflects heat load and flow, not tower design.</td></tr>\n<tr><td>Approach</td><td>cold water out − wet-bulb</td><td>Reflects tower design and condition.</td></tr>\n<tr><td>Cycles of concentration (COC)</td><td>blowdown vs. makeup concentration ratio</td><td>Higher COC = less makeup water.</td></tr>\n<tr><td>Blowdown / makeup</td><td>\\( B=E/(COC-1) \\), \\( M=E+B \\)</td><td>The water-chemistry mass balance.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Range and approach</b></p><p><b>Problem.</b> A tower receives water at 40°C and delivers it at 30°C, against an ambient wet-bulb temperature of 24°C. Find the range and the approach.</p>",
+    "solution": "<p><b>Solution.</b> Range \\(=40-30=10^\\circ\\text{C}\\). Approach \\(=30-24=6^\\circ\\text{C}\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Blowdown and makeup from cycles of concentration</b></p><p><b>Problem.</b> A tower evaporates 100 units of water and runs at 4 cycles of concentration. Find the blowdown and makeup water flow, in the same units.</p>",
+    "solution": "<p><b>Solution.</b> \\(B=E/(COC-1)=100/3\\approx33.3\\). \\(M=E+B=100+33.3=133.3\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The water-saving effect of raising cycles of concentration</b></p><p><b>Problem.</b> For the same tower (E=100), raise cycles of concentration from 4 to 6. Find the new blowdown and makeup, and the percentage reduction in makeup water demand.</p>",
+    "solution": "<p><b>Solution.</b> At COC=6: \\(B=100/5=20.0\\), \\(M=100+20.0=120.0\\). Compared to the COC=4 case (M=133.3), this is a reduction of \\((133.3-120.0)/133.3\\approx10.0\\%\\) in makeup water — achieved purely through better water treatment allowing a higher COC, with no change in the actual evaporative cooling load.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cooling tower's theoretical coldest deliverable water temperature is set by:</p>",
+    "choices": [
+     "The ambient wet-bulb temperature",
+     "The ambient dry-bulb temperature",
+     "The condenser design pressure",
+     "The circulating water flow rate alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Evaporative cooling can approach, but never beat, the wet-bulb limit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Range is defined as:</p>",
+    "choices": [
+     "Hot water in minus cold water out",
+     "Cold water out minus wet-bulb temperature",
+     "Hot water in minus wet-bulb temperature",
+     "Makeup flow minus blowdown flow"
+    ],
+    "answer": 0,
+    "solution": "<p>Approach, not range, involves the wet-bulb temperature.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Approach is defined as:</p>",
+    "choices": [
+     "Cold water out minus wet-bulb temperature",
+     "Hot water in minus cold water out",
+     "Wet-bulb temperature minus dry-bulb temperature",
+     "Blowdown minus makeup"
+    ],
+    "answer": 0,
+    "solution": "<p>Approach specifically measures closeness to the wet-bulb limit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Range is primarily driven by:</p>",
+    "choices": [
+     "The plant's heat rejection load and circulating flow rate",
+     "The tower's fill design alone",
+     "Ambient wet-bulb temperature alone",
+     "Water treatment chemistry"
+    ],
+    "answer": 0,
+    "solution": "<p>Range reflects the load being rejected, largely independent of tower design.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Approach is primarily driven by:</p>",
+    "choices": [
+     "The tower's own design and condition",
+     "The plant's heat rejection load alone",
+     "The condenser's own design, unrelated to the tower",
+     "Blowdown rate alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Fill surface area, air flow, and fouling all directly affect approach.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Raising cycles of concentration (with better water treatment) primarily:</p>",
+    "choices": [
+     "Reduces makeup water demand for the same evaporation",
+     "Increases evaporation losses",
+     "Has no effect on blowdown",
+     "Always degrades water quality"
+    ],
+    "answer": 0,
+    "solution": "<p>Less blowdown is needed to control concentration, directly reducing makeup demand.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A fouled cooling tower typically shows:</p>",
+    "choices": [
+     "A larger approach for the same conditions",
+     "A smaller approach for the same conditions",
+     "No measurable change in performance",
+     "Only a change in range, never approach"
+    ],
+    "answer": 0,
+    "solution": "<p>Degraded fill or air flow pushes cold-water temperature further from the wet-bulb limit.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A cooling tower's approach directly affects overall cycle efficiency because:</p>",
+    "choices": [
+     "It sets condenser cooling water temperature, which sets condensing pressure",
+     "It has no connection to the condenser at all",
+     "It only affects boiler pressure",
+     "It only matters for refrigeration cycles, not steam cycles"
+    ],
+    "answer": 0,
+    "solution": "<p>This connects Lesson 7 directly back to Lesson 1's condenser-pressure efficiency lever.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities team tracking cooling tower approach as a trended performance number — not just range or outlet temperature alone — catches fill fouling or air-flow degradation while it is still a cleaning or maintenance item, since a rising approach at the same ambient wet-bulb and load is a direct, hard-to-fake signature of the tower itself losing performance, distinct from a load or weather change that would show up in range instead.</p>\n<p>A water treatment program justifying the cost of better chemical dosing or filtration by pointing to the resulting increase in achievable cycles of concentration — and the makeup water savings that follow directly from §3's arithmetic — is making a genuine, quantifiable resource-conservation case, not a vague water-stewardship argument, which matters directly in a water-scarce region where makeup water itself carries a real cost.</p>\n"
+ },
+ "8": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Specific compression work compared across three cases, single stage adiabatic compression requiring the most work, two stage compression with intercooling requiring noticeably less, and the theoretical isothermal minimum requiring the least of all, for the same one to seven bar pressure rise\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Intercooling buys back part of the gap to the isothermal ideal</text><line x1=\"66\" y1=\"255\" x2=\"480\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><rect x=\"110\" y=\"90\" width=\"50\" height=\"165\" fill=\"#c2820f\" fill-opacity=\"0.22\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"135\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">1-stage</text><text x=\"135\" y=\"82\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"9\">219 kJ/kg</text><rect x=\"230\" y=\"120\" width=\"50\" height=\"135\" fill=\"#3a6ea5\" fill-opacity=\"0.22\" stroke=\"#3a6ea5\" stroke-width=\"1.6\"/><text x=\"255\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">2-stage</text><text x=\"255\" y=\"112\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"9\">189 kJ/kg</text><rect x=\"350\" y=\"145\" width=\"50\" height=\"110\" fill=\"#1f7a5c\" fill-opacity=\"0.22\" stroke=\"#1f7a5c\" stroke-width=\"1.6\"/><text x=\"375\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">isothermal</text><text x=\"375\" y=\"137\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"9\">164 kJ/kg</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">1 to 7 bar — intercooling recovers about 14% of the gap to the ideal</text></svg><figcaption>Isothermal compression is the theoretical minimum-work case — real machines run closer to adiabatic, but multistaging with intercooling between stages buys back a real, computable fraction of the difference.</figcaption></figure>\n\n<h3>§1 · Compression work, derived</h3>\n<p>Compressing a gas from \\(P_1\\) to \\(P_2\\) costs specific work depending on the process path: <b>isothermal</b> compression (temperature held constant, requiring continuous cooling during compression) costs the least, \\(w_{iso}=RT\\ln(P_2/P_1)\\); <b>adiabatic</b> (isentropic, no heat rejected during compression) costs the most, \\(w_{adia}=\\frac{k}{k-1}RT\\left[(P_2/P_1)^{(k-1)/k}-1\\right]\\). For air (\\(R=0.287\\ \\text{kJ/kg·K}\\), \\(k=1.4\\)) compressing \\(1\\) to \\(7\\ \\text{bar}\\) at \\(20^\\circ\\text{C}\\): \\(w_{iso}\\approx163.6\\), \\(w_{adia}\\approx218.9\\ \\text{kJ/kg}\\) — real single-stage machines run much closer to the adiabatic case than the unreachable isothermal ideal, since genuinely holding temperature constant through a real compression process is impractical.</p>\n\n<h3>§2 · Multistaging and intercooling</h3>\n<p><b>Multistaging</b> splits the total pressure rise across two or more stages, cooling the gas back toward inlet temperature between them (<b>intercooling</b>) before the next stage compresses it further — since each stage then compresses cooler, lower-specific-volume gas, splitting the compression this way genuinely reduces total work, moving the real process closer to the isothermal ideal without the impracticality of continuous cooling during compression itself. For the same \\(1\\) to \\(7\\ \\text{bar}\\) rise, split into two equal-pressure-ratio stages with perfect intercooling between them, total specific work drops to about \\(188.6\\ \\text{kJ/kg}\\) — roughly \\(14\\%\\) less than the single-stage adiabatic case, a real, worthwhile saving that is exactly why multistage compressors with intercoolers are the standard, not an exotic option, for any meaningfully large pressure ratio.</p>\n\n<h3>§3 · Receivers, dryers, and dew point</h3>\n<p>A <b>receiver</b> (storage tank downstream of the compressor) smooths pulsating compressor output into steady supply pressure and provides buffer capacity against short demand spikes, reducing how often the compressor cycles. Compressed air carries the moisture that was in the intake air, now concentrated by compression — an <b>air dryer</b> (refrigerated, removing moisture by cooling and condensing it out, or desiccant, removing it by adsorption) controls the compressed air's <b>dew point</b>, preventing condensation forming downstream in pipework, instruments, and pneumatic equipment as the air cools after compression. Choosing dryer type and target dew point is itself an application decision: a refrigerated dryer reaching a moderate dew point suffices for general shop air; a desiccant dryer reaching a much lower dew point is needed wherever the compressed air will be exposed to near-freezing conditions or feeds moisture-sensitive instrumentation.</p>\n\n<h3>§4 · Leak economics — the plant's most expensive utility per joule</h3>\n<p>A compressed air leak is a continuous loss, running every hour the system is pressurized, whether or not any equipment is actually using air — unlike most other utility losses, which at least scale with production. A modest leak losing \\(8\\ \\text{L/s}\\) of free air, evaluated even at the ideal adiabatic compression-work basis of §1 (\\(\\approx2.1\\ \\text{kW}\\), real electrical input higher still once compressor and motor losses are included), costs on the order of \\(18{,}000\\ \\text{kWh}\\) over a year of continuous operation — from one leak, easily overlooked amid the hiss of an already-noisy compressor room. This is precisely why compressed air, despite being \"just air,\" is routinely cited as a plant's most expensive utility per unit of useful energy delivered, and why a systematic leak survey belongs in the same category as Lesson 3's steam trap survey — a high-return, low-cost audit that a quiet system does not announce the need for on its own.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relations — compression work</span>\n<p>\\[ w_{iso}=RT\\ln\\frac{P_2}{P_1}, \\qquad w_{adia}=\\frac{k}{k-1}RT\\left[\\left(\\frac{P_2}{P_1}\\right)^{\\frac{k-1}{k}}-1\\right] \\]</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Isentropic vs. real compression</b> (Lesson 4's compressor discussion).</li><li>Basic gas properties (R, k for air) — Thermodynamics I.</li></ul>\n<h4>Toolkit — compressed air systems</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Isothermal work</td><td>\\( RT\\ln(P_2/P_1) \\)</td><td>The theoretical minimum.</td></tr>\n<tr><td>Adiabatic work</td><td>\\( \\frac{k}{k-1}RT[(P_2/P_1)^{(k-1)/k}-1] \\)</td><td>Realistic single-stage baseline.</td></tr>\n<tr><td>Intercooling</td><td>cools gas between compression stages</td><td>Recovers part of the isothermal gap.</td></tr>\n<tr><td>Dew point (compressed air)</td><td>controlled by dryer type</td><td>Prevents downstream condensation.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Isothermal vs. adiabatic work</b></p><p><b>Problem.</b> Air at 20°C (293 K) is compressed from 1 to 7 bar. Using R=0.287 kJ/kg·K and k=1.4, find the isothermal and adiabatic specific work.</p>",
+    "solution": "<p><b>Solution.</b> \\(w_{iso}=RT\\ln(P_2/P_1)=0.287\\times293\\times\\ln(7)=163.6\\ \\text{kJ/kg}\\). \\(w_{adia}=\\frac{1.4}{0.4}\\times0.287\\times293\\times[7^{0.4/1.4}-1]\\approx218.9\\ \\text{kJ/kg}\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The value of intercooling</b></p><p><b>Problem.</b> The same 1-to-7-bar compression, split into two stages with perfect intercooling, requires about 188.6 kJ/kg total. Find the percentage work savings compared to the single-stage adiabatic case, and explain in words why splitting the compression reduces work at all.</p>",
+    "solution": "<p><b>Solution.</b> Savings \\(=(218.9-188.6)/218.9\\approx13.8\\%\\). Splitting the compression and cooling between stages means the second stage compresses cooler, lower-specific-volume gas than it would have without intercooling — since compression work depends on the specific volume of the gas being compressed, starting the second stage cooler genuinely reduces the work that stage requires.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Annual cost of a small leak</b></p><p><b>Problem.</b> A leak loses 8 L/s of free air (density 1.2 kg/m³). Using the adiabatic specific work of 218.9 kJ/kg as an ideal-basis estimate, find the power lost and the energy lost over a year of continuous operation (8760 hours).</p>",
+    "solution": "<p><b>Solution.</b> Mass flow \\(=8/1000\\times1.2=0.0096\\ \\text{kg/s}\\). Power \\(=0.0096\\times218.9\\approx2.10\\ \\text{kW}\\) (ideal-gas-work basis; real electrical input would be higher). Annual energy \\(=2.10\\times8760\\approx18{,}400\\ \\text{kWh}\\) — from a single modest leak.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Isothermal compression, compared to adiabatic compression between the same pressures, requires:</p>",
+    "choices": [
+     "Less work — it is the theoretical minimum",
+     "More work",
+     "Exactly the same work",
+     "An undefined amount of work"
+    ],
+    "answer": 0,
+    "solution": "<p>Continuous cooling during isothermal compression keeps specific volume lower throughout.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Real single-stage compressors operate:</p>",
+    "choices": [
+     "Much closer to the adiabatic case than the isothermal ideal",
+     "Exactly at the isothermal ideal",
+     "Below the isothermal minimum, which is impossible in theory but achieved in practice",
+     "Independent of both isothermal and adiabatic references"
+    ],
+    "answer": 0,
+    "solution": "<p>Practical continuous cooling during compression itself is not achievable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Intercooling between compression stages reduces total work by:</p>",
+    "choices": [
+     "Cooling gas between stages, reducing the specific volume the next stage compresses",
+     "Eliminating the need for a second stage entirely",
+     "Increasing the pressure ratio of each stage",
+     "Removing moisture from the compressed air"
+    ],
+    "answer": 0,
+    "solution": "<p>Lower specific volume directly reduces the work the following stage requires.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A receiver tank's main function is to:</p>",
+    "choices": [
+     "Smooth compressor output and buffer against demand spikes",
+     "Remove moisture from compressed air",
+     "Increase compression pressure ratio",
+     "Cool the gas between compression stages"
+    ],
+    "answer": 0,
+    "solution": "<p>Drying is the dryer's job; buffering and smoothing is the receiver's.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An air dryer's primary purpose is to:</p>",
+    "choices": [
+     "Control dew point and prevent downstream condensation",
+     "Increase compressor output pressure",
+     "Reduce compression work directly",
+     "Replace the need for a receiver tank"
+    ],
+    "answer": 0,
+    "solution": "<p>Moisture concentrated by compression must be controlled before it condenses downstream.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A desiccant dryer, compared to a refrigerated dryer, is chosen when:</p>",
+    "choices": [
+     "A much lower dew point is needed, such as near-freezing exposure or sensitive instrumentation",
+     "Only general shop air is required",
+     "Cost is the only consideration",
+     "Compression work needs to be reduced"
+    ],
+    "answer": 0,
+    "solution": "<p>Desiccant drying reaches lower dew points than refrigerated drying, at higher cost.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Compressed air leaks are considered especially costly because:</p>",
+    "choices": [
+     "They run continuously regardless of production, unlike losses that scale with output",
+     "They only occur during production hours",
+     "They have no measurable energy cost",
+     "They only affect air quality, not energy use"
+    ],
+    "answer": 0,
+    "solution": "<p>A pressurized system leaks around the clock, whether or not equipment is actually using the air.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Compressed air is often called a plant's most expensive utility per joule because:</p>",
+    "choices": [
+     "Generating it involves real compression inefficiency, and losses (leaks) are continuous and easily overlooked",
+     "Compressed air itself has a high market price",
+     "It requires no capital equipment to produce",
+     "It is only used in small quantities in most plants"
+    ],
+    "answer": 0,
+    "solution": "<p>The combination of generation inefficiency and easily-overlooked continuous leaks drives this reputation.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A maintenance program running a quarterly ultrasonic leak survey across compressed air distribution — tagging and fixing leaks found, then tracking total estimated leak flow over time — is treating §4's arithmetic as a real, recurring budget line rather than a one-time cleanup; a distribution system that has never been surveyed typically loses a surprisingly large fraction of total compressor output to leaks that individually seem too small to matter.</p>\n<p>A plant specifying a new multistage compressor with intercooling for a demanding pressure ratio, rather than defaulting to a cheaper single-stage unit, is applying §1 and §2's arithmetic as a capital decision — the intercooled machine costs more upfront but the ongoing energy savings, run continuously over the equipment's service life, are a real, computable number worth weighing against that upfront difference.</p>\n"
+ },
+ "9": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A balanced combustion equation for methane and oxygen producing carbon dioxide and water, with the stoichiometric air requirement computed from the oxygen needed and the twenty one percent oxygen content of air\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Stoichiometry: the chemistry behind every air-fuel ratio</text><text x=\"280\" y=\"110\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"16\" font-weight=\"600\">CH₄ + 2 O₂ → CO₂ + 2 H₂O</text><text x=\"280\" y=\"145\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"11\">2 mol O₂ needed per mol fuel</text><text x=\"280\" y=\"170\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"11\">air is only 21% O₂ by mole</text><text x=\"280\" y=\"200\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"600\">→ 9.52 mol air per mol CH₄ → AFR ≈ 17.2 kg air/kg fuel</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Real burners run above this ratio deliberately — excess air, not less</text></svg><figcaption>The balanced chemical equation fixes exactly how much oxygen combustion needs — since air is only 21% oxygen by mole, the actual air requirement is nearly five times the oxygen requirement alone.</figcaption></figure>\n\n<h3>§1 · Stoichiometry — the air a fuel actually needs</h3>\n<p>Complete combustion of methane follows \\(CH_4+2O_2\\rightarrow CO_2+2H_2O\\): exactly \\(2\\) mol of oxygen per mol of fuel, no more, no less, for complete combustion with nothing left over. Since air is only about \\(21\\%\\) oxygen by mole, the air actually required is \\(2/0.21\\approx9.52\\) mol air per mol fuel — converting to a mass basis (methane \\(16\\ \\text{kg/kmol}\\), air \\(\\approx28.97\\ \\text{kg/kmol}\\)) gives a <b>stoichiometric air-fuel ratio</b> of \\(\\approx17.2\\ \\text{kg air/kg fuel}\\). This ratio is fixed by chemistry alone, identical for every burner running this fuel — what varies burner to burner is how much air <em>beyond</em> this minimum is actually supplied.</p>\n\n<h3>§2 · Why real combustion runs excess air</h3>\n<p>Supplying exactly the stoichiometric air requirement in practice, with real (imperfect) mixing of fuel and air, leaves pockets of incomplete combustion — unburned fuel, carbon monoxide, soot — so real burners deliberately supply <b>excess air</b>, commonly \\(10\\)–\\(30\\%\\) above stoichiometric depending on fuel and burner design, ensuring every fuel molecule actually finds enough oxygen despite imperfect mixing. This is a genuine trade-off, not a free safety margin: excess air beyond what mixing quality actually requires carries away heat as sensible heat in the hotter-than-necessary flue gas, directly reducing combustion efficiency — too little excess air risks unburned fuel and CO; too much wastes heat up the stack. At \\(20\\%\\) excess air on methane, dry flue gas oxygen content works out to roughly \\(3.8\\%\\) by volume — a number directly measurable with a flue gas analyzer, and the practical proxy operators actually use for excess air rather than trying to infer it indirectly.</p>\n\n<h3>§3 · Heating values and stack-loss efficiency</h3>\n<p><b>Higher heating value</b> (HHV) includes the latent heat recovered by condensing the water vapor formed in combustion; <b>lower heating value</b> (LHV) excludes it, since most combustion equipment exhausts flue gas well above the water's condensation temperature and never actually recovers that latent heat. Combustion efficiency, estimated by the <b>stack loss method</b>, subtracts the sensible heat carried away in the hot flue gas (a function of flue gas temperature, excess air level, and fuel type) from \\(100\\%\\) — a direct, on-site measurement requiring only stack temperature, ambient temperature, and flue gas oxygen (or CO2) content, no laboratory fuel analysis needed. This is exactly why stack loss, not a laboratory heating-value test, is the practical day-to-day combustion efficiency check a plant actually runs.</p>\n\n<h3>§4 · Boiler tuning as applied chemistry</h3>\n<p>Boiler (or any combustion equipment) tuning is, mechanically, adjusting fuel and air flow to run at the excess air level that minimizes stack loss while staying safely clear of incomplete-combustion CO formation — reading flue gas O2 (or CO2) and CO together, not either alone, since O2 alone cannot distinguish \"well-mixed, near-optimal excess air\" from \"poorly-mixed, needs more excess air despite already reading a similar O2 level.\" A boiler trimmed to run leaner (lower excess air) than its actual mixing quality supports will show rising CO before O2 drops to a genuinely dangerous level — which is exactly why a competent tuning procedure watches both together, adjusting toward the excess air level that keeps CO low while minimizing the O2 (and therefore stack loss) needed to get there.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — stoichiometric AFR</span>\n<p>Fixed by the fuel's balanced combustion equation and air's 21% oxygen content — for methane, ≈17.2 kg air/kg fuel. Everything above this is excess air, a real efficiency trade-off.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li>Basic stoichiometry (Materials Science / Chemistry background).</li><li><b>Heat input and combustion basics</b> (Manufacturing Processes II, welding heat input, if taken — a different combustion context, same chemistry).</li></ul>\n<h4>Toolkit — combustion</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Stoichiometric AFR</td><td>fixed by the balanced combustion equation</td><td>≈17.2 kg air/kg fuel for methane.</td></tr>\n<tr><td>Excess air</td><td>air supplied beyond stoichiometric</td><td>Trade-off: too little risks CO, too much wastes heat.</td></tr>\n<tr><td>HHV / LHV</td><td>with / without water's latent heat</td><td>Most equipment only realizes LHV.</td></tr>\n<tr><td>Stack loss method</td><td>on-site efficiency from flue gas temp + O2</td><td>The practical day-to-day efficiency check.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Stoichiometric air-fuel ratio</b></p><p><b>Problem.</b> Using CH4 + 2 O2 → CO2 + 2 H2O, air at 21% O2 by mole, methane molar mass 16 kg/kmol, and air molar mass 28.97 kg/kmol, find the stoichiometric air-fuel ratio by mass.</p>",
+    "solution": "<p><b>Solution.</b> Air needed \\(=2/0.21=9.52\\ \\text{mol air/mol fuel}\\). By mass: \\(AFR=9.52\\times28.97/16\\approx17.2\\ \\text{kg air/kg fuel}\\).</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why zero excess air is not the efficient choice</b></p><p><b>Problem.</b> Explain why running a burner at exactly the stoichiometric air-fuel ratio (zero excess air) is not the most efficient real-world choice, even though it minimizes flue gas heat loss in principle.</p>",
+    "solution": "<p><b>Solution.</b> Real fuel-air mixing is imperfect, so at exactly stoichiometric air, some regions of the flame are locally fuel-rich and combust incompletely — producing unburned fuel, CO, and soot, all of which represent lost chemical energy (and CO poses a real safety risk). Some excess air is needed to ensure every fuel molecule actually finds enough oxygen despite imperfect mixing; the efficient choice is the minimum excess air that keeps CO acceptably low, not zero excess air.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Diagnosing a boiler tuning problem</b></p><p><b>Problem.</b> A boiler’s flue gas O2 reading is trimmed progressively lower to save fuel, and CO begins rising well before O2 reaches a very low level. What does this indicate about the burner, and what should the operator do?</p>",
+    "solution": "<p><b>Solution.</b> Rising CO at a still-moderate O2 level indicates the burner's actual fuel-air mixing quality cannot support running that lean — it needs more excess air than a well-mixed burner would, to avoid incomplete combustion. The operator should back off excess air trimming at the point CO begins rising, accepting a somewhat higher O2 (and stack loss) than theoretically minimal, rather than pushing O2 lower and risking incomplete combustion and CO formation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The stoichiometric air-fuel ratio for a given fuel is:</p>",
+    "choices": [
+     "Fixed by the fuel's balanced combustion chemistry",
+     "Chosen freely by the burner operator",
+     "Identical for every fuel regardless of composition",
+     "Unrelated to the fuel's chemical formula"
+    ],
+    "answer": 0,
+    "solution": "<p>It follows directly and only from the balanced chemical equation and air's oxygen content.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Real burners run excess air primarily because:</p>",
+    "choices": [
+     "Real fuel-air mixing is imperfect, requiring extra air to avoid incomplete combustion",
+     "Excess air increases the fuel's heating value",
+     "Stoichiometric air is more expensive than excess air",
+     "Excess air eliminates the need for a flue"
+    ],
+    "answer": 0,
+    "solution": "<p>Imperfect mixing, not chemistry alone, is why some excess air is genuinely needed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Too much excess air in combustion primarily:</p>",
+    "choices": [
+     "Wastes heat as sensible heat carried away in hotter, higher-volume flue gas",
+     "Increases the fuel's stoichiometric ratio",
+     "Always improves combustion efficiency without limit",
+     "Has no effect on stack losses"
+    ],
+    "answer": 0,
+    "solution": "<p>Excess air beyond what mixing requires is a direct efficiency cost, not a free margin.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Higher heating value (HHV), compared to lower heating value (LHV):</p>",
+    "choices": [
+     "Includes the latent heat of the water vapor formed in combustion",
+     "Excludes all heat from combustion",
+     "Is always lower than LHV",
+     "Only applies to gaseous fuels"
+    ],
+    "answer": 0,
+    "solution": "<p>LHV excludes this latent heat, since most equipment does not recover it.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The stack loss method estimates combustion efficiency using:</p>",
+    "choices": [
+     "Flue gas temperature, ambient temperature, and flue gas oxygen (or CO2) content",
+     "Laboratory fuel heating-value testing alone",
+     "Only the fuel's chemical formula",
+     "Boiler pressure alone"
+    ],
+    "answer": 0,
+    "solution": "<p>This is a direct, on-site measurement method, not a laboratory fuel test.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Flue gas oxygen content is used as a practical proxy for:</p>",
+    "choices": [
+     "Excess air level",
+     "Fuel heating value",
+     "Boiler pressure",
+     "Stoichiometric air-fuel ratio directly"
+    ],
+    "answer": 0,
+    "solution": "<p>O2 is directly measurable and tracks excess air level closely.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Boiler tuning should monitor:</p>",
+    "choices": [
+     "Both flue gas O2 and CO together, not either alone",
+     "Only flue gas O2",
+     "Only flue gas CO",
+     "Only stack temperature"
+    ],
+    "answer": 0,
+    "solution": "<p>O2 alone cannot distinguish good mixing from poor mixing at a similar excess air level.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Rising CO during a lean-trim tuning procedure indicates:</p>",
+    "choices": [
+     "The burner's mixing quality cannot support running that lean without incomplete combustion",
+     "The burner is running with too much excess air",
+     "The fuel supply has been cut off entirely",
+     "No actionable information for the operator"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the signal to back off further excess-air reduction at that specific burner.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A boiler operator running an annual (or more frequent) combustion tuning procedure — trimming excess air toward the minimum that keeps CO low, then re-verifying periodically as burner condition changes — treats §4's O2/CO logic as a routine maintenance procedure with a real, recurring fuel-cost payback, not a one-time commissioning step never revisited.</p>\n<p>A plant engineer reviewing a stack-loss efficiency report checks both the flue gas temperature and the O2 reading together before drawing conclusions — per §3, a high stack loss reading could stem from either an unnecessarily hot flue gas (a heat-recovery opportunity) or excessive excess air (a tuning opportunity), and the right fix is different depending on which one is actually driving the number.</p>\n"
+ },
+ "10": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Exergy destroyed in a heat exchanger compared for two cases, a large fifty kelvin driving temperature difference destroying much more exergy than a smaller twenty kelvin difference transferring the identical five hundred kilowatts of heat\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Same heat transferred, very different exergy destroyed</text><line x1=\"66\" y1=\"255\" x2=\"400\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><rect x=\"130\" y=\"120\" width=\"60\" height=\"135\" fill=\"#c2820f\" fill-opacity=\"0.22\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"160\" y=\"112\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">53.2 kW destroyed</text><text x=\"160\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">ΔT = 50 K</text><rect x=\"280\" y=\"205\" width=\"60\" height=\"50\" fill=\"#1f7a5c\" fill-opacity=\"0.22\" stroke=\"#1f7a5c\" stroke-width=\"1.6\"/><text x=\"310\" y=\"197\" text-anchor=\"middle\" fill=\"#1f7a5c\" font-size=\"10\">19.6 kW destroyed</text><text x=\"310\" y=\"270\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">ΔT = 20 K</text><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Same 500 kW transferred both times — only the driving ΔT changed</text></svg><figcaption>Exergy destruction from heat transfer scales with how far apart the two temperatures are, not with how much heat moves — the same duty done across a smaller temperature difference destroys far less of the heat's actual work potential.</figcaption></figure>\n\n<h3>§1 · Second-law accounting — exergy defined</h3>\n<p><b>Exergy</b> is the maximum useful work theoretically extractable from a stream or a quantity of heat, relative to a specified reference (dead-state) environment — unlike energy, exergy is destroyed by irreversibility, never merely converted or conserved. Every irreversibility this course has covered — a turbine's isentropic efficiency shortfall (Lesson 2), a throttling valve (Lesson 3, Lesson 5), heat transfer across a finite temperature difference (any heat exchanger, boiler, or condenser) — destroys exergy, quantified by the <b>Gouy-Stodola theorem</b>: \\[ \\dot{X}_{destroyed}=T_0\\dot{S}_{gen}, \\] where \\(T_0\\) is the reference environment temperature and \\(\\dot{S}_{gen}\\) is the rate of entropy generation. A first-law energy balance alone cannot see this loss at all — energy in still exactly equals energy out; exergy analysis is specifically what makes irreversibility visible and, critically, comparable across very different kinds of equipment.</p>\n\n<h3>§2 · Applied to boilers, heat exchangers, and throttles</h3>\n<p>A <b>heat exchanger</b> (or boiler, or condenser) transferring heat \\(\\dot{Q}\\) across a finite temperature difference between a hot stream at \\(T_h\\) and a cold stream at \\(T_c\\) destroys exergy at rate \\[ \\dot{X}_{destroyed}=T_0\\dot{Q}\\left(\\frac{1}{T_c}-\\frac{1}{T_h}\\right). \\] For \\(\\dot{Q}=500\\ \\text{kW}\\), \\(T_h=400\\ \\text{K}\\), \\(T_c=350\\ \\text{K}\\), \\(T_0=298\\ \\text{K}\\): \\(\\dot{X}_{destroyed}\\approx53.2\\ \\text{kW}\\) — over \\(10\\%\\) of the heat transferred, destroyed purely by the temperature gap it crossed. Narrowing that gap to \\(T_c=380\\ \\text{K}\\) (the same 500 kW, moved across a smaller \\(20\\ \\text{K}\\) difference instead of \\(50\\ \\text{K}\\)) drops destruction to \\(19.6\\ \\text{kW}\\) — a \\(63\\%\\) reduction, at the real cost of needing more heat-exchanger surface area to move the same heat across a smaller driving temperature difference. A <b>throttle</b> (Lesson 3's flash steam, Lesson 5's expansion valve) destroys exergy differently — no heat crosses a temperature gap, but pressure drops with no work recovered from a pressure difference that, run through a turbine instead, could have produced real work; the exergy that pressure difference represented is simply gone.</p>\n\n<h3>§3 · Exergy destruction as an audit's priority list</h3>\n<p>Ranking every major component's exergy destruction, largest to smallest, turns a utility audit from a scattered equipment inspection into a genuinely prioritized improvement list — the largest destruction terms are where real improvement money belongs first, regardless of how \"important\" or \"central\" a piece of equipment might otherwise seem. A boiler's combustion irreversibility (Lesson 9's excess air, and the fundamentally irreversible nature of combustion itself) is routinely the single largest exergy destruction term in an entire steam plant — often dwarfing every downstream component combined — which is precisely why combustion tuning (Lesson 9, §4) is disproportionately valuable compared to its modest engineering effort.</p>\n\n<h3>§4 · Where the utility bill actually leaks</h3>\n<p>Every prior lesson in this course quietly builds toward this same accounting: reheat and regeneration (Lesson 2) reduce irreversibility in the turbine and feedwater train; a well-tuned burner (Lesson 9) reduces combustion's own large exergy destruction; a well-approached cooling tower (Lesson 7) reduces condenser exergy destruction; minimizing unnecessary throttling (Lesson 3, Lesson 8's leak economics) avoids destroying exergy for no purpose at all. Exergy analysis does not introduce new physics beyond what this course has already covered — it is the accounting framework that ranks all of it consistently, on the same footing, answering the audit's actual question directly: not \"where does energy go\" (the first law already answers that) but \"where does the <em>ability to do useful work</em> actually disappear\" — which is where the money is.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — exergy destruction (Gouy-Stodola)</span>\n<p>\\[ \\dot{X}_{destroyed}=T_0\\dot{S}_{gen} \\]</p><p>For heat transfer across a finite ΔT: \\( \\dot{X}_{destroyed}=T_0\\dot{Q}(1/T_c-1/T_h) \\).</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li>Entropy generation and the second law (Thermodynamics I).</li><li>Every irreversibility this course has already identified (Lessons 2, 3, 5, 7, 9).</li></ul>\n<h4>Toolkit — exergy analysis</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>\n<tr><td>Exergy</td><td>max. useful work relative to a dead state</td><td>Destroyed by irreversibility, unlike energy.</td></tr>\n<tr><td>Gouy-Stodola theorem</td><td>\\( \\dot{X}_{destroyed}=T_0\\dot{S}_{gen} \\)</td><td>Quantifies irreversibility in work terms.</td></tr>\n<tr><td>Heat-exchanger destruction</td><td>\\( T_0\\dot{Q}(1/T_c-1/T_h) \\)</td><td>Scales with ΔT, not with Q alone.</td></tr>\n<tr><td>Destruction ranking</td><td>largest terms first</td><td>Turns an audit into a priority list.</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Exergy destroyed in a heat exchanger</b></p><p><b>Problem.</b> A heat exchanger transfers 500 kW from a hot stream at 400 K to a cold stream at 350 K, with reference temperature 298 K. Find the exergy destruction rate.</p>",
+    "solution": "<p><b>Solution.</b> \\[ \\dot{X}_{destroyed}=T_0\\dot{Q}\\left(\\frac{1}{T_c}-\\frac{1}{T_h}\\right)=298\\times500\\times\\left(\\frac{1}{350}-\\frac{1}{400}\\right)\\approx53.2\\ \\text{kW}. \\]</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The payoff from a smaller driving temperature difference</b></p><p><b>Problem.</b> The same 500 kW is instead transferred to a cold stream at 380 K (same hot stream 400 K, same T0=298 K). Find the new exergy destruction and the percentage reduction from the first problem.</p>",
+    "solution": "<p><b>Solution.</b> \\[ \\dot{X}_{destroyed}=298\\times500\\times\\left(\\frac{1}{380}-\\frac{1}{400}\\right)\\approx19.6\\ \\text{kW}. \\] Reduction from 53.2 kW: \\((53.2-19.6)/53.2\\approx63\\%\\) — a large exergy saving from a smaller driving temperature difference, at the cost of needing more heat-exchanger surface area to move the same 500 kW across that smaller gap.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why a first-law audit misses this entirely</b></p><p><b>Problem.</b> Explain why a first-law (energy balance) audit of the heat exchanger in the first problem would report the device as \"100% efficient\" while an exergy audit reports a genuine loss.</p>",
+    "solution": "<p><b>Solution.</b> The first law only accounts for energy quantity — all 500 kW leaving the hot stream arrives at the cold stream, with no energy created or destroyed, so a simple energy balance shows no loss at all. Exergy accounts for the <em>quality</em> (work potential) of that energy, not just its quantity — heat at 400 K has more work potential than the same heat at 350 K, and the 53.2 kW figure captures exactly the work potential lost by moving heat across that temperature gap, a loss the first law is structurally unable to see.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Exergy is best defined as:</p>",
+    "choices": [
+     "The maximum useful work theoretically extractable relative to a reference environment",
+     "The total energy content of a stream",
+     "A synonym for enthalpy",
+     "A quantity that is always conserved, like energy"
+    ],
+    "answer": 0,
+    "solution": "<p>Unlike energy, exergy is destroyed by irreversibility.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The Gouy-Stodola theorem relates exergy destruction to:</p>",
+    "choices": [
+     "Reference temperature times entropy generation rate",
+     "Enthalpy change alone",
+     "Pressure ratio alone",
+     "Mass flow rate alone"
+    ],
+    "answer": 0,
+    "solution": "<p>\\( \\dot{X}_{destroyed}=T_0\\dot{S}_{gen} \\) is the defining relation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Exergy destruction in a heat exchanger scales primarily with:</p>",
+    "choices": [
+     "The temperature difference the heat crosses, not the quantity of heat alone",
+     "Only the quantity of heat transferred",
+     "The exchanger's physical size alone",
+     "The working fluid's color"
+    ],
+    "answer": 0,
+    "solution": "<p>A smaller driving temperature difference destroys less exergy for the same heat duty.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A first-law energy balance on an irreversible heat exchanger:</p>",
+    "choices": [
+     "Shows no loss at all, since energy in equals energy out",
+     "Directly reports the exergy destroyed",
+     "Is identical in information content to an exergy analysis",
+     "Cannot be performed on heat exchangers"
+    ],
+    "answer": 0,
+    "solution": "<p>This is exactly why exergy analysis is needed to see irreversibility at all.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A throttle destroys exergy by:</p>",
+    "choices": [
+     "Dropping pressure with no work recovered from that pressure difference",
+     "Transferring heat across a temperature difference",
+     "Increasing entropy generation to zero",
+     "Converting exergy entirely into enthalpy"
+    ],
+    "answer": 0,
+    "solution": "<p>The pressure drop's work potential is simply lost, unlike expansion through a turbine.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ranking components by exergy destruction, largest to smallest, is useful because:</p>",
+    "choices": [
+     "It prioritizes real improvement effort where it matters most, regardless of a component's apparent importance",
+     "It has no practical audit application",
+     "It only applies to boilers, never other equipment",
+     "It replaces the need for any first-law accounting"
+    ],
+    "answer": 0,
+    "solution": "<p>This turns a scattered inspection into a genuinely prioritized improvement list.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a typical steam plant, the single largest exergy destruction term is often:</p>",
+    "choices": [
+     "Combustion irreversibility in the boiler",
+     "The feedwater pump",
+     "The condensate return piping",
+     "The steam trap network alone"
+    ],
+    "answer": 0,
+    "solution": "<p>Combustion's inherent irreversibility routinely dwarfs downstream component losses.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Exergy analysis, compared to the physics already covered earlier in this course, is best understood as:</p>",
+    "choices": [
+     "A consistent accounting framework ranking irreversibilities already identified, not new physics",
+     "An entirely separate body of physics unrelated to prior lessons",
+     "Only applicable to refrigeration cycles",
+     "A replacement for the steady-flow energy equation"
+    ],
+    "answer": 0,
+    "solution": "<p>Every irreversibility exergy analysis ranks was already introduced lesson by lesson earlier in the course.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities audit team ranking every major boiler, heat exchanger, and throttle by exergy destruction rate — rather than by equipment age, visible condition, or maintenance history alone — routinely finds that the biggest opportunity is not the equipment that looks the worst, but the one quietly destroying the most work potential in normal operation; per §3, this is exactly why exergy ranking, not visual inspection, belongs at the front of a serious audit.</p>\n<p>An engineer justifying a heat exchanger upgrade (more surface area, a smaller approach temperature difference) to a skeptical budget review presents the exergy-destruction reduction in the same work-potential terms as this lesson's example — a 63% cut in destroyed exergy for a specific, computable extra heat-transfer-area cost — rather than a vaguer \"improves efficiency\" claim that does not connect to a specific number a reviewer can actually evaluate.</p>\n"
+ },
+ "11": {
+  "lecture": "\n<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A ranked bar list of utility audit findings from largest to smallest loss, combustion excess air first, then steam trap losses, then compressed air leaks, then cooling tower approach, illustrating that an audit prioritizes by loss size rather than by equipment type\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">An audit's output is a ranked list, not an equipment inventory</text><text x=\"16\" y=\"60\" fill=\"#16202e\" font-size=\"10\">combustion excess air</text><rect x=\"220\" y=\"48\" width=\"280\" height=\"18\" fill=\"#c2820f\" fill-opacity=\"0.3\" stroke=\"#c2820f\"/><text x=\"16\" y=\"98\" fill=\"#16202e\" font-size=\"10\">steam trap losses</text><rect x=\"220\" y=\"86\" width=\"180\" height=\"18\" fill=\"#3a6ea5\" fill-opacity=\"0.3\" stroke=\"#3a6ea5\"/><text x=\"16\" y=\"136\" fill=\"#16202e\" font-size=\"10\">compressed air leaks</text><rect x=\"220\" y=\"124\" width=\"120\" height=\"18\" fill=\"#1f7a5c\" fill-opacity=\"0.3\" stroke=\"#1f7a5c\"/><text x=\"16\" y=\"174\" fill=\"#16202e\" font-size=\"10\">cooling tower approach</text><rect x=\"220\" y=\"162\" width=\"70\" height=\"18\" fill=\"#16202e\" fill-opacity=\"0.18\" stroke=\"#16202e\"/><text x=\"16\" y=\"292\" fill=\"#16202e\" font-size=\"11\">Ranked by exergy destroyed or energy cost — largest opportunity funded first, every time</text></svg><figcaption>A completed audit's real deliverable is this ranking — every finding costed the same way (energy or exergy, converted to a common cost basis), so the improvement budget goes to the largest opportunity first, not to whichever system happens to be easiest to inspect.</figcaption></figure>\n\n<h3>§1 · The audit as one connected balance</h3>\n<p>A real utility audit does not treat steam, compressed air, and chilled water as three separate exercises — it closes mass and energy balances across the whole utility deck simultaneously, since a boiler's fuel input, a compressor's electrical input, and a chiller's electrical input all ultimately appear on the same utility bill, competing for the same limited improvement budget. Every lesson in this course supplies one piece of that balance: Lessons 1-2 the steam generation side, Lesson 3 the steam distribution and condensate side, Lessons 4-6 alternative and auxiliary cycles, Lessons 7-8 the cooling and compressed air utilities, Lesson 9 the combustion input driving it all, Lesson 10 the common accounting framework tying every loss together on one footing.</p>\n\n<h3>§2 · Closing the balances, ranking the losses</h3>\n<p>Closing a balance means every input (fuel, makeup water, purchased electricity) is accounted for against every output (useful process heat, useful cooling, useful compressed air) plus every identified loss (stack loss, blowdown, trap failures, leaks, condenser approach) — any unaccounted gap is exactly what a good audit hunts down before finalizing its numbers, since an unclosed balance means some real loss has not yet been found or correctly sized. Once closed, ranking every loss on a common basis (energy cost, or exergy destroyed, per Lesson 10) produces exactly the prioritized list §1's figure shows — the audit's actual deliverable, not an equipment condition report.</p>\n\n<h3>§3 · Proposing fixes with payback</h3>\n<p>Every proposed fix pairs an estimated implementation cost against its estimated annual savings, yielding a <b>simple payback period</b> (cost divided by annual savings) — the practical, easily communicated metric that turns \"we should fix this\" into a fundable project a budget owner can actually compare against competing capital requests. A steam trap survey and repair program, a compressed air leak survey, and combustion tuning are routinely among the shortest-payback items on any utility audit — months, not years — precisely because they cost little to execute and address losses (Lessons 3, 8, 9) that are large, continuous, and easily overlooked without a deliberate survey.</p>\n\n<h3>§4 · The Tier-2 utilities lesson, practiced end to end</h3>\n<p>This capstone project is deliberately not a single new calculation — it is every prior lesson's arithmetic, applied together against one representative factory utility deck: steam generation efficiency and heat rate (Lessons 1-2), condensate and trap losses (Lesson 3), cooling tower and condenser performance (Lesson 7), compressed air generation and leak cost (Lesson 8), combustion tuning (Lesson 9), and exergy-based prioritization (Lesson 10) — closed into one balance, ranked into one priority list, and costed into one set of payback estimates. This is precisely the working method a utilities engineer actually uses on a real audit, and precisely why this course builds toward it rather than treating it as a separate, disconnected final exercise.</p>\n<div class=\"keybox\"><span class=\"tag\">Key discipline — the audit method</span>\n<p>Close the balance → rank losses on a common basis → cost each fix with payback → fund the shortest paybacks first. Every number traces to a specific earlier lesson's formula.</p></div>\n",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li>Every prior lesson in this course — this is the course's synthesis and capstone.</li></ul>\n<h4>Toolkit — the utility audit</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Step</th><th>Question</th><th>Drawn from</th></tr></thead><tbody>\n<tr><td>1. Close the balance</td><td>Does every input account for every output plus loss?</td><td>Course-wide SFEE discipline</td></tr>\n<tr><td>2. Rank losses</td><td>Which losses are largest, on a common basis?</td><td>Lesson 10</td></tr>\n<tr><td>3. Cost each fix</td><td>Implementation cost vs. annual savings</td><td>Lessons 3, 7, 8, 9</td></tr>\n<tr><td>4. Fund by payback</td><td>Shortest payback first</td><td>Synthesis</td></tr>\n</tbody></table></div>\n",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Full audit walkthrough</b></p><p><b>Problem.</b> A factory utility audit finds: (a) boiler running 25% excess air where 15% would suffice, (b) three failed-open steam traps, (c) a compressed air leak network estimated at 40 L/s total, (d) a cooling tower running a 10°C approach where 6°C is achievable. Rank these for investigation priority and state the reasoning, without needing exact numbers for each.</p>",
+    "solution": "<p><b>Solution.</b> A defensible ranking, using this course's own lessons: excess air correction (Lesson 9) is typically cheap (a burner trim) and combustion is usually the single largest exergy destruction term in the plant (Lesson 10, §3) — likely highest priority. Failed steam traps (Lesson 3) and compressed air leaks (Lesson 8) are both continuous, easily-sized losses with short paybacks — next priority, roughly comparable, with the actual ranking between them depending on their computed kW figures. The cooling tower approach gap (Lesson 7) affects condenser pressure and therefore cycle efficiency, but correcting it (cleaning fill, or capital tower work) is typically a larger, longer-payback fix — reasonably placed last among these four, not because it does not matter, but because its fix is more expensive relative to its savings than the other three.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Simple payback</b></p><p><b>Problem.</b> A steam trap survey and repair program costs $8,000 to execute and is estimated to save $32,000 per year in reduced steam loss. Find the simple payback period.</p>",
+    "solution": "<p><b>Solution.</b> \\( \\text{Payback}=\\text{cost}/\\text{annual savings}=8{,}000/32{,}000=0.25\\ \\text{years}\\approx3\\ \\text{months}. \\)</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Why an unclosed balance is a red flag</b></p><p><b>Problem.</b> An audit’s fuel input, converted to energy terms, exceeds the sum of all identified useful outputs and identified losses by a significant margin. Explain what this gap means and what the auditor should do before finalizing the report.</p>",
+    "solution": "<p><b>Solution.</b> The gap means some real loss exists that has not yet been identified or correctly measured — energy cannot simply disappear from a correctly closed balance. The auditor should investigate further before finalizing the report, checking for unmeasured or underestimated losses (an unsurveyed steam trap population, an uncharacterized compressed air leak rate, an unmeasured stack loss) rather than reporting a ranked priority list built on an admittedly incomplete accounting.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A real utility audit treats steam, compressed air, and chilled water as:</p>",
+    "choices": [
+     "One connected balance competing for the same improvement budget",
+     "Three entirely separate, unrelated exercises",
+     "Only relevant if they share the same physical piping",
+     "Irrelevant to each other's energy accounting"
+    ],
+    "answer": 0,
+    "solution": "<p>All utilities ultimately draw on the same fuel and electricity budget.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>An unclosed energy balance in an audit indicates:</p>",
+    "choices": [
+     "An unidentified or mis-sized loss somewhere in the system",
+     "A perfectly efficient system",
+     "An error that should simply be ignored",
+     "That no further investigation is needed"
+    ],
+    "answer": 0,
+    "solution": "<p>Energy cannot vanish from a correctly closed accounting — a gap means something was missed.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Ranking audit findings on a common basis (energy cost or exergy destroyed) allows:</p>",
+    "choices": [
+     "Prioritizing genuinely comparable opportunities across very different equipment types",
+     "Comparing equipment only within the same category",
+     "Avoiding the need for any payback calculation",
+     "Ranking by equipment age instead of loss size"
+    ],
+    "answer": 0,
+    "solution": "<p>A common basis is what makes a boiler loss and a compressed air leak directly comparable.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Simple payback period is calculated as:</p>",
+    "choices": [
+     "Implementation cost divided by annual savings",
+     "Annual savings divided by implementation cost",
+     "Implementation cost multiplied by annual savings",
+     "Annual savings minus implementation cost"
+    ],
+    "answer": 0,
+    "solution": "<p>This gives the time required for savings to recover the initial cost.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Steam trap surveys, compressed air leak surveys, and combustion tuning are often prioritized because:</p>",
+    "choices": [
+     "They typically offer short payback periods relative to their low implementation cost",
+     "They are the only fixes an audit ever finds",
+     "They require the largest capital investment in a facility",
+     "They have no measurable energy savings"
+    ],
+    "answer": 0,
+    "solution": "<p>Low cost combined with large, continuous, easily-overlooked losses drives short payback.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>This capstone project is best described as:</p>",
+    "choices": [
+     "Applying every prior lesson's arithmetic together against one representative system",
+     "An entirely new topic unrelated to earlier lessons",
+     "Only a review of Lesson 10's exergy formulas",
+     "A purely qualitative exercise with no numerical work"
+    ],
+    "answer": 0,
+    "solution": "<p>Every step in the audit method traces to a specific earlier lesson's content.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The audit method's four steps, in order, are:</p>",
+    "choices": [
+     "Close the balance, rank losses, cost fixes with payback, fund by shortest payback",
+     "Fund every project equally, then measure results",
+     "Rank by equipment age, then close the balance",
+     "Cost fixes first, then determine if a balance exists"
+    ],
+    "answer": 0,
+    "solution": "<p>This is the working sequence a real utilities audit follows.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A utility audit's actual deliverable is best described as:</p>",
+    "choices": [
+     "A ranked, costed priority list of improvement opportunities",
+     "A simple equipment condition inventory",
+     "A single overall efficiency percentage with no further detail",
+     "A list of equipment manufacturers"
+    ],
+    "answer": 0,
+    "solution": "<p>The ranked, costed list is what a budget owner can actually act on.</p>"
+   }
+  ],
+  "kuwait": "\n<p>A utilities manager presenting audit findings to plant leadership leads with the ranked, costed priority list from §2 and §3 — not with a raw equipment inspection report — because a payback-ranked list is what a budget decision actually requires; leadership approves projects by comparing paybacks against other capital requests, not by reading an equipment condition narrative.</p>\n<p>A facility running its own internal utility audit annually, rather than only when a consultant is hired, treats this course's method as a standing, repeatable procedure — closing the balance, re-ranking losses, re-costing fixes — since a plant's loss profile genuinely changes year to year as equipment ages, operating patterns shift, and previously-funded fixes are implemented and drop off the priority list.</p>\n"
+ }
+}

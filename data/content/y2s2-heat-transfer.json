@@ -1,0 +1,1300 @@
+{
+  "1": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Four thermal resistances in series between outdoor and indoor air: an outdoor convection film, a brick layer, an insulation layer, and an indoor convection film, drawn as an electrical-circuit-style chain of resistor symbols carrying the same heat flux through every link\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">A wall is a resistor chain: same q’’ through every layer in series</text><path d=\"M 55.0,168.0 L 68.2,168.0 L 78.7,177.0 L 89.1,159.0 L 99.6,177.0 L 110.0,159.0 L 120.5,177.0 L 130.9,159.0 L 141.4,177.0 L 151.8,168.0 L 165.0,168.0\" stroke=\"#3a6ea5\" stroke-width=\"2\" fill=\"none\"/><text x=\"110.0\" y=\"144\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"10\">R₁=0.040</text><path d=\"M 165.0,168.0 L 178.2,168.0 L 188.6,177.0 L 199.1,159.0 L 209.6,177.0 L 220.0,159.0 L 230.4,177.0 L 240.9,159.0 L 251.4,177.0 L 261.8,168.0 L 275.0,168.0\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"220.0\" y=\"144\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">R₂=0.278</text><path d=\"M 275.0,168.0 L 288.2,168.0 L 298.6,177.0 L 309.1,159.0 L 319.6,177.0 L 330.0,159.0 L 340.4,177.0 L 350.9,159.0 L 361.4,177.0 L 371.8,168.0 L 385.0,168.0\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><text x=\"330.0\" y=\"144\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">R₃=1.250</text><path d=\"M 385.0,168.0 L 398.2,168.0 L 408.6,177.0 L 419.1,159.0 L 429.6,177.0 L 440.0,159.0 L 450.4,177.0 L 460.9,159.0 L 471.4,177.0 L 481.8,168.0 L 495.0,168.0\" stroke=\"#3a6ea5\" stroke-width=\"2\" fill=\"none\"/><text x=\"440.0\" y=\"144\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"10\">R₄=0.125</text><circle cx=\"55\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"55\" y=\"190\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T∞,out = 45.0°C</text><text x=\"55\" y=\"204\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">outdoor air</text><circle cx=\"165\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"165\" y=\"190\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T = 44.5°C</text><text x=\"165\" y=\"204\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">outer surface</text><circle cx=\"275\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"275\" y=\"190\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T = 41.1°C</text><text x=\"275\" y=\"204\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">brick–insulation</text><circle cx=\"385\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"385\" y=\"190\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T = 25.6°C</text><text x=\"385\" y=\"204\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">insulation–inner</text><circle cx=\"495\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"495\" y=\"190\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T∞,in = 24.0°C</text><text x=\"495\" y=\"204\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">indoor air</text><text x=\"16\" y=\"66\" fill=\"#16202e\" font-size=\"10.5\">outdoor 45.0°C → indoor 24.0°C, same q’’ = 12.41 W/m² at every step</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Insulation (R₃) alone carries 74% of the wall’s total resistance</text></svg><figcaption>Every conduction and convection layer a heat-transfer engineer stacks between two temperatures is one more resistor in this same series chain — the same bookkeeping that will carry straight through to fins, exchangers, and radiation networks later in this course.</figcaption></figure>\n\n<h3>§1 · Three rate laws, one job</h3>\n<p>Heat moves by exactly three physical mechanisms, and this course is organized around learning\neach one's rate law well enough to design against it. <b>Conduction</b>, Fourier's law,\n\\(q=-kA\\frac{dT}{dx}\\): a rate set by a material property \\(k\\) (thermal conductivity), the\narea it acts through, and the steepness of the temperature gradient it opposes. <b>Convection</b>,\nNewton's law of cooling, \\(q=hA(T_s-T_\\infty)\\): a rate set by a convection coefficient \\(h\\)\nthat is not a material property at all — it is a lumped stand-in for an entire boundary-layer\nflow field that Lessons 4–6 exist to unpack. <b>Radiation</b>, \\(q=\\varepsilon\\sigma\nA(T_s^4-T_{surr}^4)\\): the only mode that needs no material medium whatsoever, and the only one\nthat is fundamentally nonlinear in temperature rather than linear in a temperature difference.</p>\n\n<h3>§2 · The thermal resistance network</h3>\n<p>Despite their different physics, all three rate laws can be rearranged into the same shape —\na driving temperature difference divided by a resistance: \\(q=\\Delta T/R\\). For convection,\n\\(R_{conv}=1/(hA)\\), read directly off Newton's law. For conduction through a plane wall,\n\\(R_{wall}=L/(kA)\\). For conduction through a cylindrical shell (a pipe wall, a wrapped cable),\n\\(R_{cyl}=\\ln(r_2/r_1)/(2\\pi k L)\\) — a ratio of radii rather than a thickness, because the\narea available for conduction grows with radius, so a fixed radial increment does not carry a\nfixed resistance increment the way a fixed-thickness plane-wall increment does. Layers encountered\nin series carry the same heat flow through each one, so their resistances simply add:\n\\(R_{tot}=\\sum_i R_i\\), exactly like resistors in a DC circuit, with temperature standing in\nfor voltage and heat rate for current.</p>\n\n<h3>§3 · Insulation economics, and the critical-radius surprise</h3>\n<p>Adding insulation to a <i>plane</i> wall always adds resistance and always reduces heat loss\n— area is fixed, so more thickness is pure gain. Wrapping insulation around a <i>small-diameter\ncylinder</i> — a wire, a small instrument line — does two things at once: it adds conduction\nresistance (wanted) but it also adds surface area for the outer convection film (unwanted, since\n\\(R_{conv}=1/(hA)\\) falls as area rises). The total resistance as a function of wrap radius\n\\(r\\) has a genuine extremum at the <b>critical radius</b> \\(r_{cr}=k_{ins}/h\\): for a bare\nradius smaller than \\(r_{cr}\\), adding insulation up to \\(r_{cr}\\) can <i>increase</i> total\nheat loss before it starts decreasing it. A windier site (higher \\(h\\)) shrinks \\(r_{cr}\\) and\nshrinks the zone this trap can occur in; a bare conductor already thicker than \\(r_{cr}\\) never\nsees it — insulation helps it immediately, as expected.</p>\n\n<h3>§4 · A worked resistance chain, and a worked critical radius</h3>\n<p>A building envelope carries four layers in series, per square metre of wall: an outdoor film at\n\\(h_{out}=25\\ \\text{W/m}^2\\text{K}\\), a 20 mm brick layer at\n\\(k=0.72\\ \\text{W/mK}\\), a 50 mm insulation layer at\n\\(k=0.04\\ \\text{W/mK}\\), and an indoor film at\n\\(h_{in}=8\\ \\text{W/m}^2\\text{K}\\), between a 45 °C outdoor design\nday and a 24 °C indoor setpoint. The four resistances are\n\\(R_1=0.040\\), \\(R_2=0.278\\), \\(R_3=1.250\\), \\(R_4=0.125\\\n\\ \\text{m}^2\\text{K/W}\\), summing to \\(R_{tot}=1.693\\ \\text{m}^2\\text{K/W}\\)\nand a flux \\(q''=\\Delta T/R_{tot}=12.41\\ \\text{W/m}^2\\) — the same 12.41 W/m²\nthrough every layer, stepping the temperature down 45 → 44.50 → 41.06 →\n25.55 → 24.0 °C, the last figure closing the loop back to the indoor setpoint\nexactly. The insulation alone carries 74% of the total — the layer worth\nupgrading first. Separately: a cable insulated with \\(k_{ins}=0.15\\\n\\ \\text{W/mK}\\) material in \\(h=15\\ \\text{W/m}^2\\text{K}\\) still air has\n\\(r_{cr}=k_{ins}/h=10\\ \\text{mm}\\) — smaller than many real bare-cable\nradii, so a thin wrap on such a cable can genuinely raise its heat loss before enough insulation\nis added to lower it again.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — series thermal resistance</span>\n<p>\\[ R_{tot}=\\sum_i R_i, \\qquad q=\\frac{\\Delta T_{overall}}{R_{tot}} \\]</p>\n<p>Every later lesson's exchangers, fins, and radiation networks are this same sum, extended.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The steady-flow energy equation and first-law balances</b>\n(Thermodynamics I–II) — those courses established how much energy moves; this course\nestablishes how fast, and through which physical mechanism.</li></ul>\n<h4>Toolkit — rate laws and resistances</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Fourier's law</td><td>\\( q=-kA\\,dT/dx \\)</td><td>Conduction rate.</td></tr>\n<tr><td>Newton's law of cooling</td><td>\\( q=hA(T_s-T_\\infty) \\)</td><td>Convection rate.</td></tr>\n<tr><td>Stefan–Boltzmann (gray surface)</td><td>\\( q=\\varepsilon\\sigma A(T_s^4-T_{surr}^4) \\)</td><td>Radiation rate.</td></tr>\n<tr><td>Conduction resistance, plane wall</td><td>\\( R=L/(kA) \\)</td><td>Series network term.</td></tr>\n<tr><td>Conduction resistance, cylinder</td><td>\\( R=\\ln(r_2/r_1)/(2\\pi k L) \\)</td><td>Pipes, wrapped cables.</td></tr>\n<tr><td>Convection resistance</td><td>\\( R=1/(hA) \\)</td><td>Series network term.</td></tr>\n<tr><td>Critical radius of insulation</td><td>\\( r_{cr}=k_{ins}/h \\)</td><td>Small-cylinder insulation check.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The building-envelope resistance chain</b></p><p><b>Problem.</b> An exterior wall carries, in series per m²: an outdoor film \\(h_{out}=25\\ \\text{W/m}^2\\text{K}\\), a 20 mm brick layer (\\(k=0.72\\ \\text{W/mK}\\)), a 50 mm insulation layer (\\(k=0.04\\ \\text{W/mK}\\)), and an indoor film \\(h_{in}=8\\ \\text{W/m}^2\\text{K}\\), between 45°C outdoors and 24°C indoors. Find each resistance, the total, and the heat flux.</p>",
+        "solution": "<p><b>Solution.</b> \\(R_1=1/25=0.040\\), \\(R_2=0.2/0.72=0.278\\), \\(R_3=0.05/0.04=1.250\\), \\(R_4=1/8=0.125\\ \\text{m}^2\\text{K/W}\\). \\(R_{tot}=1.693\\ \\text{m}^2\\text{K/W}\\). \\(q''=(45-24)/1.693=12.41\\ \\text{W/m}^2\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Doubling the insulation thickness</b></p><p><b>Problem.</b> For the same wall, the insulation is upgraded from 50 mm to 100 mm (same \\(k=0.04\\ \\text{W/mK}\\), all else unchanged). Find the new total resistance and heat flux, and the percent reduction in q''.</p>",
+        "solution": "<p><b>Solution.</b> \\(R_3'=0.1/0.04=2.500\\ \\text{m}^2\\text{K/W}\\), replacing \\(R_3=1.250\\). \\(R_{tot}'=0.040+0.278+2.500+0.125=2.943\\ \\text{m}^2\\text{K/W}\\). \\(q''=(45-24)/2.943=7.14\\ \\text{W/m}^2\\), down from 12.41 — a 42% reduction from doubling one layer's thickness.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A second critical-radius check</b></p><p><b>Problem.</b> A different cable insulation has \\(k_{ins}=0.20\\ \\text{W/mK}\\), installed where the surrounding air convection coefficient is \\(h=12\\ \\text{W/m}^2\\text{K}\\). Find the critical radius, and state what it means for a bare conductor of radius 12 mm.</p>",
+        "solution": "<p><b>Solution.</b> \\(r_{cr}=k_{ins}/h=0.2/12.0=16.7\\ \\text{mm}\\). Since the bare radius (12 mm) already exceeds \\(r_{cr}\\) (16.7 mm), this conductor is past the extremum — any insulation added immediately reduces heat loss; there is no backfire zone left to cross.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Which of the three rate laws in §1 is the only one that can transport heat with no material medium present at all?</p>",
+        "choices": [
+          "Conduction",
+          "Convection",
+          "Radiation",
+          "All three require a medium"
+        ],
+        "answer": 2,
+        "solution": "<p>Radiation is carried by electromagnetic waves and crosses a vacuum; conduction and convection both require a material medium.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Fourier's law, Newton's law of cooling, and the Stefan–Boltzmann law all rearrange into which common structural form?</p>",
+        "choices": [
+          "A driving temperature difference divided by a thermal resistance",
+          "A pressure difference divided by a flow resistance",
+          "A mass flow rate times a specific heat",
+          "An entropy generation term times an ambient temperature"
+        ],
+        "answer": 0,
+        "solution": "<p>Every rate law in §2 becomes \\(q=\\Delta T/R\\) once rearranged — the thermal-circuit analogy this whole course leans on.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Why is a cylindrical shell's conduction resistance written as \\(\\ln(r_2/r_1)/(2\\pi k L)\\) rather than a plane-wall-style thickness over area?</p>",
+        "choices": [
+          "Because cylindrical conductivity is direction-dependent",
+          "Because the area available for conduction grows with radius, so a fixed radial increment does not carry a fixed resistance increment",
+          "Because heat cannot conduct radially, only axially",
+          "Because pipes are always thinner than plane walls"
+        ],
+        "answer": 1,
+        "solution": "<p>Area grows as \\(2\\pi r L\\), so the resistance contributed by each additional radial increment shrinks as r grows — hence the logarithmic form.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Doubling the convection coefficient \\(h\\) at a surface, area held fixed, does what to \\(R_{conv}=1/(hA)\\)?</p>",
+        "choices": [
+          "Doubles it",
+          "Halves it",
+          "Leaves it unchanged",
+          "Squares it"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(R_{conv}\\) is inversely proportional to \\(h\\); doubling \\(h\\) halves the resistance.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A windier installation site (higher external \\(h\\)) does what to the critical radius \\(r_{cr}=k_{ins}/h\\)?</p>",
+        "choices": [
+          "Increases it, widening the insulation-backfire zone",
+          "Decreases it, shrinking the insulation-backfire zone",
+          "Leaves it unchanged — \\(r_{cr}\\) depends only on the insulation",
+          "Makes the critical-radius effect disappear entirely regardless of bare radius"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(r_{cr}\\) is inversely proportional to \\(h\\); a higher \\(h\\) shrinks \\(r_{cr}\\) and with it the range of bare radii vulnerable to the effect.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A bare conductor's radius is already larger than \\(r_{cr}\\). What happens when insulation is added?</p>",
+        "choices": [
+          "Heat loss rises before it falls, exactly as for a thinner conductor",
+          "Heat loss falls immediately — this conductor is already past the extremum",
+          "Heat loss is unaffected by any amount of insulation",
+          "The critical-radius concept does not apply to conductors, only to plane walls"
+        ],
+        "answer": 1,
+        "solution": "<p>The backfire zone only exists for bare radii below \\(r_{cr}\\); above it, \\(R_{tot}\\) is already increasing with added radius, so insulation helps immediately.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In §4's worked wall, roughly what share of the total resistance does the insulation layer alone carry?</p>",
+        "choices": [
+          "About 25%",
+          "About 50%",
+          "About 74%",
+          "Exactly 100% — the films and brick contribute nothing"
+        ],
+        "answer": 2,
+        "solution": "<p>\\(R_3/R_{tot}=1.250/1.693=74\\%\\) — by far the largest single share, which is why insulation is the first place a real audit looks.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A new layer is added in series to an existing resistance network, with perfect contact and no new convection surface created. What happens to \\(R_{tot}\\) and \\(q\\)?</p>",
+        "choices": [
+          "\\(R_{tot}\\) increases, \\(q\\) decreases",
+          "\\(R_{tot}\\) decreases, \\(q\\) increases",
+          "Neither changes",
+          "\\(R_{tot}\\) increases, \\(q\\) also increases"
+        ],
+        "answer": 0,
+        "solution": "<p>Series resistances simply add; one more strictly-positive term always raises \\(R_{tot}\\), and for a fixed overall \\(\\Delta T\\) that always lowers \\(q=\\Delta T/R_{tot}\\).</p>"
+      }
+    ],
+    "kuwait": "\n<p>A facilities engineer auditing a building envelope's heat gain checks which single layer\ndominates the resistance chain before recommending any upgrade — per §4's own numbers, a\nwell-built wall's insulation layer alone can carry roughly three-quarters of the total resistance,\nso an audit that finds thin or missing insulation has found the highest-leverage fix, while\nre-specifying the indoor air film or the brick thickness would be a low-return distraction.</p>\n<p>A technician insulating a small-diameter instrument-tracing line or control cable checks the\ncritical radius before assuming that any added wrap helps — per §3, a modest layer on a thin\nenough conductor can raise, not lower, its heat loss until the wrap passes \\(r_{cr}\\), a\ngenuinely counter-intuitive result worth a two-line check before insulating small-diameter lines\nas a matter of routine practice.</p>"
+  },
+  "2": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A decaying temperature-excess curve along an aluminum pin fin's length, starting at the base value and dropping smoothly to a lower tip value, illustrating that a fin loses driving temperature difference as heat leaves along its length\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">A fin runs out of temperature excess well before it runs out of length</text><line x1=\"70\" y1=\"250\" x2=\"480\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"70\" y1=\"250\" x2=\"70\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"28\" y=\"165\" fill=\"#16202e\" font-size=\"10.5\" transform=\"rotate(-90 28 165)\">θ / θ_b</text><text x=\"275\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">position along fin, x (0 → 200 mm)</text><polyline points=\"70.0,80.0 76.8,84.0 83.7,87.8 90.5,91.5 97.3,95.2 104.2,98.7 111.0,102.1 117.8,105.4 124.7,108.7 131.5,111.8 138.3,114.9 145.2,117.8 152.0,120.7 158.8,123.5 165.7,126.1 172.5,128.8 179.3,131.3 186.2,133.7 193.0,136.1 199.8,138.4 206.7,140.6 213.5,142.8 220.3,144.9 227.2,146.9 234.0,148.8 240.8,150.7 247.7,152.5 254.5,154.3 261.3,155.9 268.2,157.6 275.0,159.1 281.8,160.6 288.7,162.0 295.5,163.4 302.3,164.7 309.2,166.0 316.0,167.2 322.8,168.3 329.7,169.4 336.5,170.5 343.3,171.5 350.2,172.4 357.0,173.3 363.8,174.1 370.7,174.9 377.5,175.6 384.3,176.3 391.2,177.0 398.0,177.6 404.8,178.1 411.7,178.6 418.5,179.0 425.3,179.4 432.2,179.8 439.0,180.1 445.8,180.3 452.7,180.5 459.5,180.7 466.3,180.8 473.2,180.9 480.0,180.9\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><circle cx=\"70.0\" cy=\"80.0\" r=\"4\" fill=\"#16202e\"/><text x=\"78.0\" y=\"72.0\" fill=\"#16202e\" font-size=\"9.5\">base, θ/θ_b=1.00</text><circle cx=\"480.0\" cy=\"180.9\" r=\"4\" fill=\"#c2820f\"/><text x=\"472.0\" y=\"170.9\" text-anchor=\"end\" fill=\"#c2820f\" font-size=\"9.5\">tip, θ/θ_b=0.41</text></svg><figcaption>The fin equation's cosh solution, plotted for this lesson's own 200 mm pin fin: temperature excess falls from base to a 41%-of-base tip value, at 59% overall efficiency — the gap under the curve is heat this fin is not delivering.</figcaption></figure>\n\n<h3>§1 · Why extend a surface at all</h3>\n<p>Newton's law of cooling, \\(q=hA(T_s-T_\\infty)\\), leaves exactly three levers once a surface\nand its fluid are fixed: the convection coefficient \\(h\\), the temperature difference, and the\narea \\(A\\). When \\(h\\) is the bottleneck — the gas side of an air-cooled enclosure, an\nun-fanned motor housing, any application where \\(h\\) sits in the tens of W/m²K rather than the\nhundreds or thousands a liquid delivers — and the temperature difference is already set by the\nprocess, the only lever left is area. A <b>fin</b> is exactly that: manufactured extra area,\nbought in exchange for material, cost, and — crucially, per §3 — a fin's own internal conduction\nresistance that eventually limits how much that extra area is actually worth.</p>\n\n<h3>§2 · The fin equation, derived and solved</h3>\n<p>An energy balance on a thin differential slice of a straight fin — conduction in one face,\nconduction out the other, the difference lost sideways by convection — gives, after dividing\nthrough by the slice's cross-sectional conduction term, the fin equation\n\\(\\dfrac{d^2\\theta}{dx^2}-m^2\\theta=0\\), where \\(\\theta=T-T_\\infty\\) is the local\ntemperature excess and \\(m=\\sqrt{hP/(kA_c)}\\) bundles the perimeter \\(P\\) (convecting\nsurface per unit length), cross-sectional area \\(A_c\\) (conducting area), conductivity\n\\(k\\), and \\(h\\) into one rate constant. With an adiabatic-tip idealization (the tip's own\nend-face loss neglected — reasonable once a fin is slender and not too short), the solution is\n\\(\\theta/\\theta_b=\\cosh(m(L-x))/\\cosh(mL)\\), and the total heat the fin carries away from\nits base works out to \\(q_{fin}=\\sqrt{hPkA_c}\\,\\theta_b\\tanh(mL)\\).</p>\n\n<h3>§3 · Efficiency, effectiveness, and where fins stop paying</h3>\n<p>Fin <b>efficiency</b> \\(\\eta_{fin}=q_{fin}/q_{max}=\\tanh(mL)/mL\\) compares the real\nfin to a hypothetical one held entirely at base temperature — it falls as \\(mL\\) grows, because\na longer or lower-conductivity fin loses more of its temperature excess before the tip. Fin\n<b>effectiveness</b> \\(\\varepsilon_{fin}=q_{fin}/(hA_c\\theta_b)\\) instead compares the fin\nto the <i>same base area with no fin at all</i> — a fin is worth adding once\n\\(\\varepsilon_{fin}\\) climbs well past 1 (a common rule of thumb wants it past 2), and since\n\\(\\varepsilon_{fin}\\) scales with \\(\\sqrt{k/h}\\), fins pay off far more decisively on\nthe low-\\(h\\) gas side of a system than on a high-\\(h\\) liquid or boiling side — the same\n\\(k/h\\) logic behind why air-cooled equipment bristles with fins and liquid-cooled equipment\nmostly does not. Length has diminishing returns for a separate reason: \\(\\tanh(mL)\\) saturates\ntoward 1 once \\(mL\\gtrsim 2.5\\text{–}3\\), so past that point almost no additional heat\nleaves per unit of added length — doubling this lesson's own 200 mm fin to\n400 mm (§4) buys only 9% more heat rate for twice the material, which is\nwhere a fin design stops paying for itself.</p>\n\n<h3>§4 · A worked pin fin</h3>\n<p>An aluminum pin fin, \\(k=200\\ \\text{W/mK}\\), diameter 5 mm, length\n200 mm, sits in \\(h=15\\ \\text{W/m}^2\\text{K}\\) air with a base excess\n\\(\\theta_b=60\\)°C. \\(A_c=\\pi r^2=19.63\\ \\text{mm}^2\\),\n\\(P=\\pi D=15.71\\ \\text{mm}\\), \\(m=\\sqrt{hP/(kA_c)}=7.75\\ \\text{m}^{-1}\\),\n\\(mL=1.549\\), \\(\\tanh(mL)=0.914\\). Efficiency\n\\(\\eta_{fin}=\\tanh(mL)/mL=59\\%\\); the fin delivers\n\\(q_{fin}=\\sqrt{hPkA_c}\\,\\theta_b\\tanh(mL)=1.67\\ \\text{W}\\), and against its own\nbare cross-section, \\(\\varepsilon_{fin}=q_{fin}/(hA_c\\theta_b)=94\\) — comfortably\npast the worth-adding threshold. Doubling the length to 400 mm drops efficiency to\n32% and raises \\(q_{fin}\\) only to 1.82 W, the 9% gain §3 already\nflagged as the point of diminishing returns.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — adiabatic-tip fin</span>\n<p>\\[ \\eta_{fin}=\\frac{\\tanh(mL)}{mL}, \\qquad m=\\sqrt{\\frac{hP}{kA_c}} \\]</p>\n<p>Every fin-efficiency chart in every textbook is this same ratio, tabulated for other tip\nconditions and cross-sections.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Thermal resistance networks and Newton's law of cooling</b>\n(Lesson 1) — a fin is, in that language, a way of shrinking a surface's effective\n\\(R_{conv}\\) by manufacturing extra area rather than by raising \\(h\\).</li></ul>\n<h4>Toolkit — fin performance</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Fin parameter</td><td>\\( m=\\sqrt{hP/(kA_c)} \\)</td><td>Sets the decay rate along the fin.</td></tr>\n<tr><td>Adiabatic-tip profile</td><td>\\( \\theta/\\theta_b=\\cosh(m(L-x))/\\cosh(mL) \\)</td><td>Temperature along the fin.</td></tr>\n<tr><td>Fin heat rate</td><td>\\( q_{fin}=\\sqrt{hPkA_c}\\,\\theta_b\\tanh(mL) \\)</td><td>Total heat leaving the base.</td></tr>\n<tr><td>Fin efficiency</td><td>\\( \\eta_{fin}=\\tanh(mL)/mL \\)</td><td>Real fin vs. all-base-temperature ideal.</td></tr>\n<tr><td>Fin effectiveness</td><td>\\( \\varepsilon_{fin}=q_{fin}/(hA_c\\theta_b) \\)</td><td>Fin vs. no fin at all; worth it once ≫1.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A worked pin fin</b></p><p><b>Problem.</b> An aluminum pin fin (\\(k=200\\ \\text{W/mK}\\)), diameter 5 mm, length 200 mm, sits in \\(h=15\\ \\text{W/m}^2\\text{K}\\) air with base excess \\(\\theta_b=60\\)°C. Find \\(m\\), \\(mL\\), the efficiency, and the heat rate \\(q_{fin}\\).</p>",
+        "solution": "<p><b>Solution.</b> \\(A_c=\\pi(D/2)^2=19.63\\ \\text{mm}^2\\), \\(P=\\pi D=15.71\\ \\text{mm}\\). \\(m=\\sqrt{hP/(kA_c)}=7.75\\ \\text{m}^{-1}\\), \\(mL=1.549\\), \\(\\tanh(mL)=0.914\\). \\(\\eta_{fin}=\\tanh(mL)/mL=59\\%\\). \\(q_{fin}=\\sqrt{hPkA_c}\\,\\theta_b\\tanh(mL)=1.67\\ \\text{W}\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Doubling the fin length</b></p><p><b>Problem.</b> The same fin is remade at 400 mm instead of 200 mm, all else unchanged. Find the new efficiency and heat rate, and the percent gain over the original 200 mm fin.</p>",
+        "solution": "<p><b>Solution.</b> \\(mL=3.098\\), \\(\\tanh(mL)=0.996\\), \\(\\eta_{fin}=32\\%\\). \\(q_{fin}=1.82\\ \\text{W}\\), only \\((1.82/1.67-1)\\times100=9\\%\\) more than the 200 mm fin — twice the material for 9% more heat.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The same fin, moved to a liquid</b></p><p><b>Problem.</b> The original 200 mm fin (§4) is instead installed where \\(h=200\\ \\text{W/m}^2\\text{K}\\) (a liquid rather than air). Find the new \\(q_{fin}\\) and effectiveness \\(\\varepsilon_{fin}\\), and compare \\(\\varepsilon_{fin}\\) to the original air-side value.</p>",
+        "solution": "<p><b>Solution.</b> \\(m=\\sqrt{h_{liq}P/(kA_c)}=28.28\\ \\text{m}^{-1}\\), \\(mL=5.657\\). \\(q_{fin}=\\sqrt{h_{liq}PkA_c}\\,\\theta_b\\tanh(mL)=6.66\\ \\text{W}\\) — larger in absolute terms than the air-side 1.67 W, because \\(h\\) itself is larger. But \\(\\varepsilon_{fin}=q_{fin}/(h_{liq}A_c\\theta_b)=28\\), down from 94 on the air side — a 3.3× drop in how much this fin is worth relative to the bare area it replaces.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A fin is most worth adding when which quantity is the bottleneck in \\(q=hA(T_s-T_\\infty)\\)?</p>",
+        "choices": [
+          "The convection coefficient h, when it is low",
+          "The temperature difference, when it is large",
+          "The fin's own thermal conductivity, when it is low",
+          "The ambient pressure"
+        ],
+        "answer": 0,
+        "solution": "<p>When h is already large (liquid, boiling), a fin's own internal conduction resistance limits its payoff; low h is where extra area helps most.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>As the fin parameter \\(mL\\to 0\\) (a very short or very conductive fin), what does the efficiency \\(\\eta_{fin}=\\tanh(mL)/mL\\) approach?</p>",
+        "choices": [
+          "0",
+          "0.5",
+          "1",
+          "It diverges to infinity"
+        ],
+        "answer": 2,
+        "solution": "<p>\\(\\lim_{x\\to0}\\tanh(x)/x=1\\): a short, highly conductive fin stays almost entirely at base temperature, so it performs almost as well as the all-base-temperature ideal.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>This lesson's fin has \\(m=7.75\\ \\text{m}^{-1}\\). A different fin with a LARGER \\(m\\) (thinner, lower-k, or higher-h) decays in temperature excess along its length:</p>",
+        "choices": [
+          "More slowly than this fin",
+          "More quickly — the excess drops off over a shorter physical distance",
+          "At exactly the same rate — m does not affect the profile's shape",
+          "Only near the tip, never near the base"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(\\theta/\\theta_b=\\cosh(m(L-x))/\\cosh(mL)\\): a larger m compresses the same decay into a shorter distance — thinner or lower-conductivity fins 'use up' their base excess faster.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The adiabatic-tip idealization used in §2 assumes which loss is negligible?</p>",
+        "choices": [
+          "Convection loss along the fin's lateral (side) surface",
+          "Conduction loss from the fin's tip end-face",
+          "Radiation loss from the base",
+          "All losses — the fin is assumed perfectly insulated everywhere"
+        ],
+        "answer": 1,
+        "solution": "<p>The lateral surface is exactly where the fin is supposed to lose heat; the idealization only neglects the small end-face area at the very tip.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Fin effectiveness \\(\\varepsilon_{fin}\\) scales with which ratio, explaining why fins matter more on the gas side of a system than the liquid side?</p>",
+        "choices": [
+          "\\(h/k\\)",
+          "\\(\\sqrt{k/h}\\)",
+          "\\(k\\cdot h\\)",
+          "It does not depend on either k or h"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(\\varepsilon_{fin}\\propto\\sqrt{k/h}\\): high-conductivity metal fins pay off most where h is small, i.e. gas-side, low-h convection.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In §4, doubling this lesson's fin from 200 mm to 400 mm changed the heat rate by roughly:</p>",
+        "choices": [
+          "+9% — barely more, despite double the material",
+          "+100% — heat rate doubled along with the length",
+          "-50% — heat rate fell",
+          "No change at all"
+        ],
+        "answer": 0,
+        "solution": "<p>\\(q_{fin}\\) rose from 1.67 W to only 1.82 W — a 9% gain for double the material, exactly the saturation §3 describes.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Moving the same pin fin from air (h=15 W/m²K) to a liquid (h=200 W/m²K) does what to its absolute heat rate \\(q_{fin}\\) and its effectiveness \\(\\varepsilon_{fin}\\)?</p>",
+        "choices": [
+          "Both rise",
+          "Both fall",
+          "\\(q_{fin}\\) rises (h itself is larger), but \\(\\varepsilon_{fin}\\) falls (the fin is worth relatively less against its own higher-h bare area)",
+          "\\(q_{fin}\\) falls, but \\(\\varepsilon_{fin}\\) rises"
+        ],
+        "answer": 2,
+        "solution": "<p>Absolute heat rate tracks h directly and rises; but effectiveness compares the fin to its own bare area at that same higher h, and that comparison gets tougher as h rises — both verified in this lesson's third solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A designer is choosing where to add fins across four surfaces on the same machine. Which surface benefits LEAST?</p>",
+        "choices": [
+          "A sealed, un-fanned electrical enclosure wall in still air",
+          "The gas side of an air-cooled cylinder head",
+          "A tube surface undergoing nucleate boiling on the process side",
+          "An outdoor motor housing cooled by natural convection only"
+        ],
+        "answer": 2,
+        "solution": "<p>Boiling delivers a very high h; per §3's \\(\\sqrt{k/h}\\) scaling, fins pay off least where h is already high — exactly the regime Lesson 7 covers next.</p>"
+      }
+    ],
+    "kuwait": "\n<p>A design engineer specifying an air-cooled heat sink or a finned outdoor enclosure checks\nfin effectiveness, not just fin count, before adding material — per §3, effectiveness scales with\n\\(\\sqrt{k/h}\\), which is exactly why finning pays off decisively on gas-cooled, low-\\(h\\)\noutdoor equipment and offers far less on a liquid-cooled jacket, where the same aluminum and the\nsame geometry would buy proportionally less.</p>\n<p>An engineer reviewing a finned air-cooled housing design recognizes, per §3's own doubling-length\nresult, that past a certain length additional fin material buys almost nothing — a design that\nkeeps extending fin length chasing a marginal cooling gain is spending mass and cost for a return\nclose to noise, an easy, quantifiable objection to raise in a design review rather than a vague\none.</p>"
+  },
+  "3": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An exponential decay curve of normalized temperature excess against time for a lumped-capacitance body, marked at one time constant tau where the excess has fallen to 1 over e, and again at the time where the excess has fallen to five percent of its initial value\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Lumped capacitance: one exponential, one time constant τ</text><line x1=\"70\" y1=\"250\" x2=\"480\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"70\" y1=\"250\" x2=\"70\" y2=\"65\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"24\" y=\"60\" fill=\"#16202e\" font-size=\"10.5\">θ*(t)/θ*(0)</text><text x=\"275\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">time, t (s)</text><polyline points=\"70.0,80.0 76.8,89.3 83.7,98.2 90.5,106.5 97.3,114.4 104.2,121.8 111.0,128.9 117.8,135.5 124.7,141.8 131.5,147.7 138.3,153.3 145.2,158.7 152.0,163.7 158.8,168.4 165.7,172.9 172.5,177.1 179.3,181.1 186.2,184.9 193.0,188.5 199.8,191.9 206.7,195.0 213.5,198.1 220.3,200.9 227.2,203.6 234.0,206.2 240.8,208.6 247.7,210.8 254.5,213.0 261.3,215.0 268.2,216.9 275.0,218.8 281.8,220.5 288.7,222.1 295.5,223.6 302.3,225.1 309.2,226.4 316.0,227.7 322.8,229.0 329.7,230.1 336.5,231.2 343.3,232.2 350.2,233.2 357.0,234.1 363.8,235.0 370.7,235.8 377.5,236.6 384.3,237.3 391.2,238.0 398.0,238.7 404.8,239.3 411.7,239.9 418.5,240.5 425.3,241.0 432.2,241.5 439.0,241.9 445.8,242.4 452.7,242.8 459.5,243.2 466.3,243.6 473.2,243.9 480.0,244.3\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"191.0\" y1=\"250\" x2=\"191.0\" y2=\"187.5\" stroke=\"#c2820f\" stroke-width=\"1\" stroke-dasharray=\"3,3\"/><circle cx=\"191.0\" cy=\"187.5\" r=\"4\" fill=\"#c2820f\"/><text x=\"199.0\" y=\"179.5\" fill=\"#c2820f\" font-size=\"9.5\">τ=14.8s, 1/e=0.37</text><circle cx=\"432.5\" cy=\"241.5\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"424.5\" y=\"231.5\" text-anchor=\"end\" fill=\"#1f7a5c\" font-size=\"9.5\">5% at t=44s</text></svg><figcaption>Once a body qualifies for lumped capacitance, its entire thermal history is this one curve — no shape, no internal gradient, just one exponential set by τ=ρVc/(hA).</figcaption></figure>\n\n<h3>§1 · Lumped capacitance, and its entry ticket</h3>\n<p>If a body's own internal conduction is fast enough that it stays at one uniform temperature\nwhile it heats or cools, an energy balance on the whole body — stored energy lost to convection,\n\\(\\rho V c\\,dT/dt=-hA(T-T_\\infty)\\) — integrates directly to\n\\(\\dfrac{T-T_\\infty}{T_i-T_\\infty}=e^{-t/\\tau}\\), a single exponential set by one time\nconstant \\(\\tau=\\rho V c/(hA)\\). The entry ticket for this shortcut is the <b>Biot number</b>,\n\\(Bi=hL_c/k\\) with \\(L_c=V/A\\): it is a ratio of internal conduction resistance\n\\((L_c/k)\\) to external convection resistance \\((1/h)\\), and the common rule of thumb is\n\\(Bi<0.1\\) — internal resistance small enough next to the external bottleneck that \"uniform\ntemperature\" is a good approximation, not merely a convenient one.</p>\n\n<h3>§2 · When lumped fails: the semi-infinite solid and one-term charts</h3>\n<p>When \\(Bi\\) is not small — a thick section, a highly conductive-but-large body, or simply the\nfirst instants after a sudden surface change, before the interior has had time to feel it — a body\nis better modeled as a <b>semi-infinite solid</b>: an error-function temperature profile spreading\nin from the surface, whose surface heat flux falls as \\(1/\\sqrt{t}\\), because the depth the\ndisturbance has reached keeps growing while the local gradient keeps relaxing. For finite shapes\n(a plane wall, a long cylinder, a sphere) once enough time has passed that a single mode dominates\n(\\(Fo=\\alpha t/L_c^2\\gtrsim0.2\\)), a <b>one-term solution</b>\n\\(\\theta^*=C_1 e^{-\\lambda_1^2 Fo}\\) (times a position function), with \\(\\lambda_1\\) and\n\\(C_1\\) tabulated against \\(Bi\\) and geometry, replaces the full infinite series — the same\nrole Heisler charts play by hand.</p>\n\n<h3>§3 · The same V/A ratio, a different exponent</h3>\n<p>Both \\(\\tau=\\rho V c/(hA)\\) here and Chvorinov's rule for casting solidification time\n(\\(t\\propto(V/A)^2\\), covered in this curriculum's manufacturing-processes course) are governed\nby the same geometric ratio, \\(V/A\\) — a body's volume against the surface it must lose or gain\nheat through. The exponent differs because the limiting resistance differs: lumped capacitance's\n\\(\\tau\\) is <i>externally</i> convection-limited, and \\(V/A\\) enters linearly through the\nenergy balance; Chvorinov's rule describes a growing solid shell whose <i>own</i> conduction\nresistance is what's controlling, and that internally-limited problem is what pushes the exponent\nto two. Estimating a real time honestly means checking \\(Bi\\) <i>first</i> and picking the model\nthat ticket actually admits — never assuming lumped capacitance applies just because it is the\neasier formula to reach for.</p>\n\n<h3>§4 · A worked quench, checked before it is trusted</h3>\n<p>A 12 mm-diameter steel pin (\\(k=45\\ \\text{W/mK}\\),\n\\(\\rho=7850\\ \\text{kg/m}^3\\), \\(c=470\\ \\text{J/kgK}\\)) is quenched in agitated\noil, \\(h=750\\ \\text{W/m}^2\\text{K}\\). For a long cylinder, \\(L_c=V/A=r/2=3.0\\\n\\ \\text{mm}\\), so \\(Bi=hL_c/k=0.05\\) — comfortably under 0.1, lumped capacitance is\nlegitimate. \\(\\tau=\\rho L_c c/h=14.76\\ \\text{s}\\): physically, the time for the excess\ntemperature to fall to \\(1/e\\approx37\\%\\) of its start. Reaching 5% of the initial excess takes\n\\(t=\\tau\\ln(20)=44.2\\ \\text{s}\\); reaching 10% takes \\(t=\\tau\\ln(10)=34.0\\\n\\ \\text{s}\\). Had the same pin instead been quenched in water\n(\\(h=5000\\ \\text{W/m}^2\\text{K}\\)), \\(Bi\\) would climb to 0.33 — over the 0.1\nline, meaning the lumped shortcut is no longer legitimate for that case, exactly the honest check\n§3 insists on before trusting any of these numbers.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — lumped capacitance</span>\n<p>\\[ \\frac{T-T_\\infty}{T_i-T_\\infty}=e^{-t/\\tau}, \\qquad \\tau=\\frac{\\rho V c}{hA},\n\\qquad Bi=\\frac{hL_c}{k}<0.1 \\]</p>\n<p>Check \\(Bi\\) before trusting \\(\\tau\\) — the formula does not warn you when it stops\napplying.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Fourier's law and thermal resistance</b> (Lesson 1) — the Biot number\nis literally a ratio of two resistances already introduced there, internal conduction against\nexternal convection.</li></ul>\n<h4>Toolkit — transient conduction</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Biot number</td><td>\\( Bi=hL_c/k \\)</td><td>Entry ticket for lumped capacitance (\\(Bi&lt;0.1\\)).</td></tr>\n<tr><td>Characteristic length</td><td>\\( L_c=V/A \\)</td><td>Same ratio behind Chvorinov's rule.</td></tr>\n<tr><td>Lumped time constant</td><td>\\( \\tau=\\rho V c/(hA) \\)</td><td>Time to fall to 1/e of initial excess.</td></tr>\n<tr><td>Fourier number</td><td>\\( Fo=\\alpha t/L_c^2 \\)</td><td>Dimensionless time for one-term/chart solutions.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The quenched pin, checked and timed</b></p><p><b>Problem.</b> A 12 mm-diameter steel pin (\\(k=45\\ \\text{W/mK}\\), \\(\\rho=7850\\ \\text{kg/m}^3\\), \\(c=470\\ \\text{J/kgK}\\)) is quenched in oil at \\(h=750\\ \\text{W/m}^2\\text{K}\\). Check the Biot number, then find \\(\\tau\\) and the time to reach 5% of the initial excess.</p>",
+        "solution": "<p><b>Solution.</b> \\(L_c=r/2=3.0\\ \\text{mm}\\), \\(Bi=hL_c/k=0.05<0.1\\): lumped is valid. \\(\\tau=\\rho L_c c/h=14.76\\ \\text{s}\\). \\(t_{5\\%}=\\tau\\ln(20)=44.2\\ \\text{s}\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The same pin, quenched in water instead</b></p><p><b>Problem.</b> The identical pin is quenched in water, \\(h=5000\\ \\text{W/m}^2\\text{K}\\), instead of oil. Check whether lumped capacitance is still legitimate.</p>",
+        "solution": "<p><b>Solution.</b> \\(Bi=h L_c/k=5000\\times0.0030/45=0.33\\) — over the 0.1 threshold. Lumped capacitance is no longer a legitimate model for this case; a one-term or chart-based solution (§2) is required instead.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Doubling the pin's radius</b></p><p><b>Problem.</b> A second pin, identical material and quench (\\(h=750\\ \\text{W/m}^2\\text{K}\\)), has twice the diameter (24 mm instead of 12 mm). Find its Biot number and time constant, and compare \\(\\tau\\) to the original pin's.</p>",
+        "solution": "<p><b>Solution.</b> \\(L_c=r/2=6\\ \\text{mm}\\), \\(Bi=hL_c/k=0.10\\) — right at the 0.1 boundary, lumped capacitance is only just still defensible. \\(\\tau=\\rho L_c c/h=29.52\\ \\text{s}\\), exactly \\(2\\times\\) the original 14.76 s — \\(\\tau\\) scales linearly with \\(L_c=V/A\\), not with its square as Chvorinov's rule does.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Biot number \\(Bi=hL_c/k\\) is best understood as a ratio of which two quantities?</p>",
+        "choices": [
+          "External convection resistance to internal conduction resistance",
+          "Internal conduction resistance to external convection resistance",
+          "Stored thermal energy to heat lost per second",
+          "Surface area to volume, with no resistance interpretation"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(Bi=(L_c/k)/(1/h)\\) — internal conduction resistance in the numerator, external convection resistance in the denominator.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A body's Biot number is 0.6. Which model should be used for its transient response?</p>",
+        "choices": [
+          "Lumped capacitance — Bi is small enough",
+          "A one-term (chart-based) or full-series solution — Bi is too large for lumped capacitance",
+          "Neither model applies to any body with Bi above zero",
+          "The semi-infinite solid solution, forever, regardless of elapsed time"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(Bi=0.6\\) is well above the \\(0.1\\) rule-of-thumb line; internal conduction resistance is not negligible, so lumped capacitance is not a legitimate shortcut here.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Near the surface of a suddenly-heated semi-infinite solid, the surface heat flux behaves as time proceeds:</p>",
+        "choices": [
+          "It stays constant forever",
+          "It rises without bound",
+          "It falls, proportional to \\(1/\\sqrt{t}\\)",
+          "It falls to exactly zero after one time constant"
+        ],
+        "answer": 2,
+        "solution": "<p>As the affected depth grows, the local temperature gradient at the surface relaxes, and the semi-infinite solid solution gives a surface flux falling as \\(1/\\sqrt{t}\\).</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Both this lesson's lumped time constant and casting's Chvorinov's rule are governed by the same geometric ratio. Which one?</p>",
+        "choices": [
+          "Surface area alone",
+          "Volume alone",
+          "\\(V/A\\), the volume-to-surface-area ratio",
+          "Density times specific heat"
+        ],
+        "answer": 2,
+        "solution": "<p>Both \\(\\tau=\\rho Vc/(hA)\\) and Chvorinov's \\(t\\propto(V/A)^2\\) are built on \\(V/A\\) — but with different exponents, per §3.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Why does Chvorinov's rule use \\((V/A)^2\\) while this lesson's lumped \\(\\tau\\) uses \\(V/A\\) to the first power?</p>",
+        "choices": [
+          "It is an arbitrary historical convention with no physical cause",
+          "Because Chvorinov's problem is limited by the growing solid shell's own internal conduction resistance, not by external convection",
+          "Because casting always involves larger volumes than quenching",
+          "Because Chvorinov's rule is only an approximation and the exponent is not meaningful"
+        ],
+        "answer": 1,
+        "solution": "<p>Lumped capacitance is externally (convection) limited, linear in V/A; Chvorinov's solidifying shell is internally (conduction) limited, which is what pushes the exponent to two — a real physical distinction, not a coincidence.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's worked pin, what does reaching \\(t=\\tau\\) specifically correspond to?</p>",
+        "choices": [
+          "The temperature excess has fallen to zero",
+          "The temperature excess has fallen to \\(1/e\\approx37\\%\\) of its initial value",
+          "The part has reached exactly the ambient temperature",
+          "The Biot number has changed"
+        ],
+        "answer": 1,
+        "solution": "<p>By definition of the exponential solution, one time constant is the time for the excess to fall to \\(1/e\\) of its starting value — visible directly on this lesson's diagram.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Doubling a lumped body's characteristic length \\(L_c\\) (same material, same h) changes \\(Bi\\) and \\(\\tau\\) how?</p>",
+        "choices": [
+          "Both double",
+          "Bi halves, τ doubles",
+          "Both are unchanged",
+          "Bi doubles, τ quadruples"
+        ],
+        "answer": 0,
+        "solution": "<p>Both \\(Bi=hL_c/k\\) and \\(\\tau=\\rho L_c c/h\\) are directly proportional to \\(L_c\\); doubling \\(L_c\\) doubles both, exactly as this lesson's third solve problem shows numerically.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A one-term (Heisler-chart-style) solution is appropriate once which condition is met?</p>",
+        "choices": [
+          "Immediately at t=0, before anything else is checked",
+          "Once the Fourier number \\(Fo=\\alpha t/L_c^2\\) is roughly 0.2 or larger",
+          "Only when Bi is exactly zero",
+          "Never — the full infinite series is always required"
+        ],
+        "answer": 1,
+        "solution": "<p>Once \\(Fo\\gtrsim0.2\\), the series solution is dominated by its first term, and the one-term/chart approximation becomes accurate enough for engineering use.</p>"
+      }
+    ],
+    "kuwait": "\n<p>A technician estimating quench or preheat duration for a batch of small parts checks the Biot\nnumber before reaching for the lumped-capacitance formula at all — per §1 and §4, the same part\ncan sit comfortably under the \\(Bi<0.1\\) line in one quench medium and clear it entirely in a\nmore aggressive one, and applying the easy formula regardless of which medium is in use would\nmisestimate the time by a real, checkable margin.</p>\n<p>An engineer estimating how long a hot component in a shut-down process line takes to reach a\nsafe-to-touch temperature uses the same time-constant idea, once \\(Bi\\) is confirmed small, as a\nfirst-pass lockout-duration estimate — a legitimate, quick engineering number precisely because\nthe check in §1 was not skipped first.</p>"
+  },
+  "4": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A boundary layer thickness curve growing smoothly from zero at the leading edge of a flat plate to a few millimetres by the trailing edge, following a square-root-of-x growth law, for laminar flow the plate's entire length\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The boundary layer is a few millimetres thick, and grows as √x</text><line x1=\"70\" y1=\"250\" x2=\"480\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1.4\"/><text x=\"275\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">plate length, x (0 → 200 mm)</text><text x=\"24\" y=\"82\" fill=\"#16202e\" font-size=\"10.5\">δ (mm)</text><polyline points=\"70.0,250.0 70.2,247.1 77.0,233.2 83.9,226.5 90.7,221.2 97.5,216.8 104.4,212.9 111.2,209.4 118.0,206.2 124.8,203.2 131.7,200.4 138.5,197.7 145.3,195.1 152.2,192.7 159.0,190.4 165.8,188.1 172.7,186.0 179.5,183.9 186.3,181.8 193.1,179.9 200.0,177.9 206.8,176.1 213.6,174.2 220.5,172.5 227.3,170.7 234.1,169.0 241.0,167.3 247.8,165.7 254.6,164.1 261.4,162.5 268.3,161.0 275.1,159.5 281.9,158.0 288.8,156.5 295.6,155.1 302.4,153.6 309.3,152.2 316.1,150.8 322.9,149.5 329.7,148.1 336.6,146.8 343.4,145.5 350.2,144.2 357.1,142.9 363.9,141.6 370.7,140.4 377.6,139.1 384.4,137.9 391.2,136.7 398.0,135.5 404.9,134.3 411.7,133.1 418.5,132.0 425.4,130.8 432.2,129.7 439.0,128.6 445.9,127.4 452.7,126.3 459.5,125.2 466.3,124.2 473.2,123.1 480.0,122.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><circle cx=\"480.0\" cy=\"122.0\" r=\"4\" fill=\"#c2820f\"/><text x=\"472.0\" y=\"112.0\" text-anchor=\"end\" fill=\"#c2820f\" font-size=\"9.5\">δ=4.0 mm at x=200 mm</text><text x=\"16\" y=\"66\" fill=\"#16202e\" font-size=\"10\">air, V=5 m/s, flowing left to right over the plate surface</text></svg><figcaption>This lesson's own plate (\\(Re_L=62,500\\)) never reaches the \\(Re_{crit}\\approx5\\times10^5\\) transition — the whole 200 mm stays laminar, and the boundary layer stays a few millimetres thin the entire way.</figcaption></figure>\n\n<h3>§1 · Two boundary layers, and the laminar–turbulent split</h3>\n<p>A fluid moving past a solid surface develops a <b>velocity boundary layer</b>: zero velocity at\nthe wall (no-slip), rising to the free-stream value across a thin layer of thickness \\(\\delta\\).\nIf the surface and fluid are at different temperatures, a parallel <b>thermal boundary layer</b>\ndevelops the same way, wall temperature to free-stream temperature across thickness\n\\(\\delta_t\\). Close to a leading edge this layer is smooth and layered — <b>laminar</b>; far\nenough along, it becomes chaotic and well-mixed except for a thin viscous sublayer —\n<b>turbulent</b>. For a flat plate the transition sits near\n\\(Re_{x,crit}\\approx5\\times10^5\\), a Reynolds number, not a fixed distance — it depends on\nvelocity and fluid as much as on position.</p>\n\n<h3>§2 · The Nu–Re–Pr grammar</h3>\n<p>The <b>Nusselt number</b> \\(Nu=hL/k\\) is simply a dimensionless convection coefficient — how\nmuch better convection moves heat across length scale \\(L\\) than pure conduction through a\nstationary layer of the same fluid would. Forced-convection correlations fit \\(Nu\\) as a power\nlaw in the <b>Reynolds number</b> \\(Re=VL/\\nu\\) (inertial versus viscous forces) and the\n<b>Prandtl number</b> \\(Pr=\\nu/\\alpha\\) (momentum versus thermal diffusivity — physically, how\nthe velocity and thermal boundary layers compare in thickness): \\(Nu=C\\,Re^m Pr^n\\). For laminar\nflow averaged over a flat plate, \\(Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3}\\) (valid for\n\\(Pr\\gtrsim0.6\\)). Cylinders in crossflow and tube banks follow the same structural form with\ndifferent constants and, for banks, a row-count correction — always fitted to data over a stated\nrange, never derived from first principles the way the flat-plate boundary-layer result nearly\nis.</p>\n\n<h3>§3 · Using a correlation without believing it past its range</h3>\n<p>Every correlation in §2 carries fine print: a Reynolds range, a Prandtl range, a specific\ngeometry it was fitted to. Applying a flat-plate correlation to a cylinder in crossflow is not a\nrounding error — it is a category error, since the boundary-layer physics genuinely differs\n(a cylinder's boundary layer separates; a flat plate's does not). Applying a correlation validated\nfor \\(Pr\\gtrsim0.6\\) to a very low-\\(Pr\\) liquid metal is the same mistake in a quieter\ndisguise: the fitted exponent on \\(Pr\\) was never tested down there, and there is no guarantee it\nstill holds.</p>\n\n<h3>§4 · A worked flat plate</h3>\n<p>Air at \\(V=5\\ \\text{m/s}\\) flows over a 200 mm-long flat plate (an\nelectronics board or a heat-sink base), film properties \\(\\nu=1.6e-05\\\n\\ \\text{m}^2\\text{/s}\\), \\(k=0.027\\ \\text{W/mK}\\), \\(Pr=0.71\\).\n\\(Re_L=VL/\\nu=62,500\\) — well under \\(Re_{crit}\\), laminar the whole length.\n\\(Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3}=148.1\\), giving\n\\(h=Nu_L k/L=19.99\\ \\text{W/m}^2\\text{K}\\) — a modest number, typical of low-speed\nforced air, and the reason Lesson 2's fins matter so much on exactly this kind of surface.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — laminar flat plate</span>\n<p>\\[ Nu_L=\\frac{hL}{k}=0.664\\,Re_L^{0.5}Pr^{1/3} \\]</p>\n<p>Same grammar, different constants, for every other forced-convection correlation this course\nuses.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Newton's law of cooling</b> (Lesson 1) treated \\(h\\) as empirical and\nexternally given; this lesson is where \\(h\\) finally gets computed from first principles rather\nthan assumed.</li></ul>\n<h4>Toolkit — external forced convection</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Nusselt number</td><td>\\( Nu=hL/k \\)</td><td>Dimensionless convection coefficient.</td></tr>\n<tr><td>Reynolds number</td><td>\\( Re=VL/\\nu \\)</td><td>Inertial vs. viscous forces; sets laminar/turbulent.</td></tr>\n<tr><td>Prandtl number</td><td>\\( Pr=\\nu/\\alpha \\)</td><td>Momentum vs. thermal diffusivity.</td></tr>\n<tr><td>Laminar flat plate (avg)</td><td>\\( Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3} \\)</td><td>Valid \\(Pr\\gtrsim0.6\\), \\(Re_L&lt;Re_{crit}\\).</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked flat plate</b></p><p><b>Problem.</b> Air at \\(V=5\\ \\text{m/s}\\) flows over a 200 mm flat plate, \\(\\nu=1.6e-05\\ \\text{m}^2\\text{/s}\\), \\(k=0.027\\ \\text{W/mK}\\), \\(Pr=0.71\\). Find \\(Re_L\\), confirm the flow stays laminar, then find \\(Nu_L\\) and \\(h\\).</p>",
+        "solution": "<p><b>Solution.</b> \\(Re_L=VL/\\nu=62,500\\), under \\(Re_{crit}=5\\times10^5\\): laminar throughout. \\(Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3}=148.1\\). \\(h=Nu_L k/L=19.99\\ \\text{W/m}^2\\text{K}\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Doubling the approach velocity</b></p><p><b>Problem.</b> The same plate now sees \\(V=10\\ \\text{m/s}\\), all else unchanged. Find the new \\(Re_L\\), \\(Nu_L\\), and \\(h\\), and the ratio to the original h.</p>",
+        "solution": "<p><b>Solution.</b> \\(Re_L=125,000\\) (still laminar). \\(Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3}=209.4\\). \\(h=28.27\\ \\text{W/m}^2\\text{K}\\). Ratio \\(h_{new}/h_{old}=1.414\\), matching \\(\\sqrt{2}=1.414\\) exactly, since \\(h\\propto Re^{0.5}\\propto V^{0.5}\\) at fixed L.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Checking the correlation's own range</b></p><p><b>Problem.</b> The same plate, same \\(V=5\\ \\text{m/s}\\) and fluid, is now 2 m long instead of 200 mm. Check whether the laminar flat-plate correlation used in §4 still applies over the full length.</p>",
+        "solution": "<p><b>Solution.</b> \\(Re_L=VL/\\nu=625,000\\), which exceeds \\(Re_{crit}=5\\times10^5\\). The boundary layer transitions to turbulent before the trailing edge, so the purely laminar correlation no longer applies over the full 2 m — a mixed laminar-turbulent correlation would be required instead, exactly the range check §3 insists on.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Physically, what does the Nusselt number \\(Nu=hL/k\\) represent?</p>",
+        "choices": [
+          "The ratio of inertial to viscous forces in the flow",
+          "How much better convection moves heat across length L than pure conduction through a stationary layer of the same fluid",
+          "The ratio of momentum to thermal diffusivity",
+          "The fraction of the boundary layer that is turbulent"
+        ],
+        "answer": 1,
+        "solution": "<p>Nu compares the actual convective h to the conduction that would occur across the same length scale L through the still fluid — a dimensionless convection coefficient.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>For a flat plate, the laminar-to-turbulent boundary-layer transition is associated with a Reynolds number near:</p>",
+        "choices": [
+          "500",
+          "5,000",
+          "5×10⁵",
+          "5×10⁹"
+        ],
+        "answer": 2,
+        "solution": "<p>The classic flat-plate transition Reynolds number is roughly \\(5\\times10^5\\), used directly in this lesson's own worked example.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In \\(Nu_L=0.664\\,Re_L^{0.5}Pr^{1/3}\\), doubling the free-stream velocity V (plate length and fluid fixed) multiplies h by approximately:</p>",
+        "choices": [
+          "1.19",
+          "1.41 (√2)",
+          "2.00",
+          "2.83"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(h\\propto Re^{0.5}\\propto V^{0.5}\\); doubling V multiplies h by \\(\\sqrt{2}\\approx1.41\\), confirmed numerically in this lesson's second solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Applying a flat-plate forced-convection correlation to a cylinder in crossflow is best described as:</p>",
+        "choices": [
+          "A safe approximation, since both are just 'external convection'",
+          "A category error — a cylinder's boundary layer separates, which a flat plate's does not, so the underlying physics genuinely differs",
+          "Exact, provided the same Reynolds number is used",
+          "Only wrong if the fluid is a liquid metal"
+        ],
+        "answer": 1,
+        "solution": "<p>Flow separation around a cylinder is physics a flat-plate correlation was never fitted to; §3 calls this a category error, not a rounding error.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A correlation is validated for \\(Pr\\gtrsim0.6\\). Applying it to a liquid metal (\\(Pr\\ll1\\)) risks:</p>",
+        "choices": [
+          "No risk at all — Pr never actually affects the result",
+          "A large, unquantified error, since the fitted Pr exponent was never tested in that range",
+          "Only a small, easily-corrected rounding error",
+          "Automatic conversion of the correlation to a natural-convection form"
+        ],
+        "answer": 1,
+        "solution": "<p>A correlation's exponents are empirical fits over a stated range; extrapolating far outside it — as with liquid metals at very low Pr — has no guarantee of holding.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>On a laminar flat plate, the boundary-layer thickness \\(\\delta(x)\\) grows approximately as:</p>",
+        "choices": [
+          "Linearly with x",
+          "As \\(\\sqrt{x}\\)",
+          "As \\(x^2\\)",
+          "It stays constant"
+        ],
+        "answer": 1,
+        "solution": "<p>The classic laminar result \\(\\delta/x=5/\\sqrt{Re_x}\\) gives \\(\\delta\\propto\\sqrt{x}\\), the shape plotted in this lesson's own diagram.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's worked example (\\(Re_L=62,500\\)), the 200 mm plate is:</p>",
+        "choices": [
+          "Entirely turbulent from the leading edge",
+          "Entirely laminar — \\(Re_L\\) never approaches \\(Re_{crit}\\approx5\\times10^5\\)",
+          "Laminar for the first half, turbulent for the second",
+          "Impossible to classify without the plate's material"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(Re_L=62,500\\) is well under \\(5\\times10^5\\); the entire plate length stays laminar, consistent with the smooth, unbroken growth curve in this lesson's diagram.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Prandtl number \\(Pr=\\nu/\\alpha\\) physically compares which two quantities?</p>",
+        "choices": [
+          "Inertial forces to viscous forces",
+          "Momentum diffusivity to thermal diffusivity — roughly, how the velocity and thermal boundary layers compare in thickness",
+          "Convective to conductive heat transfer",
+          "Buoyancy forces to viscous forces"
+        ],
+        "answer": 1,
+        "solution": "<p>Pr is the ratio of momentum diffusivity (ν) to thermal diffusivity (α); a high Pr fluid has a thermal boundary layer thinner than its velocity boundary layer, and vice versa.</p>"
+      }
+    ],
+    "kuwait": "\n<p>An engineer sizing air-cooled equipment checks a correlation's stated Reynolds and Prandtl\nrange before trusting its predicted h — per §3, borrowing a flat-plate result for a cylinder, or a\ncorrelation's fitted Prandtl exponent for a fluid well outside the range it was tested on, is a\ncategory error a spec sheet's fine print would have caught before it ever reached a design\ncalculation.</p>\n<p>A technician noticing an air-cooled component running hotter than usual in summer checks\nwhether actual airflow — not just ambient temperature — has quietly dropped, since a fouled\nfilter or a degrading fan reduces \\(V\\) directly; per §4's own correlation, \\(h\\propto\nV^{0.5}\\), so even a partial airflow loss produces a real, calculable derating in cooling\ncapacity, not merely a vague seasonal excuse.</p>"
+  },
+  "5": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A water temperature curve rising from a cool inlet value and approaching, but never quite reaching, a hot constant wall temperature line, following an exponential-approach shape along the length of a steam-jacketed pipe\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Water approaches the jacket wall temperature — it never linearly ramps to it</text><line x1=\"70\" y1=\"95\" x2=\"480\" y2=\"95\" stroke=\"#c2820f\" stroke-width=\"1.2\" stroke-dasharray=\"4,3\"/><text x=\"76\" y=\"89\" fill=\"#c2820f\" font-size=\"9.5\">T_s=120°C (jacket wall)</text><line x1=\"70\" y1=\"225\" x2=\"70\" y2=\"245\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"70\" y1=\"245\" x2=\"480\" y2=\"245\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"275\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">distance along pipe, x (0 → 10 m)</text><polyline points=\"70.0,235.0 78.2,231.9 86.4,228.8 94.6,225.8 102.8,222.9 111.0,220.1 119.2,217.3 127.4,214.6 135.6,211.9 143.8,209.3 152.0,206.7 160.2,204.2 168.4,201.8 176.6,199.4 184.8,197.1 193.0,194.8 201.2,192.6 209.4,190.4 217.6,188.3 225.8,186.2 234.0,184.2 242.2,182.2 250.4,180.3 258.6,178.4 266.8,176.5 275.0,174.7 283.2,172.9 291.4,171.2 299.6,169.5 307.8,167.8 316.0,166.2 324.2,164.6 332.4,163.0 340.6,161.5 348.8,160.0 357.0,158.6 365.2,157.2 373.4,155.8 381.6,154.4 389.8,153.1 398.0,151.8 406.2,150.5 414.4,149.3 422.6,148.1 430.8,146.9 439.0,145.8 447.2,144.6 455.4,143.5 463.6,142.4 471.8,141.4 480.0,140.3\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><circle cx=\"70.0\" cy=\"235.0\" r=\"4\" fill=\"#16202e\"/><text x=\"78.0\" y=\"251.0\" fill=\"#16202e\" font-size=\"9.5\">inlet 20°C</text><circle cx=\"480.0\" cy=\"140.3\" r=\"4\" fill=\"#1f7a5c\"/><text x=\"472.0\" y=\"130.3\" text-anchor=\"end\" fill=\"#1f7a5c\" font-size=\"9.5\">exit 87.6°C</text></svg><figcaption>Constant wall temperature forces an exponential approach, not a straight ramp — the last few metres of any such pipe buy far less temperature rise than the first few.</figcaption></figure>\n\n<h3>§1 · The entrance region, and what \"fully developed\" really means</h3>\n<p>Flow entering a pipe with a uniform inlet profile takes a <b>hydrodynamic entry length</b> to\nsettle into its fully developed velocity shape, and — separately — a <b>thermal entry length</b>\nto settle into a fully developed temperature profile. \"Thermally fully developed\" is a specific,\neasy-to-misread claim: it means the <i>dimensionless</i> temperature profile shape stops changing\nwith distance, not that the fluid's actual bulk temperature stops changing — the bulk temperature\nkeeps rising (or falling) the entire pipe length; only the shape of the profile riding on top of\nit has settled down.</p>\n\n<h3>§2 · Constant flux versus constant wall temperature</h3>\n<p>For laminar, fully developed flow, the two common thermal boundary conditions give genuinely\ndifferent Nusselt numbers even at identical Reynolds and Prandtl numbers: \\(Nu=4.36\\) for\nconstant surface heat flux, \\(Nu=3.66\\) for constant surface temperature — different because the\nboundary condition itself reshapes the developed temperature profile. For turbulent flow, the\nDittus–Boelter correlation \\(Nu=0.023\\,Re^{0.8}Pr^{n}\\) (\\(n=0.4\\) heating the fluid,\n\\(n=0.3\\) cooling it) is the workhorse, with its own fine print: \\(Re\\gtrsim10{,}000\\),\n\\(0.6\\lesssim Pr\\lesssim160\\), and \\(L/D\\gtrsim10\\) — short pipes still carry an enhanced\nentrance-region \\(h\\) this fully developed correlation does not capture, so applying it\nuncorrected to a short pipe underpredicts the true average \\(h\\), not overpredicts it.</p>\n\n<h3>§3 · Heat pickup along a real pipe run</h3>\n<p>An energy balance on the fluid, \\(\\dot m c_p\\,dT_m/dx=q''P\\), integrates very differently\ndepending on which quantity is held constant. Constant heat flux gives a bulk temperature that\nrises <i>linearly</i> with \\(x\\) — a fixed \\(q''\\) delivers a fixed temperature rise per metre,\nthe whole length. Constant wall temperature instead gives\n\\(\\ln\\!\\left(\\dfrac{T_s-T_o}{T_s-T_i}\\right)=-\\dfrac{hPL}{\\dot m c_p}\\), an\n<i>exponential approach</i> toward \\(T_s\\) that never quite arrives. A steam-jacketed pipe is\nthe constant-\\(T_s\\) case: steam condensing on the jacket's exterior releases a large latent heat\nat essentially one saturation temperature, holding the wall close to a fixed value regardless of\nhow much heat the process fluid inside is drawing — unlike, say, a uniformly electrically heated\npipe, which is closer to the constant-flux case instead.</p>\n\n<h3>§4 · A worked steam-jacketed pipe</h3>\n<p>Water at \\(\\dot m=0.5\\ \\text{kg/s}\\) (\\(c_p=4180\\ \\text{J/kgK}\\)) enters\na \\(D=50\\ \\text{mm}\\), \\(L=10\\ \\text{m}\\) pipe at\n\\(T_i=20\\)°C; the jacket holds the wall at \\(T_s=120\\)°C, with\n\\(h=1500\\ \\text{W/m}^2\\text{K}\\). \\(P=\\pi D=0.1571\\ \\text{m}\\), so\n\\(hPL/(\\dot m c_p)=1.127\\) and \\((T_s-T_o)/(T_s-T_i)=e^{-1.127}=0.324\\), giving\n\\(T_o=T_s-0.324(T_s-T_i)=87.6\\)°C — a substantial rise for a single 10 m run.\nAs a check on the assumed \\(h\\): using representative water properties at the pipe's mean film\ntemperature (\\(\\mu\\approx5.5e-04\\ \\text{Pa·s}\\), \\(k\\approx0.64\\\n\\ \\text{W/mK}\\), \\(Pr\\approx3.5\\) — given, representative values, not a claimed\nprecise lookup), \\(Re=4\\dot m/(\\pi D\\mu)=23,150\\) (turbulent), and Dittus–Boelter gives\n\\(Nu=0.023\\,Re^{0.8}Pr^{0.4}=117.8\\), \\(h=1507\\ \\text{W/m}^2\\text{K}\\)\n— within 1% of the 1500 W/m²K assumed, a reassuring cross-check rather than a coincidence.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — constant wall temperature</span>\n<p>\\[ \\frac{T_s-T_o}{T_s-T_i}=\\exp\\!\\left(-\\frac{hPL}{\\dot m c_p}\\right) \\]</p>\n<p>An exponential approach, never a straight ramp — the signature of a constant-\\(T_s\\)\nboundary.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The Nu–Re–Pr grammar and boundary-layer ideas</b> (Lesson 4) — internal\nflow reuses the same dimensionless structure, adapted to a duct instead of an open plate.</li></ul>\n<h4>Toolkit — internal forced convection</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Laminar, constant q''</td><td>\\( Nu=4.36 \\)</td><td>Fully developed, constant flux.</td></tr>\n<tr><td>Laminar, constant Ts</td><td>\\( Nu=3.66 \\)</td><td>Fully developed, constant wall temperature.</td></tr>\n<tr><td>Dittus–Boelter</td><td>\\( Nu=0.023\\,Re^{0.8}Pr^{n} \\)</td><td>Turbulent, \\(Re\\gtrsim10^4\\), \\(L/D\\gtrsim10\\).</td></tr>\n<tr><td>Constant-Ts approach</td><td>\\( \\ln\\frac{T_s-T_o}{T_s-T_i}=-\\frac{hPL}{\\dot m c_p} \\)</td><td>Exit temperature, exponential approach.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked steam-jacketed pipe</b></p><p><b>Problem.</b> Water, \\(\\dot m=0.5\\ \\text{kg/s}\\), \\(c_p=4180\\ \\text{J/kgK}\\), enters a \\(D=50\\ \\text{mm}\\), \\(L=10\\ \\text{m}\\) pipe at \\(T_i=20\\)°C. The jacket holds \\(T_s=120\\)°C, \\(h=1500\\ \\text{W/m}^2\\text{K}\\). Find the exit temperature.</p>",
+        "solution": "<p><b>Solution.</b> \\(P=\\pi D=0.1571\\ \\text{m}\\), \\(hPL/(\\dot m c_p)=1.127\\). \\((T_s-T_o)/(T_s-T_i)=e^{-1.127}=0.324\\). \\(T_o=120-0.324\\times(120-20)=87.6\\)°C.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Cross-checking h against Dittus–Boelter</b></p><p><b>Problem.</b> For the same pipe and flow, representative water properties give \\(\\mu\\approx5.5e-04\\ \\text{Pa·s}\\), \\(k\\approx0.64\\ \\text{W/mK}\\), \\(Pr\\approx3.5\\). Find \\(Re\\), confirm turbulence, then find \\(Nu\\) and \\(h\\) from Dittus–Boelter, and compare to the assumed 1500 W/m²K.</p>",
+        "solution": "<p><b>Solution.</b> \\(Re=4\\dot m/(\\pi D\\mu)=23,150\\) — turbulent, and \\(L/D=200\\) clears the \\(\\gtrsim10\\) entrance-length rule. \\(Nu=0.023\\,Re^{0.8}Pr^{0.4}=117.8\\), \\(h=Nu\\,k/D=1507\\ \\text{W/m}^2\\text{K}\\) — within about 1% of the 1500 W/m²K assumed.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Doubling the pipe length</b></p><p><b>Problem.</b> The same jacketed pipe is extended to \\(L=20\\ \\text{m}\\), all else unchanged. Find the new exit temperature, and the additional temperature rise bought by the second 10 m compared with the first.</p>",
+        "solution": "<p><b>Solution.</b> \\(hPL/(\\dot m c_p)=2.255\\), \\((T_s-T_o)/(T_s-T_i)=e^{-2.255}=0.105\\), \\(T_o=120-0.105\\times(120-20)=109.5\\)°C. The first 10 m bought \\(87.6-20=67.6\\)°C of rise; the second 10 m bought only \\(109.5-87.6=21.9\\)°C more — the exponential approach paying off far less on the back half of the pipe.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>For internal pipe flow, \"thermally fully developed\" specifically means:</p>",
+        "choices": [
+          "The bulk fluid temperature stops changing with x",
+          "The dimensionless temperature profile shape stops changing with x, even though the bulk temperature keeps changing",
+          "The flow has become turbulent",
+          "The wall temperature has become uniform"
+        ],
+        "answer": 1,
+        "solution": "<p>The bulk temperature keeps evolving the whole pipe length; only the shape of the profile riding on it has settled down, per §1.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>At identical Re and Pr, laminar fully developed pipe flow gives \\(Nu=4.36\\) for constant heat flux but \\(Nu=3.66\\) for constant wall temperature. Why do these differ?</p>",
+        "choices": [
+          "They do not actually differ; this is a textbook rounding artifact",
+          "The thermal boundary condition itself reshapes the developed temperature profile",
+          "Constant flux only applies to turbulent flow",
+          "Pr must be different in the two cases"
+        ],
+        "answer": 1,
+        "solution": "<p>Different boundary conditions produce genuinely different developed temperature profile shapes, and Nu is a property of that profile.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Applying Dittus–Boelter, uncorrected, to a short pipe with \\(L/D<10\\) tends to:</p>",
+        "choices": [
+          "Overpredict the true average h, since entrance effects add extra resistance",
+          "Underpredict the true average h, since the entrance region actually carries an enhanced h that a fully developed correlation does not include",
+          "Have no effect — Dittus–Boelter is valid at any L/D",
+          "Only affect laminar flow, never turbulent flow"
+        ],
+        "answer": 1,
+        "solution": "<p>The entrance region carries a higher true h than the fully developed value; a fully developed correlation applied to a short pipe misses that enhancement and underpredicts.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A steam jacket condensing on a pipe's exterior holds the wall close to constant temperature primarily because:</p>",
+        "choices": [
+          "Steam has an unusually high thermal conductivity",
+          "Condensation releases a large latent heat at essentially one saturation temperature, regardless of the process-side duty",
+          "The jacket is electrically heated at fixed power",
+          "Steam jackets are always thin enough to ignore"
+        ],
+        "answer": 1,
+        "solution": "<p>Latent heat release at a fixed saturation temperature is what pins the wall near a constant value — unlike a fixed-power electric heater, which is closer to constant flux.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Under constant heat flux, the pipe's bulk mean temperature rises with distance x:</p>",
+        "choices": [
+          "Linearly",
+          "Exponentially, approaching an asymptote",
+          "Logarithmically",
+          "It falls, not rises"
+        ],
+        "answer": 0,
+        "solution": "<p>\\(\\dot m c_p\\,dT_m/dx=q''P=\\)const integrates directly to a linear rise in \\(T_m\\) with x.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Under constant wall temperature, the bulk mean temperature approaches \\(T_s\\):</p>",
+        "choices": [
+          "Linearly, reaching \\(T_s\\) at a finite length",
+          "Exponentially — always approaching, never exactly arriving within a finite length",
+          "Instantaneously at the inlet",
+          "Only if the flow is laminar"
+        ],
+        "answer": 1,
+        "solution": "<p>The governing equation integrates to the exponential-approach form derived in §3 and used throughout this lesson's worked example.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's own numbers, doubling the pipe length from 10 m to 20 m added how much additional temperature rise, compared with the first 10 m?</p>",
+        "choices": [
+          "About the same again (roughly 68°C more)",
+          "Much less — only about 22°C more, versus 67.6°C from the first 10 m",
+          "Exactly zero — length beyond 10 m has no effect",
+          "More than the first stretch, not less"
+        ],
+        "answer": 1,
+        "solution": "<p>The exponential approach means each additional metre buys less than the one before; the second 10 m added only 21.9°C versus the first stretch's 67.6°C, verified in this lesson's third solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>This lesson's assumed \\(h=1500\\ \\text{W/m}^2\\text{K}\\) was cross-checked against which correlation?</p>",
+        "choices": [
+          "The laminar constant-flux result, Nu=4.36",
+          "Dittus–Boelter, using representative turbulent water properties",
+          "The flat-plate correlation from Lesson 4",
+          "It was not cross-checked at all"
+        ],
+        "answer": 1,
+        "solution": "<p>§4's cross-check computes Re, confirms turbulence, and applies Dittus–Boelter, landing within about 1% of the assumed value.</p>"
+      }
+    ],
+    "kuwait": "\n<p>An engineer sizing a jacketed or coil heat-traced pipe run identifies which thermal boundary\ncondition actually applies before reaching for a formula — per §3, a condensing-steam jacket\nbehaves as constant wall temperature, giving an exponential approach that delivers most of its\ntemperature rise in the first few metres, while an electrically traced line closer to constant\nflux delivers its rise linearly instead; treating one as the other misestimates exactly where\nalong the run the temperature change actually happens.</p>\n<p>A maintenance engineer troubleshooting a short jacketed spool that underperforms its rated duty\nchecks the pipe's \\(L/D\\) against Dittus–Boelter's own \\(L/D\\gtrsim10\\) fine print before\nassuming the correlation used to size it was ever valid — per §2, a short run actually carries a\nhigher true average h from its entrance region than the fully developed correlation predicts, so\nthe correlation itself, not the hardware, may be the source of an apparent underperformance.</p>"
+  },
+  "6": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Four horizontal bars on a logarithmic scale from 1 to 100,000 comparing typical convection coefficient ranges for natural convection in a gas, forced convection in a gas, forced convection in a liquid, and boiling or condensation, with this lesson's own computed value marked near the bottom of the natural-convection gas range\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Natural convection sits at the very bottom of the h ladder</text><rect x=\"152.3\" y=\"91\" width=\"81.2\" height=\"18\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1.4\"/><text x=\"152.3\" y=\"86\" fill=\"#3a6ea5\" font-size=\"9.5\">Natural convection, gas</text><rect x=\"233.4\" y=\"131\" width=\"74.0\" height=\"18\" fill=\"#c2820f\" fill-opacity=\"0.25\" stroke=\"#c2820f\" stroke-width=\"1.4\"/><text x=\"233.4\" y=\"126\" fill=\"#c2820f\" font-size=\"9.5\">Forced convection, gas</text><rect x=\"255.7\" y=\"171\" width=\"192.6\" height=\"18\" fill=\"#1f7a5c\" fill-opacity=\"0.25\" stroke=\"#1f7a5c\" stroke-width=\"1.4\"/><text x=\"255.7\" y=\"166\" fill=\"#1f7a5c\" font-size=\"9.5\">Forced convection, liquid</text><rect x=\"381.4\" y=\"211\" width=\"118.6\" height=\"18\" fill=\"#8a4b9e\" fill-opacity=\"0.25\" stroke=\"#8a4b9e\" stroke-width=\"1.4\"/><text x=\"381.4\" y=\"206\" fill=\"#8a4b9e\" font-size=\"9.5\">Boiling / condensation</text><line x1=\"130.0\" y1=\"250\" x2=\"130.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"130.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">1</text><line x1=\"204.0\" y1=\"250\" x2=\"204.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"204.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">10</text><line x1=\"278.0\" y1=\"250\" x2=\"278.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"278.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">100</text><line x1=\"352.0\" y1=\"250\" x2=\"352.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"352.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">1k</text><line x1=\"426.0\" y1=\"250\" x2=\"426.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"426.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">10k</text><line x1=\"500.0\" y1=\"250\" x2=\"500.0\" y2=\"255\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"500.0\" y=\"267\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">100k</text><line x1=\"130\" y1=\"250\" x2=\"500\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"174.5\" y1=\"72\" x2=\"174.5\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1.4\" stroke-dasharray=\"2,3\"/><circle cx=\"174.5\" cy=\"100\" r=\"4.5\" fill=\"#16202e\"/><text x=\"174.5\" y=\"66\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\" font-weight=\"700\">h=4.0</text></svg><figcaption>Representative h ranges by regime — natural convection in a gas sits one to two orders of magnitude below even modest forced convection, which is exactly why Lesson 2's fins pay off so much more decisively here than anywhere else in this course.</figcaption></figure>\n\n<h3>§1 · Grashof and Rayleigh — natural convection's own dimensionless numbers</h3>\n<p>Natural convection has no imposed velocity to build a Reynolds number from — buoyancy itself\ndrives the flow. The <b>Grashof number</b>,\n\\(Gr=g\\beta\\Delta T L^3/\\nu^2\\), compares buoyancy force to viscous force, playing the role\nReynolds number plays in forced convection. Multiplying by Prandtl number gives the\n<b>Rayleigh number</b>, \\(Ra=Gr\\cdot Pr\\), which folds in a comparison of buoyancy to thermal\ndiffusion as well — and it is \\(Ra\\), not \\(Gr\\) and \\(Pr\\) separately, that almost every\nnatural-convection correlation is actually written in terms of.</p>\n\n<h3>§2 · Correlations, and why orientation changes everything</h3>\n<p>A vertical plate or enclosure wall follows a Churchill–Chu-type correlation,\n\\(Nu=0.68+\\dfrac{0.670\\,Ra^{1/4}}{[1+(0.492/Pr)^{9/16}]^{4/9}}\\) for the laminar\nrange (\\(Ra\\lesssim10^9\\)). Orientation matters far more here than in forced convection: a\nhorizontal plate with its hot face <i>up</i> lets buoyant plumes rise away freely, giving a\nmeaningfully higher \\(h\\); the same plate hot face <i>down</i> traps warm, buoyant fluid\ndirectly underneath a cooler layer above it — a stable arrangement with almost none of the\nfree plume motion, and a correspondingly much lower \\(h\\). The same \\(\\Delta T\\), the same\nplate, a different number, purely from which way it faces.</p>\n\n<h3>§3 · The Gulf-summer double penalty</h3>\n<p>A sealed, un-fanned electrical enclosure rejects heat by natural convection (and radiation,\nLesson 9) alone. Two effects compound against it as ambient temperature climbs: \\(h\\) itself\ndepends only weakly on \\(\\Delta T\\) (roughly \\(\\Delta T^{1/4}\\) in the laminar range, per\n§2's correlation), so it barely improves even as the surface runs hotter; meanwhile the\n<i>available</i> \\(\\Delta T\\) between a fixed-rating surface and a hotter ambient shrinks\ndirectly. Both effects point the same unfavorable way at once — a genuine double penalty, not\nmerely \"it's hotter outside so everything runs a bit warmer.\"</p>\n\n<h3>§4 · A worked cabinet wall</h3>\n<p>A sealed cabinet's vertical wall, height \\(L=0.3\\ \\text{m}\\), runs at\n\\(T_s=70\\)°C in \\(T_\\infty=45\\)°C still Gulf-summer air\n(\\(\\Delta T=25\\)°C). At the film temperature, \\(Pr=0.71\\),\n\\(Gr=5.85e+07\\), \\(Ra=Gr\\cdot Pr=4.16e+07\\) — under \\(10^9\\), the laminar\ncorrelation applies. \\(Nu=42.0\\), giving\n\\(h=Nu\\,k/L=3.99\\ \\text{W/m}^2\\text{K}\\) — a strikingly low number next to\nLesson 4's forced-air 20 W/m²K, and the reason natural convection sits at the very bottom of\nthis lesson's own comparison chart. If ambient instead climbs to\n\\(T_\\infty=50\\)°C (\\(\\Delta T=20\\)°C) at the same surface temperature,\n\\(h\\) falls only slightly to 3.77 W/m²K, but the heat actually rejected,\n\\(q''=h\\Delta T\\), falls from 99.7 to 75.4 W/m² — a 24% drop in\ncooling capacity from a mere 5°C rise in ambient, the double penalty of §3 made\nconcrete.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — natural convection</span>\n<p>\\[ Ra=Gr\\cdot Pr=\\frac{g\\beta\\Delta T L^3}{\\nu^2}\\cdot Pr \\]</p>\n<p>Almost every correlation in this lesson is stated as \\(Nu=f(Ra)\\) — one number replaces the\nseparate Reynolds and Prandtl numbers forced convection needed.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — natural convection keeps the same\n\\(Nu\\) idea but replaces the imposed-flow Reynolds number with the buoyancy-driven Grashof/\nRayleigh number, since there is no external velocity to build Re from.</li></ul>\n<h4>Toolkit — natural convection</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Grashof number</td><td>\\( Gr=g\\beta\\Delta T L^3/\\nu^2 \\)</td><td>Buoyancy vs. viscous force.</td></tr>\n<tr><td>Rayleigh number</td><td>\\( Ra=Gr\\cdot Pr \\)</td><td>The number correlations are actually fitted to.</td></tr>\n<tr><td>Vertical plate (laminar)</td><td>Churchill–Chu form, §2</td><td>\\(Ra\\lesssim10^9\\).</td></tr>\n<tr><td>Orientation effect</td><td>hot-face-up ≫ hot-face-down, same ΔT</td><td>Same plate, different h.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked cabinet wall</b></p><p><b>Problem.</b> A cabinet wall, \\(L=0.3\\ \\text{m}\\) tall, runs at \\(T_s=70\\)°C in \\(T_\\infty=45\\)°C air (\\(Pr=0.71\\), film properties as in §4). Find \\(Gr\\), \\(Ra\\), \\(Nu\\), and \\(h\\).</p>",
+        "solution": "<p><b>Solution.</b> \\(Gr=g\\beta\\Delta TL^3/\\nu^2=5.85e+07\\). \\(Ra=Gr\\cdot Pr=4.16e+07\\) (laminar range). \\(Nu=42.0\\). \\(h=Nu\\,k/L=3.99\\ \\text{W/m}^2\\text{K}\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A hotter ambient, same surface temperature</b></p><p><b>Problem.</b> The same wall stays at \\(T_s=70\\)°C, but ambient rises to \\(T_\\infty=50\\)°C. Find the new h and the new heat flux \\(q''=h\\Delta T\\), and compare the heat flux to the original 45°C-ambient case.</p>",
+        "solution": "<p><b>Solution.</b> \\(\\Delta T=20\\)°C now. Recomputing, \\(Ra=3.31e+07\\), \\(Nu=39.7\\), \\(h=3.77\\ \\text{W/m}^2\\text{K}\\) — only slightly lower than 3.99. But \\(q''=h\\Delta T=75.4\\ \\text{W/m}^2\\), down from 99.7 W/m² — a 24% drop in rejected heat from a 5°C ambient rise alone.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A shorter cabinet wall</b></p><p><b>Problem.</b> A second, shorter cabinet has a wall only \\(L=0.15\\ \\text{m}\\) tall, same \\(T_s=70\\)°C and \\(T_\\infty=45\\)°C as §4. Find its Ra, Nu, and h, and compare h to the taller 0.3 m wall.</p>",
+        "solution": "<p><b>Solution.</b> \\(Ra=5.20e+06\\) (still laminar range), \\(Nu=25.2\\), \\(h=4.80\\ \\text{W/m}^2\\text{K}\\) — <i>higher</i> than the taller wall's 3.99 W/m²K, since \\(h=Nu\\,k/L\\) and \\(Nu\\) grows more slowly than \\(L\\) does; natural-convection h weakly falls as the characteristic length grows, the opposite of what 'bigger surface, better cooling' might suggest.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Grashof number \\(Gr=g\\beta\\Delta TL^3/\\nu^2\\) plays which role in natural convection that Reynolds number plays in forced convection?</p>",
+        "choices": [
+          "It compares buoyancy force to viscous force, since there is no imposed velocity to build Re from",
+          "It compares momentum diffusivity to thermal diffusivity",
+          "It measures the fraction of flow that is turbulent",
+          "It replaces the Nusselt number entirely"
+        ],
+        "answer": 0,
+        "solution": "<p>With no external velocity, buoyancy itself drives the flow, and Gr compares that buoyant driving force to viscous resistance — the natural-convection analog of Re.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Rayleigh number \\(Ra=Gr\\cdot Pr\\) adds which comparison beyond Gr alone?</p>",
+        "choices": [
+          "A comparison of buoyancy to thermal diffusion, not just viscosity",
+          "A comparison of inertial to viscous forces",
+          "A comparison of radiative to convective heat transfer",
+          "Nothing — Ra and Gr are interchangeable"
+        ],
+        "answer": 0,
+        "solution": "<p>Multiplying by Pr (momentum vs. thermal diffusivity) folds thermal diffusion into the comparison, which is why almost every correlation is fitted to Ra directly.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A horizontal hot plate facing UP versus the same plate facing DOWN, same ΔT:</p>",
+        "choices": [
+          "Has identical h in both orientations",
+          "Has higher h facing up — free plumes rise away, versus down, where stable stratification suppresses motion",
+          "Has higher h facing down, since heat 'wants' to sink",
+          "Cannot be compared without knowing the fluid"
+        ],
+        "answer": 1,
+        "solution": "<p>Facing up allows buoyant plumes to rise freely; facing down traps stable stratified fluid beneath a cooler layer, suppressing motion and lowering h substantially.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In the laminar range, natural-convection h depends on ΔT roughly as:</p>",
+        "choices": [
+          "\\(\\Delta T\\) (linearly)",
+          "\\(\\Delta T^{1/4}\\) — weakly",
+          "\\(\\Delta T^2\\) — strongly",
+          "Not at all"
+        ],
+        "answer": 1,
+        "solution": "<p>The Churchill–Chu form gives \\(Nu\\propto Ra^{1/4}\\propto\\Delta T^{1/4}\\): h barely improves even as the surface runs much hotter.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>As Gulf-summer ambient temperature rises (fixed surface rating), a sealed enclosure's actual rejected heat flux \\(q''=h\\Delta T\\):</p>",
+        "choices": [
+          "Rises, since hotter air always convects better",
+          "Falls — both a shrinking ΔT and an only weakly-changing h point the same unfavorable way",
+          "Stays exactly constant, since h compensates perfectly",
+          "Is undefined once ambient exceeds surface temperature"
+        ],
+        "answer": 1,
+        "solution": "<p>Both effects compound: h barely improves and the available ΔT shrinks, so rejected heat falls — verified numerically in this lesson's second solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>This lesson's own computed \\(h\\approx4\\ \\text{W/m}^2\\text{K}\\) compares to Lesson 4's forced-air result (\\(h\\approx20\\ \\text{W/m}^2\\text{K}\\)) as:</p>",
+        "choices": [
+          "Roughly five times higher",
+          "Roughly five times lower",
+          "Essentially identical",
+          "Natural convection is always higher than forced convection"
+        ],
+        "answer": 1,
+        "solution": "<p>Natural convection in a gas sits near the bottom of the h ladder — a fraction of even modest forced-air values, as this lesson's comparison chart shows directly.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A shorter wall (smaller characteristic length L), same ΔT and fluid, has natural-convection h that is:</p>",
+        "choices": [
+          "Lower than a taller wall's — bigger surfaces always convect better",
+          "Slightly higher than a taller wall's — h weakly falls as L grows",
+          "Exactly the same regardless of L",
+          "Impossible to determine without Re"
+        ],
+        "answer": 1,
+        "solution": "<p>Since \\(h=Nu\\,k/L\\) and \\(Nu\\propto Ra^{1/4}\\propto L^{3/4}\\), h scales as roughly \\(L^{-1/4}\\) — a weak decrease with increasing L, confirmed in this lesson's third solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Why does Lesson 2's fin effectiveness argument apply especially strongly to natural-convection surfaces?</p>",
+        "choices": [
+          "Fin effectiveness scales with \\(\\sqrt{k/h}\\), and natural convection's very low h is exactly the regime where that ratio — and the payoff — is largest",
+          "Fins do not work at all under natural convection",
+          "Natural convection eliminates the need for fins entirely",
+          "Fin effectiveness is independent of h"
+        ],
+        "answer": 0,
+        "solution": "<p>Low h is precisely where \\(\\varepsilon_{fin}\\propto\\sqrt{k/h}\\) is largest — exactly why finned, un-fanned enclosures are such a common design pattern.</p>"
+      }
+    ],
+    "kuwait": "\n<p>An engineer specifying a sealed, un-fanned electrical enclosure for outdoor Gulf installation\nchecks natural-convection h at the design ambient temperature, not at a mild reference\ntemperature, before setting the enclosure's maximum internal dissipation rating — per §3 and\n§4's own numbers, a modest ambient rise can cut real cooling capacity by roughly a quarter even\nthough h itself barely changes, so a catalog rating benchmarked at a temperate ambient overstates\nwhat the same enclosure can actually reject on a Gulf summer day.</p>\n<p>A technician orienting a horizontal hot surface — an outdoor junction-box lid, a horizontal\nduct run — checks which face is up before assuming a handbook horizontal-plate h applies as\nwritten: per §2, the same \\(\\Delta T\\) gives a meaningfully higher h with the hot face up\n(free plumes) than with the hot face down (stable, trapped stratification), and mixing the two\nup is an easy, checkable mistake.</p>"
+  },
+  "7": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A representative boiling curve on log-log axes, heat flux against excess temperature, rising steeply through nucleate boiling to a peak at the critical heat flux, falling through an unstable transition region, then rising again at much higher excess temperature in the film boiling regime\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">The boiling curve: the peak is a limit, not a target</text><line x1=\"90\" y1=\"250\" x2=\"500\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"90\" y1=\"250\" x2=\"90\" y2=\"60\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"295\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">excess temperature, ΔT_e (°C, log scale)</text><text x=\"20\" y=\"56\" fill=\"#16202e\" font-size=\"10.5\">q'' (log scale)</text><polyline points=\"90.0,228.5 176.8,187.1 224.0,146.5 273.5,112.9 310.9,148.5 348.2,180.5 397.7,173.5 456.9,138.5 500.0,109.9\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><circle cx=\"273.5\" cy=\"112.9\" r=\"4.5\" fill=\"#c2820f\"/><text x=\"281.5\" y=\"106.9\" fill=\"#c2820f\" font-size=\"9.5\">CHF, 1.11 MW/m² (water, 1 atm)</text><text x=\"202.2\" y=\"235\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">nucleate</text><text x=\"322.9\" y=\"235\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">transition</text><text x=\"435.1\" y=\"235\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">film boiling</text></svg><figcaption>A representative boiling curve shape, anchored at this lesson's own computed critical heat flux for water at 1 atm — past that peak, q'' actually falls before it rises again, which is exactly why the peak is dangerous to approach, not merely difficult to exceed.</figcaption></figure>\n\n<h3>§1 · Four regimes, one curve</h3>\n<p>Plotting heat flux against excess temperature \\(\\Delta T_e=T_s-T_{sat}\\) on log-log axes\ntraces a shape every boiling fluid shares. <b>Free convection boiling</b>: too little excess\ntemperature for bubbles yet, ordinary natural convection. <b>Nucleate boiling</b>: bubbles form,\ndetach, and stir the liquid violently — \\(q''\\) climbs steeply for only a modest rise in\n\\(\\Delta T_e\\), the most efficient and most desirable regime to operate in. The\n<b>critical heat flux</b> (CHF) is the peak of the curve. Past it, <b>transition boiling</b> is\ngenuinely unstable: a partial, intermittent vapor blanket forms, and \\(q''\\) <i>falls</i> as\n\\(\\Delta T_e\\) rises further. <b>Film boiling</b> follows: a stable vapor blanket fully covers\nthe surface, and \\(q''\\) eventually climbs again at much higher \\(\\Delta T_e\\) — but at\nsurface temperatures that destroy most real equipment.</p>\n\n<h3>§2 · Zuber's CHF, and Nusselt film condensation</h3>\n<p>Zuber's correlation predicts CHF from fluid properties alone, no need to trace the whole curve\nup to it: \\(q''_{max}=C\\,h_{fg}\\rho_v\\!\\left[\\dfrac{\\sigma g(\\rho_l-\\rho_v)}{\\rho_v^2}\n\\right]^{1/4}\\), \\(C\\approx0.131\\) — density difference, surface tension, and latent heat\nset the limit; the heater material does not appear at all. On the condensing side, Nusselt film\ntheory gives a mean coefficient of the same functional form for a draining condensate film, but\nwith a different leading constant by geometry — \\(0.943\\) for a vertical plate,\n\\(0.729\\) for a horizontal tube — because the controlling drainage path genuinely differs: down\na vertical surface's full length versus around a horizontal tube's circumference.</p>\n\n<h3>§3 · Why CHF is a safety limit, and why real plants get film condensation</h3>\n<p>Many real systems are controlled by an imposed <i>heat input</i> — an electric heater, a fired\nprocess heater, a reactor fuel rod — not an imposed surface temperature. For such a system, an\nupset that pushes \\(q''\\) toward CHF risks trying to sit on the falling transition-boiling\nbranch, which at a fixed \\(q''\\) has no stable point there at all — the system jumps almost\nimmediately to the much higher surface temperature the film-boiling branch demands at that same\n\\(q''\\). This is literally what \"burnout\" means physically. Real designs therefore carry a\nmargin below CHF, commonly operating in the 70% range of \\(q''_{max}\\) rather\nthan approaching it. On the condensing side: <b>dropwise</b> condensation gives a coefficient\noften five to ten times higher than film condensation, but it requires special, often\nshort-lived, surface treatments and is not self-sustaining on an untreated surface — which is why\nalmost every real condenser tube runs in film condensation despite dropwise's better numbers on\npaper.</p>\n\n<h3>§4 · A worked CHF, and a design check against it</h3>\n<p>For water at 1 atm (\\(h_{fg}=2257\\ \\text{kJ/kg}\\),\n\\(\\rho_l=958\\), \\(\\rho_v=0.6\\ \\text{kg/m}^3\\),\n\\(\\sigma=0.0589\\ \\text{N/m}\\)), Zuber's correlation gives\n\\(q''_{max}=1.11\\ \\text{MW/m}^2\\) — the same order of magnitude every heat-\ntransfer text quotes for water at atmospheric pressure. A conservative design running at\n70% of this limit operates at \\(q''=0.78\\ \\text{MW/m}^2\\); a\nreboiler specified instead at 0.85 MW/m² is running at\n\\(77\\%\\) of CHF — above the typical 70% design range, and worth\na second look before it is approved.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — Zuber critical heat flux</span>\n<p>\\[ q''_{max}=C\\,h_{fg}\\rho_v\\left[\\frac{\\sigma g(\\rho_l-\\rho_v)}{\\rho_v^2}\n\\right]^{1/4} \\]</p>\n<p>A limit computed from fluid properties alone — no heater material, no ΔT, enters at all.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Natural convection</b> (Lesson 6) — the free-convection boiling region\nat the start of the curve is exactly that, before bubble dynamics take over.</li>\n<li><b>Thermal resistance networks</b> (Lesson 1) — boiling and condensation coefficients still\nplug into the same \\(q=\\Delta T/R\\) bookkeeping used everywhere else in this course.</li></ul>\n<h4>Toolkit — boiling and condensation</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Zuber CHF</td><td>\\( q''_{max}=C h_{fg}\\rho_v[\\sigma g(\\rho_l-\\rho_v)/\\rho_v^2]^{1/4} \\)</td><td>Safety limit, fluid properties only.</td></tr>\n<tr><td>Nusselt film condensation, vertical</td><td>constant 0.943</td><td>Draining down full plate/tube length.</td></tr>\n<tr><td>Nusselt film condensation, horizontal tube</td><td>constant 0.729</td><td>Draining around the circumference.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked Zuber CHF</b></p><p><b>Problem.</b> For water at 1 atm (\\(h_{fg}=2257\\ \\text{kJ/kg}\\), \\(\\rho_l=958\\), \\(\\rho_v=0.6\\ \\text{kg/m}^3\\), \\(\\sigma=0.0589\\ \\text{N/m}\\), \\(C=0.131\\)), find the Zuber critical heat flux.</p>",
+        "solution": "<p><b>Solution.</b> \\(q''_{max}=C\\,h_{fg}\\rho_v[\\sigma g(\\rho_l-\\rho_v)/\\rho_v^2]^{1/4}=1.11\\ \\text{MW/m}^2\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Checking a specified design against CHF</b></p><p><b>Problem.</b> A reboiler for this same fluid is specified to operate at 0.85 MW/m². What fraction of the Zuber CHF is this, and is it within a typical 70% design-margin practice?</p>",
+        "solution": "<p><b>Solution.</b> \\(q''_{spec}/q''_{max}=0.85/1.11=77\\%\\) — above the typical 70% margin range, meaning this design sits closer to the CHF cliff edge than conservative practice recommends, and is worth flagging before approval.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Horizontal versus vertical condensation</b></p><p><b>Problem.</b> For otherwise-identical fluid properties, characteristic dimension, and \\(\\Delta T\\), compare the mean film-condensation coefficient for a horizontal tube (constant 0.729) against a vertical plate (constant 0.943), using the Nusselt constants alone.</p>",
+        "solution": "<p><b>Solution.</b> \\(h_{horiz}/h_{vert}=0.729/0.943=0.77\\) — the horizontal-tube arrangement's coefficient is about 77% of the vertical arrangement's, purely from the geometry-driven constant, before any difference in characteristic length is even considered.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Which regime of the boiling curve is the target for practical equipment design?</p>",
+        "choices": [
+          "Free convection boiling",
+          "Nucleate boiling — steep q'' rise for modest ΔT_e",
+          "Transition boiling",
+          "Film boiling"
+        ],
+        "answer": 1,
+        "solution": "<p>Nucleate boiling delivers the largest heat flux for the smallest excess temperature — the most efficient, most controllable regime, and where real boilers are meant to operate.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Immediately past the critical heat flux peak, in transition boiling, what happens to \\(q''\\) as \\(\\Delta T_e\\) continues to rise?</p>",
+        "choices": [
+          "It keeps rising, just more slowly",
+          "It falls — a genuinely unstable region",
+          "It stays exactly constant",
+          "It jumps discontinuously to zero"
+        ],
+        "answer": 1,
+        "solution": "<p>Transition boiling is the falling branch of the curve — an intermittent, unstable vapor blanket actually reduces q'' as ΔT_e rises further.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Why is CHF treated as a safety limit rather than a performance target?</p>",
+        "choices": [
+          "Because exceeding it slightly always destroys equipment instantly, with no exceptions",
+          "Because in a heat-flux-controlled system, approaching CHF risks an uncontrolled jump to a much higher, damaging surface temperature on the film-boiling branch",
+          "Because CHF cannot be computed or predicted at all",
+          "Because CHF only matters for nuclear reactors"
+        ],
+        "answer": 1,
+        "solution": "<p>A fixed-q'' system has no stable point on the falling transition branch; per §3, it jumps almost immediately to film boiling's much higher surface temperature — the real mechanism behind 'burnout'.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Zuber's CHF correlation is built from which properties?</p>",
+        "choices": [
+          "Heater material conductivity and surface roughness only",
+          "Density difference, surface tension, and latent heat of the fluid — not the heater material",
+          "Excess temperature ΔT_e alone",
+          "Reynolds and Prandtl numbers"
+        ],
+        "answer": 1,
+        "solution": "<p>Zuber's correlation is a fluid-properties-only result — no heater material, no ΔT_e, enters the formula at all.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In practice, which condensation regime does a typical, untreated industrial condenser tube actually operate in?</p>",
+        "choices": [
+          "Dropwise condensation, since it is thermodynamically favored",
+          "Film condensation — dropwise needs special, often short-lived surface treatment and is not self-sustaining",
+          "Neither — real tubes never condense vapor",
+          "Whichever regime gives the lower coefficient, by design"
+        ],
+        "answer": 1,
+        "solution": "<p>Film condensation is the overwhelming practical default; dropwise's much higher h requires surface treatments most industrial tubes do not carry.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Nusselt film-condensation constant differs between a horizontal tube (0.729) and a vertical plate (0.943) primarily because:</p>",
+        "choices": [
+          "One geometry is always hotter than the other",
+          "The condensate film's controlling drainage path differs — around a horizontal circumference versus down a full vertical length",
+          "Horizontal tubes cannot condense vapor at all",
+          "The constants are arbitrary and carry no physical meaning"
+        ],
+        "answer": 1,
+        "solution": "<p>Geometry sets how the condensate film drains, which is exactly what these leading constants encode — not an arbitrary labeling difference.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A reboiler specified at 0.85 MW/m² against a fluid with CHF=1.11 MW/m² is running at roughly what fraction of CHF?</p>",
+        "choices": [
+          "77% — above a typical 60–70% design-margin range",
+          "10% — deep within a safe margin",
+          "100% — exactly at the limit",
+          "It cannot be determined from CHF alone"
+        ],
+        "answer": 0,
+        "solution": "<p>\\(0.85/1.11=77\\%\\), above the conservative 70% range this lesson's §3 describes as typical practice.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In film boiling, at very high \\(\\Delta T_e\\), why does \\(q''\\) eventually rise again despite a complete, insulating vapor blanket?</p>",
+        "choices": [
+          "The vapor blanket disappears at high ΔT_e",
+          "Radiation across the vapor film becomes significant at those very high surface temperatures, adding to the reduced conduction/convection through the vapor",
+          "CHF is exceeded a second time",
+          "It does not — q'' stays flat in film boiling"
+        ],
+        "answer": 1,
+        "solution": "<p>At the very high surface temperatures film boiling reaches, radiative transfer across the vapor film becomes a real, additive contribution, per §1's curve shape.</p>"
+      }
+    ],
+    "kuwait": "\n<p>A process engineer specifying an electrically or fire-heated reboiler sizes its operating heat\nflux with a real margin below the fluid's CHF, never at it — per §3, a controlled process that\nbriefly pushes toward CHF during an upset does not fail gracefully, it can jump almost immediately\nto a much higher, damaging surface temperature, which is why a design margin belongs in the\noriginal sizing calculation rather than as an afterthought once trouble starts.</p>\n<p>A maintenance engineer evaluating a fouled or scaled condenser tube recognizes that it is\nvirtually certainly operating in film condensation, not the far more effective dropwise regime —\nper §3, expecting anywhere near dropwise-level performance from an untreated industrial tube\nsurface sets an unrealistic benchmark for what cleaning alone can restore.</p>"
+  },
+  "8": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An idealized counterflow heat exchanger temperature profile, hot stream falling from 150 to 90 degrees left to right, cold stream rising from 30 to 70 degrees right to left, with the temperature gap at each end marked separately since these two gaps together set the log mean temperature difference\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Counterflow: the two ΔT gaps at each end set the LMTD</text><line x1=\"70\" y1=\"250\" x2=\"480\" y2=\"250\" stroke=\"#16202e\" stroke-width=\"1\"/><text x=\"275\" y=\"272\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10.5\">normalized position along exchanger</text><polyline points=\"70.0,80.0 480.0,165.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2.6\"/><polyline points=\"70.0,193.3 480.0,250.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.6\"/><line x1=\"70.0\" y1=\"80.0\" x2=\"70.0\" y2=\"193.3\" stroke=\"#1f7a5c\" stroke-width=\"1.4\" stroke-dasharray=\"3,2\"/><text x=\"80.0\" y=\"136.7\" text-anchor=\"start\" fill=\"#1f7a5c\" font-size=\"10\">ΔT₁=80°C</text><line x1=\"480.0\" y1=\"165.0\" x2=\"480.0\" y2=\"250.0\" stroke=\"#1f7a5c\" stroke-width=\"1.4\" stroke-dasharray=\"3,2\"/><text x=\"470.0\" y=\"207.5\" text-anchor=\"end\" fill=\"#1f7a5c\" font-size=\"10\">ΔT₂=60°C</text><text x=\"76\" y=\"72\" fill=\"#c2820f\" font-size=\"9.5\">hot 150→90°C</text><text x=\"76\" y=\"209\" fill=\"#3a6ea5\" font-size=\"9.5\">cold 30←70°C</text></svg><figcaption>An idealized (linear) counterflow profile — real profiles curve according to the differential energy balance, and are only exactly linear when both streams' capacity rates are equal — but the two end gaps ΔT₁ and ΔT₂ are exact regardless, and they are all the LMTD formula needs.</figcaption></figure>\n\n<h3>§1 · Architectures, and one overall coefficient</h3>\n<p>Shell-and-tube and plate exchangers both do the same job through different geometry — plates\npack far more area into a given volume, shell-and-tube handles a wider range of pressures and\nfouling tendencies. Either way, the overall coefficient \\(U\\) is built exactly like Lesson 1's\nresistance chain: hot-side convection, tube-wall conduction, cold-side convection, in series — and\nin a real, aged exchanger, two more series terms as well: a fouling resistance on each side,\n\\(R_{f,h}\\) and \\(R_{f,c}\\), that only grow over an operating campaign.</p>\n\n<h3>§2 · Two design methods, and what fouling does to each</h3>\n<p>The <b>LMTD method</b> uses \\(q=UA\\,\\Delta T_{lm}\\), with\n\\(\\Delta T_{lm}=(\\Delta T_1-\\Delta T_2)/\\ln(\\Delta T_1/\\Delta T_2)\\) built from the\ntemperature gap at each end. The <b>effectiveness–NTU method</b> instead defines\n\\(\\varepsilon=q/q_{max}\\), \\(q_{max}=C_{min}(T_{h,in}-T_{c,in})\\), and\n\\(NTU=UA/C_{min}\\), with closed-form \\(\\varepsilon(NTU,C_r)\\) relations for each flow\narrangement — for the special case \\(C_r=0\\) (one stream condensing or evaporating, so its\ncapacity rate is effectively infinite), \\(\\varepsilon=1-e^{-NTU}\\) regardless of flow\narrangement. Fouling resistance added in series lowers \\(U\\) directly; for a fixed area and\ninlet conditions, a lower \\(U\\) means less heat exchanged — outlet temperatures drift back\ntoward their inlet values on both sides, not just one.</p>\n\n<h3>§3 · When effectiveness–NTU is the only honest method</h3>\n<p>LMTD needs the outlet temperatures to compute \\(\\Delta T_{lm}\\) in the first place — fine\nfor a <b>sizing</b> problem, where the duty and desired outlets are already specified and the\nquestion is how much area to buy. For a <b>rating</b> problem — a piece of hardware already\nexists, \\(UA\\) is known, and the question is what outlet temperatures it will actually deliver —\nthe outlets are the unknown, and LMTD would need an iterative guess-and-check loop to use at all.\nEffectiveness–NTU solves directly from \\(UA\\), \\(C_{min}\\), \\(C_{max}\\), and the inlet\ntemperatures, with no iteration — the only honest method once the outlets are what you are\nactually trying to find.</p>\n\n<h3>§4 · A worked LMTD, an NTU check, and a fouling number</h3>\n<p>A counterflow exchanger runs hot 150→90°C against cold\n30→70°C. \\(\\Delta T_1=T_{h,in}-T_{c,out}=80\\)°C,\n\\(\\Delta T_2=T_{h,out}-T_{c,in}=60\\)°C,\n\\(\\Delta T_{lm}=(80-60)/\\ln(80/60)=69.52\\)°C. Separately, a\ncondenser (\\(C_r\\approx0\\)) sized to \\(NTU=2\\) delivers\n\\(\\varepsilon=1-e^{-2}=86.5\\%\\) of its maximum possible duty. And on\nfouling: a clean \\(U_{clean}=800\\ \\text{W/m}^2\\text{K}\\) exchanger picking up\njust \\(R_f=0.0005\\ \\text{m}^2\\text{K/W}\\) of combined fouling resistance drops to\n\\(U_{fouled}=1/(1/U_{clean}+R_f)=571.4\\ \\text{W/m}^2\\text{K}\\) — a\n29% loss in overall coefficient from a single, modest fouling term, exactly the\nkind of number a fouling-monitoring program exists to catch before it grows further.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — LMTD</span>\n<p>\\[ \\Delta T_{lm}=\\frac{\\Delta T_1-\\Delta T_2}{\\ln(\\Delta T_1/\\Delta T_2)}, \\qquad\nq=UA\\,\\Delta T_{lm} \\]</p>\n<p>Valid for sizing; switch to effectiveness–NTU the moment the outlets become the unknown.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Thermal resistance networks</b> (Lesson 1) — U is literally the same\nseries-resistance idea, now with two convection films, a wall, and (in service) two fouling\nterms.</li></ul>\n<h4>Toolkit — heat exchangers</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>LMTD</td><td>\\( \\Delta T_{lm}=(\\Delta T_1-\\Delta T_2)/\\ln(\\Delta T_1/\\Delta T_2) \\)</td><td>Sizing, outlets known.</td></tr>\n<tr><td>Effectiveness</td><td>\\( \\varepsilon=q/q_{max} \\)</td><td>Rating, outlets unknown.</td></tr>\n<tr><td>NTU</td><td>\\( NTU=UA/C_{min} \\)</td><td>Dimensionless size.</td></tr>\n<tr><td>Cr=0 special case</td><td>\\( \\varepsilon=1-e^{-NTU} \\)</td><td>Condensing/evaporating stream.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked LMTD</b></p><p><b>Problem.</b> A counterflow exchanger runs hot 150→90°C against cold 30→70°C. Find \\(\\Delta T_1\\), \\(\\Delta T_2\\), and the LMTD.</p>",
+        "solution": "<p><b>Solution.</b> \\(\\Delta T_1=T_{h,in}-T_{c,out}=80\\)°C, \\(\\Delta T_2=T_{h,out}-T_{c,in}=60\\)°C. \\(\\Delta T_{lm}=(80-60)/\\ln(80/60)=69.52\\)°C.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>An NTU rating check</b></p><p><b>Problem.</b> A condenser (\\(C_r\\approx0\\), one stream condensing) is sized to \\(NTU=2\\). Find its effectiveness, and the physical meaning of \\(C_r\\approx0\\).</p>",
+        "solution": "<p><b>Solution.</b> \\(C_r=C_{min}/C_{max}\\approx0\\) because a condensing stream's effective heat capacity rate is enormous (it changes phase at essentially constant temperature). \\(\\varepsilon=1-e^{-NTU}=1-e^{-2}=86.5\\%\\) of the maximum possible duty is delivered.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A fouling-derated U</b></p><p><b>Problem.</b> A clean exchanger has \\(U_{clean}=800\\ \\text{W/m}^2\\text{K}\\). In service, it accumulates a combined fouling resistance of \\(R_f=0.0005\\ \\text{m}^2\\text{K/W}\\). Find the fouled overall coefficient, and the percent drop from clean.</p>",
+        "solution": "<p><b>Solution.</b> \\(U_{fouled}=1/(1/U_{clean}+R_f)=1/(1/800+0.0005)=571.4\\ \\text{W/m}^2\\text{K}\\), a \\((1-571.4/800)\\times100=29\\%\\) drop from a single, modest fouling term.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The overall coefficient U in a heat exchanger is best understood as:</p>",
+        "choices": [
+          "A single empirical constant unrelated to the exchanger's construction",
+          "A series-resistance network — hot film, wall, cold film, plus fouling — exactly like Lesson 1's resistance chain",
+          "Always equal to the higher of the two film coefficients",
+          "Independent of fouling by definition"
+        ],
+        "answer": 1,
+        "solution": "<p>U is built from the same series-resistance bookkeeping introduced in Lesson 1, now with two convection films, a wall, and (in service) fouling terms.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The LMTD method requires which piece of information that effectiveness–NTU does not strictly need to start from?</p>",
+        "choices": [
+          "The overall coefficient U",
+          "The inlet temperatures",
+          "The outlet temperatures — needed to compute ΔT₁ and ΔT₂ in the first place",
+          "The heat exchanger's area A"
+        ],
+        "answer": 2,
+        "solution": "<p>\\(\\Delta T_{lm}\\) is built directly from the outlet temperatures; effectiveness–NTU instead solves for those same outlets from UA and the inlets alone.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A heat exchanger already installed has a known UA. Its outlet temperatures at an off-design flow rate are unknown and need to be predicted. Which method is appropriate?</p>",
+        "choices": [
+          "LMTD, solved directly with no iteration",
+          "Effectiveness–NTU — outlets are the unknown, exactly the case it is built for",
+          "Neither method applies once flow rate changes",
+          "Zuber's correlation from Lesson 7"
+        ],
+        "answer": 1,
+        "solution": "<p>This is a rating problem (hardware fixed, outlets unknown) — the case §3 identifies as effectiveness–NTU's own, direct-solution territory.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Adding fouling resistance in series, area and inlet conditions held fixed, does what to U and to the heat duty q?</p>",
+        "choices": [
+          "Both increase",
+          "U decreases, and q decreases with it",
+          "U decreases but q increases to compensate",
+          "Neither changes — fouling only affects pressure drop"
+        ],
+        "answer": 1,
+        "solution": "<p>Fouling resistance adds directly to the series network, lowering U; for fixed A and similar ΔT, that lowers q as well — verified numerically in this lesson's third solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>For a condensing or evaporating stream, \\(C_r=C_{min}/C_{max}\\approx0\\) because:</p>",
+        "choices": [
+          "The stream has zero mass flow rate",
+          "A phase-changing stream's effective heat capacity rate is enormous — it absorbs or releases heat at essentially constant temperature",
+          "The stream's specific heat is exactly zero",
+          "Cr is undefined for any two-phase flow"
+        ],
+        "answer": 1,
+        "solution": "<p>Latent heat exchange at essentially one temperature makes the effective \\(C\\) of that stream enormous compared to the other, single-phase stream — hence \\(C_r\\approx0\\).</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's condenser example, \\(NTU=2\\) and \\(C_r\\approx0\\) gives an effectiveness of roughly:</p>",
+        "choices": [
+          "86%",
+          "50%",
+          "100%, exactly",
+          "It cannot be found without U and A separately"
+        ],
+        "answer": 0,
+        "solution": "<p>\\(\\varepsilon=1-e^{-NTU}=1-e^{-2}=86.5\\%\\), the direct closed form for \\(C_r=0\\), any flow arrangement.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Why is a plate exchanger often chosen over shell-and-tube for a given duty?</p>",
+        "choices": [
+          "It always tolerates more fouling and higher pressure than shell-and-tube",
+          "It packs more heat-transfer area into a given volume, at the cost of being less tolerant of high pressure or heavy fouling in many designs",
+          "It requires no U calculation at all",
+          "It cannot be used in counterflow"
+        ],
+        "answer": 1,
+        "solution": "<p>Plates trade compactness (more area per volume) for typically lower pressure and fouling tolerance than shell-and-tube — a real design trade-off, not a strict improvement.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The idealized straight-line temperature profile in this lesson's own diagram is:</p>",
+        "choices": [
+          "Exact for any counterflow exchanger, regardless of flow rates",
+          "An approximation, exactly linear only when both streams' capacity rates are equal — the ΔT₁ and ΔT₂ endpoint values themselves are still exact",
+          "Only valid for parallel flow, never counterflow",
+          "Physically impossible and never used"
+        ],
+        "answer": 1,
+        "solution": "<p>Real profiles curve according to the differential energy balance; the linear sketch is a simplification, honestly captioned as such — but the two end-gap values it starts and ends at are exact.</p>"
+      }
+    ],
+    "kuwait": "\n<p>An engineer commissioning a new exchanger uses LMTD to confirm the specified area delivers the\ncontracted duty at the design terminal temperatures — a sizing question with the outlets already\nfixed by contract. The same engineer, months later, asked what outlet temperatures the same\ninstalled hardware delivers at an off-design flow rate, switches to effectiveness–NTU without a\nsecond thought — per §3, the outlets are now the unknown, and LMTD would need to be iterated\nblind.</p>\n<p>A reliability engineer tracking a fouling-monitoring program treats a modest, single fouling\nresistance reading as a real, quantifiable loss in overall coefficient, not a rounding error —\nper §4's own number, well under a millimetre-scale fouling resistance cut this lesson's example\nexchanger's U by over a quarter, which is exactly why fouling factors get tracked as a trended\nnumber rather than checked once at commissioning and forgotten.</p>"
+  },
+  "9": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A two-surface radiation exchange network drawn as a resistor chain between a hot pipe surface and its surroundings, with a surface resistance, a space resistance for the view factor, and a second surface resistance in series, mirroring the same circuit analogy used for conduction and convection earlier in this course\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Radiation exchange is one more resistance chain, T⁴ and all</text><path d=\"M 70.0,168.0 L 88.0,168.0 L 104.3,177.0 L 120.6,159.0 L 136.9,177.0 L 153.1,159.0 L 169.4,177.0 L 185.7,159.0 L 202.0,168.0 L 220.0,168.0\" stroke=\"#3a6ea5\" stroke-width=\"2\" fill=\"none\"/><path d=\"M 220.0,168.0 L 234.4,168.0 L 247.4,177.0 L 260.5,159.0 L 273.5,177.0 L 286.5,159.0 L 299.5,177.0 L 312.6,159.0 L 325.6,168.0 L 340.0,168.0\" stroke=\"#c2820f\" stroke-width=\"2\" fill=\"none\"/><path d=\"M 340.0,168.0 L 358.0,168.0 L 374.3,177.0 L 390.6,159.0 L 406.9,177.0 L 423.1,159.0 L 439.4,177.0 L 455.7,159.0 L 472.0,168.0 L 490.0,168.0\" stroke=\"#3a6ea5\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"70\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><circle cx=\"220\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><circle cx=\"340\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><circle cx=\"490\" cy=\"168\" r=\"4\" fill=\"#16202e\"/><text x=\"70\" y=\"192\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T₁=150°C</text><text x=\"70\" y=\"205\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">pipe surface, ε=0.8</text><text x=\"490\" y=\"192\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\" font-weight=\"700\">T∞≈35°C</text><text x=\"490\" y=\"205\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"8.5\">surroundings</text><text x=\"145.0\" y=\"152\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">surface R</text><text x=\"280.0\" y=\"152\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">space R (F₁₂)</text><text x=\"415.0\" y=\"152\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9\">surface R</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">q''=2195 W/m² — radiation is 48% of this pipe's total loss</text></svg><figcaption>Radiation exchange between a small surface and its much larger surroundings collapses to the same series-resistance picture as Lesson 1's conduction chain — only now the driving difference is in \\(T^4\\), not T.</figcaption></figure>\n\n<h3>§1 · Blackbody laws, emissivity, and view factors</h3>\n<p>An ideal blackbody emits \\(E_b=\\sigma T^4\\); a real gray surface emits\n\\(E=\\varepsilon\\sigma T^4\\), with emissivity \\(\\varepsilon\\) (0 to 1) discounting it from\nthe ideal. Between two surfaces, the <b>view factor</b> \\(F_{12}\\) is the fraction of\nradiation leaving surface 1 that lands directly on surface 2. Two bookkeeping rules make view\nfactors tractable: <b>reciprocity</b>, \\(A_1F_{12}=A_2F_{21}\\), and the\n<b>summation rule</b>, \\(\\sum_j F_{1j}=1\\) for a complete enclosure — every bit of radiation\nleaving a surface inside a closed enclosure has to land somewhere.</p>\n\n<h3>§2 · The network method, shields, and combined losses</h3>\n<p>For two gray surfaces exchanging radiation, the net rate is one more resistance-network\ncalculation: \\(q_{12}=\\sigma(T_1^4-T_2^4)/R_{tot}\\), with\n\\(R_{tot}=\\dfrac{1-\\varepsilon_1}{\\varepsilon_1A_1}+\\dfrac{1}{A_1F_{12}}+\n\\dfrac{1-\\varepsilon_2}{\\varepsilon_2A_2}\\) — two surface resistances bracketing one\nspace resistance, the exact structural echo of Lesson 1's conduction chain, now driven by\n\\(T^4\\) differences instead of \\(T\\). Inserting a radiation <b>shield</b> between two\nsurfaces adds two more surface resistances in series (one per shield face); when every surface\nand shield face shares the same emissivity, \\(N\\) identical shields divide the unshielded heat\nrate by exactly \\(N+1\\) — verified directly from the resistances themselves, not merely quoted.\nCombining convection and radiation losses from one surface is instead a <b>parallel</b>\ncombination: linearizing radiation into an equivalent coefficient\n\\(h_{rad}=\\varepsilon\\sigma(T_s+T_{surr})(T_s^2+T_{surr}^2)\\) lets total loss be written\nas one Newton's-law-style term, \\(h_{combined}=h_{conv}+h_{rad}\\).</p>\n\n<h3>§3 · The energy-audit and thermography case</h3>\n<p>A bare, uninsulated hot pipe or vessel loses heat by convection and radiation simultaneously,\nand radiation is routinely the larger of the two at typical process temperatures — not a minor\ncorrection. An audit or a survey that estimates loss from convection alone, \"because that's what\ncomes to mind first,\" can understate the real opportunity by close to half, exactly the number\n§4 below computes directly rather than assumes.</p>\n\n<h3>§4 · A worked bare pipe, oxidized and then polished</h3>\n<p>A bare steel pipe, \\(D=10\\ \\text{cm}\\), runs at\n\\(T_s=150\\)°C in \\(T_\\infty=35\\)°C surroundings, oxidized\n(\\(\\varepsilon=0.8\\)), with an estimated \\(h_{conv}=10\\\n\\ \\text{W/m}^2\\text{K}\\) (Lesson 6's methods, at this modest \\(\\Delta T\\)).\n\\(h_{rad}=\\varepsilon\\sigma(T_s+T_\\infty)(T_s^2+T_\\infty^2)=9.09\\\n\\ \\text{W/m}^2\\text{K}\\) — comparable to \\(h_{conv}\\) itself.\n\\(h_{combined}=19.09\\ \\text{W/m}^2\\text{K}\\),\n\\(q''=h_{combined}\\Delta T=2195\\ \\text{W/m}^2\\), or\n\\(q'=q''\\pi D=689.7\\ \\text{W/m}\\) of bare pipe — with radiation alone carrying\n48% of the total. Polishing or foil-wrapping the same pipe to\n\\(\\varepsilon=0.1\\) drops \\(h_{rad}\\) to 1.14, radiation's share to\n10%, and the total loss to \\(q'=402.3\\ \\text{W/m}\\) — a\n42% cut in total heat loss from changing surface finish alone, no insulation\nadded at all.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — two-surface radiation network</span>\n<p>\\[ q_{12}=\\frac{\\sigma(T_1^4-T_2^4)}{\\dfrac{1-\\varepsilon_1}{\\varepsilon_1A_1}+\n\\dfrac{1}{A_1F_{12}}+\\dfrac{1-\\varepsilon_2}{\\varepsilon_2A_2}} \\]</p>\n<p>The same series-resistance idea as every other lesson in this course, one more time.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>Thermal resistance networks</b> (Lesson 1) — the two-surface radiation\nnetwork is the same series-resistance bookkeeping, now driven by \\(T^4\\).</li>\n<li><b>Natural convection</b> (Lesson 6) — combined-loss problems need an estimated\n\\(h_{conv}\\) from exactly those methods.</li></ul>\n<h4>Toolkit — radiation exchange</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Gray-surface emission</td><td>\\( E=\\varepsilon\\sigma T^4 \\)</td><td>Real surface vs. ideal blackbody.</td></tr>\n<tr><td>Reciprocity</td><td>\\( A_1F_{12}=A_2F_{21} \\)</td><td>View-factor bookkeeping.</td></tr>\n<tr><td>Two-surface network</td><td>\\( q_{12}=\\sigma(T_1^4-T_2^4)/R_{tot} \\)</td><td>Same resistance idea, T⁴ driven.</td></tr>\n<tr><td>Linearized radiation coefficient</td><td>\\( h_{rad}=\\varepsilon\\sigma(T_s+T_{surr})(T_s^2+T_{surr}^2) \\)</td><td>Combine with h_conv in parallel.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked bare pipe, oxidized</b></p><p><b>Problem.</b> A bare steel pipe, \\(D=10\\ \\text{cm}\\), runs at \\(T_s=150\\)°C in \\(T_\\infty=35\\)°C surroundings, \\(\\varepsilon=0.8\\), \\(h_{conv}=10\\ \\text{W/m}^2\\text{K}\\). Find \\(h_{rad}\\), \\(h_{combined}\\), and the loss per metre of pipe.</p>",
+        "solution": "<p><b>Solution.</b> \\(h_{rad}=\\varepsilon\\sigma(T_s+T_\\infty)(T_s^2+T_\\infty^2)=9.09\\ \\text{W/m}^2\\text{K}\\). \\(h_{combined}=19.09\\ \\text{W/m}^2\\text{K}\\). \\(q''=2195\\ \\text{W/m}^2\\), \\(q'=q''\\pi D=689.7\\ \\text{W/m}\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The same pipe, polished</b></p><p><b>Problem.</b> The same pipe is polished or foil-wrapped to \\(\\varepsilon=0.1\\), all else unchanged. Find the new loss per metre, and the percent reduction from the oxidized case.</p>",
+        "solution": "<p><b>Solution.</b> \\(h_{rad}=1.14\\ \\text{W/m}^2\\text{K}\\), \\(h_{combined}=11.14\\ \\text{W/m}^2\\text{K}\\), \\(q'=402.3\\ \\text{W/m}\\), a \\((1-402.3/689.7)\\times100=42\\%\\) drop in total loss from surface finish alone.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Radiation shields, verified from the network</b></p><p><b>Problem.</b> Two large parallel surfaces at \\(T_1=400\\ \\text{K}\\), \\(T_2=300\\ \\text{K}\\), all surfaces \\(\\varepsilon=0.5\\), exchange heat with no shield. Insert 3 identical (\\(\\varepsilon=0.5\\)) shields between them. Find the ratio of shielded to unshielded heat rate, computed from the resistances directly.</p>",
+        "solution": "<p><b>Solution.</b> No shield: \\(R_0=(1-0.5)/0.5+1+(1-0.5)/0.5=3\\), \\(q_0=\\sigma(T_1^4-T_2^4)/R_0=330.75\\ \\text{W/m}^2\\). With 3 shields, each contributing two identical surface resistances plus one more space resistance, the network totals \\(R_3=4\\times R_0=12\\), so \\(q_3=\\sigma(T_1^4-T_2^4)/R_3=82.69\\ \\text{W/m}^2\\), and \\(q_3/q_0=0.25=1/(3+1)\\) exactly, confirming the general \\(N+1\\) rule from the network itself rather than assuming it.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Reciprocity for view factors, \\(A_1F_{12}=A_2F_{21}\\), expresses which physical fact?</p>",
+        "choices": [
+          "Both surfaces must have equal emissivity",
+          "The radiation exchange between two surfaces is symmetric in a specific, area-weighted sense, regardless of which surface is labeled 1 or 2",
+          "View factors are always equal to 1",
+          "Only true for blackbodies"
+        ],
+        "answer": 1,
+        "solution": "<p>Reciprocity is a geometric bookkeeping identity, independent of emissivity — it holds for any two surfaces' view factors regardless of material.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The summation rule \\(\\sum_j F_{1j}=1\\) applies to which situation?</p>",
+        "choices": [
+          "Any two surfaces in open space",
+          "A surface inside a complete, closed enclosure — every bit of leaving radiation must land somewhere",
+          "Only blackbody surfaces",
+          "Only surfaces of equal area"
+        ],
+        "answer": 1,
+        "solution": "<p>Inside a closed enclosure, radiation leaving a surface has nowhere to go but onto the other enclosure surfaces (including possibly itself), summing to exactly 1.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Combining convection and radiation losses from one surface, using \\(h_{combined}=h_{conv}+h_{rad}\\), is structurally which kind of combination?</p>",
+        "choices": [
+          "Series resistances, like Lesson 1's conduction chain",
+          "Parallel conductances — two independent paths for the same driving ΔT",
+          "Neither — the two modes cannot be combined at all",
+          "A weighted average, not a sum"
+        ],
+        "answer": 1,
+        "solution": "<p>Both modes act on the same surface and the same ΔT simultaneously, in parallel — adding their coefficients directly, unlike the series addition used for layers encountered one after another.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>N identical radiation shields (same emissivity as the two surfaces) inserted between them divide the unshielded heat rate by:</p>",
+        "choices": [
+          "N",
+          "N+1",
+          "2N",
+          "It is unaffected by the number of shields"
+        ],
+        "answer": 1,
+        "solution": "<p>Each shield adds one more identical resistance unit to the series network; N identical shields give N+1 identical resistance units total, dividing q by N+1 — verified directly from the resistances in this lesson's third solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's bare-pipe example, radiation carries roughly what share of the total loss from the oxidized (\\(\\varepsilon=0.8\\)) surface?</p>",
+        "choices": [
+          "About 48% — comparable to convection, not a minor correction",
+          "About 5% — negligible next to convection",
+          "100% — convection contributes nothing",
+          "It cannot be estimated without a full enclosure view-factor calculation"
+        ],
+        "answer": 0,
+        "solution": "<p>\\(h_{rad}/h_{combined}=48\\%\\) — genuinely comparable to convection's share, exactly the field-relevant point §3 makes.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Polishing or foil-wrapping the same bare pipe surface (lowering ε) primarily reduces loss through which mechanism?</p>",
+        "choices": [
+          "Convection — polishing changes the boundary layer",
+          "Radiation — h_rad is directly proportional to ε, so a lower ε cuts it almost proportionally",
+          "Conduction through the pipe wall",
+          "It has no effect on either mode"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(h_{rad}\\propto\\varepsilon\\) directly; lowering emissivity cuts radiative loss sharply while leaving convection essentially untouched, as this lesson's second solve problem shows numerically.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>An energy audit tallying only convective loss from a bare, uninsulated hot pipe risks:</p>",
+        "choices": [
+          "Overstating the loss by roughly double",
+          "Understating the real loss by close to half, since radiation is routinely comparable to convection at these temperatures",
+          "No error at all — radiation is always negligible for pipes",
+          "An error only relevant above 500°C"
+        ],
+        "answer": 1,
+        "solution": "<p>This lesson's own worked numbers show radiation carrying nearly half the total loss — an audit ignoring it misses a comparable-sized opportunity, not a rounding error.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Two identical surfaces exchange radiation. Doubling the absolute temperature of the hotter surface (surroundings fixed) changes the net radiative exchange by:</p>",
+        "choices": [
+          "Doubling it",
+          "Roughly a factor of up to sixteen, since the driving term is \\(T_1^4-T_2^4\\), not \\(T_1-T_2\\)",
+          "No change, since ε is unaffected",
+          "Halving it"
+        ],
+        "answer": 1,
+        "solution": "<p>The fourth-power dependence in \\(T_1^4-T_2^4\\) makes radiative exchange far more sensitive to absolute temperature than any linear rate law — doubling \\(T_1\\) can raise \\(T_1^4\\) sixteen-fold on its own.</p>"
+      }
+    ],
+    "kuwait": "\n<p>A facilities engineer surveying bare, uninsulated hot piping tallies both convection and\nradiation loss, not convection alone — per §4's own numbers, radiation can carry close to half of\na bare hot pipe's total loss at typical process temperatures, and an audit that counts convection\nonly understates the real energy-saving opportunity from insulating by nearly double.</p>\n<p>A reliability engineer specifying a radiation shield between a hot process component and\nnearby instrumentation sizes the number of shields from the network method, not a guess — per §2,\neach identical shield divides the unshielded heat rate by exactly one more, a specific number\nworth checking against the actual protection required rather than assuming \"a shield\" is enough\nregardless of how many are fitted.</p>"
+  },
+  "10": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Two side by side panels, a temperature profile falling from a hot surface to cooler surroundings on the left, and a water vapor density profile falling from a wet surface to drier surrounding air on the right, drawn as mirror images to show the same underlying diffusion mathematics\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Same equation, two names: heat diffusion beside mass diffusion</text><line x1=\"60\" y1=\"235\" x2=\"250\" y2=\"235\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"235\" x2=\"60\" y2=\"80\" stroke=\"#16202e\" stroke-width=\"1\"/><polyline points=\"60.0,90.0 250.0,235.0\" fill=\"none\" stroke=\"#c2820f\" stroke-width=\"2.6\"/><text x=\"155\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">heat: T(x), Fourier's law</text><text x=\"54\" y=\"88\" text-anchor=\"end\" fill=\"#c2820f\" font-size=\"9\">T_s (hot)</text><text x=\"54\" y=\"233\" text-anchor=\"end\" fill=\"#c2820f\" font-size=\"9\">T_∞</text><line x1=\"330\" y1=\"235\" x2=\"520\" y2=\"235\" stroke=\"#16202e\" stroke-width=\"1\"/><line x1=\"330\" y1=\"235\" x2=\"330\" y2=\"80\" stroke=\"#16202e\" stroke-width=\"1\"/><polyline points=\"330.0,90.0 520.0,235.0\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.6\"/><text x=\"425\" y=\"255\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"10\">mass: ρ_v(x), Fick's law</text><text x=\"324\" y=\"88\" text-anchor=\"end\" fill=\"#3a6ea5\" font-size=\"9\">ρ_v,s (wet surface)</text><text x=\"324\" y=\"233\" text-anchor=\"end\" fill=\"#3a6ea5\" font-size=\"9\">ρ_v,∞</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Both profiles obey the same diffusion law — only the transported quantity differs</text></svg><figcaption>Redraw one profile and you have redrawn the other — the heat-mass analogy is this literal, not merely an inspirational comparison.</figcaption></figure>\n\n<h3>§1 · One mathematics, two names</h3>\n<p>Fick's law of diffusion, \\(N''=-D_{AB}\\,dC/dx\\), has exactly the shape of Fourier's law,\n\\(q''=-k\\,dT/dx\\) — mass diffusing down a concentration gradient the same way heat diffuses\ndown a temperature gradient. Convective mass transfer carries the same structure forward too: a\n<b>convective mass transfer coefficient</b> \\(h_m\\) plays the role \\(h\\) plays in Newton's law,\n\\(N''=h_m(C_s-C_\\infty)\\) standing in for \\(q''=h(T_s-T_\\infty)\\).</p>\n\n<h3>§2 · The heat–mass analogy, and why it works so well for air and water specifically</h3>\n<p>The Chilton–Colburn analogy connects the two convection coefficients,\n\\(h/h_m\\approx\\rho c_p\\,Le^{2/3}\\), where the <b>Lewis number</b>\n\\(Le=\\alpha/D_{AB}\\) compares thermal diffusivity to mass diffusivity. For water vapor\ndiffusing in air specifically, \\(D_{AB}\\approx2.5\\times10^{-5}\\ \\text{m}^2\\text{/s}\\)\nhappens to sit very close to air's own thermal diffusivity — a genuine physical coincidence for\nthis particular pair of substances, not a universal law — giving \\(Le\\approx1\\) and the\nsimplified <b>Lewis relation</b> \\(h/h_m\\approx\\rho c_p\\). That coincidence is exactly why\nwet-bulb thermometry and simple evaporative-cooling estimates work as well, and as simply, as they\ndo for air-water problems, and why the same shortcut should not be assumed for an arbitrary pair\nof substances.</p>\n\n<h3>§3 · Why evaporation cools what is left behind</h3>\n<p>Vaporizing a mass of liquid costs its latent heat of vaporization. With no external heat\nsource feeding that cost, the energy has to come from somewhere — and the only reservoir on hand\nis the sensible heat of the liquid (and immediate surroundings) left behind, which cools as a\ndirect result. This is the entire physical mechanism behind a wet-bulb thermometer, evaporative\ncooling pads, and the cooling felt from wet skin in moving air — not a separate \"evaporation is\ncold\" fact, but the same energy balance as every other lesson in this course, applied to a phase\nchange instead of a temperature difference.</p>\n\n<h3>§4 · A worked evaporation estimate, reusing this course's own convection numbers</h3>\n<p>Lesson 4's flat-plate result gave \\(h=20\\ \\text{W/m}^2\\text{K}\\) for forced air at\na modest speed. Using the Lewis relation with \\(\\rho_{air}=1.15\\\n\\ \\text{kg/m}^3\\), \\(c_{p,air}=1007\\ \\text{J/kgK}\\):\n\\(h_m=h/(\\rho c_p)=0.0173\\ \\text{m/s}\\). Taking a representative (given, not a claimed\nprecise psychrometric lookup) vapor-density difference between a wet surface and hot, dry Gulf\nair, \\(\\Delta\\rho_v=0.018\\ \\text{kg/m}^3\\):\n\\(N''=h_m\\Delta\\rho_v=3.11e-04\\ \\text{kg/m}^2\\text{s}=1.12\\\n\\ \\text{kg/m}^2\\text{hr}\\) — a real, order-of-magnitude-plausible desert evaporation\nrate. Converted through \\(h_{fg}\\approx2.45\\ \\text{MJ/kg}\\), this is\n\\(q_{evap}=N''h_{fg}=763\\ \\text{W/m}^2\\) of cooling drawn from the surface\nleft behind — a substantial number, on the same order as this course's other worked convective\nfluxes, and the same \"sensible heat pays for the latent heat\" bookkeeping §3 describes.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — the Lewis relation, air-water only</span>\n<p>\\[ \\frac{h}{h_m}\\approx\\rho c_p \\qquad (Le\\approx1\\text{ for water vapor in air})\n\\]</p>\n<p>A shortcut earned by a specific numerical coincidence — check \\(Le\\) before reusing it for\nany other fluid pair.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — mass transfer reuses the identical\ndimensionless structure (Sherwood, Reynolds, Schmidt in place of Nusselt, Reynolds, Prandtl).</li>\n<li><b>Psychrometrics</b> (Thermodynamics II) — the sensible/latent energy split this lesson's\nevaporative cooling relies on was introduced there for cooling-load estimates.</li></ul>\n<h4>Toolkit — the heat–mass analogy</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Fick's law</td><td>\\( N''=-D_{AB}\\,dC/dx \\)</td><td>Diffusive mass transfer.</td></tr>\n<tr><td>Convective mass transfer</td><td>\\( N''=h_m(C_s-C_\\infty) \\)</td><td>Mass-transfer analog of Newton's law.</td></tr>\n<tr><td>Lewis number</td><td>\\( Le=\\alpha/D_{AB} \\)</td><td>Thermal vs. mass diffusivity.</td></tr>\n<tr><td>Lewis relation</td><td>\\( h/h_m\\approx\\rho c_p \\)</td><td>Valid when \\(Le\\approx1\\) (air-water).</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The worked evaporation estimate</b></p><p><b>Problem.</b> Reusing Lesson 4's \\(h=20\\ \\text{W/m}^2\\text{K}\\), with \\(\\rho_{air}=1.15\\ \\text{kg/m}^3\\), \\(c_{p,air}=1007\\ \\text{J/kgK}\\), and a representative \\(\\Delta\\rho_v=0.018\\ \\text{kg/m}^3\\), find \\(h_m\\), the evaporation flux \\(N''\\), and the equivalent cooling flux \\(q_{evap}\\) (\\(h_{fg}\\approx2.45\\ \\text{MJ/kg}\\)).</p>",
+        "solution": "<p><b>Solution.</b> \\(h_m=h/(\\rho c_p)=0.0173\\ \\text{m/s}\\). \\(N''=h_m\\Delta\\rho_v=3.11e-04\\ \\text{kg/m}^2\\text{s}\\). \\(q_{evap}=N''h_{fg}=763\\ \\text{W/m}^2\\).</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The same estimate at Lesson 6's much lower h</b></p><p><b>Problem.</b> Repeat the estimate using Lesson 6's natural-convection result instead, \\(h=3.99\\ \\text{W/m}^2\\text{K}\\), same air properties and \\(\\Delta\\rho_v\\). Find the new \\(h_m\\), \\(N''\\), and \\(q_{evap}\\).</p>",
+        "solution": "<p><b>Solution.</b> \\(h_m=h/(\\rho c_p)=0.00345\\ \\text{m/s}\\). \\(N''=h_m\\Delta\\rho_v=6.20e-05\\ \\text{kg/m}^2\\text{s}\\). \\(q_{evap}=N''h_{fg}=152\\ \\text{W/m}^2\\) — about \\(5\\times\\) smaller than the forced-air case, since $h_m$ scales directly with the (much lower) natural-convection h.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Mass evaporated from a real surface</b></p><p><b>Problem.</b> At §4's flux, how much water evaporates from a 2 m² open surface over 1 hour?</p>",
+        "solution": "<p><b>Solution.</b> \\(m=N''\\times A\\times t=3.11e-04\\times2\\times3600=2.24\\ \\text{kg}\\) over the hour.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Fick's law and Fourier's law share which structural relationship?</p>",
+        "choices": [
+          "They are unrelated equations that happen to look similar by coincidence",
+          "Both state that a flux is proportional to minus a property times a concentration or temperature gradient — the same mathematical form, different transported quantity",
+          "Fick's law only applies to gases, Fourier's law only to solids",
+          "Fick's law replaces Fourier's law whenever radiation is present"
+        ],
+        "answer": 1,
+        "solution": "<p>Both are linear diffusion laws of identical form, \\(-(\\text{property})\\times(\\text{gradient})\\) — heat and mass diffuse by the same mathematics.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The Lewis number \\(Le=\\alpha/D_{AB}\\) compares which two quantities?</p>",
+        "choices": [
+          "Momentum diffusivity to thermal diffusivity",
+          "Thermal diffusivity to mass diffusivity",
+          "Convective to conductive heat transfer",
+          "Buoyancy force to viscous force"
+        ],
+        "answer": 1,
+        "solution": "<p>Le compares how fast heat diffuses (α) to how fast mass diffuses (\\(D_{AB}\\)) — when the two rates are similar, \\(Le\\approx1\\).</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The simplified Lewis relation \\(h/h_m\\approx\\rho c_p\\) is a reliable shortcut specifically because:</p>",
+        "choices": [
+          "It holds for any two substances, by definition",
+          "For water vapor in air, \\(D_{AB}\\) happens to be numerically close to air's thermal diffusivity, giving \\(Le\\approx1\\) — a specific coincidence, not a universal law",
+          "Air has zero viscosity",
+          "Water always evaporates at a fixed rate"
+        ],
+        "answer": 1,
+        "solution": "<p>This is a property coincidence specific to the air-water pair; §2 is explicit that it should not be assumed to transfer to other fluid combinations.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Physically, why does evaporation cool the liquid left behind, with no external heat source present?</p>",
+        "choices": [
+          "It does not — evaporation has no thermal effect on the remaining liquid",
+          "The latent heat needed to vaporize the escaping mass is drawn from the remaining liquid's own sensible heat, cooling it",
+          "The remaining liquid gains heat from the vapor that just left",
+          "Evaporation only cools the surrounding air, never the liquid"
+        ],
+        "answer": 1,
+        "solution": "<p>With no external heat input, the energy balance has nowhere else to draw the latent heat from except the sensible heat of what remains — this is the literal mechanism, not a figure of speech.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's worked estimate, moving from Lesson 4's forced-air \\(h=20\\ \\text{W/m}^2\\text{K}\\) to Lesson 6's natural-convection \\(h\\approx4\\ \\text{W/m}^2\\text{K}\\) changes the evaporation flux by:</p>",
+        "choices": [
+          "No change — evaporation is independent of h",
+          "It falls by roughly the same factor h itself fell, since \\(h_m\\propto h\\) via the Lewis relation",
+          "It rises, since lower h means less convective cooling competition",
+          "It becomes negative"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(h_m=h/(\\rho c_p)\\) is directly proportional to h; a lower h gives a proportionally lower \\(h_m\\) and evaporation flux, confirmed in this lesson's second solve problem.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A wet-bulb thermometer reads a lower temperature than a dry-bulb thermometer in the same air primarily because:</p>",
+        "choices": [
+          "Wet-bulb thermometers are less accurate",
+          "Evaporation from the wet wick draws latent heat from the wick's own sensible heat, cooling it below the surrounding dry-bulb air temperature",
+          "Water is inherently colder than air",
+          "The wick blocks radiation to the thermometer"
+        ],
+        "answer": 1,
+        "solution": "<p>This is exactly §3's mechanism in its most common instrument form — the wick cools itself by evaporating into the surrounding air.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>A representative vapor-density difference \\(\\Delta\\rho_v\\) used in a worked example should be presented as:</p>",
+        "choices": [
+          "A precise psychrometric-chart value recalled exactly from memory",
+          "A given, representative input value — honestly labeled as such, not claimed as a precise lookup",
+          "Irrelevant — any value produces the same q_evap",
+          "Always exactly zero for hot, dry air"
+        ],
+        "answer": 1,
+        "solution": "<p>This course's standing practice (also used for steam-table values in Thermodynamics II) is to present such figures as honest, representative GIVEN inputs, never as claimed precise recalled lookups.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>This lesson's evaporation estimate reused convection coefficients from which two earlier lessons?</p>",
+        "choices": [
+          "Lesson 1 and Lesson 2",
+          "Lesson 4 (forced convection) and Lesson 6 (natural convection)",
+          "Lesson 7 and Lesson 8",
+          "No earlier lesson's numbers were reused"
+        ],
+        "answer": 1,
+        "solution": "<p>The worked example and its second solve problem explicitly reuse Lesson 4's forced-air h and Lesson 6's natural-convection h, tying the analogy back to numbers already computed and verified earlier in this course.</p>"
+      }
+    ],
+    "kuwait": "\n<p>An engineer estimating water loss from an open process-water surface or a cooling pond in\nGulf summer heat uses the Lewis relation to convert an already-known or already-estimated h into\n\\(h_m\\), rather than deriving a mass-transfer correlation from scratch — per §4, this shortcut\nis earned specifically by \\(Le\\approx1\\) for air and water vapor, and should not be assumed to\ncarry over unchanged to a different fluid pair.</p>\n<p>A technician noticing that a wetted evaporative cooling pad, or curing concrete kept damp,\nstays noticeably cooler than the surrounding dry air is watching the same mechanism as a wet-bulb\nthermometer — per §3, the energy leaving as vapor is drawn directly from the remaining liquid's\nown sensible heat, a real, quantifiable effect rather than a vague \"evaporation feels cool\"\nimpression.</p>"
+  },
+  "11": {
+    "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Two bars comparing a heat exchanger's clean sizing area against its larger design area after a fouling margin is applied, with the percentage margin marked between them\"><rect width=\"560\" height=\"300\" fill=\"#fbfdfe\"/><text x=\"16\" y=\"22\" fill=\"#16202e\" font-size=\"12\" font-weight=\"700\">Sizing for fouling: the same margin as extra area, or as a derated U</text><line x1=\"80\" y1=\"240\" x2=\"500\" y2=\"240\" stroke=\"#16202e\" stroke-width=\"1\"/><rect x=\"200\" y=\"119.0\" width=\"90\" height=\"121.0\" fill=\"#3a6ea5\" fill-opacity=\"0.25\" stroke=\"#3a6ea5\" stroke-width=\"1.6\"/><text x=\"245\" y=\"256\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">clean, A_clean</text><text x=\"245\" y=\"111.0\" text-anchor=\"middle\" fill=\"#3a6ea5\" font-size=\"10\">16.1 m²</text><rect x=\"360\" y=\"94.8\" width=\"90\" height=\"145.2\" fill=\"#c2820f\" fill-opacity=\"0.25\" stroke=\"#c2820f\" stroke-width=\"1.6\"/><text x=\"405\" y=\"256\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">design, A_design</text><text x=\"405\" y=\"86.8\" text-anchor=\"middle\" fill=\"#c2820f\" font-size=\"10\">19.4 m²</text><line x1=\"296\" y1=\"119.0\" x2=\"354\" y2=\"119.0\" stroke=\"#16202e\" stroke-width=\"1\" stroke-dasharray=\"3,2\"/><text x=\"325\" y=\"107.0\" text-anchor=\"middle\" fill=\"#16202e\" font-size=\"9.5\">+20% fouling margin</text><text x=\"16\" y=\"278\" fill=\"#16202e\" font-size=\"11\">Same margin, restated: U_clean=450 at A_design ⇒ an equivalent U_design=375 W/m²K</text></svg><figcaption>A fouling margin can be spent as extra installed area or expressed as a derated design U — the same engineering decision, seen two ways, and this lesson's own capstone number for both.</figcaption></figure>\n\n<h3>§1 · Framing the brief: sizing, then margining</h3>\n<p>This course's capstone is a synthesis of Lesson 8: given a duty (a process stream's flow rate,\nproperties, and required temperature change) and a coolant or heating stream, size a shell-and-\ntube exchanger to meet it, then carry a real fouling margin on top — because the duty and desired\noutlets are specified in advance, this is squarely a <b>sizing</b> problem, and the LMTD method\nfrom Lesson 8 is the right tool to reach for, not effectiveness–NTU.</p>\n\n<h3>§2 · The full sizing chain</h3>\n<p>The process stream's duty follows directly from its own energy balance,\n\\(Q=\\dot m_h c_{p,h}(T_{h,in}-T_{h,out})\\); the coolant's required flow or outlet\ntemperature follows from the same energy balance applied to it,\n\\(Q=\\dot m_c c_{p,c}(T_{c,out}-T_{c,in})\\). With all four terminal temperatures now known,\n\\(\\Delta T_{lm}\\) builds exactly as in Lesson 8, and a clean-service area follows from\n\\(A_{clean}=Q/(U_{clean}\\Delta T_{lm})\\), using a representative clean-\\(U\\) figure for\nthe service (a given design input, not a fabricated precision). A fouling margin is then spent\none of two mathematically equivalent ways: buy extra area,\n\\(A_{design}=A_{clean}\\times(1+\\text{margin})\\), or keep the area fixed and instead\nderate the design \\(U\\) by the same factor, \\(U_{design}=U_{clean}/(1+\\text{margin})\\)\n— the same engineering decision, expressed two different ways on two different spec sheets.</p>\n\n<h3>§3 · Critiquing the design against how it actually fails</h3>\n<p>Real fouling is not a one-time step to the design margin and then a flat line — it accumulates\nover an operating campaign, and the first symptom of it outrunning the design margin is a\nduty shortfall at unchanged flow: outlet temperatures drift back toward their inlet values, long\nbefore anything resembling a dramatic failure. At that point the practical options are a flow\nincrease (which pushes back against the rest of the piping system's own curve, a cost this\nlesson's numbers do not include) or a cleaning outage. The fixed-percentage margin itself is a\nsimplification worth stating plainly, not defending as exact — real fouling rates are time- and\nservice-dependent, which is exactly why a trended duty calculation, not a one-time design check,\nis what actually catches the problem in the field. If any part of a real service could locally\nvaporize, Lesson 7's CHF caution becomes a second, independent failure mode to check — fouling\nmargin does not protect against that at all; and an un-insulated unit runs Lesson 9's bare-surface\nloss on top of everything else.</p>\n\n<h3>§4 · The worked capstone</h3>\n<p>Hot oil, \\(\\dot m_h=4\\ \\text{kg/s}\\), \\(c_{p,h}=2100\\\n\\ \\text{J/kgK}\\), cools 95→60°C:\n\\(Q=\\dot m_h c_{p,h}\\Delta T=294\\ \\text{kW}\\). Cooling water,\n\\(\\dot m_c=3\\ \\text{kg/s}\\), \\(c_{p,c}=4180\\ \\text{J/kgK}\\),\nenters at \\(T_{c,in}=25\\)°C and must leave at\n\\(T_{c,out}=T_{c,in}+Q/(\\dot m_c c_{p,c})=48.4\\)°C to absorb the same duty.\nCounterflow: \\(\\Delta T_1=46.56\\)°C, \\(\\Delta T_2=35\\)°C,\n\\(\\Delta T_{lm}=40.50\\)°C. At a representative clean\n\\(U_{clean}=450\\ \\text{W/m}^2\\text{K}\\) for this liquid-liquid service,\n\\(A_{clean}=Q/(U_{clean}\\Delta T_{lm})=16.13\\ \\text{m}^2\\). Carrying a\n20% fouling margin, \\(A_{design}=19.36\\ \\text{m}^2\\) —\nequivalently, the same margin as a derated \\(U_{design}=U_{clean}/1.2=375\n\\ \\text{W/m}^2\\text{K}\\) at the 19.36 m² area, exactly as §2 describes: two\nspec sheets, one design decision.</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — sizing with a fouling margin</span>\n<p>\\[ A_{design}=A_{clean}(1+m)=\\frac{Q}{U_{clean}\\,\\Delta T_{lm}}(1+m)\n=\\frac{Q}{[U_{clean}/(1+m)]\\,\\Delta T_{lm}} \\]</p>\n<p>Extra area and a derated design U are the same margin, algebraically, every time.</p></div>",
+    "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\"><li><b>The LMTD sizing method</b> (Lesson 8) — this capstone is its direct\napplied extension, start to finish, with a fouling margin added at the end.</li></ul>\n<h4>Toolkit — the capstone sizing chain</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>\n<tr><td>Duty</td><td>\\( Q=\\dot m c_p\\Delta T \\)</td><td>From either stream's own energy balance.</td></tr>\n<tr><td>Clean area</td><td>\\( A_{clean}=Q/(U_{clean}\\Delta T_{lm}) \\)</td><td>Sizing to the specified duty.</td></tr>\n<tr><td>Design area</td><td>\\( A_{design}=A_{clean}(1+m) \\)</td><td>Margin for in-service fouling.</td></tr>\n<tr><td>Equivalent design U</td><td>\\( U_{design}=U_{clean}/(1+m) \\)</td><td>Same margin, restated as a derated coefficient.</td></tr>\n</tbody></table></div>",
+    "quiz": [
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>The full capstone sizing chain</b></p><p><b>Problem.</b> Hot oil, \\(\\dot m_h=4\\ \\text{kg/s}\\), \\(c_{p,h}=2100\\ \\text{J/kgK}\\), cools 95→60°C. Cooling water, \\(\\dot m_c=3\\ \\text{kg/s}\\), \\(c_{p,c}=4180\\ \\text{J/kgK}\\), enters at \\(T_{c,in}=25\\)°C. Find \\(Q\\), \\(T_{c,out}\\), and the LMTD.</p>",
+        "solution": "<p><b>Solution.</b> \\(Q=\\dot m_h c_{p,h}(95-60)=294\\ \\text{kW}\\). \\(T_{c,out}=25+Q/(\\dot m_c c_{p,c})=48.4\\)°C. \\(\\Delta T_1=46.56\\)°C, \\(\\Delta T_2=35\\)°C, \\(\\Delta T_{lm}=40.50\\)°C.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>Sizing the area, and its fouling-margin equivalent</b></p><p><b>Problem.</b> At a representative clean \\(U_{clean}=450\\ \\text{W/m}^2\\text{K}\\), find \\(A_{clean}\\), then the design area at a 20% fouling margin, and the equivalent derated design U at that same design area.</p>",
+        "solution": "<p><b>Solution.</b> \\(A_{clean}=Q/(U_{clean}\\Delta T_{lm})=16.13\\ \\text{m}^2\\). \\(A_{design}=A_{clean}\\times1.2=19.36\\ \\text{m}^2\\). \\(U_{design}=U_{clean}/1.2=375\\ \\text{W/m}^2\\text{K}\\) — the same margin, restated as a coefficient instead of an area.</p>"
+      },
+      {
+        "type": "solve",
+        "q": "<p class=\"qname\"><b>A tighter margin</b></p><p><b>Problem.</b> A reviewer proposes a leaner 10% fouling margin instead of 20%. Find the resulting design area and equivalent design U, and compare both to the 20%-margin case.</p>",
+        "solution": "<p><b>Solution.</b> \\(A_{design}'=A_{clean}\\times1.1=17.74\\ \\text{m}^2\\), smaller than the 20%-margin's 19.36 m². \\(U_{design}'=U_{clean}/1.1=409.1\\ \\text{W/m}^2\\text{K}\\), higher than the 20%-margin's 375 — a leaner margin buys a smaller, cheaper exchanger today at the cost of a shorter run before fouling erodes the smaller cushion.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>This capstone's sizing problem is a sizing problem rather than a rating problem because:</p>",
+        "choices": [
+          "The overall coefficient U is unknown",
+          "The duty and desired terminal temperatures are specified in advance, and the question is how much area to buy — exactly Lesson 8 §3's sizing case",
+          "Rating problems never involve terminal temperatures",
+          "Effectiveness–NTU cannot be used for liquid-liquid service"
+        ],
+        "answer": 1,
+        "solution": "<p>Per Lesson 8, sizing problems start from known duty and outlets and solve for area; that is exactly this capstone's brief.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Expressing a fouling margin as extra installed area versus as a derated design U are:</p>",
+        "choices": [
+          "Two unrelated design choices, only one of which is ever correct",
+          "The same engineering decision, algebraically equivalent, restated two different ways",
+          "Only equivalent if the exchanger is counterflow",
+          "Only equivalent when the fouling margin is exactly 50%"
+        ],
+        "answer": 1,
+        "solution": "<p>\\(A_{design}=A_{clean}(1+m)\\) and \\(U_{design}=U_{clean}/(1+m)\\) at that same \\(A_{design}\\) describe the identical design decision, shown algebraically in §2.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>As a real exchanger fouls in service beyond its design margin, the FIRST symptom is typically:</p>",
+        "choices": [
+          "Sudden mechanical failure of the tubes with no warning",
+          "A duty shortfall at unchanged flow — outlet temperatures drifting back toward inlet values",
+          "An immediate, unplanned shutdown with no intermediate stage",
+          "No observable symptom until the unit is opened for inspection"
+        ],
+        "answer": 1,
+        "solution": "<p>Per §3, a duty shortfall at otherwise-normal flow is the earliest, most easily trended warning sign — well before anything catastrophic.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>The fixed-percentage fouling margin used in this lesson's sizing chain should be understood as:</p>",
+        "choices": [
+          "An exact physical law with no uncertainty",
+          "A practical simplification — real fouling accumulates in a time- and service-dependent way, not as a fixed percentage",
+          "Unnecessary once a good U value is known",
+          "Only relevant for gas-side services, never liquid-liquid"
+        ],
+        "answer": 1,
+        "solution": "<p>§3 is explicit that the fixed-percentage margin is a simplification, not a physical law — which is exactly why a trended duty check matters in the field.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>If part of this capstone's process stream could locally vaporize in service, which earlier lesson's failure-mode caution becomes independently relevant?</p>",
+        "choices": [
+          "Lesson 6's natural-convection orientation effect",
+          "Lesson 7's critical-heat-flux safety margin — a separate risk fouling margin does not protect against at all",
+          "Lesson 3's Biot-number check",
+          "Lesson 10's Lewis-relation restriction"
+        ],
+        "answer": 1,
+        "solution": "<p>CHF is a distinct failure mode from fouling; per §3, a fouling margin on area does nothing to protect against a local boiling excursion toward CHF.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>In this lesson's own numbers, tightening the fouling margin from 20% to 10% changes the design area and equivalent design U how?</p>",
+        "choices": [
+          "Smaller design area (17.7 vs 19.4 m²), higher equivalent U (409 vs 375 W/m²K)",
+          "Larger design area, lower equivalent U",
+          "No change to either quantity",
+          "Smaller area but also lower equivalent U"
+        ],
+        "answer": 0,
+        "solution": "<p>A leaner margin buys a smaller 17.74 m² unit at a higher 409.1 W/m²K equivalent design U — cheaper today, less cushion against future fouling.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>An un-insulated capstone exchanger shell adds which additional, independent loss on top of the sizing calculation itself?</p>",
+        "choices": [
+          "None — the sizing calculation already accounts for all losses",
+          "Lesson 9's combined convection-radiation bare-surface loss from the shell to its surroundings",
+          "A second fouling resistance identical to the tube-side one",
+          "A correction to the LMTD itself"
+        ],
+        "answer": 1,
+        "solution": "<p>An un-insulated shell loses heat to its surroundings by the same convection-plus-radiation mechanism Lesson 9 quantifies — a separate loss from the sizing calculation's own internal duty.</p>"
+      },
+      {
+        "type": "mc",
+        "q": "<p>Which single earlier lesson is this capstone most directly a synthesis and extension of, start to finish?</p>",
+        "choices": [
+          "Lesson 3 (transient conduction)",
+          "Lesson 8 (heat exchangers: LMTD and effectiveness–NTU)",
+          "Lesson 6 (natural convection)",
+          "Lesson 10 (mass transfer)"
+        ],
+        "answer": 1,
+        "solution": "<p>Every step of this capstone — duty, terminal temperatures, LMTD, area, margin — is Lesson 8's own sizing method carried through a complete worked design.</p>"
+      }
+    ],
+    "kuwait": "\n<p>A design engineer sizing a new liquid-liquid cooler carries an explicit fouling margin —\nextra area, or equivalently a derated design U — rather than sizing to the clean-service number\nand hoping in-service performance matches it; per §2, an engineer comparing two vendor spec\nsheets should first check which of the two equivalent conventions each one is quoting before\ncomparing their numbers directly.</p>\n<p>A maintenance engineer reading a declining-duty trend on an in-service liquid-liquid exchanger\nrecognizes an outlet temperature drifting back toward its inlet value, at otherwise unchanged\nflow, as the first symptom of fouling outrunning its design margin — per §3, this is exactly the\nkind of early, quantifiable warning a trended duty calculation is meant to catch well before a\nforced, unplanned cleaning outage becomes the only option left.</p>"
+  }
+}

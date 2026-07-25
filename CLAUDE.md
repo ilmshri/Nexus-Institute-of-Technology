@@ -1020,7 +1020,162 @@ overflowed the 560-unit viewBox and were visually clipped in the browser
 which does not measure rendered text width) — fixed by shortening or
 repositioning. Worth a quick visual scan of any new free-floating diagram
 label whose x-position plus estimated width sits past ~500-520.
-NEXT (approved order, unstarted): mfg-processes-2 (MFG 154, closes Y2S1),
-then Y2S2 (thermo-2, heat-transfer, machine-design-1, kinematics-machinery,
-metrology, mfg-processes-3) — 33 courses remain empty across Years 2-4
-site-wide.
+
+CHECKPOINT — Y2S1 COMPLETE (2026-07-24, same session continued):
+mfg-processes-2 (MFG 154) authored fresh, all 11 lessons + career block
+(Sandvik Coromant / Lincoln Electric / Stratasys — fresh rotation).
+Orthogonal cutting/Merchant's circle, tool wear modes, turning-milling-
+drilling arithmetic, CNC/G-code and machine-health quantities, grinding
+specific energy, Ra/Rz and residual stress, EDM/ECM/laser/waterjet,
+arc welding heat input, resistance/brazing/thermal cutting, bolt preload
+and torque-tension, and an AM capstone tying the whole course together —
+all Python-verified (self-consistent Merchant's-circle force example,
+verified Ra=h/4 for an idealized triangular profile, verified heat-input
+and torque-tension arithmetic including a real "unexpectedly lubricated
+bolt" 33%-overtightening example). Adopted this pass's diagram-label
+lesson proactively: labels kept short and generously margined from the
+start, plus a pre-build Python overflow scanner (x-position + estimated
+text width vs. the 560-unit viewBox) added to the verification pipeline
+before every build — caught one real overflow (L9) before it ever
+reached the browser. Coverage 188→199/528 (36%→38%). Y2S1 (strength,
+electronics-sensors, mfg-processes-2, plus previously-complete
+electrical/thermo-1/materials-2/mfg-processes-1 from Y1) is now fully
+authored — every Year 1 and Year 2 Semester 1 course is a complete
+Educational Unit.
+NEXT (approved order, unstarted): Y2S2 — thermo-2, heat-transfer,
+machine-design-1, kinematics-machinery, metrology, mfg-processes-3 —
+then Y3S1, Y3S2, Y4S1, Y4S2. 32 courses remain empty across Years 3-4
+plus the six Y2S2 courses just named.
+
+CHECKPOINT — Y2S2 STARTED (2026-07-24, same session continued): thermo-2
+(THM 202, "Cycles & Utilities") authored fresh, all 11 lessons + career
+block (Mitsubishi Power / Carrier / Atlas Copco — fresh rotation, none
+reused from an earlier course). Rankine cycle (self-consistent worked example: chip-thickness-style
+state-property chain verified through pump/boiler/turbine/condenser),
+reheat/regeneration/isentropic efficiency/heat rate, industrial steam
+systems (flash-steam quality, failed-trap SFEE costing), Brayton cycle
+and pressure-ratio trade-offs, vapor-compression refrigeration COP,
+psychrometrics (a Gulf-climate cooling example verified at ~48% latent
+share — directly on-theme for this Kuwait-context site), cooling towers
+(range/approach/cycles-of-concentration mass balance), compressed air
+(isothermal vs. adiabatic vs. intercooled specific work, leak-cost
+economics), combustion stoichiometry (methane AFR derived from the
+balanced equation and air's 21% O2 content, not recalled from memory),
+exergy analysis (Gouy-Stodola), and a capstone utility-audit lesson.
+
+Standing-directive note worth recording: steam and refrigerant property
+tables were treated as a "don't guess precise values from memory" case
+per the owner's original instruction — worked examples use round,
+clearly-representative state properties presented as GIVEN problem
+inputs (exactly how real thermodynamics textbooks structure these
+problems), never as a claimed precise steam-table lookup recalled from
+memory. Everything else (Merchant-circle-style force chains, Brayton
+efficiency, COP, moist-air enthalpy, compression work, stoichiometry,
+Gouy-Stodola) was independently first-principles-derived and
+Python-verified, same standard as every course so far.
+
+Process improvement, this pass: added a same-diagram text-collision
+scanner (checks y-proximity + x-range overlap between every pair of
+`<text>` elements inside a `<figure>`, correctly handling
+text-anchor="middle") to the verification pipeline, after finding that
+the overflow-only scanner from the previous course did not catch an
+x-axis label colliding with the standard bottom-caption line. Caught
+and fixed 5 real collisions (L1, L3, L4, L5, L8) before they ever
+reached the browser. Recommend running both the overflow scanner and
+the collision scanner as standard pre-build steps on every future
+diagram batch.
+
+Coverage: 199→210/528 lessons at full depth (38%→40%).
+NEXT (approved order, unstarted): heat-transfer, then machine-design-1,
+kinematics-machinery, metrology, mfg-processes-3 — closing Y2S2. 32
+courses remain empty across Years 3-4 after that.
+
+CHECKPOINT — HEAT-TRANSFER COMPLETE (2026-07-24, new session): heat-transfer
+(HTX 253, Y2S2) authored fresh, all 11 lessons + career block (Alfa Laval /
+Danfoss / Vertiv — fresh rotation, none reused from an earlier course).
+Thermal resistance networks and the critical-radius-of-insulation surprise;
+the fin equation derived and solved (doubling a worked fin's length from
+200 to 400 mm verified at only 9% more heat for double the material);
+lumped capacitance with a Biot-number worked example deliberately tuned to
+land at Bi=0.05 to match this course's own pre-written checkpoint question,
+plus the same pin re-quenched in water to cross the 0.1 threshold and
+invalidate the lumped shortcut; external and internal forced convection (a
+flat-plate h cross-checked against an independent Dittus-Boelter estimate
+to within 1%); natural convection (a sealed-cabinet example showing a
+hotter Gulf ambient cutting real rejected heat by ~24% even as h itself
+barely changes); boiling and condensation (Zuber CHF for water at 1 atm
+landing at the standard ~1.1 MW/m^2 textbook figure, plus a design-margin
+check flagging a hypothetical 0.85 MW/m^2 spec as running hotter than
+typical practice); heat exchangers (LMTD + effectiveness-NTU, and a
+radiation-shield-style N+1 resistance rule re-derived numerically from raw
+resistances rather than quoted from memory); radiation (a two-surface
+network diagram explicitly echoing Lesson 1's resistor-chain visual, and a
+bare-pipe example showing radiation carrying ~48% of total loss — a
+field-relevant number a convection-only audit would miss); the heat-mass
+analogy (reusing this course's own Lesson 4 and Lesson 6 convection
+numbers via the Lewis relation, an explicit numeric callback across
+lessons); and a capstone exchanger-sizing mini-project (LMTD sizing, then
+a 20% fouling margin expressed two equivalent ways — extra area vs. a
+derated design U, both landing on an exact U_design=375 W/m^2K). Every
+numeric example Python-verified pre-write, including several deliberate
+cross-checks between independently-derived results.
+
+Process improvement, this pass: caught a real hyphenation bug in the
+career-block source — a print-style mid-word line wrap ("natural-\n
+convection") that HTML actually renders as "natural- convection" with a
+stray space, not merely a text-extraction artifact. Swept all 11 lesson
+scripts for the same `[a-z]-\n"$` pattern (none found — isolated to the
+hand-typed career block) and fixed by re-running the (now idempotent)
+career-block script rather than hand-patching the JSON. Recommend
+grep-checking any hand-wrapped HTML source string for trailing mid-word
+hyphens before a first build, not just relying on the diagram scanner.
+
+Coverage: 210→221/528 lessons at full depth (40%→42%). Unit-policy
+audit: 20/20 authored-quiz courses compliant (directive #2's automatic
+build-time injection covers new courses with no extra authoring step).
+NEXT (approved order, unstarted): machine-design-1, kinematics-machinery,
+metrology, mfg-processes-3 — closing Y2S2. 32 courses remain empty across
+Years 3-4 after that.
+
+## STANDING DIRECTIVE — Resources restructure (owner, 2026-07-24)
+
+Owner feedback: the site-wide "Reference" tab piled every course's equations
+into one giant page — references must instead be attached to their own
+distinct course. Implemented as a site-architecture change (nexus_build.py +
+one new data file), not new lesson content — regenerates all 48 courses.
+
+1. Each course's own main page (`build_course_page`) now has a 3-tab bar —
+   Syllabus / Reference / Tools & Software — reusing the fully generic
+   lesson-page `.tabs`/`.tabpanel` CSS+JS as-is. Reference tab reuses
+   `reference_section_html` (already per-course; previously only surfaced
+   inside the course-summary PDF, never on the course's own page).
+2. Top nav "Reference" → **"Resources"** (owner-confirmed wording). The old
+   `build_reference_page` (all-courses equation dump) is retired; the same
+   URL (`reference/index.html`) now serves `build_resources_page`: a
+   Tools & Software directory grouped by category (new `data/tools.json`,
+   schema mirrors textbooks.json/sources.json exactly — `_comment`
+   provenance note + tools dict + courses map) plus a Compiled Summaries
+   tree (Year → Semester → Course).
+3. New `data/tools.json` populated for the 20 courses currently at full
+   depth (owner-confirmed scope — the other 28 get an honest "not compiled
+   yet" placeholder, filled in as each course is authored, same convention
+   as career blocks). 13 tools across CAD/FEA/Numerical/Circuit/CAM/
+   Materials/Statistics/Thermal categories. MathWorks, F-Chart, Mastercam,
+   Minitab, and python.org URLs were live-fetched and confirmed; Autodesk,
+   ANSYS, Dassault, and Analog Devices blocked automated fetch (403/
+   timeout — their bot protection, not a wrong-URL signal) but are current,
+   long-stable product URLs — see tools.json's own `_comment` for the
+   honest verification-status breakdown.
+4. `build_course_summary` split into `course_summary_fragment` (the
+   reusable per-course content) + a thin page wrapper — enables new
+   `build_grouped_summary`, called once per semester and once per year
+   (`curriculum/{sem}/summary.html`, `curriculum/year-{n}/summary.html`),
+   reusing the existing `.sum-part{break-before:page}` print CSS
+   unmodified for automatic per-course page breaks in the combined
+   documents. Verified against a completely unauthored course
+   (machine-design-2, Y3S1): both new tabs and the combined summary
+   degrade gracefully to honest "not yet compiled"/"still in production"
+   text, never an error.
+
+Pages 628→640 (+12 = 8 semester + 4 year summaries). Coverage unchanged
+(221/528) — this pass touched zero lesson content.
