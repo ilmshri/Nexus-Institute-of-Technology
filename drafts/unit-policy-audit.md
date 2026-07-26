@@ -29,4 +29,4 @@ Compliant: 21/21 authored-quiz courses.
 | MFG 154 Manufacturing Processes II — Machining & Joining | ft, ft/s, hp, in, lb, lbf, psi | ✅ tests non-SI |
 | THM 202 Thermodynamics II — Cycles & Utilities | BTU, ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | HTX 253 Heat Transfer | ft, ft/s, hp, in, lb, lbf, psi | ✅ tests non-SI |
-| MDN 251 Machine Design I | ft, lb, psi | ✅ tests non-SI |
+| MDN 251 Machine Design I | ft, lb, lbf, psi | ✅ tests non-SI |
