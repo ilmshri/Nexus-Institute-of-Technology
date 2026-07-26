@@ -714,7 +714,6 @@ def hero(course, eyebrow, title, sub, meta):
     meta_html = "".join(f"<div>{m[0]}<b>{esc(m[1])}</b></div>" for m in meta)
     return f"""
 <div class="nx-hero">
-  <div class="bg">{illo(course["id"])}</div>
   <div class="txt">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{esc(title)}</h1>
@@ -1004,7 +1003,6 @@ def build_course_page(sem, course, prefix, tabs_all, ref, next_course=None):
 
     hero_html = f"""
 <div class="nx-hero">
-  <div class="bg">{illo(course["id"])}</div>
   <div class="txt">
     <p class="eyebrow">{esc(course['code'])} · {esc(sem['title'].upper())}</p>
     <h1>{esc(course['title'])}</h1>
@@ -1098,7 +1096,6 @@ def build_curriculum_index(sems, tabs_by_course, prefix):
             cards.append(f"""
 <a class="course-card" href="{sem['id']}/{c['id']}/index.html" data-sem="{sem['id']}"
    data-key="{sem['id']}/{c['id']}" data-n="{len(c['lessons'])}">
-  <span class="cap">{illo(c['id'])}</span>
   <span class="code">{esc(c['code'])}</span>
   <h4>{esc(c['title'])}</h4>
   <p>{esc(blurb)}</p>
