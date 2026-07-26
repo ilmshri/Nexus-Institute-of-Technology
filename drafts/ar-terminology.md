@@ -77,7 +77,56 @@ Arabic tree is formal institutional MSA.
 | welding inspection | فحص اللحام | itqan.edu.sa/ar |
 | NDT | فحص الاختبارات غير الإتلافية | itqan.edu.sa/ar |
 
-## NEEDS YOUR CALL — I am not confident in these
+## BINDING POLICY (owner, 2026-07-26)
+
+> "words or terminology like SI unit or prefix or all scientific official terms
+> do not need to be translated into Arabic as they will not make sense"
+
+This supersedes the open questions below and settles all twelve of them. It
+also restates the standing CLAUDE.md bilingual rule ("core technical terms stay
+English/original"), so it is consistent with the rest of the project.
+
+Applied as three tiers:
+
+1. **Established Arabic scientific vocabulary stays Arabic.** النهاية،
+   الاتصال، المشتقّة، الكثافة، القوة، الضغط، الكفاءة، التحليل البُعدي،
+   معدل التدفق. These are standard in Arabic curricula and do make sense to an
+   Arabic-reading engineering student. Translating them is correct, not
+   optional.
+2. **SI units, prefixes, symbols, numerals, equations, standards and
+   acronyms stay Latin**, isolated in `<bdi>`. Already the case throughout.
+3. **Official/technical terms with no settled Arabic — or where my Arabic was
+   a coinage — keep the English term**, in the natural Gulf pattern
+   `الـ<bdi>term</bdi>`, or as an inline gloss `عربي <bdi>(english)</bdi>`
+   where the Arabic is genuinely established and only the official label needs
+   showing.
+
+The point of tier 3: a learner is better served by the word actually printed on
+the datasheet, the P&ID and the vendor manual than by a coinage that exists
+only in our courseware. Inventing terminology in a teaching text is worse than
+showing the real one.
+
+### Resolutions applied
+
+| English | Now renders as | Tier |
+|---|---|---|
+| SI prefix (the concept) | `بادئات النظام الدولي <bdi>(SI prefixes)</bdi>` / `فخّ الـ<bdi>prefix</bdi>` | 3 |
+| runout flow | `تدفق الـ<bdi>runout</bdi>` | 3 |
+| live zero | `اصطلاح الـ<bdi>live zero</bdi>` | 3 |
+| data historian | `الـ<bdi>Historian</bdi>` | 3 |
+| knockout drum | `الـ<bdi>knockout drum</bdi>` | 3 |
+| pasteurizer | `الـ<bdi>pasteurizer</bdi>` | 3 |
+| pressure head | `<bdi>pressure head</bdi>` (glossary term cell) | 3 |
+| gauge / absolute pressure | `الضغط المقيس <bdi>(gauge)</bdi>` … `الضغط المطلق <bdi>(absolute)</bdi>` | 3 gloss |
+| shaft power | `قدرة العمود <bdi>(shaft power)</bdi>` | 3 gloss |
+| check valve | `صمام عدم الرجوع <bdi>(check valve)</bdi>` | 3 gloss |
+| pump head | `الارتفاع <bdi>(Head)</bdi>` | 3 gloss |
+| hysteresis | `التخلّف` | 1 (settled Arabic) |
+
+Glosses are applied on **first use per lesson** only; later mentions use the
+Arabic alone, so the prose does not become a bracket farm.
+
+## SUPERSEDED — the open questions this policy answered
 
 These are in the committed text now, but flag anything wrong and I will fix it
 everywhere in one pass. Ordered by how often they will recur across Y1S1.
