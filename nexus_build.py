@@ -1155,9 +1155,47 @@ def build_static_pages(sems, tabs_by_course):
     total = sum(len(c["lessons"]) for s in sems for c in s["courses"])
     depth = sum(1 for s in sems for c in s["courses"] for l in c["lessons"]
                 if lesson_depth(l, tabs_by_course[(s["id"], c["id"])]))
+
+    def _course_done(s, c):
+        tabs = tabs_by_course[(s["id"], c["id"])]
+        return all(lesson_depth(l, tabs) for l in c["lessons"])
+    ylab = {1: "Foundations", 2: "The engineering core",
+            3: "Systems, control &amp; reliability", 4: "Advanced industry &amp; capstone"}
+    ycount = {n: [0, 0] for n in (1, 2, 3, 4)}
+    for s in sems:
+        yr = int(s["id"][1])
+        for c in s["courses"]:
+            ycount[yr][0] += 1 if _course_done(s, c) else 0
+            ycount[yr][1] += 1
+    ycards = []
+    for n in (1, 2, 3, 4):
+        d, tot = ycount[n]
+        if d == tot:
+            badge = f'<span class="badge done">Complete · {tot} courses</span>'
+        elif d:
+            badge = f'<span class="badge">{d} of {tot} courses complete</span>'
+        else:
+            badge = '<span class="badge">In production</span>'
+        ycards.append(
+            f'<div class="year-card"><span class="yr">Year {n}</span>'
+            f'<h3><a href="curriculum/index.html">{ylab[n]}</a></h3>{badge}'
+            f'<span class="sum"><a href="curriculum/year-{n}/summary.html">'
+            f'Compiled summary →</a></span></div>')
+    featured = []
+    picks = ("math-1", "statics", "physics-1")
+    for s in sems:
+        for c in s["courses"]:
+            if c["id"] in picks and _course_done(s, c):
+                featured.append(
+                    f'<a class="feat-card" href="curriculum/{s["id"]}/{c["id"]}/index.html">'
+                    f'<span class="code">{esc(c["code"])} · {len(c["lessons"])} lessons</span>'
+                    f'<h3>{esc(c["title"])}</h3><p>{esc(c["summary"][:120])}…</p>'
+                    f'<span class="meta">Complete course</span></a>')
     home = (fragment("pages/home-nexus.html")
             .replace("{{DEPTH}}", str(depth))
-            .replace("{{PCT}}", str(round(100 * depth / total))))
+            .replace("{{PCT}}", str(round(100 * depth / total)))
+            .replace("{{YEARCARDS}}", "".join(ycards))
+            .replace("{{FEATURED}}", "".join(featured[:3])))
     nx_page("index.html",
             "MechEd — Learn Mechanical Engineering from Scratch to Industry 4.0",
             "A complete B.S.-shaped mechanical engineering curriculum for "
