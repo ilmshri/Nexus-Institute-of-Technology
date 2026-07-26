@@ -1179,3 +1179,52 @@ one new data file), not new lesson content — regenerates all 48 courses.
 
 Pages 628→640 (+12 = 8 semester + 4 year summaries). Coverage unchanged
 (221/528) — this pass touched zero lesson content.
+
+## MECHED REBRAND + GALLERY DESIGN SYSTEM — MERGED TO MAIN (owner, 2026-07-26)
+
+NAME FINAL: **MechEd** (exact mixed case, owner-verified wordmark), tagline
+**"Engineered to Innovate" / "هندسةٌ للابتكار"** — rides the lockup descriptor
+on every page, the footer slogan, home meta description, and the hero/mission
+kickers (ASU-style innovation thread; About carries the standards trio
+Mastery / Integrity / Innovation). PROJECT IDENTITY header at the top of this
+file is superseded by this entry per the ledger's newest-wins rule; history
+below stays verbatim.
+
+DESIGN (owner chose Gallery variant over Charter/Majlis, 2026-07-26): elite-
+university register — paper #FDFCFB, deep navy ink #20325A, royal #2D5397
+primary actions, champagne gold #CBA85F hairlines/accents (owner-supplied
+palette reference); Source Serif 4 display + Source Sans 3 text + Source Code
+Pro technical mono (register verified: MIT OCW = Cardo+Helvetica, stanford.edu
+= Source Sans 3); Amiri + IBM Plex Sans Arabic on the /ar/ tree. Dropdown nav
+groups (About / Curriculum / Resources — real targets only), minimal MechEd
+monogram (nexus/logo.svg path kept; navy slab M, gold keyline + pearl, cream
+field; PWA icons regenerated), cross-document view transitions + dropdown/
+micro-transition polish (all off under prefers-reduced-motion), body
+overflow-x:clip (no sideways scroll at any width). ALL robot figures deleted
+(mission markup, CSS, assets/nx/bots/). Brightness value intact: backgrounds
+never dark; navy is ink; dark pixels only inside the bounded hero video
+(still the approved navy-teal loop — regeneration in MechEd palette offered,
+owner decision pending).
+
+BILINGUAL ARCHITECTURE (permanent, owner 2026-07-26): two-tree /ar/ mirror —
+nx_page emits every page twice (EN at path, AR at ar/path; RTL chrome,
+build-time data-ar leaf swap, ar_body/title_ar overrides, EN bodies
+bidi-isolated, honest promise-free ar-notes). applyLang/langBtn stay dormant;
+qtxt() quiz strings localize automatically on /ar/. Arabic CONTENT translation
+cancelled by owner (inert _ar keys in y1s1-math-1.json L1-L2 left in place);
+authoring schema on file at drafts/ARABIC-CONTENT-SPEC.md if revived.
+
+MERGE RECORD: design-drafts absorbed main twice (d82231bf: Resources
+restructure + 3 courses; 05b28ca8: Y1-complete/recap-summary/notation-audit
+16-commit set — Opus handoff honored verbatim incl. the MathJax
+min-width:0 !important mobile fix and the .sum-head/.sum-course/.sum-recap/
+.sum-nobreak family, now styled by the Gallery system). Main then
+fast-forwarded to the design-drafts tip (this commit's parent chain).
+Build at merge: 1292 pages (646 EN + 646 AR), coverage 224/528 (42%),
+Year 1 = 100% (the Year-1-only prototype deploy target), all gates green,
+zero old-brand/cost-rule residue, zero console errors, 375px clean.
+
+STILL OWNER-GATED (unchanged): any push/pull/fetch or GitHub-side action —
+mechedkw org + mechedkw.github.io repo, code-home rename, domain
+registrations (mechedkw.com / meched.institute — free as of 2026-07-26),
+Kuwait MOCI trademark check, Feedback-page issue-creation flip, deploy.
