@@ -7,6 +7,43 @@ correction made late does not.
 **Owner: the "NEEDS YOUR CALL" table at the bottom is the one to read.** Those
 are terms I could not settle from sources and did not want to silently invent.
 
+## Source assessment (which references to trust, and how much)
+
+**ARABTERM — arabterm.org — BEST SOURCE FOUND. Use this first.**
+Trilingual EN/DE/FR + Arabic technical dictionary, 156,140 entries / 513,950
+terms, produced by GIZ with the Arab League. Decisive feature: entries can be
+marked *"Unified Arabic term validated during the Arabization Congress
+organized by ALECSO"* — i.e. Arab League standardisation, not a crowd guess.
+The **Automotive Engineering** volume carries categories that are squarely our
+curriculum: *Mechanical Engineering*, *Mechanical Vibrations*, *Machine
+elements*, *Hydraulics*, *Heat Engine*, *Measuring Techniques*, *Friction,
+Lubrication, Bearings, Seals*, *Material Science*, *Manufacturing
+technologies*.
+Practical notes for whoever uses it next: the site is 2009-era TYPO3 +
+MooTools and its **search box is broken** in a modern browser (the form does
+not submit). Browse by direct URL instead:
+`arabterm.org/index.php?id=41&L=1&tx_3m5techdict_pi1[filterCategory]=N`
+where `N=1` is Automotive Engineering. Sub-category filtering is rendered
+client-side and could not be driven by URL; paging works
+(`Page 1 2 3 ... 151`). WebFetch is fine on it; no 403.
+
+**Reverso Context — context.reverso.net — USE ONLY AS A FREQUENCY SIGNAL.**
+It is a parallel corpus (its own footer recommends "Subtitles for movies and
+TV series"), not a curated glossary, and it is demonstrably wrong often enough
+to be dangerous for teaching text. Errors found in minutes of use:
+- "he always dreamt of becoming a mechanical engineer" rendered
+  **"مهندسًا مدنياً"** — *civil* engineer.
+- "Practically every company that designs and produces a product employs a
+  mechanical engineer" → garbled Arabic that does not parse.
+- "(it has a gauge pressure>0)" → **"(مقياس ضغطه<0)"** — the inequality is
+  flipped.
+- Its headline noun for *gauge pressure* is **مقياس الضغط**, which is a
+  *pressure gauge* (the instrument), not gauge pressure (the quantity).
+It is still useful for one question only: "is this Arabic rendering attested
+in the wild?" It confirmed الضغط المقيس is real and surfaced الضغط المانومتري
+as the formal/regulatory variant. Never take it as authority. Also note
+WebFetch gets HTTP 403 on it; it must be read through a real browser.
+
 ## Conventions confirmed from real Arabic engineering sources
 
 Checked against itqan.edu.sa's Arabic tree (`/ar/`) and Saudi industry pages.
