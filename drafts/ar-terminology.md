@@ -117,7 +117,9 @@ showing the real one.
 | knockout drum | `الـ<bdi>knockout drum</bdi>` | 3 |
 | pasteurizer | `الـ<bdi>pasteurizer</bdi>` | 3 |
 | pressure head | `<bdi>pressure head</bdi>` (glossary term cell) | 3 |
-| gauge / absolute pressure | `الضغط المقيس <bdi>(gauge)</bdi>` … `الضغط المطلق <bdi>(absolute)</bdi>` | 3 gloss |
+| gauge pressure — **the quantity** | `الضغط الـ<bdi>gauge</bdi>` vs `الضغط الـ<bdi>absolute</bdi>` | 3 |
+| pressure gauge — **the instrument** | `مقياس الضغط` (owner) | 1 |
+| pressure measurement — **the act** | `قياس الضغط` (owner) | 1 |
 | shaft power | `قدرة العمود <bdi>(shaft power)</bdi>` | 3 gloss |
 | check valve | `صمام عدم الرجوع <bdi>(check valve)</bdi>` | 3 gloss |
 | pump head | `الارتفاع <bdi>(Head)</bdi>` | 3 gloss |
@@ -125,6 +127,25 @@ showing the real one.
 
 Glosses are applied on **first use per lesson** only; later mentions use the
 Arabic alone, so the prose does not become a bracket farm.
+
+### Pressure terms are three different things (owner, 2026-07-26)
+
+The owner's guidance — "could also use مقياس الضغط, it depends on how and when
+you use it" — is the key: English "gauge" collapses three distinct ideas that
+Arabic keeps apart, and picking one blanket word for all three is wrong.
+
+| Sense | Arabic | Example in our text |
+|---|---|---|
+| the **instrument** on a line | `مقياس الضغط` | "a gauge reads 250 kPa" → `يقرأ مقياس الضغط` |
+| the **act / reading** | `قياس الضغط` | measuring activity |
+| the **quantity** (relative to atmosphere) | keep `<bdi>gauge</bdi>` / `<bdi>absolute</bdi>` | the gauge trap: `يختلف الضغط الـgauge عن الضغط الـabsolute بمقدار جوٍّ واحد` |
+
+The third is deliberately left in English under the owner's own standing rule:
+it is an official scientific term, and the entire teaching point of that
+passage is that gauge and absolute are *different quantities separated by one
+atmosphere*. An Arabic word meaning "pressure measurement" would destroy that
+sentence. Reverso makes exactly this mistake — its headline noun for "gauge
+pressure" is مقياس الضغط, the instrument.
 
 ## SUPERSEDED — the open questions this policy answered
 
