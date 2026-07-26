@@ -644,7 +644,7 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 .hero-p{border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:var(--r);
   background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);box-shadow:var(--shadow);
   margin:26px 0 0;overflow:hidden;text-align:center}
-.hero-p .hp-in{max-width:840px;margin:0 auto;padding:58px 6vw 6px}
+.hero-p .hp-in{max-width:840px;margin:0 auto;padding:64px 6vw 56px}
 .hp-eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.26em;
   text-transform:uppercase;color:var(--amber);margin:0 0 18px}
 .hero-p h1{font-size:clamp(32px,5vw,54px);font-weight:600;letter-spacing:-.02em;line-height:1.08;
@@ -652,13 +652,11 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 .hp-sub{font-size:16.5px;color:var(--soft);line-height:1.8;max-width:64ch;margin:0 auto}
 .hp-cta{justify-content:center;margin:26px 0 8px}
 .hp-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin:10px 0 0}
-.hp-orn{display:block;width:min(960px,94%);margin:8px auto 0;height:auto}
 @keyframes hp-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .hero-p .hp-eyebrow{animation:hp-rise .6s cubic-bezier(.2,.7,.2,1) both .05s}
 .hero-p h1{animation:hp-rise .7s cubic-bezier(.2,.7,.2,1) both .18s}
 .hero-p .hp-sub{animation:hp-rise .7s cubic-bezier(.2,.7,.2,1) both .32s}
 .hero-p .hp-cta,.hero-p .hp-meta{animation:hp-rise .75s cubic-bezier(.2,.7,.2,1) both .46s}
-.hero-p .hp-orn{animation:hp-rise .8s cubic-bezier(.2,.7,.2,1) both .6s}
 .std-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .std-card{border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:var(--r);
   background:var(--surface);box-shadow:var(--shadow);padding:20px 22px}
@@ -761,7 +759,7 @@ html.no-js .reveal,html.no-js .reveal-left,html.no-js .reveal-right{opacity:1;tr
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .hero-p .hp-eyebrow,.hero-p h1,.hero-p .hp-sub,.hero-p .hp-cta,
-  .hero-p .hp-meta,.hero-p .hp-orn{animation:none}
+  .hero-p .hp-meta{animation:none}
   .reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important;transition:none !important;animation:none !important}
   .feat-card:hover{transform:none}
 }
