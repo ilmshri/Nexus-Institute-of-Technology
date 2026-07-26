@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Centroids and centers of gravity — Engineering Statics — MechEd</title>
+<meta name="description" content="Centroids by integration and by composite parts. Center of gravity of built-up sections and equipment skids. Lifting-plan relevance: where the hook mu">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/10">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/10-centroids-and-centers-of-gravity.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol cur" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 10 of 11 · Year 1 · Semester 1</p>
+  <h1>Centroids and centers of gravity</h1>
+  <p class="sub">Centroids by integration and by composite parts. Center of gravity of built-up sections and equipment skids. Lifting-plan relevance: where the hook must sit.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/KCwvoUTyqJg" title="Statics: Lesson 37 - Finding the Center of Gravity &amp; Centroids" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 37 - Finding the Center of Gravity &amp; Centroids <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 37 - Finding the Center of Gravity &amp; Centroids</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does a lifting hook need to sit over the center of gravity, and what happens if it doesn't?</li><li>Composite centroid: outline the tabular method for an L-section.</li></ul></div><div class="measure">
+<h3>01 · The average position of area or weight</h3>
+<p>The centroid is the area-weighted average position of a shape:</p>
+\[ \bar{x} = \frac{\int x\, dA}{\int dA}, \qquad \bar{y} = \frac{\int y\, dA}{\int dA} \tag{1} \]
+<p>The center of gravity is the same construction weighted by weight; for uniform density and gravity they coincide. Integration handles curved boundaries once; engineering practice handles everything else by <em>composite parts</em> — split the shape into rectangles, triangles, and circles whose centroids are known, then take the weighted average. Holes enter the sum as negative areas: same formula, signed.</p>
+<h3>02 · The tabular method</h3>
+<p>Composite work is done in a table: one row per part, columns for \( A \), \( \bar{x}_i \), \( \bar{y}_i \), \( A\bar{x}_i \), \( A\bar{y}_i \); sum the columns, divide. The discipline matters more than it looks — a consistent datum (pick one corner, state it) and signed areas prevent the classic errors: measuring one part from a different origin, or forgetting that a cut-out subtracts moment as well as area. The same table extends without modification to weights: replace \( A \) with \( W \) and the result is a center of gravity.</p>
+<h3>03 · Where the hook must sit</h3>
+<p>Lift any rigid load from a single hook and it hangs with its center of gravity vertically below the hook. If the CG is off the hook line, the load tilts until they align — swinging tools, spilling contents, and shifting sling angles on the way. A lifting plan therefore starts with a CG calculation: composite masses of pump, motor, and baseplate, exactly the table of 2 with kilograms in the area column. The hook, or the sling spread, is then placed to put the CG under the crane's line of pull. the Worked Examples tab runs one steel section and one equipment skid.</p>
+
+<h3>04 · The tabular working method</h3>
+<p>Centroid calculations live or die by bookkeeping, so industrialize it. <em>Decompose</em>
+the section into shapes whose centroids are known — rectangles, triangles, circles.
+<em>Fix one reference corner</em> for the whole table and never move it mid-problem; half of
+all centroid errors are two shapes measured from two different origins. <em>Tabulate</em>
+\( A_i \), \( \bar{x}_i \), \( \bar{y}_i \), \( A_i\bar{x}_i \),
+\( A_i\bar{y}_i \) — holes entering as negative areas with negative first moments —
+<em>sum the columns, divide.</em> The table is not scaffolding to discard later: the
+moment-of-inertia lesson extends the same table by one column, and CAD packages print the
+same quantities under the same names, so fluency here reads straight into the tools.</p>
+<p>Audit the answer geometrically before accepting it: the centroid must sit inside the
+convex hull of the section (though possibly outside the material, as in an L or a channel —
+that is legal and common), and symmetry must be honored — any axis of symmetry the section
+has, the centroid sits on. An answer violating either rule is wrong with certainty, no
+recomputation required.</p>
+<p><strong>Closing.</strong> One averaging formula, executed by table, with signed areas and a declared datum. From steel sections to lifting plans, it is the same arithmetic wearing different units.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Basic integration</b> — (1) is used directly only for curved shapes; know what the integral means.</li>
+<li><b>Moments</b> (Lesson 2) — \( A\bar{x} \) is a first moment; the language is identical.</li>
+<li><b>Weight vs mass</b> (Lesson 1) — CG tables may carry kg; convert before forces are needed.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Centroid</td><td>\( \bar{x} = \Sigma A_i \bar{x}_i / \Sigma A_i \)</td><td>The area's balance point; where a distributed load's resultant acts.</td></tr>
+<tr><td>Center of gravity</td><td>\( W \) acts here</td><td>The single point standing in for a body's distributed weight.</td></tr>
+<tr><td>Composite method</td><td>split, tabulate, sum</td><td>Real sections as rectangles/triangles/circles in a table.</td></tr>
+<tr><td>Negative areas</td><td>holes enter with \( A < 0 \)</td><td>Cutouts subtract area AND first moment in the same table.</td></tr>
+<tr><td>Symmetry shortcut</td><td>centroid lies on every symmetry axis</td><td>One axis kills one coordinate before any arithmetic.</td></tr>
+<tr><td>Distributed load resultant</td><td>\( R = \int w\,dx \) at the load-area centroid</td><td>Replacing a load diagram by one force at the right spot.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Centroid of an L-section</b></p>
+<p><b>Problem.</b> An L-section: vertical leg 20 mm wide × 100 mm tall; horizontal leg 80 mm × 20 mm extending right from the vertical leg's base. Datum: outer bottom-left corner. <b>Find:</b> the centroid.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Part 1 (vertical): \( A_1 = 20 \times 100 = 2000\ \mathrm{mm^2} \), centroid (10, 50).
+(2) Part 2 (horizontal): \( A_2 = 80 \times 20 = 1600\ \mathrm{mm^2} \), centroid (60, 10).
+(3) \( \bar{x} = \dfrac{2000(10) + 1600(60)}{3600} = \dfrac{116000}{3600} = 32.2\ \mathrm{mm} \).
+(4) \( \bar{y} = \dfrac{2000(50) + 1600(10)}{3600} = \dfrac{116000}{3600} = 32.2\ \mathrm{mm} \).</p>
+<p><b>Answer:</b> \( (\bar{x}, \bar{y}) = (32.2, 32.2)\ \mathrm{mm} \).
+<b>Sanity check:</b> the centroid lies between the two part centroids, pulled toward the larger leg — and lands <em>outside the metal</em>, in the corner notch, which is perfectly legal: centroids are properties of the area, not addresses in it.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Skid center of gravity for a lift</b></p>
+<p><b>Problem.</b> A skid (masses representative): pump 320 kg centered at \( x = 0.5\ \mathrm{m} \), motor 260 kg at \( x = 1.6\ \mathrm{m} \), baseplate 140 kg at \( x = 1.1\ \mathrm{m} \), from the skid's left edge. <b>Find:</b> the CG and the single-hook pick point.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Total mass: \( 320 + 260 + 140 = 720\ \mathrm{kg} \).
+(2) \( \bar{x} = \dfrac{320(0.5) + 260(1.6) + 140(1.1)}{720} = \dfrac{160 + 416 + 154}{720} = \dfrac{730}{720} = 1.014\ \mathrm{m} \).</p>
+<p><b>Answer:</b> CG at 1.01 m from the left edge; hook (or sling resultant) goes there.
+<b>Sanity check:</b> the CG sits between pump and motor, slightly motor-side of the midpoint — the motor's greater distance nearly offsets the pump's greater mass. Hook it at midspan (≈0.8–0.9 m for this layout) and the motor end dips on pick.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Centroid of an L-section</b></p>
+<p><b>Problem.</b> An L-shaped bracket section: a 100 × 20 mm horizontal base plate with a 20 × 80 mm vertical leg standing on its left end. Reference origin at the bottom-left corner. <b>Find:</b> the centroid.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Parts: base \( A_1 = 2000\ \mathrm{mm^2} \) at \( (50, 10) \); leg \( A_2 = 1600\ \mathrm{mm^2} \) at \( (10, 60) \).
+(2) \( \bar{x} = (2000 \times 50 + 1600 \times 10)/3600 = 116{,}000/3600 = 32.2\ \mathrm{mm} \).
+(3) \( \bar{y} = (2000 \times 10 + 1600 \times 60)/3600 = 116{,}000/3600 = 32.2\ \mathrm{mm} \).</p>
+<p><b>Answer:</b> \( (\bar{x}, \bar{y}) \approx (32.2, 32.2)\ \mathrm{mm} \).
+<b>Sanity check:</b> the centroid lands between the two part centroids, pulled toward the larger base — and it sits just off the material in the L's inside corner, which is legal and typical for L-sections; a hanging bracket would tilt about exactly this point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A load is lifted from a single hook placed away from its center of gravity. On pick-up, the load:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>rises level</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>tilts until the CG hangs below the hook</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>rotates continuously</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>cannot be lifted</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A suspended rigid body settles with its CG vertically below the support point — the only orientation with zero net moment. The tilt is the field's free CG-finder (the trial pick), and the hazard when tall equipment swings as it seeks that alignment.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Masses of 100 kg at \( x = 0 \) and 300 kg at \( x = 2\ \mathrm{m} \) share a skid. The CG is at:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.5 m</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1.0 m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>1.5 m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>2.0 m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \bar{x} = (100 \times 0 + 300 \times 2)/400 = 1.5\ \mathrm{m} \) — three-quarters of the way toward the heavier mass, matching the 3:1 mass ratio. 1.0 m is the unweighted midpoint, the error the weighted average exists to prevent.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A section has one axis of symmetry. Its centroid:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Lies somewhere on that axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Lies at the section's geometric center</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Must lie inside the material</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Cannot be found without integration</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Symmetry forces the first moment across the axis to cancel, pinning the centroid to the axis — one coordinate for free. The geometric center requires TWO axes of symmetry; and the centroid can sit outside the material entirely (an L-section's inside corner, a channel's mouth) — legal and common. Composite tables handle the rest without any integral.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Can a shape's centroid lie outside its material?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>never</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>only for curved shapes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>yes — an L-section's does</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only if density varies</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The centroid is an area-weighted average position, not an address in the metal — an L-section's centroid sits in the empty corner notch. Rings, channels, and angles all put it in air; slings and fixtures must still act through it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>In a composite-area centroid table, a drilled hole is handled by entering:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Its area and first moments with negative signs</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Its area as positive but located at the origin</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Nothing — holes are ignored</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Half its area</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A hole is anti-material: it removes area AND first moment, so it rides the same table with \( A < 0 \) and correspondingly negative \( A\bar{x} \), \( A\bar{y} \) — computed at the HOLE's own centroid. Ignoring holes biases the centroid toward the removed metal; the negative-entry convention keeps one uniform procedure for any section a drawing can throw at you.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the trial pick.</b> You arrive at a fabrication yard as a packaged pump skid is rigged for load-out. The lift plan's CG came from a table like worked example 2, but the vendor added a suction strainer after the plan was issued. The rigger's insurance is the <em>trial pick</em>: lift 100 mm, watch which end dips. It dips; the crew shifts the spreader one hole and re-picks level (figures representative). The table said where the CG was; the trial pick said where it is. Lesson 10 is both — the calculation, and the humility check the field wraps around it.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(656.2\\ \\mathrm{ft}\\)", "\\(6.096\\ \\mathrm{ft}\\)", "\\(65.62\\ \\mathrm{ft}\\)", "\\(6.562\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(20 \\times 3.281 = 65.62\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(65.62\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.6096\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(6.562\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.6562\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(2 \times 3.281 = 6.562\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.1772\\ \\mathrm{in}\\)", "\\(1143\\ \\mathrm{in}\\)", "\\(17.72\\ \\mathrm{in}\\)", "\\(1.772\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(45 \\times 0.03937 = 1.772\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.01181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(76.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.1181\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(3 \times 0.03937 = 0.1181\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-friction.html">← 09 · Friction</a><a href="index.html">All lessons · STA 103</a><a href="11-moments-of-inertia.html">11 · Moments of inertia →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

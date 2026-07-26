@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Projection theory and orthographic views — Engineering Drawing &amp; CAD — MechEd</title>
+<meta name="description" content="First-angle and third-angle projection and how to tell them apart on sight. Choosing principal views. Reading a three-view drawing back into a 3-D obj">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/drawing-cad/2">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/drawing-cad/02-projection-theory-and-orthographic-views.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">DRW 102 · Engineering Drawing &amp; CAD</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-drawings-rule-the-plant.html" class="ol" data-key="y1s1/drawing-cad/1"><span class="tick"></span><span>01 · Why drawings rule the plant</span></a><a href="02-projection-theory-and-orthographic-views.html" class="ol cur" data-key="y1s1/drawing-cad/2"><span class="tick"></span><span>02 · Projection theory and orthographic views</span></a><a href="03-isometric-and-pictorial-views.html" class="ol" data-key="y1s1/drawing-cad/3"><span class="tick"></span><span>03 · Isometric and pictorial views</span></a><a href="04-sections-and-conventions.html" class="ol" data-key="y1s1/drawing-cad/4"><span class="tick"></span><span>04 · Sections and conventions</span></a><a href="05-dimensioning-practice.html" class="ol" data-key="y1s1/drawing-cad/5"><span class="tick"></span><span>05 · Dimensioning practice</span></a><a href="06-tolerances-fits-and-limits.html" class="ol" data-key="y1s1/drawing-cad/6"><span class="tick"></span><span>06 · Tolerances, fits, and limits</span></a><a href="07-gd-t-essentials.html" class="ol" data-key="y1s1/drawing-cad/7"><span class="tick"></span><span>07 · GD&amp;T essentials</span></a><a href="08-fasteners-welds-and-surface-symbols.html" class="ol" data-key="y1s1/drawing-cad/8"><span class="tick"></span><span>08 · Fasteners, welds, and surface symbols</span></a><a href="09-parametric-cad-parts.html" class="ol" data-key="y1s1/drawing-cad/9"><span class="tick"></span><span>09 · Parametric CAD: parts</span></a><a href="10-parametric-cad-assemblies-and-drawings.html" class="ol" data-key="y1s1/drawing-cad/10"><span class="tick"></span><span>10 · Parametric CAD: assemblies and drawings</span></a><a href="11-reading-plant-drawings.html" class="ol" data-key="y1s1/drawing-cad/11"><span class="tick"></span><span>11 · Reading plant drawings</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">DRW 102</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">DRW 102 · Lesson 02 of 11 · Year 1 · Semester 1</p>
+  <h1>Projection theory and orthographic views</h1>
+  <p class="sub">First-angle and third-angle projection and how to tell them apart on sight. Choosing principal views. Reading a three-view drawing back into a 3-D object.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW / NPTEL: Engineering Drawing and Com</b></span><span class="mchip">Assessment <b>worked examples + checkpoint questions</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/drawing-cad/2">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Given the projection symbol, how do you tell first-angle from third-angle at a glance?</li><li>Why might two correct views still be ambiguous, and what resolves it?</li></ul></div><div class="measure">
+<h3>01 · Projection — flattening three dimensions honestly</h3>
+<p>Orthographic projection maps a 3-D object onto 2-D planes with parallel rays, preserving
+true lengths and angles in each view. The object is imagined inside a glass box; each face of
+the box receives one view. Unfold the box and the views land in fixed positions relative to
+each other — that fixed arrangement is what lets a trained reader reconstruct the solid.</p>
+<h3>02 · First angle versus third angle</h3>
+<p>Two unfolding conventions rule the world. In <em>first angle</em> (ISO default, most of
+Europe and Asia), the object sits between observer and plane: the top view lands <em>below</em>
+the front view. In <em>third angle</em> (ASME, North America), the plane sits between observer
+and object: the top view lands <em>above</em>. The truncated-cone symbol in the title block
+declares which convention the sheet uses — read it first, every sheet, because a first-angle
+drawing read with third-angle eyes puts every feature on the wrong side of the part.</p>
+<h3>03 · Choosing and reading views</h3>
+<p>The front view carries the most shape information; additional views exist only to remove
+ambiguity. Hidden lines (dashed) show edges behind material; center lines (chain) declare
+axes and symmetry. A competent drawing shows the minimum views that fully define the part —
+and a competent reader cross-references features between views until the solid clicks into
+place mentally. That click is the skill; it comes only from reps.</p>
+<p><strong>Closing.</strong> Orthographic views are a lossless code for shape. Learn the two
+unfolding conventions, check the symbol before reading, and practice the mental refold until
+drawings become pictures.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Drawing custody</b> (Lesson 1) — you are reading the current revision.</li>
+<li><b>Basic solid visualization</b> — rotating simple prisms and cylinders mentally.</li>
+</ul>
+<h4>Glossary</h4>
+<ul class="plain">
+<li><b>Orthographic projection</b> — parallel-ray mapping preserving true size per view.</li>
+<li><b>First/third angle</b> — the two view-arrangement conventions; declared by symbol.</li>
+<li><b>Hidden line</b> — dashed; an edge behind material.</li>
+<li><b>Center line</b> — chain line marking axes and symmetry.</li>
+<li><b>Auxiliary view</b> — projection onto an inclined plane to show a slanted face true-size.</li>
+</ul>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure">
+<h4>Worked example 1 — which convention?</h4>
+<p><b>Problem.</b> A drawing shows a stepped shaft: front view with the larger diameter on
+the left; the view placed <em>below</em> the front view shows a keyway slot. <b>Find:</b> if
+the sheet is first-angle, which face of the shaft carries the keyway?</p>
+<p><b>Solution.</b> (1) First angle: the view below the front is the <em>top</em> view
+(object between observer and plane — projections fall through). (2) A keyway visible in the
+top view lies on the shaft's <em>upper</em> surface as drawn in the front view.
+(3) Had the sheet been third angle, the same placement would be the <em>bottom</em> view and
+the keyway would sit underneath.</p>
+<p><b>Answer:</b> on top (first angle). <b>Sanity check:</b> one symbol, two opposite
+machining setups — this is why the convention symbol outranks every other mark on the sheet.</p>
+<h4>Worked example 2 — minimum views</h4>
+<p><b>Problem.</b> Decide the minimum view set for (a) a plain cylindrical bushing, (b) an
+L-shaped bracket with two hole patterns on perpendicular faces.</p>
+<p><b>Solution.</b> (1) Bushing: one view plus a diameter symbol — the ⌀ mark encodes the
+revolution, so a single longitudinal view fully defines it.
+(2) Bracket: two views minimum (front + top or front + side) because perpendicular faces each
+carry features; a third view or an auxiliary is added only if hole positions remain ambiguous.</p>
+<p><b>Answer:</b> (a) one view; (b) two, sometimes three. <b>Sanity check:</b> every extra
+view is another place for revisions to miss — minimum views is quality practice, not laziness.</p>
+</div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — mirror-image bracket.</b> You arrive at a fabrication shop holding a
+freshly made support bracket that bolts up perfectly — mirrored. The drawing came from an
+overseas licensor in first angle; the shop, used to third-angle prints, read the side view on
+the wrong side. The truncated-cone symbol was on the sheet all along, small and ignored. The
+re-make is charged to "training," and the shop adds a one-line stamp to its job traveler:
+<em>projection convention checked</em>. Cheap lesson at one bracket; expensive at one heat
+exchanger.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(134.9\\ \\mathrm{lbf}\\)", "\\(266.9\\ \\mathrm{lbf}\\)", "\\(13.49\\ \\mathrm{lbf}\\)", "\\(1.349\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(60 \\times 0.2248 = 13.49\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(11.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(22.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(1.124\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.1124\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(5 \times 0.2248 = 1.124\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.45\\ \\mathrm{psi}\\)", "\\(689.5\\ \\mathrm{psi}\\)", "\\(145\\ \\mathrm{psi}\\)", "\\(14.5\\ \\mathrm{psi}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(100 \\times 0.145 = 14.5\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.116\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(55.16\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(11.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.16\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(8 \times 0.145 = 1.16\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL18611004W" target="_blank" rel="noopener">Technical Drawing with Engineering Graphics — Giesecke et al.</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Engineering Drawing</p>
+  <ul class="plain small"><li>MIT OCW / NPTEL: Engineering Drawing and Computer Graphics (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-why-drawings-rule-the-plant.html">← 01 · Why drawings rule the plant</a><a href="index.html">All lessons · DRW 102</a><a href="03-isometric-and-pictorial-views.html">03 · Isometric and pictorial views →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/statics/index.html">STA 103 · Engineering Statics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

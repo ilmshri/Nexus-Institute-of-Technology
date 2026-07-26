@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Balancing of rotors — Engineering Dynamics — MechEd</title>
+<meta name="description" content="Static versus dynamic unbalance defined precisely. Single- and two-plane balancing logic. Why unbalance shows at 1× running speed — the vibration anal">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s2/dynamics/10">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s2/dynamics/10-balancing-of-rotors.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">DYN 152 · Engineering Dynamics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-particle-kinematics.html" class="ol" data-key="y1s2/dynamics/1"><span class="tick"></span><span>01 · Particle kinematics</span></a><a href="02-newton-s-second-law-for-particles.html" class="ol" data-key="y1s2/dynamics/2"><span class="tick"></span><span>02 · Newton's second law for particles</span></a><a href="03-work-and-energy.html" class="ol" data-key="y1s2/dynamics/3"><span class="tick"></span><span>03 · Work and energy</span></a><a href="04-impulse-momentum-and-impact.html" class="ol" data-key="y1s2/dynamics/4"><span class="tick"></span><span>04 · Impulse, momentum, and impact</span></a><a href="05-systems-of-particles.html" class="ol" data-key="y1s2/dynamics/5"><span class="tick"></span><span>05 · Systems of particles</span></a><a href="06-rigid-body-kinematics.html" class="ol" data-key="y1s2/dynamics/6"><span class="tick"></span><span>06 · Rigid-body kinematics</span></a><a href="07-relative-acceleration-and-coriolis.html" class="ol" data-key="y1s2/dynamics/7"><span class="tick"></span><span>07 · Relative acceleration and Coriolis</span></a><a href="08-rigid-body-kinetics-newton-euler.html" class="ol" data-key="y1s2/dynamics/8"><span class="tick"></span><span>08 · Rigid-body kinetics: Newton–Euler</span></a><a href="09-rotational-energy-and-momentum.html" class="ol" data-key="y1s2/dynamics/9"><span class="tick"></span><span>09 · Rotational energy and momentum</span></a><a href="10-balancing-of-rotors.html" class="ol cur" data-key="y1s2/dynamics/10"><span class="tick"></span><span>10 · Balancing of rotors</span></a><a href="11-introduction-to-vibration.html" class="ol" data-key="y1s2/dynamics/11"><span class="tick"></span><span>11 · Introduction to vibration</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">DYN 152</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">DYN 152 · Lesson 10 of 11 · Year 1 · Semester 2</p>
+  <h1>Balancing of rotors</h1>
+  <p class="sub">Static versus dynamic unbalance defined precisely. Single- and two-plane balancing logic. Why unbalance shows at 1× running speed — the vibration analyst's first spectral line explained by dynamics.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.003 Engineering Dynamics</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s2/dynamics/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.003 Engineering Dynamics (ocw.mit.edu)</b></div>
+<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Static versus dynamic unbalance: what does each do to bearing forces?</li><li>Why does pure static unbalance show at exactly 1× rotation frequency?</li></ul></div><div class="measure">
+<figure class="lesson-diagram"><svg viewBox="0 0 560 290" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An unbalanced rotor: a small mass off the axis at radius r generates an outward centrifugal force m r omega squared that rotates once per revolution"><rect width="560" height="290" fill="#fbfdfe"/><text x="16" y="24" fill="#16202e" font-size="12" font-weight="700">Unbalanced rotor: force F = m r ω² rotates at 1× speed</text><circle cx="200" cy="155" r="95" fill="#eef4f2" stroke="#16202e" stroke-width="2"/><circle cx="200" cy="155" r="5" fill="#16202e"/><text x="184" y="173" fill="#16202e" font-size="11">axis</text><line x1="200" y1="155" x2="254" y2="117" stroke="#16202e" stroke-width="1.4" stroke-dasharray="3 2"/><text x="227" y="130" fill="#16202e" font-size="11">r</text><circle cx="254" cy="117" r="11" fill="#c2820f"/><text x="268" y="121" fill="#c2820f" font-size="11" font-weight="700">m</text><line x1="254.5" y1="116.9" x2="299.5" y2="85.3" stroke="#1f7a5c" stroke-width="2.6"/><path d="M299.5,85.3 L290.6,86.1 M299.5,85.3 L295.7,93.5" stroke="#1f7a5c" stroke-width="2.6" fill="none"/><text x="279.5" y="101.3" fill="#1f7a5c" font-size="12" font-weight="700">F = mrω²</text><path d="M154,97 a 58 58 0 0 1 40,-22" fill="none" stroke="#16202e" stroke-width="1.6"/><text x="134" y="97" fill="#16202e" font-size="12">ω</text><text x="16" y="278" fill="#16202e" font-size="11">Force grows with ω² and rotates once per rev — the 1× vibration a sensor reads</text></svg><figcaption>Any mass off the rotation axis throws an outward centrifugal force m r ω² that rotates with the shaft, once per revolution. Balancing moves or adds mass so these forces cancel — the reason rotors are balanced before they run.</figcaption></figure>
+
+<h3>01 · Where unbalance comes from</h3>
+<p>A rotor is <b>balanced</b> when its mass is distributed symmetrically about the axis of rotation. Any deviation — a heavy spot, a machining tolerance, a bit of trapped dirt — puts mass off-axis, and that offset mass generates an outward <b>centrifugal force</b> \( F=m r\omega^2 \) as it spins, where \(m\) is the offset mass and \(r\) its radius from the axis. The critical feature is the \( \omega^2 \): the force grows with the <em>square</em> of speed, so an unbalance harmless at low speed becomes violent at operating speed. A \( 50 \) g spot at \( r=0.1 \) m produces \( 0.05(0.1)(100^2)=50 \) N at \( 100 \) rad/s, but \( 450 \) N at \( 300 \) rad/s. This rotating force is what shakes the machine and loads its bearings.</p>
+
+<h3>02 · Static versus dynamic unbalance</h3>
+<p>Two distinct faults exist. <b>Static unbalance</b> is a single offset mass — the centre of mass lies off the axis — and it can be found at rest, since the heavy spot rolls to the bottom; correcting it needs one balancing mass in one plane. <b>Dynamic unbalance</b> is subtler: two equal offsets on opposite sides and in different planes along the shaft leave the centre of mass <em>on</em> the axis, so the rotor balances at rest, yet spinning it creates a rotating <b>couple</b> that wobbles the shaft. Dynamic unbalance cannot be detected statically and needs correction in <em>two</em> planes. Real rotors generally have both, which is why balancing is done spinning, on a balancing machine, not by hand.</p>
+<div class="keybox"><span class="tag">Key result — unbalance force</span>
+<p>\[ F=m\,r\,\omega^2\quad(\text{rotates at 1× shaft speed, grows as }\omega^2). \]</p></div>
+
+<h3>03 · Balancing logic</h3>
+<p>Balancing cancels the rotating force by adding (or removing) mass so the net \( \sum m_i r_i=0 \) as vectors. For a single static unbalance \( m r \), a correction mass \( m_b \) at radius \( r_b \), placed diametrically opposite, restores balance when \( m_b r_b=m r \) — so a \( 0.05\times0.1 \) unbalance is cured by \( 0.025 \) kg at \( 0.2 \) m. Because the force is \( m r\omega^2 \), only the product \( m r \) (the "unbalance," in g·mm) matters, not the speed — balance it once and it stays balanced at every speed. Dynamic unbalance is corrected the same way but in two planes at once, cancelling both the net force and the net couple.</p>
+
+<h3>04 · Why balancing matters, and the method</h3>
+<p>The rotating unbalance force appears in vibration at exactly \( 1\times \) the running speed — its signature line on the spectrum of the previous course's Fourier lesson. Left uncorrected it fatigues shafts, hammers bearings, loosens fasteners, and radiates noise, with severity climbing as \( \omega^2 \). The method: (1) identify the unbalance as static (one plane) or dynamic (two planes); (2) measure the magnitude and angular position of the heavy spot (a balancing machine reads the \(1\times\) response); (3) add or remove a correcting mass so \( m_b r_b=m r \) opposite the heavy spot, in the required number of planes. Balancing is the first defence against machinery vibration, applied before a rotor ever enters service.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Centripetal/centrifugal effects</b> (Lessons 1, 6) — \( F=m r\omega^2 \).</li><li><b>Centre of mass</b> (Lesson 5) — what static balance restores.</li><li><b>Couples / moments</b> (from statics) — dynamic unbalance is a couple.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula / meaning</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Unbalance force</td><td>\( F=m r\omega^2 \)</td><td>Rotates at 1×; grows as \( \omega^2 \).</td></tr>
+<tr><td>Unbalance</td><td>\( m r \) (g·mm)</td><td>Speed-independent measure.</td></tr>
+<tr><td>Static unbalance</td><td>cm off axis</td><td>One-plane correction.</td></tr>
+<tr><td>Dynamic unbalance</td><td>rotating couple</td><td>Two-plane correction.</td></tr>
+<tr><td>Balance condition</td><td>\( \sum m_i r_i=0 \)</td><td>Vector sum of unbalances.</td></tr>
+<tr><td>Correction mass</td><td>\( m_b r_b=m r \)</td><td>Opposite the heavy spot.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Unbalance force</b></p><p><b>Problem.</b> A \(0.05\) kg heavy spot sits at \(r=0.1\) m on a rotor. Find the centrifugal force at \(100\) rad/s and at \(300\) rad/s.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( F=mr\omega^2 \). At \(100\) rad/s: \( 0.05(0.1)(100^2)=50 \) N. At \(300\) rad/s: \( 0.05(0.1)(300^2)=450 \) N — nine times larger, because \( F\propto\omega^2 \) and the speed tripled.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Correction mass</b></p><p><b>Problem.</b> A static unbalance of \( mr=0.05\times0.1 \) kg·m is to be cured with a balancing mass at radius \(0.2\) m. Find the mass required.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Balance needs \( m_b r_b=m r \), so \( m_b=\dfrac{mr}{r_b}=\dfrac{0.05(0.1)}{0.2}=0.025 \) kg, placed diametrically opposite the heavy spot.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Force at running speed</b></p><p><b>Problem.</b> Find the unbalance force of the \(0.05\) kg, \(0.1\) m spot at a running speed of \(3000\) rpm.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \omega=3000\cdot\dfrac{2\pi}{60}\approx314 \) rad/s. \( F=mr\omega^2=0.05(0.1)(314^2)\approx493 \) N — nearly half a kilonewton from a \(50\) g spot, showing why balancing is essential.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The force from an offset mass on a spinning rotor is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( mr\omega^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( mr\omega \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( mr \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( m\omega^2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F=mr\omega^2 \), directed radially outward and rotating with the shaft.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The unbalance force grows with speed as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \omega^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \omega \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \sqrt{\omega} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>constant</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F\propto\omega^2 \): tripling the speed multiplies the force ninefold.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Static unbalance is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the centre of mass off the axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>a rotating couple</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>always undetectable at rest</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>balanced when spinning</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Static unbalance shifts the cm off-axis and can be detected at rest; it needs one-plane correction.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Dynamic unbalance:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>is a couple, detectable only when spinning</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>is a single heavy spot</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>needs no correction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is found at rest</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Two offsets in different planes leave the cm on-axis but create a rotating couple — corrected in two planes.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>The \(0.05\) kg, \(0.1\) m spot at \(100\) rad/s produces a force of:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>50 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>5 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>500 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.5 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 0.05(0.1)(100^2)=50 \) N.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Unbalance shows up in vibration at:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>1× the running speed</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2× the running speed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>half the running speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a random frequency</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The force rotates once per revolution, so it appears as a line at \(1\times\) shaft speed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A correction mass is placed:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>diametrically opposite the heavy spot, with \( m_b r_b=mr \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>at the heavy spot</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>at the axis</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>anywhere on the rim</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Opposite the heavy spot and sized so \( m_b r_b=mr \), cancelling the rotating force.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Dynamic unbalance requires correction in:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>two planes</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>one plane</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>no planes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>three planes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A rotating couple needs masses in two planes to cancel both the net force and the net couple.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>Balancing is a daily reality in any plant with rotating machinery — pumps, fans,
+motors, turbines, centrifuges. A rotor is balanced on a machine before installation, and
+because the unbalance force scales as \( \omega^2 \), the same tolerance that is harmless
+on a slow shaft is destructive on a high-speed one, so balancing grades tighten with
+speed. Field balancing — adding trim weights to a fan or coupling in place — is a routine
+maintenance task that reads the \( 1\times \) vibration, finds the heavy spot, and
+corrects it with \( m_b r_b=mr \).</p>
+<p>The payoff is bearing and seal life. The rotating unbalance force is carried straight
+into the bearings every revolution, so halving the unbalance roughly halves that dynamic
+load and multiplies bearing life. A rising \( 1\times \) line on a condition-monitoring
+spectrum is the classic early warning that a rotor has lost balance — from erosion,
+deposit build-up, or a thrown blade — and prompts a re-balance before the bearings are
+damaged.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(656.2\\ \\mathrm{ft}\\)", "\\(6.096\\ \\mathrm{ft}\\)", "\\(65.62\\ \\mathrm{ft}\\)", "\\(6.562\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(20 \\times 3.281 = 65.62\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(65.62\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.6096\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(6.562\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.6562\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(2 \times 3.281 = 6.562\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{rad/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(42.97\\ \\mathrm{rpm}\\)", "\\(4.712\\ \\mathrm{rpm}\\)", "\\(4297\\ \\mathrm{rpm}\\)", "\\(429.7\\ \\mathrm{rpm}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{rad/s} = 9.549\\ \\mathrm{rpm}\\): \\(45 \\times 9.549 = 429.7\\ \\mathrm{rpm}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{rad/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2.865\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.3142\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(286.5\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(28.65\ \mathrm{rpm}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{rad/s} = 9.549\ \mathrm{rpm}\): \(3 \times 9.549 = 28.65\ \mathrm{rpm}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7942332W" target="_blank" rel="noopener">Engineering Mechanics: Dynamics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL21091506W" target="_blank" rel="noopener">Engineering Mechanics: Dynamics — Meriam &amp; Kraige</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/" title="MIT OCW 2.003SC Engineering Dynamics (Prof. Vandiver)" target="_blank" rel="noopener">MIT OCW 2.003</a> <a class="watch" href="https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/" title="MIT OCW 2.003SC Engineering Dynamics (Prof. Vandiver)" target="_blank" rel="noopener">MIT OCW 2.003</a> <a class="watch" href="https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/resources/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Engineering Dynamics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-rotational-energy-and-momentum.html">← 09 · Rotational energy and momentum</a><a href="index.html">كل الدروس · DYN 152</a><a href="11-introduction-to-vibration.html">11 · Introduction to vibration →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/materials-2/index.html">MAT 153 · Materials Science II →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

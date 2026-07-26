@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Internal forces: shear and bending moment — Engineering Statics — MechEd</title>
+<meta name="description" content="Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will d">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/8">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol cur" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 08 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 08 of 11 · Year 1 · Semester 1</p>
+  <h1>Internal forces: shear and bending moment</h1>
+  <p class="sub">Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/8">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/eTEdNJRPYwk" title="Statics: Lesson 57 - Introduction to Internal Forces, M N V" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 57 - Introduction to Internal Forces, M N V <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 57 - Introduction to Internal Forces, M N V</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></div><div class="measure">
+<h3>01 · Cut the beam, expose the invisible</h3>
+<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
+<h3>02 · Diagrams, and the calculus that draws them</h3>
+<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing, in which \( x \) is the distance along the span from a chosen origin and \( w(x) \) is the intensity of the distributed load there &mdash; a force per unit length, N/m, not a force:</p>
+\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
+<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
+<h3>03 · Why these diagrams are the product</h3>
+<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. the Worked Examples tab builds both canonical cases: the central point load and the uniform load.</p>
+
+<h3>04 · Building the diagrams without tears</h3>
+<p>Internal-force diagrams are constructed, not guessed, and the construction has a grammar.
+<em>Reactions first</em> — no diagram survives wrong supports. <em>Walk the beam from the
+left,</em> cutting just after each load or support: shear jumps by each point force, slopes
+down under distributed load at exactly the load intensity, and the moment's slope at every
+station IS the shear there — \( dM/dx = V \). That one relation is the whole craft: where
+shear crosses zero, the moment peaks; where shear is constant, the moment runs straight;
+where the load is uniform, the moment curves as a parabola. <em>Close the audit at the far
+end:</em> both diagrams must return to zero (or to the end reaction/moment) — a diagram
+that doesn't close is announcing an arithmetic error at the exact spot it diverges.</p>
+<p>Keep the benchmark cases in your head as calibration: a central point load peaks at
+\( PL/4 \); a uniform load at \( wL^2/8 \). Any computed maximum should be sanity-checked
+against the nearest benchmark before it goes near a design table — the courses on strength
+and machine design will consume these diagrams, and they inherit every error made here.</p>
+<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Support reactions</b> (Lessons 3, 5) — computed before any cut is made.</li>
+<li><b>Equilibrium of a cut body</b> (Lesson 5) — the exposed section is just another FBD.</li>
+<li><b>Basic calculus</b> — slopes and areas connect \( w \), \( V \), and \( M \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Internal forces</td><td>N, V, M at a cut</td><td>What the material itself must carry at any section.</td></tr>
+<tr><td>Method of sections (beams)</td><td>cut, keep one side, apply equilibrium</td><td>N, V, M at one location in one pass.</td></tr>
+<tr><td>Shear diagram</td><td>\( V(x) \)</td><td>How transverse load accumulates along the span.</td></tr>
+<tr><td>Moment diagram</td><td>\( M(x) \)</td><td>Where bending is worst — the beam designer's map.</td></tr>
+<tr><td>Diagram calculus</td><td>\( dV/dx = -w,\ dM/dx = V \)</td><td>Slopes and areas connect load, shear, and moment; V = 0 locates max M.</td></tr>
+<tr><td>Central point load</td><td>\( M_{max} = PL/4 \)</td><td>The benchmark case every beam eye should know cold.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Central point load</b></p>
+<p><b>Problem.</b> Simply supported beam, span \( L = 4\ \mathrm{m} \), point load \( P = 8\ \mathrm{kN} \) at midspan. <b>Find:</b> the shear and moment diagrams and the maximum moment.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: symmetric, \( R = 4\ \mathrm{kN} \) each.
+(2) Shear: \( V = +4\ \mathrm{kN} \) from A to midspan, stepping down by 8 to \( -4\ \mathrm{kN} \) to B.
+(3) Moment: rises linearly (slope 4) to midspan, falls linearly after.
+(4) \( M_{max} = 4 \times 2 = 8\ \mathrm{kN\cdot m} \) — matching \( PL/4 = 8 \times 4/4 \).</p>
+<p><b>Answer:</b> \( V_{max} = 4\ \mathrm{kN} \), \( M_{max} = 8\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> \( M \) peaks exactly where \( V \) crosses zero (the load point). Diagram closes to zero at both ends — free ends carry no moment. ✓</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Uniform load</b></p>
+<p><b>Problem.</b> Simply supported beam, \( L = 6\ \mathrm{m} \), UDL \( w = 3\ \mathrm{kN/m} \). <b>Find:</b> diagrams and \( M_{max} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Reactions: \( R = wL/2 = 9\ \mathrm{kN} \) each.
+(2) Shear: \( V(x) = 9 - 3x \) — linear, zero at \( x = 3\ \mathrm{m} \).
+(3) Moment: parabolic, \( M(x) = 9x - 1.5x^2 \).
+(4) \( M_{max} = M(3) = 27 - 13.5 = 13.5\ \mathrm{kN\cdot m} \) — matching \( wL^2/8 = 3 \times 36/8 \).</p>
+<p><b>Answer:</b> \( V_{max} = 9\ \mathrm{kN} \) at the supports; \( M_{max} = 13.5\ \mathrm{kN\cdot m} \) at midspan.
+<b>Sanity check:</b> shear crosses zero at midspan by symmetry, and the parabola peaks there. The two formulas \( PL/4 \) and \( wL^2/8 \) are worth memorizing — they bound most quick beam checks you will ever do standing up.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Shear and moment at a section</b></p>
+<p><b>Problem.</b> An 8 m simply supported beam carries a 6 kN point load at midspan. <b>Find:</b> the reactions, the internal shear and moment 2 m from the left support, and the maximum bending moment.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Symmetry: \( R_A = R_B = 3\ \mathrm{kN} \).
+(2) Cut at 2 m (left of the load), keep the left piece: \( V = +3\ \mathrm{kN} \); \( M = 3 \times 2 = 6\ \mathrm{kN\,m} \).
+(3) Maximum at midspan where V crosses zero: \( M_{max} = PL/4 = 6 \times 8/4 = 12\ \mathrm{kN\,m} \).</p>
+<p><b>Answer:</b> \( R = 3\ \mathrm{kN} \) each; at 2 m: \( V = 3\ \mathrm{kN},\ M = 6\ \mathrm{kN\,m} \); \( M_{max} = 12\ \mathrm{kN\,m} \).
+<b>Sanity check:</b> \( dM/dx = V \): the moment climbs at 3 kN·m per metre on the left half — 6 at 2 m, 12 at 4 m — exactly linearly, as constant shear demands.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The bending moment in a beam is maximum where:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the load is largest</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the shear force crosses zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the beam is deepest</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>deflection is zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( dM/dx = V \): the moment's slope is the shear, so \( M \) turns where \( V = 0 \). The largest load and the moment peak often do coincide — but the shear-zero rule is the reason, and the reliable locator when loading is mixed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A simply supported beam, span 10 m, carries 2 kN/m over its whole length. \( M_{max} \):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>20 kN·m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>25 kN·m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>50 kN·m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>100 kN·m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( M_{max} = wL^2/8 = 2 \times 100 / 8 = 25\ \mathrm{kN\cdot m} \) at midspan. 50 uses \( wL^2/4 \) (confusing it with \( PL/4 \)); 100 forgets the 8 entirely. The two canonical formulas — \( PL/4 \) and \( wL^2/8 \) — are worth keeping straight for standing-up estimates.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A simply supported beam of span L carries a central point load P. The maximum bending moment is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( PL/4 \), at midspan</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( PL/2 \), at midspan</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( PL/8 \), at the supports</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( PL \), under the load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Reactions are \( P/2 \); the moment climbs linearly to midspan: \( (P/2)(L/2) = PL/4 \). \( PL/2 \) forgets the reaction split; \( PL/8 \) borrows the uniform-load formula's denominator (\( wL^2/8 \)) — the classic benchmark mix-up; and moments at simple supports are zero by definition. \( PL/4 \) is a number every engineer should carry as calibration.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>At a downward point load, the shear diagram:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>steps down by the load value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>slopes gradually downward</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unaffected</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>steps up by half the load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A concentrated load is a jump in \( V \) equal to its magnitude — the diagram is discontinuous there. Distributed loads produce the gradual slopes (\( dV/dx = -w \)); mixing up step versus slope is the fastest way to a wrong diagram.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>At every point along a beam, the slope of the bending-moment diagram equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The shear force there</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The load intensity there</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The reaction at the nearest support</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( dM/dx = V \) — the fundamental relation of diagram construction. Its consequences do the real work: maximum moment where shear crosses zero, straight moment lines under constant shear, parabolas under uniform load. The load intensity is the slope of the SHEAR diagram \( (dV/dx = -w) \) — one derivative over; confusing the two levels is the standard diagram error.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the liquid-filled span.</b> You arrive at a piping review at a petrochemical plant where a line's support span was set when the service was gas; a process change now runs it liquid-full, multiplying the weight per metre (figures representative). The pipe between supports is Lesson 8's beam under a UDL: \( M_{max} = wL^2/8 \) at mid-span, growing with the <em>square</em> of span. The review question — add a support or accept the sag — is answered by exactly this diagram: double the weight doubles the moment, but halving the span quarters it. The support goes in at the shear-zero point's worst span.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.798\\ \\mathrm{lbf}\\)", "\\(35.59\\ \\mathrm{lbf}\\)", "\\(17.98\\ \\mathrm{lbf}\\)", "\\(0.1798\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(8 \\times 0.2248 = 1.798\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(22.48\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(444.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(224.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.248\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(100 \times 0.2248 = 22.48\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kN}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.05338\\ \\mathrm{lbf}\\)", "\\(2698\\ \\mathrm{lbf}\\)", "\\(2.698e+04\\ \\mathrm{lbf}\\)", "\\(269.8\\ \\mathrm{lbf}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kN} = 224.8\\ \\mathrm{lbf}\\): \\(12 \\times 224.8 = 2698\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kN}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.6672\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(3.372e+04\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3.372e+05\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(3372\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kN} = 224.8\ \mathrm{lbf}\): \(150 \times 224.8 = 3.372e+04\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="07-frames-and-machines.html">← 07 · Frames and machines</a><a href="index.html">All lessons · STA 103</a><a href="09-friction.html">09 · Friction →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

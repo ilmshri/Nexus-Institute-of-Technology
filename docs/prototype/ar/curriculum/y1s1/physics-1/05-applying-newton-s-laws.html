@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Applying Newton's laws — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="Friction, static and kinetic, with its adaptive character; inclined planes; tension and pulleys. Multi-body problems solved with paired free-body diag">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/physics-1/5">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/physics-1/05-applying-newton-s-laws.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">PHY 107 · Engineering Physics I — Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-units-and-vectors.html" class="ol" data-key="y1s1/physics-1/1"><span class="tick"></span><span>01 · Measurement, units, and vectors</span></a><a href="02-kinematics-in-one-dimension.html" class="ol" data-key="y1s1/physics-1/2"><span class="tick"></span><span>02 · Kinematics in one dimension</span></a><a href="03-kinematics-in-two-dimensions.html" class="ol" data-key="y1s1/physics-1/3"><span class="tick"></span><span>03 · Kinematics in two dimensions</span></a><a href="04-newton-s-laws-of-motion.html" class="ol" data-key="y1s1/physics-1/4"><span class="tick"></span><span>04 · Newton's laws of motion</span></a><a href="05-applying-newton-s-laws.html" class="ol cur" data-key="y1s1/physics-1/5"><span class="tick"></span><span>05 · Applying Newton's laws</span></a><a href="06-work-and-energy.html" class="ol" data-key="y1s1/physics-1/6"><span class="tick"></span><span>06 · Work and energy</span></a><a href="07-potential-energy-and-conservation.html" class="ol" data-key="y1s1/physics-1/7"><span class="tick"></span><span>07 · Potential energy and conservation</span></a><a href="08-momentum-impulse-and-collisions.html" class="ol" data-key="y1s1/physics-1/8"><span class="tick"></span><span>08 · Momentum, impulse, and collisions</span></a><a href="09-rotation-i-kinematics-and-torque.html" class="ol" data-key="y1s1/physics-1/9"><span class="tick"></span><span>09 · Rotation I: kinematics and torque</span></a><a href="10-rotation-ii-dynamics-and-angular-momentum.html" class="ol" data-key="y1s1/physics-1/10"><span class="tick"></span><span>10 · Rotation II: dynamics and angular momentum</span></a><a href="11-oscillations-first-contact.html" class="ol" data-key="y1s1/physics-1/11"><span class="tick"></span><span>11 · Oscillations first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">PHY 107</a> /
+<span>Lesson 05 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">PHY 107 · Lesson 05 of 11 · Year 1 · Semester 1</p>
+  <h1>Applying Newton's laws</h1>
+  <p class="sub">Friction, static and kinetic, with its adaptive character; inclined planes; tension and pulleys. Multi-body problems solved with paired free-body diagrams. The physics behind holding brakes, belt slip, and why inclined conveyors have a maximum angle.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 8.01SC Classical Mechanics</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/5">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/urkfH7_ikVg" title="Dynamics — Particle Kinetics Notes" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Dynamics — Particle Kinetics Notes <span class="src">Engineering Deciphered</span></figcaption></figure></div><div class="vh-bar"><span class="n">Dynamics — Particle Kinetics Notes</span><span class="c">ENGINEERING DECIPHERED</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A crate sits on a 20° incline with μs = 0.30: does it stay? (No — tan 20° = 0.36 &gt; 0.30)</li><li>Why does static friction adjust to the load while kinetic friction does not?</li></ul></div><div class="measure">
+<h3>01 · Friction joins the diagram</h3>
+<p>Newton's laws meet real surfaces through friction, and the rules carry over from statics
+with one upgrade: motion. Static friction adapts — it supplies exactly what equilibrium
+demands, up to the ceiling \( \mu_s N \) — while kinetic friction, once sliding begins,
+holds the steady lower value \( \mu_k N \). The normal force is never assumed: on an
+incline it is \( mg\cos\theta \), under a downward push it grows, under an angled pull
+it shrinks, and every friction calculation begins by solving for \( N \) from the
+perpendicular equation. The incline is the standard stage: gravity resolves into
+\( mg\sin\theta \) along the slope and \( mg\cos\theta \) into it, and the contest
+between \( mg\sin\theta \) and \( \mu_s mg\cos\theta \) — that is, between
+\( \tan\theta \) and \( \mu_s \) — decides whether anything moves at all.</p>
+<h3>02 · Ropes, pulleys, and shared fates</h3>
+<p>An ideal rope is inextensible and massless: it transmits one tension throughout its
+length, and it forces connected bodies to share one acceleration magnitude. Those two facts
+turn multi-body problems into systems of simple equations — one second law per body, plus
+the constraint. An ideal pulley redirects the rope without changing its tension; the
+hanging-mass-drags-sliding-mass arrangement is the archetype, and its logic reappears in
+every counterweight, hoist, and tensioning system built since.</p>
+<h3>03 · Friction as the transmitter of motion</h3>
+<p>Friction does not only resist motion — it CAUSES most of it. A box accelerates with its
+conveyor belt only because static friction drags it along; the maximum acceleration friction
+can transmit is \( a_{max} = \mu_s g \), and a belt that accelerates harder leaves its
+cargo sliding behind. The same ceiling governs tires on tarmac and shoes on floors: traction
+is static friction employed, and the μ-times-g budget is the hard limit on every start and
+every stop that relies on it.</p>
+<h3>04 · The applying-Newton working method</h3>
+<p>The procedure composes everything so far. Draw the free body; solve the perpendicular
+axis first to capture \( N \); decide the friction regime honestly — compute the force
+equilibrium would require, compare with \( \mu_s N \), and only then choose static
+(adaptive, at the required value) or kinetic (fixed, at \( \mu_k N \), opposing the
+sliding). Align one axis with the acceleration, write the second law per axis, add the
+rope constraint when bodies connect, and count equations against unknowns before solving.
+Audit with limits: set \( \mu = 0 \) and the answer must collapse to the frictionless
+case; set \( a = 0 \) and it must collapse to statics. The regime decision is where the
+marks — and the real machines — are won or lost: assuming sliding when the part actually
+grips, or grip when it actually slides, produces answers that are precisely and confidently
+wrong. When in doubt, solve both regimes and let the comparison with the ceiling name the
+truth — two short calculations beat one plausible guess every time.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The second law by axis</b> (Lesson 4) — the engine this lesson feeds.</li>
+<li><b>Friction fundamentals</b> (Statics) — adaptive static ceiling, fixed kinetic value.</li>
+<li><b>Incline components</b> — \( mg\sin\theta \) along, \( mg\cos\theta \) into the slope.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Static friction</td><td>\( F_s \le \mu_s N \)</td><td>Adaptive grip before sliding; equality only at the slip threshold.</td></tr>
+<tr><td>Kinetic friction</td><td>\( F_k = \mu_k N \)</td><td>Fixed drag once sliding; always below the static ceiling.</td></tr>
+<tr><td>Normal on an incline</td><td>\( N = mg\cos\theta \)</td><td>Never assume N = W off the horizontal.</td></tr>
+<tr><td>Slide condition</td><td>\( \tan\theta > \mu_s \)</td><td>The incline holds or releases on this comparison alone.</td></tr>
+<tr><td>Rope constraint</td><td>one tension, one acceleration magnitude</td><td>Ideal cords make multi-body systems solvable.</td></tr>
+<tr><td>Traction ceiling</td><td>\( a_{max} = \mu_s g \)</td><td>The most acceleration friction can transmit — belts, tires, shoes.</td></tr>
+<tr><td>Limit audits</td><td>\( \mu \to 0 \), \( a \to 0 \)</td><td>Answers must collapse to frictionless and static cases.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Holds or slides?</b></p>
+<p><b>Problem.</b> A 60 kg crate rests on a 20° ramp with \( \mu_s = 0.50 \). <b>Find:</b> whether it holds, the actual friction force, and the margin against sliding.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Required to hold: \( mg\sin 20° = 588.6 \times 0.342 = 201\ \mathrm{N} \).
+(2) Available ceiling: \( \mu_s mg\cos 20° = 0.5 \times 588.6 \times 0.940 = 277\ \mathrm{N} \).
+(3) 201 < 277 → holds; actual friction = 201 N (the required value); margin = 277/201 = 1.38.</p>
+<p><b>Answer:</b> holds, with friction at 201 N and a 38% reserve.
+<b>Sanity check:</b> the comparison reduces to \( \tan 20° = 0.364 \) versus \( \mu_s = 0.50 \) — same verdict in one line; the ramp would release this crate at \( \tan^{-1}(0.5) = 26.6° \), a number worth computing before anyone tilts anything further.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The table-and-hanger system</b></p>
+<p><b>Problem.</b> A 12 kg block on a smooth table is tied by a cord over an ideal pulley to a hanging 6 kg block. <b>Find:</b> the system acceleration and the cord tension.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) System view (both bodies, one rope): driving force = hanging weight = \( 6 \times 9.81 = 58.9\ \mathrm{N} \); total mass 18 kg → \( a = 58.9/18 = 3.27\ \mathrm{m/s^2} \).
+(2) Isolate the table block — tension is its only horizontal force: \( T = 12 \times 3.27 = 39.2\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( 3.27\ \mathrm{m/s^2} \); \( T \approx 39\ \mathrm{N} \).
+<b>Sanity check:</b> \( T \) must sit between zero and the hanging weight (58.9 N) — it does; and the hanging block's own ledger closes: \( 58.9 - 39.2 = 19.7 = 6 \times 3.27 \) ✓. The counterweight logic of every hoist starts exactly here.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Will the box ride the belt?</b></p>
+<p><b>Problem.</b> A conveyor accelerates at \( 3.0\ \mathrm{m/s^2} \). The box it carries has \( \mu_s = 0.25 \) against the belt. <b>Find:</b> whether the box keeps up, and the friction coefficient that would be needed.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Friction is the only horizontal force ON the box; its ceiling delivers at most \( a_{max} = \mu_s g = 0.25 \times 9.81 = 2.45\ \mathrm{m/s^2} \).
+(2) \( 2.45 < 3.0 \) → the box cannot keep up; it slides backward relative to the belt.
+(3) Required: \( \mu_s \ge a/g = 3.0/9.81 = 0.31 \).</p>
+<p><b>Answer:</b> it slips; the belt-box pair would need \( \mu_s \ge 0.31 \).
+<b>Sanity check:</b> once slipping, kinetic friction (lower still) takes over and the lag worsens — which is why belt ramps and indexing conveyors publish acceleration limits, and why the fix is gentler ramps or grippier belting, not wishful thinking.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A crate sits on a 15° ramp. The normal force from the ramp is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( mg\cos 15° \) — less than the weight</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( mg \) — always</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( mg\sin 15° \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Zero unless it slides</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The ramp pushes perpendicular to its own surface, and only the into-slope component of gravity loads it: \( N = mg\cos\theta \). Assuming \( N = mg \) off the horizontal quietly inflates every friction ceiling computed from it — the most common incline error. The along-slope component \( mg\sin\theta \) is the sliding drive, a different actor entirely.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Once an object breaks free and slides, the friction force typically:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Drops to the lower kinetic value \( \mu_k N \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Rises above the static ceiling</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Stays exactly at \( \mu_s N \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Vanishes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mu_k < \mu_s \) for nearly all dry pairs, so breaking free brings a force DROP — the lurch when a stuck skid finally moves, and the reason wheels that lock (sliding) stop cars worse than wheels that keep rolling (static contact). The static value is a ceiling that applies only up to the instant of release, not during the slide.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>In an ideal rope over an ideal pulley, the tension is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The same everywhere along the rope</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Larger on the heavier side</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero at the pulley</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Proportional to rope length</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Massless rope + frictionless pulley = one tension throughout; the pulley redirects the force without taxing it. A tension difference across a real pulley belongs to pulley friction and rope mass — refinements later courses price. The single-tension idealization is what lets one symbol T close a two-body problem, and it is accurate to a few percent on decent hardware.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>An indexing table must accelerate parts at \( 4\ \mathrm{m/s^2} \) using friction alone. The minimum \( \mu_s \) is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.41</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.25</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4.0</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.10</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Friction must supply \( ma \), and its ceiling is \( \mu_s mg \): \( \mu_s \ge a/g = 4/9.81 = 0.41 \). Mass cancels — heavier parts need no more coefficient, only more force, which friction automatically scales. Answering 4.0 confuses the acceleration with the coefficient; 0.25 would cap the table at 2.45 m/s². This one-line check sizes every friction-driven transfer in automation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Anti-lock braking keeps wheels rolling rather than skidding because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Rolling contact uses the higher static friction; skidding drops to kinetic</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Rolling tires have no friction</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Kinetic friction exceeds static</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It reduces the car's weight</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A rolling tire's contact patch is momentarily stationary on the road — static friction, the higher ceiling. Lock the wheel and the patch slides — kinetic, lower, and steering vanishes with the grip differential. The same physics governs machine spindles, clutch engagement, and web handling: keep the contact static and you keep both the force ceiling and the control.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kJ}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.11\\ \\mathrm{BTU}\\)", "\\(1.896\\ \\mathrm{BTU}\\)", "\\(18.96\\ \\mathrm{BTU}\\)", "\\(0.1896\\ \\mathrm{BTU}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kJ} = 0.9478\\ \\mathrm{BTU}\\): \\(2 \\times 0.9478 = 1.896\\ \\mathrm{BTU}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kJ}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(21.1\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(18.96\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(189.6\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.896\ \mathrm{BTU}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kJ} = 0.9478\ \mathrm{BTU}\): \(20 \times 0.9478 = 18.96\ \mathrm{BTU}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(40.23\\ \\mathrm{hp}\\)", "\\(2.237\\ \\mathrm{hp}\\)", "\\(4.023\\ \\mathrm{hp}\\)", "\\(0.4023\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(3 \\times 1.341 = 4.023\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(603.5\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(33.56\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(60.35\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.035\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(45 \times 1.341 = 60.35\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2538490W" target="_blank" rel="noopener">Fundamentals of Physics — Halliday, Resnick &amp; Walker</a></li><li><a href="https://openlibrary.org/works/OL4797379W" target="_blank" rel="noopener">University Physics — Young &amp; Freedman</a></li></ul>
+  <p class="src"><b>Taught from</b> — MIT OCW 8.01SC</p>
+  <ul class="plain small"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="04-newton-s-laws-of-motion.html">← 04 · Newton's laws of motion</a><a href="index.html">كل الدروس · PHY 107</a><a href="06-work-and-energy.html">06 · Work and energy →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

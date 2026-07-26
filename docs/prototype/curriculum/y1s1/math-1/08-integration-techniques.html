@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Integration techniques — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="Substitution, integration by parts, and simple partial fractions. Choosing a technique by recognizing structure. Numerical fallback when no closed for">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/math-1/8">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/math-1/08-integration-techniques.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol cur" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 08 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 08 of 11 · Year 1 · Semester 1</p>
+  <h1>Integration techniques</h1>
+  <p class="sub">Substitution, integration by parts, and simple partial fractions. Choosing a technique by recognizing structure. Numerical fallback when no closed form exists.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/8">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/aeXp1zC6Hls" title="Lec 30 | MIT 18.01 Single Variable Calculus, Fall 2007 — Integration by Parts" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lec 30 | MIT 18.01 Single Variable Calculus, Fall 2007 — Integration by Parts <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lec 30 | MIT 18.01 Single Variable Calculus, Fall 2007 — Integration by Parts</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Which technique handles ∫x·e^x dx, and why does substitution alone fail?</li><li>When is a numerical integral the honest choice over an analytic one?</li></ul></div><div class="measure">
+<h3>01 · Substitution — the chain rule reversed</h3>
+<p>Most integrals you meet are chain-rule results wearing a disguise. Substitution unmasks
+them: set \( u = \) the inner function, trade \( dx \) for \( du \), integrate, return.</p>
+\[ \int x\,(x^2+1)^3 dx \;\xrightarrow{\,u = x^2+1,\ du = 2x\,dx\,}\; \tfrac12\int u^3 du = \frac{(x^2+1)^4}{8} + C \tag{1} \]
+<p>The skill is <em>seeing</em> the derivative of the inside sitting beside it. Flow, decay,
+and geometry integrals in plant work overwhelmingly fall to substitution.</p>
+<h3>02 · Integration by parts — the product rule reversed</h3>
+<p>When the integrand is a genuine product — a polynomial times an exponential, say — parts
+applies:</p>
+\[ \int u\,dv = uv - \int v\,du \tag{2} \]
+<p>Choose \( u \) to simplify when differentiated, \( dv \) to stay tame when integrated.
+The workhorse case \( \int t\,e^{-t}dt \) models energy in decaying transients and
+first-moment calculations, and the Worked Examples tab runs it end to end.</p>
+<h3>03 · Knowing when to stop</h3>
+<p>Real plant data rarely hands you a clean antiderivative. The professional sequence is:
+try substitution; try parts; recognize a table form; otherwise integrate <em>numerically</em>
+— trapezoids or Simpson on sampled data — and say so. A numerically honest answer beats a
+heroic symbolic detour every time. Software does symbolic work well; your job is to set the
+integral up correctly and sanity-check its output.</p>
+
+<h3>04 · Choosing the technique — a decision procedure</h3>
+<p>Integration is pattern recognition with a fallback ladder, and the ladder has exactly four
+rungs. <em>Rung one: is the derivative of an inner function sitting beside it?</em> If the
+integrand contains \( g(x) \) inside another function and \( g'(x) \) — up to a constant —
+as a factor, substitution finishes it in one line. Train the eye on the constant: in
+\( \int x\,e^{x^2}dx \), the \( x \) outside is \( \tfrac12 \) of the needed
+\( 2x \), and the half simply rides along. <em>Rung two: a genuine product of unrelated
+factors</em> — polynomial times exponential, polynomial times sine — goes to parts, choosing
+\( u \) as the factor that simplifies when differentiated. <em>Rung three: recognize a
+table form</em> and write the answer. <em>Rung four: integrate numerically</em> — trapezoids
+on the samples you have — and say so plainly.</p>
+<p>Two habits turn technique into reliability. Verify every antiderivative by
+differentiating it — ten seconds that catch dropped halves and sign slips before they
+propagate. And when limits are involved in a substitution, transform them with the variable
+so the evaluation happens in \( u \)-space and nothing needs converting back. The
+techniques are few; the discipline around them is what makes the answers dependable.</p>
+<p>Know also what the ladder is for. In professional work, symbolic software integrates
+faster than any human — but it cannot decide whether the integral was set up correctly,
+whether the limits mean what the question meant, or whether the answer's magnitude is
+plausible. The techniques you practice here build exactly that judgment: someone who has
+integrated by hand recognizes a wrong machine answer on sight, the way a machinist who has
+cut threads manually reads a bad CNC part at a glance. Learn the moves to own the judgment,
+then delegate the labor freely.</p>
+<p><strong>Closing.</strong> Substitution reverses the chain rule, parts reverses the product
+rule, and numerical integration is the licensed fallback — not a defeat.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Chain rule</b> (Lesson 4) and <b>product rule</b> — today's methods are their inverses.</li>
+<li><b>Antiderivatives</b> (Lesson 7) — the target object of every technique.</li>
+<li><b>Exponentials</b> (Lesson 5) — \( \int e^{kt}dt = e^{kt}/k + C \) appears constantly.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Substitution</td><td>\( u = g(x),\ du = g'(x)\,dx \)</td><td>The inner function's derivative sits beside it, up to a constant.</td></tr>
+<tr><td>Integration by parts</td><td>\( \int u\,dv = uv - \int v\,du \)</td><td>Genuine products: polynomial × exponential or sine; pick \( u \) to simplify.</td></tr>
+<tr><td>Limits under substitution</td><td>\( x{=}a \to u{=}g(a) \)</td><td>Transform the limits with the variable and never convert back.</td></tr>
+<tr><td>Table form</td><td>memorized standards</td><td>Recognize before deriving; most plant integrals are three patterns.</td></tr>
+<tr><td>Trapezoid rule</td><td>\( \sum \tfrac{f_i + f_{i+1}}{2}\,\Delta t \)</td><td>Sampled data — the licensed, honest fallback.</td></tr>
+<tr><td>Verify by differentiating</td><td>\( \tfrac{d}{dx}(\text{answer}) \stackrel{?}{=} \text{integrand} \)</td><td>The ten-second audit every antiderivative deserves.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Substitution with limits</b></p>
+<p><b>Problem.</b> Evaluate \( \displaystyle\int_0^2 x\,(x^2+1)^3\,dx \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( u = x^2+1 \), \( du = 2x\,dx \); limits map \( x{=}0 \to u{=}1 \),
+\( x{=}2 \to u{=}5 \).
+(2) Integral becomes \( \tfrac12 \int_1^5 u^3 du = \tfrac12 \cdot \frac{u^4}{4}\Big|_1^5 \).
+(3) \( = \frac{625 - 1}{8} = 78 \).</p>
+<p><b>Answer:</b> 78. <b>Sanity check:</b> the integrand at \( x=2 \) is \( 2 \times 125 = 250 \),
+at 0 it's 0; a rough average of ~40 over width 2 gives ~80 — same neighborhood as 78.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Parts on a decaying transient</b></p>
+<p><b>Problem.</b> A quantity accumulates as \( \int_0^2 t\,e^{-t}\,dt \) (dimensionless
+model of energy delivered by a decaying pulse). <b>Find:</b> its value.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Parts with \( u = t,\ dv = e^{-t}dt \Rightarrow du = dt,\ v = -e^{-t} \).
+(2) \( \int t e^{-t} dt = -t e^{-t} + \int e^{-t} dt = -t e^{-t} - e^{-t} \).
+(3) Evaluate 0→2: \( \left[-(t+1)e^{-t}\right]_0^2 = -(3)(0.1353) + 1 = 1 - 0.406 = 0.594 \).</p>
+<p><b>Answer:</b> ≈0.594. <b>Sanity check:</b> the full integral to infinity equals 1 exactly;
+by \( t=2 \) (two time constants) most of the pulse has landed — 59% here, with the tail's
+remainder consistent with \( (t+1)e^{-t} \) at \( t=2 \) being 0.406.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Integrating data that has no formula</b></p>
+<p><b>Problem.</b> A flow is sampled every 15 minutes: 40, 52, 60, 54, 42 m³/h. <b>Find:</b> the volume transferred over the hour by the trapezoid rule.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Step \( h = 0.25 \) h. Trapezoid rule: \( V = h\left[\tfrac{f_0 + f_4}{2} + f_1 + f_2 + f_3\right] \).
+(2) \( V = 0.25\left[\tfrac{40+42}{2} + 52 + 60 + 54\right] = 0.25\,(41 + 166) = 51.75\ \mathrm{m^3} \).</p>
+<p><b>Answer:</b> ≈51.8 m³.
+<b>Sanity check:</b> the flow averaged roughly 50 m³/h over one hour, so ~50 m³ is the expected neighborhood; the trapezoid answer sits just above it because the curve spends more time near its 60 m³/h crest than at its ends. This is rung four of the technique ladder — used openly, it is not an approximation of last resort but the standard tool for sampled data.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\int_0^2 \frac{x}{x^2+1}\,dx \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \ln 5 \approx 1.609 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \arctan 2 \approx 1.107 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( \tfrac{1}{2}\ln 5 \approx 0.805 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tfrac{1}{2}\ln 3 \approx 0.549 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Set \( u = x^2+1 \), so \( du = 2x\,dx \) and the limits map to \( u=1 \) and \( u=5 \), giving \( \tfrac12\int_1^5 \frac{du}{u} = \tfrac12\ln 5 \). The answer \( \ln 5 \) is the most common substitution slip: dropping the factor \( \tfrac12 \) that \( du = 2x\,dx \) forces. \( \arctan 2 \) comes from pattern-matching the table form \( \int dx/(x^2+1) \) while ignoring the \( x \) in the numerator, and \( \tfrac12\ln 3 \) results from converting the upper limit as \( 2+1 \) instead of \( 2^2+1 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Using integration by parts, evaluate \( \displaystyle\int_0^1 x\,e^{x}\,dx \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( e - 1 \approx 1.718 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 1 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \tfrac{e}{2} \approx 1.359 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 2e - 1 \approx 4.437 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Take \( u = x \), \( dv = e^x dx \), so \( \int x e^x dx = x e^x - \int e^x dx = (x-1)e^x \); evaluating from 0 to 1 gives \( 0 - (-1) = 1 \). The value \( e/2 \) is the classic error of integrating the two factors independently as \( (x^2/2)e^x \) — integration has no product rule, which is exactly why parts exists. \( 2e-1 \) follows from a sign slip in the parts formula (writing \( uv + \int v\,du \)), and \( e-1 \) is \( \int_0^1 e^x dx \) alone, i.e., forgetting the boundary term \( uv \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>What is \( \displaystyle\int e^{3t}\,dt \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \tfrac{1}{3}e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 3e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( e^{3t} + C \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( t\,e^{3t} + C \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Differentiating \( \tfrac13 e^{3t} \) returns \( e^{3t} \) — the inner derivative 3 must be divided away, not multiplied in. Choosing \( 3e^{3t} \) applies the chain rule in the forward direction, the classic inversion error; the ten-second audit — differentiate your answer — catches it instantly. The \( t\,e^{3t} \) option imports a factor that only appears when integrating products <em>by parts</em>, not plain exponentials.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Each integrand below is a polynomial factor times an exponential or composite factor. For which integral does substitution alone fail, making integration by parts the required technique?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \displaystyle\int x\,e^{x^2}\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \displaystyle\int \frac{2x}{x^2+1}\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \displaystyle\int x^2\,e^{x^3}\,dx \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\( \displaystyle\int x\,e^{3x}\,dx \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Substitution works only when the derivative of the inner function sits beside it: in \( \int x e^{x^2} dx \), \( \int x^2 e^{x^3} dx \), and \( \int 2x/(x^2+1)\,dx \) the polynomial factor is, up to a constant, the derivative of the inner function, so a \( u \)-substitution finishes each in one line. In \( \int x e^{3x} dx \) the inner function \( 3x \) has constant derivative, so the leftover \( x \) cannot be absorbed into \( du \); the integrand is a genuine product and parts applies. The classic error runs the other way: seeing \( x \) times an exponential in \( \int x e^{x^2} dx \) and launching into parts, which only produces a harder integral.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Which is \( \displaystyle\int 2x\cos(x^2)\,dx \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \sin(x^2) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \cos(x^3/3) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 2\sin(x^2) + C \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( -\sin(x^2) + C \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The derivative of the inner function \( x^2 \) is \( 2x \), sitting right there as a factor — substitution territory: \( u = x^2 \) gives \( \int\cos u\,du = \sin u + C = \sin(x^2) + C \). Check by differentiating: \( \tfrac{d}{dx}\sin(x^2) = 2x\cos(x^2) \) ✓. The \( \cos(x^3/3) \) option "integrates the inside," a move calculus never licenses; the sign-flipped option confuses the sine and cosine derivative pair.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the totalizer that lied politely.</b> You arrive to commission a batching
+skid whose vendor totalizer disagrees with the tank dip by 4% every batch. The vendor's
+firmware integrates flow with coarse rectangles at a slow scan; the batch flow rises and falls
+steeply. You re-integrate a logged batch with trapezoids — thirty minutes in a spreadsheet —
+and land within 0.5% of the dip. The finding isn't "the meter is bad"; it's "the integration
+method under-resolves the ramps." The vendor pushes a firmware setting, scan tightens, and the
+totalizer and the tank finally tell one story. Technique matters even when silicon does the
+arithmetic.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.798\\ \\mathrm{lbf}\\)", "\\(35.59\\ \\mathrm{lbf}\\)", "\\(17.98\\ \\mathrm{lbf}\\)", "\\(0.1798\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(8 \\times 0.2248 = 1.798\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(22.48\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(444.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(224.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.248\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(100 \times 0.2248 = 22.48\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(3.658\\ \\mathrm{ft/s}\\)", "\\(39.37\\ \\mathrm{ft/s}\\)", "\\(393.7\\ \\mathrm{ft/s}\\)", "\\(3.937\\ \\mathrm{ft/s}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(12 \\times 3.281 = 39.37\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(45.72\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(492.1\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4921\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(49.21\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(150 \times 3.281 = 492.1\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="07-the-integral-as-accumulation.html">← 07 · The integral as accumulation</a><a href="index.html">All lessons · MTH 101</a><a href="09-applications-areas-volumes-work-and-averages.html">09 · Applications: areas, volumes, work, and averages →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

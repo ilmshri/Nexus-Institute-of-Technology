@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Arrays and numerical work — Engineering Computing — MechEd</title>
+<meta name="description" content="NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed witho">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/computing/7">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/computing/07-arrays-and-numerical-work.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">CMP 106 · Engineering Computing</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-engineers-script.html" class="ol" data-key="y1s1/computing/1"><span class="tick"></span><span>01 · Why engineers script</span></a><a href="02-variables-types-and-expressions.html" class="ol" data-key="y1s1/computing/2"><span class="tick"></span><span>02 · Variables, types, and expressions</span></a><a href="03-control-flow.html" class="ol" data-key="y1s1/computing/3"><span class="tick"></span><span>03 · Control flow</span></a><a href="04-functions.html" class="ol" data-key="y1s1/computing/4"><span class="tick"></span><span>04 · Functions</span></a><a href="05-testing-and-debugging-engineering-code.html" class="ol" data-key="y1s1/computing/5"><span class="tick"></span><span>05 · Testing and debugging engineering code</span></a><a href="06-lists-dictionaries-and-files.html" class="ol" data-key="y1s1/computing/6"><span class="tick"></span><span>06 · Lists, dictionaries, and files</span></a><a href="07-arrays-and-numerical-work.html" class="ol cur" data-key="y1s1/computing/7"><span class="tick"></span><span>07 · Arrays and numerical work</span></a><a href="08-plotting-engineering-data.html" class="ol" data-key="y1s1/computing/8"><span class="tick"></span><span>08 · Plotting engineering data</span></a><a href="09-curve-fitting-and-interpolation.html" class="ol" data-key="y1s1/computing/9"><span class="tick"></span><span>09 · Curve fitting and interpolation</span></a><a href="10-small-simulations.html" class="ol" data-key="y1s1/computing/10"><span class="tick"></span><span>10 · Small simulations</span></a><a href="11-project-a-maintenance-data-mini-analysis.html" class="ol" data-key="y1s1/computing/11"><span class="tick"></span><span>11 · Project: a maintenance data mini-analysis</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">CMP 106</a> /
+<span>Lesson 07 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">CMP 106 · Lesson 07 of 11 · Year 1 · Semester 1</p>
+  <h1>Arrays and numerical work</h1>
+  <p class="sub">NumPy arrays for vectorized calculation over whole datasets. Elementwise operations, aggregation, and broadcasting. A vibration record processed without a single explicit loop.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 6.0001 Introduction to Computer Scie</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/computing/7">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 6.0001 Introduction to Computer Science and Programming in Python (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/o9nW0uBqvEo" title="MIT 6.0001 Lec 10 — Understanding Program Efficiency (best fit: why vectorized code wins)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MIT 6.0001 Lec 10 — Understanding Program Efficiency (best fit: why vectorized code wins) <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">MIT 6.0001 Lec 10 — Understanding Program Efficiency (best fit: why vectorized code wins)</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does vectorization replace, and why is it faster and clearer?</li><li>Compute the RMS of an array in one line — conceptually, what happened?</li></ul></div><div class="measure">
+<h3>01 · The array idea: operate on all of it</h3>
+<p>Lists process element by element through loops; numerical arrays (NumPy's
+<code>ndarray</code>) operate on whole datasets at once: <code>kw = hp * 0.746</code>
+converts every horsepower value in one expression — vectorization. The gains are two:
+the code READS as the mathematics (one formula, visibly applied to everything), and it
+runs orders of magnitude faster, because the looping happens in optimized machinery
+below. For engineering data — a year of hourly readings is 8,760 numbers, a vibration
+waveform 65,536 — the array is the natural container, and the loop becomes the
+exception rather than the habit.</p>
+<h3>02 · The reductions: from many numbers to a few</h3>
+<p>Analysis usually ends in reductions: <code>mean</code>, <code>std</code>,
+<code>min/max</code>, <code>sum</code> — the descriptive statistics of a dataset in one
+call each. The standard deviation deserves engineering respect: it is the honest width of
+the scatter, the number that turns "about 4.25" into "4.25 ± 0.30", and the seed of
+every control chart the metrology course will draw. Alongside them, <code>argmax</code>
+answers WHERE — the index of the worst reading — which is often the more actionable
+question: not "how bad" but "which machine".</p>
+<h3>03 · Masks: asking questions of data</h3>
+<p>Comparison on an array yields an array of booleans — a mask — and the mask selects:
+<code>readings[readings &gt; 4.0]</code> is every reading above the alarm line, in one
+expression: no loop, no if, no accumulator. Count them with <code>sum</code> of the mask,
+average them, or feed them onward. The idiom — condition, mask, selection — is the
+data-analysis sentence structure, and it compounds: masks combine with
+\( \texttt{\&} \) and \( \texttt{|} \) into compound questions ("above alarm AND
+after the overhaul") that still read as one line.</p>
+<h3>04 · The vectorized working method</h3>
+<p>Reach for the array whenever data is homogeneous and numeric; keep lists for mixed
+records. Write transformations as whole-array expressions and CHECK them on a three-value
+array first — vectorized code is compact enough that a wrong formula corrupts everything
+uniformly, so the small trace matters doubly. Prefer the built-in reductions to
+hand-rolled loops (they are tested code, and faster), and when a reduction's answer
+surprises, look at the mask counts before doubting the data: how many values, how many
+above threshold, how many NaN — the three questions that catch most data-quality issues
+at the door. Then the discipline that spans every lesson: units ride the variable names
+(<code>vel_mm_s</code>), conversions happen once, visibly, at the border, and any result
+consumed downstream gets an assertion pinning a known case. Arrays change the scale of
+what one line does; they change nothing about what makes the line trustworthy.</p>
+<p>The payoff arrives immediately in the lessons ahead: plotting consumes arrays whole,
+curve fitting reduces them to parameters, and simulations generate them by the thousand.
+Vectorized thinking — state the operation once, apply it to everything, summarize with a
+reduction — is also precisely how plant historians and analysis platforms work
+internally, so fluency here reads directly onto the tools the later automation courses
+will operate.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Lists and loops</b> (Lessons 3, 6) — arrays replace the transform loop.</li>
+<li><b>Statistics vocabulary</b> — mean and standard deviation as scatter's width.</li>
+<li><b>Assertions</b> (Lesson 5) — vectorized code gets pinned like any other.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Array (ndarray)</td><td>homogeneous numeric block</td><td>The natural container for measurements at scale.</td></tr>
+<tr><td>Vectorization</td><td>\( \texttt{kw = hp * 0.746} \)</td><td>One expression, every element; reads as the mathematics.</td></tr>
+<tr><td>Reductions</td><td>\( \texttt{mean, std, min, max, sum} \)</td><td>Whole datasets to summary numbers, one call each.</td></tr>
+<tr><td>Standard deviation</td><td>scatter's honest width</td><td>The ± that belongs beside every reported mean.</td></tr>
+<tr><td>argmax / argmin</td><td>index of the extreme</td><td>WHICH machine, not just how bad.</td></tr>
+<tr><td>Mask</td><td>\( \texttt{a[a > 4.0]} \)</td><td>Condition → boolean array → selection, in one line.</td></tr>
+<tr><td>Compound masks</td><td>\( \texttt{(a>4) \& (t>t0)} \)</td><td>Multi-condition questions that still read as sentences.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Fleet conversion in one line</b></p>
+<p><b>Problem.</b> Motor ratings arrive in horsepower: <code>[10, 25, 50]</code>. Convert the whole set to kW (1 hp = 0.746 kW) vectorized, and state the result.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) <code>hp = np.array([10, 25, 50])</code>; <code>kw = hp * 0.746</code>.
+(2) Result: <code>[7.46, 18.65, 37.3]</code> — every element converted by the one expression.</p>
+<p><b>Answer:</b> [7.46, 18.65, 37.3] kW.
+<b>Sanity check:</b> the same operation on a plain LIST — <code>[10,25,50] * 0.746</code> — is an error, and <code>* 3</code> would have REPEATED the list: the array's element-wise arithmetic is a genuinely different contract, and knowing which container you hold decides what * means.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Mean and scatter of a survey</b></p>
+<p><b>Problem.</b> Four bearing-temperature readings: 4.1, 3.9, 4.3, 4.7 (°C above ambient). <b>Find:</b> the mean and the (population) standard deviation, and report them together.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mean: \( (4.1+3.9+4.3+4.7)/4 = 4.25 \).
+(2) Deviations: −0.15, −0.35, 0.05, 0.45; squares sum to 0.35; variance \( 0.35/4 = 0.0875 \).
+(3) \( \sigma = \sqrt{0.0875} = 0.30 \). Report: \( 4.25 \pm 0.30 \) °C.</p>
+<p><b>Answer:</b> mean 4.25, σ ≈ 0.30 — "4.25 ± 0.30 °C".
+<b>Sanity check:</b> σ has the data's own units and sits comfortably inside the observed spread (range 0.8) — a σ larger than the range would announce an arithmetic slip. The ± habit turns every reported mean into an honest claim, and the metrology course will build control charts on exactly this number.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The alarm-line question</b></p>
+<p><b>Problem.</b> Vibration readings <code>[3.2, 5.1, 2.8, 6.0]</code> mm/s; the alert line is 4.0. Using a mask, find how many readings exceed it and their average.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Mask: <code>v &gt; 4.0</code> → <code>[False, True, False, True]</code>.
+(2) Count: 2. Selection: <code>v[v &gt; 4.0]</code> → <code>[5.1, 6.0]</code>.
+(3) Mean of offenders: \( (5.1+6.0)/2 = 5.55\ \mathrm{mm/s} \).</p>
+<p><b>Answer:</b> 2 readings above the line, averaging 5.55 mm/s.
+<b>Sanity check:</b> condition → mask → selection replaced a four-line loop-with-if, and reads as the question itself. Scale it to a year of route data and the same one-liner is a fleet exception report — the entire reason the mask idiom is worth owning.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p><code>np.array([1, 2, 3]) * 2</code> evaluates to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>array([2, 4, 6])</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>[1, 2, 3, 1, 2, 3]</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>An error</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>array([1, 2, 3, 2])</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Arrays do element-wise arithmetic: every value doubles. The repetition answer is what a plain LIST does with * 2 — the container decides the contract, and this pair of behaviors side by side is the cleanest illustration of why. Knowing which type you hold (Lesson 2's discipline, scaled up) is what makes the one-character operator safe.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p><code>argmax</code> returns:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The INDEX of the largest value</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The largest value</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>All values above average</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The last value</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>max answers 'how bad'; argmax answers 'WHERE' — the position, which maps to a machine, a timestamp, a route point. In maintenance data the location is usually the actionable half: <code>tags[np.argmax(vibration)]</code> names the machine to visit. The pairing of a value-question with its index-question runs through all of applied data work.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>The standard deviation of a set of readings tells you:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The typical spread of readings around their mean, in the data's own units</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The largest error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Whether the mean is correct</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The instrument's accuracy</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>σ is scatter's width — the honest ± beside the mean. It bounds nothing absolutely (readings beyond σ are routine — most data holds ~1/3 of it there), says nothing about BIAS (a precisely wrong instrument scatters tightly around the wrong value), and instrument accuracy is a calibration question. Reporting mean ± σ claims exactly what the data supports, no more.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A vectorized formula applied to 30,000 readings should first be checked by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Running it on a tiny array with a hand-computable answer</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Running it twice on the full data</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Checking that no error is raised</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Trusting NumPy</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Vectorization's power is uniform application — which means a wrong formula corrupts all 30,000 values uniformly and plausibly. The three-value trace with a known answer pins the formula; then scale merely repeats proven arithmetic. Re-running identical wrongness reproduces it identically; absence of errors proves syntax, not sense — the recurring theme every verification lesson has hammered.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>For <code>a = np.array([10, 20, 30, 40])</code>, the slice <code>a[1:3]</code> is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>array([20, 30])</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>array([20, 30, 40])</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>array([10, 20, 30])</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>array([30])</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Same convention as lists and range: start included, stop excluded — indices 1 and 2, values 20 and 30. The consistency across list, range, and array slicing is deliberate: one fencepost rule serves the whole language, and internalizing 'stop is excluded' once retires the off-by-one everywhere at once.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{W}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.0006705\\ \\mathrm{hp}\\)", "\\(3729\\ \\mathrm{hp}\\)", "\\(0.06705\\ \\mathrm{hp}\\)", "\\(0.006705\\ \\mathrm{hp}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{W} = 0.001341\\ \\mathrm{hp}\\): \\(5 \\times 0.001341 = 0.006705\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{W}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.008046\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(4.474e+04\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0.8046\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.08046\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{W} = 0.001341\ \mathrm{hp}\): \(60 \times 0.001341 = 0.08046\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(26.25\\ \\mathrm{ft}\\)", "\\(2.438\\ \\mathrm{ft}\\)", "\\(262.5\\ \\mathrm{ft}\\)", "\\(2.625\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(8 \\times 3.281 = 26.25\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(328.1\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3281\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(32.81\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(100 \times 3.281 = 328.1\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL17575152W" target="_blank" rel="noopener">Introduction to Computation and Programming Using Python — John V. Guttag (MIT Press)</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a>; NumPy documentation practice</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/" title="MIT OCW 6.0001 Introduction to CS and Programming in Python" target="_blank" rel="noopener">MIT OCW 6.0001</a> <a class="watch" href="https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/video_galleries/lecture-videos/" target="_blank" rel="noopener">Watch lectures ▶</a> Introduction to Computer Science and Programming in Python (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="06-lists-dictionaries-and-files.html">← 06 · Lists, dictionaries, and files</a><a href="index.html">All lessons · CMP 106</a><a href="08-plotting-engineering-data.html">08 · Plotting engineering data →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/math-2/index.html">MTH 151 · Engineering Mathematics II →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

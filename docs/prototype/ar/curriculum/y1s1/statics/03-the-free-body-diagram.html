@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>The free-body diagram — Engineering Statics — MechEd</title>
+<meta name="description" content="The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a b">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/3">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/statics/03-the-free-body-diagram.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol cur" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 03 of 11 · Year 1 · Semester 1</p>
+  <h1>The free-body diagram</h1>
+  <p class="sub">The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a bad FBD.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/G4_NFrUPSj4" title="Statics: Lesson 18 - How to Solve Complex Systems with Multiple FBDs" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 18 - How to Solve Complex Systems with Multiple FBDs <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 18 - How to Solve Complex Systems with Multiple FBDs</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name the three steps of a free-body diagram and the most common omission.</li><li>What reactions does a fixed support supply that a pin does not?</li></ul></div><div class="measure">
+<h3>01 · Isolate, replace, label</h3>
+<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>
+<h3>02 · Supports are force vocabularies</h3>
+<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>
+<h3>03 · Every equilibrium error is an FBD error</h3>
+<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. the Worked Examples tab applies the discipline to a simply supported beam and a cantilever.</p>
+
+<h3>04 · The FBD checklist</h3>
+<p>The free-body diagram is a procedure, not an artwork. Run the checklist in order.
+<em>One — isolate:</em> redraw ONLY the chosen body, stripped of everything it touches.
+<em>Two — replace every contact:</em> each support, cable, surface, and neighbor becomes the
+force set it can transmit — a cable becomes one pull along its line, a smooth surface one
+normal push, a pin two components. <em>Three — add the field forces:</em> weight at the
+center of gravity, always. <em>Four — name every unknown</em> with a symbol and an assumed
+direction; a wrong assumption costs nothing — the algebra answers with a minus sign.
+<em>Five — count:</em> unknowns versus available equations, before solving; a mismatch caught
+here saves a page of doomed algebra.</p>
+<p>Two disciplines keep diagrams honest. Forces the body exerts on other things never appear
+— an FBD shows only what acts <em>on</em> the body, and mixing the action–reaction pair onto
+one diagram is the classic corruption. And when a problem involves several connected bodies,
+draw a separate FBD per body plus, where helpful, one of the whole assembly — the pair of
+views cross-checks itself, because the internal forces must cancel in the assembly view.</p>
+<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \( \Sigma F = 0 \) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Forces as vectors</b> (Lesson 1) — reactions are drawn as components.</li>
+<li><b>Moments</b> (Lesson 2) — fixed supports supply one, and \( \Sigma M = 0 \) will need it.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Free-body diagram</td><td>one body, all forces on it</td><td>The non-negotiable first step of every equilibrium problem.</td></tr>
+<tr><td>Support replacement</td><td>contact → force(s)</td><td>Each support type contributes its own reaction set to the diagram.</td></tr>
+<tr><td>Weight</td><td>\( W = mg \) at the center of gravity</td><td>Every body with mass carries it; drawn at the centroid.</td></tr>
+<tr><td>Normal force</td><td>\( N \perp \) surface</td><td>Contact with a surface pushes, never pulls, normal to the contact.</td></tr>
+<tr><td>Action–reaction discipline</td><td>pairs act on DIFFERENT bodies</td><td>The force a body exerts on the floor never appears on that body's own FBD.</td></tr>
+<tr><td>Unknown bookkeeping</td><td>name every unknown once</td><td>Count unknowns vs equations before solving anything.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Beam on a pin and a roller</b></p>
+<p><b>Problem.</b> A 4 m beam is pinned at A and rests on a roller at B (right end). A 2 kN load acts 1.5 m from A. Neglect beam weight. <b>Find:</b> the reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: pin at A gives \( A_x, A_y \); roller at B gives vertical \( R_B \); load 2 kN down at 1.5 m.
+(2) \( \Sigma F_x = 0 \Rightarrow A_x = 0 \) (no horizontal loads).
+(3) \( \Sigma M_A = 0 \): \( R_B \times 4 - 2 \times 1.5 = 0 \Rightarrow R_B = 0.75\ \mathrm{kN} \).
+(4) \( \Sigma F_y = 0 \): \( A_y = 2 - 0.75 = 1.25\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( A_y = 1.25\ \mathrm{kN} \), \( R_B = 0.75\ \mathrm{kN} \), \( A_x = 0 \).
+<b>Sanity check:</b> the load sits nearer A, so A carries more — 1.25 &gt; 0.75, and the two sum to 2 kN. ✓</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Cantilever: the moment reaction earns its keep</b></p>
+<p><b>Problem.</b> A bracket is built into a wall (fixed support) and carries 3 kN downward at 2 m from the wall. <b>Find:</b> the wall reactions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: at the wall draw \( V \) (vertical force), \( H \) (horizontal force), and moment \( M_w \).
+(2) \( \Sigma F_x = 0 \Rightarrow H = 0 \).
+(3) \( \Sigma F_y = 0 \Rightarrow V = 3\ \mathrm{kN} \) upward.
+(4) \( \Sigma M_{wall} = 0 \Rightarrow M_w = 3 \times 2 = 6\ \mathrm{kN\cdot m} \), opposing the load's turning.</p>
+<p><b>Answer:</b> \( V = 3\ \mathrm{kN} \), \( M_w = 6\ \mathrm{kN\cdot m} \).
+<b>Sanity check:</b> replace the fixed support with a pin: no \( M_w \) is available, nothing balances the 6 kN·m, and the bracket rotates — the moment reaction is not optional bookkeeping, it is what "built-in" means.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Free body on an incline</b></p>
+<p><b>Problem.</b> A 50 kg crate rests on a smooth 25° incline, held by a rope parallel to the slope. Draw the free-body diagram and <b>find</b> the rope tension and the normal force. \( g = 9.81\ \mathrm{m/s^2} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD: weight \( W = 50 \times 9.81 = 490.5\ \mathrm{N} \) vertically down; normal \( N \) perpendicular to the slope; tension \( T \) up the slope. Axes along and normal to the incline.
+(2) Along the slope: \( T = W\sin 25° = 490.5 \times 0.4226 = 207\ \mathrm{N} \).
+(3) Normal to it: \( N = W\cos 25° = 490.5 \times 0.9063 = 445\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T \approx 207\ \mathrm{N} \), \( N \approx 445\ \mathrm{N} \).
+<b>Sanity check:</b> \( \sqrt{207^2 + 445^2} = 490.8 \approx W \) — the two components reassemble the weight, as the rotated axes demand; and a steeper slope would trade N for T, exactly as intuition says.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Which support supplies a moment reaction?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Roller</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Pin</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>Fixed (built-in) support</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Only the fixed support resists rotation, adding a moment to its two force components. A pin gives two force components but spins freely; a roller gives one normal force; a cable one axial pull. This menu is why a flagpole (fixed) stands while the same pole on a pin would fall.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The most commonly <em>omitted</em> force on a free-body diagram is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the body's own weight</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the applied load</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the roller reaction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>wind load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Self-weight, acting at the center of gravity, is invisible on the sketch and therefore chronically forgotten — the first item to check on any suspect FBD. Applied loads and support reactions are at least prompted by the drawing; gravity prompts nothing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Which force does NOT belong on the free-body diagram of a crate resting on the floor?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The force the crate exerts on the floor</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The crate's weight</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The normal force from the floor on the crate</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A rope tension pulling the crate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>An FBD shows only forces acting <em>on</em> the chosen body. The crate-on-floor force acts on the <em>floor</em> — it is the Newton's-third-law partner of the normal force, and the pair never appears on one diagram together. Including it is the most common FBD corruption, and it silently doubles the contact force in the equations.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A taut cable attached to a body can exert on it:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a pull or a push along the cable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only a pull along the cable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a force in any direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a pull plus a moment</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Cables carry tension only — they pull along their own axis and buckle rather than push. Drawing a cable force as a push (or at an angle to the cable) is an FBD error that no amount of correct algebra downstream can repair.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A planar body is supported by one pin and one roller. How many unknown reaction components appear on its FBD?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>3</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>6</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The pin contributes two components; the roller one, normal to its surface: three unknowns — exactly matching the three planar equilibrium equations, which is why pin-plus-roller is THE standard determinate support scheme. Four would demand more equations than statics owns; two would leave the body a mechanism.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the pipe support that was drawn wrong before it was built wrong.</b> You arrive at a pipe-rack survey in a petrochemical process unit where a spring hanger is topped out and a nearby rigid support is cold. The as-built review starts exactly where this lesson does: draw the pipe segment as a free body, put in weight, the hanger pull, and each support's actual reaction menu — a rigid shoe pushes only up, a guide only sideways, the spring a set force. The diagram shows one support was assumed to share load it geometrically cannot see (figures representative). The correction was decided on the FBD before anyone touched a wrench.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.3937\\ \\mathrm{in}\\)", "\\(2540\\ \\mathrm{in}\\)", "\\(39.37\\ \\mathrm{in}\\)", "\\(3.937\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(100 \\times 0.03937 = 3.937\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.0315\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(203.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3.15\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.315\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(8 \times 0.03937 = 0.315\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(330.7\\ \\mathrm{lb}\\)", "\\(68.04\\ \\mathrm{lb}\\)", "\\(3307\\ \\mathrm{lb}\\)", "\\(33.07\\ \\mathrm{lb}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(150 \\times 2.205 = 330.7\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(26.46\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(5.443\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(264.6\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.646\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(12 \times 2.205 = 26.46\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-moments-and-couples.html">← 02 · Moments and couples</a><a href="index.html">كل الدروس · STA 103</a><a href="04-equilibrium-of-a-particle.html">04 · Equilibrium of a particle →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

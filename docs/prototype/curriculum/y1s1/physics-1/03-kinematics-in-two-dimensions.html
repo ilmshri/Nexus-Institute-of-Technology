@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Kinematics in two dimensions — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="Projectile motion as two independent one-dimensional motions running on a shared clock. Relative velocity and moving reference frames. Where 2-D kinem">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/physics-1/3">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/physics-1/03-kinematics-in-two-dimensions.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">PHY 107 · Engineering Physics I — Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-units-and-vectors.html" class="ol" data-key="y1s1/physics-1/1"><span class="tick"></span><span>01 · Measurement, units, and vectors</span></a><a href="02-kinematics-in-one-dimension.html" class="ol" data-key="y1s1/physics-1/2"><span class="tick"></span><span>02 · Kinematics in one dimension</span></a><a href="03-kinematics-in-two-dimensions.html" class="ol cur" data-key="y1s1/physics-1/3"><span class="tick"></span><span>03 · Kinematics in two dimensions</span></a><a href="04-newton-s-laws-of-motion.html" class="ol" data-key="y1s1/physics-1/4"><span class="tick"></span><span>04 · Newton's laws of motion</span></a><a href="05-applying-newton-s-laws.html" class="ol" data-key="y1s1/physics-1/5"><span class="tick"></span><span>05 · Applying Newton's laws</span></a><a href="06-work-and-energy.html" class="ol" data-key="y1s1/physics-1/6"><span class="tick"></span><span>06 · Work and energy</span></a><a href="07-potential-energy-and-conservation.html" class="ol" data-key="y1s1/physics-1/7"><span class="tick"></span><span>07 · Potential energy and conservation</span></a><a href="08-momentum-impulse-and-collisions.html" class="ol" data-key="y1s1/physics-1/8"><span class="tick"></span><span>08 · Momentum, impulse, and collisions</span></a><a href="09-rotation-i-kinematics-and-torque.html" class="ol" data-key="y1s1/physics-1/9"><span class="tick"></span><span>09 · Rotation I: kinematics and torque</span></a><a href="10-rotation-ii-dynamics-and-angular-momentum.html" class="ol" data-key="y1s1/physics-1/10"><span class="tick"></span><span>10 · Rotation II: dynamics and angular momentum</span></a><a href="11-oscillations-first-contact.html" class="ol" data-key="y1s1/physics-1/11"><span class="tick"></span><span>11 · Oscillations first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">PHY 107</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">PHY 107 · Lesson 03 of 11 · Year 1 · Semester 1</p>
+  <h1>Kinematics in two dimensions</h1>
+  <p class="sub">Projectile motion as two independent one-dimensional motions running on a shared clock. Relative velocity and moving reference frames. Where 2-D kinematics lives in machinery: belt speeds, transfer trajectories, parts leaving conveyors.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 8.01SC Classical Mechanics</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/hIOq8uxveR0" title="Dynamics — 2D Rectangular Motion Notes" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Dynamics — 2D Rectangular Motion Notes <span class="src">Engineering Deciphered</span></figcaption></figure></div><div class="vh-bar"><span class="n">Dynamics — 2D Rectangular Motion Notes</span><span class="c">ENGINEERING DECIPHERED</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A part leaves a horizontal conveyor at 2 m/s from 1.25 m height: how far out does it land? (≈1.0 m)</li><li>Why don't the horizontal and vertical motions of a projectile interfere?</li></ul></div><div class="measure">
+<h3>01 · Two motions sharing one clock</h3>
+<p>The deepest fact of two-dimensional motion is independence: the horizontal and vertical
+motions of a projectile do not consult each other. Gravity acts only vertically, so the
+horizontal velocity is untouched — constant from launch to landing — while the vertical
+motion is ordinary free fall. The only thing the two share is the clock. Every projectile
+problem therefore splits into two one-dimensional problems solved with Lesson 2's toolkit,
+joined by the time variable: usually the vertical motion sets the time (how long until it
+lands?) and the horizontal motion spends it (how far did it get?).</p>
+<h3>02 · The projectile's arithmetic</h3>
+<p>Launched horizontally from height \( h \) with speed \( v_0 \): the fall time is
+\( t = \sqrt{2h/g} \) — identical to a dropped object, regardless of \( v_0 \) — and
+the reach is \( x = v_0 t \). Launched at angle \( \theta \): the initial velocity
+splits into \( v_0\cos\theta \) horizontal and \( v_0\sin\theta \) vertical, the
+apex arrives when the vertical velocity runs out, and the level-ground range is
+\( R = v_0^2 \sin 2\theta / g \), maximized at 45°. At the apex the vertical velocity
+is zero but the horizontal velocity is untouched — the projectile is still moving, a fact
+the classic "zero velocity at the top" error forgets.</p>
+<h3>03 · Relative motion: velocities add like vectors</h3>
+<p>Velocity is always measured relative to a frame, and frames stack by vector addition:
+the velocity of A relative to ground equals A relative to B plus B relative to ground. A
+worker walking at 1.0 m/s against a conveyor doing 1.5 m/s moves at 0.5 m/s over the floor;
+a part carried on a moving belt leaves the belt end with the belt's velocity as its
+inheritance. In one dimension this is signed addition; in two, components — nothing new,
+just Lesson 1's machinery applied to velocities.</p>
+<h3>04 · The two-column working method</h3>
+<p>Solve every 2-D motion with two columns and one clock. Write the horizontal column:
+constant velocity, \( x = v_x t \), nothing else. Write the vertical column: free fall
+with the full constant-acceleration kit. Identify which column the question interrogates
+and which column supplies the time, and pass \( t \) between them explicitly. Keep signs
+by one declared axis pair (right and up positive is conventional), and audit at the seams:
+the landing condition is a VERTICAL statement (height reaches zero), the reach is a
+HORIZONTAL one, and mixing the columns — using the launch speed where a component belongs —
+is the error the layout exists to prevent. The same two-column habit will return, upgraded,
+as normal-and-tangential components in the dynamics course; learning its discipline now on
+projectiles is the cheap rehearsal.</p>
+<p>The applications are nearer than they look: discharge trajectories off conveyor heads set
+guard and bin positions, falling-object times set interlock reaction budgets, and every
+"how far can it reach" safety question — spray, jet, or dropped tool — is a projectile
+problem wearing overalls. The two columns answer all of them.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>1-D kinematics</b> (Lesson 2) — the constant-acceleration kit, fluently.</li>
+<li><b>Vector components</b> (Lesson 1) — splitting a launch velocity by angle.</li>
+<li><b>The shared-clock idea</b> — time is the only variable both axes see.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Independence principle</td><td>gravity touches only the vertical</td><td>The license to split any 2-D problem into two 1-D columns.</td></tr>
+<tr><td>Horizontal column</td><td>\( x = v_x t \), \( v_x \) constant</td><td>No horizontal force → no horizontal acceleration.</td></tr>
+<tr><td>Fall time from height</td><td>\( t = \sqrt{2h/g} \)</td><td>Horizontal launch or plain drop — same clock either way.</td></tr>
+<tr><td>Velocity split</td><td>\( v_x = v_0\cos\theta,\ v_y = v_0\sin\theta \)</td><td>Angled launches; the components live separate lives after this line.</td></tr>
+<tr><td>Level-ground range</td><td>\( R = v_0^2\sin 2\theta/g \)</td><td>Quick reach estimates; maximum at 45°.</td></tr>
+<tr><td>Apex condition</td><td>\( v_y = 0 \), \( v_x \) unchanged</td><td>The top of the arc — moving horizontally, not stopped.</td></tr>
+<tr><td>Relative velocity</td><td>\( \mathbf{v}_{A/G} = \mathbf{v}_{A/B} + \mathbf{v}_{B/G} \)</td><td>Belts, streams, moving platforms — frames stack by vector addition.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Off the end of the conveyor</b></p>
+<p><b>Problem.</b> A part leaves a horizontal conveyor at 2.0 m/s, 1.25 m above the floor. <b>Find:</b> the flight time and where it lands, measured from the conveyor end.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Vertical column sets the clock: \( t = \sqrt{2h/g} = \sqrt{2 \times 1.25/9.81} = 0.505\ \mathrm{s} \).
+(2) Horizontal column spends it: \( x = v_x t = 2.0 \times 0.505 = 1.01\ \mathrm{m} \).</p>
+<p><b>Answer:</b> ≈0.5 s; ≈1.0 m out.
+<b>Sanity check:</b> the fall time is exactly a dropped part's — belt speed cannot buy hang time, only reach. Doubling the belt speed doubles the landing distance but changes the flight time not at all: the independence principle, priced in numbers a guard designer can use.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The 45° maximum</b></p>
+<p><b>Problem.</b> A material-testing launcher fires at 20 m/s on level ground. <b>Find:</b> the maximum range and the angle that achieves it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( R = v_0^2\sin 2\theta/g \), maximized where \( \sin 2\theta = 1 \), i.e. \( \theta = 45° \).
+(2) \( R_{max} = 20^2/9.81 = 40.8\ \mathrm{m} \).</p>
+<p><b>Answer:</b> ≈41 m at 45°.
+<b>Sanity check:</b> range scales as \( v_0^2 \) — a 10% speed increase buys 21% more reach — and the \( \sin 2\theta \) symmetry means 30° and 60° land in the same place, a fact worth knowing whenever a spray, jet, or thrown object's reach is being bounded for safety.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Walking against the belt</b></p>
+<p><b>Problem.</b> A maintenance worker walks at 1.0 m/s toward the tail of a conveyor that carries them forward at 1.5 m/s. <b>Find:</b> the worker's velocity over the floor, and their displacement after 8 s.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Frames stack: \( v_{worker/ground} = v_{worker/belt} + v_{belt/ground} = -1.0 + 1.5 = +0.5\ \mathrm{m/s} \).
+(2) Displacement: \( 0.5 \times 8 = 4.0\ \mathrm{m} \) forward.</p>
+<p><b>Answer:</b> 0.5 m/s forward; 4 m in 8 s.
+<b>Sanity check:</b> walking exactly at belt speed would hold position (0 m/s), and walking slower than the belt must still drift forward — the signed addition delivers both limits correctly, which is the entire content of relative velocity in one dimension.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>During projectile flight (no air resistance), the horizontal velocity:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Stays constant</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Decreases steadily</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Increases steadily</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Falls to zero at the apex</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>No horizontal force acts, so no horizontal acceleration exists: \( v_x \) at landing equals \( v_x \) at launch. Gravity spends itself entirely on the vertical column. The apex-stop intuition confuses the vertical component (which does reach zero there) with the whole velocity — the projectile is moving fastest horizontally precisely when it looks momentarily 'paused' at the top.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Two identical parts leave a table edge at the same instant — one dropped, one sliding off horizontally at 3 m/s. Which lands first?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>They land together</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The dropped one</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The sliding one</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Depends on their masses</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both fall the same height under the same vertical physics; the slider's horizontal speed buys distance, not time. This is the independence principle in its purest test form — and the classic demonstration that the vertical clock cannot be bribed horizontally. Mass cancels out of free fall entirely, a fact Newton's laws will formalize next lesson.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A part must fall 4.9 m from a chute to a bin. Its flight time is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>1.0 s</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.5 s</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>2.0 s</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>4.9 s</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( t = \sqrt{2h/g} = \sqrt{2 \times 4.9/9.81} = 1.0\ \mathrm{s} \). The square root is the working surprise: quadrupling the height only doubles the time. Numbers like this size catch-guards and interlock timings — one second of flight is one second for a light curtain to react, and the calculation is exactly this one line.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>At the apex of its arc, a projectile launched at an angle has:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Zero vertical velocity and unchanged horizontal velocity</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Zero total velocity</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero acceleration</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Maximum speed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The vertical component has been spent \( (v_y = 0) \) while the horizontal component never changes — so the projectile moves horizontally at the top, at its MINIMUM (not zero, not maximum) speed. Gravity still acts: acceleration at the apex is the same \( g \) as everywhere else. Three classic errors, one question.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A box rides a conveyor moving 2 m/s and slides off its end. At the instant it leaves, the box's horizontal velocity is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>2 m/s — it inherits the belt's velocity</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Zero — it left the belt</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Depends on its weight</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Equal to g</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Velocity belongs to the object, not the surface: leaving the belt removes the belt's FORCE, not the velocity already possessed. The box begins its projectile life at the belt's speed — which is why discharge trajectories, guard distances, and bin placements are computed from belt speed. Weight decides nothing here, and \( g \) is an acceleration, not a velocity.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(32.81\\ \\mathrm{ft/s}\\)", "\\(30.48\\ \\mathrm{ft/s}\\)", "\\(3281\\ \\mathrm{ft/s}\\)", "\\(328.1\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(100 \\times 3.281 = 328.1\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2.625\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2.438\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(262.5\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(26.25\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(8 \times 3.281 = 26.25\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(330.7\\ \\mathrm{lb}\\)", "\\(68.04\\ \\mathrm{lb}\\)", "\\(3307\\ \\mathrm{lb}\\)", "\\(33.07\\ \\mathrm{lb}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(150 \\times 2.205 = 330.7\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(26.46\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(5.443\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(264.6\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.646\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(12 \times 2.205 = 26.46\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2538490W" target="_blank" rel="noopener">Fundamentals of Physics — Halliday, Resnick &amp; Walker</a></li><li><a href="https://openlibrary.org/works/OL4797379W" target="_blank" rel="noopener">University Physics — Young &amp; Freedman</a></li></ul>
+  <p class="src"><b>Taught from</b> — MIT OCW 8.01SC</p>
+  <ul class="plain small"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-kinematics-in-one-dimension.html">← 02 · Kinematics in one dimension</a><a href="index.html">All lessons · PHY 107</a><a href="04-newton-s-laws-of-motion.html">04 · Newton's laws of motion →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

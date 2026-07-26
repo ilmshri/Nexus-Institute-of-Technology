@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>The derivative as a rate — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes of">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/math-1/3">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/math-1/03-the-derivative-as-a-rate.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol cur" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 03 of 11 · Year 1 · Semester 1</p>
+  <h1>The derivative as a rate</h1>
+  <p class="sub">Definition from first principles, then the derivative as velocity, heat-up rate, and wear rate. Differentiability versus continuity. Reading slopes off real trend data.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/7K1sB05pE0A" title="Lec 1 | MIT 18.01 Single Variable Calculus, Fall 2007 — Rate of Change" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lec 1 | MIT 18.01 Single Variable Calculus, Fall 2007 — Rate of Change <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lec 1 | MIT 18.01 Single Variable Calculus, Fall 2007 — Rate of Change</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A bearing temperature trend rises 2 °C/hour: what derivative statement is that, and toward what does it point?</li><li>Why can a function be continuous yet not differentiable at a point — and what would that look like on a trend?</li></ul></div><div class="measure">
+<h3>01 · From average rate to instantaneous rate</h3>
+<p>Between Monday and Friday a bearing housing warmed from 62 °C to 74 °C: average rate
+3 °C/day. But <em>right now</em>, this hour, how fast is it heating? Squeeze the interval and
+the average rate converges — Lesson 2's limit — to the instantaneous rate:</p>
+\[ \frac{dT}{dt} = \lim_{\Delta t\to 0}\frac{T(t+\Delta t)-T(t)}{\Delta t} \tag{1} \]
+<p>That is the derivative: the local slope of the trend, the speed of change at an instant.
+Units divide: °C per hour, m³ per second, mm/s of vibration per week. A derivative always has
+units, and always tells a maintenance story.</p>
+<h3>02 · The derivative as the trend's confession</h3>
+<p>Condition monitoring is derivative-reading as a profession. A flat vibration trend with
+\( dV/dt \approx 0 \) buys you time; the same amplitude with a steep positive slope buys you a
+work order. Two machines at identical 4 mm/s are in different worlds if one arrived there over
+three years and the other over three weeks. Value tells you <em>where</em> it is; the
+derivative tells you <em>where it's going</em>.</p>
+<h3>03 · Computing from a model</h3>
+<p>Given a fitted trend \( T(t) = 40 + 0.8t + 0.05t^2 \) (°C, hours), the power rule (proved
+next lesson) gives \( T'(t) = 0.8 + 0.1t \): the heating <em>accelerates</em>, because the rate
+itself grows. Set \( T'(t) \) against an alarm rate and you get a time-to-act, not just a
+number: solve \( 0.8+0.1t = 2.5 \) → \( t = 17\ \mathrm{h} \). The derivative converts a curve
+into a deadline.</p>
+
+<h3>04 · Computing derivatives from data — the working method</h3>
+<p>Real trends arrive as samples, not formulas, so the working derivative is a finite
+difference. From the two latest points you can only form the <em>forward-looking secant</em>
+\( (f_{now} - f_{prev})/\Delta t \); mid-record, prefer the <em>central difference</em>
+\( (f_{i+1} - f_{i-1})/(2\Delta t) \), which cancels the first layer of error and tracks
+the true tangent far better on smooth data. Three disciplines make the estimates
+trustworthy. <em>State the units</em> — a slope is always something per something, and writing
+mm/s per week forces the physical meaning into view. <em>Respect noise:</em> differentiation
+amplifies it, so difference over intervals long enough for the real change to dominate the
+scatter; a derivative computed from two noisy readings an hour apart is an opinion, not a
+measurement. <em>Distinguish model from data:</em> when a curve has been fitted, differentiate
+the model symbolically and use the data-side difference as its check — when the two disagree
+badly, the fit, the data, or the machine has changed, and every one of those is worth
+knowing.</p>
+<p>Then read the result the way 2 taught: the value says where the machine is, the derivative
+says where it is going, and the difference between those two sentences is the difference
+between recording a number and making a decision.</p>
+<p><strong>Closing.</strong> The derivative is a limit of average rates, it carries units, and
+on the plant floor it is the difference between watching a number and reading its intent.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Limits</b> (Lesson 2) — the derivative is literally a limit; no limit, no slope.</li>
+<li><b>Slope of a line</b> — rise over run; the derivative generalizes it to curves.</li>
+<li><b>Function notation</b> (Lesson 1) — \( T'(t) \) is itself a new function of time.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Derivative</td><td>\( \tfrac{dT}{dt} = \lim_{\Delta t\to 0}\tfrac{\Delta T}{\Delta t} \)</td><td>The instantaneous rate; the slope of the trend at one instant, always with units.</td></tr>
+<tr><td>Secant (average) rate</td><td>\( \Delta T/\Delta t \)</td><td>What two spot readings give; the derivative's finite approximation.</td></tr>
+<tr><td>Forward difference</td><td>\( (f_{i+1} - f_i)/h \)</td><td>Rate from the latest two samples — the only choice at the record's live edge.</td></tr>
+<tr><td>Central difference</td><td>\( (f_{i+1} - f_{i-1})/(2h) \)</td><td>The better mid-record estimate on smooth data; first-order errors cancel.</td></tr>
+<tr><td>Rate-to-deadline</td><td>solve \( f'(t) = \text{limit} \)</td><td>Turning an alarm rate into a time-to-act.</td></tr>
+<tr><td>Differentiability</td><td>no corners, no jumps</td><td>Knowing where a slope exists at all; trend corners mark regime changes.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Time-to-alarm from a fitted trend</b></p>
+<p><b>Problem.</b> A gearbox housing temperature trend fits
+\( T(t) = 40 + 0.8t + 0.05t^2 \) (°C, \(t\) in hours since the shift began). Site practice
+flags any heating rate above 2.5 °C/h. <b>Find:</b> the rate at \( t=10\ \mathrm{h} \) and the
+time the rate limit is reached.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Differentiate: \( T'(t) = 0.8 + 0.1t \).
+(2) At \( t=10 \): \( T'(10) = 0.8 + 1.0 = 1.8\ \mathrm{°C/h} \) — under the limit.
+(3) Set \( 0.8 + 0.1t = 2.5 \Rightarrow t = 17\ \mathrm{h} \).</p>
+<p><b>Answer:</b> 1.8 °C/h now; the 2.5 °C/h threshold arrives at \( t = 17\ \mathrm{h} \).
+<b>Sanity check:</b> the rate grows 0.1 °C/h every hour; from 1.8 at \(t=10\), seven more hours
+adds 0.7 → 2.5. Consistent.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Filling rate from level</b></p>
+<p><b>Problem.</b> A vertical cylindrical tank, diameter 3.0 m, shows level rising at
+0.40 m per minute. <b>Find:</b> the inflow in m³/h.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( V = A h \) with \( A = \pi D^2/4 = \pi (3.0)^2/4 = 7.07\ \mathrm{m^2} \).
+(2) Chain of rates: \( \dot V = A \, \dot h = 7.07 \times 0.40 = 2.83\ \mathrm{m^3/min} \).
+(3) Convert: \( 2.83 \times 60 = 170\ \mathrm{m^3/h} \).</p>
+<p><b>Answer:</b> ≈170 m³/h. <b>Sanity check:</b> the tank gains 24 m³ every 10 minutes —
+about 3.4 m of level per hour, which a 3 m-diameter receiving tank plausibly does during
+transfer. Units chain cleanly: m² × m/min → m³/min.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>A derivative from historian samples</b></p>
+<p><b>Problem.</b> A vibration trend is sampled weekly: \( V = 2.0,\ 2.3,\ 2.9 \) mm/s at \( t = 0, 1, 2 \) weeks. <b>Find:</b> the rate of change at \( t = 1 \) week by forward difference and by central difference, with units, and state which estimate to trust on a smooth trend.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Forward difference: \( (2.9 - 2.3)/1 = 0.60 \) mm/s per week.
+(2) Central difference: \( (2.9 - 2.0)/2 = 0.45 \) mm/s per week.
+(3) On smooth data the central difference is the better tangent estimate — its first-order errors cancel; the forward difference looks half a step into the future and overstates a rising, accelerating trend.</p>
+<p><b>Answer:</b> forward 0.60, central 0.45 mm/s per week; prefer the central estimate mid-record.
+<b>Sanity check:</b> the weekly increments are 0.3 then 0.6 — the instantaneous rate at \( t=1 \) should sit between them, and 0.45 does.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A machine's vibration trend has been fitted as \( V(t) = 1.2 + 0.03t^2 \) (mm/s, with \( t \) in weeks since installation). What is the instantaneous rate of change of vibration at \( t = 5 \) weeks?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.30 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.15 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1.95 mm/s per week</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.06 mm/s per week</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Differentiating gives \( V'(t) = 0.06t \), so \( V'(5) = 0.30 \) mm/s per week. The distractor 0.15 comes from dropping the factor of 2 when differentiating \( t^2 \), and 1.95 is the value \( V(5) \) itself — confusing where the trend is with how fast it is moving. Answering 0.06 means the derivative was formed correctly but never evaluated at \( t = 5 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A pump bearing's temperature follows the fitted trend \( T(t) = 35 + 1.2t + 0.04t^2 \) (°C, \( t \) in hours since start-up). Site practice requires intervention once the heating rate reaches 3.0 °C/h. At what time does the rate reach that limit?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( t = 22.5 \) h</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( t = 45 \) h</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( t = 37.5 \) h</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( t = 75 \) h</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The rate is \( T'(t) = 1.2 + 0.08t \); setting \( 1.2 + 0.08t = 3.0 \) gives \( t = 1.8/0.08 = 22.5 \) h — the derivative turns the curve into a deadline. The distractor 45 h comes from differentiating \( 0.04t^2 \) as \( 0.04t \) (dropping the factor of 2), and 37.5 h comes from dividing 3.0 by 0.08 without first subtracting the constant rate term 1.2 °C/h.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A bearing temperature \( T(t) \) is logged with \( T \) in °C and \( t \) in hours. What are the units of \( T'(t) \)?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>°C</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>°C/h</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>h/°C</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It is dimensionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The derivative is a limit of \( \Delta T/\Delta t \), so its units are the ratio of the units: °C per hour. A derivative always carries units, and stating them is not pedantry — it is what turns "the trend is 1.8" into the actionable "the housing is heating at 1.8 °C every hour." Answering °C confuses the rate with the reading; dimensionless confuses mathematics with the pure-number world it models.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A recorded trend is continuous at \( t = t_0 \) but shows a sharp corner there, like \( |t - t_0| \)-shaped behaviour after a sudden load change. Which statement is correct?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The function is continuous at \( t_0 \) but not differentiable there: the one-sided secant slopes converge to different values, so no single tangent slope exists.</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Continuity at \( t_0 \) guarantees differentiability at \( t_0 \), so the derivative must exist.</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The function is differentiable at \( t_0 \) but cannot be continuous there.</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The derivative at \( t_0 \) exists and equals the average of the left-hand and right-hand slopes.</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At a corner the limit defining the derivative fails: the left and right difference quotients approach different values, yet the function value has no jump — continuous but not differentiable. The classic error is reversing the implication: differentiability implies continuity, never the converse. Averaging the two one-sided slopes is a tempting repair, but the defining limit simply does not exist, so no derivative can be assigned.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Between \( t = 2 \) h and \( t = 6 \) h a trend rises from 10 to 22 units — an average rate of 3 units/h. What can be said about the instantaneous rate at \( t = 4 \) h?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It is exactly 3 units/h</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It is at least 3 units/h</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>It cannot be determined from the average alone</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It is zero, since 4 h is the midpoint</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>An average over an interval constrains nothing at any particular interior instant: the trend could be rising at 6 units/h at \( t=4 \) and crawling elsewhere, or vice versa. (The mean value theorem promises the instantaneous rate equals 3 <em>somewhere</em> in the interval — but not at any point you get to choose.) Reading an interval average as a point value is the classic trend-review error this lesson exists to retire.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — two identical numbers, one work order.</b> You arrive for the monthly route
+at a cable plant's drawing line and both gearboxes read 3.9 mm/s. The history tells them
+apart: unit A has sat between 3.7 and 4.0 for two years (\( dV/dt \approx 0 \)); unit B was at
+2.1 six weeks ago — a slope of ~0.3 mm/s per week and climbing. Same value, different
+derivative, different decision: A stays on route, B gets an inspection window before the next
+production campaign. When you defend that call in the morning meeting, the argument is
+equation (1), spoken in plain language: it isn't where the number is, it's how fast it's
+moving.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.45\\ \\mathrm{psi}\\)", "\\(689.5\\ \\mathrm{psi}\\)", "\\(145\\ \\mathrm{psi}\\)", "\\(14.5\\ \\mathrm{psi}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(100 \\times 0.145 = 14.5\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.116\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(55.16\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(11.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.16\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(8 \times 0.145 = 1.16\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{Pa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.02176\\ \\mathrm{psi}\\)", "\\(1.034e+06\\ \\mathrm{psi}\\)", "\\(0.2176\\ \\mathrm{psi}\\)", "\\(0.002176\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{Pa} = 0.000145\\ \\mathrm{psi}\\): \\(150 \\times 0.000145 = 0.02176\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{Pa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(0.00174\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.274e+04\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0.0174\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.000174\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{Pa} = 0.000145\ \mathrm{psi}\): \(12 \times 0.000145 = 0.00174\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-limits-and-continuity.html">← 02 · Limits and continuity</a><a href="index.html">كل الدروس · MTH 101</a><a href="04-differentiation-rules-and-the-chain-rule.html">04 · Differentiation rules and the chain rule →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

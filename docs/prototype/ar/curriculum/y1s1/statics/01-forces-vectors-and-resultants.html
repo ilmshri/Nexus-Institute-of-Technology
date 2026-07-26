@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Forces, vectors, and resultants — Engineering Statics — MechEd</title>
+<meta name="description" content="Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and s">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/1">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/year-1/summary.html">ملخص السنة 1</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">الملخصات المجمّعة</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html" lang="en" dir="ltr">English</a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol cur" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 01 of 11 · Year 1 · Semester 1</p>
+  <h1>Forces, vectors, and resultants</h1>
+  <p class="sub">Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and strut forces.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/5OE3DV4ga2A" title="Statics: Lesson 4 - Cartesian Notation &amp; Vector Addition Explained!" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 4 - Cartesian Notation &amp; Vector Addition Explained! <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 4 - Cartesian Notation &amp; Vector Addition Explained!</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></div><div class="measure">
+<h3>01 · Force is a vector, and the arrow is the contract</h3>
+<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
+\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
+<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
+<h3>02 · Weight is not mass</h3>
+<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
+<h3>03 · Cables and struts resolve the same way</h3>
+<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and the Worked Examples tab drills it on a crane cable and a motor lift.</p>
+
+<h3>04 · The component working method</h3>
+<p>Every force problem in this course, and most in the courses after it, runs through one
+mechanical procedure — run it the same way every time and errors lose their hiding places.
+<em>Choose axes deliberately:</em> horizontal-vertical by default, but rotate the axes onto an
+incline the moment most forces align with it — the algebra shrinks. <em>Build a sign
+table:</em> before any arithmetic, write each force's components with signs from the geometry,
+in a small table, so every \( \cos \) and \( \sin \) is committed once and visibly.
+<em>Sum, then recompose:</em> add the columns for \( \Sigma F_x \) and \( \Sigma F_y \),
+recompose into magnitude and angle — and state the quadrant from the signs of the sums, not
+from the calculator's arctangent, which cheerfully reports the wrong quadrant half the time.</p>
+<p>Then run the two closing audits. <em>Recomposition:</em> resolve your resultant back into
+components; if they don't reproduce the sums, a sign slipped. <em>Magnitude sense:</em> the
+resultant can never exceed the sum of the magnitudes and can never be less than the largest
+minus the rest — an answer outside that band is wrong before any rechecking. Ten disciplined
+seconds close out a page of arithmetic.</p>
+<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently and without a diagram panic.</li>
+<li><b>SI units</b> — newtons, kilograms, and the prefix ladder (kN, MPa come soon).</li>
+<li><b>Vector idea</b> — a quantity with direction; formal vector algebra is built here, not assumed.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Force</td><td>vector, in newtons</td><td>Any push or pull on a body; magnitude, direction, and point of application all matter.</td></tr>
+<tr><td>Components</td><td>\( F_x = F\cos\theta,\ F_y = F\sin\theta \)</td><td>Splitting a force onto working axes before any equilibrium arithmetic.</td></tr>
+<tr><td>Resultant</td><td>\( R = \sqrt{(\Sigma F_x)^2 + (\Sigma F_y)^2} \)</td><td>Collapsing a force set into one equivalent force.</td></tr>
+<tr><td>Direction of resultant</td><td>\( \theta = \tan^{-1}(\Sigma F_y/\Sigma F_x) \)</td><td>Reporting the resultant as magnitude-plus-angle; check the quadrant.</td></tr>
+<tr><td>Unit conversion</td><td>\( W = mg \)</td><td>Kilograms on a display are mass; slings and anchors feel newtons.</td></tr>
+<tr><td>Recomposition check</td><td>components → \( R \) → components</td><td>The self-audit that catches sign and quadrant slips.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Resolving a cable force</b></p>
+<p><b>Problem.</b> A crane cable applies \( F = 10\ \mathrm{kN} \) to a padeye, at \( 30^\circ \) above the horizontal. <b>Find:</b> the horizontal and vertical components.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN} \).
+(2) \( F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN} \).
+(3) Check by recomposition: \( \sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN} \) — the original magnitude returns.</p>
+<p><b>Answer:</b> \( F_x = 8.66\ \mathrm{kN} \), \( F_y = 5.00\ \mathrm{kN} \).
+<b>Sanity check:</b> at \( 30^\circ \) the force leans closer to horizontal than vertical, so \( F_x > F_y \) — as computed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Weight, then sling tension</b></p>
+<p><b>Problem.</b> A 250 kg motor hangs from two identical sling legs, each at \( 60^\circ \) above the horizontal. <b>Find:</b> the weight and the tension per leg.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Weight: \( W = mg = 250 \times 9.81 = 2452.5\ \mathrm{N} \).
+(2) Vertical equilibrium, two legs sharing symmetrically: \( 2T\sin 60^\circ = W \).
+(3) \( T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( W \approx 2.45\ \mathrm{kN} \); each leg carries \( \approx 1.42\ \mathrm{kN} \).
+<b>Sanity check:</b> each leg carries more than \( W/2 = 1226\ \mathrm{N} \) because only the vertical component of the leg tension supports load — flattening the legs toward horizontal would drive \( T \) higher still, which is why rigging charts penalize shallow sling angles.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Three forces, one resultant</b></p>
+<p><b>Problem.</b> Three concurrent forces act on a padeye: 300 N along +x, 200 N along +y, and 150 N at 210° (measured CCW from +x). <b>Find:</b> the magnitude and direction of the resultant.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Components: \( \Sigma F_x = 300 + 0 + 150\cos 210° = 300 - 129.9 = 170.1\ \mathrm{N} \); \( \Sigma F_y = 0 + 200 + 150\sin 210° = 200 - 75 = 125\ \mathrm{N} \).
+(2) Magnitude: \( R = \sqrt{170.1^2 + 125^2} = 211\ \mathrm{N} \).
+(3) Direction: both sums positive → first quadrant; \( \theta = \tan^{-1}(125/170.1) = 36.3° \) above +x.</p>
+<p><b>Answer:</b> \( R \approx 211\ \mathrm{N} \) at 36.3°.
+<b>Sanity check:</b> the magnitude band: largest force alone is 300 N and the sum of magnitudes is 650 N — but the 150 N force opposes the other two, so a resultant below 300 N is expected; recomposing 211 N at 36.3° returns (170.1, 125.0) exactly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A 20 kN cable force acts at \( 60^\circ \) above the horizontal. What is its vertical component?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>10.0 kN</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>17.3 kN</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>20.0 kN</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>34.6 kN</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F_y = F\sin\theta = 20\sin 60^\circ = 17.3\ \mathrm{kN} \). Choosing 10.0 kN is the classic swap — that is \( 20\cos 60^\circ \), the <em>horizontal</em> component. The component along an axis uses the sine of the angle measured from the other axis; sketch the triangle before reaching for a formula.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Forces of 6 kN and 8 kN act at a point. Which resultant magnitude is <em>impossible</em>?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2 kN</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>10 kN</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>14 kN</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>16 kN</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Two forces bound their resultant between their difference and their sum: \( |8-6| = 2 \) kN (opposing) up to \( 8+6 = 14 \) kN (aligned). 10 kN sits inside the range (it is the perpendicular case, \( \sqrt{6^2+8^2} \)). 16 kN exceeds the sum — no orientation can produce it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A 100 N force acts at 60° above the horizontal. What are its horizontal and vertical components?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>50.0 N and 86.6 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>86.6 N and 50.0 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>100 N and 60 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>60 N and 100 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F_x = 100\cos 60° = 50.0\ \mathrm{N} \), \( F_y = 100\sin 60° = 86.6\ \mathrm{N} \). The swapped pair is the classic cosine–sine mix-up — at angles above 45° the vertical component must be the larger, which settles it without a calculator. The other options confuse the magnitude and the angle with components, which have force units both.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A crane load cell reads 500 (calibrated in kg). What force does the load apply to the hook?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>500 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( \approx 4.9\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \approx 50\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>500 kg is already a force</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN} \). Kilograms measure mass; the hook feels newtons. Writing \"500 N\" understates the load nearly tenfold — the exact unit slip Lesson 1's vignette catches in a lift plan.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Two 100 N forces act on a bracket at right angles to each other. The resultant's magnitude is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>≈141 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>200 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>100 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Perpendicular forces add vectorially: \( R = \sqrt{100^2 + 100^2} = 141\ \mathrm{N} \). Answering 200 N adds magnitudes algebraically — only legal when forces are collinear and aligned; 0 N would require them opposed. The resultant of two forces always lies between their difference and their sum: here between 0 and 200, and 141 sits exactly where the right angle puts it.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the scale reads kilograms, the sling feels newtons.</b> You arrive at a scrap bay where the crane's load cell shows 4,800 on its display and a new engineer writes "4,800 N" into a lift plan for an electric-arc-furnace charge at a steel mill. The display is calibrated in kilograms; the sling load is \( 4800 \times 9.81 \approx 47.1\ \mathrm{kN} \) (figures representative). One unit slip understates the rigging load by a factor of ten. The fix costs one line — \( W = mg \), units written beside every number — which is precisely Lesson 1 doing its job on a real lift.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{kN}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.2002\\ \\mathrm{lbf}\\)", "\\(1.012e+04\\ \\mathrm{lbf}\\)", "\\(1.012e+05\\ \\mathrm{lbf}\\)", "\\(1012\\ \\mathrm{lbf}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kN} = 224.8\\ \\mathrm{lbf}\\): \\(45 \\times 224.8 = 1.012e+04\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{kN}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.01334\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(674.4\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(6744\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(67.44\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kN} = 224.8\ \mathrm{lbf}\): \(3 \times 224.8 = 674.4\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft}\\)", "\\(18.29\\ \\mathrm{ft}\\)", "\\(196.9\\ \\mathrm{ft}\\)", "\\(19.69\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(5 \times 3.281 = 16.4\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">كل الدروس · STA 103</a><a href="02-moments-and-couples.html">02 · Moments and couples →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

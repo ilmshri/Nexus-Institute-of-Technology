@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Equilibrium of a particle — Engineering Statics — MechEd</title>
+<meta name="description" content="Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/4">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/04-equilibrium-of-a-particle.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol cur" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 04 of 11 · Year 1 · Semester 1</p>
+  <h1>Equilibrium of a particle</h1>
+  <p class="sub">Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/6Gy6oEVoaGo" title="Statics: Lesson 16 - 2D Force Equilibrium &amp; Frictionless Pulleys" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 16 - 2D Force Equilibrium &amp; Frictionless Pulleys <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 16 - 2D Force Equilibrium &amp; Frictionless Pulleys</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A particle under three concurrent forces is in equilibrium: what geometric fact must the forces obey?</li><li>When do you solve by components versus by force triangle?</li></ul></div><div class="measure">
+<h3>01 · Concurrent forces, one point, two (or three) equations</h3>
+<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>
+\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0 \tag{1} \]
+<p>(add \( \Sigma F_z = 0 \) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>
+<h3>02 · Components or geometry — choose deliberately</h3>
+<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>
+<h3>03 · Cables, rings, and pulleys</h3>
+<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \( T \) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. the Worked Examples tab solves the classic two-cable suspension and a movable-pulley hold.</p>
+
+<h3>04 · The particle equilibrium recipe</h3>
+<p>Concurrent-force problems yield to a fixed sequence. <em>FBD of the point</em> — the ring,
+hook, or knot where the forces meet — with every cable's pull drawn along its own line.
+<em>Axes and components:</em> resolve each force with the sign table from Lesson 1.
+<em>Write both equations:</em> \( \Sigma F_x = 0 \) and \( \Sigma F_y = 0 \), giving two
+equations for at most two unknowns. <em>Solve simultaneously</em> — substitution is usually
+cleanest: express one tension from the x-equation, feed it to the y-equation.
+<em>Check physically:</em> substitute the answers back until both sums close to zero within
+rounding, and confirm every cable came out in tension — a negative cable force is not a
+solution, it is a diagnosis that the geometry cannot hang that load that way.</p>
+<p>Read the answers like an engineer afterward. The steeper cable always carries more of a
+hung load's weight; as a cable approaches horizontal its tension grows without bound —
+which is why "just pull it a little tighter" is how straight spans of cable snap hardware.
+The recipe produces numbers; the reading of them produces judgment, and the judgment is
+what the courses downstream — and the plant floor — actually pay for.</p>
+<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Resolution into components</b> (Lesson 1) — the working method of the whole lesson.</li>
+<li><b>FBD discipline</b> (Lesson 3) — the node is isolated and every cable drawn pulling.</li>
+<li><b>Simultaneous equations</b> — two unknowns from two linear equations, cleanly.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Particle equilibrium</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0 \)</td><td>Concurrent force systems — rings, hooks, connection points.</td></tr>
+<tr><td>Two-force equilibrium</td><td>equal, opposite, collinear</td><td>A body under exactly two forces; the shortcut behind two-force members.</td></tr>
+<tr><td>Cable assumption</td><td>tension only, along the cable</td><td>Cables pull; a computed compression in a cable means the model is wrong.</td></tr>
+<tr><td>Simultaneous solution</td><td>two equations, two unknowns</td><td>Two unknown tensions from the two component equations.</td></tr>
+<tr><td>Equilibrium check</td><td>substitute back</td><td>Verify both component sums close to zero with the solved values.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Two cables, one weight</b></p>
+<p><b>Problem.</b> A 500 N weight hangs from a ring supported by cable A at \( 30^\circ \) above horizontal (up-left) and cable B at \( 45^\circ \) above horizontal (up-right). <b>Find:</b> both tensions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of the ring: \( T_A \) up-left at 30°, \( T_B \) up-right at 45°, 500 N down.
+(2) \( \Sigma F_x = 0 \): \( -T_A\cos 30^\circ + T_B\cos 45^\circ = 0 \Rightarrow T_A = 0.8165\,T_B \).
+(3) \( \Sigma F_y = 0 \): \( T_A\sin 30^\circ + T_B\sin 45^\circ = 500 \).
+(4) Substitute: \( T_B(0.8165 \times 0.5 + 0.7071) = 500 \Rightarrow T_B = 448.3\ \mathrm{N} \), \( T_A = 366.0\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T_A = 366\ \mathrm{N} \), \( T_B = 448\ \mathrm{N} \).
+<b>Sanity check:</b> back-substitute: \( 366.0\sin 30^\circ + 448.3\sin 45^\circ = 183.0 + 317.0 = 500\ \mathrm{N} \). ✓ The steeper cable (B) carries more of the vertical — as its geometry says it must.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The movable pulley</b></p>
+<p><b>Problem.</b> A 100 kg load hangs from a single frictionless movable pulley; one rope end is anchored, the other held by a worker, both rope parts vertical. <b>Find:</b> the holding force.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Load weight: \( W = 100 \times 9.81 = 981\ \mathrm{N} \).
+(2) FBD of the pulley block: two rope parts up, each with the same tension \( T \) (frictionless sheave), \( W \) down.
+(3) \( 2T = 981 \Rightarrow T = 490.5\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( \approx 490\ \mathrm{N} \) — half the load.
+<b>Sanity check:</b> the worker pays for the halved force with doubled rope travel; energy balances. A real sheave adds friction, so field pull runs a few percent higher — the idealization is stated, not smuggled.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Two cables, one load</b></p>
+<p><b>Problem.</b> A 1200 N load hangs from a ring supported by two cables: cable 1 at 30° above horizontal to the left, cable 2 at 45° above horizontal to the right. <b>Find:</b> both cable tensions.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FBD of the ring; equilibrium of the concurrent system.
+(2) \( \Sigma F_x = 0 \): \( T_1\cos 30° = T_2\cos 45° \Rightarrow T_2 = 1.2247\,T_1 \).
+(3) \( \Sigma F_y = 0 \): \( T_1\sin 30° + T_2\sin 45° = 1200 \Rightarrow 0.5\,T_1 + 0.866\,T_1 = 1200 \Rightarrow T_1 = 1200/1.366 = 878\ \mathrm{N} \).
+(4) \( T_2 = 1.2247 \times 878 = 1076\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( T_1 \approx 878\ \mathrm{N} \), \( T_2 \approx 1076\ \mathrm{N} \).
+<b>Sanity check:</b> the steeper cable (45°) carries more — as it must — and substituting back: \( 878\times0.5 + 1076\times0.7071 = 439 + 761 = 1200\ \mathrm{N} \) ✓; both tensions positive, so both cables genuinely pull.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Three concurrent forces hold a particle in equilibrium. Drawn tip-to-tail they must:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>form a closed triangle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>be equal in magnitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>be mutually perpendicular</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>all pass through the ground</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \Sigma F = 0 \) means the vector chain returns to its start — a closed triangle. Magnitudes need not be equal (each opposes the resultant of the other two), and perpendicularity is a special case, not a requirement. The closed triangle is also the fast graphical solution route.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A 1000 N load hangs symmetrically from two slings, each at \( 45^\circ \) above horizontal. Tension per sling:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>500 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>707 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1000 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1414 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 2T\sin 45^\circ = 1000 \Rightarrow T = 1000/(2 \times 0.707) = 707\ \mathrm{N} \). Each sling carries more than half the load because only its vertical component supports weight. 500 N ignores the angle; 1414 N applies the factor twice.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A body is in equilibrium under exactly three non-parallel forces. The three forces must be:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Concurrent — their lines of action meet at one point</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Equal in magnitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Perpendicular to each other</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Applied at the same point on the body</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>If two of the lines meet at a point, the third must pass through it too — otherwise it would create an unbalanced moment about that intersection. That is the three-force-member theorem, and it locates unknown reaction directions geometrically before any algebra. Equal magnitudes and right angles are special cases, not requirements; the forces act where they act — only their <em>lines</em> must concur.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A rope runs over a frictionless pulley. The pulley changes the rope's:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>tension only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>direction only</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>both tension and direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>With no friction at the sheave, the same tension runs through the whole rope — the pulley redirects it, nothing more. Mechanical advantage in pulley systems comes from the number of rope parts sharing the load, never from a single sheave altering tension.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A ring in equilibrium is pulled by exactly two cables. The two tensions must be:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Equal, opposite, and collinear</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Equal and perpendicular</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Proportional to the cable lengths</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Two-force equilibrium demands the forces be equal in magnitude, opposite in direction, and share one line of action — otherwise either a net force or a net couple survives. This is the two-force-member principle that later turns truss members into pure tension/compression carriers. Cable length is irrelevant to statics; and nonzero loads are perfectly possible — they just must be collinear.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the two-legged lift with unequal legs.</b> You arrive at a fabrication-yard lift where a vessel nozzle forces the two crane slings to different angles — one steep, one shallow. The rigger's question is Lesson 4 verbatim: which leg works harder? Isolate the hook ring, write \( \Sigma F_x = \Sigma F_y = 0 \), and the shallow leg comes out carrying the larger tension — it must generate the same vertical share through a smaller sine (figures representative). The lift plan swaps in a longer sling to steepen the shallow leg before the lift, not after.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(330.7\\ \\mathrm{lb}\\)", "\\(68.04\\ \\mathrm{lb}\\)", "\\(3307\\ \\mathrm{lb}\\)", "\\(33.07\\ \\mathrm{lb}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(150 \\times 2.205 = 330.7\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(26.46\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(5.443\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(264.6\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.646\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(12 \times 2.205 = 26.46\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(13.79\\ \\mathrm{psi}\\)", "\\(0.2901\\ \\mathrm{psi}\\)", "\\(2.901\\ \\mathrm{psi}\\)", "\\(0.02901\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(2 \\times 0.145 = 0.2901\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(137.9\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2.901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(29.01\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2901\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(20 \times 0.145 = 2.901\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-the-free-body-diagram.html">← 03 · The free-body diagram</a><a href="index.html">All lessons · STA 103</a><a href="05-equilibrium-of-rigid-bodies.html">05 · Equilibrium of rigid bodies →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

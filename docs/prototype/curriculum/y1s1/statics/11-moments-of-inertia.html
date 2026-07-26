@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Moments of inertia — Engineering Statics — MechEd</title>
+<meta name="description" content="Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stres">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/11">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/11-moments-of-inertia.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol cur" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 11 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 11 of 11 · Year 1 · Semester 1</p>
+  <h1>Moments of inertia</h1>
+  <p class="sub">Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/11">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/Fy6K8cxv5y0" title="Statics: Lesson 67 - Introduction to Area Moment of Inertia" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 67 - Introduction to Area Moment of Inertia <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 67 - Introduction to Area Moment of Inertia</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does the parallel-axis theorem add, and when must you use it?</li><li>Why does an I-beam's shape maximize second moment for its area?</li></ul></div><div class="measure">
+<h3>01 · The second moment: area times distance squared</h3>
+<p>The second moment of area about the x-axis is</p>
+\[ I_x = \int y^2\, dA \tag{1} \]
+<p>Distance enters <em>squared</em>: area far from the axis counts disproportionately. For the workhorse rectangle about its own centroid, \( I = bh^3/12 \) — the cubed depth is the single most consequential exponent in structural engineering. \( I \) is not inertia in the dynamic sense; it is a purely geometric measure of how a section's area is deployed against bending.</p>
+<h3>02 · The parallel-axis theorem</h3>
+<p>Centroidal values are tabulated; real composite parts sit away from the composite centroid. The transfer rule:</p>
+\[ I = \bar{I} + A d^2 \tag{2} \]
+<p>adds \( Ad^2 \) for a part whose own centroid lies distance \( d \) from the axis in question. Two habits keep it honest: the theorem transfers only <em>from</em> a centroidal axis (never between two non-centroidal axes directly), and in composite work the \( Ad^2 \) terms usually dwarf the parts' own \( \bar{I} \) — flanges of an I-beam earn their keep almost entirely through \( Ad^2 \).</p>
+<h3>03 · Why sections look the way they do</h3>
+<p>An I-beam is the parallel-axis theorem drawn in steel: put most of the area in two flanges far from the neutral axis (huge \( d \)), keep a thin web to hold them apart and carry shear. the Worked Examples tab computes a small I-section at \( I = 4.49 \times 10^6\ \mathrm{mm^4} \) — then shows a solid square of the <em>same area</em> manages only \( 0.65 \times 10^6 \): the shape, not the steel, is doing seven times the work. Strength of Materials will divide bending moment by exactly this \( I \) to get stress; every section table you will ever open is a catalog of this one integral.</p>
+
+<h3>04 · The transfer working method</h3>
+<p>Composite moments of inertia extend the centroid table by exactly one discipline: the
+parallel-axis transfer. The sequence never varies. <em>Find the composite centroid first</em>
+— Lesson 10's table verbatim. <em>For each part,</em> write its own centroidal
+\( \bar{I}_i \) from the standard formulas, measure the distance \( d_i \) from the
+part's centroid to the COMPOSITE centroid, and transfer: \( I_i = \bar{I}_i + A_i d_i^2 \).
+<em>Sum.</em> Holes ride the same table with negative \( A \) and negative \( \bar{I} \).
+The classic error is transferring between two arbitrary axes — the theorem only moves I
+away from a shape's OWN centroid, never between two off-centroid axes; when in doubt, route
+through the centroid in two steps.</p>
+<p>Read the result with the \( h^3 \) instinct: material far from the axis does the work,
+which is why doubling a beam's depth multiplies its bending stiffness eightfold while
+doubling its width merely doubles it, and why the I-beam exists at all. When a computed
+composite I comes out smaller than its largest part's contribution, the arithmetic is
+wrong — transfers only ever add for real areas. These numbers feed the flexure formula in
+Strength of Materials directly; the audit habits travel with them.</p>
+<p><strong>Closing.</strong> \( y^2 \) rewards distance, \( bh^3/12 \) rewards depth, and \( Ad^2 \) explains the I-beam. Statics ends by manufacturing the geometric property that strength calculations spend.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Centroids</b> (Lesson 10) — the composite centroid must be located before any \( d \) is measured.</li>
+<li><b>Composite bookkeeping</b> (Lesson 10) — the same table grows two more columns.</li>
+<li><b>Integration</b> — (1) is evaluated once for the rectangle; after that, tables and transfer.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Area moment of inertia</td><td>\( I = \int y^2 dA \)</td><td>The section's resistance to bending; mm⁴.</td></tr>
+<tr><td>Rectangle about centroid</td><td>\( I = bh^3/12 \)</td><td>The workhorse formula; depth cubed is the story.</td></tr>
+<tr><td>Rectangle about base</td><td>\( I = bh^3/3 \)</td><td>When the reference axis sits on an edge.</td></tr>
+<tr><td>Parallel-axis theorem</td><td>\( I = \bar{I} + A d^2 \)</td><td>Moving I from a shape's centroid to the composite's axis.</td></tr>
+<tr><td>Composite I</td><td>sum of transferred parts</td><td>The same tabular discipline as centroids, one column longer.</td></tr>
+<tr><td>Depth leverage</td><td>\( I \propto h^3 \)</td><td>Why beams stand upright and I-beams put material far from the axis.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>I-section by composite parts</b></p>
+<p><b>Problem.</b> An I-section: two flanges 100 × 10 mm (top and bottom), web 10 × 80 mm, overall depth 100 mm, symmetric. <b>Find:</b> \( I \) about the horizontal centroidal axis.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Symmetry puts the centroid at mid-depth; each flange centroid sits \( d = 45\ \mathrm{mm} \) away.
+(2) One flange: \( \bar{I} = \dfrac{100 \times 10^3}{12} = 8333\ \mathrm{mm^4} \); \( Ad^2 = 1000 \times 45^2 = 2\,025\,000\ \mathrm{mm^4} \).
+(3) Web (centroid on the axis, no transfer): \( \dfrac{10 \times 80^3}{12} = 426\,667\ \mathrm{mm^4} \).
+(4) Total: \( I = 2(8333 + 2\,025\,000) + 426\,667 = 4.49 \times 10^6\ \mathrm{mm^4} \).</p>
+<p><b>Answer:</b> \( I \approx 4.49 \times 10^6\ \mathrm{mm^4} \).
+<b>Sanity check:</b> the flanges' own \( \bar{I} \) (8,333 each) is 0.4% of their \( Ad^2 \) — the transfer term carries the section, as 2 promised.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Same steel, different shape</b></p>
+<p><b>Problem.</b> Reshape the I-section's area (\( A = 2 \times 1000 + 800 = 2800\ \mathrm{mm^2} \)) into a solid square. <b>Find:</b> its \( I \) and the comparison.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Square side: \( s = \sqrt{2800} = 52.9\ \mathrm{mm} \).
+(2) \( I = \dfrac{s^4}{12} = \dfrac{52.9^4}{12} = 0.653 \times 10^6\ \mathrm{mm^4} \).
+(3) Ratio: \( 4.49/0.653 = 6.9 \).</p>
+<p><b>Answer:</b> the I-shape is ~6.9× stiffer in bending than a square of identical area.
+<b>Sanity check:</b> identical steel tonnage, sevenfold performance difference — pure geometry. This single ratio is why rolled sections exist, why racks are built from I-beams and channels, and why "add more steel" is the wrong first answer to a deflection problem.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>One rectangle, two axes</b></p>
+<p><b>Problem.</b> A 60 mm wide × 100 mm deep rectangular section. <b>Find:</b> its moment of inertia about its own centroidal horizontal axis and about its base — and reconcile the two with the parallel-axis theorem.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Centroidal: \( \bar{I} = bh^3/12 = 60 \times 100^3/12 = 5.0 \times 10^6\ \mathrm{mm^4} \).
+(2) About the base: \( I = bh^3/3 = 2.0 \times 10^7\ \mathrm{mm^4} \).
+(3) Parallel axis, \( d = 50\ \mathrm{mm} \): \( \bar{I} + Ad^2 = 5.0\times10^6 + 6000 \times 2500 = 2.0 \times 10^7 \) ✓ — the two formulas are one theorem apart.</p>
+<p><b>Answer:</b> \( 5.0 \times 10^6\ \mathrm{mm^4} \) centroidal; \( 2.0 \times 10^7\ \mathrm{mm^4} \) at the base.
+<b>Sanity check:</b> the base value is exactly four times the centroidal one for a rectangle — a ratio worth memorizing as a self-test whenever both are computed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The second moment of area \( I \) measures:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>how much area a section has</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>how far from the axis the area is deployed (distance squared)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the section's mass distribution</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the maximum stress it can carry</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( I = \int y^2 dA \): area counts by the <em>square</em> of its distance from the axis. Two sections of identical area can differ in \( I \) sevenfold — geometry, not quantity of material. Stress capacity involves \( I \) but also material strength; \( I \) itself is purely geometric.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A 50 mm wide × 100 mm deep rectangle, about its horizontal centroidal axis: \( I \) =</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 1.04 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 4.17 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 8.33 \times 10^6\ \mathrm{mm^4} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.42 \times 10^6\ \mathrm{mm^4} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( I = bh^3/12 = 50 \times 100^3/12 = 4.17 \times 10^6\ \mathrm{mm^4} \). Choice A swaps \( b \) and \( h \) (\( 100 \times 50^3/12 \)) — a factor of 4 penalty for laying the section on its side, which is the whole lesson about depth cubed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>The area moment of inertia carries units of:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>mm⁴</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>mm²</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>mm³</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>N·mm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( I = \int y^2\,dA \): length squared times area — length to the fourth. mm² is area, mm³ is the section modulus (I divided by a distance — coming in Strength of Materials), N·mm is a moment of force: three different section quantities that beginners shuffle. Units are the fastest audit: any "moment of inertia" not in length⁴ is some other animal.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The parallel-axis theorem \( I = \bar{I} + Ad^2 \) may be applied:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>between any two parallel axes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only transferring from a centroidal axis</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>only for symmetric sections</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>only when \( d \) is small</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The theorem transfers from a part's own centroidal axis outward. Chaining it between two non-centroidal axes double-counts the offset — go back through the centroid instead. (Symmetry and the size of \( d \) are irrelevant to validity.)</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Doubling a rectangular beam's depth (h) while keeping its width multiplies its centroidal moment of inertia by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>16</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( I = bh^3/12 \propto h^3 \): doubling h gives \( 2^3 = 8 \) times the stiffness quantity. Doubling the WIDTH doubles I only linearly — which is the entire argument for deep, upright sections and for the I-beam's flanges-far-from-axis geometry. Choosing 4 squares instead of cubes; 16 belongs to \( h^4 \), a different integral.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the purlin that sagged and the catalog that fixed it.</b> You arrive at a pre-engineered building retrofit where new cable trays load roof purlins beyond their original duty, and mid-span deflection is visible by eye (figures representative). The instinct on the floor is a heavier purlin; the catalog answer is a <em>deeper</em> one — \( I \) grows with depth cubed, so a modest depth increase outperforms a large weight increase. The engineer's comparison table is worked example 2 with real section numbers: same steel budget, different deployment of area, and the deflection problem disappears into \( bh^3/12 \).</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.1772\\ \\mathrm{in}\\)", "\\(1143\\ \\mathrm{in}\\)", "\\(17.72\\ \\mathrm{in}\\)", "\\(1.772\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(45 \\times 0.03937 = 1.772\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.01181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(76.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.1181\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(3 \times 0.03937 = 0.1181\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(132.3\\ \\mathrm{lb}\\)", "\\(27.22\\ \\mathrm{lb}\\)", "\\(1323\\ \\mathrm{lb}\\)", "\\(13.23\\ \\mathrm{lb}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(60 \\times 2.205 = 132.3\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(11.02\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2.268\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(110.2\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.102\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(5 \times 2.205 = 11.02\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="10-centroids-and-centers-of-gravity.html">← 10 · Centroids and centers of gravity</a><a href="index.html">All lessons · STA 103</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

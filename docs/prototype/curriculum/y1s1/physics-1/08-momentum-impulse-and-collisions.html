@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Momentum, impulse, and collisions — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="The impulse–momentum theorem; conservation of momentum where external forces vanish; elastic and inelastic collisions distinguished by what happens to">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/physics-1/8">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/physics-1/08-momentum-impulse-and-collisions.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">PHY 107 · Engineering Physics I — Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-units-and-vectors.html" class="ol" data-key="y1s1/physics-1/1"><span class="tick"></span><span>01 · Measurement, units, and vectors</span></a><a href="02-kinematics-in-one-dimension.html" class="ol" data-key="y1s1/physics-1/2"><span class="tick"></span><span>02 · Kinematics in one dimension</span></a><a href="03-kinematics-in-two-dimensions.html" class="ol" data-key="y1s1/physics-1/3"><span class="tick"></span><span>03 · Kinematics in two dimensions</span></a><a href="04-newton-s-laws-of-motion.html" class="ol" data-key="y1s1/physics-1/4"><span class="tick"></span><span>04 · Newton's laws of motion</span></a><a href="05-applying-newton-s-laws.html" class="ol" data-key="y1s1/physics-1/5"><span class="tick"></span><span>05 · Applying Newton's laws</span></a><a href="06-work-and-energy.html" class="ol" data-key="y1s1/physics-1/6"><span class="tick"></span><span>06 · Work and energy</span></a><a href="07-potential-energy-and-conservation.html" class="ol" data-key="y1s1/physics-1/7"><span class="tick"></span><span>07 · Potential energy and conservation</span></a><a href="08-momentum-impulse-and-collisions.html" class="ol cur" data-key="y1s1/physics-1/8"><span class="tick"></span><span>08 · Momentum, impulse, and collisions</span></a><a href="09-rotation-i-kinematics-and-torque.html" class="ol" data-key="y1s1/physics-1/9"><span class="tick"></span><span>09 · Rotation I: kinematics and torque</span></a><a href="10-rotation-ii-dynamics-and-angular-momentum.html" class="ol" data-key="y1s1/physics-1/10"><span class="tick"></span><span>10 · Rotation II: dynamics and angular momentum</span></a><a href="11-oscillations-first-contact.html" class="ol" data-key="y1s1/physics-1/11"><span class="tick"></span><span>11 · Oscillations first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">PHY 107</a> /
+<span>Lesson 08 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">PHY 107 · Lesson 08 of 11 · Year 1 · Semester 1</p>
+  <h1>Momentum, impulse, and collisions</h1>
+  <p class="sub">The impulse–momentum theorem; conservation of momentum where external forces vanish; elastic and inelastic collisions distinguished by what happens to kinetic energy. Impact loading: why dropped loads and hammer blows produce forces far beyond their weights.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 8.01SC Classical Mechanics</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/8">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/3nJIzh5rmGs" title="Dynamics — Conservation of Momentum Notes" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Dynamics — Conservation of Momentum Notes <span class="src">Engineering Deciphered</span></figcaption></figure></div><div class="vh-bar"><span class="n">Dynamics — Conservation of Momentum Notes</span><span class="c">ENGINEERING DECIPHERED</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Two 5 kg carts collide and stick, one moving at 4 m/s: final speed? (2 m/s)</li><li>Why does extending the stopping time reduce the impact force?</li></ul></div><div class="measure">
+<h3>01 · Momentum: motion's currency</h3>
+<p>Momentum, \( \mathbf{p} = m\mathbf{v} \), is the quantity of motion — a vector, in
+kilogram-metres per second. Newton's second law in its original and most general form says
+force is the RATE of change of momentum: \( \mathbf{F} = d\mathbf{p}/dt \). Integrated
+over a contact, this becomes the impulse–momentum theorem:
+\( \mathbf{F}\Delta t = \Delta\mathbf{p} \) — the product of force and its duration
+equals the momentum change it produces. The product is the point: the same momentum change
+can be bought with a large force briefly or a small force at leisure, and nearly all impact
+engineering — packaging, bumpers, crash padding, soft-landing programs — is the deliberate
+purchase of more \( \Delta t \) to shrink \( F \).</p>
+<h3>02 · Conservation: the system keeps its total</h3>
+<p>When no net EXTERNAL force acts on a system, its total momentum cannot change — the
+internal pushes and pulls cancel in third-law pairs. Collisions, couplings, and separations
+all obey it: \( m_1v_1 + m_2v_2 \) before equals the same sum after, signs carried by
+direction. The law holds regardless of how violent, brief, or lossy the interaction is —
+which is what makes it the collision analyst's first equation, written before anything is
+known about the forces themselves.</p>
+<h3>03 · Collisions: what momentum keeps, energy may lose</h3>
+<p>Momentum is conserved in every collision; kinetic energy is not. A perfectly INELASTIC
+collision — the bodies couple and move together — conserves momentum while converting the
+maximum possible kinetic energy to deformation and heat. An ELASTIC collision conserves
+both, an idealization that hard steel balls and billiards approach. Real impacts live
+between the limits. The two conservation questions are therefore always asked separately,
+and the energy shortfall in a sticking collision is not an error — it is the crumple, the
+dent, and the noise, priced exactly.</p>
+<h3>04 · The impulse–momentum working method</h3>
+<p>Define the system so the interesting forces become internal — both carts, hammer plus
+pile — and check that external forces are absent, negligible, or perpendicular during the
+brief event. Declare the positive direction and carry every velocity's sign. Write momentum
+conservation across the event; solve; then, if energies matter, audit the kinetic-energy
+books separately and route any loss honestly to deformation and heat. For contact-force
+questions, use the theorem in its \( F = \Delta p/\Delta t \) form and respect its
+sensitivity: halving the stopping time doubles the average force, which is why hard
+surfaces break what padded ones spare. The method's discipline is the system boundary —
+drawn well, the messy contact forces never need computing at all; drawn badly, nothing
+conserves and everything confuses.</p>
+<p>Momentum and energy together complete the collision toolkit: momentum answers the
+velocities, energy names the damage, and the pair of audits — run separately, never
+merged — resolves every impact question this course will pose. The dynamics course will
+add rotation to both ledgers; the bookkeeping discipline installed here is the part that
+does not change.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Second and third laws</b> (Lesson 4) — conservation is their joint consequence.</li>
+<li><b>Vectors and signs</b> (Lesson 1) — momentum is direction-carrying.</li>
+<li><b>Kinetic energy</b> (Lesson 6) — the second, separate audit in collisions.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Momentum</td><td>\( \mathbf{p} = m\mathbf{v} \)</td><td>The motion currency; vector, kg·m/s.</td></tr>
+<tr><td>Impulse–momentum theorem</td><td>\( F\,\Delta t = \Delta p \)</td><td>Trading force against time at fixed momentum change.</td></tr>
+<tr><td>Conservation</td><td>\( \Sigma p \) constant, no net external force</td><td>Collisions, couplings, separations — the first equation written.</td></tr>
+<tr><td>Perfectly inelastic</td><td>bodies couple; max KE loss</td><td>Coupling wagons, catching parts, sticking impacts.</td></tr>
+<tr><td>Elastic</td><td>momentum AND KE conserved</td><td>The hard-ball idealization; real impacts sit between.</td></tr>
+<tr><td>Impact force estimate</td><td>\( F = \Delta p/\Delta t \)</td><td>Why stopping time, not speed alone, decides damage.</td></tr>
+<tr><td>System boundary</td><td>choose so contact forces are internal</td><td>The move that makes the messy forces irrelevant.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>The price of a hard stop</b></p>
+<p><b>Problem.</b> A 0.5 kg part arrives at 4 m/s and must be stopped. <b>Find:</b> the average force if it stops in 0.02 s (rigid stop) versus 0.2 s (cushioned stop).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Momentum to remove: \( \Delta p = 0.5 \times 4 = 2.0\ \mathrm{kg\,m/s} \).
+(2) Rigid: \( F = 2.0/0.02 = 100\ \mathrm{N} \).
+(3) Cushioned: \( F = 2.0/0.2 = 10\ \mathrm{N} \).</p>
+<p><b>Answer:</b> 100 N versus 10 N — tenfold softer for tenfold longer.
+<b>Sanity check:</b> the product \( F\Delta t \) is identical (2.0 N·s) in both cases — the momentum bill must be paid in full; only the installment plan changes. Every bumper, dashpot, and packaging foam is this calculation cast in hardware.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Coupling on the line</b></p>
+<p><b>Problem.</b> A 5 kg carrier moving at 4 m/s couples into an identical stationary carrier. <b>Find:</b> the common speed after coupling, and the kinetic energy lost.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Momentum: \( 5 \times 4 + 5 \times 0 = 10\,v \Rightarrow v = 2.0\ \mathrm{m/s} \).
+(2) KE before: \( \tfrac12 \times 5 \times 16 = 40\ \mathrm{J} \); after: \( \tfrac12 \times 10 \times 4 = 20\ \mathrm{J} \).
+(3) Lost: 20 J — exactly half, to the coupling's clunk, flex, and heat.</p>
+<p><b>Answer:</b> 2 m/s; 50% of the kinetic energy gone.
+<b>Sanity check:</b> equal masses coupling always halve the speed and the kinetic energy — momentum conserved, energy honestly not. The energy did not err; it bought the permanent coupling, and the accounting names its price.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Recoil of the free trolley</b></p>
+<p><b>Problem.</b> A 200 kg unbraked trolley carries a 20 kg component. The component is ejected horizontally at 3 m/s (relative to ground). <b>Find:</b> the trolley's recoil velocity.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) System momentum before: zero.
+(2) After: \( 20 \times 3 + 180 \times v = 0 \Rightarrow v = -60/180 = -0.33\ \mathrm{m/s} \).
+(3) The 180 kg remainder recoils at 0.33 m/s opposite the ejection.</p>
+<p><b>Answer:</b> ≈0.33 m/s backward.
+<b>Sanity check:</b> momentum magnitudes match — \( 20 \times 3 = 60 = 180 \times 0.33 \) — and the mass ratio (9:1) appears inverted in the speed ratio, as conservation demands. Every launcher, ejector, and pusher mechanism on an unsecured base rehearses this arithmetic; brakes exist because of it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Total momentum of a system is conserved when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>No net external force acts on the system</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>No friction exists anywhere</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The collision is elastic</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The bodies are rigid</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Conservation follows from Newton's laws whenever external forces sum to zero — internal forces, however violent, cancel in third-law pairs. Elasticity governs the ENERGY question, not the momentum one; rigidity and friction are red herrings at the system level (friction internal to the system is internal). Drawing the boundary so the big forces are internal is the entire craft.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Impulse equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The area under the force–time curve</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Force divided by time</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The slope of the momentum curve</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Mass times acceleration</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( J = \int F\,dt \) — force accumulated over its duration, equal to the momentum change it delivers. Force-over-time is a rate, not an accumulation; slope-of-momentum IS force (the differential form); and \( ma \) is instantaneous force, one integral short of impulse. The area reading matters practically: load-cell traces of impacts are integrated to exactly this quantity.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Padded surfaces reduce impact damage because they:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Extend the stopping time, lowering the force for the same momentum change</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Reduce the momentum to be removed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Absorb momentum permanently</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Make the object lighter</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The momentum bill \( \Delta p \) is fixed by mass and speed; padding stretches \( \Delta t \), and \( F = \Delta p/\Delta t \) falls proportionally. Momentum is not absorbed or shrunk — it is transferred at a gentler rate. Crumple zones, dock bumpers, and foam packaging are all \( \Delta t \)-merchants, selling time to buy down force.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>In a perfectly inelastic collision, which is conserved?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Momentum only — kinetic energy takes its maximum loss</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Both momentum and kinetic energy</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Kinetic energy only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Sticking together is the maximum-KE-loss outcome compatible with momentum conservation; the missing energy became deformation, heat, and sound. Both-conserved defines the ELASTIC limit — the other end of the spectrum. Momentum survives every collision without exception; energy's fate depends on the hardware, which is why the two audits are always run separately.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A 1000 kg cart at 2 m/s and a 2000 kg cart at 1 m/s have:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Equal momenta but different kinetic energies</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Equal kinetic energies</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Equal momenta and energies</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing comparable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Momenta: \( 1000\times2 = 2000\times1 = 2000\ \mathrm{kg\,m/s} \) — equal. Energies: \( \tfrac12\times1000\times4 = 2000\ \mathrm{J} \) versus \( \tfrac12\times2000\times1 = 1000\ \mathrm{J} \) — the faster cart carries double. Momentum scales with v, energy with \( v^2 \): two different currencies, and collisions settle accounts in both. The distinction is the entire reason Lessons 6 and 8 are separate lessons.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.315\\ \\mathrm{in}\\)", "\\(203.2\\ \\mathrm{in}\\)", "\\(3.15\\ \\mathrm{in}\\)", "\\(0.0315\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(8 \\times 0.03937 = 0.315\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(3.937\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2540\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(39.37\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.3937\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(100 \times 0.03937 = 3.937\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(82.74\\ \\mathrm{psi}\\)", "\\(1.74\\ \\mathrm{psi}\\)", "\\(17.4\\ \\mathrm{psi}\\)", "\\(0.174\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(12 \\times 0.145 = 1.74\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1034\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(21.76\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(217.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.176\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(150 \times 0.145 = 21.76\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2538490W" target="_blank" rel="noopener">Fundamentals of Physics — Halliday, Resnick &amp; Walker</a></li><li><a href="https://openlibrary.org/works/OL4797379W" target="_blank" rel="noopener">University Physics — Young &amp; Freedman</a></li></ul>
+  <p class="src"><b>Taught from</b> — MIT OCW 8.01SC</p>
+  <ul class="plain small"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="07-potential-energy-and-conservation.html">← 07 · Potential energy and conservation</a><a href="index.html">All lessons · PHY 107</a><a href="09-rotation-i-kinematics-and-torque.html">09 · Rotation I: kinematics and torque →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

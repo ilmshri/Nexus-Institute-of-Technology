@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Multiple integrals — Engineering Mathematics II — MechEd</title>
+<meta name="description" content="Double and triple integrals over regions. Mass, centroid, and moment of inertia of solid parts computed properly. Order of integration chosen for sani">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s2/math-2/4">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s2/math-2/04-multiple-integrals.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 151 · Engineering Mathematics II</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-vectors-and-vector-geometry.html" class="ol" data-key="y1s2/math-2/1"><span class="tick"></span><span>01 · Vectors and vector geometry</span></a><a href="02-partial-derivatives.html" class="ol" data-key="y1s2/math-2/2"><span class="tick"></span><span>02 · Partial derivatives</span></a><a href="03-chain-rule-and-total-differentials.html" class="ol" data-key="y1s2/math-2/3"><span class="tick"></span><span>03 · Chain rule and total differentials</span></a><a href="04-multiple-integrals.html" class="ol cur" data-key="y1s2/math-2/4"><span class="tick"></span><span>04 · Multiple integrals</span></a><a href="05-vector-fields-flux-and-circulation.html" class="ol" data-key="y1s2/math-2/5"><span class="tick"></span><span>05 · Vector fields, flux, and circulation</span></a><a href="06-matrices-and-linear-systems.html" class="ol" data-key="y1s2/math-2/6"><span class="tick"></span><span>06 · Matrices and linear systems</span></a><a href="07-eigenvalues-and-eigenvectors.html" class="ol" data-key="y1s2/math-2/7"><span class="tick"></span><span>07 · Eigenvalues and eigenvectors</span></a><a href="08-second-order-linear-odes.html" class="ol" data-key="y1s2/math-2/8"><span class="tick"></span><span>08 · Second-order linear ODEs</span></a><a href="09-forced-oscillations-and-resonance.html" class="ol" data-key="y1s2/math-2/9"><span class="tick"></span><span>09 · Forced oscillations and resonance</span></a><a href="10-laplace-transforms.html" class="ol" data-key="y1s2/math-2/10"><span class="tick"></span><span>10 · Laplace transforms</span></a><a href="11-fourier-series-first-contact.html" class="ol" data-key="y1s2/math-2/11"><span class="tick"></span><span>11 · Fourier series first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 151</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 151 · Lesson 04 of 11 · Year 1 · Semester 2</p>
+  <h1>Multiple integrals</h1>
+  <p class="sub">Double and triple integrals over regions. Mass, centroid, and moment of inertia of solid parts computed properly. Order of integration chosen for sanity.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.02 Multivariable Calculus</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s2/math-2/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.02 Multivariable Calculus; 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/YP_B0AapU0c" title="MIT 18.02 Lec 16 — Double Integrals" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MIT 18.02 Lec 16 — Double Integrals <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">MIT 18.02 Lec 16 — Double Integrals</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Set up (don't solve) the triple integral for a stepped shaft's mass.</li><li>Why does integration order sometimes make an impossible integral easy?</li></ul></div><div class="measure">
+<figure class="lesson-diagram"><svg viewBox="0 0 560 280" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Rectangular region of integration with a differential area element dA=dx dy"><rect width="560" height="280" fill="#fbfdfe"/><text x="14" y="22" fill="#16202e" font-size="12" font-weight="700">Double integral: sum f(x,y)·dA over the region</text><line x1="70" y1="235" x2="70" y2="109" stroke="#e8eef3"/><line x1="112" y1="235" x2="112" y2="109" stroke="#e8eef3"/><line x1="154" y1="235" x2="154" y2="109" stroke="#e8eef3"/><line x1="196" y1="235" x2="196" y2="109" stroke="#e8eef3"/><line x1="238" y1="235" x2="238" y2="109" stroke="#e8eef3"/><line x1="70" y1="235" x2="238" y2="235" stroke="#e8eef3"/><line x1="70" y1="193" x2="238" y2="193" stroke="#e8eef3"/><line x1="70" y1="151" x2="238" y2="151" stroke="#e8eef3"/><line x1="70" y1="109" x2="238" y2="109" stroke="#e8eef3"/><rect x="70" y="151" width="126" height="84" fill="#1f7a5c" fill-opacity="0.10" stroke="#1f7a5c" stroke-width="1.6"/><rect x="154" y="176" width="17" height="17" fill="#c2820f" fill-opacity="0.6" stroke="#c2820f" stroke-width="1.2"/><text x="177" y="182" fill="#c2820f" font-size="12" font-weight="700">dA = dx·dy</text><line x1="70" y1="235" x2="251" y2="235" stroke="#16202e" stroke-width="1.5"/><line x1="70" y1="235" x2="70" y2="96" stroke="#16202e" stroke-width="1.5"/><text x="247" y="253" fill="#16202e" font-size="12">x</text><text x="54" y="102" fill="#16202e" font-size="12">y</text><text x="127" y="253" fill="#1f7a5c" font-size="11">b = 3</text><text x="202" y="193" fill="#1f7a5c" font-size="11">h = 2</text><text x="14" y="270" fill="#16202e" font-size="11">Area = ∬dA = 6 · Moment of inertia about base I = ∬y²dA = bh³/3 = 8</text></svg><figcaption>A double integral adds a quantity over a two-dimensional region, one differential tile dA at a time. The same machinery yields area, mass, centroid, and moment of inertia — only the weight inside the integral changes.</figcaption></figure>
+
+<h3>01 · Integrating over a region</h3>
+<p>A single integral accumulates along a line; a <b>double integral</b> \( \iint_R f\,dA \) accumulates over a two-dimensional region \( R \), summing the value of \( f \) on every infinitesimal tile \( dA=dx\,dy \). With \( f=1 \) it returns the plain area of \( R \); with \( f \) a height it returns a volume; with \( f \) a density it returns a mass. The practical key is <b>Fubini's theorem</b>: a double integral is computed as an <em>iterated</em> integral, one variable then the other, and for a well-behaved region the order may be swapped. Over a rectangle the two directions even separate: \( \iint_{[0,2]\times[0,3]}xy\,dA=\Big(\int_0^2 x\,dx\Big)\Big(\int_0^3 y\,dy\Big)=(2)(4.5)=9 \).</p>
+
+<h3>02 · Mass and centroid</h3>
+<p>Give the region a density \( \rho \) and the same integral computes physical properties of a plate or lamina. The <b>mass</b> is \( m=\iint_R \rho\,dA \), and the <b>centroid</b> — the balance point — is the density-weighted average position, \( \bar{x}=\dfrac{1}{m}\iint_R x\,\rho\,dA \), with \( \bar{y} \) similar. For a uniform rectangle \( [0,2]\times[0,3] \) the centroid sits at its geometric centre \( (1,\,1.5) \), as symmetry demands. For a right triangle with legs \( b,h \) the area is \( bh/2 \) and the centroid lands at \( (b/3,\,h/3) \) — one-third of the way from the right-angle along each leg, a result worth memorising because triangular cross-sections are everywhere in structures.</p>
+<div class="keybox"><span class="tag">Key formulas — mass &amp; centroid</span>
+<p>\[ m=\iint_R \rho\,dA,\qquad \bar{x}=\frac{1}{m}\iint_R x\,\rho\,dA,\qquad \bar{y}=\frac{1}{m}\iint_R y\,\rho\,dA \]</p></div>
+
+<h3>03 · Moment of inertia</h3>
+<p>Weight the area by the <em>square</em> of distance from an axis and the integral becomes the <b>second moment of area</b> (area moment of inertia) — the geometric quantity that sets a beam's stiffness and a shaft's resistance to twist. About its base, a rectangle of width \( b \) and height \( h \) has \( I=\iint y^2\,dA=\int_0^h\!\int_0^b y^2\,dx\,dy=\dfrac{bh^3}{3} \); for \( b=3,\ h=2 \) this is \( 8 \). About the centroidal axis the value drops to \( \dfrac{bh^3}{12}=2 \). The two are linked by the <b>parallel-axis theorem</b> \( I=I_c+Ad^2 \): here \( I_c+Ad^2=2+6(1)^2=8 \), recovering the base value. The cubic dependence on \( h \) is why depth, far more than width, buys bending stiffness.</p>
+<div class="keybox"><span class="tag">Key results — second moment of area</span>
+<p>Rectangle: \( I_{\text{base}}=\dfrac{bh^3}{3},\quad I_{\text{centroid}}=\dfrac{bh^3}{12} \).  Parallel axis: \( I=I_c+Ad^2 \).</p></div>
+
+<h3>04 · Triple integrals and the method</h3>
+<p>Adding a third direction gives the <b>triple integral</b> \( \iiint_V f\,dV \) over a solid: with \( f=1 \) it is the volume, with \( f=\rho \) the mass, with \( f=\rho\,r^2 \) the mass moment of inertia of a real three-dimensional part. A box \( [0,1]\times[0,2]\times[0,3] \) has volume \( 1\cdot2\cdot3=6 \). The method for every case is one habit: decide what quantity sits inside the integral (\(1\), a height, a density, or a squared distance), set the limits by sweeping the region in a sensible order, integrate one variable at a time holding the rest fixed, and check the units of the answer. Choosing the integration order to match the region — and, in the next lesson, choosing the right coordinates — is what turns a hard region into an easy calculation.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Single-variable integration</b> — each iterated step is one of these.</li><li><b>Area and volume</b> as accumulated quantities.</li><li><b>Distance from an axis</b> — the \(r\) in a moment of inertia.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Area</td><td>\( A=\iint_R dA \)</td><td>Region measure (\(f=1\)).</td></tr>
+<tr><td>Iterated integral</td><td>\( \iint f\,dA=\int\!\!\int f\,dx\,dy \)</td><td>Fubini: one variable at a time.</td></tr>
+<tr><td>Mass</td><td>\( m=\iint \rho\,dA \)</td><td>Plate with density \(\rho\).</td></tr>
+<tr><td>Centroid</td><td>\( \bar x=\frac1m\iint x\rho\,dA \)</td><td>Balance point.</td></tr>
+<tr><td>Second moment (rect.)</td><td>\( I_{\text{base}}=\frac{bh^3}{3},\ I_c=\frac{bh^3}{12} \)</td><td>Bending / torsion stiffness.</td></tr>
+<tr><td>Parallel axis</td><td>\( I=I_c+Ad^2 \)</td><td>Shift the reference axis.</td></tr>
+<tr><td>Volume (solid)</td><td>\( V=\iiint_V dV \)</td><td>Triple integral, \(f=1\).</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>A separable double integral</b></p><p><b>Problem.</b> Evaluate \( \displaystyle\int_0^3\!\!\int_0^2 xy\,dx\,dy \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Inner: \( \int_0^2 xy\,dx=y\big[\tfrac{x^2}{2}\big]_0^2=2y \). Outer: \( \int_0^3 2y\,dy=\big[y^2\big]_0^3=9 \). Over a rectangle the factors separate: \( (\int_0^2 x\,dx)(\int_0^3 y\,dy)=(2)(4.5)=9 \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Second moment of area</b></p><p><b>Problem.</b> A rectangle has width \( b=3 \), height \( h=2 \). Find its second moment of area about the base and about the centroid, and check with the parallel-axis theorem.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> About the base \( I=\iint y^2\,dA=\dfrac{bh^3}{3}=\dfrac{3\cdot8}{3}=8 \). About the centroid \( I_c=\dfrac{bh^3}{12}=\dfrac{24}{12}=2 \). Check: \( A=6 \), \( d=h/2=1 \), so \( I_c+Ad^2=2+6(1)=8 \) ✓.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Centroid of a triangle</b></p><p><b>Problem.</b> Find the area and centroid of a right triangle with legs \( b=3 \) (along \(x\)) and \( h=6 \) (along \(y\)), right angle at the origin.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Area \( =\tfrac12 bh=\tfrac12(3)(6)=9 \). The centroid of a triangle is one-third of the way from the right angle along each leg: \( \bar x=b/3=1 \), \( \bar y=h/3=2 \). So \( (\bar x,\bar y)=(1,2) \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>\( \iint_R dA \) (with \( f=1 \)) gives:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the area of \(R\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the perimeter of \(R\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the centroid</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Summing \(1\) over every tile \(dA\) accumulates the region's area.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>\( \int_0^3\!\int_0^2 xy\,dx\,dy \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>9</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>6</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>18</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>36</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( (\int_0^2 x\,dx)(\int_0^3 y\,dy)=(2)(4.5)=9 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Fubini's theorem lets you:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>compute a double integral as two single integrals</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>differentiate under the integral</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>ignore the region</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>swap \(f\) for its derivative</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It reduces \( \iint f\,dA \) to an iterated integral, and (for nice regions) the order may be swapped.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>The mass of a plate of density \( \rho \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \iint_R \rho\,dA \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \iint_R dA \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \rho\,\bar x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \iint_R \rho^2\,dA \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Mass is density accumulated over the area: \( m=\iint_R\rho\,dA \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>The second moment of area of a rectangle about its base is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{bh^3}{3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \frac{bh^3}{12} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \frac{b^3h}{3} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( bh \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( I_{\text{base}}=\iint y^2\,dA=\frac{bh^3}{3} \); the centroidal value is \( \frac{bh^3}{12} \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>The parallel-axis theorem states:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( I=I_c+Ad^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( I=I_c-Ad^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( I=I_c/A \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( I=Ad^2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Moving off the centroid adds \( Ad^2 \): \( I=I_c+Ad^2 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The centroid of a right triangle with legs \(b,h\) (right angle at origin) is at:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( (b/3,\,h/3) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( (b/2,\,h/2) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( (b/3,\,h/2) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( (b,\,h) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A triangle's centroid is one-third from the right angle along each leg: \( (b/3,h/3) \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Doubling a beam's depth \(h\) (width fixed) multiplies its base second moment \( bh^3/3 \) by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>3</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(I\propto h^3\), so \( h\to2h \) gives \( 2^3=8\times \) the stiffness — why depth dominates bending.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>A structural draftsman selecting a floor beam relies directly on the second
+moment of area: a beam's stiffness scales as \( bh^3/12 \), so the depth \(h\)
+enters cubed while the width \(b\) enters only linearly. Doubling the depth stiffens
+the beam eightfold; doubling the width merely doubles it. That single integral
+result is why rolled sections are deep and thin rather than square, and why an
+I-beam pushes its material as far from the neutral axis as the geometry allows —
+the \( y^2 \) weight in \( \iint y^2\,dA \) rewards distance from the axis above all.</p>
+<p>The centroid integral does the balancing. When a fabricator lifts an irregular
+steel plate with a single sling, the lift point must sit over the centroid
+\( \bar x=\frac1A\iint x\,dA \), or the plate swings and tilts. For composite plates
+the same rule is applied piecewise — locate each simple piece's centroid, then take
+the area-weighted average — which is the everyday shop version of evaluating the
+integral without calculus.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(201.2\\ \\mathrm{hp}\\)", "\\(111.9\\ \\mathrm{hp}\\)", "\\(2012\\ \\mathrm{hp}\\)", "\\(20.12\\ \\mathrm{hp}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(150 \\times 1.341 = 201.2\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(16.09\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.948\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(160.9\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.609\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(12 \times 1.341 = 16.09\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.6096\\ \\mathrm{ft/s}\\)", "\\(6.562\\ \\mathrm{ft/s}\\)", "\\(65.62\\ \\mathrm{ft/s}\\)", "\\(0.6562\\ \\mathrm{ft/s}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(2 \\times 3.281 = 6.562\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(6.096\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(65.62\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(656.2\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.562\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(20 \times 3.281 = 65.62\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" title="MIT OCW 18.02SC Multivariable Calculus" target="_blank" rel="noopener">MIT OCW 18.02</a> <a class="watch" href="https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" title="MIT OCW 18.02SC Multivariable Calculus" target="_blank" rel="noopener">MIT OCW 18.02</a> <a class="watch" href="https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Multivariable Calculus; <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-chain-rule-and-total-differentials.html">← 03 · Chain rule and total differentials</a><a href="index.html">All lessons · MTH 151</a><a href="05-vector-fields-flux-and-circulation.html">05 · Vector fields, flux, and circulation →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/dynamics/index.html">DYN 152 · Engineering Dynamics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>

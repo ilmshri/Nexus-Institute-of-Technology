@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>The integral as accumulation — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="Riemann sums to the definite integral. Accumulated flow from a rate curve, energy from a power trace. The Fundamental Theorem as the bridge between ra">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=a380c1ec72">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/math-1/7">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/math-1/07-the-integral-as-accumulation.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol cur" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 07 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 07 of 11 · Year 1 · Semester 1</p>
+  <h1>The integral as accumulation</h1>
+  <p class="sub">Riemann sums to the definite integral. Accumulated flow from a rate curve, energy from a power trace. The Fundamental Theorem as the bridge between rates and totals.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/7">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/hjZhPczMkL4" title="Lec 18 | MIT 18.01 Single Variable Calculus, Fall 2007 — Definite Integrals" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lec 18 | MIT 18.01 Single Variable Calculus, Fall 2007 — Definite Integrals <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lec 18 | MIT 18.01 Single Variable Calculus, Fall 2007 — Definite Integrals</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Power drawn over a shift is a curve: what integral gives energy consumed, and in what units?</li><li>State the Fundamental Theorem in one sentence about rates and totals.</li></ul></div><div class="measure">
+<h3>01 · Accumulation is the other half of calculus</h3>
+<p>The derivative asks: how fast? The integral asks the inverse question: <em>how much,
+in total?</em> A flow meter reads m³/h instant by instant; the invoice wants m³. Adding up a
+changing rate over time is integration &mdash; the total volume \( V \) that passes in the time from \( 0 \) to \( T \), accumulated from the instantaneous volumetric flow rate \( Q(t) \):</p>
+\[ V = \int_{0}^{T} Q(t)\,dt \tag{1} \]
+<p>Geometrically this is the area under the \( Q(t) \) curve — approximated by stacking thin
+rectangles \( Q \cdot \Delta t \) and letting \( \Delta t \to 0 \). Every totalizer in the
+plant is performing equation (1) in silicon, all day long.</p>
+<h3>02 · The Fundamental Theorem — rates and totals are inverses</h3>
+<p>The Fundamental Theorem of Calculus says accumulation and differentiation undo each other:
+if \( F(t) = \int_a^t f(x)\,dx \), then \( F' = f \). Consequently</p>
+\[ \int_a^b f(t)\,dt = F(b) - F(a) \quad\text{where } F' = f \tag{2} \]
+<p>Find any antiderivative, evaluate at the ends, subtract. The theorem is why energy (kWh) is
+the antiderivative of power (kW), why distance is the antiderivative of speed, and why a
+totalizer can be checked against two readings of a cumulative register.</p>
+<h3>03 · Reading areas like an engineer</h3>
+<p>Area under a pump's power trend = energy consumed. Area under a flow curve = volume
+transferred. Area between inflow and outflow curves = inventory change. When the curve is
+data rather than formula, the integral is done numerically — trapezoids on historian samples —
+which is Lesson 9's business. The concept is identical: total = area.</p>
+
+<h3>04 · Setting up an integral — the working method</h3>
+<p>Every accumulation problem is set up the same way, and the setup is where the marks are
+won or lost. <em>Identify the rate</em> — the quantity per time (or per length, per angle)
+being accumulated — and write its units down. <em>Fix the interval:</em> the start and end of
+the accumulation, in the rate's own time variable. <em>Integrate, and check the units of the
+result:</em> a rate in m³/h integrated over hours must land in m³, and if it doesn't, the
+setup — not the arithmetic — is wrong. Then exploit the Fundamental Theorem in both
+directions. Given a formula, find an antiderivative and evaluate at the ends. Given a
+cumulative register — a totalizer, an energy meter, an odometer — the theorem says the
+accumulation over any window is simply the difference of two readings: engineering's most
+underrated free lunch.</p>
+<p>Sketch first, always. A rough graph of the rate shows whether the answer should be near
+the peak-times-width rectangle or well under it, whether any region runs negative, and where
+the accumulation concentrates. The sketch is the estimate, the integral is the precision, and
+disagreement between them is the error alarm that catches transposed limits and dropped
+signs before they reach a report.</p>
+<p>One caution completes the method: an integral answers exactly the question its limits ask,
+no more. A total over a shift says nothing about which hour did the accumulating, and a net
+accumulation of zero can hide furious movement in both directions. Keep the question and the
+interval welded together when you present the number, and totals stop being ambushed by
+follow-up questions.</p>
+<p><strong>Closing.</strong> Integrals accumulate rates into totals; the Fundamental Theorem
+makes them computable from antiderivatives; and the plant's totalizers, energy meters, and
+inventory balances are integrals with tag numbers.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The derivative</b> (Lesson 3) — the Fundamental Theorem runs it backwards.</li>
+<li><b>Limits of sums</b> (Lesson 2) — the rectangle stack converges by the same logic.</li>
+<li><b>Power rule</b> (Lesson 4) — reversed: \( \int x^n dx = x^{n+1}/(n{+}1) + C,\ n\neq -1 \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Definite integral</td><td>\( V = \int_0^T Q(t)\,dt \)</td><td>Totals from rates: volume from flow, energy from power, distance from speed.</td></tr>
+<tr><td>Antiderivative</td><td>\( F' = f \)</td><td>The function you evaluate at the ends; unique up to a constant.</td></tr>
+<tr><td>Fundamental Theorem</td><td>\( \int_a^b f\,dt = F(b) - F(a) \)</td><td>Computing accumulations without rectangles — and auditing totalizers from two register readings.</td></tr>
+<tr><td>Average from a register</td><td>\( \bar{f} = \tfrac{F(b)-F(a)}{b-a} \)</td><td>Turning cumulative meter readings into honest average rates.</td></tr>
+<tr><td>Net accumulation</td><td>signed area</td><td>Flows that reverse: the integral counts backflow negative, as inventory demands.</td></tr>
+<tr><td>Unit check on integrals</td><td>rate units × time units</td><td>m³/h over hours must land in m³ — the setup test that precedes arithmetic.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Volume from a ramping flow</b></p>
+<p><b>Problem.</b> During a transfer, flow ramps as \( Q(t) = 20 + 4t \) m³/h (\( t \) in
+hours) for six hours. <b>Find:</b> the total volume moved.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( V = \int_0^6 (20+4t)\,dt \).
+(2) Antiderivative: \( 20t + 2t^2 \).
+(3) Evaluate: \( (120 + 72) - 0 = 192\ \mathrm{m^3} \).</p>
+<p><b>Answer:</b> 192 m³. <b>Sanity check:</b> average flow is \( (20+44)/2 = 32\ \mathrm{m^3/h} \)
+over 6 h → 192 m³. The trapezoid agrees with the antiderivative, as it must for a linear ramp.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Energy from a power trend</b></p>
+<p><b>Problem.</b> A compressor's electrical demand across a shift is modeled
+\( P(t) = 250 - 10t + t^2 \) kW over \( 0 \le t \le 8 \) h. <b>Find:</b> the energy consumed
+and the average power.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( E = \int_0^8 (250 - 10t + t^2)\,dt = \left[250t - 5t^2 + t^3/3\right]_0^8 \).
+(2) \( = 2000 - 320 + 170.7 = 1850.7\ \mathrm{kWh} \).
+(3) Average power \( = E/8 = 231.3\ \mathrm{kW} \).</p>
+<p><b>Answer:</b> ≈1851 kWh; average ≈231 kW. <b>Sanity check:</b> the parabola dips mid-shift
+(minimum \( P(5) = 225 \) kW) and ends at \( P(8)=234 \); an average of 231 kW sits sensibly
+between the minimum and the endpoints.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Auditing a week from two register readings</b></p>
+<p><b>Problem.</b> A water totalizer — a cumulative register, i.e. an antiderivative of flow — read 10,450 m³ on Monday 08:00 and 12,730 m³ on Friday 08:00 (96 hours later). <b>Find:</b> the volume consumed and the true average flow for the period, and name the theorem doing the work.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) By the Fundamental Theorem, consumption over the window is the register difference: \( 12{,}730 - 10{,}450 = 2{,}280\ \mathrm{m^3} \) — no flow curve needed.
+(2) True average flow: \( 2{,}280/96 = 23.75\ \mathrm{m^3/h} \).
+(3) The register <em>is</em> \( F(t) \) with \( F' = Q \); two readings evaluate \( \int Q\,dt \) exactly, whatever the flow did in between.</p>
+<p><b>Answer:</b> 2,280 m³; 23.75 m³/h average.
+<b>Sanity check:</b> a line that idles nights could still spike far above 23.75 by day — the average from registers is exact as an average, and silent about peaks; that distinction is the next lesson's business.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>During a controlled draw-down, a tank's outflow falls linearly as \( Q(t) = 50 - 4t \ \mathrm{m^3/h} \) for \( 0 \le t \le 6 \) h. What total volume leaves the tank during the six hours?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 300\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 156\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 228\ \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 288\ \mathrm{m^3} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Volume is the accumulated rate: \( \int_0^6 (50-4t)\,dt = \left[50t - 2t^2\right]_0^6 = 300 - 72 = 228\ \mathrm{m^3} \). The distractor 156 m³ comes from the classic antiderivative slip of writing \( 50t - 4t^2 \), forgetting to divide by the new power when reversing the power rule. The distractor 300 m³ multiplies the initial rate by the duration as if the flow never declined, ignoring that the integrand changes over the interval.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A pump motor's electrical demand over a 4-hour run is modeled by \( P(t) = 120 + 30t - 3t^2 \) kW. What is the average power drawn over the run?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 656\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 164\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 156\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 192\ \mathrm{kW} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Energy is the area under the power curve: \( E = \int_0^4 (120 + 30t - 3t^2)\,dt = \left[120t + 15t^2 - t^3\right]_0^4 = 656\ \mathrm{kWh} \), and the average power is that total divided by the interval, \( 656/4 = 164\ \mathrm{kW} \). Choosing 656 confuses the integral (kWh) with its average (kW) — a unit slip that forgets the division by the 4 h duration. The distractor 156 kW is the endpoint average \( (P(0)+P(4))/2 = (120+192)/2 \), which only equals the true average when the curve is linear; this parabola bulges above its chord.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\int_1^3 (2t + 1)\,dt \).</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>10</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>14</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>22</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The antiderivative is \( t^2 + t \); evaluating, \( (9 + 3) - (1 + 1) = 10 \). Answering 14 forgets to subtract the lower-end value — the most common definite-integral slip; 22 is the integrand's value at \( t=3 \) times the width, treating a changing rate as constant at its end value. The average-rate check: the integrand runs from 3 to 7, averaging 5 over width 2 — exactly 10.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Historian tags record a tank's inflow \( Q_{\text{in}}(t) \) and outflow \( Q_{\text{out}}(t) \), both in \( \mathrm{m^3/h} \). What physical quantity does \( \int_0^T \big[ Q_{\text{in}}(t) - Q_{\text{out}}(t) \big]\,dt \) equal?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The change in stored volume between \( t=0 \) and \( t=T \), in \( \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The tank's absolute liquid volume at \( t=T \), in \( \mathrm{m^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The instantaneous net inflow at \( t=T \), in \( \mathrm{m^3/h} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The average net inflow rate over the interval, in \( \mathrm{m^3/h} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The integrand \( Q_{\text{in}} - Q_{\text{out}} \) is the net rate of accumulation, so by the Fundamental Theorem its definite integral over \( [0,T] \) is the net volume added — the inventory change \( V(T) - V(0) \), in \( \mathrm{m^3} \). It is not the absolute volume at \( t=T \): that classic error forgets the initial inventory \( V(0) \), which the definite integral cannot see. The remaining options confuse the integral with its integrand (a rate at one instant) or with the average rate, which would require dividing the integral by \( T \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>During a filter backflush, a line's flow \( Q(t) \) runs negative for part of an interval. What does \( \int Q\,dt \) over that interval report?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The net volume delivered, with backflow counted negative</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The gross volume that moved in either direction</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero — integrals of negative regions are discarded</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The average flow rate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The definite integral is signed area: forward flow accumulates positive, reverse flow negative, and the result is net delivery — which is exactly what an inventory balance needs. Gross movement would require integrating \( |Q| \), a different (and occasionally also useful) quantity. Discarding negative regions is not a convention mathematics offers, and an average is the integral <em>divided by</em> the width, not the integral itself.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the invoice audit.</b> You arrive at a monthly utilities meeting where a
+neighboring consumer disputes the demineralized-water charge: "our line only draws 30 m³/h."
+The historian's flow trend says the line ramps hard every startup. You export the week's
+\( Q(t) \), integrate numerically, and the area under the curve says 5,410 m³ against their
+flat-rate claim of 5,040. The 7% difference is startup ramps — invisible to anyone quoting
+instantaneous flow, undeniable to anyone who owns equation (1). The invoice stands, with a
+trend chart attached.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{kJ}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.4739\\ \\mathrm{BTU}\\)", "\\(5.275\\ \\mathrm{BTU}\\)", "\\(47.39\\ \\mathrm{BTU}\\)", "\\(4.739\\ \\mathrm{BTU}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kJ} = 0.9478\\ \\mathrm{BTU}\\): \\(5 \\times 0.9478 = 4.739\\ \\mathrm{BTU}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{kJ}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(5.687\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(63.3\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(568.7\ \mathrm{BTU}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(56.87\ \mathrm{BTU}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kJ} = 0.9478\ \mathrm{BTU}\): \(60 \times 0.9478 = 56.87\ \mathrm{BTU}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.798\\ \\mathrm{lbf}\\)", "\\(35.59\\ \\mathrm{lbf}\\)", "\\(17.98\\ \\mathrm{lbf}\\)", "\\(0.1798\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(8 \\times 0.2248 = 1.798\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(22.48\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(444.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(224.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.248\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(100 \times 0.2248 = 22.48\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="06-extrema-curve-behavior-and-optimization.html">← 06 · Extrema, curve behavior, and optimization</a><a href="index.html">All lessons · MTH 101</a><a href="08-integration-techniques.html">08 · Integration techniques →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=a380c1ec72"></script>
+</body>
+</html>
