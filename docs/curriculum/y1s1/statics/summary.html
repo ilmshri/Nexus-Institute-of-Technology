@@ -3,57 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#FAF8F4">
-<title>Course summary — Engineering Statics — MechEd</title>
-<meta name="description" content="Compiled lectures, foundations, and reference for STA 103 Engineering Statics.">
+<meta name="theme-color" content="#0E1626">
+<title>Course summary — Engineering Statics — Nexus Institute of Technology</title>
+<meta name="description" content="Condensed per-lesson revision summary for STA 103 Engineering Statics.">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=b847538bfd">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=529472124d">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="MechEd — Online Engineering Education">
+    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">MECHED</span>
+      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
         <small>Online Engineering Education</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html">Home</a>
-      <div class="navgrp">
-        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
-        <div class="drop">
-          <a href="../../../about/index.html">About the institute</a>
-          <a href="../../../about/index.html#standards">Our standards</a>
-          <a href="../../../feedback/index.html">Feedback</a>
-        </div>
-      </div>
+      <a href="../../../about/index.html">About</a>
       <a href="../../../mission/index.html">Mission</a>
-      <div class="navgrp">
-        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
-        <div class="drop">
-          <a href="../../../curriculum/index.html">Full curriculum</a>
-          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a><a href="../../../curriculum/year-2/summary.html">Year 2 — compiled summary</a><a href="../../../curriculum/year-3/summary.html">Year 3 — compiled summary</a><a href="../../../curriculum/year-4/summary.html">Year 4 — compiled summary</a>
-        </div>
-      </div>
-      <div class="navgrp">
-        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
-        <div class="drop">
-          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
-          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
-        </div>
-      </div>
+      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
+      <a href="../../../reference/index.html">Resources</a>
       <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
-    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
-    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/summary.html" lang="ar" dir="rtl">العربية</a>
   </div>
 </header>
 
@@ -62,516 +38,35 @@
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COURSE SUMMARY</span>STA 103 · Year 1 · Semester 1</p>
   <h1>STA 103 — Engineering Statics</h1>
-  <p class="sub">One compiled document: every authored lecture, then the foundations
-  toolkits, then this course's own equation-and-term reference. Use
-  <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <p class="sub">A condensed revision summary: the key points of every lesson in
+  this course, in brief. Not a copy of the lectures — read those on the course
+  page. Use <b>Print / Save as PDF</b> for a downloadable copy.</p>
   <div class="cta-row no-print">
     <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
     <a class="btn btn-ghost" href="index.html">Back to course</a>
   </div>
 </div>
 <article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-statics">STA 103 — Engineering Statics</h2>
 
-<h2 id="sum-statics">STA 103 — Engineering Statics</h2>
-<h2 class="sum-part">Part 1 — Lectures</h2>
-
-<section class="sum-lesson"><h3>Lesson 01 · Forces, vectors, and resultants</h3><div class="measure">
-<h3>01 · Force is a vector, and the arrow is the contract</h3>
-<p>A force has magnitude, direction, and a point of application — drop any of the three and the analysis is fiction. In 2-D we work in components: a force \( F \) at angle \( \theta \) above the horizontal carries \( F_x = F\cos\theta \) and \( F_y = F\sin\theta \). The reverse trip is just as routine:</p>
-\[ R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1} \]
-<p>Resultants are found by summing components, never by adding magnitudes — two 10 kN forces can combine to anything from 0 to 20 kN depending on their directions.</p>
-<h3>02 · Weight is not mass</h3>
-<p>Mass is the amount of matter, in kilograms; weight is the gravitational <em>force</em> on that mass, \( W = mg \) with \( g = 9.81\ \mathrm{m/s^2} \), in newtons. A 250 kg motor does not load its sling with "250 kg" — it loads it with \( 250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN} \). Bolt-load calculations, sling charts, and pressure-area checks all fail the same way when someone feeds a mass where a force belongs. Carry units through every line; they are the cheapest error detector you will ever own.</p>
-<h3>03 · Cables and struts resolve the same way</h3>
-<p>A taut cable pulls along its own axis; a straight two-force strut pushes or pulls along its axis. Both therefore hand you a force whose <em>direction is known from geometry</em> — only the magnitude is unknown. Resolving such members into components is the mechanical habit this whole course is built on, and the Worked Examples tab drills it on a crane cable and a motor lift.</p>
-
-<h3>04 · The component working method</h3>
-<p>Every force problem in this course, and most in the courses after it, runs through one
-mechanical procedure — run it the same way every time and errors lose their hiding places.
-<em>Choose axes deliberately:</em> horizontal-vertical by default, but rotate the axes onto an
-incline the moment most forces align with it — the algebra shrinks. <em>Build a sign
-table:</em> before any arithmetic, write each force's components with signs from the geometry,
-in a small table, so every \( \cos \) and \( \sin \) is committed once and visibly.
-<em>Sum, then recompose:</em> add the columns for \( \Sigma F_x \) and \( \Sigma F_y \),
-recompose into magnitude and angle — and state the quadrant from the signs of the sums, not
-from the calculator's arctangent, which cheerfully reports the wrong quadrant half the time.</p>
-<p>Then run the two closing audits. <em>Recomposition:</em> resolve your resultant back into
-components; if they don't reproduce the sums, a sign slipped. <em>Magnitude sense:</em> the
-resultant can never exceed the sum of the magnitudes and can never be less than the largest
-minus the rest — an answer outside that band is wrong before any rechecking. Ten disciplined
-seconds close out a page of arithmetic.</p>
-<p><strong>Closing.</strong> Components in, resultant out, units carried, weight computed from mass — four small disciplines that remove most of the errors this course will otherwise spend weeks catching.</p></div></section><section class="sum-lesson"><h3>Lesson 02 · Moments and couples</h3><div class="measure">
-<h3>01 · Moment: the turning effect of a force</h3>
-<p>The moment of a force about a point measures its tendency to rotate a body about that point:</p>
-\[ M = F d \tag{1} \]
-<p>where \( d \) is the <em>perpendicular</em> distance from the point to the force's line of action — not the distance to where the force happens to be applied. A 500 N pull on a 0.6 m wrench gives 300 N·m only if the pull is perpendicular to the handle; at \( 60^\circ \) to it, the effective arm shrinks and \( M = 500 \times 0.6 \sin 60^\circ = 259.8\ \mathrm{N \cdot m} \). Sign convention: pick counterclockwise positive and never renegotiate mid-problem.</p>
-<h3>02 · Varignon's theorem</h3>
-<p>The moment of a force equals the sum of the moments of its components. This is not a curiosity — it is the standard labor-saving device. Rather than hunt for a perpendicular distance through awkward geometry, resolve the force into \( F_x \) and \( F_y \) at its point of application and take each component's moment with its own easy arm. The wrench case above: \( F_y = 500\sin 60^\circ \) acting 0.6 m from the nut gives the same 259.8 N·m in one line.</p>
-<h3>03 · Couples: pure rotation</h3>
-<p>Two equal, opposite, non-collinear forces form a <em>couple</em>. Their force resultant is zero — a couple does not push a body anywhere — but their moment \( M = Fd \) (\( d \) the separation) is the same about <em>every</em> point in the plane. That free-floating property is why we may slide a couple anywhere on a rigid body, and why any force system reduces to one force plus one couple at a chosen point — the standard equivalent system used from here to machine design.</p>
-
-<h3>04 · The moment working method</h3>
-<p>Moments punish improvisation, so fix the routine. <em>Declare the convention first</em> —
-counterclockwise positive, written at the top of the page — and never renegotiate it
-mid-problem. <em>Choose the moment center tactically:</em> the point that kills the most
-unknowns, usually where reaction lines cross; the moment of a force through the chosen point
-is zero, and that choice is free information. <em>Pick the computation route per force:</em>
-if the perpendicular distance is visible, \( M = Fd \) is fastest; if the geometry is
-angled and awkward, split the force into components at its point of application and let
-Varignon's theorem sum the pieces — components times their own clean arms beat one force
-times a distance you can't see.</p>
-<p>Treat couples as the privileged objects they are: a couple's moment is the same about
-every point, so it moves freely around the diagram without recalculation — the one moment
-that never asks "about where?". And keep the units honest: newton-metres, force times
-length, always stated. A moment reported as a bare number is an invitation to the classic
-error of adding it to a force — dimensional homogeneity, learned in the mathematics course,
-polices this line for free.</p>
-<p><strong>Closing.</strong> Moment is force times perpendicular arm; Varignon converts geometry into components; couples turn without pushing and belong to no particular point. These three facts carry every equilibrium equation that follows.</p></div></section><section class="sum-lesson"><h3>Lesson 03 · The free-body diagram</h3><div class="measure">
-<h3>01 · Isolate, replace, label</h3>
-<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>
-<h3>02 · Supports are force vocabularies</h3>
-<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>
-<h3>03 · Every equilibrium error is an FBD error</h3>
-<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. the Worked Examples tab applies the discipline to a simply supported beam and a cantilever.</p>
-
-<h3>04 · The FBD checklist</h3>
-<p>The free-body diagram is a procedure, not an artwork. Run the checklist in order.
-<em>One — isolate:</em> redraw ONLY the chosen body, stripped of everything it touches.
-<em>Two — replace every contact:</em> each support, cable, surface, and neighbor becomes the
-force set it can transmit — a cable becomes one pull along its line, a smooth surface one
-normal push, a pin two components. <em>Three — add the field forces:</em> weight at the
-center of gravity, always. <em>Four — name every unknown</em> with a symbol and an assumed
-direction; a wrong assumption costs nothing — the algebra answers with a minus sign.
-<em>Five — count:</em> unknowns versus available equations, before solving; a mismatch caught
-here saves a page of doomed algebra.</p>
-<p>Two disciplines keep diagrams honest. Forces the body exerts on other things never appear
-— an FBD shows only what acts <em>on</em> the body, and mixing the action–reaction pair onto
-one diagram is the classic corruption. And when a problem involves several connected bodies,
-draw a separate FBD per body plus, where helpful, one of the whole assembly — the pair of
-views cross-checks itself, because the internal forces must cancel in the assembly view.</p>
-<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \( \Sigma F = 0 \) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p></div></section><section class="sum-lesson"><h3>Lesson 04 · Equilibrium of a particle</h3><div class="measure">
-<h3>01 · Concurrent forces, one point, two (or three) equations</h3>
-<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>
-\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0 \tag{1} \]
-<p>(add \( \Sigma F_z = 0 \) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>
-<h3>02 · Components or geometry — choose deliberately</h3>
-<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>
-<h3>03 · Cables, rings, and pulleys</h3>
-<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \( T \) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. the Worked Examples tab solves the classic two-cable suspension and a movable-pulley hold.</p>
-
-<h3>04 · The particle equilibrium recipe</h3>
-<p>Concurrent-force problems yield to a fixed sequence. <em>FBD of the point</em> — the ring,
-hook, or knot where the forces meet — with every cable's pull drawn along its own line.
-<em>Axes and components:</em> resolve each force with the sign table from Lesson 1.
-<em>Write both equations:</em> \( \Sigma F_x = 0 \) and \( \Sigma F_y = 0 \), giving two
-equations for at most two unknowns. <em>Solve simultaneously</em> — substitution is usually
-cleanest: express one tension from the x-equation, feed it to the y-equation.
-<em>Check physically:</em> substitute the answers back until both sums close to zero within
-rounding, and confirm every cable came out in tension — a negative cable force is not a
-solution, it is a diagnosis that the geometry cannot hang that load that way.</p>
-<p>Read the answers like an engineer afterward. The steeper cable always carries more of a
-hung load's weight; as a cable approaches horizontal its tension grows without bound —
-which is why "just pull it a little tighter" is how straight spans of cable snap hardware.
-The recipe produces numbers; the reading of them produces judgment, and the judgment is
-what the courses downstream — and the plant floor — actually pay for.</p>
-<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p></div></section><section class="sum-lesson"><h3>Lesson 05 · Equilibrium of rigid bodies</h3><div class="measure">
-<h3>01 · The full toolkit</h3>
-<p>A rigid body in plane equilibrium obeys three independent equations:</p>
-\[ \Sigma F_x = 0, \qquad \Sigma F_y = 0, \qquad \Sigma M_O = 0 \tag{1} \]
-<p>with the moment point \( O \) yours to choose — and choosing it <em>on</em> an unknown force's line of action removes that unknown from the equation. The craft of rigid-body statics is mostly the craft of choosing moment points that make equations fall apart into one-unknown pieces.</p>
-<h3>02 · Two- and three-force members</h3>
-<p>A member loaded at exactly two points carries force only along the line joining them — anything else would leave an unbalanced moment. Recognizing a two-force member converts a two-component unknown into a single magnitude along a known direction, which is a large discount. A three-force member's forces must be concurrent (or all parallel); that fact locates unknown directions geometrically. Both shortcuts come from \( \Sigma M = 0 \) applied with intent.</p>
-<h3>03 · Determinate or not</h3>
-<p>Three equations solve three unknowns. A beam on a pin and a roller (3 unknowns) is <em>statically determinate</em>: statics alone finishes it. Add a second pin (4 unknowns) and equilibrium no longer decides how the supports share — the structure is <em>statically indeterminate</em>, and the answer depends on stiffness, which is Strength of Materials' opening business. Recognizing indeterminacy early saves you from hunting for a fourth equation that does not exist.</p>
-
-<h3>04 · The rigid-body recipe</h3>
-<p>Bodies with size add one resource and one obligation: moments. The sequence is fixed.
-<em>FBD with the support table:</em> replace each support by its reaction set — pin two,
-roller one, fixed three — and count; a planar body offers exactly three equations, so more
-than three unknowns stops the problem before it starts. <em>Take moments first, and
-tactically:</em> choose the moment center where the most unknown reaction lines intersect —
-usually a support — so one \( \Sigma M = 0 \) line yields one unknown immediately.
-<em>Finish with the force sums:</em> \( \Sigma F_x = 0 \), \( \Sigma F_y = 0 \) deliver
-the remaining reactions. <em>Audit with a spare moment equation:</em> a moment sum about a
-different point, computed with the solved numbers, must close to zero — the free
-self-check almost nobody uses and every professional should.</p>
-<p>Two readings matter on the way out. Reactions must add up to carry the total applied
-load — vertically and horizontally — or something is lost. And the load-sharing should make
-physical sense: a point load near one support loads that support proportionally harder, in
-inverse ratio of the distances — lever arms doing exactly what levers do.</p>
-<p>One caution for the field: supports in drawings are idealizations of hardware. A "pin"
-is a bolted cleat that also resists a little moment; a "roller" is a slotted hole or a
-bearing pad that can bind. The three-equation arithmetic stands on those idealizations, so
-when a measured reaction disagrees stubbornly with the calculation, inspect the support
-before doubting the algebra — the hardware may have quietly changed its type.</p>
-<p><strong>Closing.</strong> Three equations, moment points chosen to kill unknowns, two-force members spotted on sight, and the determinacy count run before solving. That is rigid-body statics in one paragraph; the rest is practice.</p></div></section><section class="sum-lesson"><h3>Lesson 06 · Trusses</h3><div class="measure">
-<h3>01 · A truss is a set of two-force members</h3>
-<p>The truss idealization: straight members, frictionless pin joints, loads applied only at joints. Every member is then a two-force member — pure tension or pure compression along its axis. That single assumption converts a structure into bookkeeping: find each member's axial force and its sense. Real gusset-plated, bolted trusses are not pinned, but the idealization prices member forces remarkably well and is the standard first analysis of any roof truss or braced rack.</p>
-<h3>02 · Method of joints, method of sections</h3>
-<p>The <b>method of joints</b> isolates one pin at a time and applies particle equilibrium — two equations per joint, so start at a joint with at most two unknowns (usually a support) and walk the structure. The <b>method of sections</b> cuts clean through up to three members and treats one whole side as a rigid body; a moment taken about the intersection of two cut members isolates the third in a single line. Joints when you want everything; sections when you want <em>one</em> member deep inside the span without solving half the truss to reach it.</p>
-<h3>03 · Zero-force members and reading the load path</h3>
-<p>At an unloaded joint of two non-collinear members, both are zero-force; at an unloaded joint of three members where two are collinear, the third is zero-force. Spotting these by inspection prunes the work — and teaches the deeper habit: a truss is a <em>load path</em>. Follow the applied load through diagonals and chords to the supports and the force pattern (top chord compression, bottom chord tension in a simply supported truss under gravity load) stops being memorized and starts being seen.</p>
-
-<h3>04 · Choosing the attack: joints or sections</h3>
-<p>Truss problems reward a decision made before any arithmetic. <em>Sweep for zero-force
-members first</em> — the two-collinear-plus-one pattern at unloaded joints — and strike them
-out; trusses routinely shrink by a quarter before any equation is written. <em>Ask what the
-problem actually wants.</em> Every member force? Method of joints: find a starting joint with
-at most two unknowns (support ends and loaded tips qualify), solve it, and let each solved
-member unlock the next joint. Three specific member forces in a big truss? Method of
-sections: cut through at most three members including the targets, treat either half as a
-rigid body, and take a moment about the point where the two unwanted cut members intersect —
-the target force falls out in one line.</p>
-<p>Keep the bookkeeping uniform: assume every member in tension, let negative answers declare
-compression, and record T or C beside every result — downstream design cares about the
-difference more than the magnitude, because compression members buckle and tension members
-don't. Final audit: at any solved joint, the component sums must close; thirty seconds of
-checking buys back the whole truss.</p>
-<p><strong>Closing.</strong> Two-force members, joints for the census, sections for the surgical strike, zero-force members pruned on sight. A truss drawing is a picture of forces waiting to be read.</p></div></section><section class="sum-lesson"><h3>Lesson 07 · Frames and machines</h3><div class="measure">
-<h3>01 · Frames are not trusses</h3>
-<p>A frame contains at least one <em>multi-force member</em> — a member loaded at three or more points, or loaded between its pins. Its members carry shear and bending, not just axial force, so the truss shortcut (force along the member) is off the table except for any genuine two-force members hiding inside. Identify those first: every one you spot replaces two unknowns with one.</p>
-<h3>02 · Dismember at the pins — and pay Newton his due</h3>
-<p>The method is systematic: draw an FBD of the whole frame for the external reactions, then <em>dismember</em> — separate the members at their connecting pins and draw each member alone. At every pin, the force one member exerts on the other appears on both diagrams, equal and opposite. The classic error is drawing pin components in inconsistent directions on the two sides, which silently violates \( \Sigma F = 0 \) for the pin itself. Adopt a convention, draw the action–reaction pair explicitly, and let negative answers correct your guesses.</p>
-<h3>03 · Machines: frames that multiply force</h3>
-<p>A machine is a frame with moving parts designed to transmit and transform force — pliers, clamps, linkages, toggles. The same dismemberment analysis yields the <em>mechanical advantage</em>: output force per input force, set by the lever arms. A toggle clamp near its dead-center position multiplies force enormously because the geometry sends the output arm toward zero — the reason a modest hand force can hold a workpiece against machining loads. the Worked Examples tab runs a gripping tool and a loaded two-member frame.</p>
-
-<h3>04 · The disassembly working method</h3>
-<p>Frames surrender to a fixed sequence, and improvising it is how pin forces get lost.
-<em>Survey for two-force members first</em> — straight, loaded only at their two pins —
-because each one found replaces two unknown components with a single force along the member
-line. <em>Solve the assembly as one rigid body</em> where possible, harvesting the external
-reactions before any disassembly. <em>Then pull the pins:</em> draw a separate FBD for every
-member, and at each shared pin write the force ONCE, applying it to the two members as an
-equal-and-opposite pair — the bookkeeping backbone of the whole method. Choose which member's
-diagram to solve first by counting unknowns: there is almost always one member with only
-two or three, and solving it feeds the others like the truss's joint order did.</p>
-<p>For machines, the same disassembly answers the practical question — what does the jaw,
-blade, or clamp deliver for a given hand force? Moments about the pivot of the handle member
-give the multiplication directly: output over input equals input arm over output arm. When
-the answer looks too good, check whether friction and pin clearances were ignored — they
-were, and real tools deliver a little less than the statics promises.</p>
-<p><strong>Closing.</strong> Spot the two-force members, dismember at pins with honest action–reaction pairs, and read machines as frames whose geometry is doing force arithmetic. Statics of frames is Newton's third law made procedural.</p></div></section><section class="sum-lesson"><h3>Lesson 08 · Internal forces: shear and bending moment</h3><div class="measure">
-<h3>01 · Cut the beam, expose the invisible</h3>
-<p>External reactions are only half the story; design needs the forces <em>inside</em> the member. Cut a beam at any section and, on the exposed face, three internal resultants restore equilibrium: normal force \( N \), shear force \( V \), and bending moment \( M \). Sign convention (keep it for life): positive shear rotates the element clockwise; positive moment sags the beam — compression on top, tension on the bottom. The convention is arbitrary; consistency is not.</p>
-<h3>02 · Diagrams, and the calculus that draws them</h3>
-<p>Shear and moment vary along the span, so we plot them. Two differential relations do most of the drawing:</p>
-\[ \frac{dV}{dx} = -w(x), \qquad \frac{dM}{dx} = V \tag{1} \]
-<p>Between point loads, \( V \) is constant and \( M \) runs straight; under a uniform load, \( V \) slopes linearly and \( M \) curves parabolically. A point load steps \( V \); a couple steps \( M \). And the operational headline: <em>the bending moment is extremal where the shear crosses zero</em> — because \( dM/dx = V = 0 \) there. That is where beams break, and where you look first.</p>
-<h3>03 · Why these diagrams are the product</h3>
-<p>Strength of Materials will convert \( M \) into bending stress and \( V \) into shear stress; every beam, shaft, and rack girder calculation starts from these two plots. Drawing them is not an academic exercise before the real work — for the structural side of plant engineering, the diagram <em>is</em> the deliverable that the stress check consumes. the Worked Examples tab builds both canonical cases: the central point load and the uniform load.</p>
-
-<h3>04 · Building the diagrams without tears</h3>
-<p>Internal-force diagrams are constructed, not guessed, and the construction has a grammar.
-<em>Reactions first</em> — no diagram survives wrong supports. <em>Walk the beam from the
-left,</em> cutting just after each load or support: shear jumps by each point force, slopes
-down under distributed load at exactly the load intensity, and the moment's slope at every
-station IS the shear there — \( dM/dx = V \). That one relation is the whole craft: where
-shear crosses zero, the moment peaks; where shear is constant, the moment runs straight;
-where the load is uniform, the moment curves as a parabola. <em>Close the audit at the far
-end:</em> both diagrams must return to zero (or to the end reaction/moment) — a diagram
-that doesn't close is announcing an arithmetic error at the exact spot it diverges.</p>
-<p>Keep the benchmark cases in your head as calibration: a central point load peaks at
-\( PL/4 \); a uniform load at \( wL^2/8 \). Any computed maximum should be sanity-checked
-against the nearest benchmark before it goes near a design table — the courses on strength
-and machine design will consume these diagrams, and they inherit every error made here.</p>
-<p><strong>Closing.</strong> Cut, expose \( N, V, M \), plot with the two differential relations, and read the maximum moment where shear crosses zero. Beams are analyzed exactly once you can draw these two pictures without hesitation.</p></div></section><section class="sum-lesson"><h3>Lesson 09 · Friction</h3><div class="measure">
-<h3>01 · Dry friction and the threshold</h3>
-<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
-\[ F \le \mu_s N \tag{1} \]
-<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
-<h3>02 · Wedges and screws</h3>
-<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
-<h3>03 · Belt friction: the exponential surprise</h3>
-<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
-\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
-<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
-
-<h3>04 · The friction working method</h3>
-<p>Friction problems have one trap and one discipline. The trap: writing
-\( F = \mu_s N \) by reflex. Static friction is adaptive — it supplies exactly what
-equilibrium demands, UP TO the ceiling \( \mu_s N \), and equals the ceiling only at
-impending motion. So the method is: <em>assume equilibrium, solve for the friction force
-required,</em> then <em>compare</em> with the available maximum. Required below available —
-the body holds, and the actual friction is the required value, not the ceiling. Required
-above available — motion begins, and kinetic friction \( \mu_k N \) takes over at its
-lower, fixed value.</p>
-<p>The discipline: recompute \( N \) from equilibrium every time the loading changes.
-A downward push on a crate raises N and buys holding capacity; an upward-angled pull robs
-it — the same pull that helps horizontally hurts vertically, and the trade is decided by
-the numbers, not intuition. Complete the method by checking the second failure mode: tall
-narrow bodies may TIP before they slide, so compare the moment of the push about the
-tipping edge with the restoring moment of the weight. Slip-or-tip is answered by whichever
-threshold arrives first, and rigging, racking, and machine-skid problems ask it weekly.</p>
-<p>Treat published coefficients as estimates, not constants. Surface condition, moisture,
-paint, and dust move \( \mu \) by tens of percent, which is why lift plans and skid
-calculations carry margin on top of the friction arithmetic. When a job genuinely hinges on
-friction, the professional move is to measure — the tilt test that reads \( \mu_s \)
-straight off the angle of repose — and then still design as if the measured number were
-optimistic.</p>
-<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div></section><section class="sum-lesson"><h3>Lesson 10 · Centroids and centers of gravity</h3><div class="measure">
-<h3>01 · The average position of area or weight</h3>
-<p>The centroid is the area-weighted average position of a shape:</p>
-\[ \bar{x} = \frac{\int x\, dA}{\int dA}, \qquad \bar{y} = \frac{\int y\, dA}{\int dA} \tag{1} \]
-<p>The center of gravity is the same construction weighted by weight; for uniform density and gravity they coincide. Integration handles curved boundaries once; engineering practice handles everything else by <em>composite parts</em> — split the shape into rectangles, triangles, and circles whose centroids are known, then take the weighted average. Holes enter the sum as negative areas: same formula, signed.</p>
-<h3>02 · The tabular method</h3>
-<p>Composite work is done in a table: one row per part, columns for \( A \), \( \bar{x}_i \), \( \bar{y}_i \), \( A\bar{x}_i \), \( A\bar{y}_i \); sum the columns, divide. The discipline matters more than it looks — a consistent datum (pick one corner, state it) and signed areas prevent the classic errors: measuring one part from a different origin, or forgetting that a cut-out subtracts moment as well as area. The same table extends without modification to weights: replace \( A \) with \( W \) and the result is a center of gravity.</p>
-<h3>03 · Where the hook must sit</h3>
-<p>Lift any rigid load from a single hook and it hangs with its center of gravity vertically below the hook. If the CG is off the hook line, the load tilts until they align — swinging tools, spilling contents, and shifting sling angles on the way. A lifting plan therefore starts with a CG calculation: composite masses of pump, motor, and baseplate, exactly the table of 2 with kilograms in the area column. The hook, or the sling spread, is then placed to put the CG under the crane's line of pull. the Worked Examples tab runs one steel section and one equipment skid.</p>
-
-<h3>04 · The tabular working method</h3>
-<p>Centroid calculations live or die by bookkeeping, so industrialize it. <em>Decompose</em>
-the section into shapes whose centroids are known — rectangles, triangles, circles.
-<em>Fix one reference corner</em> for the whole table and never move it mid-problem; half of
-all centroid errors are two shapes measured from two different origins. <em>Tabulate</em>
-\( A_i \), \( \bar{x}_i \), \( \bar{y}_i \), \( A_i\bar{x}_i \),
-\( A_i\bar{y}_i \) — holes entering as negative areas with negative first moments —
-<em>sum the columns, divide.</em> The table is not scaffolding to discard later: the
-moment-of-inertia lesson extends the same table by one column, and CAD packages print the
-same quantities under the same names, so fluency here reads straight into the tools.</p>
-<p>Audit the answer geometrically before accepting it: the centroid must sit inside the
-convex hull of the section (though possibly outside the material, as in an L or a channel —
-that is legal and common), and symmetry must be honored — any axis of symmetry the section
-has, the centroid sits on. An answer violating either rule is wrong with certainty, no
-recomputation required.</p>
-<p><strong>Closing.</strong> One averaging formula, executed by table, with signed areas and a declared datum. From steel sections to lifting plans, it is the same arithmetic wearing different units.</p></div></section><section class="sum-lesson"><h3>Lesson 11 · Moments of inertia</h3><div class="measure">
-<h3>01 · The second moment: area times distance squared</h3>
-<p>The second moment of area about the x-axis is</p>
-\[ I_x = \int y^2\, dA \tag{1} \]
-<p>Distance enters <em>squared</em>: area far from the axis counts disproportionately. For the workhorse rectangle about its own centroid, \( I = bh^3/12 \) — the cubed depth is the single most consequential exponent in structural engineering. \( I \) is not inertia in the dynamic sense; it is a purely geometric measure of how a section's area is deployed against bending.</p>
-<h3>02 · The parallel-axis theorem</h3>
-<p>Centroidal values are tabulated; real composite parts sit away from the composite centroid. The transfer rule:</p>
-\[ I = \bar{I} + A d^2 \tag{2} \]
-<p>adds \( Ad^2 \) for a part whose own centroid lies distance \( d \) from the axis in question. Two habits keep it honest: the theorem transfers only <em>from</em> a centroidal axis (never between two non-centroidal axes directly), and in composite work the \( Ad^2 \) terms usually dwarf the parts' own \( \bar{I} \) — flanges of an I-beam earn their keep almost entirely through \( Ad^2 \).</p>
-<h3>03 · Why sections look the way they do</h3>
-<p>An I-beam is the parallel-axis theorem drawn in steel: put most of the area in two flanges far from the neutral axis (huge \( d \)), keep a thin web to hold them apart and carry shear. the Worked Examples tab computes a small I-section at \( I = 4.49 \times 10^6\ \mathrm{mm^4} \) — then shows a solid square of the <em>same area</em> manages only \( 0.65 \times 10^6 \): the shape, not the steel, is doing seven times the work. Strength of Materials will divide bending moment by exactly this \( I \) to get stress; every section table you will ever open is a catalog of this one integral.</p>
-
-<h3>04 · The transfer working method</h3>
-<p>Composite moments of inertia extend the centroid table by exactly one discipline: the
-parallel-axis transfer. The sequence never varies. <em>Find the composite centroid first</em>
-— Lesson 10's table verbatim. <em>For each part,</em> write its own centroidal
-\( \bar{I}_i \) from the standard formulas, measure the distance \( d_i \) from the
-part's centroid to the COMPOSITE centroid, and transfer: \( I_i = \bar{I}_i + A_i d_i^2 \).
-<em>Sum.</em> Holes ride the same table with negative \( A \) and negative \( \bar{I} \).
-The classic error is transferring between two arbitrary axes — the theorem only moves I
-away from a shape's OWN centroid, never between two off-centroid axes; when in doubt, route
-through the centroid in two steps.</p>
-<p>Read the result with the \( h^3 \) instinct: material far from the axis does the work,
-which is why doubling a beam's depth multiplies its bending stiffness eightfold while
-doubling its width merely doubles it, and why the I-beam exists at all. When a computed
-composite I comes out smaller than its largest part's contribution, the arithmetic is
-wrong — transfers only ever add for real areas. These numbers feed the flexure formula in
-Strength of Materials directly; the audit habits travel with them.</p>
-<p><strong>Closing.</strong> \( y^2 \) rewards distance, \( bh^3/12 \) rewards depth, and \( Ad^2 \) explains the I-beam. Statics ends by manufacturing the geometric property that strength calculations spend.</p></div></section>
-<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
-
-<section class="sum-lesson"><h3>Lesson 01 · Forces, vectors, and resultants</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Trigonometry</b> — sine, cosine, tangent on right triangles, fluently and without a diagram panic.</li>
-<li><b>SI units</b> — newtons, kilograms, and the prefix ladder (kN, MPa come soon).</li>
-<li><b>Vector idea</b> — a quantity with direction; formal vector algebra is built here, not assumed.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Force</td><td>vector, in newtons</td><td>Any push or pull on a body; magnitude, direction, and point of application all matter.</td></tr>
-<tr><td>Components</td><td>\( F_x = F\cos\theta,\ F_y = F\sin\theta \)</td><td>Splitting a force onto working axes before any equilibrium arithmetic.</td></tr>
-<tr><td>Resultant</td><td>\( R = \sqrt{(\Sigma F_x)^2 + (\Sigma F_y)^2} \)</td><td>Collapsing a force set into one equivalent force.</td></tr>
-<tr><td>Direction of resultant</td><td>\( \theta = \tan^{-1}(\Sigma F_y/\Sigma F_x) \)</td><td>Reporting the resultant as magnitude-plus-angle; check the quadrant.</td></tr>
-<tr><td>Unit conversion</td><td>\( W = mg \)</td><td>Kilograms on a display are mass; slings and anchors feel newtons.</td></tr>
-<tr><td>Recomposition check</td><td>components → \( R \) → components</td><td>The self-audit that catches sign and quadrant slips.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 02 · Moments and couples</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Force components</b> (Lesson 1) — Varignon's theorem is useless without quick resolution.</li>
-<li><b>Perpendicular distance</b> — reading the shortest distance from a point to a line off a sketch.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Moment of a force</td><td>\( M = F\,d \)</td><td>Turning effect about a point; \( d \) is the PERPENDICULAR distance.</td></tr>
-<tr><td>Cross-product form</td><td>\( \mathbf{M} = \mathbf{r} \times \mathbf{F} \)</td><td>3-D moments, or when the perpendicular distance is awkward to see.</td></tr>
-<tr><td>Angled-force moment</td><td>\( M = F\,r\sin\theta \)</td><td>Force not perpendicular to the arm — the general planar case.</td></tr>
-<tr><td>Couple</td><td>\( M = F\,s \) (force pair, spacing \( s \))</td><td>Pure turning with zero net force; the same moment about EVERY point.</td></tr>
-<tr><td>Varignon's theorem</td><td>\( M_O(\mathbf{F}) = \Sigma M_O(\text{components}) \)</td><td>Splitting an awkward force into components and summing their moments.</td></tr>
-<tr><td>Sign convention</td><td>CCW positive (declare it)</td><td>One declared convention per problem, kept to the end.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 03 · The free-body diagram</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Forces as vectors</b> (Lesson 1) — reactions are drawn as components.</li>
-<li><b>Moments</b> (Lesson 2) — fixed supports supply one, and \( \Sigma M = 0 \) will need it.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Free-body diagram</td><td>one body, all forces on it</td><td>The non-negotiable first step of every equilibrium problem.</td></tr>
-<tr><td>Support replacement</td><td>contact → force(s)</td><td>Each support type contributes its own reaction set to the diagram.</td></tr>
-<tr><td>Weight</td><td>\( W = mg \) at the center of gravity</td><td>Every body with mass carries it; drawn at the centroid.</td></tr>
-<tr><td>Normal force</td><td>\( N \perp \) surface</td><td>Contact with a surface pushes, never pulls, normal to the contact.</td></tr>
-<tr><td>Action–reaction discipline</td><td>pairs act on DIFFERENT bodies</td><td>The force a body exerts on the floor never appears on that body's own FBD.</td></tr>
-<tr><td>Unknown bookkeeping</td><td>name every unknown once</td><td>Count unknowns vs equations before solving anything.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 04 · Equilibrium of a particle</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Resolution into components</b> (Lesson 1) — the working method of the whole lesson.</li>
-<li><b>FBD discipline</b> (Lesson 3) — the node is isolated and every cable drawn pulling.</li>
-<li><b>Simultaneous equations</b> — two unknowns from two linear equations, cleanly.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Particle equilibrium</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0 \)</td><td>Concurrent force systems — rings, hooks, connection points.</td></tr>
-<tr><td>Two-force equilibrium</td><td>equal, opposite, collinear</td><td>A body under exactly two forces; the shortcut behind two-force members.</td></tr>
-<tr><td>Cable assumption</td><td>tension only, along the cable</td><td>Cables pull; a computed compression in a cable means the model is wrong.</td></tr>
-<tr><td>Simultaneous solution</td><td>two equations, two unknowns</td><td>Two unknown tensions from the two component equations.</td></tr>
-<tr><td>Equilibrium check</td><td>substitute back</td><td>Verify both component sums close to zero with the solved values.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 05 · Equilibrium of rigid bodies</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>FBDs and support menus</b> (Lesson 3) — reactions drawn correctly is the entry fee.</li>
-<li><b>Moments and Varignon</b> (Lesson 2) — \( \Sigma M_O = 0 \) is the workhorse equation.</li>
-<li><b>Particle equilibrium</b> (Lesson 4) — the force-balance half of the toolkit.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Rigid-body equilibrium</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0,\ \Sigma M = 0 \)</td><td>Bodies with size — beams, frames, brackets; three equations, no more.</td></tr>
-<tr><td>Pin support</td><td>2 unknowns \( (A_x, A_y) \)</td><td>Resists translation both ways, spins freely.</td></tr>
-<tr><td>Roller support</td><td>1 unknown, \( \perp \) surface</td><td>Resists only normal to its rolling surface.</td></tr>
-<tr><td>Fixed support</td><td>3 unknowns \( (A_x, A_y, M_A) \)</td><td>Welded or embedded ends; adds a reaction moment.</td></tr>
-<tr><td>Moment-point strategy</td><td>take \( \Sigma M \) where unknowns intersect</td><td>Kills two unknowns in one line — the professional's first move.</td></tr>
-<tr><td>Statical determinacy</td><td>unknowns = 3 (planar)</td><td>More unknowns than equations means statics alone cannot solve it.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 06 · Trusses</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Particle equilibrium</b> (Lesson 4) — a joint is exactly that problem, repeated.</li>
-<li><b>Rigid-body equilibrium</b> (Lesson 5) — support reactions come first; sections use \( \Sigma M \).</li>
-<li><b>Two-force members</b> (Lesson 5) — the fact that makes the whole idealization work.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Truss assumptions</td><td>pin joints, loads at joints</td><td>Members become two-force members: pure tension or compression.</td></tr>
-<tr><td>Method of joints</td><td>\( \Sigma F_x = 0,\ \Sigma F_y = 0 \) per joint</td><td>Solving every member force, joint by joint, ≤2 unknowns at a time.</td></tr>
-<tr><td>Method of sections</td><td>cut ≤3 members, use \( \Sigma M \)</td><td>One targeted member force without solving the whole truss.</td></tr>
-<tr><td>Tension vs compression</td><td>assume tension; negative = compression</td><td>One consistent assumption; the sign delivers the verdict.</td></tr>
-<tr><td>Zero-force members</td><td>two collinear + one at a joint, unloaded</td><td>Spotting them first shrinks the problem before any arithmetic.</td></tr>
-<tr><td>Joint order</td><td>start where ≤2 unknowns</td><td>Usually a support or the loaded end; the solvable path through the truss.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 07 · Frames and machines</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Rigid-body equilibrium</b> (Lesson 5) — applied member by member.</li>
-<li><b>Two-force member recognition</b> (Lesson 5) — the frame analyst's first move.</li>
-<li><b>Truss thinking</b> (Lesson 6) — to see when it does <em>not</em> apply.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Frame</td><td>contains ≥1 multi-force member</td><td>Structures with members carrying 3+ forces; joints solved by disassembly.</td></tr>
-<tr><td>Machine</td><td>frame with moving parts</td><td>Pliers, clamps, linkages — force multiplication devices.</td></tr>
-<tr><td>Member disassembly</td><td>FBD per member</td><td>The frame method: pull the pins apart and expose the pin forces.</td></tr>
-<tr><td>Pin-force pairs</td><td>equal and opposite on the two members</td><td>Newton's third law at every shared pin — the bookkeeping backbone.</td></tr>
-<tr><td>Two-force member shortcut</td><td>force along the member line</td><td>Spot them first; each one turns two unknowns into one.</td></tr>
-<tr><td>Mechanical advantage</td><td>\( F_{out}/F_{in} = a_{in}/a_{out} \)</td><td>Lever-arm ratios in machines — what the tool multiplies.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 08 · Internal forces: shear and bending moment</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Support reactions</b> (Lessons 3, 5) — computed before any cut is made.</li>
-<li><b>Equilibrium of a cut body</b> (Lesson 5) — the exposed section is just another FBD.</li>
-<li><b>Basic calculus</b> — slopes and areas connect \( w \), \( V \), and \( M \).</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Internal forces</td><td>N, V, M at a cut</td><td>What the material itself must carry at any section.</td></tr>
-<tr><td>Method of sections (beams)</td><td>cut, keep one side, apply equilibrium</td><td>N, V, M at one location in one pass.</td></tr>
-<tr><td>Shear diagram</td><td>\( V(x) \)</td><td>How transverse load accumulates along the span.</td></tr>
-<tr><td>Moment diagram</td><td>\( M(x) \)</td><td>Where bending is worst — the beam designer's map.</td></tr>
-<tr><td>Diagram calculus</td><td>\( dV/dx = -w,\ dM/dx = V \)</td><td>Slopes and areas connect load, shear, and moment; V = 0 locates max M.</td></tr>
-<tr><td>Central point load</td><td>\( M_{max} = PL/4 \)</td><td>The benchmark case every beam eye should know cold.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 09 · Friction</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Equilibrium with inequalities in mind</b> (Lesson 5) — friction saturates; it is not always \( \mu N \).</li>
-<li><b>FBD discipline</b> (Lesson 3) — friction direction set by impending motion, drawn before solving.</li>
-<li><b>Exponentials</b> — the capstan equation lives on \( e^{\mu\beta} \).</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Static friction</td><td>\( F_s \le \mu_s N \)</td><td>Adaptive holding force up to a ceiling; equality only at impending slip.</td></tr>
-<tr><td>Kinetic friction</td><td>\( F_k = \mu_k N \)</td><td>Once sliding, friction drops to this steady value.</td></tr>
-<tr><td>Impending motion</td><td>\( F_s = \mu_s N \)</td><td>The boundary case where friction problems are solved.</td></tr>
-<tr><td>Angle of repose</td><td>\( \tan\phi = \mu_s \)</td><td>The steepest slope a body rests on; a field measurement of \( \mu_s \).</td></tr>
-<tr><td>Slip vs tip</td><td>compare \( \mu_s N \) with the tipping ratio</td><td>Tall loads may tip before they slide; check both failure modes.</td></tr>
-<tr><td>Normal-force honesty</td><td>N from equilibrium, not assumption</td><td>Pushes and pulls change N — recompute it before multiplying by \( \mu \).</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 10 · Centroids and centers of gravity</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Basic integration</b> — (1) is used directly only for curved shapes; know what the integral means.</li>
-<li><b>Moments</b> (Lesson 2) — \( A\bar{x} \) is a first moment; the language is identical.</li>
-<li><b>Weight vs mass</b> (Lesson 1) — CG tables may carry kg; convert before forces are needed.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Centroid</td><td>\( \bar{x} = \Sigma A_i \bar{x}_i / \Sigma A_i \)</td><td>The area's balance point; where a distributed load's resultant acts.</td></tr>
-<tr><td>Center of gravity</td><td>\( W \) acts here</td><td>The single point standing in for a body's distributed weight.</td></tr>
-<tr><td>Composite method</td><td>split, tabulate, sum</td><td>Real sections as rectangles/triangles/circles in a table.</td></tr>
-<tr><td>Negative areas</td><td>holes enter with \( A < 0 \)</td><td>Cutouts subtract area AND first moment in the same table.</td></tr>
-<tr><td>Symmetry shortcut</td><td>centroid lies on every symmetry axis</td><td>One axis kills one coordinate before any arithmetic.</td></tr>
-<tr><td>Distributed load resultant</td><td>\( R = \int w\,dx \) at the load-area centroid</td><td>Replacing a load diagram by one force at the right spot.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 11 · Moments of inertia</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Centroids</b> (Lesson 10) — the composite centroid must be located before any \( d \) is measured.</li>
-<li><b>Composite bookkeeping</b> (Lesson 10) — the same table grows two more columns.</li>
-<li><b>Integration</b> — (1) is evaluated once for the rectangle; after that, tables and transfer.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Area moment of inertia</td><td>\( I = \int y^2 dA \)</td><td>The section's resistance to bending; mm⁴.</td></tr>
-<tr><td>Rectangle about centroid</td><td>\( I = bh^3/12 \)</td><td>The workhorse formula; depth cubed is the story.</td></tr>
-<tr><td>Rectangle about base</td><td>\( I = bh^3/3 \)</td><td>When the reference axis sits on an edge.</td></tr>
-<tr><td>Parallel-axis theorem</td><td>\( I = \bar{I} + A d^2 \)</td><td>Moving I from a shape's centroid to the composite's axis.</td></tr>
-<tr><td>Composite I</td><td>sum of transferred parts</td><td>The same tabular discipline as centroids, one column longer.</td></tr>
-<tr><td>Depth leverage</td><td>\( I \propto h^3 \)</td><td>Why beams stand upright and I-beams put material far from the axis.</td></tr>
-</tbody></table></div>
-</div></section>
-<h2 class="sum-part">Part 3 — Course reference</h2>
-<div class="wide"><h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[F_x = F\cos\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = F\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[g = 9.81\ \mathrm{m/s^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = F\cos\theta,\ F_y = F\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{(\Sigma F_x)^2 + (\Sigma F_y)^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\theta = \tan^{-1}(\Sigma F_y/\Sigma F_x)\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[4800 \times 9.81 \approx 47.1\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F = 10\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 8.66\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 5.00\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg = 250 \times 9.81 = 2452.5\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[2T\sin 60^\circ = W\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W \approx 2.45\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\approx 1.42\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W/2 = 1226\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\Sigma F_x = 300 + 0 + 150\cos 210° = 300 - 129.9 = 170.1\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\Sigma F_y = 0 + 200 + 150\sin 210° = 200 - 75 = 125\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{170.1^2 + 125^2} = 211\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\theta = \tan^{-1}(125/170.1) = 36.3°\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R \approx 211\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = F\sin\theta = 20\sin 60^\circ = 17.3\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[|8-6| = 2\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[8+6 = 14\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 100\cos 60° = 50.0\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 100\sin 60° = 86.6\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{100^2 + 100^2} = 141\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[M = F d \tag{1}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 500 \times 0.6 \sin 60^\circ = 259.8\ \mathrm{N \cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[F_y = 500\sin 60^\circ\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = Fd\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,d\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[\mathbf{M} = \mathbf{r} \times \mathbf{F}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,r\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,s\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M_O(\mathbf{F}) = \Sigma M_O(\text{components})\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[d = 0.6\sin 60^\circ = 0.520\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[500\sin 60^\circ = 433.0\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 433.0 \times 0.6 = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li></ul>
-<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\theta\)</span><span class="chip">\(\Sigma\)</span><span class="chip">\(\phi\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\beta\)</span><span class="chip">\(\pi\)</span><span class="chip">\(\alpha\)</span><span class="chip unit">m/s^2</span><span class="chip unit">N</span><span class="chip unit">kN</span><span class="chip unit">m</span><span class="chip unit">rad</span><span class="chip unit">mm</span><span class="chip unit">kg</span></div>
-<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>SI units</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Trigonometry</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Vector idea</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Force components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></td></tr><tr><td>Perpendicular distance</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></td></tr><tr><td>cable</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>fixed (built-in) support</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>Forces as vectors</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>Moments</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>pin</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>roller</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>FBD discipline</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>Resolution into components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>Simultaneous equations</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>FBDs and support menus</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>Moments and Varignon</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>Particle equilibrium</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>method of joints</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>method of sections</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Rigid-body equilibrium</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Two-force members</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Truss thinking</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/07-frames-and-machines.html">L07</a></td></tr><tr><td>Two-force member recognition</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/07-frames-and-machines.html">L07</a></td></tr><tr><td>Basic calculus</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Equilibrium of a cut body</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Support reactions</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Equilibrium with inequalities in mind</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/09-friction.html">L09</a></td></tr><tr><td>Exponentials</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/09-friction.html">L09</a></td></tr><tr><td>Basic integration</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/10-centroids-and-centers-of-gravity.html">L10</a></td></tr><tr><td>Weight vs mass</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/10-centroids-and-centers-of-gravity.html">L10</a></td></tr><tr><td>Centroids</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr><tr><td>Composite bookkeeping</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr><tr><td>Integration</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr></tbody></table></div></div>
+<section class="sum-lesson"><h3>Lesson 01 · Forces, vectors, and resultants</h3><div class="sum-recap"><ul> <li>A force is a vector: magnitude, direction and line of action. The arrow on the diagram is a contract about all three.</li> <li><b>Weight is not mass.</b> \( W = mg \) converts one to the other; kilograms are mass, newtons are force, and the distinction survives every later course.</li> <li>Resolve into components to add, then recombine with \( R = \sqrt{R_x^2 + R_y^2} \) and a direction angle.</li> <li>Cables pull only; struts can also push. What a member can carry is part of the geometry.</li> <li><b>Working method:</b> choose axes that kill the most unknowns — usually one axis along an unknown force.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 02 · Moments and couples</h3><div class="sum-recap"><ul> <li>A moment is the turning effect of a force: magnitude times perpendicular distance to the point.</li> <li><b>Varignon's theorem:</b> the moment of a force equals the sum of the moments of its components — so you may replace an awkward perpendicular distance with convenient component distances.</li> <li>A couple is two equal, opposite, non-collinear forces: pure rotation, no net force, and the <i>same</i> moment about every point in the plane.</li> <li><b>Working method:</b> choose the moment centre to eliminate unknowns — put it where the forces you do not want to solve for intersect.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 03 · The free-body diagram</h3><div class="sum-recap"><ul> <li>Isolate the body, replace every contact with the force it can transmit, then label everything. Nothing else.</li> <li><b>Supports are force vocabularies:</b> a roller supplies one force, a pin two, a fixed support two plus a moment. Learn the menu and the diagram writes itself.</li> <li>Practically every equilibrium error is a free-body-diagram error, not an algebra error.</li> <li>Never write \( \Sigma F = 0 \) until the picture is finished.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 04 · Equilibrium of a particle</h3><div class="sum-recap"><ul> <li>Concurrent forces act through one point, so only force balance is available: \( \Sigma F_x = 0 \) and \( \Sigma F_y = 0 \) (add \( \Sigma F_z = 0 \) in three dimensions).</li> <li>There is no moment equation here, and none is needed — every line of action passes through the same point.</li> <li>Components or geometry (the closed force triangle) are both valid; choose deliberately rather than by habit.</li> <li>An ideal cable over a frictionless pulley carries the same tension along its whole length.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 05 · Equilibrium of rigid bodies</h3><div class="sum-recap"><ul> <li>A rigid body in a plane obeys three independent equations: \( \Sigma F_x = 0 \), \( \Sigma F_y = 0 \), \( \Sigma M = 0 \) about any point you choose.</li> <li><b>Two-force members</b> carry force along the line joining their two connection points. Spotting them collapses the algebra before it starts.</li> <li>Count unknowns against equations: more unknowns than equations means statically indeterminate, and statics alone cannot finish the problem.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 06 · Trusses</h3><div class="sum-recap"><ul> <li>A truss is a set of two-force members: axial load only, tension or compression, no bending.</li> <li><b>Method of joints</b> when you need every member; <b>method of sections</b> when you need a few members deep inside the truss without working through it joint by joint.</li> <li>Zero-force members carry nothing <i>in this load case</i> but hold geometry and resist other cases — recognise them to simplify, never to delete them.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 07 · Frames and machines</h3><div class="sum-recap"><ul> <li>Frames are not trusses: they contain multi-force members, so the two-force shortcut does not apply.</li> <li><b>Dismember at the pins</b> and pay Newton his due — the force one member exerts on another appears equal and opposite on the mating diagram. Getting that sign wrong silently violates equilibrium for the pin itself.</li> <li>Machines are frames built to multiply force; mechanical advantage falls out of the same equilibrium equations, with no new theory.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 08 · Internal forces: shear and bending moment</h3><div class="sum-recap"><ul> <li>Cut the beam and three internal resultants restore equilibrium on the exposed face: normal force \( N \), shear force \( V \), bending moment \( M \).</li> <li>The sign convention is arbitrary; consistency is not. Fix one and keep it for life.</li> <li><b>The calculus that draws the diagrams:</b> \( dV/dx = -w(x) \) and \( dM/dx = V \), where \( w \) is the distributed load intensity in N/m.</li> <li>Between point loads \( V \) is constant and \( M \) runs straight; under uniform load \( V \) slopes and \( M \) curves. A point load steps \( V \); a couple steps \( M \).</li> <li><b>The design headline:</b> the bending moment is extremal where the shear crosses zero.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 09 · Friction</h3><div class="sum-recap"><ul> <li>Dry friction has a threshold: \( F \le \mu_s N \). Equality holds only at impending motion — below it, friction is simply whatever equilibrium demands, no more.</li> <li>That inequality is the single most misused relation in statics: friction is not automatically \( \mu_s N \).</li> <li>Wedges and screws are friction devices, and are <b>self-locking</b> when the friction angle exceeds the lead angle — which is why a screw jack holds its load.</li> <li><b>Belt friction is exponential in wrap angle</b>, so a modest increase in wrap multiplies holding force. One extra turn round a capstan changes the problem.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 10 · Centroids and centers of gravity</h3><div class="sum-recap"><ul> <li>A centroid is the average position of area; a centre of gravity is the average position of weight. They coincide only when the material is uniform.</li> <li><b>Tabular method:</b> one row per simple part, columns for \( A \), \( \bar{x} \), \( \bar{y} \), then the products. Holes enter as negative area — the arithmetic handles them without special cases.</li> <li>Replace area with weight and the same table returns the centre of gravity, which is where the lifting hook must sit if the load is to hang level.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 11 · Moments of inertia</h3><div class="sum-recap"><ul> <li>The second moment of area is area times distance squared: a section's resistance to bending, not a mass property.</li> <li><b>Parallel-axis theorem:</b> \( I = \bar{I} + Ad^2 \). The transfer term is squared in distance, so it usually dominates.</li> <li>That squared distance is why sections look the way they do: an I-beam puts its material as far from the neutral axis as it can, and a tube beats a solid rod of equal weight.</li> </ul></div></section>
 </article>
 </main>
-<footer class="nx-foot"><div class="in">
-  <div class="mark"><span class="teal">MECHED</span><span class="slogan">Engineered for Mastery</span></div>
-  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
-  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
-  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
-</div></footer>
-<script src="../../../assets/nx/nexus.js?v=b847538bfd"></script>
+<footer class="nx-foot">
+  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
+  <nav>
+    <a href="../../../index.html">Home</a> ·
+    <a href="../../../about/index.html">About</a> ·
+    <a href="../../../mission/index.html">Mission</a> ·
+    <a href="../../../curriculum/index.html">Curriculum</a> ·
+    <a href="../../../reference/index.html">Resources</a> ·
+    <a href="../../../career/index.html">Career Paths</a>
+  </nav>
+  <p class="lang-en">Free, open engineering education. Worked-example values are
+  pedagogical; representative industrial figures are labeled as such and are not
+  published operating data of any named company. Every visual is an original vector
+  illustration. Lessons not yet at full depth say so honestly.</p>
+</footer>
+<script src="../../../assets/nx/nexus.js?v=529472124d"></script>
 </body>
 </html>

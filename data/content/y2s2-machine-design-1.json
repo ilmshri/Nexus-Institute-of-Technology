@@ -1,0 +1,356 @@
+{
+ "1": {
+  "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A stress axis from zero to 300 megapascals showing the working stress at 40, the allowable stress at 125 for a factor of safety of two, and the yield strength at 250. The margin is the gap between working stress and allowable stress.\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"300\" fill=\"#ffffff\"/><path d=\"M60 200 L520 200\" stroke=\"#14181F\" stroke-width=\"1.6\"/><path d=\"M60.0 196 L60.0 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"60\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">0</text><path d=\"M136.66666666666666 196 L136.66666666666666 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"137\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">50</text><path d=\"M213.33333333333331 196 L213.33333333333331 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"213\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">100</text><path d=\"M290.0 196 L290.0 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"290\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">150</text><path d=\"M366.66666666666663 196 L366.66666666666663 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"367\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">200</text><path d=\"M443.33333333333337 196 L443.33333333333337 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"443\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">250</text><path d=\"M520.0 196 L520.0 204\" stroke=\"#5B6672\" stroke-width=\"1\"/><text x=\"520\" y=\"222\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">300</text><text x=\"290\" y=\"245\" font-size=\"12\" fill=\"#14181F\" text-anchor=\"middle\">stress (MPa)</text><path d=\"M121.3 200 L121.3 120\" stroke=\"#07785C\" stroke-width=\"2.4\"/><circle cx=\"121.3\" cy=\"120\" r=\"4\" fill=\"#07785C\"/><text x=\"121.3\" y=\"108\" font-size=\"12\" fill=\"#07785C\" text-anchor=\"middle\">working 40</text><path d=\"M251.7 200 L251.7 96\" stroke=\"#8A5A0F\" stroke-width=\"2.4\" stroke-dasharray=\"5 4\"/><text x=\"251.7\" y=\"84\" font-size=\"12\" fill=\"#8A5A0F\" text-anchor=\"middle\">allowable 125</text><path d=\"M443.3 200 L443.3 120\" stroke=\"#9c2f2f\" stroke-width=\"2.4\"/><circle cx=\"443.3\" cy=\"120\" r=\"4\" fill=\"#9c2f2f\"/><text x=\"443.3\" y=\"108\" font-size=\"12\" fill=\"#9c2f2f\" text-anchor=\"middle\">yield 250</text><path d=\"M121.3 158 L251.7 158\" stroke=\"#5B6672\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"186\" y=\"150\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">margin you own</text><text x=\"348\" y=\"176\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">margin the code owns</text></svg><figcaption>Where a factor of safety actually lives. The working stress is what the part sees; the allowable stress is what the code lets you claim. The gap between them is the margin you chose and must defend — not a number the standard handed you.</figcaption></figure>\n<h3>§1 · Design is analysis run backwards</h3>\n<p>Analysis asks: given this part, what stress appears? Design asks the harder inverse: given\nthis load and this consequence of failure, what part? Analysis has one answer; design has a\nfamily of them, and the engineering is in the choosing. Every design decision is therefore\ntwo decisions — a size, and a <em>reason</em> for that size that survives being questioned a\nyear later by someone holding a broken piece of it.</p>\n<h3>§2 · Load cases before geometry</h3>\n<p>The first discipline is refusing to size anything until the load cases are written down.\nSteady operating load is rarely the governing one. Start-up torque, upset pressure, thermal\ngrowth against a fixed anchor, a dropped tool, a lifting case during maintenance, and the\nseismic or wind case if the structure is outdoors — each is a separate load case, and the part\nmust survive the worst of them, not their average. A part that fails in service almost never\nfailed under the load the designer analysed; it failed under the one nobody wrote down.</p>\n<h3>§3 · The factor of safety, honestly</h3>\n<p>The factor of safety is the ratio of the strength you rely on to the stress you expect:</p>\n<div class=\"keybox\"><span class=\"tag\">Key relation — design margin</span>\n<p>\\[ n = \\frac{S}{\\sigma}, \\qquad \\sigma_{allow} = \\frac{S}{n} \\]</p>\n<p>\\( S \\) is the governing strength — yield for permanent-deformation limits, ultimate for\nrupture, endurance limit for fatigue — and \\( \\sigma \\) is the stress the load case\nproduces. Choosing \\( n \\) is choosing how much ignorance you are buying insurance against.</p></div>\n<p>What \\( n \\) actually covers is worth naming, because it is not one thing: scatter in\nmaterial properties, uncertainty in the load, idealisation error in the analysis, degradation\nin service, and the consequence of failure. A bracket holding a cable tray and a bracket\nholding a pressure vessel get different numbers for the last reason alone. A large \\( n \\)\nis not conservatism; it is an admission of how much you do not know, and it is expensive in\nmass, cost and — in rotating equipment — in the very inertia you are trying to control.</p>\n<h3>§4 · The design working method</h3>\n<p>Use the same sequence every time. <em>One:</em> write the load cases, each with its source\nand its own worst-credible magnitude. <em>Two:</em> identify the failure mode each case could\nprovoke — yielding, rupture, fatigue, buckling, wear, leakage — because the governing strength\ndepends on the mode, not on the load. <em>Three:</em> choose \\( n \\) and record why, in the\ncalculation, in one sentence. <em>Four:</em> size the part, then check every <em>other</em>\nfailure mode against that size; the mode that governs is rarely the one you started with.\n<em>Five:</em> state the result as a drawing callout, not as a stress — a number that cannot be\ninspected has not been designed.</p>\n<p>Codes and standards are encoded experience, and they deserve respect precisely because they\nare other people's failures written down. But a code gives a floor, not an answer: it tells you\nthe minimum a competent engineer may claim, and it assumes you have identified the right load\ncases and the right failure mode. Meeting a code with the wrong load case is fully compliant\nand fully wrong.</p>\n<p><strong>Closing.</strong> Design is a defensible size. The margin is yours to justify, the\nload cases are yours to enumerate, and the code is a floor beneath both.</p>",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Axial stress and strain</b> (Strength of Materials L1) — \\( \\sigma = F/A \\) and what yield means physically.</li>\n<li><b>Material property vocabulary</b> (Materials I L7) — yield strength, tensile strength, ductility, and which is a design stress.</li>\n<li><b>Free-body diagrams</b> (Statics L3) — every load case begins as one.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Factor of safety</td><td>\\( n = S/\\sigma \\)</td><td>Comparing the strength relied on against the stress expected; state which \\( S \\).</td></tr>\n<tr><td>Allowable stress</td><td>\\( \\sigma_{allow} = S/n \\)</td><td>The number you actually size against, once \\( n \\) is chosen.</td></tr>\n<tr><td>Load case</td><td>—</td><td>One credible loading condition with its own magnitude and source; parts fail under unlisted ones.</td></tr>\n<tr><td>Failure mode</td><td>—</td><td>Yield, rupture, fatigue, buckling, wear, leakage — decides which strength governs.</td></tr>\n<tr><td>Margin of safety</td><td>\\( MS = n - 1 \\)</td><td>Aerospace-style reporting; \\( MS \\ge 0 \\) means the case is satisfied.</td></tr>\n<tr><td>Design vs analysis</td><td>—</td><td>Analysis returns a stress; design returns a size plus the reason for it.</td></tr>\n</tbody></table></div>",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Sizing to an allowable, not to a stress</b></p>\n<p><b>Problem.</b> A tension link carries a steady load \\( F = 12\\ \\mathrm{kN} \\). The\nmaterial has a yield strength \\( S_y = 250\\ \\mathrm{MPa} \\). The proposed section area is\n\\( 300\\ \\mathrm{mm^2} \\). <b>Find:</b> the working stress, the resulting factor of safety\nagainst yield, and the allowable stress if the design standard requires \\( n = 2 \\).</p>",
+    "solution": "<p><b>Solution.</b> (1) Working stress:\n\\( \\sigma = F/A = 12\\,000/300\\times10^{-6} = 40\\ \\mathrm{MPa} \\).\n(2) Factor of safety on yield: \\( n = S_y/\\sigma = 250/40 = 6.25 \\).\n(3) Allowable at the required \\( n = 2 \\): \\( \\sigma_{allow} = 250/2 = 125\\ \\mathrm{MPa} \\).</p>\n<p><b>Answer:</b> 40 MPa working, \\( n = 6.25 \\), allowable 125 MPa.\n<b>Sanity check:</b> the working stress sits well under the allowable, so the link passes with\nroom to spare — which is itself a finding. A part running at \\( n = 6.25 \\) where the standard\nasks for 2 is carrying mass and cost nobody specified, and is worth a second look before it is\nmultiplied across a hundred assemblies.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>What the margin buys you</b></p>\n<p><b>Problem.</b> The same link, sized as above, is found in service to carry 20% more load\nthan the design case because an upstream damper was removed. <b>Find:</b> the new working\nstress and factor of safety, and state whether the part is still acceptable against a required\n\\( n = 2 \\).</p>",
+    "solution": "<p><b>Solution.</b> (1) New load: \\( 1.2 \\times 12 = 14.4\\ \\mathrm{kN} \\), so\n\\( \\sigma = 14\\,400/300\\times10^{-6} = 48\\ \\mathrm{MPa} \\).\n(2) \\( n = 250/48 = 5.21 \\).\n(3) Required is \\( n = 2 \\); actual is 5.21, so the link remains acceptable.</p>\n<p><b>Answer:</b> 48 MPa, \\( n = 5.21 \\), still acceptable.\n<b>Sanity check:</b> this is exactly what margin is for — an unlisted load case appeared and the\npart absorbed it. Note what the calculation does <em>not</em> say: it does not say removing the\ndamper was harmless. Fatigue and the components downstream were never checked, and a 20%\nload rise is a far larger rise in fatigue damage, as Lessons 3 and 4 will show.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Choosing n with a reason attached</b></p>\n<p><b>Problem.</b> Two brackets use the same material and see the same 40 MPa working stress.\nBracket A supports a lighting conduit in an accessible corridor. Bracket B supports a pipe\ncarrying hot process fluid above a walkway. <b>Find:</b> a defensible factor of safety for each\nand the resulting allowable stresses, and state the single dominant reason they differ.</p>",
+    "solution": "<p><b>Solution.</b> (1) The stress analysis is identical, so nothing in the\nmechanics distinguishes them. (2) The consequence of failure does not: A drops a conduit in a\nplace where people can see and reach it; B releases hot fluid over a walkway, where failure\ninjures people. (3) A defensible pair is \\( n_A = 2 \\) giving\n\\( \\sigma_{allow} = 125\\ \\mathrm{MPa} \\), and \\( n_B = 4 \\) giving\n\\( \\sigma_{allow} = 62.5\\ \\mathrm{MPa} \\) — B is then sized to roughly twice the area for\nthe same load.</p>\n<p><b>Answer:</b> \\( n_A \\approx 2 \\), \\( n_B \\approx 4 \\); the dominant reason is\nconsequence of failure, not uncertainty in load or material.\n<b>Sanity check:</b> the exact numbers are a judgement and a standard may set them for you. What\nis not a judgement is that they must differ, and that the reason is recorded. An engineer who\nsizes both at \\( n = 2 \\) has not made an error of arithmetic; they have made an error of\nscope.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A component is sized against yield with \\( S_y = 250\\ \\mathrm{MPa} \\) and a required factor of safety \\( n = 2.5 \\). What is the allowable stress?</p>",
+    "choices": [
+     "\\( 100\\ \\mathrm{MPa} \\)",
+     "\\( 625\\ \\mathrm{MPa} \\)",
+     "\\( 252.5\\ \\mathrm{MPa} \\)",
+     "\\( 247.5\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The allowable stress is the strength divided by the factor of safety: \\( \\sigma_{allow} = S_y/n = 250/2.5 = 100\\ \\mathrm{MPa} \\). The 625 MPa answer multiplies instead of divides, which would license a stress above yield — the direction of the error is the giveaway, since a factor of safety must always reduce what you may claim. The 252.5 and 247.5 answers treat the factor as something to add to or subtract from the strength; a factor of safety is a ratio, and it is dimensionless precisely so that it scales rather than offsets.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pressure-retaining part is designed strictly to the minimum a code permits, using the load cases the designer listed. In service it fails. Which statement best describes the situation?</p>",
+    "choices": [
+     "The code is invalid and should not have been used",
+     "Code compliance is a floor, and it assumes the right load cases and failure mode were identified",
+     "The factor of safety must have been below 1.0",
+     "Codes apply only to materials, not to load cases"
+    ],
+    "answer": 1,
+    "solution": "<p>A code encodes other people's failures and sets the minimum a competent engineer may claim. It cannot know which load cases exist in your plant. Meeting a code against an incomplete list of load cases is fully compliant and still wrong, which is why enumerating load cases precedes sizing in the working method. The factor of safety was almost certainly above 1.0 for the case analysed — that is the point: the governing case was not analysed. Codes plainly do address loading and failure modes, not just materials.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which of the following is <b>not</b> one of the uncertainties a factor of safety is intended to cover?</p>",
+    "choices": [
+     "Scatter in material properties",
+     "Uncertainty in the applied load",
+     "An arithmetic mistake in the stress calculation",
+     "Degradation of the part in service"
+    ],
+    "answer": 2,
+    "solution": "<p>The factor of safety covers scatter in properties, uncertainty in load, idealisation error in the model, service degradation, and the consequence of failure. It is not an allowance for arithmetic errors, and treating it as one is dangerous: a wrong calculation can be wrong by any factor at all, including orders of magnitude, whereas the margin is sized for bounded, anticipated variation. Arithmetic is controlled by checking, not by margin.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A part is sized for its steady operating load. Which of these is most likely to be the load case that actually governs its size?</p>",
+    "choices": [
+     "The steady operating load, since it acts for the longest time",
+     "The average of all load cases",
+     "A short-duration start-up or upset case",
+     "Whichever case produces the lowest stress"
+    ],
+    "answer": 2,
+    "solution": "<p>Steady operating load is rarely governing precisely because everything is comfortable there. Start-up torque, upset pressure, thermal growth against an anchor and maintenance lifting cases are short but large, and a part must survive the worst credible case, not the average or the most frequent one. Duration matters for fatigue and creep, not for a yield check. Sizing to the lowest-stress case inverts the entire exercise.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Reported as a margin of safety, a component with a factor of safety \\( n = 1.35 \\) has \\( MS \\) equal to</p>",
+    "choices": [
+     "\\( 0.35 \\)",
+     "\\( 1.35 \\)",
+     "\\( -0.35 \\)",
+     "\\( 0.74 \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Margin of safety is defined as \\( MS = n - 1 \\), so \\( 1.35 - 1 = 0.35 \\); a non-negative value means the case is satisfied, and the convention exists so that \"zero\" reads as \"exactly adequate\" rather than \"no strength\". Reporting 1.35 confuses the margin with the factor itself. The 0.74 answer is \\( 1/1.35 \\), the stress-to-strength ratio, which is a utilisation rather than a margin.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Two designers size the same bracket. One reports \"the stress is 40 MPa\". The other reports \"6 mm plate, 50 mm wide, per drawing callout\". Which has completed a <b>design</b>?</p>",
+    "choices": [
+     "The first, because the stress is the engineering result",
+     "The second, because a size that can be inspected is the deliverable",
+     "Both equally",
+     "Neither, without a fatigue check"
+    ],
+    "answer": 1,
+    "solution": "<p>Analysis returns a stress; design returns a size, and a size that cannot be inspected has not been designed. The drawing callout is the deliverable because it is what the shop builds and what the inspector measures against. The first report is a necessary intermediate, not an output. A fatigue check may well be required, but its absence does not turn the second report into a non-design — it identifies a further load case to assess, which is exactly the working method's step four.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Increasing a factor of safety from 2 to 4 on a tension member, for the same load and material, has what effect on the required cross-sectional area?</p>",
+    "choices": [
+     "Halves it",
+     "Doubles it",
+     "Leaves it unchanged",
+     "Quadruples it"
+    ],
+    "answer": 1,
+    "solution": "<p>For a tension member \\( A = F n / S \\), so the area is directly proportional to \\( n \\): doubling the factor doubles the area, and with it the mass and the material cost. Halving is the same relation read backwards. It is unchanged only if the factor plays no part in sizing, which would make it decorative. Quadrupling would require an area proportional to \\( n^2 \\), which holds for neither axial nor bending sizing — in bending the section modulus scales with \\( n \\), so the depth grows more slowly still.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which strength should govern the factor of safety for a part whose failure criterion is \"must not deform permanently\"?</p>",
+    "choices": [
+     "Ultimate tensile strength",
+     "Yield strength",
+     "Endurance limit",
+     "Hardness"
+    ],
+    "answer": 1,
+    "solution": "<p>Permanent deformation is yielding, so the yield strength governs. Ultimate tensile strength describes rupture and would permit the part to deform grossly while remaining \"safe\" against the wrong criterion. The endurance limit governs fatigue under fluctuating load, a different failure mode. Hardness is a proxy for strength, useful for field triage, but it is not itself a design strength — a point Materials I made when it warned that hardness correlations are empirical.</p>"
+   }
+  ],
+  "kuwait": "\n<p><b>Applied case — the bracket that passed and the bracket that mattered.</b> During a\nplant modification, a contractor supplies two identical brackets from the same drawing: one\nsupports an instrument-air line, the other a small steam header above a maintenance walkway.\nThe calculation package sizes both at \\( n = 2 \\) against yield, and the arithmetic is\ncorrect in both. A design review rejects the package — not for its stress analysis, which is\nsound, but for its scope: the two brackets have the same mechanics and different consequences,\nand the calculation never says so. The steam bracket is re-sized at \\( n = 4 \\) and, more\nimportantly, the calculation now carries one sentence explaining why. The reviewer's objection\nwas not conservatism; it was that a margin without a stated reason cannot be checked, revised,\nor defended when the plant changes around it.</p>"
+ },
+ "2": {
+  "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Mohr circle for a plane stress state of 80 megapascals normal and 40 megapascals shear. The circle is centred at 40 megapascals with radius 56.6, giving principal stresses of 96.6 and minus 16.6 megapascals.\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"300\" fill=\"#ffffff\"/><path d=\"M70 165.0 L500 165.0\" stroke=\"#14181F\" stroke-width=\"1.4\"/><text x=\"505\" y=\"169.0\" font-size=\"12\" fill=\"#14181F\">σ</text><path d=\"M250.0 40 L250.0 285\" stroke=\"#14181F\" stroke-width=\"1.4\"/><text x=\"256.0\" y=\"38\" font-size=\"12\" fill=\"#14181F\">τ</text><circle cx=\"302.0\" cy=\"165.0\" r=\"73.5\" fill=\"none\" stroke=\"#07785C\" stroke-width=\"2\"/><circle cx=\"302.0\" cy=\"165.0\" r=\"3\" fill=\"#07785C\"/><text x=\"302\" y=\"185.0\" font-size=\"11\" fill=\"#07785C\" text-anchor=\"middle\">C 40</text><circle cx=\"375.5\" cy=\"165.0\" r=\"4\" fill=\"#8A5A0F\"/><text x=\"376\" y=\"153.0\" font-size=\"11\" fill=\"#8A5A0F\" text-anchor=\"middle\">96.6</text><circle cx=\"228.5\" cy=\"165.0\" r=\"4\" fill=\"#8A5A0F\"/><text x=\"228\" y=\"153.0\" font-size=\"11\" fill=\"#8A5A0F\" text-anchor=\"middle\">−16.6</text><path d=\"M302.0 165.0 L354.0 113.0\" stroke=\"#9c2f2f\" stroke-width=\"1.8\"/><circle cx=\"354.0\" cy=\"113.0\" r=\"4\" fill=\"#9c2f2f\"/><text x=\"362\" y=\"107\" font-size=\"11\" fill=\"#9c2f2f\">(80, 40)</text><text x=\"310\" y=\"128\" font-size=\"11\" fill=\"#9c2f2f\">R = 56.6</text></svg><figcaption>Mohr's circle for the worked stress state: 80 MPa normal with 40 MPa shear. The centre sits at 40 MPa, the radius is 56.6 MPa, and the principal stresses fall out as 96.6 and −16.6 MPa. Von Mises and Tresca are two different ways of collapsing this picture into one number.</figcaption></figure>\n<h3>§1 · One number from a stress state</h3>\n<p>Material strength is quoted from a tension test — a single axis, a single number. Real parts\ncarry combined stress: bending with torsion, pressure with axial load, a bolt in tension while\na joint shears. A failure theory is the bridge, collapsing a multiaxial stress state into one\nequivalent stress that may be compared against the tensile yield strength honestly.</p>\n<h3>§2 · Von Mises and Tresca</h3>\n<div class=\"keybox\"><span class=\"tag\">Key relations — the two static theories</span>\n<p>\\[ \\sigma' = \\sqrt{\\sigma_x^2 - \\sigma_x\\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2}, \\qquad\n\\sigma_{Tresca} = \\sigma_{max} - \\sigma_{min} \\]</p>\n<p>Von Mises (distortion energy) predicts yielding of ductile metals most accurately; Tresca\n(maximum shear) is always the more conservative of the two, by up to about 15%.</p></div>\n<p>Both take the same input and answer the same question, and Tresca never predicts a higher\ncapacity than von Mises. That is why codes fond of conservatism adopt Tresca while a designer\nchasing mass adopts von Mises — and why quoting a factor of safety without naming the theory\nis an incomplete statement.</p>\n<h3>§3 · Stress concentrations, counted honestly</h3>\n<p>Nominal stress is what the average section carries; a hole, a fillet or a keyway multiplies\nit locally by a geometric factor \\( K_t \\), so \\( \\sigma_{max} = K_t \\sigma_{nom} \\).\nFor a <em>static</em> load on a <em>ductile</em> material, local yielding blunts the peak and\nredistributes it, so \\( K_t \\) is commonly set aside. Under fatigue, or in a brittle\nmaterial, that permission is withdrawn entirely — which is the bridge to Lesson 3, and the\nreason a shaft's shoulder radius is a design variable rather than a drafting convenience.</p>\n<h3>§4 · The static sizing method</h3>\n<p><em>One:</em> resolve the stress state at the worst point — usually a surface, usually at a\ndiscontinuity. <em>Two:</em> get the principal stresses, by Mohr's circle or by formula.\n<em>Three:</em> pick a theory and say which. <em>Four:</em> compare against \\( S_y/n \\).\n<em>Five:</em> decide whether \\( K_t \\) applies — ductile and static, usually not; brittle or\nfatigue, always. The commonest error in practice is comparing a raw shear stress against a\ntensile yield strength, which mixes two incompatible quantities and is optimistic by roughly\nthe factor \\( \\sqrt{3} \\).</p>\n<p><strong>Closing.</strong> A failure theory is a translator, not a truth. Name the one you\nused, and the number you report becomes checkable.</p>",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Principal stresses and Mohr's circle</b> (Strength of Materials) — the transformation itself, not just the formula.</li>\n<li><b>Yield strength</b> (Materials I L7) — a tensile-test number being borrowed for a multiaxial state.</li>\n<li><b>Factor of safety</b> (Lesson 1) — the allowable stress this lesson compares against.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Von Mises stress</td><td>\\( \\sigma' = \\sqrt{\\sigma_x^2-\\sigma_x\\sigma_y+\\sigma_y^2+3\\tau_{xy}^2} \\)</td><td>Ductile metals under static combined stress; the accurate default.</td></tr>\n<tr><td>Tresca stress</td><td>\\( \\sigma_{max}-\\sigma_{min} \\)</td><td>When the code or the consequence calls for the conservative theory.</td></tr>\n<tr><td>Principal stresses</td><td>\\( \\tfrac{\\sigma_x+\\sigma_y}{2}\\pm\\sqrt{(\\tfrac{\\sigma_x-\\sigma_y}{2})^2+\\tau_{xy}^2} \\)</td><td>The input both theories need; remember the third principal is zero in plane stress.</td></tr>\n<tr><td>Stress concentration</td><td>\\( \\sigma_{max}=K_t\\sigma_{nom} \\)</td><td>Holes, fillets, keyways; mandatory under fatigue or in brittle material.</td></tr>\n<tr><td>Pure shear equivalence</td><td>\\( S_{sy}\\approx 0.577\\,S_y \\)</td><td>Shear yield from tensile yield, via von Mises.</td></tr>\n</tbody></table></div>",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>The same state, two theories</b></p>\n<p><b>Problem.</b> A shaft surface carries \\( \\sigma_x = 80\\ \\mathrm{MPa} \\) bending and\n\\( \\tau_{xy} = 40\\ \\mathrm{MPa} \\) torsional shear, with \\( \\sigma_y = 0 \\).\n\\( S_y = 250\\ \\mathrm{MPa} \\). <b>Find:</b> the principal stresses, the von Mises and Tresca\nequivalent stresses, and the factor of safety by each theory.</p>",
+    "solution": "<p><b>Solution.</b> (1) Centre \\( (80+0)/2 = 40 \\); radius\n\\( \\sqrt{40^2+40^2} = 56.57\\ \\mathrm{MPa} \\). Principals: \\( 96.57 \\) and\n\\( -16.57\\ \\mathrm{MPa} \\), with the third equal to zero.\n(2) Von Mises: \\( \\sqrt{80^2 + 3(40)^2} = \\sqrt{11\\,200} = 105.83\\ \\mathrm{MPa} \\).\n(3) Tresca: \\( \\sigma_{max}-\\sigma_{min} = 96.57-(-16.57) = 113.14\\ \\mathrm{MPa} \\).\n(4) \\( n_{VM} = 250/105.83 = 2.36 \\); \\( n_{T} = 250/113.14 = 2.21 \\).</p>\n<p><b>Answer:</b> 96.6 / −16.6 MPa; \\( \\sigma' = 105.8 \\), \\( \\sigma_{Tresca} = 113.1 \\) MPa;\n\\( n = 2.36 \\) or \\( 2.21 \\).\n<b>Sanity check:</b> Tresca is 6.9% higher in stress and correspondingly lower in factor of\nsafety, inside the expected 0–15% band. If your two theories ever disagree by more than about\n15%, the arithmetic is wrong, not the physics.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>When the concentration counts</b></p>\n<p><b>Problem.</b> A ductile steel plate with \\( S_y = 250\\ \\mathrm{MPa} \\) carries a nominal\ntensile stress of 40 MPa through a section containing a hole with \\( K_t = 2.5 \\).\n<b>Find:</b> the peak local stress, and state whether the part yields (a) under a static load\nand (b) if the same plate were a brittle casting.</p>",
+    "solution": "<p><b>Solution.</b> (1) Peak: \\( \\sigma_{max} = K_t\\sigma_{nom} = 2.5\\times40\n= 100\\ \\mathrm{MPa} \\). (2) Static, ductile: 100 MPa is below \\( S_y = 250 \\), so no yielding;\nand even had it exceeded yield locally, the ductile material would redistribute rather than\nfracture. (3) Brittle casting: no redistribution is available, so the 100 MPa peak is the stress\nthat must be compared against the material's (much lower) tensile capacity, and \\( K_t \\)\ncannot be set aside.</p>\n<p><b>Answer:</b> 100 MPa peak; safe statically in ductile steel; \\( K_t \\) governs in a\nbrittle casting. <b>Sanity check:</b> the difference is not in the stress — it is 100 MPa in\nboth — but in whether the material can shed the peak. That single distinction is why cast\nhousings crack at fillets that would be unremarkable in a forging.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Shear yield is not tensile yield</b></p>\n<p><b>Problem.</b> A pin is loaded in pure shear. The material has \\( S_y = 250\\ \\mathrm{MPa} \\)\nin tension. <b>Find:</b> the shear yield strength by the von Mises criterion, and the factor of\nsafety if the pin carries \\( 80\\ \\mathrm{MPa} \\) of shear.</p>",
+    "solution": "<p><b>Solution.</b> (1) For pure shear, \\( \\sigma_x=\\sigma_y=0 \\), so\n\\( \\sigma' = \\sqrt{3}\\,\\tau \\). Yielding begins when \\( \\sqrt{3}\\,\\tau = S_y \\), giving\n\\( S_{sy} = S_y/\\sqrt{3} = 0.577\\times250 = 144.3\\ \\mathrm{MPa} \\).\n(2) \\( n = 144.3/80 = 1.80 \\).</p>\n<p><b>Answer:</b> \\( S_{sy} = 144.3\\ \\mathrm{MPa} \\), \\( n = 1.80 \\).\n<b>Sanity check:</b> comparing the 80 MPa shear directly against the 250 MPa tensile yield would\nhave reported \\( n = 3.13 \\) — optimistic by exactly \\( \\sqrt{3} \\), and the single most\ncommon static-design error in the field. A pin \"with a factor of three\" can in fact be sitting\nat 1.8.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For the same stress state, which statement about the two static failure theories is always true for a ductile metal?</p>",
+    "choices": [
+     "Von Mises predicts a lower equivalent stress than Tresca",
+     "Tresca predicts a lower equivalent stress than von Mises",
+     "They always agree exactly",
+     "Which is lower depends on the material"
+    ],
+    "answer": 0,
+    "solution": "<p>Tresca is the more conservative theory everywhere, so its equivalent stress is never below the von Mises value, and von Mises therefore never reports the larger number. The two agree only in specific states — uniaxial tension being one — and differ by up to about 15% in pure shear, which is the largest gap. The relationship is geometric, set by the shapes of the two yield surfaces, so it does not depend on which ductile metal is involved.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A pure shear stress \\( \\tau = 50\\ \\mathrm{MPa} \\) acts alone. What is the von Mises equivalent stress?</p>",
+    "choices": [
+     "\\( 50\\ \\mathrm{MPa} \\)",
+     "\\( 86.6\\ \\mathrm{MPa} \\)",
+     "\\( 100\\ \\mathrm{MPa} \\)",
+     "\\( 28.9\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 1,
+    "solution": "<p>With both normal stresses zero the formula reduces to \\( \\sigma' = \\sqrt{3\\tau^2} = \\sqrt{3}\\,\\tau = 1.732\\times50 = 86.6\\ \\mathrm{MPa} \\). Answering 50 MPa treats shear as if it were directly comparable with a tensile strength, the error this lesson names explicitly. The 100 MPa answer doubles the shear, which is the Tresca result for this state and so belongs to the other theory. The 28.9 MPa answer divides by \\( \\sqrt{3} \\) instead of multiplying, inverting the relation.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Under a static load on a ductile steel part, why is the stress-concentration factor \\( K_t \\) commonly set aside?</p>",
+    "choices": [
+     "Because \\( K_t \\) is always close to 1.0 for ductile metals",
+     "Because local yielding blunts and redistributes the peak stress",
+     "Because static loads are smaller than fatigue loads",
+     "Because \\( K_t \\) applies only to shear, not tension"
+    ],
+    "answer": 1,
+    "solution": "<p>A ductile material yields locally at the notch, which redistributes load into the surrounding material and blunts the peak — the part tolerates the concentration rather than fracturing at it. \\( K_t \\) is a purely geometric factor and is routinely 2 to 3, nowhere near unity. The permission has nothing to do with load magnitude, and it is withdrawn entirely under fatigue or in brittle materials, where no redistribution mechanism exists. \\( K_t \\) applies to any stress type.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>In a plane-stress state with principals \\( 96.6 \\) and \\( -16.6\\ \\mathrm{MPa} \\), what is the third principal stress used in the Tresca calculation?</p>",
+    "choices": [
+     "\\( 0 \\)",
+     "\\( 96.6\\ \\mathrm{MPa} \\)",
+     "\\( -16.6\\ \\mathrm{MPa} \\)",
+     "\\( 40\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Plane stress means the out-of-plane principal stress is zero, and it must still be included when identifying the maximum and minimum for Tresca. Here the set is \\( \\{96.6,\\,0,\\,-16.6\\} \\), so the Tresca stress is \\( 96.6-(-16.6)=113.2\\ \\mathrm{MPa} \\). Forgetting the zero is harmless when both in-plane principals straddle zero, as here, but becomes a real error when both are the same sign — in that case the zero is the minimum and governs the answer.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A designer reports \"the factor of safety is 2.2\" without naming a failure theory. What is the most accurate criticism?</p>",
+    "choices": [
+     "The number is meaningless because factors of safety are qualitative",
+     "The statement is incomplete: the same state gives different factors under different theories",
+     "The number is wrong because 2.2 is below the minimum permitted",
+     "No criticism — the theory does not affect the result"
+    ],
+    "answer": 1,
+    "solution": "<p>The same stress state produced 2.36 by von Mises and 2.21 by Tresca in this lesson's worked example, so a bare factor of safety cannot be checked or compared against another engineer's number. The criticism is one of completeness, not of validity — the figure is perfectly meaningful once the theory is named. Nothing here establishes a minimum permitted value, and the claim that the theory does not matter is contradicted by the two results.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which combination makes it <b>mandatory</b> to apply the stress-concentration factor in a static strength check?</p>",
+    "choices": [
+     "Ductile material, steady load",
+     "Brittle material, steady load",
+     "Ductile material, load applied slowly",
+     "Any material, provided the notch is small"
+    ],
+    "answer": 1,
+    "solution": "<p>A brittle material cannot yield locally, so the geometric peak is the stress that actually acts and \\( K_t \\) must be carried through. Ductile materials under steady load redistribute the peak, which is the standard permission to set \\( K_t \\) aside; the rate of load application does not change that, since the mechanism is plasticity rather than strain rate. Notch size does not grant an exemption — a small sharp notch typically produces a <em>higher</em> \\( K_t \\), not a lower one.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Applying von Mises to a state with \\( \\sigma_x = 120\\ \\mathrm{MPa} \\), \\( \\sigma_y = 0 \\), \\( \\tau_{xy} = 0 \\) gives an equivalent stress of</p>",
+    "choices": [
+     "\\( 120\\ \\mathrm{MPa} \\)",
+     "\\( 208\\ \\mathrm{MPa} \\)",
+     "\\( 60\\ \\mathrm{MPa} \\)",
+     "\\( 69.3\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>Uniaxial tension is the state the tension test itself produces, and any sound failure theory must return the applied stress unchanged there: \\( \\sqrt{120^2} = 120\\ \\mathrm{MPa} \\). This is the sanity check to run on any failure-theory formula you are unsure you have remembered correctly — feed it uniaxial tension and see whether it hands the number back. The other options apply spurious factors of \\( \\sqrt{3} \\) or one-half that have no term to attach to in this state.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>The shear yield strength of a ductile steel with \\( S_y = 300\\ \\mathrm{MPa} \\), by the von Mises criterion, is approximately</p>",
+    "choices": [
+     "\\( 300\\ \\mathrm{MPa} \\)",
+     "\\( 173\\ \\mathrm{MPa} \\)",
+     "\\( 150\\ \\mathrm{MPa} \\)",
+     "\\( 520\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 1,
+    "solution": "<p>Von Mises gives \\( S_{sy}=0.577\\,S_y = 0.577\\times300 = 173\\ \\mathrm{MPa} \\). Using 300 MPa compares a shear stress against a tensile strength, the error worth roughly \\( \\sqrt{3} \\) that this lesson flags. The 150 MPa answer is the Tresca prediction, \\( S_y/2 \\) — defensible if you say you used Tresca, but it is not the von Mises figure the question asks for. Multiplying by \\( \\sqrt{3} \\) to reach 520 MPa moves in the wrong direction: shear capacity is always below tensile capacity.</p>"
+   }
+  ],
+  "kuwait": "\n<p><b>Applied case — a pin with a factor of three that was really 1.8.</b> A lifting-lug pin on\na maintenance davit is checked during a routine review. The original calculation divided the\ntensile yield strength by the pin's shear stress and reported a factor of safety of 3.1, which\npassed without comment for years. The reviewer repeats the check through von Mises: shear yield\nis \\( 0.577 S_y \\), and the real factor is 1.8. Nothing about the pin changed and no arithmetic\nwas wrong — the original simply compared a shear stress against a tensile strength, two\nquantities that are not comparable. The lug was not replaced, because 1.8 was still adequate for\nits duty, but every other shear-loaded item in the same calculation package was rechecked, and\ntwo of them were not adequate. The lesson is that an error of <em>kind</em> propagates silently\nthrough a document in a way an error of arithmetic rarely does.</p>"
+ },
+ "3": {
+  "lecture": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"An S-N diagram on logarithmic life axis. Strength falls from 0.9 times ultimate at one thousand cycles to the endurance limit at one million cycles, where the line becomes horizontal. A lower corrected endurance limit is shown beneath the ideal specimen value.\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"300\" fill=\"#ffffff\"/><path d=\"M80 240 L520 240\" stroke=\"#14181F\" stroke-width=\"1.5\"/><path d=\"M80 40 L80 240\" stroke=\"#14181F\" stroke-width=\"1.5\"/><text x=\"300\" y=\"272\" font-size=\"12\" fill=\"#14181F\" text-anchor=\"middle\">life N (log cycles)</text><text x=\"26\" y=\"140\" font-size=\"12\" fill=\"#14181F\" transform=\"rotate(-90 26 140)\" text-anchor=\"middle\">stress amplitude</text><text x=\"140\" y=\"258\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">10³</text><text x=\"235\" y=\"258\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">10⁴</text><text x=\"330\" y=\"258\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">10⁵</text><text x=\"425\" y=\"258\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">10⁶</text><text x=\"500\" y=\"258\" font-size=\"11\" fill=\"#5B6672\" text-anchor=\"middle\">10⁷</text><path d=\"M140 70 L425 140 L515 140\" fill=\"none\" stroke=\"#07785C\" stroke-width=\"2.2\"/><text x=\"150\" y=\"62\" font-size=\"11\" fill=\"#07785C\">0.9·Sut = 540</text><text x=\"432\" y=\"134\" font-size=\"11\" fill=\"#07785C\">Se′ = 300</text><path d=\"M140 96 L425 186 L515 186\" fill=\"none\" stroke=\"#8A5A0F\" stroke-width=\"2.2\" stroke-dasharray=\"6 4\"/><text x=\"432\" y=\"200\" font-size=\"11\" fill=\"#8A5A0F\">Se = 174</text><path d=\"M405 142 L405 184\" stroke=\"#9c2f2f\" stroke-width=\"1.6\"/><path d=\"M405 184 l-4 -7 l8 0 z\" fill=\"#9c2f2f\"/><text x=\"399\" y=\"168\" font-size=\"11\" fill=\"#9c2f2f\" text-anchor=\"end\">Marin factors</text><path d=\"M425 140 L425 240\" stroke=\"#5B6672\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/></svg><figcaption>The S-N picture and what the Marin factors do to it. The upper line is an ideal polished specimen; the lower dashed line is the same steel once surface finish, size and a reliability requirement are paid for. The endurance limit falls from 300 MPa to 174 MPa — the part did not change, the honesty did.</figcaption></figure>\n<h3>§1 · Why static strength is not the answer</h3>\n<p>A shaft that never approaches yield can still fail, and usually does. Fatigue is damage\naccumulated by <em>fluctuating</em> stress: a crack initiates at a surface discontinuity, grows\na little on each cycle, and severs the section at a nominal stress the static calculation\ndeclared safe by a wide margin. Most rotating-machinery failures are fatigue failures, and none\nof them are visible to a yield check.</p>\n<h3>§2 · The endurance limit and where it comes from</h3>\n<p>Test enough polished specimens and steels show a stress amplitude below which life becomes\neffectively unlimited — the endurance limit. For wrought steels a serviceable first estimate is\n\\( S_e' = 0.5\\,S_{ut} \\) (capped near 700 MPa). The prime matters: that value belongs to a\nmirror-polished 7.6 mm rotating-bending specimen tested at room temperature, which is not the\npart you are designing.</p>\n<h3>§3 · The Marin factors — paying for reality</h3>\n<div class=\"keybox\"><span class=\"tag\">Key relation — corrected endurance limit</span>\n<p>\\[ S_e = k_a k_b k_c k_d k_e \\, S_e' \\]</p>\n<p>\\( k_a \\) surface finish, \\( k_b \\) size, \\( k_c \\) load type, \\( k_d \\) temperature,\n\\( k_e \\) reliability. Each is at most 1.0, so they only ever reduce — and because they\nmultiply, they stack fast.</p></div>\n<p>Their physical logic is worth holding onto rather than memorising. Surface finish dominates\nbecause fatigue cracks start at the surface, so roughness supplies ready-made initiation sites:\na machined finish costs about 17% at 600 MPa, and a hot-rolled or forged surface costs far more.\nSize reduces strength because a larger section exposes more highly-stressed volume, so the\nworst flaw present is statistically worse. Reliability is not a physical property at all but a\nchoice about how far into the scatter band you design: 50% reliability means half of parts fail\nsooner than predicted, which is why 90%, 99% or 99.9% carry escalating penalties.</p>\n<h3>§4 · The estimating method</h3>\n<p><em>One:</em> get \\( S_{ut} \\) for the actual material and condition, not the generic grade.\n<em>Two:</em> take \\( S_e' = 0.5 S_{ut} \\). <em>Three:</em> evaluate each Marin factor against\nthe real part — its finish, its diameter, its loading, its service temperature, and the\nreliability the duty demands. <em>Four:</em> multiply. <em>Five:</em> compare the stress\n<em>amplitude</em> against \\( S_e/n \\), never the peak stress, because fatigue is driven by the\nalternating component. And carry \\( K_f \\), the fatigue concentration factor, always — the\nductile-static permission of Lesson 2 does not survive here.</p>\n<p>The characteristic number to remember is the size of the total knockdown. In the worked case\nbelow, five factors that each look modest combine to leave 58% of the specimen value. An\nengineer who designs to \\( 0.5 S_{ut} \\) directly is not being slightly optimistic; they are\nclaiming nearly twice the fatigue strength the part has.</p>\n<p><strong>Closing.</strong> The endurance limit is a laboratory number until you have paid for\nyour part's surface, size and required reliability. Then it is a design stress.</p>",
+  "foundations": "\n<h4>What this lesson assumes</h4>\n<ul class=\"plain\">\n<li><b>Fatigue, S–N curves and crack initiation</b> (Materials I L8) — the physical mechanism this lesson quantifies.</li>\n<li><b>Stress concentration</b> (Lesson 2) — \\( K_t \\), and why fatigue withdraws the permission to ignore it.</li>\n<li><b>Tensile strength</b> (Materials I L7) — \\( S_{ut} \\) is the input the whole estimate hangs on.</li>\n</ul>\n<h4>Glossary</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>\n<tbody>\n<tr><td>Specimen endurance limit</td><td>\\( S_e' \\approx 0.5\\,S_{ut} \\)</td><td>First estimate for wrought steel; a laboratory value, never a design stress.</td></tr>\n<tr><td>Corrected endurance limit</td><td>\\( S_e = k_ak_bk_ck_dk_e S_e' \\)</td><td>The number you actually design against.</td></tr>\n<tr><td>Surface factor</td><td>\\( k_a = a\\,S_{ut}^{\\,b} \\)</td><td>Machined, ground, hot-rolled, forged — the largest single knockdown.</td></tr>\n<tr><td>Size factor</td><td>\\( k_b = 1.24\\,d^{-0.107} \\)</td><td>Round sections roughly 3–51 mm in bending or torsion.</td></tr>\n<tr><td>Reliability factor</td><td>\\( k_e \\)</td><td>A design choice about scatter: 0.897 at 90%, 0.814 at 99%, 0.753 at 99.9%.</td></tr>\n<tr><td>Stress amplitude</td><td>\\( \\sigma_a = (\\sigma_{max}-\\sigma_{min})/2 \\)</td><td>The quantity fatigue responds to; compare this against \\( S_e \\).</td></tr>\n</tbody></table></div>",
+  "quiz": [
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>What the specimen value costs after correction</b></p>\n<p><b>Problem.</b> A machined steel shaft of 30 mm diameter runs in rotating bending at room\ntemperature. The steel has \\( S_{ut} = 600\\ \\mathrm{MPa} \\); the duty requires 99%\nreliability (\\( k_e = 0.814 \\)). Use \\( k_a = 4.51\\,S_{ut}^{-0.265} \\) and\n\\( k_b = 1.24\\,d^{-0.107} \\). <b>Find:</b> \\( S_e' \\), each Marin factor, and the corrected\nendurance limit \\( S_e \\).</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( S_e' = 0.5\\times600 = 300\\ \\mathrm{MPa} \\).\n(2) \\( k_a = 4.51\\times600^{-0.265} = 0.828 \\).\n(3) \\( k_b = 1.24\\times30^{-0.107} = 0.862 \\).\n(4) \\( k_c = 1 \\) (bending), \\( k_d = 1 \\) (room temperature), \\( k_e = 0.814 \\).\n(5) \\( S_e = 0.828\\times0.862\\times1\\times1\\times0.814\\times300 = 174.2\\ \\mathrm{MPa} \\).</p>\n<p><b>Answer:</b> \\( S_e \\approx 174\\ \\mathrm{MPa} \\).\n<b>Sanity check:</b> the total knockdown is \\( 174.2/300 = 0.581 \\) — the corrected limit is 58%\nof the specimen value, and 29% of \\( S_{ut} \\). Designing against \\( 0.5S_{ut} = 300 \\) would\nhave claimed 1.72 times the fatigue strength this shaft actually possesses.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Buying strength with surface finish</b></p>\n<p><b>Problem.</b> The same shaft is ground rather than machined, so\n\\( k_a = 1.58\\,S_{ut}^{-0.085} \\). All other factors are unchanged. <b>Find:</b> the new\n\\( k_a \\), the new \\( S_e \\), and the percentage gain in endurance limit.</p>",
+    "solution": "<p><b>Solution.</b> (1) \\( k_a = 1.58\\times600^{-0.085} = 0.917 \\).\n(2) \\( S_e = 0.917\\times0.862\\times0.814\\times300 = 193.0\\ \\mathrm{MPa} \\).\n(3) Gain: \\( 193.0/174.2 - 1 = 0.108 \\), i.e. 10.8%.</p>\n<p><b>Answer:</b> \\( k_a = 0.917 \\), \\( S_e = 193\\ \\mathrm{MPa} \\), a 10.8% gain.\n<b>Sanity check:</b> grinding buys about a tenth more fatigue strength for one extra\nmanufacturing operation — often the cheapest strength available, and far cheaper than the\nlarger diameter that would otherwise be needed. It is also why a drawing note specifying\nsurface finish in a fillet is a structural requirement, not cosmetic.</p>"
+   },
+   {
+    "type": "solve",
+    "q": "<p class=\"qname\"><b>Amplitude, not peak</b></p>\n<p><b>Problem.</b> A component cycles between \\( \\sigma_{min} = 20\\ \\mathrm{MPa} \\) and\n\\( \\sigma_{max} = 140\\ \\mathrm{MPa} \\). <b>Find:</b> the stress amplitude and mean stress,\nand the factor of safety on infinite life against \\( S_e = 174\\ \\mathrm{MPa} \\), ignoring the\nmean-stress effect for now.</p>",
+    "solution": "<p><b>Solution.</b> (1) Amplitude:\n\\( \\sigma_a = (140-20)/2 = 60\\ \\mathrm{MPa} \\).\n(2) Mean: \\( \\sigma_m = (140+20)/2 = 80\\ \\mathrm{MPa} \\).\n(3) \\( n = S_e/\\sigma_a = 174/60 = 2.9 \\).</p>\n<p><b>Answer:</b> \\( \\sigma_a = 60 \\), \\( \\sigma_m = 80\\ \\mathrm{MPa} \\), \\( n = 2.9 \\).\n<b>Sanity check:</b> comparing the peak 140 MPa against \\( S_e \\) instead would have reported\n\\( n = 1.24 \\) — needlessly alarming — while ignoring that the 80 MPa mean stress is itself\ndamaging in a way this calculation has not yet accounted for. Lesson 4 supplies the Goodman\ntreatment that reconciles the two.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>For a wrought steel with \\( S_{ut} = 800\\ \\mathrm{MPa} \\), the first estimate of the specimen endurance limit \\( S_e' \\) is</p>",
+    "choices": [
+     "\\( 400\\ \\mathrm{MPa} \\)",
+     "\\( 800\\ \\mathrm{MPa} \\)",
+     "\\( 240\\ \\mathrm{MPa} \\)",
+     "\\( 1600\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 0,
+    "solution": "<p>The standard first estimate for wrought steel is \\( S_e' = 0.5\\,S_{ut} = 400\\ \\mathrm{MPa} \\), subject to the cap near 700 MPa that applies to very high-strength steels. Answering 800 MPa confuses the endurance limit with the ultimate strength itself. The 240 MPa figure applies 0.3 rather than 0.5, and 1600 MPa doubles instead of halving — fatigue strength is always below static strength, so any answer above \\( S_{ut} \\) can be rejected on sight.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Which Marin factor is typically the largest single knockdown for an as-forged component?</p>",
+    "choices": [
+     "Size, \\( k_b \\)",
+     "Surface finish, \\( k_a \\)",
+     "Load type, \\( k_c \\)",
+     "Temperature, \\( k_d \\)"
+    ],
+    "answer": 1,
+    "solution": "<p>Fatigue cracks initiate at the surface, so surface condition dominates: a rough as-forged skin supplies ready-made initiation sites and can cut the endurance limit by more than half on a strong steel. Size is real but milder over ordinary shaft diameters — around 0.86 at 30 mm. Load type applies a fixed adjustment for axial or torsional loading rather than a finish-dependent one, and temperature is 1.0 until the part runs hot. This ranking is why grinding a fillet is such a cost-effective structural intervention.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Five Marin factors of 0.83, 0.86, 1.0, 1.0 and 0.81 are applied to \\( S_e' = 300\\ \\mathrm{MPa} \\). The corrected endurance limit is closest to</p>",
+    "choices": [
+     "\\( 300\\ \\mathrm{MPa} \\)",
+     "\\( 174\\ \\mathrm{MPa} \\)",
+     "\\( 250\\ \\mathrm{MPa} \\)",
+     "\\( 90\\ \\mathrm{MPa} \\)"
+    ],
+    "answer": 1,
+    "solution": "<p>The factors multiply: \\( 0.83\\times0.86\\times0.81 = 0.578 \\), and \\( 0.578\\times300 \\approx 174\\ \\mathrm{MPa} \\). The 250 MPa answer comes from averaging the factors instead of multiplying, which badly understates the stacking; 300 MPa ignores the correction entirely. The 90 MPa answer roughly adds the shortfalls rather than compounding the factors, over-penalising the part. Multiplication is the point: several individually modest factors combine to remove more than 40% of the specimen value.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Fatigue design compares which stress quantity against the corrected endurance limit?</p>",
+    "choices": [
+     "The maximum stress in the cycle",
+     "The stress amplitude",
+     "The mean stress",
+     "The static yield stress"
+    ],
+    "answer": 1,
+    "solution": "<p>Fatigue damage is driven by the alternating component, so the stress amplitude \\( \\sigma_a = (\\sigma_{max}-\\sigma_{min})/2 \\) is the quantity compared against \\( S_e \\). Using the maximum stress conflates the steady and fluctuating parts and reports a needlessly low factor of safety. The mean stress is not ignored — it genuinely reduces allowable amplitude — but it enters through a Goodman or Gerber construction rather than by direct comparison. The yield stress governs a different failure mode entirely.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Raising the required reliability from 50% to 99% changes \\( k_e \\) from 1.000 to 0.814. What does this represent physically?</p>",
+    "choices": [
+     "The material becomes weaker at higher reliability",
+     "A choice about how far into the strength scatter band the design sits",
+     "An allowance for higher operating temperature",
+     "A correction for the larger size of reliable parts"
+    ],
+    "answer": 1,
+    "solution": "<p>Reliability is not a property of the material but a decision about scatter. The endurance limit measured across many specimens is a distribution; designing at 50% reliability means half of parts are expected to fail earlier than predicted, which is rarely acceptable, so the design stress is moved down the distribution and \\( k_e \\) falls. The steel is unchanged. Temperature is handled separately by \\( k_d \\), and size by \\( k_b \\); neither has anything to do with the reliability choice.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>Why must the fatigue stress-concentration factor be carried through a fatigue calculation, when \\( K_t \\) is often set aside for static ductile design?</p>",
+    "choices": [
+     "Fatigue loads are always larger than static loads",
+     "Local yielding cannot blunt a peak that recurs every cycle at the crack initiation site",
+     "\\( K_t \\) is only defined for cyclic loading",
+     "Fatigue calculations use nominal stress, so the factor compensates"
+    ],
+    "answer": 1,
+    "solution": "<p>The static permission rests on local yielding redistributing the peak once. Under cyclic loading the notch root is exactly where a crack initiates and then grows a little on every cycle, so the concentration governs the life rather than being blunted away. Fatigue loads are typically <em>smaller</em> than the static ones a part survives, which is what makes fatigue failures surprising. \\( K_t \\) is a purely geometric factor defined regardless of loading, and the last option inverts the logic of nominal stress.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A shaft's diameter is increased from 30 mm to 60 mm. Using \\( k_b = 1.24\\,d^{-0.107} \\), the size factor</p>",
+    "choices": [
+     "increases, because a bigger shaft is stronger",
+     "decreases slightly, because more highly-stressed material is exposed",
+     "is unchanged, because \\( k_b \\) depends only on material",
+     "halves, in proportion to the diameter"
+    ],
+    "answer": 1,
+    "solution": "<p>The exponent is negative, so \\( k_b \\) falls as diameter grows: from 0.862 at 30 mm to about 0.800 at 60 mm, a reduction of roughly 7%. The physical reason is statistical — a larger section exposes a greater volume of highly-stressed material, so the worst flaw present is likely to be worse. Note this concerns <em>strength per unit area</em>: the bigger shaft still carries far more load, because section modulus grows with the cube of diameter while \\( k_b \\) declines only weakly. The factor certainly depends on geometry, and the decline is nothing like proportional.</p>"
+   },
+   {
+    "type": "mc",
+    "q": "<p>A designer sizes a machined 30 mm shaft directly against \\( 0.5\\,S_{ut} \\), omitting the Marin factors. Compared with the corrected value of 174 MPa, the claimed fatigue strength is too high by a factor of about</p>",
+    "choices": [
+     "1.1",
+     "1.7",
+     "3.0",
+     "1.0 — the omission is harmless"
+    ],
+    "answer": 1,
+    "solution": "<p>The claim is 300 MPa against an actual 174 MPa, a ratio of \\( 300/174 = 1.72 \\). This is the practical significance of the whole lesson: the omission is not a rounding matter but nearly a factor of two, and it is invisible in the arithmetic because every individual step is correct. A part designed this way can pass every check in the calculation package and still fail in service, which is precisely the pattern that makes fatigue the dominant failure mode in rotating machinery.</p>"
+   }
+  ],
+  "kuwait": "\n<p><b>Applied case — the shaft that passed every static check.</b> A cooling-water pump shaft\nfails through a keyway after eighteen months. The original calculation is retrieved and is\narithmetically flawless: peak stress well below yield, factor of safety above four. It contains\nno fatigue check at all. Re-worked under this lesson's method, the picture inverts — the\ncorrected endurance limit for the machined 30 mm section at 99% reliability is about 174 MPa,\nnot the 300 MPa a bare \\( 0.5S_{ut} \\) would have claimed, and the keyway's fatigue\nconcentration applies in full because the ductile-static permission does not survive cyclic\nloading. The replacement shaft is ground at the fillet and the keyway radius increased; both\nchanges buy fatigue strength rather than section. The instructive part is that no one made a\ncalculation error. They answered the wrong question, thoroughly.</p>"
+ }
+}
