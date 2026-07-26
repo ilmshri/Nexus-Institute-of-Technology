@@ -47,7 +47,122 @@
   </div>
 </div>
 <article class="part tight sum-doc">
-<h2 class="sum-course" id="sum-machine-design-1">MDN 251 — Machine Design I</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p>
+<h2 class="sum-course" id="sum-machine-design-1">MDN 251 — Machine Design I</h2>
+<p class="ref-thin">Condensed per-lesson recaps are not written for this course yet,
+so this document is the full compiled text in the meantime.</p>
+<h2 class="sum-part sum-nobreak">Part 1 — Lectures</h2>
+<p class="ref-thin">Lessons 03, 04, 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the lectures section.</p>
+<section class="sum-lesson"><h3>Lesson 01 · Design methodology and factors of safety</h3><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A stress axis from zero to 300 megapascals showing the working stress at 40, the allowable stress at 125 for a factor of safety of two, and the yield strength at 250. The margin is the gap between working stress and allowable stress."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M60 200 L520 200" stroke="#14181F" stroke-width="1.6"/><path d="M60.0 196 L60.0 204" stroke="#5B6672" stroke-width="1"/><text x="60" y="222" font-size="11" fill="#5B6672" text-anchor="middle">0</text><path d="M136.66666666666666 196 L136.66666666666666 204" stroke="#5B6672" stroke-width="1"/><text x="137" y="222" font-size="11" fill="#5B6672" text-anchor="middle">50</text><path d="M213.33333333333331 196 L213.33333333333331 204" stroke="#5B6672" stroke-width="1"/><text x="213" y="222" font-size="11" fill="#5B6672" text-anchor="middle">100</text><path d="M290.0 196 L290.0 204" stroke="#5B6672" stroke-width="1"/><text x="290" y="222" font-size="11" fill="#5B6672" text-anchor="middle">150</text><path d="M366.66666666666663 196 L366.66666666666663 204" stroke="#5B6672" stroke-width="1"/><text x="367" y="222" font-size="11" fill="#5B6672" text-anchor="middle">200</text><path d="M443.33333333333337 196 L443.33333333333337 204" stroke="#5B6672" stroke-width="1"/><text x="443" y="222" font-size="11" fill="#5B6672" text-anchor="middle">250</text><path d="M520.0 196 L520.0 204" stroke="#5B6672" stroke-width="1"/><text x="520" y="222" font-size="11" fill="#5B6672" text-anchor="middle">300</text><text x="290" y="245" font-size="12" fill="#14181F" text-anchor="middle">stress (MPa)</text><path d="M121.3 200 L121.3 120" stroke="#07785C" stroke-width="2.4"/><circle cx="121.3" cy="120" r="4" fill="#07785C"/><text x="121.3" y="108" font-size="12" fill="#07785C" text-anchor="middle">working 40</text><path d="M251.7 200 L251.7 96" stroke="#8A5A0F" stroke-width="2.4" stroke-dasharray="5 4"/><text x="251.7" y="84" font-size="12" fill="#8A5A0F" text-anchor="middle">allowable 125</text><path d="M443.3 200 L443.3 120" stroke="#9c2f2f" stroke-width="2.4"/><circle cx="443.3" cy="120" r="4" fill="#9c2f2f"/><text x="443.3" y="108" font-size="12" fill="#9c2f2f" text-anchor="middle">yield 250</text><path d="M121.3 158 L251.7 158" stroke="#5B6672" stroke-width="1.2" stroke-dasharray="3 3"/><text x="186" y="150" font-size="11" fill="#5B6672" text-anchor="middle">margin you own</text><text x="348" y="176" font-size="11" fill="#5B6672" text-anchor="middle">margin the code owns</text></svg><figcaption>Where a factor of safety actually lives. The working stress is what the part sees; the allowable stress is what the code lets you claim. The gap between them is the margin you chose and must defend — not a number the standard handed you.</figcaption></figure>
+<h3>01 · Design is analysis run backwards</h3>
+<p>Analysis asks: given this part, what stress appears? Design asks the harder inverse: given
+this load and this consequence of failure, what part? Analysis has one answer; design has a
+family of them, and the engineering is in the choosing. Every design decision is therefore
+two decisions — a size, and a <em>reason</em> for that size that survives being questioned a
+year later by someone holding a broken piece of it.</p>
+<h3>02 · Load cases before geometry</h3>
+<p>The first discipline is refusing to size anything until the load cases are written down.
+Steady operating load is rarely the governing one. Start-up torque, upset pressure, thermal
+growth against a fixed anchor, a dropped tool, a lifting case during maintenance, and the
+seismic or wind case if the structure is outdoors — each is a separate load case, and the part
+must survive the worst of them, not their average. A part that fails in service almost never
+failed under the load the designer analysed; it failed under the one nobody wrote down.</p>
+<h3>03 · The factor of safety, honestly</h3>
+<p>The factor of safety is the ratio of the strength you rely on to the stress you expect:</p>
+<div class="keybox"><span class="tag">Key relation — design margin</span>
+<p>\[ n = \frac{S}{\sigma}, \qquad \sigma_{allow} = \frac{S}{n} \]</p>
+<p>\( S \) is the governing strength — yield for permanent-deformation limits, ultimate for
+rupture, endurance limit for fatigue — and \( \sigma \) is the stress the load case
+produces. Choosing \( n \) is choosing how much ignorance you are buying insurance against.</p></div>
+<p>What \( n \) actually covers is worth naming, because it is not one thing: scatter in
+material properties, uncertainty in the load, idealisation error in the analysis, degradation
+in service, and the consequence of failure. A bracket holding a cable tray and a bracket
+holding a pressure vessel get different numbers for the last reason alone. A large \( n \)
+is not conservatism; it is an admission of how much you do not know, and it is expensive in
+mass, cost and — in rotating equipment — in the very inertia you are trying to control.</p>
+<h3>04 · The design working method</h3>
+<p>Use the same sequence every time. <em>One:</em> write the load cases, each with its source
+and its own worst-credible magnitude. <em>Two:</em> identify the failure mode each case could
+provoke — yielding, rupture, fatigue, buckling, wear, leakage — because the governing strength
+depends on the mode, not on the load. <em>Three:</em> choose \( n \) and record why, in the
+calculation, in one sentence. <em>Four:</em> size the part, then check every <em>other</em>
+failure mode against that size; the mode that governs is rarely the one you started with.
+<em>Five:</em> state the result as a drawing callout, not as a stress — a number that cannot be
+inspected has not been designed.</p>
+<p>Codes and standards are encoded experience, and they deserve respect precisely because they
+are other people's failures written down. But a code gives a floor, not an answer: it tells you
+the minimum a competent engineer may claim, and it assumes you have identified the right load
+cases and the right failure mode. Meeting a code with the wrong load case is fully compliant
+and fully wrong.</p>
+<p><strong>Closing.</strong> Design is a defensible size. The margin is yours to justify, the
+load cases are yours to enumerate, and the code is a floor beneath both.</p></div></section><section class="sum-lesson"><h3>Lesson 02 · Static failure design</h3><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Mohr circle for a plane stress state of 80 megapascals normal and 40 megapascals shear. The circle is centred at 40 megapascals with radius 56.6, giving principal stresses of 96.6 and minus 16.6 megapascals."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M70 165.0 L500 165.0" stroke="#14181F" stroke-width="1.4"/><text x="505" y="169.0" font-size="12" fill="#14181F">σ</text><path d="M250.0 40 L250.0 285" stroke="#14181F" stroke-width="1.4"/><text x="256.0" y="38" font-size="12" fill="#14181F">τ</text><circle cx="302.0" cy="165.0" r="73.5" fill="none" stroke="#07785C" stroke-width="2"/><circle cx="302.0" cy="165.0" r="3" fill="#07785C"/><text x="302" y="185.0" font-size="11" fill="#07785C" text-anchor="middle">C 40</text><circle cx="375.5" cy="165.0" r="4" fill="#8A5A0F"/><text x="376" y="153.0" font-size="11" fill="#8A5A0F" text-anchor="middle">96.6</text><circle cx="228.5" cy="165.0" r="4" fill="#8A5A0F"/><text x="228" y="153.0" font-size="11" fill="#8A5A0F" text-anchor="middle">−16.6</text><path d="M302.0 165.0 L354.0 113.0" stroke="#9c2f2f" stroke-width="1.8"/><circle cx="354.0" cy="113.0" r="4" fill="#9c2f2f"/><text x="362" y="107" font-size="11" fill="#9c2f2f">(80, 40)</text><text x="310" y="128" font-size="11" fill="#9c2f2f">R = 56.6</text></svg><figcaption>Mohr's circle for the worked stress state: 80 MPa normal with 40 MPa shear. The centre sits at 40 MPa, the radius is 56.6 MPa, and the principal stresses fall out as 96.6 and −16.6 MPa. Von Mises and Tresca are two different ways of collapsing this picture into one number.</figcaption></figure>
+<h3>01 · One number from a stress state</h3>
+<p>Material strength is quoted from a tension test — a single axis, a single number. Real parts
+carry combined stress: bending with torsion, pressure with axial load, a bolt in tension while
+a joint shears. A failure theory is the bridge, collapsing a multiaxial stress state into one
+equivalent stress that may be compared against the tensile yield strength honestly.</p>
+<h3>02 · Von Mises and Tresca</h3>
+<div class="keybox"><span class="tag">Key relations — the two static theories</span>
+<p>\[ \sigma' = \sqrt{\sigma_x^2 - \sigma_x\sigma_y + \sigma_y^2 + 3\tau_{xy}^2}, \qquad
+\sigma_{Tresca} = \sigma_{max} - \sigma_{min} \]</p>
+<p>Von Mises (distortion energy) predicts yielding of ductile metals most accurately; Tresca
+(maximum shear) is always the more conservative of the two, by up to about 15%.</p></div>
+<p>Both take the same input and answer the same question, and Tresca never predicts a higher
+capacity than von Mises. That is why codes fond of conservatism adopt Tresca while a designer
+chasing mass adopts von Mises — and why quoting a factor of safety without naming the theory
+is an incomplete statement.</p>
+<h3>03 · Stress concentrations, counted honestly</h3>
+<p>Nominal stress is what the average section carries; a hole, a fillet or a keyway multiplies
+it locally by a geometric factor \( K_t \), so \( \sigma_{max} = K_t \sigma_{nom} \).
+For a <em>static</em> load on a <em>ductile</em> material, local yielding blunts the peak and
+redistributes it, so \( K_t \) is commonly set aside. Under fatigue, or in a brittle
+material, that permission is withdrawn entirely — which is the bridge to Lesson 3, and the
+reason a shaft's shoulder radius is a design variable rather than a drafting convenience.</p>
+<h3>04 · The static sizing method</h3>
+<p><em>One:</em> resolve the stress state at the worst point — usually a surface, usually at a
+discontinuity. <em>Two:</em> get the principal stresses, by Mohr's circle or by formula.
+<em>Three:</em> pick a theory and say which. <em>Four:</em> compare against \( S_y/n \).
+<em>Five:</em> decide whether \( K_t \) applies — ductile and static, usually not; brittle or
+fatigue, always. The commonest error in practice is comparing a raw shear stress against a
+tensile yield strength, which mixes two incompatible quantities and is optimistic by roughly
+the factor \( \sqrt{3} \).</p>
+<p><strong>Closing.</strong> A failure theory is a translator, not a truth. Name the one you
+used, and the number you report becomes checkable.</p></div></section>
+<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
+<p class="ref-thin">Lessons 03, 04, 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the foundations section.</p>
+<section class="sum-lesson"><h3>Lesson 01 · Design methodology and factors of safety</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Axial stress and strain</b> (Strength of Materials L1) — \( \sigma = F/A \) and what yield means physically.</li>
+<li><b>Material property vocabulary</b> (Materials I L7) — yield strength, tensile strength, ductility, and which is a design stress.</li>
+<li><b>Free-body diagrams</b> (Statics L3) — every load case begins as one.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Factor of safety</td><td>\( n = S/\sigma \)</td><td>Comparing the strength relied on against the stress expected; state which \( S \).</td></tr>
+<tr><td>Allowable stress</td><td>\( \sigma_{allow} = S/n \)</td><td>The number you actually size against, once \( n \) is chosen.</td></tr>
+<tr><td>Load case</td><td>—</td><td>One credible loading condition with its own magnitude and source; parts fail under unlisted ones.</td></tr>
+<tr><td>Failure mode</td><td>—</td><td>Yield, rupture, fatigue, buckling, wear, leakage — decides which strength governs.</td></tr>
+<tr><td>Margin of safety</td><td>\( MS = n - 1 \)</td><td>Aerospace-style reporting; \( MS \ge 0 \) means the case is satisfied.</td></tr>
+<tr><td>Design vs analysis</td><td>—</td><td>Analysis returns a stress; design returns a size plus the reason for it.</td></tr>
+</tbody></table></div></div></section><section class="sum-lesson"><h3>Lesson 02 · Static failure design</h3><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Principal stresses and Mohr's circle</b> (Strength of Materials) — the transformation itself, not just the formula.</li>
+<li><b>Yield strength</b> (Materials I L7) — a tensile-test number being borrowed for a multiaxial state.</li>
+<li><b>Factor of safety</b> (Lesson 1) — the allowable stress this lesson compares against.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Von Mises stress</td><td>\( \sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2} \)</td><td>Ductile metals under static combined stress; the accurate default.</td></tr>
+<tr><td>Tresca stress</td><td>\( \sigma_{max}-\sigma_{min} \)</td><td>When the code or the consequence calls for the conservative theory.</td></tr>
+<tr><td>Principal stresses</td><td>\( \tfrac{\sigma_x+\sigma_y}{2}\pm\sqrt{(\tfrac{\sigma_x-\sigma_y}{2})^2+\tau_{xy}^2} \)</td><td>The input both theories need; remember the third principal is zero in plane stress.</td></tr>
+<tr><td>Stress concentration</td><td>\( \sigma_{max}=K_t\sigma_{nom} \)</td><td>Holes, fillets, keyways; mandatory under fatigue or in brittle material.</td></tr>
+<tr><td>Pure shear equivalence</td><td>\( S_{sy}\approx 0.577\,S_y \)</td><td>Shear yield from tensile yield, via von Mises.</td></tr>
+</tbody></table></div></div></section>
 </article>
 </main>
 <footer class="nx-foot">
