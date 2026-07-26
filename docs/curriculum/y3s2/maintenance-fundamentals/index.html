@@ -3,36 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
-<title>Maintenance Engineering Fundamentals — Nexus Institute of Technology</title>
+<meta name="theme-color" content="#FAF8F4">
+<title>Maintenance Engineering Fundamentals — MechEd</title>
 <meta name="description" content="The discipline you came from, rebuilt as engineering: failure behavior over time, the P–F interval, maintenance strategy types, and the vocabulary — a">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=529472124d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=13992839c7">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small>Online Engineering Education</small></span>
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html">Home</a>
-      <a href="../../../about/index.html">About</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
       <a href="../../../mission/index.html">Mission</a>
-      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-      <a href="../../../reference/index.html">Resources</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a><a href="../../../curriculum/year-2/summary.html">Year 2 — compiled summary</a><a href="../../../curriculum/year-3/summary.html">Year 3 — compiled summary</a><a href="../../../curriculum/year-4/summary.html">Year 4 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
       <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y3s2/maintenance-fundamentals/index.html" lang="ar" dir="rtl">العربية</a>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
+<div class="course-shell">
+<div class="course-main">
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <span>MNT 306</span></nav>
 
@@ -51,16 +79,14 @@
   <a class="btn btn-ghost" href="../../../curriculum/index.html">Full curriculum</a>
 </div>
 <div class="learn"><h3>What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Failure as a process, not an event: load versus capability over time.</span></div><div><span class="ck">✓</span><span>The six classic failure patterns and the uncomfortable evidence that most failures are not age-related.</span></div><div><span class="ck">✓</span><span>Run-to-failure, time-based, condition-based, and proactive strategies — each legitimate somewhere.</span></div><div><span class="ck">✓</span><span>MTBF, MTTR, availability, and utilization defined with equations and abused-examples.</span></div><div><span class="ck">✓</span><span>Ranking equipment by consequence and likelihood; criticality matrices built honestly.</span></div><div><span class="ck">✓</span><span>PM tasks written against failure modes, not habits.</span></div></div></div>
-<section class="part tight">
-  <div class="wide">
-    <div class="tabs" role="tablist">
-      <button class="on" data-tab="ct-syllabus">Syllabus</button>
-      <button data-tab="ct-reference">Reference</button>
-      <button data-tab="ct-tools">Tools &amp; Software</button>
-    </div>
-    <section class="tabpanel on" id="ct-syllabus">
-      <h2 class="tabcap">Syllabus</h2>
-      <div class="lessons">
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>Syllabus</h3>
+  <div class="lessons">
 <div class="syl" data-key="y3s2/maintenance-fundamentals/1" data-href="01-why-equipment-fails.html">
   <span class="tick"></span>
   <div class="no">01</div>
@@ -171,37 +197,32 @@
     <details><summary>Checkpoint questions</summary><ul><li>Map your current maintenance experience onto the roles in this lesson.</li><li>Which role owns strategy, and which owns this week's schedule?</li></ul></details>
   </div>
 </div></div>
-      <ul class="plain small"><li>NPTEL: Maintenance and reliability-related engineering courses (nptel.ac.in)</li><li>Practitioner curriculum structured against the <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP body-of-knowledge</a> domains (framework, not a textbook)</li></ul>
-      
-    </section>
-    <section class="tabpanel" id="ct-reference">
-      <h2 class="tabcap">Reference</h2>
-      <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
+  <ul class="plain small"><li>NPTEL: Maintenance and reliability-related engineering courses (nptel.ac.in)</li><li>Practitioner curriculum structured against the <a href="https://smrp.org" title="SMRP — Society for Maintenance &amp; Reliability Professionals" target="_blank" rel="noopener">SMRP CMRP body-of-knowledge</a> domains (framework, not a textbook)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <p class="ref-thin">This course is below full teaching depth, so its reference is thin: it lists only what the authored lessons actually introduce, and grows as lessons are written.</p>
 <p class="ref-thin">No reference material has been extracted yet — this course's lessons are still in production.</p>
-    </section>
-    <section class="tabpanel" id="ct-tools">
-      <h2 class="tabcap">Tools &amp; Software</h2>
-      <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
-    </section>
-    
-  </div>
-</section><nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I →</a></nav>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MNT 306</b></div><div class="frow"><span>Placement</span><b>Year 3 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · in production</b></div><div class="frow"><span>Core-60 lessons</span><b>1</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y3s2/reliability-1/index.html">REL 354 · Reliability Engineering I →</a></nav>
+</aside>
+</div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
-  <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Resources</a> ·
-    <a href="../../../career/index.html">Career Paths</a>
-  </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
-  pedagogical; representative industrial figures are labeled as such and are not
-  published operating data of any named company. Every visual is an original vector
-  illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=529472124d"></script>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=13992839c7"></script>
 </body>
 </html>

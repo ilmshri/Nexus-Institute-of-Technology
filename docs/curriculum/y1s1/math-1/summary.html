@@ -3,33 +3,57 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
-<title>Course summary — Engineering Mathematics I — Nexus Institute of Technology</title>
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Mathematics I — MechEd</title>
 <meta name="description" content="Condensed per-lesson revision summary for MTH 101 Engineering Mathematics I.">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=529472124d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=13992839c7">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small>Online Engineering Education</small></span>
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html">Home</a>
-      <a href="../../../about/index.html">About</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
       <a href="../../../mission/index.html">Mission</a>
-      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-      <a href="../../../reference/index.html">Resources</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a><a href="../../../curriculum/year-2/summary.html">Year 2 — compiled summary</a><a href="../../../curriculum/year-3/summary.html">Year 3 — compiled summary</a><a href="../../../curriculum/year-4/summary.html">Year 4 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
       <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/math-1/summary.html" lang="ar" dir="rtl">العربية</a>
   </div>
 </header>
 
@@ -52,21 +76,12 @@
 <section class="sum-lesson"><h3>Lesson 01 · Functions, units, and engineering magnitudes</h3><div class="sum-recap"><ul> <li>Every physical quantity carries a unit, and units obey algebra exactly as numbers do.</li> <li><b>Dimensional homogeneity:</b> both sides of a physical equation must carry identical dimensions, and the arguments of \( \sin \), \( \ln \) and \( e^x \) must be dimensionless. Checking this kills roughly half of all calculation errors before they are made.</li> <li>A function is a machine's behaviour written down — the pump curve \( H(Q) \), the torque curve \( T(\omega) \), the cooling curve \( T(t) \). The domain is physical, not decorative: beyond runout flow the curve is forbidden, not merely undefined.</li> <li>Estimate before you calculate. If a suitcase-sized transfer pump computes to 300 kW, the arithmetic is wrong — and you know it before re-checking.</li> <li><b>Working method:</b> substitute units rather than numbers and confirm both sides match; convert every input to base SI before any arithmetic; convert the answer back to trade units and test it against an order-of-magnitude estimate.</li> <li><b>Two traps with names:</b> the <i>gauge trap</i> (gauge and absolute pressure differ by one atmosphere) and the <i>prefix trap</i> (kPa meeting Pa, m³/h meeting m³/s in the same line).</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 02 · Limits and continuity</h3><div class="sum-recap"><ul> <li>A limit describes what a quantity <i>approaches</i>, which is not always what it equals at the point itself.</li> <li>Most plant quantities are continuous, but not all — some genuinely jump, and pretending otherwise hides real behaviour.</li> <li>One-sided limits are the honest description of a switching event: a relay closing, a valve seating, a pump cutting in.</li> <li>The ratio \( \Delta y/\Delta x \) as \( \Delta x \to 0 \) is why limits matter at all — it is the derivative in embryo.</li> <li><b>Evaluation order:</b> substitute first; if that gives \( 0/0 \), factor, rationalise or expand and try again; for behaviour at large argument, compare the dominant terms.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 03 · The derivative as a rate</h3><div class="sum-recap"><ul> <li>The derivative is the instantaneous rate of change — the average rate over an interval that has been allowed to shrink to nothing.</li> <li>Read the sign and the magnitude before the formula: sign gives direction of drift, magnitude gives urgency.</li> <li><b>From a model:</b> differentiate the expression. <b>From data:</b> take finite differences — but note that shrinking the interval amplifies measurement noise, so the smallest interval is rarely the best one.</li> <li>The units of a derivative are always (units of the output) divided by (units of the input). This alone identifies what a rate physically is.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 04 · Differentiation rules and the chain rule</h3><div class="sum-recap"><ul> <li>Constant-multiple, sum, power, product and quotient rules: each is proved once from the limit definition and then used for life.</li> <li><b>Chain rule:</b> plant variables cause one another in chains — valve position sets flow, flow sets level, level sets pressure. Multiply the local sensitivities along the chain.</li> <li><b>Relative rates</b> are the engineer's form: divide a derivative by its own function. For the fan law \( P = kN^3 \), logarithmic differentiation gives \( dP/P = 3\,dN/N \) — a 2% speed increase costs about 6% more power.</li> <li>That single result is why trimming fan or pump speed slightly is usually the cheapest energy project available.</li> <li>Choose the rule from the <i>structure</i> of the expression before touching symbols.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 05 · Exponentials, logarithms, and growth/decay</h3><div class="sum-recap"><ul> <li>\( e^x \) is its own derivative; exponential behaviour is what happens whenever the rate of change is proportional to the amount currently present.</li> <li><b>The plant's standard curve</b> is decay toward an offset, not toward zero: something approaches a final value \( y_\infty \) rather than vanishing.</li> <li>The time constant \( \tau \) is the whole story: about 63% of the journey is complete after one \( \tau \), 95% after three, 99% after five.</li> <li>Logarithms are how you solve for time — "when will it reach X" is a logarithm, every time.</li> <li><b>Transient protocol:</b> identify the initial value, the final value, and \( \tau \). With those three, the curve is fully determined.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 06 · Extrema, curve behavior, and optimization</h3><div class="sum-recap"><ul> <li>Curves turn where the derivative vanishes; the second derivative says whether the turn is a maximum or a minimum.</li> <li><b>Optimization recipe:</b> express the objective in one variable, differentiate, solve for stationary points — then check the endpoints.</li> <li>Checking endpoints is not a formality. Constrained optima frequently sit at a limit rather than at a turning point, and skipping the check is the classic way to report a wrong optimum confidently.</li> <li>The hard part is translation, not calculus: turning a stated goal into an honest objective function with its real constraints.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 07 · The integral as accumulation</h3><div class="sum-recap"><ul> <li>The derivative asks <i>how fast</i>; the integral asks <i>how much in total</i>. They are the two halves of the subject.</li> <li>\( V = \int_0^T Q(t)\,dt \) — every totalizer in the plant is performing this calculation continuously.</li> <li><b>Fundamental Theorem:</b> accumulation and differentiation undo each other, so \( \int_a^b f = F(b) - F(a) \). Find any antiderivative and evaluate at the two ends.</li> <li>Area under a curve is a physical total. Read the units of the area to know which total it is: rate × time is quantity, force × distance is work.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 08 · Integration techniques</h3><div class="sum-recap"><ul> <li><b>Substitution</b> is the chain rule run backwards — look for a function and its own derivative sitting in the same integrand.</li> <li><b>Integration by parts</b> is the product rule run backwards: \( \int u\,dv = uv - \int v\,du \). Choose \( u \) to be the factor that simplifies when differentiated.</li> <li>Know when to stop. Many perfectly ordinary integrals have no closed form, and a numerical answer is a legitimate engineering answer, not a defeat.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 09 · Applications: areas, volumes, work, and averages</h3><div class="sum-recap"><ul> <li><b>Average value</b> is the integral spread evenly across the interval. Every KPI beginning with the word "average" is this calculation — whether or not it was computed honestly.</li> <li>Averaging a few spot readings taken at convenient times is not this calculation, and you can now say precisely why.</li> <li><b>RMS is the average that heats.</b> Electrical heating goes as the square of current, so the meaningful average for an alternating quantity is the root of the mean of the square — which is why vibration severity standards quote RMS velocity.</li> <li><b>Work by integration</b> when force varies along the path: \( W = \int F\,dx \). Emptying a tank is the signature case, because each layer must rise a different height.</li> <li>Choosing the right average — mean, RMS, or time-weighted — is a field decision with different answers, not a matter of taste.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 10 · First-order differential equations</h3><div class="sum-recap"><ul> <li>An equation containing its own rate of change describes nearly every tank, thermal mass and mixing problem you will meet.</li> <li><b>Separation of variables:</b> gather each variable on its own side, integrate both, then apply the initial condition to fix the constant.</li> <li>Put the equation in the standard form \( \dot{y} = -(y - y_\infty)/\tau \) and the time constant can be read straight off the coefficients — tank volume over volumetric flow for a flushed tank, thermal mass over loss coefficient for a cooling body.</li> <li>You can often read the dynamics without solving anything: the final value and the time constant answer most practical questions.</li> <li><b>Modelling method:</b> start from a balance statement — rate in minus rate out — and express each rate in terms of the state variable.</li> </ul></div></section><section class="sum-lesson"><h3>Lesson 11 · Taylor series and approximation</h3><div class="sum-recap"><ul> <li>Every smooth function is locally a polynomial. That is the entire idea, and it is what makes linearization defensible rather than lazy.</li> <li>The classic small approximations — \( \sin x \approx x \), \( (1+x)^n \approx 1 + nx \), \( e^x \approx 1 + x \) — are all the same theorem truncated after one term.</li> <li>The remainder term is not optional bookkeeping: it is how you state the size of the error you just agreed to accept.</li> <li>A linearization you can defend comes with its range of validity attached. Without that range, it is a guess wearing a formula.</li> </ul></div></section>
 </article>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
-  <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Resources</a> ·
-    <a href="../../../career/index.html">Career Paths</a>
-  </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
-  pedagogical; representative industrial figures are labeled as such and are not
-  published operating data of any named company. Every visual is an original vector
-  illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=529472124d"></script>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=13992839c7"></script>
 </body>
 </html>

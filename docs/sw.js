@@ -1,7 +1,7 @@
-/* Nexus Institute of Technology — minimal service worker.
+/* MechEd — minimal service worker.
    Assets: cache-first. Pages: network-first with cache fallback. */
-var VERSION = 'nx-529472124d';
-var CORE = ['./', 'assets/nx/nexus.css?v=529472124d', 'assets/nx/nexus.js?v=529472124d',
+var VERSION = 'me-13992839c7';
+var CORE = ['./', 'assets/nx/nexus.css?v=13992839c7', 'assets/nx/nexus.js?v=13992839c7',
             'assets/nx/logo.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', function (e) {

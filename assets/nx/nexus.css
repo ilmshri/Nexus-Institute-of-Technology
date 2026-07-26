@@ -9,16 +9,16 @@
    media (the hero video panel). Every selector emitted by nexus_build.py
    keeps working; no photography. */
 :root{
-  --bg:#FAF8F4; --surface:#FFFFFF; --sunken:#F2EFE8; --overlay:#FFFFFF;
-  --ink:#1C2C4F; --soft:#44506B; --muted:#6E7688; --faint:#9AA0B0;
-  --line:#E7E2D6; --line-strong:#D6D0C0;
+  --bg:#FDFCFB; --surface:#FFFFFF; --sunken:#F6F4F1; --overlay:#FFFFFF;
+  --ink:#20325A; --soft:#44506B; --muted:#6E7688; --faint:#9AA0B0;
+  --line:#ECE9E3; --line-strong:#DBD7CF;
   --accent:#2D5397; --accent-deep:#1F3A66; --accent-ink:#24427C;
   --tint:#EDF1F8; --tint-line:#CBD7EA;
-  --gold:#C9A45C; --gold-soft:#E8C87E; --gold-tint:#F8F1E1;
+  --gold:#CBA85F; --gold-soft:#E8C87E; --gold-tint:#F9F3E4;
   --amber:#B08A3E; --amber-tint:var(--gold-tint);
   --navy:#14294B;
   --ok:#1F7A4D; --bad:#B3382C; --bad-tint:#F9ECEA;
-  --shadow:0 1px 2px rgba(26,39,66,.06);
+  --shadow:0 1px 2px rgba(32,50,90,.05);
   --sans:'Source Sans 3',-apple-system,'Helvetica Neue',Arial,sans-serif;
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --mono:'Source Code Pro',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
@@ -50,10 +50,10 @@ a:hover{color:var(--accent-deep)}
 /* ---------- top app bar (prestige lockup + dropdown groups) ---------- */
 .appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 92%,transparent);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.appbar .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:0 20px;height:60px}
+.appbar .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:0 20px;height:64px}
 .appbar .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);white-space:nowrap}
 .appbar .brand img{width:30px;height:30px}
-.appbar .brand .txt{font-family:var(--serif);font-size:17px;font-weight:700;letter-spacing:.14em}
+.appbar .brand .txt{font-family:var(--serif);font-size:18.5px;font-weight:700;letter-spacing:.01em}
 .appbar .brand .txt small{display:block;font-family:var(--sans);font-size:8.5px;font-weight:600;
   letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-top:2px}
 .appbar .brand .teal{color:var(--navy)}
@@ -105,8 +105,8 @@ a:hover{color:var(--accent-deep)}
 /* ---------- buttons ---------- */
 .btn{display:inline-block;border:1px solid transparent;border-radius:var(--r-sm);padding:10px 18px;font-family:var(--sans);
   font-size:13.5px;font-weight:600;cursor:pointer;text-decoration:none;text-align:center}
-.btn-primary{background:var(--navy);border-color:var(--navy);color:#fff}
-.btn-primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
 .btn-ghost{background:var(--surface);color:var(--navy);border-color:var(--line-strong)}
 .btn-ghost:hover{background:var(--gold-tint);border-color:var(--gold);color:var(--navy)}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:20px 0 6px}
@@ -142,7 +142,7 @@ a:hover{color:var(--accent-deep)}
 /* lesson header (Atlas, replaces the dark hero card on lessons) */
 .lesson-head{padding:4px 0 0}
 .lesson-head .eyebrow{margin:0 0 10px}
-.lesson-head h1{font-size:clamp(26px,3.4vw,38px);font-weight:650;letter-spacing:-.03em;line-height:1.08;margin:0}
+.lesson-head h1{font-size:clamp(28px,3.8vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:0}
 .lesson-head .sub{margin:12px 0 0;font-size:15px;color:var(--muted);line-height:1.7;max-width:70ch}
 .metachips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;position:relative}
 .mchip{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--line);
@@ -281,7 +281,7 @@ a:hover{color:var(--accent-deep)}
 .nx-hero:has(video.hero-loop){background:var(--nx-grad-hero);border:0;color:#eef4f2;padding:38px 34px;border-radius:16px}
 .nx-hero:has(video.hero-loop) .txt{text-align:center}
 .nx-hero:has(video.hero-loop) .eyebrow{color:var(--gold-soft)}
-.nx-hero:has(video.hero-loop) h1{font-size:clamp(26px,4vw,42px);color:#fff;letter-spacing:-.01em}
+.nx-hero:has(video.hero-loop) h1{font-size:clamp(28px,4.6vw,50px);color:#fff;letter-spacing:-.01em;font-weight:600}
 .nx-hero:has(video.hero-loop) .sub{color:#C9D4E8;font-size:16px;margin:0 auto}
 .nx-hero:has(video.hero-loop) .meta{justify-content:center;gap:26px}
 .nx-hero:has(video.hero-loop) .meta div{background:transparent;border:0;padding:0;font-size:11px;
@@ -303,26 +303,17 @@ a:hover{color:var(--accent-deep)}
   background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.05) 30%,rgba(232,200,126,.14) 50%,rgba(255,255,255,.05) 70%,transparent 100%);
   transform:skewX(-18deg);animation:nx-shine 5.5s ease-in-out infinite 1s;pointer-events:none;z-index:3}
 @media(max-width:700px){.nx-hero{padding:22px 20px}}
-/* robots (Mission page only) */
 .part{position:relative}
-.nx-bot{position:absolute;width:120px;height:120px;background:center/contain no-repeat;
-  pointer-events:none;z-index:1;animation:nx-bob 5.5s ease-in-out infinite}
-.nx-bot-wrench{background-image:url(bots/bot-wrench.png);inset-inline-end:3%;top:30px}
-.nx-bot-gear{background-image:url(bots/bot-gear.png);inset-inline-end:2%;top:-30px;width:134px;height:134px;animation-delay:1.2s}
-.nx-bot-caliper{background-image:url(bots/bot-caliper.png);inset-inline-end:4%;bottom:6px;width:112px;height:112px;animation-delay:2.1s}
-.nx-bot-oil{background-image:url(bots/bot-oil.png);inset-inline-end:3%;top:40px;animation-delay:3s}
-@keyframes nx-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-@media(max-width:1120px){.nx-bot{display:none}}
 
 /* ---------- structure ---------- */
-.part{padding:34px 0 8px}
+.part{padding:46px 0 12px}
 .part.tight{padding:20px 0 4px}
 .measure{max-width:75ch}
 .wide{max-width:100%}
 .rule{border:0;border-top:1px solid var(--line);margin:30px 0}
 .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
 .kicker .n{display:inline-block;background:var(--tint);color:var(--accent-ink);border-radius:6px;padding:2px 9px;margin-inline-end:10px;font-weight:600}
-h2{font-size:clamp(20px,2.6vw,27px);margin:0 0 14px;letter-spacing:-.02em;font-weight:650}
+h2{font-size:clamp(22px,3vw,30px);margin:0 0 14px;letter-spacing:-.015em;font-weight:600}
 h3{font-size:18px;margin:36px 0 12px;font-weight:650;letter-spacing:-.015em}
 .lead{font-size:16.5px;font-family:var(--sans);color:var(--soft);line-height:1.75}
 p,li{font-size:15px}
@@ -334,7 +325,7 @@ ul.plain{list-style:none;padding:0}
 ul.plain li{padding:7px 0;border-bottom:1px solid var(--line)}
 .pagehead{padding:30px 0 6px}
 .pagehead .sub{font-size:15.5px;font-family:var(--sans);color:var(--muted);max-width:72ch;line-height:1.7}
-.pagehead h1{font-size:clamp(26px,3.8vw,40px);margin:6px 0 12px;letter-spacing:-.03em;font-weight:650}
+.pagehead h1{font-size:clamp(30px,4.4vw,48px);margin:6px 0 12px;letter-spacing:-.02em;font-weight:600}
 .crumbs{font-size:12px;color:var(--faint);padding:16px 0 0}
 .crumbs a{color:var(--faint);text-decoration:none}
 .crumbs a:hover{color:var(--accent-ink)}
@@ -650,7 +641,7 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 /* ---------- footer ---------- */
 .nx-foot{border-top:1px solid var(--gold);margin-top:60px;padding:32px 0 42px;background:var(--surface)}
 .nx-foot .in{max-width:1140px;margin:0 auto;padding:0 5vw;display:flex;gap:14px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:start}
-.nx-foot .mark{font-family:var(--serif);font-weight:700;letter-spacing:.12em;font-size:14.5px}
+.nx-foot .mark{font-family:var(--serif);font-weight:700;letter-spacing:.01em;font-size:15.5px}
 .nx-foot .mark .teal{color:var(--navy)}
 .nx-foot .slogan{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;
   text-transform:uppercase;color:var(--amber);margin-top:4px}
@@ -819,3 +810,17 @@ html.no-js .reveal,html.no-js .reveal-left,html.no-js .reveal-right{opacity:1;tr
 .en-body{font-family:var(--sans)}
 .en-body h1,.en-body h2,.en-body h3{font-family:var(--serif)}
 .en-body .measure p,.en-body .measure li,.en-body .lead{font-family:var(--sans)}
+
+/* ---------- smooth navigation & micro-transitions ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation-duration:.18s}
+::view-transition-new(root){animation-duration:.26s}
+a,.btn,.chip,.tabs button,.kbtn,.lang-btn,.appbar nav a,.navgrp .drop a{
+  transition:color .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
+.fig-panel,.outline,.nx-hero{transition:box-shadow .22s ease}
+@keyframes drop-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.navgrp:hover .drop,.navgrp:focus-within .drop,.navgrp.open .drop{animation:drop-in .16s ease}
+@media (prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  .navgrp .drop{animation:none !important}
+}

@@ -247,7 +247,7 @@ NX_PAGE = """<!doctype html>
   <div class="in">
     <a class="brand" href="{prefix}index.html" aria-label="MechEd — {brand_small}">
       <img src="{aprefix}assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">MECHED</span>
+      <span class="txt"><span class="teal">MechEd</span>
         <small>{brand_small}</small></span>
     </a>
     {navblock}
@@ -261,7 +261,7 @@ NX_PAGE = """<!doctype html>
 {body}
 </main>
 <footer class="nx-foot"><div class="in">
-  <div class="mark"><span class="teal">MECHED</span><span class="slogan">{slogan}</span></div>
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">{slogan}</span></div>
   {footnav}
   <p class="proto">{proto_line}</p>
   <p>{integrity_line}</p>
@@ -276,10 +276,10 @@ NX_PAGE = """<!doctype html>
 # is emitted twice, EN at its path and AR at ar/<path>, full RTL chrome, with
 # the language toggle labeled in the destination language. The brand word
 # stays Latin "MECHED" in both trees (owner constraint 2026-07-25).
-SLOGAN_EN = "Engineered for Mastery"
-SLOGAN_AR = "هندسة الإتقان"
-BRAND_SMALL_EN = "Online Engineering Education"
-BRAND_SMALL_AR = "التعليم الهندسي عبر الإنترنت"
+SLOGAN_EN = "Engineered to Innovate"
+SLOGAN_AR = "هندسةٌ للابتكار"
+BRAND_SMALL_EN = "Engineered to Innovate"
+BRAND_SMALL_AR = "هندسةٌ للابتكار"
 
 L_EN = {
     "Home": "Home", "About": "About", "Mission": "Mission",
@@ -1163,7 +1163,7 @@ def build_static_pages(sems, tabs_by_course):
     nx_page("index.html",
             "MechEd — Learn Mechanical Engineering from Scratch to Industry 4.0",
             "A complete B.S.-shaped mechanical engineering curriculum for "
-            "anyone — from zero background to Industry 4.0. Preliminary open release.",
+            "anyone — from zero background to Industry 4.0. Engineered to innovate. Preliminary open release.",
             home, "", "home",
             title_ar="MechEd — تعلَّم الهندسة الميكانيكية من الصفر إلى الصناعة 4.0",
             ar_note="page")
@@ -1187,7 +1187,7 @@ def build_static_pages(sems, tabs_by_course):
     if mission_body.rstrip().endswith('</div>'):        # drop the lang-en close
         mission_body = mission_body.rstrip()[:-6]
     mission_head = """<div class="pagehead">
-  <p class="kicker"><span class="n">MISSION</span>Advanced Industrial Systems &amp; Engineering Mastery</p>
+  <p class="kicker"><span class="n">MISSION</span>Engineering Mastery · Industry 4.0 · Innovation</p>
   <h1>Learn Mechanical Engineering from Scratch to Industry 4.0.</h1>
 </div>"""
     nx_page("mission/index.html",

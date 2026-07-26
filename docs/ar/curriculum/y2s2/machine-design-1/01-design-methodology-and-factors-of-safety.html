@@ -12,17 +12,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=b847538bfd">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=13992839c7">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body data-key="y2s2/machine-design-1/1">
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="MechEd — التعليم الهندسي عبر الإنترنت">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
       <img src="../../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">MECHED</span>
-        <small>التعليم الهندسي عبر الإنترنت</small></span>
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>هندسةٌ للابتكار</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html">الرئيسية</a>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MDN 251 · Lesson 01 of 11 · Year 2 · Semester 2</p>
   <h1>Design methodology and factors of safety</h1>
   <p class="sub">Load cases, failure modes, and design margins chosen with reasons attached. Codes and standards as encoded experience. The difference between analysis and design stated plainly.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/1">Mark as complete</button>
@@ -91,23 +91,118 @@
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is a factor of safety a statement about ignorance, not strength?</li><li>Analysis versus design: what reverses between them?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MDN 251 · Machine Design I</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
-  <p class="small">Course context: From stress analysis to sized hardware: static and fatigue design methodology, shafts, keys, fasteners, and welded joints — the course where strength of materials starts buying parts.</p>
-</div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why is a factor of safety a statement about ignorance, not strength?</li><li>Analysis versus design: what reverses between them?</li></ul></div>
-</div></section>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why is a factor of safety a statement about ignorance, not strength?</li><li>Analysis versus design: what reverses between them?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A stress axis from zero to 300 megapascals showing the working stress at 40, the allowable stress at 125 for a factor of safety of two, and the yield strength at 250. The margin is the gap between working stress and allowable stress."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M60 200 L520 200" stroke="#14181F" stroke-width="1.6"/><path d="M60.0 196 L60.0 204" stroke="#5B6672" stroke-width="1"/><text x="60" y="222" font-size="11" fill="#5B6672" text-anchor="middle">0</text><path d="M136.66666666666666 196 L136.66666666666666 204" stroke="#5B6672" stroke-width="1"/><text x="137" y="222" font-size="11" fill="#5B6672" text-anchor="middle">50</text><path d="M213.33333333333331 196 L213.33333333333331 204" stroke="#5B6672" stroke-width="1"/><text x="213" y="222" font-size="11" fill="#5B6672" text-anchor="middle">100</text><path d="M290.0 196 L290.0 204" stroke="#5B6672" stroke-width="1"/><text x="290" y="222" font-size="11" fill="#5B6672" text-anchor="middle">150</text><path d="M366.66666666666663 196 L366.66666666666663 204" stroke="#5B6672" stroke-width="1"/><text x="367" y="222" font-size="11" fill="#5B6672" text-anchor="middle">200</text><path d="M443.33333333333337 196 L443.33333333333337 204" stroke="#5B6672" stroke-width="1"/><text x="443" y="222" font-size="11" fill="#5B6672" text-anchor="middle">250</text><path d="M520.0 196 L520.0 204" stroke="#5B6672" stroke-width="1"/><text x="520" y="222" font-size="11" fill="#5B6672" text-anchor="middle">300</text><text x="290" y="245" font-size="12" fill="#14181F" text-anchor="middle">stress (MPa)</text><path d="M121.3 200 L121.3 120" stroke="#07785C" stroke-width="2.4"/><circle cx="121.3" cy="120" r="4" fill="#07785C"/><text x="121.3" y="108" font-size="12" fill="#07785C" text-anchor="middle">working 40</text><path d="M251.7 200 L251.7 96" stroke="#8A5A0F" stroke-width="2.4" stroke-dasharray="5 4"/><text x="251.7" y="84" font-size="12" fill="#8A5A0F" text-anchor="middle">allowable 125</text><path d="M443.3 200 L443.3 120" stroke="#9c2f2f" stroke-width="2.4"/><circle cx="443.3" cy="120" r="4" fill="#9c2f2f"/><text x="443.3" y="108" font-size="12" fill="#9c2f2f" text-anchor="middle">yield 250</text><path d="M121.3 158 L251.7 158" stroke="#5B6672" stroke-width="1.2" stroke-dasharray="3 3"/><text x="186" y="150" font-size="11" fill="#5B6672" text-anchor="middle">margin you own</text><text x="348" y="176" font-size="11" fill="#5B6672" text-anchor="middle">margin the code owns</text></svg><figcaption>Where a factor of safety actually lives. The working stress is what the part sees; the allowable stress is what the code lets you claim. The gap between them is the margin you chose and must defend — not a number the standard handed you.</figcaption></figure>
+<h3>01 · Design is analysis run backwards</h3>
+<p>Analysis asks: given this part, what stress appears? Design asks the harder inverse: given
+this load and this consequence of failure, what part? Analysis has one answer; design has a
+family of them, and the engineering is in the choosing. Every design decision is therefore
+two decisions — a size, and a <em>reason</em> for that size that survives being questioned a
+year later by someone holding a broken piece of it.</p>
+<h3>02 · Load cases before geometry</h3>
+<p>The first discipline is refusing to size anything until the load cases are written down.
+Steady operating load is rarely the governing one. Start-up torque, upset pressure, thermal
+growth against a fixed anchor, a dropped tool, a lifting case during maintenance, and the
+seismic or wind case if the structure is outdoors — each is a separate load case, and the part
+must survive the worst of them, not their average. A part that fails in service almost never
+failed under the load the designer analysed; it failed under the one nobody wrote down.</p>
+<h3>03 · The factor of safety, honestly</h3>
+<p>The factor of safety is the ratio of the strength you rely on to the stress you expect:</p>
+<div class="keybox"><span class="tag">Key relation — design margin</span>
+<p>\[ n = \frac{S}{\sigma}, \qquad \sigma_{allow} = \frac{S}{n} \]</p>
+<p>\( S \) is the governing strength — yield for permanent-deformation limits, ultimate for
+rupture, endurance limit for fatigue — and \( \sigma \) is the stress the load case
+produces. Choosing \( n \) is choosing how much ignorance you are buying insurance against.</p></div>
+<p>What \( n \) actually covers is worth naming, because it is not one thing: scatter in
+material properties, uncertainty in the load, idealisation error in the analysis, degradation
+in service, and the consequence of failure. A bracket holding a cable tray and a bracket
+holding a pressure vessel get different numbers for the last reason alone. A large \( n \)
+is not conservatism; it is an admission of how much you do not know, and it is expensive in
+mass, cost and — in rotating equipment — in the very inertia you are trying to control.</p>
+<h3>04 · The design working method</h3>
+<p>Use the same sequence every time. <em>One:</em> write the load cases, each with its source
+and its own worst-credible magnitude. <em>Two:</em> identify the failure mode each case could
+provoke — yielding, rupture, fatigue, buckling, wear, leakage — because the governing strength
+depends on the mode, not on the load. <em>Three:</em> choose \( n \) and record why, in the
+calculation, in one sentence. <em>Four:</em> size the part, then check every <em>other</em>
+failure mode against that size; the mode that governs is rarely the one you started with.
+<em>Five:</em> state the result as a drawing callout, not as a stress — a number that cannot be
+inspected has not been designed.</p>
+<p>Codes and standards are encoded experience, and they deserve respect precisely because they
+are other people's failures written down. But a code gives a floor, not an answer: it tells you
+the minimum a competent engineer may claim, and it assumes you have identified the right load
+cases and the right failure mode. Meeting a code with the wrong load case is fully compliant
+and fully wrong.</p>
+<p><strong>Closing.</strong> Design is a defensible size. The margin is yours to justify, the
+load cases are yours to enumerate, and the code is a floor beneath both.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Axial stress and strain</b> (Strength of Materials L1) — \( \sigma = F/A \) and what yield means physically.</li>
+<li><b>Material property vocabulary</b> (Materials I L7) — yield strength, tensile strength, ductility, and which is a design stress.</li>
+<li><b>Free-body diagrams</b> (Statics L3) — every load case begins as one.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Factor of safety</td><td>\( n = S/\sigma \)</td><td>Comparing the strength relied on against the stress expected; state which \( S \).</td></tr>
+<tr><td>Allowable stress</td><td>\( \sigma_{allow} = S/n \)</td><td>The number you actually size against, once \( n \) is chosen.</td></tr>
+<tr><td>Load case</td><td>—</td><td>One credible loading condition with its own magnitude and source; parts fail under unlisted ones.</td></tr>
+<tr><td>Failure mode</td><td>—</td><td>Yield, rupture, fatigue, buckling, wear, leakage — decides which strength governs.</td></tr>
+<tr><td>Margin of safety</td><td>\( MS = n - 1 \)</td><td>Aerospace-style reporting; \( MS \ge 0 \) means the case is satisfied.</td></tr>
+<tr><td>Design vs analysis</td><td>—</td><td>Analysis returns a stress; design returns a size plus the reason for it.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Sizing to an allowable, not to a stress</b></p>
+<p><b>Problem.</b> A tension link carries a steady load \( F = 12\ \mathrm{kN} \). The
+material has a yield strength \( S_y = 250\ \mathrm{MPa} \). The proposed section area is
+\( 300\ \mathrm{mm^2} \). <b>Find:</b> the working stress, the resulting factor of safety
+against yield, and the allowable stress if the design standard requires \( n = 2 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Working stress:
+\( \sigma = F/A = 12\,000/300\times10^{-6} = 40\ \mathrm{MPa} \).
+(2) Factor of safety on yield: \( n = S_y/\sigma = 250/40 = 6.25 \).
+(3) Allowable at the required \( n = 2 \): \( \sigma_{allow} = 250/2 = 125\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> 40 MPa working, \( n = 6.25 \), allowable 125 MPa.
+<b>Sanity check:</b> the working stress sits well under the allowable, so the link passes with
+room to spare — which is itself a finding. A part running at \( n = 6.25 \) where the standard
+asks for 2 is carrying mass and cost nobody specified, and is worth a second look before it is
+multiplied across a hundred assemblies.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>What the margin buys you</b></p>
+<p><b>Problem.</b> The same link, sized as above, is found in service to carry 20% more load
+than the design case because an upstream damper was removed. <b>Find:</b> the new working
+stress and factor of safety, and state whether the part is still acceptable against a required
+\( n = 2 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) New load: \( 1.2 \times 12 = 14.4\ \mathrm{kN} \), so
+\( \sigma = 14\,400/300\times10^{-6} = 48\ \mathrm{MPa} \).
+(2) \( n = 250/48 = 5.21 \).
+(3) Required is \( n = 2 \); actual is 5.21, so the link remains acceptable.</p>
+<p><b>Answer:</b> 48 MPa, \( n = 5.21 \), still acceptable.
+<b>Sanity check:</b> this is exactly what margin is for — an unlisted load case appeared and the
+part absorbed it. Note what the calculation does <em>not</em> say: it does not say removing the
+damper was harmless. Fatigue and the components downstream were never checked, and a 20%
+load rise is a far larger rise in fatigue damage, as Lessons 3 and 4 will show.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Choosing n with a reason attached</b></p>
+<p><b>Problem.</b> Two brackets use the same material and see the same 40 MPa working stress.
+Bracket A supports a lighting conduit in an accessible corridor. Bracket B supports a pipe
+carrying hot process fluid above a walkway. <b>Find:</b> a defensible factor of safety for each
+and the resulting allowable stresses, and state the single dominant reason they differ.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The stress analysis is identical, so nothing in the
+mechanics distinguishes them. (2) The consequence of failure does not: A drops a conduit in a
+place where people can see and reach it; B releases hot fluid over a walkway, where failure
+injures people. (3) A defensible pair is \( n_A = 2 \) giving
+\( \sigma_{allow} = 125\ \mathrm{MPa} \), and \( n_B = 4 \) giving
+\( \sigma_{allow} = 62.5\ \mathrm{MPa} \) — B is then sized to roughly twice the area for
+the same load.</p>
+<p><b>Answer:</b> \( n_A \approx 2 \), \( n_B \approx 4 \); the dominant reason is
+consequence of failure, not uncertainty in load or material.
+<b>Sanity check:</b> the exact numbers are a judgement and a standard may set them for you. What
+is not a judgement is that they must differ, and that the reason is recorded. An engineer who
+sizes both at \( n = 2 \) has not made an error of arithmetic; they have made an error of
+scope.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>A component is sized against yield with \( S_y = 250\ \mathrm{MPa} \) and a required factor of safety \( n = 2.5 \). What is the allowable stress?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 100\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 625\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 252.5\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 247.5\ \mathrm{MPa} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The allowable stress is the strength divided by the factor of safety: \( \sigma_{allow} = S_y/n = 250/2.5 = 100\ \mathrm{MPa} \). The 625 MPa answer multiplies instead of divides, which would license a stress above yield — the direction of the error is the giveaway, since a factor of safety must always reduce what you may claim. The 252.5 and 247.5 answers treat the factor as something to add to or subtract from the strength; a factor of safety is a ratio, and it is dimensionless precisely so that it scales rather than offsets.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A pressure-retaining part is designed strictly to the minimum a code permits, using the load cases the designer listed. In service it fails. Which statement best describes the situation?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The code is invalid and should not have been used</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Code compliance is a floor, and it assumes the right load cases and failure mode were identified</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The factor of safety must have been below 1.0</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Codes apply only to materials, not to load cases</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A code encodes other people's failures and sets the minimum a competent engineer may claim. It cannot know which load cases exist in your plant. Meeting a code against an incomplete list of load cases is fully compliant and still wrong, which is why enumerating load cases precedes sizing in the working method. The factor of safety was almost certainly above 1.0 for the case analysed — that is the point: the governing case was not analysed. Codes plainly do address loading and failure modes, not just materials.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Which of the following is <b>not</b> one of the uncertainties a factor of safety is intended to cover?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Scatter in material properties</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Uncertainty in the applied load</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>An arithmetic mistake in the stress calculation</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Degradation of the part in service</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The factor of safety covers scatter in properties, uncertainty in load, idealisation error in the model, service degradation, and the consequence of failure. It is not an allowance for arithmetic errors, and treating it as one is dangerous: a wrong calculation can be wrong by any factor at all, including orders of magnitude, whereas the margin is sized for bounded, anticipated variation. Arithmetic is controlled by checking, not by margin.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A part is sized for its steady operating load. Which of these is most likely to be the load case that actually governs its size?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The steady operating load, since it acts for the longest time</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The average of all load cases</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>A short-duration start-up or upset case</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Whichever case produces the lowest stress</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Steady operating load is rarely governing precisely because everything is comfortable there. Start-up torque, upset pressure, thermal growth against an anchor and maintenance lifting cases are short but large, and a part must survive the worst credible case, not the average or the most frequent one. Duration matters for fatigue and creep, not for a yield check. Sizing to the lowest-stress case inverts the entire exercise.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Reported as a margin of safety, a component with a factor of safety \( n = 1.35 \) has \( MS \) equal to</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 0.35 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 1.35 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( -0.35 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.74 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Margin of safety is defined as \( MS = n - 1 \), so \( 1.35 - 1 = 0.35 \); a non-negative value means the case is satisfied, and the convention exists so that "zero" reads as "exactly adequate" rather than "no strength". Reporting 1.35 confuses the margin with the factor itself. The 0.74 answer is \( 1/1.35 \), the stress-to-strength ratio, which is a utilisation rather than a margin.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Two designers size the same bracket. One reports "the stress is 40 MPa". The other reports "6 mm plate, 50 mm wide, per drawing callout". Which has completed a <b>design</b>?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The first, because the stress is the engineering result</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The second, because a size that can be inspected is the deliverable</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Both equally</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Neither, without a fatigue check</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Analysis returns a stress; design returns a size, and a size that cannot be inspected has not been designed. The drawing callout is the deliverable because it is what the shop builds and what the inspector measures against. The first report is a necessary intermediate, not an output. A fatigue check may well be required, but its absence does not turn the second report into a non-design — it identifies a further load case to assess, which is exactly the working method's step four.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Increasing a factor of safety from 2 to 4 on a tension member, for the same load and material, has what effect on the required cross-sectional area?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Halves it</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Doubles it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Leaves it unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Quadruples it</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>For a tension member \( A = F n / S \), so the area is directly proportional to \( n \): doubling the factor doubles the area, and with it the mass and the material cost. Halving is the same relation read backwards. It is unchanged only if the factor plays no part in sizing, which would make it decorative. Quadrupling would require an area proportional to \( n^2 \), which holds for neither axial nor bending sizing — in bending the section modulus scales with \( n \), so the depth grows more slowly still.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Which strength should govern the factor of safety for a part whose failure criterion is "must not deform permanently"?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Ultimate tensile strength</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Yield strength</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Endurance limit</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Hardness</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Permanent deformation is yielding, so the yield strength governs. Ultimate tensile strength describes rupture and would permit the part to deform grossly while remaining "safe" against the wrong criterion. The endurance limit governs fatigue under fluctuating load, a different failure mode. Hardness is a proxy for strength, useful for field triage, but it is not itself a design strength — a point Materials I made when it warned that hardness correlations are empirical.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the bracket that passed and the bracket that mattered.</b> During a
+plant modification, a contractor supplies two identical brackets from the same drawing: one
+supports an instrument-air line, the other a small steam header above a maintenance walkway.
+The calculation package sizes both at \( n = 2 \) against yield, and the arithmetic is
+correct in both. A design review rejects the package — not for its stress analysis, which is
+sound, but for its scope: the two brackets have the same mechanics and different consequences,
+and the calculation never says so. The steam bracket is re-sized at \( n = 4 \) and, more
+importantly, the calculation now carries one sentence explaining why. The reviewer's objection
+was not conservatism; it was that a margin without a stated reason cannot be checked, revised,
+or defended when the plant changes around it.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.3103\\ \\mathrm{psi}\\)", "\\(6527\\ \\mathrm{psi}\\)", "\\(6.527e+04\\ \\mathrm{psi}\\)", "\\(652.7\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(45 \\times 145 = 6527\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.02068\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(435.1\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4351\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(43.51\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(3 \times 145 = 435.1\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft}\\)", "\\(18.29\\ \\mathrm{ft}\\)", "\\(196.9\\ \\mathrm{ft}\\)", "\\(19.69\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(5 \times 3.281 = 16.4\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -128,11 +223,11 @@
 </div></div>
 </main>
 <footer class="nx-foot"><div class="in">
-  <div class="mark"><span class="teal">MECHED</span><span class="slogan">هندسة الإتقان</span></div>
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
   <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
   <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
   <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
 </div></footer>
-<script src="../../../../assets/nx/nexus.js?v=b847538bfd"></script>
+<script src="../../../../assets/nx/nexus.js?v=13992839c7"></script>
 </body>
 </html>

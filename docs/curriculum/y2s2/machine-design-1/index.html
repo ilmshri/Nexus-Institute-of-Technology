@@ -3,36 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0E1626">
-<title>Machine Design I — Nexus Institute of Technology</title>
+<meta name="theme-color" content="#FAF8F4">
+<title>Machine Design I — MechEd</title>
 <meta name="description" content="From stress analysis to sized hardware: static and fatigue design methodology, shafts, keys, fasteners, and welded joints — the course where strength ">
 <link rel="manifest" href="../../../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=529472124d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=13992839c7">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header class="appbar">
   <div class="in">
-    <a class="brand" href="../../../index.html" aria-label="Nexus Institute of Technology">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
       <img src="../../../assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">Nexus</span> Institute of Technology
-        <small>Online Engineering Education</small></span>
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
     </a>
     <nav aria-label="Site">
       <a href="../../../index.html">Home</a>
-      <a href="../../../about/index.html">About</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
       <a href="../../../mission/index.html">Mission</a>
-      <a href="../../../curriculum/index.html" class="on">Curriculum</a>
-      <a href="../../../reference/index.html">Resources</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/year-1/summary.html">Year 1 — compiled summary</a><a href="../../../curriculum/year-2/summary.html">Year 2 — compiled summary</a><a href="../../../curriculum/year-3/summary.html">Year 3 — compiled summary</a><a href="../../../curriculum/year-4/summary.html">Year 4 — compiled summary</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Compiled summaries</a>
+        </div>
+      </div>
       <a href="../../../career/index.html">Career Paths</a>
     </nav>
     <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/machine-design-1/index.html" lang="ar" dir="rtl">العربية</a>
   </div>
 </header>
 
-<main class="wrap">
+<main>
 
+<div class="course-shell">
+<div class="course-main">
 <nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
 <span>MDN 251</span></nav>
 
@@ -51,16 +79,14 @@
   <a class="btn btn-ghost" href="../../../curriculum/index.html">Full curriculum</a>
 </div>
 <div class="learn"><h3>What you'll learn</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Load cases, failure modes, and design margins chosen with reasons attached.</span></div><div><span class="ck">✓</span><span>Von Mises and Tresca applied to component sizing.</span></div><div><span class="ck">✓</span><span>Endurance limits and the modification factors — surface, size, load, temperature, reliability.</span></div><div><span class="ck">✓</span><span>Goodman and Gerber treatments of mean stress.</span></div><div><span class="ck">✓</span><span>Combined bending and torsion under fatigue; deflection and critical-speed checks.</span></div><div><span class="ck">✓</span><span>Key sizing by shear and bearing.</span></div></div></div>
-<section class="part tight">
-  <div class="wide">
-    <div class="tabs" role="tablist">
-      <button class="on" data-tab="ct-syllabus">Syllabus</button>
-      <button data-tab="ct-reference">Reference</button>
-      <button data-tab="ct-tools">Tools &amp; Software</button>
-    </div>
-    <section class="tabpanel on" id="ct-syllabus">
-      <h2 class="tabcap">Syllabus</h2>
-      <div class="lessons">
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>Syllabus</h3>
+  <div class="lessons">
 <div class="syl" data-key="y2s2/machine-design-1/1" data-href="01-design-methodology-and-factors-of-safety.html">
   <span class="tick"></span>
   <div class="no">01</div>
@@ -171,38 +197,33 @@
     <details><summary>Checkpoint questions</summary><ul><li>In the shaft-assembly project, which element failed first on paper, and what did you change?</li><li>What must design documentation let a reviewer do?</li></ul></details>
   </div>
 </div></div>
-      <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
-      
-    </section>
-    <section class="tabpanel" id="ct-reference">
-      <h2 class="tabcap">Reference</h2>
-      <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[n = \frac{S}{\sigma}, \qquad \sigma_{allow} = \frac{S}{n}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = F/A\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = S/\sigma\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = S/n\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[MS = n - 1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[MS \ge 0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[F = 12\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[S_y = 250\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = F/A = 12\,000/300\times10^{-6} = 40\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = S_y/\sigma = 250/40 = 6.25\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 250/2 = 125\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 6.25\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[1.2 \times 12 = 14.4\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = 14\,400/300\times10^{-6} = 48\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 250/48 = 5.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 5.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_A = 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 125\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_B = 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 62.5\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_A \approx 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_B \approx 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 2.5\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = S_y/n = 250/2.5 = 100\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 1.35\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[1.35 - 1 = 0.35\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[A = F n / S\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma' = \sqrt{\sigma_x^2 - \sigma_x\sigma_y + \sigma_y^2 + 3\tau_{xy}^2}, \qquad \sigma_{Tresca} = \sigma_{max} - \sigma_{min}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max} = K_t \sigma_{nom}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[S_{sy}\approx 0.577\,S_y\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_x = 80\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\tau_{xy} = 40\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_y = 0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[(80+0)/2 = 40\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sqrt{40^2+40^2} = 56.57\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sqrt{80^2 + 3(40)^2} = \sqrt{11\,200} = 105.83\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max}-\sigma_{min} = 96.57-(-16.57) = 113.14\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n_{VM} = 250/105.83 = 2.36\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n_{T} = 250/113.14 = 2.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma' = 105.8\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{Tresca} = 113.1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n = 2.36\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[K_t = 2.5\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max} = K_t\sigma_{nom} = 2.5\times40 = 100\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[S_y = 250\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li></ul>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[n = \frac{S}{\sigma}, \qquad \sigma_{allow} = \frac{S}{n}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = F/A\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = S/\sigma\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = S/n\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[MS = n - 1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[MS \ge 0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[F = 12\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[S_y = 250\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = F/A = 12\,000/300\times10^{-6} = 40\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = S_y/\sigma = 250/40 = 6.25\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 250/2 = 125\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 6.25\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[1.2 \times 12 = 14.4\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma = 14\,400/300\times10^{-6} = 48\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 250/48 = 5.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 5.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_A = 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 125\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_B = 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = 62.5\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_A \approx 2\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n_B \approx 4\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 2.5\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma_{allow} = S_y/n = 250/2.5 = 100\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[n = 1.35\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[1.35 - 1 = 0.35\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[A = F n / S\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></li><li><span class="ref-eq">\[\sigma' = \sqrt{\sigma_x^2 - \sigma_x\sigma_y + \sigma_y^2 + 3\tau_{xy}^2}, \qquad \sigma_{Tresca} = \sigma_{max} - \sigma_{min}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max} = K_t \sigma_{nom}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[S_{sy}\approx 0.577\,S_y\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_x = 80\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\tau_{xy} = 40\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_y = 0\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[(80+0)/2 = 40\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sqrt{40^2+40^2} = 56.57\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sqrt{80^2 + 3(40)^2} = \sqrt{11\,200} = 105.83\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max}-\sigma_{min} = 96.57-(-16.57) = 113.14\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n_{VM} = 250/105.83 = 2.36\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n_{T} = 250/113.14 = 2.21\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma' = 105.8\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{Tresca} = 113.1\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[n = 2.36\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[K_t = 2.5\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[\sigma_{max} = K_t\sigma_{nom} = 2.5\times40 = 100\ \mathrm{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li><li><span class="ref-eq">\[S_y = 250\]</span><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></li></ul>
 <h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\sigma\)</span><span class="chip">\(\tau\)</span><span class="chip unit">kN</span><span class="chip unit">MPa</span></div>
 <h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Axial stress and strain</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></td></tr><tr><td>Free-body diagrams</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></td></tr><tr><td>Material property vocabulary</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/01-design-methodology-and-factors-of-safety.html">L01</a></td></tr><tr><td>Factor of safety</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></td></tr><tr><td>Principal stresses and Mohr's circle</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></td></tr><tr><td>Yield strength</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/02-static-failure-design.html">L02</a></td></tr><tr><td>Fatigue, S–N curves and crack initiation</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/03-fatigue-design-i-the-s-n-method.html">L03</a></td></tr><tr><td>Stress concentration</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/03-fatigue-design-i-the-s-n-method.html">L03</a></td></tr><tr><td>Tensile strength</td><td><a class="ref-jump" href="../../../curriculum/y2s2/machine-design-1/03-fatigue-design-i-the-s-n-method.html">L03</a></td></tr></tbody></table></div>
-    </section>
-    <section class="tabpanel" id="ct-tools">
-      <h2 class="tabcap">Tools &amp; Software</h2>
-      <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
-    </section>
-    
-  </div>
-</section><nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="ref-thin">Course-specific software recommendations are not compiled yet for this course — they are added as each course reaches full teaching depth.</p>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>MDN 251</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 2</b></div><div class="frow"><span>Lessons</span><b>11 · 3 at full depth</b></div><div class="frow"><span>Assessment</span><b>3 interactive quizzes</b></div></div>
+
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</aside>
+</div>
 </main>
-<footer class="nx-foot">
-  <div class="mark"><span class="teal">NEXUS</span> INSTITUTE OF TECHNOLOGY</div>
-  <nav>
-    <a href="../../../index.html">Home</a> ·
-    <a href="../../../about/index.html">About</a> ·
-    <a href="../../../mission/index.html">Mission</a> ·
-    <a href="../../../curriculum/index.html">Curriculum</a> ·
-    <a href="../../../reference/index.html">Resources</a> ·
-    <a href="../../../career/index.html">Career Paths</a>
-  </nav>
-  <p class="lang-en">Free, open engineering education. Worked-example values are
-  pedagogical; representative industrial figures are labeled as such and are not
-  published operating data of any named company. Every visual is an original vector
-  illustration. Lessons not yet at full depth say so honestly.</p>
-</footer>
-<script src="../../../assets/nx/nexus.js?v=529472124d"></script>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=13992839c7"></script>
 </body>
 </html>
