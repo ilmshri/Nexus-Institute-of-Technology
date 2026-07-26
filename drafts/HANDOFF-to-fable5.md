@@ -3,7 +3,7 @@
 From the Opus session working content/engineering on `main`. You own the visual
 redesign, the MechEd rebrand and the two-tree Arabic system on `design-drafts`.
 
-**Nothing has been pushed.** `main` is 14 commits ahead of `origin/main`,
+**Nothing has been pushed.** `main` is 15 commits ahead of `origin/main`,
 local only, per the owner's git-safety hold while the rebrand is coordinated on
 GitHub.
 
@@ -88,17 +88,11 @@ Confined to the course-summary functions. No template, routing or chrome changes
 
 ---
 
-## 2. New data field: `recap` — your AR tree probably wants `recap_ar`
+## 2. New data field: `recap`
 
 Every Y1S1 lesson (all 66, 6 courses) now has a `recap` key in
 `data/content/y1s1-*.json` — a short hand-written bullet summary as an HTML
 string, sibling to `lecture`/`foundations`/`kuwait`/`quiz`.
-
-This did not exist when you wrote the Arabic schema, which is why the schema
-lists `lecture_ar`/`foundations_ar`/`kuwait_ar` + quiz keys but no `recap_ar`.
-I added `recap_ar` by extension on the two lessons I translated, following the
-identical sibling convention — **flagging it so you can accept or reject it**.
-Without it the AR tree's summary PDFs fall back to English.
 
 Design note: the summary document is now genuinely different in kind from the
 lecture pages — scannable bullets, no diagrams, no lecture prose. `.sum-recap`
@@ -107,64 +101,19 @@ document dropped from 820 KB to 560 KB as a result.
 
 ---
 
-## 3. Arabic — stopped, but 2 lessons exist and validate
+## 3. Arabic — cancelled
 
-The owner cancelled the translation ("huge and very hard task that needs super
-precise and accurate efforts"). Before that, `y1s1-math-1.json` lessons **1 and
-2** were fully translated under your schema:
+The owner cancelled the Arabic translation. Nothing further is being authored,
+and it is not waiting on you for anything.
 
-- `lecture_ar`, `foundations_ar`, `kuwait_ar`, `recap_ar`
-- per quiz item: `q_ar`, `choices_ar`, `solution_ar`
-- **no `answer_ar` anywhere** — the Arabic item reuses the English `answer`
-  index by position, so `choices_ar` must stay in the same order as `choices`
+One factual note so it doesn't surprise you in a diff: `y1s1-math-1.json`
+lessons 1 and 2 still carry `_ar` sibling keys from before the cancellation.
+They are **inert** — `docs/` builds byte-identical with them present — so they
+were left in place rather than deleted. Strip them or ignore them as you
+prefer.
 
-These keys are **inert**: `docs/` builds byte-identical with them present, so
-they cost nothing and are there if the translation ever resumes.
-
-### `drafts/verify_ar.py` — please keep and use this
-
-An executable check of the whole contract: markup parity (tag multiset
-identical once added `<bdi>` isolators are discounted), inline/display math
-span-count parity, glossary row parity, `§N` markers preserved so the build's
-`§N→0N` transform still applies, LTR isolation (no bare Latin or digit run in
-Arabic prose), quiz shape, and that the English source was never modified.
-Run: `python3 drafts/verify_ar.py [course-id]`. Exit non-zero on any failure.
-
-It caught three real defects that reading the Arabic alone could not, because
-the Arabic read perfectly well in each case: `\(\sim\)` rendered as the word
-"نحو", `\( t \)` rendered as "الزمن", and an English gloss `(Head)` left
-un-isolated. **Whoever resumes the translation should run this per lesson.**
-
-### `drafts/ar-terminology.md` — the terminology decisions
-
-Includes the owner's binding rule: *"SI units, prefixes, and all scientific
-official terms do not need to be translated into Arabic as they will not make
-sense."* Applied as three tiers (established Arabic vocabulary stays Arabic;
-units/symbols/standards stay Latin in `<bdi>`; official terms with no settled
-Arabic keep the English in `الـ<bdi>term</bdi>`).
-
-Also records source quality, which matters for your `arabize()` work:
-
-- **ARABTERM (arabterm.org)** — best source found. GIZ + Arab League, 156k
-  entries, ALECSO-validated "unified Arabic term" marks. Automotive volume has
-  Mechanical Engineering / Vibrations / Machine elements / Hydraulics
-  categories. Caveat: 2009-era TYPO3, **search box is broken** in a modern
-  browser — browse by direct `filterCategory` URL.
-- **Reverso Context** — frequency signal only, *not* authority. Four errors
-  found in minutes, including "mechanical engineer" → مهندس **مدني** (civil)
-  and a flipped inequality. Its headline noun for "gauge pressure" is مقياس
-  الضغط, which is the *instrument*, not the quantity.
-- **itqan.edu.sa** — genuinely bilingual (EN/AR toggle; the default landing
-  page is English, `/ar/` is the Arabic tree). Confirms formal institutional
-  MSA and that Latin acronyms stay inline unchanged:
-  `شهادات معتمدة من ASNT و ASME و TWI و AWS`.
-
-Owner-corrected terms worth not re-litigating: pump head is **الارتفاع** (not
-الرفع); hysteresis is **التخلّف** (owner suggested التباطؤ — undecided, see the
-doc); and *gauge* splits three ways — `مقياس الضغط` the instrument,
-`قياس الضغط` the act, and `الضغط الـgauge` / `الـabsolute` for the quantity.
-
----
+Leftover working notes live in `drafts/ar-terminology.md` and
+`drafts/verify_ar.py` if the translation is ever revived. Not needed otherwise.
 
 ## 4. Content state
 
@@ -192,6 +141,6 @@ TODOs pending a proper WebSearch→oEmbed pass.
 
 1. Rebase `nexus.css` and `nexus_build.py` — additive, localised, described above.
 2. **Keep the MathJax `min-width:0 !important` rule**; it fixes mobile on every lesson page.
-3. Decide on `recap_ar`; style `.sum-recap` in the redesign.
-4. `nexus.js` untouched — your two-tree Arabic system is unchallenged.
-5. Nothing pushed; `main` is 14 commits ahead, local only.
+3. Style `.sum-recap` — the summary document is now bullets, not lecture prose.
+4. `nexus.js` untouched. Arabic is cancelled; two lessons of inert `_ar` keys remain in the data.
+5. Nothing pushed; `main` is 15 commits ahead, local only.
