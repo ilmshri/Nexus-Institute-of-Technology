@@ -74,7 +74,13 @@ a:hover{color:var(--accent-deep)}
   background:var(--overlay);border:1px solid var(--line-strong);border-top:2px solid var(--gold);
   border-radius:0 0 var(--r-sm) var(--r-sm);box-shadow:0 12px 32px rgba(20,41,75,.12),var(--shadow);
   padding:8px;display:none}
+/* Hover bridge: the panel sits 6px below the trigger, and without this the
+   pointer crosses a dead gap on the way down, :hover drops, and the menu
+   disappears before it can be clicked. This transparent strip spans the gap so
+   the hover region is continuous. Visual offset is unchanged. */
+.navgrp .drop::before{content:"";position:absolute;top:-16px;inset-inline:0;height:16px}
 .navgrp:hover .drop,.navgrp:focus-within .drop,.navgrp.open .drop{display:block}
+.navgrp.open>a.grp .caret{transform:rotate(-135deg) translateY(-2px);opacity:.9}
 .navgrp .drop a{display:block;padding:9px 12px;font-size:13px;font-weight:500;color:var(--soft);border-radius:5px}
 .navgrp .drop a:hover{background:var(--sunken);color:var(--navy)}
 .navgrp .drop a.on::after{display:none}
@@ -97,8 +103,13 @@ a:hover{color:var(--accent-deep)}
   .appbar nav::-webkit-scrollbar{display:none}
   .appbar nav a{flex:0 0 auto;padding:7px 10px;font-size:12.5px;white-space:nowrap}
   .navgrp{flex:0 0 auto}
-  .navgrp .drop{display:none !important} /* dropdown items unreachable on touch-scroll bar; group link goes to its landing page */
-  .navgrp>a.grp .caret{display:none}
+  /* Touch: the dropdown used to be display:none here, which made its items
+     unreachable on phones entirely. It is now tap-to-open (see nexus.js) and
+     anchored to the viewport edge so it cannot be clipped by the scrolling
+     nav strip. */
+  .navgrp{position:static}
+  .navgrp .drop{inset-inline:8px auto;width:min(280px,calc(100vw - 16px));
+    top:calc(100% + 4px);max-height:min(60vh,420px);overflow-y:auto}
   .kbtn{display:none}
 }
 

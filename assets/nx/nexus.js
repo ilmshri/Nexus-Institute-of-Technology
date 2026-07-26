@@ -531,3 +531,61 @@
     } else { say('Copying is not available in this browser.'); }
   });
 })();
+
+/* ---------- nav dropdowns: click / tap to open ----------
+   The CSS already supported `.navgrp.open`, but nothing ever set it, so the
+   menus were hover-only — unusable on touch and fragile with a pointer. This
+   adds the missing half: click or tap the group to toggle, click outside or
+   press Escape to close, and arrow/Escape keyboard handling. Hover still works
+   on pointer devices; this only adds a second way in. */
+(function () {
+  var groups = [].slice.call(document.querySelectorAll('.navgrp'));
+  if (!groups.length) return;
+  var canHover = window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  function closeAll(except) {
+    groups.forEach(function (g) {
+      if (g !== except) {
+        g.classList.remove('open');
+        var t = g.querySelector('a.grp');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  groups.forEach(function (g) {
+    var trigger = g.querySelector('a.grp');
+    var panel = g.querySelector('.drop');
+    if (!trigger || !panel) return;
+
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+
+    trigger.addEventListener('click', function (e) {
+      // On a pointer device the group link stays a real link once its menu is
+      // already open — so a deliberate second click still reaches the landing
+      // page. The first click opens. On touch, the first tap always opens.
+      var isOpen = g.classList.contains('open');
+      if (canHover && isOpen) return;
+      e.preventDefault();
+      closeAll(g);
+      g.classList.toggle('open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    g.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        g.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      }
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navgrp')) closeAll(null);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll(null);
+  });
+})();
