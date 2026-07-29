@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../assets/nx/nexus.css?v=acf1b14077">
+<link rel="stylesheet" href="../../assets/nx/nexus.css?v=b47a1e2322">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -1058,177 +1058,210 @@ applied extension, start to finish, with a fouling margin added at the end.</li>
 <tr><td>Design area</td><td>\( A_{design}=A_{clean}(1+m) \)</td><td>Margin for in-service fouling.</td></tr>
 <tr><td>Equivalent design U</td><td>\( U_{design}=U_{clean}/(1+m) \)</td><td>Same margin, restated as a derated coefficient.</td></tr>
 </tbody></table></div></div></section><h2 class="sum-course" id="sum-machine-design-1">MDN 251 — Machine Design I</h2>
-<p class="ref-thin">Condensed per-lesson recaps are not written for this course yet,
-so this document is the full compiled text in the meantime.</p>
-<h2 class="sum-part sum-nobreak">Part 1 — Lectures</h2>
-<p class="ref-thin">Lessons 04, 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the lectures section.</p>
-<section class="sum-lesson"><h3>Lesson 01 · Design methodology and factors of safety</h3><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A stress axis from zero to 300 megapascals showing the working stress at 40, the allowable stress at 125 for a factor of safety of two, and the yield strength at 250. The margin is the gap between working stress and allowable stress."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M60 200 L520 200" stroke="#14181F" stroke-width="1.6"/><path d="M60.0 196 L60.0 204" stroke="#5B6672" stroke-width="1"/><text x="60" y="222" font-size="11" fill="#5B6672" text-anchor="middle">0</text><path d="M136.66666666666666 196 L136.66666666666666 204" stroke="#5B6672" stroke-width="1"/><text x="137" y="222" font-size="11" fill="#5B6672" text-anchor="middle">50</text><path d="M213.33333333333331 196 L213.33333333333331 204" stroke="#5B6672" stroke-width="1"/><text x="213" y="222" font-size="11" fill="#5B6672" text-anchor="middle">100</text><path d="M290.0 196 L290.0 204" stroke="#5B6672" stroke-width="1"/><text x="290" y="222" font-size="11" fill="#5B6672" text-anchor="middle">150</text><path d="M366.66666666666663 196 L366.66666666666663 204" stroke="#5B6672" stroke-width="1"/><text x="367" y="222" font-size="11" fill="#5B6672" text-anchor="middle">200</text><path d="M443.33333333333337 196 L443.33333333333337 204" stroke="#5B6672" stroke-width="1"/><text x="443" y="222" font-size="11" fill="#5B6672" text-anchor="middle">250</text><path d="M520.0 196 L520.0 204" stroke="#5B6672" stroke-width="1"/><text x="520" y="222" font-size="11" fill="#5B6672" text-anchor="middle">300</text><text x="290" y="245" font-size="12" fill="#14181F" text-anchor="middle">stress (MPa)</text><path d="M121.3 200 L121.3 120" stroke="#07785C" stroke-width="2.4"/><circle cx="121.3" cy="120" r="4" fill="#07785C"/><text x="121.3" y="108" font-size="12" fill="#07785C" text-anchor="middle">working 40</text><path d="M251.7 200 L251.7 96" stroke="#8A5A0F" stroke-width="2.4" stroke-dasharray="5 4"/><text x="251.7" y="84" font-size="12" fill="#8A5A0F" text-anchor="middle">allowable 125</text><path d="M443.3 200 L443.3 120" stroke="#9c2f2f" stroke-width="2.4"/><circle cx="443.3" cy="120" r="4" fill="#9c2f2f"/><text x="443.3" y="108" font-size="12" fill="#9c2f2f" text-anchor="middle">yield 250</text><path d="M121.3 158 L251.7 158" stroke="#5B6672" stroke-width="1.2" stroke-dasharray="3 3"/><text x="186" y="150" font-size="11" fill="#5B6672" text-anchor="middle">margin you own</text><text x="348" y="176" font-size="11" fill="#5B6672" text-anchor="middle">margin the code owns</text></svg><figcaption>Where a factor of safety actually lives. The working stress is what the part sees; the allowable stress is what the code lets you claim. The gap between them is the margin you chose and must defend — not a number the standard handed you.</figcaption></figure>
-<h3>01 · Design is analysis run backwards</h3>
-<p>Analysis asks: given this part, what stress appears? Design asks the harder inverse: given
-this load and this consequence of failure, what part? Analysis has one answer; design has a
-family of them, and the engineering is in the choosing. Every design decision is therefore
-two decisions — a size, and a <em>reason</em> for that size that survives being questioned a
-year later by someone holding a broken piece of it.</p>
-<h3>02 · Load cases before geometry</h3>
-<p>The first discipline is refusing to size anything until the load cases are written down.
-Steady operating load is rarely the governing one. Start-up torque, upset pressure, thermal
-growth against a fixed anchor, a dropped tool, a lifting case during maintenance, and the
-seismic or wind case if the structure is outdoors — each is a separate load case, and the part
-must survive the worst of them, not their average. A part that fails in service almost never
-failed under the load the designer analysed; it failed under the one nobody wrote down.</p>
-<h3>03 · The factor of safety, honestly</h3>
-<p>The factor of safety is the ratio of the strength you rely on to the stress you expect:</p>
-<div class="keybox"><span class="tag">Key relation — design margin</span>
-<p>\[ n = \frac{S}{\sigma}, \qquad \sigma_{allow} = \frac{S}{n} \]</p>
-<p>\( S \) is the governing strength — yield for permanent-deformation limits, ultimate for
-rupture, endurance limit for fatigue — and \( \sigma \) is the stress the load case
-produces. Choosing \( n \) is choosing how much ignorance you are buying insurance against.</p></div>
-<p>What \( n \) actually covers is worth naming, because it is not one thing: scatter in
-material properties, uncertainty in the load, idealisation error in the analysis, degradation
-in service, and the consequence of failure. A bracket holding a cable tray and a bracket
-holding a pressure vessel get different numbers for the last reason alone. A large \( n \)
-is not conservatism; it is an admission of how much you do not know, and it is expensive in
-mass, cost and — in rotating equipment — in the very inertia you are trying to control.</p>
-<h3>04 · The design working method</h3>
-<p>Use the same sequence every time. <em>One:</em> write the load cases, each with its source
-and its own worst-credible magnitude. <em>Two:</em> identify the failure mode each case could
-provoke — yielding, rupture, fatigue, buckling, wear, leakage — because the governing strength
-depends on the mode, not on the load. <em>Three:</em> choose \( n \) and record why, in the
-calculation, in one sentence. <em>Four:</em> size the part, then check every <em>other</em>
-failure mode against that size; the mode that governs is rarely the one you started with.
-<em>Five:</em> state the result as a drawing callout, not as a stress — a number that cannot be
-inspected has not been designed.</p>
-<p>Codes and standards are encoded experience, and they deserve respect precisely because they
-are other people's failures written down. But a code gives a floor, not an answer: it tells you
-the minimum a competent engineer may claim, and it assumes you have identified the right load
-cases and the right failure mode. Meeting a code with the wrong load case is fully compliant
-and fully wrong.</p>
-<p><strong>Closing.</strong> Design is a defensible size. The margin is yours to justify, the
-load cases are yours to enumerate, and the code is a floor beneath both.</p></div></section><section class="sum-lesson"><h3>Lesson 02 · Static failure design</h3><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Mohr circle for a plane stress state of 80 megapascals normal and 40 megapascals shear. The circle is centred at 40 megapascals with radius 56.6, giving principal stresses of 96.6 and minus 16.6 megapascals."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M70 165.0 L500 165.0" stroke="#14181F" stroke-width="1.4"/><text x="505" y="169.0" font-size="12" fill="#14181F">σ</text><path d="M250.0 40 L250.0 285" stroke="#14181F" stroke-width="1.4"/><text x="256.0" y="38" font-size="12" fill="#14181F">τ</text><circle cx="302.0" cy="165.0" r="73.5" fill="none" stroke="#07785C" stroke-width="2"/><circle cx="302.0" cy="165.0" r="3" fill="#07785C"/><text x="302" y="185.0" font-size="11" fill="#07785C" text-anchor="middle">C 40</text><circle cx="375.5" cy="165.0" r="4" fill="#8A5A0F"/><text x="376" y="153.0" font-size="11" fill="#8A5A0F" text-anchor="middle">96.6</text><circle cx="228.5" cy="165.0" r="4" fill="#8A5A0F"/><text x="228" y="153.0" font-size="11" fill="#8A5A0F" text-anchor="middle">−16.6</text><path d="M302.0 165.0 L354.0 113.0" stroke="#9c2f2f" stroke-width="1.8"/><circle cx="354.0" cy="113.0" r="4" fill="#9c2f2f"/><text x="362" y="107" font-size="11" fill="#9c2f2f">(80, 40)</text><text x="310" y="128" font-size="11" fill="#9c2f2f">R = 56.6</text></svg><figcaption>Mohr's circle for the worked stress state: 80 MPa normal with 40 MPa shear. The centre sits at 40 MPa, the radius is 56.6 MPa, and the principal stresses fall out as 96.6 and −16.6 MPa. Von Mises and Tresca are two different ways of collapsing this picture into one number.</figcaption></figure>
-<h3>01 · One number from a stress state</h3>
-<p>Material strength is quoted from a tension test — a single axis, a single number. Real parts
-carry combined stress: bending with torsion, pressure with axial load, a bolt in tension while
-a joint shears. A failure theory is the bridge, collapsing a multiaxial stress state into one
-equivalent stress that may be compared against the tensile yield strength honestly.</p>
-<h3>02 · Von Mises and Tresca</h3>
-<div class="keybox"><span class="tag">Key relations — the two static theories</span>
-<p>\[ \sigma' = \sqrt{\sigma_x^2 - \sigma_x\sigma_y + \sigma_y^2 + 3\tau_{xy}^2}, \qquad
-\sigma_{Tresca} = \sigma_{max} - \sigma_{min} \]</p>
-<p>Von Mises (distortion energy) predicts yielding of ductile metals most accurately; Tresca
-(maximum shear) is always the more conservative of the two, by up to about 15%.</p></div>
-<p>Both take the same input and answer the same question, and Tresca never predicts a higher
-capacity than von Mises. That is why codes fond of conservatism adopt Tresca while a designer
-chasing mass adopts von Mises — and why quoting a factor of safety without naming the theory
-is an incomplete statement.</p>
-<h3>03 · Stress concentrations, counted honestly</h3>
-<p>Nominal stress is what the average section carries; a hole, a fillet or a keyway multiplies
-it locally by a geometric factor \( K_t \), so \( \sigma_{max} = K_t \sigma_{nom} \).
-For a <em>static</em> load on a <em>ductile</em> material, local yielding blunts the peak and
-redistributes it, so \( K_t \) is commonly set aside. Under fatigue, or in a brittle
-material, that permission is withdrawn entirely — which is the bridge to Lesson 3, and the
-reason a shaft's shoulder radius is a design variable rather than a drafting convenience.</p>
-<h3>04 · The static sizing method</h3>
-<p><em>One:</em> resolve the stress state at the worst point — usually a surface, usually at a
-discontinuity. <em>Two:</em> get the principal stresses, by Mohr's circle or by formula.
-<em>Three:</em> pick a theory and say which. <em>Four:</em> compare against \( S_y/n \).
-<em>Five:</em> decide whether \( K_t \) applies — ductile and static, usually not; brittle or
-fatigue, always. The commonest error in practice is comparing a raw shear stress against a
-tensile yield strength, which mixes two incompatible quantities and is optimistic by roughly
-the factor \( \sqrt{3} \).</p>
-<p><strong>Closing.</strong> A failure theory is a translator, not a truth. Name the one you
-used, and the number you report becomes checkable.</p></div></section><section class="sum-lesson"><h3>Lesson 03 · Fatigue design I: the S–N method</h3><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An S-N diagram on logarithmic life axis. Strength falls from 0.9 times ultimate at one thousand cycles to the endurance limit at one million cycles, where the line becomes horizontal. A lower corrected endurance limit is shown beneath the ideal specimen value."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M80 240 L520 240" stroke="#14181F" stroke-width="1.5"/><path d="M80 40 L80 240" stroke="#14181F" stroke-width="1.5"/><text x="300" y="272" font-size="12" fill="#14181F" text-anchor="middle">life N (log cycles)</text><text x="26" y="140" font-size="12" fill="#14181F" transform="rotate(-90 26 140)" text-anchor="middle">stress amplitude</text><text x="140" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10³</text><text x="235" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁴</text><text x="330" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁵</text><text x="425" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁶</text><text x="500" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁷</text><path d="M140 70 L425 140 L515 140" fill="none" stroke="#07785C" stroke-width="2.2"/><text x="150" y="62" font-size="11" fill="#07785C">0.9·Sut = 540</text><text x="432" y="134" font-size="11" fill="#07785C">Se′ = 300</text><path d="M140 96 L425 186 L515 186" fill="none" stroke="#8A5A0F" stroke-width="2.2" stroke-dasharray="6 4"/><text x="432" y="200" font-size="11" fill="#8A5A0F">Se = 174</text><path d="M405 142 L405 184" stroke="#9c2f2f" stroke-width="1.6"/><path d="M405 184 l-4 -7 l8 0 z" fill="#9c2f2f"/><text x="399" y="168" font-size="11" fill="#9c2f2f" text-anchor="end">Marin factors</text><path d="M425 140 L425 240" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3"/></svg><figcaption>The S-N picture and what the Marin factors do to it. The upper line is an ideal polished specimen; the lower dashed line is the same steel once surface finish, size and a reliability requirement are paid for. The endurance limit falls from 300 MPa to 174 MPa — the part did not change, the honesty did.</figcaption></figure>
-<h3>01 · Why static strength is not the answer</h3>
-<p>A shaft that never approaches yield can still fail, and usually does. Fatigue is damage
-accumulated by <em>fluctuating</em> stress: a crack initiates at a surface discontinuity, grows
-a little on each cycle, and severs the section at a nominal stress the static calculation
-declared safe by a wide margin. Most rotating-machinery failures are fatigue failures, and none
-of them are visible to a yield check.</p>
-<h3>02 · The endurance limit and where it comes from</h3>
-<p>Test enough polished specimens and steels show a stress amplitude below which life becomes
-effectively unlimited — the endurance limit. For wrought steels a serviceable first estimate is
-\( S_e' = 0.5\,S_{ut} \) (capped near 700 MPa). The prime matters: that value belongs to a
-mirror-polished 7.6 mm rotating-bending specimen tested at room temperature, which is not the
-part you are designing.</p>
-<h3>03 · The Marin factors — paying for reality</h3>
-<div class="keybox"><span class="tag">Key relation — corrected endurance limit</span>
-<p>\[ S_e = k_a k_b k_c k_d k_e \, S_e' \]</p>
-<p>\( k_a \) surface finish, \( k_b \) size, \( k_c \) load type, \( k_d \) temperature,
-\( k_e \) reliability. Each is at most 1.0, so they only ever reduce — and because they
-multiply, they stack fast.</p></div>
-<p>Their physical logic is worth holding onto rather than memorising. Surface finish dominates
-because fatigue cracks start at the surface, so roughness supplies ready-made initiation sites:
-a machined finish costs about 17% at 600 MPa, and a hot-rolled or forged surface costs far more.
-Size reduces strength because a larger section exposes more highly-stressed volume, so the
-worst flaw present is statistically worse. Reliability is not a physical property at all but a
-choice about how far into the scatter band you design: 50% reliability means half of parts fail
-sooner than predicted, which is why 90%, 99% or 99.9% carry escalating penalties.</p>
-<h3>04 · The estimating method</h3>
-<p><em>One:</em> get \( S_{ut} \) for the actual material and condition, not the generic grade.
-<em>Two:</em> take \( S_e' = 0.5 S_{ut} \). <em>Three:</em> evaluate each Marin factor against
-the real part — its finish, its diameter, its loading, its service temperature, and the
-reliability the duty demands. <em>Four:</em> multiply. <em>Five:</em> compare the stress
-<em>amplitude</em> against \( S_e/n \), never the peak stress, because fatigue is driven by the
-alternating component. And carry \( K_f \), the fatigue concentration factor, always — the
-ductile-static permission of Lesson 2 does not survive here.</p>
-<p>The characteristic number to remember is the size of the total knockdown. In the worked case
-below, five factors that each look modest combine to leave 58% of the specimen value. An
-engineer who designs to \( 0.5 S_{ut} \) directly is not being slightly optimistic; they are
-claiming nearly twice the fatigue strength the part has.</p>
-<p><strong>Closing.</strong> The endurance limit is a laboratory number until you have paid for
-your part's surface, size and required reliability. Then it is a design stress.</p></div></section>
-<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
-<p class="ref-thin">Lessons 04, 05, 06, 07, 08, 09, 10, 11 are still in production and are omitted from the foundations section.</p>
-<section class="sum-lesson"><h3>Lesson 01 · Design methodology and factors of safety</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Axial stress and strain</b> (Strength of Materials L1) — \( \sigma = F/A \) and what yield means physically.</li>
-<li><b>Material property vocabulary</b> (Materials I L7) — yield strength, tensile strength, ductility, and which is a design stress.</li>
-<li><b>Free-body diagrams</b> (Statics L3) — every load case begins as one.</li>
+
+<section class="sum-lesson"><h3>Lesson 01 · Design methodology and factors of safety</h3><div class="sum-recap"><ul>
+<li>Analysis asks what stress a given part sees; design asks the inverse — given the load and
+the consequence of failure, what part? Analysis has one answer, design has a family.</li>
+<li>Write the load cases before sizing anything: start-up, upset, thermal growth against a fixed
+anchor, dropped tool, maintenance lifting, wind or seismic. The part must survive the worst, not
+the average.</li>
+<li>Parts that fail in service rarely failed under the load that was analysed — they failed under
+the one nobody wrote down.</li>
+<li>The design margin is \( n = S/\sigma \), with \( S \) the strength governing the
+<em>failure mode</em>: yield for permanent set, ultimate for rupture, endurance limit for
+fatigue.</li>
+<li>\( n \) covers several distinct things — material scatter, load uncertainty, idealisation
+error, service degradation, and the consequence of failure. A cable-tray bracket and a
+pressure-vessel bracket differ on the last alone.</li>
+<li>A large \( n \) is not conservatism but an admission of ignorance, and it costs mass, money
+and — on rotating equipment — the inertia the design is trying to control.</li>
+<li>Work the same sequence every time: load cases, failure modes, choose and record \( n \),
+size, then re-check every other mode against that size — the governing mode is rarely the one you
+started with.</li>
+<li>Codes and standards are encoded experience: they carry the failures that shaped them, which
+is why departing from one requires an argument rather than a preference.</li>
+</ul></div></section><section class="sum-lesson"><h3>Lesson 02 · Static failure design</h3><div class="sum-recap"><ul>
+<li>Strength is quoted from a uniaxial tension test; real parts carry combined stress. A failure
+theory collapses a multiaxial state into one equivalent stress that can be compared against that
+single number honestly.</li>
+<li>Von Mises: \( \sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2} \)
+— the most accurate predictor of yielding in ductile metals.</li>
+<li>Tresca: \( \sigma_{max}-\sigma_{min} \) — always the more conservative, by up to about
+15%, and never predicting a higher capacity than von Mises.</li>
+<li>A factor of safety quoted without naming the theory used is an incomplete statement.</li>
+<li>A discontinuity multiplies nominal stress geometrically:
+\( \sigma_{max}=K_t\sigma_{nom} \).</li>
+<li>For a <em>static</em> load on a <em>ductile</em> material, local yielding blunts and
+redistributes the peak, so \( K_t \) is commonly set aside. That permission is withdrawn
+entirely for brittle materials and under fatigue — the bridge into Lesson 3.</li>
+<li>Method: resolve the stress state at the worst point, get the principal stresses, name a
+theory, compare against \( S_y/n \), then decide whether \( K_t \) applies.</li>
+<li>The commonest practical error is comparing a raw shear stress against a tensile yield
+strength — optimistic by roughly \( \sqrt3 \).</li>
+</ul></div></section><section class="sum-lesson"><h3>Lesson 03 · Fatigue design I: the S–N method</h3><div class="sum-recap"><ul>
+<li>A part that never approaches yield can still fail: fatigue accumulates damage under
+<em>fluctuating</em> stress, and most rotating-machinery failures are fatigue failures invisible
+to a yield check.</li>
+<li>For wrought steels a first estimate of the specimen endurance limit is
+\( S_e' = 0.5S_{ut} \), capped near 700 MPa — a mirror-polished laboratory value, not a design
+stress.</li>
+<li>The Marin factors correct it to the real part:
+\( S_e = k_ak_bk_ck_dk_e S_e' \). Each is at most 1.0, and because they multiply they stack
+fast.</li>
+<li>Surface finish dominates, because fatigue cracks start at the surface and roughness supplies
+ready-made initiation sites. Size punishes the larger stressed volume; reliability is a choice
+about where in the scatter band you design, not a material property.</li>
+<li>On the worked 30 mm machined shaft, five modest factors left 58% of the specimen value —
+\( S_e = 174 \) MPa against \( S_e' = 300 \).</li>
+<li>Compare the stress <em>amplitude</em> against \( S_e/n \), never the peak: fatigue is
+driven by the alternating component.</li>
+<li>Carry \( K_f \) always — the ductile-static permission of Lesson 2 does not survive cyclic
+loading, because the notch root is where the crack grows a little on every cycle.</li>
+<li>Designing directly against \( 0.5S_{ut} \) claims about 1.7 times the fatigue strength the
+part actually has, with every individual arithmetic step correct.</li>
+</ul></div></section><section class="sum-lesson"><h3>Lesson 04 · Fatigue design II: mean stress and cumulative damage</h3><div class="sum-recap">
+<ul>
+<li>A tensile mean stress reduces the amplitude a part can survive, so a fatigue state needs
+two coordinates — \( \sigma_a \) and \( \sigma_m \) — not one.</li>
+<li>Constant-life criteria all run between \( S_e \) on the amplitude axis and
+\( S_{ut} \) on the mean axis. Goodman is the straight line between them:
+\( \sigma_a/S_e + \sigma_m/S_{ut} = 1/n \).</li>
+<li>Gerber's parabola is less conservative (2.56 vs Goodman's 2.09 on this lesson's case);
+Soderberg anchors at \( S_y \) and alone rules out first-cycle yielding.</li>
+<li>Setting \( \sigma_m = 0 \) returns every criterion to \( n = S_e/\sigma_a \), Lesson 3's
+result.</li>
+<li>Variable-amplitude duty is summed with Miner's rule, \( D=\sum n_i/N_i \), with lives
+read off the finite-life line \( S_f = aN^{\,b} \).</li>
+<li>Miner's rule ignores load order and real failures scatter between \( D\approx0.5 \) and
+\( D\approx2 \). Treat \( D=0.9 \) as no demonstrated margin.</li>
 </ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Factor of safety</td><td>\( n = S/\sigma \)</td><td>Comparing the strength relied on against the stress expected; state which \( S \).</td></tr>
-<tr><td>Allowable stress</td><td>\( \sigma_{allow} = S/n \)</td><td>The number you actually size against, once \( n \) is chosen.</td></tr>
-<tr><td>Load case</td><td>—</td><td>One credible loading condition with its own magnitude and source; parts fail under unlisted ones.</td></tr>
-<tr><td>Failure mode</td><td>—</td><td>Yield, rupture, fatigue, buckling, wear, leakage — decides which strength governs.</td></tr>
-<tr><td>Margin of safety</td><td>\( MS = n - 1 \)</td><td>Aerospace-style reporting; \( MS \ge 0 \) means the case is satisfied.</td></tr>
-<tr><td>Design vs analysis</td><td>—</td><td>Analysis returns a stress; design returns a size plus the reason for it.</td></tr>
-</tbody></table></div></div></section><section class="sum-lesson"><h3>Lesson 02 · Static failure design</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Principal stresses and Mohr's circle</b> (Strength of Materials) — the transformation itself, not just the formula.</li>
-<li><b>Yield strength</b> (Materials I L7) — a tensile-test number being borrowed for a multiaxial state.</li>
-<li><b>Factor of safety</b> (Lesson 1) — the allowable stress this lesson compares against.</li>
+</div></section><section class="sum-lesson"><h3>Lesson 05 · Shaft design</h3><div class="sum-recap">
+<ul>
+<li>A rotating shaft under fixed transverse load sees <em>fully reversed</em> bending
+(\( \sigma_m=0 \)) but <em>steady</em> torque (\( \tau_a=0 \)) — the two loads enter the
+fatigue criterion through different terms.</li>
+<li>DE-Goodman inverts to a diameter directly:
+\( d^3=\frac{16n}{\pi}\left[\frac{2K_fM_a}{S_e}+\frac{\sqrt3K_{fs}T_m}{S_{ut}}\right] \).</li>
+<li>Size at the critical section, not the maximum-moment section — a shoulder or keyway with a
+high \( K_f \) often governs.</li>
+<li>Diameter responds to the cube root: doubling the factor of safety costs only 26% more
+diameter, so fatigue margin on a shaft is cheap.</li>
+<li>Strength is not enough. Check bearing slope (about 0.001 rad) and gear-mesh deflection —
+stiffness depends on \( d^4 \) and \( E \), so a stronger steel does not help.</li>
+<li>Check first critical speed, \( \omega_n=\sqrt{k/m}=\sqrt{g/\delta} \), and keep the
+operating speed well below it.</li>
+<li>When a shaft is marginal, a bigger fillet radius, a ground finish, or a relocated keyway
+usually buys more life per unit cost than extra diameter.</li>
 </ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Von Mises stress</td><td>\( \sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2} \)</td><td>Ductile metals under static combined stress; the accurate default.</td></tr>
-<tr><td>Tresca stress</td><td>\( \sigma_{max}-\sigma_{min} \)</td><td>When the code or the consequence calls for the conservative theory.</td></tr>
-<tr><td>Principal stresses</td><td>\( \tfrac{\sigma_x+\sigma_y}{2}\pm\sqrt{(\tfrac{\sigma_x-\sigma_y}{2})^2+\tau_{xy}^2} \)</td><td>The input both theories need; remember the third principal is zero in plane stress.</td></tr>
-<tr><td>Stress concentration</td><td>\( \sigma_{max}=K_t\sigma_{nom} \)</td><td>Holes, fillets, keyways; mandatory under fatigue or in brittle material.</td></tr>
-<tr><td>Pure shear equivalence</td><td>\( S_{sy}\approx 0.577\,S_y \)</td><td>Shear yield from tensile yield, via von Mises.</td></tr>
-</tbody></table></div></div></section><section class="sum-lesson"><h3>Lesson 03 · Fatigue design I: the S–N method</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
-<li><b>Fatigue, S–N curves and crack initiation</b> (Materials I L8) — the physical mechanism this lesson quantifies.</li>
-<li><b>Stress concentration</b> (Lesson 2) — \( K_t \), and why fatigue withdraws the permission to ignore it.</li>
-<li><b>Tensile strength</b> (Materials I L7) — \( S_{ut} \) is the input the whole estimate hangs on.</li>
+</div></section><section class="sum-lesson"><h3>Lesson 06 · Keys, splines, and retaining hardware</h3><div class="sum-recap">
+<ul>
+<li>Torque reaches a clearance-fitted hub through a key; everything else follows from the
+tangential force \( F = 2T/d \).</li>
+<li>Two checks, same force, different areas: shear over \( wL \) along the interface, bearing
+over \( (h/2)L \) on the driving faces.</li>
+<li>The capacities divide down to \( T_{bearing}/T_{shear} = h/w \) — bearing governs for any
+key flatter than it is wide, and the two are equal for a square key.</li>
+<li>Key length is set by the hub, not by the torque: the Lesson 5 duty needs 7.3 mm and gets
+60 mm, about eight times the strength requirement.</li>
+<li>That surplus is intentional. Keys must survive start and stall transients, and the key is
+designed as the mechanical fuse — yielding near 1630 N·m against the shaft's 2610 N·m.</li>
+<li>A keyway costs \( K_f \ge 2 \) in the shaft. Splines (about 1070 N·m here, only ~25% of
+teeth assumed loaded) and interference fits (\( T=\mu p\pi d^2L/2 \), about 905 N·m) avoid
+the slot.</li>
+<li>Retaining rings carry thrust, not torque, and their groove dimensions — depth, width, corner
+radius — are structural, not cosmetic.</li>
 </ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
-<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
-<tbody>
-<tr><td>Specimen endurance limit</td><td>\( S_e' \approx 0.5\,S_{ut} \)</td><td>First estimate for wrought steel; a laboratory value, never a design stress.</td></tr>
-<tr><td>Corrected endurance limit</td><td>\( S_e = k_ak_bk_ck_dk_e S_e' \)</td><td>The number you actually design against.</td></tr>
-<tr><td>Surface factor</td><td>\( k_a = a\,S_{ut}^{\,b} \)</td><td>Machined, ground, hot-rolled, forged — the largest single knockdown.</td></tr>
-<tr><td>Size factor</td><td>\( k_b = 1.24\,d^{-0.107} \)</td><td>Round sections roughly 3–51 mm in bending or torsion.</td></tr>
-<tr><td>Reliability factor</td><td>\( k_e \)</td><td>A design choice about scatter: 0.897 at 90%, 0.814 at 99%, 0.753 at 99.9%.</td></tr>
-<tr><td>Stress amplitude</td><td>\( \sigma_a = (\sigma_{max}-\sigma_{min})/2 \)</td><td>The quantity fatigue responds to; compare this against \( S_e \).</td></tr>
-</tbody></table></div></div></section><h2 class="sum-course" id="sum-kinematics-machinery">KDM 252 — Kinematics &amp; Dynamics of Machinery</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p><h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p><h2 class="sum-course" id="sum-mfg-processes-3">MFG 254 — Manufacturing Processes III — Sheet, Plastics &amp; Additive</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p>
+</div></section><section class="sum-lesson"><h3>Lesson 07 · Threaded fasteners and bolted joints</h3><div class="sum-recap">
+<ul>
+<li>A preloaded joint is two springs in opposition: the bolt stretches, the members are
+compressed, and an external load is shared between them.</li>
+<li>\( C=k_b/(k_b+k_m) \) is the fraction of external load reaching the bolt. For M12 through
+a 40 mm steel grip, \( C=0.156 \) — a 20 kN load raises bolt tension by only 3.1 kN.</li>
+<li>\( F_b=F_i+CP \) and \( F_m=F_i-(1-C)P \), and always \( F_b-F_m=P \).</li>
+<li>Separation at \( P_0=F_i/(1-C) \) is usually the governing failure, not bolt yield — here
+2.25 against 4.05. Design for clamp force.</li>
+<li>Preload is normally \( 0.75A_tS_p \) for reusable joints; the tensile stress area follows
+from \( A_t=\frac{\pi}{4}(d-0.9382p)^2 \).</li>
+<li>Under cyclic load the bolt's amplitude is \( CP/2A_t \) — smaller than an unpreloaded bolt's
+by exactly \( 1/C \), here 6.4×. Tightening a bolt properly makes it last longer.</li>
+<li>Softening the members raises \( C \). A gasket at \( k_m/4 \) takes the bolt's stress
+amplitude from 18.5 to 50.4 MPa with no change to the applied load.</li>
+</ul>
+</div></section><section class="sum-lesson"><h3>Lesson 08 · Welded joint design</h3><div class="sum-recap">
+<ul>
+<li>Fillet welds are specified by leg \( h \) but fail on the throat \( t=0.707h \) — a
+6 mm fillet resists on 4.24 mm.</li>
+<li>Weld volume grows as \( h^2 \) while strength grows as \( h \), so long small fillets
+beat short large ones for the same capacity.</li>
+<li>An eccentric load on a weld group is solved exactly like a bolt group: direct shear
+\( P/A_w \) plus torsional shear \( Tr/J_u \), added as vectors at each corner.</li>
+<li>Use the unit-throat method — treat welds as lines, work in force per unit length, and divide
+by the allowable at the end to get the throat.</li>
+<li>On the worked bracket, eccentricity took 66.7 N/mm of direct shear to a resultant of
+316.6 N/mm — a factor of 4.75 from the moment alone.</li>
+<li>Welds crack at the toe, where a geometric notch, near-yield tensile residual stress, and the
+worst defects coincide.</li>
+<li>Weld fatigue strength is essentially independent of the parent steel's grade; details are
+classified by geometry, on \( \Delta\sigma^3N=\text{const} \).</li>
+<li>The cube law is severe: 80 → 100 MPa of stress range halves the life. Improve the detail or
+cut the range; do not upgrade the steel.</li>
+</ul>
+</div></section><section class="sum-lesson"><h3>Lesson 09 · Springs</h3><div class="sum-recap">
+<ul>
+<li>A helical spring works in torsion: the axial force acts at the mean coil radius, so
+\( T=FD/2 \).</li>
+<li>The Wahl factor \( K_W \) collects coil curvature and direct shear, putting peak stress on
+the inner fibre — 1.197 at \( C=7.5 \), and that is where springs fail.</li>
+<li>Spring index \( C=D/d \) should sit between about 4 and 12; below 4 the coil is hard to
+wind and \( K_W \) climbs steeply.</li>
+<li>Rate \( k=Gd^4/(8D^3N_a) \) — the fourth power means a 12% thinner wire loses 41% of the
+rate. Wire diameter is the design, not a tolerance.</li>
+<li>Check solid height \( L_s=dN_t \): a good spring survives being closed solid without
+yielding (here 564 MPa against 814, \( n=1.44 \)).</li>
+<li>Check buckling: stable while \( L_0<2.63D/\alpha \), with \( \alpha \) set by the end
+conditions.</li>
+<li>Springs cycle between two positive forces, so fatigue is a large-mean, small-amplitude
+Goodman problem in shear.</li>
+<li>Shot peening puts compression into the inner fibre where cracks start and typically buys 20%
+or more on endurance — usually the cheapest life available.</li>
+</ul>
+</div></section><section class="sum-lesson"><h3>Lesson 10 · Power screws</h3><div class="sum-recap">
+<ul>
+<li>A screw thread is an inclined plane wrapped round a cylinder:
+\( \tan\lambda=l/\pi d_m \), with \( d_m=d-p/2 \).</li>
+<li>Lead is travel per revolution and equals pitch only for a single start — a double start
+doubles the lead and the efficiency benefit that comes with it.</li>
+<li>Raising and lowering torques differ only in the sign of the friction terms; a positive
+\( T_L \) means the screw is self-locking.</li>
+<li>Self-locking requires \( \mu>\tan\lambda\cos\alpha \) — independent of load, but
+dependent on a friction coefficient that can drift with lubricant and wear.</li>
+<li>Self-locking caps efficiency: at the boundary it is 48.9%, and no self-locking screw exceeds
+50%. The worked screw runs at 30% on the thread alone.</li>
+<li>Thread angle enters through \( \sec\alpha \) — a square thread is the most efficient form
+and the hardest to manufacture.</li>
+<li>Collar friction \( T_c=F\mu_cd_c/2 \) does no useful work. Here it is 46% of the total
+torque and drops overall efficiency from 29.5% to 16.1%.</li>
+<li>A thrust bearing in place of a plain collar is usually the cheapest large improvement
+available.</li>
+</ul>
+</div></section><section class="sum-lesson"><h3>Lesson 11 · Design project: a driven shaft assembly</h3><div class="sum-recap">
+<ul>
+<li>State the duty once — \( T=P/\omega=108.3\ \mathrm{N\,m} \) — and reference it
+everywhere; every downstream number inherits it.</li>
+<li>Trace the load path: belt → pulley → key → shaft → bearings → pedestals → welds, with torque
+branching through the coupling.</li>
+<li>A belt drives on \( T_1-T_2 \) but loads the shaft with \( T_1+T_2 \) — here 866 N of
+useful force against a 1733 N transverse pull.</li>
+<li>Bending (130 N·m) exceeds torque (108 N·m), so this shaft is bending-governed, as belt drives
+usually are.</li>
+<li>Results: shaft 34.0 mm computed and 35 mm specified (\( n=2.19 \)); key \( n=6.0 \);
+friction-driven coupling bolts \( n=6.5 \); pedestal welds \( n=55 \).</li>
+<li>The margins span 25×. The design lives in the shaft; everything else is set by hub length,
+standard bolt size or minimum fillet — so that is where any improvement or uprate must go.</li>
+<li>Document so it can be reviewed: assumptions attributed, governing criterion named per
+component, and the computed answer kept distinct from the specified size.</li>
+</ul>
+</div></section><h2 class="sum-course" id="sum-kinematics-machinery">KDM 252 — Kinematics &amp; Dynamics of Machinery</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p><h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p><h2 class="sum-course" id="sum-mfg-processes-3">MFG 254 — Manufacturing Processes III — Sheet, Plastics &amp; Additive</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p>
 </article>
 </main>
 <footer class="nx-foot"><div class="in">
@@ -1237,6 +1270,6 @@ your part's surface, size and required reliability. Then it is a design stress.<
   <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../../assets/nx/nexus.js?v=acf1b14077"></script>
+<script src="../../assets/nx/nexus.js?v=b47a1e2322"></script>
 </body>
 </html>
