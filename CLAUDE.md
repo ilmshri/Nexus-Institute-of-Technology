@@ -1137,6 +1137,51 @@ NEXT (approved order, unstarted): machine-design-1, kinematics-machinery,
 metrology, mfg-processes-3 — closing Y2S2. 32 courses remain empty across
 Years 3-4 after that.
 
+CHECKPOINT — MACHINE-DESIGN-1 COMPLETE (2026-07-29, new session, commits
+9a037f82 + 053356c8, LOCAL ONLY — not pushed): machine-design-1 (MDN 251,
+Y2S2) finished L4-L11, joining the L1-L3 authored previously; 11/11 full
+Educational Units. Fatigue II (Goodman/Gerber/Soderberg + Miner with its
+scatter stated honestly), shaft design (DE-Goodman, deflection, critical
+speed), keys/splines/interference fits, bolted joints (joint stiffness and
+the load-sharing constant C), welded joints (throat vs leg, eccentric weld
+groups, weld-toe fatigue), springs (Wahl, rate as d^4, solid height,
+buckling), power screws (self-locking vs efficiency, collar loss), and an
+integrative capstone. One duty carries through the whole course — the
+Lesson 3 steel (Sut 600, Se 174 MPa) and the Lesson 5 shaft reappear in
+Lessons 6 and 11 — so cross-lesson numbers are checkable against each other.
+Career block SKF / Nord-Lock / Lesjöfors (fresh rotation, grep-verified none
+reused), tools.json entry added, recaps authored for L1-L3 so the course
+summary PDF leaves the legacy compiled-lecture fallback (11/11 recaps).
+Coverage 224→232/528 (42%→44%). Y2S2 now 3 of 6 done.
+
+VIDEO DIRECTIVE CHANGED (owner, 2026-07-29): the approved-channel list is
+WAIVED — any channel is acceptable. The integrity floor is NOT waived: every
+id must be oEmbed-verified live before entry, and fabricating ids stays
+prohibited regardless of instructions. All 11 MDN 251 lessons now carry
+verified embeds ({id,title,channel,verified:true}); titles and channels were
+copied from the oEmbed response, never typed by hand. Method note worth
+keeping: the first verification pass used Python urllib and every request
+failed with CERTIFICATE_VERIFY_FAILED — a local trust-store problem that says
+NOTHING about the videos. Re-run with curl, all 33 candidates returned 200.
+Do not read a transport error as a dead video.
+
+DIAGRAM QA — SCANNER REBUILT ON REAL FONT METRICS (2026-07-29). The previous
+overflow scanner estimated label width from a character count, which is ~34%
+low and produced both false positives and misses. The scanner now reads actual
+glyph advance widths out of /System/Library/Fonts/SFNS.ttf (a small pure-Python
+TrueType hmtx/cmap reader — no third-party deps) and applies a 1.18 calibration
+measured against getComputedTextLength() in the browser over 8 real labels
+(observed ratio 1.135-1.175; the browser picks a wider optical size than the
+font file's default instance at 10-12px). Run it before every build. It caught
+two collisions in this course's own new diagrams pre-ship, and 39 PRE-EXISTING
+defects across 9 already-shipped courses — 34 clipped labels (worst ran to
+x=737 in a 560 box, invisible in the browser because the outer SVG clips), 4
+same-row collisions, and 2 mid-word hyphen line-wraps that HTML renders with a
+stray space. All 39 fixed in 053356c8 with no numeric claim altered. One was
+also a correctness bug: thermo-1 L11's Otto cycle drew state 4 BELOW state 1
+and 3px away, when the P-V loop puts 4 above 1. Scanner is now clean across all
+21 content files.
+
 ## STANDING DIRECTIVE — Resources restructure (owner, 2026-07-24)
 
 Owner feedback: the site-wide "Reference" tab piled every course's equations
