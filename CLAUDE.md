@@ -1182,6 +1182,44 @@ also a correctness bug: thermo-1 L11's Otto cycle drew state 4 BELOW state 1
 and 3px away, when the P-V loop puts 4 above 1. Scanner is now clean across all
 21 content files.
 
+## STANDING DIRECTIVE — Y1+Y2 completion, videos, diagrams, summaries (owner, 2026-07-30)
+
+Four directives, given four times over in one message for emphasis. Binding and
+permanent; apply without being re-asked.
+
+1. VIDEOS — THE CHANNEL GATE IS DEAD. Y1 and Y2 carry many lessons still showing
+   "Lecture video — in production." Any video on YouTube or another accredited
+   platform that speaks precisely to the lecture's actual content is embedded
+   "without any questions asked." Topical fit is the ONLY editorial test; do not
+   stall a lesson hunting for a prestigious source. The single thing not waived
+   is that the id must be real — oEmbed-verify live and copy title/channel from
+   the response. That is anti-fabrication, not a quality gate. Shape:
+   {id,title,channel,verified:true} on the LESSON entry in data/y*.json.
+   (Verify with curl — this machine's Python trust store fails every
+   youtube.com request with CERTIFICATE_VERIFY_FAILED, which is not a dead video.)
+
+2. DIAGRAMS MUST BE CLEAN. Several are "not well-structured or tailored… many
+   components overlap." Overlap is NOT only text-vs-text: check text against
+   shapes and shapes against each other. drafts/qa_content.py originally covered
+   only text pairs and must be extended, then run over every authored course.
+
+3. NEVER START YEAR 3 UNTIL YEARS 1 AND 2 ARE COMPLETELY FINISHED. "Finished"
+   means every lesson authored AND carrying a video AND its diagrams clean. As of
+   2026-07-30 the gap is: kinematics-machinery, metrology, mfg-processes-3 (33
+   lessons unauthored) plus 129 Y1+Y2 lessons with no video. Y3/Y4 stay untouched.
+
+4. SUMMARIES — PER COURSE, NOT PER YEAR. The Curriculum tab's "year compiled
+   summary" is REJECTED; the owner does not approve of compiling by year. Every
+   course carries its own compiled summary on its own main page (the page listing
+   its 11 lessons). The printable PDF must be classically designed for revision:
+   ONE LECTURE PER PAGE — never two lectures on a page — generous spacing, text
+   given room to breathe, each lecture carrying its own fundamentals section in a
+   suitable structure, and never messy or anything other than formal classical
+   printed lecture notes. This necessarily edits nexus_build.py emission and the
+   print CSS that the design session nominally owns; the owner ordered it
+   directly and has previously confirmed the boundary flexes for summary/print
+   work. Flag the crossing in the commit; do not ask again.
+
 ## STANDING DIRECTIVE — Resources restructure (owner, 2026-07-24)
 
 Owner feedback: the site-wide "Reference" tab piled every course's equations
