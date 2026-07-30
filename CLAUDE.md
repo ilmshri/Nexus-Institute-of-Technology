@@ -1220,6 +1220,29 @@ permanent; apply without being re-asked.
    directly and has previously confirmed the boundary flexes for summary/print
    work. Flag the crossing in the commit; do not ask again.
 
+PROGRESS AGAINST THE 2026-07-30 DIRECTIVES (as of commit 8776199b, local only):
+  1. VIDEOS — DONE for all authored content. 231/231 authored Y1+Y2 lessons
+     carry a verified embed (was 135/231); embeds 248 -> 462. Remaining
+     "in production" panels exist ONLY in courses with no lessons written yet.
+     Tooling: drafts/addvideos.py verifies via curl and refuses to write an id
+     that does not return 200 — three candidates returned 401/403 (embedding
+     disabled) and were replaced, not shipped.
+  2. DIAGRAMS — PARTIAL. The text-overflow and text-vs-text collision scanner is
+     clean across all 21 content files (39 defects fixed in 053356c8). NOT yet
+     done: text-vs-shape and shape-vs-shape overlap, which is what the owner's
+     "components overlap" most likely refers to. drafts/qa_content.py needs
+     extending before that can be claimed.
+  3. YEAR 3 — untouched, as ordered.
+  4. SUMMARIES — infrastructure DONE (362952a8), content PARTIAL. The year and
+     semester compiled documents are deleted and each course now owns its
+     summary, printed as a two-page classical spread per lesson (key points
+     recto; assumed knowledge + glossary verso), measured to fit A4 with zero
+     overflow. BUT only 7 of 21 authored courses (Y1S1's six + machine-design-1)
+     have the per-lesson `recap` this design renders. The other 14 courses —
+     154 lessons — still fall back to the legacy compiled lecture dump, which is
+     the artefact the owner rejected. Writing those 154 recaps is the single
+     biggest remaining task and is pure content authoring.
+
 ## STANDING DIRECTIVE — Resources restructure (owner, 2026-07-24)
 
 Owner feedback: the site-wide "Reference" tab piled every course's equations
