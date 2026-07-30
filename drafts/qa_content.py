@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))  # drafts/ttfwidth.py
 from ttfwidth import metrics          # real SF NS advance widths, not a guess
 from svggeom import shapes_in, text_hits_shape, text_box
+import qa_sequence                   # curriculum-sequencing gates (a)-(d)
 
 VIEWBOX_W = 560
 
@@ -249,6 +250,24 @@ def main(argv):
             for n, s in sorted(off.items()):
                 print(f"  {n}: " + ", ".join(
                     f"{a}+{b} x{len(v)}" for (a, b), v in sorted(s.items())))
+    # Curriculum-sequencing gates (owner directive, 2026-07-31). Course-level
+    # and cross-file, so they live in qa_sequence.py and are summarised here.
+    seq, vstats = qa_sequence.run(Path("."), files)
+    counts = {}
+    for kind, cid, lid, msg in seq:
+        counts[kind] = counts.get(kind, 0) + 1
+    if seq:
+        print("\nSEQUENCING — run `python3 drafts/qa_sequence.py` for detail:")
+        for kind, label in (("a", "declared forward reference"),
+                            ("b", "undeclared forward reference"),
+                            ("c", "cross-course prerequisite direction"),
+                            ("d", "video is a numbered series instalment"),
+                            ("d-order", "series numbering vs our lesson order")):
+            if counts.get(kind):
+                print(f"  ({kind}) {label}: {counts[kind]}")
+        print(f"  {vstats['instalments']} of {vstats['embeds']} embeds are "
+              f"series instalments")
+
     print(f"\n{len(files)} file(s) scanned — {len(issues)} issue(s)"
           f"{' (quiz contract enforced)' if strict_quiz else ''}.")
     return 1 if issues else 0

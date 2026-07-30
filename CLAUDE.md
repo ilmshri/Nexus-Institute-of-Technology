@@ -1347,3 +1347,41 @@ STILL OWNER-GATED (unchanged): any push/pull/fetch or GitHub-side action —
 mechedkw org + mechedkw.github.io repo, code-home rename, domain
 registrations (mechedkw.com / meched.institute — free as of 2026-07-26),
 Kuwait MOCI trademark check, Feedback-page issue-creation flip, deploy.
+
+## STANDING DIRECTIVE — curriculum sequencing (owner, 2026-07-31)
+
+Binding and permanent. Triggered by MTH 101 L2 (limits), which embedded MIT
+18.01 Lec 2 — a lecture that opens by recalling the derivative, which our
+course does not teach until L3. Our lesson order was right; the video
+assignment was wrong. The video pass matched topically, one lesson at a time,
+with no ordering constraint, so the defect is systemic rather than isolated.
+
+1. **A lesson may never assume anything not already taught in an earlier
+   lesson.** The lesson is the unit the student trusts.
+2. **Never reorder a course to match a video series — re-source the video.**
+   The one exception is when OUR order is genuinely wrong pedagogically, in
+   which case fix our order and say so explicitly.
+3. **Prefer self-contained videos over numbered instalments of a semester
+   course, EVEN when the numbering lines up.** An instalment carries the
+   previous lecture's context, notation and running examples our student never
+   saw. Keep one only where we have deliberately mirrored a consecutive run in
+   the same order.
+4. **Integrity floor unchanged:** every replacement id oEmbed-verified live
+   with curl, title and channel copied from the response, never typed by hand.
+
+GATES: `drafts/qa_sequence.py`, run automatically by `drafts/qa_content.py`.
+  (a) declared forward reference — a foundations "What this lesson assumes"
+      entry citing a later lesson of the same course.
+  (b) undeclared forward reference — a lesson using a term its own course does
+      not introduce (glossary row or keybox tag) until a later lesson.
+  (c) cross-course prerequisite direction — a cited course must precede this
+      one in curriculum order, and the cited lesson number must exist.
+  (d) series instalment — an embedded video whose title or channel marks it as
+      a numbered instalment, plus any course drawing several videos from one
+      series with the numbering not rising with our lesson order.
+
+Check (b) is a signal, not a verdict: it cannot tell "assumes X" from "mentions
+X, which Lesson 5 will cover", and ordinary words that happen to head a
+glossary row ("method", "weight", "series") show up as noise. Triage before
+acting — the informative filter is whether the term is load-bearing in the
+earlier lesson's quiz or keybox.
