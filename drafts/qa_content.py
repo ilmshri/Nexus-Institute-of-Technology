@@ -16,6 +16,7 @@ Gates (each has caught a real defect in this project):
 import json
 import re
 import sys
+from html import unescape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))  # drafts/ttfwidth.py
@@ -29,7 +30,7 @@ COMPANIES = [
     "Kuwait Steel", "Gulf Cable", "Gulf Glass", "Mabanee", "Bechtel",
     "Siemens", "ABB", "Schneider", "Caterpillar", "Cummins",
     "Toyota", "Boeing", "Airbus", "Alfa Laval", "Danfoss",
-    "Vertiv", "Carrier", "Mitsubishi", "Atlas Copco", "Sandvik",
+    "Vertiv", "Mitsubishi", "Atlas Copco", "Sandvik",
     "Lincoln Electric", "Stratasys", "Omron", "Texas Instruments",
     "Analog Devices", "SKF", "Nord-Lock", "Lesjofors",
     "Timken", "Bosch", "Parker Hannifin", "Emerson", "Honeywell",
@@ -40,7 +41,14 @@ COMPANIES = [
 # sense, never the company. Company names legitimately live only in the career
 # blocks in data/y*.json, which this scanner does not cover — check those by
 # hand when writing one.
-AMBIGUOUS = {}
+# "Carrier" is ordinary machinery vocabulary — the planet carrier of an
+# epicyclic train (KDM 252 L6 uses it in almost every sentence), the carrier
+# gas of a process, the charge carriers of a semiconductor. Matching the bare
+# word produced a false positive per lesson, so it is checked only in a form
+# that can only be the company.
+AMBIGUOUS = {
+    "Carrier": r"\bCarrier\s+(Corporation|Corp\.?|Global|Air Conditioning)\b",
+}
 
 
 def texts_in_figures(html):
@@ -67,7 +75,10 @@ def texts_in_figures(html):
             anchor = a("text-anchor", "start")
             weight = a("font-weight", "400")
             tfill = a("fill")
-            content = re.sub(r"<[^>]+>", "", body)
+            # Entities must be decoded before measuring: "&#956; = 46.4&#176;"
+            # is nine rendered glyphs, not eighteen. Measuring the raw source
+            # made every entity-bearing label read ~2.3x too wide.
+            content = unescape(re.sub(r"<[^>]+>", "", body))
             yield fi, vbw, x, y, anchor, size, weight, content, tfill
 
 
@@ -134,6 +145,15 @@ def gate_text(name, lid, field, html, issues):
                       f"({html.count(chr(92)+'(')} vs {html.count(chr(92)+')')})")
     if html.count(r"\[") != html.count(r"\]"):
         issues.append(f"{name} L{lid} {field}: unbalanced \\[ \\]")
+    # A doubled backslash reaches the browser as a literal "\\(" and MathJax
+    # leaves the whole expression as raw text. Caused by an r"..." literal in
+    # an authoring script that also escaped the delimiter.
+    for tok in (r"\\(", r"\\)", r"\\[", r"\\]"):
+        if tok in html:
+            i = html.index(tok)
+            issues.append(f"{name} L{lid} {field}: double-escaped math "
+                          f"delimiter {tok!r} — {html[max(0,i-40):i+25]!r}")
+            break
     for c in COMPANIES:
         if re.search(rf"\b{re.escape(c)}\b", html):
             issues.append(f"{name} L{lid} {field}: company name {c!r} "
@@ -184,6 +204,20 @@ def main(argv):
                 if field == "lecture":
                     gate_svg(name, lid, field, html, issues)
             quiz = les.get("quiz")
+            # Quiz strings were outside every text gate until 2026-07-31, which
+            # is exactly where a double-escaped delimiter survived a clean scan.
+            if isinstance(quiz, list):
+                for qi, q in enumerate(quiz):
+                    if not isinstance(q, dict):
+                        continue
+                    for key in ("q", "solution"):
+                        if isinstance(q.get(key), str):
+                            gate_text(name, lid, f"quiz[{qi}].{key}",
+                                      q[key], issues)
+                    for ci, ch in enumerate(q.get("choices", []) or []):
+                        if isinstance(ch, str):
+                            gate_text(name, lid, f"quiz[{qi}].choices[{ci}]",
+                                      ch, issues)
             if isinstance(quiz, list):
                 if strict_quiz:
                     gate_quiz(name, lid, quiz, issues)
