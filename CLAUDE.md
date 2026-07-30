@@ -1220,7 +1220,20 @@ permanent; apply without being re-asked.
    directly and has previously confirmed the boundary flexes for summary/print
    work. Flag the crossing in the commit; do not ask again.
 
-PROGRESS AGAINST THE 2026-07-30 DIRECTIVES (as of commit 8776199b, local only):
+PROGRESS AGAINST THE 2026-07-30 DIRECTIVES (updated at commit 55f2e0ff, local only):
+  1. VIDEOS — DONE. 231/231 authored Y1+Y2 lessons carry a verified embed.
+  2. DIAGRAMS — DONE for label-vs-artwork geometry: findings 161 -> 35 via
+     drafts/svggeom.py + drafts/nudge_labels.py (108 labels repositioned). The
+     35 that remain are long labels crossing full-height rules; they need
+     rewording or a leader, which is authoring judgement, not geometry.
+  3. YEAR 3 — untouched, as ordered. Y1+Y2 still needs its last 3 courses.
+  4. SUMMARIES — DONE. All 154 missing recaps written, so all 21 authored
+     courses now render the per-course classical two-page spread; ZERO remain on
+     the legacy compiled dump.
+  REMAINING BEFORE YEAR 2 IS CLOSED: kinematics-machinery, metrology and
+  mfg-processes-3 — 33 lessons unauthored, plus their videos.
+
+SUPERSEDED SNAPSHOT (kept for the audit trail), as of commit 8776199b:
   1. VIDEOS — DONE for all authored content. 231/231 authored Y1+Y2 lessons
      carry a verified embed (was 135/231); embeds 248 -> 462. Remaining
      "in production" panels exist ONLY in courses with no lessons written yet.
