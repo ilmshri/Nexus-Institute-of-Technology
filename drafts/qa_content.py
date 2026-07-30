@@ -20,6 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))  # drafts/ttfwidth.py
 from ttfwidth import metrics          # real SF NS advance widths, not a guess
+from svggeom import shapes_in, text_hits_shape, text_box
 
 VIEWBOX_W = 560
 
@@ -65,8 +66,9 @@ def texts_in_figures(html):
             size = float(a("font-size", "12"))
             anchor = a("text-anchor", "start")
             weight = a("font-weight", "400")
+            tfill = a("fill")
             content = re.sub(r"<[^>]+>", "", body)
-            yield fi, vbw, x, y, anchor, size, weight, content
+            yield fi, vbw, x, y, anchor, size, weight, content, tfill
 
 
 def span(x, anchor, size, weight, content):
@@ -80,22 +82,44 @@ def span(x, anchor, size, weight, content):
 
 def gate_svg(name, lid, field, html, issues):
     rows = list(texts_in_figures(html))
-    for fi, vbw, x, y, anchor, size, weight, content in rows:
+    for fi, vbw, x, y, anchor, size, weight, content, _tf in rows:
         x0, x1 = span(x, anchor, size, weight, content)
         if x1 > vbw or x0 < 0:
             issues.append(
                 f"{name} L{lid} {field}: SVG overflow fig{fi} "
                 f"[{x0:.0f},{x1:.0f}] outside 0..{vbw:.0f} — {content!r}")
+    # labels colliding with the DRAWING (owner 2026-07-30: "components overlap").
+    # Text-vs-text alone missed this class entirely.
+    for fi, fig in enumerate(re.findall(r"<figure.*?</figure>", html, re.S)):
+        shapes = list(shapes_in(fig))
+        for r in rows:
+            if r[0] != fi:
+                continue
+            _, _, x, y, anchor, size, weight, content, tfill = r
+            if not content.strip():
+                continue
+            tbox = text_box(x, y, anchor, size, weight, content)
+            for sh in shapes:
+                if text_hits_shape(tbox, sh, tfill):
+                    issues.append(
+                        f"{name} L{lid} {field}: label over {sh['kind']} "
+                        f"<{sh['name']}> fig{fi} — {content!r}")
+                    break
+
     # collisions: same figure, y within 6 units, x-ranges overlap
     for i in range(len(rows)):
         for j in range(i + 1, len(rows)):
-            fi, _, xi, yi, ai, si, wi, ci = rows[i]
-            fj, _, xj, yj, aj, sj, wj, cj = rows[j]
-            if fi != fj or abs(yi - yj) > 6:
+            fi, _, xi, yi, ai, si, wi, ci, _a = rows[i]
+            fj, _, xj, yj, aj, sj, wj, cj, _b = rows[j]
+            if fi != fj:
                 continue
-            i0, i1 = span(xi, ai, si, wi, ci)
-            j0, j1 = span(xj, aj, sj, wj, cj)
-            if i0 < j1 and j0 < i1:
+            bi = text_box(xi, yi, ai, si, wi, ci)
+            bj = text_box(xj, yj, aj, sj, wj, cj)
+            if not (bi[0] < bj[2] and bj[0] < bi[2]
+                    and bi[1] < bj[3] and bj[1] < bi[3]):
+                continue
+            i0, i1, j0, j1 = bi[0], bi[2], bj[0], bj[2]
+            if True:
                 issues.append(
                     f"{name} L{lid} {field}: SVG collision fig{fi} y≈{yi:.0f} "
                     f"— {ci!r} [{i0:.0f},{i1:.0f}] vs {cj!r} [{j0:.0f},{j1:.0f}]")
