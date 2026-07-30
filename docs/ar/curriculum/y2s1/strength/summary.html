@@ -73,298 +73,19 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-strength">SOM 201 — Strength of Materials</h2>
-<p class="ref-thin">Condensed per-lesson recaps are not written for this course yet,
-so this document is the full compiled text in the meantime.</p>
-<h2 class="sum-part sum-nobreak">Part 1 — Lectures</h2>
 
-<section class="sum-lesson"><h3>Lesson 01 · Stress and strain under axial load</h3><div class="measure">
-<h3>01 · Stress: force made local</h3>
-<p>A load of a few kilonewtons means nothing to a material until it is spread over an
-area. <b>Normal stress</b> \( \sigma = P/A \) is that intensity — force per unit area,
-in pascals (N/m²), or in engineering practice megapascals. A 100&nbsp;kN pull on a
-25&nbsp;mm round bar (\( A=\tfrac{\pi}{4}d^2=490.9\ \text{mm}^2 \)) is
-\( \sigma=100{,}000/490.9\times10^{-6}\approx204\ \text{MPa} \). The same force on a
-thicker bar is a gentler stress. Stress, not force, is what a material feels, and it is
-the quantity every allowable is written against.</p>
-<h3>02 · Strain: deformation made dimensionless</h3>
-<p><b>Normal strain</b> \( \varepsilon = \delta/L \) is the stretch per unit length —
-a pure number. It divides out the specimen size so that a 1&nbsp;mm stretch in a
-1&nbsp;m bar (\( \varepsilon=0.001 \)) and a 2&nbsp;mm stretch in a 2&nbsp;m bar describe
-the <em>same</em> material state. This normalisation is why stress and strain, not force
-and elongation, are the axes of the material's fingerprint: they belong to the material,
-not to the part.</p>
-<h3>03 · Hooke's law and the elastic contract</h3>
-<p>Over the initial straight portion of the tensile curve, stress is proportional to
-strain: \( \sigma = E\varepsilon \). The slope \(E\) is <b>Young's modulus</b> — steel's
-is about 200&nbsp;GPa — a stiffness the material carries regardless of shape. Combining
-the three relations gives the workhorse deformation formula
-\( \delta = \dfrac{PL}{AE} \). An 80&nbsp;kN load on a 2&nbsp;m steel bar of 20&nbsp;mm
-diameter stretches it \( \delta=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}
-\approx2.55\ \text{mm} \). Longer and softer stretches more; thicker and stiffer stretches
-less — all four factors sit in one fraction.</p>
-<h3>04 · Reading the tensile curve as a contract</h3>
-<p>The tensile test is the material's signed contract. The <b>proportional limit</b> ends
-Hooke's law; the <b>yield strength</b> marks the onset of permanent deformation — the
-number most designs are kept below; the <b>ultimate strength</b> is the peak the specimen
-can carry; and the strain at fracture measures <b>ductility</b>, the warning a part gives
-before it breaks. Design keeps the working stress a chosen margin below yield, expressed
-as a <b>factor of safety</b> \( \text{FoS}=\sigma_{\text{yield}}/\sigma_{\text{allow}} \):
-a 250&nbsp;MPa yield held to a 160&nbsp;MPa allowable is a FoS of about 1.56.</p>
-<h3>05 · Why this lesson is the foundation of the course</h3>
-<p>Every later topic — torsion, bending, combined loading, buckling, fatigue — is this
-same logic applied to a different stress: define the stress from the load and geometry,
-relate it to a strain through an elastic law, and compare against an allowable drawn from
-the tensile contract. The stress–strain diagram is therefore not one lesson among many but
-the template for all of them. Master reading it — where the straight part ends, how much
-warning the ductility gives, what margin the factor of safety buys — and the rest of
-Strength of Materials becomes variations on a theme you already understand. The habit of
-converting a raw force into a local stress, and only then judging safety, is the single
-most important reflex the course installs.</p>
-</div></section><section class="sum-lesson"><h3>Lesson 02 · Axial members and thermal stress</h3><div class="measure">
-<h3>01 · Bars in series: deformations add</h3>
-<p>Real members are rarely one uniform prism. A <b>stepped bar</b> — segments of different
-area or load — deforms by the sum of its parts: \( \delta=\sum \dfrac{P_iL_i}{A_iE_i} \).
-Each segment carries its own internal force (found by a free-body cut) over its own length
-and area. The method is bookkeeping: cut, find \(P_i\), compute each \( \delta_i \), add
-with sign. Tension lengthens (+), compression shortens (−); the signs must be respected or
-a stretch and a squeeze will wrongly cancel.</p>
-<h3>02 · Statically indeterminate axial problems</h3>
-<p>When a bar is held at both ends, statics alone cannot find the internal forces — there
-are more unknown reactions than equilibrium equations. The missing equation is
-<b>compatibility</b>: a geometric statement about how the deformations must fit, usually
-"the total length change is zero" or "the two segments share the same displacement."
-Pairing equilibrium with compatibility and Hooke's law closes the problem. This trio —
-equilibrium, compatibility, material law — is the general recipe for every indeterminate
-structure in the curriculum, first met here in its simplest axial form.</p>
-<h3>03 · Thermal strain and free expansion</h3>
-<p>Temperature changes strain a material even with no load: \( \varepsilon_T=\alpha\,\Delta T \),
-where \( \alpha \) is the coefficient of thermal expansion (steel \(\approx12\times10^{-6}
-/^\circ\text{C}\)). A 50&nbsp;°C rise gives \( \varepsilon_T=600\times10^{-6} \) — a free
-bar simply grows by \( \alpha\,\Delta T\,L \) and feels no stress. Thermal strain is real
-deformation; it becomes a stress only when something stops it.</p>
-<h3>04 · Thermal stress: expansion against restraint</h3>
-<p>Restrain that bar between rigid walls so it cannot grow, and the thermal strain is
-converted entirely into mechanical strain of the opposite sign — a compressive stress
-\( \sigma=E\alpha\,\Delta T \). For steel over 50&nbsp;°C:
-\( \sigma=200\times10^9\times12\times10^{-6}\times50=120\ \text{MPa} \), independent of the
-bar's length or area. That length-independence surprises students and explains real
-failures: a fully restrained pipe run heated 50&nbsp;°C carries 120&nbsp;MPa whether it is
-one metre or one hundred. Expansion joints, loops, and sliding supports exist precisely to
-give thermal strain somewhere to go before it becomes stress.</p>
-<h3>05 · The engineering lesson</h3>
-<p>The pattern to carry forward: deformation is additive over segments, indeterminate
-problems need compatibility, and temperature is just another source of strain that turns
-into stress only under restraint. The thermal case is the embryo of the entire piping- and
-pressure-stress world of later courses — where a plant's thermal cycling, not its pressure,
-is often the fatigue driver. An engineer who instinctively asks "is this free to expand, or
-restrained?" before worrying about the temperature itself has absorbed the core of this
-lesson. The arithmetic is easy; the modelling judgement — free versus restrained, determinate
-versus indeterminate — is the skill. It is worth stressing the counter-intuitive part once more: thermal stress is set by the temperature change, the material, and the degree of restraint alone, never by how long the member is. A designer who adds length hoping to relieve a restrained thermal load achieves nothing; only giving the expansion room — a loop, a joint, a sliding support — actually lowers the stress. That single insight prevents a whole class of piping and structural failures.</p>
-</div></section><section class="sum-lesson"><h3>Lesson 03 · Torsion of shafts</h3><div class="measure">
-<h3>01 · Twisting a shaft</h3>
-<p>A driveline transmits power by torque, and torque twists. For a circular shaft the
-<b>torsion formula</b> \( \tau=\dfrac{Tr}{J} \) gives the shear stress at radius \(r\),
-where \(J\) is the polar second moment of area — \( J=\dfrac{\pi d^4}{32} \) for a solid
-shaft. Stress is zero on the axis and maximum at the surface, so shafts are loaded most
-where they can be inspected. The surface stress can be written directly as
-\( \tau_{\max}=\dfrac{16T}{\pi d^3} \), the sizing formula an engineer reaches for first.</p>
-<h3>02 · Angle of twist</h3>
-<p>How much a shaft rotates end-to-end is \( \varphi=\dfrac{TL}{GJ} \), the torsional twin
-of \( \delta=PL/AE \): torque replaces force, the shear modulus \(G\) replaces \(E\), and
-\(J\) replaces \(A\). The parallel is exact and worth holding onto — axial and torsional
-members obey the same load–stiffness–geometry logic. Excess twist matters even when stress
-is safe: a shaft that winds up too much upsets timing, gear meshing, and control response.</p>
-<h3>03 · Power, torque, and speed</h3>
-<p>Rotating machines are rated in power, but shafts are sized by torque, so the link
-\( P=T\omega \) is used constantly. With speed in rev/min, \( \omega=\dfrac{2\pi N}{60} \).
-A 15&nbsp;kW motor at 1500&nbsp;rev/min turns at \( \omega=157.1\ \text{rad/s} \) and
-delivers \( T=P/\omega=15{,}000/157.1=95.5\ \text{N·m} \). Halving the speed for the same
-power doubles the torque — which is why low-speed drives need fat shafts, and why a
-gearbox that reduces speed must be built for the torque it raises.</p>
-<h3>04 · Sizing and reading failures</h3>
-<p>To size a solid shaft, invert the surface-stress formula:
-\( d=\left(\dfrac{16T}{\pi\tau_{\text{allow}}}\right)^{1/3} \) — the cube root is why a
-modest torque increase needs only a small diameter increase, and why hollow shafts (most
-material at large radius, where it works hardest) are so efficient. Torsional failures read
-their own history: a ductile shaft shears flat across the section (maximum shear on the
-transverse plane), while a brittle shaft breaks on a 45° helix (maximum tension on the
-diagonal). The fracture surface names the failure mode before any calculation. This
-stress-at-a-radius reasoning returns directly in the rotating-equipment and machine-design
-courses, where shaft sizing is a daily task.</p>
-<h3>05 · Why torsion generalises the axial story</h3>
-<p>Torsion is the second instance of the course's master pattern, and seeing it as such is
-the point: a load (torque) produces a stress (shear) that varies with geometry (\(r\) and
-\(J\)), relates to a deformation (twist) through a material stiffness (\(G\)), and is judged
-against an allowable. Where axial members spread force over an area, shafts spread torque
-over a radius distribution — but the modelling grammar is identical. An engineer who has
-internalised \( \delta=PL/AE \) already half-knows \( \varphi=TL/GJ \); the remaining work
-is recognising which geometry factor plays the role of \(A\). That transfer of structure, lesson to lesson, is what turns a list of formulas into a single competence. The same recognition makes the hollow-shaft insight obvious rather than memorised: because stress rises with radius, material near the axis barely earns its weight, so removing it costs little strength and saves much mass — the reason drive shafts and structural tubes are hollow by default.</p>
-</div></section><section class="sum-lesson"><h3>Lesson 04 · Bending and transverse shear in beams</h3><div class="measure">
-<h3>01 · Bending stress from plane sections</h3>
-<p>A beam resists transverse load by bending, and bending puts one face in tension and the
-other in compression, with a neutral axis of zero stress between. Assuming plane sections
-stay plane, strain varies linearly with distance \(y\) from the neutral axis, and so — through
-Hooke's law — does stress. Integrating that stress into a resisting moment gives the
-<b>flexure formula</b> \( \sigma=\dfrac{My}{I} \), where \(I\) is the second moment of area
-of the cross-section. Stress is largest at the extreme fibre, farthest from the neutral
-axis.</p>
-<h3>02 · Section modulus, the designer's currency</h3>
-<p>Evaluating the flexure formula at the extreme fibre \(c\) gives
-\( \sigma_{\max}=\dfrac{M}{S} \), where \( S=I/c \) is the <b>section modulus</b> — a single
-number that captures a section's bending efficiency. A rectangular section
-\(b\times h\) has \( I=\dfrac{bh^3}{12} \) and \( S=\dfrac{bh^2}{6} \). For \(b=50\),
-\(h=100\) mm: \( I=4.17\times10^6\ \text{mm}^4 \), \( S=83{,}333\ \text{mm}^3 \), so a
-10&nbsp;kN·m moment gives \( \sigma=M/S=10\times10^6/83{,}333=120\ \text{MPa} \). Because
-\(S\propto h^2\), depth matters far more than width — the reason beams are tall, not fat.</p>
-<h3>03 · Transverse shear and shear flow</h3>
-<p>Bending rarely comes alone; the transverse load also produces a <b>shear stress</b>
-\( \tau=\dfrac{VQ}{Ib} \), where \(V\) is the shear force, \(Q\) the first moment of the area
-beyond the level of interest, and \(b\) the width there. Shear stress is greatest at the
-neutral axis — opposite to bending stress — which is why an I-beam puts material in flanges
-(far out, for bending) and a thin web at the centre (to carry shear). The related idea of
-<b>shear flow</b> \( q=VQ/I \) sizes the fasteners or welds that hold a built-up section
-together.</p>
-<h3>04 · Designing a beam</h3>
-<p>The design task inverts the flexure formula: for a required moment and an allowable
-stress, the section must supply \( S\ge M/\sigma_{\text{allow}} \). Choosing the lightest
-section that meets this — a deep, thin-webbed shape — is the everyday work of structural and
-machine design, and \(S\) is the number tabulated for every standard beam. Bending stress
-usually governs, but the shear check at the neutral axis must not be skipped for short, heavily
-loaded beams, where shear can control. Reading which of the two governs — long slender beams
-by bending, short stubby ones by shear — is the judgement this lesson trains.</p>
-<h3>05 · Bending as the course's capstone stress</h3>
-<p>Bending combines everything before it: an internal moment (from statics), a linear stress
-distribution (from plane sections and Hooke's law), a geometry factor (\(I\) and \(S\)), and
-an allowable (from the tensile contract). It is the axial and torsional grammar applied to a
-stress that varies across the section rather than being uniform or radial. Mastering the
-section modulus — why depth is cubed into \(I\) but squared into \(S\), why beams are oriented
-tall — equips the machine-design and structures courses that follow, where beam selection is
-routine. The through-line of Strength of Materials is now complete: define the stress, relate
-it to strain, judge it against an allowable — for axial, torsional, and bending members alike.</p>
-</div></section><section class="sum-lesson"><h3>Lesson 05 · Beam deflection</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="The elastic curve of a cantilever beam with a tip load, deflection growing smoothly from zero at the fixed end to a maximum at the free tip"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">The elastic curve: a cantilever under a tip load</text><line x1="66" y1="255" x2="540" y2="255" stroke="#16202e" stroke-width="1.3"/><line x1="66" y1="255" x2="66" y2="60" stroke="#16202e" stroke-width="1.3"/><text x="303" y="277" text-anchor="middle" fill="#16202e" font-size="11">position along beam, x/L →</text><text x="20" y="180" fill="#16202e" font-size="11" transform="rotate(-90 20 180)">deflection, v(x)/v_max →</text><rect x="60" y="240" width="12" height="30" fill="#16202e"/><polyline points="66.0,255.0 81.8,254.7 97.6,253.7 113.4,252.2 129.2,250.0 145.0,247.3 160.8,244.1 176.6,240.3 192.4,236.0 208.2,231.3 224.0,226.1 239.8,220.5 255.6,214.4 271.4,208.0 287.2,201.2 303.0,194.1 318.8,186.6 334.6,178.8 350.4,170.8 366.2,162.4 382.0,153.9 397.8,145.1 413.6,136.2 429.4,127.0 445.2,117.7 461.0,108.3 476.8,98.8 492.6,89.2 508.4,79.5 524.2,69.7 540.0,60.0" fill="none" stroke="#3a6ea5" stroke-width="2"/><path d="M540,60 L525,50 M540,60 L525,70" stroke="#c2820f" stroke-width="2" fill="none"/><text x="470" y="45" fill="#c2820f" font-size="11" font-weight="600">P — tip load</text><text x="70" y="230" fill="#16202e" font-size="10">fixed: v=0, v′=0</text><text x="16" y="292" fill="#16202e" font-size="11">δ_max = PL³/(3EI) at the tip — both deflection AND slope are zero at the wall</text></svg><figcaption>The elastic curve for a cantilever under a tip load satisfies both boundary conditions at the fixed end — zero deflection and zero slope — and curves smoothly to its maximum at the free tip.</figcaption></figure>
-
-<h3>01 · The elastic curve, from curvature</h3>
-<p>Beam curvature relates directly to bending moment, \( 1/\rho=M/(EI) \), and for the small deflections this course works with, curvature is well approximated by the second derivative of the deflection curve, giving the governing equation \[ EIv''=M(x). \] Integrating once gives slope, \( EIv'=\int M\,dx+C_1 \); integrating again gives deflection, \( EIv=\iint M\,dx\,dx+C_1x+C_2 \) — with the constants fixed by the actual boundary conditions at the supports.</p>
-
-<h3>02 · A worked cantilever, and reading the shape</h3>
-<p>For a cantilever fixed at \(x=0\) with a point load \(P\) at the free tip \(x=L\): \[ v(x)=\frac{P}{6EI}\left(3Lx^2-x^3\right), \] with maximum deflection at the tip, \[ \delta=v(L)=\frac{PL^3}{3EI}. \] The shape reflects both boundary conditions used at the wall — zero deflection <em>and</em> zero slope — curving away smoothly and accelerating toward the free end.</p>
-
-<h3>03 · Superposition — why it works</h3>
-<p>Because \(EIv''=M(x)\) is linear in \(v\), the deflection from several loads acting together is simply the sum of the deflections each would cause acting alone — <b>superposition</b>. This turns most practical beam-deflection problems from re-deriving a new differential-equation solution every time into a lookup-and-add exercise: break the actual loading into pieces matching a table of standard cases (cantilever tip load, cantilever uniform load, simply-supported centre load, and so on), find each piece's deflection, and add them.</p>
-
-<h3>04 · Stiffness as a distinct failure mode</h3>
-<p>A beam can be entirely safe against stress failure — well below yield — and still fail the actual application because it deflects too much: a machinery baseplate that flexes enough to misalign a coupling, a walkway that feels unacceptably springy. <b>Stiffness</b>, governed by \(EI\) and geometry, is a separate design criterion from <b>strength</b>, governed by section modulus and allowable stress (Lesson 4) — a design can be strength-limited or stiffness-limited, and which one actually governs must be checked explicitly, never assumed. Working method: (1) identify loading and supports, matching or superposing standard cases; (2) check both bending stress and deflection against whatever serviceability limit applies, often a fraction of span such as \(L/360\); (3) whichever check is more restrictive governs the real design.</p>
-<div class="keybox"><span class="tag">Key result — cantilever tip deflection</span>
-<p>\[ \delta = \frac{PL^3}{3EI} \]</p><p>Stiffness (this) and strength (Lesson 4) are separate checks — either can govern.</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 06 · Combined loading</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A small stress element at a shaft surface point showing normal stress from bending acting on the left and right faces and shear stress from torsion acting along the top and bottom faces"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">The stress element: bending and torsion, at the same point</text><rect x="240" y="110" width="80" height="80" fill="none" stroke="#16202e" stroke-width="1.6"/><path d="M200,150 L238,150 M230,143 L238,150 L230,157" stroke="#c2820f" stroke-width="2.2" fill="none"/><path d="M322,150 L360,150 M352,143 L360,150 L352,157" stroke="#c2820f" stroke-width="2.2" fill="none"/><text x="180" y="140" fill="#c2820f" font-size="12" font-weight="600">σ</text><text x="366" y="140" fill="#c2820f" font-size="12" font-weight="600">σ</text><path d="M240,108 L320,108 M312,101 L320,108 L312,115" stroke="#3a6ea5" stroke-width="2.2" fill="none"/><path d="M320,192 L240,192 M248,185 L240,192 L248,199" stroke="#3a6ea5" stroke-width="2.2" fill="none"/><text x="255" y="98" fill="#3a6ea5" font-size="12" font-weight="600">τ</text><text x="270" y="212" fill="#3a6ea5" font-size="12" font-weight="600">τ</text><text x="16" y="292" fill="#16202e" font-size="11">Same point, two load types — the stresses combine, but must be tracked as separate components</text></svg><figcaption>At a shaft's outer surface, bending produces normal stress σ on the element's faces while torsion produces shear stress τ along the same faces — two distinct stress components at the identical point, the starting state for transformation and failure analysis.</figcaption></figure>
-
-<h3>01 · Superposing stress types at a point</h3>
-<p>When axial load, torsion, bending, and pressure act on the same member, their stresses <b>superpose</b> at any given point — but only because each formula (\(\sigma=P/A\), \(\sigma=My/I\), \(\tau=Tr/J\)) is itself linear in its load, the same linearity behind Lesson 5's deflection superposition, now applied to stress instead. The essential discipline: superposing stress means tracking not just magnitude but which <em>component</em> and which <em>face</em> — normal stresses add to normal stresses on the same face; shear stresses add to shear stresses on the same face; the two types are never simply summed together as if they were one quantity.</p>
-
-<h3>02 · Finding stresses at a point on a shaft</h3>
-<p>The classic case: a shaft transmitting torque \(T\) while also carrying a bending moment \(M\) — from an off-axis pulley belt load, say — at the same cross-section. At the outer-surface point where bending stress is greatest, \( \sigma=32M/(\pi d^3) \) (normal, from bending) coexists with \( \tau=16T/(\pi d^3) \) (shear, from torsion) — a genuine two-component stress state at one point, not yet reduced to a single number, ready for stress transformation (next lesson) or a failure theory (two lessons ahead). If the shaft also carries an axial load \(P\), the direct stress \(\sigma=P/A\) adds to the bending normal stress on that same face, while the torsional shear stays a separate component entirely.</p>
-
-<h3>03 · Hunting the critical point</h3>
-<p>The <b>critical point</b> — where the combined stress state is worst — is not always obvious, because the individual stress components do not necessarily peak at the same location. Bending stress peaks at the outer fibre at the section of maximum moment; torsional shear is uniform around a circular shaft's circumference wherever torque is constant. If a stress concentration — a keyway, a fillet — sits nearby, that location can dominate even where the nominal stresses are lower, since the concentration factor multiplies whatever nominal stress exists there. Working method: identify two or three candidate points — the maximum-moment location, any stress-concentration site, any point where multiple components peak together — and evaluate the full combined state at each, rather than assuming the answer.</p>
-
-<h3>04 · A shaft-with-pulley pattern</h3>
-<p>Given a shaft of diameter \(d\) transmitting torque \(T\) while carrying bending moment \(M\) from an off-axis load at a specific section: (1) compute \( \sigma=32M/(\pi d^3) \) and \( \tau=16T/(\pi d^3) \) at that section's outer surface, using \(I=\pi d^4/64\) and \(J=\pi d^4/32\) substituted into the flexure and torsion formulas; (2) add any axial or other normal stress present at that same point; (3) the resulting \((\sigma,\tau)\) state is the direct starting point for the next two lessons — transformation, then a failure criterion.</p>
-<div class="keybox"><span class="tag">Key formulas — solid circular shaft</span>
-<p>\[ \sigma=\frac{32M}{\pi d^3},\qquad \tau=\frac{16T}{\pi d^3}. \]</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 07 · Stress transformation and Mohr's circle</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Mohr’s circle for a plane stress state, centered on the normal stress axis, with the x face and y face points diametrically opposite and the principal stresses marked where the circle crosses the axis"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Mohr’s circle: every face orientation, one circle</text><line x1="66" y1="157.5" x2="540" y2="157.5" stroke="#16202e" stroke-width="1.3"/><line x1="303" y1="255" x2="303" y2="60" stroke="#16202e" stroke-width="1.3"/><text x="500" y="150" fill="#16202e" font-size="11">σ →</text><text x="310" y="72" fill="#16202e" font-size="11">τ →</text><circle cx="303.0" cy="157.5" r="76.4" fill="none" stroke="#3a6ea5" stroke-width="2"/><circle cx="226.6" cy="157.5" r="4" fill="#1f7a5c"/><text x="174" y="175" fill="#1f7a5c" font-size="11" font-weight="600">σ₂ ≈ 27.6</text><circle cx="379.4" cy="157.5" r="4" fill="#1f7a5c"/><text x="385" y="175" fill="#1f7a5c" font-size="11" font-weight="600">σ₁ ≈ 112.4</text><circle cx="357.0" cy="103.5" r="4" fill="#c2820f"/><text x="362" y="98" fill="#c2820f" font-size="10">x-face (σx, τxy)</text><circle cx="249.0" cy="211.5" r="4" fill="#c2820f"/><text x="150" y="225" fill="#c2820f" font-size="10">y-face (σy, −τxy)</text><line x1="357.0" y1="103.5" x2="249.0" y2="211.5" stroke="#c2820f" stroke-width="1.3" stroke-dasharray="3 3"/><text x="16" y="292" fill="#16202e" font-size="11">Center=(σx+σy)/2=70, R=√(((σx−σy)/2)²+τxy²)≈42.4 — every orientation lies on this circle</text></svg><figcaption>Plotting the x-face and y-face stress states as two diametrically opposite points defines the whole circle. Every other face orientation's stress state lies somewhere on that same circle, reached by rotating twice the physical angle.</figcaption></figure>
-
-<h3>01 · Plane-stress transformation, derived</h3>
-<p>Given a stress state \((\sigma_x,\sigma_y,\tau_{xy})\) on the standard faces, equilibrium of a wedge cut at angle \(\theta\) gives the stress on that rotated face directly: \[ \sigma_{\theta}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2}\cos2\theta+\tau_{xy}\sin2\theta, \] with a parallel expression for \(\tau_\theta\). These follow from summing forces on a triangular element — genuinely derived, not merely asserted.</p>
-
-<h3>02 · Mohr’s circle as the graphical engine</h3>
-<p>The transformation equations are exactly the parametric equations of a circle in \((\sigma,\tau)\) space: centre at \(\left(\frac{\sigma_x+\sigma_y}{2},0\right)\), radius \[ R=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2}. \] Every possible stress state at that point, for every possible face orientation, lies somewhere on this one circle. Reading it: plot \((\sigma_x,\tau_{xy})\) for the x-face and \((\sigma_y,-\tau_{xy})\) for the y-face — diametrically opposite points — and any other orientation is a rotation around the same circle, by \(2\theta\), not \(\theta\): the graphical angle doubles the physical one, a classic point of confusion worth fixing early.</p>
-
-<h3>03 · Principal stresses and maximum shear</h3>
-<p><b>Principal stresses</b> — where shear is zero — occur where the circle crosses the \(\sigma\)-axis: \( \sigma_{1,2}=\text{centre}\pm R \). <b>Maximum in-plane shear</b> equals the radius \(R\) itself, occurring \(90^\circ\) around the circle — \(45^\circ\) physically — from the principal directions. This is exactly why fatigue cracks often pick planes offset \(45^\circ\) from the obvious loading direction: many failure mechanisms, especially in ductile materials, are shear-driven, so they follow the maximum-shear orientation, not the maximum-normal-stress one.</p>
-
-<h3>04 · Working method</h3>
-<p>(1) Identify \(\sigma_x\), \(\sigma_y\), \(\tau_{xy}\) at the point of interest, typically from a combined-loading analysis (Lesson 6). (2) Compute the centre and radius. (3) Principal stresses are centre \(\pm R\). (4) Maximum shear is \(R\), acting at \(45^\circ\) from the principal directions. This is the direct bridge from "here are the stresses on an arbitrary cut" to "here is the worst normal stress and the worst shear stress, and the planes they act on" — the necessary input before any failure theory (Lesson 9) can be applied.</p>
-<div class="keybox"><span class="tag">Key results — Mohr’s circle</span>
-<p>\[ \text{centre}=\frac{\sigma_x+\sigma_y}{2},\qquad R=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{xy}^2},\qquad \sigma_{1,2}=\text{centre}\pm R. \]</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 08 · Pressure vessels: thin-walled theory</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Bar chart comparing hoop stress at one hundred megapascals against axial stress at fifty megapascals for the same thin walled cylindrical pressure vessel, showing the two to one ratio"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Hoop stress is always exactly double axial stress</text><line x1="66" y1="255" x2="540" y2="255" stroke="#16202e" stroke-width="1.3"/><line x1="66" y1="255" x2="66" y2="60" stroke="#16202e" stroke-width="1.3"/><text x="20" y="180" fill="#16202e" font-size="11" transform="rotate(-90 20 180)">stress (MPa) →</text><rect x="180" y="89.25" width="80" height="165.75" fill="#c2820f" fill-opacity="0.55" stroke="#c2820f" stroke-width="1.5"/><text x="220" y="80" text-anchor="middle" fill="#c2820f" font-size="12" font-weight="600">hoop: σ=pr/t=100 MPa</text><rect x="330" y="172.1" width="80" height="82.9" fill="#3a6ea5" fill-opacity="0.55" stroke="#3a6ea5" stroke-width="1.5"/><text x="370" y="163" text-anchor="middle" fill="#3a6ea5" font-size="12" font-weight="600">axial: σ=pr/2t=50 MPa</text><text x="16" y="292" fill="#16202e" font-size="11">r=500mm, t=10mm, p=2MPa — the 2:1 ratio holds regardless of the specific numbers</text></svg><figcaption>Cutting a thin-walled cylinder two different ways — longitudinally and transversely — gives two different equilibrium equations, and hoop stress always comes out exactly twice axial stress, whatever the actual pressure, radius, or thickness.</figcaption></figure>
-
-<h3>01 · Hoop and axial stress, derived from equilibrium</h3>
-<p>For a thin-walled cylinder (\(r/t\gtrsim10\)), cutting it longitudinally and balancing internal pressure pushing the two halves apart against the wall's tensile stress holding them together gives \[ \sigma_{hoop}=\frac{pr}{t}. \] Cutting it transversely instead, balancing pressure on an end cap against the wall's axial stress around the thin circumference, gives \[ \sigma_{axial}=\frac{pr}{2t}. \] The ratio \(\sigma_{hoop}/\sigma_{axial}=2\) always — the pressure, radius, and thickness all cancel out of that ratio, leaving a result that holds for any thin cylindrical vessel whatsoever.</p>
-
-<h3>02 · What the 2:1 ratio predicts</h3>
-<p>Since hoop stress is the larger of the two, a cylindrical vessel failing from pure overpressure is expected to crack <b>longitudinally</b> — along the axis — because a longitudinal crack is opened by the larger hoop stress, while a circumferential crack, driven only by the smaller axial stress, needs a higher pressure to propagate. This is a genuine, testable prediction that matches observed pipe and vessel failures, not just a bookkeeping result.</p>
-
-<h3>03 · Spherical vessels, briefly</h3>
-<p>A sphere has no preferred direction by symmetry — cutting it any way gives the identical equilibrium, \( \sigma=pr/2t \) — the same value as a cylinder's lower, axial stress, in every direction. This is exactly why spherical pressure vessels are the material-efficient choice for the highest-pressure applications: no direction is "wasted" carrying only half the stress the way a cylinder's axial direction is, so a sphere uses less material for the same pressure and volume than an equivalent cylinder.</p>
-
-<h3>04 · When thin-wall theory stops being honest</h3>
-<p>The \(r/t>10\) rule of thumb is the honesty boundary. Below it, stress varies significantly through the wall thickness — higher at the inner surface than the outer — and the simple average formulas above increasingly understate the true peak stress; thick-wall (Lamé) theory takes over from there. Working method: (1) check \(r/t\) before applying any formula; (2) if thin-wall applies, compute both stresses and remember the 2:1 relationship; (3) predict crack orientation from whichever stress is genuinely higher.</p>
-<div class="keybox"><span class="tag">Key ratio — thin-walled cylinder</span>
-<p>\[ \sigma_{hoop}=\frac{pr}{t},\qquad \sigma_{axial}=\frac{pr}{2t},\qquad \frac{\sigma_{hoop}}{\sigma_{axial}}=2\ \text{always}. \]</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 09 · Failure theories</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Tresca hexagon and von Mises ellipse plotted in principal stress space, the ellipse circumscribing the hexagon and touching it only at the six uniaxial stress state corners"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Tresca (hexagon) vs. von Mises (ellipse): yield loci</text><line x1="66" y1="160" x2="540" y2="160" stroke="#16202e" stroke-width="1.1"/><line x1="303" y1="277" x2="303" y2="43" stroke="#16202e" stroke-width="1.1"/><text x="500" y="152" fill="#16202e" font-size="11">σ₁ →</text><text x="308" y="55" fill="#16202e" font-size="11">σ₂ →</text><polygon points="442.4,95.0 442.4,160.0 303.0,225.0 238.0,225.0 238.0,160.0 303.0,95.0" fill="none" stroke="#c2820f" stroke-width="2.2"/><text x="429" y="90" fill="#c2820f" font-size="11" font-weight="600">Tresca (conservative)</text><polyline points="368.0,95.0 372.3,100.5 375.5,106.9 377.4,114.3 378.1,122.5 377.4,131.3 375.5,140.6 372.3,150.2 368.0,160.0 362.5,169.8 356.1,179.4 348.7,188.7 340.5,197.5 331.7,205.7 322.4,213.1 312.8,219.5 303.0,225.0 293.2,229.3 283.6,232.5 274.3,234.4 265.5,235.1 257.3,234.4 249.9,232.5 243.5,229.3 238.0,225.0 233.7,219.5 230.5,213.1 228.6,205.7 227.9,197.5 228.6,188.7 230.5,179.4 233.7,169.8 238.0,160.0 243.5,150.2 249.9,140.6 257.3,131.3 265.5,122.5 274.3,114.3 283.6,106.9 293.2,100.5 303.0,95.0 312.8,90.7 322.4,87.5 331.7,85.6 340.5,84.9 348.7,85.6 356.1,87.5 362.5,90.7 368.0,95.0" fill="none" stroke="#3a6ea5" stroke-width="2.2"/><text x="380" y="200" fill="#3a6ea5" font-size="11" font-weight="600">von Mises (fits data better)</text><text x="16" y="292" fill="#16202e" font-size="11">Touching only at the six uniaxial corners — everywhere else, von Mises allows more stress</text></svg><figcaption>Both loci pass through the same uniaxial yield points, but the von Mises ellipse bulges outside Tresca's hexagon everywhere else — von Mises always predicts equal or higher allowable stress, and fits experimental ductile-yield data more closely.</figcaption></figure>
-
-<h3>01 · Tresca and von Mises for ductile metals</h3>
-<p>Ductile metals yield primarily by shear — dislocation slip — and both theories are built around that mechanism, differing in how they combine multiple stress components into one comparable value. <b>Tresca</b> (maximum shear stress theory) predicts yield when \( \sigma_1-\sigma_3\geq\sigma_y \) (max minus min principal stress), since in a simple tension test at yield, \(\sigma_1-\sigma_3=\sigma_y-0=\sigma_y\) exactly. Geometrically, Tresca's yield locus in principal-stress space is a <b>hexagon</b>. <b>Von Mises</b> (distortion-energy theory) predicts yield when \( \sigma_1^2-\sigma_1\sigma_2+\sigma_2^2\geq\sigma_y^2 \) (plane stress). Geometrically this is an <b>ellipse</b> circumscribing Tresca's hexagon, touching it only at the six uniaxial-stress corners and bulging outward everywhere else — von Mises always predicts equal or higher allowable stress than Tresca for the same state.</p>
-
-<h3>02 · Why von Mises predicts yielding better</h3>
-<p>Experimental ductile-metal yield data sits between the two curves, but noticeably closer to the von Mises ellipse — von Mises is the more accurate predictor. Tresca remains popular anyway, precisely because it is simpler to compute and conservative: a deliberate engineering trade, accepting some extra safety margin for calculation simplicity and certainty of staying on the safe side. For <b>brittle</b> materials, neither shear-based theory applies well; <b>maximum-normal-stress</b> theory — yield or fracture when the largest principal stress alone reaches ultimate strength — is appropriate instead, because brittle materials fail by flaw-driven crack propagation under tension, not shear-driven slip.</p>
-
-<h3>03 · Pure shear — a clean test case</h3>
-<p>For pure shear (\(\sigma_1=\tau\), \(\sigma_2=-\tau\)): Tresca predicts yield at \(\sigma_1-\sigma_2=2\tau=\sigma_y\), so \(\tau_y=\sigma_y/2=0.50\sigma_y\). Von Mises predicts yield at \(\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2=3\tau^2=\sigma_y^2\), so \(\tau_y=\sigma_y/\sqrt3\approx0.577\sigma_y\). Von Mises allows about 15% more shear stress before predicting yield than Tresca does for this exact case — a concrete illustration of Tresca's conservatism.</p>
-
-<h3>04 · Working method</h3>
-<p>(1) Determine whether the material is ductile (use Tresca or von Mises) or brittle (use maximum-normal-stress). (2) Find the principal stresses at the critical point, from Lesson 7's Mohr’s circle. (3) Apply the appropriate theory's comparison against the uniaxial yield or ultimate strength from a simple tension test. (4) Remember that "the stress" is not a single number once several components are present — these theories exist specifically to reduce a multi-component state to one comparable equivalent value.</p>
-<div class="keybox"><span class="tag">Key criteria</span>
-<p>Tresca: \(\sigma_1-\sigma_3=\sigma_y\). Von Mises: \(\sigma_1^2-\sigma_1\sigma_2+\sigma_2^2=\sigma_y^2\). Von Mises ≥ Tresca always (less conservative).</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 10 · Buckling of columns</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Critical stress versus slenderness ratio, a flat line at the yield stress for short stocky columns and a falling Euler curve for long slender columns, crossing at the critical slenderness ratio"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Short columns yield; long columns buckle</text><line x1="66" y1="255" x2="540" y2="255" stroke="#16202e" stroke-width="1.3"/><line x1="66" y1="255" x2="66" y2="60" stroke="#16202e" stroke-width="1.3"/><text x="303" y="277" text-anchor="middle" fill="#16202e" font-size="11">slenderness ratio, Le/r →</text><text x="20" y="180" fill="#16202e" font-size="11" transform="rotate(-90 20 180)">critical stress, σcr →</text><line x1="66" y1="133.1" x2="276.6" y2="133.1" stroke="#c2820f" stroke-width="2.2"/><text x="100" y="123" fill="#c2820f" font-size="11" font-weight="600">short columns: yield governs (flat)</text><polyline points="276.9,133.5 288.8,146.1 303.0,158.8 317.2,169.4 331.4,178.3 345.7,185.9 359.9,192.4 374.1,198.1 388.3,203.0 402.5,207.3 416.8,211.1 431.0,214.4 445.2,217.4 459.4,220.1 473.6,222.5 487.9,224.6 502.1,226.6 516.3,228.3 530.5,230.0 540.0,230.9" fill="none" stroke="#3a6ea5" stroke-width="2.2"/><text x="330" y="150" fill="#3a6ea5" font-size="11" font-weight="600">long columns: Euler buckling governs</text><line x1="276.6" y1="255" x2="276.6" y2="133.1" stroke="#1f7a5c" stroke-width="1" stroke-dasharray="3 3"/><text x="200" y="264" fill="#1f7a5c" font-size="10">critical slenderness ≈ 89</text><text x="16" y="292" fill="#16202e" font-size="11">Euler stress depends on E and geometry alone — never on the material's strength</text></svg><figcaption>Below the critical slenderness ratio, a column simply yields — the Euler formula would predict a stress the material could never actually sustain. Above it, buckling governs, and critical stress falls steeply as the column gets more slender.</figcaption></figure>
-
-<h3>01 · Euler buckling, derived</h3>
-<p>A slender column under axial compression can fail by sideways deflection — buckling — at a load far below what would cause simple material yielding. Modeling the column with the same \(EIv''=M(x)\) logic as Lesson 5's beam, but now with \(M(x)=P\,v(x)\) — the moment caused by the deflection itself, growing as the deflection grows — leads to a solution where deflection stays exactly zero until the load reaches a critical value: \[ P_{cr}=\frac{\pi^2EI}{L_e^2}, \] the <b>Euler buckling load</b>, with \(L_e\) the <b>effective length</b>, not simply the physical length.</p>
-
-<h3>02 · Effective length — what end conditions encode</h3>
-<p>\( L_e=KL \), where \(K\) depends on end restraint: \(K=1\) for pinned-pinned (the baseline case), \(K=0.5\) for fixed-fixed (far stiffer against buckling, since \(P_{cr}\propto1/L_e^2\)), \(K=2\) for fixed-free (a cantilevered column, much weaker), \(K=0.7\) for fixed-pinned. Real end conditions rarely match these idealized cases exactly, so \(K\) is often an engineering judgment call, not a precisely derived number.</p>
-
-<h3>03 · Slenderness and the yield crossover</h3>
-<p>In terms of stress, \[ \sigma_{cr}=\frac{P_{cr}}{A}=\frac{\pi^2E}{(L_e/r)^2}, \] with \(r=\sqrt{I/A}\) the <b>radius of gyration</b> and \(L_e/r\) the <b>slenderness ratio</b>. Notice \(E\) — stiffness — appears, but the material's yield or ultimate strength does not: Euler buckling depends on stiffness and geometry alone. But the formula cannot be trusted forever — as slenderness falls, the predicted \(\sigma_{cr}\) would eventually exceed the material's actual yield strength, which is physically impossible. Below a critical slenderness ratio (where the Euler curve crosses the yield stress), the column simply yields in compression before it ever reaches the geometrically-predicted buckling load — short, stocky columns are a strength problem; long, slender ones are a stiffness problem, the same distinction from Lesson 5, now appearing in compression.</p>
-
-<h3>04 · Why buckling fails without warning</h3>
-<p>Unlike a ductile material's visible plastic elongation before tensile fracture, an idealized column near its buckling load shows almost no deflection right up to \(P_{cr}\), then diverges sharply — real imperfections (a slight initial crookedness, off-centre loading) soften this into a more gradual but still sudden-feeling transition. Working method: (1) compute the slenderness ratio \(L_e/r\); (2) compute the Euler critical stress; (3) compare against yield strength — whichever is lower actually governs; (4) always use effective length \(L_e=KL\), never raw physical length, since end conditions change the answer by a large factor.</p>
-<div class="keybox"><span class="tag">Key result — Euler buckling</span>
-<p>\[ P_{cr}=\frac{\pi^2EI}{L_e^2},\qquad \sigma_{cr}=\frac{\pi^2E}{(L_e/r)^2}. \]</p><p>Depends on stiffness (E) and geometry — never on the material's strength.</p></div>
-</div></section><section class="sum-lesson"><h3>Lesson 11 · Stress concentration and fatigue preview</h3><div class="measure">
-<figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Stress concentration factor Kt versus fillet radius to diameter ratio, a steeply falling curve from over two at a sharp small fillet down toward about one point one at a generous fillet"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Stress concentration factor Kt falls as the fillet gets gentler</text><line x1="66" y1="255" x2="540" y2="255" stroke="#16202e" stroke-width="1.3"/><line x1="66" y1="255" x2="66" y2="60" stroke="#16202e" stroke-width="1.3"/><text x="303" y="277" text-anchor="middle" fill="#16202e" font-size="11">fillet radius / shaft diameter, r/d →</text><text x="20" y="180" fill="#16202e" font-size="11" transform="rotate(-90 20 180)">Kt →</text><polyline points="66.0,60.0 77.9,106.1 89.7,132.3 101.5,149.6 113.4,161.9 125.3,171.2 137.1,178.5 148.9,184.4 160.8,189.4 172.7,193.5 184.5,197.1 196.3,200.2 208.2,202.9 220.0,205.3 231.9,207.5 243.8,209.4 255.6,211.2 267.4,212.8 279.3,214.3 291.2,215.6 303.0,216.9 314.9,218.0 326.7,219.1 338.5,220.1 350.4,221.0 362.2,221.9 374.1,222.7 386.0,223.5 397.8,224.2 409.6,224.9 421.5,225.6 433.4,226.2 445.2,226.8 457.0,227.3 468.9,227.9 480.8,228.4 492.6,228.9 504.4,229.3 516.3,229.8 528.1,230.2 540.0,230.6" fill="none" stroke="#3a6ea5" stroke-width="2"/><circle cx="90.9" cy="134.5" r="4" fill="#c2820f"/><text x="96" y="130" fill="#c2820f" font-size="11" font-weight="600">r/d≈0.1 → Kt≈1.74 (representative)</text><text x="16" y="292" fill="#16202e" font-size="11">Kt is geometry only — what a material actually "feels" in fatigue depends on notch sensitivity too</text></svg><figcaption>A sharp, small fillet concentrates stress severely; a generous, gentle fillet approaches Kt=1. The curve shape is representative — the working method (check geometry, then check the material's notch sensitivity) is the durable lesson.</figcaption></figure>
-
-<h3>01 · Kt — the geometry tax on nominal stress</h3>
-<p>Any geometric discontinuity — a hole, fillet, keyway, or groove — locally disturbs smooth stress flow, concentrating stress well above the simple load-over-area <b>nominal</b> value right at the discontinuity: \[ \sigma_{actual}=K_t\,\sigma_{nominal}, \] where \(K_t\), the stress concentration factor, depends purely on geometry — the discontinuity's shape relative to the part's size — not on load magnitude or material. A small fillet radius relative to the part size gives a high \(K_t\); a generous fillet approaches \(K_t\approx1\).</p>
-
-<h3>02 · Why keyways matter so much</h3>
-<p>A keyway — a slot cut for a key transmitting torque between a shaft and a hub — combines a sharp internal corner geometry with sitting exactly in a highly-stressed region: a shaft's outer surface, already carrying peak bending or torsion stress. That combination — an inherently severe geometric discontinuity landing precisely where nominal stress is already highest — is why keyways are a classically dangerous fatigue location, with \(K_t\) often in the range of \(2\)–\(3\) for a sharp keyway, a reasonable order-of-magnitude starting point before consulting an actual chart for the specific geometry.</p>
-
-<h3>03 · Notch sensitivity — the metallurgy half of the story</h3>
-<p>Not every material "feels" the full geometric \(K_t\) equally. <b>Notch sensitivity</b> \(q\) (\(0\leq q\leq1\)) scales how much of the theoretical \(K_t\) actually translates into reduced fatigue strength: \[ K_f=1+q(K_t-1). \] \(q\approx0\) means a material is essentially notch-insensitive — often a ductile material with enough local ductility to blunt the stress peak through local yielding before a fatigue crack can start, giving \(K_f\approx1\) regardless of \(K_t\). \(q\approx1\) means the material takes the full geometric \(K_t\) at face value — typically harder, higher-strength, more brittle materials lacking that local ductility. The same geometric feature can be a minor concern in one material and a serious fatigue risk in another: geometry sets the ceiling, metallurgy decides how much of it the material actually experiences.</p>
-
-<h3>04 · Working method — the handshake with materials science</h3>
-<p>(1) Identify every geometric discontinuity — holes, fillets, keyways, grooves, threads — as a candidate stress-concentration site. (2) Look up or estimate \(K_t\) for each, from its specific geometry ratio. (3) For a fatigue assessment, find the material's notch sensitivity \(q\) and compute \(K_f=1+q(K_t-1)\) — the number that actually multiplies the nominal alternating stress in a fatigue-life estimate (Materials Science II's S-N curve, meeting this course's geometry). (4) For a static check on a ductile material, \(K_t\) is often reasonably ignored, since local yielding redistributes stress before the whole part fails — but never for a fatigue check, where localized, repeated stress well below yield can still eventually crack a part. This distinction — matters enormously for fatigue and for brittle materials, often legitimately ignored for static ductile loading — is easy to get backward and worth fixing firmly.</p>
-<div class="keybox"><span class="tag">Key formulas — stress concentration</span>
-<p>\[ \sigma_{actual}=K_t\,\sigma_{nominal}\ (\text{static, geometry only}),\qquad K_f=1+q(K_t-1)\ (\text{fatigue, geometry AND metallurgy}). \]</p></div>
-</div></section>
-<h2 class="sum-part">Part 2 — Foundations &amp; toolkits</h2>
-
-<section class="sum-lesson"><h3>Lesson 01 · Stress and strain under axial load</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
+<section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 01 · Stress and strain under axial load</p><h3><span class="sum-n">Lesson 01</span>Stress and strain under axial load</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Stress makes force local — \( \sigma=F/A \) — so two parts carrying the same load can be in completely different danger.</li>
+<li>Strain makes deformation dimensionless, \( \varepsilon=\delta/L \), which is what lets materials be compared at all.</li>
+<li>Hooke's law \( \sigma=E\varepsilon \) is a contract valid only below the proportional limit — outside it, nothing that follows applies.</li>
+<li>\( E \) is stiffness, not strength: it sets deflection, and every steel has essentially the same value regardless of grade.</li>
+<li>The tensile curve is read as a sequence of commitments — proportional limit, yield, ultimate, fracture — each governing a different design question.</li>
+<li>Yield governs permanent set, ultimate governs rupture, and choosing the wrong one is choosing the wrong failure mode.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 01 · Stress and strain under axial load · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
 <li><b>Statics</b> — internal force from a free-body cut precedes any stress.</li>
 <li><b>Areas of sections</b> — \(A=\tfrac{\pi}{4}d^2\) for round bars.</li>
 <li><b>Unit discipline</b> — MPa = N/mm²; keep a consistent system.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
 <thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
 <tbody>
 <tr><td>Normal stress</td><td>\( \sigma=P/A \)</td><td>Axial force spread over a cross-section.</td></tr>
@@ -372,16 +93,18 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Hooke's law</td><td>\( \sigma=E\varepsilon \)</td><td>Elastic (straight-line) region only.</td></tr>
 <tr><td>Axial deformation</td><td>\( \delta=PL/AE \)</td><td>Elongation of a uniform bar.</td></tr>
 <tr><td>Factor of safety</td><td>\( \sigma_y/\sigma_{allow} \)</td><td>Margin held below yield.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 02 · Axial members and thermal stress</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 02 · Axial members and thermal stress</p><h3><span class="sum-n">Lesson 02</span>Axial members and thermal stress</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Bars in series share the load and add their deformations: \( \delta=\sum P_iL_i/A_iE_i \).</li>
+<li>A problem is statically indeterminate when equilibrium alone cannot find the forces; compatibility of deformation supplies the missing equation.</li>
+<li>Free thermal expansion \( \delta=\alpha L\Delta T \) produces strain but no stress at all.</li>
+<li>Stress appears only when expansion is <em>restrained</em>: \( \sigma=E\alpha\Delta T \), independent of length.</li>
+<li>That independence is the surprise — a short restrained bar is stressed exactly as hard as a long one.</li>
+<li>It is why pipework needs loops and expansion joints, and why anchoring both ends of a hot line is a design error.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 02 · Axial members and thermal stress · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
 <li><b>Axial stress/strain</b> (Lesson 1) — the per-segment ingredients.</li>
 <li><b>Free-body cuts</b> — to find each segment's internal force.</li>
 <li><b>Equilibrium equations</b> — half of every indeterminate problem.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
 <thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
 <tbody>
 <tr><td>Series deformation</td><td>\( \delta=\sum P_iL_i/A_iE_i \)</td><td>Stepped or composite bars.</td></tr>
@@ -389,16 +112,18 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Thermal strain</td><td>\( \varepsilon_T=\alpha\Delta T \)</td><td>Free temperature change, no stress.</td></tr>
 <tr><td>Thermal stress</td><td>\( \sigma=E\alpha\Delta T \)</td><td>Fully restrained temperature change.</td></tr>
 <tr><td>Expansion coeff.</td><td>\( \alpha \) [1/°C]</td><td>Material's thermal sensitivity.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 03 · Torsion of shafts</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 03 · Torsion of shafts</p><h3><span class="sum-n">Lesson 03</span>Torsion of shafts</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Torsion of a circular shaft gives \( \tau=Tr/J \), maximum at the surface and zero on the axis.</li>
+<li>Because the core carries so little, hollow shafts are far more material-efficient than solid ones.</li>
+<li>Angle of twist \( \phi=TL/JG \) is the stiffness check, separate from the stress check.</li>
+<li>Power, torque and speed connect through \( P=T\omega \) — the step that turns a motor rating into a shaft load.</li>
+<li>Ductile shafts fail on the transverse plane of maximum shear; brittle ones on a 45° helix following the principal tension.</li>
+<li>The fracture surface therefore reports the failure mode, which makes torsion the cleanest introduction to reading a broken part.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 03 · Torsion of shafts · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
 <li><b>Axial member logic</b> (Lessons 1–2) — torsion mirrors \(\delta=PL/AE\).</li>
 <li><b>Second moments of area</b> — \(J=\pi d^4/32\) for solid circles.</li>
 <li><b>Rotational kinematics</b> — \(\omega=2\pi N/60\).</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
 <thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
 <tbody>
 <tr><td>Torsion formula</td><td>\( \tau=Tr/J \)</td><td>Shear stress at radius \(r\).</td></tr>
@@ -406,16 +131,18 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Angle of twist</td><td>\( \varphi=TL/GJ \)</td><td>End-to-end rotation.</td></tr>
 <tr><td>Power–torque</td><td>\( P=T\omega,\ \omega=2\pi N/60 \)</td><td>Link machine rating to shaft torque.</td></tr>
 <tr><td>Polar moment</td><td>\( J=\pi d^4/32 \)</td><td>Solid circular section.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 04 · Bending and transverse shear in beams</h3><div class="measure">
-<h4>What this lesson assumes</h4>
-<ul class="plain">
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 04 · Bending and transverse shear in beams</p><h3><span class="sum-n">Lesson 04</span>Bending and transverse shear in beams</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Plane sections remaining plane gives \( \sigma=My/I \): bending stress varies linearly through the depth and is zero at the neutral axis.</li>
+<li>Section modulus \( S=I/c \) is the designer's currency — capacity in one number, so beams are chosen by \( S \) not by area.</li>
+<li>Putting material far from the neutral axis is what makes an I-beam efficient.</li>
+<li>Transverse shear \( \tau=VQ/It \) is largest at the neutral axis, exactly where bending stress is zero.</li>
+<li>The two peaks are therefore in different places, which is why both must be checked.</li>
+<li>Shear flow governs how a built-up section is fastened together — it sizes the welds, bolts or nails holding the flanges to the web.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 04 · Bending and transverse shear in beams · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
 <li><b>Shear and moment</b> — internal \(V\) and \(M\) from statics.</li>
 <li><b>Second moment of area</b> — \(I=bh^3/12\) for rectangles.</li>
 <li><b>The flexure logic</b> — plane sections + Hooke's law.</li>
-</ul>
-<h4>Glossary</h4>
-<div class="glossary-wrap"><table class="glossary">
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
 <thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
 <tbody>
 <tr><td>Flexure formula</td><td>\( \sigma=My/I \)</td><td>Bending stress at height \(y\).</td></tr>
@@ -423,9 +150,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Rect. properties</td><td>\( I=bh^3/12,\ S=bh^2/6 \)</td><td>Solid rectangular section.</td></tr>
 <tr><td>Transverse shear</td><td>\( \tau=VQ/Ib \)</td><td>Shear stress, peaks at neutral axis.</td></tr>
 <tr><td>Shear flow</td><td>\( q=VQ/I \)</td><td>Sizing fasteners in built-up beams.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 05 · Beam deflection</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 05 · Beam deflection</p><h3><span class="sum-n">Lesson 05</span>Beam deflection</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Deflection follows from curvature: \( EI\,d^2y/dx^2=M(x) \), integrated twice with boundary conditions.</li>
+<li>The standard cantilever result \( \delta=PL^3/3EI \) shows the dominant dependence — length cubed.</li>
+<li>Doubling a span multiplies deflection eightfold, which is why stiffness problems are almost always solved by shortening or deepening, not by strengthening.</li>
+<li>Superposition works because the governing equation is linear — sum the deflections from each load separately.</li>
+<li>Stiffness is a distinct failure mode: a beam can be perfectly safe in stress and useless in service.</li>
+<li>Since \( E \) is fixed for a material class, geometry is the only real lever on deflection.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 05 · Beam deflection · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>The flexure formula and section modulus</b> (Lesson 4).</li><li>Basic integration of polynomial functions (Math I).</li></ul>
 <h4>Toolkit — beam deflection</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -433,9 +165,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Cantilever, tip load</td><td>\( \delta=PL^3/(3EI) \)</td><td>Standard case, used directly or by superposition.</td></tr>
 <tr><td>Superposition</td><td>add individual deflections</td><td>Valid because the governing equation is linear.</td></tr>
 <tr><td>Stiffness limit</td><td>e.g. \(\delta \le L/360\)</td><td>A serviceability check, separate from strength.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 06 · Combined loading</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 06 · Combined loading</p><h3><span class="sum-n">Lesson 06</span>Combined loading</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Real components carry several stress types at once, and at a point they superpose — axial, bending and torsional contributions add on the same element.</li>
+<li>For a shaft, \( \sigma=32M/\pi d^3 \) and \( \tau=16T/\pi d^3 \) act together on the surface element.</li>
+<li>Superposition is valid only while everything stays elastic.</li>
+<li>The critical point is hunted, not assumed: it is normally on the surface and at a discontinuity, and rarely where the moment is largest.</li>
+<li>Bending and torsion peak at different locations around the circumference, so several candidate points must be checked.</li>
+<li>The shaft-with-pulley pattern recurs throughout machine design and is the template for combining these stresses.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 06 · Combined loading · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>Bending stress and the flexure formula</b> (Lesson 4).</li><li><b>Torsional shear stress</b> (Lesson 3).</li><li><b>Superposition</b> (Lesson 5) — the same linearity idea, applied to stress.</li></ul>
 <h4>Toolkit — combined loading</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -443,9 +180,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Torsional shear (circular shaft)</td><td>\( \tau=16T/(\pi d^3) \)</td><td>Shear stress, outer surface.</td></tr>
 <tr><td>Axial stress</td><td>\( \sigma=P/A \)</td><td>Adds directly to bending normal stress.</td></tr>
 <tr><td>Critical point</td><td>not always the max-moment section</td><td>Check concentration sites too.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 07 · Stress transformation and Mohr's circle</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 07 · Stress transformation and Mohr's circle</p><h3><span class="sum-n">Lesson 07</span>Stress transformation and Mohr's circle</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Stress components depend on the axes chosen; the state at a point does not. Transformation converts between them.</li>
+<li>Mohr's circle is the graphical engine: centre \( (\sigma_x+\sigma_y)/2 \), radius \( R=\sqrt{((\sigma_x-\sigma_y)/2)^2+\tau_{xy}^2} \).</li>
+<li>Principal stresses are the extremes, \( \sigma_{1,2}=\text{centre}\pm R \), and on those planes the shear stress is zero.</li>
+<li>Maximum shear equals \( R \) and occurs 45° from the principal planes — which is why ductile parts shear at 45° to the pull.</li>
+<li>Angles on the circle are twice the physical angles, the single most common slip in using it.</li>
+<li>Principal stresses are what every failure theory in the next lesson consumes, so this is the gateway to combined-load design.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 07 · Stress transformation and Mohr's circle · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>Combined stress states (σ, τ) at a point</b> (Lesson 6).</li><li>Basic trigonometry (double-angle identities).</li></ul>
 <h4>Toolkit — stress transformation</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -453,9 +195,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Mohr’s circle radius</td><td>\( \sqrt{((\sigma_x-\sigma_y)/2)^2+\tau_{xy}^2} \)</td><td>Equals maximum in-plane shear.</td></tr>
 <tr><td>Principal stresses</td><td>\( \text{centre}\pm R \)</td><td>Zero-shear planes.</td></tr>
 <tr><td>Graphical vs. physical angle</td><td>graphical = 2 × physical</td><td>A classic source of error.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 08 · Pressure vessels: thin-walled theory</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 08 · Pressure vessels: thin-walled theory</p><h3><span class="sum-n">Lesson 08</span>Pressure vessels: thin-walled theory</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Thin-wall vessel stresses come straight from equilibrium on a cut, not from any elasticity theory.</li>
+<li>\( \sigma_{hoop}=pr/t \), \( \sigma_{axial}=pr/2t \), so hoop stress is always exactly twice axial.</li>
+<li>That fixed 2:1 ratio predicts the failure: a cylindrical vessel splits along a longitudinal seam, not a circumferential one.</li>
+<li>It is also why longitudinal welds are the ones inspected hardest.</li>
+<li>A sphere carries \( pr/2t \) in every direction, making it the most material-efficient pressure shape — and the most expensive to fabricate.</li>
+<li>Thin-wall theory stops being honest beyond about \( r/t=10 \); below that, radial stress matters and thick-wall (Lamé) theory is required.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 08 · Pressure vessels: thin-walled theory · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>Equilibrium of a free body</b> (Statics).</li><li><b>Normal stress</b> (Lesson 1).</li></ul>
 <h4>Toolkit — thin-walled pressure vessels</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -463,9 +210,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Axial stress</td><td>\( \sigma_{axial}=pr/2t \)</td><td>Cylinder, transverse cut.</td></tr>
 <tr><td>Spherical vessel stress</td><td>\( \sigma=pr/2t \), all directions</td><td>More material-efficient than a cylinder.</td></tr>
 <tr><td>Thin-wall validity</td><td>\( r/t\gtrsim10 \)</td><td>Below this, use thick-wall (Lamé) theory.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 09 · Failure theories</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 09 · Failure theories</p><h3><span class="sum-n">Lesson 09</span>Failure theories</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A failure theory converts a multiaxial stress state into one equivalent number comparable with a tensile test result.</li>
+<li>Tresca uses maximum shear, \( \sigma_{max}-\sigma_{min} \); von Mises uses distortion energy.</li>
+<li>Von Mises predicts ductile yielding more accurately; Tresca is always the more conservative, by up to about 15%.</li>
+<li>Pure shear is the clean test case: von Mises predicts yielding at \( 0.577S_y \), Tresca at \( 0.5S_y \).</li>
+<li>That factor of \( 1/\sqrt3 \) is why a shear allowable is roughly 0.577 of the tensile one.</li>
+<li>Always name the theory used — a factor of safety quoted without it is an incomplete statement.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 09 · Failure theories · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>Principal stresses from Mohr’s circle</b> (Lesson 7).</li><li><b>Ductile vs. brittle behavior</b> (Materials Science I).</li></ul>
 <h4>Toolkit — failure theories</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Theory</th><th>Criterion</th><th>Use</th></tr></thead><tbody>
@@ -474,9 +226,14 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Maximum normal stress</td><td>\( \sigma_1=\sigma_{ult} \)</td><td>Brittle materials.</td></tr>
 <tr><td>Pure shear yield (Tresca)</td><td>\( \tau_y=0.5\sigma_y \)</td><td>Conservative shear limit.</td></tr>
 <tr><td>Pure shear yield (von Mises)</td><td>\( \tau_y=\sigma_y/\sqrt3\approx0.577\sigma_y \)</td><td>Less conservative shear limit.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 10 · Buckling of columns</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 10 · Buckling of columns</p><h3><span class="sum-n">Lesson 10</span>Buckling of columns</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Buckling is an instability, not a strength failure: a column can buckle at a stress far below yield.</li>
+<li>Euler's critical load is \( P_{cr}=\pi^2EI/L_e^2 \), depending on stiffness and geometry — material strength does not appear.</li>
+<li>A stronger steel therefore buys nothing against buckling; a larger \( I \) or a shorter effective length does.</li>
+<li>End conditions enter through effective length: pinned \( L_e=L \), fixed-fixed \( 0.5L \), fixed-free \( 2L \), a fourfold spread in capacity.</li>
+<li>Slenderness ratio \( L_e/r \) decides the mode — slender columns buckle, stubby ones yield, and the crossover is where Euler stops applying.</li>
+<li>Buckling gives no warning: it is sudden, sideways and complete, which is why its factor of safety is set higher than for yielding.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 10 · Buckling of columns · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>The elastic curve equation, EIv''=M(x)</b> (Lesson 5).</li><li><b>Second moment of area and radius of gyration</b> (Lesson 4 / Statics).</li></ul>
 <h4>Toolkit — column buckling</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -484,9 +241,15 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Effective length</td><td>\( L_e=KL \)</td><td>K depends on end conditions.</td></tr>
 <tr><td>Slenderness ratio</td><td>\( L_e/r \)</td><td>Sets whether buckling or yielding governs.</td></tr>
 <tr><td>Critical stress</td><td>\( \sigma_{cr}=\pi^2E/(L_e/r)^2 \)</td><td>Independent of material strength.</td></tr>
-</tbody></table></div>
-</div></section><section class="sum-lesson"><h3>Lesson 11 · Stress concentration and fatigue preview</h3><div class="measure">
-<h4>What this lesson assumes</h4>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">SOM 201 · Lesson 11 · Stress concentration and fatigue preview</p><h3><span class="sum-n">Lesson 11</span>Stress concentration and fatigue preview</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A hole, fillet, groove or keyway multiplies the nominal stress locally: \( \sigma_{max}=K_t\sigma_{nom} \).</li>
+<li>\( K_t \) is pure geometry — it depends on the shape and proportions of the discontinuity, not on the material.</li>
+<li>The sharper the transition, the higher the factor, which is why fillet radius is a structural dimension and not a drafting convenience.</li>
+<li>A keyway is among the worst offenders and sits exactly where torque is transferred, so it usually defines the critical section of a shaft.</li>
+<li>Notch sensitivity \( q \) is the metallurgy half: it converts the geometric \( K_t \) into the fatigue factor \( K_f=1+q(K_t-1) \).</li>
+<li>Ductile materials under static load can blunt the peak by local yielding, so \( K_t \) is often set aside there.</li>
+<li>That permission is withdrawn entirely for brittle materials and under fatigue — the handshake into Machine Design's fatigue lessons.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">SOM 201 · Lesson 11 · Stress concentration and fatigue preview · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
 <ul class="plain"><li><b>Nominal stress from axial/bending/torsion formulas</b> (Lessons 1, 3, 4).</li><li><b>S-N curves and fatigue</b> (Materials Science II) — this lesson supplies the geometry half of that story.</li></ul>
 <h4>Toolkit — stress concentration and notch sensitivity</h4>
 <div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
@@ -495,8 +258,7 @@ it to strain, judge it against an allowable — for axial, torsional, and bendin
 <tr><td>Effective fatigue factor</td><td>\( K_f=1+q(K_t-1) \)</td><td>The real fatigue-relevant multiplier.</td></tr>
 <tr><td>Static, ductile</td><td>Kt often ignored</td><td>Local yielding redistributes stress.</td></tr>
 <tr><td>Fatigue, any material</td><td>Kt (via Kf) never ignored</td><td>Cracks initiate below yield.</td></tr>
-</tbody></table></div>
-</div></section>
+</tbody></table></div></div></div></section>
 </article></div>
 </main>
 <footer class="nx-foot"><div class="in">
