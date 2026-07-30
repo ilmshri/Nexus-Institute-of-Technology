@@ -286,9 +286,9 @@ L_EN = {
     "About the institute": "About the institute",
     "Our standards": "Our standards",
     "Full curriculum": "Full curriculum",
-    "Year summary": "Year {n} — compiled summary",
+    "Year link": "Year {n}",
     "Tools & Software": "Tools &amp; Software",
-    "Compiled summaries": "Compiled summaries",
+    "Course summaries": "Course summaries",
     "Search lessons": "Search lessons",
     "Sections": "Sections",
 }
@@ -299,9 +299,9 @@ L_AR = {
     "About the institute": "عن المعهد",
     "Our standards": "معاييرنا",
     "Full curriculum": "المنهج الكامل",
-    "Year summary": "ملخص السنة {n}",
+    "Year link": "السنة {n}",
     "Tools & Software": "الأدوات والبرمجيات",
-    "Compiled summaries": "الملخصات المجمّعة",
+    "Course summaries": "ملخصات المقررات",
     "Search lessons": "ابحث في الدروس",
     "Sections": "الأقسام",
 }
@@ -330,9 +330,12 @@ def _navblock(prefix, active, L):
         return ' class="on"' if active in keys else ""
     def grp_on(*keys):
         return ' class="grp on"' if active in keys else ' class="grp"'
+    # Year-compiled summaries were RETIRED by owner order (2026-07-30): "I do not
+    # approve of this way of compiling." Summaries are per-COURSE only, reached
+    # from each course's own page. The dropdown now lists the years themselves.
     years = "".join(
-        f'<a href="{prefix}curriculum/year-{n}/summary.html">'
-        + L["Year summary"].format(n=n) + "</a>" for n in (1, 2, 3, 4))
+        f'<a href="{prefix}curriculum/index.html#year-{n}">'
+        + L["Year link"].format(n=n) + "</a>" for n in (1, 2, 3, 4))
     return f'''<nav aria-label="Site">
       <a href="{prefix}index.html"{on("home")}>{L["Home"]}</a>
       <div class="navgrp">
@@ -355,7 +358,7 @@ def _navblock(prefix, active, L):
         <a href="{prefix}reference/index.html"{grp_on("reference")}>{L["Resources"]}{_caret()}</a>
         <div class="drop">
           <a href="{prefix}reference/index.html#tools">{L["Tools & Software"]}</a>
-          <a href="{prefix}reference/index.html#summaries">{L["Compiled summaries"]}</a>
+          <a href="{prefix}reference/index.html#summaries">{L["Course summaries"]}</a>
         </div>
       </div>
       <a href="{prefix}career/index.html"{on("career")}>{L["Career Paths"]}</a>
@@ -1176,8 +1179,8 @@ def build_static_pages(sems, tabs_by_course):
         ycards.append(
             f'<div class="year-card"><span class="yr">Year {n}</span>'
             f'<h3><a href="curriculum/index.html">{ylab[n]}</a></h3>{badge}'
-            f'<span class="sum"><a href="curriculum/year-{n}/summary.html">'
-            f'Compiled summary →</a></span></div>')
+            f'<span class="sum"><a href="curriculum/index.html#year-{n}">'
+            f'Browse courses →</a></span></div>')
     featured = []
     picks = ("math-1", "statics", "physics-1")
     for s in sems:
@@ -1594,17 +1597,13 @@ def build_resources_page(sems, prefix='../'):
                 f'<li><a href="{prefix}curriculum/{sem["id"]}/{c["id"]}/summary.html">'
                 f'{esc(c["code"])} · {esc(c["title"])}</a></li>'
                 for c in sem["courses"])
-            sem_href = f"{prefix}curriculum/{sem['id']}/summary.html"
             sem_cards.append(
                 f'<section class="ref-course"><div class="ref-chd"><h3>{esc(sem["title"])}</h3>'
-                f'<span class="ref-count"><a href="{sem_href}">Combined semester '
-                f'summary →</a></span></div><ul class="plain small">{course_rows}</ul>'
-                f'</section>')
-        year_href = f"{prefix}curriculum/year-{yr}/summary.html"
+                f'<span class="ref-count">{len(sem["courses"])} courses</span></div>'
+                f'<ul class="plain small">{course_rows}</ul></section>')
         year_blocks.append(
             f'<div class="ref-sem"><h2>Year {yr}</h2>'
-            f'<p class="small"><a href="{year_href}">Download the combined Year {yr} '
-            f'summary →</a></p>{"".join(sem_cards)}</div>')
+            f'{"".join(sem_cards)}</div>')
     summaries_html = "".join(year_blocks)
 
     body = f"""
@@ -1751,42 +1750,95 @@ so this document is the full compiled text in the meantime.</p>
 {omitted(miss_fnd, 'foundations')}
 {p2}"""
 
+def _split_foundations(html):
+    """Split a lesson's `foundations` HTML into its two halves.
+
+    The authored contract is always: <h4>What this lesson assumes</h4> + a
+    <ul class="plain">, then <h4>Glossary</h4> + a glossary table. The print
+    document restyles those headings, so it needs the pieces rather than the
+    blob. Returns (assumes_html, glossary_html); either may be "" if a course
+    predates the contract, and the caller then just omits that block."""
+    if not isinstance(html, str) or not html.strip():
+        return "", ""
+    marker = html.find("<h4>Glossary</h4>")
+    if marker == -1:
+        return html.strip(), ""
+    assumes = html[:marker]
+    glossary = html[marker + len("<h4>Glossary</h4>"):]
+    # drop the leading <h4>…</h4> of the first half; the print layout supplies
+    # its own section labels so the two halves are styled identically.
+    a_start = assumes.find("</h4>")
+    if a_start != -1:
+        assumes = assumes[a_start + 5:]
+    return assumes.strip(), glossary.strip()
+
 def course_summary_fragment(sem, course, prefix, tabs_all, ref):
-    """The printable content for ONE course, shared by that course's own
-    summary.html AND the combined semester/year summaries.
+    """The printable revision document for ONE course.
 
-    PREFERRED FORM (owner, 2026-07-26): a genuine per-lesson RECAP — the short,
-    plain-language bullet summary authored in each lesson's `recap` field. This
-    document used to be a verbatim second copy of every lecture, which is
-    exactly what the owner asked us to stop shipping: a summary you can revise
-    from in ten minutes is a different artefact from the lectures, not a
-    reprint of them.
+    OWNER DIRECTIVE 2026-07-30 — this is now the ONLY kind of summary the site
+    produces. The combined semester/year documents were retired ("I do not
+    approve of this way of compiling"), so this fragment no longer has to
+    survive being concatenated with others, and it is laid out for print first:
 
-    FALLBACK: a course with no authored recaps yet keeps the legacy compiled
-    lecture+foundations document, labelled honestly, rather than degrading to an
-    empty placeholder. Those PDFs already ship and are still useful; silently
-    emptying them would be a regression. Courses migrate to the recap form as
-    their recaps get written, one course at a time.
+      * ONE LESSON PER PAGE. Never two lessons on a sheet. `.sum-lesson`
+        carries `break-before:page` in print, and the first one is suppressed so
+        the cover block does not leave a blank leaf.
+      * Each lesson carries its OWN fundamentals — the assumed-knowledge list
+        and the glossary table — under the lesson's key points, so a student
+        revising Lesson 7 has Lesson 7's vocabulary on the same sheet instead of
+        hunting a separate reference.
+      * Classical printed-notes structure: a running course line, a ruled lesson
+        title, then labelled KEY POINTS / ASSUMED KNOWLEDGE / GLOSSARY blocks.
 
-    `prefix`/`ref` are no longer read (the reference section is gone). They stay
-    in the signature deliberately — this is a shared interface with two callers
-    plus the ctx tuples in main(), and a parallel branch is rebasing against it;
-    reshaping it now would buy nothing and cost a merge conflict."""
+    FALLBACK unchanged: a course with no authored recaps keeps the legacy
+    compiled document, labelled honestly, rather than shipping an empty page.
+
+    `prefix`/`ref` are unread; kept in the signature because main() passes ctx
+    tuples positionally and a parallel branch rebases against this shape."""
     heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
                f'{esc(course["code"])} — {esc(course["title"])}</h2>')
 
-    recaps, no_recap = [], []
+    sheets, no_recap = [], []
     for les in course['lessons']:
         tab = tabs_all.get(str(les['n']))
         rec = tab.get('recap') if isinstance(tab, dict) else None
-        head = f"Lesson {les['n']:02d} · {esc(les['t'])}"
-        if isinstance(rec, str) and rec.strip():
-            recaps.append(f'<section class="sum-lesson"><h3>{head}</h3>'
-                          f'<div class="sum-recap">{rec}</div></section>')
-        else:
+        if not (isinstance(rec, str) and rec.strip()):
             no_recap.append(les['n'])
+            continue
+        assumes, glossary = _split_foundations(
+            tab.get('foundations') if isinstance(tab, dict) else "")
+        run = (f'{esc(course["code"])} · Lesson {les["n"]:02d} · '
+               f'{esc(les["t"])}')
+        # Deliberate two-page spread per lesson: key points recto, fundamentals
+        # verso. Measured at A4/18mm over a full course, the recto peaks at 55%
+        # of the sheet and the verso at 90%, so neither ever overflows and both
+        # keep the margin room a student actually annotates in. Cramming both
+        # onto one sheet would need ~9pt type, which contradicts the owner's
+        # "give the text some room to breathe".
+        fund = []
+        if assumes:
+            fund.append('<div class="sum-block sum-assumes">'
+                        '<h4>Assumed knowledge</h4>'
+                        f'{assumes}</div>')
+        if glossary:
+            fund.append('<div class="sum-block sum-gloss">'
+                        '<h4>Glossary</h4>'
+                        f'{glossary}</div>')
+        fund_html = ""
+        if fund:
+            fund_html = (f'<div class="sum-fund">'
+                         f'<p class="sum-run">{run} · fundamentals</p>'
+                         f'{"".join(fund)}</div>')
+        sheets.append(
+            f'<section class="sum-lesson">'
+            f'<p class="sum-run">{run}</p>'
+            f'<h3><span class="sum-n">Lesson {les["n"]:02d}</span>'
+            f'{esc(les["t"])}</h3>'
+            f'<div class="sum-block"><h4>Key points</h4>'
+            f'<div class="sum-recap">{rec}</div></div>'
+            f'{fund_html}</section>')
 
-    if not recaps:
+    if not sheets:
         return heading + _legacy_compiled_fragment(course, tabs_all)
 
     gap = ''
@@ -1797,7 +1849,7 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
                f'{", ".join("%02d" % n for n in no_recap)} — read '
                f'{"those lessons" if plural else "that lesson"} in full on the '
                f'course page.</p>')
-    return f"{heading}\n{gap}\n{''.join(recaps)}"
+    return f"{heading}\n{gap}\n{''.join(sheets)}"
 
 def build_course_summary(sem, course, prefix, tabs_all, ref):
     """Owner directive #5: end-of-course summary, print-optimized so the browser's
@@ -1808,9 +1860,10 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>
   <h1>{esc(course['code'])} — {esc(course['title'])}</h1>
-  <p class="sub">A condensed revision summary: the key points of every lesson in
-  this course, in brief. Not a copy of the lectures — read those on the course
-  page. Use <b>Print / Save as PDF</b> for a downloadable copy.</p>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
   <div class="cta-row no-print">
     <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
     <a class="btn btn-ghost" href="index.html">Back to course</a>
@@ -1823,39 +1876,6 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
             f"Course summary — {course['title']} — MechEd",
             f"Condensed per-lesson revision summary for "
             f"{course['code']} {course['title']}.",
-            body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
-
-def build_grouped_summary(title, courses_ctx, out_path, prefix):
-    """One printable document combining several courses' own summary content
-    (course_summary_fragment), reusing the existing print CSS's
-    .sum-part{break-before:page} as-is — zero new print CSS needed. Each
-    course's Part 1 forces a fresh page, and that course's own heading rides
-    along on it (see course_summary_fragment's own docstring).
-    courses_ctx: list of (sem, course, tabs_all, ref) tuples, curriculum order."""
-    frags = "".join(course_summary_fragment(sem, course, prefix, tabs_all, ref)
-                    for (sem, course, tabs_all, ref) in courses_ctx)
-    jump = "".join(f'<li><a href="#sum-{course["id"]}">{esc(course["code"])} · '
-                   f'{esc(course["title"])}</a></li>'
-                   for (sem, course, tabs_all, ref) in courses_ctx)
-    n = len(courses_ctx)
-    body = f"""
-<div class="pagehead sum-head">
-  <p class="kicker"><span class="n">COMBINED SUMMARY</span>{n} course{'s' if n != 1 else ''}</p>
-  <h1>{esc(title)}</h1>
-  <p class="sub">A condensed revision summary across {n} course{'s' if n != 1 else ''}:
-  the key points of every lesson, course by course in curriculum order. Use
-  <b>Print / Save as PDF</b> for a downloadable copy.</p>
-  <div class="cta-row no-print">
-    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
-    <a class="btn btn-ghost" href="{prefix}reference/index.html">Back to Resources</a>
-  </div>
-  <ul class="plain small no-print">{jump}</ul>
-</div>
-<article class="part tight sum-doc">
-{frags}
-</article>"""
-    nx_page(out_path, f"{title} — MechEd",
-            f"Condensed per-lesson revision summary across {n} courses.",
             body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 
 def main():
@@ -1942,26 +1962,10 @@ def main():
                 build_lesson_page(sem, c, les, "../../../", tabs_all, nxt)
                 n_pages += 1
 
-    # Combined summaries (owner directive, 2026-07-24): one per semester and one
-    # per year, reusing course_summary_fragment + the existing print CSS as-is.
-    def ctx_for(course_list):
-        return [(sem, c, tabs_by_course[(sem["id"], c["id"])],
-                 refs_by_course[(sem["id"], c["id"])]) for (sem, c) in course_list]
-
-    years = {}
-    for sem in sems:
-        m = re.match(r"y(\d)s\d", sem["id"])
-        yr = int(m.group(1)) if m else 0
-        years.setdefault(yr, []).append(sem)
-        build_grouped_summary(f"{sem['title']} — Combined Summary",
-                              ctx_for([(sem, c) for c in sem["courses"]]),
-                              f"curriculum/{sem['id']}/summary.html", "../../")
-        n_pages += 1
-    for yr, yr_sems in years.items():
-        build_grouped_summary(f"Year {yr} — Combined Summary",
-                              ctx_for([(sem, c) for sem in yr_sems for c in sem["courses"]]),
-                              f"curriculum/year-{yr}/summary.html", "../../")
-        n_pages += 1
+    # Combined semester/year summary documents were RETIRED by owner order
+    # (2026-07-30): "I do not approve of this way of compiling." A summary now
+    # belongs to exactly one course and is reached from that course's own page.
+    # build_course_summary() above already emits every one of them.
 
     build_static_pages(sems, tabs_by_course)
     n_pages += 2

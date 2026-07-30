@@ -382,35 +382,85 @@ html.js .tabpanel.on{display:block}
    no such affordance, and in print there is no scrolling at all, so the floor
    silently clips them off the page. Drop it in the summary/print contexts. */
 .sum-doc figure.lesson-diagram svg{min-width:0}
+/* ---------- course summary: classical printed lecture notes ----------
+   Owner directive 2026-07-30: per-course only (the year/semester compiled
+   documents are retired), designed to be printed and revised from. The rules
+   that matter: ONE LESSON PER SHEET, never two; generous leading; each lesson
+   carrying its own fundamentals; and nothing that reads as anything other than
+   formal printed notes. Screen styling deliberately mirrors the print layout so
+   what you see is what comes out of the printer. */
 .sum-part{font-size:15px;letter-spacing:.02em;border-bottom:2px solid var(--nx-ink);
   padding-bottom:8px;margin:40px 0 22px}
-.sum-lesson{margin:0 0 30px}
-.sum-lesson>h3{font-size:16px;color:var(--nx-teal-d);margin:0 0 12px;
-  padding-top:6px;border-top:1px solid var(--nx-line)}
-/* per-lesson recap: the summary document's actual content (owner 2026-07-26).
-   Reading rhythm matches .measure — same serif, same 1.8 line-height. */
-.sum-recap{max-width:75ch}
-.sum-recap ul{margin:6px 0 0;padding-inline-start:20px}
-.sum-recap li{font-family:var(--serif);font-size:15.5px;line-height:1.8;margin:7px 0}
-.sum-recap p{font-family:var(--serif);line-height:1.8}
+.sum-course{font-family:var(--serif);font-size:19px;letter-spacing:.01em;
+  margin:34px 0 0;padding-bottom:10px;border-bottom:2px solid var(--nx-ink)}
+
+/* one lesson = one sheet */
+.sum-lesson{margin:0;padding:34px 0 40px;border-top:1px solid var(--nx-line)}
+.sum-lesson:first-of-type{border-top:0}
+/* running head — the course line that repeats on every printed sheet */
+.sum-run{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.sum-lesson>h3{font-family:var(--serif);font-size:19px;line-height:1.35;
+  color:var(--nx-ink);font-weight:600;margin:0 0 18px;padding-bottom:12px;
+  border-bottom:1px solid var(--nx-ink)}
+.sum-n{display:block;font-family:var(--mono);font-size:10.5px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);
+  margin-bottom:7px}
+
+/* labelled blocks: KEY POINTS / ASSUMED KNOWLEDGE / GLOSSARY */
+.sum-block{margin:0 0 18px;max-width:78ch}
+.sum-fund{margin-top:26px;padding-top:22px;border-top:1px dashed var(--nx-line)}
+.sum-fund .sum-run{margin-bottom:16px}
+.sum-block:last-child{margin-bottom:0}
+.sum-block>h4{font-family:var(--sans);font-size:10px;font-weight:650;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  margin:0 0 12px}
+.sum-recap{max-width:78ch}
+.sum-recap ul,.sum-assumes ul{margin:0;padding-inline-start:22px;list-style:disc}
+.sum-recap li,.sum-assumes li{font-family:var(--serif);font-size:15px;
+  line-height:1.85;margin:0 0 11px;padding-inline-start:4px}
+.sum-recap p{font-family:var(--serif);font-size:15px;line-height:1.85;margin:0 0 11px}
+.sum-assumes b{font-weight:650}
+/* glossary reads as a ruled reference table, not a web data grid */
+.sum-gloss table{width:100%;border-collapse:collapse;font-family:var(--serif);
+  font-size:13.5px}
+.sum-gloss thead th{font-family:var(--sans);font-size:9.5px;font-weight:650;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  text-align:start;padding:0 12px 7px 0;border-bottom:1px solid var(--nx-ink)}
+.sum-gloss td{padding:7px 12px 7px 0;border-bottom:1px solid var(--nx-line);
+  line-height:1.6;vertical-align:top}
+.sum-gloss tr td:first-child{font-weight:600;width:24%}
+.sum-gloss tr td:nth-child(2){width:30%}
+.sum-gloss .glossary-wrap{overflow-x:auto}
+
 @media print{
+  @page{margin:18mm 16mm}
   .appbar,.nx-foot,.sidemenu,.no-print,.coursenav,.prevnext,.crumbs{display:none !important}
-  body{background:#fff;color:#000}
+  body{background:#fff;color:#000;font-size:11pt}
   main.wrap,main{padding:0;margin:0}
   .pagehead{padding:0 0 12px;max-width:none}
   .part.sum-doc{max-width:none;padding:0}
   figure.lesson-diagram svg{min-width:0;max-width:100%}
-  .sum-lesson,.ref-course,.keybox,figure{break-inside:avoid}
-  .sum-part{break-before:page}
-  .sum-part:first-of-type{break-before:auto}
-  /* Each course starts a fresh page in the combined semester/year documents.
-     This used to be Part 1's job; the recap form has no Part headings, so the
-     course heading itself carries the break. .sum-nobreak then suppresses the
-     legacy fallback's Part 1 break so it does not emit a near-blank page
-     directly after the heading that just broke. */
-  .sum-course{break-before:page}
-  .sum-course:first-of-type{break-before:auto}
-  .sum-nobreak{break-before:auto}
+  .keybox,figure,.sum-block,.sum-gloss tr{break-inside:avoid}
+  /* THE rule: every lesson starts its own sheet, and no lesson is ever split
+     across two. The cover block occupies the first page on its own, so the
+     first lesson still breaks — that is intended, not an off-by-one. */
+  .sum-lesson{break-before:page;break-inside:auto;padding:0 0 12px;border-top:0}
+  /* Each lesson is a two-page spread: key points recto, fundamentals verso.
+     Measured over a full course at A4/18mm the recto peaks at 55% of the sheet
+     and the verso at 90%, so neither overflows. */
+  .sum-fund{break-before:page;margin-top:0;padding-top:0;border-top:0}
+  .sum-course{break-after:avoid}
+  .sum-lesson>h3{break-after:avoid}
+  .sum-block>h4{break-after:avoid}
+  .sum-run{color:#555}
+  .sum-block{max-width:none}
+  .sum-recap,.sum-recap ul{max-width:none}
+  .sum-recap li,.sum-assumes li{font-size:10pt;line-height:1.6;margin-bottom:6pt}
+  .sum-gloss table{font-size:9pt}
+  .sum-gloss td{padding:6px 10px 6px 0}
+  .sum-lesson>h3{font-size:18px;margin-bottom:18px}
+  .sum-block{margin-bottom:18px}
   a{color:#000;text-decoration:none}
   .ref-jump{display:none}
 }
