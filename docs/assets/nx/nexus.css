@@ -433,6 +433,34 @@ html.js .tabpanel.on{display:block}
 .sum-gloss tr td:nth-child(2){width:30%}
 .sum-gloss .glossary-wrap{overflow-x:auto}
 
+/* ---------- revision-notes document (design session, 2026-08-01) ----------
+   One block = one A4 page, measured — the gate is
+   design-previews/tools/qa_revision_fit.py. Classical printed-notes register:
+   serif body at 1.8, generous ruled headings, existing tokens only. */
+.rev-page{margin:0;padding:34px 0 40px;border-top:1px solid var(--nx-line)}
+.rev-page:first-of-type{border-top:0}
+.rev-what{font-family:var(--serif);font-size:15.5px;line-height:1.8;max-width:78ch;margin:0 0 18px}
+.rev-kp{margin:0;padding-inline-start:22px;list-style:disc}
+.rev-kp li{font-family:var(--serif);font-size:15px;line-height:1.8;margin:0 0 11px;padding-inline-start:4px}
+.rev-contents{list-style:none;margin:18px 0 0;padding:0;max-width:78ch}
+.rev-contents li{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--nx-line);
+  padding:9px 2px;font-family:var(--serif);font-size:15px;line-height:1.6}
+.rev-toc-n{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.08em}
+.rev-toc-t{flex:1}
+.rev-toc-c{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
+.rev-sheet-h{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.35;
+  margin:6px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--nx-ink);max-width:78ch}
+.rev-body{font-family:var(--serif);font-size:15px;line-height:1.8;max-width:78ch}
+.rev-body p{margin:0 0 12px}
+.rev-body ul,.rev-body ol{margin:0 0 12px;padding-inline-start:22px}
+.rev-body li{margin:0 0 8px}
+.rev-body mjx-container[display="true"]{margin:16px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
+.rev-body mjx-container[display="true"][width="full"]{min-width:0 !important}
+.rev-terms .glossary-wrap{overflow-x:auto}
+.rev-read{display:block;font-family:var(--sans);font-size:11.5px;font-style:italic;
+  color:var(--muted);line-height:1.5;margin-top:3px}
+.rev-terms table.glossary td{line-height:1.55}
+
 @media print{
   @page{margin:18mm 16mm}
   .appbar,.nx-foot,.sidemenu,.no-print,.coursenav,.prevnext,.crumbs{display:none !important}
@@ -453,6 +481,12 @@ html.js .tabpanel.on{display:block}
   .sum-course{break-after:avoid}
   .sum-lesson>h3{break-after:avoid}
   .sum-block>h4{break-after:avoid}
+  /* Revision-notes: every block starts its own sheet (cover keeps the first
+     leaf to itself, same pattern as .sum-lesson). Blocks are gate-measured to
+     fit one A4 page — see design-previews/tools/qa_revision_fit.py. */
+  .rev-page{break-before:page;break-inside:avoid;border-top:0;padding:0 0 12px}
+  .rev-page h3,.rev-sheet-h{break-after:avoid}
+  .rev-contents li{break-inside:avoid}
   .sum-run{color:#555}
   .sum-block{max-width:none}
   .sum-recap,.sum-recap ul{max-width:none}

@@ -11,8 +11,8 @@
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=dc57f9c331">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=c6252cec03">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MDN 301 · Lesson 02 of 11 · Year 3 · Semester 1</p>
   <h1>Spur gear design: surface durability</h1>
   <p class="sub">Contact stress by Hertzian logic; pitting as the surface fatigue mode. Bending versus pitting as competing failure budgets. The design meaning of gear micropitting found in an oil sample.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Machine Design</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Machine Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y3s1/machine-design-2/2">Mark as complete</button>
@@ -91,23 +91,203 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Bending versus pitting: which failure budget wears out and which breaks?</li><li>What does micropitting in an oil report imply about film thickness?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MDN 301 · Machine Design II — Machine Elements</b>
-  (Year 3 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Machine Design (nptel.ac.in)</li><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design</li></ul>
-  <p class="small">Course context: The rotating-equipment bill of materials designed properly: gears, rolling and journal bearings, belts and chains, clutches, brakes, and couplings — every element a maintenance engineer has replaced, now sized from first principles.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Bending versus pitting: which failure budget wears out and which breaks?</li><li>What does micropitting in an oil report imply about film thickness?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Utilisation, meaning stress divided by its allowable, plotted against module for the same drive. Both bending and contact utilisation fall as module grows, but bending falls about twice as steeply. Bending reaches its allowable at module 3.44 while contact does not reach its own until module 4.31, so contact is the binding mode. At the module 4 chosen on bending alone, bending utilisation is 0.68 but contact utilisation is 1.10."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Two failure modes, two allowables — the later crossing sizes the gear</text><line x1="90.0" y1="244.0" x2="490.0" y2="244.0" stroke="#14181F" stroke-width="1.5"/><line x1="90.0" y1="244.0" x2="90.0" y2="62.0" stroke="#14181F" stroke-width="1.5"/><text x="290.0" y="276" text-anchor="middle" fill="#14181F" font-size="12">module m (mm), face width held at 10m</text><text x="26" y="153" font-size="12" fill="#14181F" transform="rotate(-90 26 153)" text-anchor="middle">utilisation  σ / σ(allowable)</text><line x1="90.0" y1="244.0" x2="90.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="90.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">3</text><line x1="170.0" y1="244.0" x2="170.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="170.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">4</text><line x1="250.0" y1="244.0" x2="250.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="250.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">5</text><line x1="330.0" y1="244.0" x2="330.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="330.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">6</text><line x1="410.0" y1="244.0" x2="410.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="410.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">7</text><line x1="490.0" y1="244.0" x2="490.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="490.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">8</text><line x1="86.0" y1="244.0" x2="90.0" y2="244.0" stroke="#5B6672" stroke-width="1"/><text x="82" y="248.0" text-anchor="end" fill="#5B6672" font-size="11">0</text><line x1="86.0" y1="190.5" x2="90.0" y2="190.5" stroke="#5B6672" stroke-width="1"/><text x="82" y="194.47058823529412" text-anchor="end" fill="#5B6672" font-size="11">0.5</text><line x1="86.0" y1="136.9" x2="90.0" y2="136.9" stroke="#5B6672" stroke-width="1"/><text x="82" y="140.94117647058823" text-anchor="end" fill="#5B6672" font-size="11">1</text><line x1="86.0" y1="83.4" x2="90.0" y2="83.4" stroke="#5B6672" stroke-width="1"/><text x="82" y="87.41176470588235" text-anchor="end" fill="#5B6672" font-size="11">1.5</text><line x1="90.0" y1="136.9" x2="490.0" y2="136.9" stroke="#14181F" stroke-width="1.4" stroke-dasharray="5 3"/><polyline points="90.0,92.2 93.3,97.5 96.7,102.5 100.0,107.3 103.3,111.9 106.7,116.2 110.0,120.4 113.3,124.3 116.7,128.1 120.0,131.7 123.3,135.2 126.7,138.5 130.0,141.6 133.3,144.6 136.7,147.5 140.0,150.3 143.3,153.0 146.7,155.5 150.0,158.0 153.3,160.3 156.7,162.6 160.0,164.8 163.3,166.9 166.7,168.9 170.0,170.8 173.3,172.7 176.7,174.5 180.0,176.3 183.3,177.9 186.7,179.5 190.0,181.1 193.3,182.6 196.7,184.1 200.0,185.5 203.3,186.8 206.7,188.1 210.0,189.4 213.3,190.6 216.7,191.8 220.0,193.0 223.3,194.1 226.7,195.2 230.0,196.2 233.3,197.2 236.7,198.2 240.0,199.2 243.3,200.1 246.7,201.0 250.0,201.9 253.3,202.7 256.7,203.5 260.0,204.3 263.3,205.1 266.7,205.9 270.0,206.6 273.3,207.3 276.7,208.0 280.0,208.7 283.3,209.3 286.7,210.0 290.0,210.6 293.3,211.2 296.7,211.8 300.0,212.4 303.3,212.9 306.7,213.5 310.0,214.0 313.3,214.5 316.7,215.0 320.0,215.5 323.3,216.0 326.7,216.5 330.0,216.9 333.3,217.4 336.7,217.8 340.0,218.2 343.3,218.6 346.7,219.0 350.0,219.4 353.3,219.8 356.7,220.2 360.0,220.6 363.3,220.9 366.7,221.3 370.0,221.6 373.3,222.0 376.7,222.3 380.0,222.6 383.3,222.9 386.7,223.3 390.0,223.6 393.3,223.9 396.7,224.1 400.0,224.4 403.3,224.7 406.7,225.0 410.0,225.2 413.3,225.5 416.7,225.8 420.0,226.0 423.3,226.3 426.7,226.5 430.0,226.7 433.3,227.0 436.7,227.2 440.0,227.4 443.3,227.6 446.7,227.8 450.0,228.1 453.3,228.3 456.7,228.5 460.0,228.7 463.3,228.9 466.7,229.0 470.0,229.2 473.3,229.4 476.7,229.6 480.0,229.8 483.3,230.0 486.7,230.1 490.0,230.3" fill="none" stroke="#3a6ea5" stroke-width="2.4"/><polyline points="90.0,74.8 93.3,77.8 96.7,80.7 100.0,83.5 103.3,86.2 106.7,88.8 110.0,91.3 113.3,93.8 116.7,96.2 120.0,98.5 123.3,100.7 126.7,102.9 130.0,105.0 133.3,107.1 136.7,109.1 140.0,111.1 143.3,113.0 146.7,114.8 150.0,116.6 153.3,118.4 156.7,120.1 160.0,121.8 163.3,123.4 166.7,125.0 170.0,126.5 173.3,128.1 176.7,129.5 180.0,131.0 183.3,132.4 186.7,133.8 190.0,135.1 193.3,136.4 196.7,137.7 200.0,138.9 203.3,140.2 206.7,141.4 210.0,142.5 213.3,143.7 216.7,144.8 220.0,145.9 223.3,147.0 226.7,148.1 230.0,149.1 233.3,150.1 236.7,151.1 240.0,152.1 243.3,153.0 246.7,154.0 250.0,154.9 253.3,155.8 256.7,156.7 260.0,157.5 263.3,158.4 266.7,159.2 270.0,160.0 273.3,160.8 276.7,161.6 280.0,162.4 283.3,163.1 286.7,163.9 290.0,164.6 293.3,165.4 296.7,166.1 300.0,166.8 303.3,167.4 306.7,168.1 310.0,168.8 313.3,169.4 316.7,170.1 320.0,170.7 323.3,171.3 326.7,171.9 330.0,172.5 333.3,173.1 336.7,173.7 340.0,174.3 343.3,174.8 346.7,175.4 350.0,175.9 353.3,176.5 356.7,177.0 360.0,177.5 363.3,178.1 366.7,178.6 370.0,179.1 373.3,179.6 376.7,180.0 380.0,180.5 383.3,181.0 386.7,181.5 390.0,181.9 393.3,182.4 396.7,182.8 400.0,183.2 403.3,183.7 406.7,184.1 410.0,184.5 413.3,184.9 416.7,185.4 420.0,185.8 423.3,186.2 426.7,186.6 430.0,186.9 433.3,187.3 436.7,187.7 440.0,188.1 443.3,188.4 446.7,188.8 450.0,189.2 453.3,189.5 456.7,189.9 460.0,190.2 463.3,190.6 466.7,190.9 470.0,191.2 473.3,191.6 476.7,191.9 480.0,192.2 483.3,192.5 486.7,192.8 490.0,193.2" fill="none" stroke="#9c2f2f" stroke-width="2.4"/><line x1="125.1" y1="136.9" x2="125.1" y2="244.0" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="2 3"/><line x1="194.7" y1="136.9" x2="194.7" y2="244.0" stroke="#9c2f2f" stroke-width="1" stroke-dasharray="2 3"/><circle cx="170.0" cy="170.8" r="4.5" fill="#3a6ea5"/><circle cx="170.0" cy="126.5" r="4.5" fill="#9c2f2f"/><text x="486" y="150.94117647058823" text-anchor="end" fill="#14181F" font-size="10">allowable = 1.0</text><text x="300" y="105" fill="#9c2f2f" font-size="10" font-weight="600">contact (pitting) — governs</text><text x="218" y="228" fill="#3a6ea5" font-size="10" font-weight="600">bending</text><text x="150" y="88" fill="#5B6672" font-size="10">m = 4 from L1: 0.68 bending, 1.10 contact</text></svg><figcaption>The same drive, checked twice. Bending utilisation falls about twice as steeply as contact, so the two curves cross their common allowable line at different modules — 3.44 and 4.31. The gear must be sized on the later crossing, which means the m=4 chosen on bending alone in the previous lesson is not big enough.</figcaption></figure>
+<h3>&sect;1 &middot; The other way a tooth dies</h3>
+<p>The previous lesson sized a pinion so its teeth would not snap off. That check is
+necessary and it is not sufficient, because the commoner end for an industrial gear is
+not a broken tooth at all. It is a flank that slowly turns to pitted, spalled,
+grey-looking metal until the profile no longer resembles an involute, the mesh gets
+noisy, and someone condemns the gearbox on vibration long before anything actually
+breaks.</p>
+<p>That is surface fatigue &mdash; pitting. The mechanism is not bending but repeated
+Hertzian contact: two curved surfaces pressed together, a very small contact patch, and
+a subsurface shear stress that cycles once per mesh. Cracks nucleate a little below the
+surface, run back to it, and lift out a flake. The damage concentrates in a band near
+the pitch line, typically just below it on the dedendum flank, where the sliding
+direction reverses and the lubricant film is at its thinnest.</p>
+<p>Two failure modes, two different equations, two different allowables. Neither one
+sizes a gear on its own.</p>
+
+<h3>&sect;2 &middot; Hertz, in the form gears actually use</h3>
+<p>At the pitch point the two flanks can be replaced by two cylinders whose radii are the
+radii of curvature of the involutes there: \( r_1 = (d_1/2)\sin\phi \) and
+\( r_2 = (d_2/2)\sin\phi \). For two parallel cylinders pressed together with a load
+\( W' \) per unit length, the peak contact pressure is</p>
+<p>\[ \sigma_H = \sqrt{\frac{W' E^*}{\pi R}}, \qquad
+\frac{1}{R} = \frac{1}{r_1}+\frac{1}{r_2}, \qquad
+\frac{1}{E^*} = \frac{1-\nu_1^2}{E_1}+\frac{1-\nu_2^2}{E_2} \]</p>
+<p>\( R \) is the relative radius &mdash; dominated by the smaller member, which is why
+the pinion is always the one that pits first. \( E^* \) is the contact modulus, a single
+number standing in for both materials; for steel on steel it is about 114 GPa. The load
+per unit length is the <em>normal</em> load spread over the face:
+\( W' = W_tK_v/(b\cos\phi) \).</p>
+<p>Note the square root. It is the whole difference between this lesson and the last
+one.</p>
+
+<h3>&sect;3 &middot; Why contact stress is so stubborn</h3>
+<p>Put the two expressions side by side. Bending was
+\( \sigma_b = W_tK_v/(bmY) \). Substituting \( d_1 = mN_1 \) into the Hertz expression and
+collecting terms, everything that varies with the design collapses into the same group
+\( W_tK_v/(bm) \), and what is left is a constant of the tooth system:</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the two modes are not independent</span>
+<p>\[ \sigma_H = K\sqrt{\sigma_b}, \qquad
+K = \sqrt{\frac{2E^*Y\,(1+1/i)}{\pi N_1 \sin\phi\cos\phi}} \]</p>
+<p>\( K \) depends only on material, tooth count, ratio, pressure angle and form factor
+&mdash; not on module, face width, load or speed. For this drive
+\( K = 69.5\ \mathrm{MPa}^{1/2} \), and the identity is exact, not approximate.</p>
+</div>
+<p>The consequence is blunt. Any change that halves the bending stress reduces the
+contact stress only by \( \sqrt{2} \), a factor of 1.41. Quartering the bending stress
+&mdash; a serious redesign &mdash; halves the contact stress. Geometry is a weak
+instrument against pitting, and every step you take to fix bending buys you only half as
+much, in log terms, against the surface.</p>
+<p>This is why the two utilisation curves in the figure have different slopes, why they
+cross their allowable line at different modules, and why the gear must be sized on
+whichever crossing comes later.</p>
+
+<h3>&sect;4 &middot; What you actually change</h3>
+<p>Run both checks, always, and let the losing one size the gear. When bending governs,
+grow the tooth: it is a cubic lever and it works. When contact governs &mdash; which it
+usually does on larger, slower, well-loaded industrial drives &mdash; growing the gear is
+a poor trade, and the real instrument is metallurgy. Through-hardened steel might allow
+about 620 MPa of contact stress; a carburised and ground surface allows roughly twice
+that, at no change in size, because surface fatigue strength scales with surface hardness
+while the tooth's bending strength barely notices.</p>
+<p><em>The working method.</em> <em>One:</em> size on bending, as before, to get a
+starting module. <em>Two:</em> compute \( r_1, r_2, R \), then \( W' \), then
+\( \sigma_H \). <em>Three:</em> divide each stress by its own allowable and compare the
+two utilisations, not the two stresses &mdash; they are in different units of danger.
+<em>Four:</em> if contact governs, price both routes: the module that passes, against the
+heat treatment that passes. <em>Five:</em> if you harden, re-check bending, because case
+hardening changes the root's residual stress and its allowable too.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Bending versus pitting: which failure budget wears out and which breaks?</li><li>What does micropitting in an oil report imply about film thickness?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Lewis bending</b> (this course, L1) &mdash; \( \sigma_b = W_tK_v/(bmY) \) and the
+worked 15 kW drive it sized.</li>
+<li><b>Gear tooth geometry</b> (Kinematics &amp; Dynamics of Machinery L5) &mdash; pressure
+angle, pitch circle, and the involute's radius of curvature.</li>
+<li><b>Fatigue as a surface phenomenon</b> (Machine Design I L3) &mdash; cyclic stress,
+initiation sites, and why a finite-life allowable is not a yield strength.</li>
+<li><b>Elastic constants</b> (Strength of Materials L1) &mdash; Young's modulus and
+Poisson's ratio as independent material numbers.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Hertzian contact stress</td><td>\( \sigma_H = \sqrt{W'E^*/(\pi R)} \)</td><td>Peak pressure in line contact; the pitting driver.</td></tr>
+<tr><td>Relative radius</td><td>\( 1/R = 1/r_1 + 1/r_2 \)</td><td>Dominated by the smaller member &mdash; the pinion pits first.</td></tr>
+<tr><td>Contact modulus</td><td>\( 1/E^* = \sum (1-\nu^2)/E \)</td><td>One number for both materials; ~114 GPa steel on steel.</td></tr>
+<tr><td>Load per unit face</td><td>\( W' = W_tK_v/(b\cos\phi) \)</td><td>The normal load, not the tangential one, spread across the face.</td></tr>
+<tr><td>Mode coupling</td><td>\( \sigma_H = K\sqrt{\sigma_b} \)</td><td>Exact for a given tooth system; halving bending buys only \( \sqrt{2} \) on contact.</td></tr>
+<tr><td>Utilisation</td><td>\( \sigma/\sigma_{allow} \)</td><td>The only fair comparison between two modes with different allowables.</td></tr>
+<tr><td>Pitting</td><td>&mdash;</td><td>Surface fatigue near the pitch line; ends gears far more often than breakage.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Contact stress on the pinion sized in L1</b></p>
+<p><b>Problem.</b> Take the previous lesson's design: \( m = 4\ \mathrm{mm} \),
+\( N_1 = 20 \), ratio \( i = 3 \), \( b = 40\ \mathrm{mm} \), \( \phi = 20^\circ \),
+\( W_t = 2470\ \mathrm{N} \), \( K_v = 1.996 \), steel on steel with
+\( E = 207\ \mathrm{GPa} \), \( \nu = 0.3 \). <b>Find:</b> \( E^* \), the two radii of
+curvature, the relative radius, the load per unit face width, and the contact
+stress.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Contact modulus:
+\( 1/E^* = 2(1-0.3^2)/207 = 0.008792\ \mathrm{GPa^{-1}} \), so
+\( E^* = 113.7\ \mathrm{GPa} \).
+(2) \( d_1 = 80\ \mathrm{mm} \), \( d_2 = 240\ \mathrm{mm} \), so
+\( r_1 = 40\sin20^\circ = 13.68\ \mathrm{mm} \) and
+\( r_2 = 120\sin20^\circ = 41.04\ \mathrm{mm} \).
+(3) \( 1/R = 1/13.68 + 1/41.04 \Rightarrow R = 10.26\ \mathrm{mm} \).
+(4) Normal dynamic load \( W_n = W_tK_v/\cos\phi = (2470)(1.996)/0.9397
+= 5245\ \mathrm{N} \), so \( W' = 5245/0.040 = 131.1\ \mathrm{kN/m} \).
+(5) \( \sigma_H = \sqrt{W'E^*/(\pi R)}
+= \sqrt{(131\,124)(113.7\times10^9)/(\pi \times 0.010261)} = 680\ \mathrm{MPa} \).</p>
+<p>Note that \( R \) came out closer to \( r_1 \) than to \( r_2 \): the small member
+dominates the relative radius, which is the geometric reason the pinion always pits
+before the wheel.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Which mode actually sizes this gear</b></p>
+<p><b>Problem.</b> The bending allowable is 140 MPa and the contact allowable for the
+through-hardened steel is 620 MPa. The bending stress at \( m = 4 \) was 95.7 MPa and the
+contact stress is 680 MPa. <b>Find:</b> both utilisations, state which mode governs, and
+find the module at which each mode just reaches its allowable.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Bending utilisation
+\( = 95.7/140 = 0.68 \) &mdash; passes. Contact utilisation
+\( = 680/620 = 1.10 \) &mdash; <b>fails</b>. Contact governs, and the design accepted in
+the previous lesson is not adequate.</p>
+<p>Sweeping the module: bending reaches utilisation 1.0 at
+\( m = 3.44\ \mathrm{mm} \), contact at \( m = 4.31\ \mathrm{mm} \). The gear must be
+sized on the later crossing, so the next standard module up, \( m = 5 \), is the smallest
+that satisfies both (utilisations 0.39 and 0.83).</p>
+<p>The general lesson is in the two crossings being different at all: comparing raw
+stresses would have been meaningless, because 95.7 and 680 are measured against different
+allowables. Utilisation is the only fair comparison.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Buying the margin with heat treatment instead of size</b></p>
+<p><b>Problem.</b> Rather than growing the gearbox to \( m = 5 \), the alternative is to
+carburise and grind the \( m = 4 \) pair, raising the contact allowable to about
+1300 MPa. <b>Find:</b> the resulting contact utilisation, the factor by which the
+bending stress would have had to fall to achieve the same contact relief by geometry
+alone, and one check that must be repeated afterwards.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Contact utilisation becomes
+\( 680/1300 = 0.52 \) &mdash; comfortably passing, with no change in size.</p>
+<p>(2) By geometry alone, reaching \( \sigma_H = 680/(1300/620) = 324\ \mathrm{MPa} \)
+means reducing contact stress by a factor \( 680/324 = 2.10 \). Since
+\( \sigma_H = K\sqrt{\sigma_b} \), the bending stress would have to fall by
+\( 2.10^2 = 4.4 \) times. That is the asymmetry in one number: a factor of two on the
+surface costs a factor of four on the tooth.</p>
+<p>(3) Re-check bending. Case hardening changes the root's allowable and its residual
+stress state, usually favourably, but a case that is too deep or ends badly at the root
+fillet can move the crack initiation site rather than remove it. The check that was
+passing at 0.68 is not automatically still valid against a different material
+condition.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>For a given tooth system, halving the bending stress reduces the contact stress by what factor?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \sqrt{2} \approx 1.41 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 2 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 4 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It leaves contact stress unchanged</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both stresses trace back to the same group \( W_tK_v/(bm) \), but
+bending is linear in it and contact goes as its square root, giving the exact relation
+\( \sigma_H = K\sqrt{\sigma_b} \) with \( K \) independent of module, face width, load and
+speed. So a factor of 2 on bending is only \( \sqrt{2} \) on contact &mdash; the reason
+geometry is a weak instrument against pitting.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Why does the pinion pit before the wheel, other things being equal?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The relative radius is dominated by the smaller member, so its contact patch is smaller and its pressure higher</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The pinion is made of softer material by convention</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The pinion carries a larger tangential load than the wheel</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The pinion runs at a lower pitch-line velocity</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 1/R = 1/r_1 + 1/r_2 \) is a reciprocal sum, so the smaller
+radius dominates it and \( R \) sits closer to \( r_1 \) than to \( r_2 \) &mdash; in the
+worked case 10.26 mm against radii of 13.68 and 41.04. A smaller relative radius means a
+smaller contact patch and a higher peak pressure. The tangential load is identical on
+both members, and the pinion also accumulates more stress cycles per unit time, which
+compounds the same conclusion.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The contact modulus \( E^* \) for steel on steel is about 114 GPa, roughly half of steel's Young's modulus. Why is it lower than \( E \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Both bodies deform, so their compliances add: \( 1/E^* = \sum (1-\nu^2)/E \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It is reduced by a safety factor built into the Hertz theory</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It accounts for the lubricant film between the surfaces</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It is the modulus measured in compression rather than tension</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( E^* \) is a series combination of the two bodies' compliances,
+each already softened by the \( (1-\nu^2) \) plane-strain factor. Two identical steel
+bodies each contribute the same compliance, so \( E^* \) lands near half of \( E \). It
+is a geometric-elastic bookkeeping term, not a safety factor and not a lubrication
+term.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Contact stress varies with transmitted load how?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>As \( \sqrt{W} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Linearly with \( W \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>As \( W^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>As \( W^{1/3} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \sigma_H = \sqrt{W'E^*/(\pi R)} \), so contact stress goes as the
+square root of load. A 20% overload raises contact stress by only about 10% &mdash; which
+sounds reassuring and is not, because it also means shedding load is an inefficient way to
+cure pitting. The same square root that protects you from overload frustrates you in
+redesign.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Where on the tooth flank does pitting typically concentrate?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>In a band near the pitch line, commonly just below it on the dedendum</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the very tip of the tooth</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At the root fillet on the tension side</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Uniformly over the whole working flank</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The pitch line is where rolling is pure and sliding reverses
+direction, so the lubricant film is thinnest there and the contact pressure band is at its
+most damaging; damage usually appears just below it on the dedendum. The root fillet is
+where <em>bending</em> cracks start, a different mode entirely &mdash; distinguishing the
+two on a failed tooth is the first thing a failure analysis does.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A gearbox is found to be contact-limited. Which remedy gives the most relief for the least change in envelope?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Carburise and grind the flanks</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Increase the face width by 20%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Increase the module by one step</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Reduce the pressure angle</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Surface fatigue strength scales with surface hardness, so case
+hardening can roughly double the contact allowable with no change in size at all. Face
+width and module both work only through the square root and cost envelope; a 20% face
+increase buys under 10% on contact stress. Reducing the pressure angle actually makes
+contact <em>worse</em>, because it shrinks the radii of curvature at the pitch point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Why must the two modes be compared as utilisations rather than as stresses?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>They are measured against different allowables, so the raw numbers are not comparable</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Contact stress is always numerically larger, so the comparison is trivial</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Utilisation removes the effect of the velocity factor</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Bending stress is a nominal value and contact stress is a peak value</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>In the worked case bending is 95.7 MPa against a 140 MPa allowable
+and contact is 680 MPa against 620 MPa. The contact number is seven times larger and yet
+it is the one that fails &mdash; because surface allowables are far higher than bending
+allowables. Dividing each by its own allowable is what makes them commensurable, and it is
+the step most often skipped.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>As gears are made larger and slower for the same transmitted power, which failure mode tends to become governing?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Contact, because bending utilisation falls about twice as fast with size</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Bending, because the teeth become more slender</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Neither — both scale identically with size</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Bending, because the velocity factor falls</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Since \( \sigma_H = K\sqrt{\sigma_b} \), a change that drops bending
+utilisation by a factor of four drops contact utilisation only by two. Growing a gear
+therefore retires the bending problem much faster than the pitting problem, and on large
+slow drives the surface is nearly always what sets the size. That is exactly the crossing
+pattern in the figure: 3.44 mm for bending, 4.31 mm for contact.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the gearbox that was replaced for the wrong reason.</b> A
+reduction gearbox on a conveyor drive is condemned after four years on rising vibration.
+The teardown report records "gear wear" and the unit is replaced like-for-like. The
+replacement is condemned on the same symptom in three and a half years.</p>
+<p>The second teardown is photographed properly, and the flanks tell a specific story:
+pitting in a narrow band just below the pitch line on the pinion dedendum, the wheel
+almost unmarked, and every tooth root clean and uncracked. That is surface fatigue on the
+smaller member, which is where the relative radius is least &mdash; the textbook
+signature, not general wear. Recalculating the original selection shows a bending
+utilisation near 0.6 and a contact utilisation just above 1.0: the drive had been chosen
+on a torque rating that reflected tooth strength, and the surface had never been checked
+separately.</p>
+<p>The fix costs nothing in envelope. The same gear geometry is re-specified in a
+case-hardened and ground grade, roughly doubling the contact allowable, and the drive is
+still in service. The instructive part is not the metallurgy but the diagnosis: a report
+that says "wear" closes an investigation, while a report that says "pitting on the pinion
+dedendum, roots clean" names the failure mode, and naming the mode is what points at the
+one design number nobody had computed.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft/s}\\)", "\\(18.29\\ \\mathrm{ft/s}\\)", "\\(196.9\\ \\mathrm{ft/s}\\)", "\\(19.69\\ \\mathrm{ft/s}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(5 \times 3.281 = 16.4\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.248\\ \\mathrm{lbf}\\)", "\\(444.8\\ \\mathrm{lbf}\\)", "\\(224.8\\ \\mathrm{lbf}\\)", "\\(22.48\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(100 \\times 0.2248 = 22.48\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1798\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(35.59\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(8 \times 0.2248 = 1.798\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -133,6 +313,6 @@
   <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../../../assets/nx/nexus.js?v=dc57f9c331"></script>
+<script src="../../../assets/nx/nexus.js?v=c6252cec03"></script>
 </body>
 </html>

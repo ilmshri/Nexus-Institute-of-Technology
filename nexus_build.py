@@ -237,7 +237,7 @@ NX_PAGE = """<!doctype html>
 <link rel="apple-touch-icon" href="{aprefix}assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{aprefix}assets/nx/nexus.css?v={v}">
 {extra_head}</head>
 <body{body_attrs}>
@@ -1772,6 +1772,105 @@ def _split_foundations(html):
         assumes = assumes[a_start + 5:]
     return assumes.strip(), glossary.strip()
 
+def _revision_ok(tab):
+    """One lesson's revision block is complete enough to render: intro with
+    what/keypoints/terms, at least one sheet, and every sheet/example a
+    {title, body} pair. The author-side gate (drafts/qa_revision.py) checks
+    content quality; this only guards the renderer's inputs."""
+    if not isinstance(tab, dict):
+        return False
+    rev = tab.get('revision')
+    if not isinstance(rev, dict):
+        return False
+    intro = rev.get('intro')
+    if not (isinstance(intro, dict) and intro.get('what')
+            and intro.get('keypoints') and intro.get('terms')):
+        return False
+    sheets = rev.get('sheets')
+    if not (isinstance(sheets, list) and sheets):
+        return False
+    for blk in list(sheets) + list(rev.get('examples') or []):
+        if not (isinstance(blk, dict) and blk.get('title') and blk.get('body')):
+            return False
+    return True
+
+def _rev_terms_table(terms):
+    """intro.terms as the site's existing glossary-table family (owner
+    contract). Three columns, with "read as" set as an italic line under the
+    symbol: measured on the A4 sheet, the four-column layout wraps long prose
+    into tall cells and blows the page; this keeps every field and fits."""
+    rows = ''.join(
+        f'<tr><td>{t["term"]}</td>'
+        f'<td>{t["symbol"]}<span class="rev-read">{t["read"]}</span></td>'
+        f'<td>{t["meaning"]}</td></tr>' for t in terms)
+    return ('<div class="glossary-wrap"><table class="glossary">'
+            '<thead><tr><th>Term</th><th>Symbol — read as</th>'
+            '<th>Meaning</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table></div>')
+
+def revision_lesson_pages(code, les, rev):
+    """One migrated lesson as a list of one-A4-page blocks: the intro page
+    (what + key points + terms table), then each sheet, then each worked
+    example. Sheet/example headings come from the data's "title" field — the
+    renderer owns the heading markup, bodies are heading-free (enforced by
+    drafts/qa_revision.py). EVERY block must fit a single A4 sheet; the
+    authoritative gate is design-previews/tools/qa_revision_fit.py, which
+    measures the real print layout."""
+    run = f'{code} · Lesson {les["n"]:02d} · {esc(les["t"])}'
+    intro = rev['intro']
+    kp = ''.join(f'<li>{k}</li>' for k in intro['keypoints'])
+    # Two opening sheets, both gate-measured: the opener (what + key points)
+    # and a dedicated Terms & signs sheet. One combined page measured 175% of
+    # A4 with a real 11-term lesson — splitting is the design answer, and the
+    # vocabulary sheet standing alone suits the terms-first rule anyway.
+    pages = [
+        f'<section class="rev-page"><p class="sum-run">{run}</p>'
+        f'<h3><span class="sum-n">Lesson {les["n"]:02d}</span>{esc(les["t"])}</h3>'
+        f'<p class="rev-what">{intro["what"]}</p>'
+        f'<div class="sum-block"><h4>Key points</h4><ul class="rev-kp">{kp}</ul></div>'
+        f'</section>',
+        f'<section class="rev-page rev-terms"><p class="sum-run">{run} · terms &amp; signs</p>'
+        f'<h3 class="rev-sheet-h">Terms &amp; signs — read these first</h3>'
+        f'{_rev_terms_table(intro["terms"])}</section>']
+    n_sheets = len(rev['sheets'])
+    for i, sh in enumerate(rev['sheets'], 1):
+        pages.append(
+            f'<section class="rev-page"><p class="sum-run">{run} · sheet {i} of {n_sheets}</p>'
+            f'<h3 class="rev-sheet-h">{esc(sh["title"])}</h3>'
+            f'<div class="rev-body">{sh["body"]}</div></section>')
+    for i, ex in enumerate(rev.get('examples') or [], 1):
+        pages.append(
+            f'<section class="rev-page rev-example"><p class="sum-run">{run} · worked example {i}</p>'
+            f'<h3 class="rev-sheet-h">{esc(ex["title"])}</h3>'
+            f'<div class="rev-body">{ex["body"]}</div></section>')
+    return pages
+
+def revision_document_fragment(course, tabs_all):
+    """The revision-notes document for a FULLY migrated course (all 11 lessons
+    carry renderable revision blocks — the caller enforces all-or-legacy,
+    never mixed). Replaces the recap spread. Contents-page lesson titles come
+    from data/y*.json "t" (owner contract), never from the content JSON."""
+    code = esc(course['code'])
+    heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
+               f'{code} — {esc(course["title"])}</h2>')
+    toc_rows = []
+    for les in course['lessons']:
+        rev = tabs_all[str(les['n'])]['revision']
+        n_s, n_e = len(rev['sheets']), len(rev.get('examples') or [])
+        counts = f'{n_s} sheet{"s" if n_s != 1 else ""}'
+        if n_e:
+            counts += f' · {n_e} example{"s" if n_e != 1 else ""}'
+        toc_rows.append(f'<li><span class="rev-toc-n">{les["n"]:02d}</span>'
+                        f'<span class="rev-toc-t">{esc(les["t"])}</span>'
+                        f'<span class="rev-toc-c">{counts}</span></li>')
+    pages = [f'<section class="rev-page rev-toc">{heading}'
+             f'<p class="sum-run">{code} · revision notes · contents</p>'
+             f'<ol class="rev-contents">{"".join(toc_rows)}</ol></section>']
+    for les in course['lessons']:
+        pages.extend(revision_lesson_pages(
+            code, les, tabs_all[str(les['n'])]['revision']))
+    return ''.join(pages)
+
 def course_summary_fragment(sem, course, prefix, tabs_all, ref):
     """The printable revision document for ONE course.
 
@@ -1795,6 +1894,13 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
 
     `prefix`/`ref` are unread; kept in the signature because main() passes ctx
     tuples positionally and a parallel branch rebases against this shape."""
+    # Revision-notes restructure (owner, 2026-08-01): a course whose 11 lessons
+    # ALL carry renderable revision blocks gets the new document, REPLACING the
+    # recap spread. All-or-legacy, never mixed — one partially-migrated course
+    # keeps the spread untouched until its last lesson lands.
+    if course['lessons'] and all(_revision_ok(tabs_all.get(str(l['n'])))
+                                 for l in course['lessons']):
+        return revision_document_fragment(course, tabs_all)
     heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
                f'{esc(course["code"])} — {esc(course["title"])}</h2>')
 

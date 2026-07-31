@@ -11,8 +11,8 @@
 <link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=dc57f9c331">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=c6252cec03">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -72,7 +72,95 @@
   </div>
 </div>
 <article class="part tight sum-doc">
-<h2 class="sum-course" id="sum-machine-design-2">MDN 301 — Machine Design II — Machine Elements</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p>
+<h2 class="sum-course" id="sum-machine-design-2">MDN 301 — Machine Design II — Machine Elements</h2>
+<p class="ref-thin">No recap is authored yet for lessons 03, 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
+<section class="sum-lesson"><p class="sum-run">MDN 301 · Lesson 01 · Spur gear design: bending</p><h3><span class="sum-n">Lesson 01</span>Spur gear design: bending</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A gear tooth is idealised as a cantilever loaded at the tip and broken at the root:
+\( \sigma = W_tK_v/(bmY) \).</li>
+<li>The Lewis form factor \( Y \) depends only on tooth count and pressure angle &mdash;
+0.245 at 14 teeth, 0.322 at 20, 0.359 at 30 &mdash; never on size.</li>
+<li>The tangential load is an output of the size choice, not an input:
+\( W_t = P/V \) with \( V = \pi mNn/60 \), so a bigger gear carries less tooth load at the
+same power.</li>
+<li>Module therefore appears three times in the denominator and is close to a cubic lever;
+face width appears once and is strictly linear.</li>
+<li>Worked case: 15 kW at 1450 rev/min through a 20-tooth pinion at \( b = 10m \) gives
+198.5 MPa at \( m = 3 \) &mdash; failing a 140 MPa allowable &mdash; and 95.7 MPa at
+\( m = 4 \), passing with a margin of 1.46.</li>
+<li>The stress ratio between those two is 2.07 rather than the pure-cubic 2.37, because
+the larger gear runs faster at the pitch line and carries a higher velocity factor.</li>
+<li>\( K_v = (6.1+V)/6.1 \) is an empirical fit for one quality class, not a derived
+dynamic amplification; size with it, then rate against a standard.</li>
+<li>Lewis ignores the root fillet stress concentration, which is exactly where the fatigue
+crack starts &mdash; so it sizes, it does not certify.</li>
+<li>When a bending check fails, step the module before widening the face: the first is
+cubic and stiffens the tooth, the second is linear and costs shaft length and load
+distribution.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MDN 301 · Lesson 01 · Spur gear design: bending · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Gear tooth geometry</b> (Kinematics &amp; Dynamics of Machinery L5) &mdash; module,
+pitch diameter, pressure angle, and why the involute is the profile used.</li>
+<li><b>Bending of beams</b> (Strength of Materials L4) &mdash; \( \sigma = Mc/I \) and the
+idea of a section modulus.</li>
+<li><b>Stress concentration</b> (Strength of Materials L11) &mdash; why a fillet radius,
+not a sharp corner, decides where a crack starts.</li>
+<li><b>Fatigue and the S&ndash;N method</b> (Machine Design I L3) &mdash; a tooth is loaded
+once per revolution, so the allowable stress here is a fatigue allowable, not yield.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Module</td><td>\( m = d/N \)</td><td>The size variable of a gear tooth; the single strongest lever on bending stress.</td></tr>
+<tr><td>Tangential load</td><td>\( W_t = P/V \)</td><td>The load that bends the tooth; falls as the gear grows, for fixed power.</td></tr>
+<tr><td>Pitch-line velocity</td><td>\( V = \pi d n/60 \)</td><td>Sets both the tangential load and the dynamic factor.</td></tr>
+<tr><td>Lewis form factor</td><td>\( Y \)</td><td>Depends on tooth count and pressure angle only; 0.322 at 20 teeth, 20&deg; full depth.</td></tr>
+<tr><td>Lewis bending stress</td><td>\( \sigma = W_t K_v/(bmY) \)</td><td>Sizing the module against tooth breakage at the root.</td></tr>
+<tr><td>Velocity (dynamic) factor</td><td>\( K_v = (6.1+V)/6.1 \)</td><td>Empirical uplift for mesh dynamics; state the quality class it came from.</td></tr>
+<tr><td>Face-width ratio</td><td>\( b/m \)</td><td>Usually 8&ndash;16; wider gains less than proportionally because load spreads unevenly.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 301 · Lesson 02 · Spur gear design: surface durability</p><h3><span class="sum-n">Lesson 02</span>Spur gear design: surface durability</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Gears have two failure modes with two equations and two allowables: tooth breakage in
+bending, and pitting from repeated Hertzian contact. Neither sizes a gear alone.</li>
+<li>Pitting is surface fatigue, concentrated in a band near the pitch line and usually
+just below it on the dedendum, where sliding reverses and the film is thinnest.</li>
+<li>At the pitch point the flanks are replaced by cylinders of radius
+\( (d/2)\sin\phi \), giving \( \sigma_H = \sqrt{W'E^*/(\pi R)} \) with
+\( 1/R = 1/r_1 + 1/r_2 \) and \( 1/E^* = \sum (1-\nu^2)/E \).</li>
+<li>\( R \) is dominated by the smaller member, which is the geometric reason the pinion
+always pits first &mdash; 10.26 mm against radii of 13.68 and 41.04 in the worked
+case.</li>
+<li>The two modes are exactly coupled: \( \sigma_H = K\sqrt{\sigma_b} \), with
+\( K = 69.5\ \mathrm{MPa}^{1/2} \) here, depending only on material, tooth count, ratio,
+pressure angle and form factor.</li>
+<li>So halving bending stress buys only \( \sqrt2 \) on contact, and contact stress
+responds to load only as \( \sqrt{W} \). Geometry is a weak instrument against
+pitting.</li>
+<li>Compare modes as utilisations, never as stresses: 95.7 MPa against a 140 allowable
+passes at 0.68, while 680 MPa against a 620 allowable fails at 1.10 &mdash; the larger
+number is the safer one.</li>
+<li>For this drive bending reaches its allowable at \( m = 3.44 \) and contact at
+\( m = 4.31 \); the gear is sized on the later crossing, so the previous lesson's
+\( m = 4 \) is not adequate and \( m = 5 \) is the smallest that passes both.</li>
+<li>The cheaper route is usually metallurgy: carburising and grinding roughly doubles the
+contact allowable, taking the \( m = 4 \) pair to 0.52 utilisation with no change in
+envelope &mdash; then re-check bending, because the root's allowable changed too.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MDN 301 · Lesson 02 · Spur gear design: surface durability · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Lewis bending</b> (this course, L1) &mdash; \( \sigma_b = W_tK_v/(bmY) \) and the
+worked 15 kW drive it sized.</li>
+<li><b>Gear tooth geometry</b> (Kinematics &amp; Dynamics of Machinery L5) &mdash; pressure
+angle, pitch circle, and the involute's radius of curvature.</li>
+<li><b>Fatigue as a surface phenomenon</b> (Machine Design I L3) &mdash; cyclic stress,
+initiation sites, and why a finite-life allowable is not a yield strength.</li>
+<li><b>Elastic constants</b> (Strength of Materials L1) &mdash; Young's modulus and
+Poisson's ratio as independent material numbers.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Hertzian contact stress</td><td>\( \sigma_H = \sqrt{W'E^*/(\pi R)} \)</td><td>Peak pressure in line contact; the pitting driver.</td></tr>
+<tr><td>Relative radius</td><td>\( 1/R = 1/r_1 + 1/r_2 \)</td><td>Dominated by the smaller member &mdash; the pinion pits first.</td></tr>
+<tr><td>Contact modulus</td><td>\( 1/E^* = \sum (1-\nu^2)/E \)</td><td>One number for both materials; ~114 GPa steel on steel.</td></tr>
+<tr><td>Load per unit face</td><td>\( W' = W_tK_v/(b\cos\phi) \)</td><td>The normal load, not the tangential one, spread across the face.</td></tr>
+<tr><td>Mode coupling</td><td>\( \sigma_H = K\sqrt{\sigma_b} \)</td><td>Exact for a given tooth system; halving bending buys only \( \sqrt{2} \) on contact.</td></tr>
+<tr><td>Utilisation</td><td>\( \sigma/\sigma_{allow} \)</td><td>The only fair comparison between two modes with different allowables.</td></tr>
+<tr><td>Pitting</td><td>&mdash;</td><td>Surface fatigue near the pitch line; ends gears far more often than breakage.</td></tr>
+</tbody></table></div></div></div></section>
 </article>
 </main>
 <footer class="nx-foot"><div class="in">
@@ -81,6 +169,6 @@
   <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../../../assets/nx/nexus.js?v=dc57f9c331"></script>
+<script src="../../../assets/nx/nexus.js?v=c6252cec03"></script>
 </body>
 </html>

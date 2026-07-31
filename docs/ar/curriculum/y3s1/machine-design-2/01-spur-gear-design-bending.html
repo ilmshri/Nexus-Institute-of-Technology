@@ -11,8 +11,8 @@
 <link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=dc57f9c331">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=c6252cec03">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MDN 301 · Lesson 01 of 11 · Year 3 · Semester 1</p>
   <h1>Spur gear design: bending</h1>
   <p class="sub">Lewis bending analysis with velocity and geometry factors. Module and face width chosen against tooth breakage. Where root cracks start and why.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Machine Design</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Machine Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y3s1/machine-design-2/1">Mark as complete</button>
@@ -91,23 +91,196 @@
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Which two velocity-dependent factors modify Lewis bending stress?</li><li>Why do gear root cracks start on the tension side?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MDN 301 · Machine Design II — Machine Elements</b>
-  (Year 3 · Semester 1). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Machine Design (nptel.ac.in)</li><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design</li></ul>
-  <p class="small">Course context: The rotating-equipment bill of materials designed properly: gears, rolling and journal bearings, belts and chains, clutches, brakes, and couplings — every element a maintenance engineer has replaced, now sized from first principles.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Which two velocity-dependent factors modify Lewis bending stress?</li><li>Why do gear root cracks start on the tension side?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Bending stress plotted against module for a fixed 15 kilowatt drive, falling steeply from about 198 megapascals at module 3 to under 20 at module 8. A horizontal allowable line at 140 megapascals is crossed between module 3, which fails, and module 4, which passes at about 96 megapascals."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Tooth bending stress falls almost as the cube of module</text><line x1="90.0" y1="244.0" x2="490.0" y2="244.0" stroke="#14181F" stroke-width="1.5"/><line x1="90.0" y1="244.0" x2="90.0" y2="62.0" stroke="#14181F" stroke-width="1.5"/><text x="290.0" y="276" text-anchor="middle" fill="#14181F" font-size="12">module m (mm), face width held at 10m</text><text x="26" y="153" font-size="12" fill="#14181F" transform="rotate(-90 26 153)" text-anchor="middle">tooth bending stress (MPa)</text><line x1="90.0" y1="244.0" x2="90.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="90.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">3</text><line x1="170.0" y1="244.0" x2="170.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="170.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">4</text><line x1="250.0" y1="244.0" x2="250.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="250.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">5</text><line x1="330.0" y1="244.0" x2="330.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="330.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">6</text><line x1="410.0" y1="244.0" x2="410.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="410.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">7</text><line x1="490.0" y1="244.0" x2="490.0" y2="248.0" stroke="#5B6672" stroke-width="1"/><text x="490.0" y="260" text-anchor="middle" fill="#5B6672" font-size="11">8</text><line x1="86.0" y1="244.0" x2="90.0" y2="244.0" stroke="#5B6672" stroke-width="1"/><text x="82" y="248.0" text-anchor="end" fill="#5B6672" font-size="11">0</text><line x1="86.0" y1="202.6" x2="90.0" y2="202.6" stroke="#5B6672" stroke-width="1"/><text x="82" y="206.63636363636363" text-anchor="end" fill="#5B6672" font-size="11">50</text><line x1="86.0" y1="161.3" x2="90.0" y2="161.3" stroke="#5B6672" stroke-width="1"/><text x="82" y="165.27272727272728" text-anchor="end" fill="#5B6672" font-size="11">100</text><line x1="86.0" y1="119.9" x2="90.0" y2="119.9" stroke="#5B6672" stroke-width="1"/><text x="82" y="123.90909090909092" text-anchor="end" fill="#5B6672" font-size="11">150</text><line x1="86.0" y1="78.5" x2="90.0" y2="78.5" stroke="#5B6672" stroke-width="1"/><text x="82" y="82.54545454545456" text-anchor="end" fill="#5B6672" font-size="11">200</text><polyline points="90.0,79.8 93.3,85.5 96.7,91.0 100.0,96.1 103.3,101.1 106.7,105.8 110.0,110.3 113.3,114.5 116.7,118.6 120.0,122.5 123.3,126.2 126.7,129.8 130.0,133.2 133.3,136.5 136.7,139.6 140.0,142.6 143.3,145.5 146.7,148.3 150.0,150.9 153.3,153.5 156.7,156.0 160.0,158.3 163.3,160.6 166.7,162.8 170.0,164.9 173.3,166.9 176.7,168.8 180.0,170.7 183.3,172.5 186.7,174.3 190.0,176.0 193.3,177.6 196.7,179.2 200.0,180.7 203.3,182.2 206.7,183.6 210.0,185.0 213.3,186.3 216.7,187.6 220.0,188.8 223.3,190.0 226.7,191.2 230.0,192.3 233.3,193.4 236.7,194.5 240.0,195.5 243.3,196.5 246.7,197.5 250.0,198.4 253.3,199.3 256.7,200.2 260.0,201.1 263.3,201.9 266.7,202.7 270.0,203.5 273.3,204.3 276.7,205.1 280.0,205.8 283.3,206.5 286.7,207.2 290.0,207.9 293.3,208.5 296.7,209.2 300.0,209.8 303.3,210.4 306.7,211.0 310.0,211.5 313.3,212.1 316.7,212.6 320.0,213.2 323.3,213.7 326.7,214.2 330.0,214.7 333.3,215.2 336.7,215.7 340.0,216.1 343.3,216.6 346.7,217.0 350.0,217.4 353.3,217.8 356.7,218.3 360.0,218.7 363.3,219.0 366.7,219.4 370.0,219.8 373.3,220.2 376.7,220.5 380.0,220.9 383.3,221.2 386.7,221.6 390.0,221.9 393.3,222.2 396.7,222.5 400.0,222.8 403.3,223.1 406.7,223.4 410.0,223.7 413.3,224.0 416.7,224.3 420.0,224.5 423.3,224.8 426.7,225.1 430.0,225.3 433.3,225.6 436.7,225.8 440.0,226.1 443.3,226.3 446.7,226.5 450.0,226.8 453.3,227.0 456.7,227.2 460.0,227.4 463.3,227.6 466.7,227.8 470.0,228.0 473.3,228.2 476.7,228.4 480.0,228.6 483.3,228.8 486.7,229.0 490.0,229.2" fill="none" stroke="#3a6ea5" stroke-width="2.4"/><line x1="90.0" y1="128.2" x2="490.0" y2="128.2" stroke="#9c2f2f" stroke-width="1.6" stroke-dasharray="5 3"/><text x="486" y="120.18181818181819" text-anchor="end" fill="#9c2f2f" font-size="11">allowable 140 MPa</text><circle cx="90.0" cy="79.8" r="4.5" fill="#9c2f2f"/><circle cx="170.0" cy="164.9" r="4.5" fill="#1f7a5c"/><text x="102.0" y="69.80499625606492" fill="#9c2f2f" font-size="11" font-weight="600">m = 3 fails: 198 MPa</text><text x="184.0" y="168.85893427936077" fill="#1f7a5c" font-size="11" font-weight="600">m = 4 passes: 96 MPa</text><text x="150" y="100" fill="#5B6672" font-size="11">one module step = 2.07x</text></svg><figcaption>Module is the strong lever. Holding the face-width ratio at 10m, one step from m=3 to m=4 divides the bending stress by 2.07 — close to the cube of the module ratio, 2.37, and short of it only because the larger gear runs faster at the pitch line and so carries a higher velocity factor.</figcaption></figure>
+<h3>&sect;1 &middot; A gear tooth is a cantilever that nobody built carefully</h3>
+<p>Strip the mesh of everything decorative and one tooth is a short, stubby cantilever
+loaded near its tip. Wilfred Lewis published that idealisation in 1892 and it still sets
+the module of most industrial gearing, because the assumption it makes is the right one
+to make first: the tooth breaks at its root, in bending, and the root is where a designer
+has any leverage at all.</p>
+<p>The idealisation is deliberately crude. It puts the whole tangential load on a single
+tooth tip, ignores the radial component that compresses the root, ignores the fact that
+two tooth pairs share the load through part of the mesh cycle, and — most importantly —
+ignores the stress concentration at the root fillet. Every one of those omissions is
+conservative except the last, which is why Lewis alone is a sizing tool and not a
+verdict.</p>
+<p>What the idealisation gets right is the scaling. The tooth's section modulus grows
+with the square of its size while the load it must carry falls as the gear gets bigger,
+and that combination is what makes module such a powerful design variable.</p>
+
+<h3>&sect;2 &middot; The Lewis equation and its form factor</h3>
+<p>Treat the tooth as a cantilever of face width \( b \), thickness \( t \) at the
+critical root section, and height \( h \) from the load point to that section. Bending
+gives \( \sigma = 6W_t h/(bt^2) \). Lewis's insight was that for a given tooth
+<em>form</em>, \( h \) and \( t \) both scale with the module, so the whole geometry
+collapses into one dimensionless number:</p>
+<p>\[ \sigma = \frac{W_t}{b\,m\,Y} \]</p>
+<p>\( Y \) is the Lewis form factor. It depends only on the number of teeth and the
+pressure angle, not on size — 0.245 at 14 teeth, 0.322 at 20, 0.359 at 30, approaching
+about 0.485 for a rack. Fewer teeth means a more sharply undercut, weaker root, which is
+the design reason to avoid very small pinions quite apart from interference.</p>
+<p>The tangential load comes from the power, not from a free body: \( W_t = P/V \) with
+\( V = \pi d n/60 \) the pitch-line velocity and \( d = mN \). Note what that does — for
+fixed power, a bigger gear runs faster at the pitch line and therefore carries
+<em>less</em> tangential load. Module helps twice over.</p>
+
+<h3>&sect;3 &middot; The velocity factor, and what it is honestly doing</h3>
+<p>Real teeth are not perfect involutes. Manufacturing error, tooth deflection under
+load, and the resulting velocity fluctuation at each mesh throw a dynamic increment on
+top of the steady load, and it grows with speed. The classical Barth factor</p>
+<p>\[ K_v = \frac{6.1 + V}{6.1} \qquad (V \text{ in m/s, cut teeth}) \]</p>
+<p>is an empirical fudge, and worth naming as one. It is not derived; it is a curve
+fitted to gears of a particular quality class, and better-cut gears get a gentler
+constant. Use it to size, then check against a real rating standard before cutting
+metal. What it captures correctly is the direction: the faster the pitch line runs, the
+more of the load is dynamic rather than transmitted.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; Lewis bending with dynamic effect</span>
+<p>\[ \sigma = \frac{W_t K_v}{b\,m\,Y}, \qquad W_t = \frac{P}{V}, \qquad
+V = \frac{\pi m N n}{60} \]</p>
+<p>Hold \( b = 10m \) and the module appears cubed in the denominator: once through
+\( b \), once through \( m \), and once more through \( W_t \), which falls as the gear
+grows. Only \( K_v \) pushes back, because the bigger gear runs faster.</p>
+</div>
+
+<h3>&sect;4 &middot; The design working method</h3>
+<p><em>One:</em> fix the transmitted power, the pinion speed, and the tooth count from
+the ratio you need. <em>Two:</em> pick a trial module and compute in this order —
+\( d = mN \), then \( V \), then \( W_t = P/V \), then \( K_v \). <em>Three:</em> choose
+the face width as a multiple of module; 8 to 16 is the usual band, and the reason it is a
+band rather than a number is load distribution: a wide, narrow-shafted gear does not
+carry load evenly across its face, so the extra width is not fully earned.
+<em>Four:</em> compute \( \sigma \) and compare against the allowable bending stress for
+the material and life required. <em>Five:</em> if it fails, step the module up before
+reaching for face width — the module is the cubic lever and the face width is only
+linear.</p>
+<p>That last instruction is the whole practical content of the lesson. A designer who
+answers a failed bending check by widening the gear is buying a linear improvement at a
+cost in shaft length, bearing span, and load distribution; a designer who steps the
+module buys roughly a cubic one and a stiffer tooth into the bargain.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Which two velocity-dependent factors modify Lewis bending stress?</li><li>Why do gear root cracks start on the tension side?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Gear tooth geometry</b> (Kinematics &amp; Dynamics of Machinery L5) &mdash; module,
+pitch diameter, pressure angle, and why the involute is the profile used.</li>
+<li><b>Bending of beams</b> (Strength of Materials L4) &mdash; \( \sigma = Mc/I \) and the
+idea of a section modulus.</li>
+<li><b>Stress concentration</b> (Strength of Materials L11) &mdash; why a fillet radius,
+not a sharp corner, decides where a crack starts.</li>
+<li><b>Fatigue and the S&ndash;N method</b> (Machine Design I L3) &mdash; a tooth is loaded
+once per revolution, so the allowable stress here is a fatigue allowable, not yield.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Module</td><td>\( m = d/N \)</td><td>The size variable of a gear tooth; the single strongest lever on bending stress.</td></tr>
+<tr><td>Tangential load</td><td>\( W_t = P/V \)</td><td>The load that bends the tooth; falls as the gear grows, for fixed power.</td></tr>
+<tr><td>Pitch-line velocity</td><td>\( V = \pi d n/60 \)</td><td>Sets both the tangential load and the dynamic factor.</td></tr>
+<tr><td>Lewis form factor</td><td>\( Y \)</td><td>Depends on tooth count and pressure angle only; 0.322 at 20 teeth, 20&deg; full depth.</td></tr>
+<tr><td>Lewis bending stress</td><td>\( \sigma = W_t K_v/(bmY) \)</td><td>Sizing the module against tooth breakage at the root.</td></tr>
+<tr><td>Velocity (dynamic) factor</td><td>\( K_v = (6.1+V)/6.1 \)</td><td>Empirical uplift for mesh dynamics; state the quality class it came from.</td></tr>
+<tr><td>Face-width ratio</td><td>\( b/m \)</td><td>Usually 8&ndash;16; wider gains less than proportionally because load spreads unevenly.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Sizing a pinion against tooth breakage</b></p>
+<p><b>Problem.</b> A spur pinion transmits \( P = 15\ \mathrm{kW} \) at
+\( n = 1450\ \mathrm{rev/min} \). It has \( N = 20 \) teeth, 20&deg; full-depth form
+(\( Y = 0.322 \)), and the face width is held at \( b = 10m \). Cut teeth, so use the
+Barth factor. <b>Find:</b> for a trial module \( m = 4\ \mathrm{mm} \), the pitch
+diameter, pitch-line velocity, tangential load, velocity factor, and the Lewis bending
+stress.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Pitch diameter:
+\( d = mN = 4 \times 20 = 80\ \mathrm{mm} \).
+(2) Pitch-line velocity:
+\( V = \pi d n/60 = \pi(0.080)(1450)/60 = 6.074\ \mathrm{m/s} \).
+(3) Tangential load: \( W_t = P/V = 15\,000/6.074 = 2470\ \mathrm{N} \).
+(4) Velocity factor: \( K_v = (6.1+6.074)/6.1 = 1.996 \).
+(5) Face width \( b = 10m = 40\ \mathrm{mm} \), so
+\( \sigma = W_tK_v/(bmY) = (2470)(1.996)/(0.040 \times 0.004 \times 0.322)
+= 95.7\ \mathrm{MPa} \).</p>
+<p>Against a 140 MPa allowable this passes with a margin of 1.46. Note the order of the
+calculation: geometry, then velocity, then load. The load is an <em>output</em> of the
+size choice, not an input to it, which is what makes gear sizing iterative.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>The module step that decides the design</b></p>
+<p><b>Problem.</b> For the same drive, a colleague proposes \( m = 3\ \mathrm{mm} \) to
+save space, keeping \( b = 10m \). <b>Find:</b> the resulting bending stress, whether it
+meets the 140 MPa allowable, and the ratio of this stress to the \( m = 4 \) result.
+Compare that ratio with the cube of the module ratio and explain the difference.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( d = 60\ \mathrm{mm} \),
+\( V = \pi(0.060)(1450)/60 = 4.555\ \mathrm{m/s} \),
+\( W_t = 15\,000/4.555 = 3293\ \mathrm{N} \),
+\( K_v = (6.1+4.555)/6.1 = 1.747 \), \( b = 30\ \mathrm{mm} \). Then
+\( \sigma = (3293)(1.747)/(0.030 \times 0.003 \times 0.322) = 198.5\ \mathrm{MPa} \)
+&mdash; <b>over</b> the 140 MPa allowable, so the proposal fails.</p>
+<p>The ratio is \( 198.5/95.67 = 2.07 \), against \( (4/3)^3 = 2.37 \) for a pure cubic
+law. The shortfall is the velocity factor: the larger gear runs at 6.07 m/s rather than
+4.56, so its \( K_v \) is 1.996 rather than 1.747 and it gives back some of what the
+geometry won. Module is very nearly a cubic lever, but not quite, and the correction
+always works against the bigger gear.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Rescuing the small module with face width</b></p>
+<p><b>Problem.</b> Suppose the \( m = 3\ \mathrm{mm} \) pinion must be kept for envelope
+reasons. <b>Find:</b> the face width that would bring its bending stress down to the
+140 MPa allowable, and the resulting \( b/m \) ratio. Comment on whether this is a sound
+fix.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Bending stress is inversely proportional to face
+width, so \( b = W_tK_v/(\sigma m Y) \). With \( W_t = 3293\ \mathrm{N} \),
+\( K_v = 1.747 \), \( \sigma = 140\ \mathrm{MPa} \), \( m = 0.003\ \mathrm{m} \),
+\( Y = 0.322 \):</p>
+<p>\[ b = \frac{(3293)(1.747)}{(140\times10^6)(0.003)(0.322)} = 0.0425\ \mathrm{m}
+= 42.5\ \mathrm{mm} \]</p>
+<p>That is \( b/m = 42.5/3 = 14.2 \), inside the 8&ndash;16 band but at its upper end.
+The arithmetic works; the engineering is weaker. Face width buys stress only in
+proportion, and it buys it on the assumption that load is uniform across the face &mdash;
+which a 14:1 face-width ratio on a shaft that deflects under the same load will not
+deliver. The honest comparison is that \( m = 4 \) at \( b = 40\ \mathrm{mm} \) is both
+narrower and less stressed than \( m = 3 \) at \( b = 42.5\ \mathrm{mm} \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Holding the face-width ratio \( b/m \) constant, how does Lewis bending stress scale with module for a fixed transmitted power and speed?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Roughly as \( 1/m^3 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Roughly as \( 1/m \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Roughly as \( 1/m^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Roughly as \( m^2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Module enters three times: through \( b = (b/m)\cdot m \), through
+\( m \) itself, and through \( W_t = P/V \), since \( V \propto m \) makes the tangential
+load fall as the gear grows. That is \( 1/m^3 \), tempered slightly by \( K_v \) rising
+with velocity. In the worked case one step from 3 to 4 mm divided the stress by 2.07
+against a pure-cubic 2.37.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Doubling only the face width \( b \), with module and speed unchanged, changes the Lewis bending stress by what factor?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 0.5 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.25 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 0.125 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \sigma = W_tK_v/(bmY) \) and nothing else in it depends on
+\( b \), so stress is simply inversely proportional to face width: doubling \( b \) halves
+\( \sigma \). This is exactly why face width is the weak lever &mdash; and why it is
+tempting, since it looks like the cheapest change on a drawing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The Lewis form factor \( Y \) for a 20&deg; full-depth tooth is 0.245 at 14 teeth and 0.359 at 30 teeth. What does that trend say?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Teeth on a small pinion have weaker roots, so small pinions are penalised twice</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Larger gears have weaker teeth because they carry more load</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( Y \) grows with module, so a bigger module is stronger</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( Y \) is a safety factor and larger values are more conservative</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( Y \) depends only on tooth count and pressure angle, never on
+size. A low tooth count gives a more undercut, thinner root and therefore a smaller
+\( Y \), which raises the stress for the same load. Small pinions are already the
+interference-prone member; the form factor penalises them again on strength. The two
+distractors that tie \( Y \) to module or to load both misread it as something other than
+a pure shape number.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>For fixed transmitted power, increasing the module increases the pitch-line velocity. What is the net effect on the tangential load \( W_t \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( W_t \) falls, because \( W_t = P/V \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( W_t \) rises, because a bigger gear carries more torque</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( W_t \) is unchanged, because the power is unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( W_t \) falls, but only if the speed \( n \) is also reduced</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Power is the product of force and velocity at the pitch line, so at
+fixed power a faster pitch line means a smaller tangential force. Since \( V = \pi mNn/60 \)
+grows in direct proportion to module, \( W_t \) falls in inverse proportion. This is the
+third of the three routes by which module reduces bending stress, and the one designers
+most often forget when they reason from torque alone.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A spur tooth fails in bending. Where does the crack almost always originate?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At the root fillet on the loaded (tension) side</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the tooth tip, where the load is applied</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At the pitch line, where sliding reverses</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>At the root fillet on the compression side</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Bending puts the loaded flank's root in tension, and the fillet
+there is both the highest-stressed section and a geometric stress raiser. Fatigue cracks
+initiate in tension, so the tension-side fillet is the site. The pitch line is where
+<em>surface</em> failure &mdash; pitting &mdash; concentrates, which is a different failure
+mode with a different equation, and the subject of the next lesson.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Which of these does the plain Lewis equation <em>not</em> account for?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Stress concentration at the root fillet</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The tangential component of the tooth load</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The face width of the gear</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The number of teeth on the gear</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Lewis treats the tooth as a smooth cantilever and takes no account
+of the fillet as a stress raiser &mdash; which is precisely the location where the crack
+starts. Modern ratings restore it as a geometry factor \( J \) that folds the concentration
+and load sharing into \( Y \). The other three are all present: \( W_t \) is the tangential
+load, \( b \) is the face width, and tooth count enters through \( Y \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The Barth velocity factor \( K_v = (6.1+V)/6.1 \) is best described as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>An empirical fit for a given tooth quality class, not a derived result</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>An exact dynamic amplification derived from the equation of motion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A safety factor mandated by international gear standards</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A correction for the radial component of tooth load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is a curve fitted to measured behaviour of gears cut to a
+particular quality, and better-cut gearing uses a gentler constant. Naming it as empirical
+matters: it tells you the number is a sizing aid whose validity ends where its quality
+class does, and that a real rating check against a standard is still owed before metal is
+cut.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A bending check fails by a small margin. Which change reduces the stress most for the least penalty elsewhere?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Step the module up one size</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Increase the face width by the same proportion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Increase the shaft diameter</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Raise the pinion speed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Module is close to a cubic lever; face width is strictly linear and
+is paid for in shaft length, bearing span, and worse load distribution across the face.
+Shaft diameter does not appear in the Lewis equation at all &mdash; it matters for
+deflection and therefore load distribution, but it does not reduce tooth bending stress
+directly. Raising the speed lowers \( W_t \) but raises \( K_v \) and is rarely a free
+variable.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the gearbox that was quieter after it broke.</b> A drive on a
+materials-handling line sheds two teeth from its input pinion after eighteen months. The
+replacement is ordered to the same drawing, and fails again in under a year. Only on the
+second failure does anyone plot the fracture faces: both start at the root fillet on the
+loaded flank, both show beach marks, and both are fatigue &mdash; not the overload the
+first report assumed.</p>
+<p>The design file, when it is finally read, sizes the pinion on the motor's nameplate
+power. The line, however, starts against a loaded belt, and the starting torque is roughly
+twice nameplate for about a second. Lewis bending stress is linear in load, so that is a
+factor of two on the stress for a few hundred cycles per start &mdash; and the pinion is
+started perhaps a dozen times a shift. The original calculation was arithmetically
+correct and answered the wrong question: it sized for the load that the drive runs at,
+not the load that it starts at. The rebuild steps the module up one size, keeps the same
+centre distance by reducing tooth counts on both members, and records the start
+condition as a named load case. The characteristic detail is that the new gearbox is also
+audibly quieter, because a stiffer tooth deflects less under the same load and meshes
+closer to its intended involute.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1143\\ \\mathrm{in}\\)", "\\(1.772\\ \\mathrm{in}\\)", "\\(17.72\\ \\mathrm{in}\\)", "\\(0.1772\\ \\mathrm{in}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(45 \\times 0.03937 = 1.772\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(76.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(0.1181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.01181\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(3 \times 0.03937 = 0.1181\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft/s}\\)", "\\(18.29\\ \\mathrm{ft/s}\\)", "\\(196.9\\ \\mathrm{ft/s}\\)", "\\(19.69\\ \\mathrm{ft/s}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(5 \times 3.281 = 16.4\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -133,6 +306,6 @@
   <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
   <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
 </div></footer>
-<script src="../../../../assets/nx/nexus.js?v=dc57f9c331"></script>
+<script src="../../../../assets/nx/nexus.js?v=c6252cec03"></script>
 </body>
 </html>
