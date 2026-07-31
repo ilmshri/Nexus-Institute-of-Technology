@@ -76,7 +76,7 @@
   <p class="eyebrow">KDM 252 · Lesson 11 of 11 · Year 2 · Semester 2</p>
   <h1>Governors and gyroscopic effects</h1>
   <p class="sub">Centrifugal governors as proportional controllers made of iron. Gyroscopic couples on turbine and vehicle bearings. Legacy topics that still explain modern behavior.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/kinematics-machinery/11">Mark as complete</button>
@@ -91,23 +91,217 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does a governor control that a flywheel cannot?</li><li>Where do gyroscopic couples load a turbine's bearings?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>KDM 252 · Kinematics &amp; Dynamics of Machinery</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Theory of Machines (nptel.ac.in)</li></ul>
-  <p class="small">Course context: Mechanisms in motion: linkages, cams, gear geometry and trains, flywheels, and machine balancing — how rotation becomes useful motion, and where the shaking forces that vibration analysts chase are born.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does a governor control that a flywheel cannot?</li><li>Where do gyroscopic couples load a turbine's bearings?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of governor ball height against speed from 50 to 300 revolutions per minute. The simple Watt governor collapses as the inverse square of speed, from 358 millimetres at 50 rev/min to 22 millimetres at 200, which is too small to work with. The Porter governor, loaded with a sleeve weight ten times the ball mass, keeps a usable 246 millimetres at the same 200 rev/min."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Why a governor has to be loaded</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">speed N (rev/min)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">ball height h (m)</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">50</text><path d="M173 250 L173 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="173" y="266" text-anchor="middle" fill="#5B6672" font-size="11">100</text><path d="M256 250 L256 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="256" y="266" text-anchor="middle" fill="#5B6672" font-size="11">150</text><path d="M339 250 L339 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="339" y="266" text-anchor="middle" fill="#5B6672" font-size="11">200</text><path d="M422 250 L422 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="422" y="266" text-anchor="middle" fill="#5B6672" font-size="11">250</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">300</text><path d="M86 250 L90 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 203 L90 203" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="207" text-anchor="end" fill="#5B6672" font-size="11">0.10</text><path d="M86 156 L90 156" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="160" text-anchor="end" fill="#5B6672" font-size="11">0.20</text><path d="M86 109 L90 109" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="113" text-anchor="end" fill="#5B6672" font-size="11">0.30</text><path d="M86 62 L90 62" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="66" text-anchor="end" fill="#5B6672" font-size="11">0.40</text><path d="M90 81.8 L91.7 88.4 L93.3 94.5 L95 100.3 L96.6 105.8 L98.3 111 L100 115.9 L101.6 120.6 L103.3 125 L104.9 129.2 L106.6 133.2 L108.3 137 L109.9 140.6 L111.6 144.1 L113.2 147.4 L114.9 150.5 L116.6 153.5 L118.2 156.3 L119.9 159.1 L121.5 161.7 L123.2 164.2 L124.9 166.6 L126.5 168.9 L128.2 171.1 L129.8 173.2 L131.5 175.3 L133.2 177.2 L134.8 179.1 L136.5 180.9 L138.1 182.6 L139.8 184.3 L141.5 185.9 L143.1 187.5 L144.8 189 L146.4 190.4 L148.1 191.8 L149.8 193.2 L151.4 194.5 L153.1 195.7 L154.7 196.9 L156.4 198.1 L158.1 199.2 L159.7 200.3 L161.4 201.4 L163 202.4 L164.7 203.4 L166.4 204.4 L168 205.3 L169.7 206.2 L171.3 207.1 L173 208 L174.7 208.8 L176.3 209.6 L178 210.4 L179.6 211.1 L181.3 211.9 L183 212.6 L184.6 213.3 L186.3 214 L187.9 214.6 L189.6 215.3 L191.3 215.9 L192.9 216.5 L194.6 217.1 L196.2 217.6 L197.9 218.2 L199.6 218.8 L201.2 219.3 L202.9 219.8 L204.5 220.3 L206.2 220.8 L207.9 221.3 L209.5 221.8 L211.2 222.2 L212.8 222.7 L214.5 223.1 L216.2 223.5 L217.8 223.9 L219.5 224.3 L221.1 224.7 L222.8 225.1 L224.5 225.5 L226.1 225.9 L227.8 226.2 L229.4 226.6 L231.1 226.9 L232.8 227.3 L234.4 227.6 L236.1 227.9 L237.7 228.2 L239.4 228.5 L241.1 228.9 L242.7 229.1 L244.4 229.4 L246 229.7 L247.7 230 L249.4 230.3 L251 230.5 L252.7 230.8 L254.3 231.1 L256 231.3 L257.7 231.6 L259.3 231.8 L261 232 L262.6 232.3 L264.3 232.5 L266 232.7 L267.6 232.9 L269.3 233.2 L270.9 233.4 L272.6 233.6 L274.3 233.8 L275.9 234 L277.6 234.2 L279.2 234.4 L280.9 234.6 L282.6 234.7 L284.2 234.9 L285.9 235.1 L287.5 235.3 L289.2 235.5 L290.9 235.6 L292.5 235.8 L294.2 236 L295.8 236.1 L297.5 236.3 L299.2 236.4 L300.8 236.6 L302.5 236.7 L304.1 236.9 L305.8 237 L307.5 237.2 L309.1 237.3 L310.8 237.4 L312.4 237.6 L314.1 237.7 L315.8 237.8 L317.4 238 L319.1 238.1 L320.7 238.2 L322.4 238.4 L324.1 238.5 L325.7 238.6 L327.4 238.7 L329 238.8 L330.7 238.9 L332.4 239.1 L334 239.2 L335.7 239.3 L337.3 239.4 L339 239.5 L340.7 239.6 L342.3 239.7 L344 239.8 L345.6 239.9 L347.3 240 L349 240.1 L350.6 240.2 L352.3 240.3 L353.9 240.4 L355.6 240.5 L357.3 240.6 L358.9 240.6 L360.6 240.7 L362.2 240.8 L363.9 240.9 L365.6 241 L367.2 241.1 L368.9 241.2 L370.5 241.2 L372.2 241.3 L373.9 241.4 L375.5 241.5 L377.2 241.5 L378.8 241.6 L380.5 241.7 L382.2 241.8 L383.8 241.8 L385.5 241.9 L387.1 242 L388.8 242.1 L390.5 242.1 L392.1 242.2 L393.8 242.3 L395.4 242.3 L397.1 242.4 L398.8 242.5 L400.4 242.5 L402.1 242.6 L403.7 242.6 L405.4 242.7 L407.1 242.8 L408.7 242.8 L410.4 242.9 L412 242.9 L413.7 243 L415.4 243.1 L417 243.1 L418.7 243.2 L420.3 243.2 L422 243.3 L423.7 243.3 L425.3 243.4 L427 243.4 L428.6 243.5 L430.3 243.5 L432 243.6 L433.6 243.6 L435.3 243.7 L436.9 243.7 L438.6 243.8 L440.3 243.8 L441.9 243.9 L443.6 243.9 L445.2 244 L446.9 244 L448.6 244.1 L450.2 244.1 L451.9 244.1 L453.5 244.2 L455.2 244.2 L456.9 244.3 L458.5 244.3 L460.2 244.4 L461.8 244.4 L463.5 244.4 L465.2 244.5 L466.8 244.5 L468.5 244.6 L470.1 244.6 L471.8 244.6 L473.5 244.7 L475.1 244.7 L476.8 244.8 L478.4 244.8 L480.1 244.8 L481.8 244.9 L483.4 244.9 L485.1 244.9 L486.7 245 L488.4 245 L490.1 245 L491.7 245.1 L493.4 245.1 L495 245.1 L496.7 245.2 L498.4 245.2 L500 245.2 L501.7 245.3 L503.3 245.3 L505 245.3" fill="none" stroke="#1f7a5c" stroke-width="2.4"/><path d="M267.6 62.4 L269.3 64.7 L270.9 67.1 L272.6 69.3 L274.3 71.6 L275.9 73.8 L277.6 75.9 L279.2 78 L280.9 80.1 L282.6 82.2 L284.2 84.2 L285.9 86.1 L287.5 88.1 L289.2 90 L290.9 91.8 L292.5 93.7 L294.2 95.5 L295.8 97.2 L297.5 99 L299.2 100.7 L300.8 102.4 L302.5 104 L304.1 105.7 L305.8 107.3 L307.5 108.8 L309.1 110.4 L310.8 111.9 L312.4 113.4 L314.1 114.9 L315.8 116.3 L317.4 117.7 L319.1 119.1 L320.7 120.5 L322.4 121.9 L324.1 123.2 L325.7 124.5 L327.4 125.8 L329 127.1 L330.7 128.4 L332.4 129.6 L334 130.8 L335.7 132 L337.3 133.2 L339 134.4 L340.7 135.5 L342.3 136.7 L344 137.8 L345.6 138.9 L347.3 139.9 L349 141 L350.6 142.1 L352.3 143.1 L353.9 144.1 L355.6 145.1 L357.3 146.1 L358.9 147.1 L360.6 148.1 L362.2 149 L363.9 149.9 L365.6 150.9 L367.2 151.8 L368.9 152.7 L370.5 153.6 L372.2 154.4 L373.9 155.3 L375.5 156.2 L377.2 157 L378.8 157.8 L380.5 158.6 L382.2 159.5 L383.8 160.2 L385.5 161 L387.1 161.8 L388.8 162.6 L390.5 163.3 L392.1 164.1 L393.8 164.8 L395.4 165.5 L397.1 166.3 L398.8 167 L400.4 167.7 L402.1 168.4 L403.7 169 L405.4 169.7 L407.1 170.4 L408.7 171 L410.4 171.7 L412 172.3 L413.7 173 L415.4 173.6 L417 174.2 L418.7 174.8 L420.3 175.4 L422 176 L423.7 176.6 L425.3 177.2 L427 177.7 L428.6 178.3 L430.3 178.9 L432 179.4 L433.6 180 L435.3 180.5 L436.9 181.1 L438.6 181.6 L440.3 182.1 L441.9 182.6 L443.6 183.1 L445.2 183.6 L446.9 184.1 L448.6 184.6 L450.2 185.1 L451.9 185.6 L453.5 186.1 L455.2 186.6 L456.9 187 L458.5 187.5 L460.2 187.9 L461.8 188.4 L463.5 188.8 L465.2 189.3 L466.8 189.7 L468.5 190.2 L470.1 190.6 L471.8 191 L473.5 191.4 L475.1 191.8 L476.8 192.3 L478.4 192.7 L480.1 193.1 L481.8 193.5 L483.4 193.9 L485.1 194.2 L486.7 194.6 L488.4 195 L490.1 195.4 L491.7 195.8 L493.4 196.1 L495 196.5 L496.7 196.9 L498.4 197.2 L500 197.6 L501.7 197.9 L503.3 198.3 L505 198.6" fill="none" stroke="#c2820f" stroke-width="2.4" stroke-dasharray="6 4"/><path d="M339 239.5 L339 134.4" stroke="#9c2f2f" stroke-width="1.2" stroke-dasharray="3 3" fill="none"/><circle cx="339" cy="239.5" r="4" fill="#1f7a5c"/><circle cx="339" cy="134.4" r="4" fill="#c2820f"/><text x="100" y="46" fill="#1f7a5c" font-size="11">Watt governor</text><text x="230" y="46" fill="#c2820f" font-size="11">Porter, M/m = 10</text><text x="392" y="46" fill="#9c2f2f" font-size="11">at 200 rpm: 22 vs 246 mm</text></svg><figcaption>A Watt governor's ball height falls as \( 1/N^2 \), so the geometry that works at 60 rev/min has collapsed to 22 mm by 200 &mdash; a travel too small to move a valve, and too small to resolve against friction in the linkage. Loading the sleeve multiplies the height by \( (m+M)/m \), which is 11 for a 2 kg ball and a 20 kg sleeve, restoring 246 mm at the same speed. That is the whole reason a practical governor carries dead weight.</figcaption></figure>
+<h3>&#167;1 &middot; The problem a flywheel cannot solve</h3>
+<p>Lesson 9 sized a flywheel to hold the speed steady <em>within</em> a cycle. It said nothing
+about what the average speed should be, and it cannot: a flywheel is a passive store, and if the
+load falls away it simply carries on turning faster. Holding the mean speed against a changing
+load is a control problem, and the <b>governor</b> is that controller, built from iron a century
+before anyone wrote down a transfer function.</p>
+<p>The principle is a feedback loop with no electronics in it. Two balls are carried on arms from
+a spindle driven by the engine. Rotation throws them outward against gravity; the arms lift a
+sleeve; the sleeve moves a linkage that closes the fuel or steam valve. Speed rises, balls rise,
+supply falls, speed falls. The equilibrium of the balls <em>is</em> the measurement, and the
+sleeve position <em>is</em> the control action.</p>
+
+<h3>&#167;2 &middot; The Watt governor, and the inverse square that defeats it</h3>
+<p>Take the simplest arrangement: two balls of mass \( m \) on arms pivoted on the spindle axis,
+with nothing else attached. Each ball travels a circle of radius \( r \) at angular speed
+\( \omega \), so the arm must supply a centripetal force \( m\omega^2r \) horizontally and carry
+the weight \( mg \) vertically. The arm can only pull along its own length, so the ratio of those
+two components fixes the arm's angle &mdash; and with it the height \( h \) of the ball below the
+pivot.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; Watt governor height</span>
+<p>\[ \tan\theta=\frac{m\omega^2r}{mg}=\frac{r}{h}
+\quad\Longrightarrow\quad h=\frac{g}{\omega^2}=\frac{895}{N^2}\ \text{metres} \]</p>
+<p>with \( N \) in rev/min. The ball mass cancels completely: a heavier ball does not change the
+height, because it adds to both the centripetal requirement and the weight.</p></div>
+<p>That cancellation is the first surprise and the inverse square is the second. At 60 rev/min,
+\( h = 0.248 \) m &mdash; a governor a quarter of a metre tall, which is workable. At 120 it is
+0.062 m, and at 200 it is 0.022 m. The whole travel available to move a valve has shrunk to
+22 mm, and the <em>change</em> in that travel for a small speed change is smaller still. Below a
+certain size the friction in the linkage swamps the signal and the governor stops responding at
+all.</p>
+<p>So the simple Watt governor is a low-speed device, and that is a geometric fact rather than a
+manufacturing limitation. Every practical governor is a way of defeating it.</p>
+
+<h3>&#167;3 &middot; Loading the governor, and the three words that grade it</h3>
+<p>The <b>Porter</b> governor adds a dead weight \( M \) on the sleeve. The arms now carry the
+balls' weight <em>and</em> lift the sleeve load, so a much higher rotational speed is needed to
+reach any given angle &mdash; equivalently, at a given speed the balls sit far higher than they
+would unloaded.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; Porter governor height</span>
+<p>\[ h=\frac{m+M}{m}\cdot\frac{g}{\omega^2} \]</p>
+<p>for the arrangement whose upper and lower arms meet on the axis. The factor \( (m+M)/m \) is
+the design lever, and unlike the Watt case the ball mass now matters.</p></div>
+<p>With a 2 kg ball and a 20 kg sleeve the factor is 11, so the 22 mm of the Watt governor at
+200 rev/min becomes 246 mm &mdash; usable again. Springs are used the same way in high-speed
+governors, where the dead weight would be impractically large and its own inertia would make the
+governor sluggish.</p>
+<p>Three properties grade the result. <b>Sensitiveness</b> is the ratio of mean speed to the
+speed range between the sleeve's extreme positions: a sensitive governor makes a large sleeve
+movement for a small speed change. <b>Stability</b> requires that each speed correspond to
+exactly one radius, so the governor settles rather than wanders. And a governor is
+<b>isochronous</b> when the sleeve moves through its whole travel with no speed change at all
+&mdash; the limiting case of sensitiveness, and a trap: an isochronous governor has no unique
+equilibrium, so it drives the sleeve hard to one end or the other and the engine <b>hunts</b>,
+oscillating about the set speed instead of holding it. The cure is deliberate insensitivity plus
+friction or damping, which is the same conclusion a control engineer reaches about excessive
+proportional gain, in different words.</p>
+
+<h3>&#167;4 &middot; Gyroscopic couples: the reaction to turning a spinning rotor</h3>
+<p>The last topic of the course is one every rotating machine carries and few analyses include.
+A spinning rotor has angular momentum \( I\omega \) along its axis. Turn that axis &mdash;
+<b>precess</b> it &mdash; and the direction of the momentum vector changes, which requires a
+torque, and the rotor applies the reaction of that torque to its bearings.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; gyroscopic couple</span>
+<p>\[ C=I\,\omega\,\omega_p \]</p>
+<p>\( \omega \) is the spin speed and \( \omega_p \) the precession rate. The couple acts about
+the axis perpendicular to both, so a rotor precessed in yaw reacts in pitch.</p></div>
+<p>The numbers are not small. A turbine rotor of \( I = 25\ \mathrm{kg\,m^2} \) at 3000 rev/min
+has \( \omega = 314.2 \) rad/s. Put it in a ship turning at a leisurely 0.1 rad/s and
+\( C = 25(314.2)(0.1) = 785\ \mathrm{N\cdot m} \). Carried by bearings 2 m apart, that is
+393 N up on one and 393 N down on the other &mdash; a load that appears only while the vessel
+turns, reverses when it turns the other way, and is invisible to any analysis done with the ship
+on a straight course.</p>
+<p>The same term explains behaviour that looks like magic elsewhere: a ship's turbine pitching
+the hull as it turns, a rotor whirling in its clearance, a large flywheel making a vehicle
+reluctant to change direction. It is also why the flywheel of Lesson 9 is not free &mdash; adding
+inertia to smooth a cycle adds gyroscopic couple to every manoeuvre. Governors and gyroscopes are
+usually filed as legacy topics; they are better understood as the two places where this course's
+kinematics reaches directly into how a machine behaves in service.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What does a governor control that a flywheel cannot?</li><li>Where do gyroscopic couples load a turbine's bearings?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Flywheels and speed fluctuation</b> (Lesson 9) &mdash; the distinction this lesson opens
+with: a flywheel holds speed within a cycle, a governor sets the mean.</li>
+<li><b>Centripetal force</b> (Dynamics L3) &mdash; \( m\omega^2r \), one of the two components
+whose ratio sets the arm angle.</li>
+<li><b>Angular momentum</b> (Physics I L10) &mdash; \( I\omega \), the vector whose rotation
+produces the gyroscopic couple.</li>
+<li><b>Moment equilibrium</b> (Statics L5) &mdash; resolving a couple into a pair of bearing
+reactions.</li>
+<li><b>Balancing</b> (Lesson 10) &mdash; the other running load that appears only when the
+machine is turning.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Watt height</td><td>\( h=g/\omega^2=895/N^2 \)</td><td>Unloaded governor; ball mass cancels.</td></tr>
+<tr><td>Porter height</td><td>\( h=\frac{m+M}{m}\frac{g}{\omega^2} \)</td><td>Sleeve-loaded governor; the factor is the design lever.</td></tr>
+<tr><td>Sensitiveness</td><td>mean speed / speed range</td><td>Large sleeve travel for a small speed change.</td></tr>
+<tr><td>Stability</td><td>one radius per speed</td><td>The governor settles instead of wandering.</td></tr>
+<tr><td>Isochronism</td><td>full travel at one speed</td><td>The limiting case &mdash; and the cause of hunting.</td></tr>
+<tr><td>Hunting</td><td>oscillation about the set speed</td><td>Too sensitive; cured by insensitivity and damping.</td></tr>
+<tr><td>Gyroscopic couple</td><td>\( C=I\omega\omega_p \)</td><td>Any spinning rotor whose axis is being turned.</td></tr>
+<tr><td>Precession</td><td>\( \omega_p \)</td><td>Rate at which the spin axis itself rotates.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The Watt governor's collapse with speed</b></p>
+<p><b>Problem.</b> Find the ball height of a simple Watt governor at 60, 120 and 200 rev/min.
+State what happens to the height when the speed doubles, and say why the device is unusable at
+the highest of the three speeds.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( h = g/\omega^2 \) with \( \omega = 2\pi N/60 \).</p>
+<p>(1) \( N = 60 \): \( \omega = 6.283\ \mathrm{rad/s} \), \( \omega^2 = 39.48 \), so
+\( h = 9.81/39.48 = 0.2485\ \mathrm{m} \).</p>
+<p>(2) \( N = 120 \): \( \omega = 12.566 \), \( \omega^2 = 157.9 \), so
+\( h = 0.0621\ \mathrm{m} \).</p>
+<p>(3) \( N = 200 \): \( \omega = 20.944 \), \( \omega^2 = 438.6 \), so
+\( h = 0.0224\ \mathrm{m} \).</p>
+<p>(4) Doubling the speed quarters the height, since \( h \propto 1/\omega^2 \): 0.2485 to
+0.0621 m from 60 to 120 rev/min is a factor of exactly 4.</p>
+<p><b>Answer:</b> 248.5, 62.1 and 22.4 mm; the height falls as the inverse square of speed, and
+22 mm is too small to work with.
+<b>Sanity check:</b> the shortcut \( h = 895/N^2 \) metres reproduces all three &mdash;
+\( 895/3600 = 0.249 \), \( 895/14\,400 = 0.0622 \), \( 895/40\,000 = 0.0224 \) &mdash; which is
+worth carrying because it needs no unit conversion. The reason 22 mm fails is not the absolute
+size but the <em>change</em> in it: the sleeve movement available for a 1% speed change is a
+fraction of a millimetre, which the friction in any real linkage will absorb entirely.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Sizing a Porter governor</b></p>
+<p><b>Problem.</b> A Porter governor has 2 kg balls and a 20 kg sleeve weight, with upper and
+lower arms meeting on the axis. Find the ball height at 200 rev/min and compare it with the Watt
+governor at the same speed. Then find the sleeve mass needed to give a 150 mm height at
+250 rev/min with the same 2 kg balls.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) At 200 rev/min, \( g/\omega^2 = 0.02236\ \mathrm{m} \)
+from the previous problem, and the loading factor is
+\( \dfrac{m+M}{m} = \dfrac{2+20}{2} = 11 \).</p>
+<p>(2) \( h = 11(0.02236) = 0.2460\ \mathrm{m} \), against the Watt governor's 0.0224 m &mdash;
+eleven times as much, which is the factor itself.</p>
+<p>(3) At 250 rev/min, \( \omega = 26.18\ \mathrm{rad/s} \) and
+\( g/\omega^2 = 9.81/685.4 = 0.014313\ \mathrm{m} \).</p>
+<p>(4) The required factor is \( 0.150/0.014313 = 10.48 \), so
+\( \dfrac{2+M}{2} = 10.48 \) and \( M = 2(10.48-1) = 18.96\ \mathrm{kg} \).</p>
+<p><b>Answer:</b> 246 mm at 200 rev/min, eleven times the Watt height; a 18.96 kg sleeve gives
+150 mm at 250 rev/min.
+<b>Sanity check:</b> note that the answer to (2) is exactly the loading factor times the Watt
+result, because the sleeve load enters as a simple multiplier and nothing else changes. Note
+also what it costs: the 20 kg sleeve is dead weight that must be accelerated every time the
+governor responds, which makes a heavily loaded governor slow. That is why high-speed engines use
+a spring instead &mdash; the same multiplying effect with a fraction of the moving mass.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Gyroscopic couple on a turbine's bearings (with a US customary check)</b></p>
+<p><b>Problem.</b> A turbine rotor has \( I = 25\ \mathrm{kg\,m^2} \) and runs at 3000 rev/min in
+a vessel that turns at 0.10 rad/s. Its bearings are 2.0 m apart. Find the gyroscopic couple and
+the bearing reactions it produces, express the reaction in pounds-force, and state what happens
+if the vessel turns twice as fast.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \omega = 2\pi(3000)/60 = 314.16\ \mathrm{rad/s} \).</p>
+<p>(2) \( C = I\omega\omega_p = 25(314.16)(0.10) = 785.4\ \mathrm{N\cdot m} \).</p>
+<p>(3) A couple carried by two bearings 2.0 m apart is a force pair:
+\( F = C/L = 785.4/2.0 = 392.7\ \mathrm{N} \), one up and one down.</p>
+<p>(4) \( 392.7/4.448 = 88.3\ \mathrm{lbf} \).</p>
+<p>(5) The couple is linear in \( \omega_p \), so doubling the turn rate to 0.20 rad/s doubles
+it to 1570.8 N&middot;m and the bearing reactions to 785.4 N.</p>
+<p><b>Answer:</b> 785.4 N&middot;m, giving \( \pm 392.7 \) N (88.3 lbf) at the bearings, and both
+double if the vessel turns twice as fast.
+<b>Sanity check:</b> the load exists only while the vessel is turning and reverses when it turns
+the other way, so it is a transient, fully reversed duty that no steady-state bearing calculation
+would ever show. Its direction is worth stating carefully too: the couple acts about the axis
+perpendicular to both the spin and the precession, so a rotor yawed by the vessel's turn reacts
+in <em>pitch</em> &mdash; it tries to lift one end of the machine, not to resist the turn.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The difference between a flywheel and a governor is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a flywheel is heavier</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a flywheel limits fluctuation within a cycle; a governor sets the mean speed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a governor stores energy</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a flywheel responds faster</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A flywheel is a passive energy store that smooths the swing within one
+revolution and has no view about what the average speed should be; if the load falls away it
+simply speeds up. A governor measures speed and changes the energy supplied, which is a feedback
+loop. Machines that need both fit both, and confusing them is why a surging engine is sometimes
+given a bigger flywheel, which cannot help.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>In a simple Watt governor, doubling the ball mass</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>halves the height</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>doubles the height</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>leaves the height unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>quarters the height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( h = g/\omega^2 \) contains no mass at all. The ball mass appears in both
+the centripetal requirement \( m\omega^2r \) and the weight \( mg \), and cancels when their
+ratio sets the arm angle. This is why the Watt governor cannot be tuned by changing the balls,
+and why a <em>sleeve</em> load, which does not cancel, is the standard way to change its
+behaviour.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A Porter governor's height exceeds the Watt value by the factor</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( M/m \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( (m+M)/m \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( m/(m+M) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \sqrt{M/m} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( h = \frac{m+M}{m}\cdot\frac{g}{\omega^2} \), so a 2 kg ball with a 20 kg
+sleeve gives 11, not 10 &mdash; the balls' own weight is still being carried. Using \( M/m \)
+instead is the standard slip and lands about 10% low here, more at small \( M/m \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>An isochronous governor is one that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>holds the speed perfectly and is the design goal</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>moves through its whole sleeve travel with no change in speed, and therefore hunts</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>has zero friction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is insensitive to load changes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Isochronism is the limiting case of sensitiveness: every sleeve position
+corresponds to the same speed, so there is no unique equilibrium for the governor to settle at.
+It drives the sleeve to one extreme, overshoots, and drives it to the other &mdash; hunting. It
+sounds like the ideal and is a fault, which is the same lesson a control engineer learns about
+excessive proportional gain.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Hunting in a governed engine is cured by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increasing the governor's sensitiveness</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>adding deliberate insensitivity and damping</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>increasing the flywheel inertia</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>raising the set speed</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Hunting is an over-responsive loop, so the fix is to reduce the response and
+dissipate energy in it &mdash; a small deliberate speed range across the sleeve travel, plus
+friction or a dashpot. Raising the sensitiveness makes it worse. A larger flywheel smooths
+fluctuation within a cycle and does nothing about an oscillation of the mean speed, which is a
+different phenomenon on a much longer timescale.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>The gyroscopic couple on a rotor is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( I\omega \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( I\omega\omega_p \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( I\omega_p^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tfrac12 I\omega^2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C = I\omega\omega_p \) &mdash; the rate of change of the angular-momentum
+vector \( I\omega \) as its direction is swung at \( \omega_p \). \( I\omega \) alone is the
+momentum, and \( \tfrac12 I\omega^2 \) is the kinetic energy the flywheel of Lesson 9 stores;
+neither is a couple.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A rotor spinning about a fore-and-aft axis is precessed by a vessel turning in
+yaw. The gyroscopic couple acts</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>about the spin axis, opposing rotation</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>about the yaw axis, resisting the turn</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>about the axis perpendicular to both, in pitch</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>along the direction of travel</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The couple is perpendicular to both the spin and the precession, so a rotor
+yawed by the vessel's turn reacts in pitch &mdash; it tries to lift one end of the machine rather
+than to resist the turn. That perpendicular relationship is what makes gyroscopic effects feel
+counter-intuitive, and it is why the resulting bearing loads appear where nobody was
+watching.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Fitting a larger flywheel to a vehicle engine to reduce speed fluctuation also</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>reduces the gyroscopic couple during cornering</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>increases the gyroscopic couple during cornering</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>has no gyroscopic consequence</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>eliminates the need for a governor</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C = I\omega\omega_p \) is proportional to \( I \), so more inertia means
+a larger couple for the same spin and turn rate &mdash; the machine becomes more reluctant to
+change direction and loads its bearings harder when it does. That is the standing cost of the
+Lesson 9 decision, and the reason flywheel sizing is bounded from above as well as below.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the generator set that surged after an overhaul.</b> A
+governor-controlled engine driving an alternator was overhauled. The governor linkage was cleaned,
+re-bushed and freed off, and its response was checked and found much crisper than before. In
+service the set began surging: the speed swung slowly above and below its set point instead of
+settling, and the electrical output followed it.</p>
+<p>Nothing had failed. The overhaul had raised the governor's sensitiveness by removing the
+friction that had been damping it, pushing it toward the isochronous condition where a whole
+range of sleeve positions corresponds to one speed. With no unique equilibrium to settle at, the
+sleeve is driven to one extreme, the engine overshoots, and the sleeve is driven to the other
+&mdash; which is hunting, and it is a property of the loop rather than of any component in it.
+The engine was not faulty, the governor was not worn, and the linkage was in better condition
+than it had been for years.</p>
+<p>Two practices follow. Friction in a governor linkage is not purely a defect &mdash; part of it
+is the damping the loop needs, so an overhaul that removes it must restore damping deliberately,
+with a dashpot or a designed speed droop, rather than assume that freer is better. And a machine
+that surges is telling you about a control loop, not a mechanism: the useful measurement is the
+speed range across the full sleeve travel, and if that range is near zero the governor is
+isochronous and will hunt no matter how well it is made.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.6527\\ \\mathrm{psi}\\)", "\\(310.3\\ \\mathrm{psi}\\)", "\\(65.27\\ \\mathrm{psi}\\)", "\\(6.527\\ \\mathrm{psi}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(45 \\times 0.145 = 6.527\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.04351\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(20.68\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4.351\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.4351\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(3 \times 0.145 = 0.4351\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.362\\ \\mathrm{in}\\)", "\\(1524\\ \\mathrm{in}\\)", "\\(23.62\\ \\mathrm{in}\\)", "\\(0.2362\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(60 \\times 0.03937 = 2.362\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(0.1969\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(127\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.969\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.01969\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(5 \times 0.03937 = 0.1969\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

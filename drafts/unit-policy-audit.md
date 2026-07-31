@@ -30,4 +30,4 @@ Compliant: 22/22 authored-quiz courses.
 | THM 202 Thermodynamics II — Cycles & Utilities | BTU, ft, ft/s, hp, lb, lbf, psi | ✅ tests non-SI |
 | HTX 253 Heat Transfer | ft, ft/s, hp, in, lb, lbf, psi | ✅ tests non-SI |
 | MDN 251 Machine Design I | ft, ft/s, hp, in, lb, lbf, psi, rpm, erg | ✅ tests non-SI |
-| KDM 252 Kinematics & Dynamics of Machinery | ft, ft/s, hp, lb, lbf, psi, rpm, erg | ✅ tests non-SI |
+| KDM 252 Kinematics & Dynamics of Machinery | ft, ft/s, hp, in, lb, lbf, psi, rpm, erg | ✅ tests non-SI |

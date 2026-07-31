@@ -73,7 +73,7 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-kinematics-machinery">KDM 252 — Kinematics &amp; Dynamics of Machinery</h2>
-<p class="ref-thin">No recap is authored yet for lessons 10, 11 — read those lessons in full on the course page.</p>
+
 <section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 01 · Mechanisms and mobility</p><h3><span class="sum-n">Lesson 01</span>Mechanisms and mobility</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
 <ul>
 <li>A link is a rigid body, a joint removes relative freedom, and a chain with one link fixed to
@@ -478,6 +478,101 @@ smooths.</li>
 <tr><td>Coefficient of fluctuation</td><td>\( C_s=(\omega_{\max}-\omega_{\min})/\omega_{\text{mean}} \)</td><td>A specification: 0.2 for a crusher, 0.003 for an alternator.</td></tr>
 <tr><td>Flywheel inertia</td><td>\( I=\Delta E/(C_s\omega^2) \)</td><td>Sizing; note the inverse square in \( \omega \).</td></tr>
 <tr><td>Rim stress</td><td>\( \sigma \approx \rho v^2 \)</td><td>The burst-speed limit on any flywheel.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 10 · Balancing of rotating and reciprocating masses</p><h3><span class="sum-n">Lesson 10</span>Balancing of rotating and reciprocating masses</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Unbalance is an effective \( mr \) that rotation turns into \( m\omega^2r \) &mdash; a
+once-per-revolution bearing load whose size goes as the square of speed.</li>
+<li>Single-plane balance requires \( \sum m_ir_i=0 \); that is necessary and not sufficient for a
+long rotor.</li>
+<li>Two equal unbalances 180&#176; apart at opposite ends sum to zero force and leave a couple
+that rocks the bearings &mdash; hence two conditions and two correction planes.</li>
+<li>\( \sum m_ir_ia_i=0 \) is solved first, about one correction plane, which removes that
+plane's unknown.</li>
+<li>The worked shaft needs 416.6 kg&middot;mm at 33.67&#176; and 232.2 kg&middot;mm at
+224.13&#176; &mdash; 4.17 kg and 2.32 kg at 100 mm radius.</li>
+<li>Its single-plane answer, 192.9 kg&middot;mm at 201.1&#176;, is neither correction: a
+one-plane fix on a two-plane rotor cancels force and leaves couple.</li>
+<li>Reciprocating force is
+\( m\omega^2r\cos\theta + (m\omega^2r/n)\cos2\theta \) &mdash; 1687.5 N primary and 421.9 N
+secondary here, 2109.4 N at top dead centre against 1265.6 N at bottom.</li>
+<li>A rotating mass rotates a reciprocating unbalance rather than removing it: cancelling
+\( c \) of the primary introduces \( c \) transversely.</li>
+<li>The peak residual is \( \max(c,1-c)m\omega^2r \), minimised at \( c=\tfrac12 \) &mdash;
+843.8 N, half the primary; locomotive practice used \( \tfrac23 \) to steer the residual into a
+tolerable direction.</li>
+<li>An inline four cancels primaries and couples by crank geometry and adds four secondaries at
+twice crank speed &mdash; the reason balance shafts run at \( 2\omega \).</li>
+<li>Field balancing measures amplitude and phase, adds a trial mass and re-measures; the
+influence coefficient does the rest, on the same vector algebra.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 10 · Balancing of rotating and reciprocating masses · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Piston acceleration</b> (Lesson 3) &mdash; the primary and secondary terms come directly
+from \( \cos\theta + \cos2\theta/n \).</li>
+<li><b>Shaking force</b> (Lesson 7) &mdash; what balancing exists to remove.</li>
+<li><b>Vector addition and moments</b> (Statics L2) &mdash; the two-plane conditions are a force
+polygon and a moment polygon.</li>
+<li><b>Centripetal force</b> (Dynamics L3) &mdash; \( m\omega^2r \), the whole rotating-unbalance
+mechanism.</li>
+<li><b>Frequency in a spectrum</b> (Lesson 6) &mdash; distinguishing a once-per-revolution
+balance line from a mesh line.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Unbalance force</td><td>\( m\omega^2r \)</td><td>Rotating; grows as the square of speed.</td></tr>
+<tr><td>Force condition</td><td>\( \sum m_ir_i=0 \)</td><td>Single-plane balance; necessary but not sufficient.</td></tr>
+<tr><td>Couple condition</td><td>\( \sum m_ir_ia_i=0 \)</td><td>Long rotors; solve this first, about a correction plane.</td></tr>
+<tr><td>Primary force</td><td>\( m\omega^2r\cos\theta \)</td><td>Crank frequency; partially cancellable.</td></tr>
+<tr><td>Secondary force</td><td>\( (m\omega^2r/n)\cos2\theta \)</td><td>Twice crank frequency; needs a \( 2\omega \) shaft.</td></tr>
+<tr><td>Partial balance</td><td>residual \( \max(c,1-c)m\omega^2r \)</td><td>Best at \( c=\tfrac12 \); \( \tfrac23 \) is a locomotive convention.</td></tr>
+<tr><td>Influence coefficient</td><td>response per unit trial mass</td><td>Field balancing from measurement, not from known masses.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 11 · Governors and gyroscopic effects</p><h3><span class="sum-n">Lesson 11</span>Governors and gyroscopic effects</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A flywheel limits fluctuation within a cycle; a governor sets the mean speed. They are
+different problems and neither substitutes for the other.</li>
+<li>A governor is a mechanical feedback loop: the balls' equilibrium is the measurement and the
+sleeve position is the control action.</li>
+<li>Watt governor: \( h=g/\omega^2=895/N^2 \) metres. The ball mass cancels completely, so
+heavier balls change nothing.</li>
+<li>Height falls as the inverse square of speed &mdash; 248.5 mm at 60 rev/min, 62.1 at 120,
+22.4 at 200 &mdash; and below about 20 mm linkage friction swamps the signal.</li>
+<li>Porter governor: \( h=\frac{m+M}{m}\cdot\frac{g}{\omega^2} \). A 2 kg ball with a 20 kg
+sleeve gives a factor of 11 (not 10), restoring 246 mm at 200 rev/min.</li>
+<li>The dead weight is paid for in response speed, which is why high-speed governors use springs
+for the same multiplying effect with less moving mass.</li>
+<li>Sensitiveness is mean speed over speed range; stability requires one radius per speed.</li>
+<li>Isochronism &mdash; full sleeve travel at a single speed &mdash; sounds ideal and causes
+hunting, because there is no unique equilibrium to settle at. Cure with deliberate insensitivity
+and damping.</li>
+<li>Gyroscopic couple \( C=I\omega\omega_p \), acting about the axis perpendicular to both spin
+and precession: a rotor yawed by a turn reacts in pitch.</li>
+<li>A 25 kg&middot;m&#178; rotor at 3000 rev/min precessed at 0.1 rad/s gives 785 N&middot;m,
+which is \( \pm393 \) N on bearings 2 m apart &mdash; a reversing load that appears only while
+the machine turns.</li>
+<li>It scales with \( I \), so the flywheel of Lesson 9 is not free: smoothing a cycle buys
+gyroscopic couple in every manoeuvre.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 11 · Governors and gyroscopic effects · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Flywheels and speed fluctuation</b> (Lesson 9) &mdash; the distinction this lesson opens
+with: a flywheel holds speed within a cycle, a governor sets the mean.</li>
+<li><b>Centripetal force</b> (Dynamics L3) &mdash; \( m\omega^2r \), one of the two components
+whose ratio sets the arm angle.</li>
+<li><b>Angular momentum</b> (Physics I L10) &mdash; \( I\omega \), the vector whose rotation
+produces the gyroscopic couple.</li>
+<li><b>Moment equilibrium</b> (Statics L5) &mdash; resolving a couple into a pair of bearing
+reactions.</li>
+<li><b>Balancing</b> (Lesson 10) &mdash; the other running load that appears only when the
+machine is turning.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Watt height</td><td>\( h=g/\omega^2=895/N^2 \)</td><td>Unloaded governor; ball mass cancels.</td></tr>
+<tr><td>Porter height</td><td>\( h=\frac{m+M}{m}\frac{g}{\omega^2} \)</td><td>Sleeve-loaded governor; the factor is the design lever.</td></tr>
+<tr><td>Sensitiveness</td><td>mean speed / speed range</td><td>Large sleeve travel for a small speed change.</td></tr>
+<tr><td>Stability</td><td>one radius per speed</td><td>The governor settles instead of wandering.</td></tr>
+<tr><td>Isochronism</td><td>full travel at one speed</td><td>The limiting case &mdash; and the cause of hunting.</td></tr>
+<tr><td>Hunting</td><td>oscillation about the set speed</td><td>Too sensitive; cured by insensitivity and damping.</td></tr>
+<tr><td>Gyroscopic couple</td><td>\( C=I\omega\omega_p \)</td><td>Any spinning rotor whose axis is being turned.</td></tr>
+<tr><td>Precession</td><td>\( \omega_p \)</td><td>Rate at which the spin axis itself rotates.</td></tr>
 </tbody></table></div></div></div></section>
 </article>
 </main>
