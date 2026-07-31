@@ -73,7 +73,7 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2>
-<p class="ref-thin">No recap is authored yet for lessons 02, 03, 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
+<p class="ref-thin">No recap is authored yet for lessons 03, 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
 <section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 01 · Measurement fundamentals</p><h3><span class="sum-n">Lesson 01</span>Measurement fundamentals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
 <ul>
 <li>Resolution is what the display can show, precision is agreement among repeats, bias is a
@@ -119,6 +119,53 @@ terminates at.</li>
 <tr><td>Traceability</td><td>unbroken calibration chain</td><td>Links a working gauge to the SI metre.</td></tr>
 <tr><td>Coverage factor</td><td>\( U=k\,u \), usually \( k=2 \)</td><td>Reading a certificate's stated uncertainty.</td></tr>
 <tr><td>Thermal error</td><td>\( \Delta L=L\alpha\Delta T \)</td><td>Any measurement away from 20&#176;C.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 02 · Dimensional instruments</p><h3><span class="sum-n">Lesson 02</span>Dimensional instruments</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Calipers are wide-range and least accurate, micrometers trade range for accuracy, dial
+indicators measure differences only, gauge blocks are embodied length, and a comparator is an
+indicator plus a stand plus a block.</li>
+<li>Abbe's principle: the measuring line should be collinear with the scale. Any offset \( h \)
+turns an angular error into \( \varepsilon = h\tan\theta \).</li>
+<li>Abbe error is first order in tilt; cosine error \( L(1-\cos\theta) \), all that remains when
+\( h=0 \), is second order.</li>
+<li>A caliper with a 40 mm offset tilted 0.1&#176; gives 69.8 &#181;m; a micrometer at the same
+tilt gives 0.038 &#181;m &mdash; a factor of 1833, bought by geometry rather than
+workmanship.</li>
+<li>Double the tilt and the caliper error doubles while the micrometer error quadruples from a
+number that was already negligible.</li>
+<li>Gauge blocks wring so a stack acts as one length; build from the finest decimal first, and use
+as few blocks as possible &mdash; 41.275 mm as 1.005 + 1.27 + 8.0 + 31.0.</li>
+<li>Every wrung interface adds uncertainty and a contamination risk, so four blocks beat seven for
+the same length.</li>
+<li>A ratchet fixes the measuring force so contact deformation is repeatable and calibration can
+absorb it; feeling the fit converts a bias into scatter.</li>
+<li>Parallax, anvil wear, dirt and hand heat are all systematic and none is fixed by buying a
+better instrument &mdash; a specification is an upper bound on performance, not a description of
+it.</li>
+<li>An error that depends on technique passes a repeatability check and fails between operators,
+which is what gauge R&amp;R exists to expose.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 02 · Dimensional instruments · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Bias and precision</b> (Lesson 1) &mdash; the distinction that decides which errors of use
+matter and how they show up.</li>
+<li><b>Thermal error</b> (Lesson 1) &mdash; \( \Delta L=L\alpha\Delta T \), applied here to hand
+heat and to steel gauge blocks.</li>
+<li><b>Small-angle behaviour</b> (Engineering Mathematics I L11) &mdash; why
+\( \tan\theta\approx\theta \) is first order and \( 1-\cos\theta \) is second.</li>
+<li><b>Tolerances and IT grades</b> (Engineering Drawing &amp; CAD L6) &mdash; the bands these
+instrument errors are spent against.</li>
+<li><b>Elastic contact</b> (Strength of Materials L1) &mdash; why a measuring force must be
+controlled rather than merely light.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Abbe offset</td><td>\( h \)</td><td>Perpendicular distance from the measuring line to the scale.</td></tr>
+<tr><td>Abbe error</td><td>\( \varepsilon=h\tan\theta \)</td><td>First order in tilt; the caliper's structural weakness.</td></tr>
+<tr><td>Cosine error</td><td>\( L(1-\cos\theta) \)</td><td>Second order; what remains when \( h=0 \).</td></tr>
+<tr><td>Wringing</td><td>&mdash;</td><td>Adhesion of lapped block faces; a stack acts as one length.</td></tr>
+<tr><td>Stack rule</td><td>clear the finest decimal first</td><td>Building a required length from fewest blocks.</td></tr>
+<tr><td>Ratchet / friction thimble</td><td>&mdash;</td><td>Fixes the measuring force so contact deformation is repeatable.</td></tr>
+<tr><td>Comparator</td><td>indicator + stand + block</td><td>Micrometre-level work by difference, not absolutely.</td></tr>
 </tbody></table></div></div></div></section>
 </article></div>
 </main>

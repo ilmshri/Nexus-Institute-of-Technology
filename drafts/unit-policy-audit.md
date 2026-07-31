@@ -31,4 +31,4 @@ Compliant: 23/23 authored-quiz courses.
 | HTX 253 Heat Transfer | ft, ft/s, hp, in, lb, lbf, psi | ✅ tests non-SI |
 | MDN 251 Machine Design I | ft, ft/s, hp, in, lb, lbf, psi, rpm, erg | ✅ tests non-SI |
 | KDM 252 Kinematics & Dynamics of Machinery | ft, ft/s, hp, in, lb, lbf, psi, rpm, erg | ✅ tests non-SI |
-| MET 204 Metrology & Quality Control | in, lb | ✅ tests non-SI |
+| MET 204 Metrology & Quality Control | in, lb, lbf | ✅ tests non-SI |
