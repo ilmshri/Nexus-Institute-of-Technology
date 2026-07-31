@@ -262,8 +262,11 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
   <div class="kicker">MechEd · design session · 2026-07-31 · private review</div>
   <h1>Three decisions, side by side: motion, the mark, and photography</h1>
   <p>Everything below is built from the real site — real chrome, real MTH 101 content, the fixed Gallery palette.
-  Nothing ships until you choose. Real screen-recordings of the cross-page transitions are attached in the chat;
-  the simulator here reproduces their exact timing and easing.</p>
+  Real screen-recordings of the cross-page transitions are attached in the chat; the simulator here reproduces
+  their exact timing and easing.</p>
+  <p style="margin-top:10px;font-size:14px"><b>Jump straight to:</b>
+  <a href="#motion">1 · Motion</a> &nbsp;·&nbsp; <a href="#logo">2 · Logo</a> &nbsp;·&nbsp;
+  <a href="#photo">3 · Photography</a></p>
 </header>
 <div class="tabs" role="tablist">
   <button class="on" data-pane="motion">1 · Motion</button>
@@ -273,6 +276,10 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
 
 <section class="pane on" id="pane-motion">
   <h2>Motion &amp; transitions</h2>
+  <p class="note"><b>Decided ✓ — Treatment A chosen and applied</b> on the design branch (commit
+  <code>e32d146e</code>): 0.14s/0.22s quiet crossfade, tab entry fade, hover prefetch. Verified live —
+  140/220&nbsp;ms transitions firing, zero transitions under reduced motion, both language trees, zero colour
+  changes. B and C stay below for the record.</p>
   <p class="lede">All three treatments are CSS-only progressive enhancement on the View Transitions layer the site
   already ships. Zero JavaScript added by any of them. Firefox (no cross-document support yet) keeps today's instant
   navigation; under “reduce motion” every one of them switches off entirely.</p>
@@ -319,8 +326,8 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
     <figure><img src="__DESKCOURSE__" alt="Course page, real build"><figcaption>Real build — MTH 101 course page</figcaption></figure>
     <figure><img src="__DESKL02__" alt="Lesson page, real build"><figcaption>Real build — Lesson 02 with video hero</figcaption></figure>
   </div>
-  <div class="rate"><b>To rate:</b> reply with the letter — e.g. “Motion: B” — plus anything to tune
-  (speed, how far the title travels, whether tabs should move at all).</div>
+  <div class="rate"><b>Motion is settled.</b> If the applied result ever feels off in daily use, say so —
+  durations are two numbers in one CSS block.</div>
 </section>
 
 <section class="pane" id="pane-logo">
@@ -340,11 +347,13 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
     <p><b>The shield says “teaching institution”.</b> Heraldry is the oldest, fastest-read signal of an academy —
     it is why Harvard, Yale, Oxford and Cambridge all keep one. Ours is cut to one navy outline and one gold
     keyline: the shape carries the meaning, no illustration inside.</p>
-    <p><b>The gold dot is a pivot.</b> In every mechanism drawing an engineer makes, the fixed pivot — the point
-    the machine turns about — is drawn as a small filled circle. One gold pivot under the M is the entire
-    discipline in one dot: <em>everything above turns on this point.</em> It is also the only place the champagne
-    gold touches the emblem, which keeps it precious. If the story still doesn’t land for you, the no-dot cut is
-    below — it loses meaning, not elegance.</p>
+    <p><b>The gold dot is a pivot — and, privately, a sun.</b> In every mechanism drawing an engineer makes, the
+    fixed pivot — the point the machine turns about — is drawn as a small filled circle: <em>everything above
+    turns on this point.</em> That is the public meaning. The private one is yours: a single gold sun under the
+    M — the quietest possible nod to the Sun Devil gold you graduated under, legible only to you. No borrowed
+    mark, no trademark exposure, just a gold point that carries both readings.
+    <b>My recommendation: keep it.</b> It is the emblem’s only champagne detail, it now means two true things,
+    and removing it later is a one-line edit if it ever stops earning its place.</p>
     <div class="pivotfig">
       <figure style="margin:0">
       <svg viewBox="0 0 320 128" width="300" role="img" aria-label="Four-bar linkage with fixed pivots drawn as filled dots">
@@ -371,6 +380,27 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
       <figure style="margin:0;text-align:center"><span style="display:inline-block;width:84px">__R2SHD__</span>
       <figcaption>The same point, under the M.</figcaption></figure>
     </div>
+  </div>
+
+  <h3>The ASU thread — minimal, and already partly there</h3>
+  <div class="card meaning">
+    <p><b>What can be mirrored, and what can’t.</b> ASU’s marks — the sunburst, the pitchfork, the maroon — are
+    trademarks (and this project was burned once already under its old ASU-adjacent name). What <em>can</em> be
+    mirrored is what actually makes ASU feel like ASU: the innovation identity and the charter gesture.</p>
+    <p><b>1 · The tagline already does it.</b> “Engineered to Innovate” was chosen as the ASU-style innovation
+    thread — the same claim ASU built its “New American University” identity on. That mirror is already on every
+    page of your site.</p>
+    <p><b>2 · The dot as the sun</b> — above.</p>
+    <p><b>3 · Proposed: a charter block.</b> ASU’s most distinctive institutional gesture is its charter — one
+    measured sentence, set formally, everywhere. A MechEd charter in the same spirit (About page, print covers)
+    would be the strongest minimal mirror, with zero trademark risk. Draft wording — yours to rewrite:</p>
+    <div style="background:var(--surface);border:1px solid var(--line);border-inline-start:3px solid var(--gold);border-radius:0 8px 8px 0;padding:18px 22px;margin:6px 0">
+      <div style="font:600 10.5px var(--sans);letter-spacing:.16em;color:var(--gold);text-transform:uppercase">The MechEd Charter</div>
+      <p style="font:400 18px/1.6 var(--serif);margin:8px 0 0">MechEd is measured not by whom it admits, but by
+      what anyone — starting from zero — can build on leaving it.</p>
+    </div>
+    <p style="margin-top:10px">Say “add the charter” and I’ll set it properly on the About page and the print
+    covers once you’ve settled the wording.</p>
   </div>
 
   <h3>The family</h3>
@@ -454,6 +484,7 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
   ask for it — nothing in this family blocks adding it later. On your word I’ll cut final masters, regenerate the
   full icon set (favicon, 180/192/512, true maskable), and swap the site over in one pass — the two golds
   (<code>#C9A45C</code> vs <code>#CBA85F</code>) get unified at the same time.</div>
+</section>
 <section class="pane" id="pane-photo">
   <h2>Photography — a proposal, not a fait accompli</h2>
   <p class="lede">You asked whether photos belong. My honest answer: <b>yes in three bounded places, no everywhere
@@ -540,8 +571,9 @@ Photos: yes-duotone / yes-colour / no (+ which placements)</div>
     document.getElementById('pane-'+b.dataset.pane).classList.add('on');
     try{history.replaceState(null,'','#'+b.dataset.pane)}catch(e){}
   })});
-  var h=location.hash.replace('#','');
-  if(h){var b=document.querySelector('.tabs button[data-pane="'+h+'"]');if(b)b.click();}
+  function goHash(){var h=location.hash.replace('#','');
+    if(h){var b=document.querySelector('.tabs button[data-pane="'+h+'"]');if(b){b.click();b.scrollIntoView({block:'nearest'});window.scrollTo(0,0);}}}
+  goHash();window.addEventListener('hashchange',goHash);
 
   /* ---- simulator ---- */
   var T={
