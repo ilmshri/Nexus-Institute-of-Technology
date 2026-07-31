@@ -94,7 +94,7 @@ def symbols_in(html):
     return out
 
 
-def check_lesson(name, lid, lesson, issues):
+def check_lesson(name, lid, lesson, issues, lesson_title=None):
     rev = lesson.get("revision")
     if rev is None:
         return False
@@ -126,6 +126,29 @@ def check_lesson(name, lid, lesson, issues):
     if not sheets:
         issues.append(f"{tag}: revision.sheets is empty")
 
+    # Sheets and examples are {title, body} (design session, 2026-08-01): the
+    # RENDERER emits the heading, so a body carrying its own <h3> would print
+    # the heading twice.
+    for kind, blocks in (("sheet", sheets), ("example", examples)):
+        for i, blk in enumerate(blocks):
+            if not isinstance(blk, dict):
+                issues.append(f"{tag}: {kind}[{i}] is not a "
+                              f"{{title, body}} object")
+                continue
+            if not blk.get("title"):
+                issues.append(f"{tag}: {kind}[{i}] has no title")
+            if not blk.get("body"):
+                issues.append(f"{tag}: {kind}[{i}] has no body")
+            if re.search(r"<h[1-5]\b", blk.get("body", "")):
+                issues.append(f"{tag}: {kind}[{i}] body contains a heading — "
+                              f"the renderer emits it; bodies are heading-free")
+            # rule 4: never duplicate the lesson title, which the contents page
+            # already takes from data/y*.json
+            lt = (lesson_title or "").strip().lower()
+            if lt and blk.get("title", "").strip().lower() == lt:
+                issues.append(f"{tag}: {kind}[{i}] title duplicates the lesson "
+                              f"title {lesson_title!r} — contents page owns it")
+
     # ---- budget (ESTIMATE — see module docstring)
     intro_cost = (_words(what) + COST_LIST_ITEM * len(kp)
                   + COST_TABLE_ROW * len(terms))
@@ -133,12 +156,12 @@ def check_lesson(name, lid, lesson, issues):
         issues.append(f"{tag}: intro ~{intro_cost} word-equivalents > "
                       f"{BUDGET_INTRO} — split the terms table or trim keypoints")
     for i, s in enumerate(sheets):
-        c = cost(s)
+        c = cost(s.get("body", "")) + COST_HEADING if isinstance(s, dict) else cost(s)
         if c > BUDGET_SHEET:
             issues.append(f"{tag}: sheet[{i}] ~{c} word-equivalents > "
                           f"{BUDGET_SHEET} — split it, do not shrink type")
     for i, e in enumerate(examples):
-        c = cost(e)
+        c = cost(e.get("body", "")) + COST_HEADING if isinstance(e, dict) else cost(e)
         if c > BUDGET_EXAMPLE:
             issues.append(f"{tag}: example[{i}] ~{c} word-equivalents > "
                           f"{BUDGET_EXAMPLE} — move one example to its own page")
@@ -152,7 +175,8 @@ def check_lesson(name, lid, lesson, issues):
                       re.findall(r"\\([A-Za-z]+)", declared)}
     for kind, blocks in (("sheet", sheets), ("example", examples)):
         for i, blk in enumerate(blocks):
-            for sym in sorted(symbols_in(blk)):
+            blk_html = blk.get("body", "") if isinstance(blk, dict) else blk
+            for sym in sorted(symbols_in(blk_html)):
                 if sym in declared_syms:
                     continue
                 if sym.lstrip("\\") in {t.get("term", "") for t in terms}:
@@ -163,15 +187,29 @@ def check_lesson(name, lid, lesson, issues):
     return True
 
 
+def _titles_for(stem):
+    """Lesson titles from data/y*.json — the contents page's source of truth."""
+    sem, _, course = stem.partition("-")
+    try:
+        sd = json.loads(Path(f"data/{sem}.json").read_text(encoding="utf-8"))
+    except OSError:
+        return {}
+    for c in sd.get("courses", []):
+        if c["id"] == course:
+            return {str(l["n"]): l.get("t", "") for l in c["lessons"]}
+    return {}
+
+
 def main(argv):
     files = [Path(p) for p in argv[1:]] or sorted(
         Path("data/content").glob("*.json"))
     issues, seen, withrev = [], 0, 0
     for p in files:
         data = json.loads(p.read_text(encoding="utf-8"))
+        titles = _titles_for(p.stem)
         for lid in sorted((k for k in data if k.isdigit()), key=int):
             seen += 1
-            if check_lesson(p.stem, lid, data[lid], issues):
+            if check_lesson(p.stem, lid, data[lid], issues, titles.get(lid)):
                 withrev += 1
     for s in issues:
         print("FAIL:", s)
