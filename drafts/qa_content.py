@@ -21,7 +21,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))  # drafts/ttfwidth.py
 from ttfwidth import metrics          # real SF NS advance widths, not a guess
-from svggeom import shapes_in, text_hits_shape, text_box
+from svggeom import (shapes_in, text_hits_shape, text_box, luminance,
+                     LIGHT_FILL)
 import qa_sequence                   # curriculum-sequencing gates (a)-(d)
 
 VIEWBOX_W = 560
@@ -111,6 +112,28 @@ def gate_svg(name, lid, field, html, issues):
             if not content.strip():
                 continue
             tbox = text_box(x, y, anchor, size, weight, content)
+            # Reversed-out text (light ink on a dark filled box) is invisible
+            # wherever it leaves that box, so it must FIT inside it. This is a
+            # different failure from overflowing the viewBox and nothing caught
+            # it: mfg-processes-1 L1 shipped a root node reading "ANUFACTURING
+            # OPERATION" because 197 units of label sat in a 160-unit box and
+            # the first and last letters were white on white.
+            if luminance(tfill) > LIGHT_FILL:
+                for sh in shapes:
+                    # 'lum' is already composited over the white page, so a
+                    # 0.15-opacity tint correctly reads as light, not dark.
+                    if sh["kind"] != "fill" or sh["lum"] > LIGHT_FILL:
+                        continue
+                    bx0, by0, bx1, by1 = sh["box"]
+                    if not (bx0 <= x <= bx1 and by0 <= y <= by1):
+                        continue          # text is not seated in this box
+                    if tbox[0] < bx0 or tbox[2] > bx1:
+                        issues.append(
+                            f"{name} L{lid} {field}: reversed-out label "
+                            f"overflows its <{sh['name']}> fig{fi} "
+                            f"[{tbox[0]:.0f},{tbox[2]:.0f}] vs box "
+                            f"[{bx0:.0f},{bx1:.0f}] — {content!r}")
+                    break
             for sh in shapes:
                 if text_hits_shape(tbox, sh, tfill):
                     issues.append(
