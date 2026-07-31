@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 04 of 11 · Year 2 · Semester 2</p>
   <h1>Form, fits, and GD&amp;T verification</h1>
   <p class="sub">Measuring flatness, roundness, and runout — the rotating-equipment repair set. Verifying position with datums. CMM measurement in outline.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/4">Mark as complete</button>
@@ -91,23 +91,234 @@
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Measure runout on a shaft: setup, instrument, and what the number means.</li><li>What does a datum system add to a position check?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Measure runout on a shaft: setup, instrument, and what the number means.</li><li>What does a datum system add to a position check?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of radial deviation against angle for a roundness trace of eight points. The measured points swing 22 micrometres peak to valley. A dashed sine curve fitted as the first harmonic follows them closely, and it represents the part being off-centre rather than out of round. Subtracting it leaves a residual of only 2.8 micrometres, so 87 per cent of the apparent out-of-roundness was a setup artefact."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Most of this roundness trace is a centring error</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">angular position (degrees)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">radial deviation (&#181;m)</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M193.8 250 L193.8 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="193.8" y="266" text-anchor="middle" fill="#5B6672" font-size="11">90</text><path d="M297.5 250 L297.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="297.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">180</text><path d="M401.2 250 L401.2 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="401.2" y="266" text-anchor="middle" fill="#5B6672" font-size="11">270</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">360</text><path d="M86 223.1 L90 223.1" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="227.1" text-anchor="end" fill="#5B6672" font-size="11">&#8722;10</text><path d="M86 189.6 L90 189.6" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="193.6" text-anchor="end" fill="#5B6672" font-size="11">&#8722;5</text><path d="M86 156 L90 156" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="160" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 122.4 L90 122.4" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="126.4" text-anchor="end" fill="#5B6672" font-size="11">5</text><path d="M86 88.9 L90 88.9" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="92.9" text-anchor="end" fill="#5B6672" font-size="11">10</text><path d="M90 156 L505 156" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><path d="M90 78.6 L93.5 80.6 L96.9 82.8 L100.4 85.1 L103.8 87.6 L107.3 90.3 L110.8 93.1 L114.2 96 L117.7 99.1 L121.1 102.2 L124.6 105.6 L128 109 L131.5 112.5 L135 116.1 L138.4 119.8 L141.9 123.5 L145.3 127.3 L148.8 131.1 L152.2 135 L155.7 138.9 L159.2 142.8 L162.6 146.8 L166.1 150.7 L169.5 154.6 L173 158.5 L176.5 162.3 L179.9 166.1 L183.4 169.8 L186.8 173.5 L190.3 177 L193.8 180.5 L197.2 183.9 L200.7 187.2 L204.1 190.3 L207.6 193.4 L211 196.3 L214.5 199 L218 201.6 L221.4 204.1 L224.9 206.4 L228.3 208.5 L231.8 210.4 L235.2 212.2 L238.7 213.7 L242.2 215.1 L245.6 216.3 L249.1 217.3 L252.5 218.1 L256 218.7 L259.5 219 L262.9 219.2 L266.4 219.2 L269.8 218.9 L273.3 218.5 L276.8 217.9 L280.2 217 L283.7 216 L287.1 214.7 L290.6 213.3 L294 211.7 L297.5 209.9 L301 207.9 L304.4 205.7 L307.9 203.4 L311.3 200.9 L314.8 198.2 L318.2 195.4 L321.7 192.5 L325.2 189.4 L328.6 186.3 L332.1 182.9 L335.5 179.5 L339 176 L342.5 172.4 L345.9 168.7 L349.4 165 L352.8 161.2 L356.3 157.4 L359.8 153.5 L363.2 149.6 L366.7 145.7 L370.1 141.7 L373.6 137.8 L377 133.9 L380.5 130 L384 126.2 L387.4 122.4 L390.9 118.7 L394.3 115 L397.8 111.5 L401.2 108 L404.7 104.6 L408.2 101.3 L411.6 98.2 L415.1 95.1 L418.5 92.2 L422 89.5 L425.5 86.9 L428.9 84.4 L432.4 82.1 L435.8 80 L439.3 78.1 L442.8 76.3 L446.2 74.8 L449.7 73.4 L453.1 72.2 L456.6 71.2 L460 70.4 L463.5 69.8 L467 69.5 L470.4 69.3 L473.9 69.3 L477.3 69.6 L480.8 70 L484.2 70.6 L487.7 71.5 L491.2 72.5 L494.6 73.8 L498.1 75.2 L501.5 76.8 L505 78.6" fill="none" stroke="#c2820f" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M90 75.4 L141.9 115.7 L193.8 182.9 L245.6 223.1 L297.5 209.7 L349.4 156 L401.2 109 L453.1 82.1 L505 75.4" fill="none" stroke="#3a6ea5" stroke-width="2"/><circle cx="90" cy="75.4" r="4.5" fill="#3a6ea5"/><circle cx="141.9" cy="115.7" r="4.5" fill="#3a6ea5"/><circle cx="193.8" cy="182.9" r="4.5" fill="#3a6ea5"/><circle cx="245.6" cy="223.1" r="4.5" fill="#3a6ea5"/><circle cx="297.5" cy="209.7" r="4.5" fill="#3a6ea5"/><circle cx="349.4" cy="156" r="4.5" fill="#3a6ea5"/><circle cx="401.2" cy="109" r="4.5" fill="#3a6ea5"/><circle cx="453.1" cy="82.1" r="4.5" fill="#3a6ea5"/><text x="100" y="46" fill="#3a6ea5" font-size="11">measured trace</text><text x="240" y="46" fill="#c2820f" font-size="11">first harmonic = off-centre</text><text x="410" y="46" fill="#9c2f2f" font-size="11">residual 2.8 &#181;m</text></svg><figcaption>The trace swings 22 &#181;m peak to valley, and a part accepted or rejected on that number would be judged mostly on how well it was centred in the fixture. Fitting and removing the first harmonic &mdash; a once-per-revolution sinusoid, which is exactly what an off-centre setup produces &mdash; leaves 2.8 &#181;m of genuine out-of-roundness. The eccentricity it removed was 11.2 &#181;m at 331&#176;, and 87% of the apparent form error went with it.</figcaption></figure>
+<h3>&#167;1 &middot; Size is one number; form is not</h3>
+<p>A two-point measurement &mdash; a micrometer across a diameter &mdash; returns a size. It says
+almost nothing about <b>form</b>, which is how the real surface departs from its ideal geometry.
+The classic demonstration is a three-lobed shaft: measured across any diameter it reads exactly
+the same everywhere, passes a size check perfectly, and will not rotate properly in a bearing,
+because its diameter is constant while its <em>radius</em> is not.</p>
+<p>Form controls exist because of that gap. <b>Flatness</b> and <b>straightness</b> constrain a
+surface or a line to lie between two parallel planes or lines; <b>roundness</b> constrains a
+circular section between two concentric circles; <b>cylindricity</b> does both at once along a
+length. None of them references a datum &mdash; a form tolerance is about the feature's own shape,
+which is why it can be checked without knowing how the part is held.</p>
+<p><b>Runout</b> and <b>position</b> are different animals: they are <em>related</em> controls, and
+they need datums. That distinction &mdash; form controls are self-contained, orientation and
+location controls are not &mdash; is the organising idea of the whole GD&amp;T system, and it also
+predicts which measurements are hard.</p>
+
+<h3>&#167;2 &middot; Roundness, and the artefact that dominates it</h3>
+<p>Measure radius against angle around a section and the result is a polar trace. Its peak-to-valley
+value looks like an answer, and usually is not, because a part mounted even slightly off-centre
+produces a large sinusoidal signal at one cycle per revolution &mdash; the <b>first harmonic</b>
+&mdash; that has nothing to do with the part's shape.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; separating centring from form</span>
+<p>\[ r(\theta)\approx a_0+b_1\cos\theta+c_1\sin\theta+\underbrace{\ldots}_{\text{form}},
+\qquad e=\sqrt{b_1^2+c_1^2} \]</p>
+<p>The first harmonic is the eccentricity of the setup. Genuine out-of-roundness lives in the
+second harmonic and above &mdash; ovality at two cycles, three-lobing at three.</p></div>
+<p>Take a trace of eight points, in micrometres of deviation: 12, 6, &#8722;4, &#8722;10,
+&#8722;8, 0, 7, 11. Peak to valley is 22 &#181;m. Fitting the first harmonic gives
+\( b_1 = 9.77 \), \( c_1 = -5.40 \), so \( e = 11.17\ \mu\mathrm{m} \) at 331&#176;. Subtract it
+and the residual peak-to-valley is <b>2.82 &#181;m</b>. Eighty-seven per cent of the apparent form
+error was the part sitting off-centre in the fixture.</p>
+<p>This is why a roundness instrument centres and levels the part before it measures, and why the
+number it reports is not simply the range of its trace. It is also why the harmonic content is
+worth reading rather than only the total: two-cycle ovality suggests chuck clamping, three-lobe
+suggests centreless grinding, and high harmonics suggest chatter. The total alone hides the
+diagnosis.</p>
+
+<h3>&#167;3 &middot; Runout: the cheap measurement that means several things at once</h3>
+<p>Put a dial indicator on a rotating shaft and read the <b>total indicator reading</b>, the full
+sweep of the needle over one revolution. It is the fastest useful check in a workshop and the most
+commonly over-interpreted.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; runout is a composite</span>
+<p>\[ \text{TIR}=2e+(\text{form error})+(\text{datum error}) \]</p>
+<p>A perfectly round part running off-centre by \( e \) gives \( \mathrm{TIR}=2e \). Runout never
+separates its causes &mdash; it sums them.</p></div>
+<p>A shaft shows TIR = 0.080 mm. A separate roundness check, properly centred, gives 0.006 mm of
+form error. The eccentricity is therefore \( (0.080-0.006)/2 = 0.037\ \mathrm{mm} \) &mdash; and
+that is the number with consequences: a 12 kg rotor with 0.037 mm of eccentricity at 3000 rev/min
+carries an unbalance force of
+\( m e\omega^2 = 12(3.7\times10^{-5})(314.2)^2 = 43.8\ \mathrm{N} \), once per revolution,
+straight into the bearings. Kinematics &amp; Dynamics of Machinery calls that the shaking force;
+metrology is where its magnitude is established.</p>
+<p>The practical rule is that runout is an excellent <em>screen</em> and a poor <em>diagnosis</em>.
+A high TIR tells you to look; it does not tell you whether to re-machine the journal, re-cut the
+centres, or re-mount the part.</p>
+
+<h3>&#167;4 &middot; Position, datums, and the bonus most inspectors forget</h3>
+<p>Location is controlled by <b>position</b> tolerance, and it works in a way that catches people
+trained on plus/minus dimensions. The tolerance defines a cylindrical <b>zone</b> of stated
+diameter, centred on the theoretically exact position, within which the feature's axis must lie.
+Because the zone is round rather than square, it is 57% larger in area than the
+\( \pm \) box that circumscribes the same limits &mdash; and it is the correct shape, since a
+radial error does not care about direction.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; position and the MMC bonus</span>
+<p>\[ \varnothing_{\text{error}}=2\sqrt{\Delta x^2+\Delta y^2},\qquad
+\text{bonus}=|\,\text{actual size}-\text{MMC}\,| \]</p>
+<p>At maximum material condition the tolerance grows by the amount the feature departs from MMC,
+because a hole made larger than its smallest permitted size leaves more room for the mating
+part.</p></div>
+<p>A hole is specified \( \varnothing10.00 \) to \( \varnothing10.10 \) with position
+\( \varnothing0.2 \) at MMC. It is produced at \( \varnothing10.06 \), with its axis 0.08 mm out
+in \( x \) and 0.09 mm in \( y \). The positional error is
+\( 2\sqrt{0.08^2+0.09^2} = 0.241\ \mathrm{mm} \). Against the stated 0.2 it fails. But MMC for a
+hole is its smallest size, 10.00, so the bonus is \( 10.06-10.00 = 0.06 \) and the available
+tolerance is \( 0.26\ \mathrm{mm} \). The part passes.</p>
+<p>Rejecting it would scrap a good part, and this is not a rare situation &mdash; it is the normal
+one, since features are rarely produced exactly at MMC. The bonus is not a concession or a
+leniency; it is a statement that the assembly still fits, which is what the tolerance was
+protecting in the first place.</p>
+<p>A <b>coordinate measuring machine</b> is the instrument that makes this practical at scale. It
+probes points, fits substitute geometry to them by least squares, establishes the datum reference
+frame from the datum features in order, and evaluates the tolerance in that frame. Two cautions
+belong with it: the fitted geometry depends on where the points were taken, so a sparse or badly
+distributed sample can report a form error that is really a sampling artefact; and the machine's
+own uncertainty belongs in the budget of Lesson 3 like any other instrument's.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Measure runout on a shaft: setup, instrument, and what the number means.</li><li>What does a datum system add to a position check?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Uncertainty budgets</b> (Lesson 3) &mdash; a CMM's own uncertainty enters one like any
+other instrument's.</li>
+<li><b>Dial indicators</b> (Lesson 2) &mdash; the comparison instrument runout is read on.</li>
+<li><b>Limits and fits, and GD&amp;T symbols</b> (Engineering Drawing &amp; CAD L6&ndash;L7) &mdash;
+the drawing language being verified here.</li>
+<li><b>Harmonic decomposition</b> (Engineering Mathematics II L11) &mdash; fitting a first harmonic
+to separate centring from form.</li>
+<li><b>Rotating unbalance</b> (Kinematics &amp; Dynamics of Machinery L10) &mdash;
+\( me\omega^2 \), the consequence of the eccentricity measured here.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Form control</td><td>no datum</td><td>Flatness, straightness, roundness, cylindricity &mdash; the feature's own shape.</td></tr>
+<tr><td>Related control</td><td>needs datums</td><td>Runout, position, orientation &mdash; measured in a datum frame.</td></tr>
+<tr><td>First harmonic</td><td>\( e=\sqrt{b_1^2+c_1^2} \)</td><td>Setup eccentricity, not form; remove before judging roundness.</td></tr>
+<tr><td>Harmonic content</td><td>2 cycles, 3 cycles, ...</td><td>Ovality from clamping, lobing from centreless grinding, chatter above.</td></tr>
+<tr><td>Runout (TIR)</td><td>\( 2e+\text{form}+\text{datum} \)</td><td>Fast screen; never a diagnosis.</td></tr>
+<tr><td>Position zone</td><td>\( \varnothing = 2\sqrt{\Delta x^2+\Delta y^2} \)</td><td>Cylindrical zone about true position.</td></tr>
+<tr><td>MMC bonus</td><td>\( |{\rm actual}-{\rm MMC}| \)</td><td>Extra position tolerance earned by departing from MMC.</td></tr>
+<tr><td>Substitute geometry</td><td>least-squares fit to probed points</td><td>What a CMM actually evaluates; sampling-dependent.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>How much of this roundness trace is real?</b></p>
+<p><b>Problem.</b> A roundness trace of eight equally spaced points gives radial deviations, in
+micrometres, of 12, 6, &#8722;4, &#8722;10, &#8722;8, 0, 7, 11. Find the peak-to-valley value as
+measured, fit the first harmonic \( a_0+b_1\cos\theta+c_1\sin\theta \), find the eccentricity it
+represents, and find the residual peak-to-valley out-of-roundness.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) As measured, peak to valley is
+\( 12-(-10)=22\ \mu\mathrm{m} \).</p>
+<p>(2) \( a_0 = \frac{1}{8}\sum r_i = \frac{14}{8} = 1.75\ \mu\mathrm{m} \).</p>
+<p>(3) \( b_1 = \frac{2}{8}\sum r_i\cos\theta_i \). With
+\( \cos\theta = 1, 0.707, 0, -0.707, -1, -0.707, 0, 0.707 \), the sum is 39.09, so
+\( b_1 = 9.77\ \mu\mathrm{m} \).</p>
+<p>(4) \( c_1 = \frac{2}{8}\sum r_i\sin\theta_i \). With
+\( \sin\theta = 0, 0.707, 1, 0.707, 0, -0.707, -1, -0.707 \), the sum is &#8722;21.61, so
+\( c_1 = -5.40\ \mu\mathrm{m} \).</p>
+<p>(5) \( e=\sqrt{9.77^2+5.40^2} = \sqrt{95.51+29.18} = 11.17\ \mu\mathrm{m} \), directed at
+\( \operatorname{atan2}(-5.40,\,9.77) = 331^\circ \).</p>
+<p>(6) Subtracting the fitted harmonic point by point leaves residuals of 0.48, 1.16, &#8722;0.35,
+&#8722;1.02, 0.02, 1.34, &#8722;0.15, &#8722;1.48 &#181;m, so the residual peak to valley is
+\( 1.34-(-1.48) = 2.82\ \mu\mathrm{m} \).</p>
+<p><b>Answer:</b> 22 &#181;m as measured; eccentricity 11.17 &#181;m at 331&#176;; genuine
+out-of-roundness 2.82 &#181;m.
+<b>Sanity check:</b> the eccentricity removed \( (22-2.82)/22 = 87\% \) of the apparent form error,
+which is why a roundness instrument centres and levels a part before measuring rather than simply
+reporting the range of its trace. Note the direction is worth keeping: 331&#176; points at where
+the part sits proud in the fixture, which is actionable, while the 22 &#181;m alone would have
+sent the part back to the grinder for a fault it does not have.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Runout, decomposed and then costed</b></p>
+<p><b>Problem.</b> A shaft journal shows a total indicator reading of 0.080 mm. A separate,
+properly centred roundness check on the same section gives 0.006 mm of form error. Find the
+eccentricity. Then, treating the shaft as part of a 12 kg rotor running at 3000 rev/min, find the
+unbalance force that eccentricity produces.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) For a round part running off-centre,
+\( \mathrm{TIR} = 2e \); the measured TIR also contains the form error, so
+\( 2e = 0.080-0.006 = 0.074 \) and \( e = 0.037\ \mathrm{mm} \).</p>
+<p>(2) \( \omega = 2\pi(3000)/60 = 314.16\ \mathrm{rad/s} \).</p>
+<p>(3) \( F = m e\omega^2 = 12(3.7\times10^{-5})(314.16)^2
+= 12(3.7\times10^{-5})(98\,696) = 43.8\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( e = 0.037 \) mm, producing a 43.8 N rotating force at 3000 rev/min.
+<b>Sanity check:</b> the decomposition matters because the two causes have different cures &mdash;
+0.006 mm of form error is a machining problem and 0.037 mm of eccentricity is a mounting or
+centres problem, and TIR alone cannot tell them apart. The force is the reason anyone cares: 43.8 N
+once per revolution, fifty times a second, straight into the bearings, from a 37 micrometre error
+that a size check would never have seen. Note also that the force scales as \( \omega^2 \), so the
+same shaft at 6000 rev/min would deliver 175 N.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Position with the MMC bonus (with a US customary check)</b></p>
+<p><b>Problem.</b> A hole is specified \( \varnothing10.00 \) to \( \varnothing10.10 \) mm with a
+position tolerance of \( \varnothing0.2 \) at MMC. It is produced at \( \varnothing10.06 \), with
+its axis displaced 0.08 mm in \( x \) and 0.09 mm in \( y \) from true position. Find the
+positional error, the bonus tolerance, and the verdict &mdash; both as specified and as it would
+be if the tolerance were applied regardless of feature size. Give the positional error in
+inches.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The zone is cylindrical, so the error is a diameter:
+\( \varnothing_{\text{error}} = 2\sqrt{0.08^2+0.09^2} = 2\sqrt{0.0064+0.0081}
+= 2(0.1204) = 0.241\ \mathrm{mm} \).</p>
+<p>(2) MMC for a hole is its <em>smallest</em> permitted size, 10.00 mm. The feature was made at
+10.06, so bonus \( = 10.06-10.00 = 0.06\ \mathrm{mm} \).</p>
+<p>(3) Available tolerance \( = 0.2+0.06 = 0.26\ \mathrm{mm} \).</p>
+<p>(4) \( 0.241 < 0.26 \) &#8594; the part <b>passes</b> as specified. Applied regardless of
+feature size, the limit would be 0.2 and \( 0.241 > 0.2 \) &#8594; it would <b>fail</b>.</p>
+<p>(5) \( 0.241\ \mathrm{mm} \div 25.4 = 0.00948\ \mathrm{in} \).</p>
+<p><b>Answer:</b> error \( \varnothing0.241 \) mm (0.00948 in), bonus 0.06 mm, allowed 0.26 mm
+&mdash; passes at MMC, would fail regardless of feature size.
+<b>Sanity check:</b> the two verdicts differ on the same measured part, which is exactly why the
+modifier on the drawing has to be read before the calculation is done. The bonus is not leniency:
+a hole larger than MMC leaves more clearance for the mating fastener, so the assembly still fits
+and the tolerance has done its job. Note also the doubling &mdash; forgetting that a position error
+is stated as a zone <em>diameter</em> and comparing the 0.120 radial value against 0.2 would have
+passed the part for the wrong reason.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>A three-lobed shaft is measured across several diameters with a micrometer. The
+readings are all identical. This shows that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the shaft is round</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a two-point measurement cannot detect odd-lobed form error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the micrometer is faulty</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the shaft is within its size tolerance and therefore acceptable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>An odd-lobed form has constant diameter and varying radius, so every
+two-point measurement agrees while the part is not round. It is the standard demonstration that
+size and form are different quantities, and the reason roundness is measured against a rotating
+axis rather than across a diameter. The part may well be within size tolerance and still not run
+in a bearing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The first harmonic of a roundness trace represents</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>ovality</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the eccentricity of the setup</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>three-lobing</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>surface roughness</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>One cycle per revolution is what an off-centre mounting produces, so the first
+harmonic is a setup artefact rather than a property of the part. Genuine form lives at two cycles
+(ovality, often from clamping), three (lobing, often from centreless grinding) and above (chatter).
+In the worked trace the first harmonic accounted for 87% of the apparent 22 &#181;m.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A roundness trace shows 22 &#181;m peak to valley; after removing the fitted first
+harmonic the residual is 2.8 &#181;m. The part's out-of-roundness is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>22 &#181;m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>2.8 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>19.2 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>11.2 &#181;m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>2.8 &#181;m &mdash; the rest was the part sitting 11.2 &#181;m off-centre in
+the fixture. Reporting the raw 22 would reject a good part for a fault belonging to the setup,
+which is why a roundness instrument centres and levels before measuring and why the reported value
+is not simply the range of the trace.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>For a perfectly round shaft mounted with eccentricity \( e \), the TIR is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( e \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 2e \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( e/2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( e\sqrt2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The indicator sees the high side and then the low side, so the needle sweeps
+\( 2e \) over a revolution. This is why TIR must be halved before it can be compared with an
+eccentricity or fed into an unbalance calculation &mdash; and why a 0.080 mm TIR is a 0.040 mm
+mounting error, not 0.080.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Runout is best described as</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a pure measure of concentricity</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>a pure measure of roundness</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>a composite of form, eccentricity and datum error that cannot separate them</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>equivalent to a position tolerance</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>TIR sums whatever moves the indicator: the part's own form, its eccentricity
+about the datum axis, and any error in the datum itself. That makes it a fast and genuinely useful
+screen and a poor diagnosis &mdash; a high reading says look, not what to fix. Separating the
+causes needs a second, centred measurement, as the worked example does.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A position tolerance defines a zone that is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a square box about true position</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a cylinder about true position</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a sphere about the datum</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a pair of parallel planes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A cylinder, because a radial error has no preferred direction. That is also why
+the error is computed as a <em>diameter</em>,
+\( 2\sqrt{\Delta x^2+\Delta y^2} \) &mdash; forgetting the factor of two is the commonest arithmetic
+slip in position evaluation and passes parts that should fail. A round zone is also 57% larger in
+area than the square box that circumscribes the same plus/minus limits.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A hole specified \( \varnothing10.00\text{--}10.10 \) with position
+\( \varnothing0.2 \) at MMC is produced at \( \varnothing10.06 \). The available position
+tolerance is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \varnothing0.20 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( \varnothing0.26 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \varnothing0.14 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \varnothing0.06 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>MMC for a hole is its smallest size, 10.00, so departing to 10.06 earns a bonus
+of 0.06 and the tolerance becomes 0.26. The bonus is not a concession: a larger hole leaves more
+clearance for the mating fastener, so the assembly the tolerance was protecting still works.
+Ignoring it scraps good parts routinely, because features are rarely produced exactly at
+MMC.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A CMM reports a form error that turns out to be a sampling artefact. The most likely
+cause is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the probe is worn</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>too few or badly distributed probed points for the substitute geometry fitted</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the datum frame was omitted</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the room was too warm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A CMM evaluates <em>substitute geometry</em> least-squares-fitted to the points
+it took, so the reported form depends on where those points were. A sparse or clustered sample can
+miss a lobe entirely or invent one. It is the same lesson as the roundness harmonic: the number a
+machine reports is a property of the measurement as well as of the part, and the sampling strategy
+belongs in the method.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the journals that were reground for nothing.</b> A pump shaft was
+checked during overhaul with a dial indicator between centres. The journal showed 0.080 mm TIR
+against a 0.030 mm limit, and both journals were reground. The shaft was reassembled, ran, and
+showed the same vibration as before.</p>
+<p>The measurement was correct and the conclusion drawn from it was not. TIR is a composite:
+\( \mathrm{TIR} = 2e + \text{form} + \text{datum error} \). A centred roundness check on the same
+section found only 0.006 mm of genuine form error, so the eccentricity was
+\( (0.080-0.006)/2 = 0.037\ \mathrm{mm} \) &mdash; and eccentricity measured between centres is a
+statement about the <em>centres</em>, which had been damaged, as much as about the journal.
+Regrinding the journal removed metal from the one part of the assembly that was nearly right. The
+0.037 mm that remained is worth 43.8 N of rotating force on a 12 kg rotor at 3000 rev/min, which
+is what the vibration survey had been reporting all along.</p>
+<p>Two practices follow. Runout is a screen, and a screen that fails should trigger a measurement
+that can separate causes &mdash; a centred roundness check costs minutes and distinguishes a
+machining fault from a mounting one. And when a repair does not change the symptom, the first
+suspect is the diagnosis rather than the workmanship: the same TIR before and after regrinding was
+evidence that the metal removed had not been the problem.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(330.7\\ \\mathrm{lb}\\)", "\\(68.04\\ \\mathrm{lb}\\)", "\\(3307\\ \\mathrm{lb}\\)", "\\(33.07\\ \\mathrm{lb}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(150 \\times 2.205 = 330.7\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(26.46\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(5.443\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(264.6\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.646\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(12 \times 2.205 = 26.46\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(13.79\\ \\mathrm{psi}\\)", "\\(0.2901\\ \\mathrm{psi}\\)", "\\(2.901\\ \\mathrm{psi}\\)", "\\(0.02901\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(2 \\times 0.145 = 0.2901\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(137.9\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2.901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(29.01\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2901\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(20 \times 0.145 = 2.901\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

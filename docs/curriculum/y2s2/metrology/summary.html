@@ -73,7 +73,7 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2>
-<p class="ref-thin">No recap is authored yet for lessons 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
+<p class="ref-thin">No recap is authored yet for lessons 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
 <section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 01 · Measurement fundamentals</p><h3><span class="sum-n">Lesson 01</span>Measurement fundamentals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
 <ul>
 <li>Resolution is what the display can show, precision is agreement among repeats, bias is a
@@ -213,6 +213,52 @@ in quadrature and not linearly.</li>
 <tr><td>Expanded uncertainty</td><td>\( U=ku_c \), \( k=2 \)</td><td>What is reported; about 95% coverage.</td></tr>
 <tr><td>Variance share</td><td>\( u_i^2/u_c^2 \)</td><td>The ranking that tells you what to fix.</td></tr>
 <tr><td>Guard band</td><td>accept within \( T-2U \)</td><td>Confident conformity decisions near a limit.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 04 · Form, fits, and GD&amp;T verification</p><h3><span class="sum-n">Lesson 04</span>Form, fits, and GD&amp;T verification</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Size and form are different quantities: an odd-lobed shaft has constant diameter and varying
+radius, so every two-point measurement agrees while the part is not round.</li>
+<li>Form controls (flatness, straightness, roundness, cylindricity) need no datum; related
+controls (runout, position, orientation) do &mdash; which predicts which measurements are
+hard.</li>
+<li>A roundness trace's first harmonic is the setup's eccentricity, not the part's shape:
+\( e=\sqrt{b_1^2+c_1^2} \).</li>
+<li>The worked trace reads 22 &#181;m peak to valley, of which 11.17 &#181;m at 331&#176; is
+centring; the genuine out-of-roundness is 2.82 &#181;m, so 87% of it was an artefact.</li>
+<li>Harmonic content is a diagnosis: two cycles suggests clamping, three suggests centreless
+grinding, higher suggests chatter. The total alone hides it.</li>
+<li>Runout is a composite, \( \mathrm{TIR}=2e+\text{form}+\text{datum} \) &mdash; an excellent
+screen and a poor diagnosis.</li>
+<li>A 0.080 mm TIR with 0.006 mm of form means \( e=0.037 \) mm, which on a 12 kg rotor at
+3000 rev/min is 43.8 N of rotating force into the bearings.</li>
+<li>A position tolerance is a cylindrical zone, so the error is a diameter,
+\( 2\sqrt{\Delta x^2+\Delta y^2} \) &mdash; forgetting the factor of two passes parts that should
+fail.</li>
+<li>At MMC the tolerance grows by the departure from MMC: a \( \varnothing10.00 \) hole made at
+10.06 earns 0.06, so 0.241 mm of error passes against 0.26 and would have failed against 0.2.</li>
+<li>A CMM evaluates least-squares substitute geometry fitted to the points it took, so sampling
+strategy is part of the method and its own uncertainty belongs in the Lesson 3 budget.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 04 · Form, fits, and GD&amp;T verification · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Uncertainty budgets</b> (Lesson 3) &mdash; a CMM's own uncertainty enters one like any
+other instrument's.</li>
+<li><b>Dial indicators</b> (Lesson 2) &mdash; the comparison instrument runout is read on.</li>
+<li><b>Limits and fits, and GD&amp;T symbols</b> (Engineering Drawing &amp; CAD L6&ndash;L7) &mdash;
+the drawing language being verified here.</li>
+<li><b>Harmonic decomposition</b> (Engineering Mathematics II L11) &mdash; fitting a first harmonic
+to separate centring from form.</li>
+<li><b>Rotating unbalance</b> (Kinematics &amp; Dynamics of Machinery L10) &mdash;
+\( me\omega^2 \), the consequence of the eccentricity measured here.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Form control</td><td>no datum</td><td>Flatness, straightness, roundness, cylindricity &mdash; the feature's own shape.</td></tr>
+<tr><td>Related control</td><td>needs datums</td><td>Runout, position, orientation &mdash; measured in a datum frame.</td></tr>
+<tr><td>First harmonic</td><td>\( e=\sqrt{b_1^2+c_1^2} \)</td><td>Setup eccentricity, not form; remove before judging roundness.</td></tr>
+<tr><td>Harmonic content</td><td>2 cycles, 3 cycles, ...</td><td>Ovality from clamping, lobing from centreless grinding, chatter above.</td></tr>
+<tr><td>Runout (TIR)</td><td>\( 2e+\text{form}+\text{datum} \)</td><td>Fast screen; never a diagnosis.</td></tr>
+<tr><td>Position zone</td><td>\( \varnothing = 2\sqrt{\Delta x^2+\Delta y^2} \)</td><td>Cylindrical zone about true position.</td></tr>
+<tr><td>MMC bonus</td><td>\( |{\rm actual}-{\rm MMC}| \)</td><td>Extra position tolerance earned by departing from MMC.</td></tr>
+<tr><td>Substitute geometry</td><td>least-squares fit to probed points</td><td>What a CMM actually evaluates; sampling-dependent.</td></tr>
 </tbody></table></div></div></div></section>
 </article>
 </main>
