@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 03 of 11 · Year 2 · Semester 2</p>
   <h1>Deep drawing and stretch forming</h1>
   <p class="sub">Drawability and the limiting draw ratio; blankholder force and defect map — wrinkling versus tearing. Redraws and ironing. Cans and cookware as engineered products.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/3">Mark as complete</button>
@@ -91,23 +91,264 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What limits the drawing ratio in one hit?</li><li>Wrinkling versus tearing: which control fixes each?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What limits the drawing ratio in one hit?</li><li>Wrinkling versus tearing: which control fixes each?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A blank 150 millimetres across and three successive drawn cups, in cross-section and to the same scale. The first draw takes it to 80 millimetres diameter and 50.3 millimetres tall at a drawing ratio of 1.88, close to the one-hit limit. The second reaches 55 millimetres and 88.5 tall at a ratio of 1.45, and the third 42 millimetres and 123.4 tall at 1.31. The three ratios multiply to an overall 3.57, which no single draw could achieve."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">One blank, three draws: the cup gets taller as the ratio gets gentler</text><text x="95" y="52" fill="#1f7a5c" font-size="11">one blank, three draws: 150 &#8594; 80 &#8594; 55 &#8594; 42 mm, overall DR 3.57</text><rect x="75" y="246" width="150" height="4" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.5"/><text x="150" y="268" text-anchor="middle" fill="#3a6ea5" font-size="11">&#8709;150</text><text x="150" y="284" text-anchor="middle" fill="#5B6672" font-size="10">blank</text><path d="M250 199.7 L250 250 L330 250 L330 199.7" fill="#1f7a5c22" stroke="#1f7a5c" stroke-width="2.2"/><text x="290" y="191.7" text-anchor="middle" fill="#5B6672" font-size="10">50.3</text><text x="290" y="268" text-anchor="middle" fill="#1f7a5c" font-size="11">&#8709;80</text><text x="290" y="284" text-anchor="middle" fill="#5B6672" font-size="10">DR 1.88</text><path d="M355 161.5 L355 250 L410 250 L410 161.5" fill="#1f7a5c22" stroke="#1f7a5c" stroke-width="2.2"/><text x="382.5" y="153.5" text-anchor="middle" fill="#5B6672" font-size="10">88.5</text><text x="382.5" y="268" text-anchor="middle" fill="#1f7a5c" font-size="11">&#8709;55</text><text x="382.5" y="284" text-anchor="middle" fill="#5B6672" font-size="10">DR 1.45</text><path d="M435 126.6 L435 250 L477 250 L477 126.6" fill="#1f7a5c22" stroke="#1f7a5c" stroke-width="2.2"/><text x="456" y="118.6" text-anchor="middle" fill="#5B6672" font-size="10">123.4</text><text x="456" y="268" text-anchor="middle" fill="#1f7a5c" font-size="11">&#8709;42</text><text x="456" y="284" text-anchor="middle" fill="#5B6672" font-size="10">DR 1.31</text><path d="M60 250 L505 250" stroke="#14181F" stroke-width="1.4" fill="none"/></svg><figcaption>Surface area is conserved, so a cup's height follows from its diameter alone: \( h=(D_b^2-D_p^2)/4D_p \). The first draw is the aggressive one at \( \mathrm{DR}=1.88 \), just inside the limit of about 2; the redraws are deliberately gentler at 1.45 and 1.31, because each one starts from material already work-hardened by the last. Their ratios multiply, so three draws reach an overall 3.57 that no single hit could. The blank's thickness is drawn exaggerated &mdash; at 2 mm on a 150 mm disc it would be a hairline at this scale.</figcaption></figure>
+<h3>&#167;1 &middot; Two stresses, two failures, one control</h3>
+<p>Deep drawing pushes a flat blank through a die with a punch, turning a disc into a cup. Follow
+the material and the mechanics divide cleanly in two. The <b>flange</b> &mdash; here the part of the
+blank still outside the die, not the bent-up leg Lesson 2 called by the same name &mdash; is
+being pulled toward a smaller circumference, so it is in <em>circumferential compression</em>. The
+<b>wall</b> already drawn in is carrying the whole force of dragging that flange, so it is in
+<em>tension</em>.</p>
+<p>Each of those stresses has its own failure. Compress a thin annulus in its own plane and it
+buckles: the flange throws up radial <b>wrinkles</b>, which are then dragged into the wall and
+locked in. Tension the wall past its strength and it <b>tears</b>, always at the same place &mdash;
+just above the punch nose radius, where the section is thinnest and no longer supported by the
+punch.</p>
+<p>One control governs both, in opposite directions. The <b>blankholder</b> clamps the flange
+between two plates. Increase its force and the flange is held flat, so wrinkling stops &mdash; but
+the flange now has to be dragged out from under a heavier clamp, so the friction adds to the wall
+tension and tearing arrives sooner. Decrease it and the reverse happens. That is the whole answer to
+which control fixes which defect: <b>they are the same control, and it has a window rather than a
+setting</b>.</p>
+<p>Everything else in the process is a way of widening that window. Lubricant reduces the friction
+the blankholder buys. A generous die corner radius reduces the bending and unbending work the wall
+has to carry. Draw beads add local restraint exactly where a non-round flange would otherwise flow
+in too freely. And the window narrows as the draw gets deeper, until at some ratio it closes.</p>
+
+<h3>&#167;2 &middot; How deep is one draw allowed to be</h3>
+<p>Three ratios decide whether a cup can be drawn in one hit, and all three are checked before
+anything is tooled.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; the feasibility set</span>
+<p>\[ \mathrm{DR}=\frac{D_b}{D_p}\le2.0,\qquad
+r=\frac{D_b-D_p}{D_b}\le0.5,\qquad
+\frac{t}{D_b}\ge0.01 \]</p>
+<p>The first two say the same thing twice &mdash; \( r=1-1/\mathrm{DR} \) &mdash; and the third is
+about wrinkling: a blank too thin for its diameter buckles before it draws, whatever the blankholder
+does.</p></div>
+<p>A \( \varnothing150 \) blank in 2 mm sheet drawn to a \( \varnothing80 \) cup gives
+\( \mathrm{DR}=1.875 \), \( r=0.467 \) and \( t/D_b=0.0133 \). All three pass, but the first two
+only just, which is a useful thing to know before the first part is pressed rather than after.</p>
+<p>Where does the limit of about 2 come from? The wall has to carry the force that deforms the
+flange, so the limit is a competition between the work of drawing and the strength of the wall. The
+ideal work of reducing a blank to a cup gives a limiting ratio of \( e=2.72 \) for a perfectly
+efficient, frictionless process. Real drawing loses work to friction under the blankholder, to
+friction over the die radius, and to bending the material into the die and straightening it again,
+which puts the efficiency around 0.7.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the limiting draw ratio</span>
+<p>\[ \mathrm{LDR}=e^{\,\eta} \]</p>
+<p>With \( \eta\approx0.7 \), \( \mathrm{LDR}=2.01 \) &mdash; which is where the rule of thumb comes
+from. Excellent lubrication and generous radii push \( \eta \) toward 0.8 and the LDR to 2.23.</p></div>
+<p>Material matters too, through <b>normal anisotropy</b> \( \bar R \): the ratio of width strain to
+thickness strain in a tensile test. A sheet with \( \bar R>1 \) resists thinning more than it
+resists narrowing, so its wall survives more tension before tearing. Ordinary steel sits near
+\( \bar R=1 \) and reaches an LDR near 2.0; a dedicated deep-drawing grade at \( \bar R\approx1.8 \)
+reaches about 2.4. That is a material specification bought specifically to change a process limit,
+which is unusual enough to be worth remembering.</p>
+
+<h3>&#167;3 &middot; Force, redraws, and ironing</h3>
+<p>The drawing force peaks early in the stroke, when the flange is largest, and falls as the flange
+is consumed.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; drawing and blankholder force</span>
+<p>\[ F=\pi D_p t\,\mathrm{TS}\left(\frac{D_b}{D_p}-0.7\right),\qquad
+F_h=0.015\,Y\pi\!\left[D_b^{2}-(D_p+2.2t+2R_d)^{2}\right] \]</p>
+<p>The \( -0.7 \) is empirical and absorbs the friction and bending losses; the bracket in
+\( F_h \) is the flange area still under the blankholder as the draw begins.</p></div>
+<p>For the \( \varnothing80 \) cup: \( F=\pi(80)(2)(340)(1.175)=200.8\ \mathrm{kN} \), which is
+22.6 US tons. With an 8 mm die radius the blankholder needs
+\( F_h=146.3\ \mathrm{kN} \) &mdash; 73% of the drawing force, high because this blank is large
+relative to its punch. The press must supply both at once: <b>347 kN, 39.0 US tons</b>. A press
+sized on the drawing force alone is 42% short, which is a specification error rather than a
+process one.</p>
+<p>When one draw is not enough, <b>redraw</b>. Ratios multiply, so a sequence of gentle draws reaches
+what a single hit cannot: 1.875, then 1.455, then 1.310 takes \( \varnothing150 \) down to
+\( \varnothing42 \) at an overall ratio of 3.57. The redraws are deliberately gentler because each
+starts from material the previous draw work-hardened, and if the ductility runs out an intermediate
+anneal is cheaper than the scrap. Cup height follows from area constancy alone,
+\( h=(D_b^2-D_p^2)/4D_p \), so the sequence in the diagram runs 50.3, 88.5 and 123.4 mm tall on the
+same blank.</p>
+<p><b>Ironing</b> is a different operation that looks similar. The gap between punch and die is set
+<em>smaller</em> than the sheet thickness, so the wall is squeezed and lengthens while its diameter
+stays put. Volume is conserved in the wall, so \( h'=h\,t/t' \): thinning the 50.3 mm wall from 2.0
+to 1.2 mm makes it 83.9 mm tall. This is how a beverage can gets a wall far thinner than its base
+&mdash; the base is never ironed &mdash; and it is why an ironed cup has a wall of controlled
+thickness while a drawn one does not.</p>
+<p>One consequence of anisotropy shows up here as scrap. If a sheet's properties vary <em>within</em>
+its plane, the cup rim draws up unevenly and forms <b>ears</b>, which must be trimmed. The trim
+allowance is designed into the blank diameter, so planar anisotropy is paid for in material on every
+part.</p>
+
+<h3>&#167;4 &middot; Reading the window</h3>
+<p>The two failures bound a process window, and both bounds can be estimated rather than discovered
+on the press. The lower bound is the blankholder pressure below which the flange buckles, and it
+rises steeply with the draw ratio because a deeper draw means a wider, more slender flange:</p>
+<div class="keybox"><span class="tag">Key relation &mdash; minimum blankholder pressure</span>
+<p>\[ p_{\min}=c\left[(\beta-1)^{3}+\frac{0.5\,D_p}{100\,t}\right]\mathrm{TS},
+\qquad c\approx2\text{--}3\times10^{-3} \]</p>
+<p>\( \beta=\mathrm{DR} \). The cube is what makes the window close: at \( \beta=1.5 \) the flange
+needs 0.33 MPa, at 1.875 it needs 0.89, and at 2.2 it needs 1.97.</p></div>
+<p>For the worked cup, 0.89 MPa over a 12,645 mm&#178; flange is 11.2 kN &mdash; far below the
+146 kN the blankholder formula asks for, and the gap between those two numbers <em>is</em> the
+window. The upper bound is where the added friction pushes the wall past its strength, and it falls
+as the draw ratio rises for the same reason the lower bound climbs. Somewhere the two meet, and that
+meeting point is the LDR.</p>
+<p>Four practical corollaries follow. A part that wrinkles and a part that tears are opposite
+symptoms of the same maladjusted control, so the first diagnostic question is which one appeared,
+not what to tighten. A <b>die corner radius</b> that is too small tears (excessive bending work) and
+one that is too large wrinkles (unsupported flange), which is the same trade in a different
+variable; \( R_d\approx4 \) to \( 10t \) is the usual range. A <b>punch nose radius</b> below about
+\( 4t \) concentrates the thinning and moves the tear to a predictable place. And because the wall
+is drawn in tension rather than bent, springback is small in the wall and concentrated in the
+<em>flange</em> &mdash; so a drawn part with a retained flange carries both this lesson's problems
+and the last one's.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What limits the drawing ratio in one hit?</li><li>Wrinkling versus tearing: which control fixes each?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Tensile strength, yield, work hardening and anisotropy</b> (Materials Science I L5, Strength
+of Materials L2) &mdash; the wall's capacity, the redraw's ductility budget and \( \bar R \).</li>
+<li><b>Buckling of a compressed member</b> (Strength of Materials L10) &mdash; wrinkling is a
+flange buckling in its own plane.</li>
+<li><b>Friction and the effect of lubrication in forming</b> (Manufacturing Processes I
+L7&ndash;L9) &mdash; the loss that sets the drawing efficiency.</li>
+<li><b>Blanking and the strip layout that produces the disc</b> (Lesson 1) &mdash; the blank comes
+from there, trim allowance included.</li>
+<li><b>Springback</b> (Lesson 2) &mdash; small in a drawn wall, real in a retained flange.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Flange / wall stresses</td><td>compression / tension</td><td>Wrinkling comes from one, tearing from the other.</td></tr>
+<tr><td>Blankholder</td><td>one control, two directions</td><td>Too little wrinkles, too much tears; it has a window.</td></tr>
+<tr><td>Drawing ratio</td><td>\( \mathrm{DR}=D_b/D_p\le2 \)</td><td>1.875 for a 150 blank to an 80 cup.</td></tr>
+<tr><td>Reduction, thickness ratio</td><td>\( r\le0.5 \), \( t/D_b\ge0.01 \)</td><td>The other two feasibility checks, before tooling.</td></tr>
+<tr><td>Limiting draw ratio</td><td>\( \mathrm{LDR}=e^{\eta} \)</td><td>2.01 at \( \eta=0.7 \) &mdash; where the rule of thumb comes from.</td></tr>
+<tr><td>Normal anisotropy</td><td>\( \bar R \); 1.0 &#8594; 1.8</td><td>Raises LDR from about 2.0 to 2.4; a property bought to move a limit.</td></tr>
+<tr><td>Cup height</td><td>\( h=(D_b^2-D_p^2)/4D_p \)</td><td>Area constancy; 50.3 mm for the worked cup.</td></tr>
+<tr><td>Drawing force</td><td>\( \pi D_pt\,\mathrm{TS}(\mathrm{DR}-0.7) \)</td><td>200.8 kN; add the blankholder before sizing a press.</td></tr>
+<tr><td>Blankholder force</td><td>\( 0.015Y\pi[D_b^2-(D_p+2.2t+2R_d)^2] \)</td><td>146.3 kN here; total 347 kN, 39.0 US tons.</td></tr>
+<tr><td>Redraw</td><td>ratios multiply</td><td>1.875 &#215; 1.455 &#215; 1.310 = 3.57 overall.</td></tr>
+<tr><td>Ironing</td><td>\( h'=h\,t/t' \)</td><td>Thins the wall deliberately: 50.3 mm becomes 83.9 at 1.2 mm.</td></tr>
+<tr><td>Minimum blankholder pressure</td><td>\( c[(\beta-1)^3+0.5D_p/100t]\mathrm{TS} \)</td><td>The cube is why the window closes as the draw deepens.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Can it be drawn in one hit, and what press does it need?</b></p>
+<p><b>Problem.</b> A \( \varnothing150 \) mm blank in 2 mm sheet (\( \mathrm{TS}=340 \) MPa,
+\( Y=250 \) MPa) is to be drawn into a \( \varnothing80 \) mm cup over an 8 mm die radius. Check the
+three feasibility ratios, find the cup height, and find the drawing force, the blankholder force and
+the total press force, in kilonewtons and US tons.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \mathrm{DR}=150/80=1.875 \), which is at or below 2.0
+&#8212; passes.</p>
+<p>(2) \( r=(150-80)/150=0.467 \), at or below 0.5 &#8212; passes.</p>
+<p>(3) \( t/D_b=2/150=0.0133 \), at or above 0.01 &#8212; passes. All three, but the first two
+narrowly.</p>
+<p>(4) Area is conserved, so \( h=(D_b^2-D_p^2)/4D_p=(22500-6400)/320=50.3\ \mathrm{mm} \).</p>
+<p>(5) \( F=\pi D_p t\,\mathrm{TS}(\mathrm{DR}-0.7)=\pi(80)(2)(340)(1.175)
+=200{,}811\ \mathrm{N}=200.8\ \mathrm{kN} \).</p>
+<p>(6) \( D_p+2.2t+2R_d=80+4.4+16=100.4 \), so
+\( F_h=0.015(250)\pi[22500-10080]=146{,}318\ \mathrm{N}=146.3\ \mathrm{kN} \).</p>
+<p>(7) Total \( =200.8+146.3=347.1\ \mathrm{kN} \), which is
+\( 347{,}128/4.4482/2000=39.0 \) US tons. The drawing force alone would be 22.6 US tons.</p>
+<p><b>Answer:</b> feasible in one draw; \( h=50.3 \) mm; 200.8 kN drawing plus 146.3 kN blankholder,
+347.1 kN or 39.0 US tons total.
+<b>Sanity check:</b> the blankholder is 73% of the drawing force here, which is high but expected
+&mdash; the flange area is largest exactly when the draw ratio is near its limit. A press specified
+on the 22.6 tons of drawing force would be 42% short, and it is a specification error rather than a
+process one, so it survives every trial on paper. Note also how close the ratios are to their
+limits: at \( \varnothing75 \) instead of 80 the DR would be 2.0 and one hit would be marginal.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Three draws, and then ironing</b></p>
+<p><b>Problem.</b> The same \( \varnothing150 \) blank is to become a \( \varnothing42 \) cup. Show
+that one draw cannot do it, propose a three-stage sequence through \( \varnothing80 \) and
+\( \varnothing55 \), and give each stage's ratio and each cup's height. Then find how tall the first
+cup's wall becomes if it is ironed from 2.0 mm to 1.2 mm, and say why the base is unaffected.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) One hit would need \( \mathrm{DR}=150/42=3.571 \),
+far above the limit of about 2 &#8212; impossible.</p>
+<p>(2) Stage 1: \( 150\to80 \), \( \mathrm{DR}=1.875 \).
+Stage 2: \( 80\to55 \), \( \mathrm{DR}=1.455 \).
+Stage 3: \( 55\to42 \), \( \mathrm{DR}=1.310 \).</p>
+<p>(3) Ratios multiply: \( 1.875\times1.455\times1.310=3.571 \), the overall reduction required.</p>
+<p>(4) Heights from area constancy, all referred to the original blank:
+\( h=(22500-D_p^2)/4D_p \). At 80: 50.3 mm. At 55: 88.5 mm. At 42: 123.4 mm.</p>
+<p>(5) The redraws are deliberately gentler than the first because each starts from material the
+previous draw work-hardened; if ductility runs out, an intermediate anneal restores it.</p>
+<p>(6) Ironing conserves the wall's volume while holding its diameter, so \( h't'=ht \) and
+\( h'=50.3(2.0/1.2)=83.9\ \mathrm{mm} \).</p>
+<p>(7) The base never passes between punch and die, so it keeps its original 2 mm.</p>
+<p><b>Answer:</b> one draw is impossible at DR 3.57; three stages of 1.875, 1.455 and 1.310 give cups
+50.3, 88.5 and 123.4 mm tall; ironing the first cup's wall to 1.2 mm makes it 83.9 mm tall with a
+2 mm base.
+<b>Sanity check:</b> the heights had to grow as the diameters shrink, because the same disc of
+material is being redistributed &mdash; and they can be computed from the diameter alone without
+knowing anything about the tooling, which is what makes area constancy so useful early in a design.
+Note what ironing buys and costs: a wall of controlled thickness far thinner than the base, at the
+price of a separate operation and much higher wall tension, which is why an ironed cup is drawn
+first and ironed second rather than both at once.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Where the window is, and why it closes</b></p>
+<p><b>Problem.</b> Using \( p_{\min}=c[(\beta-1)^3+0.5D_p/100t]\mathrm{TS} \) with
+\( c=3\times10^{-3} \), \( D_p=80 \) mm, \( t=2 \) mm and \( \mathrm{TS}=340 \) MPa, find the
+minimum blankholder pressure at drawing ratios of 1.5, 1.875 and 2.2. Convert the 1.875 case to a
+force on the flange. Then use \( \mathrm{LDR}=e^{\eta} \) to find the limiting ratio at efficiencies
+of 0.7 and 0.8, and say what physically raises \( \eta \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The bracket's second term is fixed:
+\( 0.5(80)/(100\times2)=0.20 \).</p>
+<p>(2) \( \beta=1.5 \): \( (0.5)^3+0.2=0.325 \), so
+\( p_{\min}=3\times10^{-3}(0.325)(340)=0.33\ \mathrm{MPa} \).</p>
+<p>(3) \( \beta=1.875 \): \( (0.875)^3+0.2=0.870 \), so \( p_{\min}=0.89\ \mathrm{MPa} \).</p>
+<p>(4) \( \beta=2.2 \): \( (1.2)^3+0.2=1.928 \), so \( p_{\min}=1.97\ \mathrm{MPa} \) &mdash; six
+times the 1.5 case, from a cube.</p>
+<p>(5) Flange area \( =\frac{\pi}{4}(150^2-80^2)=12{,}645\ \mathrm{mm}^2 \), so at
+\( \beta=1.875 \) the minimum hold is \( 0.887\times12{,}645=11.2\ \mathrm{kN} \).</p>
+<p>(6) \( \mathrm{LDR}=e^{0.7}=2.01 \) and \( e^{0.8}=2.23 \).</p>
+<p>(7) \( \eta \) rises with anything that removes lost work: better lubrication under the
+blankholder and over the die radius, a more generous die corner radius (less bending and
+unbending), and a lower blankholder force &mdash; which is available only if wrinkling allows.</p>
+<p><b>Answer:</b> 0.33, 0.89 and 1.97 MPa; 11.2 kN of hold on the flange at DR 1.875; LDR 2.01 at
+\( \eta=0.7 \) and 2.23 at 0.8.
+<b>Sanity check:</b> the cube is the whole story of why deep draws are hard &mdash; the floor of the
+window climbs steeply while its ceiling falls, and the two meet at the LDR. Note the direction of
+each cure: everything that raises \( \eta \) also lowers the friction the blankholder buys, so
+lubrication widens the window from both sides at once, which is why it is the cheapest fix on the
+list and the first one to check when a drawn part starts failing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Wrinkles in a drawn cup originate in</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the wall, which is in tension</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the flange, which is in circumferential compression</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the base, which is unstressed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the punch nose radius</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The flange is being pulled toward a smaller circumference, so it is compressed
+in its own plane and buckles like any slender compressed member. The wall is in tension and fails
+the other way, by tearing just above the punch nose radius where the section is thinnest and no
+longer supported.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A drawn cup is tearing near the punch nose. The first correction to try is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increase the blankholder force</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>reduce the blankholder force or improve lubrication</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>reduce the die corner radius</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>increase the drawing ratio</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Tearing means the wall is carrying too much tension, and the blankholder is
+what puts most of it there through friction. Reducing the hold or lubricating better both lower it.
+Increasing the hold is the cure for the <em>other</em> failure, and a smaller die radius adds
+bending work and makes tearing worse.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The one-hit limiting draw ratio of about 2 comes from</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a standard that fixes it at 2.0</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( \mathrm{LDR}=e^{\eta} \) with an efficiency near 0.7</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the maximum blankholder force presses can supply</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the thickness-to-diameter rule</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A perfectly efficient process would reach \( e=2.72 \); friction under the
+blankholder and over the die radius, plus bending and unbending into the die, bring the efficiency to
+about 0.7, giving \( e^{0.7}=2.01 \). Excellent lubrication and generous radii reach \( \eta=0.8 \)
+and an LDR of 2.23.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A \( \varnothing150 \) blank is drawn to a \( \varnothing80 \) cup. Its height is
+about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>35 mm</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>50 mm</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>70 mm</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>100 mm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Area is conserved, so \( h=(D_b^2-D_p^2)/4D_p=(22500-6400)/320=50.3 \) mm. The
+same relation gives 88.5 mm at \( \varnothing55 \) and 123.4 mm at \( \varnothing42 \) &mdash; a
+useful check that needs nothing about the tooling.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A \( \varnothing42 \) cup from a \( \varnothing150 \) blank requires an overall ratio
+of 3.57. This is achieved by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a single draw with a very high blankholder force</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>successive redraws whose ratios multiply, each gentler than the first</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>ironing the wall</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>using a thicker blank</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>1.875 &#215; 1.455 &#215; 1.310 = 3.571. Ratios multiply, and the redraws are
+deliberately gentler because each starts from material work-hardened by the last; an intermediate
+anneal restores ductility if it runs out. Ironing changes wall thickness, not diameter.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Ironing a cup wall from 2.0 mm to 1.2 mm at constant diameter makes the wall</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.6 times as tall</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1.4 times as tall</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>1.67 times as tall</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>unchanged in height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The wall's volume is conserved at constant diameter, so \( h'=h\,t/t'
+=h(2.0/1.2)=1.67h \) &mdash; 50.3 mm becomes 83.9 mm. The base never passes between punch and die,
+so it keeps its original thickness, which is exactly how a beverage can has a wall far thinner than
+its bottom.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Normal anisotropy \( \bar R \) above 1 raises the limiting draw ratio because the
+sheet</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is stronger in every direction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>resists thinning more than it resists narrowing, so the wall survives more tension</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>has a lower yield strength</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>springs back less</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \bar R \) is the ratio of width strain to thickness strain. A sheet that
+prefers to narrow rather than thin keeps a thicker, stronger wall for the same draw, so it tears
+later: \( \bar R\approx1 \) gives an LDR near 2.0 and a dedicated deep-drawing grade at 1.8 reaches
+about 2.4. Planar variation in \( \bar R \) is a separate problem &mdash; it makes ears.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The minimum blankholder pressure rises with \( (\beta-1)^3 \). The consequence is
+that</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the process window closes rapidly as the draw ratio approaches its limit</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>deep draws need less lubricant</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>blankholder force is unimportant at low ratios</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the die radius should be reduced for deep draws</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The floor of the window climbs as a cube &mdash; 0.33 MPa at \( \beta=1.5 \),
+0.89 at 1.875, 1.97 at 2.2 &mdash; while the ceiling set by tearing falls, and where they meet is the
+LDR. It is why a draw at 1.9 is a different proposition from one at 1.5, and why lubrication, which
+widens the window from both sides, is the first thing to check.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the press that was sized on the wrong force.</b> A shop quoted a drawn
+stainless cup, \( \varnothing80 \) from a \( \varnothing150 \) blank in 2 mm sheet, and sized the
+job for its 25-tonne press on a drawing-force calculation of about 22.6 US tons. On the first
+production attempt the press stalled part-way down the stroke, and the parts that did come out
+carried heavy wrinkles in the flange.</p>
+<p>Both symptoms came from the same omission. The blankholder force is carried by the same press
+stroke as the drawing force, and for this geometry it is \( 146 \) kN against the drawing force's
+\( 201 \) kN &mdash; a total of 347 kN, or 39.0 US tons. The press had 64% of what the job needed.
+What happened next made it worse: with the press struggling, the blankholder pressure was reduced to
+get the stroke to complete, which took the flange below the \( 0.89 \) MPa that
+\( \beta=1.875 \) requires and produced exactly the wrinkles that were then blamed on the
+material.</p>
+<p>Two practices follow. Size a drawing press on the <em>sum</em> of the drawing and blankholder
+forces, because they act together and the blankholder can exceed half the total on a blank this
+large relative to its punch. And treat a blankholder setting as a process parameter with a floor and
+a ceiling, both computable before the job runs &mdash; reducing it to rescue a stroke is trading a
+tearing margin for a wrinkling failure, and doing it at the machine hides the real problem, which
+was a press two-thirds the size the part needed.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kN}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2248\\ \\mathrm{lbf}\\)", "\\(0.4448\\ \\mathrm{lbf}\\)", "\\(2.248e+05\\ \\mathrm{lbf}\\)", "\\(2.248e+04\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kN} = 224.8\\ \\mathrm{lbf}\\): \\(100 \\times 224.8 = 2.248e+04\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kN}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(179.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.03559\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.798e+04\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kN} = 224.8\ \mathrm{lbf}\): \(8 \times 224.8 = 1798\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{cm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(59.06\\ \\mathrm{in}\\)", "\\(381\\ \\mathrm{in}\\)", "\\(590.6\\ \\mathrm{in}\\)", "\\(5.906\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{cm} = 0.3937\\ \\mathrm{in}\\): \\(150 \\times 0.3937 = 59.06\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{cm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(4.724\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(47.24\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.4724\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{cm} = 0.3937\ \mathrm{in}\): \(12 \times 0.3937 = 4.724\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

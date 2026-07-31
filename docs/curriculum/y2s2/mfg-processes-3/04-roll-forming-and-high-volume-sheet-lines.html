@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 04 of 11 · Year 2 · Semester 2</p>
   <h1>Roll forming and high-volume sheet lines</h1>
   <p class="sub">Progressive roll forming of profiles; line balancing and tooling. Coil handling, leveling, and slitting upstream. The continuous logic of Kirby-style panel production.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/4">Mark as complete</button>
@@ -91,23 +91,250 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does roll forming beat brake bending at volume?</li><li>What does the flower pattern encode?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does roll forming beat brake bending at volume?</li><li>What does the flower pattern encode?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 284" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A roll-forming flower pattern for a channel. The flat web stays horizontal while each leg is drawn at seven successive stands, rotating from flat through 15, 30, 45, 60 and 75 degrees to vertical. The superimposed sections open like a flower, and the spacing between them is the bend angle each stand adds."><rect x="0" y="0" width="560" height="284" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">The flower pattern: one section drawn at every stand</text><text x="95" y="44" fill="#9c2f2f" font-size="11">a 40 mm leg raised in one 400 mm stand pitch strains its edge 0.50%</text><text x="95" y="60" fill="#5B6672" font-size="11">&mdash; four times the yield strain, so it edge-waves; spread it over 814 mm</text><path d="M420 220 L516 220" stroke="#c9ced6" stroke-width="1.8" fill="none"/><path d="M180 220 L84 220" stroke="#c9ced6" stroke-width="1.8" fill="none"/><path d="M420 220 L512.7 195.2" stroke="#a9b3c0" stroke-width="1.8" fill="none"/><path d="M180 220 L87.3 195.2" stroke="#a9b3c0" stroke-width="1.8" fill="none"/><path d="M420 220 L503.1 172" stroke="#8b9aad" stroke-width="1.8" fill="none"/><path d="M180 220 L96.9 172" stroke="#8b9aad" stroke-width="1.8" fill="none"/><path d="M420 220 L487.9 152.1" stroke="#6f8398" stroke-width="1.8" fill="none"/><path d="M180 220 L112.1 152.1" stroke="#6f8398" stroke-width="1.8" fill="none"/><path d="M420 220 L468 136.9" stroke="#4f6c86" stroke-width="1.8" fill="none"/><path d="M180 220 L132 136.9" stroke="#4f6c86" stroke-width="1.8" fill="none"/><path d="M420 220 L444.8 127.3" stroke="#33566f" stroke-width="1.8" fill="none"/><path d="M180 220 L155.2 127.3" stroke="#33566f" stroke-width="1.8" fill="none"/><path d="M420 220 L420 124" stroke="#1f7a5c" stroke-width="2.4" fill="none"/><path d="M180 220 L180 124" stroke="#1f7a5c" stroke-width="2.4" fill="none"/><path d="M180 220 L420 220" stroke="#14181F" stroke-width="3" fill="none"/><text x="532" y="224" text-anchor="middle" fill="#14181F" font-size="11">0&#176;</text><text x="517" y="168" text-anchor="middle" fill="#5B6672" font-size="11">30&#176;</text><text x="476" y="127" text-anchor="middle" fill="#5B6672" font-size="11">60&#176;</text><text x="420" y="112" text-anchor="middle" fill="#14181F" font-size="11">90&#176;</text><text x="300" y="262" text-anchor="middle" fill="#5B6672" font-size="10">each section is one stand: 0&#176; to 90&#176; in 15&#176; steps</text></svg><figcaption>Every stand adds a few degrees, so the section's history is one drawing: superimpose the profile at each stand and it opens like a flower. What the pattern encodes is not the shape &mdash; that is on the part drawing &mdash; but the <em>path</em>. A leg being raised makes its outer edge travel farther than the web, by \( \sqrt{L^2+h^2}/L-1 \) over a stand pitch \( L \). Raise a 40 mm leg in one 400 mm pitch and that is 0.50% of longitudinal strain against a 0.12% yield strain: the edge buckles into a wave. Spreading the same bend over 814 mm keeps it elastic, which in practice means three stands rather than one.</figcaption></figure>
+<h3>&#167;1 &middot; Continuous instead of discrete</h3>
+<p>A press brake makes one bend at a time on one part at a time. A <b>roll former</b> makes every
+bend at once, on a strip that never stops: coil feeds through a line of roll stands, each pair of
+rolls adding a few degrees to the developing profile, until the section leaves the last stand
+complete and a flying shear cuts it to length.</p>
+<p>The consequence is that <b>complexity stops costing time</b>. On a brake, doubling the number of
+bends roughly doubles the cycle. On a roll former, doubling the number of bends means more stands
+and more tooling, but the line still runs at the same metres per minute, so the output per hour is
+unchanged. Time is bought once, in capital.</p>
+<p>That is exactly the shape of a break-even calculation. Take a six-bend profile 3 m long. On a
+brake at 6 s a bend plus 20 s of handling, the cycle is 56 s, so 64.3 parts an hour; at a
+machine-and-operator rate of 60 an hour that is 0.933 a part, on tooling costing 4,000. Roll formed
+at 30 m/min, a 3 m part occupies the line for 6 s, so 600 parts an hour; at 90 an hour that is
+0.150 a part, on tooling costing 60,000.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the process crossover</span>
+<p>\[ N^{*}=\frac{C_{\text{roll}}-C_{\text{brake}}}{c_{\text{brake}}-c_{\text{roll}}} \]</p>
+<p>Fixed cost difference over variable cost difference. Here
+\( (60{,}000-4{,}000)/(0.933-0.150)=71{,}500 \) parts.</p></div>
+<p>So the honest answer to "why does roll forming beat brake bending at volume" is that it does
+not, below about seventy thousand parts of this profile &mdash; and above it, it wins by a widening
+margin, because the line is 9.3 times faster and the tooling has already been paid for. Two riders
+matter as much as the number. Roll-forming tooling is <em>profile-specific</em>, so the crossover has
+to be reached on one profile rather than on a family of them; and changing profile means re-rolling
+the whole line, which is hours, so a roll former with a mixed order book loses on changeover what it
+gains on speed.</p>
+
+<h3>&#167;2 &middot; The flower pattern, and the strain nobody sees on the drawing</h3>
+<p>Superimpose the profile's cross-section as it appears at each stand and the result opens like a
+flower. That drawing &mdash; the <b>flower pattern</b> &mdash; is the roll former's real design
+document, and it encodes three things the part drawing does not.</p>
+<p>The first is the <b>angle schedule</b>: how many degrees each stand adds. Mild steel tolerates 15
+to 30 degrees a stand; high-strength grades need 3 to 8, because they have less ductility to spend
+and far more springback to fight. A 90&#176; leg is therefore a 4-stand job in mild steel and a
+12-stand job in a high-strength grade, and the difference is visible in the flower before any roll is
+cut.</p>
+<p>The second is the <b>material path</b>, which is where the real design work is. As a leg rises,
+its outer edge has to travel farther than the web does, because it follows a longer route through
+the same machine length.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; longitudinal edge strain</span>
+<p>\[ \varepsilon=\sqrt{1+\left(\frac{h}{L}\right)^{2}}-1\ \approx\ \frac{h^{2}}{2L^{2}} \]</p>
+<p>\( h \) is how far the edge rises and \( L \) the forming length over which it rises. The strip
+is continuous, so that extra length has to come from stretching the edge &mdash; and if
+\( \varepsilon \) exceeds the yield strain, it does not spring back.</p></div>
+<p>Raise a 40 mm leg over one 400 mm stand pitch and \( \varepsilon=0.499\% \). Mild steel yields at
+\( Y/E=0.121\% \). The edge is being strained four times past yield, so it lengthens permanently, and
+a permanently longer edge on a strip of fixed length has nowhere to go: it buckles into the ripple
+called <b>edge wave</b>. Invert the relation and the design rule falls out &mdash; keeping
+\( \varepsilon\le\varepsilon_y \) needs \( L\ge814 \) mm, which at a 300 mm stand pitch means
+spreading that leg over three stands instead of one.</p>
+<p>The third thing the flower encodes is where the strip is <em>gripped</em>. A section is driven by
+friction on the surfaces the rolls touch, so the pattern has to keep a flat, driven region all the
+way through; a profile that closes early loses its drive and stops feeding.</p>
+
+<h3>&#167;3 &middot; Everything upstream of the first stand</h3>
+<p>A roll-forming line is longer before the forming than after it, and most of what goes wrong
+happens there.</p>
+<p>Coil arrives with <b>coil set</b> &mdash; a residual curvature from being wound. A
+<b>leveller</b> removes it by bending the strip alternately over a set of offset rolls, working it
+past yield in both directions until it forgets its history. That only works if the rolls are small
+enough to yield the strip through most of its thickness: the surface strain of bending over a roll of
+radius \( R \) is \( t/2R \).</p>
+<div class="keybox"><span class="tag">Key relation &mdash; leveller roll size</span>
+<p>\[ \varepsilon_{\text{surface}}=\frac{t}{2R}\ \ge\ k\,\varepsilon_y \]</p>
+<p>Reaching five times yield in 1.5 mm mild steel needs \( R\le124 \) mm, that is rolls of
+248 mm diameter or less. A leveller with rolls too large flattens the strip visually and leaves the
+residual stress that later makes the finished profile bow.</p></div>
+<p><b>Slitting</b> cuts a wide master coil into strips of working width with rotary knives, and
+everything Lesson 1 said about clearance applies: too little double-shears the edge, too much leaves
+a heavy burr. Two extra consequences belong to slitting specifically. The burr has a direction, and a
+burr rolled to the outside of a bend is a crack starter. And a slit strip carries <b>camber</b>
+&mdash; a gentle curve in its own plane from asymmetric residual stress &mdash; which the roll former
+converts faithfully into a bowed profile.</p>
+<p>Downstream the line is balanced by its slowest element, which is rarely the forming. Cut-off,
+punching stations and packing all take their turn as the constraint, and a line running below its
+rated speed is usually waiting on one of them rather than on the rolls.</p>
+
+<h3>&#167;4 &middot; What roll forming holds, and what it cannot do</h3>
+<p>Roll-formed sections hold their <em>cross-section</em> well &mdash; typically
+\( \pm0.5 \) mm on section dimensions and \( \pm1^{\circ} \) on angles &mdash; because every part
+passes through the same rolls. What they hold badly is everything along the length: <b>bow</b>
+(curvature in the plane of the web), <b>camber</b> (curvature in the plane of the flanges) and
+<b>twist</b>. Those come from asymmetric strain history, which is why the flower pattern is drawn
+symmetrically wherever the part allows it, and why a deliberately asymmetric profile is a harder
+tooling job than its drawing suggests.</p>
+<p><b>End flare</b> is the characteristic defect. While the strip is continuous, each section is
+restrained by the material ahead of and behind it; the moment the shear cuts, the free ends lose that
+restraint and spring open. The usual answers are to cut before forming and accept slightly worse
+length control, to cut after forming and trim a short scrap end, or to add a final restraining stand
+close to the shear.</p>
+<p>Three things the process cannot do, and it is worth knowing them before a profile is designed
+around it. A section that <b>changes along its length</b> is impossible in ordinary roll forming,
+because every stand sees the same shape pass through it. Parts <b>shorter than the forming length</b>
+cannot be produced conventionally, since the piece must be gripped by several stands at once. And a
+profile that <b>closes and reopens</b> loses the driven surfaces it needs, so closed sections are
+formed to nearly closed and then seam-welded rather than folded shut.</p>
+<p>Which returns to the same decision as \( \S1 \). Brake bending is right for low volume, high mix,
+short parts and geometry that varies; roll forming is right for one long profile in quantity. The
+crossover is a number, it is computable before either tool is ordered, and it moves with the profile
+&mdash; more bends push it toward roll forming, because bends cost time on a brake and only capital
+on a line.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does roll forming beat brake bending at volume?</li><li>What does the flower pattern encode?</li></ul></div>
-</div><div class="applied"><span class="tag">Applied case</span><p>Industry anchor for this lesson: <b>Kirby Building Systems</b>. The full applied case is written when this lesson reaches full depth; the <a href="../../../career/index.html">Career Paths page</a> maps what Kirby Building Systems runs and which roles touch this topic.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bending, springback and the minimum bend radius</b> (Lesson 2) &mdash; a roll stand is a bend
+made a few degrees at a time, with the same springback to fight.</li>
+<li><b>Shearing clearance and burr direction</b> (Lesson 1) &mdash; slitting is shearing with
+rotary knives.</li>
+<li><b>Yield strain, \( Y/E \), and residual stress</b> (Materials Science I L4&ndash;L5, Strength
+of Materials L2) &mdash; the edge-wave criterion and what a leveller is doing.</li>
+<li><b>Buckling of a compressed member</b> (Strength of Materials L10) &mdash; edge wave is a strip
+edge buckling because it has been made permanently too long.</li>
+<li><b>Break-even and fixed-versus-variable cost</b> (Manufacturing Processes I L11) &mdash; the
+same crossover, applied to a process choice.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Roll forming</td><td>continuous, one stand per few degrees</td><td>Complexity costs stands and capital, not cycle time.</td></tr>
+<tr><td>Process crossover</td><td>\( N^{*}=\Delta C/\Delta c \)</td><td>71,500 parts for the worked six-bend profile.</td></tr>
+<tr><td>Flower pattern</td><td>sections superimposed</td><td>Encodes the angle schedule, the material path and the driven surfaces.</td></tr>
+<tr><td>Degrees per stand</td><td>15&ndash;30 mild, 3&ndash;8 high-strength</td><td>A 90&#176; leg: 4 stands or 12.</td></tr>
+<tr><td>Edge strain</td><td>\( \sqrt{1+(h/L)^2}-1\approx h^2/2L^2 \)</td><td>0.50% for a 40 mm leg in one 400 mm pitch.</td></tr>
+<tr><td>Edge wave</td><td>\( \varepsilon>\varepsilon_y \)</td><td>The edge is permanently longer than the strip and buckles.</td></tr>
+<tr><td>Forming length needed</td><td>\( L\ge h/\sqrt{(1+\varepsilon_y)^2-1} \)</td><td>814 mm here &mdash; three stands, not one.</td></tr>
+<tr><td>Coil set / levelling</td><td>\( t/2R\ge k\varepsilon_y \)</td><td>Rolls of 248 mm diameter or less for 1.5 mm steel.</td></tr>
+<tr><td>Slitting camber</td><td>in-plane curve from residual stress</td><td>Converted faithfully into a bowed profile.</td></tr>
+<tr><td>End flare</td><td>ends lose the strip's restraint</td><td>Cut before forming, trim a scrap end, or add a restraining stand.</td></tr>
+<tr><td>Achievable tolerance</td><td>\( \pm0.5 \) mm section, \( \pm1^{\circ} \)</td><td>Section is easy; bow, camber and twist are not.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Where does the line beat the brake?</b></p>
+<p><b>Problem.</b> A six-bend profile 3 m long is quoted two ways. On a press brake each bend takes
+6 s and handling adds 20 s per part, at a machine-and-operator rate of 60 per hour, on tooling
+costing 4,000. Roll formed, the line runs at 30 m/min at a rate of 90 per hour, on tooling costing
+60,000. Find each route's parts per hour and cost per part, the break-even quantity, and what
+happens to it if the profile gains two more bends.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Brake cycle \( =6(6)+20=56\ \mathrm{s} \), so
+\( 3600/56=64.3 \) parts per hour and \( 60/64.3=0.933 \) per part.</p>
+<p>(2) Roll forming: at 30 m/min the line moves 0.5 m/s, so a 3 m part occupies it for 6 s &mdash;
+600 parts per hour, and \( 90/600=0.150 \) per part. The line is \( 600/64.3=9.33 \) times
+faster.</p>
+<p>(3) \( N^{*}=(60{,}000-4{,}000)/(0.933-0.150)=56{,}000/0.783=71{,}489 \) parts.</p>
+<p>(4) Check: at that quantity both routes cost
+\( 60{,}000+71{,}489(0.150)=70{,}723 \) and \( 4{,}000+71{,}489(0.933)=70{,}723 \). Equal.</p>
+<p>(5) Two more bends add \( 12\ \mathrm{s} \) to the brake cycle, making it 68 s: 52.9 parts an
+hour and 1.134 per part. The roll-formed rate is unchanged, though the tooling rises &mdash; say to
+70,000 for two more stands. Then
+\( N^{*}=(70{,}000-4{,}000)/(1.134-0.150)=67{,}073 \) parts: the crossover <em>falls</em> despite
+the extra tooling.</p>
+<p><b>Answer:</b> 64.3 against 600 parts an hour, 0.933 against 0.150 per part, break-even 71,489;
+adding two bends lowers the crossover to about 67,000.
+<b>Sanity check:</b> the direction of the last result is the important one &mdash; bends cost
+<em>time</em> on a brake and only <em>capital</em> on a line, so a more complex profile favours roll
+forming even though its tooling gets dearer. Note what the number does not include: roll-forming
+tooling is profile-specific, so the quantity must be reached on one profile, and a changeover costs
+hours of line time that this arithmetic never sees.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Why the leg edge waves, and how far to spread it</b></p>
+<p><b>Problem.</b> A 40 mm leg is raised from flat to vertical in a single 400 mm stand pitch, in
+mild steel with \( Y=250 \) MPa and \( E=207 \) GPa. Find the longitudinal strain forced on the leg
+edge, compare it with the yield strain, and say what defect results. Then find the forming length
+that keeps the edge elastic and the number of 300 mm stand pitches it implies.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) While the web travels \( L=400 \) mm along the line, the
+edge travels the hypotenuse of that length and its own rise: \( \sqrt{L^2+h^2} \).</p>
+<p>(2) \( \varepsilon=\sqrt{1+(40/400)^2}-1=\sqrt{1.01}-1=0.004988 \), that is
+<b>0.499%</b>.</p>
+<p>(3) The yield strain is \( \varepsilon_y=Y/E=250/207{,}000=0.001208 \), or 0.121%.</p>
+<p>(4) \( 0.499/0.121=4.13 \): the edge is strained four times past yield, so it lengthens
+permanently.</p>
+<p>(5) A strip edge that is permanently longer than the strip has nowhere to go and buckles &mdash;
+<b>edge wave</b>, the ripple along the free edge of the finished section.</p>
+<p>(6) Setting \( \varepsilon=\varepsilon_y \):
+\( L=h/\sqrt{(1+\varepsilon_y)^2-1}=40/0.04916=813.6\ \mathrm{mm} \).</p>
+<p>(7) At a 300 mm stand pitch that is \( 813.6/300=2.71 \), so the leg must be raised over
+<b>three stands</b>, not one.</p>
+<p><b>Answer:</b> 0.499% against a 0.121% yield strain, 4.1 times over, producing edge wave; the
+bend needs 814 mm of forming length, three stands at a 300 mm pitch.
+<b>Sanity check:</b> the strain goes as \( h^2/2L^2 \), so it is far more sensitive to the leg
+height than to the pitch &mdash; doubling the leg to 80 mm would need four times the forming length,
+about 3.3 m, which is most of a line. That is the real reason deep-legged profiles need many stands,
+and it is decided on the flower pattern before any roll is cut rather than discovered on the
+line.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Size the leveller</b></p>
+<p><b>Problem.</b> A 1.5 mm mild-steel coil (\( Y=250 \) MPa, \( E=207 \) GPa) arrives with coil
+set. To erase it, the leveller must strain the strip surface to five times its yield strain. Find the
+maximum leveller roll radius and diameter, and state what happens if larger rolls are used. Then find
+the roll radius needed for 3 mm sheet at the same criterion, and comment.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Bending a strip of thickness \( t \) over a radius
+\( R \) strains its surface by \( \varepsilon=t/2R \).</p>
+<p>(2) \( \varepsilon_y=250/207{,}000=0.001208 \), so the target is
+\( 5\varepsilon_y=0.006039 \).</p>
+<p>(3) \( R=t/(2\varepsilon)=1.5/(2\times0.006039)=124.2\ \mathrm{mm} \), a diameter of
+248.4 mm. Rolls must be that size <em>or smaller</em>, since a smaller radius gives more
+strain.</p>
+<p>(4) With larger rolls the strain never reaches five times yield, so only the outer fibres yield
+and the core keeps its memory: the strip leaves the leveller looking flat and retains the residual
+stress that later shows up as bow or twist in the formed profile.</p>
+<p>(5) For 3 mm at the same criterion, \( R=3/(2\times0.006039)=248.4\ \mathrm{mm} \) &mdash; the
+radius scales directly with thickness.</p>
+<p><b>Answer:</b> \( R\le124.2 \) mm (248.4 mm diameter) for 1.5 mm strip, and 248.4 mm radius for
+3 mm; larger rolls leave residual stress that reappears as bow or twist.
+<b>Sanity check:</b> the linear scaling is worth noticing, because it says a leveller built for thin
+gauge is over-specified for thick and a leveller built for thick gauge simply cannot level thin
+&mdash; which is why lines carry roll cassettes rather than one set. Note also what levelling does
+not fix: camber from slitting is an in-plane curve, and rolls that bend the strip through its
+thickness do nothing about it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>On a roll-forming line, adding two more bends to a profile</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>roughly doubles the cycle time</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>adds stands and tooling cost but leaves parts per hour unchanged</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>halves the line speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>requires a second pass through the line</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The line runs at metres per minute regardless of how many stands it has, so
+complexity is paid for in capital rather than in time. On a brake the same two bends add 12 s to
+every cycle. That asymmetry is why extra bends push the break-even quantity <em>down</em>, toward
+roll forming, even though the tooling gets dearer.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>For a six-bend 3 m profile, roll forming overtakes brake bending at about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>700 parts</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>7,000 parts</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>71,000 parts</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>710,000 parts</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( N^{*}=(60{,}000-4{,}000)/(0.933-0.150)=71{,}489 \). Below it the brake's
+cheap tooling wins despite being 9.3 times slower; above it the line's 0.15 per part does. The
+crossover is computable before either tool is ordered.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A flower pattern is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the arrangement of parts on the coil</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the cross-section superimposed at every stand</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the wear pattern on the rolls</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the layout of the cooling system</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is the roll former's design document: every stand's section drawn on one set
+of axes, opening progressively. It encodes the angle schedule, the path the material takes &mdash;
+which is where edge strain is checked &mdash; and which surfaces stay flat enough to drive the
+strip.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Raising a 40 mm leg over a 400 mm forming length strains the leg edge about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.05%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>0.50%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5.0%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>not at all &mdash; bending is a transverse operation</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \varepsilon=\sqrt{1+(40/400)^2}-1=0.499\% \). The edge must travel the
+hypotenuse while the web travels the base, and on a continuous strip that extra length can only come
+from stretching. Bending is transverse, but roll forming is bending <em>while moving</em>, which is
+what creates the longitudinal component.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Edge wave in a roll-formed section is caused by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the rolls being set too tight</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the leg edge being strained past yield, so it is permanently longer than the strip</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>insufficient lubrication</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>cutting the section too short</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A permanently lengthened edge on a strip of fixed length has nowhere to go and
+buckles into a ripple. The cure is geometric rather than mechanical: spread the same bend over more
+forming length. Keeping \( \varepsilon\le\varepsilon_y \) for a 40 mm leg needs 814 mm, or three
+stands at a 300 mm pitch.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A leveller erases coil set by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>heating the strip</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>bending it alternately past yield over small-radius rolls</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>stretching it in tension only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>grinding the surface</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The strip must be worked past yield in both directions until its residual
+curvature is erased, and that needs \( t/2R \) to reach several times the yield strain: rolls of
+248 mm diameter or less for 1.5 mm mild steel. Larger rolls yield only the outer fibres, leaving a
+strip that looks flat and later bows.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>End flare on roll-formed lengths occurs because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the shear blade is blunt</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the cut ends lose the restraint the continuous strip provided</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the line accelerates at the cut</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the profile is asymmetric</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>While the strip is continuous, each section is held in shape by the material
+ahead of and behind it. Cutting removes that, and the free ends spring toward their unrestrained
+shape. The usual answers are to cut before forming, to trim a short scrap end, or to add a
+restraining stand close to the shear.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Which of these is <em>not</em> achievable by conventional roll forming?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a 12 m length with six bends</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a section whose shape changes along its length</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a nearly closed section finished by seam welding</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a profile with punched holes in line</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Every stand sees the same shape pass through it, so the section is constant
+along the length by construction. Long lengths, in-line punching and nearly closed sections
+completed by welding are all routine &mdash; the last because a fully closed profile would lose the
+driven flat surfaces the line needs to feed it.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the profile that waved along one edge.</b> A panel line was retooled for
+a new section with a 40 mm return leg, and the first production run came off with a visible ripple
+along that leg on every length. The rolls were checked, reset and checked again; the strip supplier
+was asked to confirm the coil's flatness; nothing changed.</p>
+<p>The defect was designed in, not set up wrong. The flower pattern raised the leg from flat to
+vertical between two stands 400 mm apart, which forces the leg edge to travel
+\( \sqrt{400^2+40^2} \) while the web travels 400 &mdash; a longitudinal strain of 0.499% against a
+yield strain of 0.121%. The edge was being stretched four times past yield on every metre of strip,
+so it left the line permanently longer than the material beside it and buckled. No roll setting can
+absorb that, because the extra length is real. Keeping the edge elastic needs 814 mm of forming
+length, which at the line's 300 mm stand pitch meant raising the leg over three stands instead of
+one.</p>
+<p>Two practices follow. Check the edge-strain criterion on the flower pattern before any roll is
+cut &mdash; it costs one line of arithmetic per leg and it is the commonest reason a new profile
+misbehaves. And when a defect appears identically on every part from the first metre onward, treat
+the design as the suspect rather than the setup: setup errors drift, wander and respond to
+adjustment, while a geometric impossibility does none of those things.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{cm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(59.06\\ \\mathrm{in}\\)", "\\(381\\ \\mathrm{in}\\)", "\\(590.6\\ \\mathrm{in}\\)", "\\(5.906\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{cm} = 0.3937\\ \\mathrm{in}\\): \\(150 \\times 0.3937 = 59.06\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{cm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(4.724\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(47.24\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.4724\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{cm} = 0.3937\ \mathrm{in}\): \(12 \times 0.3937 = 4.724\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.9072\\ \\mathrm{lb}\\)", "\\(4.409\\ \\mathrm{lb}\\)", "\\(44.09\\ \\mathrm{lb}\\)", "\\(0.4409\\ \\mathrm{lb}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(2 \\times 2.205 = 4.409\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(9.072\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(44.09\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(440.9\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.409\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(20 \times 2.205 = 44.09\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

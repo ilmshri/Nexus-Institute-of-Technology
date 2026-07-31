@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 11 of 11 · Year 2 · Semester 2</p>
   <h1>Design for manufacturing and assembly</h1>
   <p class="sub">DFM/DFA rules that move cost: part-count reduction, self-locating features, tolerance realism. Redesign exercises on real hardware. The conversation between design and the floor formalized.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/11">Mark as complete</button>
@@ -91,23 +91,259 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Give two DFM rules that remove cost without removing function.</li><li>Why does part-count reduction beat per-part cheapening?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Give two DFM rules that remove cost without removing function.</li><li>Why does part-count reduction beat per-part cheapening?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Three stacked bars comparing the cost of one assembly. The baseline of twenty parts costs 69, made up of 60 of piece cost, 2 of assembly labour and 7 of part-number overhead. Making every part ten per cent cheaper saves 6. Consolidating to twelve parts, each forty per cent dearer, saves 13.20 &mdash; more than twice as much &mdash; because the assembly labour and the part-number overhead go away with the parts rather than merely shrinking."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Removing parts beats making parts cheaper</text><rect x="145" y="110" width="70" height="140" fill="#3a6ea533" stroke="#5B6672" stroke-width="1.1"/><rect x="145" y="105.3" width="70" height="4.7" fill="#c2820f55" stroke="#5B6672" stroke-width="1.1"/><rect x="145" y="89" width="70" height="16.3" fill="#1f7a5c44" stroke="#5B6672" stroke-width="1.1"/><text x="180" y="81" text-anchor="middle" fill="#14181F" font-size="11">69.00</text><text x="180" y="266" text-anchor="middle" fill="#14181F" font-size="11">20 parts</text><text x="180" y="282" text-anchor="middle" fill="#5B6672" font-size="10">baseline</text><rect x="265" y="124" width="70" height="126" fill="#3a6ea533" stroke="#5B6672" stroke-width="1.1"/><rect x="265" y="119.3" width="70" height="4.7" fill="#c2820f55" stroke="#5B6672" stroke-width="1.1"/><rect x="265" y="103" width="70" height="16.3" fill="#1f7a5c44" stroke="#5B6672" stroke-width="1.1"/><text x="300" y="95" text-anchor="middle" fill="#14181F" font-size="11">63.00</text><text x="300" y="266" text-anchor="middle" fill="#14181F" font-size="11">20 parts</text><text x="300" y="282" text-anchor="middle" fill="#5B6672" font-size="10">10% cheaper</text><rect x="385" y="132.4" width="70" height="117.6" fill="#3a6ea533" stroke="#5B6672" stroke-width="1.1"/><rect x="385" y="129.6" width="70" height="2.8" fill="#c2820f55" stroke="#5B6672" stroke-width="1.1"/><rect x="385" y="119.8" width="70" height="9.8" fill="#1f7a5c44" stroke="#5B6672" stroke-width="1.1"/><text x="420" y="111.8" text-anchor="middle" fill="#14181F" font-size="11">55.80</text><text x="420" y="266" text-anchor="middle" fill="#14181F" font-size="11">12 parts</text><text x="420" y="282" text-anchor="middle" fill="#5B6672" font-size="10">40% dearer each</text><text x="505" y="48" text-anchor="end" fill="#3a6ea5" font-size="11">piece cost</text><text x="505" y="64" text-anchor="end" fill="#c2820f" font-size="11">assembly labour</text><text x="505" y="80" text-anchor="end" fill="#1f7a5c" font-size="11">part-number overhead</text><path d="M110 250 L490 250" stroke="#14181F" stroke-width="1.5" fill="none"/></svg><figcaption>Every part in an assembly carries three costs, not one: the piece itself, the operation that installs it, and the overhead of being a part number at all &mdash; purchasing, inventory, goods-in inspection, documentation. Cheapening the pieces touches only the first, so a 10% cut across twenty parts saves 6.00 of 69.00. Consolidating to twelve parts touches all three, and saves 13.20 <em>even though every surviving part costs 40% more</em>. The reason is that assembly labour and part-number overhead are eliminated rather than reduced &mdash; and at 4.60 a part the consolidated design would still win on total cost while losing on piece cost, which is exactly the comparison a purchasing department cannot see.</figcaption></figure>
+<h3>&#167;1 &middot; Cost is committed long before it is spent</h3>
+<p>By the time a design is released, something like three-quarters of the product's manufacturing
+cost is <b>committed</b> &mdash; fixed by the geometry, the materials, the tolerances and the number
+of parts &mdash; while only a small fraction has actually been <b>spent</b>. Every process in this
+course confirms it. Lesson 1's nesting decision repeats on every blank for the life of the tool.
+Lesson 7's wall thickness sets the moulding cycle for every shot. Lesson 2's bend radius decides
+whether the part can be made from the cheaper grade at all.</p>
+<p>That asymmetry is the entire argument for design for manufacturing. The influence is largest at
+the point where the least is known and the least has been spent, and it decays as drawings become
+tools. The conventional escalation is a change costing 1 at concept, 10 at detail design, 100 once
+tooling is cut, 1,000 in production and 10,000 after launch &mdash; a rule of thumb rather than a
+measurement, but the right order of magnitude and the right shape.</p>
+<p>What follows is not a plea to think harder. It is a small set of rules whose effect can be
+computed, and a process for applying them before the leverage is gone.</p>
+
+<h3>&#167;2 &middot; Why removing a part beats making it cheaper</h3>
+<p>Every part in an assembly carries three costs. The <b>piece cost</b> is the obvious one. The
+<b>assembly operation</b> that installs it is the second. The third is the cost of being a part
+number at all: purchasing, receiving, inventory, goods-in inspection, engineering drawings, change
+control. Only the first appears on a quotation, and the other two are the ones that vanish when a
+part does.</p>
+<div class="keybox"><span class="tag">Key comparison &mdash; two ways to take cost out</span>
+<p>\[ C=n\left(c_{\text{piece}}+c_{\text{assembly}}+c_{\text{part number}}\right) \]</p>
+<p>Cheapening acts on \( c_{\text{piece}} \) alone. Consolidating acts on \( n \), and therefore on
+all three terms at once.</p></div>
+<p>Take a twenty-part assembly at 3.00 a piece, 0.10 of assembly labour per part and 0.35 of
+part-number overhead: 69.00 in total. Now compare two projects.</p>
+<p><b>Cheapen everything by 10%</b> &mdash; a real achievement, requiring twenty supplier
+negotiations or twenty design changes. The result is \( 20(2.70+0.10+0.35)=63.00 \): a saving of
+<b>6.00</b>, or 8.7%.</p>
+<p><b>Consolidate to twelve parts</b>, accepting that the survivors are more complex and cost 40%
+more each. The result is \( 12(4.20+0.10+0.35)=55.80 \): a saving of <b>13.20</b>, or 19.1%
+&mdash; more than twice as much, from parts that individually got dearer.</p>
+<p>The comparison is worth pushing further, because it exposes a real organisational failure. Suppose
+the survivors cost 4.60 each, 53% more. The consolidated design's <em>pieces</em> now total 55.20
+against the cheapened design's 54.00, so on piece cost it has lost. Its total is 60.60 against 63.00,
+so on real cost it has won. A purchasing function measured on piece price will reject the better
+design, correctly by its own metric and wrongly by the company's.</p>
+<p>Which parts may be combined is a question with a published answer. A part needs to be separate
+only if it must <b>move</b> relative to its neighbours, if it must be a <b>different material</b> for
+a fundamental reason, or if keeping it separate is the only way to <b>assemble</b> anything else.
+Every other part is a candidate, and counting the ones that pass gives the theoretical minimum from
+which the <b>DFA index</b> is computed &mdash; the theoretical minimum times three seconds, over the
+actual assembly time. Our baseline, with a theoretical minimum of five parts and 160 s of assembly,
+scores 9.4%; the consolidated design at 60 s scores 25%.</p>
+
+<h3>&#167;3 &middot; Rules that remove cost without removing function</h3>
+<p><b>Self-locating features.</b> A chamfer, a locating boss, a step that a part can only sit on one
+way: these remove the alignment part of an assembly operation and remove the defect mode with it. If
+six of an eight-second operation is aligning, the feature removes 75% of that operation and the
+inspection it justified. The strongest version is <b>asymmetry that makes wrong assembly
+impossible</b> &mdash; a part that cannot be fitted backwards needs no instruction, no poka-yoke
+fixture and no check.</p>
+<p><b>Top-down assembly.</b> Design so every part drops in along one axis, ideally from above with
+gravity holding it. Each reorientation of a partly built assembly costs several seconds and usually a
+fixture; removing three at six seconds each takes 18 s out of every unit built, forever.</p>
+<p><b>Eliminate fasteners.</b> A threaded fastener is not one item but five: the screw, the thread
+feature, the driving operation, the torque specification and the inspection of it. Four screws at
+0.12 with six seconds of driving each cost 0.78 an assembly before any of the overhead, and they add
+four part numbers. A snap fit converts all of that into geometry that is already being moulded.</p>
+<p><b>Tolerance realism.</b> This is the rule Metrology &amp; Quality Control was written to support,
+and it can be settled arithmetically rather than argued. A turning operation holding
+\( \sigma=0.02 \) mm meets \( \pm0.1 \) mm at \( C_p=0.2/(6\times0.02)=1.67 \) &mdash; comfortable.
+Asked for \( \pm0.025 \) mm, the same process gives \( C_p=0.42 \), which is not a tighter tolerance
+but a <em>different process</em>: grinding, another setup, another inspection. The tolerance did not
+get harder; it changed the routing. The same is true elsewhere in this course &mdash; a press brake
+holds about \( \pm0.5^{\circ} \) (Lesson 2), a roll-formed section about \( \pm0.5 \) mm
+(Lesson 4), and a powder-bed part about \( \pm0.1 \) mm before machining (Lesson 10). A drawing that
+asks for better is specifying a secondary operation whether or not it says so.</p>
+<p><b>Design for the process actually chosen.</b> Draft angles and uniform walls if it is moulded
+(Lesson 7); radii above \( R_{\min} \) and bend lines across the rolling direction if it is formed
+(Lesson 2); outlines that nest if it is blanked (Lesson 1); loads in the layer plane if it is printed
+(Lesson 10). None of these removes function. Each of them removes an operation, a defect mode or a
+material cost that the drawing was going to incur silently.</p>
+
+<h3>&#167;4 &middot; Making the conversation a process</h3>
+<p>All of this fails as goodwill and works as a procedure, because the leverage decays with time and
+goodwill has no schedule.</p>
+<p>Four mechanisms do most of the work. <b>Early manufacturing involvement</b> &mdash; a
+manufacturing engineer in the design reviews from concept, not at release, because at release the
+answer to every objection is that the tooling is ordered. A <b>producibility checklist</b> applied at
+a defined gate, so the questions get asked in a fixed order rather than remembered. A <b>costed
+redesign loop</b>: proposals evaluated on total cost including assembly and part-number overhead, not
+on piece price, or the arithmetic of \( \S2 \) will send every decision the wrong way. And a
+<b>feedback channel from the floor</b> with evidence attached &mdash; which already exists, because
+the nonconformance record of Metrology &amp; Quality Control L11 is exactly that channel when the
+disposition names a design cause rather than a process one.</p>
+<p>The measurable outputs are few and worth tracking by name: part count, number of <em>unique</em>
+part numbers, assembly time, number of reorientations, and the DFA index. All of them are countable
+from a drawing set before anything is made, which is the point &mdash; a design review that produces
+numbers can be repeated, and one that produces opinions cannot.</p>
+<p>It is a reasonable place to end a manufacturing course. Every lesson here has been about a process
+constraining a design: clearance and nesting in Lesson 1, springback in Lesson 2, the limiting draw
+ratio in Lesson 3, edge strain in Lesson 4, the tonnage curve in Lesson 5, die swell in Lesson 6, the
+square law in Lesson 7, blow-up ratio in Lesson 8, the V-curve in Lesson 9 and build orientation in
+Lesson 10. Design for manufacturing is not an additional subject. It is those constraints applied
+early enough to be free.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Give two DFM rules that remove cost without removing function.</li><li>Why does part-count reduction beat per-part cheapening?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Every process constraint in this course</b> (Lessons 1&ndash;10) &mdash; nesting, springback,
+draw ratio, edge strain, the tonnage curve, die swell, the cooling square law, blow-up ratio, line
+availability and build orientation.</li>
+<li><b>Capability indices</b> (Metrology &amp; Quality Control L8) &mdash; the arithmetic that turns
+a tolerance argument into a routing decision.</li>
+<li><b>Nonconformance and corrective action</b> (Metrology &amp; Quality Control L11) &mdash; the
+existing channel for manufacturability feedback.</li>
+<li><b>Fixed and variable cost, and break-even</b> (Manufacturing Processes I L11, Lesson 4) &mdash;
+the structure every DFM comparison uses.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Cost committed vs spent</td><td>~75% committed, a fraction spent</td><td>Influence is largest where least is known.</td></tr>
+<tr><td>Change escalation</td><td>1 / 10 / 100 / 1,000 / 10,000</td><td>A convention, and the right shape.</td></tr>
+<tr><td>Three costs per part</td><td>piece + assembly + part number</td><td>Only the first appears on a quotation.</td></tr>
+<tr><td>Cheapen vs consolidate</td><td>6.00 against 13.20 saved</td><td>Consolidation wins even at 40% dearer pieces.</td></tr>
+<tr><td>The piece-price trap</td><td>55.20 pieces but 60.60 total</td><td>A purchasing metric rejects the better design.</td></tr>
+<tr><td>Separateness test</td><td>moves / different material / assembly access</td><td>Everything else is a consolidation candidate.</td></tr>
+<tr><td>DFA index</td><td>\( 3\,n_{\min}/t_{\rm assembly} \)</td><td>9.4% before, 25% after.</td></tr>
+<tr><td>Self-locating features</td><td>removes the alignment sub-operation</td><td>Asymmetry that makes wrong assembly impossible is strongest.</td></tr>
+<tr><td>Top-down assembly</td><td>3 reorientations &#215; 6 s = 18 s</td><td>Per unit, forever.</td></tr>
+<tr><td>Fastener cost</td><td>0.78 for four screws, plus 4 part numbers</td><td>Five items, not one.</td></tr>
+<tr><td>Tolerance realism</td><td>\( C_p \) 1.67 at \( \pm0.1 \), 0.42 at \( \pm0.025 \)</td><td>A tighter tolerance is a different process.</td></tr>
+<tr><td>Trackable outputs</td><td>parts, unique numbers, time, reorientations, index</td><td>Countable from a drawing set before anything is made.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Two projects, one assembly</b></p>
+<p><b>Problem.</b> An assembly has 20 parts at 3.00 a piece, 0.10 of assembly labour per part and
+0.35 of part-number overhead per part. (a) Find the total. (b) Project A cheapens every piece by
+10%; find the new total and the saving. (c) Project B consolidates to 12 parts whose pieces cost 40%
+more each; find the new total and the saving. (d) Show that B still wins if its pieces cost 4.60
+each, and say what that implies about how projects are judged.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a) Each part carries \( 3.00+0.10+0.35=3.45 \), so
+\( 20\times3.45=69.00 \).</p>
+<p>(b) Pieces fall to 2.70, so \( 20(2.70+0.10+0.35)=20(3.15)=63.00 \) &mdash; a saving of
+<b>6.00</b>, or 8.7%.</p>
+<p>(c) Pieces rise to \( 3.00\times1.40=4.20 \), but there are only twelve:
+\( 12(4.20+0.10+0.35)=12(4.65)=55.80 \) &mdash; a saving of <b>13.20</b>, or 19.1%, which is
+2.2 times A's.</p>
+<p>(d1) At 4.60 a piece, B's pieces total \( 12\times4.60=55.20 \), against A's
+\( 20\times2.70=54.00 \). On piece cost B has <em>lost</em>.</p>
+<p>(d2) B's total is \( 12(4.60+0.10+0.35)=12(5.05)=60.60 \), against A's 63.00. On real cost B has
+<b>won</b>.</p>
+<p>(d3) A project judged on piece price would reject B &mdash; correctly by that metric and wrongly
+by the company's. Consolidation must be evaluated on total cost including assembly labour and
+part-number overhead, or the arithmetic sends every decision the wrong way.</p>
+<p><b>Answer:</b> 69.00 baseline; A saves 6.00 (8.7%), B saves 13.20 (19.1%); at 4.60 a piece B
+still wins on total cost while losing on piece cost.
+<b>Sanity check:</b> the reason B wins is structural rather than arithmetic luck &mdash; cheapening
+acts on one of the three cost terms while consolidation acts on all three at once, because the
+assembly operation and the part number disappear with the part instead of shrinking with it. Note
+the organisational consequence in (d): the metric a purchasing function is measured on cannot see
+two-thirds of the saving, which is why DFA proposals need a costing that includes them
+explicitly.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Settle a tolerance argument with arithmetic</b></p>
+<p><b>Problem.</b> A turned diameter is produced by a process with \( \sigma=0.02 \) mm. (a) Find
+\( C_p \) against a \( \pm0.1 \) mm tolerance and against \( \pm0.025 \) mm, and say what each means
+for the routing. (b) The design office proposes tightening a press-brake angle from
+\( \pm0.5^{\circ} \) to \( \pm0.1^{\circ} \) and a roll-formed section from \( \pm0.5 \) mm to
+\( \pm0.1 \) mm; comment on both using this course. (c) State the general principle in one
+sentence.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a1) \( C_p=(\mathrm{USL}-\mathrm{LSL})/6\sigma \). At
+\( \pm0.1 \): \( 0.20/(6\times0.02)=1.67 \) &mdash; comfortably above the usual 1.33 gate, so a
+single turning operation holds it.</p>
+<p>(a2) At \( \pm0.025 \): \( 0.05/0.12=0.42 \) &mdash; far below 1.33. The process is not capable,
+so the feature needs a second operation: grinding, with its own setup, its own inspection and its own
+cost.</p>
+<p>(a3) So the tolerance change is not a tightening. It is a <em>routing</em> change, and it should
+appear in the cost estimate as one.</p>
+<p>(b1) A press brake holds about \( \pm0.5^{\circ} \) (Lesson 2), and springback varies with the
+material's \( Y/E \) and coil-to-coil, so \( \pm0.1^{\circ} \) needs a different process &mdash;
+bottoming, or an adaptive brake with in-process angle measurement.</p>
+<p>(b2) A roll-formed section holds about \( \pm0.5 \) mm (Lesson 4), and the hard errors there are
+bow, camber and twist along the length rather than the section itself; \( \pm0.1 \) mm implies a
+straightening or machining operation after forming.</p>
+<p>(c) A tolerance the chosen process cannot hold is not a tolerance; it is an unwritten instruction
+to add an operation.</p>
+<p><b>Answer:</b> \( C_p=1.67 \) and \( 0.42 \); the tighter tolerance changes the routing to
+turning-plus-grinding; both proposed changes in (b) specify secondary operations; and a tolerance
+beyond the process is a hidden operation.
+<b>Sanity check:</b> stating the argument as \( C_p \) converts an opinion into a number both sides
+can check, which is the whole value of Metrology &amp; Quality Control's machinery in a design
+review. Note that the answer is never "the tolerance is too tight" in the abstract &mdash; it is too
+tight <em>for the process on the routing</em>, and either the tolerance or the routing has to change,
+with a cost attached to whichever moves.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Score the assembly before and after</b></p>
+<p><b>Problem.</b> The 20-part assembly takes 8 s a part to build, and applying the separateness
+test gives a theoretical minimum of 5 parts. (a) Find the assembly time and the DFA index. (b) After
+redesign it has 12 parts at 5 s each; find the new time and index. (c) The redesign also removed
+three reorientations at 6 s each and four screws costing 0.12 with 6 s of driving each at 0.0125 per
+second; find those savings. (d) Name the three tests that decide whether a part may be
+combined.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a1) Assembly time \( =20\times8=160\ \mathrm{s} \).</p>
+<p>(a2) DFA index \( =3n_{\min}/t=3(5)/160=15/160=9.4\% \).</p>
+<p>(b1) After: \( 12\times5=60\ \mathrm{s} \).</p>
+<p>(b2) Index \( =15/60=25\% \) &mdash; nearly three times better, and the improvement comes from
+both terms, since fewer parts are each faster to fit.</p>
+<p>(c1) Reorientations: \( 3\times6=18\ \mathrm{s} \) per unit, removed permanently.</p>
+<p>(c2) Fasteners: \( 4(0.12)+4(6)(0.0125)=0.48+0.30=0.78 \) per assembly, plus four part numbers
+and their overhead.</p>
+<p>(d) A part must stay separate only if it <b>moves</b> relative to its neighbours, if it must be a
+<b>different material</b> for a fundamental reason, or if separating it is the only way to
+<b>assemble</b> the rest. Everything else is a candidate for combination.</p>
+<p><b>Answer:</b> 160 s and 9.4% before, 60 s and 25% after; 18 s of reorientation and 0.78 of
+fasteners removed; and the three tests are movement, material and assembly access.
+<b>Sanity check:</b> the index is deliberately harsh &mdash; three seconds a part is close to the
+best a human hand achieves, so even a good design scores well under 50%, and the number is useful as
+a <em>comparison</em> between two designs of the same product rather than as an absolute grade. Note
+that the reorientation and fastener savings are per unit and permanent, which is what distinguishes
+a design change from a process improvement: nobody has to keep doing anything for them to
+persist.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>By the time a design is released, the share of manufacturing cost already
+<em>committed</em> is roughly</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>10%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>30%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>50%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>75%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Geometry, material, tolerances and part count fix most of the cost long before
+much of it is spent. That asymmetry is the whole argument for design for manufacturing: the influence
+is largest exactly where the least is known, and it decays as drawings become tools.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Each part in an assembly carries</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>its piece cost only</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>its piece cost and assembly labour</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>its piece cost, an assembly operation and the overhead of being a part number</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>its piece cost and a share of tooling</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Purchasing, receiving, inventory, goods-in inspection, drawings and change
+control all attach to a part number and vanish with it. Only the piece cost appears on a quotation,
+which is why cheapening looks like the obvious lever and consolidation is the better one.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A 20-part assembly at 3.00 + 0.10 + 0.35 a part costs 69.00. Cheapening every piece by
+10% saves 6.00. Consolidating to 12 parts at 40% dearer pieces saves</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>3.00</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>6.00</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>13.20</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing &mdash; the pieces cost more</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 12(4.20+0.10+0.35)=55.80 \), so 13.20 &mdash; 2.2 times the cheapening
+project, from parts that individually got dearer. Cheapening acts on one cost term; consolidation
+acts on all three, because the operation and the part number go away with the part.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A consolidated design whose pieces total 55.20 against a cheapened design's 54.00, but
+whose total cost is 60.60 against 63.00, will be</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>accepted by any reasonable metric</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>rejected by a purchasing function measured on piece price</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>rejected on quality grounds</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>identical in cost</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It has lost on piece cost and won on real cost, so a metric that sees only piece
+price rejects the better design &mdash; correctly by its own measure and wrongly by the company's.
+That is why DFA proposals must be costed on total cost including assembly and part-number
+overhead.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A part may be combined with its neighbour unless it</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is made of metal</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>moves relative to them, must be a different material for a fundamental reason, or must be separate to allow assembly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>has a tolerance tighter than 0.1 mm</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>was designed by a different engineer</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Those three tests define the theoretical minimum part count, from which the DFA
+index is computed. Everything failing all three is a consolidation candidate &mdash; and the count is
+made from a drawing set, before anything is built.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A process with \( \sigma=0.02 \) mm asked for \( \pm0.025 \) mm gives
+\( C_p=0.42 \). The correct reading is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the operator must be more careful</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the tolerance change is really a routing change, adding a grinding operation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the tolerance should simply be rejected</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the gauge is inadequate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At \( \pm0.1 \) the same process gives \( C_p=1.67 \) and holds it comfortably.
+At \( \pm0.025 \) it is not capable, so the feature needs a second operation with its own setup,
+inspection and cost. The tolerance did not get harder; it changed the routing, and it should appear
+in the estimate as such.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Removing three assembly reorientations at 6 s each saves</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>18 s once</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>18 s per unit, permanently</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>6 s per unit</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing measurable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A design change persists without anyone continuing to do anything, which is
+exactly what distinguishes it from a process improvement. Top-down assembly &mdash; every part
+dropping in along one axis, ideally with gravity holding it &mdash; is the rule that removes
+them.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The strongest form of a self-locating feature is one that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>reduces the alignment time</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>makes wrong assembly physically impossible</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is marked with an arrow</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is documented in the work instruction</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A part that cannot be fitted backwards needs no instruction, no fixture and no
+check, so it removes the operation, the defect mode and the inspection together. Merely reducing
+alignment time is worth having &mdash; six of an eight-second operation &mdash; but it leaves the
+error possible.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the cost-down project that saved nothing.</b> An assembly of twenty parts
+was targeted for a 10% cost reduction. The project renegotiated or redesigned every piece and
+achieved it: piece cost fell from 3.00 to 2.70 across the board, a genuine result requiring twenty
+separate pieces of work. The assembly's total cost fell from 69.00 to 63.00 &mdash; 8.7%, against a
+10% target &mdash; and the shortfall was blamed on the two parts whose suppliers had refused to
+move.</p>
+<p>The target had been set on the wrong quantity. Each part carried 0.10 of assembly labour and 0.35
+of part-number overhead as well as its piece cost, so piece cost was only 87% of the total and a 10%
+cut in it could never deliver 10% overall. Meanwhile a consolidation study done afterwards found the
+assembly could be built from twelve parts. Even with the survivors 40% dearer each, that design cost
+55.80 &mdash; a 19.1% saving, more than twice what twenty negotiations had produced, and available
+from one redesign rather than twenty.</p>
+<p>Two practices follow. Set cost-reduction targets against total assembly cost including assembly
+labour and part-number overhead, because a target set against piece price alone is arithmetically
+incapable of being met by piece-price work. And run the part-count study <em>first</em>: it is
+cheaper to do, it is done once rather than per part, and it changes what the piece-cost work should
+even be aimed at &mdash; there is no point negotiating the price of a part the design does not
+need.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(6.035\\ \\mathrm{hp}\\)", "\\(33.56\\ \\mathrm{hp}\\)", "\\(603.5\\ \\mathrm{hp}\\)", "\\(60.35\\ \\mathrm{hp}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(45 \\times 1.341 = 60.35\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.4023\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2.237\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(40.23\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(4.023\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(3 \times 1.341 = 4.023\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.362\\ \\mathrm{in}\\)", "\\(1524\\ \\mathrm{in}\\)", "\\(23.62\\ \\mathrm{in}\\)", "\\(0.2362\\ \\mathrm{in}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(60 \\times 0.03937 = 2.362\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(0.1969\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(127\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.969\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.01969\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(5 \times 0.03937 = 0.1969\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

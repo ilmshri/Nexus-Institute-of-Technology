@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 05 of 11 · Year 2 · Semester 2</p>
   <h1>Presses, dies, and tooling</h1>
   <p class="sub">Mechanical and hydraulic presses; die sets and progressive dies. Tonnage curves and where presses are overloaded. Die maintenance as a production-uptime discipline.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/5">Mark as complete</button>
@@ -91,23 +91,264 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Mechanical versus hydraulic press: where does each win?</li><li>Why is die maintenance a production KPI?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Mechanical versus hydraulic press: where does each win?</li><li>Why is die maintenance a production KPI?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Available press force as a percentage of the rating, against distance above bottom dead centre. A hydraulic press delivers its full rating anywhere in the stroke, shown as a flat line at 100 per cent. A mechanical press holds its rating only to about 6 millimetres above bottom dead centre and then falls away, reaching 73 per cent at 12 millimetres, 55 per cent at 25 and 47 per cent at mid-stroke. Blanking works at the bottom and gets the full rating; drawing works high in the stroke and gets about half."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">A mechanical press is only rated near the bottom of its stroke</text><path d="M95 86.4 L505 86.4" stroke="#3a6ea5" stroke-width="2.2" stroke-dasharray="7 4" fill="none"/><path d="M96 86.4 L97 86.4 L98.1 86.4 L99.1 86.4 L100.1 86.4 L101.2 86.4 L102.2 86.4 L103.2 86.4 L104.2 86.4 L105.2 86.4 L106.3 86.4 L107.3 86.4 L108.3 86.4 L109.3 86.4 L110.4 86.4 L111.4 86.4 L112.4 86.4 L113.5 86.4 L114.5 86.4 L115.5 86.4 L116.5 86.4 L117.5 86.4 L118.6 86.4 L119.6 86.4 L120.6 86.4 L121.7 86.4 L122.7 86.4 L123.7 86.4 L124.7 86.4 L125.8 86.4 L126.8 86.4 L127.8 86.4 L128.8 86.4 L129.8 86.4 L130.9 86.4 L131.9 86.4 L132.9 86.4 L133.9 86.4 L135 86.4 L136 86.4 L137 86.4 L138.1 86.4 L139.1 86.4 L140.1 86.4 L141.1 86.4 L142.2 86.4 L143.2 86.4 L144.2 86.4 L145.2 87.9 L146.2 89.5 L147.3 90.9 L148.3 92.4 L149.3 93.8 L150.3 95.1 L151.4 96.4 L152.4 97.7 L153.4 98.9 L154.4 100.1 L155.5 101.3 L156.5 102.5 L157.5 103.6 L158.6 104.7 L159.6 105.7 L160.6 106.8 L161.6 107.8 L162.7 108.7 L163.7 109.7 L164.7 110.7 L165.7 111.6 L166.8 112.5 L167.8 113.3 L168.8 114.2 L169.8 115 L170.8 115.9 L171.9 116.7 L172.9 117.5 L173.9 118.2 L174.9 119 L176 119.7 L177 120.5 L178 121.2 L179.1 121.9 L180.1 122.6 L181.1 123.2 L182.1 123.9 L183.2 124.5 L184.2 125.2 L185.2 125.8 L186.2 126.4 L187.2 127 L188.3 127.6 L189.3 128.2 L190.3 128.8 L191.3 129.3 L192.4 129.9 L193.4 130.4 L194.4 130.9 L195.4 131.5 L196.5 132 L197.5 132.5 L198.5 133 L199.6 133.5 L200.6 134 L201.6 134.4 L202.6 134.9 L203.7 135.4 L204.7 135.8 L205.7 136.3 L206.7 136.7 L207.8 137.2 L208.8 137.6 L209.8 138 L210.8 138.4 L211.8 138.8 L212.9 139.2 L213.9 139.6 L214.9 140 L215.9 140.4 L217 140.8 L218 141.2 L219 141.5 L220.1 141.9 L221.1 142.3 L222.1 142.6 L223.1 143 L224.2 143.3 L225.2 143.7 L226.2 144 L227.2 144.3 L228.2 144.7 L229.3 145 L230.3 145.3 L231.3 145.6 L232.3 145.9 L233.4 146.2 L234.4 146.5 L235.4 146.8 L236.4 147.1 L237.5 147.4 L238.5 147.7 L239.5 148 L240.5 148.3 L241.6 148.6 L242.6 148.8 L243.6 149.1 L244.7 149.4 L245.7 149.7 L246.7 149.9 L247.7 150.2 L248.8 150.4 L249.8 150.7 L250.8 150.9 L251.8 151.2 L252.8 151.4 L253.9 151.7 L254.9 151.9 L255.9 152.2 L257 152.4 L258 152.6 L259 152.8 L260 153.1 L261.1 153.3 L262.1 153.5 L263.1 153.7 L264.1 154 L265.1 154.2 L266.2 154.4 L267.2 154.6 L268.2 154.8 L269.2 155 L270.3 155.2 L271.3 155.4 L272.3 155.6 L273.4 155.8 L274.4 156 L275.4 156.2 L276.4 156.4 L277.4 156.6 L278.5 156.8 L279.5 156.9 L280.5 157.1 L281.6 157.3 L282.6 157.5 L283.6 157.7 L284.6 157.8 L285.6 158 L286.7 158.2 L287.7 158.3 L288.7 158.5 L289.8 158.7 L290.8 158.8 L291.8 159 L292.8 159.2 L293.9 159.3 L294.9 159.5 L295.9 159.6 L296.9 159.8 L297.9 160 L299 160.1 L300 160.3 L301 160.4 L302.1 160.5 L303.1 160.7 L304.1 160.8 L305.1 161 L306.1 161.1 L307.2 161.3 L308.2 161.4 L309.2 161.5 L310.2 161.7 L311.3 161.8 L312.3 161.9 L313.3 162.1 L314.4 162.2 L315.4 162.3 L316.4 162.5 L317.4 162.6 L318.5 162.7 L319.5 162.8 L320.5 163 L321.5 163.1 L322.6 163.2 L323.6 163.3 L324.6 163.4 L325.6 163.6 L326.6 163.7 L327.7 163.8 L328.7 163.9 L329.7 164 L330.8 164.1 L331.8 164.2 L332.8 164.4 L333.8 164.5 L334.9 164.6 L335.9 164.7 L336.9 164.8 L337.9 164.9 L338.9 165 L340 165.1 L341 165.2 L342 165.3 L343 165.4 L344.1 165.5 L345.1 165.6 L346.1 165.7 L347.1 165.8 L348.2 165.9 L349.2 166 L350.2 166.1 L351.2 166.2 L352.3 166.2 L353.3 166.3 L354.3 166.4 L355.4 166.5 L356.4 166.6 L357.4 166.7 L358.4 166.8 L359.4 166.9 L360.5 166.9 L361.5 167 L362.5 167.1 L363.6 167.2 L364.6 167.3 L365.6 167.4 L366.6 167.4 L367.7 167.5 L368.7 167.6 L369.7 167.7 L370.7 167.7 L371.8 167.8 L372.8 167.9 L373.8 168 L374.8 168 L375.9 168.1 L376.9 168.2 L377.9 168.2 L378.9 168.3 L379.9 168.4 L381 168.5 L382 168.5 L383 168.6 L384.1 168.7 L385.1 168.7 L386.1 168.8 L387.1 168.9 L388.1 168.9 L389.2 169 L390.2 169 L391.2 169.1 L392.2 169.2 L393.3 169.2 L394.3 169.3 L395.3 169.3 L396.4 169.4 L397.4 169.5 L398.4 169.5 L399.4 169.6 L400.4 169.6 L401.5 169.7 L402.5 169.7 L403.5 169.8 L404.6 169.8 L405.6 169.9 L406.6 169.9 L407.6 170 L408.6 170 L409.7 170.1 L410.7 170.1 L411.7 170.2 L412.8 170.2 L413.8 170.3 L414.8 170.3 L415.8 170.4 L416.9 170.4 L417.9 170.5 L418.9 170.5 L419.9 170.5 L420.9 170.6 L422 170.6 L423 170.7 L424 170.7 L425.1 170.8 L426.1 170.8 L427.1 170.8 L428.1 170.9 L429.1 170.9 L430.2 170.9 L431.2 171 L432.2 171 L433.2 171.1 L434.3 171.1 L435.3 171.1 L436.3 171.2 L437.3 171.2 L438.4 171.2 L439.4 171.3 L440.4 171.3 L441.4 171.3 L442.5 171.4 L443.5 171.4 L444.5 171.4 L445.6 171.4 L446.6 171.5 L447.6 171.5 L448.6 171.5 L449.6 171.6 L450.7 171.6 L451.7 171.6 L452.7 171.6 L453.8 171.7 L454.8 171.7 L455.8 171.7 L456.8 171.7 L457.9 171.8 L458.9 171.8 L459.9 171.8 L460.9 171.8 L461.9 171.8 L463 171.9 L464 171.9 L465 171.9 L466.1 171.9 L467.1 171.9 L468.1 172 L469.1 172 L470.2 172 L471.2 172 L472.2 172 L473.2 172 L474.2 172.1 L475.3 172.1 L476.3 172.1 L477.3 172.1 L478.4 172.1 L479.4 172.1 L480.4 172.1 L481.4 172.1 L482.4 172.2 L483.5 172.2 L484.5 172.2 L485.5 172.2 L486.6 172.2 L487.6 172.2 L488.6 172.2 L489.6 172.2 L490.6 172.2 L491.7 172.2 L492.7 172.2 L493.7 172.2 L494.8 172.3 L495.8 172.3 L496.8 172.3 L497.8 172.3 L498.9 172.3 L499.9 172.3 L500.9 172.3 L501.9 172.3 L502.9 172.3 L504 172.3 L505 172.3" fill="none" stroke="#9c2f2f" stroke-width="2.6"/><circle cx="119.6" cy="86.4" r="5" fill="#1f7a5c"/><circle cx="300" cy="160.3" r="5" fill="#c2820f"/><text x="300" y="78" text-anchor="middle" fill="#3a6ea5" font-size="11">hydraulic: full rating anywhere in the stroke</text><text x="410" y="138" text-anchor="middle" fill="#9c2f2f" font-size="11">mechanical press:</text><text x="410" y="154" text-anchor="middle" fill="#9c2f2f" font-size="11">torque-limited away from BDC</text><text x="110" y="218" fill="#1f7a5c" font-size="11">blanking, 3 mm above BDC: 100%</text><text x="110" y="236" fill="#c2820f" font-size="11">drawing, 25 mm above BDC: 55%</text><path d="M95 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 70" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="95" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M177 250 L177 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="177" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M259 250 L259 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="259" y="266" text-anchor="middle" fill="#5B6672" font-size="11">20</text><path d="M341 250 L341 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="341" y="266" text-anchor="middle" fill="#5B6672" font-size="11">30</text><path d="M423 250 L423 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="423" y="266" text-anchor="middle" fill="#5B6672" font-size="11">40</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">50</text><path d="M91 250 L95 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M91 209.1 L95 209.1" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="213.1" text-anchor="end" fill="#5B6672" font-size="11">25</text><path d="M91 168.2 L95 168.2" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="172.2" text-anchor="end" fill="#5B6672" font-size="11">50</text><path d="M91 127.3 L95 127.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="131.3" text-anchor="end" fill="#5B6672" font-size="11">75</text><path d="M91 86.4 L95 86.4" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="90.4" text-anchor="end" fill="#5B6672" font-size="11">100</text><text x="300" y="288" text-anchor="middle" fill="#14181F" font-size="12">distance above bottom dead centre (mm)</text><text x="26" y="160" font-size="12" fill="#14181F" transform="rotate(-90 26 160)" text-anchor="middle">available force (% of rating)</text></svg><figcaption>A mechanical press turns a flywheel's torque into slide force through a crank, and the mechanical advantage depends on where the crank is: \( F=T/(R\sin\theta) \). Near bottom dead centre \( \sin\theta \) is small and the force is enormous, so the rating is quoted at a stated distance above BDC &mdash; 6 mm here. Higher in the stroke the same torque delivers far less: 73% at 12 mm, 55% at 25 mm, 47% at mid-stroke. Blanking finishes at the bottom and gets the whole rating; drawing needs its force from the moment the punch touches, so a 100-tonne mechanical press is a 55-tonne press for that job. A hydraulic press has no crank and no such curve.</figcaption></figure>
+<h3>&#167;1 &middot; Two ways to push, and why the choice is not about size</h3>
+<p>A <b>mechanical press</b> stores energy in a flywheel and releases it through a clutch to a crank
+or eccentric that drives the slide. The slide's position is a fixed function of crank angle, so the
+stroke length, the velocity profile and the timing are all built into the machine and cannot be
+changed. A <b>hydraulic press</b> drives the slide with a cylinder, so force, speed, stroke length
+and dwell are all set by the control valve.</p>
+<p>The distinction that matters is not force or size but <em>where in the stroke the force is
+available</em>. A crank converts torque to force with a mechanical advantage that depends on crank
+angle.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; slide force from crank torque</span>
+<p>\[ F=\frac{T}{R\sin\theta},\qquad \cos\theta=1-\frac{s}{R} \]</p>
+<p>\( R \) is the crank radius, \( \theta \) the angle from bottom dead centre and \( s \) the
+distance the slide is above BDC. As \( \theta\to0 \) the available force diverges, so a press's
+rating has to be quoted <em>at a stated distance above BDC</em>.</p></div>
+<p>Take a 100-tonne press with a 100 mm stroke, so \( R=50 \) mm, rated at 6 mm above bottom dead
+centre. At that point \( \sin\theta=0.475 \). Twelve millimetres up, \( \sin\theta=0.650 \) and the
+available force is \( 0.475/0.650=73\% \) of the rating. At 25 mm it is <b>55%</b>. At mid-stroke it
+is 47%.</p>
+<p>So the answer to where each press wins is arithmetic rather than preference. <b>Blanking and
+piercing</b> finish at the bottom of the stroke and need force only there, so a mechanical press
+gives its whole rating and its 60&ndash;150 strokes a minute. <b>Deep drawing</b> needs force from
+the moment the punch touches the blank and holds it for the length of the draw, which is high in the
+stroke &mdash; so that 100-tonne press is a 55-tonne press for the job. The drawing operation of
+Lesson 3 needs 347 kN at that height, which 538 kN covers, but by a factor of 1.55 rather than the
+2.8 the nameplate suggests, and the blankholder load arrives higher still where less is available. A
+hydraulic press
+delivers its rating anywhere, at any speed, with a dwell if the process wants one; it simply cannot
+match a mechanical press's cycle rate.</p>
+
+<h3>&#167;2 &middot; The die set and the progressive die</h3>
+<p>A <b>die set</b> is the frame that holds punch and die in register: two shoes joined by guide
+pillars and bushes, with the punch holder above and the die block below. Its specification follows
+directly from Lesson 1's clearance. If the guiding lets the punch wander by \( e \), the clearance
+becomes \( c-e \) on one side and \( c+e \) on the other, and the burr goes with it.</p>
+<p>For 3 mm steel, \( c=0.18 \) mm. Holding both sides within \( \pm20\% \) of nominal needs
+\( e\le0.036 \) mm &mdash; even then the worst case is a side-to-side ratio of
+\( 0.216/0.144=1.5 \). That single number justifies the whole cost of a guided die set, and it is
+why a die run in a press with worn gibs produces a burr on one side and not the other.</p>
+<p>A <b>progressive die</b> strings several stations along one strip: the strip advances by a fixed
+pitch each stroke, each station performs one operation, and a finished part falls out on every
+stroke once the die is full. An eight-station die at 100 strokes a minute delivers its first part
+after eight strokes &mdash; 4.8 seconds &mdash; and 100 parts a minute thereafter. The strip is the
+conveyor, which is the source of both its speed and its cost: the carrier web has to survive being
+fed, located and stripped at every station, so a progressive layout uses noticeably more material
+than the single-station nesting of Lesson 1.</p>
+<p>A <b>transfer die</b> moves parts between stations mechanically instead, with no carrier, which
+recovers that material and buys the freedom to make parts a strip could not carry &mdash; at the
+cost of a transfer mechanism and its timing.</p>
+
+<h3>&#167;3 &middot; The three ways presses are broken</h3>
+<p><b>Overloading away from bottom dead centre</b> is the first, and it is the tonnage curve being
+ignored. The press's gauge and its nameplate both say 100 tonnes; the crankshaft does not care what
+the nameplate says, and it fails in torsion. Any operation working high in the stroke has to be
+checked against the curve rather than the rating.</p>
+<p><b>Off-centre loading</b> is the second. If the resultant load does not act through the slide's
+centre, the slide tips, and the gibs and bearings carry the moment. Presses are rated for a maximum
+off-centre distance, and two dies of unequal tonnage sharing one bolster is the classic way to
+exceed it. The fix is layout: balance the tonnage about the centre, or accept a lower total.</p>
+<p><b>Snap-through</b> is the third and the least expected. Under load the press frame stretches
+elastically and stores energy; at the instant the blank fractures, the load vanishes and that energy
+is released in milliseconds.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; stored energy released at fracture</span>
+<p>\[ \delta=\frac{F}{k},\qquad E=\tfrac12 k\delta^{2}=\frac{F^{2}}{2k} \]</p>
+<p>A frame of stiffness 2,000 kN/mm carrying 1,000 kN stretches 0.5 mm and stores 250 J, all of
+which is dumped into the machine when the cut breaks through. The resulting <b>reverse tonnage</b>
+runs at 10&ndash;15% of the forward load and cracks frames and tie rods.</p></div>
+<p>Everything that softens the breakthrough softens this: the angular shear of Lesson 1, staggered
+punch lengths so stations do not all break through together, and slower speeds on thick or hard
+material. It is the same physics as a bolt cutter kicking when the wire parts, at a scale that
+breaks castings.</p>
+
+<h3>&#167;4 &middot; Die maintenance is a scheduling problem, not a virtue</h3>
+<p>Punch and die edges wear round. A rounded edge behaves exactly like excessive clearance &mdash;
+heavier rollover, a bigger burr, more force &mdash; so Lesson 1's edge zones are the wear gauge, and
+<b>burr height is the maintenance signal</b>. Sharpening grinds the punch face back by two or three
+tenths of a millimetre and restores it; a punch with 12 mm of grindable length at 0.3 mm a sharpen
+has 40 sharpens in it, so at 200,000 hits between them its life is eight million hits.</p>
+<p>Choosing the interval is the same problem Metrology &amp; Quality Control solved for calibration.
+Sharpening costs a planned stoppage. Running too long costs an unplanned one, which is far worse:
+stripping, repairing and re-setting a crashed die takes hours where a sharpening takes
+three-quarters of one, and it scraps the parts in the die and sometimes damages the press. Measure
+both in the currency the line understands &mdash; parts of lost output &mdash; and the maintenance
+event costs about 4,500 while a crash costs about 24,000, a ratio of 5.3.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the sharpening interval</span>
+<p>\[ \text{cost per hit}=\frac{C_m}{N}+\frac{\lambda N C_c}{2},
+\qquad N^{*}=\sqrt{\frac{2C_m}{\lambda C_c}} \]</p>
+<p>\( N \) is the interval in hits, \( C_m \) the cost of a planned maintenance event, \( C_c \) the
+cost of a crash and \( \lambda \) the hazard rate, which grows with hits since the last
+sharpening.</p></div>
+<p>With \( \lambda=10^{-11} \) per hit squared, \( N^{*}=194{,}000 \) hits &mdash; which is where
+shop practice sits, and the arithmetic recovers the rule of thumb rather than contradicting it. At
+the optimum the two cost terms are equal, exactly as they were for the calibration interval, and
+that equality is the fastest way to audit an existing schedule: if planned stoppages dominate the
+cost, the interval is too short, and if crashes do, it is too long.</p>
+<p>Which is the answer to why die maintenance is a production indicator rather than a housekeeping
+one. It is not that maintained dies are tidier. It is that the interval is a decision with a
+computable cost, the wrong interval is expensive in both directions, and the evidence needed to set
+it &mdash; hits since sharpening, burr height, crash history &mdash; is data a shop either records
+or does not.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Mechanical versus hydraulic press: where does each win?</li><li>Why is die maintenance a production KPI?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Clearance, burr and cutting force</b> (Lesson 1) &mdash; the die set exists to hold that
+clearance, and burr height is the wear signal.</li>
+<li><b>Angular shear</b> (Lesson 1) &mdash; the same trick that lowers peak force also softens
+snap-through.</li>
+<li><b>Drawing and blankholder force</b> (Lesson 3) &mdash; the operation that needs force high in
+the stroke.</li>
+<li><b>Crank-slider kinematics</b> (Kinematics &amp; Dynamics of Machinery L2&ndash;L3) &mdash;
+\( \cos\theta=1-s/R \) and the slide's velocity profile.</li>
+<li><b>Torsion and elastic strain energy</b> (Strength of Materials L5 and L9) &mdash; the
+crankshaft's failure mode and the frame energy released at snap-through.</li>
+<li><b>Setting an interval from two costs</b> (Metrology &amp; Quality Control L11) &mdash; the
+identical optimisation, here for sharpening rather than calibration.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Mechanical press</td><td>flywheel, clutch, crank</td><td>Fast, fixed stroke, force only near BDC.</td></tr>
+<tr><td>Hydraulic press</td><td>cylinder and valve</td><td>Full rating anywhere, adjustable dwell, slower.</td></tr>
+<tr><td>Tonnage curve</td><td>\( F=T/(R\sin\theta) \)</td><td>100% at 6 mm, 73% at 12, 55% at 25, 47% at mid-stroke.</td></tr>
+<tr><td>Rating point</td><td>a stated height above BDC</td><td>A rating without one is meaningless.</td></tr>
+<tr><td>Die set guiding</td><td>\( e\le0.2c=0.036 \) mm</td><td>Wander becomes clearance, and clearance becomes burr.</td></tr>
+<tr><td>Progressive die</td><td>one part per stroke once full</td><td>Fast, and the carrier web costs material.</td></tr>
+<tr><td>Transfer die</td><td>no carrier strip</td><td>Better utilisation, added mechanism and timing.</td></tr>
+<tr><td>Off-centre load</td><td>moment on the gibs</td><td>Two unequal dies on one bolster is the classic cause.</td></tr>
+<tr><td>Snap-through</td><td>\( E=F^2/2k \); 250 J at 1,000 kN</td><td>Reverse tonnage 10&ndash;15%; cracks frames.</td></tr>
+<tr><td>Punch life</td><td>12 mm / 0.3 mm = 40 sharpens</td><td>Eight million hits at 200,000 between grinds.</td></tr>
+<tr><td>Sharpening interval</td><td>\( N^{*}=\sqrt{2C_m/\lambda C_c} \)</td><td>194,000 hits; the two cost terms are equal there.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Read the tonnage curve before choosing the press</b></p>
+<p><b>Problem.</b> A 100-tonne mechanical press has a 100 mm stroke and is rated 6 mm above bottom
+dead centre. Find the available force at 12 mm and at 25 mm above BDC, in tonnes and kilonewtons.
+The drawing operation of Lesson 3 needs 347 kN and must have it from 25 mm above BDC. Say whether
+this press can do the job, and what would.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The crank radius is half the stroke, \( R=50 \) mm, and
+\( \cos\theta=1-s/R \), so \( \sin\theta=\sqrt{2s/R-(s/R)^2} \).</p>
+<p>(2) At the rating point, \( s=6 \): \( \sin\theta=\sqrt{0.24-0.0144}=0.4750 \).</p>
+<p>(3) At \( s=12 \): \( \sin\theta=\sqrt{0.48-0.0576}=0.6499 \), so the available fraction is
+\( 0.4750/0.6499=0.731 \) &mdash; 73.1 tonnes, or 717 kN.</p>
+<p>(4) At \( s=25 \): \( \sin\theta=\sqrt{1.0-0.25}=0.8660 \), giving
+\( 0.4750/0.8660=0.548 \) &mdash; <b>54.8 tonnes, or 538 kN</b>.</p>
+<p>(5) The draw needs 347 kN at 25 mm, and 538 kN is available, so the press <em>can</em> supply the
+force &mdash; but with only a 1.55 factor over the requirement, and the machine's gauge and
+nameplate both suggest 981 kN, which is 2.8 times the truth at that height.</p>
+<p>(6) The right machine is hydraulic: full rating anywhere in the stroke, adjustable ram speed, and
+a dwell at the bottom if the process wants one. A mechanical press would be the right answer for the
+blanking that produced the disc, which finishes at the bottom of the stroke.</p>
+<p><b>Answer:</b> 73.1 t (717 kN) at 12 mm and 54.8 t (538 kN) at 25 mm; the press can just do the
+347 kN draw, at 55% of its nameplate, and a hydraulic press is the correct choice for drawing.
+<b>Sanity check:</b> the curve is steepest exactly where operations that matter live &mdash; between
+6 and 25 mm the available force nearly halves &mdash; so a press chosen on its nameplate for a
+drawing job is routinely a press chosen at twice its real capacity. Note that the operation, not the
+part, decides: the same press is fully rated for blanking the blank and half-rated for drawing
+it.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Guiding, and the energy that arrives after the cut</b></p>
+<p><b>Problem.</b> (a) A die blanks 3 mm steel at a clearance of 0.18 mm per side. Find the maximum
+punch-to-die wander the die set may allow if both sides are to stay within \( \pm20\% \) of nominal
+clearance, and the worst-case ratio between the two sides. (b) The same press has a frame stiffness
+of 2,000 kN/mm and the operation peaks at 1,000 kN. Find the frame's elastic stretch, the energy
+stored in it, and say what happens to that energy at breakthrough and what reduces it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Wander \( e \) makes the clearance \( c-e \) on one side
+and \( c+e \) on the other, so \( \pm20\% \) requires \( e\le0.20(0.18)=0.036\ \mathrm{mm} \).</p>
+<p>(2) Even at that limit the sides are \( 0.144 \) and \( 0.216 \) mm, a ratio of
+\( 0.216/0.144=1.5 \) &mdash; so one side of every part carries a visibly heavier burr than the
+other.</p>
+<p>(3) \( \delta=F/k=1000/2000=0.5\ \mathrm{mm} \) of elastic stretch in the frame.</p>
+<p>(4) \( E=\tfrac12k\delta^{2}=\tfrac12(2000)(0.25)=250\ \mathrm{kN\,mm}=250\ \mathrm{J} \).</p>
+<p>(5) At the instant the blank fractures the load vanishes and the frame recoils, releasing all
+250 J in milliseconds. The resulting <b>reverse tonnage</b> is typically 10&ndash;15% of the forward
+load and is what cracks frames and breaks tie rods.</p>
+<p>(6) Anything that makes the breakthrough gradual reduces it: angular shear on the tool, staggered
+punch lengths so stations do not break through together, and lower press speeds on thick or hard
+material.</p>
+<p><b>Answer:</b> \( e\le0.036 \) mm with a worst-case 1.5:1 side-to-side clearance ratio; 0.5 mm
+of frame stretch storing 250 J, released as reverse tonnage at breakthrough and softened by angular
+shear, staggered punches and slower speeds.
+<b>Sanity check:</b> both halves of this problem are the same idea &mdash; a press and die are
+elastic structures, and their deflections are of the same order as the clearances they are supposed
+to hold. Note that 0.036 mm is tighter than most people's mental image of a press tool, and that
+\( E=F^2/2k \) means a <em>stiffer</em> frame stores less energy at the same load, which is why heavy
+frames both deflect less and snap through less violently.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Set the sharpening interval</b></p>
+<p><b>Problem.</b> A planned sharpening costs about 4,500 parts of lost output; an unplanned die
+crash costs about 24,000. The hazard of a crash grows with hits since the last sharpening, at
+\( \lambda=10^{-11} \) per hit squared. Find the cost per hit as a function of the interval, the
+optimum interval, the cost there, and the punch's total life if it has 12 mm of grindable length at
+0.3 mm a sharpen. Comment on how to audit an existing interval without redoing the calculation.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) One maintenance event per \( N \) hits costs
+\( C_m/N \) per hit.</p>
+<p>(2) If the hazard rises linearly with hits since sharpening, the expected crashes over an interval
+are \( \int_0^N\lambda x\,dx=\lambda N^2/2 \), which is \( \lambda N/2 \) per hit, costing
+\( \lambda NC_c/2 \).</p>
+<p>(3) Total per hit: \( K(N)=C_m/N+\lambda NC_c/2 \).</p>
+<p>(4) \( dK/dN=-C_m/N^2+\lambda C_c/2=0 \) gives
+\( N^{*}=\sqrt{2C_m/(\lambda C_c)}=\sqrt{9000/(2.4\times10^{-7})}
+=\sqrt{3.75\times10^{10}} \), so \( N^{*}=194{,}000 \) hits.</p>
+<p>(5) \( K(N^{*})=4500/193{,}649+10^{-11}(193{,}649)(24{,}000)/2=0.0232+0.0232
+=0.0465 \) parts of lost output per hit.</p>
+<p>(6) Punch life: \( 12/0.3=40 \) sharpens, so \( 40\times194{,}000\approx7.7 \) million hits
+&mdash; about eight million at the round 200,000 interval shops use.</p>
+<p>(7) To audit an interval without recomputing: at the optimum the two terms are <b>equal</b>. If
+planned stoppages dominate the maintenance cost, the interval is too short; if crashes dominate, it
+is too long.</p>
+<p><b>Answer:</b> \( K(N)=C_m/N+\lambda NC_c/2 \), minimised at \( N^{*}=194{,}000 \) hits costing
+0.0465 parts per hit, with the two terms equal; the punch lasts 40 sharpens, roughly eight million
+hits.
+<b>Sanity check:</b> the arithmetic lands on the 200,000-hit interval shops already use, which is the
+right kind of agreement &mdash; the model recovers accumulated practice rather than overturning it,
+and its value is that it says <em>why</em>, and what to change when the costs change. Note that the
+whole structure is Metrology &amp; Quality Control's calibration-interval problem with different
+labels: a planned cost that falls with the interval, an unplanned one that rises, and equality at the
+optimum.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>A mechanical press's rating must be quoted with</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the flywheel speed</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a stated distance above bottom dead centre</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the bolster area</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the motor power</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F=T/(R\sin\theta) \) diverges as the crank approaches bottom dead centre, so
+the available force depends entirely on where in the stroke it is measured. A 100-tonne press rated
+at 6 mm above BDC gives 73 tonnes at 12 mm and 55 at 25. A rating without its measuring point is not
+a specification.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A 100-tonne mechanical press with a 100 mm stroke, rated 6 mm above BDC, can deliver
+about how much at 25 mm above BDC?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>100 tonnes</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>82 tonnes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>55 tonnes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>12 tonnes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \sin\theta \) is 0.475 at the rating point and 0.866 at 25 mm, so the
+available fraction is \( 0.475/0.866=0.548 \) &mdash; 54.8 tonnes. The nameplate and the gauge both
+still say 100, which is why an operation working high in the stroke is the classic way to break a
+crankshaft.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>For deep drawing rather than blanking, the better press is usually hydraulic
+because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is cheaper</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>it delivers full rated force anywhere in the stroke, with controllable speed and dwell</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it strokes faster</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it needs no die set</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A draw needs force from the moment the punch touches and holds it through the
+stroke, which is precisely where a crank cannot deliver. Hydraulics have no such curve and add
+adjustable ram speed and a dwell. The trade is cycle rate: 10&ndash;30 strokes a minute against a
+mechanical press's 60&ndash;150, which is why blanking stays mechanical.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A die set's guide pillars exist mainly to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>support the weight of the die</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>hold punch-to-die register far tighter than the clearance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>align the die on the bolster</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>resist snap-through</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Any wander \( e \) makes the clearance \( c-e \) on one side and \( c+e \) on
+the other, so at \( c=0.18 \) mm even a 0.036 mm error gives a 1.5:1 side-to-side ratio and a burr
+that differs around the part. The guiding requirement is a fraction of a clearance that is itself a
+fraction of a millimetre.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>An eight-station progressive die running at 100 strokes a minute produces</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>12.5 parts a minute</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>100 parts a minute, after eight strokes to fill the die</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>800 parts a minute</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>one part per eight strokes indefinitely</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Each stroke advances the strip one pitch and every station works at once, so
+after the initial eight strokes &mdash; 4.8 seconds &mdash; a finished part leaves on every stroke.
+The strip is the conveyor, which is where the speed comes from and also why a progressive layout uses
+more material than the single-station nesting of Lesson 1.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Snap-through, or reverse tonnage, is caused by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the slide returning too fast</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>elastic energy stored in the press frame being released when the cut breaks through</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>hydraulic pressure spikes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>misaligned guide pillars</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The frame stretches under load and stores \( E=F^2/2k \) &mdash; 250 J for
+1,000 kN on a 2,000 kN/mm frame &mdash; which is dumped back in milliseconds when the load vanishes.
+The reverse load runs at 10&ndash;15% of the forward one and cracks frames and tie rods. Angular
+shear, staggered punch lengths and lower speeds all soften it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The practical signal that a punch needs sharpening is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the press ammeter</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>burr height on the parts</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the noise of the stroke</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the number of strokes since installation</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A worn edge behaves like excessive clearance, so the burr grows &mdash; which
+makes Lesson 1's edge zones the wear gauge, readable on the parts without stopping the press. Stroke
+count sets the <em>planned</em> interval; burr height is what confirms or corrects it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>At the optimum sharpening interval, \( K(N)=C_m/N+\lambda NC_c/2 \) has</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a negligible maintenance term</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>its two terms equal</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a negligible crash term</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>no minimum</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Setting \( dK/dN=0 \) gives \( C_m/N=\lambda NC_c/2 \). It is the fastest audit
+of an existing schedule: if planned stoppages dominate the cost, the interval is too short; if
+crashes dominate, it is too long. The same structure sets a calibration interval in Metrology &amp;
+Quality Control.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the press that was chosen from its nameplate.</b> A shop moved a drawing
+operation onto a 100-tonne mechanical press because the calculation said the job needed 347 kN
+&mdash; 35 tonnes &mdash; and the press had three times that. The first shift produced sound parts.
+Within a month the press was making an intermittent knock at the bottom of the stroke, and the
+crankshaft was found cracked at a journal fillet.</p>
+<p>The force calculation was right and the press selection was not. The draw needs its force from the
+moment the punch touches the blank, about 25 mm above bottom dead centre, and at that height the
+crank's mechanical advantage gives \( \sin\theta=0.866 \) against the 0.475 at the 6 mm rating point:
+\( 0.475/0.866=55\% \) of the nameplate, or 538 kN. The job at 347 kN was inside that, but only by a
+factor of 1.55 rather than the 2.8 the nameplate implied &mdash; and the blankholder, whose force
+Lesson 3 put at 146 kN, arrives earlier still, higher in the stroke, where the available force is
+lower again. The machine was being worked near its real limit every stroke, and the failure was in
+torsion at the crankshaft, which is where a mechanical press fails when the load is applied where the
+crank has no advantage.</p>
+<p>Two practices follow. Size a mechanical press against its tonnage curve at the height where the
+operation actually needs the force, never against the nameplate &mdash; the two differ by a factor of
+two over the range where real operations live. And treat operation type as a machine-selection
+criterion in its own right: blanking finishes at bottom dead centre and belongs on a mechanical
+press, while drawing needs force throughout the stroke and belongs on a hydraulic one, whatever the
+force numbers alone suggest.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.9072\\ \\mathrm{lb}\\)", "\\(4.409\\ \\mathrm{lb}\\)", "\\(44.09\\ \\mathrm{lb}\\)", "\\(0.4409\\ \\mathrm{lb}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(2 \\times 2.205 = 4.409\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(9.072\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(44.09\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(440.9\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.409\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(20 \times 2.205 = 44.09\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{J}\\). In CGS units, this is closest to:&lt;/p>", "choices": ["\\(3e+08\\ \\mathrm{erg}\\)", "\\(3e-07\\ \\mathrm{erg}\\)", "\\(3e+07\\ \\mathrm{erg}\\)", "\\(3e+06\\ \\mathrm{erg}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{J} = 1e+07\\ \\mathrm{erg}\\): \\(3 \\times 1e+07 = 3e+07\\ \\mathrm{erg}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{J}\). In CGS units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(4.5e+09\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(4.5e-06\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(4.5e+08\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.5e+07\ \mathrm{erg}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{J} = 1e+07\ \mathrm{erg}\): \(45 \times 1e+07 = 4.5e+08\ \mathrm{erg}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
