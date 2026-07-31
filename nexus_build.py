@@ -307,11 +307,11 @@ L_AR = {
 }
 PROTO_EN = ('Preliminary open release — a prototype published so learners can try it '
             'and reflect. <a href="{prefix}feedback/index.html">Leave a review</a> — it shapes the '
-            'final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" '
+            'final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" '
             'target="_blank" rel="noopener">Source on GitHub</a>.')
 PROTO_AR = ('إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. '
             '<a href="{prefix}feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. '
-            '<a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">'
+            '<a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">'
             '<span dir="ltr">المصدر على GitHub</span></a>.')
 INTEG_EN = ('Open engineering education. Worked-example values are pedagogical; '
             'representative industrial figures are labeled as such and are not published '
@@ -1262,7 +1262,7 @@ def build_static_pages(sems, tabs_by_course):
   tried, what worked, what should change. Your review goes straight into the planning of
   the final, tailored releases.</p>
 </div>
-<form class="review-composer" id="reviewForm" data-repo="nexuskw/nexuskw.github.io">
+<form class="review-composer" id="reviewForm" data-repo="mechedkw/mechedkw.github.io">
   <fieldset class="rev-rating">
     <legend>Overall reaction</legend>
     <div class="rate-row">
@@ -1293,7 +1293,7 @@ def build_static_pages(sems, tabs_by_course):
   <p class="small">Posting opens GitHub with your review pre-filled — it publishes under
   your GitHub account, publicly, on the project repository. No account? Use
   <b>Copy review text</b> and share it through any channel on the
-  <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">project page</a>.</p>
+  <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">project page</a>.</p>
 </form>"""
     nx_page("feedback/index.html",
             "Feedback — MechEd",

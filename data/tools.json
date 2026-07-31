@@ -1,5 +1,5 @@
 {
- "_comment": "Course tools/software registry (added 2026-07-24, mirrors textbooks.json/sources.json's schema and honesty rule). Each url is the vendor's own official product or homepage. mathworks.com (MATLAB, Simulink), fchartsoftware.com/ees, mastercam.com, minitab.com, and python.org were live-fetched and confirmed reachable at authoring time. Autodesk (AutoCAD, Fusion 360), ANSYS (Mechanical, Fluent, Granta EduPack), Dassault (SolidWorks), and Analog Devices (LTspice) returned bot-protection blocks (403/timeout) to automated fetch, not evidence of an incorrect URL — these are the current, long-stable product URLs for well-known commercial products; re-verify manually if a vendor restructures its site. 'courses' is populated only for courses already at full teaching depth; a course absent from 'courses' has no tools listed yet and the renderer must show an honest 'in production' placeholder, not an error — same convention as career blocks and the reference extractor.",
+ "_comment": "Course tools/software registry (added 2026-07-24, mirrors textbooks.json/sources.json's schema and honesty rule). Each url is the vendor's own official product or homepage. mathworks.com (MATLAB, Simulink), fchartsoftware.com/ees, mastercam.com, minitab.com, and python.org were live-fetched and confirmed reachable at authoring time; autoform.com and autodesk.com/products/moldflow/overview were likewise live-fetched (2026-07-31) and returned 200 with the expected product page titles. Autodesk (AutoCAD, Fusion 360), ANSYS (Mechanical, Fluent, Granta EduPack), Dassault (SolidWorks), and Analog Devices (LTspice) returned bot-protection blocks (403/timeout) to automated fetch, not evidence of an incorrect URL — these are the current, long-stable product URLs for well-known commercial products; re-verify manually if a vendor restructures its site. 'courses' is populated only for courses already at full teaching depth; a course absent from 'courses' has no tools listed yet and the renderer must show an honest 'in production' placeholder, not an error — same convention as career blocks and the reference extractor.",
  "tools": {
   "matlab": {
    "name": "MATLAB",
@@ -91,6 +91,27 @@
    "category": "Statistics",
    "url": "https://www.minitab.com/en-us/",
    "note": "The standard statistical software in industrial quality and Six Sigma programs."
+  },
+  "renishaw-modus": {
+   "name": "MODUS",
+   "vendor": "Renishaw",
+   "category": "Metrology & Inspection",
+   "url": "https://www.renishaw.com/en/modus-metrology-software--10495",
+   "note": "CMM inspection software: CAD-driven offline programming, GD&T evaluation against a datum reference frame, and export to statistical quality formats — the software side of Lessons 4 and 7–10."
+  },
+  "autoform": {
+   "name": "AutoForm",
+   "vendor": "AutoForm Engineering",
+   "category": "FEA & Simulation",
+   "url": "https://www.autoform.com/",
+   "note": "Sheet-metal forming simulation: blank development, draw-die feasibility against the wrinkling/tearing window, and springback compensation — the numerical form of Lessons 1–3 and 5."
+  },
+  "moldflow": {
+   "name": "Moldflow",
+   "vendor": "Autodesk",
+   "category": "FEA & Simulation",
+   "url": "https://www.autodesk.com/products/moldflow/overview",
+   "note": "Injection-moulding simulation: fill and pack analysis, cooling-time prediction, gate and runner placement, and warpage — the numerical form of Lessons 6–7."
   }
  },
  "courses": {
@@ -186,6 +207,17 @@
    "matlab",
    "solidworks",
    "ansys-mechanical"
+  ],
+  "metrology": [
+   "minitab",
+   "python",
+   "renishaw-modus"
+  ],
+  "mfg-processes-3": [
+   "solidworks",
+   "autoform",
+   "moldflow",
+   "fusion360"
   ]
  }
 }

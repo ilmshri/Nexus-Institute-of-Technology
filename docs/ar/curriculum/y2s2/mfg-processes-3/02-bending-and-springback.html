@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 02 of 11 · Year 2 · Semester 2</p>
   <h1>Bending and springback</h1>
   <p class="sub">Bend allowance from neutral-axis geometry; bending force; and springback — why it happens, how much to expect, and the compensation strategies press brakes actually use. Kirby's roll-formed and brake-formed building panels as the standing example.</p>
-  <div class="metachips"><span class="mchip">Format <b>Study guide · Core 60</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>3 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/2">Mark as complete</button>
@@ -84,93 +84,280 @@
 </div>
 <div class="src-strip"><span class="t">SOURCED FROM</span>
   <b>Groover, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</b></div>
-<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/cwCwyByn6oA" title="SHEET METAL BEND ALLOWANCE CALCULATION ❗️THEORY | WHAT'S SPRING BACK IN SHEETMETAL PRESS TOOL DESIGN" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>SHEET METAL BEND ALLOWANCE CALCULATION ❗️THEORY | WHAT'S SPRING BACK IN SHEETMETAL PRESS TOOL DESIGN <span class="src">CIM Design Solution</span></figcaption></figure></div><div class="vh-bar"><span class="n">SHEET METAL BEND ALLOWANCE CALCULATION ❗️THEORY | WHAT'S SPRING BACK IN SHEETMETAL PRESS TOOL DESIGN</span><span class="c">CIM DESIGN SOLUTION</span></div></div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">المحاضرة</button>
   <button data-tab="t-foundations">الأسس</button>
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Compute bend allowance for a 90° bend, R = 6 mm, t = 3 mm.</li><li>Springback scales with which material ratio — and why does high-strength steel spring back more than mild steel?</li><li>V-die bending force: what happens to required tonnage when sheet thickness doubles?</li></ul></div><section class="part tight">
-  <div class="measure rv">
-    <h3>Objectives</h3>
-    <ol class="objectives">
-      <li>Compute bend allowance so a flat blank folds to the drawing's dimensions.</li>
-      <li>Estimate V-bending force and pick a press with margin, units carried through.</li>
-      <li>Explain what drives springback and name the two families of compensation.</li>
-    </ol>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Compute bend allowance for a 90° bend, R = 6 mm, t = 3 mm.</li><li>Springback scales with which material ratio — and why does high-strength steel spring back more than mild steel?</li><li>V-die bending force: what happens to required tonnage when sheet thickness doubles?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Springback of a 90 degree bend, in degrees, plotted against the ratio of bend radius to sheet thickness, for three materials. Mild steel springs back least, high-strength steel about three times as much, and aluminium 6061-T6 most of all despite having a far lower yield strength than the high-strength steel, because its elastic modulus is a third as large. At a radius ten times the thickness the three spring back 3.3, 9.1 and 10.7 degrees."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Springback is set by yield over modulus, not by strength alone</text><path d="M95 250 L97 249.2 L99.1 248.4 L101.2 247.6 L103.2 246.8 L105.2 246 L107.3 245.2 L109.3 244.4 L111.4 243.5 L113.5 242.7 L115.5 241.9 L117.6 241.1 L119.6 240.3 L121.7 239.5 L123.7 238.7 L125.8 237.9 L127.8 237.1 L129.8 236.3 L131.9 235.5 L133.9 234.7 L136 233.9 L138.1 233.1 L140.1 232.2 L142.2 231.4 L144.2 230.6 L146.2 229.8 L148.3 229 L150.3 228.2 L152.4 227.4 L154.4 226.6 L156.5 225.8 L158.6 225 L160.6 224.2 L162.6 223.4 L164.7 222.6 L166.8 221.8 L168.8 221 L170.8 220.1 L172.9 219.3 L174.9 218.5 L177 217.7 L179.1 216.9 L181.1 216.1 L183.2 215.3 L185.2 214.5 L187.2 213.7 L189.3 212.9 L191.4 212.1 L193.4 211.3 L195.4 210.5 L197.5 209.7 L199.6 208.9 L201.6 208.1 L203.7 207.3 L205.7 206.4 L207.8 205.6 L209.8 204.8 L211.9 204 L213.9 203.2 L216 202.4 L218 201.6 L220.1 200.8 L222.1 200 L224.2 199.2 L226.2 198.4 L228.2 197.6 L230.3 196.8 L232.3 196 L234.4 195.2 L236.5 194.4 L238.5 193.6 L240.5 192.8 L242.6 192 L244.7 191.2 L246.7 190.3 L248.8 189.5 L250.8 188.7 L252.8 187.9 L254.9 187.1 L257 186.3 L259 185.5 L261 184.7 L263.1 183.9 L265.1 183.1 L267.2 182.3 L269.2 181.5 L271.3 180.7 L273.3 179.9 L275.4 179.1 L277.4 178.3 L279.5 177.5 L281.5 176.7 L283.6 175.9 L285.6 175.1 L287.7 174.3 L289.8 173.5 L291.8 172.7 L293.9 171.9 L295.9 171.1 L297.9 170.3 L300 169.5 L302.1 168.7 L304.1 167.9 L306.1 167.1 L308.2 166.3 L310.2 165.5 L312.3 164.7 L314.3 163.9 L316.4 163.1 L318.5 162.3 L320.5 161.5 L322.5 160.6 L324.6 159.8 L326.7 159 L328.7 158.2 L330.8 157.4 L332.8 156.6 L334.9 155.8 L336.9 155 L338.9 154.2 L341 153.4 L343 152.6 L345.1 151.8 L347.1 151 L349.2 150.2 L351.2 149.5 L353.3 148.7 L355.4 147.9 L357.4 147.1 L359.4 146.3 L361.5 145.5 L363.6 144.7 L365.6 143.9 L367.7 143.1 L369.7 142.3 L371.8 141.5 L373.8 140.7 L375.8 139.9 L377.9 139.1 L380 138.3 L382 137.5 L384.1 136.7 L386.1 135.9 L388.2 135.1 L390.2 134.3 L392.2 133.5 L394.3 132.7 L396.4 131.9 L398.4 131.1 L400.4 130.3 L402.5 129.5 L404.6 128.7 L406.6 127.9 L408.6 127.1 L410.7 126.3 L412.8 125.5 L414.8 124.7 L416.8 124 L418.9 123.2 L420.9 122.4 L423 121.6 L425.1 120.8 L427.1 120 L429.2 119.2 L431.2 118.4 L433.2 117.6 L435.3 116.8 L437.3 116 L439.4 115.2 L441.4 114.4 L443.5 113.6 L445.6 112.8 L447.6 112.1 L449.6 111.3 L451.7 110.5 L453.8 109.7 L455.8 108.9 L457.9 108.1 L459.9 107.3 L461.9 106.5 L464 105.7 L466.1 104.9 L468.1 104.1 L470.2 103.4 L472.2 102.6 L474.2 101.8 L476.3 101 L478.3 100.2 L480.4 99.4 L482.4 98.6 L484.5 97.8 L486.6 97 L488.6 96.3 L490.7 95.5 L492.7 94.7 L494.8 93.9 L496.8 93.1 L498.9 92.3 L500.9 91.5 L502.9 90.7 L505 90" fill="none" stroke="#9c2f2f" stroke-width="2.2"/><path d="M95 250 L97 249.3 L99.1 248.6 L101.2 247.9 L103.2 247.3 L105.2 246.6 L107.3 245.9 L109.3 245.2 L111.4 244.5 L113.5 243.8 L115.5 243.2 L117.6 242.5 L119.6 241.8 L121.7 241.1 L123.7 240.4 L125.8 239.7 L127.8 239 L129.8 238.4 L131.9 237.7 L133.9 237 L136 236.3 L138.1 235.6 L140.1 234.9 L142.2 234.3 L144.2 233.6 L146.2 232.9 L148.3 232.2 L150.3 231.5 L152.4 230.8 L154.4 230.1 L156.5 229.5 L158.6 228.8 L160.6 228.1 L162.6 227.4 L164.7 226.7 L166.8 226 L168.8 225.4 L170.8 224.7 L172.9 224 L174.9 223.3 L177 222.6 L179.1 221.9 L181.1 221.2 L183.2 220.6 L185.2 219.9 L187.2 219.2 L189.3 218.5 L191.4 217.8 L193.4 217.1 L195.4 216.5 L197.5 215.8 L199.6 215.1 L201.6 214.4 L203.7 213.7 L205.7 213 L207.8 212.4 L209.8 211.7 L211.9 211 L213.9 210.3 L216 209.6 L218 208.9 L220.1 208.3 L222.1 207.6 L224.2 206.9 L226.2 206.2 L228.2 205.5 L230.3 204.8 L232.3 204.2 L234.4 203.5 L236.5 202.8 L238.5 202.1 L240.5 201.4 L242.6 200.7 L244.7 200.1 L246.7 199.4 L248.8 198.7 L250.8 198 L252.8 197.3 L254.9 196.6 L257 196 L259 195.3 L261 194.6 L263.1 193.9 L265.1 193.2 L267.2 192.5 L269.2 191.9 L271.3 191.2 L273.3 190.5 L275.4 189.8 L277.4 189.1 L279.5 188.4 L281.5 187.8 L283.6 187.1 L285.6 186.4 L287.7 185.7 L289.8 185 L291.8 184.4 L293.9 183.7 L295.9 183 L297.9 182.3 L300 181.6 L302.1 180.9 L304.1 180.3 L306.1 179.6 L308.2 178.9 L310.2 178.2 L312.3 177.5 L314.3 176.9 L316.4 176.2 L318.5 175.5 L320.5 174.8 L322.5 174.1 L324.6 173.5 L326.7 172.8 L328.7 172.1 L330.8 171.4 L332.8 170.7 L334.9 170 L336.9 169.4 L338.9 168.7 L341 168 L343 167.3 L345.1 166.6 L347.1 166 L349.2 165.3 L351.2 164.6 L353.3 163.9 L355.4 163.2 L357.4 162.6 L359.4 161.9 L361.5 161.2 L363.6 160.5 L365.6 159.8 L367.7 159.2 L369.7 158.5 L371.8 157.8 L373.8 157.1 L375.8 156.5 L377.9 155.8 L380 155.1 L382 154.4 L384.1 153.7 L386.1 153.1 L388.2 152.4 L390.2 151.7 L392.2 151 L394.3 150.3 L396.4 149.7 L398.4 149 L400.4 148.3 L402.5 147.6 L404.6 147 L406.6 146.3 L408.6 145.6 L410.7 144.9 L412.8 144.2 L414.8 143.6 L416.8 142.9 L418.9 142.2 L420.9 141.5 L423 140.9 L425.1 140.2 L427.1 139.5 L429.2 138.8 L431.2 138.2 L433.2 137.5 L435.3 136.8 L437.3 136.1 L439.4 135.5 L441.4 134.8 L443.5 134.1 L445.6 133.4 L447.6 132.7 L449.6 132.1 L451.7 131.4 L453.8 130.7 L455.8 130 L457.9 129.4 L459.9 128.7 L461.9 128 L464 127.3 L466.1 126.7 L468.1 126 L470.2 125.3 L472.2 124.7 L474.2 124 L476.3 123.3 L478.3 122.6 L480.4 122 L482.4 121.3 L484.5 120.6 L486.6 119.9 L488.6 119.3 L490.7 118.6 L492.7 117.9 L494.8 117.2 L496.8 116.6 L498.9 115.9 L500.9 115.2 L502.9 114.6 L505 113.9" fill="none" stroke="#c2820f" stroke-width="2.2"/><path d="M95 250 L97 249.8 L99.1 249.5 L101.2 249.3 L103.2 249 L105.2 248.8 L107.3 248.5 L109.3 248.3 L111.4 248 L113.5 247.8 L115.5 247.6 L117.6 247.3 L119.6 247.1 L121.7 246.8 L123.7 246.6 L125.8 246.3 L127.8 246.1 L129.8 245.8 L131.9 245.6 L133.9 245.4 L136 245.1 L138.1 244.9 L140.1 244.6 L142.2 244.4 L144.2 244.1 L146.2 243.9 L148.3 243.6 L150.3 243.4 L152.4 243.2 L154.4 242.9 L156.5 242.7 L158.6 242.4 L160.6 242.2 L162.6 241.9 L164.7 241.7 L166.8 241.4 L168.8 241.2 L170.8 241 L172.9 240.7 L174.9 240.5 L177 240.2 L179.1 240 L181.1 239.7 L183.2 239.5 L185.2 239.2 L187.2 239 L189.3 238.8 L191.4 238.5 L193.4 238.3 L195.4 238 L197.5 237.8 L199.6 237.5 L201.6 237.3 L203.7 237 L205.7 236.8 L207.8 236.5 L209.8 236.3 L211.9 236.1 L213.9 235.8 L216 235.6 L218 235.3 L220.1 235.1 L222.1 234.8 L224.2 234.6 L226.2 234.3 L228.2 234.1 L230.3 233.9 L232.3 233.6 L234.4 233.4 L236.5 233.1 L238.5 232.9 L240.5 232.6 L242.6 232.4 L244.7 232.1 L246.7 231.9 L248.8 231.7 L250.8 231.4 L252.8 231.2 L254.9 230.9 L257 230.7 L259 230.4 L261 230.2 L263.1 229.9 L265.1 229.7 L267.2 229.5 L269.2 229.2 L271.3 229 L273.3 228.7 L275.4 228.5 L277.4 228.2 L279.5 228 L281.5 227.7 L283.6 227.5 L285.6 227.3 L287.7 227 L289.8 226.8 L291.8 226.5 L293.9 226.3 L295.9 226 L297.9 225.8 L300 225.5 L302.1 225.3 L304.1 225.1 L306.1 224.8 L308.2 224.6 L310.2 224.3 L312.3 224.1 L314.3 223.8 L316.4 223.6 L318.5 223.3 L320.5 223.1 L322.5 222.9 L324.6 222.6 L326.7 222.4 L328.7 222.1 L330.8 221.9 L332.8 221.6 L334.9 221.4 L336.9 221.1 L338.9 220.9 L341 220.7 L343 220.4 L345.1 220.2 L347.1 219.9 L349.2 219.7 L351.2 219.4 L353.3 219.2 L355.4 218.9 L357.4 218.7 L359.4 218.5 L361.5 218.2 L363.6 218 L365.6 217.7 L367.7 217.5 L369.7 217.2 L371.8 217 L373.8 216.8 L375.8 216.5 L377.9 216.3 L380 216 L382 215.8 L384.1 215.5 L386.1 215.3 L388.2 215 L390.2 214.8 L392.2 214.6 L394.3 214.3 L396.4 214.1 L398.4 213.8 L400.4 213.6 L402.5 213.3 L404.6 213.1 L406.6 212.8 L408.6 212.6 L410.7 212.4 L412.8 212.1 L414.8 211.9 L416.8 211.6 L418.9 211.4 L420.9 211.1 L423 210.9 L425.1 210.6 L427.1 210.4 L429.2 210.2 L431.2 209.9 L433.2 209.7 L435.3 209.4 L437.3 209.2 L439.4 208.9 L441.4 208.7 L443.5 208.4 L445.6 208.2 L447.6 208 L449.6 207.7 L451.7 207.5 L453.8 207.2 L455.8 207 L457.9 206.7 L459.9 206.5 L461.9 206.3 L464 206 L466.1 205.8 L468.1 205.5 L470.2 205.3 L472.2 205 L474.2 204.8 L476.3 204.5 L478.3 204.3 L480.4 204.1 L482.4 203.8 L484.5 203.6 L486.6 203.3 L488.6 203.1 L490.7 202.8 L492.7 202.6 L494.8 202.3 L496.8 202.1 L498.9 201.9 L500.9 201.6 L502.9 201.4 L505 201.1" fill="none" stroke="#3a6ea5" stroke-width="2.2"/><path d="M300 250 L300 163.8" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><circle cx="300" cy="225.5" r="4.5" fill="#3a6ea5"/><circle cx="300" cy="181.6" r="4.5" fill="#c2820f"/><circle cx="300" cy="169.5" r="4.5" fill="#9c2f2f"/><text x="110" y="88" fill="#9c2f2f" font-size="11">aluminium 6061-T6 &mdash; Y/E = 3.99 &#215; 10&#8315;&#179;</text><text x="110" y="106" fill="#c2820f" font-size="11">high-strength steel &mdash; 3.38 &#215; 10&#8315;&#179;</text><text x="110" y="124" fill="#3a6ea5" font-size="11">mild steel &mdash; 1.21 &#215; 10&#8315;&#179;</text><text x="380" y="234" fill="#14181F" font-size="11">at R/t = 10: 3.3&#176; &middot; 9.1&#176; &middot; 10.7&#176;</text><path d="M95 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 70" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="95" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M197.5 250 L197.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="197.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">5</text><path d="M300 250 L300 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="300" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M402.5 250 L402.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="402.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">15</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">20</text><path d="M91 250 L95 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M91 212.5 L95 212.5" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="216.5" text-anchor="end" fill="#5B6672" font-size="11">5</text><path d="M91 175 L95 175" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="179" text-anchor="end" fill="#5B6672" font-size="11">10</text><path d="M91 137.5 L95 137.5" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="141.5" text-anchor="end" fill="#5B6672" font-size="11">15</text><path d="M91 100 L95 100" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="104" text-anchor="end" fill="#5B6672" font-size="11">20</text><text x="300" y="288" text-anchor="middle" fill="#14181F" font-size="12">bend radius / sheet thickness</text><text x="26" y="160" font-size="12" fill="#14181F" transform="rotate(-90 26 160)" text-anchor="middle">springback of a 90&#176; bend</text></svg><figcaption>Elastic strain recovers when the punch lifts, so a bend always opens. How much is governed by \( Y/E \) &mdash; how far the material was strained past yield relative to how stiffly it springs back &mdash; through \( R_i/R_f = 4(R_iY/Et)^3-3(R_iY/Et)+1 \). High-strength steel has the same modulus as mild steel and nearly three times the yield, so it springs back nearly three times as far. Aluminium springs back further still on a lower yield, because its modulus is a third of steel's. Springback also grows with \( R/t \), which is why a tight bottomed bend holds its angle and a wide air bend does not.</figcaption></figure>
+<h3>&#167;1 &middot; The flat length is not the sum of the legs</h3>
+<p>Bend a strip and the outer surface stretches while the inner one is compressed. Somewhere between
+them is a surface whose length does not change &mdash; the <b>neutral axis</b> &mdash; and the flat
+blank has to be cut to the length of <em>that</em>, not to the sum of the finished legs. Get it
+wrong and every part is short or long by a few millimetres, consistently, on a tool that is
+otherwise perfect.</p>
+<p>The neutral axis does not sit at mid-thickness. Material thins on the tensile side more than it
+thickens on the compressive side, so the neutral surface migrates inward, and the migration depends
+on how sharp the bend is. Shops carry that in a single factor.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; bend allowance</span>
+<p>\[ \mathrm{BA}=2\pi\frac{\alpha}{360}\bigl(R+K t\bigr),\qquad
+K\approx0.33\ (R<2t),\qquad K\approx0.50\ (R\ge2t) \]</p>
+<p>\( \alpha \) is the swept bend angle, \( R \) the inside radius, \( t \) the thickness. \( K \) is
+where the neutral axis sits, as a fraction of the thickness measured from the inside surface.</p></div>
+<p>For a 90&#176; bend with \( R=6 \) mm in \( t=3 \) mm sheet, \( R/t=2 \) so \( K=0.50 \), and
+\( \mathrm{BA}=2\pi(0.25)(6+1.5)=11.78\ \mathrm{mm} \). Draughtsmen more often work with the
+<b>bend deduction</b>, because parts are dimensioned to their outside faces:</p>
+<div class="keybox"><span class="tag">Key relation &mdash; bend deduction</span>
+<p>\[ \mathrm{BD}=2(R+t)\tan\frac{\alpha}{2}-\mathrm{BA} \]</p>
+<p>Flat length = (sum of outside dimensions) &#8722; (one BD per bend). The first term is the
+outside setback: how far the outside faces would run past each other if the corner were sharp.</p></div>
+<p>Here \( \mathrm{BD}=2(9)(1)-11.78=6.22\ \mathrm{mm} \). A U-channel with outside dimensions
+50 + 80 + 50 = 180 mm and two 90&#176; bends therefore develops to
+\( 180-2(6.22)=167.56\ \mathrm{mm} \) of flat blank. Use \( K=0.33 \) by mistake &mdash; the value
+for a tight bend, on a bend that is not tight &mdash; and the blank comes out 165.96 mm: 1.6 mm
+short on a part nobody would suspect, because both bends and both legs are individually correct.
+The arithmetic is unit-blind, so the same bend at \( R=0.25 \) in and \( t=0.125 \) in gives
+\( \mathrm{BA}=0.4909 \) in, which is the 12.47 mm the metric calculation would have given.</p>
 
-    <h3>Key equations — sourced (Groover, Ch. 20)</h3>
-    <div class="keybox">
-      <span class="cap">Bend allowance and V-die bending force</span>
-      <div class="eqrow"><span class="eq">BA <b>=</b> 2π <span class="fr"><span class="nu">A</span><span class="de">360</span></span> <b>(</b>R + K<sub>ba</sub> t<b>)</b></span><span class="eqnum">(1)</span></div>
-      <div class="eqrow"><span class="eq">F <b>=</b> <span class="fr"><span class="nu">K<sub>bf</sub> · TS · w · t<sup>2</sup></span><span class="de">D</span></span></span><span class="eqnum">(2)</span></div>
-    </div>
-    <p>In (1), A is the bend angle, R the inside radius, and K<sub>ba</sub> locates the neutral
-    axis (Groover: 0.33 for tight bends R &lt; 2t, 0.5 for R ≥ 2t) — the neutral axis migrates
-    inward as bending sharpens, which is the whole reason blanks are not sized by naive
-    centerline arithmetic. In (2), TS is tensile strength, w bend width, t thickness, D the die
-    opening, K<sub>bf</sub> ≈ 1.33 for V-dies.</p>
-    <p><strong>Springback</strong>: on unloading, the elastic part of the through-thickness
-    strain distribution recovers; the bend opens and its radius grows. The drivers fall straight
-    out of beam elasticity — springback grows with the material's yield-to-modulus ratio Y/E and
-    with R/t (gentler bends are more elastic overall). That is why high-strength steels and
-    aluminum (high Y/E) spring back hard, and why annealed mild steel is forgiving.</p>
+<h3>&#167;2 &middot; Springback: the bend that opens after the punch lifts</h3>
+<p>Bending strains the outer fibres past yield, but not all of the strain is plastic. When the load
+comes off, the elastic component recovers and the bend opens: the angle decreases and the radius
+grows. This is <b>springback</b>, and it is not a defect &mdash; it is elasticity doing what
+elasticity does.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; springback</span>
+<p>\[ \frac{R_i}{R_f}=4\left(\frac{R_i Y}{E t}\right)^{3}-3\left(\frac{R_i Y}{E t}\right)+1 \]</p>
+<p>Everything material-dependent enters through \( Y/E \) &mdash; yield strength over elastic
+modulus. A stronger material springs back more; a stiffer one springs back less; and the two effects
+are of equal weight.</p></div>
+<p>That answers the question shops ask most often. High-strength steel springs back more than mild
+steel not because it is "harder" but because it has the same \( E \) and nearly three times the
+\( Y \): at \( R/t=10 \), a 90&#176; bend recovers 3.3&#176; in mild steel and 9.1&#176; in
+high-strength steel. Aluminium 6061-T6 has a <em>lower</em> yield than that high-strength steel
+&mdash; 275 MPa against 700 &mdash; and springs back further still, 10.7&#176;, because its modulus
+is 69 GPa against steel's 207. Ranking materials by strength predicts springback badly; ranking them
+by \( Y/E \) predicts it correctly.</p>
+<p>Note the other variable in the bracket: \( R_i/t \). Springback grows with it, which is why the
+same material behaves quite differently in different operations. A tight bend at \( R/t=2 \) barely
+moves; a wide air bend at \( R/t=20 \) recovers 6.5&#176; in mild steel and 21.3&#176; in aluminium
+&mdash; a quarter of the angle asked for.</p>
+<p>Four responses exist and shops use all of them. <b>Overbending</b> is the cheapest: bend past the
+target by the predicted recovery, so a mild-steel bend aimed at 90&#176; is formed to
+\( 90/0.9638=93.4^{\circ} \). <b>Bottoming</b> presses the sheet fully into the die so the bend zone
+yields through its thickness, and <b>coining</b> goes further and sets the radius plastically
+&mdash; both reduce springback and both cost force, coining several times more than air bending.
+<b>Stretch forming</b> superimposes tension so the whole section is plastic, nearly eliminating
+springback, and is why aircraft skin panels are formed that way. And an <b>adaptive press brake</b>
+measures the angle mid-stroke and corrects, which is the only one of the four that copes with sheet
+whose yield varies from coil to coil.</p>
 
-    <div class="keybox">
-      <span class="cap">Condensed worked example — one brake bend</span>
-      <p style="margin:10px 0 4px">90° V-bend, mild steel TS = 450 MPa, t = 2 mm, w = 250 mm, R = 5 mm, die opening D = 25 mm:</p>
-      <p style="margin:4px 0;font-family:var(--mono);font-size:14px">
-      R/t = 2.5 ≥ 2 → K_ba = 0.5<br>
-      BA = 2π(90/360)(5 + 0.5×2) = (π/2)(6) = <strong style="color:var(--ember)">9.4 mm</strong> of blank consumed by the bend<br>
-      F = 1.33 × 450 × 250 × 2² / 25 = <strong style="color:var(--ember)">23.9 kN</strong> (≈ 2.4 tonnes) — a small brake job; specify press tonnage with margin over this instantaneous peak.</p>
-    </div>
+<h3>&#167;3 &middot; Force, and a question with two right answers</h3>
+<p>V-die bending force comes from treating the sheet as a beam loaded at the punch and supported at
+the die shoulders.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; bending force</span>
+<p>\[ F=\frac{K_{bf}\,\mathrm{TS}\,w\,t^{2}}{D} \]</p>
+<p>\( w \) is the length of the bend, \( D \) the die opening, and \( K_{bf}\approx1.33 \) for a
+V-die or 0.33 for a wiping die. The thickness appears squared and the die opening divides.</p></div>
+<p>For a 1 m bend in 3 mm steel of 340 MPa with the usual \( D=8t=24 \) mm opening,
+\( F=1.33(340)(1000)(9)/24=169.6\ \mathrm{kN} \) &mdash; 19.1 US tons per metre of bend, or
+5.8 tons per foot.</p>
+<p>Now the question worth being careful with: what happens when the sheet thickness doubles? If the
+die opening is left alone, force goes as \( t^2 \) and <b>quadruples</b> to 678 kN. But nobody
+leaves the die opening alone &mdash; it is chosen as a multiple of thickness, so \( D=8t \) grows
+too, and \( F\propto t^2/t=t \): the force merely <b>doubles</b>, to 339 kN. Both answers are
+correct and they differ by a factor of two, so the question is incomplete until someone says whether
+the tooling changed. It is also the reason a press brake's tonnage chart is published against die
+opening rather than against thickness alone.</p>
+<p>One more limit belongs here. Bend a material tighter than it can stretch and the outer fibre
+cracks. The usable minimum radius follows from the tensile reduction of area \( r \), in per cent:
+\( R_{\min}/t = 50/r - 1 \). A steel with \( r=40\% \) can be bent to \( R=0.25t \); one with
+\( r=20\% \) needs \( R=1.5t \). It is a ductility measurement doing duty as a forming
+specification.</p>
 
-    <h3>Misconceptions</h3>
-    <div class="miscon">
-      <article>
-        <div class="wrong">"Springback is a quality defect — good tooling eliminates it."</div>
-        <div class="right">Springback is Hooke's law; it cannot be eliminated, only compensated.
-        Family one: <em>overbend</em> past the target so recovery lands on it. Family two:
-        <em>bottoming/coining</em> — plastically setting the bend zone at the stroke's end.
-        Roll-forming lines compensate in the flower pattern's last passes. Fighting the physics
-        instead of budgeting for it is the actual defect.</div>
-      </article>
-      <article>
-        <div class="wrong">"Stronger sheet needs a tighter radius allowance, weaker sheet more."</div>
-        <div class="right">Backwards on both ends. Minimum bend radius is a <em>ductility</em>
-        limit (crack the outer fiber and no allowance saves you), while springback scales with
-        Y/E. A high-strength, low-ductility sheet needs a <em>larger</em> minimum radius and
-        <em>more</em> overbend — the two requirements stack, they don't trade.</div>
-      </article>
-    </div>
-
-    <h3>Kuwait floor</h3>
-    <p>Kirby Building Systems' panels, purlins, and trim are this lesson at line speed:
-    coil-fed roll forming and brake bending of structural sheet, with tooling that encodes
-    springback compensation for each gauge and grade. A gauge substitution or a coil with
-    off-spec yield strength shows up the same afternoon as out-of-tolerance profiles — the
-    production engineer's first sheet-metal lesson, learned here for free.</p>
-
-    <p class="small"><strong>Study from</strong> — Groover, Ch. 20; Kalpakjian &amp; Schmid,
-    sheet-forming chapter (minimum bend radius and springback data). Course-level videos are
-    linked on the MFG 254 course page.</p>
-  </div>
-</section>
-</section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<h3>&#167;4 &middot; Direction, sequence, and the tolerance the drawing should ask for</h3>
+<p>Rolled sheet is not isotropic. Rolling elongates grains and stretches inclusions into stringers
+along the rolling direction, so the material is weaker across those stringers than along them. A
+bend line <em>parallel</em> to the rolling direction stretches the outer fibre across the stringers
+and cracks at a radius the same material tolerates easily when the bend line runs
+<em>perpendicular</em>. The practical rule is that \( R_{\min} \) is roughly one and a half to two
+times larger for a bend line along the rolling direction, and the fix is free: rotate the part on
+the strip. For a part with bends on two axes, one of them will be unfavourable, and the layout has
+to decide which bend gets the larger radius &mdash; which is why Lesson 1's nesting decision cannot
+be made on utilisation alone.</p>
+<p>Two more shop realities shape the drawing. <b>Bend sequence</b> is constrained by tool access: a
+flange formed early can collide with the ram or the die on a later bend, so the order is planned
+backwards from the last bend, and a part that cannot be sequenced has to be redesigned rather than
+argued about. And a bend that stops partway along an edge tears at its ends unless a small
+<b>relief notch</b> is cut in the flat pattern first &mdash; a feature that costs nothing at the
+blanking stage and cannot be added afterwards.</p>
+<p>Finally, what to write on the drawing. A brake-formed angle holds about \( \pm0.5^{\circ} \)
+routinely and \( \pm0.25^{\circ} \) with in-process angle measurement; a developed flat length holds
+about \( \pm0.25 \) mm. Those figures are the process talking, and a drawing that asks for
+\( \pm0.1^{\circ} \) is asking for a different process, not for more care. Metrology &amp; Quality
+Control makes the same point from the measuring side &mdash; a tolerance is only meaningful against
+a process that can hold it and a gauge that can see it.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure"><p>This study guide carries one condensed worked example inside the <b>Lecture</b> tab (the boxed calculation). Full five-problem quiz depth arrives when this lesson is promoted.</p></div><div class="applied"><span class="tag">Applied case</span><p>This lesson's factory-floor application is written into the <b>Lecture</b> tab — anchor company: <b>Kirby Building Systems</b>.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Elastic and plastic behaviour, yield strength and the elastic modulus</b> (Materials Science
+I L4&ndash;L5, Strength of Materials L2) &mdash; springback is the elastic part of the strain coming
+back.</li>
+<li><b>Bending stress and the neutral axis of a beam</b> (Strength of Materials L4) &mdash; the same
+neutral surface, now permanently deformed.</li>
+<li><b>Reduction of area from the tensile test</b> (Materials Science I L5) &mdash; used directly as
+\( R_{\min}/t=50/r-1 \).</li>
+<li><b>Rolling and the anisotropy it creates</b> (Manufacturing Processes I L8) &mdash; why the bend
+line's direction matters.</li>
+<li><b>Blanking, clearance and strip layout</b> (Lesson 1) &mdash; the flat pattern and the relief
+notches are cut there.</li>
+<li><b>Achievable tolerance versus a specified one</b> (Metrology &amp; Quality Control L5 and L8)
+&mdash; what a drawing may reasonably ask of a press brake.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Neutral axis / \( K \)</td><td>0.33 for \( R<2t \), 0.50 for \( R\ge2t \)</td><td>Where the length is preserved; it migrates inward on tight bends.</td></tr>
+<tr><td>Bend allowance</td><td>\( 2\pi\frac{\alpha}{360}(R+Kt) \)</td><td>Arc length of the neutral axis: 11.78 mm for 90&#176;, R6, t3.</td></tr>
+<tr><td>Bend deduction</td><td>\( 2(R+t)\tan\frac{\alpha}{2}-\mathrm{BA} \)</td><td>Subtract one per bend from the outside dimensions.</td></tr>
+<tr><td>Springback</td><td>\( \frac{R_i}{R_f}=4x^3-3x+1 \), \( x=\frac{R_iY}{Et} \)</td><td>Elastic recovery; grows with \( Y/E \) and with \( R/t \).</td></tr>
+<tr><td>\( Y/E \)</td><td>1.21, 3.38, 3.99 \( \times10^{-3} \)</td><td>Mild steel, high-strength steel, 6061-T6 &mdash; the correct ranking.</td></tr>
+<tr><td>Overbend</td><td>\( \alpha/(R_i/R_f) \)</td><td>93.4&#176; to land on 90&#176; in mild steel at \( R/t=10 \).</td></tr>
+<tr><td>Bottoming / coining</td><td>higher force, less springback</td><td>Plastically set the bend zone instead of predicting its recovery.</td></tr>
+<tr><td>Bending force</td><td>\( K_{bf}\mathrm{TS}\,wt^2/D \), \( K_{bf}=1.33 \) V-die</td><td>169.6 kN/m at t3, D24; quadruples or doubles on \( 2t \) depending on \( D \).</td></tr>
+<tr><td>Minimum bend radius</td><td>\( R_{\min}/t=50/r-1 \)</td><td>Ductility read off the tensile test as a forming limit.</td></tr>
+<tr><td>Bend-line direction</td><td>\( R_{\min} \) 1.5&ndash;2&#215; along rolling</td><td>Rotate the part on the strip before enlarging the radius.</td></tr>
+<tr><td>Brake tolerance</td><td>\( \pm0.5^{\circ} \), \( \pm0.25 \) mm flat</td><td>What the process holds; tighter needs a different process.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Develop the flat blank</b></p>
+<p><b>Problem.</b> A U-channel is formed from 3 mm sheet with two 90&#176; bends at an inside radius
+of 6 mm. Its outside dimensions are 50, 80 and 50 mm. Find the bend allowance, the bend deduction
+and the flat blank length. Then find the error if \( K=0.33 \) had been used instead, and give the
+bend allowance for the same geometry stated as \( R=0.25 \) in in 0.125 in sheet.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( R/t=6/3=2 \), which is not less than 2, so
+\( K=0.50 \).</p>
+<p>(2) \( \mathrm{BA}=2\pi\frac{90}{360}(6+0.5\times3)=\frac{\pi}{2}(7.5)
+=11.78\ \mathrm{mm} \).</p>
+<p>(3) Outside setback \( =(R+t)\tan45^{\circ}=(6+3)(1)=9.0 \) mm, so
+\( \mathrm{BD}=2(9.0)-11.78=6.22\ \mathrm{mm} \).</p>
+<p>(4) Flat length \( =(50+80+50)-2(6.22)=180-12.44=167.56\ \mathrm{mm} \).</p>
+<p>(5) With \( K=0.33 \): \( \mathrm{BA}=\frac{\pi}{2}(6+0.99)=10.98 \) mm,
+\( \mathrm{BD}=18-10.98=7.02 \) mm, flat \( =180-14.04=165.96 \) mm &mdash; <b>1.60 mm short</b>.</p>
+<p>(6) In inches: \( R/t=0.25/0.125=2 \), so \( K=0.50 \) again and
+\( \mathrm{BA}=\frac{\pi}{2}(0.25+0.0625)=0.4909\ \mathrm{in} \), which is 12.47 mm &mdash; the same
+bend, since \( 0.25 \) in is 6.35 mm rather than 6.00.</p>
+<p><b>Answer:</b> BA 11.78 mm, BD 6.22 mm, flat 167.56 mm; using \( K=0.33 \) makes the blank
+1.60 mm short; the inch geometry gives BA 0.4909 in.
+<b>Sanity check:</b> the flat is shorter than the sum of the outside dimensions and longer than the
+sum of the inside ones, which is the only sensible place for it &mdash; the corner material has to
+go somewhere. Note how the 1.60 mm error hides: both bends are the right angle, both legs are the
+right length, and only the overall developed length is wrong, so it survives every check except
+measuring the finished part end to end.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Three materials, one bend</b></p>
+<p><b>Problem.</b> A 90&#176; bend is formed at \( R_i/t=10 \) in three materials: mild steel
+(\( Y=250 \) MPa, \( E=207 \) GPa), high-strength steel (\( Y=700 \) MPa, \( E=207 \) GPa) and
+aluminium 6061-T6 (\( Y=275 \) MPa, \( E=69 \) GPa). Find \( Y/E \) and the springback in degrees
+for each, rank them, and give the overbend angle needed for the mild steel. Explain why the ranking
+is not the ranking by yield strength.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1)
+\( Y/E \): \( 250/207000=1.21\times10^{-3} \); \( 700/207000=3.38\times10^{-3} \);
+\( 275/69000=3.99\times10^{-3} \).</p>
+<p>(2) With \( x=(R_i/t)(Y/E) \) and
+\( R_i/R_f=4x^3-3x+1 \):</p>
+<p>(3) Mild steel: \( x=10(1.208\times10^{-3})=0.01208 \), so
+\( R_i/R_f=4(1.76\times10^{-6})-0.03623+1=0.9638 \) and the bend opens by
+\( 90(1-0.9638)=3.26^{\circ} \).</p>
+<p>(4) High-strength steel: \( x=0.03382 \), \( R_i/R_f=0.8987 \), springback
+\( 9.12^{\circ} \).</p>
+<p>(5) Aluminium: \( x=0.03986 \), \( R_i/R_f=0.8807 \), springback \( 10.74^{\circ} \).</p>
+<p>(6) Ranking, least to most: mild steel, high-strength steel, aluminium. By yield strength the
+ranking would be mild steel, aluminium, high-strength steel &mdash; aluminium and the
+high-strength steel swap places, because aluminium's modulus is a third of steel's and the governing
+group is \( Y/E \), not \( Y \).</p>
+<p>(7) Overbend for mild steel: form to \( 90/0.9638=93.38^{\circ} \), which recovers to
+\( 93.38\times0.9638=90.0^{\circ} \).</p>
+<p><b>Answer:</b> \( Y/E \) = 1.21, 3.38, 3.99 \( \times10^{-3} \); springback 3.26&#176;,
+9.12&#176; and 10.74&#176;; overbend the mild steel to 93.38&#176;.
+<b>Sanity check:</b> a material that yields late and springs back stiffly recovers little, and both
+halves of that sentence carry equal weight &mdash; which is exactly why the aluminium, with the
+lowest strength of the two non-mild materials, springs back the most. Note the practical
+consequence: a press-brake program written for mild steel and run on 6061-T6 will produce bends
+about 7&#176; open, and no amount of care at the machine will fix it without changing the target
+angle.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Tonnage, and a question with two right answers</b></p>
+<p><b>Problem.</b> A 1 m long 90&#176; bend is air-formed in 3 mm steel of \( \mathrm{TS}=340 \) MPa
+in a V-die opened to \( 8t \), with \( K_{bf}=1.33 \). Find the force in kilonewtons, in US tons per
+metre and in US tons per foot. Then find the force if the thickness doubles to 6 mm, (a) with the
+die opening unchanged and (b) with the die opening also scaled to \( 8t \), and say which answer a
+press-brake tonnage chart is built around.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( D=8t=24\ \mathrm{mm} \), so
+\( F=\dfrac{1.33(340)(1000)(3)^2}{24}=\dfrac{1.33(340)(9000)}{24}
+=169{,}575\ \mathrm{N}=169.6\ \mathrm{kN} \).</p>
+<p>(2) \( 169{,}575/4.4482=38{,}122\ \mathrm{lbf}=19.06 \) US tons per metre, which is
+\( 19.06\times0.3048=5.81 \) US tons per foot.</p>
+<p>(3) (a) Die opening fixed at 24 mm: \( F\propto t^2 \), so
+\( F=1.33(340)(1000)(36)/24=678{,}300\ \mathrm{N}=678.3\ \mathrm{kN} \) &mdash; four times.</p>
+<p>(4) (b) Die opening scaled to \( 8t=48 \) mm:
+\( F=1.33(340)(1000)(36)/48=339{,}150\ \mathrm{N}=339.2\ \mathrm{kN} \) &mdash; twice, because
+\( F\propto t^2/D \) and \( D\propto t \) leaves \( F\propto t \).</p>
+<p>(5) A tonnage chart is published against die opening precisely because of this: the answer is
+not determined by the material and thickness alone.</p>
+<p><b>Answer:</b> 169.6 kN, 19.06 US tons per metre, 5.81 per foot; doubling the thickness gives
+678.3 kN at a fixed die opening and 339.2 kN with the opening scaled &mdash; a factor of four or of
+two, depending on the tooling.
+<b>Sanity check:</b> both answers are right and they differ by a factor of two, so the question as
+usually asked is under-specified. The physical reason is worth holding: a wider die opening is a
+longer beam span, and a longer span needs less force for the same bend &mdash; at the price of a
+larger formed radius, which then increases springback by &#167;2's relation. Nothing in sheet
+forming is adjusted in isolation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The flat blank for a bent part is developed from</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the sum of the outside dimensions</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the sum of the inside dimensions</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>the arc length of the neutral axis through each bend, added to the flat legs</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the sum of the legs plus twice the thickness per bend</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The neutral surface is the one whose length does not change, so the blank must
+carry its arc length: \( \mathrm{BA}=2\pi\frac{\alpha}{360}(R+Kt) \). Expressed against outside
+dimensions this becomes the bend deduction, which is what a draughtsman usually subtracts &mdash;
+6.22 mm per bend for a 90&#176; bend at R6 in 3 mm sheet.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The factor \( K \) in the bend allowance is smaller for tight bends because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the material work-hardens</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the neutral axis migrates toward the inside surface</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the bend angle is measured differently</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the radius is harder to measure</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The outer fibre thins more than the inner fibre thickens, so the surface of
+unchanged length moves inward &mdash; roughly 0.33t from the inside for \( R<2t \) against 0.50t for
+gentler bends. Using 0.50 where 0.33 belongs, or the reverse, puts every blank out by a millimetre
+or two while leaving all the angles and legs correct.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Springback is governed by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>yield strength alone</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the ratio \( Y/E \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>hardness</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the bend angle alone</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The springback relation depends on the material only through
+\( x=(R_i/t)(Y/E) \). A stronger material springs back more and a stiffer one springs back less,
+with equal weight &mdash; which is why 6061-T6 aluminium, at 275 MPa, springs back further than a
+700 MPa steel: its modulus is a third as large.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>At \( R/t = 10 \), a 90&#176; bend in mild steel springs back about 3.3&#176;. The
+same bend in aluminium 6061-T6 springs back about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1.1&#176;</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>3.3&#176;</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>10.7&#176;</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>27&#176;</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( Y/E \) is \( 3.99\times10^{-3} \) against mild steel's
+\( 1.21\times10^{-3} \), roughly 3.3 times, and the springback follows: 10.74&#176;. A press-brake
+program written for mild steel and run on 6061-T6 leaves every bend about 7&#176; open, and care at
+the machine cannot recover it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Springback increases with \( R/t \). The practical consequence is that</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>tight bottomed bends hold their angle better than wide air bends</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>wide bends are more accurate</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the effect disappears above \( R/t = 5 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>thicker sheet always springs back more</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( x=(R_i/t)(Y/E) \), so a wide air bend at \( R/t=20 \) recovers 6.5&#176; in
+mild steel where a tight bend at \( R/t=2 \) barely moves. It is the main reason bottoming and
+coining are used where angle accuracy matters, despite costing several times the force.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>V-die bending force is \( F=K_{bf}\mathrm{TS}\,wt^{2}/D \). If the sheet thickness
+doubles and the die opening is scaled to \( 8t \) as usual, the force</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>quadruples</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>doubles</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>halves</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F\propto t^2/D \), and scaling \( D\propto t \) leaves \( F\propto t \), so
+169.6 kN becomes 339.2 kN. Only if the die opening is left unchanged does the force quadruple to
+678.3 kN. Both answers are correct and the question is incomplete without the tooling &mdash; which
+is why tonnage charts are published against die opening.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A steel with a tensile reduction of area of 20% has a minimum bend radius of
+about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 0.25t \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 1.5t \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 2.5t \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 5t \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( R_{\min}/t=50/r-1=50/20-1=1.5 \). It is a ductility measurement from the
+tensile test doing duty as a forming specification. A more ductile steel at \( r=40\% \) manages
+\( 0.25t \), and the same material bent along the rolling direction needs one and a half to two
+times more.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A bend line running parallel to the rolling direction</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is preferred, since the grain supports the bend</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>needs a larger minimum radius, because the outer fibre stretches across the inclusion stringers</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>makes no difference in modern steels</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>reduces springback</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Rolling stretches inclusions into stringers along the rolling direction, and
+bending parallel to them pulls the outer fibre across them, so cracking starts at a radius the same
+sheet tolerates easily the other way round. The fix costs nothing &mdash; rotate the part on the
+strip &mdash; which is why the layout of Lesson 1 cannot be settled on utilisation alone.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the panel run that changed material and not the program.</b> A
+fabricator formed roof and wall panels on a press brake to a program developed and proven on mild
+steel. A contract specified the same profiles in a high-strength grade, at the same thickness and
+the same nominal dimensions, and the program was reused unchanged on the reasonable-sounding grounds
+that the geometry had not moved. The first panels came off with every bend several degrees open, the
+profiles would not interlock, and the batch was scrapped.</p>
+<p>Nothing had gone wrong at the machine. Springback depends on the material only through
+\( Y/E \), and the new grade had the same modulus as mild steel with nearly three times the yield,
+so at the profile's \( R/t \) the bends recovered roughly three times as far &mdash; about
+9&#176; instead of 3&#176;. The program's overbend was compensating for the old material's recovery,
+and against the new one it was simply the wrong number. Worse, the substitution was invisible on the
+drawing: the geometry, thickness and tooling were all unchanged, and the only thing that moved was a
+material property nobody had been asked to check.</p>
+<p>Two practices follow. Treat a material change as a tooling change: the overbend is part of the
+process specification, not a property of the part, and it must be re-derived from \( Y/E \) and
+re-proven on a sample before a run. And where a shop forms several grades on one tool, prefer a
+strategy that does not depend on knowing the material &mdash; bottoming, or an adaptive brake that
+measures the angle mid-stroke &mdash; because coil-to-coil variation in yield within a single grade
+is enough to move a bend by a fraction of a degree even when nothing has been substituted.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(8.702e+04\\ \\mathrm{psi}\\)", "\\(0.4137\\ \\mathrm{psi}\\)", "\\(8702\\ \\mathrm{psi}\\)", "\\(870.2\\ \\mathrm{psi}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(60 \\times 145 = 8702\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(7252\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.03447\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(725.2\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(72.52\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(5 \times 145 = 725.2\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kN}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2248\\ \\mathrm{lbf}\\)", "\\(0.4448\\ \\mathrm{lbf}\\)", "\\(2.248e+05\\ \\mathrm{lbf}\\)", "\\(2.248e+04\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kN} = 224.8\\ \\mathrm{lbf}\\): \\(100 \\times 224.8 = 2.248e+04\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kN}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(179.8\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.03559\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.798e+04\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kN} = 224.8\ \mathrm{lbf}\): \(8 \times 224.8 = 1798\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
   
 </div>
 
@@ -201,7 +388,7 @@
 <footer class="nx-foot"><div class="in">
   <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
   <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
-  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
   <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
 </div></footer>
 <script src="../../../../assets/nx/nexus.js?v=dc57f9c331"></script>

@@ -76,7 +76,7 @@
   <p class="eyebrow">MFG 254 · Lesson 10 of 11 · Year 2 · Semester 2</p>
   <h1>Additive manufacturing processes</h1>
   <p class="sub">PBF, DED, material extrusion, and binder jetting with their materials and defect signatures. Post-processing realities. Where AM fits a maintenance organization: fixtures and unobtainable spares.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/10">Mark as complete</button>
@@ -84,34 +84,270 @@
 </div>
 <div class="src-strip"><span class="t">SOURCED FROM</span>
   <b>Groover, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</b></div>
-<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/6i_iJSMcJmY" title="Comparing 3D Printing Technologies: SLS, SLA &amp; DMLS" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Comparing 3D Printing Technologies: SLS, SLA &amp; DMLS <span class="src">TforDesign</span></figcaption></figure></div><div class="vh-bar"><span class="n">Comparing 3D Printing Technologies: SLS, SLA &amp; DMLS</span><span class="c">TFORDESIGN</span></div></div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">Lecture</button>
   <button data-tab="t-foundations">Foundations</button>
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Rank PBF, FDM, binder jetting by surface finish and by strength honesty.</li><li>What post-processing does each AM family assume?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
-  <p class="small">Course context: The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics processing, packaging operations, and additive — Kirby's panel lines and KDD's filling halls as the anchors.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Rank PBF, FDM, binder jetting by surface finish and by strength honesty.</li><li>What post-processing does each AM family assume?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Theoretical staircase roughness in micrometres against the angle a surface makes with the build plate, for three layer heights. At a 45 degree surface a 200 micrometre layer gives 35 micrometres of roughness, a 50 micrometre layer gives 8.8 and a 20 micrometre layer gives 3.5. All three fall to zero at a vertical wall, where there are no steps at all."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Staircase roughness is the layer height, projected onto the surface</text><path d="M95 87 L97 87.1 L99.1 87.2 L101.2 87.3 L103.2 87.5 L105.2 87.6 L107.3 87.8 L109.3 87.9 L111.4 88.1 L113.4 88.3 L115.5 88.5 L117.6 88.7 L119.6 88.9 L121.7 89.1 L123.7 89.3 L125.8 89.6 L127.8 89.8 L129.8 90.1 L131.9 90.3 L133.9 90.6 L136 90.9 L138.1 91.2 L140.1 91.5 L142.2 91.8 L144.2 92.1 L146.2 92.4 L148.3 92.7 L150.3 93.1 L152.4 93.4 L154.4 93.8 L156.5 94.2 L158.6 94.5 L160.6 94.9 L162.6 95.3 L164.7 95.7 L166.8 96.1 L168.8 96.5 L170.9 97 L172.9 97.4 L174.9 97.8 L177 98.3 L179.1 98.7 L181.1 99.2 L183.2 99.7 L185.2 100.2 L187.2 100.7 L189.3 101.2 L191.4 101.7 L193.4 102.2 L195.4 102.7 L197.5 103.2 L199.6 103.8 L201.6 104.3 L203.6 104.9 L205.7 105.5 L207.8 106 L209.8 106.6 L211.9 107.2 L213.9 107.8 L215.9 108.4 L218 109 L220.1 109.6 L222.1 110.3 L224.2 110.9 L226.2 111.5 L228.2 112.2 L230.3 112.8 L232.3 113.5 L234.4 114.2 L236.5 114.9 L238.5 115.5 L240.5 116.2 L242.6 116.9 L244.7 117.7 L246.7 118.4 L248.8 119.1 L250.8 119.8 L252.8 120.6 L254.9 121.3 L257 122.1 L259 122.8 L261 123.6 L263.1 124.4 L265.1 125.2 L267.2 125.9 L269.2 126.7 L271.3 127.5 L273.4 128.3 L275.4 129.2 L277.4 130 L279.5 130.8 L281.5 131.6 L283.6 132.5 L285.6 133.3 L287.7 134.2 L289.8 135.1 L291.8 135.9 L293.9 136.8 L295.9 137.7 L298 138.6 L300 139.4 L302.1 140.3 L304.1 141.3 L306.1 142.2 L308.2 143.1 L310.2 144 L312.3 144.9 L314.4 145.9 L316.4 146.8 L318.5 147.7 L320.5 148.7 L322.5 149.6 L324.6 150.6 L326.6 151.6 L328.7 152.6 L330.8 153.5 L332.8 154.5 L334.9 155.5 L336.9 156.5 L339 157.5 L341 158.5 L343 159.5 L345.1 160.5 L347.1 161.5 L349.2 162.6 L351.2 163.6 L353.3 164.6 L355.4 165.7 L357.4 166.7 L359.4 167.7 L361.5 168.8 L363.5 169.9 L365.6 170.9 L367.7 172 L369.7 173.1 L371.8 174.1 L373.8 175.2 L375.9 176.3 L377.9 177.4 L380 178.5 L382 179.6 L384.1 180.7 L386.1 181.8 L388.2 182.9 L390.2 184 L392.2 185.1 L394.3 186.2 L396.4 187.3 L398.4 188.4 L400.4 189.6 L402.5 190.7 L404.6 191.8 L406.6 193 L408.6 194.1 L410.7 195.2 L412.8 196.4 L414.8 197.5 L416.8 198.7 L418.9 199.8 L420.9 201 L423 202.2 L425 203.3 L427.1 204.5 L429.2 205.7 L431.2 206.8 L433.2 208 L435.3 209.2 L437.3 210.3 L439.4 211.5 L441.5 212.7 L443.5 213.9 L445.6 215.1 L447.6 216.3 L449.7 217.4 L451.7 218.6 L453.8 219.8 L455.8 221 L457.8 222.2 L459.9 223.4 L461.9 224.6 L464 225.8 L466 227 L468.1 228.2 L470.2 229.4 L472.2 230.6 L474.2 231.8 L476.3 233 L478.3 234.2 L480.4 235.5 L482.5 236.7 L484.5 237.9 L486.6 239.1 L488.6 240.3 L490.7 241.5 L492.7 242.7 L494.8 243.9 L496.8 245.1 L498.9 246.4 L500.9 247.6 L502.9 248.8 L505 250" fill="none" stroke="#9c2f2f" stroke-width="2.4"/><path d="M95 209.2 L97 209.3 L99.1 209.3 L101.2 209.3 L103.2 209.4 L105.2 209.4 L107.3 209.4 L109.3 209.5 L111.4 209.5 L113.4 209.6 L115.5 209.6 L117.6 209.7 L119.6 209.7 L121.7 209.8 L123.7 209.8 L125.8 209.9 L127.8 210 L129.8 210 L131.9 210.1 L133.9 210.2 L136 210.2 L138.1 210.3 L140.1 210.4 L142.2 210.4 L144.2 210.5 L146.2 210.6 L148.3 210.7 L150.3 210.8 L152.4 210.9 L154.4 210.9 L156.5 211 L158.6 211.1 L160.6 211.2 L162.6 211.3 L164.7 211.4 L166.8 211.5 L168.8 211.6 L170.9 211.7 L172.9 211.8 L174.9 212 L177 212.1 L179.1 212.2 L181.1 212.3 L183.2 212.4 L185.2 212.5 L187.2 212.7 L189.3 212.8 L191.4 212.9 L193.4 213 L195.4 213.2 L197.5 213.3 L199.6 213.4 L201.6 213.6 L203.6 213.7 L205.7 213.9 L207.8 214 L209.8 214.2 L211.9 214.3 L213.9 214.4 L215.9 214.6 L218 214.8 L220.1 214.9 L222.1 215.1 L224.2 215.2 L226.2 215.4 L228.2 215.5 L230.3 215.7 L232.3 215.9 L234.4 216 L236.5 216.2 L238.5 216.4 L240.5 216.6 L242.6 216.7 L244.7 216.9 L246.7 217.1 L248.8 217.3 L250.8 217.5 L252.8 217.6 L254.9 217.8 L257 218 L259 218.2 L261 218.4 L263.1 218.6 L265.1 218.8 L267.2 219 L269.2 219.2 L271.3 219.4 L273.4 219.6 L275.4 219.8 L277.4 220 L279.5 220.2 L281.5 220.4 L283.6 220.6 L285.6 220.8 L287.7 221 L289.8 221.3 L291.8 221.5 L293.9 221.7 L295.9 221.9 L298 222.1 L300 222.4 L302.1 222.6 L304.1 222.8 L306.1 223 L308.2 223.3 L310.2 223.5 L312.3 223.7 L314.4 224 L316.4 224.2 L318.5 224.4 L320.5 224.7 L322.5 224.9 L324.6 225.2 L326.6 225.4 L328.7 225.6 L330.8 225.9 L332.8 226.1 L334.9 226.4 L336.9 226.6 L339 226.9 L341 227.1 L343 227.4 L345.1 227.6 L347.1 227.9 L349.2 228.1 L351.2 228.4 L353.3 228.7 L355.4 228.9 L357.4 229.2 L359.4 229.4 L361.5 229.7 L363.5 230 L365.6 230.2 L367.7 230.5 L369.7 230.8 L371.8 231 L373.8 231.3 L375.9 231.6 L377.9 231.8 L380 232.1 L382 232.4 L384.1 232.7 L386.1 232.9 L388.2 233.2 L390.2 233.5 L392.2 233.8 L394.3 234 L396.4 234.3 L398.4 234.6 L400.4 234.9 L402.5 235.2 L404.6 235.5 L406.6 235.7 L408.6 236 L410.7 236.3 L412.8 236.6 L414.8 236.9 L416.8 237.2 L418.9 237.5 L420.9 237.7 L423 238 L425 238.3 L427.1 238.6 L429.2 238.9 L431.2 239.2 L433.2 239.5 L435.3 239.8 L437.3 240.1 L439.4 240.4 L441.5 240.7 L443.5 241 L445.6 241.3 L447.6 241.6 L449.7 241.9 L451.7 242.2 L453.8 242.5 L455.8 242.8 L457.8 243.1 L459.9 243.4 L461.9 243.7 L464 244 L466 244.3 L468.1 244.6 L470.2 244.9 L472.2 245.2 L474.2 245.5 L476.3 245.8 L478.3 246.1 L480.4 246.4 L482.5 246.7 L484.5 247 L486.6 247.3 L488.6 247.6 L490.7 247.9 L492.7 248.2 L494.8 248.5 L496.8 248.8 L498.9 249.1 L500.9 249.4 L502.9 249.7 L505 250" fill="none" stroke="#c2820f" stroke-width="2.4"/><path d="M95 233.7 L97 233.7 L99.1 233.7 L101.2 233.7 L103.2 233.7 L105.2 233.8 L107.3 233.8 L109.3 233.8 L111.4 233.8 L113.4 233.8 L115.5 233.8 L117.6 233.9 L119.6 233.9 L121.7 233.9 L123.7 233.9 L125.8 234 L127.8 234 L129.8 234 L131.9 234 L133.9 234.1 L136 234.1 L138.1 234.1 L140.1 234.1 L142.2 234.2 L144.2 234.2 L146.2 234.2 L148.3 234.3 L150.3 234.3 L152.4 234.3 L154.4 234.4 L156.5 234.4 L158.6 234.5 L160.6 234.5 L162.6 234.5 L164.7 234.6 L166.8 234.6 L168.8 234.7 L170.9 234.7 L172.9 234.7 L174.9 234.8 L177 234.8 L179.1 234.9 L181.1 234.9 L183.2 235 L185.2 235 L187.2 235.1 L189.3 235.1 L191.4 235.2 L193.4 235.2 L195.4 235.3 L197.5 235.3 L199.6 235.4 L201.6 235.4 L203.6 235.5 L205.7 235.5 L207.8 235.6 L209.8 235.7 L211.9 235.7 L213.9 235.8 L215.9 235.8 L218 235.9 L220.1 236 L222.1 236 L224.2 236.1 L226.2 236.2 L228.2 236.2 L230.3 236.3 L232.3 236.4 L234.4 236.4 L236.5 236.5 L238.5 236.6 L240.5 236.6 L242.6 236.7 L244.7 236.8 L246.7 236.8 L248.8 236.9 L250.8 237 L252.8 237.1 L254.9 237.1 L257 237.2 L259 237.3 L261 237.4 L263.1 237.4 L265.1 237.5 L267.2 237.6 L269.2 237.7 L271.3 237.8 L273.4 237.8 L275.4 237.9 L277.4 238 L279.5 238.1 L281.5 238.2 L283.6 238.2 L285.6 238.3 L287.7 238.4 L289.8 238.5 L291.8 238.6 L293.9 238.7 L295.9 238.8 L298 238.9 L300 238.9 L302.1 239 L304.1 239.1 L306.1 239.2 L308.2 239.3 L310.2 239.4 L312.3 239.5 L314.4 239.6 L316.4 239.7 L318.5 239.8 L320.5 239.9 L322.5 240 L324.6 240.1 L326.6 240.2 L328.7 240.3 L330.8 240.4 L332.8 240.5 L334.9 240.5 L336.9 240.6 L339 240.7 L341 240.8 L343 241 L345.1 241.1 L347.1 241.2 L349.2 241.3 L351.2 241.4 L353.3 241.5 L355.4 241.6 L357.4 241.7 L359.4 241.8 L361.5 241.9 L363.5 242 L365.6 242.1 L367.7 242.2 L369.7 242.3 L371.8 242.4 L373.8 242.5 L375.9 242.6 L377.9 242.7 L380 242.8 L382 243 L384.1 243.1 L386.1 243.2 L388.2 243.3 L390.2 243.4 L392.2 243.5 L394.3 243.6 L396.4 243.7 L398.4 243.8 L400.4 244 L402.5 244.1 L404.6 244.2 L406.6 244.3 L408.6 244.4 L410.7 244.5 L412.8 244.6 L414.8 244.8 L416.8 244.9 L418.9 245 L420.9 245.1 L423 245.2 L425 245.3 L427.1 245.4 L429.2 245.6 L431.2 245.7 L433.2 245.8 L435.3 245.9 L437.3 246 L439.4 246.2 L441.5 246.3 L443.5 246.4 L445.6 246.5 L447.6 246.6 L449.7 246.7 L451.7 246.9 L453.8 247 L455.8 247.1 L457.8 247.2 L459.9 247.3 L461.9 247.5 L464 247.6 L466 247.7 L468.1 247.8 L470.2 247.9 L472.2 248.1 L474.2 248.2 L476.3 248.3 L478.3 248.4 L480.4 248.5 L482.5 248.7 L484.5 248.8 L486.6 248.9 L488.6 249 L490.7 249.2 L492.7 249.3 L494.8 249.4 L496.8 249.5 L498.9 249.6 L500.9 249.8 L502.9 249.9 L505 250" fill="none" stroke="#1f7a5c" stroke-width="2.4"/><path d="M287.9 250 L287.9 134.3" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><circle cx="287.9" cy="134.3" r="4.5" fill="#9c2f2f"/><circle cx="287.9" cy="221.1" r="4.5" fill="#c2820f"/><circle cx="287.9" cy="238.4" r="4.5" fill="#1f7a5c"/><text x="500" y="92" text-anchor="end" fill="#9c2f2f" font-size="11">200 &#181;m &mdash; material extrusion</text><text x="500" y="110" text-anchor="end" fill="#c2820f" font-size="11">50 &#181;m &mdash; powder bed fusion</text><text x="500" y="128" text-anchor="end" fill="#1f7a5c" font-size="11">20 &#181;m &mdash; fine powder bed</text><text x="185" y="170" text-anchor="middle" fill="#14181F" font-size="11">at 45&#176;: 35.4 / 8.8 / 3.5 &#181;m</text><path d="M95 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 70" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M119.1 250 L119.1 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="119.1" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M215.6 250 L215.6 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="215.6" y="266" text-anchor="middle" fill="#5B6672" font-size="11">30</text><path d="M312.1 250 L312.1 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="312.1" y="266" text-anchor="middle" fill="#5B6672" font-size="11">50</text><path d="M408.5 250 L408.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="408.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">70</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">90</text><path d="M91 250 L95 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M91 217.3 L95 217.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="221.3" text-anchor="end" fill="#5B6672" font-size="11">10</text><path d="M91 184.5 L95 184.5" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="188.5" text-anchor="end" fill="#5B6672" font-size="11">20</text><path d="M91 151.8 L95 151.8" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="155.8" text-anchor="end" fill="#5B6672" font-size="11">30</text><path d="M91 119.1 L95 119.1" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="123.1" text-anchor="end" fill="#5B6672" font-size="11">40</text><path d="M91 86.4 L95 86.4" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="90.4" text-anchor="end" fill="#5B6672" font-size="11">50</text><text x="300" y="288" text-anchor="middle" fill="#14181F" font-size="12">surface angle from the build plate (degrees)</text><text x="26" y="160" font-size="12" fill="#14181F" transform="rotate(-90 26 160)" text-anchor="middle">staircase Ra (&#181;m)</text></svg><figcaption>A layered process approximates a sloped surface with steps, and the deviation measured normal to the intended surface is \( h\cos\theta \) peak to valley &mdash; a sawtooth, so \( R_a=h\cos\theta/4 \). Layer height therefore sets surface finish directly and linearly: at a 45&#176; surface, 200 &#181;m layers give 35 &#181;m, 50 &#181;m layers give 8.8 and 20 &#181;m layers give 3.5. Both ends of the curve are degenerate &mdash; a vertical wall has no steps and a flat top is a single layer &mdash; and on a real part the as-built roughness is worse than this, because partly melted powder and the extrusion bead's own shape add to the geometry.</figcaption></figure>
+<h3>&#167;1 &middot; Four families, and what actually separates them</h3>
+<p>Every additive process builds by adding material in layers. What distinguishes them is how the
+material is placed and how it is bonded, and those two choices decide everything else &mdash;
+resolution, density, anisotropy, residual stress and what has to happen after the build.</p>
+<p><b>Powder bed fusion</b> spreads a thin powder layer and melts selected regions with a laser or
+electron beam. It reaches full density and near-wrought properties in metals, which is why it makes
+functional parts; the melt pool also leaves steep thermal gradients, so parts carry substantial
+residual stress and need supports that anchor them against it. <b>Directed energy deposition</b>
+feeds powder or wire into a melt pool on a moving head, so it builds fast and large, adds material
+to existing parts, and resolves badly &mdash; it is a near-net process that assumes machining
+afterwards. <b>Material extrusion</b> lays down a thermoplastic bead; it is cheap and accessible,
+and each layer bonds to the last by a weld rather than by being bulk material. <b>Binder jetting</b>
+prints liquid binder onto powder, so there is no melt pool at all: no residual stress, no supports,
+but a fragile green part that must be debound and sintered, with the shrinkage that implies.</p>
+<p>Those distinctions explain a ranking that surprises people, because <b>the best process for
+surface finish is not the best for strength</b>. Binder jetting uses the finest powder and never
+melts it, so it gives the smoothest as-built surfaces; powder bed fusion is coarser as-built because
+partly melted particles stick to the skin, but it is the only family that reaches near-wrought
+strength; and material extrusion is worst on both counts. Ranked on finish it is binder jetting,
+then powder bed fusion, then extrusion; ranked on strength honesty it is powder bed fusion, then
+binder jetting, then extrusion by a long way.</p>
+
+<h3>&#167;2 &middot; Layer height buys two things at once, in opposite directions</h3>
+<p>Layer height is the one parameter every additive process shares, and it sets both the surface and
+the schedule.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; staircase roughness</span>
+<p>\[ R_a=\frac{h\cos\theta}{4} \]</p>
+<p>\( h \) is the layer height and \( \theta \) the surface's angle to the build plate. The steps
+form a sawtooth of peak-to-valley \( h\cos\theta \) measured normal to the intended surface, and a
+sawtooth's \( R_a \) is a quarter of its peak-to-valley.</p></div>
+<p>At a 45&#176; surface: 200 &#181;m layers give \( R_a=35\ \mu\mathrm{m} \), 50 &#181;m give 8.8,
+and 20 &#181;m give 3.5. Both ends of the curve are degenerate &mdash; a vertical wall has no steps
+and a flat top is a single layer &mdash; and the as-built roughness is always worse than the
+geometry predicts, because partly melted powder and the bead's own profile add to it.</p>
+<p>Build time runs the other way. Each layer costs a fixed recoat or travel time plus a scan time
+proportional to the area, so</p>
+<div class="keybox"><span class="tag">Key relation &mdash; build time</span>
+<p>\[ t=\frac{H}{h}\left(t_{\text{recoat}}+\frac{A_{\text{layer}}}{v\,\text{hatch}}\right) \]</p>
+<p>Everything is divided by the layer height, so time is inversely proportional to it while
+roughness is directly proportional.</p></div>
+<p>A 50 mm tall part with 4,000 mm&#178; of scanned area per layer, a laser at 800 mm/s on a
+0.11 mm hatch and 8 s of recoat, takes 45.5 s of scanning per layer. At \( h=50\ \mu\mathrm{m} \)
+that is 1,000 layers and <b>14.8 hours</b>; at \( h=100\ \mu\mathrm{m} \) it is 500 layers and
+<b>7.4 hours</b>. Doubling the layer height exactly halves the build and exactly doubles the
+staircase roughness &mdash; a clean trade, and the first decision on any build.</p>
+<p>The third property layer height does <em>not</em> fix is strength, and this is where honesty
+matters. Powder bed fusion in metal reaches 95&ndash;100% of wrought strength across the layers and
+85&ndash;95% along the build direction, closing to near-parity after hot isostatic pressing. Binder
+jetting after sintering reaches 90&ndash;97% density and is nearly isotropic. Material extrusion is
+different in kind: with a bulk polymer at 50 MPa, a printed part might reach 45 MPa in the plane of
+the layers and <b>15 MPa across them</b> &mdash; a factor of three, because the interlayer bond is a
+weld between beads that were never simultaneously molten. Orientation on the build plate is
+therefore a structural decision, not a packing one.</p>
+
+<h3>&#167;3 &middot; What each family assumes will happen afterwards</h3>
+<p>The commonest costing error in additive manufacturing is quoting the print. Post-processing is
+routinely 30 to 70% of a metal part's cost, and each family assumes a different chain of it.</p>
+<p><b>Powder bed fusion in metal</b> assumes: stress relief on the plate <em>before</em> cutting the
+part free, because releasing it first lets the residual stress warp it; separation from the plate by
+wire EDM or bandsaw; support removal, which is manual and often the single largest labour item; hot
+isostatic pressing if fatigue matters; machining of every feature with a real tolerance, since the
+process holds roughly \( \pm0.1 \) mm at best; a surface treatment; and internal inspection, usually
+computed tomography, because porosity cannot be seen.</p>
+<p><b>Powder bed fusion in polymer</b> assumes depowdering, bead blasting and often dyeing or
+sealing &mdash; but no supports, since the surrounding powder holds the part.
+<b>Material extrusion</b> assumes support removal and, if the surface matters, sanding or vapour
+smoothing. <b>Directed energy deposition</b> assumes machining, always. And <b>binder jetting</b>
+assumes the longest chain of all: depowdering a fragile green part, curing, debinding and
+sintering.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; designing for sinter shrinkage</span>
+<p>\[ L_{\text{green}}=\frac{L_{\text{final}}}{1-s} \]</p>
+<p>At \( s=18\% \) linear the green part is 1.22 times the finished size, and the volume shrinks by
+\( 1-(1-s)^{3}=45\% \). The shrinkage must be compensated in the model and it is not perfectly
+isotropic, which is what limits binder jetting's accuracy.</p></div>
+
+<h3>&#167;4 &middot; Where additive actually belongs in a plant</h3>
+<p>Additive manufacturing has near-zero tooling cost and a per-part cost that barely falls with
+quantity. Every process in this course so far has the opposite shape: expensive tooling, cheap
+parts. So the crossover sits at low quantities, and it is computable exactly as in Lesson 4.</p>
+<p>A bracket printed for 85 a part against one machined for 20 a part on a 3,000 fixture crosses at
+\( 3{,}000/(85-20)=46 \) parts. Below 46, print it; above, do not. That single number disposes of
+most of the enthusiasm and most of the scepticism at once.</p>
+<p>Two applications in a maintenance organisation clear that bar comfortably. The first is
+<b>fixtures, jigs, gauges and end-of-arm tooling</b>: quantity one, geometry bespoke to a machine
+that already exists, loads modest, and lead time the thing that actually matters. The second is
+<b>unobtainable spares</b>. When a part for out-of-production equipment has a twelve-week lead time
+and the plant loses 8,000 a day while it waits, printing it in five days saves 79 days &mdash;
+<b>632,000</b> &mdash; and the part could cost twenty times a conventional one without the
+arithmetic becoming close.</p>
+<p>Three cautions belong with that, and they are what separate a working programme from a press
+release. Reverse-engineering a legacy part needs its <em>material and heat treatment</em>
+identified, not just its geometry, and a scan gives only the second. A printed part in a
+pressure-containing or safety-critical duty needs qualification the plant may not be able to
+perform, which is Metrology &amp; Quality Control's problem in a new setting. And the anisotropy of
+\( \S2 \) must be oriented against the actual load &mdash; a spare printed in the convenient
+direction rather than the loaded one is a part that looks right and is three times weaker where it
+matters.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Rank PBF, FDM, binder jetting by surface finish and by strength honesty.</li><li>What post-processing does each AM family assume?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Melting, solidification and residual stress</b> (Materials Science I L7, Manufacturing
+Processes I L2) &mdash; a melt pool on a cold substrate is a casting problem in miniature.</li>
+<li><b>Sintering and powder consolidation</b> (Materials Science I L9) &mdash; what happens after
+binder jetting, and where the shrinkage comes from.</li>
+<li><b>Surface texture and \( R_a \)</b> (Metrology &amp; Quality Control L6) &mdash; the staircase
+is a computed profile, so its \( R_a \) follows from the geometry.</li>
+<li><b>Fixed-versus-variable cost crossover</b> (Lesson 4) &mdash; additive has the opposite cost
+shape to everything else in this course.</li>
+<li><b>Anisotropy and directional properties</b> (Lesson 2, Materials Science II L10) &mdash; a
+build direction is a grain direction by another name.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Powder bed fusion</td><td>melts a powder layer</td><td>Near-wrought strength; residual stress and supports.</td></tr>
+<tr><td>Directed energy deposition</td><td>melt pool on a moving head</td><td>Large parts, repair and cladding; always machined after.</td></tr>
+<tr><td>Material extrusion</td><td>a bead welded to the last</td><td>Cheap; interlayer strength is the weak axis.</td></tr>
+<tr><td>Binder jetting</td><td>binder onto powder, then sinter</td><td>No stress, no supports; 18% linear shrinkage.</td></tr>
+<tr><td>Staircase \( R_a \)</td><td>\( h\cos\theta/4 \)</td><td>35 / 8.8 / 3.5 &#181;m at 45&#176; for 200 / 50 / 20 &#181;m layers.</td></tr>
+<tr><td>Build time</td><td>\( \frac{H}{h}\big(t_{\rm recoat}+\frac{A}{v\,\text{hatch}}\big) \)</td><td>14.8 h at 50 &#181;m, 7.4 h at 100.</td></tr>
+<tr><td>The layer-height trade</td><td>time \( \propto1/h \), roughness \( \propto h \)</td><td>Doubling \( h \) exactly halves one and doubles the other.</td></tr>
+<tr><td>PBF anisotropy</td><td>95&ndash;100% XY, 85&ndash;95% Z</td><td>Closes toward parity after hot isostatic pressing.</td></tr>
+<tr><td>Extrusion anisotropy</td><td>45 MPa in plane, 15 MPa across</td><td>A factor of three &mdash; orientation is a structural decision.</td></tr>
+<tr><td>Sinter compensation</td><td>\( L_{\rm green}=L_{\rm final}/(1-s) \)</td><td>1.22&#215; at 18% linear; 45% by volume.</td></tr>
+<tr><td>Additive crossover</td><td>\( N^{*}=\text{tooling}/\Delta c \)</td><td>46 parts for the worked bracket.</td></tr>
+<tr><td>Spares case</td><td>79 days saved &#215; 8,000/day</td><td>632,000 &mdash; the part cost is not the variable that matters.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Choose the layer height</b></p>
+<p><b>Problem.</b> A part 50 mm tall is built with 4,000 mm&#178; of scanned area per layer, a laser
+at 800 mm/s on a 0.11 mm hatch spacing, and 8 s of recoat per layer. (a) Find the scan time per
+layer and the build time at 50 &#181;m and at 100 &#181;m layers. (b) Find the staircase roughness
+at a 45&#176; surface for each. (c) State the trade in one sentence, and say what the relation
+predicts for a vertical wall and why the real part will not match it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a1) Scan rate \( =v\times\text{hatch}=800(0.11)
+=88\ \mathrm{mm^2/s} \), so \( t_{\text{scan}}=4000/88=45.5\ \mathrm{s} \) per layer.</p>
+<p>(a2) At \( h=50\ \mu\mathrm{m} \): \( 50/0.05=1000 \) layers, each costing
+\( 8+45.5=53.5\ \mathrm{s} \), so \( 53{,}455\ \mathrm{s}=14.85\ \mathrm{h} \).</p>
+<p>(a3) At \( h=100\ \mu\mathrm{m} \): 500 layers, \( 26{,}727\ \mathrm{s}=7.42\ \mathrm{h} \).</p>
+<p>(b) \( R_a=h\cos45^{\circ}/4 \): at 50 &#181;m, \( 50(0.7071)/4=8.8\ \mu\mathrm{m} \); at
+100 &#181;m, \( 17.7\ \mu\mathrm{m} \).</p>
+<p>(c) Doubling the layer height exactly halves the build and exactly doubles the staircase
+roughness, because time goes as \( 1/h \) and roughness as \( h \).</p>
+<p>(d) At a vertical wall \( \theta=90^{\circ} \), so \( \cos\theta=0 \) and the relation predicts no
+staircase at all &mdash; correctly, since the layers stack directly on one another. The real wall is
+still rough, because partly melted powder sticks to the skin and the bead has its own profile; the
+formula gives the <em>geometric</em> contribution only.</p>
+<p><b>Answer:</b> 45.5 s of scan per layer; 14.85 h and 7.42 h; 8.8 and 17.7 &#181;m of staircase
+\( R_a \); doubling \( h \) halves time and doubles roughness; a vertical wall has no staircase but
+is not smooth.
+<b>Sanity check:</b> the two effects are exactly reciprocal because both are linear in \( h \),
+which makes this the cleanest trade in the process &mdash; there is no layer height that is better
+on both counts, only one that suits the part. Note that the recoat term is what makes tall thin
+parts expensive: it is paid per layer regardless of how little is scanned, so a 50 mm tall
+matchstick costs nearly what a 50 mm tall block does.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Orient the part, and compensate the shrinkage</b></p>
+<p><b>Problem.</b> (a) A polymer with 50 MPa bulk strength is printed by material extrusion,
+reaching 90% of bulk in the plane of the layers and 30% across them. Give both strengths and the
+ratio, and say what it means for how the part is placed on the plate. (b) The same geometry is to be
+binder jetted instead, with 18% linear sintering shrinkage. Find the scale factor for the green part
+and the volumetric shrinkage. (c) Name the post-processing each of the two routes assumes.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a1) In plane: \( 0.9(50)=45\ \mathrm{MPa} \). Across the
+layers: \( 0.3(50)=15\ \mathrm{MPa} \).</p>
+<p>(a2) The ratio is \( 45/15=3.0 \). The weak direction is the build direction, because each layer
+is welded to the last rather than being continuous material.</p>
+<p>(a3) So orientation on the plate is a structural decision: the part must be laid so its principal
+tensile load runs <em>in</em> the layer plane, not across it. A part oriented for packing density or
+for support convenience can be three times weaker than the same geometry oriented for load.</p>
+<p>(b1) The green part must be larger by \( 1/(1-s) \):
+\( 1/(1-0.18)=1.22 \), so every dimension is scaled 1.22 times.</p>
+<p>(b2) Volumetric shrinkage \( =1-(1-0.18)^{3}=1-0.551=45\% \).</p>
+<p>(c) Material extrusion assumes support removal and, if the surface matters, sanding or vapour
+smoothing. Binder jetting assumes depowdering a fragile green part, curing, debinding and sintering
+&mdash; a far longer chain, and the sintering is where the accuracy is lost, because the shrinkage
+is not perfectly isotropic.</p>
+<p><b>Answer:</b> 45 and 15 MPa, a ratio of 3, so the load must lie in the layer plane; the green
+part is scaled 1.22&#215; against a 45% volumetric shrinkage; and the two routes assume completely
+different post-processing.
+<b>Sanity check:</b> the 45% volumetric figure is the one that surprises &mdash; an 18% linear
+shrinkage sounds modest until it is cubed, and it is why binder-jetted parts distort in sintering
+rather than merely getting smaller. Note that both halves of this problem are the same lesson: an
+additive part's properties and dimensions are consequences of how it was built, so the build
+decision has to be made with the drawing in hand rather than afterwards.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>When is printing it the right answer?</b></p>
+<p><b>Problem.</b> (a) A bracket can be printed for 85 a part with no tooling, or machined for 20 a
+part on a 3,000 fixture. Find the crossover quantity and state the rule it gives. (b) A pump
+component for out-of-production equipment has a twelve-week lead time. The plant loses 8,000 a day
+while the equipment is down, and the part could be printed in five days. Find the saving, and
+comment on how much the printed part's own cost matters. (c) Give three cautions before printing a
+plant spare.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a1) Printing costs \( 85N \); machining costs
+\( 3000+20N \).</p>
+<p>(a2) Equal at \( 85N=3000+20N \), so \( N^{*}=3000/65=46 \) parts.</p>
+<p>(a3) The rule: below about 46 parts, print it; above, do not. Additive has near-zero tooling and a
+per-part cost that does not fall with quantity, which is the opposite shape to every other process
+in this course.</p>
+<p>(b1) Twelve weeks is 84 days; printing takes 5, so 79 days are saved.</p>
+<p>(b2) \( 79\times8000=632{,}000 \).</p>
+<p>(b3) Against that, the part's own cost is almost irrelevant &mdash; it could cost twenty times a
+conventional one without the arithmetic becoming close. The variable that matters is lead time, not
+unit cost, which is why the spares case is strong where the production case usually is not.</p>
+<p>(c) Three cautions: the legacy part's <em>material and heat treatment</em> must be identified, and
+a geometric scan gives neither; a pressure-containing or safety-critical duty needs qualification the
+plant may not be able to perform; and the build direction must be oriented against the real load, or
+the part is three times weaker exactly where it is loaded.</p>
+<p><b>Answer:</b> 46 parts; 632,000 saved on the spare, against which unit cost hardly signifies; and
+material identification, qualification and orientation are the three things to settle first.
+<b>Sanity check:</b> the two parts of this problem point in opposite directions and both are right
+&mdash; additive loses badly on repeat production and wins overwhelmingly on lead time, so the
+question is never "is printing cheaper" but "what is the cost of waiting". Note that the cautions
+are not administrative: printing the right geometry in the wrong material or the wrong orientation
+produces a part that fits, looks correct, and fails.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Ranked on as-built surface finish, best first, the three families are</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>powder bed fusion, binder jetting, material extrusion</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>binder jetting, powder bed fusion, material extrusion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>material extrusion, binder jetting, powder bed fusion</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>all three are equivalent at the same layer height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Binder jetting uses the finest powder and never melts it, so nothing sticks to
+the skin. Powder bed fusion is coarser as-built because partly melted particles adhere. Material
+extrusion is worst, with both the largest layers and a visible bead profile. The ranking on
+<em>strength</em> is different &mdash; powder bed fusion first &mdash; which is the point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Doubling the layer height from 50 to 100 &#181;m on a fixed part</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>halves the build time and doubles the staircase roughness</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>halves both</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>doubles both</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>halves the time and leaves roughness unchanged</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Build time goes as \( 1/h \) and staircase roughness as \( h \), so the trade is
+exactly reciprocal: 14.85 h and 8.8 &#181;m become 7.42 h and 17.7 &#181;m. There is no layer height
+that is better on both counts, only one that suits the part.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A material-extrusion part in a 50 MPa polymer reaches about 45 MPa in the layer plane.
+Across the layers it reaches about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>45 MPa</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>38 MPa</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>15 MPa</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>50 MPa</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Roughly 30% of bulk, because the interlayer bond is a weld between beads that
+were never simultaneously molten &mdash; a factor of three below the in-plane strength. Orientation
+on the plate is therefore a structural decision, and a part placed for packing density can be three
+times weaker where it is loaded.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Metal powder bed fusion parts are stress relieved</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>after cutting them from the build plate</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>while still attached to the build plate</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>only if they will be machined</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>never; the process is stress-free</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The plate is what restrains the part against the residual stress the melt pool
+built in. Cut it free first and the stress releases as distortion. It is the first item in the
+post-processing chain, and getting the order wrong scraps the part before anything else can be
+done.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A binder-jetted part sintering at 18% linear shrinkage loses what fraction of its
+volume?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>18%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>31%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>45%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>54%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 1-(1-0.18)^{3}=1-0.551=45\% \). The linear figure sounds modest until it is
+cubed, and the shrinkage is not perfectly isotropic &mdash; which is where binder jetting's accuracy
+is lost, and why the green part is modelled 1.22 times oversize.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Post-processing on a metal powder-bed part typically accounts for</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>under 5% of cost</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>about 10%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>30&ndash;70% of cost</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing, if the part is used as built</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Stress relief, plate separation, support removal, optional hot isostatic
+pressing, machining of every real tolerance, surface treatment and internal inspection. Quoting the
+print alone is the commonest costing error in additive manufacturing, and support removal is often
+the single largest labour item.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A bracket costs 85 to print with no tooling, or 20 to machine on a 3,000 fixture. The
+crossover is at</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>12 parts</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>46 parts</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>150 parts</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>there is none; printing is always dearer</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 85N=3000+20N \) gives \( N=3000/65=46 \). Additive has near-zero tooling and
+a per-part cost that does not fall with quantity &mdash; the opposite shape to every other process in
+this course &mdash; so it wins at low volume and loses at high.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Before printing a replacement for an out-of-production plant part, the item most
+easily overlooked is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the geometry</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the material specification and heat treatment</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the build plate size</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the layer height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A scan gives geometry and nothing else. Printing the right shape in the wrong
+alloy or condition produces a part that fits, looks correct and fails &mdash; and the failure is
+usually attributed to the process rather than to the missing specification. Qualification and build
+orientation are the other two things to settle first.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the printed bracket that failed in the direction nobody checked.</b> A
+maintenance team printed a replacement mounting bracket in a filled polymer to keep a conveyor
+running while a machined part was on order. It was modelled correctly and printed on the flat, which
+was the orientation that packed best on the plate and needed the least support. It broke in
+service inside a shift, at a load well below what the material's datasheet allowed.</p>
+<p>The datasheet described the bulk polymer. A material-extrusion part is not bulk polymer: each
+layer is welded to the one below it by a bond formed between beads that were never simultaneously
+molten, so with a 50 MPa bulk material a printed part reaches about 45 MPa in the plane of the
+layers and about 15 MPa across them &mdash; a factor of three. Laid flat, the bracket's principal
+tensile load ran straight across the layers, into the weakest axis it had. Standing it up would have
+put the same load in the layer plane, cost more support material and a longer build, and produced a
+part three times stronger.</p>
+<p>Two practices follow. Treat build orientation as a structural decision made with the load case in
+hand, never as a packing or support decision &mdash; it is the additive equivalent of the rolling
+direction in Lesson 2, and it has a larger effect. And when a printed part is used in service, record
+its orientation with the drawing: the geometry alone does not define the part, and a reprint in a
+different orientation is a different component.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(29.01\\ \\mathrm{psi}\\)", "\\(137.9\\ \\mathrm{psi}\\)", "\\(2.901\\ \\mathrm{psi}\\)", "\\(0.2901\\ \\mathrm{psi}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(20 \\times 0.145 = 2.901\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2.901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(13.79\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.2901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.02901\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(2 \times 0.145 = 0.2901\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(6.035\\ \\mathrm{hp}\\)", "\\(33.56\\ \\mathrm{hp}\\)", "\\(603.5\\ \\mathrm{hp}\\)", "\\(60.35\\ \\mathrm{hp}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(45 \\times 1.341 = 60.35\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.4023\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2.237\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(40.23\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(4.023\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(3 \times 1.341 = 4.023\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
   
 </div>
 
@@ -142,7 +378,7 @@
 <footer class="nx-foot"><div class="in">
   <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
   <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
-  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
 <script src="../../../assets/nx/nexus.js?v=dc57f9c331"></script>

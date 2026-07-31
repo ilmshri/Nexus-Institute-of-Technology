@@ -82,14 +82,47 @@ def luminance(color):
     return lum
 
 
+CURVE_STEPS = 16   # samples per bezier segment; collision only needs the hull
+
+
+def _flatten_cubic(p0, p1, p2, p3):
+    """Sample a cubic bezier. Endpoints excluded at t=0 (already emitted)."""
+    out = []
+    for i in range(1, CURVE_STEPS + 1):
+        t = i / CURVE_STEPS
+        mt = 1.0 - t
+        a, b, c, e = mt**3, 3 * mt * mt * t, 3 * mt * t * t, t**3
+        out.append((a * p0[0] + b * p1[0] + c * p2[0] + e * p3[0],
+                    a * p0[1] + b * p1[1] + c * p2[1] + e * p3[1]))
+    return out
+
+
+def _flatten_quad(p0, p1, p2):
+    out = []
+    for i in range(1, CURVE_STEPS + 1):
+        t = i / CURVE_STEPS
+        mt = 1.0 - t
+        a, b, c = mt * mt, 2 * mt * t, t * t
+        out.append((a * p0[0] + b * p1[0] + c * p2[0],
+                    a * p0[1] + b * p1[1] + c * p2[1]))
+    return out
+
+
 def _path_points(d):
     """Approximate a path as a list of polylines.
 
-    Curves are reduced to their endpoints and control points, which is enough
-    to catch a curve sweeping through a label without pulling in a full bezier
-    flattener. Arcs (A) contribute their endpoint only.
+    Curves are FLATTENED by sampling, not reduced to their control points. The
+    control-point shortcut this replaced reported the convex hull instead of
+    the curve, and a cubic sits far inside its hull: the S-curve in
+    electronics-sensors L3 has control points at y=80 and y=220 but never
+    leaves y=129.8..170.2, so labels a comfortable 40 units clear of the ink
+    were still being flagged. Six of the 35 findings in the 2026-07-30 backlog
+    were that artefact and nothing else. Arcs (A) still contribute their
+    endpoint only — no elliptical-arc parameterisation — which under-reports
+    rather than over-reports, and no diagram in this project strokes an A.
     """
     out, cur, x, y, start = [], [], 0.0, 0.0, (0.0, 0.0)
+    prev_ctrl = None      # last cubic/quad control point, for S and T
     for m in re.finditer(r"([MmLlHhVvCcSsQqTtAaZz])([^MmLlHhVvCcSsQqTtAaZz]*)", d):
         cmd, raw = m.group(1), m.group(2)
         nums = [float(v) for v in re.findall(r"-?\d*\.?\d+(?:e-?\d+)?", raw)]
@@ -122,10 +155,33 @@ def _path_points(d):
             step = {"C": 6, "S": 4, "Q": 4, "T": 2}[c]
             for i in range(0, len(nums) - step + 1, step):
                 seg = nums[i:i + step]
+                pts = []
                 for j in range(0, len(seg) - 1, 2):
                     px, py = seg[j], seg[j + 1]
-                    cur.append((x + px, y + py) if rel else (px, py))
-                x, y = cur[-1]
+                    pts.append((x + px, y + py) if rel else (px, py))
+                p0 = (x, y)
+                if c == "C":
+                    c1, c2, end = pts
+                elif c == "S":
+                    c2, end = pts
+                    c1 = ((2 * x - prev_ctrl[0], 2 * y - prev_ctrl[1])
+                          if prev_ctrl else p0)
+                elif c == "Q":
+                    q, end = pts
+                    c1 = c2 = q
+                else:                                    # T
+                    end = pts[0]
+                    q = ((2 * x - prev_ctrl[0], 2 * y - prev_ctrl[1])
+                         if prev_ctrl else p0)
+                    c1 = c2 = q
+                if c in ("C", "S"):
+                    cur.extend(_flatten_cubic(p0, c1, c2, end))
+                    prev_ctrl = c2
+                else:
+                    cur.extend(_flatten_quad(p0, c1, end))
+                    prev_ctrl = c1
+                x, y = end
+            continue
         elif c == "A":
             for i in range(0, len(nums) - 6, 7):
                 nx, ny = nums[i + 5], nums[i + 6]
@@ -135,6 +191,7 @@ def _path_points(d):
             if cur:
                 cur.append(start)
                 x, y = start
+        prev_ctrl = None    # only C/S/Q/T leave a reflectable control point
     if len(cur) > 1:
         out.append(cur)
     return out
