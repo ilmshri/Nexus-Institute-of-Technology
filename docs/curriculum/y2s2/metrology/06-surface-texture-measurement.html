@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=97c10d800f">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da01dd12d4">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 06 of 11 · Year 2 · Semester 2</p>
   <h1>Surface texture measurement</h1>
   <p class="sub">Ra, Rz, and the stylus trace read properly. Cutoffs and filtering honestly explained. Finish specs matched to gaskets, seals, and bearing seats.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/6">Mark as complete</button>
@@ -91,23 +91,277 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does cutoff length change a measured Ra?</li><li>Match a finish spec to a mechanical-seal face versus a painted guard.</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does cutoff length change a measured Ra?</li><li>Match a finish spec to a mechanical-seal face versus a painted guard.</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 256" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Two surface profiles drawn to the same vertical scale. The upper one is a sinusoid with an arithmetic mean roughness of 0.80 micrometres and a total height of 2.51 micrometres. The lower one is a plateau-honed profile, flat over ninety per cent of its length with deep narrow valleys, and it has the same 0.80 micrometre Ra but a total height of 4.44 micrometres. The ratio of root-mean-square to arithmetic roughness is 1.11 for the sinusoid and 1.67 for the plateau surface, which is what distinguishes them."><rect x="0" y="0" width="560" height="256" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Two surfaces, the same Ra, and only one of them will hold oil</text><text x="95" y="50" fill="#3a6ea5" font-size="11">ground: sinusoidal &mdash; Ra 0.80 &#181;m, Rt 2.51 &#181;m</text><path d="M95 78 L470 78" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><text x="89" y="82" text-anchor="end" fill="#5B6672" font-size="10">mean line</text><path d="M95 78 L96.6 77 L98.1 75.9 L99.7 74.9 L101.2 73.9 L102.8 73 L104.4 72 L105.9 71.1 L107.5 70.2 L109.1 69.4 L110.6 68.7 L112.2 68 L113.8 67.3 L115.3 66.7 L116.9 66.2 L118.4 65.8 L120 65.5 L121.6 65.2 L123.1 65 L124.7 64.8 L126.2 64.8 L127.8 64.8 L129.4 65 L130.9 65.2 L132.5 65.5 L134.1 65.8 L135.6 66.2 L137.2 66.7 L138.8 67.3 L140.3 68 L141.9 68.7 L143.4 69.4 L145 70.2 L146.6 71.1 L148.1 72 L149.7 73 L151.2 73.9 L152.8 74.9 L154.4 75.9 L155.9 77 L157.5 78 L159.1 79 L160.6 80.1 L162.2 81.1 L163.8 82.1 L165.3 83 L166.9 84 L168.4 84.9 L170 85.8 L171.6 86.6 L173.1 87.3 L174.7 88 L176.2 88.7 L177.8 89.3 L179.4 89.8 L180.9 90.2 L182.5 90.5 L184.1 90.8 L185.6 91 L187.2 91.2 L188.8 91.2 L190.3 91.2 L191.9 91 L193.4 90.8 L195 90.5 L196.6 90.2 L198.1 89.8 L199.7 89.3 L201.2 88.7 L202.8 88 L204.4 87.3 L205.9 86.6 L207.5 85.8 L209.1 84.9 L210.6 84 L212.2 83 L213.8 82.1 L215.3 81.1 L216.9 80.1 L218.4 79 L220 78 L221.6 77 L223.1 75.9 L224.7 74.9 L226.2 73.9 L227.8 73 L229.4 72 L230.9 71.1 L232.5 70.2 L234.1 69.4 L235.6 68.7 L237.2 68 L238.8 67.3 L240.3 66.7 L241.9 66.2 L243.4 65.8 L245 65.5 L246.6 65.2 L248.1 65 L249.7 64.8 L251.2 64.8 L252.8 64.8 L254.4 65 L255.9 65.2 L257.5 65.5 L259.1 65.8 L260.6 66.2 L262.2 66.7 L263.8 67.3 L265.3 68 L266.9 68.7 L268.4 69.4 L270 70.2 L271.6 71.1 L273.1 72 L274.7 73 L276.2 73.9 L277.8 74.9 L279.4 75.9 L280.9 77 L282.5 78 L284.1 79 L285.6 80.1 L287.2 81.1 L288.8 82.1 L290.3 83 L291.9 84 L293.4 84.9 L295 85.8 L296.6 86.6 L298.1 87.3 L299.7 88 L301.2 88.7 L302.8 89.3 L304.4 89.8 L305.9 90.2 L307.5 90.5 L309.1 90.8 L310.6 91 L312.2 91.2 L313.8 91.2 L315.3 91.2 L316.9 91 L318.4 90.8 L320 90.5 L321.6 90.2 L323.1 89.8 L324.7 89.3 L326.2 88.7 L327.8 88 L329.4 87.3 L330.9 86.6 L332.5 85.8 L334.1 84.9 L335.6 84 L337.2 83 L338.8 82.1 L340.3 81.1 L341.9 80.1 L343.4 79 L345 78 L346.6 77 L348.1 75.9 L349.7 74.9 L351.2 73.9 L352.8 73 L354.4 72 L355.9 71.1 L357.5 70.2 L359.1 69.4 L360.6 68.7 L362.2 68 L363.8 67.3 L365.3 66.7 L366.9 66.2 L368.4 65.8 L370 65.5 L371.6 65.2 L373.1 65 L374.7 64.8 L376.2 64.8 L377.8 64.8 L379.4 65 L380.9 65.2 L382.5 65.5 L384.1 65.8 L385.6 66.2 L387.2 66.7 L388.8 67.3 L390.3 68 L391.9 68.7 L393.4 69.4 L395 70.2 L396.6 71.1 L398.1 72 L399.7 73 L401.2 73.9 L402.8 74.9 L404.4 75.9 L405.9 77 L407.5 78 L409.1 79 L410.6 80.1 L412.2 81.1 L413.8 82.1 L415.3 83 L416.9 84 L418.4 84.9 L420 85.8 L421.6 86.6 L423.1 87.3 L424.7 88 L426.2 88.7 L427.8 89.3 L429.4 89.8 L430.9 90.2 L432.5 90.5 L434.1 90.8 L435.6 91 L437.2 91.2 L438.8 91.2 L440.3 91.2 L441.9 91 L443.4 90.8 L445 90.5 L446.6 90.2 L448.1 89.8 L449.7 89.3 L451.2 88.7 L452.8 88 L454.4 87.3 L455.9 86.6 L457.5 85.8 L459.1 84.9 L460.6 84 L462.2 83 L463.8 82.1 L465.3 81.1 L466.9 80.1 L468.4 79 L470 78" fill="none" stroke="#3a6ea5" stroke-width="2"/><text x="95" y="108" fill="#5B6672" font-size="10">Rq/Ra = 1.11 &mdash; smooth and wave-like</text><text x="95" y="144" fill="#1f7a5c" font-size="11">plateau-honed &mdash; Ra 0.80 &#181;m, Rt 4.44 &#181;m</text><path d="M95 172 L470 172" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><text x="89" y="176" text-anchor="end" fill="#5B6672" font-size="10">mean line</text><path d="M95 167.3 L128.8 167.3 L128.8 214 L136.2 214 L136.2 167.3 L203.8 167.3 L203.8 214 L211.2 214 L211.2 167.3 L278.8 167.3 L278.8 214 L286.2 214 L286.2 167.3 L353.8 167.3 L353.8 214 L361.2 214 L361.2 167.3 L428.8 167.3 L428.8 214 L436.2 214 L436.2 167.3 L470 167.3" fill="none" stroke="#1f7a5c" stroke-width="2"/><text x="95" y="236" fill="#5B6672" font-size="10">Rq/Ra = 1.67 &mdash; flat, with deep valleys that hold oil</text><path d="M488 64.8 L488 91.2" stroke="#3a6ea5" stroke-width="1.4" fill="none"/><path d="M482 64.8 L494 64.8" stroke="#3a6ea5" stroke-width="1.4" fill="none"/><path d="M482 91.2 L494 91.2" stroke="#3a6ea5" stroke-width="1.4" fill="none"/><text x="500" y="82" fill="#3a6ea5" font-size="10">Rt 2.51 &#181;m</text><path d="M488 167.3 L488 214" stroke="#1f7a5c" stroke-width="1.4" fill="none"/><path d="M482 167.3 L494 167.3" stroke="#1f7a5c" stroke-width="1.4" fill="none"/><path d="M482 214 L494 214" stroke="#1f7a5c" stroke-width="1.4" fill="none"/><text x="500" y="194.7" fill="#1f7a5c" font-size="10">Rt 4.44 &#181;m</text></svg><figcaption>Ra is an average of magnitudes, so it cannot tell these two apart &mdash; both return 0.80 &#181;m. Yet the sinusoid is 2.51 &#181;m from crest to trough and the plateau surface is 4.44 &#181;m, and in a lubricated contact they behave nothing alike: the plateau carries the load on 90% of its area while its valleys hold oil, and the sinusoid does neither well. The ratio Rq/Ra is the cheapest thing that separates them &mdash; 1.11 here against 1.67, where a random ground surface sits near 1.25. The plateau profile is idealised as flat-bottomed grooves so its Ra can be computed exactly.</figcaption></figure>
+<h3>&#167;1 &middot; What is on the surface, and what the instrument does to it</h3>
+<p>Drag a fine stylus across a machined surface and it traces a profile \( z(x) \). That profile is
+not one thing. It is a superposition of three, separated by wavelength: <b>form</b>, the intended
+shape and its long-wavelength errors; <b>waviness</b>, the medium-wavelength undulation left by
+machine vibration, spindle error or workpiece deflection; and <b>roughness</b>, the short-wavelength
+marks of the cutting or abrasive process itself.</p>
+<p>Nothing in the raw trace announces which is which, so <b>roughness is defined by the filter that
+extracts it</b>. Two wavelengths do the separating. The long cutoff \( \lambda_c \) divides
+roughness from waviness; the short cutoff \( \lambda_s \) divides roughness from noise. One
+<b>sampling length</b> equals \( \lambda_c \), and the standard evaluation length is five of them,
+so a stated roughness is an average over five sampling lengths.</p>
+<p>The instrument filters mechanically before it filters electronically. A stylus tip is a cone
+ending in a radius, typically 2 &#181;m, and it cannot enter a valley sharper than itself &mdash;
+it bridges across, and the profile it records is smoother than the surface. For a sinusoidal
+profile of amplitude \( a \) and wavelength \( \lambda \), the radius of curvature at the valley
+floor is \( \lambda^2/4\pi^2a \), so the tip follows only while that exceeds the tip radius
+\( r \).</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the shortest wavelength a stylus can follow</span>
+<p>\[ \lambda_{\min}=2\pi\sqrt{a\,r} \]</p>
+<p>With \( a=0.5\ \mu\mathrm{m} \) and a 2 &#181;m tip, \( \lambda_{\min}=6.28\ \mu\mathrm{m} \).
+A 10 &#181;m feature is traced faithfully; a 4 &#181;m one is bridged and under-reported.</p></div>
+<p>This is worth stating plainly because it is the honest version of a claim instruments make about
+themselves: a 0.01 &#181;m vertical resolution says nothing about whether the tip reached the
+bottom of the valley it was resolving. Optical instruments trade this problem for different ones
+&mdash; they have no tip radius, but steep flanks scatter light away and are reported as missing
+data.</p>
+
+<h3>&#167;2 &middot; Ra, Rz, Rq, and what each of them discards</h3>
+<p>From the filtered profile, taken about its mean line, the standard parameters follow.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; the amplitude parameters</span>
+<p>\[ R_a=\frac{1}{L}\int_0^L|z|\,dx,\qquad
+R_q=\sqrt{\frac{1}{L}\int_0^L z^2\,dx},\qquad
+R_z=\frac{1}{5}\sum_{i=1}^{5}\bigl(z_{p,i}-z_{v,i}\bigr) \]</p>
+<p>\( R_a \) is the mean magnitude of the deviation, \( R_q \) its root mean square, and \( R_z \)
+the mean of the five largest peak-to-valley heights, one from each sampling length. \( R_t \) is
+the single largest peak-to-valley height over the whole evaluation length.</p></div>
+<p>\( R_a \) dominates drawings because it is stable: it averages over the whole trace, so a stray
+scratch barely moves it, and repeat measurements agree. That stability is also its defect. It is
+<em>blind to shape</em>, and shape is what most surfaces are for.</p>
+<p>The diagram makes the point with two profiles of identical \( R_a=0.80\ \mu\mathrm{m} \). The
+first is a sinusoid, which needs amplitude \( a=\pi R_a/2=1.257\ \mu\mathrm{m} \) and so stands
+2.51 &#181;m crest to trough. The second is plateau-honed: flat over 90% of its length with narrow
+valleys of depth \( d \). Its mean line sits \( 0.1d \) below the plateau, so
+\( R_a=0.9(0.1d)+0.1(0.9d)=0.18d \), giving \( d=4.44\ \mu\mathrm{m} \) &mdash; 1.77 times the
+total height of the sinusoid, at the same \( R_a \).</p>
+<p>The cheapest discriminator is the ratio \( R_q/R_a \), because \( R_q \) weights large
+deviations by their square and \( R_a \) does not. A sinusoid gives \( \pi/2\sqrt2=1.111 \); a
+random surface with a normal height distribution gives \( \sqrt{\pi/2}=1.253 \); the plateau
+profile above gives 1.667. A measured ratio well above 1.25 says the height distribution has a
+tail &mdash; deep valleys, or high peaks, and the sign of the skew says which. When that
+distinction actually governs function, the standard offers parameters built for it
+(\( R_k \), \( R_{pk} \), \( R_{vk} \), from the bearing-area curve), and a drawing that cares
+should call for them rather than tightening \( R_a \) and hoping.</p>
+
+<h3>&#167;3 &middot; Why the cutoff changes the answer</h3>
+<p>Because roughness is whatever survives the filter, changing \( \lambda_c \) changes the
+measured value on an unchanged surface. This is not instrument error. It is the definition
+working.</p>
+<p>Take a profile that is the sum of two sinusoids: a machining roughness of 0.5 &#181;m amplitude
+at 0.1 mm wavelength, and a waviness of 2.0 &#181;m amplitude at 1.6 mm. Measured with
+\( \lambda_c=0.8\ \mathrm{mm} \), the 1.6 mm component is longer than the cutoff and is removed as
+waviness, leaving \( R_a=2(0.5)/\pi=0.318\ \mu\mathrm{m} \). Measured with
+\( \lambda_c=2.5\ \mathrm{mm} \), the 1.6 mm component is shorter than the cutoff, survives as
+roughness, and \( R_a=1.294\ \mu\mathrm{m} \). The same surface, the same instrument, the same
+operator: <b>4.06 times the answer</b>.</p>
+<div class="keybox"><span class="tag">Key rule &mdash; a roughness figure without its cutoff is not a specification</span>
+<p>\[ R_a \text{ alone is incomplete};\qquad R_a\ \text{with}\ \lambda_c\ \text{is a number} \]</p>
+<p>The standard cutoff is chosen from the roughness itself &mdash; 0.8 mm for \( R_a \) between
+0.1 and 2 &#181;m, 2.5 mm above that, 0.25 mm below &#8722; so a first trace is used to pick the
+cutoff for the second.</p></div>
+<p>That selection rule sounds circular and is not: it is a two-pass procedure, and it exists so
+that the filter is matched to the process rather than to the inspector. The practical consequences
+are direct. A supplier and a customer measuring the same part with different cutoffs will disagree
+by a factor, and neither will be wrong. A drawing calling for \( R_a\ 0.8 \) with no cutoff has
+under-specified the part. And a surface whose real content sits near the cutoff &mdash; a milled
+face with feed marks at roughly \( \lambda_c \) &mdash; is the case where the disagreement is
+worst, because the filter is cutting exactly where the energy is.</p>
+<p>The same logic governs the short end. \( \lambda_s \) exists so that electrical noise and the
+stylus's own tip effects are not reported as roughness, and it is the reason a measured profile
+should never be read as the true surface at scales near the tip radius.</p>
+
+<h3>&#167;4 &middot; Matching a finish to what the surface has to do</h3>
+<p>A finish specification is a functional requirement, not a quality aspiration, and smoother is
+frequently wrong. Four cases cover most of what an engineer specifies.</p>
+<p><b>A face that has to seal against a soft gasket</b> wants texture, not polish. A spiral-wound
+or compressed-fibre gasket seats by biting into the flange face, and a lapped flange gives it
+nothing to grip; the usual call is a controlled serrated or phonographic finish in the
+\( R_a\ 3.2\text{--}6.3\ \mu\mathrm{m} \) range. <b>A face that has to seal against a rigid
+counterface</b> &mdash; a mechanical seal, a metal-to-metal joint &mdash; is the opposite: the leak
+path is the roughness itself, so it is lapped to \( R_a\ 0.1\ \mu\mathrm{m} \) or better, and
+flatness is checked optically rather than by stylus. <b>A surface that is going to be painted or
+bonded</b> wants tooth for the adhesive to key into, so a blasted or coarsely machined
+\( R_a\ 3.2\text{--}12.5\ \mu\mathrm{m} \) is specified deliberately. <b>A lubricated sliding
+surface</b> is the interesting one, because it wants both: a smooth load-carrying plateau and
+valleys deep enough to hold oil &mdash; which is the plateau-honed profile of &#167;2, and exactly
+what \( R_a \) alone cannot specify.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the film-thickness ratio</span>
+<p>\[ \Lambda=\frac{h_{\min}}{\sqrt{R_{q,1}^2+R_{q,2}^2}} \]</p>
+<p>Roughnesses of two contacting surfaces combine in quadrature. \( \Lambda>3 \) is full-film
+separation, \( 1<\Lambda<3 \) is mixed lubrication with intermittent asperity contact, and
+\( \Lambda<1 \) is boundary contact. The film thickness \( h_{\min} \) comes from the bearing
+analysis; the roughnesses come from this lesson.</p></div>
+<p>A journal at \( R_q=0.25\ \mu\mathrm{m} \) running in a shell at \( R_q=0.40 \) has a composite
+roughness of \( \sqrt{0.25^2+0.40^2}=0.472\ \mu\mathrm{m} \). With a minimum film of 1.8 &#181;m,
+\( \Lambda=3.82 \) &mdash; the surfaces never touch. Refinish the journal to
+\( R_q=0.80\ \mu\mathrm{m} \) and the composite becomes 0.894, so \( \Lambda=2.01 \): the film is
+unchanged, the clearance is unchanged, the drawing dimensions are unchanged, and the bearing is now
+in mixed lubrication, where it will wear. The only thing that moved was a finish, and the number
+that governed it was \( R_q \) rather than \( R_a \).</p>
+<p>Two habits follow from all of this. State the cutoff with the roughness, always, or the
+specification does not close. And say what the surface is for &mdash; a finish specified for a seal
+face, a gasket seat and a paint key are three different requirements that a single tightened
+\( R_a \) serves badly.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does cutoff length change a measured Ra?</li><li>Match a finish spec to a mechanical-seal face versus a painted guard.</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Fourier series and decomposition by wavelength</b> (Engineering Mathematics II L11) &mdash;
+what a roughness filter is doing when it splits a profile at \( \lambda_c \).</li>
+<li><b>Mean, root mean square, and the normal distribution</b> (Engineering Statistics L1 and L4)
+&mdash; \( R_a \) against \( R_q \), and the \( \sqrt{\pi/2} \) ratio of a random surface.</li>
+<li><b>Grinding, honing, and surface integrity</b> (Manufacturing Processes II L5&ndash;L6) &mdash;
+the processes that produce the finishes specified here.</li>
+<li><b>Resolution, accuracy, and what an instrument specification claims</b> (Lesson 1) &mdash; why
+vertical resolution is not the same as fidelity.</li>
+<li><b>Contact instruments and their geometry</b> (Lesson 2) &mdash; a stylus is a probe with a
+radius, like every other contacting device.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Form / waviness / roughness</td><td>separated by wavelength</td><td>Three contents of one trace; the filter decides which is which.</td></tr>
+<tr><td>Long cutoff \( \lambda_c \)</td><td>0.25 / 0.8 / 2.5 mm</td><td>Divides roughness from waviness; one sampling length.</td></tr>
+<tr><td>Short cutoff \( \lambda_s \)</td><td>2.5 / 8 &#181;m</td><td>Keeps noise and tip effects out of the roughness.</td></tr>
+<tr><td>Evaluation length</td><td>\( 5\lambda_c \)</td><td>What a reported value averages over.</td></tr>
+<tr><td>\( R_a \)</td><td>\( \frac{1}{L}\int|z|dx \)</td><td>Stable, reproducible, and blind to shape.</td></tr>
+<tr><td>\( R_q \)</td><td>\( \sqrt{\frac{1}{L}\int z^2dx} \)</td><td>Weights deep features; the parameter lubrication uses.</td></tr>
+<tr><td>\( R_z \), \( R_t \)</td><td>peak-to-valley</td><td>When the extreme, not the average, is what fails.</td></tr>
+<tr><td>\( R_q/R_a \)</td><td>1.11 sine, 1.25 random, higher if skewed</td><td>A one-line test for whether the profile has a tail.</td></tr>
+<tr><td>Stylus limit</td><td>\( \lambda_{\min}=2\pi\sqrt{ar} \)</td><td>Shortest wavelength the tip can enter rather than bridge.</td></tr>
+<tr><td>Film-thickness ratio</td><td>\( \Lambda=h_{\min}/\sqrt{R_{q,1}^2+R_{q,2}^2} \)</td><td>&gt;3 full film, 1&ndash;3 mixed, &lt;1 boundary.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Two surfaces, one Ra</b></p>
+<p><b>Problem.</b> Surface A is sinusoidal with \( R_a=0.80\ \mu\mathrm{m} \). Surface B is
+plateau-honed: flat over 90% of its length, with valleys of depth \( d \) over the remaining 10%,
+and it too measures \( R_a=0.80\ \mu\mathrm{m} \). Find the total height \( R_t \) of each and the
+ratio \( R_q/R_a \) of each, and say which parameter would have distinguished them on a
+drawing.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) For a sinusoid of amplitude \( a \),
+\( R_a = 2a/\pi \), so \( a = \pi(0.80)/2 = 1.257\ \mu\mathrm{m} \) and
+\( R_t = 2a = 2.513\ \mu\mathrm{m} \).</p>
+<p>(2) \( R_q = a/\sqrt2 = 0.889\ \mu\mathrm{m} \), so \( R_q/R_a = \pi/(2\sqrt2) = 1.111 \).</p>
+<p>(3) For surface B the mean line must pass through the profile's centroid. With the plateau at
+height 0 and the valleys at \( -d \), the mean sits at \( -0.1d \), so the plateau is \( +0.1d \)
+above it and the valley floor \( -0.9d \) below.</p>
+<p>(4) \( R_a = 0.9(0.1d) + 0.1(0.9d) = 0.18d \). Setting this to 0.80 gives
+\( d = 4.444\ \mu\mathrm{m} \), which is \( R_t \) &mdash; 1.77 times surface A's.</p>
+<p>(5) \( R_q^2 = 0.9(0.1d)^2 + 0.1(0.9d)^2 = 0.09d^2 \), so \( R_q = 0.3d = 1.333\ \mu\mathrm{m} \)
+and \( R_q/R_a = 0.3d/0.18d = 1.667 \).</p>
+<p>(6) \( R_a \) is identical, so it distinguishes nothing. \( R_t \) or \( R_z \) separates them
+by 1.77 times, and \( R_q/R_a \) separates them as 1.111 against 1.667.</p>
+<p><b>Answer:</b> A: \( R_t=2.51\ \mu\mathrm{m} \), \( R_q/R_a=1.111 \). B:
+\( R_t=4.44\ \mu\mathrm{m} \), \( R_q/R_a=1.667 \). \( R_a \) cannot tell them apart; a
+peak-to-valley parameter or the \( R_q/R_a \) ratio can.
+<b>Sanity check:</b> a random surface with a normal height distribution gives
+\( R_q/R_a=\sqrt{\pi/2}=1.253 \), so both results sit either side of that benchmark in the right
+direction &mdash; the sinusoid has no tail and reads low, the valley-dominated profile has a long
+one and reads high. Note the practical inversion: surface B is the rougher by every extreme measure
+and is the better bearing surface, because it carries load on 90% of its area and stores oil in the
+rest.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>The same surface, two cutoffs</b></p>
+<p><b>Problem.</b> A profile is the sum of two sinusoids: 0.5 &#181;m amplitude at 0.1 mm
+wavelength, and 2.0 &#181;m amplitude at 1.6 mm. Give \( R_q \) as measured with
+\( \lambda_c=0.8\ \mathrm{mm} \) and with \( \lambda_c=2.5\ \mathrm{mm} \), and the ratio between
+them. State which reading a drawing calling for &quot;\( R_a\ 0.4 \)&quot; would have been judged
+against.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) A long cutoff \( \lambda_c \) passes wavelengths
+<em>shorter</em> than itself as roughness and rejects longer ones as waviness.</p>
+<p>(2) At \( \lambda_c=0.8 \) mm: the 0.1 mm component passes, the 1.6 mm component is rejected
+because \( 1.6 > 0.8 \). Only the roughness survives, and for a single sinusoid
+\( R_q = a/\sqrt2 = 0.5/\sqrt2 = 0.354\ \mu\mathrm{m} \).</p>
+<p>(3) At \( \lambda_c=2.5 \) mm: both components pass, since \( 1.6 < 2.5 \). Sinusoids of
+different wavelength are orthogonal over a common length, so their mean squares add:
+\( R_q = \sqrt{a_1^2/2 + a_2^2/2} = \sqrt{0.125+2.000} = \sqrt{2.125} = 1.458\ \mu\mathrm{m} \).</p>
+<p>(4) The ratio is \( 1.458/0.354 = 4.12 \). (The corresponding \( R_a \) values are 0.318 and
+1.294 &#181;m, a factor of 4.06 &mdash; the same story.)</p>
+<p>(5) The 0.8 mm cutoff is the standard choice for \( R_a \) between 0.1 and 2 &#181;m, so a
+drawing calling for \( R_a\ 0.4 \) with no cutoff stated would be judged against 0.318 and the part
+would pass &mdash; while an inspector who chose 2.5 mm would read 1.294 and reject it.</p>
+<p><b>Answer:</b> \( R_q = 0.354\ \mu\mathrm{m} \) at \( \lambda_c=0.8 \) mm and
+\( 1.458\ \mu\mathrm{m} \) at 2.5 mm, a factor of 4.12; the part passes on one cutoff and fails on
+the other.
+<b>Sanity check:</b> nothing about the surface changed, so this is the definition of roughness
+showing itself, not a measurement error &mdash; roughness is what survives the filter. Note that
+the waviness carries almost all the height here \( (2.0 \) against \( 0.5\ \mu\mathrm{m}) \), which
+is why including it swamps the result; a surface whose waviness were small would show little
+cutoff sensitivity. This is the whole reason a specification without \( \lambda_c \) is
+incomplete.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>A refinished journal, and a US customary check</b></p>
+<p><b>Problem.</b> A journal finished to \( R_q=0.25\ \mu\mathrm{m} \) runs in a shell at
+\( R_q=0.40\ \mu\mathrm{m} \) with a minimum oil film of 1.8 &#181;m. Find the film-thickness ratio
+and classify the lubrication regime. The journal is later reground to
+\( R_q=0.80\ \mu\mathrm{m} \) with everything else unchanged; repeat. Express both journal
+finishes in micro-inches.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The two roughnesses combine in quadrature:
+\( \sigma = \sqrt{0.25^2+0.40^2} = \sqrt{0.0625+0.1600} = \sqrt{0.2225}
+= 0.472\ \mu\mathrm{m} \).</p>
+<p>(2) \( \Lambda = h_{\min}/\sigma = 1.8/0.472 = 3.82 \). Since \( \Lambda > 3 \), the surfaces
+are fully separated by the film and do not touch.</p>
+<p>(3) After regrinding, \( \sigma = \sqrt{0.80^2+0.40^2} = \sqrt{0.80} = 0.894\ \mu\mathrm{m} \).</p>
+<p>(4) \( \Lambda = 1.8/0.894 = 2.01 \), which is between 1 and 3: mixed lubrication, with
+asperities touching through the film.</p>
+<p>(5) \( 0.25\ \mu\mathrm{m} = 250/25.4 = 9.8\ \mu\mathrm{in} \) and
+\( 0.80\ \mu\mathrm{m} = 800/25.4 = 31.5\ \mu\mathrm{in} \).</p>
+<p><b>Answer:</b> \( \Lambda = 3.82 \) (full film) before, \( \Lambda = 2.01 \) (mixed) after; the
+journal went from 9.8 to 31.5 micro-inches.
+<b>Sanity check:</b> the clearance, the oil, the load and every dimension on the drawing were
+unchanged &mdash; only a finish moved, and the bearing crossed out of full-film operation into a
+regime where it wears. That is why a journal drawing states a finish at all, and why the parameter
+it should state is \( R_q \): the quadrature sum is a sum of squares, so it is \( R_q \) that
+combines correctly and \( R_a \) that does not. Note the rougher surface dominates the composite
+&mdash; at 0.80 against 0.40, the shell contributes only a tenth of \( \sigma^2 \), so polishing the
+shell would have bought almost nothing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Roughness is separated from waviness by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the stylus tip radius</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the long cutoff \( \lambda_c \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the evaluation length</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the vertical resolution of the instrument</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \lambda_c \) is the wavelength at which the filter divides them: shorter
+content is reported as roughness, longer as waviness. One sampling length equals \( \lambda_c \)
+and the evaluation length is five of them. The tip radius and \( \lambda_s \) act at the short end,
+keeping noise and tip artefacts out.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The same surface measured at \( \lambda_c = 0.8 \) mm and at \( \lambda_c = 2.5 \) mm
+gives \( R_a \) values differing by a factor of four. This means</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the instrument needs calibration</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the surface changed between measurements</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>the surface has substantial content between those two wavelengths, and both readings are correct</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the longer cutoff is always wrong</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both are correct measurements of different quantities, because roughness is
+defined as what survives the filter. Here a 1.6 mm undulation is waviness at the 0.8 mm cutoff and
+roughness at the 2.5 mm cutoff. It is why a roughness value quoted without its cutoff is not a
+specification, and why supplier and customer can disagree by a factor with neither at fault.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Two surfaces both measure \( R_a = 0.80\ \mu\mathrm{m} \). One is sinusoidal, the
+other plateau-honed with deep valleys. Their \( R_q/R_a \) ratios are</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>identical, since Ra is identical</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>1.11 and 1.67 respectively</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1.67 and 1.11 respectively</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>both close to 1.25</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( R_q \) weights deviations by their square, so a profile with deep valleys
+raises \( R_q \) without raising \( R_a \) proportionately: 1.111 for the sinusoid, 1.667 for the
+plateau profile. A random surface with a normal height distribution sits at
+\( \sqrt{\pi/2}=1.253 \), so the ratio is a quick test for whether the height distribution has a
+tail.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A 2 &#181;m stylus tip traversing a profile of 0.5 &#181;m amplitude will bridge
+rather than follow features shorter than about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2 &#181;m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>6.3 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>25 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.8 mm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \lambda_{\min}=2\pi\sqrt{ar}=2\pi\sqrt{(0.5)(2)}=6.28\ \mu\mathrm{m} \).
+Below that the valley floor is sharper than the tip and the recorded profile is smoother than the
+real surface. A quoted vertical resolution of 0.01 &#181;m says nothing about this &mdash; the
+limit is geometric, not electrical.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A flange face that must seal against a spiral-wound gasket should be specified</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>as smooth as the shop can lap it</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>with a controlled texture around \( R_a\ 3.2\text{--}6.3\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>with no finish requirement, since the gasket does the sealing</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the same as a mechanical seal face</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A soft gasket seals by biting into the face, so it needs something to grip; a
+lapped flange gives it nothing and can leak. The controlled serrated finish is a functional
+requirement in its own right. The opposite case &mdash; a rigid counterface such as a mechanical
+seal, where the roughness <em>is</em> the leak path &mdash; is lapped to 0.1 &#181;m or
+better.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Two surfaces with \( R_q \) of 0.25 and 0.40 &#181;m have a composite roughness
+of</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.65 &#181;m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>0.47 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.33 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.15 &#181;m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>They combine in quadrature:
+\( \sqrt{0.25^2+0.40^2}=\sqrt{0.2225}=0.472\ \mu\mathrm{m} \), not by addition. Because it is a sum
+of squares, the rougher surface dominates &mdash; and because it is a sum of squares, the parameter
+that combines correctly is \( R_q \) rather than \( R_a \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A bearing operating at \( \Lambda = 2.0 \) is in</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>full-film separation, with no asperity contact</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>mixed lubrication, with intermittent asperity contact</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>boundary lubrication, essentially dry</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>hydrostatic operation</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \Lambda>3 \) is full film, \( 1<\Lambda<3 \) is mixed, \( \Lambda<1 \) is
+boundary. At 2.0 the film carries most of the load but asperities touch, and the surface wears. In
+the worked example the bearing arrived there purely by being refinished coarser &mdash; the film,
+clearance and load were unchanged.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The main reason \( R_a \) dominates drawings despite being blind to profile shape
+is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is the only parameter most instruments compute</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>it averages over the whole trace, so it is reproducible and insensitive to a stray scratch</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it is the largest of the amplitude parameters</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it does not require a cutoff to be stated</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Averaging magnitudes over the evaluation length makes \( R_a \) stable and
+repeatable, which is a real virtue in a shop specification. The cost is that it discards shape
+entirely. Every instrument computes \( R_q \) and \( R_z \) as well, \( R_t \) is larger by
+construction, and \( R_a \) needs a cutoff exactly like the others.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the polished journal that wore out.</b> A pump shaft came back from an
+overhaul with its journals reground and then polished, on the instruction &quot;improve the
+finish&quot;. The shop measured them, recorded \( R_a\ 0.35\ \mu\mathrm{m} \) against a drawing
+calling for 0.4 maximum, and released the shaft. The bearings wore visibly within a few hundred
+hours.</p>
+<p>The measurement was in specification and the surface was wrong. Polishing had removed the honing
+valleys and left a smooth, near-sinusoidal profile: same \( R_a \), \( R_q \) risen from 0.25 to
+about 0.4 &#181;m as the profile lost its plateau character, and &mdash; the part that mattered
+&mdash; no valleys left to hold oil where the film thins at start-up and shutdown. On top of that
+the drawing specified only \( R_a \) with no cutoff and no shape parameter, so the finish that had
+worked for years was never actually specified; it had been produced by the original honing process
+and preserved by habit.</p>
+<p>Two practices follow. Where the surface has a job beyond looking finished, specify the parameter
+that governs that job &mdash; \( R_q \) for a lubricated contact, a peak-to-valley or bearing-area
+parameter where oil retention or contact area is the point &mdash; and state the cutoff so the
+number closes. And treat &quot;improve the finish&quot; as an unsafe instruction on a functional
+surface: it is a direction without a target, and on a plateau-honed journal the improvement runs
+the wrong way.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(40.23\\ \\mathrm{hp}\\)", "\\(2.237\\ \\mathrm{hp}\\)", "\\(4.023\\ \\mathrm{hp}\\)", "\\(0.4023\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(3 \\times 1.341 = 4.023\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(603.5\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(33.56\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(60.35\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.035\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(45 \times 1.341 = 60.35\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.64\\ \\mathrm{ft/s}\\)", "\\(1.524\\ \\mathrm{ft/s}\\)", "\\(164\\ \\mathrm{ft/s}\\)", "\\(16.4\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(5 \\times 3.281 = 16.4\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(19.69\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(18.29\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1969\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(196.9\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(60 \times 3.281 = 196.9\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -133,6 +387,6 @@
   <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../../../assets/nx/nexus.js?v=97c10d800f"></script>
+<script src="../../../assets/nx/nexus.js?v=da01dd12d4"></script>
 </body>
 </html>

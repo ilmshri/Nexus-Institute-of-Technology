@@ -832,9 +832,14 @@ html.no-js .reveal,html.no-js .reveal-left,html.no-js .reveal-right{opacity:1;tr
 .en-body .measure p,.en-body .measure li,.en-body .lead{font-family:var(--sans)}
 
 /* ---------- smooth navigation & micro-transitions ---------- */
+/* Treatment A "Quiet Crossfade" — owner's choice, 2026-07-31 design review. */
 @view-transition{navigation:auto}
-::view-transition-old(root){animation-duration:.18s}
-::view-transition-new(root){animation-duration:.26s}
+::view-transition-old(root){animation-duration:.14s;animation-timing-function:ease-out}
+::view-transition-new(root){animation-duration:.22s;animation-timing-function:ease-in-out}
+@media (prefers-reduced-motion: no-preference){
+  html.js .tabpanel.on{transition:opacity .22s ease}
+  @starting-style{ html.js .tabpanel.on{opacity:0} }
+}
 a,.btn,.chip,.tabs button,.kbtn,.lang-btn,.appbar nav a,.navgrp .drop a{
   transition:color .15s ease,background-color .15s ease,border-color .15s ease,box-shadow .15s ease}
 .outline,.nx-hero,.feat-card,.std-card,.year-card{transition:box-shadow .22s ease}

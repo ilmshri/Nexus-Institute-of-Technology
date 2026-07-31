@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=97c10d800f">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=da01dd12d4">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 09 of 11 · Year 2 · Semester 2</p>
   <h1>Acceptance sampling</h1>
   <p class="sub">Sampling plans, OC curves, and the risks each party carries. AQL semantics without the folklore. Where sampling makes sense and where 100% inspection is owed.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/9">Mark as complete</button>
@@ -91,23 +91,271 @@
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do producer's and consumer's risk mean on an OC curve?</li><li>When is 100% inspection actually owed?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What do producer's and consumer's risk mean on an OC curve?</li><li>When is 100% inspection actually owed?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 306" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Two operating-characteristic curves, plotting the probability a lot is accepted against the lot fraction defective in per cent. The plan taking 125 parts and accepting on 3 defectives falls gradually: it accepts 95 per cent of lots at 1.10 per cent defective and still accepts 10 per cent of lots at 5.27 per cent defective. The plan taking 500 parts and accepting on 12 is far steeper over the same range, discriminating between 1.55 and 3.54 per cent. Marked points show the producer's risk at the upper left and the consumer's risk at the lower right."><rect x="0" y="0" width="560" height="306" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">An operating-characteristic curve is the whole of a sampling plan</text><path d="M95 79 L151.4 79" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M151.4 79 L151.4 250" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M95 232 L364.9 232" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M364.9 232 L364.9 250" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M95 70 L97 70 L99.1 70 L101.2 70 L103.2 70 L105.2 70 L107.3 70 L109.3 70 L111.4 70 L113.5 70 L115.5 70 L117.5 70 L119.6 70 L121.7 70 L123.7 70 L125.8 70 L127.8 70 L129.8 70 L131.9 70 L133.9 70 L136 70 L138.1 70.1 L140.1 70.1 L142.2 70.2 L144.2 70.2 L146.2 70.3 L148.3 70.5 L150.3 70.7 L152.4 70.9 L154.4 71.2 L156.5 71.5 L158.6 71.9 L160.6 72.5 L162.7 73.1 L164.7 73.8 L166.8 74.7 L168.8 75.7 L170.8 76.8 L172.9 78.1 L174.9 79.6 L177 81.2 L179.1 83 L181.1 85 L183.2 87.1 L185.2 89.5 L187.2 92 L189.3 94.7 L191.4 97.6 L193.4 100.6 L195.4 103.8 L197.5 107.2 L199.6 110.7 L201.6 114.3 L203.7 118 L205.7 121.9 L207.8 125.8 L209.8 129.8 L211.9 133.9 L213.9 138 L215.9 142.2 L218 146.3 L220.1 150.5 L222.1 154.6 L224.2 158.8 L226.2 162.9 L228.2 166.9 L230.3 170.9 L232.3 174.8 L234.4 178.6 L236.5 182.3 L238.5 186 L240.5 189.5 L242.6 192.9 L244.7 196.2 L246.7 199.4 L248.8 202.5 L250.8 205.5 L252.8 208.3 L254.9 211 L257 213.6 L259 216 L261.1 218.3 L263.1 220.5 L265.1 222.6 L267.2 224.6 L269.2 226.5 L271.3 228.2 L273.3 229.9 L275.4 231.4 L277.4 232.9 L279.5 234.2 L281.6 235.5 L283.6 236.7 L285.6 237.8 L287.7 238.8 L289.8 239.7 L291.8 240.6 L293.9 241.4 L295.9 242.2 L297.9 242.8 L300 243.5 L302.1 244.1 L304.1 244.6 L306.1 245.1 L308.2 245.6 L310.2 246 L312.3 246.4 L314.4 246.7 L316.4 247 L318.5 247.3 L320.5 247.6 L322.6 247.8 L324.6 248 L326.7 248.2 L328.7 248.4 L330.8 248.6 L332.8 248.7 L334.9 248.8 L336.9 249 L338.9 249.1 L341 249.2 L343 249.3 L345.1 249.3 L347.1 249.4 L349.2 249.5 L351.2 249.5 L353.3 249.6 L355.4 249.6 L357.4 249.7 L359.4 249.7 L361.5 249.7 L363.6 249.8 L365.6 249.8 L367.7 249.8 L369.7 249.8 L371.8 249.9 L373.8 249.9 L375.9 249.9 L377.9 249.9 L380 249.9 L382 249.9 L384.1 249.9 L386.1 249.9 L388.1 249.9 L390.2 250 L392.2 250 L394.3 250 L396.4 250 L398.4 250 L400.4 250 L402.5 250 L404.6 250 L406.6 250 L408.6 250 L410.7 250 L412.8 250 L414.8 250 L416.9 250 L418.9 250 L420.9 250 L423 250 L425 250 L427.1 250 L429.2 250 L431.2 250 L433.2 250 L435.3 250 L437.3 250 L439.4 250 L441.4 250 L443.5 250 L445.6 250 L447.6 250 L449.6 250 L451.7 250 L453.8 250 L455.8 250 L457.9 250 L459.9 250 L461.9 250 L464 250 L466.1 250 L468.1 250 L470.2 250 L472.2 250 L474.3 250 L476.3 250 L478.4 250 L480.4 250 L482.4 250 L484.5 250 L486.6 250 L488.6 250 L490.6 250 L492.7 250 L494.8 250 L496.8 250 L498.8 250 L500.9 250 L502.9 250 L505 250" fill="none" stroke="#1f7a5c" stroke-width="2"/><path d="M95 70 L97 70 L99.1 70 L101.2 70 L103.2 70 L105.2 70 L107.3 70 L109.3 70.1 L111.4 70.1 L113.5 70.2 L115.5 70.3 L117.5 70.4 L119.6 70.6 L121.7 70.8 L123.7 71 L125.8 71.3 L127.8 71.6 L129.8 71.9 L131.9 72.4 L133.9 72.8 L136 73.3 L138.1 73.9 L140.1 74.5 L142.2 75.2 L144.2 75.9 L146.2 76.7 L148.3 77.6 L150.3 78.5 L152.4 79.5 L154.4 80.5 L156.5 81.6 L158.6 82.8 L160.6 84 L162.7 85.2 L164.7 86.5 L166.8 87.9 L168.8 89.3 L170.8 90.8 L172.9 92.3 L174.9 93.9 L177 95.5 L179.1 97.1 L181.1 98.8 L183.2 100.5 L185.2 102.3 L187.2 104.1 L189.3 105.9 L191.4 107.7 L193.4 109.6 L195.4 111.5 L197.5 113.4 L199.6 115.4 L201.6 117.4 L203.7 119.3 L205.7 121.3 L207.8 123.3 L209.8 125.4 L211.9 127.4 L213.9 129.4 L215.9 131.5 L218 133.5 L220.1 135.5 L222.1 137.6 L224.2 139.6 L226.2 141.6 L228.2 143.7 L230.3 145.7 L232.3 147.7 L234.4 149.7 L236.5 151.7 L238.5 153.7 L240.5 155.6 L242.6 157.6 L244.7 159.5 L246.7 161.4 L248.8 163.3 L250.8 165.2 L252.8 167.1 L254.9 168.9 L257 170.7 L259 172.5 L261.1 174.3 L263.1 176.1 L265.1 177.8 L267.2 179.5 L269.2 181.2 L271.3 182.8 L273.3 184.5 L275.4 186.1 L277.4 187.7 L279.5 189.2 L281.6 190.8 L283.6 192.3 L285.6 193.7 L287.7 195.2 L289.8 196.6 L291.8 198 L293.9 199.4 L295.9 200.7 L297.9 202 L300 203.3 L302.1 204.6 L304.1 205.8 L306.1 207 L308.2 208.2 L310.2 209.4 L312.3 210.5 L314.4 211.6 L316.4 212.7 L318.5 213.8 L320.5 214.8 L322.6 215.9 L324.6 216.8 L326.7 217.8 L328.7 218.8 L330.8 219.7 L332.8 220.6 L334.9 221.5 L336.9 222.3 L338.9 223.1 L341 224 L343 224.7 L345.1 225.5 L347.1 226.3 L349.2 227 L351.2 227.7 L353.3 228.4 L355.4 229.1 L357.4 229.7 L359.4 230.4 L361.5 231 L363.6 231.6 L365.6 232.2 L367.7 232.8 L369.7 233.3 L371.8 233.9 L373.8 234.4 L375.9 234.9 L377.9 235.4 L380 235.9 L382 236.3 L384.1 236.8 L386.1 237.2 L388.1 237.7 L390.2 238.1 L392.2 238.5 L394.3 238.9 L396.4 239.2 L398.4 239.6 L400.4 240 L402.5 240.3 L404.6 240.6 L406.6 241 L408.6 241.3 L410.7 241.6 L412.8 241.9 L414.8 242.1 L416.9 242.4 L418.9 242.7 L420.9 242.9 L423 243.2 L425 243.4 L427.1 243.7 L429.2 243.9 L431.2 244.1 L433.2 244.3 L435.3 244.5 L437.3 244.7 L439.4 244.9 L441.4 245.1 L443.5 245.3 L445.6 245.4 L447.6 245.6 L449.6 245.8 L451.7 245.9 L453.8 246.1 L455.8 246.2 L457.9 246.4 L459.9 246.5 L461.9 246.6 L464 246.7 L466.1 246.9 L468.1 247 L470.2 247.1 L472.2 247.2 L474.3 247.3 L476.3 247.4 L478.4 247.5 L480.4 247.6 L482.4 247.7 L484.5 247.8 L486.6 247.9 L488.6 248 L490.6 248 L492.7 248.1 L494.8 248.2 L496.8 248.2 L498.8 248.3 L500.9 248.4 L502.9 248.4 L505 248.5" fill="none" stroke="#3a6ea5" stroke-width="2.4"/><circle cx="151.4" cy="79" r="5" fill="#3a6ea5"/><circle cx="364.9" cy="232" r="5" fill="#9c2f2f"/><text x="320" y="88" fill="#3a6ea5" font-size="11">n = 125, c = 3</text><text x="320" y="104" fill="#1f7a5c" font-size="11">n = 500, c = 12</text><text x="320" y="128" fill="#5B6672" font-size="10">producer's risk &#945; = 5% at p = 1.10%</text><text x="320" y="144" fill="#5B6672" font-size="10">consumer's risk &#946; = 10% at p = 5.27%</text><path d="M95 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 70" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="95" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M197.5 250 L197.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="197.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">2</text><path d="M300 250 L300 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="300" y="266" text-anchor="middle" fill="#5B6672" font-size="11">4</text><path d="M402.5 250 L402.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="402.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">6</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">8</text><path d="M91 250 L95 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="254" text-anchor="end" fill="#5B6672" font-size="11">0.0</text><path d="M91 214 L95 214" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="218" text-anchor="end" fill="#5B6672" font-size="11">0.2</text><path d="M91 178 L95 178" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="182" text-anchor="end" fill="#5B6672" font-size="11">0.4</text><path d="M91 142 L95 142" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="146" text-anchor="end" fill="#5B6672" font-size="11">0.6</text><path d="M91 106 L95 106" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="110" text-anchor="end" fill="#5B6672" font-size="11">0.8</text><path d="M91 70 L95 70" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="74" text-anchor="end" fill="#5B6672" font-size="11">1.0</text><text x="300" y="288" text-anchor="middle" fill="#14181F" font-size="12">lot fraction defective (per cent)</text><text x="26" y="160" font-size="12" fill="#14181F" transform="rotate(-90 26 160)" text-anchor="middle">probability of acceptance</text></svg><figcaption>Every property of a sampling plan is a point on this curve. The plan \( n=125 \), \( c=3 \) accepts 95% of lots that are 1.10% defective &mdash; so a supplier running at exactly that level still has one lot in twenty rejected, which is the <b>producer's risk</b> &#945;. The same plan accepts 10% of lots that are 5.27% defective, and those shipments reach the customer: the <b>consumer's risk</b> &#946;. The ratio between those two qualities, 4.79 here, measures how sharply the plan discriminates, and the only way to improve it is a larger sample &mdash; \( n=500 \), \( c=12 \) brings it to 2.29.</figcaption></figure>
+<h3>&#167;1 &middot; The plan, and the curve that is the plan</h3>
+<p>A lot arrives. Inspecting all of it may be impossible, uneconomic, or destructive, so a
+<b>single sampling plan</b> takes \( n \) parts at random and accepts the lot if the number of
+defectives \( d \) is at most the <b>acceptance number</b> \( c \). Two integers, and the whole
+behaviour of the scheme follows from them.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the operating-characteristic curve</span>
+<p>\[ P_a(p)=\sum_{d=0}^{c}\binom{n}{d}p^{\,d}(1-p)^{\,n-d} \]</p>
+<p>The probability of accepting a lot whose true fraction defective is \( p \). Plotted against
+\( p \) this is the <b>OC curve</b>, and it is a complete description of the plan &mdash; every
+other property quoted about a plan is a point read off it.</p></div>
+<p>For \( n=125 \), \( c=3 \): a lot at 1% defective is accepted 96.3% of the time, at 2% it is
+accepted 75.9%, at 3% 48.1%, and at 5% 12.4%. Notice what the curve is not. It is not a step. There
+is no fraction defective below which acceptance is certain and above which rejection is certain,
+because the plan sees only a sample and a sample is a random draw. Every plan that inspects fewer
+than all the parts has a sloping curve, and every sloping curve means both parties carry a
+risk.</p>
+
+<h3>&#167;2 &middot; The two risks, which are the two errors of a test</h3>
+<p>Those risks have names, and they are the familiar pair from hypothesis testing wearing work
+clothes.</p>
+<div class="keybox"><span class="tag">Key definitions &mdash; the two risks</span>
+<p>\[ \alpha=1-P_a(\mathrm{AQL})\quad\text{(producer's risk)},\qquad
+\beta=P_a(\mathrm{LTPD})\quad\text{(consumer's risk)} \]</p>
+<p>\( \alpha \) is the chance a <em>good</em> lot is rejected &mdash; a type I error, and the
+supplier pays for it. \( \beta \) is the chance a <em>bad</em> lot is accepted &mdash; a type II
+error, and the customer pays for it. Conventionally \( \alpha=0.05 \) and
+\( \beta=0.10 \).</p></div>
+<p>Reading the reference plan's curve at those two probabilities gives its two defining qualities.
+It accepts 95% of lots at \( p=1.10\% \), so 1.10% is the <b>acceptable quality level</b> for this
+plan; and it accepts 10% of lots at \( p=5.27\% \), so 5.27% is the <b>lot tolerance percent
+defective</b>. The ratio of the two, \( 5.27/1.10=4.79 \), is the plan's <b>discrimination
+ratio</b> &mdash; how much worse a lot has to be before the plan reliably notices.</p>
+<p>Only one thing improves that ratio, and it is not the acceptance number. Compare four plans, each
+chosen to hold roughly the same AQL: \( n=50,c=1 \) discriminates at 10.56; \( n=125,c=3 \) at 4.79;
+\( n=200,c=5 \) at 3.49; \( n=500,c=12 \) at 2.29. <b>Sample size buys discrimination</b>, and
+nothing else does.</p>
+<p>Which disposes of the most durable piece of folklore in the subject: that a sample should be some
+percentage of the lot. It should not, because the OC curve barely depends on lot size at all. Taking
+125 parts from a lot of 1,000 that is 3% defective accepts it with probability 0.4713; taking the
+same 125 from a lot of 100,000 at the same 3% accepts with probability 0.4813. The lot grew a
+hundredfold and the plan's behaviour moved by one point in a hundred. A plan is defined by
+\( n \) and \( c \); &quot;10% of the lot&quot; is a rule that inspects far too many small lots and
+far too few large ones.</p>
+
+<h3>&#167;3 &middot; What an AQL does not mean</h3>
+<p>The AQL is the most misread number in quality, in two distinct ways, and both are worth stating
+as flat corrections.</p>
+<p><b>It is not a target, and it is not permission.</b> The AQL is a property of the <em>plan</em>
+&mdash; the quality it happens to accept 95% of the time. It is not an agreement that the supplier
+may run at that level. A supplier who does run at exactly the AQL will have one lot in twenty
+rejected, and across twenty consecutive lots the chance of at least one rejection is
+\( 1-0.95^{20}=64\% \). Sitting on the AQL is not a comfortable place to be; it is the edge of the
+plan's tolerance for you.</p>
+<p><b>An accepted lot is not a good lot.</b> Acceptance is a decision about the lot, not a
+certificate about its parts. A lot accepted at \( p=3\% \) still contains 3% defectives, all of
+which proceed into assembly. Sampling never removes defectives from an accepted lot; it only
+decides whether the lot goes forward.</p>
+<p>What sampling <em>can</em> bound is the long-run average, provided rejected lots are screened
+rather than returned unchanged.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; average outgoing quality</span>
+<p>\[ \mathrm{AOQ}(p)\approx p\,P_a(p),\qquad
+\mathrm{AOQL}=\max_p\ \mathrm{AOQ}(p) \]</p>
+<p>Accepted lots pass at \( p \); rejected lots are 100%-inspected and their defectives replaced,
+so they pass at nearly zero. The product has a maximum &mdash; incoming quality that is very good
+produces little outgoing defect, and incoming quality that is very bad is almost always
+rejected and rectified.</p></div>
+<p>For the reference plan the maximum is \( \mathrm{AOQL}=1.55\% \), occurring at an incoming level
+of 2.34%. That is a genuine guarantee with a genuine condition: however bad the supplier's process
+becomes, long-run outgoing quality cannot exceed 1.55% defective &mdash; <em>if</em> every rejected
+lot is really screened and rectified. Where rejected lots are returned to the supplier and shipped
+back untouched, the AOQL is not a bound on anything.</p>
+
+<h3>&#167;4 &middot; When to sample, and when 100% inspection is owed</h3>
+<p>The economic answer is sharper than most people expect, and it says that sampling is usually the
+wrong choice.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the all-or-none rule</span>
+<p>\[ p^{*}=\frac{k_1}{k_2}:\qquad p<p^{*}\Rightarrow\text{inspect none},\qquad
+p>p^{*}\Rightarrow\text{inspect all} \]</p>
+<p>\( k_1 \) is the cost of inspecting one part and \( k_2 \) the cost of one defective passing
+into production. For a <em>stable</em> process at known \( p \), the minimum-cost policy is one of
+the two extremes; partial sampling costs more than the better of them.</p></div>
+<p>With inspection at 0.40 per part and an escape costing 55, the break-even is
+\( p^{*}=0.40/55=0.73\% \). A process running at 0.2% defective costs \( 0.002\times55=0.11 \) per
+part if nothing is inspected, against 0.40 per part to screen: <b>inspect nothing</b>. The same
+process drifted to 2% costs \( 1.10 \) per part unscreened: <b>inspect everything</b>. There is no
+value of \( p \) at which checking one part in eight is the cheapest policy.</p>
+<p>So why does acceptance sampling exist at all? Because the rule's premise &mdash; a stable
+process at known \( p \) &mdash; is exactly what a receiving inspector does not have. Lots arrive
+from a supplier whose process state is invisible, may be stable or not, and may differ lot to lot.
+Sampling is the rational hedge under that ignorance, and it is also a contractual instrument: it
+gives both sides a defined, auditable rule. Its right home is <b>incoming inspection from an
+unverified source</b>, and its natural replacement is evidence &mdash; a supplier who can produce
+control charts and capability studies has told you \( p \), and once \( p \) is known the
+all-or-none rule applies.</p>
+<p>Three situations override the arithmetic entirely. Where the test is <b>destructive</b>,
+sampling is not a choice but the only possibility, and the plan's discrimination has to be paid for
+in scrapped parts. Where the consequence of an escape is a <b>safety</b> event, no escape rate is
+acceptable and the answer is 100% inspection with redundancy, or a design that removes the failure
+mode. And where the process is <b>not in control</b>, \( p \) is not a number, so no policy derived
+from it is valid until stability is restored.</p>
+<p>One honest qualification belongs with all of this. &quot;100% inspection&quot; is a name, not a
+guarantee: attribute inspection typically detects 80&ndash;95% of the defectives present, so a 2%
+incoming rate screened at 90% efficiency still passes 0.2%. A second pass takes it to 0.02% and a
+third to 0.002%, which is why critical characteristics get redundant checks rather than one careful
+one. The instrument, the inspector and the plan are all part of the same measuring system, and none
+of them is perfect.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>What do producer's and consumer's risk mean on an OC curve?</li><li>When is 100% inspection actually owed?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The binomial distribution</b> (Engineering Statistics L3) &mdash; the OC curve is a binomial
+tail evaluated at every \( p \).</li>
+<li><b>Probability rules and independence</b> (Engineering Statistics L2) &mdash; the
+\( 1-0.95^{20} \) argument, and the escape rate through repeated inspection.</li>
+<li><b>Hypothesis testing, type I and type II errors</b> (Engineering Statistics L7) &mdash;
+producer's and consumer's risk are exactly \( \alpha \) and \( \beta \).</li>
+<li><b>Attribute inspection</b> (Lesson 5) &mdash; a sampling plan counts pass/fail verdicts, with
+all the information loss that implies.</li>
+<li><b>Fraction nonconforming and stability</b> (Lessons 7 and 8) &mdash; the all-or-none rule
+assumes a process in control at a known \( p \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Single sampling plan</td><td>\( (n,c) \)</td><td>Take \( n \), accept if defectives \( \le c \).</td></tr>
+<tr><td>OC curve</td><td>\( P_a(p)=\sum_{d\le c}\binom{n}{d}p^d(1-p)^{n-d} \)</td><td>The complete description of a plan.</td></tr>
+<tr><td>Producer's risk \( \alpha \)</td><td>\( 1-P_a(\mathrm{AQL}) \)</td><td>Good lot rejected; a type I error.</td></tr>
+<tr><td>Consumer's risk \( \beta \)</td><td>\( P_a(\mathrm{LTPD}) \)</td><td>Bad lot accepted; a type II error.</td></tr>
+<tr><td>AQL / LTPD</td><td>1.10% / 5.27% for \( (125,3) \)</td><td>The qualities accepted 95% and 10% of the time.</td></tr>
+<tr><td>Discrimination ratio</td><td>LTPD / AQL</td><td>4.79 at \( n=125 \); 2.29 at \( n=500 \). Only \( n \) improves it.</td></tr>
+<tr><td>Lot size</td><td>almost irrelevant</td><td>125 from 1,000 and from 100,000 differ by 0.01 in \( P_a \).</td></tr>
+<tr><td>AOQ / AOQL</td><td>\( pP_a(p) \); max 1.55% at \( p=2.34\% \)</td><td>Only if rejected lots are genuinely screened.</td></tr>
+<tr><td>All-or-none rule</td><td>\( p^{*}=k_1/k_2 \)</td><td>Stable process, known \( p \): inspect none or all.</td></tr>
+<tr><td>Inspection efficiency</td><td>80&ndash;95% typical</td><td>2% screened at 90% still passes 0.2%.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Read a plan off its own curve</b></p>
+<p><b>Problem.</b> A single sampling plan takes \( n=125 \) and accepts on \( c=3 \). Give the
+probability of accepting lots at 1%, 3% and 5% defective. The plan's AQL (the quality accepted 95%
+of the time) is 1.10% and its LTPD (accepted 10% of the time) is 5.27%; state the producer's and
+consumer's risks and the discrimination ratio. Then find the probability that a supplier running at
+exactly the AQL has at least one of twenty consecutive lots rejected.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1)
+\( P_a(p)=\sum_{d=0}^{3}\binom{125}{d}p^d(1-p)^{125-d} \).</p>
+<p>(2) At \( p=0.01 \): the four terms are 0.2847, 0.3595, 0.2251 and 0.0932, giving
+\( P_a=0.963 \).</p>
+<p>(3) At \( p=0.03 \): \( P_a=0.481 \). At \( p=0.05 \): \( P_a=0.124 \).</p>
+<p>(4) Producer's risk \( \alpha=1-P_a(\mathrm{AQL})=1-0.95=0.05 \): one good lot in twenty is
+rejected. Consumer's risk \( \beta=P_a(\mathrm{LTPD})=0.10 \): one lot in ten at 5.27% defective is
+accepted and shipped.</p>
+<p>(5) Discrimination ratio \( =5.27/1.10=4.79 \). A lot must be nearly five times worse than the
+AQL before the plan rejects it reliably.</p>
+<p>(6) Lots are independent, so \( P=1-0.95^{20}=1-0.3585=0.642 \).</p>
+<p><b>Answer:</b> \( P_a \) = 0.963, 0.481, 0.124 at 1%, 3% and 5%; \( \alpha=0.05 \),
+\( \beta=0.10 \), discrimination ratio 4.79; a supplier at the AQL has a 64% chance of at least one
+rejection in twenty lots.
+<b>Sanity check:</b> the curve falls from 0.96 to 0.12 as \( p \) goes from 1% to 5%, which is
+gradual, not a step &mdash; and that gradualness <em>is</em> the two risks. Note what the 64% means
+in practice: the AQL is not a safe operating point for a supplier, and treating it as a target
+guarantees regular arguments over rejected lots that were exactly as agreed. The place to sit is
+well below the AQL, which is the same conclusion the capability threshold of Lesson 8 reaches from
+the other direction.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Two pieces of folklore, tested</b></p>
+<p><b>Problem.</b> (a) A quality manual requires the sample to be &quot;10% of the lot&quot;.
+Taking \( n=125 \), \( c=3 \) from lots that are 3% defective, the exact acceptance probabilities
+are 0.4713 for a lot of 1,000 and 0.4813 for a lot of 100,000. Comment on what this implies for the
+10% rule. (b) The same plan is used with rejected lots 100%-inspected and rectified. Given that
+\( \mathrm{AOQ}(p)\approx pP_a(p) \) peaks at 1.55% when \( p=2.34\% \), state what is and is not
+guaranteed, and evaluate \( \mathrm{AOQ} \) at \( p=1\% \) and \( p=6\% \) using
+\( P_a=0.9626 \) and \( P_a=0.0539 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The lot grew by a factor of 100 and \( P_a \) moved from
+0.4713 to 0.4813 &mdash; one part in a hundred. The plan's behaviour is governed by \( n \) and
+\( c \), not by the fraction of the lot they represent.</p>
+<p>(2) So the 10% rule inspects 100 parts from a lot of 1,000 &mdash; roughly the right sample
+&mdash; and 10,000 from a lot of 100,000, which buys discrimination nobody asked for at eighty
+times the cost. Run the other way, on a lot of 200 it takes 20 parts, a plan far too weak to
+discriminate at all. The rule is wrong in both directions.</p>
+<p>(3) \( \mathrm{AOQ}(0.01)=0.01\times0.9626=0.96\% \). Most lots pass, carrying their defectives
+with them.</p>
+<p>(4) \( \mathrm{AOQ}(0.06)=0.06\times0.0539=0.32\% \). Incoming quality is far worse, but almost
+every lot is rejected and rectified, so little defect gets through.</p>
+<p>(5) Between those extremes lies the maximum, 1.55% at \( p=2.34\% \). What is guaranteed is that
+long-run <em>average</em> outgoing quality cannot exceed 1.55% defective whatever the supplier
+does. What is not guaranteed is anything about a particular lot: an accepted lot at 3% still
+contains 3% defectives. And the guarantee fails entirely if rejected lots are returned unscreened
+rather than rectified.</p>
+<p><b>Answer:</b> (a) lot size is nearly irrelevant, so the 10% rule over-inspects large lots and
+under-inspects small ones; (b) AOQ is 0.96% at \( p=1\% \) and 0.32% at \( p=6\% \), with a
+guaranteed long-run ceiling of 1.55% that depends entirely on rejected lots actually being
+screened.
+<b>Sanity check:</b> AOQ falling at <em>both</em> ends is the right shape &mdash; good incoming
+quality produces few defectives and bad incoming quality gets rejected &mdash; so a maximum in
+between must exist. Note the two conditions that are easy to lose: the ceiling is a long-run
+average and not a property of any lot, and it evaporates the moment rejected lots go back to the
+supplier and return untouched.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Sample, screen, or leave it alone (with a per-gross cost)</b></p>
+<p><b>Problem.</b> Inspecting one part costs 0.40 and one defective escaping into production costs
+55, in the same units. For a stable process, find the break-even fraction defective and give the
+minimum-cost policy at \( p=0.2\% \) and at \( p=2\% \). Then repeat the break-even calculation for
+a fastener line where inspection is quoted at 48 per gross. Finally, if 100% inspection detects 90%
+of the defectives present, find the outgoing rate from a 2% incoming rate after one, two and three
+passes.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Cost per part of inspecting nothing is \( pk_2 \); of
+inspecting everything, \( k_1 \). They are equal at \( p^{*}=k_1/k_2=0.40/55=0.00727 \), that is
+0.73%.</p>
+<p>(2) At \( p=0.002 \): unscreened costs \( 0.002\times55=0.11 \) per part, screening costs 0.40.
+<b>Inspect nothing.</b></p>
+<p>(3) At \( p=0.02 \): unscreened costs \( 0.02\times55=1.10 \) per part against 0.40.
+<b>Inspect everything.</b> No intermediate sampling fraction beats the better extreme, because both
+costs are linear in the fraction inspected.</p>
+<p>(4) A gross is 144 parts, so \( k_1=48/144=0.3333 \) per part and
+\( p^{*}=0.3333/55=0.00606 \), that is 0.61% &mdash; 6,061 parts per million.</p>
+<p>(5) Each pass leaves 10% of what it was given:
+\( 0.02(0.10)=0.2\% \), then \( 0.02\%\), then \( 0.002\% \).</p>
+<p><b>Answer:</b> \( p^{*}=0.73\% \); inspect nothing at 0.2% and everything at 2%; at 48 per gross
+the break-even is 0.61%; screening at 90% efficiency gives 0.2%, 0.02% and 0.002% after one, two
+and three passes.
+<b>Sanity check:</b> the rule assumes a stable process at a known \( p \), which is exactly what a
+receiving inspector lacks &mdash; and that, rather than economics, is why acceptance sampling
+exists. Note that the per-gross figure needed only a count conversion, and the answer moved from
+0.73% to 0.61% because inspection got cheaper, which is the direction it should move. Note finally
+that &quot;100% inspection&quot; is a name: one pass at 90% still ships 2,000 defectives per
+million, which is why critical characteristics are checked redundantly rather than
+carefully.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The operating-characteristic curve of a sampling plan plots</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the fraction defective against the sample size</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the probability of accepting a lot against the lot's true fraction defective</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the cost of inspection against the lot size</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the number of defectives found against time</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( P_a(p) \) against \( p \). It is the complete description of the plan &mdash;
+the AQL, the LTPD, both risks and the discrimination ratio are all points read off it. Two integers,
+\( n \) and \( c \), determine the whole curve.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Producer's risk \( \alpha \) is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the chance a bad lot is accepted</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the chance a good lot is rejected</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the fraction defective the supplier is allowed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the cost of rework</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is a type I error in the language of hypothesis testing: rejecting a lot that
+was in fact acceptable. The supplier pays for it. Consumer's risk \( \beta \) is the type II error
+&mdash; accepting a bad lot &mdash; and the customer pays for that. Both exist because the OC curve
+slopes, and it slopes because a sample is a random draw.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A quality manual requires the sample to be 10% of the lot. This rule is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>correct, since larger lots need larger samples</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>wrong, because a plan's discrimination depends on \( n \) and \( c \) rather than on the fraction of the lot sampled</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>correct only for lots above 1,000</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>equivalent to a fixed-\( n \) plan</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Taking 125 parts from a 3% defective lot of 1,000 accepts it with probability
+0.4713; from a lot of 100,000 the figure is 0.4813. A hundredfold change in lot size moved
+\( P_a \) by one point. The rule over-inspects large lots enormously and leaves small lots with
+plans too weak to discriminate.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A supplier runs at exactly the plan's AQL. Over twenty consecutive lots the
+probability of at least one rejection is about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>5%</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>20%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>64%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>95%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 1-0.95^{20}=0.64 \). The AQL is the quality the plan accepts 95% of the time,
+so sitting on it means one lot in twenty rejected on average &mdash; and across twenty lots that is
+very likely to happen at least once. The AQL is a property of the plan, not a target or a
+permission.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A lot at 3% defective is accepted by the plan. It follows that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the lot contains no defectives</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the defectives were removed by the sampling</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>the lot still contains 3% defectives, all of which proceed into assembly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the supplier's process is in control</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Acceptance is a decision about the lot, not a treatment of it. Sampling removes
+nothing from an accepted lot. What sampling can bound is the long-run average outgoing quality, and
+only if rejected lots are actually screened and rectified rather than returned unchanged.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>The only way to improve a plan's discrimination ratio is to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>lower the acceptance number \( c \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>increase the sample size \( n \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>increase the lot size</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>tighten the AQL</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Holding the AQL roughly fixed, the ratio falls from 10.56 at \( n=50 \) to 4.79
+at \( n=125 \), 3.49 at \( n=200 \) and 2.29 at \( n=500 \). Lowering \( c \) alone shifts the whole
+curve left rather than steepening it, and the lot size is nearly irrelevant. Discrimination is
+bought with sample size and nothing else.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>For a stable process at known \( p \), with inspection costing \( k_1 \) per part and
+an escape costing \( k_2 \), the minimum-cost policy is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>always sample a fixed fraction</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>inspect none if \( p<k_1/k_2 \), inspect all if \( p>k_1/k_2 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>inspect a fraction equal to \( p \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>inspect all, always</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both costs are linear in the fraction inspected, so the optimum is at one end or
+the other &mdash; partial sampling never beats the better extreme. With \( k_1=0.40 \) and
+\( k_2=55 \) the break-even is 0.73%. The rule's premise is a <em>stable</em> process at a
+<em>known</em> \( p \), which is precisely what a receiving inspector does not have &mdash; and that
+is the real reason acceptance sampling exists.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>&quot;100% inspection&quot; of an attribute characteristic typically</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>removes every defective</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>detects 80&ndash;95% of the defectives present, so a second pass is needed for the rest</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is always cheaper than sampling</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is required by every standard</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Inspector and gauge are part of the measuring system and neither is perfect. At
+90% efficiency a 2% incoming rate leaves 0.2% after one pass, 0.02% after two and 0.002% after
+three. That is why critical characteristics are checked redundantly rather than once carefully, and
+why &quot;100% inspected&quot; on a certificate is a description of effort, not of outcome.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the AQL that was read as an allowance.</b> A purchase specification for
+machined fittings called for inspection at &quot;AQL 1.0&quot;. The supplier's quality plan set the
+process aim so that about 1% of parts were nonconforming, on the stated reasoning that 1% was what
+the contract allowed. Lots were rejected repeatedly, each rejection was disputed, and both sides
+believed the other was in breach.</p>
+<p>Both readings of the number were wrong in the same way. An AQL is a property of the sampling
+plan &mdash; the quality it accepts about 95% of the time &mdash; not a permitted defect rate. A
+supplier sitting exactly on it faces \( 1-0.95^{20}=64\% \) odds of at least one rejection in twenty
+lots, so the rejections were the plan working as designed, not evidence of a worse process than
+agreed. The customer's position was no better founded: accepted lots at 1% defective had been
+carrying 1% defectives into assembly the whole time, because acceptance is a decision about a lot
+and never a treatment of it.</p>
+<p>Two practices follow. Write the specification in terms both sides can check &mdash; the plan
+\( (n,c) \), the resulting AQL and LTPD, and the risks each party is accepting &mdash; rather than a
+bare AQL figure that invites the allowance reading. And prefer evidence to sampling where it can be
+had: a supplier who supplies control charts and capability studies has stated the process fraction
+defective directly, at which point the receiving decision stops being a gamble on a sample and
+becomes the straightforward cost comparison of the all-or-none rule.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(304.8\\ \\mathrm{in}\\)", "\\(0.4724\\ \\mathrm{in}\\)", "\\(4.724\\ \\mathrm{in}\\)", "\\(0.04724\\ \\mathrm{in}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(12 \\times 0.03937 = 0.4724\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(3810\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(5.906\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(59.06\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.5906\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(150 \times 0.03937 = 5.906\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(44.96\\ \\mathrm{lbf}\\)", "\\(88.96\\ \\mathrm{lbf}\\)", "\\(4.496\\ \\mathrm{lbf}\\)", "\\(0.4496\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(20 \\times 0.2248 = 4.496\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(4.496\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.896\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.4496\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.04496\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(2 \times 0.2248 = 0.4496\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -133,6 +381,6 @@
   <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
   <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
 </div></footer>
-<script src="../../../../assets/nx/nexus.js?v=97c10d800f"></script>
+<script src="../../../../assets/nx/nexus.js?v=da01dd12d4"></script>
 </body>
 </html>

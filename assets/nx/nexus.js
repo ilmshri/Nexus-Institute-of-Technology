@@ -377,6 +377,25 @@
     var root = document.documentElement.getAttribute('data-root') || './';
     navigator.serviceWorker.register(root + 'sw.js').catch(function () {});
   }
+
+  /* ---------- Treatment A (owner choice, 2026-07-31): prefetch same-origin
+     pages on hover/pointerdown so the quiet crossfade lands on an already
+     loaded page. External and target=_blank links are excluded; browsers
+     without Speculation Rules skip this entirely. ---------- */
+  try {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports &&
+        HTMLScriptElement.supports('speculationrules')) {
+      var sr = document.createElement('script');
+      sr.type = 'speculationrules';
+      sr.textContent = JSON.stringify({
+        prefetch: [{
+          where: { and: [{ href_matches: '/*' }, { not: { selector_matches: 'a[target]' } }] },
+          eagerness: 'moderate'
+        }]
+      });
+      document.head.appendChild(sr);
+    }
+  } catch (e) {}
 })();
 
 /* ---------- interactive workshop (homepage): pointer parallax + gear train.

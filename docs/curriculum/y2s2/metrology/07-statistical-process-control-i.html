@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=97c10d800f">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=da01dd12d4">
 <script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 07 of 11 · Year 2 · Semester 2</p>
   <h1>Statistical process control I</h1>
   <p class="sub">Variation: common versus special cause — the distinction all of SPC rests on. X̄–R charts built and read. Control limits versus specification limits, never confused again.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/7">Mark as complete</button>
@@ -91,23 +91,292 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Common versus special cause: why does the response differ?</li><li>Why are control limits never the same thing as spec limits?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Common versus special cause: why does the response differ?</li><li>Why are control limits never the same thing as spec limits?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An X-bar control chart of ten subgroup means, in micrometres above 25.000 millimetres. The centre line is at 10.2 and the control limits, computed from the first eight subgroups, are at 7.75 and 12.65 micrometres. The ninth subgroup mean of 13.1 lies above the upper control limit and is marked as out of control. The specification limits at 0 and 21 micrometres lie far outside the control limits, at the top and bottom of the chart."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Control limits come from the process; specification limits do not</text><rect x="95" y="138.4" width="363" height="40.1" fill="#1f7a5c14" stroke="none" stroke-width="0"/><path d="M95 70.2 L458 70.2" stroke="#c2820f" stroke-width="1.8" stroke-dasharray="7 4" fill="none"/><text x="468" y="73.7" fill="#c2820f" font-size="10">USL 21.0 (spec)</text><path d="M95 241.8 L458 241.8" stroke="#c2820f" stroke-width="1.8" stroke-dasharray="7 4" fill="none"/><text x="468" y="245.3" fill="#c2820f" font-size="10">LSL 0.0 (spec)</text><path d="M95 138.4 L458 138.4" stroke="#9c2f2f" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/><text x="468" y="141.9" fill="#9c2f2f" font-size="10">UCL 12.65</text><path d="M95 158.5 L458 158.5" stroke="#1f7a5c" stroke-width="1.6" fill="none"/><text x="468" y="162" fill="#1f7a5c" font-size="10">CL 10.20</text><path d="M95 178.5 L458 178.5" stroke="#9c2f2f" stroke-width="1.6" stroke-dasharray="5 4" fill="none"/><text x="468" y="182" fill="#9c2f2f" font-size="10">LCL 7.75</text><path d="M95 158.5 L135.3 155.2 L175.7 161.7 L216 156.8 L256.3 160.1 L296.7 153.5 L337 163.4 L377.3 158.5 L417.7 134.7 L458 151.9" fill="none" stroke="#3a6ea5" stroke-width="2"/><circle cx="95" cy="158.5" r="4" fill="#3a6ea5"/><circle cx="135.3" cy="155.2" r="4" fill="#3a6ea5"/><circle cx="175.7" cy="161.7" r="4" fill="#3a6ea5"/><circle cx="216" cy="156.8" r="4" fill="#3a6ea5"/><circle cx="256.3" cy="160.1" r="4" fill="#3a6ea5"/><circle cx="296.7" cy="153.5" r="4" fill="#3a6ea5"/><circle cx="337" cy="163.4" r="4" fill="#3a6ea5"/><circle cx="377.3" cy="158.5" r="4" fill="#3a6ea5"/><circle cx="417.7" cy="134.7" r="5" fill="#9c2f2f"/><circle cx="458" cy="151.9" r="4" fill="#3a6ea5"/><text x="417.7" y="124.7" text-anchor="middle" fill="#9c2f2f" font-size="10">out of control</text><path d="M95 250 L458 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 62" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M95 250 L95 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="95" y="266" text-anchor="middle" fill="#5B6672" font-size="11">1</text><path d="M135.3 250 L135.3 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="135.3" y="266" text-anchor="middle" fill="#5B6672" font-size="11">2</text><path d="M175.7 250 L175.7 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="175.7" y="266" text-anchor="middle" fill="#5B6672" font-size="11">3</text><path d="M216 250 L216 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="216" y="266" text-anchor="middle" fill="#5B6672" font-size="11">4</text><path d="M256.3 250 L256.3 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="256.3" y="266" text-anchor="middle" fill="#5B6672" font-size="11">5</text><path d="M296.7 250 L296.7 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="296.7" y="266" text-anchor="middle" fill="#5B6672" font-size="11">6</text><path d="M337 250 L337 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="337" y="266" text-anchor="middle" fill="#5B6672" font-size="11">7</text><path d="M377.3 250 L377.3 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="377.3" y="266" text-anchor="middle" fill="#5B6672" font-size="11">8</text><path d="M417.7 250 L417.7 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="417.7" y="266" text-anchor="middle" fill="#5B6672" font-size="11">9</text><path d="M458 250 L458 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="458" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M91 241.8 L95 241.8" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="245.8" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M91 201 L95 201" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="205" text-anchor="end" fill="#5B6672" font-size="11">5</text><path d="M91 160.1 L95 160.1" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="164.1" text-anchor="end" fill="#5B6672" font-size="11">10</text><path d="M91 119.2 L95 119.2" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="123.2" text-anchor="end" fill="#5B6672" font-size="11">15</text><path d="M91 78.3 L95 78.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="87" y="82.3" text-anchor="end" fill="#5B6672" font-size="11">20</text><text x="276.5" y="288" text-anchor="middle" fill="#14181F" font-size="12">subgroup number</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">subgroup mean (&#181;m)</text></svg><figcaption>The limits at 7.75 and 12.65 &#181;m were computed from the first eight subgroups and describe what this process <em>does</em>: they are \( \bar{\bar{X}}\pm A_2\bar{R} \), three standard errors of a mean of five. The limits at 0 and 21 &#181;m come from the drawing and describe what is <em>wanted</em> of a single part. They are different quantities on different scales, which is why they are never drawn on the same chart in practice &mdash; shown together here only to make the gap visible. Subgroup 9 sits above the upper control limit while its range stays well inside the range chart's limit, so the level moved and the spread did not.</figcaption></figure>
+<h3>&#167;1 &middot; Two kinds of variation, and why the response differs</h3>
+<p>Every process varies. The whole of statistical process control rests on one distinction, due to
+Shewhart: some of that variation belongs to the process and some does not.</p>
+<p><b>Common-cause</b> variation is the sum of many small influences that are always present
+&mdash; tool wear between regrinds, coolant temperature, material hardness within its own
+specification, the operator's loading. No single one is identifiable, and together they produce a
+stable, predictable distribution. <b>Special-cause</b> variation comes from something assignable
+that is not part of the system: a tool has chipped, a batch of material is different, a fixture has
+loosened, a new operator is running the machine.</p>
+<p>The two demand opposite responses, and this is the practical point. A special cause should be
+found and removed &mdash; it is an event, it has a story, and the story is usually short. A common
+cause should be left alone at the machine and attacked at the system level, because there is no
+single thing to fix and adjusting for it makes the output worse. Not slightly worse:
+<em>measurably</em> worse.</p>
+<div class="keybox"><span class="tag">Key result &mdash; the cost of tampering</span>
+<p>\[ \sigma^2_{\text{adjusted}}=2\sigma^2,\qquad
+\sigma_{\text{adjusted}}=\sqrt2\,\sigma\approx1.414\,\sigma \]</p>
+<p>Adjusting the machine by \( -(x_n-T) \) after every part gives
+\( x_{n+1}=T-e_n+e_{n+1} \), the difference of two independent errors. The variance doubles and
+the standard deviation rises by 41%.</p></div>
+<p>The derivation is worth following because the result is so counter-intuitive to anyone standing
+at a machine. Let the uncontrolled output be \( x_n=T+a_n+e_n \), where \( a_n \) is the current
+offset and \( e_n \) is an independent random error with standard deviation \( \sigma \). The
+conscientious operator sets \( a_{n+1}=a_n-(x_n-T)=-e_n \). The next part is then
+\( x_{n+1}=T-e_n+e_{n+1} \), which has variance \( \sigma^2+\sigma^2 \). Every correction was
+sensible, every one was made in good faith, and the process got 41% worse. This is <b>tampering</b>,
+and it is the commonest way a shop makes a stable process unstable.</p>
+<p>So the first question about any deviation is not &quot;how do I correct it?&quot; but &quot;is
+this the process talking, or something new?&quot; A control chart exists to answer exactly that
+question and nothing else.</p>
+
+<h3>&#167;2 &middot; Building an \( \bar{X} \)&ndash;\( R \) chart</h3>
+<p>Take small samples of consecutive parts &mdash; a <b>rational subgroup</b>, usually four or five
+&mdash; at intervals. Consecutive matters: the subgroup must be chosen so that only common causes
+can act <em>within</em> it, leaving any special cause to show up <em>between</em> subgroups. A
+subgroup made of one part from each of five machines destroys the method before it starts.</p>
+<p>From each subgroup take the mean \( \bar{X} \) and the range \( R \). Average those over a
+baseline of twenty or so subgroups to get \( \bar{\bar{X}} \) and \( \bar{R} \), and the limits
+follow.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; the chart limits</span>
+<p>\[ \hat\sigma=\frac{\bar R}{d_2},\qquad
+\bar{\bar X}\pm A_2\bar R\ \text{ with }\ A_2=\frac{3}{d_2\sqrt n},\qquad
+\text{UCL}_R=D_4\bar R,\ \ \text{LCL}_R=D_3\bar R \]</p>
+<p>At \( n=5 \): \( d_2=2.326 \), so \( A_2=3/(2.326\sqrt5)=0.577 \), and \( D_4=2.114 \),
+\( D_3=0 \). The limits are three standard errors of the mean, nothing more exotic &mdash;
+\( A_2 \) simply packages \( 3/(d_2\sqrt n) \) so the shop never has to compute \( \hat\sigma \).</p></div>
+<p>The chart in the diagram uses ten subgroups of five bores, measured in micrometres above
+25.000 mm. The first eight are the baseline: \( \bar{\bar X}=10.2\ \mu\mathrm{m} \) and
+\( \bar R=4.25\ \mu\mathrm{m} \), so \( A_2\bar R=0.577(4.25)=2.45 \) and the limits are 7.75 and
+12.65 &#181;m. The range chart's upper limit is \( 2.114(4.25)=8.98\ \mu\mathrm{m} \).</p>
+<p>Read the range chart first, always. It reports the process <em>spread</em>, and the
+\( \bar{X} \) limits are computed from \( \bar R \) &mdash; so if the spread is unstable, the
+\( \bar{X} \) limits were built on sand and mean nothing. Here every range from 3 to 6 &#181;m sits
+well inside 8.98, so the spread is stable and the \( \bar{X} \) chart can be trusted. Subgroup 9
+then reads 13.1, above the upper control limit, while its range is an unremarkable 5. A signal on
+the mean with no signal on the range says the process <em>level</em> shifted and its spread did
+not &mdash; which points at a setting, an offset, a new batch, not at a worn tool or a loose
+fixture.</p>
+<p>The estimate that falls out of the same arithmetic is
+\( \hat\sigma=\bar R/d_2=4.25/2.326=1.83\ \mu\mathrm{m} \), so the process's own spread is
+\( 6\hat\sigma=10.96\ \mu\mathrm{m} \) against a 21 &#181;m tolerance &mdash; it occupies about
+half of what it was given. Comparing those two numbers properly is the next lesson's subject.</p>
+
+<h3>&#167;3 &middot; Control limits are not specification limits</h3>
+<p>This is the confusion that ruins more charts than any other, and it is worth stating as
+bluntly as possible.</p>
+<div class="keybox"><span class="tag">Key distinction</span>
+<p><b>Control limits</b> are computed from the process and describe what it <em>does</em>. They
+apply to a subgroup statistic, and on an \( \bar{X} \) chart they sit at
+\( \pm3\sigma/\sqrt n \).</p>
+<p><b>Specification limits</b> are set by the designer and describe what is <em>wanted</em>. They
+apply to an individual part. They are never computed, never plotted on an \( \bar{X} \) chart, and
+never used to judge whether a process is stable.</p></div>
+<p>The arithmetic shows why mixing them is not a matter of taste. With \( n=5 \) the control limits
+sit at \( \pm3\sigma/\sqrt5=\pm1.34\sigma \) &mdash; less than half the \( \pm3\sigma \) spread of
+the individual parts. On the worked chart that is \( \pm2.45\ \mu\mathrm{m} \) about the centre
+line for the means, against \( \pm5.48\ \mu\mathrm{m} \) for single bores. The specification limits
+are at &#8722;10.2 and +10.8 &#181;m from the same centre. Draw them on the \( \bar{X} \) chart, as
+the diagram does deliberately, and they are so far out that no realistic shift would ever reach
+them: the chart would signal nothing until the process had been producing scrap for a long
+time.</p>
+<p>Two statements follow that sound like paradoxes and are not. A process can be in perfect
+statistical control and produce nothing but scrap &mdash; control means <em>predictable</em>, not
+<em>good</em>, and a stable process centred outside the tolerance is stably wrong. And a process
+can sit comfortably inside the tolerance while being wildly out of control &mdash; there is room to
+wander, and it is wandering, and the day it wanders past the edge nothing on the chart will have
+warned anyone.</p>
+<p>Those are the two independent questions a shop has to keep separate: <em>is it stable?</em>,
+which the control chart answers, and <em>is it good enough?</em>, which the tolerance answers. A
+chart with specification limits drawn on it has silently merged them and answers neither.</p>
+
+<h3>&#167;4 &middot; Reading the chart, and the two errors on offer</h3>
+<p>The basic signal is a point beyond a control limit. With limits at three standard errors and a
+stable normal process, the chance a point falls outside by luck alone is
+\( 2(1-\Phi(3))=0.0027 \), so the <b>average run length</b> between false alarms is
+\( 1/0.0027=370 \) subgroups. That is the number the three-sigma convention was chosen to
+produce: rare enough that a signal is worth acting on.</p>
+<p>Rare per point is not rare per chart. Over 25 in-control points the chance of at least one false
+alarm is \( 1-(1-0.0027)^{25}=6.5\% \), and a shop running several charts sees false alarms
+routinely. Supplementary <b>runs rules</b> &mdash; eight consecutive points on one side of the
+centre line, two of three beyond two standard errors &mdash; catch small sustained shifts that the
+beyond-limit rule misses, at the price of more false alarms still: eight in a row on one side has
+probability \( 2(0.5)^8=0.0078 \) by chance alone.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; how fast a shift is caught</span>
+<p>\[ P_{\text{detect}}=1-\Phi\!\left(3-k\sqrt n\right)+\Phi\!\left(-3-k\sqrt n\right),
+\qquad \mathrm{ARL}=\frac{1}{P_{\text{detect}}} \]</p>
+<p>for a shift of \( k \) process standard deviations. The subgroup size enters as
+\( \sqrt n \), which is the whole reason subgroups exist.</p></div>
+<p>With \( n=5 \), a shift of one standard deviation is detected with probability 0.222 per
+subgroup, an average run length of 4.5 subgroups. A shift of two is detected with probability 0.930
+&mdash; an average run length of 1.08, essentially the next point. Small shifts are slow to find
+and large ones are immediate, and the leverage is in \( \sqrt n \): moving from \( n=1 \) to
+\( n=5 \) is what turns a one-sigma shift from nearly invisible into a four-subgroup wait.</p>
+<p>Behind all of it are two errors with different costs. Treating common cause as special is
+tampering, and &#167;1 priced it at a 41% rise in the standard deviation. Treating special cause as
+common is missing a real event while it is still cheap to fix, and leaving it in the process until
+it becomes the new normal. The chart is not a scoreboard; it is an instrument for telling those two
+mistakes apart, and its only output is a decision about which kind of variation just occurred.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Common versus special cause: why does the response differ?</li><li>Why are control limits never the same thing as spec limits?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Mean, range, and standard deviation</b> (Engineering Statistics L1) &mdash; the statistics
+each subgroup contributes.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; where the
+0.0027 behind three-sigma limits comes from.</li>
+<li><b>Sampling distributions and the standard error \( \sigma/\sqrt n \)</b> (Engineering
+Statistics L5) &mdash; why control limits on a mean are tighter than the spread of parts, and why
+\( n \) enters as \( \sqrt n \).</li>
+<li><b>Tolerances and specification limits</b> (Lesson 5, and Engineering Drawing &amp; CAD L6)
+&mdash; the quantity control limits are constantly confused with.</li>
+<li><b>Measurement uncertainty</b> (Lesson 3) &mdash; a chart plots what was measured, so the
+instrument's own variation is inside every point.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Common cause</td><td>many small influences</td><td>Inherent to the process; improve the system, not the part.</td></tr>
+<tr><td>Special cause</td><td>assignable event</td><td>Find it and remove it; it has a story.</td></tr>
+<tr><td>Tampering</td><td>\( \sigma\to\sqrt2\,\sigma \)</td><td>Adjusting on every reading; makes a stable process 41% worse.</td></tr>
+<tr><td>Rational subgroup</td><td>\( n \) consecutive parts</td><td>Only common causes may act within a subgroup.</td></tr>
+<tr><td>\( \bar X \) chart</td><td>\( \bar{\bar X}\pm A_2\bar R \)</td><td>Tracks the process level.</td></tr>
+<tr><td>\( R \) chart</td><td>\( D_4\bar R \), \( D_3\bar R \)</td><td>Tracks the spread &mdash; read it first.</td></tr>
+<tr><td>\( \hat\sigma \) from ranges</td><td>\( \bar R/d_2 \), \( d_2=2.326 \)</td><td>Process standard deviation without computing one.</td></tr>
+<tr><td>\( A_2 \)</td><td>\( 3/(d_2\sqrt n)=0.577 \) at \( n=5 \)</td><td>Packages three standard errors into one multiplier.</td></tr>
+<tr><td>Control limits</td><td>from the process</td><td>What it does; apply to a subgroup statistic.</td></tr>
+<tr><td>Specification limits</td><td>from the drawing</td><td>What is wanted; apply to a part, never to a chart.</td></tr>
+<tr><td>Average run length</td><td>\( 1/P \)</td><td>370 in control; 4.5 for a \( 1\sigma \) shift at \( n=5 \).</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Build the chart, in millimetres and then in inches</b></p>
+<p><b>Problem.</b> Eight baseline subgroups of five bores give
+\( \bar{\bar X}=10.2\ \mu\mathrm{m} \) above 25.000 mm and \( \bar R=4.25\ \mu\mathrm{m} \). Derive
+\( A_2 \) from \( d_2=2.326 \) rather than quoting it, and give the \( \bar X \) and \( R \) chart
+limits and the estimated process standard deviation. Then state whether a ninth subgroup with
+\( \bar X=13.1 \) and \( R=5 \) is a signal, and what kind. Finally, repeat the \( \bar X \) limits
+for a shaft process with \( \bar{\bar X}=1.24980 \) in and \( \bar R=0.00042 \) in.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The control limits are three standard errors of the mean,
+and \( \hat\sigma=\bar R/d_2 \), so
+\( 3\hat\sigma/\sqrt n = 3\bar R/(d_2\sqrt n) \). Hence
+\( A_2 = 3/(d_2\sqrt n) = 3/(2.326\sqrt5) = 3/5.2011 = 0.577 \).</p>
+<p>(2) \( A_2\bar R = 0.577(4.25) = 2.452\ \mu\mathrm{m} \), so
+\( \mathrm{UCL}=10.2+2.452=12.65 \) and \( \mathrm{LCL}=10.2-2.452=7.75\ \mu\mathrm{m} \).</p>
+<p>(3) \( \mathrm{UCL}_R = D_4\bar R = 2.114(4.25) = 8.98\ \mu\mathrm{m} \); \( D_3=0 \) at
+\( n=5 \), so \( \mathrm{LCL}_R = 0 \).</p>
+<p>(4) \( \hat\sigma = 4.25/2.326 = 1.83\ \mu\mathrm{m} \), so the process spread is
+\( 6\hat\sigma = 10.96\ \mu\mathrm{m} \). As a check,
+\( 3\hat\sigma/\sqrt5 = 2.451 \), which matches \( A_2\bar R = 2.452 \) to the rounding in
+\( A_2 \).</p>
+<p>(5) Subgroup 9: \( \bar X = 13.1 > 12.65 \), so the \( \bar X \) chart signals. Its range,
+5 &#181;m, is well inside 8.98, so the \( R \) chart does not. A signal on the mean alone means the
+process <b>level shifted</b> while its spread was unchanged.</p>
+<p>(6) In inches: \( \hat\sigma = 0.00042/2.326 = 0.000181 \) in;
+\( A_2\bar R = 0.577(0.00042) = 0.000242 \) in; limits
+\( 1.24980\pm0.000242 \), that is 1.249558 and 1.250042 in.</p>
+<p><b>Answer:</b> \( A_2=0.577 \); \( \bar X \) limits 7.75 / 12.65 &#181;m, \( R \) limits
+0 / 8.98 &#181;m, \( \hat\sigma=1.83\ \mu\mathrm{m} \); subgroup 9 is a level shift, not a spread
+change; the inch chart runs 1.249558 to 1.250042 in.
+<b>Sanity check:</b> \( A_2 \) is not a magic table entry &mdash; it is \( 3/(d_2\sqrt n) \), and
+recovering 0.577 from 2.326 and \( \sqrt5 \) confirms the limits really are three standard errors.
+Note the order of reading: the \( \bar X \) limits are built from \( \bar R \), so an unstable
+range chart would make them meaningless, which is why the range chart is read first. Note also that
+the two unit systems needed no separate theory &mdash; every constant is dimensionless.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>What the conscientious operator costs</b></p>
+<p><b>Problem.</b> A stable process produces \( x_n = T + a_n + e_n \), where \( T \) is the target,
+\( a_n \) the current machine offset and \( e_n \) an independent error with standard deviation
+\( \sigma \). After each part the operator resets the offset by
+\( a_{n+1} = a_n - (x_n - T) \). Find the variance of the output under this policy, and the
+percentage change in the standard deviation. State what the operator should have done instead, and
+how a control chart would have told them.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Substituting the observation into the adjustment rule,
+\( a_{n+1} = a_n - (a_n + e_n) = -e_n \). The offset becomes exactly the negative of the last
+error.</p>
+<p>(2) The next part is therefore \( x_{n+1} = T + a_{n+1} + e_{n+1} = T - e_n + e_{n+1} \).</p>
+<p>(3) The two errors are independent, so their variances add:
+\( \operatorname{Var}(x_{n+1}) = \sigma^2 + \sigma^2 = 2\sigma^2 \).</p>
+<p>(4) The standard deviation becomes \( \sqrt2\,\sigma = 1.414\sigma \), a rise of
+<b>41.4%</b>.</p>
+<p>(5) The correct action is to leave the machine alone: the deviations were common-cause, and a
+process in control is already doing the best it can without changing the system. A control chart
+would have shown every one of those readings inside the limits, which is precisely the instruction
+&quot;do not adjust&quot;.</p>
+<p><b>Answer:</b> the variance doubles to \( 2\sigma^2 \) and the standard deviation rises 41.4%;
+the operator should have made no adjustment, and an in-control chart is what says so.
+<b>Sanity check:</b> nothing in the derivation depends on \( \sigma \), the target or the machine,
+so tampering costs the same 41% on any stable process &mdash; it is a property of the feedback rule,
+not of the equipment. Note that every individual correction was reasonable and made in good faith,
+which is why the result has to be derived rather than argued: intuition at the machine says each
+adjustment reduced an error, and the arithmetic says the corrections were adding a second
+independent error to every part.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>How long before the chart notices?</b></p>
+<p><b>Problem.</b> An \( \bar X \) chart uses subgroups of five and three-sigma limits. Find the
+false-alarm probability per point and the in-control average run length, and the probability of at
+least one false alarm in 25 in-control points. Then find the probability of detecting a shift of one
+process standard deviation on any single subgroup, and of two, with the corresponding average run
+lengths. Comment on what changing \( n \) would do.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) In control, a point falls outside three standard errors
+with probability \( 2(1-\Phi(3)) = 2(0.00135) = 0.0027 \).</p>
+<p>(2) \( \mathrm{ARL}_0 = 1/0.0027 = 370 \) subgroups between false alarms.</p>
+<p>(3) Over 25 points, \( P = 1-(1-0.0027)^{25} = 1-0.9347 = 0.065 \), about one chart in
+fifteen.</p>
+<p>(4) A shift of \( k \) process standard deviations moves the mean by \( k\sqrt n \) standard
+errors, so
+\( P = 1-\Phi(3-k\sqrt n)+\Phi(-3-k\sqrt n) \). For \( k=1 \), \( n=5 \):
+\( 1-\Phi(3-2.236) = 1-\Phi(0.764) = 0.222 \), and the lower tail adds nothing. ARL
+\( = 1/0.222 = 4.5 \) subgroups.</p>
+<p>(5) For \( k=2 \): \( 1-\Phi(3-4.472) = 1-\Phi(-1.472) = 0.930 \), so ARL
+\( = 1.08 \) &mdash; essentially the next subgroup.</p>
+<p>(6) \( n \) enters only as \( \sqrt n \). Doubling the subgroup to 10 makes
+\( k\sqrt n = 3.162 \) for a one-sigma shift, raising detection to
+\( 1-\Phi(-0.162)=0.564 \) and dropping the ARL to 1.8 &mdash; at twice the measuring cost per
+subgroup.</p>
+<p><b>Answer:</b> 0.0027 per point, \( \mathrm{ARL}_0 = 370 \), 6.5% over 25 points; detection 0.222
+(ARL 4.5) for a \( 1\sigma \) shift and 0.930 (ARL 1.08) for \( 2\sigma \); sensitivity scales as
+\( \sqrt n \).
+<b>Sanity check:</b> the in-control ARL of 370 is what the three-sigma convention was chosen to
+deliver &mdash; a false alarm rare enough to be worth investigating. The 6.5% over 25 points is the
+same number read the other way and explains why a shop running several charts sees false alarms
+regularly; it is not evidence the charts are wrong. Note the asymmetry that matters in practice:
+big shifts are caught immediately and small ones are slow, which is exactly why runs rules exist
+and why they buy their extra sensitivity with extra false alarms.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>An operator adjusts the machine by the full deviation after every part. Compared with
+leaving it alone, the output standard deviation</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>falls to \( \sigma/\sqrt2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>is unchanged</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>rises to \( \sqrt2\,\sigma \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>rises to \( 2\sigma \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The adjustment makes the offset \( -e_n \), so the next part carries
+\( -e_n+e_{n+1} \): two independent errors instead of one, variance \( 2\sigma^2 \), standard
+deviation \( \sqrt2\,\sigma \) &mdash; 41% worse. The result depends only on the feedback rule, not
+on the machine or the size of \( \sigma \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>On an \( \bar X \)&ndash;\( R \) chart pair, the range chart should be read first
+because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is easier to plot</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the \( \bar X \) limits are computed from \( \bar R \), so an unstable spread invalidates them</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the range is more precise than the mean</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the range detects shifts faster</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \bar{\bar X}\pm A_2\bar R \) takes its width entirely from \( \bar R \). If
+the spread is unstable, \( \bar R \) is not estimating anything and the \( \bar X \) limits were
+built on sand. The mean chart, not the range chart, is the faster detector of a level shift.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The constant \( A_2 = 0.577 \) at \( n = 5 \) is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>an empirical factor with no derivation</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 3/(d_2\sqrt n) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the ratio of the range to the standard deviation</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>three standard deviations of a single part</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( A_2 \) packages three standard errors of the mean expressed through the
+range: \( 3\hat\sigma/\sqrt n = 3\bar R/(d_2\sqrt n) \). At \( n=5 \),
+\( 3/(2.326\sqrt5)=0.577 \). It exists so the shop never has to compute \( \hat\sigma \), not
+because the limits are anything other than three standard errors.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A subgroup mean falls outside the \( \bar X \) limits while the range chart stays in
+control. This points to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a change in the process spread</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a shift in the process level</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a measurement error only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>a specification that is too tight</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The two charts separate level from spread. A mean-only signal says the process
+moved without becoming more variable &mdash; a setting, an offset, a new batch of material &mdash;
+rather than a worn tool or a loose fixture, which would widen the ranges. Specification limits play
+no part in either chart.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Control limits and specification limits differ in that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>control limits are always wider</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>specification limits are recomputed as the process changes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>control limits are computed from the process and apply to a subgroup statistic; specification limits are set by the designer and apply to a part</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>they are the same thing expressed in different units</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>One describes what the process does, the other what is wanted, and they apply
+to different quantities &mdash; a subgroup mean against a single part. On an \( \bar X \) chart at
+\( n=5 \) the control limits sit at \( \pm1.34\sigma \) while individual parts spread over
+\( \pm3\sigma \), so specification limits drawn on the same chart sit far outside and the chart
+signals nothing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A process is in perfect statistical control. It follows that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>every part is within specification</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the process is predictable, which says nothing about whether it meets the specification</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>no further improvement is possible</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the specification limits equal the control limits</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Control means stable and predictable, not good. A process centred outside its
+tolerance can be in flawless control and produce nothing but scrap &mdash; stably wrong. The
+converse also holds: a process can sit inside the tolerance while wandering badly, with no warning
+on the day it wanders out.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>With three-sigma limits, the average run length between false alarms on an in-control
+chart is about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>27 points</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>100 points</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>370 points</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1000 points</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 2(1-\Phi(3)) = 0.0027 \) per point, so \( \mathrm{ARL}_0 = 1/0.0027 = 370 \).
+That is the number the three-sigma convention was chosen to produce. Read the other way, 25 points
+carry a 6.5% chance of at least one false alarm, which is why a shop with several charts sees them
+regularly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>At \( n = 5 \), an \( \bar X \) chart detects a shift of one process standard
+deviation with probability about 0.22 per subgroup. Increasing the subgroup to \( n = 10 \)
+helps because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the limits widen</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the shift is measured in standard errors, which scale as \( 1/\sqrt n \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>larger subgroups are more likely to contain a bad part</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the false-alarm rate falls</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A shift of \( k \) process standard deviations is \( k\sqrt n \) standard errors,
+so \( n=10 \) turns a one-sigma shift from 2.24 to 3.16 standard errors and detection rises from
+0.222 to 0.564. The false-alarm rate is unchanged at 0.0027 &mdash; three-sigma limits are
+three-sigma limits &mdash; and the cost is measuring twice as many parts per subgroup.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the chart that was drawn with the wrong limits.</b> A machining cell
+introduced control charts on a bore operation. The lines drawn on the chart were the drawing's own
+limits, 25.000 and 25.021 mm, because that was what everyone recognised. For eleven months no point
+ever came close to either line, the charts were filed, and the exercise was judged a success. Then
+a batch was rejected at assembly for bores that measured 25.024.</p>
+<p>The chart had been incapable of signalling. Plotted on it were subgroup means of five, whose
+standard error is \( \sigma/\sqrt5 \); the correct control limits were
+\( \bar{\bar X}\pm A_2\bar R \), which for this process was \( \pm2.45\ \mu\mathrm{m} \) about a
+centre line of 10.2 &#181;m &mdash; a band 4.9 &#181;m wide inside a 21 &#181;m specification. Every
+subgroup mean sat inside the specification because a mean of five is four times less variable than
+a part; that is arithmetic, not performance. Re-plotting the filed data against real control limits
+showed the level had shifted above the upper control limit five months earlier and stayed there.</p>
+<p>Two practices follow. Control limits are computed from the process and nothing else &mdash; if
+the lines on a chart came off a drawing, the chart is decoration. And the fact that a chart never
+signals is not evidence of a good process; it is first evidence that the chart may not be able to
+signal. The check costs one calculation: limits that are not roughly \( \pm3\bar R/(d_2\sqrt n) \)
+about the process's own centre line are not control limits.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.64\\ \\mathrm{ft/s}\\)", "\\(1.524\\ \\mathrm{ft/s}\\)", "\\(164\\ \\mathrm{ft/s}\\)", "\\(16.4\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(5 \\times 3.281 = 16.4\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(19.69\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(18.29\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1969\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(196.9\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(60 \times 3.281 = 196.9\ \mathrm{ft/s}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(26.25\\ \\mathrm{ft}\\)", "\\(2.438\\ \\mathrm{ft}\\)", "\\(262.5\\ \\mathrm{ft}\\)", "\\(2.625\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(8 \\times 3.281 = 26.25\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(328.1\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3281\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(32.81\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(100 \times 3.281 = 328.1\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
@@ -133,6 +402,6 @@
   <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../../../assets/nx/nexus.js?v=97c10d800f"></script>
+<script src="../../../assets/nx/nexus.js?v=da01dd12d4"></script>
 </body>
 </html>
