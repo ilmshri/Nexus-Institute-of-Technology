@@ -369,7 +369,97 @@
   "lecture_ar": "\n<h3>§1 · لماذا توجد النهايات في المصنع</h3>\n<p>تجيب النهاية عن سؤال واحد: <em>ما القيمة التي تقترب منها الدالة كلما اقترب دخلها من\nنقطة معيّنة؟</em> ورسميًا، \\( \\lim_{x\\to a} f(x) = L \\) تعني أنّ بوسعنا أن نجعل\n\\( f(x) \\) قريبةً من \\( L \\) بأي قدرٍ نشاء، بأخذ \\( x \\) قريبةً بما يكفي من\n\\( a \\). يبدو التعريف مجرّدًا، لكنّ معناه في المصنع ملموس: إلامَ يستقرّ الحسّاس، وإلامَ\nتؤول النسبة، وماذا يحدث عند حافة التشغيل؟</p>\n<h3>§2 · النسبة التي تُعرِّف كل شيء</h3>\n<p>أهمّ نهاية في هذا المقرر هي نسبة بين مقدارين متلاشيين،</p>\n\\[ \\lim_{\\theta\\to 0}\\frac{\\sin\\theta}{\\theta} = 1 \\tag{1} \\]\n<p>جرّبها عدديًا: عند \\( \\theta = 0.1 \\) راديان تكون النسبة <bdi>0.9983</bdi>، وعند\n<bdi>0.01</bdi> تكون <bdi>0.99998</bdi>. المقداران يتلاشيان معًا، لكنّ <em>نسبتهما</em>\nتتقارب — وهذا هو النموذج الذهني الكامل للمشتقّة في الدرس التالي، حيث يتقارب ارتفاعٌ متلاشٍ\nعلى أفقٍ متلاشٍ نحو ميل.</p>\n<h3>§3 · الاتصال — وما يعنيه للإشارات</h3>\n<p>تكون \\( f \\) متّصلة عند \\( a \\) حين \\( \\lim_{x\\to a} f(x) = f(a) \\): لا قفزة ولا\nثقب ولا انفجار. العمليات الفيزيائية — الحرارة والمستوى والضغط — متّصلة؛ أمّا\n<em>قياساتها</em> فليست ملزمةً بذلك. المزدوجة الحرارية التي تقفز <bdi>40 °C</bdi> بين مسحتين\nلم تشهد معجزة، بل شهدت ضجيجًا كهربائيًا أو وصلةً مرتخية أو تغيّرًا مفاجئًا فيما تلامسه.\nومعرفةُ أيّ المتغيّرات الفيزيائية يمكنها القفز وأيّها لا يمكنه أداةٌ تشخيصية: الضغط يمكنه\nأن يقفز (انغلاق صمام عنيف)، وحرارة المعدن لا يمكنها ذلك.</p>\n<p>وتُختم الدرسَ النهاياتُ أحادية الجانب: المُرحِّل الذي يقترب من نقطة فصله من أسفل ومن\nأعلى يرى عالمين مختلفين، \\( \\lim_{x\\to a^-} \\) و\\( \\lim_{x\\to a^+} \\). والتخلّف ليس إلا نهاياتٍ أحادية الجانب في ثياب العمل.</p>\n\n<h3>§4 · كيف تُقيّم نهاية — شجرة القرار</h3>\n<p>إذا واجهتك نهاية فاتبع تسلسلًا ثابتًا. <em>أولًا، عوّض.</em> فإن كانت الدالة متّصلة هناك\nفالنهاية هي القيمة وانتهى الأمر — ومعظم النهايات عمليًا تنتهي عند هذا الحد.\n<em>ثانيًا، إن أعطى التعويض الصيغة <bdi>0/0</bdi>،</em> فالصيغة تخبرك أنّ عاملًا مشتركًا\nمختبئ: حلّل كثيرات الحدود، أو اضرب في المرافق حين تظهر الجذور، ثم اختصر وعوّض من جديد.\n<em>ثالثًا، افحص الجانبين.</em> فحين يتضمّن التعبير قيمًا مطلقة أو تعريفًا مجزّأً أو عتبةً\nفيزيائية، احسب النهايتين اليسرى واليمنى منفصلتين؛ ولا توجد النهاية ثنائية الجانب إلا إذا\nتطابقتا. <em>رابعًا، تحقّق عدديًا.</em> قيّم التعبير عند مُدخلات تزحف نحو النقطة —\nعلى بعد <bdi>0.1</bdi> ثم <bdi>0.01</bdi> ثم <bdi>0.001</bdi> — وراقب الاتجاه. وهذا ليس\nغشًّا؛ بل هو كيف يؤكّد المهندس نتيجةً جبرية بالطريقة نفسها التي يؤكّد بها الفنيّ معايرة:\nبأدلّةٍ متقاربة.</p>\n<p>واستعمل الاتصال أداةَ تشخيصٍ بالانضباط نفسه. قبل أن تلوم حسّاسًا أو تصدّق قفزة، اسأل:\nأيّ المتغيّرات الفيزيائية يمكنها القفز فعلًا (الضغط، القوة، التيار)، وأيّها تكاملاتٌ\nلتدفّقات منتهية ومن ثمّ لا يمكنها القفز (حرارة المعدن، مستوى الخزّان، الحجم المتراكم).\nفالرياضيات تفرز أحداث المصنع من أحداث الأجهزة قبل أن يُكتب أول أمر عمل.</p>\n<p><strong>الخلاصة.</strong> النهايات تُقنِّن الاقتراب، والاتصال يُقنِّن انعدام المفاجآت.\nوغدًا يجتمعان في المشتقّة.</p>\n",
   "foundations_ar": "\n<h4>ما يفترضه هذا الدرس</h4>\n<ul class=\"plain\">\n<li><b>تقييم الدوال ورسمها</b> (الدرس الأول) — قراءة \\( f \\) بجوار نقطة، لا عندها فقط.</li>\n<li><b>القياس بالراديان</b> — نهاية الجيب خاطئة بالدرجات؛ والراديان يجعل القوس = نصف القطر × الزاوية.</li>\n<li><b>التحليل إلى عوامل</b> — حلّ \\( \\tfrac{x^2-9}{x-3} \\) يقتضي \\( (x-3)(x+3) \\).</li>\n</ul>\n<h4>مسرد المصطلحات</h4>\n<div class=\"glossary-wrap\"><table class=\"glossary\">\n<thead><tr><th>المصطلح</th><th>المعادلة</th><th>متى تستعمله</th></tr></thead>\n<tbody>\n<tr><td>النهاية</td><td>\\( \\lim_{x\\to a} f(x) = L \\)</td><td>قيمة الاستقرار؛ اقترابٌ لا وصول — وقد توجد حيث لا توجد قيمة الدالة.</td></tr>\n<tr><td>نهاية الجيب</td><td>\\( \\lim_{\\theta\\to 0}\\tfrac{\\sin\\theta}{\\theta} = 1 \\)</td><td>أعمال الزوايا الصغيرة ومشتقّة الجيب؛ بالراديان حصرًا.</td></tr>\n<tr><td>الصيغة <bdi>0/0</bdi></td><td>حلّل، أو اضرب في المرافق</td><td>حين يعيد التعويض <bdi>0/0</bdi>، فثمّة عامل مشترك مختبئ ينتظر الاختصار.</td></tr>\n<tr><td>الاتصال</td><td>\\( \\lim_{x\\to a} f(x) = f(a) \\)</td><td>لتقرير ما إذا كانت قفزةٌ مسجَّلة يمكن أن تكون فيزيائية أم لا بدّ أن تكون جهازية.</td></tr>\n<tr><td>النهايات أحادية الجانب</td><td>\\( x\\to a^-,\\ x\\to a^+ \\)</td><td>نقاط الفصل، والتخلّف، والقيم المطلقة، والسلوك المجزّأ.</td></tr>\n<tr><td>انقطاع قابل للإزالة</td><td>ثقب عند \\( x=a \\)</td><td>النهاية موجودة؛ والتعريف وحده هو الذي يُخطئ النقطة.</td></tr>\n</tbody></table></div>\n",
   "kuwait_ar": "\n<p><b>الحالة — الفصل الذي «جاء من العدم».</b> تصل إلى وحدة ضاغط فُصلت على ارتفاع حرارة\nالتصريف. يُظهر المنحنى صعودًا سلسًا بمعدّل <bdi>8 °C/min</bdi> لستّ دقائق ثم الفصل —\nصعودٌ متّصل وفيزيائي وحقيقي: مشكلة مبرِّد لا مشكلة حسّاس. يصرّ المشغّل على أن الحرارة\n«قفزت». لكنّ بيانات الـ<bdi>Historian</bdi> بدقّة الثانية تقول غير ذلك: لم يقفز شيء، بل <em>اقترب</em>.\nفتكتب النتيجة مستندًا إلى اتصال المنحنى، ويُؤكَّد انسداد المبرِّد عند الفحص. النهايات هي\nالطريقة التي تُحاجّ بها بيقينٍ عمّا كانت تفعله الإشارة قُبيل الحدث مباشرة.</p>\n",
-  "recap_ar": "<ul> <li>النهاية تصف ما <i>تقترب</i> منه الكمية، وليس بالضرورة ما تساويه عند النقطة نفسها.</li> <li>معظم مقادير المصنع متّصلة، لكن ليس جميعها — فبعضها يقفز فعلًا، والتظاهر بغير ذلك يُخفي سلوكًا حقيقيًا.</li> <li>النهايات أحادية الجانب هي الوصف الأمين لحدث تبديل: مُرحِّل يُغلق، أو صمام يستقرّ على مقعده، أو مضخة تبدأ العمل.</li> <li>النسبة \\( \\Delta y/\\Delta x \\) عندما \\( \\Delta x \\to 0 \\) هي سبب أهمية النهايات أصلًا — فهي المشتقّة في طور الجنين.</li> <li><b>ترتيب التقييم:</b> عوّض أولًا؛ فإن أعطى \\( 0/0 \\) فحلّل أو اضرب في المرافق أو افْضُض ثم أعِد المحاولة؛ ولسلوك الوسيط الكبير قارن الحدود المهيمنة.</li> </ul>"
+  "recap_ar": "<ul> <li>النهاية تصف ما <i>تقترب</i> منه الكمية، وليس بالضرورة ما تساويه عند النقطة نفسها.</li> <li>معظم مقادير المصنع متّصلة، لكن ليس جميعها — فبعضها يقفز فعلًا، والتظاهر بغير ذلك يُخفي سلوكًا حقيقيًا.</li> <li>النهايات أحادية الجانب هي الوصف الأمين لحدث تبديل: مُرحِّل يُغلق، أو صمام يستقرّ على مقعده، أو مضخة تبدأ العمل.</li> <li>النسبة \\( \\Delta y/\\Delta x \\) عندما \\( \\Delta x \\to 0 \\) هي سبب أهمية النهايات أصلًا — فهي المشتقّة في طور الجنين.</li> <li><b>ترتيب التقييم:</b> عوّض أولًا؛ فإن أعطى \\( 0/0 \\) فحلّل أو اضرب في المرافق أو افْضُض ثم أعِد المحاولة؛ ولسلوك الوسيط الكبير قارن الحدود المهيمنة.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>A limit describes what a quantity is heading towards, which is not always the same as what it equals. Engineering needs the distinction constantly: a formula may be undefined at exactly the operating point you care about while still having a perfectly definite value approaching it. Continuity is the companion idea &mdash; the guarantee that a small change of input produces a small change of output, which is what makes a measurement trustworthy.</p>",
+    "keypoints": [
+     "A limit asks what \\( f(x) \\) approaches as \\( x \\) approaches a value, deliberately ignoring what happens exactly at that value.",
+     "A limit can exist where the function does not. That is the useful case, not an edge case.",
+     "A two-sided limit exists only if the left-hand and right-hand limits agree.",
+     "A function is continuous at a point when the limit exists, the function is defined there, and the two are equal.",
+     "A removable discontinuity is a hole that algebra can cancel; a jump cannot be cancelled, and an infinite one means the output runs away.",
+     "\\( 0/0 \\) is not an answer, it is a signal to factor, cancel or rearrange before substituting.",
+     "Physically, continuity is the promise that a small nudge of input gives a small nudge of output &mdash; the assumption behind every calibration."
+    ],
+    "terms": [
+     {
+      "term": "Limit",
+      "symbol": "\\( \\lim_{x \\to a} f(x) \\)",
+      "read": "the limit of f of x as x approaches a",
+      "meaning": "The value \\( f(x) \\) heads towards as \\( x \\) nears \\( a \\)."
+     },
+     {
+      "term": "Left-hand limit",
+      "symbol": "\\( \\lim_{x \\to a^-} f(x) \\)",
+      "read": "the limit as x approaches a from the left",
+      "meaning": "Approaching from values below \\( a \\) only."
+     },
+     {
+      "term": "Right-hand limit",
+      "symbol": "\\( \\lim_{x \\to a^+} f(x) \\)",
+      "read": "the limit as x approaches a from the right",
+      "meaning": "Approaching from values above \\( a \\) only."
+     },
+     {
+      "term": "Continuity at a point",
+      "symbol": "\\( \\lim_{x \\to a} f(x) = f(a) \\)",
+      "read": "the limit as x approaches a equals f of a",
+      "meaning": "All three of: the limit exists, \\( f(a) \\) exists, and they agree."
+     },
+     {
+      "term": "Removable discontinuity",
+      "symbol": "&mdash;",
+      "read": "removable discontinuity",
+      "meaning": "A single missing point that cancels algebraically; the limit still exists."
+     },
+     {
+      "term": "Jump discontinuity",
+      "symbol": "&mdash;",
+      "read": "jump discontinuity",
+      "meaning": "Left and right limits both exist but differ, so no two-sided limit exists."
+     },
+     {
+      "term": "Infinite discontinuity",
+      "symbol": "&mdash;",
+      "read": "infinite discontinuity",
+      "meaning": "The function grows without bound near the point; often a vertical asymptote."
+     },
+     {
+      "term": "Indeterminate form",
+      "symbol": "\\( 0/0 \\)",
+      "read": "zero over zero",
+      "meaning": "A substitution that carries no information yet; rearrange, then substitute."
+     },
+     {
+      "term": "Piecewise function",
+      "symbol": "&mdash;",
+      "read": "piecewise function",
+      "meaning": "Different rules on different intervals; check continuity where the rules meet."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "What a limit is, and why the value at the point is excluded",
+     "body": "<p>The limit of a function, written \\( \\lim_{x \\to a} f(x) \\) and read aloud as &lsquo;the limit of f of x as x approaches a&rsquo;, is the value the output heads towards as the input closes in on \\( a \\). The definition deliberately says nothing about what happens when the input <em>equals</em> \\( a \\). That exclusion is not a technicality; it is the whole reason the idea earns its place.</p><p>Consider a quantity defined as a ratio that collapses at one particular operating point &mdash; a formula with \\( x - 2 \\) in the denominator, evaluated at \\( x = 2 \\). Substituting gives \\( 0/0 \\), which is an <b>indeterminate form</b>: not a number, and not a verdict, but an instruction to do some algebra before substituting. Cancel the common factor and the surviving expression usually has a perfectly ordinary value there. The function had a hole; the physical quantity did not.</p><p>Approaching can be done from two sides, and they need not agree. The <b>left-hand limit</b> \\( \\lim_{x \\to a^-} f(x) \\), read &lsquo;the limit as x approaches a from the left&rsquo;, uses only inputs below \\( a \\); the right-hand limit uses only inputs above it. A two-sided limit exists exactly when both one-sided limits exist and are equal. This is why a controller that switches behaviour at a threshold has to be examined from both directions: the approach from below and the approach from above are different questions with possibly different answers.</p>"
+    },
+    {
+     "title": "Continuity, and the three ways it fails",
+     "body": "<p>A function is <b>continuous</b> at a point when three separate things are true: the limit exists there, the function is actually defined there, and the two are equal &mdash; written compactly as \\( \\lim_{x \\to a} f(x) = f(a) \\). All three are required, and the three ways of failing are worth naming because they behave differently in practice.</p><p>A <b>removable discontinuity</b> is a single missing point. The limit exists, the function simply is not defined there, and algebra can fill the hole. Physically this is almost always an artefact of how the formula was written rather than anything the equipment does.</p><p>A <b>jump discontinuity</b> is different in kind. Both one-sided limits exist but they disagree, so no two-sided limit exists and no algebra repairs it. A relay changing state and a valve snapping between seats are genuine jumps: the output really does take two different values either side of the threshold.</p><p>An <b>infinite discontinuity</b> means the output grows without bound as the point is approached. In equipment terms that is a warning rather than a value &mdash; a model predicting infinite pressure or infinite current is telling you the model has left its valid range.</p><p>The engineering content of continuity is a promise: a small change of input gives a small change of output. Every calibration, every interpolation between two table entries and every controller tuned on a local slope assumes it. Where it fails, those methods fail with it, and the failure is usually silent.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A hole that algebra removes",
+     "body": "<p><b>Problem.</b> Evaluate \\( \\lim_{x \\to 2} \\dfrac{x^2 - 4}{x - 2} \\).</p><p><b>Approach.</b> Substitute first, always &mdash; it either gives the answer immediately or tells you which technique you need. Here it gives \\( 0/0 \\), the indeterminate form, so the expression must be rearranged before it will yield anything. The numerator is a difference of two squares, which shares a factor with the denominator. The classic error is to report &lsquo;undefined&rsquo; from the first substitution and stop; the function is indeed undefined at \\( x = 2 \\), but the limit is a different question and it has an ordinary answer.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; substitute.</em> \\( (4-4)/(2-2) = 0/0 \\). Indeterminate, so continue.</p><p><em>Step 2 &mdash; factor.</em> \\( x^2 - 4 = (x-2)(x+2) \\).</p><p><em>Step 3 &mdash; cancel.</em> For every \\( x \\neq 2 \\) the expression equals \\( x + 2 \\). The limit only concerns \\( x \\neq 2 \\), so this cancellation is legitimate.</p><p><em>Step 4 &mdash; substitute into the survivor.</em> \\( 2 + 2 = 4 \\).</p><p><b>Answer.</b> The limit is 4. Numerically, inputs of 2.1, 2.01 and 2.001 give 4.1, 4.01 and 4.001 &mdash; closing on 4 as expected, which is a useful sanity check on any limit you have done algebraically.</p>"
+    },
+    {
+     "title": "Checking a piecewise signal for continuity",
+     "body": "<p><b>Problem.</b> A transmitter output is modelled as \\( f(x) = 2x + 1 \\) for \\( x &lt; 3 \\) and \\( f(x) = x + 4 \\) for \\( x \\ge 3 \\). Is the output continuous at \\( x = 3 \\)?</p><p><b>Approach.</b> Continuity at a junction needs all three conditions, so test them in order rather than eyeballing the graph: the left-hand limit, the right-hand limit, and the defined value. The common mistake is to check only that the function is defined at the junction &mdash; a jump discontinuity is defined at the junction too, and jumps are exactly what this test exists to find.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; left-hand limit.</em> Using the rule for \\( x &lt; 3 \\): \\( \\lim_{x \\to 3^-} f(x) = 2(3) + 1 = 7 \\).</p><p><em>Step 2 &mdash; right-hand limit.</em> Using the rule for \\( x \\ge 3 \\): \\( \\lim_{x \\to 3^+} f(x) = 3 + 4 = 7 \\).</p><p><em>Step 3 &mdash; the two agree,</em> so the two-sided limit exists and equals 7.</p><p><em>Step 4 &mdash; the defined value.</em> \\( f(3) = 3 + 4 = 7 \\), which matches the limit.</p><p><b>Answer.</b> Continuous at \\( x = 3 \\). Had the second rule been \\( x + 5 \\), the right-hand limit would have been 8 against a left-hand limit of 7 &mdash; a jump of one unit, no two-sided limit, and a signal that steps discontinuously as it crosses the threshold.</p>"
+    }
+   ]
+  }
  },
  "3": {
   "lecture": "\n<h3>§1 · From average rate to instantaneous rate</h3>\n<p>Between Monday and Friday a bearing housing warmed from 62 °C to 74 °C: average rate\n3 °C/day. But <em>right now</em>, this hour, how fast is it heating? Squeeze the interval and\nthe average rate converges — Lesson 2's limit — to the instantaneous rate:</p>\n\\[ \\frac{dT}{dt} = \\lim_{\\Delta t\\to 0}\\frac{T(t+\\Delta t)-T(t)}{\\Delta t} \\tag{1} \\]\n<p>That is the derivative: the local slope of the trend, the speed of change at an instant.\nUnits divide: °C per hour, m³ per second, mm/s of vibration per week. A derivative always has\nunits, and always tells a maintenance story.</p>\n<h3>§2 · The derivative as the trend's confession</h3>\n<p>Condition monitoring is derivative-reading as a profession. A flat vibration trend with\n\\( dV/dt \\approx 0 \\) buys you time; the same amplitude with a steep positive slope buys you a\nwork order. Two machines at identical 4 mm/s are in different worlds if one arrived there over\nthree years and the other over three weeks. Value tells you <em>where</em> it is; the\nderivative tells you <em>where it's going</em>.</p>\n<h3>§3 · Computing from a model</h3>\n<p>Given a fitted trend \\( T(t) = 40 + 0.8t + 0.05t^2 \\) (°C, hours), the power rule (proved\nnext lesson) gives \\( T'(t) = 0.8 + 0.1t \\): the heating <em>accelerates</em>, because the rate\nitself grows. Set \\( T'(t) \\) against an alarm rate and you get a time-to-act, not just a\nnumber: solve \\( 0.8+0.1t = 2.5 \\) → \\( t = 17\\ \\mathrm{h} \\). The derivative converts a curve\ninto a deadline.</p>\n\n<h3>§4 · Computing derivatives from data — the working method</h3>\n<p>Real trends arrive as samples, not formulas, so the working derivative is a finite\ndifference. From the two latest points you can only form the <em>forward-looking secant</em>\n\\( (f_{now} - f_{prev})/\\Delta t \\); mid-record, prefer the <em>central difference</em>\n\\( (f_{i+1} - f_{i-1})/(2\\Delta t) \\), which cancels the first layer of error and tracks\nthe true tangent far better on smooth data. Three disciplines make the estimates\ntrustworthy. <em>State the units</em> — a slope is always something per something, and writing\nmm/s per week forces the physical meaning into view. <em>Respect noise:</em> differentiation\namplifies it, so difference over intervals long enough for the real change to dominate the\nscatter; a derivative computed from two noisy readings an hour apart is an opinion, not a\nmeasurement. <em>Distinguish model from data:</em> when a curve has been fitted, differentiate\nthe model symbolically and use the data-side difference as its check — when the two disagree\nbadly, the fit, the data, or the machine has changed, and every one of those is worth\nknowing.</p>\n<p>Then read the result the way §2 taught: the value says where the machine is, the derivative\nsays where it is going, and the difference between those two sentences is the difference\nbetween recording a number and making a decision.</p>\n<p><strong>Closing.</strong> The derivative is a limit of average rates, it carries units, and\non the plant floor it is the difference between watching a number and reading its intent.</p>\n",
@@ -452,7 +542,97 @@
     "solution": "<p>An average over an interval constrains nothing at any particular interior instant: the trend could be rising at 6 units/h at \\( t=4 \\) and crawling elsewhere, or vice versa. (The mean value theorem promises the instantaneous rate equals 3 <em>somewhere</em> in the interval — but not at any point you get to choose.) Reading an interval average as a point value is the classic trend-review error this lesson exists to retire.</p>"
    }
   ],
-  "recap": "<ul> <li>The derivative is the instantaneous rate of change — the average rate over an interval that has been allowed to shrink to nothing.</li> <li>Read the sign and the magnitude before the formula: sign gives direction of drift, magnitude gives urgency.</li> <li><b>From a model:</b> differentiate the expression. <b>From data:</b> take finite differences — but note that shrinking the interval amplifies measurement noise, so the smallest interval is rarely the best one.</li> <li>The units of a derivative are always (units of the output) divided by (units of the input). This alone identifies what a rate physically is.</li> </ul>"
+  "recap": "<ul> <li>The derivative is the instantaneous rate of change — the average rate over an interval that has been allowed to shrink to nothing.</li> <li>Read the sign and the magnitude before the formula: sign gives direction of drift, magnitude gives urgency.</li> <li><b>From a model:</b> differentiate the expression. <b>From data:</b> take finite differences — but note that shrinking the interval amplifies measurement noise, so the smallest interval is rarely the best one.</li> <li>The units of a derivative are always (units of the output) divided by (units of the input). This alone identifies what a rate physically is.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>The derivative is the rate at which one quantity changes with respect to another, defined as the limit of an average rate as the measuring interval shrinks to nothing. Almost every engineering quantity that matters is a derivative of something else: velocity from position, flow from volume, heating rate from temperature. This lesson defines it and reads it as a slope.</p>",
+    "keypoints": [
+     "An average rate of change over an interval is a difference quotient; the derivative is what it approaches as the interval shrinks to zero.",
+     "\\( f'(x) \\) and \\( dy/dx \\) name the same object &mdash; the instantaneous rate of change.",
+     "Geometrically the derivative is the slope of the tangent: the slope the curve has at one point rather than across a span.",
+     "The units of a derivative are always the output's units divided by the input's, which makes it self-checking.",
+     "A positive derivative means increasing, negative means decreasing, and zero means momentarily stationary.",
+     "Differentiability implies continuity, but continuity does not imply differentiability &mdash; a sharp corner is continuous and has no single slope.",
+     "Reading a derivative off equipment data is reading a gradient: how fast the reading moves, not how large it is."
+    ],
+    "terms": [
+     {
+      "term": "Difference quotient",
+      "symbol": "\\( \\dfrac{f(x+h) - f(x)}{h} \\)",
+      "read": "f of x plus h, minus f of x, all over h",
+      "meaning": "The average rate of change across an interval of width \\( h \\)."
+     },
+     {
+      "term": "Derivative",
+      "symbol": "\\( f'(x) \\)",
+      "read": "f prime of x",
+      "meaning": "The limit of the difference quotient as \\( h \\) approaches zero."
+     },
+     {
+      "term": "Leibniz notation",
+      "symbol": "\\( \\dfrac{dy}{dx} \\)",
+      "read": "d y by d x",
+      "meaning": "The same derivative, written to keep the two variables visible."
+     },
+     {
+      "term": "Increment",
+      "symbol": "\\( h \\)",
+      "read": "h",
+      "meaning": "The width of the interval over which the average rate is taken."
+     },
+     {
+      "term": "Tangent line",
+      "symbol": "&mdash;",
+      "read": "tangent line",
+      "meaning": "The straight line touching the curve at one point with the curve's own slope."
+     },
+     {
+      "term": "Stationary point",
+      "symbol": "\\( f'(x) = 0 \\)",
+      "read": "f prime of x equals zero",
+      "meaning": "A point where the quantity is momentarily neither rising nor falling."
+     },
+     {
+      "term": "Differentiable",
+      "symbol": "&mdash;",
+      "read": "differentiable",
+      "meaning": "Has a single well-defined slope at the point; corners do not."
+     },
+     {
+      "term": "Stored volume",
+      "symbol": "\\( V \\)",
+      "read": "V",
+      "meaning": "Volume held in a vessel, in cubic metres."
+     },
+     {
+      "term": "Level",
+      "symbol": "\\( z \\)",
+      "read": "z",
+      "meaning": "Liquid height in a vessel, in metres. Written z here because h already means the increment."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "From average rate to instantaneous rate",
+     "body": "<p>An average rate of change is easy and familiar: total change divided by the interval it happened over. Written for a function it is the <b>difference quotient</b> \\( \\dfrac{f(x+h) - f(x)}{h} \\), read aloud as &lsquo;f of x plus h, minus f of x, all over h&rsquo;, where \\( h \\) is the width of the interval. It is the slope of the straight line joining two points on the curve.</p><p>That average conceals whatever happened inside the interval. A pump that ran hard for one minute and idled for nine has the same average as one that ran steadily, and if what you need is the rate <em>now</em>, the average is the wrong number. The fix is to shrink the interval, and the <b>derivative</b> is what the difference quotient approaches as \\( h \\) approaches zero.</p><p>Notice that this is exactly the previous lesson's machinery doing work. Setting \\( h = 0 \\) outright gives \\( 0/0 \\) &mdash; the indeterminate form &mdash; because both the change and the interval vanish together. The limit asks what the ratio approaches without ever setting \\( h \\) to zero, which is precisely the question that has an answer.</p><p>Two notations are standard and mean the same thing. \\( f'(x) \\), read &lsquo;f prime of x&rsquo;, is compact. \\( \\dfrac{dy}{dx} \\), read &lsquo;d y by d x&rsquo;, keeps both variables in view, which matters when several quantities vary at once and you must be explicit about what is changing with respect to what.</p>"
+    },
+    {
+     "title": "Reading a derivative: slope, sign, and units",
+     "body": "<p>Geometrically the derivative is the slope of the <b>tangent line</b> &mdash; the straight line that touches the curve at one point and shares its direction there. The difference quotient is the slope of a line cutting the curve at two points; as the second point slides towards the first, that cutting line pivots into the tangent.</p><p>The sign carries most of the practical information. Positive means the quantity is increasing, negative means decreasing, and zero means a <b>stationary point</b> \\( f'(x) = 0 \\), where the quantity is momentarily neither rising nor falling. A bearing temperature whose derivative has just turned positive is a different situation from one that is merely high and steady, and the derivative is what distinguishes them.</p><p>The units are automatic and worth using as a check. A derivative always carries the output's units divided by the input's: level in metres against time in seconds gives metres per second; volume against level gives cubic metres per metre. If a derivative comes out in units that do not match that rule, the differentiation went wrong, and you know it before checking the algebra.</p><p>One caution. A function that is <b>differentiable</b> at a point is certainly continuous there, but the reverse fails: a curve with a sharp corner is continuous and yet has no single slope at the corner, because the slope approaching from each side disagrees. Physical signals that switch regime produce exactly this.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A derivative from first principles",
+     "body": "<p><b>Problem.</b> For \\( f(x) = x^2 \\), find \\( f'(3) \\) from the definition, and check it numerically.</p><p><b>Approach.</b> Build the difference quotient, simplify it algebraically until \\( h \\) no longer sits in a denominator, and only then let \\( h \\) approach zero. The order matters: cancelling before taking the limit is what makes the limit exist at all. The classic error is to set \\( h = 0 \\) in the unsimplified quotient, which returns \\( 0/0 \\) and looks like a dead end.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; write the quotient at \\( x = 3 \\).</em><br>\\( \\dfrac{(3+h)^2 - 3^2}{h} \\).</p><p><em>Step 2 &mdash; expand the numerator.</em><br>\\( (9 + 6h + h^2) - 9 = 6h + h^2 \\).</p><p><em>Step 3 &mdash; cancel \\( h \\).</em><br>\\( \\dfrac{6h + h^2}{h} = 6 + h \\), valid for every \\( h \\neq 0 \\).</p><p><em>Step 4 &mdash; take the limit.</em> As \\( h \\) approaches zero, \\( 6 + h \\) approaches 6.</p><p><b>Answer.</b> \\( f'(3) = 6 \\). Numerically, \\( h = 0.1 \\) gives 6.1, \\( h = 0.01 \\) gives 6.01 and \\( h = 0.001 \\) gives 6.001 &mdash; approaching 6 from above, exactly as the algebra says.</p>"
+    },
+    {
+     "title": "A rate with units attached",
+     "body": "<p><b>Problem.</b> A tank's stored volume varies with level as \\( V = 0.8h^2 \\), with \\( V \\) in cubic metres and \\( h \\) in metres. Find \\( dV/dh \\) and evaluate it at \\( h = 2.5\\ \\mathrm{m} \\). State what the number means.</p><p><b>Approach.</b> This derivative is taken with respect to level, not time, so it answers &lsquo;how much extra volume per extra metre of level&rsquo; &mdash; the local capacity of the tank. Keeping the units in view is the guard against misreading it as a filling rate, which is a different derivative with respect to a different variable.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; differentiate.</em> By the same first-principles argument used for \\( x^2 \\), the derivative of \\( h^2 \\) is \\( 2h \\), so \\( dV/dh = 1.6h \\).</p><p><em>Step 2 &mdash; evaluate.</em> \\( 1.6 \\times 2.5 = 4.0 \\).</p><p><em>Step 3 &mdash; attach units.</em> Cubic metres divided by metres is square metres, so \\( dV/dh = 4.0\\ \\mathrm{m^2} \\) &mdash; which is the tank's cross-sectional area at that level, as it should be.</p><p><b>Answer.</b> \\( 4.0\\ \\mathrm{m^2} \\): near a level of 2.5 m, each extra metre of level stores about 4 cubic metres more. Because the tank widens with height, this is a local figure and not a constant &mdash; at \\( h = 1 \\) it is only \\( 1.6\\ \\mathrm{m^2} \\).</p>"
+    }
+   ]
+  }
  },
  "4": {
   "lecture": "\n<h3>§1 · The rules — machinery for slopes</h3>\n<p>Yesterday's limit definition is correct and slow. Today we industrialize it. For\nconstants \\(c\\), functions \\(u, v\\):</p>\n\\[ (cu)' = cu', \\qquad (u+v)' = u' + v', \\qquad (x^n)' = nx^{n-1} \\tag{1} \\]\n\\[ (uv)' = u'v + uv', \\qquad \\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2} \\tag{2} \\]\n<p>Each is proved once from the limit and used forever. The power rule follows from expanding\n\\( (x+\\Delta x)^n \\) and watching every term above first order vanish with \\( \\Delta x \\) —\nthe same \"higher-order terms die\" argument that engineering approximation lives on.</p>\n<h3>§2 · The chain rule — rates through a chain of causes</h3>\n<p>Plant variables cause each other in chains: valve position sets flow, flow sets level,\nlevel sets pressure. If \\( y = f(u) \\) and \\( u = g(x) \\):</p>\n\\[ \\frac{dy}{dx} = \\frac{dy}{du}\\cdot\\frac{du}{dx} \\tag{3} \\]\n<p>Rates multiply along the chain. This single rule powers every sensitivity argument you will\nmake: how much does discharge pressure move per percent of speed? Differentiate through the\nchain of dependencies and multiply the local sensitivities.</p>\n<h3>§3 · Relative rates — the engineer's favorite</h3>\n<p>Divide a derivative by its function and you get relative sensitivity. For a fan law\n\\( P = kN^3 \\) — shaft power \\( P \\) rising with the cube of rotational speed \\( N \\), \\( k \\) a constant for the machine and duty — logarithmic differentiation gives \\( \\frac{dP}{P} = 3\\frac{dN}{N} \\): a 2%\nspeed increase costs ≈6% more power ((1.02)³ = 1.061 exactly). This is why slowing a fan or\npump slightly is the cheapest energy project in any plant — the cube works for you on the way\ndown.</p>\n\n<h3>§4 · Choosing the rule — structure before symbols</h3>\n<p>Differentiation errors rarely come from forgetting a rule; they come from misreading the\n<em>structure</em> of the expression. So classify before you differentiate. Is the expression\na sum of powers? The power rule handles each term independently — after rewriting roots and\nreciprocals as powers, \\( \\sqrt{x} = x^{1/2} \\), \\( 1/x = x^{-1} \\). Is it two varying\nquantities multiplied — force times velocity, pressure times flow? That is a genuine product:\nproduct rule. A ratio with the variable in the denominator? Quotient rule, with the\nsubtraction order fixed. A function <em>of</em> a function — something raised to a power,\nan exponential of an expression? Chain rule, differentiating outer times inner, working from\nthe outside in.</p>\n<p>For the power laws that fill engineering — \\( P = kN^3 \\), \\( \\Delta P = kQ^2 \\) —\nlogarithmic differentiation earns its keep: take logs, differentiate, and relative rates\nappear directly, \\( dP/P = n\\,dN/N \\). That one line is the professional's sensitivity\nlanguage: percent out per percent in. Keep the honest distinction from §3 visible — the\nrelative-rate figure is a first-order estimate, exact only in the limit; for large changes,\ncompute the ratio exactly and let the linear estimate serve as its sanity check.</p>\n<p>Finally, make numerical verification a reflex. Any symbolic derivative can be audited in\nten seconds: evaluate the function at \\( x \\) and at \\( x + 0.001 \\), divide the difference\nby 0.001, and compare with the formula's prediction. Agreement to three figures means the\nalgebra survived; disagreement means a dropped inner derivative or a sign error is hiding in\nthe work. Professionals check their derivatives the way welders check their fit-up — before\nthe error is buried under everything built on top of it.</p>\n<p><strong>Closing.</strong> Rules (1)–(2) mechanize differentiation; the chain rule (3) walks\nrates through cause-and-effect; relative rates turn calculus into percentage talk that\nmanagers act on.</p>\n",
@@ -535,7 +715,109 @@
     "solution": "<p>The chain rule multiplies rates along the dependency chain: \\( dL/dt = (dL/dV)(dV/dt) = 0.14 \\times 2.5 = 0.35 \\) m/min. Dividing (17.9) or adding (2.64) the sensitivities are the classic chain-rule confusions; 0.056 inverts one factor. When causes chain — valve to flow, flow to volume, volume to level — their local sensitivities multiply, which is the entire content of equation (3).</p>"
    }
   ],
-  "recap": "<ul> <li>Constant-multiple, sum, power, product and quotient rules: each is proved once from the limit definition and then used for life.</li> <li><b>Chain rule:</b> plant variables cause one another in chains — valve position sets flow, flow sets level, level sets pressure. Multiply the local sensitivities along the chain.</li> <li><b>Relative rates</b> are the engineer's form: divide a derivative by its own function. For the fan law \\( P = kN^3 \\), logarithmic differentiation gives \\( dP/P = 3\\,dN/N \\) — a 2% speed increase costs about 6% more power.</li> <li>That single result is why trimming fan or pump speed slightly is usually the cheapest energy project available.</li> <li>Choose the rule from the <i>structure</i> of the expression before touching symbols.</li> </ul>"
+  "recap": "<ul> <li>Constant-multiple, sum, power, product and quotient rules: each is proved once from the limit definition and then used for life.</li> <li><b>Chain rule:</b> plant variables cause one another in chains — valve position sets flow, flow sets level, level sets pressure. Multiply the local sensitivities along the chain.</li> <li><b>Relative rates</b> are the engineer's form: divide a derivative by its own function. For the fan law \\( P = kN^3 \\), logarithmic differentiation gives \\( dP/P = 3\\,dN/N \\) — a 2% speed increase costs about 6% more power.</li> <li>That single result is why trimming fan or pump speed slightly is usually the cheapest energy project available.</li> <li>Choose the rule from the <i>structure</i> of the expression before touching symbols.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>First principles work but are slow, so this lesson replaces them with rules. The product, quotient and chain rules let any combination of familiar functions be differentiated by inspection. The chain rule is the one that matters most in engineering, because real quantities are almost always functions of functions.</p>",
+    "keypoints": [
+     "The power rule: the derivative of \\( x^n \\) is \\( nx^{n-1} \\).",
+     "Differentiation is linear &mdash; constants pull out, and sums differentiate term by term.",
+     "The product rule handles a product of two varying quantities and is not simply the product of the derivatives.",
+     "The quotient rule follows the same pattern with a minus sign, so the order of the two terms matters.",
+     "The chain rule differentiates a function of a function by multiplying the outer rate by the inner rate.",
+     "In Leibniz notation the chain rule reads as a cancellation of differentials, which is why it is easy to remember and easy to extend.",
+     "Identify the inner function first, before differentiating anything &mdash; most chain-rule errors are misidentification, not arithmetic."
+    ],
+    "terms": [
+     {
+      "term": "Power rule",
+      "symbol": "\\( \\dfrac{d}{dx}x^n = nx^{n-1} \\)",
+      "read": "d by d x of x to the n equals n x to the n minus one",
+      "meaning": "The basic rule for any power of the variable."
+     },
+     {
+      "term": "Product rule",
+      "symbol": "\\( (uv)' = u'v + uv' \\)",
+      "read": "u v all prime equals u prime v plus u v prime",
+      "meaning": "For two varying factors multiplied together."
+     },
+     {
+      "term": "Quotient rule",
+      "symbol": "\\( \\left(\\dfrac{u}{v}\\right)' = \\dfrac{u'v - uv'}{v^2} \\)",
+      "read": "u over v all prime equals u prime v minus u v prime, over v squared",
+      "meaning": "For a ratio of two varying quantities; the minus sign fixes the order."
+     },
+     {
+      "term": "Chain rule",
+      "symbol": "\\( \\dfrac{dy}{dx} = \\dfrac{dy}{du}\\dfrac{du}{dx} \\)",
+      "read": "d y by d x equals d y by d u times d u by d x",
+      "meaning": "For a function of a function: outer rate times inner rate."
+     },
+     {
+      "term": "Inner function",
+      "symbol": "\\( u \\)",
+      "read": "u",
+      "meaning": "The expression sitting inside another; identify it before differentiating."
+     },
+     {
+      "term": "Exponential derivative",
+      "symbol": "\\( \\dfrac{d}{dx}e^{x} = e^{x} \\)",
+      "read": "d by d x of e to the x equals e to the x",
+      "meaning": "The exponential is its own derivative — the property the next lesson builds on."
+     },
+     {
+      "term": "Time",
+      "symbol": "\\( t \\)",
+      "read": "t",
+      "meaning": "Elapsed time, in seconds or minutes as stated."
+     },
+     {
+      "term": "Temperature",
+      "symbol": "\\( T \\)",
+      "read": "T",
+      "meaning": "Temperature in degrees Celsius."
+     },
+     {
+      "term": "Torque",
+      "symbol": "\\( M \\)",
+      "read": "M",
+      "meaning": "Turning moment, in newton-metres. Written M here to keep T free for temperature."
+     },
+     {
+      "term": "Angular speed",
+      "symbol": "\\( \\omega \\)",
+      "read": "omega",
+      "meaning": "Rotational speed, in radians per second."
+     },
+     {
+      "term": "Power",
+      "symbol": "\\( P = M\\omega \\)",
+      "read": "P equals M omega",
+      "meaning": "Mechanical power, torque times angular speed, in watts."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "The rules, and the one that is not a product",
+     "body": "<p>The <b>power rule</b>, \\( \\dfrac{d}{dx}x^n = nx^{n-1} \\), read as &lsquo;d by d x of x to the n equals n x to the n minus one&rsquo;, does most of the routine work. Differentiation is also linear: a constant multiplier passes straight through, and a sum differentiates term by term. Those two facts alone handle every polynomial.</p><p>Products need more care. The <b>product rule</b> is \\( (uv)' = u'v + uv' \\) &mdash; &lsquo;u v all prime equals u prime v plus u v prime&rsquo;. The tempting shortcut, multiplying the two derivatives, is simply wrong, and the reason is physical rather than algebraic: when two quantities both vary, the product changes because the first changed while the second held, <em>and</em> because the second changed while the first held. Two contributions, hence two terms.</p><p>Mechanical power is the clean example. Power is torque times angular speed, and on a machine running up to load both are moving. The rate at which power changes has a term from the torque rising and a term from the speed falling, and those terms can partly cancel &mdash; which is exactly why the product rule, not a shortcut, is needed to say whether power is rising or falling at a given instant.</p><p>The <b>quotient rule</b> follows the same shape with a minus sign, \\( \\left(\\dfrac{u}{v}\\right)' = \\dfrac{u'v - uv'}{v^2} \\). Because of that minus, the order of the two products is not interchangeable; writing them the wrong way round flips the sign of every answer.</p>"
+    },
+    {
+     "title": "The chain rule: outer rate times inner rate",
+     "body": "<p>The <b>chain rule</b> handles a function of a function, which in engineering is the normal case rather than a special one. Written in Leibniz notation it is \\( \\dfrac{dy}{dx} = \\dfrac{dy}{du} \\dfrac{du}{dx} \\), read as &lsquo;d y by d x equals d y by d u times d u by d x&rsquo;, where \\( u \\) is the <b>inner function</b> &mdash; whatever expression is sitting inside the other.</p><p>The notation is doing you a favour. The differentials appear to cancel, and while that is not a proof it is a reliable memory aid and it generalises to longer chains without modification. If a temperature depends on time through an exponent, and the exponent itself depends on time, the rate multiplies along the chain.</p><p><b>The working method.</b> First name the inner function explicitly, in writing. Second, differentiate the outer function while treating the inner one as a single symbol. Third, multiply by the derivative of the inner function. Fourth, substitute the inner expression back.</p><p>Almost every chain-rule error is at the first step, not the third. Differentiating \\( e^{-t/12} \\) as if the exponent were simply \\( -t \\), and so forgetting the factor of one twelfth, is the standard slip; it produces an answer twelve times too large with no visible symptom. Naming the inner function on paper before differentiating is what prevents it.</p><p>One derivative to carry forward: the exponential is its own derivative, \\( \\dfrac{d}{dx}e^{x} = e^{x} \\). Combined with the chain rule that single fact generates every growth and decay rate in the next lesson.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A cooling curve differentiated by the chain rule",
+     "body": "<p><b>Problem.</b> A component cools according to \\( T(t) = 20 + 60e^{-t/12} \\), with \\( T \\) in &deg;C and \\( t \\) in minutes. Find \\( dT/dt \\), and evaluate it at \\( t = 0 \\) and \\( t = 12\\ \\mathrm{min} \\).</p><p><b>Approach.</b> The constant 20 differentiates to zero. The remaining term is an exponential of a function, so name the inner function first: \\( u = -t/12 \\), whose derivative is \\( -1/12 \\). Forgetting that factor is the standard error and would overstate every cooling rate by a factor of twelve, so it is worth writing down explicitly rather than carrying in your head.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; name the inner function.</em> \\( u = -t/12 \\), so \\( du/dt = -1/12 \\).</p><p><em>Step 2 &mdash; differentiate the outer.</em> The derivative of \\( 60e^{u} \\) with respect to \\( u \\) is \\( 60e^{u} \\).</p><p><em>Step 3 &mdash; multiply along the chain.</em><br>\\( dT/dt = 60e^{-t/12} \\times (-1/12) = -5e^{-t/12} \\).</p><p><em>Step 4 &mdash; evaluate.</em> At \\( t = 0 \\), \\( -5(1) = -5 \\). At \\( t = 12 \\), \\( -5e^{-1} = -1.84 \\).</p><p><b>Answer.</b> \\( dT/dt = -5e^{-t/12} \\)&deg;C/min: cooling at 5&deg;C per minute initially, slowing to 1.84&deg;C per minute after twelve minutes. The sign is negative throughout, as any cooling curve must be, and the units come out as degrees per minute &mdash; both worth checking.</p>"
+    },
+    {
+     "title": "A product rule where the two terms fight",
+     "body": "<p><b>Problem.</b> During a run-up, a drive's torque rises as \\( T = 50 + 2t \\) N&middot;m and its angular speed falls as \\( \\omega = 100 - 0.5t \\) rad/s, with \\( t \\) in seconds. Power is \\( P = T\\omega \\). Find \\( dP/dt \\) at \\( t = 10\\ \\mathrm{s} \\) and say whether power is rising.</p><p><b>Approach.</b> Both factors vary, so this is a product rule and not a case where one factor can be treated as constant. The interest is that the two contributions have opposite signs &mdash; torque is helping, speed is hurting &mdash; so the answer is a competition and its sign cannot be guessed. Multiplying the two derivatives together, the classic shortcut, would give 2 &times; (&minus;0.5) = &minus;1, which is not merely inaccurate but the wrong sign.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; the pieces.</em> \\( T' = 2 \\), \\( \\omega' = -0.5 \\).</p><p><em>Step 2 &mdash; values at \\( t = 10 \\).</em> \\( T = 50 + 20 = 70 \\), \\( \\omega = 100 - 5 = 95 \\).</p><p><em>Step 3 &mdash; apply the rule.</em><br>\\( dP/dt = T'\\omega + T\\omega' = 2(95) + 70(-0.5) = 190 - 35 \\).</p><p><b>Answer.</b> \\( dP/dt = 155\\ \\mathrm{W/s} \\) &mdash; power is rising, because the torque term outweighs the speed term at this instant. Note it need not stay that way: as torque grows and speed falls, the second term grows in magnitude, and the sign can reverse later in the run-up.</p>"
+    }
+   ]
+  }
  },
  "5": {
   "lecture": "\n<h3>§1 · The function that is its own derivative</h3>\n<p>One function grows at a rate equal to its own size: \\( \\frac{d}{dt}e^{t} = e^{t} \\).\nScale time by a constant and \\( \\frac{d}{dt}e^{kt} = k e^{kt} \\): growth or decay proportional\nto the current amount. That single property makes \\( e^{kt} \\) the native language of charging\ncapacitors, cooling castings, decaying vibration transients, draining accumulators, and\ncompounding costs.</p>\n<h3>§2 · Decay with an offset — the plant's favorite curve</h3>\n<p>A hot object doesn't decay to zero; it decays to ambient. The working form is</p>\n\\[ T(t) = T_\\infty + (T_0 - T_\\infty)\\,e^{-t/\\tau} \\tag{1} \\]\n<p>where \\( \\tau \\) is the <em>time constant</em>: after one \\( \\tau \\), 63% of the gap to\nambient is closed; after 3\\( \\tau \\), 95%; after 5\\( \\tau \\), it's over. Ask \"how many time\nconstants?\" and any first-order transient becomes readable at a glance.</p>\n<h3>§3 · Logarithms — solving for time</h3>\n<p>The logarithm inverts the exponential; it is how you extract <em>when</em>:</p>\n\\[ t = \\tau \\,\\ln\\!\\frac{T_0 - T_\\infty}{T(t) - T_\\infty} \\tag{2} \\]\n<p>Logs also compress scale (decibels, pH, Richter) and straighten exponentials: plot\n\\( \\ln(T - T_\\infty) \\) against \\( t \\) and first-order data falls on a line whose slope is\n\\( -1/\\tau \\). Fitting a straight line to a log plot is how you <em>measure</em> a time\nconstant from plant data.</p>\n\n<h3>§4 · The transient protocol</h3>\n<p>Every first-order transient yields to the same four questions, asked in order.\n<em>What is the destination?</em> Identify \\( T_\\infty \\) — ambient, setpoint, asymptote —\nbecause everything is measured as a gap from it. <em>What is the gap?</em> Compute the current\nexcess over the destination; the transient's whole story is this gap shrinking.\n<em>What is the tempo?</em> Get \\( \\tau \\) — from a datasheet, from a fit, or from data via\nthe semilog method of §3: plot \\( \\ln(\\text{gap}) \\) against time, and the slope is\n\\( -1/\\tau \\). <em>When?</em> Turn any target into time with\n\\( t = \\tau\\,\\ln(\\text{gap}_0/\\text{gap}_{target}) \\), or count in the coarse currency —\none \\( \\tau \\) closes 63% of the gap, three close 95%, five end the story.</p>\n<p>The same machinery runs upward for growth. Compounding at rate \\( r \\) per period doubles\nin \\( \\ln 2/\\ln(1+r) \\) periods — the honest version of the rule of 70 — and any quantity\nthat grows in proportion to itself, from an escalating tariff to a fouling deposit, is the\nexponential wearing different clothes. When data arrives, straighten it first: if the semilog\nplot is not a line, the process is not first-order, and no amount of \\( \\tau \\)-talk will\nmake it one. The plot is the test; the constants come after.</p>\n<p>Know the honest failure modes too. A curve on the semilog plot usually means two time\nconstants stacked — a fast surface effect riding on a slow bulk one — and a flat early\nsection means deadtime: transport delay before the response begins. Both are information, not\nnuisance. Report what the data shows, fit the region the model genuinely describes, and say\nso; a stated approximation is engineering, an unstated one is luck.</p>\n<p><strong>Closing.</strong> \\( e^{kt} \\) encodes self-proportional change; \\( \\tau \\) makes\ntransients countable; logarithms solve for time and straighten curves so data confesses its\nconstants.</p>\n",

@@ -47,17 +47,30 @@ PAGE_MIN = 253
 # The renderer emits TWO opening sheets — an opener (what + keypoints) and a
 # separate "Terms & signs" sheet — because the original combined intro page
 # measured 175% of A4. Each is a page and each is budgeted as one.
-MAX_TERMS_PER_SHEET = 12
+MAX_TERMS_PER_SHEET = 11
+
+# The terms sheet is consistently the TIGHTEST block in the document, and a
+# row count alone does not predict it — measured at 11 rows it ran 91% of A4
+# in MTH 101 L1 and 96% in L4, the difference being how long the meanings and
+# symbols are. So cost it from its real text plus a per-row overhead, fitted
+# to those four measured sheets (79%, 80%, 91%, 96%).
+COST_TERM_ROW = 6
 
 # LaTeX control words that are structure or operators, never a quantity the
 # student must have been introduced to.
 STRUCTURAL = {
-    "frac", "sqrt", "left", "right", "begin", "end", "text", "mathrm", "cdot",
-    "times", "quad", "qquad", "displaystyle", "sum", "int", "lim", "to",
-    "infty", "approx", "le", "ge", "ne", "pm", "mp", "cases", "array",
-    "partial", "d", "dx", "dt", "log", "ln", "exp", "sin", "cos", "tan",
-    "matrix", "pmatrix", "bmatrix", "hline", "\\", "over", "big", "Big",
-    "label", "tag", "operatorname", "mathbf", "boldsymbol", "colon",
+    "frac", "dfrac", "tfrac", "sqrt", "left", "right", "begin", "end", "text",
+    "mathrm", "cdot", "cdots", "ldots", "dots", "times", "div", "quad",
+    "qquad", "displaystyle", "sum", "prod", "int", "iint", "lim", "to",
+    "infty", "approx", "sim", "simeq", "equiv", "propto", "neq", "ne", "le",
+    "leq", "ge", "geq", "ll", "gg", "pm", "mp", "cases", "array", "align",
+    "aligned", "partial", "d", "dx", "dt", "log", "ln", "exp", "sin", "cos",
+    "tan", "sec", "csc", "cot", "arctan", "sinh", "cosh", "matrix", "pmatrix",
+    "bmatrix", "vmatrix", "hline", "\\", "over", "big", "Big", "bigg", "Bigg",
+    "label", "tag", "operatorname", "mathbf", "mathit", "boldsymbol", "colon",
+    "circ", "deg", "prime", "langle", "rangle", "lvert", "rvert", "lVert",
+    "rVert", "vert", "mid", "space", ";", ",", "!", "hat", "bar", "tilde",
+    "vec", "overline", "underline", "limits", "nolimits", "substack",
 }
 
 
@@ -176,7 +189,9 @@ def check_lesson(name, lid, lesson, issues, lesson_title=None,
     if len(terms) > MAX_TERMS_PER_SHEET:
         issues.append(f"{tag}: {len(terms)} terms — more than "
                       f"{MAX_TERMS_PER_SHEET} will not fit one terms sheet")
-    _report("terms sheet", COST_TABLE_ROW * len(terms))
+    terms_words = sum(_words(t.get("term", "") + " " + t.get("read", "")
+                             + " " + t.get("meaning", "")) for t in terms)
+    _report("terms sheet", terms_words + COST_TERM_ROW * len(terms))
     for i, sh in enumerate(sheets):
         _report(f"sheet[{i}]",
                 cost(sh.get("body", "")) + COST_HEADING if isinstance(sh, dict)
