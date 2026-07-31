@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 08 of 11 · Year 2 · Semester 2</p>
   <h1>Statistical process control II and capability</h1>
   <p class="sub">Attribute charts in brief; capability indices Cp and Cpk computed and abused-proofed. What Cpk = 1.33 actually promises. Capability studies as pre-production gatekeeping.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/8">Mark as complete</button>
@@ -84,34 +84,274 @@
 </div>
 <div class="src-strip"><span class="t">SOURCED FROM</span>
   <b>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</b></div>
-<div class="video-status"><span class="dot"></span>Lecture video — in production. Only verified embeds ship.</div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/jFsNSYzBWhk" title="Process Capability Analysis Explained (Cp, Cpk, Pp, Ppk)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Process Capability Analysis Explained (Cp, Cpk, Pp, Ppk) <span class="src">numiqo</span></figcaption></figure></div><div class="vh-bar"><span class="n">Process Capability Analysis Explained (Cp, Cpk, Pp, Ppk)</span><span class="c">NUMIQO</span></div></div>
 <div class="tabs" role="tablist">
   <button class="on" data-tab="t-lecture">Lecture</button>
   <button data-tab="t-foundations">Foundations</button>
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Cp = 1.8 but Cpk = 0.7: what is the process doing?</li><li>What does Cpk = 1.33 promise in defect terms, roughly?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Cp = 1.8 but Cpk = 0.7: what is the process doing?</li><li>What does Cpk = 1.33 promise in defect terms, roughly?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A normal distribution drawn inside a tolerance band. The band runs from the lower specification limit at minus 5.4 process standard deviations to the upper limit at plus 5.4, so the six-sigma spread fits comfortably and Cp is 1.80. The distribution is centred 3.3 standard deviations above the middle of the band, close to the upper limit, so Cpk is only 0.70 and the shaded upper tail beyond the specification amounts to 1.79 per cent of production."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">A process whose spread fits and whose centring does not</text><text x="95" y="52" fill="#1f7a5c" font-size="11">Cp = 1.80 &mdash; the six-sigma spread fits the tolerance</text><text x="95" y="68" fill="#9c2f2f" font-size="11">Cpk = 0.70 &mdash; but the mean sits 3.3&#963; above centre</text><path d="M105 240 L105 80" stroke="#c2820f" stroke-width="1.8" fill="none"/><text x="105" y="258" text-anchor="middle" fill="#c2820f" font-size="11">LSL</text><path d="M443.1 240 L443.1 80" stroke="#c2820f" stroke-width="1.8" fill="none"/><text x="443.1" y="258" text-anchor="middle" fill="#c2820f" font-size="11">USL</text><path d="M274.1 240 L274.1 150" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><text x="274.1" y="258" text-anchor="middle" fill="#5B6672" font-size="10">tolerance centre</text><path d="M443.1 240 L443.1 225.7 L446.3 228.4 L449.4 230.8 L452.5 232.7 L455.7 234.3 L458.8 235.6 L461.9 236.6 L465 237.4 L468.2 238.1 L471.3 238.6 L474.4 238.9 L477.6 239.2 L480.7 239.4 L483.8 239.6 L487 239.7 L490.1 239.8 L493.2 239.9 L496.3 239.9 L499.5 239.9 L502.6 240 L505.7 240 L508.9 240 L512 240 L512 240" fill="#9c2f2f33" stroke="#9c2f2f" stroke-width="1"/><path d="M80 240 L83.1 240 L86.3 240 L89.4 240 L92.5 240 L95.7 240 L98.8 240 L101.9 240 L105 240 L108.2 240 L111.3 240 L114.4 240 L117.6 240 L120.7 240 L123.8 240 L127 240 L130.1 240 L133.2 240 L136.3 240 L139.5 240 L142.6 240 L145.7 240 L148.9 240 L152 240 L155.1 240 L158.3 240 L161.4 240 L164.5 240 L167.7 240 L170.8 240 L173.9 240 L177 240 L180.2 240 L183.3 240 L186.4 240 L189.6 240 L192.7 240 L195.8 240 L199 240 L202.1 240 L205.2 240 L208.3 240 L211.5 240 L214.6 240 L217.7 240 L220.9 240 L224 240 L227.1 240 L230.3 240 L233.4 240 L236.5 240 L239.7 240 L242.8 240 L245.9 240 L249 240 L252.2 240 L255.3 239.9 L258.4 239.9 L261.6 239.9 L264.7 239.8 L267.8 239.7 L271 239.6 L274.1 239.4 L277.2 239.2 L280.3 238.9 L283.5 238.6 L286.6 238.1 L289.7 237.4 L292.9 236.6 L296 235.6 L299.1 234.3 L302.3 232.7 L305.4 230.8 L308.5 228.4 L311.7 225.7 L314.8 222.4 L317.9 218.6 L321 214.3 L324.2 209.4 L327.3 203.9 L330.4 197.8 L333.6 191.2 L336.7 184.2 L339.8 176.7 L343 169 L346.1 161.2 L349.2 153.3 L352.3 145.6 L355.5 138.2 L358.6 131.4 L361.7 125.3 L364.9 120 L368 115.7 L371.1 112.6 L374.3 110.6 L377.4 110 L380.5 110.6 L383.7 112.6 L386.8 115.7 L389.9 120 L393 125.3 L396.2 131.4 L399.3 138.2 L402.4 145.6 L405.6 153.3 L408.7 161.2 L411.8 169 L415 176.7 L418.1 184.2 L421.2 191.2 L424.3 197.8 L427.5 203.9 L430.6 209.4 L433.7 214.3 L436.9 218.6 L440 222.4 L443.1 225.7 L446.3 228.4 L449.4 230.8 L452.5 232.7 L455.7 234.3 L458.8 235.6 L461.9 236.6 L465 237.4 L468.2 238.1 L471.3 238.6 L474.4 238.9 L477.6 239.2 L480.7 239.4 L483.8 239.6 L487 239.7 L490.1 239.8 L493.2 239.9 L496.3 239.9 L499.5 239.9 L502.6 240 L505.7 240 L508.9 240 L512 240" fill="none" stroke="#3a6ea5" stroke-width="2.2"/><path d="M377.4 240 L377.4 110" stroke="#3a6ea5" stroke-width="1.4" stroke-dasharray="4 3" fill="none"/><text x="369.4" y="105" text-anchor="end" fill="#3a6ea5" font-size="10">process mean</text><text x="452" y="205" fill="#9c2f2f" font-size="10">1.79% beyond USL</text><path d="M80 240 L512 240" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="296" y="282" text-anchor="middle" fill="#14181F" font-size="12">deviation from the tolerance centre, in process standard deviations</text></svg><figcaption>\( C_p \) compares the tolerance with the process spread and gets 1.80 &mdash; the distribution would fit with room to spare if it were centred. \( C_{pk} \) compares the tolerance with where the process actually <em>is</em>, and gets 0.70, because the mean sits 3.3&#963; above the middle and only 2.1&#963; of room remains on the upper side. The gap between the two indices is entirely centring: \( k = 1 - C_{pk}/C_p = 0.611 \) of the half-tolerance has been given away. The shaded tail is 1.79% of production, or 17,900 parts per million, and the whole of it could be recovered by moving the mean rather than by improving the machine.</figcaption></figure>
+<h3>&#167;1 &middot; When the data are counts, not measurements</h3>
+<p>Lesson 7's charts plot a measurement. Plenty of characteristics do not produce one &mdash; a
+part passes a limit gauge or it does not, a weld shows defects or it does not &mdash; and those
+need charts built on the distribution the counting itself follows.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; the attribute charts</span>
+<p>\[ \bar p\pm3\sqrt{\frac{\bar p(1-\bar p)}{n}}\qquad\text{(fraction nonconforming, binomial)} \]</p>
+<p>\[ \bar c\pm3\sqrt{\bar c}\qquad\text{(defects per unit, Poisson)} \]</p>
+<p>The \( p \) chart counts nonconforming <em>units</em> out of \( n \); the \( c \) chart counts
+<em>defects</em>, of which one unit may carry several. Their limits are the three-sigma convention
+applied to the right distribution, not a new idea.</p></div>
+<p>Take \( \bar p=0.03 \) with samples of 200. The standard error is
+\( \sqrt{0.03(0.97)/200}=0.01206 \), so the upper limit is
+\( 0.03+0.0362=0.0662 \) and the lower limit computes to \( -0.0062 \) &mdash; negative, so it is
+truncated to zero. That truncation is not a formality. It means the chart <b>cannot detect an
+improvement</b>: no sample, however clean, will ever fall below a limit of zero. The chart is
+one-sided by arithmetic.</p>
+<p>Getting a usable lower limit means making \( \bar p>3\sqrt{\bar p(1-\bar p)/n} \), which
+rearranges to \( n>9(1-\bar p)/\bar p \) &mdash; here \( 9(0.97)/0.03=291 \), so samples of 292 or
+more. At \( \bar p=0.003 \) it would be 2,991. This is the same point Lesson 5 made about limit
+gauges, in a new form: a pass/fail observation carries far less information than a measurement, so
+attribute charts need very large samples to say anything a variables chart says from five parts.
+Where a measurement is available, chart the measurement.</p>
+
+<h3>&#167;2 &middot; \( C_p \): could the process fit?</h3>
+<p>Stability, which Lesson 7 established, is not the same question as adequacy. A process can be
+perfectly stable and still too variable for the tolerance it has been given. The index that asks
+this is \( C_p \).</p>
+<div class="keybox"><span class="tag">Key relation &mdash; potential capability</span>
+<p>\[ C_p=\frac{\mathrm{USL}-\mathrm{LSL}}{6\hat\sigma},\qquad
+\hat\sigma=\frac{\bar R}{d_2} \]</p>
+<p>A ratio of two widths: what is allowed, over what the process naturally produces.
+\( C_p=1 \) means the natural spread exactly fills the tolerance, which even perfectly centred
+leaves 0.27% outside &mdash; the same three-sigma tail as a control limit.</p></div>
+<p>The bore process of Lesson 7 had \( \hat\sigma=1.83\ \mu\mathrm{m} \) against a 21 &#181;m
+tolerance, so \( C_p=21/(6\times1.827)=1.92 \). Its spread occupies just over half the tolerance.
+Note carefully what has and has not been established by that number: \( C_p \) contains no
+information at all about where the process is sitting. It is a statement about the machine, not
+about the parts. For that reason it is sometimes called <em>potential</em> capability &mdash; what
+the process could achieve if someone centred it.</p>
+
+<h3>&#167;3 &middot; \( C_{pk} \): is it fitting?</h3>
+<p>The index that accounts for position takes the worse of the two sides.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; actual capability and the centring loss</span>
+<p>\[ C_{pk}=\min\!\left(\frac{\mathrm{USL}-\mu}{3\hat\sigma},\
+\frac{\mu-\mathrm{LSL}}{3\hat\sigma}\right),\qquad
+k=1-\frac{C_{pk}}{C_p} \]</p>
+<p>\( C_{pk}\le C_p \) always, with equality only when the process is centred. The gap between
+them is pure centring: \( k \) is the fraction of the half-tolerance the mean has given away.</p></div>
+<p>The diagram's process is the standard diagnostic case, and it answers the question directly.
+\( C_p=1.80 \) and \( C_{pk}=0.70 \) give \( k=1-0.70/1.80=0.611 \). Since \( C_p=1.80 \) means the
+tolerance is \( 10.8\hat\sigma \) wide, its half-width is \( 5.4\hat\sigma \), and the mean is
+\( 0.611\times5.4=3.3\hat\sigma \) off centre. Check it against the definition: the room remaining
+above is \( 5.4-3.3=2.1\hat\sigma \), and \( 2.1/3=0.70 \). The process is not too variable; it is
+badly aimed, and the fix is a setting, not a machine.</p>
+<p>The defect rate follows from the near side alone. \( z=3C_{pk}=2.1 \), so the upper tail is
+\( 1-\Phi(2.1)=0.01786 \), about 17,900 parts per million. The lower tail sits \( 8.7\hat\sigma \)
+away and contributes nothing measurable. Every one of those 17,900 is recoverable by moving the
+mean.</p>
+<p>Which answers the other standing question &mdash; what does \( C_{pk}=1.33 \) actually promise?
+\( z=3(1.33)=3.99 \), so the near tail is \( 1-\Phi(3.99)=3.30\times10^{-5} \): <b>33 parts per
+million on the near side</b>. The familiar figure of 63 ppm is the two-sided total, and it is only
+correct if the process is <em>centred</em>, that is if \( C_p=C_{pk}=1.33 \). A process with
+\( C_p=3 \) and \( C_{pk}=1.33 \) has 33 ppm and nothing on the far side; a centred one has 33 on
+each. \( C_{pk} \) alone bounds the near tail and says nothing about the total, which is exactly
+why both indices are quoted together and neither is quoted alone.</p>
+<p>The same arithmetic explains the most-quoted number in quality. A process with \( C_p=2 \) whose
+mean is allowed to wander \( 1.5\hat\sigma \) has \( C_{pk}=1.5 \), so \( z=4.5 \) and the tail is
+\( 3.40\times10^{-6} \) &mdash; 3.4 parts per million. The 1.5\( \sigma \) drift is a convention
+about long-term behaviour, not a law, and the 3.4 ppm is a consequence of assuming it.</p>
+
+<h3>&#167;4 &middot; Four ways a capability index lies</h3>
+<p>Capability indices are the most abused numbers in manufacturing, and every abuse is avoidable
+with one question each.</p>
+<p><b>The process is not stable.</b> \( \hat\sigma=\bar R/d_2 \) estimates the spread of a
+distribution, which presupposes there <em>is</em> one. On an out-of-control process the parameter
+being estimated changes while you estimate it, and the resulting index describes nothing. Stability
+first, capability second: that ordering is not a preference, it is a precondition, and computing
+\( C_{pk} \) before checking the charts is the single commonest error in the field.</p>
+<p><b>The measuring system is inside the number.</b> Independent variances add, so what a study
+observes is \( \sigma^2_{\text{obs}}=\sigma^2_{\text{process}}+\sigma^2_{\text{measurement}} \).
+A process at \( \sigma=1.5\ \mu\mathrm{m} \) measured with a gauge whose own spread is
+1.0 &#181;m reads \( \sqrt{1.5^2+1.0^2}=1.80\ \mu\mathrm{m} \), taking \( C_p \) from 2.33 to 1.94
+&mdash; a 17% loss produced entirely by the instrument. How much of an observed spread belongs to
+the measuring system, and how to find out, is taken up later in this course.</p>
+<p><b>The estimate is far softer than it looks.</b> \( C_{pk} \) is computed from a sample and
+inherits its uncertainty. The standard large-sample interval is</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the confidence interval on \( C_{pk} \)</span>
+<p>\[ \hat C_{pk}\pm z_{\alpha/2}\sqrt{\frac{1}{9n}+\frac{\hat C_{pk}^2}{2(n-1)}} \]</p>
+<p>At \( \hat C_{pk}=1.33 \) from 30 parts the 95% interval is <b>0.97 to 1.69</b>. From 100 parts
+it is 1.13 to 1.53. A single quoted index is a point estimate, and a small one is barely
+evidence.</p></div>
+<p>A supplier reporting &quot;\( C_{pk}=1.33 \), \( n=30 \)&quot; has demonstrated that the true
+value is somewhere between not-capable and very capable. That is worth knowing before a study is
+accepted, and it is why capability studies specify a sample size rather than leaving it to whoever
+runs them.</p>
+<p><b>The distribution is not normal.</b> Every parts-per-million figure above comes from the
+normal tail. A skewed process &mdash; a form or position characteristic bounded at zero, a
+plated thickness &mdash; can show a respectable \( C_{pk} \) and a defect rate several times what
+the index implies, because the real tail is heavier than the model's. The index is still useful as
+a comparative measure; the ppm conversion is not.</p>
+<p>Used properly, the study is a gate rather than a report. Before production starts, run the
+process, prove it is stable, then show the index clears the threshold the contract sets &mdash;
+commonly 1.33, and 1.67 where failure is expensive or unsafe. Doing it in that order is what makes
+capability a decision instead of an autopsy.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Cp = 1.8 but Cpk = 0.7: what is the process doing?</li><li>What does Cpk = 1.33 promise in defect terms, roughly?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Control charts, \( \hat\sigma=\bar R/d_2 \), and stability</b> (Lesson 7) &mdash; the
+precondition every index in this lesson depends on.</li>
+<li><b>Specification limits and tolerance</b> (Lesson 5, and Engineering Drawing &amp; CAD L6)
+&mdash; the numerator of every capability index.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; how an index
+becomes a parts-per-million figure.</li>
+<li><b>Binomial and Poisson distributions</b> (Engineering Statistics L3) &mdash; the basis of the
+\( p \) and \( c \) charts.</li>
+<li><b>Confidence intervals</b> (Engineering Statistics L6) &mdash; why a \( C_{pk} \) from 30
+parts is barely evidence.</li>
+<li><b>Independent variances add</b> (Engineering Statistics L4) &mdash; how the measuring system
+gets inside the process index.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>\( p \) chart</td><td>\( \bar p\pm3\sqrt{\bar p(1-\bar p)/n} \)</td><td>Fraction of units nonconforming.</td></tr>
+<tr><td>\( c \) chart</td><td>\( \bar c\pm3\sqrt{\bar c} \)</td><td>Defects per unit, where one unit may carry several.</td></tr>
+<tr><td>Truncated LCL</td><td>\( n>9(1-\bar p)/\bar p \)</td><td>Below this sample size the chart cannot detect improvement.</td></tr>
+<tr><td>\( C_p \)</td><td>\( (\mathrm{USL}-\mathrm{LSL})/6\hat\sigma \)</td><td>Could the spread fit? Says nothing about centring.</td></tr>
+<tr><td>\( C_{pk} \)</td><td>\( \min\!\big((\mathrm{USL}-\mu),(\mu-\mathrm{LSL})\big)/3\hat\sigma \)</td><td>Does it fit where it actually sits?</td></tr>
+<tr><td>Centring loss \( k \)</td><td>\( 1-C_{pk}/C_p \)</td><td>Fraction of the half-tolerance given away by aim.</td></tr>
+<tr><td>Near-tail ppm</td><td>\( 10^6(1-\Phi(3C_{pk})) \)</td><td>33 ppm at 1.33; 63 ppm two-sided only if centred.</td></tr>
+<tr><td>The 3.4 ppm figure</td><td>\( C_p=2 \), \( 1.5\hat\sigma \) drift</td><td>A convention about drift, not a law.</td></tr>
+<tr><td>Measurement inflation</td><td>\( \sigma^2_{\rm obs}=\sigma^2_{\rm proc}+\sigma^2_{\rm meas} \)</td><td>A 1.0 &#181;m gauge on a 1.5 &#181;m process costs 17% of \( C_p \).</td></tr>
+<tr><td>Interval on \( C_{pk} \)</td><td>\( \hat C_{pk}\pm z\sqrt{\tfrac{1}{9n}+\tfrac{\hat C_{pk}^2}{2(n-1)}} \)</td><td>1.33 from 30 parts means 0.97 to 1.69.</td></tr>
+<tr><td>Acceptance thresholds</td><td>1.33 usual, 1.67 critical</td><td>A gate before production, not a report after it.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Read a process from its two indices</b></p>
+<p><b>Problem.</b> A study reports \( C_p=1.80 \) and \( C_{pk}=0.70 \). Find the centring loss
+\( k \), how far the mean sits from the centre of the tolerance in process standard deviations, and
+the fraction of production outside the specification. Say what should be done, and what
+\( C_{pk} \) would become if it were done.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( k=1-C_{pk}/C_p=1-0.70/1.80=0.611 \).</p>
+<p>(2) \( C_p=1.80 \) means the tolerance is \( 6(1.80)=10.8\hat\sigma \) wide, so its half-width
+is \( 5.4\hat\sigma \). The mean is displaced by \( k \) of that:
+\( 0.611\times5.4=3.3\hat\sigma \).</p>
+<p>(3) Check against the definition: the room left on the near side is
+\( 5.4-3.3=2.1\hat\sigma \), and \( 2.1/3=0.70=C_{pk} \). Consistent.</p>
+<p>(4) Near tail: \( z=3C_{pk}=2.1 \), so \( 1-\Phi(2.1)=0.01786 \). Far tail:
+\( z=5.4+3.3=8.7 \), which contributes about \( 10^{-18} \). Total 1.79%, or 17,900 ppm.</p>
+<p>(5) The spread is fine and the aim is not, so the action is to move the mean to the centre of
+the tolerance &mdash; a setting change, not a machine problem. Centred, \( C_{pk}=C_p=1.80 \), and
+the defect rate falls to \( 2(1-\Phi(5.4))=6.7\times10^{-8} \), about 0.07 ppm.</p>
+<p><b>Answer:</b> \( k=0.611 \), the mean is \( 3.3\hat\sigma \) high, 1.79% (17,900 ppm) is outside;
+recentring alone takes \( C_{pk} \) to 1.80 and the defect rate to well under one ppm.
+<b>Sanity check:</b> the two indices together carry information neither has alone &mdash;
+\( C_p \) says the machine is capable, \( C_{pk} \) says the parts are not, and only the pair
+identifies centring as the cause. Note the leverage: a quarter of a million defective parts per
+fifteen million disappear for the cost of a tool offset, whereas improving \( C_p \) from 1.80
+would have meant a new process. This is why a report quoting \( C_{pk} \) alone is incomplete.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>A capability study in inches, and how much to believe it</b></p>
+<p><b>Problem.</b> A shaft is specified 1.2490 / 1.2510 in. A stable process gives
+\( \mu=1.2504 \) in and \( \hat\sigma=0.00025 \) in. Find \( C_p \), both one-sided indices,
+\( C_{pk} \), and the defect rate in parts per million. Then, given that the study used 30 parts,
+give the 95% confidence interval on the reported \( C_{pk} \) and say what it means for an
+acceptance threshold of 1.33.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1)
+\( C_p=(1.2510-1.2490)/(6\times0.00025)=0.0020/0.0015=1.333 \).</p>
+<p>(2) Upper side: \( (1.2510-1.2504)/(3\times0.00025)=0.0006/0.00075=0.800 \).</p>
+<p>(3) Lower side: \( (1.2504-1.2490)/0.00075=0.0014/0.00075=1.867 \).</p>
+<p>(4) \( C_{pk}=\min(0.800,1.867)=0.800 \).</p>
+<p>(5) Upper tail \( z=3(0.800)=2.4 \), giving \( 1-\Phi(2.4)=0.008198 \); lower tail
+\( z=5.6 \), giving \( 1.1\times10^{-8} \). Total 8,198 ppm, about 0.82%.</p>
+<p>(6) With \( n=30 \) and \( \hat C_{pk}=0.800 \):
+\( \sqrt{1/(9\times30)+0.64/58}=\sqrt{0.003704+0.011034}=0.1214 \), so the interval is
+\( 0.800\pm1.96(0.1214)=0.562 \) to 1.038.</p>
+<p>(7) The whole interval lies below 1.33, so the process fails the threshold and the sample size
+is not the reason &mdash; even the optimistic end of the interval is short.</p>
+<p><b>Answer:</b> \( C_p=1.333 \), \( C_{pu}=0.800 \), \( C_{pl}=1.867 \), \( C_{pk}=0.800 \),
+8,198 ppm; the 95% interval is 0.56 to 1.04, entirely below the 1.33 gate.
+<b>Sanity check:</b> \( C_p \) and \( C_{pk} \) differ by a factor of 1.67, and the two one-sided
+indices show immediately why &mdash; the mean sits 0.0004 in above the centre of a 0.0020 in band,
+so 60% of the upper half-tolerance is gone. Note that the arithmetic never touched a unit
+conversion: the indices are ratios of lengths and are the same number in inches or millimetres.
+Note also what the interval does and does not settle &mdash; here it rules the process out, whereas
+a reported 1.33 from the same 30 parts would have ranged from 0.97 to 1.69 and settled
+nothing.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Two things that are not the process</b></p>
+<p><b>Problem.</b> A tolerance of 21 &#181;m is checked on a process whose true standard deviation
+is 1.5 &#181;m, using a gauge whose own measurement standard deviation is 1.0 &#181;m. Find the
+observed \( C_p \), the true \( C_p \), and the fraction of the index lost to the instrument.
+Separately, a \( p \) chart runs at \( \bar p=0.03 \) with samples of 200: give its limits and state
+what the chart cannot do, and find the smallest sample size that fixes it.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Independent variances add:
+\( \sigma_{\text{obs}}=\sqrt{1.5^2+1.0^2}=\sqrt{3.25}=1.803\ \mu\mathrm{m} \).</p>
+<p>(2) \( C_{p,\text{obs}}=21/(6\times1.803)=1.941 \).</p>
+<p>(3) \( C_{p,\text{true}}=21/(6\times1.5)=2.333 \).</p>
+<p>(4) Loss \( =1-1.941/2.333=0.168 \), so <b>17%</b> of the index was consumed by the measuring
+system, not by the process.</p>
+<p>(5) \( p \) chart: \( \sqrt{0.03(0.97)/200}=0.01206 \), so
+\( \mathrm{UCL}=0.03+0.0362=0.0662 \) and the lower limit computes to \( -0.0062 \), which is
+truncated to 0.</p>
+<p>(6) With a lower limit of zero no sample can ever fall below it, so the chart <b>cannot detect
+an improvement</b> &mdash; only a deterioration.</p>
+<p>(7) A positive lower limit needs \( \bar p>3\sqrt{\bar p(1-\bar p)/n} \), that is
+\( n>9(1-\bar p)/\bar p=9(0.97)/0.03=291 \). Samples of 292 or more.</p>
+<p><b>Answer:</b> observed \( C_p=1.94 \) against a true 2.33, a 17% loss to the gauge; the
+\( p \) chart runs 0 to 0.0662 and is blind to improvement below \( n=292 \).
+<b>Sanity check:</b> both results are the same lesson in different clothing &mdash; the number a
+study reports is a property of the measurement scheme as well as of the process. The gauge cost
+more index than most process improvements would have gained, and the \( p \) chart's blindness is
+arithmetic rather than bad luck. Note that a variables chart on the same characteristic would have
+signalled from five parts, which is the argument for measuring wherever a measurement
+exists.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>A process reports \( C_p=1.8 \) and \( C_{pk}=0.7 \). The process is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>too variable for the tolerance</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>well centred but too variable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>capable in spread but badly off centre</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>unstable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C_p \) is a pure spread comparison and 1.8 says the spread fits with room to
+spare. The gap down to 0.7 is entirely centring: \( k=1-0.7/1.8=0.611 \) of the half-tolerance has
+been given away, putting the mean \( 3.3\hat\sigma \) off centre. The fix is a setting, not a
+machine. Neither index says anything about stability, which must be established first.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>\( C_{pk}=1.33 \) promises</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>63 ppm defective in all cases</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>about 33 ppm on the near side, and 63 ppm in total only if the process is centred</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>zero defects</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.27% defective</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( z=3(1.33)=3.99 \), so the near tail is \( 3.30\times10^{-5} \), that is
+33 ppm. The familiar 63 ppm doubles it, which is right only when \( C_p=C_{pk} \). A process with
+\( C_p=3 \) and \( C_{pk}=1.33 \) has 33 ppm and nothing on the far side. This is why the two
+indices are always quoted together.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>\( C_p \) and \( C_{pk} \) are equal when</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the process is stable</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the process is centred in the tolerance</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the tolerance is symmetric</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the sample is large</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C_{pk} \) takes the worse of the two sides, so it equals \( C_p \) only when
+both sides are equal &mdash; that is, when the mean sits at the centre of the tolerance. Otherwise
+\( C_{pk}<C_p \), and the gap \( k=1-C_{pk}/C_p \) measures exactly how much centring has cost.
+Stability and sample size are separate questions.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A \( p \) chart at \( \bar p=0.03 \) with \( n=200 \) has its lower control limit
+truncated to zero. The consequence is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the chart is invalid</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the chart cannot signal an improvement, only a deterioration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the upper limit must also be recomputed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the process is out of control</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>No sample fraction can fall below zero, so a genuine improvement produces no
+signal. It is a property of the arithmetic at small \( \bar p \) and small \( n \): a positive
+lower limit needs \( n>9(1-\bar p)/\bar p \), here 292. The chart remains perfectly valid for
+detecting a worsening.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>The commonest abuse of a capability index is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>using \( \bar R/d_2 \) rather than the sample standard deviation</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>computing it on a process that has not been shown to be in control</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>quoting it to three decimal places</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>using it on a one-sided tolerance</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \hat\sigma \) estimates the spread of a distribution, which presupposes a
+stable one exists. On an out-of-control process the quantity being estimated is moving while it is
+estimated, and the index describes nothing. Stability first, capability second &mdash; a
+precondition, not a preference.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A process with \( \sigma = 1.5\ \mu\mathrm{m} \) is measured with a gauge whose own
+standard deviation is 1.0 &#181;m. The observed spread is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1.5 &#181;m</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>1.8 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>2.5 &#181;m</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.5 &#181;m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Independent variances add:
+\( \sqrt{1.5^2+1.0^2}=\sqrt{3.25}=1.80\ \mu\mathrm{m} \). Against a 21 &#181;m tolerance that takes
+\( C_p \) from 2.33 to 1.94, so 17% of the index was lost to the instrument rather than to the
+process &mdash; usually more than a process improvement would have gained.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A supplier reports \( C_{pk}=1.33 \) from a study of 30 parts. The 95% confidence
+interval is roughly</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1.30 to 1.36</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1.25 to 1.41</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>0.97 to 1.69</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1.33 exactly; it is a computed value</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \hat C_{pk}\pm1.96\sqrt{1/(9n)+\hat C_{pk}^2/(2(n-1))} \) gives
+\( 1.33\pm0.36 \). The reported value is a point estimate from a sample and inherits its
+uncertainty; from 30 parts it spans not-capable to very capable. From 100 parts it is still 1.13 to
+1.53, which is why studies specify a sample size.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The widely quoted &quot;3.4 parts per million&quot; follows from</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( C_{pk}=2 \) on a centred process</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( C_p=2 \) with an assumed \( 1.5\hat\sigma \) drift in the mean</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a six-sigma control chart limit</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( C_p=1.33 \) with a normal distribution</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C_p=2 \) with the mean allowed to wander \( 1.5\hat\sigma \) leaves
+\( C_{pk}=1.5 \), so \( z=4.5 \) and the tail is \( 3.40\times10^{-6} \). The \( 1.5\sigma \) shift
+is a convention about long-term behaviour rather than a law, so the 3.4 ppm is a consequence of
+that assumption and not a property of any particular process.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the capability study that was run on the wrong week.</b> A supplier had
+to demonstrate \( C_{pk}\ge1.33 \) on a bore before a production order was released. The study was
+run on 30 consecutive parts from a single setup, returned \( C_{pk}=1.38 \), and the order was
+placed. Rejects in the first production month ran near 2%.</p>
+<p>Three things had gone wrong, and each was checkable in advance. No control chart accompanied the
+study, so nobody had shown the process was stable; 30 consecutive parts from one setup capture the
+variation <em>within</em> a setup and almost none of the variation <em>between</em> setups, which
+is where this process moved. The sample size made the number soft in any case: at
+\( \hat C_{pk}=1.38 \) with \( n=30 \) the 95% interval runs from about 1.01 to 1.75, so 1.38 was
+never evidence of clearing 1.33. And the gauge's own variation sat inside \( \hat\sigma \)
+unexamined, which if anything made the reported figure conservative &mdash; the one error that
+happened to work in the supplier's favour and still told nobody anything true.</p>
+<p>Two practices follow. A capability study is not a number, it is a number plus the conditions
+that produced it: the control charts showing stability, the sampling plan showing what sources of
+variation were allowed to act, the sample size, and the state of the measuring system. And an
+acceptance threshold should be applied to the lower confidence limit rather than to the point
+estimate, which is what turns &quot;we measured 1.38&quot; into &quot;we have demonstrated
+1.33&quot;.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(26.25\\ \\mathrm{ft}\\)", "\\(2.438\\ \\mathrm{ft}\\)", "\\(262.5\\ \\mathrm{ft}\\)", "\\(2.625\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(8 \\times 3.281 = 26.25\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(328.1\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(30.48\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3281\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(32.81\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(100 \times 3.281 = 328.1\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(304.8\\ \\mathrm{in}\\)", "\\(0.4724\\ \\mathrm{in}\\)", "\\(4.724\\ \\mathrm{in}\\)", "\\(0.04724\\ \\mathrm{in}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(12 \\times 0.03937 = 0.4724\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(3810\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(5.906\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(59.06\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.5906\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(150 \times 0.03937 = 5.906\ \mathrm{in}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
-  <div class="lib-video-todo">TODO: Find approved video</div><p class="small">Only videos from the approved-channel list embed here; nothing is linked until it has been opened and verified.</p>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
   
 </div>
 

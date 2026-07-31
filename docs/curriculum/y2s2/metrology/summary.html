@@ -73,7 +73,7 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2>
-<p class="ref-thin">No recap is authored yet for lessons 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
+
 <section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 01 · Measurement fundamentals</p><h3><span class="sum-n">Lesson 01</span>Measurement fundamentals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
 <ul>
 <li>Resolution is what the display can show, precision is agreement among repeats, bias is a
@@ -259,6 +259,364 @@ to separate centring from form.</li>
 <tr><td>Position zone</td><td>\( \varnothing = 2\sqrt{\Delta x^2+\Delta y^2} \)</td><td>Cylindrical zone about true position.</td></tr>
 <tr><td>MMC bonus</td><td>\( |{\rm actual}-{\rm MMC}| \)</td><td>Extra position tolerance earned by departing from MMC.</td></tr>
 <tr><td>Substitute geometry</td><td>least-squares fit to probed points</td><td>What a CMM actually evaluates; sampling-dependent.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 05 · Limit gauging and Taylor's principle</p><h3><span class="sum-n">Lesson 05</span>Limit gauging and Taylor's principle</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A limit gauge is a limit built into steel: the GO gauge embodies maximum material condition,
+the NO-GO gauge least material condition.</li>
+<li>For a hole MMC is the smallest permitted size and for a shaft the largest, so a GO plug must
+enter and a GO ring must pass over.</li>
+<li>Taylor's principle: the GO gauge checks all dimensions simultaneously over the full length; the
+NO-GO gauge checks one dimension at a time at individual sections.</li>
+<li>The reason is functional &mdash; MMC protects assembly, which is a whole-feature property, and
+LMC protects local material.</li>
+<li>A bowed or lobed bore accepts only \( d_{\max}=D-2\delta \); a 0.008 mm bow in a 25.010 mm bore
+leaves 24.994 mm, which a full-form GO plug at 25.000 correctly refuses and a two-point micrometer
+passes at every section.</li>
+<li>Gauge-maker's tolerance \( t_g=0.10\,T \) and wear allowance \( w=0.05\,T \) are disposed inside
+the work zone, the wear allowance on the GO gauge only.</li>
+<li>For the 21 &#181;m hole that gives GO 25.00105 / 25.00315 and NO-GO 25.0189 / 25.0210, and a
+guaranteed accept band of 15.75 &#181;m &mdash; exactly \( 0.75\,T \), the same fraction in
+inches.</li>
+<li>The lost quarter is transferred from the manufacturer to the customer; straddling the limit
+instead hands it back and admits parts up to \( t_g/2 \) outside.</li>
+<li>Attribute gauging is fast, unambiguous, and makes 100% inspection affordable, and a GO gauge is
+a more faithful test of a fit than any set of numbers.</li>
+<li>It is blind between the limits: a \( 2\sigma \) drift takes rejects from 0.27% to 15.87% with no
+warning, where ten measured parts locate the mean to 1.11 &#181;m. Gauge for the verdict, measure
+for the process.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 05 · Limit gauging and Taylor's principle · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Limits, fits, and hole-basis notation</b> (Engineering Drawing &amp; CAD L6) &mdash; where
+\( \varnothing25\,\mathrm{H7/g6} \) and its four limits come from.</li>
+<li><b>Material condition modifiers</b> (Lesson 4, and Engineering Drawing &amp; CAD L7) &mdash;
+MMC and LMC, which the two gauges embody.</li>
+<li><b>Two-point measurement and its blind spots</b> (Lesson 2) &mdash; the micrometer that reads
+25.010 all the way along a bent bore.</li>
+<li><b>Calibration intervals and out-of-tolerance investigation</b> (Lesson 3) &mdash; a gauge is a
+controlled instrument, and wear is its drift.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; used to turn
+a process mean and standard deviation into a reject rate.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Value or rule</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Limit gauge</td><td>attribute, pass/fail</td><td>Verifying a limit without reading a scale.</td></tr>
+<tr><td>GO gauge</td><td>made to MMC</td><td>Smallest hole / largest shaft; must enter or pass over.</td></tr>
+<tr><td>NO-GO gauge</td><td>made to LMC</td><td>Largest hole / smallest shaft; must not enter or pass over.</td></tr>
+<tr><td>Taylor's principle</td><td>GO full-form, NO-GO point-by-point</td><td>Shaping a gauge so it tests the function the limit protects.</td></tr>
+<tr><td>Effective bore</td><td>\( d_{\max}=D-2\delta \)</td><td>What a bowed or lobed bore will actually accept.</td></tr>
+<tr><td>Gauge-maker's tolerance</td><td>\( t_g=0.10\,T \)</td><td>The gauge's own tolerance, disposed inside the work zone.</td></tr>
+<tr><td>Wear allowance</td><td>\( w=0.05\,T \)</td><td>GO gauge only; sets its service life, not its licence.</td></tr>
+<tr><td>Guaranteed band</td><td>\( 0.75\,T \)</td><td>What the shop can rely on after gauge tolerance and wear.</td></tr>
+<tr><td>Unilateral disposition</td><td>gauge tolerance inside \( T \)</td><td>Protects the customer completely, at the shop's cost.</td></tr>
+<tr><td>Attribute vs variable</td><td>verdict vs number</td><td>A gauge says whether; only a measurement says where.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 06 · Surface texture measurement</p><h3><span class="sum-n">Lesson 06</span>Surface texture measurement</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A stylus trace contains form, waviness and roughness together; roughness is <em>defined</em> by
+the filter that extracts it, so it does not exist independently of \( \lambda_c \).</li>
+<li>One sampling length is \( \lambda_c \) and the standard evaluation length is
+\( 5\lambda_c \).</li>
+<li>The stylus filters mechanically before anything electronic does: it follows only wavelengths
+longer than \( \lambda_{\min}=2\pi\sqrt{ar} \), which is 6.3 &#181;m for a 2 &#181;m tip on a
+0.5 &#181;m amplitude.</li>
+<li>\( R_a \) is the mean magnitude, \( R_q \) the root mean square, \( R_z \) and \( R_t \) the
+peak-to-valley measures.</li>
+<li>\( R_a \) is stable and blind to shape: a sinusoid and a plateau-honed profile both at
+0.80 &#181;m stand 2.51 and 4.44 &#181;m tall, a factor of 1.77.</li>
+<li>\( R_q/R_a \) is the cheapest discriminator &mdash; 1.111 for a sinusoid, 1.253 for a random
+normal surface, 1.667 for the plateau profile.</li>
+<li>Changing the cutoff changes the answer on an unchanged surface: 0.5 &#181;m at 0.1 mm plus
+2.0 &#181;m at 1.6 mm reads \( R_a\ 0.318 \) at \( \lambda_c = 0.8 \) mm and 1.294 at 2.5 mm, a
+factor of 4.06.</li>
+<li>A roughness value quoted without its cutoff is not a specification, and two parties can
+disagree by a factor with neither at fault.</li>
+<li>Finish is a functional requirement: texture for a soft gasket, lapped for a rigid counterface,
+tooth for paint or adhesive, plateau with valleys for a lubricated slide.</li>
+<li>\( \Lambda = h_{\min}/\sqrt{R_{q,1}^2+R_{q,2}^2} \) &mdash; a journal refinished from
+\( R_q\ 0.25 \) to 0.80 &#181;m takes \( \Lambda \) from 3.82 to 2.01, out of full film and into
+mixed lubrication, with nothing else on the drawing changed.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 06 · Surface texture measurement · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Fourier series and decomposition by wavelength</b> (Engineering Mathematics II L11) &mdash;
+what a roughness filter is doing when it splits a profile at \( \lambda_c \).</li>
+<li><b>Mean, root mean square, and the normal distribution</b> (Engineering Statistics L1 and L4)
+&mdash; \( R_a \) against \( R_q \), and the \( \sqrt{\pi/2} \) ratio of a random surface.</li>
+<li><b>Grinding, honing, and surface integrity</b> (Manufacturing Processes II L5&ndash;L6) &mdash;
+the processes that produce the finishes specified here.</li>
+<li><b>Resolution, accuracy, and what an instrument specification claims</b> (Lesson 1) &mdash; why
+vertical resolution is not the same as fidelity.</li>
+<li><b>Contact instruments and their geometry</b> (Lesson 2) &mdash; a stylus is a probe with a
+radius, like every other contacting device.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Form / waviness / roughness</td><td>separated by wavelength</td><td>Three contents of one trace; the filter decides which is which.</td></tr>
+<tr><td>Long cutoff \( \lambda_c \)</td><td>0.25 / 0.8 / 2.5 mm</td><td>Divides roughness from waviness; one sampling length.</td></tr>
+<tr><td>Short cutoff \( \lambda_s \)</td><td>2.5 / 8 &#181;m</td><td>Keeps noise and tip effects out of the roughness.</td></tr>
+<tr><td>Evaluation length</td><td>\( 5\lambda_c \)</td><td>What a reported value averages over.</td></tr>
+<tr><td>\( R_a \)</td><td>\( \frac{1}{L}\int|z|dx \)</td><td>Stable, reproducible, and blind to shape.</td></tr>
+<tr><td>\( R_q \)</td><td>\( \sqrt{\frac{1}{L}\int z^2dx} \)</td><td>Weights deep features; the parameter lubrication uses.</td></tr>
+<tr><td>\( R_z \), \( R_t \)</td><td>peak-to-valley</td><td>When the extreme, not the average, is what fails.</td></tr>
+<tr><td>\( R_q/R_a \)</td><td>1.11 sine, 1.25 random, higher if skewed</td><td>A one-line test for whether the profile has a tail.</td></tr>
+<tr><td>Stylus limit</td><td>\( \lambda_{\min}=2\pi\sqrt{ar} \)</td><td>Shortest wavelength the tip can enter rather than bridge.</td></tr>
+<tr><td>Film-thickness ratio</td><td>\( \Lambda=h_{\min}/\sqrt{R_{q,1}^2+R_{q,2}^2} \)</td><td>&gt;3 full film, 1&ndash;3 mixed, &lt;1 boundary.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 07 · Statistical process control I</p><h3><span class="sum-n">Lesson 07</span>Statistical process control I</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Common-cause variation belongs to the process; special-cause variation is an assignable event.
+The two demand opposite responses, and telling them apart is the chart's only job.</li>
+<li>Tampering &mdash; adjusting by the full deviation after every part &mdash; makes
+\( x_{n+1}=T-e_n+e_{n+1} \), doubling the variance and raising the standard deviation 41%.</li>
+<li>A rational subgroup is chosen so that only common causes act within it, leaving special causes
+to show between subgroups.</li>
+<li>\( \hat\sigma=\bar R/d_2 \) and the \( \bar X \) limits are \( \bar{\bar X}\pm A_2\bar R \) with
+\( A_2=3/(d_2\sqrt n) \) &mdash; three standard errors, packaged.</li>
+<li>At \( n=5 \): \( d_2=2.326 \), \( A_2=0.577 \), \( D_4=2.114 \), \( D_3=0 \).</li>
+<li>The worked chart gives limits 7.75 and 12.65 &#181;m from \( \bar{\bar X}=10.2 \) and
+\( \bar R=4.25 \), with \( \hat\sigma=1.83\ \mu\mathrm{m} \) and a range-chart limit of
+8.98 &#181;m.</li>
+<li>Read the range chart first: the \( \bar X \) limits are computed from \( \bar R \). A mean-only
+signal means the level moved and the spread did not.</li>
+<li>Control limits come from the process and apply to a subgroup statistic; specification limits
+come from the drawing and apply to a part. At \( n=5 \) they differ by a factor of
+\( \sqrt5 \) in scale, so mixing them makes a chart that cannot signal.</li>
+<li>In control means predictable, not good: a stable process centred outside the tolerance produces
+scrap stably.</li>
+<li>Three-sigma limits give a false alarm every 370 points, 6.5% over 25 points; a \( 1\sigma \)
+shift is caught in 4.5 subgroups at \( n=5 \) and a \( 2\sigma \) shift on the next one, with
+sensitivity scaling as \( \sqrt n \).</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 07 · Statistical process control I · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Mean, range, and standard deviation</b> (Engineering Statistics L1) &mdash; the statistics
+each subgroup contributes.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; where the
+0.0027 behind three-sigma limits comes from.</li>
+<li><b>Sampling distributions and the standard error \( \sigma/\sqrt n \)</b> (Engineering
+Statistics L5) &mdash; why control limits on a mean are tighter than the spread of parts, and why
+\( n \) enters as \( \sqrt n \).</li>
+<li><b>Tolerances and specification limits</b> (Lesson 5, and Engineering Drawing &amp; CAD L6)
+&mdash; the quantity control limits are constantly confused with.</li>
+<li><b>Measurement uncertainty</b> (Lesson 3) &mdash; a chart plots what was measured, so the
+instrument's own variation is inside every point.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Common cause</td><td>many small influences</td><td>Inherent to the process; improve the system, not the part.</td></tr>
+<tr><td>Special cause</td><td>assignable event</td><td>Find it and remove it; it has a story.</td></tr>
+<tr><td>Tampering</td><td>\( \sigma\to\sqrt2\,\sigma \)</td><td>Adjusting on every reading; makes a stable process 41% worse.</td></tr>
+<tr><td>Rational subgroup</td><td>\( n \) consecutive parts</td><td>Only common causes may act within a subgroup.</td></tr>
+<tr><td>\( \bar X \) chart</td><td>\( \bar{\bar X}\pm A_2\bar R \)</td><td>Tracks the process level.</td></tr>
+<tr><td>\( R \) chart</td><td>\( D_4\bar R \), \( D_3\bar R \)</td><td>Tracks the spread &mdash; read it first.</td></tr>
+<tr><td>\( \hat\sigma \) from ranges</td><td>\( \bar R/d_2 \), \( d_2=2.326 \)</td><td>Process standard deviation without computing one.</td></tr>
+<tr><td>\( A_2 \)</td><td>\( 3/(d_2\sqrt n)=0.577 \) at \( n=5 \)</td><td>Packages three standard errors into one multiplier.</td></tr>
+<tr><td>Control limits</td><td>from the process</td><td>What it does; apply to a subgroup statistic.</td></tr>
+<tr><td>Specification limits</td><td>from the drawing</td><td>What is wanted; apply to a part, never to a chart.</td></tr>
+<tr><td>Average run length</td><td>\( 1/P \)</td><td>370 in control; 4.5 for a \( 1\sigma \) shift at \( n=5 \).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 08 · Statistical process control II and capability</p><h3><span class="sum-n">Lesson 08</span>Statistical process control II and capability</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Attribute charts apply the three-sigma convention to the counting distribution:
+\( \bar p\pm3\sqrt{\bar p(1-\bar p)/n} \) for fraction nonconforming,
+\( \bar c\pm3\sqrt{\bar c} \) for defects per unit.</li>
+<li>At \( \bar p=0.03 \) and \( n=200 \) the lower limit truncates to zero, so the chart cannot
+detect an improvement; a positive limit needs \( n>9(1-\bar p)/\bar p=292 \).</li>
+<li>\( C_p=(\mathrm{USL}-\mathrm{LSL})/6\hat\sigma \) asks whether the spread <em>could</em> fit and
+contains no information about centring.</li>
+<li>\( C_{pk} \) takes the worse side, so \( C_{pk}\le C_p \) always, and
+\( k=1-C_{pk}/C_p \) is the fraction of the half-tolerance lost to aim.</li>
+<li>\( C_p=1.80 \) with \( C_{pk}=0.70 \) means \( k=0.611 \), a mean \( 3.3\hat\sigma \) off
+centre, and 17,900 ppm outside &mdash; all of it recoverable by moving the mean.</li>
+<li>\( C_{pk}=1.33 \) promises 33 ppm on the near side; the familiar 63 ppm is the two-sided total
+and holds only if the process is centred.</li>
+<li>The 3.4 ppm figure is \( C_p=2 \) with an assumed \( 1.5\hat\sigma \) drift, so
+\( C_{pk}=1.5 \) and \( z=4.5 \) &mdash; a convention, not a law.</li>
+<li>Stability first, capability second: \( \hat\sigma \) estimates a distribution, which an
+out-of-control process does not have.</li>
+<li>The gauge is inside the index:
+\( \sigma^2_{\rm obs}=\sigma^2_{\rm proc}+\sigma^2_{\rm meas} \), and a 1.0 &#181;m gauge on a
+1.5 &#181;m process costs 17% of \( C_p \).</li>
+<li>\( \hat C_{pk}=1.33 \) from 30 parts has a 95% interval of 0.97 to 1.69, so a threshold belongs
+on the lower confidence limit rather than the point estimate.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 08 · Statistical process control II and capability · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Control charts, \( \hat\sigma=\bar R/d_2 \), and stability</b> (Lesson 7) &mdash; the
+precondition every index in this lesson depends on.</li>
+<li><b>Specification limits and tolerance</b> (Lesson 5, and Engineering Drawing &amp; CAD L6)
+&mdash; the numerator of every capability index.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; how an index
+becomes a parts-per-million figure.</li>
+<li><b>Binomial and Poisson distributions</b> (Engineering Statistics L3) &mdash; the basis of the
+\( p \) and \( c \) charts.</li>
+<li><b>Confidence intervals</b> (Engineering Statistics L6) &mdash; why a \( C_{pk} \) from 30
+parts is barely evidence.</li>
+<li><b>Independent variances add</b> (Engineering Statistics L4) &mdash; how the measuring system
+gets inside the process index.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>\( p \) chart</td><td>\( \bar p\pm3\sqrt{\bar p(1-\bar p)/n} \)</td><td>Fraction of units nonconforming.</td></tr>
+<tr><td>\( c \) chart</td><td>\( \bar c\pm3\sqrt{\bar c} \)</td><td>Defects per unit, where one unit may carry several.</td></tr>
+<tr><td>Truncated LCL</td><td>\( n>9(1-\bar p)/\bar p \)</td><td>Below this sample size the chart cannot detect improvement.</td></tr>
+<tr><td>\( C_p \)</td><td>\( (\mathrm{USL}-\mathrm{LSL})/6\hat\sigma \)</td><td>Could the spread fit? Says nothing about centring.</td></tr>
+<tr><td>\( C_{pk} \)</td><td>\( \min\!\big((\mathrm{USL}-\mu),(\mu-\mathrm{LSL})\big)/3\hat\sigma \)</td><td>Does it fit where it actually sits?</td></tr>
+<tr><td>Centring loss \( k \)</td><td>\( 1-C_{pk}/C_p \)</td><td>Fraction of the half-tolerance given away by aim.</td></tr>
+<tr><td>Near-tail ppm</td><td>\( 10^6(1-\Phi(3C_{pk})) \)</td><td>33 ppm at 1.33; 63 ppm two-sided only if centred.</td></tr>
+<tr><td>The 3.4 ppm figure</td><td>\( C_p=2 \), \( 1.5\hat\sigma \) drift</td><td>A convention about drift, not a law.</td></tr>
+<tr><td>Measurement inflation</td><td>\( \sigma^2_{\rm obs}=\sigma^2_{\rm proc}+\sigma^2_{\rm meas} \)</td><td>A 1.0 &#181;m gauge on a 1.5 &#181;m process costs 17% of \( C_p \).</td></tr>
+<tr><td>Interval on \( C_{pk} \)</td><td>\( \hat C_{pk}\pm z\sqrt{\tfrac{1}{9n}+\tfrac{\hat C_{pk}^2}{2(n-1)}} \)</td><td>1.33 from 30 parts means 0.97 to 1.69.</td></tr>
+<tr><td>Acceptance thresholds</td><td>1.33 usual, 1.67 critical</td><td>A gate before production, not a report after it.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 09 · Acceptance sampling</p><h3><span class="sum-n">Lesson 09</span>Acceptance sampling</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A single sampling plan is two integers, \( (n,c) \), and its OC curve
+\( P_a(p)=\sum_{d\le c}\binom{n}{d}p^d(1-p)^{n-d} \) is the complete description of it.</li>
+<li>The curve is never a step, so both parties always carry a risk: \( \alpha \) that a good lot is
+rejected (type I), \( \beta \) that a bad lot is accepted (type II).</li>
+<li>For \( n=125,c=3 \): \( P_a \) is 0.963 at 1%, 0.481 at 3%, 0.124 at 5%; AQL 1.10%, LTPD 5.27%,
+discrimination ratio 4.79.</li>
+<li>Discrimination is bought with sample size alone: the ratio runs 10.56, 4.79, 3.49, 2.29 for
+\( n= \) 50, 125, 200, 500.</li>
+<li>Lot size barely matters &mdash; 125 parts from a 3% lot of 1,000 accepts at 0.4713, from
+100,000 at 0.4813 &mdash; so &quot;10% of the lot&quot; is wrong in both directions.</li>
+<li>An AQL is a property of the plan, not a target: a supplier sitting on it has a 64% chance of at
+least one rejection in twenty lots.</li>
+<li>An accepted lot is not a good lot; sampling removes nothing from it.</li>
+<li>\( \mathrm{AOQ}=pP_a(p) \) peaks at \( \mathrm{AOQL}=1.55\% \) when \( p=2.34\% \), and that
+ceiling holds only if rejected lots are genuinely screened and rectified.</li>
+<li>For a stable process at known \( p \), the cheapest policy is one of the extremes:
+\( p^{*}=k_1/k_2 \), which is 0.73% at 0.40 to inspect and 55 to escape. Sampling's real home is
+incoming lots whose process state is unknown.</li>
+<li>Destructive tests force sampling; safety consequences override the economics; and
+&quot;100% inspection&quot; at 90% efficiency still passes 0.2% of a 2% incoming rate.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 09 · Acceptance sampling · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>The binomial distribution</b> (Engineering Statistics L3) &mdash; the OC curve is a binomial
+tail evaluated at every \( p \).</li>
+<li><b>Probability rules and independence</b> (Engineering Statistics L2) &mdash; the
+\( 1-0.95^{20} \) argument, and the escape rate through repeated inspection.</li>
+<li><b>Hypothesis testing, type I and type II errors</b> (Engineering Statistics L7) &mdash;
+producer's and consumer's risk are exactly \( \alpha \) and \( \beta \).</li>
+<li><b>Attribute inspection</b> (Lesson 5) &mdash; a sampling plan counts pass/fail verdicts, with
+all the information loss that implies.</li>
+<li><b>Fraction nonconforming and stability</b> (Lessons 7 and 8) &mdash; the all-or-none rule
+assumes a process in control at a known \( p \).</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Single sampling plan</td><td>\( (n,c) \)</td><td>Take \( n \), accept if defectives \( \le c \).</td></tr>
+<tr><td>OC curve</td><td>\( P_a(p)=\sum_{d\le c}\binom{n}{d}p^d(1-p)^{n-d} \)</td><td>The complete description of a plan.</td></tr>
+<tr><td>Producer's risk \( \alpha \)</td><td>\( 1-P_a(\mathrm{AQL}) \)</td><td>Good lot rejected; a type I error.</td></tr>
+<tr><td>Consumer's risk \( \beta \)</td><td>\( P_a(\mathrm{LTPD}) \)</td><td>Bad lot accepted; a type II error.</td></tr>
+<tr><td>AQL / LTPD</td><td>1.10% / 5.27% for \( (125,3) \)</td><td>The qualities accepted 95% and 10% of the time.</td></tr>
+<tr><td>Discrimination ratio</td><td>LTPD / AQL</td><td>4.79 at \( n=125 \); 2.29 at \( n=500 \). Only \( n \) improves it.</td></tr>
+<tr><td>Lot size</td><td>almost irrelevant</td><td>125 from 1,000 and from 100,000 differ by 0.01 in \( P_a \).</td></tr>
+<tr><td>AOQ / AOQL</td><td>\( pP_a(p) \); max 1.55% at \( p=2.34\% \)</td><td>Only if rejected lots are genuinely screened.</td></tr>
+<tr><td>All-or-none rule</td><td>\( p^{*}=k_1/k_2 \)</td><td>Stable process, known \( p \): inspect none or all.</td></tr>
+<tr><td>Inspection efficiency</td><td>80&ndash;95% typical</td><td>2% screened at 90% still passes 0.2%.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 10 · Gauge R&amp;R and measurement systems</p><h3><span class="sum-n">Lesson 10</span>Gauge R&amp;R and measurement systems</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Every reading is part plus measurement, and the variances add:
+\( \sigma^2_{\rm obs}=\sigma^2_{\rm part}+\sigma^2_{\rm gauge} \), with
+\( \sigma^2_{\rm gauge}=\sigma^2_{\rm EV}+\sigma^2_{\rm AV} \).</li>
+<li>Repeatability is one operator, one part, one gauge, repeated; reproducibility is between
+operators &mdash; usually the work instruction rather than the people.</li>
+<li>The crossed study (10 parts &#215; 3 operators &#215; 3 trials) uses Lesson 7's estimator:
+EV \( =\bar R/d_2 \), AV \( =\sqrt{(R_o/d_2)^2-\sigma^2_{\rm EV}/nr} \), PV \( =R_p/d_2 \).</li>
+<li>The worked study gives EV 3.19, AV 2.59, GRR 4.11, PV 11.05 and TV 11.79 &#181;m.</li>
+<li>Two verdicts, two questions: \( \%\mathrm{GRR}=34.9\% \) against the process (unacceptable for
+charting) and 24.7% against a 100 &#181;m tolerance (marginal for accept/reject).</li>
+<li>Quadrature is forgiving: 34.9% of \( \sigma \) is only 12.2% of the variance, inflates
+\( \sigma \) by 6.7% and costs 6.3% of \( C_p \).</li>
+<li>Resolution is what it destroys: \( \mathrm{ndc}=3 \) against a usual minimum of 5, and an
+\( \bar X \) chart 22% slower to catch a \( 1\sigma \) shift (ARL 5.47 against 4.50).</li>
+<li>Read which component is large: 60% of this gauge's variance is repeatability, so fixture and
+method, not training. Averaging three readings gives \( \%\mathrm{GRR}=27.7\% \) and ndc 4.</li>
+<li>Resolution contributes \( q^2/12 \): a 5 &#181;m display adds 1.44 &#181;m, a 1 &#181;m display
+0.29.</li>
+<li>Guard band \( z_\gamma\sigma_{\rm GRR} \) each side &mdash; 13.5% of the tolerance here, 3.3%
+with a 1.0 &#181;m gauge. Run the study before the charts, and use parts that span the real process
+range.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 10 · Gauge R&amp;R and measurement systems · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>\( \sigma^2_{\text{obs}}=\sigma^2_{\text{proc}}+\sigma^2_{\text{meas}} \)</b> (Lesson 8, and
+Engineering Statistics L4) &mdash; the identity this whole lesson decomposes.</li>
+<li><b>\( \hat\sigma=\bar R/d_2 \) and the \( d_2 \) table</b> (Lesson 7) &mdash; the same
+estimator, applied to cells, operators and parts.</li>
+<li><b>Capability indices and control-chart sensitivity</b> (Lessons 7 and 8) &mdash; the two things
+a poor measuring system quietly degrades.</li>
+<li><b>Type A uncertainty evaluation</b> (Lesson 3) &mdash; a gauge study is a type A evaluation of
+two named components.</li>
+<li><b>Resolution and accuracy</b> (Lesson 1) &mdash; discrimination as a variance source,
+\( (\text{resolution})^2/12 \).</li>
+<li><b>Guard banding against an uncertainty</b> (Lesson 3) &mdash; introduced there against a
+certificate's expanded uncertainty; this lesson supplies the working-condition figure that belongs
+in it.</li>
+<li><b>Normal tail areas and one-sided confidence</b> (Engineering Statistics L4 and L6) &mdash; the
+\( z_\gamma=1.645 \) behind a guard band.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Repeatability (EV)</td><td>\( \bar R/d_2 \)</td><td>One operator, one part, one gauge, repeated &mdash; equipment and method.</td></tr>
+<tr><td>Reproducibility (AV)</td><td>\( \sqrt{(R_o/d_2)^2-\sigma^2_{\rm EV}/nr} \)</td><td>Between operators; the subtraction stops them being charged for the gauge.</td></tr>
+<tr><td>GRR</td><td>\( \sqrt{\sigma^2_{\rm EV}+\sigma^2_{\rm AV}} \)</td><td>The measuring system's own standard deviation.</td></tr>
+<tr><td>PV, TV</td><td>\( R_p/d_2 \); \( \sqrt{\mathrm{GRR}^2+\mathrm{PV}^2} \)</td><td>Part variation and what a study actually observes.</td></tr>
+<tr><td>%GRR to process</td><td>\( 100\,\mathrm{GRR}/\mathrm{TV} \)</td><td>Can the gauge see the process? Governs charts and capability.</td></tr>
+<tr><td>%GRR to tolerance</td><td>\( 100\cdot6\,\mathrm{GRR}/T \)</td><td>Can it see the tolerance? Governs accept/reject.</td></tr>
+<tr><td>Verdict bands</td><td>&lt;10% / 10&ndash;30% / &gt;30%</td><td>Conventions, judged against what the gauge is for.</td></tr>
+<tr><td>ndc</td><td>\( \lfloor\sqrt2\,\mathrm{PV}/\mathrm{GRR}\rfloor \)</td><td>Distinct categories; 5 is the usual minimum for a variables chart.</td></tr>
+<tr><td>Averaging \( r \) readings</td><td>\( \sigma^2_{\rm EV}/r \)</td><td>Cuts repeatability only; useless if AV dominates.</td></tr>
+<tr><td>Resolution</td><td>\( (\text{resolution})^2/12 \)</td><td>The display is a variance source: 5 &#181;m adds 1.44 &#181;m.</td></tr>
+<tr><td>Guard band</td><td>\( z_\gamma\sigma_{\rm GRR} \) each side</td><td>13.5% of a 100 &#181;m tolerance at GRR 4.11 &#181;m, 95% confidence.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 11 · Quality systems and audits</p><h3><span class="sum-n">Lesson 11</span>Quality systems and audits</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A quality system reduces to three obligations &mdash; say it, do it, prove it &mdash; and every
+clause of a standard serves one of them.</li>
+<li>Mapped onto calibration: the written procedure and its out-of-tolerance clause; identified
+instruments calibrated against traceable standards; and retained certificates, budgets,
+investigations and recall decisions.</li>
+<li>Say without do is paperwork, do without say is craft, and do without prove is
+indistinguishable from undone in an audit.</li>
+<li>Correction fixes the product, corrective action removes the cause, preventive action acts on a
+cause not yet realised. A system that only corrects meets the same nonconformance forever.</li>
+<li>Containment and the effectiveness check are what make a corrective action real; without the
+second it is a promise.</li>
+<li>An out-of-tolerance instrument is a nonconformance whose containment scope was fixed by the
+calibration interval: \( N\approx rT/2 \), so 50,000 parts at 100,000/year on a twelve-month
+interval and 12,500 on a three-month one.</li>
+<li>\( K(T)=C_c/T+r\lambda TC_p/2 \) minimises at
+\( T^{*}=\sqrt{2C_c/(r\lambda C_p)}=6.8 \) months here, costing 424 a year.</li>
+<li>At the optimum the two cost terms are equal (212 each) &mdash; the fastest test of an existing
+interval. Twelve months costs 17% more, three months 35% more.</li>
+<li>Maintenance records enter the audit trail three ways: equipment control, agreement with the
+calibration history, and root-cause confirmation &mdash; and a capability study never repeated
+after an overhaul describes a machine that no longer exists.</li>
+<li>An audit is a sample: 59 records for 95% confidence of catching a 5% nonconformity, and finding
+nothing in 30 bounds the rate at 9.5%, close to the rule of three's \( 3/n \). &quot;No
+findings&quot; is a bound, never a zero.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 11 · Quality systems and audits · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Traceability chains and calibration vocabulary</b> (Lesson 1) &mdash; the chain an auditor
+walks backwards.</li>
+<li><b>Uncertainty budgets, intervals, and out-of-tolerance investigation</b> (Lesson 3) &mdash;
+this lesson prices the interval that lesson introduced.</li>
+<li><b>Control charts and capability studies</b> (Lessons 7 and 8) &mdash; the evidence a quality
+system retains and an auditor asks for.</li>
+<li><b>Gauge studies</b> (Lesson 10) &mdash; the measuring system as a controlled item with records
+of its own.</li>
+<li><b>Sampling and the binomial</b> (Lesson 9, and Engineering Statistics L3) &mdash; an audit is a
+sample, with the same arithmetic.</li>
+<li><b>Minimising a function of one variable</b> (Engineering Mathematics I L6) &mdash; setting
+\( dK/dT=0 \) for the optimum interval.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Rule or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Say / do / prove</td><td>the three obligations</td><td>Everything in a standard serves one of them.</td></tr>
+<tr><td>Do without prove</td><td>= undone</td><td>In an audit the two are indistinguishable.</td></tr>
+<tr><td>Nonconformance</td><td>any requirement not met</td><td>Record: what, how much, containment, disposition.</td></tr>
+<tr><td>Disposition</td><td>use-as-is / rework / repair / regrade / scrap</td><td>An engineering decision with named authority.</td></tr>
+<tr><td>Correction</td><td>fixes the product</td><td>Necessary, and not a corrective action.</td></tr>
+<tr><td>Corrective action</td><td>removes the cause</td><td>Needs an effectiveness check or it is a promise.</td></tr>
+<tr><td>Containment scope</td><td>back to the last good calibration</td><td>Set by the interval, decided long before the finding.</td></tr>
+<tr><td>Exposure</td><td>\( N\approx rT/2 \)</td><td>50,000 parts on a 12-month interval at 100,000/year.</td></tr>
+<tr><td>Optimum interval</td><td>\( T^{*}=\sqrt{2C_c/(r\lambda C_p)} \)</td><td>6.8 months here; the two cost terms are equal there.</td></tr>
+<tr><td>Audit sample size</td><td>\( n=\ln0.05/\ln0.95=59 \)</td><td>95% confidence of finding a 5% nonconformity.</td></tr>
+<tr><td>Rule of three</td><td>\( p_{95\%}\approx3/n \)</td><td>Nothing found in 30 records means below 9.5%, not zero.</td></tr>
 </tbody></table></div></div></div></section>
 </article>
 </main>
