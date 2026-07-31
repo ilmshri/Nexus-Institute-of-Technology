@@ -333,6 +333,10 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
 
 <section class="pane" id="pane-logo">
   <h2>The mark — round 2</h2>
+  <p class="note"><b>Decided ✓ — applied (commit <code>75bef745</code>).</b> The shield (with the pivot dot) is
+  live as the site mark on both language trees; beside the existing Source Serif type it forms the crest lockup in
+  the header. App icons re-exported opaque and maskable-safe; the two golds unified on <code>#CBA85F</code>.
+  The charter is set on the About page.</p>
   <p class="lede">You chose the shield and the wordmark, without the Arabic line. Built here into one family —
   at this register an identity is rarely a single image; it is a system: <b>the word wherever there is room, the
   emblem wherever there isn't.</b> That is exactly how the institutions you named operate.</p>
@@ -400,8 +404,9 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
       <p style="font:400 18px/1.6 var(--serif);margin:8px 0 0">MechEd is measured not by whom it admits, but by
       what anyone — starting from zero — can build on leaving it.</p>
     </div>
-    <p style="margin-top:10px">Say “add the charter” and I’ll set it properly on the About page and the print
-    covers once you’ve settled the wording.</p>
+    <p style="margin-top:10px"><b>Added ✓</b> — live on the About page (both trees), gold hairlines, formal serif.
+    The wording is one sentence in <code>content/pages/about.html</code>; rewrite it any time and it ships on the
+    next build. Print-cover placement queues with the summary work.</p>
   </div>
 
   <h3>The family</h3>
@@ -488,6 +493,10 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
 </section>
 <section class="pane" id="pane-photo">
   <h2>Photography — a proposal, not a fait accompli</h2>
+  <p class="note"><b>Decided ✓ — direction approved, rollout deferred.</b> Duotone, bounded placements (course
+  headers, semester dividers, one homepage band). Deliberately NOT shipped yet: 4 finished headers out of 48
+  courses would break the uniformity that reads “institution”. It ships as one pass once a full licensed set is
+  sourced — the six verified images here are the pilot standard.</p>
   <p class="lede">You asked whether photos belong. My honest answer: <b>yes in three bounded places, no everywhere
   else.</b> Course headers (one image, behind the title), semester dividers on the curriculum page, and at most one
   homepage band. Not inside lessons — the computed diagrams are the product there and photography would dilute them.</p>
@@ -556,6 +565,9 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
 
 <section class="pane" id="pane-colours">
   <h2>Colours — the ASU sample you asked for</h2>
+  <p class="note"><b>Decided ✓ — navy + champagne stays.</b> Under your elite-institution test the quiet family
+  wins: bright athletic gold reads campus, not academic press. The full ASU sample remains browsable at
+  <code>design-previews/palette-asu/</code> if you ever want to revisit — nothing was thrown away.</p>
   <p class="lede">Your request: see the site in ASU's maroon and gold before deciding. Below, every comparison is
   <b>current palette on the left, ASU maroon + gold on the right</b> — same pages, same type, same layout, real
   content. The full ASU tree is browsable on the Mac at <code>design-previews/palette-asu/</code>. Mapping:
