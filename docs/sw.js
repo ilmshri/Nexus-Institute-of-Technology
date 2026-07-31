@@ -1,7 +1,7 @@
 /* MechEd — minimal service worker.
    Assets: cache-first. Pages: network-first with cache fallback. */
-var VERSION = 'me-da01dd12d4';
-var CORE = ['./', 'assets/nx/nexus.css?v=da01dd12d4', 'assets/nx/nexus.js?v=da01dd12d4',
+var VERSION = 'me-dc57f9c331';
+var CORE = ['./', 'assets/nx/nexus.css?v=dc57f9c331', 'assets/nx/nexus.js?v=dc57f9c331',
             'assets/nx/logo.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', function (e) {

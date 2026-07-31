@@ -636,6 +636,8 @@ figure.lesson-diagram figcaption{font-family:var(--sans);font-size:12.5px;line-h
    !important; this restores the overflow-x:auto behaviour intended above. */
 .measure mjx-container[display="true"][width="full"]{min-width:0 !important}
 .keybox mjx-container[display="true"]{margin:8px 0 12px}
+.career-block mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%}
+.career-block mjx-container[display="true"][width="full"]{min-width:0 !important}
 .check{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);margin:32px 0 0;overflow:hidden}
 .check .q{padding:22px 24px 16px}
 .check button{display:block;width:100%;border:0;border-top:1px solid var(--line);background:var(--sunken);
@@ -825,6 +827,12 @@ html.no-js .reveal,html.no-js .reveal-left,html.no-js .reveal-right{opacity:1;tr
   .reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important;transition:none !important;animation:none !important}
   .feat-card:hover{transform:none}
 }
+
+/* ---------- charter block (About) ---------- */
+.charter{text-align:center;padding:30px 0 6px}
+.charter-kicker{font:600 11px var(--sans);letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin:0 0 16px}
+.charter-line{font:400 clamp(20px,3.2vw,25px)/1.65 var(--serif);color:var(--ink);max-width:27em;
+margin:0 auto;border-block:1px solid var(--gold);padding:26px 10px}
 
 /* ---------- EN content islands inside the AR tree ---------- */
 .en-body{font-family:var(--sans)}
