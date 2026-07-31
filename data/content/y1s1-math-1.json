@@ -900,7 +900,85 @@
     "solution": "<p>Requiring \\( e^{-t/\\tau} = 0.01 \\) gives \\( t = \\tau\\ln 100 \\approx 4.6\\,\\tau \\) — the origin of the field rule that five time constants end the story. \\( \\tau\\ln 10 \\) closes only 90%; \\( \\tau\\ln 2 \\) is the half-life; and \\( 99\\tau \\) misreads the exponential as linear, the very misreading the time-constant idea exists to prevent.</p>"
    }
   ],
-  "recap": "<ul> <li>\\( e^x \\) is its own derivative; exponential behaviour is what happens whenever the rate of change is proportional to the amount currently present.</li> <li><b>The plant's standard curve</b> is decay toward an offset, not toward zero: something approaches a final value \\( y_\\infty \\) rather than vanishing.</li> <li>The time constant \\( \\tau \\) is the whole story: about 63% of the journey is complete after one \\( \\tau \\), 95% after three, 99% after five.</li> <li>Logarithms are how you solve for time — \"when will it reach X\" is a logarithm, every time.</li> <li><b>Transient protocol:</b> identify the initial value, the final value, and \\( \\tau \\). With those three, the curve is fully determined.</li> </ul>"
+  "recap": "<ul> <li>\\( e^x \\) is its own derivative; exponential behaviour is what happens whenever the rate of change is proportional to the amount currently present.</li> <li><b>The plant's standard curve</b> is decay toward an offset, not toward zero: something approaches a final value \\( y_\\infty \\) rather than vanishing.</li> <li>The time constant \\( \\tau \\) is the whole story: about 63% of the journey is complete after one \\( \\tau \\), 95% after three, 99% after five.</li> <li>Logarithms are how you solve for time — \"when will it reach X\" is a logarithm, every time.</li> <li><b>Transient protocol:</b> identify the initial value, the final value, and \\( \\tau \\). With those three, the curve is fully determined.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>Exponential behaviour appears wherever a quantity's rate of change is proportional to the quantity itself &mdash; cooling, discharge, vibration decay, corrosion allowance, radioactive sources. The logarithm is its inverse, and it is the tool that turns a multiplicative process into a straight line you can read. This lesson gives both, and the two time constants engineers actually quote.</p>",
+    "keypoints": [
+     "Exponential change means the rate is proportional to the amount present, which is why it never quite reaches zero.",
+     "\\( e^{x} \\) is its own derivative; every growth and decay rate follows from that one fact and the chain rule.",
+     "Decay is written \\( A_0e^{-t/\\tau} \\), where the time constant is the time to fall to about 37% of the start.",
+     "The half-life is the time to halve, and it is a fixed multiple of the time constant: \\( t_{1/2} = \\tau \\ln 2 \\).",
+     "Logarithms turn products into sums, which is why they linearise multiplicative data and why decibels exist.",
+     "A straight line on a log axis is an exponential on a linear one &mdash; the quickest way to identify the behaviour from plant data.",
+     "Solving for time means taking a logarithm of both sides, so the natural log is the working tool rather than a curiosity."
+    ],
+    "terms": [
+     {
+      "term": "Exponential function",
+      "symbol": "\\( e^{x} \\)",
+      "read": "e to the x",
+      "meaning": "The function equal to its own derivative; base of natural growth and decay."
+     },
+     {
+      "term": "Natural logarithm",
+      "symbol": "\\( \\ln x \\)",
+      "read": "log x, or natural log of x",
+      "meaning": "The inverse of \\( e^{x} \\); undoes an exponential to release the exponent."
+     },
+     {
+      "term": "Initial value",
+      "symbol": "\\( A_0 \\)",
+      "read": "A nought",
+      "meaning": "The amount present at \\( t = 0 \\)."
+     },
+     {
+      "term": "Time constant",
+      "symbol": "\\( \\tau \\)",
+      "read": "tau",
+      "meaning": "Time to fall to \\( 1/e \\), about 37%, of the starting value."
+     },
+     {
+      "term": "Decay law",
+      "symbol": "\\( A = A_0e^{-t/\\tau} \\)",
+      "read": "A equals A nought e to the minus t over tau",
+      "meaning": "Amount remaining after time \\( t \\) in a proportional-rate decay."
+     },
+     {
+      "term": "Half-life",
+      "symbol": "\\( t_{1/2} = \\tau \\ln 2 \\)",
+      "read": "t half equals tau log two",
+      "meaning": "Time to fall to half; a fixed multiple of the time constant, about 0.693 of it."
+     },
+     {
+      "term": "Decibel",
+      "symbol": "\\( 10\\log_{10}(P_2/P_1) \\)",
+      "read": "ten log to base ten of P two over P one",
+      "meaning": "A logarithmic ratio measure; every 10 dB is a factor of ten in power."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Why proportional rates produce exponentials",
+     "body": "<p>A great many industrial quantities share one behaviour: the rate at which they change is proportional to how much of them is left. A hot component loses heat fastest when it is hottest; a vessel discharges fastest when it is fullest; a vibration loses energy fastest when the amplitude is largest. Whenever that proportionality holds, the resulting curve is an exponential.</p><p>The reason sits in the previous lesson. The exponential \\( e^{x} \\), read &lsquo;e to the x&rsquo;, is the one function equal to its own derivative. So if a quantity's rate must stay proportional to the quantity, an exponential is the shape that satisfies it, and the chain rule supplies the constant of proportionality.</p><p>Decay is written \\( A = A_0e^{-t/\\tau} \\), read &lsquo;A equals A nought e to the minus t over tau&rsquo;. Here \\( A_0 \\) is the initial value and \\( \\tau \\), read &lsquo;tau&rsquo;, is the <b>time constant</b> &mdash; the time taken to fall to \\( 1/e \\), about 37%, of the start. Because the rate keeps shrinking with the amount, the curve never reaches zero. That is not a mathematical quibble: it is why a purge is specified as &lsquo;five time constants&rsquo; rather than &lsquo;until empty&rsquo;.</p><p>Engineers more often quote the <b>half-life</b>, the time to fall to half. The two measures are rigidly linked, \\( t_{1/2} = \\tau \\ln 2 \\), so the half-life is always about 0.693 of the time constant. Neither depends on where you start measuring &mdash; the time to halve is the same from any point on the curve, which is the property that makes the number worth quoting at all.</p>"
+    },
+    {
+     "title": "Logarithms: releasing an exponent, and straightening a curve",
+     "body": "<p>The natural logarithm \\( \\ln x \\) is the inverse of \\( e^{x} \\). Its working purpose is narrow and constant: when the unknown you want sits in an exponent, taking logarithms of both sides brings it down where algebra can reach it. Every &lsquo;how long until&rsquo; question about an exponential process is answered this way.</p><p>The second use is diagnostic. Logarithms turn products into sums, so a process that multiplies by a fixed factor per unit time becomes a straight line when the quantity is plotted on a logarithmic axis. That is the quickest test available on plant data: plot the readings with a log vertical axis, and if they fall on a line the process is exponential and the slope gives the time constant directly. A curve that refuses to straighten is telling you the rate is not simply proportional to the amount, and that some other mechanism is present.</p><p>The same property explains the <b>decibel</b>, \\( 10\\log_{10}(P_2/P_1) \\). Quantities spanning many orders of magnitude are unwieldy on a linear scale, and a logarithmic measure compresses them into a readable range while turning ratios into differences. Every 10 dB is one factor of ten in power, so a hundredfold increase is 20 dB &mdash; and because it is a ratio, a decibel figure is meaningless until the reference is stated.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Time constant and half-life from two readings",
+     "body": "<p><b>Problem.</b> A machine's vibration amplitude is 12 mm when the drive trips and 3 mm eight seconds later. Assuming exponential decay, find the time constant and the half-life, and predict the amplitude at 20 s.</p><p><b>Approach.</b> Two readings and one assumed shape determine the curve. Substitute both into \\( A = A_0e^{-t/\\tau} \\) and take logarithms to release \\( \\tau \\) from the exponent. Before calculating, notice that 12 to 3 is two halvings in eight seconds, so the half-life should come out at 4 s &mdash; a check worth forming first, because the commonest error here is a dropped minus sign, which returns a negative time constant and a curve that grows.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; substitute.</em> \\( 3 = 12e^{-8/\\tau} \\), so \\( e^{-8/\\tau} = 0.25 \\).</p><p><em>Step 2 &mdash; take logarithms.</em> \\( -8/\\tau = \\ln 0.25 = -1.386 \\).</p><p><em>Step 3 &mdash; solve.</em> \\( \\tau = 8/1.386 = 5.77\\ \\mathrm{s} \\).</p><p><em>Step 4 &mdash; half-life.</em> \\( t_{1/2} = \\tau \\ln 2 = 5.77 \\times 0.693 = 4.00\\ \\mathrm{s} \\), matching the check.</p><p><em>Step 5 &mdash; predict.</em> Twenty seconds is five half-lives, so \\( 12/2^5 = 0.375\\ \\mathrm{mm} \\).</p><p><b>Answer.</b> \\( \\tau = 5.77\\ \\mathrm{s} \\), \\( t_{1/2} = 4.00\\ \\mathrm{s} \\), amplitude 0.375 mm at 20 s.</p>"
+    },
+    {
+     "title": "A ratio expressed logarithmically",
+     "body": "<p><b>Problem.</b> A modification raises a fan's radiated sound power by a factor of 100. Express the increase in decibels. Separately, an instrument datasheet quotes a 3 dB rise &mdash; what power ratio is that?</p><p><b>Approach.</b> The decibel is defined on a ratio, \\( 10\\log_{10}(P_2/P_1) \\), so the first part is direct substitution. The second part runs the definition backwards, which means undoing a logarithm rather than taking one. The classic error is treating decibels as additive in the quantity rather than in the exponent: 20 dB is not twice 10 dB in power terms, it is ten times it.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; forward.</em> \\( 10\\log_{10}(100) = 10 \\times 2 = 20\\ \\mathrm{dB} \\).</p><p><em>Step 2 &mdash; backward, set up.</em> \\( 3 = 10\\log_{10}(P_2/P_1) \\), so \\( \\log_{10}(P_2/P_1) = 0.3 \\).</p><p><em>Step 3 &mdash; undo the logarithm.</em> \\( P_2/P_1 = 10^{0.3} = 2.0 \\).</p><p><b>Answer.</b> A hundredfold rise is 20 dB; a 3 dB rise is a doubling of power. That second result is worth memorising &mdash; 3 dB means twice the power, which is why it appears constantly as a bandwidth and margin criterion.</p>"
+    }
+   ]
+  }
  },
  "6": {
   "lecture": "\n<h3>§1 · Where curves turn</h3>\n<p>A smooth function can only reverse direction where its derivative is zero. Those points —\nwhere \\( f'(x) = 0 \\) — are the <em>critical points</em>, and among them live the maxima and\nminima that engineering actually cares about: least material, least energy, most throughput.\nThe second derivative classifies them: \\( f'' > 0 \\) cups upward (minimum), \\( f'' < 0 \\) caps\ndownward (maximum).</p>\n<h3>§2 · The optimization recipe</h3>\n<p>Every optimization in this course follows one recipe:</p>\n\\[ \\text{model} \\to \\text{constraint} \\to \\text{single-variable objective} \\to f'(x)=0 \\to \\text{check ends} \\tag{1} \\]\n<p>Write the quantity to optimize; use the constraint to eliminate variables; differentiate;\nsolve; then — the step everyone forgets — <em>check the boundary</em>. In a plant, optima\nfrequently live at the constraint (valve fully open, maximum allowed speed) rather than at an\ninterior zero of the derivative. The mathematics is honest about this only if you ask.</p>\n<h3>§3 · A worked shape decision</h3>\n<p>Minimum-surface tanks, minimum-loss pipe runs, maximum-volume boxes from fixed sheet —\nthese classic problems all reduce to recipe (1). In §Worked Examples we size an open-top\nsquare tank for 4 m³ with least plate area — the kind of trade a fabrication shop quotes\nweekly — and find the optimum has height equal to half the base side, a proportion worth\nmemorizing.</p>\n\n<h3>§4 · From words to optimum — the translation discipline</h3>\n<p>The calculus in recipe (1) is the easy half; the profession lives in the translation that\nprecedes it. Practice the sequence deliberately. <em>Name the objective</em> — the single\nquantity to minimize or maximize — and write its formula with every variable it depends on.\n<em>Name the constraint</em> — the fixed volume, the required duty, the forbidden region — as\nan equation, and use it to eliminate variables until the objective depends on one.\n<em>Differentiate, set to zero, solve</em> — then <em>classify</em> with the second\nderivative, and <em>walk the boundary</em>: evaluate the objective at every end of the allowed\ninterval, because constrained optima are the plant's normal case, not its exception. Finally,\n<em>sanity-check the geometry of the answer:</em> optima usually land on proportions —\nheight equals half the base, cost terms equal at the minimum — and a result that looks\narbitrary is a result worth re-deriving.</p>\n<p>Two honest cautions. A mathematical optimum is only as good as the model's costs: a plate\nthat is cheapest by area may not be cheapest by welding length, and writing the model down\nmakes that assumption visible and challengeable. And when the objective is nearly flat near\nits optimum — as it often is — precision fetishism wastes effort: report the flat region,\nnot a false fourth digit.</p>\n<p>Real decision variables are also rarely continuous. Batches come in integers, plate comes\nin stock sizes, speeds come in motor steps. The calculus still earns its keep: find the\ncontinuous optimum, then evaluate the objective at the feasible values on either side of it\nand take the better — the curve's flatness near the optimum usually makes the rounding cost\nnegligible, and computing it proves that instead of assuming it.</p>\n<p><strong>Closing.</strong> Derivative zero finds candidates; the second derivative sorts\nthem; the boundary check keeps you honest. Optimization is calculus with a purchase order\nattached.</p>\n",
@@ -983,7 +1061,109 @@
     "solution": "<p>A sign change of the second derivative is precisely an inflection: concavity flips — a rise that was accelerating begins decelerating, or the reverse. It is not an extremum, because the first derivative is nonzero and the trend is still climbing or falling through the point; and nothing about curvature change implies a break in the function. On real trends, inflections are early news: the character of change changing is often the first visible symptom of a new regime.</p>"
    }
   ],
-  "recap": "<ul> <li>Curves turn where the derivative vanishes; the second derivative says whether the turn is a maximum or a minimum.</li> <li><b>Optimization recipe:</b> express the objective in one variable, differentiate, solve for stationary points — then check the endpoints.</li> <li>Checking endpoints is not a formality. Constrained optima frequently sit at a limit rather than at a turning point, and skipping the check is the classic way to report a wrong optimum confidently.</li> <li>The hard part is translation, not calculus: turning a stated goal into an honest objective function with its real constraints.</li> </ul>"
+  "recap": "<ul> <li>Curves turn where the derivative vanishes; the second derivative says whether the turn is a maximum or a minimum.</li> <li><b>Optimization recipe:</b> express the objective in one variable, differentiate, solve for stationary points — then check the endpoints.</li> <li>Checking endpoints is not a formality. Constrained optima frequently sit at a limit rather than at a turning point, and skipping the check is the classic way to report a wrong optimum confidently.</li> <li>The hard part is translation, not calculus: turning a stated goal into an honest objective function with its real constraints.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>A stationary point is where a quantity stops rising or falling, and that is where optima live. This lesson uses the first derivative to find candidates and the second derivative to classify them, then applies both to a design question: choosing dimensions that minimise material for a required duty.</p>",
+    "keypoints": [
+     "Optima occur where the first derivative is zero, or at the ends of the allowed range &mdash; endpoints are candidates too and are often forgotten.",
+     "The second derivative measures how the slope itself is changing, which is what distinguishes a minimum from a maximum.",
+     "Positive second derivative at a stationary point means a minimum; negative means a maximum.",
+     "An inflection is where curvature changes sign; a stationary point can be neither a maximum nor a minimum.",
+     "Real optimisation starts by writing the objective in ONE variable, using the constraint to eliminate the others.",
+     "The constraint is what makes the problem finite &mdash; without it, most engineering objectives have no interior optimum.",
+     "Check the answer is a minimum rather than assuming it; the algebra is happy to hand you a maximum."
+    ],
+    "terms": [
+     {
+      "term": "Stationary point",
+      "symbol": "\\( f'(x) = 0 \\)",
+      "read": "f prime of x equals zero",
+      "meaning": "Where the quantity is momentarily neither increasing nor decreasing."
+     },
+     {
+      "term": "Second derivative",
+      "symbol": "\\( f''(x) \\)",
+      "read": "f double prime of x",
+      "meaning": "The derivative of the derivative: the rate at which the slope changes."
+     },
+     {
+      "term": "Local minimum",
+      "symbol": "\\( f''(x) > 0 \\)",
+      "read": "f double prime of x greater than zero",
+      "meaning": "Stationary and curving upwards, so the value is least nearby."
+     },
+     {
+      "term": "Local maximum",
+      "symbol": "\\( f''(x) < 0 \\)",
+      "read": "f double prime of x less than zero",
+      "meaning": "Stationary and curving downwards, so the value is greatest nearby."
+     },
+     {
+      "term": "Inflection",
+      "symbol": "&mdash;",
+      "read": "inflection",
+      "meaning": "Where curvature changes sign; not itself an optimum."
+     },
+     {
+      "term": "Objective function",
+      "symbol": "&mdash;",
+      "read": "objective function",
+      "meaning": "The quantity being minimised or maximised, written in one variable."
+     },
+     {
+      "term": "Constraint",
+      "symbol": "&mdash;",
+      "read": "constraint",
+      "meaning": "The fixed requirement used to eliminate variables from the objective."
+     },
+     {
+      "term": "Radius",
+      "symbol": "\\( r \\)",
+      "read": "r",
+      "meaning": "Vessel radius, in metres."
+     },
+     {
+      "term": "Height",
+      "symbol": "\\( H \\)",
+      "read": "H",
+      "meaning": "Vessel height, in metres."
+     },
+     {
+      "term": "Surface area",
+      "symbol": "\\( S \\)",
+      "read": "S",
+      "meaning": "Material area of the vessel, in square metres."
+     },
+     {
+      "term": "Pi",
+      "symbol": "\\( \\pi \\)",
+      "read": "pi",
+      "meaning": "The circle constant, 3.1416."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Finding candidates, then classifying them",
+     "body": "<p>Where a quantity is at its largest or smallest, it is momentarily neither rising nor falling, so its derivative is zero. That gives the search a starting point: solve \\( f'(x) = 0 \\) to find <b>stationary points</b>. It is a search for candidates, not for answers, and two habits keep it honest.</p><p>The first is to remember the endpoints. If the variable is confined to a range &mdash; and physical variables always are, since a radius cannot be negative and a pressure cannot exceed a rating &mdash; then the extreme value may sit at an end of that range where the derivative is nowhere near zero. Endpoints are candidates and must be evaluated alongside the stationary points.</p><p>The second is to classify what you find. The <b>second derivative</b> \\( f''(x) \\), read &lsquo;f double prime of x&rsquo;, is the derivative of the derivative: it measures how fast the slope is changing, which is curvature. At a stationary point a positive second derivative means the curve is bending upwards, so the point is a <b>local minimum</b>; negative means bending downwards and a <b>local maximum</b>.</p><p>If the second derivative is zero the test is silent and says nothing either way &mdash; the point may be an <b>inflection</b>, where curvature changes sign without any optimum at all. In that case fall back on examining the sign of the first derivative on both sides.</p>"
+    },
+    {
+     "title": "Turning a design question into one variable",
+     "body": "<p>Optimisation problems arrive with several dimensions free and one requirement fixed, and the entire method is to use the requirement to eliminate variables until the quantity you care about depends on one thing.</p><p>The quantity to be minimised or maximised is the <b>objective function</b> &mdash; material area, cost, energy, pressure drop. The fixed requirement is the <b>constraint</b> &mdash; a duty, a capacity, a required flow. Without a constraint most engineering objectives have no interior optimum at all: the cheapest vessel is one of zero size, which is why the constraint is what makes the question meaningful rather than a complication.</p><p><b>The working method.</b> <em>One:</em> name the variables and write the objective in terms of all of them. <em>Two:</em> write the constraint as an equation. <em>Three:</em> solve the constraint for one variable and substitute, so the objective depends on a single variable. <em>Four:</em> differentiate, set to zero, and solve. <em>Five:</em> classify with the second derivative, and check the endpoints of the physical range. <em>Six:</em> back-substitute to recover the other dimensions.</p><p>Step three is where most of the difficulty lives, and step five is where most of the errors do. A stationary point found and never classified is a common way to present a maximum as though it were a minimum, and the algebra will not object.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "The least material for a required capacity",
+     "body": "<p><b>Problem.</b> An open-top cylindrical vessel must hold \\( 2\\ \\mathrm{m^3} \\). Find the radius and height that use the least material, and the resulting surface area.</p><p><b>Approach.</b> Objective: the surface area \\( S \\) of a base plus a wall, with no lid. Constraint: the fixed volume. Use the constraint to eliminate the height so \\( S \\) depends only on \\( r \\), then differentiate. The trap is forgetting that the vessel is open-topped and including a second circle, which changes the answer entirely &mdash; so write the area from the actual geometry rather than recalling a formula for a closed cylinder.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; objective and constraint.</em> \\( S = \\pi r^2 + 2\\pi rH \\) and \\( \\pi r^2H = 2 \\).</p><p><em>Step 2 &mdash; eliminate \\( H \\).</em> \\( H = 2/(\\pi r^2) \\), so \\( S = \\pi r^2 + 4/r \\).</p><p><em>Step 3 &mdash; differentiate and set to zero.</em> \\( dS/dr = 2\\pi r - 4/r^2 = 0 \\), giving \\( r^3 = 2/\\pi \\) and \\( r = 0.860\\ \\mathrm{m} \\).</p><p><em>Step 4 &mdash; classify.</em> \\( S''(r) = 2\\pi + 8/r^3 = 18.85 > 0 \\), so it is a minimum.</p><p><em>Step 5 &mdash; back-substitute.</em> \\( H = 2/(\\pi \\times 0.740) = 0.860\\ \\mathrm{m} \\).</p><p><b>Answer.</b> \\( r = H = 0.860\\ \\mathrm{m} \\), \\( S = 6.97\\ \\mathrm{m^2} \\). The height equals the radius exactly &mdash; a general result for an open-top cylinder, independent of the volume required, and a useful thing to recognise on a drawing.</p>"
+    },
+    {
+     "title": "Confirming the optimum is real",
+     "body": "<p><b>Problem.</b> For the same vessel, evaluate the surface area at \\( r = 0.70\\ \\mathrm{m} \\) and \\( r = 1.00\\ \\mathrm{m} \\), and comment on how sharp the optimum is.</p><p><b>Approach.</b> A second-derivative test proves a point is a minimum but says nothing about how much it matters. Evaluating the objective at nearby feasible values answers a different and more practical question: how much material is actually lost by building the vessel a little off optimum. This is the step that decides whether the optimisation is worth defending against a standard plate size or a stock diameter.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; use the single-variable form.</em> \\( S = \\pi r^2 + 4/r \\).</p><p><em>Step 2 &mdash; evaluate below optimum.</em> At \\( r = 0.70 \\): \\( S = 1.539 + 5.714 = 7.254\\ \\mathrm{m^2} \\).</p><p><em>Step 3 &mdash; at the optimum.</em> \\( r = 0.860 \\): \\( S = 6.975\\ \\mathrm{m^2} \\).</p><p><em>Step 4 &mdash; above optimum.</em> At \\( r = 1.00 \\): \\( S = 3.142 + 4.000 = 7.142\\ \\mathrm{m^2} \\).</p><p><b>Answer.</b> Both neighbours use more material, confirming the minimum. But the penalty is small &mdash; 4.0% at \\( r = 0.70 \\) and 2.4% at \\( r = 1.00 \\) &mdash; so the optimum is shallow. In practice that means rounding the radius to a stock size costs very little, which is a more useful conclusion than the optimum itself.</p>"
+    }
+   ]
+  }
  },
  "7": {
   "lecture": "\n<h3>§1 · Accumulation is the other half of calculus</h3>\n<p>The derivative asks: how fast? The integral asks the inverse question: <em>how much,\nin total?</em> A flow meter reads m³/h instant by instant; the invoice wants m³. Adding up a\nchanging rate over time is integration &mdash; the total volume \\( V \\) that passes in the time from \\( 0 \\) to \\( T \\), accumulated from the instantaneous volumetric flow rate \\( Q(t) \\):</p>\n\\[ V = \\int_{0}^{T} Q(t)\\,dt \\tag{1} \\]\n<p>Geometrically this is the area under the \\( Q(t) \\) curve — approximated by stacking thin\nrectangles \\( Q \\cdot \\Delta t \\) and letting \\( \\Delta t \\to 0 \\). Every totalizer in the\nplant is performing equation (1) in silicon, all day long.</p>\n<h3>§2 · The Fundamental Theorem — rates and totals are inverses</h3>\n<p>The Fundamental Theorem of Calculus says accumulation and differentiation undo each other:\nif \\( F(t) = \\int_a^t f(x)\\,dx \\), then \\( F' = f \\). Consequently</p>\n\\[ \\int_a^b f(t)\\,dt = F(b) - F(a) \\quad\\text{where } F' = f \\tag{2} \\]\n<p>Find any antiderivative, evaluate at the ends, subtract. The theorem is why energy (kWh) is\nthe antiderivative of power (kW), why distance is the antiderivative of speed, and why a\ntotalizer can be checked against two readings of a cumulative register.</p>\n<h3>§3 · Reading areas like an engineer</h3>\n<p>Area under a pump's power trend = energy consumed. Area under a flow curve = volume\ntransferred. Area between inflow and outflow curves = inventory change. When the curve is\ndata rather than formula, the integral is done numerically — trapezoids on historian samples —\nwhich is Lesson 9's business. The concept is identical: total = area.</p>\n\n<h3>§4 · Setting up an integral — the working method</h3>\n<p>Every accumulation problem is set up the same way, and the setup is where the marks are\nwon or lost. <em>Identify the rate</em> — the quantity per time (or per length, per angle)\nbeing accumulated — and write its units down. <em>Fix the interval:</em> the start and end of\nthe accumulation, in the rate's own time variable. <em>Integrate, and check the units of the\nresult:</em> a rate in m³/h integrated over hours must land in m³, and if it doesn't, the\nsetup — not the arithmetic — is wrong. Then exploit the Fundamental Theorem in both\ndirections. Given a formula, find an antiderivative and evaluate at the ends. Given a\ncumulative register — a totalizer, an energy meter, an odometer — the theorem says the\naccumulation over any window is simply the difference of two readings: engineering's most\nunderrated free lunch.</p>\n<p>Sketch first, always. A rough graph of the rate shows whether the answer should be near\nthe peak-times-width rectangle or well under it, whether any region runs negative, and where\nthe accumulation concentrates. The sketch is the estimate, the integral is the precision, and\ndisagreement between them is the error alarm that catches transposed limits and dropped\nsigns before they reach a report.</p>\n<p>One caution completes the method: an integral answers exactly the question its limits ask,\nno more. A total over a shift says nothing about which hour did the accumulating, and a net\naccumulation of zero can hide furious movement in both directions. Keep the question and the\ninterval welded together when you present the number, and totals stop being ambushed by\nfollow-up questions.</p>\n<p><strong>Closing.</strong> Integrals accumulate rates into totals; the Fundamental Theorem\nmakes them computable from antiderivatives; and the plant's totalizers, energy meters, and\ninventory balances are integrals with tag numbers.</p>\n",
@@ -1066,7 +1246,103 @@
     "solution": "<p>The definite integral is signed area: forward flow accumulates positive, reverse flow negative, and the result is net delivery — which is exactly what an inventory balance needs. Gross movement would require integrating \\( |Q| \\), a different (and occasionally also useful) quantity. Discarding negative regions is not a convention mathematics offers, and an average is the integral <em>divided by</em> the width, not the integral itself.</p>"
    }
   ],
-  "recap": "<ul> <li>The derivative asks <i>how fast</i>; the integral asks <i>how much in total</i>. They are the two halves of the subject.</li> <li>\\( V = \\int_0^T Q(t)\\,dt \\) — every totalizer in the plant is performing this calculation continuously.</li> <li><b>Fundamental Theorem:</b> accumulation and differentiation undo each other, so \\( \\int_a^b f = F(b) - F(a) \\). Find any antiderivative and evaluate at the two ends.</li> <li>Area under a curve is a physical total. Read the units of the area to know which total it is: rate × time is quantity, force × distance is work.</li> </ul>"
+  "recap": "<ul> <li>The derivative asks <i>how fast</i>; the integral asks <i>how much in total</i>. They are the two halves of the subject.</li> <li>\\( V = \\int_0^T Q(t)\\,dt \\) — every totalizer in the plant is performing this calculation continuously.</li> <li><b>Fundamental Theorem:</b> accumulation and differentiation undo each other, so \\( \\int_a^b f = F(b) - F(a) \\). Find any antiderivative and evaluate at the two ends.</li> <li>Area under a curve is a physical total. Read the units of the area to know which total it is: rate × time is quantity, force × distance is work.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>Differentiation asks how fast something changes; integration asks how much has accumulated. If you know a rate and want a total &mdash; a flow and want a volume, a power and want an energy, a corrosion rate and want a wall loss &mdash; the operation you need is a definite integral. This lesson builds it as a limit of sums and reads it as an area.</p>",
+    "keypoints": [
+     "Integrating a rate over an interval gives the total accumulated over that interval, in the rate's units multiplied by the interval's.",
+     "A definite integral is defined as the limit of a sum of narrow strips, which is why it equals the area under the curve.",
+     "The area interpretation is literal: strip width times strip height, summed.",
+     "Areas below the axis count as negative, so an integral can represent a net rather than a gross total.",
+     "The Fundamental Theorem links the two halves of calculus: integrate a rate by finding a function whose derivative is that rate.",
+     "The average value of a quantity over an interval is its integral divided by the interval length.",
+     "A numerical sum with finitely many strips approaches the exact integral as the strips narrow &mdash; which is how instruments actually totalise."
+    ],
+    "terms": [
+     {
+      "term": "Definite integral",
+      "symbol": "\\( \\int_a^b f(x)\\,dx \\)",
+      "read": "the integral from a to b of f of x d x",
+      "meaning": "The accumulated total of \\( f \\) between \\( a \\) and \\( b \\)."
+     },
+     {
+      "term": "Integrand",
+      "symbol": "\\( f(x) \\)",
+      "read": "f of x",
+      "meaning": "The rate being accumulated — the quantity inside the integral."
+     },
+     {
+      "term": "Limits of integration",
+      "symbol": "\\( a, b \\)",
+      "read": "a and b",
+      "meaning": "The start and end of the interval over which the total is taken."
+     },
+     {
+      "term": "Riemann sum",
+      "symbol": "\\( \\sum f(x_i)\\,\\Delta x \\)",
+      "read": "the sum of f of x i times delta x",
+      "meaning": "Strips of width \\( \\Delta x \\) summed; approaches the integral as strips narrow."
+     },
+     {
+      "term": "Strip width",
+      "symbol": "\\( \\Delta x \\)",
+      "read": "delta x",
+      "meaning": "The width of one interval in the approximating sum."
+     },
+     {
+      "term": "Antiderivative",
+      "symbol": "\\( F(x) \\)",
+      "read": "capital F of x",
+      "meaning": "A function whose derivative is \\( f(x) \\); the tool for evaluating exactly."
+     },
+     {
+      "term": "Fundamental Theorem",
+      "symbol": "\\( \\int_a^b f(x)\\,dx = F(b) - F(a) \\)",
+      "read": "the integral from a to b of f of x d x equals F of b minus F of a",
+      "meaning": "Evaluate an integral by finding an antiderivative and differencing it."
+     },
+     {
+      "term": "Average value",
+      "symbol": "\\( \\bar{f} = \\dfrac{1}{b-a}\\int_a^b f\\,dx \\)",
+      "read": "f bar equals one over b minus a, times the integral from a to b of f d x",
+      "meaning": "The constant value that would accumulate the same total over the interval."
+     },
+     {
+      "term": "Volumetric flow rate",
+      "symbol": "\\( Q \\)",
+      "read": "Q",
+      "meaning": "Volume passing per unit time, in cubic metres per second."
+     },
+     {
+      "term": "Time",
+      "symbol": "\\( t \\)",
+      "read": "t",
+      "meaning": "Elapsed time, in seconds."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Accumulating a rate: sums that become an integral",
+     "body": "<p>Suppose a flow rate varies through a shift and you need the volume that passed. If the rate were constant, the answer would be rate times time. It is not constant, so the honest approach is to chop the shift into short intervals, treat the rate as constant across each one, multiply and add.</p><p>That is a <b>Riemann sum</b>, \\( \\sum f(x_i)\\,\\Delta x \\), read as &lsquo;the sum of f of x i times delta x&rsquo;, where \\( \\Delta x \\) is the width of one interval. Each term is one rectangle: a height taken from the rate curve and a width taken from the interval. The sum is an approximation, and it is wrong by however much the rate moved inside each interval.</p><p>Narrow the intervals and that error shrinks. The <b>definite integral</b> \\( \\int_a^b f(x)\\,dx \\), read &lsquo;the integral from a to b of f of x d x&rsquo;, is defined as what the sum approaches as the strips become arbitrarily narrow. The elongated S is a sum sign and the \\( dx \\) is the vanishing width, so the notation is a picture of the construction.</p><p>Two consequences follow immediately. The integral equals the area under the curve, because that is literally what was summed &mdash; and area below the axis counts as negative, so an integral of a signed quantity gives a net rather than a gross total. And the units follow the multiplication: a flow in cubic metres per second integrated over seconds gives cubic metres, which is the same self-check that worked for derivatives.</p>"
+    },
+    {
+     "title": "Evaluating exactly, and reading an average",
+     "body": "<p>Summing strips converges but is laborious. The exact route is the <b>Fundamental Theorem</b>, \\( \\int_a^b f(x)\\,dx = F(b) - F(a) \\), where \\( F \\) is an <b>antiderivative</b> &mdash; any function whose derivative is the integrand. Integration is therefore differentiation run backwards: to accumulate a rate, find the quantity whose rate it is, and difference that quantity between the endpoints.</p><p>This is why the previous lessons' rules are not left behind. Knowing that the derivative of \\( x^2 \\) is \\( 2x \\) tells you at once that the accumulation of \\( 2x \\) is \\( x^2 \\), up to a constant that cancels in the difference.</p><p>The integral also delivers averages, which is often what is actually wanted. The <b>average value</b> over an interval is the integral divided by the interval length, \\( \\bar{f} = \\dfrac{1}{b-a}\\int_a^b f\\,dx \\). Read physically, it is the constant value that would have accumulated the same total in the same time &mdash; the steady flow equivalent to a varying one, or the steady load equivalent to a fluctuating one.</p><p>That definition is worth holding onto because it is not the same as averaging a handful of instrument readings. Readings taken at uneven intervals, or during a period when the quantity moved quickly, give a different and generally wrong answer. The integral weights every instant by the time it actually lasted.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Volume from a ramping flow",
+     "body": "<p><b>Problem.</b> During start-up a flow rises linearly as \\( Q(t) = 0.05 + 0.01t \\), with \\( Q \\) in \\( \\mathrm{m^3/s} \\) and \\( t \\) in seconds. Find the volume passed in the first 60 s, and the average flow over that period.</p><p><b>Approach.</b> Volume is the accumulation of flow, so integrate the rate over the interval. The integrand is a sum of two simple terms, so the antiderivative is immediate. The error to avoid is multiplying the final flow by the elapsed time &mdash; that treats a ramp as though it had been at its maximum throughout, and here it would overstate the volume by more than half.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; set up.</em> \\( \\int_0^{60}(0.05 + 0.01t)\\,dt \\).</p><p><em>Step 2 &mdash; antiderivative.</em> \\( F(t) = 0.05t + 0.005t^2 \\), whose derivative is the integrand.</p><p><em>Step 3 &mdash; difference the endpoints.</em> \\( F(60) - F(0) = (3.0 + 18.0) - 0 = 21.0 \\).</p><p><em>Step 4 &mdash; average.</em> \\( 21.0/60 = 0.35\\ \\mathrm{m^3/s} \\).</p><p><b>Answer.</b> 21.0 m&sup3; passed, at an average flow of 0.35 m&sup3;/s. The wrong method gives \\( 0.65 \\times 60 = 39 \\) m&sup3;. Note the average equals the flow at the mid-point, 30 s, which is a property of a linear ramp and a quick check on this class of problem.</p>"
+    },
+    {
+     "title": "Watching a Riemann sum converge",
+     "body": "<p><b>Problem.</b> For the same flow, approximate the volume with left-endpoint Riemann sums using 6, 60 and 600 strips, and compare with the exact 21.0 m&sup3;.</p><p><b>Approach.</b> A left-endpoint sum takes each strip's height from the start of its interval. For a rising rate that height is the lowest value in the strip, so every rectangle sits below the curve and the sum must under-estimate &mdash; predicting the direction of the error before computing is the point of the exercise. This is exactly how a flow totaliser accumulates from periodic samples, so the convergence rate is a practical matter rather than an academic one.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; six strips,</em> \\( \\Delta t = 10\\ \\mathrm{s} \\), heights taken at 0, 10, ... 50 s: total 18.0 m&sup3;.</p><p><em>Step 2 &mdash; sixty strips,</em> \\( \\Delta t = 1\\ \\mathrm{s} \\): total 20.7 m&sup3;.</p><p><em>Step 3 &mdash; six hundred strips,</em> \\( \\Delta t = 0.1\\ \\mathrm{s} \\): total 20.97 m&sup3;.</p><p><b>Answer.</b> The sums run 18.0, 20.7 and 20.97 against an exact 21.0 &mdash; always low, as predicted, and closing on the true value. Each tenfold increase in strip count cuts the error roughly tenfold: 3.0, then 0.3, then 0.03. A totaliser sampling once a second on this ramp would under-read by about 1.4%.</p>"
+    }
+   ]
+  }
  },
  "8": {
   "lecture": "\n<h3>§1 · Substitution — the chain rule reversed</h3>\n<p>Most integrals you meet are chain-rule results wearing a disguise. Substitution unmasks\nthem: set \\( u = \\) the inner function, trade \\( dx \\) for \\( du \\), integrate, return.</p>\n\\[ \\int x\\,(x^2+1)^3 dx \\;\\xrightarrow{\\,u = x^2+1,\\ du = 2x\\,dx\\,}\\; \\tfrac12\\int u^3 du = \\frac{(x^2+1)^4}{8} + C \\tag{1} \\]\n<p>The skill is <em>seeing</em> the derivative of the inside sitting beside it. Flow, decay,\nand geometry integrals in plant work overwhelmingly fall to substitution.</p>\n<h3>§2 · Integration by parts — the product rule reversed</h3>\n<p>When the integrand is a genuine product — a polynomial times an exponential, say — parts\napplies:</p>\n\\[ \\int u\\,dv = uv - \\int v\\,du \\tag{2} \\]\n<p>Choose \\( u \\) to simplify when differentiated, \\( dv \\) to stay tame when integrated.\nThe workhorse case \\( \\int t\\,e^{-t}dt \\) models energy in decaying transients and\nfirst-moment calculations, and §Worked Examples runs it end to end.</p>\n<h3>§3 · Knowing when to stop</h3>\n<p>Real plant data rarely hands you a clean antiderivative. The professional sequence is:\ntry substitution; try parts; recognize a table form; otherwise integrate <em>numerically</em>\n— trapezoids or Simpson on sampled data — and say so. A numerically honest answer beats a\nheroic symbolic detour every time. Software does symbolic work well; your job is to set the\nintegral up correctly and sanity-check its output.</p>\n\n<h3>§4 · Choosing the technique — a decision procedure</h3>\n<p>Integration is pattern recognition with a fallback ladder, and the ladder has exactly four\nrungs. <em>Rung one: is the derivative of an inner function sitting beside it?</em> If the\nintegrand contains \\( g(x) \\) inside another function and \\( g'(x) \\) — up to a constant —\nas a factor, substitution finishes it in one line. Train the eye on the constant: in\n\\( \\int x\\,e^{x^2}dx \\), the \\( x \\) outside is \\( \\tfrac12 \\) of the needed\n\\( 2x \\), and the half simply rides along. <em>Rung two: a genuine product of unrelated\nfactors</em> — polynomial times exponential, polynomial times sine — goes to parts, choosing\n\\( u \\) as the factor that simplifies when differentiated. <em>Rung three: recognize a\ntable form</em> and write the answer. <em>Rung four: integrate numerically</em> — trapezoids\non the samples you have — and say so plainly.</p>\n<p>Two habits turn technique into reliability. Verify every antiderivative by\ndifferentiating it — ten seconds that catch dropped halves and sign slips before they\npropagate. And when limits are involved in a substitution, transform them with the variable\nso the evaluation happens in \\( u \\)-space and nothing needs converting back. The\ntechniques are few; the discipline around them is what makes the answers dependable.</p>\n<p>Know also what the ladder is for. In professional work, symbolic software integrates\nfaster than any human — but it cannot decide whether the integral was set up correctly,\nwhether the limits mean what the question meant, or whether the answer's magnitude is\nplausible. The techniques you practice here build exactly that judgment: someone who has\nintegrated by hand recognizes a wrong machine answer on sight, the way a machinist who has\ncut threads manually reads a bad CNC part at a glance. Learn the moves to own the judgment,\nthen delegate the labor freely.</p>\n<p><strong>Closing.</strong> Substitution reverses the chain rule, parts reverses the product\nrule, and numerical integration is the licensed fallback — not a defeat.</p>\n",
