@@ -76,7 +76,7 @@
   <p class="eyebrow">KDM 252 · Lesson 05 of 11 · Year 2 · Semester 2</p>
   <h1>Gear tooth geometry</h1>
   <p class="sub">The involute and why conjugate action matters. Module, pressure angle, and interference. Backlash as both necessity and defect.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/kinematics-machinery/5">Mark as complete</button>
@@ -91,23 +91,238 @@
   <button data-tab="t-examples">الأمثلة والاختبار</button>
   <button data-tab="t-library">المكتبة</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does the involute tolerate center-distance error?</li><li>What does interference between teeth physically destroy?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>KDM 252 · Kinematics &amp; Dynamics of Machinery</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Theory of Machines (nptel.ac.in)</li></ul>
-  <p class="small">Course context: Mechanisms in motion: linkages, cams, gear geometry and trains, flywheels, and machine balancing — how rotation becomes useful motion, and where the shaking forces that vibration analysts chase are born.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does the involute tolerate center-distance error?</li><li>What does interference between teeth physically destroy?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of the minimum number of pinion teeth that avoids interference against pressure angle, from 14 to 26 degrees. The curve falls steeply from about 34 teeth at 14 degrees through 32 teeth at 14.5 degrees to 17.1 at 20 degrees and 11.2 at 25 degrees. Three marked points give the practical tooth counts of 32, 18 and 12."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Why 20&#176; became the standard pressure angle</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">pressure angle &#966; (degrees)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">minimum pinion teeth</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">14</text><path d="M159.2 250 L159.2 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="159.2" y="266" text-anchor="middle" fill="#5B6672" font-size="11">16</text><path d="M228.3 250 L228.3 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="228.3" y="266" text-anchor="middle" fill="#5B6672" font-size="11">18</text><path d="M297.5 250 L297.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="297.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">20</text><path d="M366.7 250 L366.7 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="366.7" y="266" text-anchor="middle" fill="#5B6672" font-size="11">22</text><path d="M435.8 250 L435.8 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="435.8" y="266" text-anchor="middle" fill="#5B6672" font-size="11">24</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">26</text><path d="M86 250 L90 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 197.8 L90 197.8" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="201.8" text-anchor="end" fill="#5B6672" font-size="11">10</text><path d="M86 145.6 L90 145.6" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="149.6" text-anchor="end" fill="#5B6672" font-size="11">20</text><path d="M86 93.3 L90 93.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="97.3" text-anchor="end" fill="#5B6672" font-size="11">30</text><path d="M90 71.5 L93.5 74 L96.9 76.4 L100.4 78.8 L103.8 81.1 L107.3 83.4 L110.7 85.6 L114.2 87.8 L117.7 89.9 L121.1 92 L124.6 94.1 L128 96.1 L131.5 98.1 L135 100 L138.4 101.9 L141.9 103.8 L145.3 105.6 L148.8 107.4 L152.3 109.1 L155.7 110.8 L159.2 112.5 L162.6 114.2 L166.1 115.8 L169.5 117.4 L173 119 L176.5 120.5 L179.9 122 L183.4 123.5 L186.8 125 L190.3 126.4 L193.8 127.8 L197.2 129.2 L200.7 130.6 L204.1 131.9 L207.6 133.2 L211 134.5 L214.5 135.8 L218 137 L221.4 138.2 L224.9 139.4 L228.3 140.6 L231.8 141.8 L235.2 142.9 L238.7 144.1 L242.2 145.2 L245.6 146.3 L249.1 147.3 L252.5 148.4 L256 149.4 L259.5 150.5 L262.9 151.5 L266.4 152.5 L269.8 153.4 L273.3 154.4 L276.8 155.3 L280.2 156.3 L283.7 157.2 L287.1 158.1 L290.6 159 L294 159.9 L297.5 160.7 L301 161.6 L304.4 162.4 L307.9 163.2 L311.3 164 L314.8 164.8 L318.3 165.6 L321.7 166.4 L325.2 167.2 L328.6 167.9 L332.1 168.7 L335.5 169.4 L339 170.1 L342.5 170.8 L345.9 171.6 L349.4 172.2 L352.8 172.9 L356.3 173.6 L359.8 174.3 L363.2 174.9 L366.7 175.6 L370.1 176.2 L373.6 176.8 L377 177.5 L380.5 178.1 L384 178.7 L387.4 179.3 L390.9 179.9 L394.3 180.4 L397.8 181 L401.2 181.6 L404.7 182.1 L408.2 182.7 L411.6 183.2 L415.1 183.8 L418.5 184.3 L422 184.8 L425.5 185.4 L428.9 185.9 L432.4 186.4 L435.8 186.9 L439.3 187.4 L442.8 187.8 L446.2 188.3 L449.7 188.8 L453.1 189.3 L456.6 189.7 L460 190.2 L463.5 190.6 L467 191.1 L470.4 191.5 L473.9 192 L477.3 192.4 L480.8 192.8 L484.2 193.2 L487.7 193.6 L491.2 194.1 L494.6 194.5 L498.1 194.9 L501.5 195.3 L505 195.6" fill="none" stroke="#1f7a5c" stroke-width="2.4"/><circle cx="107.3" cy="83.4" r="4" fill="#9c2f2f"/><circle cx="297.5" cy="160.7" r="4" fill="#3a6ea5"/><circle cx="470.4" cy="191.5" r="4" fill="#c2820f"/><text x="310" y="80" fill="#9c2f2f" font-size="11">14.5&#176; &#8594; 32 teeth</text><text x="310" y="98" fill="#3a6ea5" font-size="11">20&#176; &#8594; 18 teeth</text><text x="310" y="116" fill="#c2820f" font-size="11">25&#176; &#8594; 12 teeth</text><text x="310" y="140" fill="#5B6672" font-size="11">N&#8202;min = 2k / sin&#178;&#966;</text></svg><figcaption>Interference &mdash; the mating tooth tip gouging into the pinion's flank below its base circle &mdash; is avoided by keeping the pinion above \( 2k/\sin^2\phi \) teeth. The old 14.5&#176; standard demanded 32 teeth in the pinion, which forces a large, slow-ratio pair; 20&#176; brings it to 17.1, so 18 teeth suffice and a 4:1 reduction fits in one stage. That single curve is why almost every gear now cut is a 20&#176; gear.</figcaption></figure>
+<h3>&#167;1 &middot; Conjugate action, and the one curve that delivers it</h3>
+<p>A gear pair has one job that a friction wheel cannot do reliably: hold an exact, constant
+speed ratio while transmitting torque. Constant means constant <em>through the mesh</em>, not on
+average &mdash; a ratio that fluctuates within a tooth pitch is a vibration source, and it will
+be found in the spectrum of Lesson 6.</p>
+<p>The condition is geometric. Where two tooth flanks touch, the common normal to both surfaces
+must pass through a fixed point on the line of centres &mdash; the <b>pitch point</b>. That is
+the law of gearing, and any pair of profiles satisfying it is called <b>conjugate</b>. Many
+curves can be made conjugate to some mate; only one is conjugate to <em>itself</em>, so that a
+gear cut with it meshes correctly with any other gear of the same pressure angle and pitch. That
+curve is the <b>involute</b>: the path traced by a point on a taut string unwound from a circle
+&mdash; the <b>base circle</b>.</p>
+<p>The involute's decisive property follows from that construction. The string is always tangent
+to the base circle, so the contact normal always lies along one fixed straight line, the
+<b>line of action</b>, inclined to the common tangent by the <b>pressure angle</b> \( \phi \).
+The direction in which one tooth pushes another never changes through the mesh, which means the
+bearing load direction never changes either. A cycloidal tooth is conjugate too, and does not
+have that property.</p>
+
+<h3>&#167;2 &middot; Module, pitch and the standard tooth</h3>
+<p>Two gears mesh only if their teeth are the same size, so tooth size is standardised as the
+<b>module</b> \( m \), the pitch diameter per tooth.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; gear geometry</span>
+<p>\[ m=\frac{d}{N},\qquad p=\pi m,\qquad d_b=d\cos\phi,\qquad
+C=\frac{m(N_1+N_2)}{2} \]</p>
+<p>\( p \) is the circular pitch measured on the pitch circle and \( d_b \) is the base-circle
+diameter. In US customary practice the same idea is inverted as diametral pitch
+\( P=N/d \) teeth per inch, with \( m = 25.4/P \) mm.</p></div>
+<p>Take \( m=4 \) mm, \( \phi=20^\circ \), a 20-tooth pinion driving a 40-tooth gear. Then
+\( d_1 = 80 \), \( d_2 = 160 \) and \( C = 120 \) mm; the base circles are
+\( 80\cos 20^\circ = 75.18 \) and \( 150.35 \) mm; the circular pitch is
+\( \pi(4) = 12.566 \) mm and the base pitch \( \pi m\cos\phi = 11.809 \) mm. The standard
+full-depth tooth then adds an addendum of \( 1m \) above the pitch circle and a dedendum of
+\( 1.25m \) below it, the extra quarter-module giving root clearance.</p>
+
+<h3>&#167;3 &middot; Contact ratio: how many teeth are actually working</h3>
+<p>Contact begins where the addendum circle of the driven gear cuts the line of action and ends
+where the driver's addendum circle cuts it. The length between is the <b>length of action</b>
+\( Z \), and dividing it by the base pitch counts how many tooth pairs are in mesh on average.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; contact ratio</span>
+<p>\[ m_c=\frac{Z}{p_b}
+=\frac{\sqrt{r_{a1}^2-r_{b1}^2}+\sqrt{r_{a2}^2-r_{b2}^2}-C\sin\phi}{\pi m\cos\phi} \]</p>
+<p>\( m_c > 1 \) is mandatory &mdash; below it, one pair disengages before the next takes over
+and the drive stops. Practice wants at least 1.2, and 1.4 or more for quiet running.</p></div>
+<p>For the worked pair, \( \sqrt{44^2-37.588^2}=22.873 \), \( \sqrt{84^2-75.175^2}=37.479 \) and
+\( C\sin\phi = 41.042 \) mm, so \( Z = 19.309 \) mm and \( m_c = 19.309/11.809 = 1.635 \). Read
+that as: for 63.5% of the time two tooth pairs share the load, and for the rest a single pair
+carries everything. It is the fractional part that matters. As the second pair engages and
+disengages the stiffness of the mesh changes abruptly, and that stiffness variation &mdash; not
+the tooth force itself &mdash; is the origin of gear-mesh vibration.</p>
+
+<h3>&#167;4 &middot; Interference, and what centre distance does not change</h3>
+<p>The involute exists only outside the base circle; inside it there is no involute to be
+conjugate with. If a gear's addendum reaches the mating pinion's flank below its base circle,
+the tip does not roll &mdash; it digs, cutting material out of the pinion's root and leaving it
+weakened. This is <b>interference</b>, and it is worst for a small pinion driven by a large
+gear.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; interference limit</span>
+<p>\[ N_{\min}=\frac{2k}{\sin^2\phi} \]</p>
+<p>\( k=1 \) for a standard full-depth tooth. This is the limit against a rack, the worst
+case.</p></div>
+<p>The numbers explain a century of standards work. At \( \phi=14.5^\circ \),
+\( N_{\min}=31.9 \), so a pinion needed 32 teeth &mdash; large gears, large centre distances,
+modest ratios per stage. At \( 20^\circ \), \( N_{\min}=17.1 \) and an 18-tooth pinion is legal.
+At \( 25^\circ \) it falls to 11.2, which is why high-ratio and compact drives use the steeper
+angle, accepting higher radial bearing loads and a lower contact ratio in exchange. When a
+smaller pinion is unavoidable, the cure is <b>profile shift</b>: cut the tooth with the hob
+withdrawn slightly, which moves the working part of the flank away from the base circle
+without changing the module or the mating gear.</p>
+<p>Finally, the property that makes involute gears manufacturable at all. Move the gears apart
+and the pitch circles and pressure angle both change &mdash; but the base circles do not, because
+they were cut into the metal. The line of action still runs tangent to the same two base
+circles, so the speed ratio is still exactly \( N_1/N_2 \). Opening the worked pair by 1 mm
+raises the operating pressure angle from 20&#176; to 21.26&#176; and drops the contact ratio from
+1.635 to 1.395 &mdash; a 14.7% loss of overlap &mdash; and opens a backlash of
+\( 2\Delta C\tan\phi = 0.73 \) mm. The ratio, however, is untouched. A tolerance on centre
+distance is therefore a tolerance on smoothness and noise, not on kinematic accuracy, which is
+exactly the trade a housing designer needs to know. Some backlash is required in any case, for
+lubricant and thermal growth; the design task is to control it, not to eliminate it.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Why does the involute tolerate center-distance error?</li><li>What does interference between teeth physically destroy?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Higher pairs</b> (Lesson 1) &mdash; gear-tooth contact removes one freedom, the same
+class as the cam contact of Lesson 4.</li>
+<li><b>Instant centres</b> (Lesson 2) &mdash; the pitch point is the instant centre of the two
+gears, which is why the law of gearing is stated there.</li>
+<li><b>Rolling and sliding contact</b> (Dynamics L5) &mdash; pure rolling occurs only at the
+pitch point; everywhere else the flanks slide.</li>
+<li><b>Involute construction</b> (Mathematics I) &mdash; the unwinding-string curve and its
+tangent property.</li>
+<li><b>Contact stress</b> (Machine Design I L3) &mdash; what the tooth force does once the
+geometry has decided where it acts.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Module</td><td>\( m=d/N \)</td><td>Tooth size; two gears mesh only at equal module.</td></tr>
+<tr><td>Diametral pitch</td><td>\( P=N/d,\ m=25.4/P \)</td><td>US customary equivalent, teeth per inch.</td></tr>
+<tr><td>Base circle</td><td>\( d_b=d\cos\phi \)</td><td>The circle the involute is unwound from; fixed once cut.</td></tr>
+<tr><td>Base pitch</td><td>\( p_b=\pi m\cos\phi \)</td><td>Denominator of the contact ratio.</td></tr>
+<tr><td>Contact ratio</td><td>\( m_c=Z/p_b \)</td><td>Average tooth pairs in mesh; must exceed 1.</td></tr>
+<tr><td>Interference limit</td><td>\( N_{\min}=2k/\sin^2\phi \)</td><td>Smallest legal pinion; 17.1 at 20&#176;.</td></tr>
+<tr><td>Profile shift</td><td>hob withdrawn by \( xm \)</td><td>Legalising a pinion below \( N_{\min} \).</td></tr>
+<tr><td>Backlash</td><td>\( B \approx 2\Delta C\tan\phi \)</td><td>Consequence of opening the centre distance.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Geometry and contact ratio of a gear pair</b></p>
+<p><b>Problem.</b> A 20-tooth pinion drives a 40-tooth gear, module 4 mm, pressure angle
+20&#176;, standard full-depth teeth (addendum \( 1m \)). Find the pitch diameters, centre
+distance, base-circle radii, base pitch and contact ratio.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( d_1 = mN_1 = 4(20) = 80 \) mm and
+\( d_2 = 4(40) = 160 \) mm, so \( r_1 = 40 \), \( r_2 = 80 \) and
+\( C = 40+80 = 120 \) mm.</p>
+<p>(2) \( r_{b} = r\cos\phi \): \( r_{b1} = 40\cos 20^\circ = 37.588 \) mm and
+\( r_{b2} = 75.175 \) mm.</p>
+<p>(3) Addendum radii \( r_{a1} = 40+4 = 44 \) mm, \( r_{a2} = 80+4 = 84 \) mm.</p>
+<p>(4) \( p_b = \pi m\cos\phi = \pi(4)(0.93969) = 11.809 \) mm.</p>
+<p>(5) \( Z = \sqrt{44^2-37.588^2} + \sqrt{84^2-75.175^2} - 120\sin 20^\circ
+= 22.873 + 37.479 - 41.042 = 19.309 \) mm.</p>
+<p>(6) \( m_c = 19.309/11.809 = 1.635 \).</p>
+<p><b>Answer:</b> \( d_1=80 \), \( d_2=160 \), \( C=120 \) mm;
+\( r_{b1}=37.59 \), \( r_{b2}=75.18 \) mm; \( p_b = 11.81 \) mm; \( m_c = 1.635 \).
+<b>Sanity check:</b> \( m_c \) comfortably exceeds 1, so the drive never runs out of contact,
+and its fractional part says two pairs share the load 63.5% of the time and one pair carries
+everything for the remaining 36.5%. The single-pair interval is the one that sizes the tooth. As
+an independent check on the arithmetic, \( Z \) must be smaller than \( C\sin\phi = 41.04 \) mm,
+the whole tangent length between the base circles &mdash; and 19.31 mm is 47% of it, which is
+typical for standard teeth.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Interference and the choice of pressure angle</b></p>
+<p><b>Problem.</b> Find the minimum pinion tooth count against a rack for standard full-depth
+teeth at 14.5&#176;, 20&#176; and 25&#176;. A drive needs a 14-tooth pinion. State which
+options make that legal and what each costs.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( N_{\min}=2k/\sin^2\phi \) with \( k=1 \).</p>
+<p>(1) \( \phi=14.5^\circ \): \( \sin\phi = 0.25038 \),
+\( N_{\min} = 2/0.062690 = 31.90 \) &#8594; 32 teeth.</p>
+<p>(2) \( \phi=20^\circ \): \( \sin\phi = 0.34202 \),
+\( N_{\min} = 2/0.116978 = 17.10 \) &#8594; 18 teeth.</p>
+<p>(3) \( \phi=25^\circ \): \( \sin\phi = 0.42262 \),
+\( N_{\min} = 2/0.178606 = 11.20 \) &#8594; 12 teeth.</p>
+<p>(4) A 14-tooth pinion is illegal at 20&#176; and legal at 25&#176;. The alternatives are to
+cut it at 20&#176; with a positive profile shift, or to reduce the addendum (lower \( k \)),
+since \( N_{\min} \) is proportional to \( k \).</p>
+<p><b>Answer:</b> 32, 18 and 12 teeth; a 14-tooth pinion needs 25&#176;, a profile shift, or a
+stub tooth.
+<b>Sanity check:</b> each route has a price. Going to 25&#176; raises the radial component of
+the tooth force by \( \tan 25^\circ/\tan 20^\circ = 1.28 \), a 28% increase in the separating
+load the bearings carry, and lowers the contact ratio. A profile shift keeps the module and the
+mating gear but changes the tooth thickness and needs the pair designed together. A stub tooth
+reduces the contact ratio directly, since a shorter addendum shortens the length of action. The
+inverse-square dependence on \( \sin\phi \) is what makes the 14.5&#176; standard so
+restrictive, and why it was retired.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Centre-distance error, and a US customary pair</b></p>
+<p><b>Problem.</b> (a) The 20/40-tooth pair above is assembled with its centres 121 mm apart
+instead of 120. Find the operating pressure angle, the new contact ratio and the backlash, and
+say what happens to the speed ratio. (b) Separately, find the contact ratio of an 18/36-tooth
+pair of diametral pitch 6 per inch at 20&#176;.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution (a).</b> (1) The base circles are cut into the metal and cannot
+change, so \( C\cos\phi \) is invariant:
+\( \cos\phi' = \frac{120\cos 20^\circ}{121} = \frac{112.763}{121} = 0.93192 \), giving
+\( \phi' = 21.26^\circ \).</p>
+<p>(2) The two square-root terms are properties of the gears alone and are unchanged at 22.873
+and 37.479 mm, so \( Z' = 22.873+37.479-121\sin 21.26^\circ = 60.352-43.881 = 16.471 \) mm.</p>
+<p>(3) \( m_c' = 16.471/11.809 = 1.395 \), down from 1.635 &mdash; a 14.7% loss.</p>
+<p>(4) \( B \approx 2\Delta C\tan\phi = 2(1)(0.36397) = 0.73 \) mm.</p>
+<p>(5) The speed ratio is still exactly \( 40/20 = 2 \), because it is set by the base circles.</p>
+<p><b>Solution (b).</b> \( d_1 = 18/6 = 3.000 \) in, \( d_2 = 6.000 \) in, \( C = 4.500 \) in;
+\( r_{b1} = 1.5\cos 20^\circ = 1.40954 \), \( r_{b2} = 2.81908 \) in; addendum
+\( 1/P = 0.16667 \) in so \( r_{a1} = 1.66667 \), \( r_{a2} = 3.16667 \) in;
+\( p_b = (\pi/6)\cos 20^\circ = 0.49202 \) in.
+\( Z = 0.88937+1.44242-1.53909 = 0.79270 \) in, so \( m_c = 1.611 \).</p>
+<p><b>Answer:</b> (a) \( \phi'=21.26^\circ \), \( m_c=1.395 \), backlash 0.73 mm, ratio
+unchanged at 2:1. (b) \( m_c = 1.611 \).
+<b>Sanity check:</b> part (a) is the practical reason involute teeth won: a housing bore
+tolerance degrades smoothness and adds backlash but cannot introduce a ratio error, so a gearbox
+does not need a precision centre distance to keep time. Part (b) confirms the unit system is
+cosmetic &mdash; \( P=6 \) per inch is \( m = 25.4/6 = 4.233 \) mm, close to the 4 mm pair, and
+the contact ratio comes out at 1.611 against 1.635, the small difference coming from 18 and 36
+teeth rather than 20 and 40.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Conjugate action requires that the common normal at the point of tooth contact</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>be perpendicular to the line of centres</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>pass through a fixed pitch point on the line of centres</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>pass through the base circle centre</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>rotate uniformly through the mesh</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>That is the law of gearing, and it is what makes the angular-velocity ratio
+constant instant by instant rather than merely on average. The involute satisfies it by keeping
+the contact normal along one fixed straight line, the line of action, tangent to both base
+circles &mdash; so the direction of the tooth force, and hence of the bearing load, never
+changes through the mesh.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Two gears will mesh correctly only if they share the same</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>number of teeth</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>module and pressure angle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>face width</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>material</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Module fixes tooth size and pressure angle fixes the flank shape, so any two
+involute gears with both in common will mesh &mdash; the involute is conjugate to itself, which
+is precisely why gears are stocked as catalogue items rather than cut in matched pairs. Tooth
+counts set the ratio and must differ for a reduction. Face width and material affect capacity,
+not whether the teeth engage.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A gear pair is computed to have a contact ratio of 0.94. This means</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it runs quietly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>one tooth pair leaves contact before the next enters, so the drive is not continuous</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>two pairs are always in contact</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the pinion is too large</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A contact ratio below 1 means there are instants with no tooth pair in
+contact at all: the drive breaks and re-engages every pitch, which is an impact load and, in the
+strict sense, not a gear drive. Above 1 the mesh is continuous, and the fractional part gives
+the proportion of time a second pair is sharing the load &mdash; 63.5% for the worked pair at
+1.635. Practice wants at least 1.2, and more for quiet running.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Interference in a gear pair physically</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increases the contact ratio</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>produces backlash</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>gouges material from the pinion flank below its base circle, weakening the root</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>raises the operating pressure angle</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>There is no involute inside the base circle, so a mating tip that reaches
+below it cannot roll conjugately &mdash; it digs. In cutting this shows as undercutting by the
+hob, which thins the tooth root exactly where the bending stress is highest; in a running pair
+it shows as scoring. It is avoided by keeping the pinion above \( 2k/\sin^2\phi \) teeth, by
+profile shift, or by a shorter addendum.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Moving to a 25&#176; pressure angle from 20&#176; allows a smaller pinion. The
+principal penalty is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the speed ratio changes</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a higher radial separating force on the bearings and a lower contact ratio</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the module must change</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>backlash becomes impossible to control</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The tooth force acts along the line of action, so its radial component goes
+as \( \tan\phi \): moving from 20&#176; to 25&#176; raises the separating load by
+\( \tan 25^\circ/\tan 20^\circ = 1.28 \), a 28% increase carried by the bearings and the shafts.
+The length of action also shortens relative to the base pitch, so the contact ratio falls and
+the mesh runs less smoothly. The ratio and the module are untouched &mdash; those depend on
+tooth counts and tooth size.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A gearbox housing is bored 1 mm wide, opening a 120 mm centre distance to 121 mm.
+The speed ratio</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increases slightly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>decreases slightly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>is unchanged, because it is set by the base circles</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>becomes non-uniform through the mesh</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The base circles were cut into the metal and do not move, and the line of
+action stays tangent to both, so the ratio remains exactly \( N_2/N_1 \). What does change is
+the operating pressure angle (20&#176; to 21.26&#176; here), the contact ratio (1.635 to 1.395)
+and the backlash (0.73 mm). That insensitivity of ratio to centre distance is the involute's
+great manufacturing advantage.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Backlash in a gear pair is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>always a defect to be eliminated</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>necessary for lubricant film and thermal growth, and controlled rather than removed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the same as the contact ratio</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>caused only by tooth wear</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Zero backlash means the teeth are pinched: no room for an oil film, no room
+for the housing and gears to grow at different rates, and a jammed drive at temperature. Some is
+therefore designed in, by tooth-thickness allowance or by centre distance, and specified with a
+tolerance. It matters most in reversing and positioning drives, where the lost motion at
+reversal is the backlash, and there it is minimised with anti-backlash arrangements rather than
+by removing the clearance.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Pure rolling between two involute teeth occurs</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>everywhere along the flank</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>only at the pitch point</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>only at the tooth tip</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nowhere &mdash; the contact is pure sliding</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At the pitch point the two flanks have equal velocities, so there is rolling
+alone; that point is the instant centre of the two gears. Away from it the contact slides, with
+the sliding velocity growing toward tip and root. That is why scuffing and pitting appear on the
+flanks above and below the pitch line rather than on it, and why the pitch line is often the
+last polished band on a worn tooth.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the replacement pinion that would not run quietly.</b> A drive pinion
+was replaced on a gearbox after a bearing failure. The new pinion had the correct tooth count and
+the correct module, the gears meshed, and the ratio was verified on the shafts. The unit ran, but
+noisily, and a vibration survey found a strong component at tooth-passing frequency that had not
+been there before.</p>
+<p>The pinion had been supplied at 25&#176; pressure angle in place of the original 20&#176;.
+Nothing in a quick check catches this: module and tooth count fix the pitch diameters, so the
+centre distance still fits and the shafts still turn at the right ratio. What changes is the
+flank shape. Two gears of different pressure angle are not conjugate to each other, so contact
+no longer holds a fixed line of action, the ratio fluctuates within each pitch, and the
+fluctuation appears exactly at tooth-passing frequency. The steeper pinion also raises the
+radial separating force by \( \tan 25^\circ/\tan 20^\circ = 1.28 \), which is 28% more load into
+the bearing that had just been replaced.</p>
+<p>Two practices follow. Pressure angle belongs on the spares specification alongside module and
+tooth count &mdash; three numbers, not two, and the third is the one that cannot be measured with
+a caliper on the shop floor. And a noise complaint that arrives with a new component is a
+geometry question first: a spectrum peaking at tooth-passing frequency points at the mesh itself,
+not at the bearings, and the mesh is defined by the pair's shared geometry rather than by either
+gear alone.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.01379\\ \\mathrm{psi}\\)", "\\(290.1\\ \\mathrm{psi}\\)", "\\(2901\\ \\mathrm{psi}\\)", "\\(29.01\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(2 \\times 145 = 290.1\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1379\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(2.901e+04\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(290.1\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(20 \times 145 = 2901\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{J}\\). In CGS units, this is closest to:&lt;/p>", "choices": ["\\(3e+08\\ \\mathrm{erg}\\)", "\\(3e-07\\ \\mathrm{erg}\\)", "\\(3e+07\\ \\mathrm{erg}\\)", "\\(3e+06\\ \\mathrm{erg}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{J} = 1e+07\\ \\mathrm{erg}\\): \\(3 \\times 1e+07 = 3e+07\\ \\mathrm{erg}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{J}\). In CGS units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(4.5e+09\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(4.5e-06\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(4.5e+08\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.5e+07\ \mathrm{erg}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{J} = 1e+07\ \mathrm{erg}\): \(45 \times 1e+07 = 4.5e+08\ \mathrm{erg}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>

@@ -191,6 +191,24 @@ def term_index(lessons):
             t = normalise_term(term)
             if t and t not in first:
                 first[t] = n
+    # A lesson that uses a term throughout is teaching it, whatever lesson the
+    # glossary row happens to sit in: thermo-2 L1 works "superheat" eight times
+    # and defines it inline, while the glossary entry is in L5. Without this the
+    # gate reports the lesson that does the teaching.
+    for lid in sorted(lessons, key=lambda k: int(k) if k.isdigit() else 999):
+        if not lid.isdigit():
+            continue
+        n = int(lid)
+        body = strip_html(lessons[lid].get("lecture") or "")
+        for q in lessons[lid].get("quiz") or []:
+            body += " " + strip_html(q.get("q") or "")
+            body += " " + strip_html(q.get("solution") or "")
+        low = re.sub(r"\s+", " ", body).lower()
+        for term, intro in list(first.items()):
+            if intro <= n:
+                continue
+            if len(re.findall(r"\b" + re.escape(term) + r"\b", low)) >= 3:
+                first[term] = n
     return first
 
 
@@ -205,6 +223,21 @@ def normalise_term(term):
     if t.split()[0] in {"problem", "solution", "answer", "sanity"}:
         return None
     return t
+
+
+# Naming the lesson that develops a term is the CORRECT fix, not a defect:
+# "a dislocation ... which Lesson 5 develops". Without this the gate penalises
+# exactly the edit it should be asking for.
+SIGNPOST = re.compile(
+    r"(lesson\s+\d+|next lesson|lessons? ahead|later in this course|"
+    r"in year \d|develops? (it|this)|takes? (it|this) up|comes? later|"
+    r"we (will|shall)|returns? to (it|this)|is the subject of)", re.I)
+
+
+def _sentence_around(text, match):
+    lo = max(text.rfind(".", 0, match.start()), text.rfind(";", 0, match.start()))
+    hi = text.find(".", match.end())
+    return text[(lo + 1 if lo >= 0 else 0):(hi if hi >= 0 else len(text))]
 
 
 def check_undeclared_forward(course_id, lessons, issues):
@@ -222,11 +255,15 @@ def check_undeclared_forward(course_id, lessons, issues):
         for term, intro in first.items():
             if intro <= here:
                 continue
-            if re.search(r"\b" + re.escape(term) + r"\b", low):
-                issues.append(
-                    ("b", course_id, here,
-                     f"uses {term!r}, which this course does not introduce "
-                     f"until Lesson {intro}"))
+            m = re.search(r"\b" + re.escape(term) + r"\b", low)
+            if not m:
+                continue
+            if SIGNPOST.search(_sentence_around(low, m)):
+                continue                      # introduced in place, or signposted
+            issues.append(
+                ("b", course_id, here,
+                 f"uses {term!r} unsignposted, which this course does not "
+                 f"introduce until Lesson {intro}"))
 
 
 # ---------------------------------------------------------------- (c)

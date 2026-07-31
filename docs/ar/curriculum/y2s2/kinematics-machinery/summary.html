@@ -72,7 +72,413 @@
   </div>
 </div>
 <article class="part tight sum-doc">
-<h2 class="sum-course" id="sum-kinematics-machinery">KDM 252 — Kinematics &amp; Dynamics of Machinery</h2><p class="ref-thin">This course is still in production — there is no authored content to compile yet.</p>
+<h2 class="sum-course" id="sum-kinematics-machinery">KDM 252 — Kinematics &amp; Dynamics of Machinery</h2>
+<p class="ref-thin">No recap is authored yet for lessons 10, 11 — read those lessons in full on the course page.</p>
+<section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 01 · Mechanisms and mobility</p><h3><span class="sum-n">Lesson 01</span>Mechanisms and mobility</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A link is a rigid body, a joint removes relative freedom, and a chain with one link fixed to
+earth is a mechanism.</li>
+<li>Lower pairs (pins, sliders) contact over a surface and remove two freedoms; higher pairs
+(cam, gear tooth) contact along a line and remove one.</li>
+<li>Kutzbach: \( M = 3(N-1) - 2j_1 - j_2 \). \( M=1 \) is a one-input mechanism, \( M=0 \) a
+structure, \( M&lt;0 \) over-constrained.</li>
+<li>The count ignores where the joints are, so special geometry &mdash; parallel or redundant
+links &mdash; can move while counting zero, and does so only while the tolerances hold.</li>
+<li>Grashof, \( s+\ell \le p+q \), decides whether any link can be driven by a continuously
+rotating motor.</li>
+<li>Which inversion you get depends on what is grounded: adjacent to the shortest gives a
+crank-rocker, the shortest itself gives a drag-link, opposite gives a double-rocker.</li>
+<li>Inversions preserve relative motion between links and change everything measured against
+ground &mdash; one slider-crank chain gives an engine, a quick-return and a hand pump.</li>
+<li>The transmission angle \( \mu \) grades a linkage: useful force goes as \( \sin\mu \), and
+\( \mu \) should stay above about 40&#176; through the whole cycle.</li>
+<li>The worked linkage is Grashof with \( M=1 \) and still poor: \( \mu \) falls to 29.0&#176;
+once per revolution, fixed by shortening the crank at the cost of stroke.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 01 · Mechanisms and mobility · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Rigid-body kinematics</b> (Dynamics L1) &mdash; a planar rigid body has three degrees of
+freedom, the fact the whole mobility count is built on.</li>
+<li><b>Free-body reasoning</b> (Statics L2) &mdash; a two-force member carries load along its own
+line, which is why the transmission angle matters.</li>
+<li><b>Vector geometry</b> (Mathematics I) &mdash; the cosine rule, used here to find the
+transmission angle from link lengths alone.</li>
+<li><b>Constraint counting</b> (Statics L11) &mdash; the same subtract-what-is-removed argument
+that decides static determinacy decides mobility.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Mobility</td><td>\( M=3(N-1)-2j_1-j_2 \)</td><td>Any planar chain, before geometry is drawn.</td></tr>
+<tr><td>Lower pair</td><td>removes 2 freedoms</td><td>Pins and sliders &mdash; surface contact.</td></tr>
+<tr><td>Higher pair</td><td>removes 1 freedom</td><td>Cam-follower and gear-tooth contact &mdash; line contact.</td></tr>
+<tr><td>Grashof condition</td><td>\( s+\ell \le p+q \)</td><td>Deciding whether any link can be motor-driven.</td></tr>
+<tr><td>Crank-rocker</td><td>shortest link adjacent to ground</td><td>Rotation in, oscillation out.</td></tr>
+<tr><td>Double-crank</td><td>shortest link grounded</td><td>Both side links turn fully, at uneven rates.</td></tr>
+<tr><td>Transmission angle</td><td>\( \cos\mu=\frac{r_3^2+r_4^2-d^2}{2r_3r_4} \)</td><td>Grading a linkage; keep \( \mu\ge 40^\circ \) all cycle.</td></tr>
+<tr><td>Inversion</td><td>ground a different link</td><td>Same relative motion, different machine.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 02 · Position and velocity analysis</p><h3><span class="sum-n">Lesson 02</span>Position and velocity analysis</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Position analysis is one idea: walk round the closed chain as vectors and arrive back at the
+start, \( \sum r_ie^{i\theta_i}=0 \).</li>
+<li>Solve it as geometry, not algebra &mdash; locate the crank pin, measure \( d \) to the far
+pivot, then two cosine rules finish the triangle.</li>
+<li>Two roots exist, the open and crossed circuits; a built linkage lives in one and cannot
+change without being dismantled.</li>
+<li>A cosine argument outside \( \pm1 \) is not a rounding error &mdash; it means the linkage
+cannot be assembled at that crank angle.</li>
+<li>Differentiating the loop gives angular velocities linear in \( \omega_2 \): doubling the
+input doubles every velocity and changes no ratio.</li>
+<li>A negative \( \omega_3 \) is a direction. The coupler reverses within one crank revolution
+as a matter of course.</li>
+<li>A four-bar has \( 4(3)/2 = 6 \) instant centres; four are the pins, and Kennedy's collinearity
+theorem locates the other two.</li>
+<li>\( \omega_4/\omega_2 = |O_2I_{24}|/|O_4I_{24}| \) &mdash; a velocity ratio read off a drawing,
+which reproduced the analytical 0.3525 exactly and shares no arithmetic with it.</li>
+<li>The ratio varies through the cycle because \( I_{24} \) moves; here it runs from 0.0014 to
+0.838.</li>
+<li>Toggle positions &mdash; crank in line with coupler &mdash; set the rocker extremes
+(49.46&#176; to 114.62&#176;, a 65.17&#176; swing) and are where the output velocity passes
+through zero.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 02 · Position and velocity analysis · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Mobility and Grashof</b> (Lesson 1) &mdash; the assembly limit reappears here as a cosine
+rule with no solution.</li>
+<li><b>Rigid-body velocity</b> (Dynamics L4) &mdash;
+\( \mathbf{v}_B = \mathbf{v}_A + \boldsymbol{\omega}\times\mathbf{r}_{B/A} \), the relation the
+loop derivative encodes.</li>
+<li><b>Cosine rule</b> (Mathematics I) &mdash; the whole position solution, applied twice.</li>
+<li><b>Complex-number rotation</b> (Mathematics II) &mdash; \( e^{i\theta} \) as a rotation
+operator, which is what makes the loop equation compact.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Loop closure</td><td>\( \sum r_ie^{i\theta_i}=0 \)</td><td>Position analysis of any closed chain.</td></tr>
+<tr><td>Circuit</td><td>two roots of the cosine rule</td><td>Open or crossed; a built linkage stays in one.</td></tr>
+<tr><td>Coupler angular velocity</td><td>\( \omega_3=\frac{r_2\omega_2\sin(\theta_4-\theta_2)}{r_3\sin(\theta_3-\theta_4)} \)</td><td>Four-bar velocity, analytically.</td></tr>
+<tr><td>Rocker angular velocity</td><td>\( \omega_4=\frac{r_2\omega_2\sin(\theta_2-\theta_3)}{r_4\sin(\theta_4-\theta_3)} \)</td><td>Output speed at one instant.</td></tr>
+<tr><td>Instant centre</td><td>\( N(N-1)/2 \) of them</td><td>Six for a four-bar; four are the pins.</td></tr>
+<tr><td>Kennedy's theorem</td><td>three centres are collinear</td><td>Locating the two centres that are not joints.</td></tr>
+<tr><td>Velocity ratio</td><td>\( \omega_4/\omega_2=|O_2I_{24}|/|O_4I_{24}| \)</td><td>Checking an analytical result off a drawing.</td></tr>
+<tr><td>Toggle position</td><td>crank in line with coupler</td><td>Rocker extremes; output velocity passes through zero.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 03 · Acceleration analysis</p><h3><span class="sum-n">Lesson 03</span>Acceleration analysis</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Acceleration, not velocity, sets inertia loads: \( F=ma \) at the centre of mass and
+\( M=I_G\alpha \) about it.</li>
+<li>The scale is large &mdash; a 0.5 kg piston at 2500 m/s&#178; pushes 1250 N through its pin,
+255 times its own weight.</li>
+<li>Inertia forces go as \( \omega^2 \): a 20% speed rise means 44% more load, and it reverses
+twice per revolution, so it is a fatigue duty.</li>
+<li>Slider-crank exactly:
+\( a=-r\omega^2\left[\cos\theta+\frac{n^2\cos 2\theta+\sin^4\theta}{(n^2-\sin^2\theta)^{3/2}}\right] \),
+with \( n=L/r \).</li>
+<li>Two-term working form \( a \approx -r\omega^2(\cos\theta+\cos 2\theta/n) \): exact at both
+dead centres, worst error 3.2% at \( 90^\circ \) where the acceleration is small.</li>
+<li>The secondary term exists only because the rod is finite; its amplitude is \( 1/n \) of the
+primary and its frequency is twice crank speed.</li>
+<li>Linkage acceleration is the velocity loop differentiated again: a centripetal
+\( \omega^2r \) that is already known, plus a tangential \( \alpha r \) that carries the
+unknown.</li>
+<li>Constant input speed does not mean zero acceleration elsewhere &mdash; the worked four-bar
+gives \( \alpha_3=33.05 \) and \( \alpha_4=39.93 \) rad/s&#178; at \( \alpha_2=0 \).</li>
+<li>Coriolis \( 2\omega v_{\text{rel}} \) appears wherever sliding happens on a rotating member,
+perpendicular to the slot.</li>
+<li>It is easily the dominant term: in the worked block it was 24 of 27 m/s&#178; transverse, and
+omitting it gave an answer 58% low.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 03 · Acceleration analysis · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Velocity analysis</b> (Lesson 2) &mdash; the acceleration equations are the velocity
+equations differentiated once more, and reuse their results.</li>
+<li><b>Normal and tangential acceleration</b> (Dynamics L2) &mdash; \( v^2/\rho \) and
+\( dv/dt \), reappearing as \( \omega^2r \) and \( \alpha r \).</li>
+<li><b>Rotating reference frames</b> (Dynamics L6) &mdash; the source of the Coriolis term.</li>
+<li><b>Newton's second law</b> (Physics I) &mdash; why acceleration, not velocity, sets the
+force.</li>
+<li><b>Binomial expansion</b> (Mathematics I) &mdash; expanding
+\( \sqrt{n^2-\sin^2\theta} \) is what produces the two-term form.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Centripetal term</td><td>\( \omega^2 r \)</td><td>Always present on a rotating link; points at the centre.</td></tr>
+<tr><td>Tangential term</td><td>\( \alpha r \)</td><td>Present when the link's speed is changing.</td></tr>
+<tr><td>Coriolis term</td><td>\( 2\omega v_{\text{rel}} \)</td><td>Sliding along a rotating member; perpendicular to the slot.</td></tr>
+<tr><td>Rod ratio</td><td>\( n=L/r \)</td><td>Sets the size of the secondary term, \( 1/n \) of the primary.</td></tr>
+<tr><td>Primary component</td><td>\( -r\omega^2\cos\theta \)</td><td>Crank frequency; the dominant inertia load.</td></tr>
+<tr><td>Secondary component</td><td>\( -r\omega^2\cos 2\theta/n \)</td><td>Twice crank frequency; exists only for finite rod length.</td></tr>
+<tr><td>Acceleration polygon</td><td>vectors head to tail</td><td>Graphical solution and independent check.</td></tr>
+<tr><td>Inertia force</td><td>\( F=ma,\ M=I_G\alpha \)</td><td>Converting the kinematics into bearing loads (Lesson 7).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 04 · Cams</p><h3><span class="sum-n">Lesson 04</span>Cams</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A cam's profile is its displacement schedule made physical: complete freedom over the
+follower's motion, bought with a higher pair and its contact stress.</li>
+<li>Dwells are usually why a cam is chosen &mdash; no linkage holds an output exactly still for a
+finite part of the cycle.</li>
+<li>Every motion law delivers the same lift over the same rise; they differ only in the
+derivatives, and the derivatives break the machine.</li>
+<li>Uniform motion has the lowest peak velocity, \( h\omega/\beta \), and infinite acceleration
+at both ends &mdash; unusable in pure form.</li>
+<li>SHM: \( v_{\max}=\pi h\omega/2\beta \), \( a_{\max}=\pi^2h\omega^2/2\beta^2 \) &mdash; 0.628
+m/s and 39.48 m/s&#178; for the worked cam.</li>
+<li>Cycloidal: \( v_{\max}=2h\omega/\beta \), \( a_{\max}=2\pi h\omega^2/\beta^2 \) &mdash; 0.800
+m/s and 50.26 m/s&#178;, exactly \( 4/\pi \) times the harmonic values, always.</li>
+<li>Cycloidal still wins at speed: harmonic acceleration steps at both ends of the rise, which is
+infinite jerk and rings the follower train.</li>
+<li>Wear records the acceleration history &mdash; bands at the transitions indicate a
+discontinuity, even wear at mid-rise indicates an honest load.</li>
+<li>Pressure angle \( \tan\phi = (ds/d\theta)/(R_p+s) \), kept below about 30&#176;; the base
+circle is its control (29.7&#176; at \( R_p=25 \) mm falls to 16.0&#176; at 60 mm).</li>
+<li>The spring holds the higher pair together: \( F \ge ma_{\max} \), 78 N with margin here, and
+the requirement grows as \( \omega^2 \) whenever the machine is sped up.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 04 · Cams · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Higher pairs</b> (Lesson 1) &mdash; the cam-follower contact removes one freedom, which is
+what lets one input position a follower arbitrarily.</li>
+<li><b>Acceleration and inertia force</b> (Lesson 3) &mdash; the follower's acceleration is what
+the spring and the contact stress have to carry.</li>
+<li><b>Simple harmonic motion</b> (Physics I) &mdash; the projection argument behind the harmonic
+law and its derivatives.</li>
+<li><b>Differentiation of a specified displacement</b> (Mathematics I) &mdash; every result here
+is \( s(\theta) \) differentiated once and twice.</li>
+<li><b>Transmission angle</b> (Lesson 1) &mdash; the pressure angle is the same idea for a
+higher pair.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Motion law</td><td>\( s(\theta) \)</td><td>The specification; everything else is its derivative.</td></tr>
+<tr><td>Harmonic peak accel.</td><td>\( \pi^2h\omega^2/2\beta^2 \)</td><td>Low-speed cams; smallest peak of the smooth laws.</td></tr>
+<tr><td>Cycloidal peak accel.</td><td>\( 2\pi h\omega^2/\beta^2 \)</td><td>High-speed cams; \( 4/\pi \) times the harmonic peak.</td></tr>
+<tr><td>Jerk</td><td>\( da/dt \)</td><td>Infinite for harmonic at the rise ends; finite for cycloidal.</td></tr>
+<tr><td>Pressure angle</td><td>\( \tan\phi=\frac{ds/d\theta}{R_p+s} \)</td><td>Keep \( \le 30^\circ \) on a translating follower.</td></tr>
+<tr><td>Prime circle</td><td>\( R_p \)</td><td>The pressure-angle control: bigger cam, smaller angle.</td></tr>
+<tr><td>Follower jump</td><td>\( F_{\text{spring}} \ge ma_{\max} \)</td><td>Spring sizing; loss of contact destroys cams.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 05 · Gear tooth geometry</p><h3><span class="sum-n">Lesson 05</span>Gear tooth geometry</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>The law of gearing: the contact normal must pass through a fixed pitch point on the line of
+centres. Profiles that satisfy it are conjugate.</li>
+<li>The involute is conjugate to itself, so any two involute gears of the same module and
+pressure angle mesh &mdash; which is why gears are catalogue items.</li>
+<li>Its contact normal stays on one fixed line of action tangent to both base circles, so the
+tooth-force direction never changes through the mesh.</li>
+<li>\( m=d/N \), \( p=\pi m \), \( d_b=d\cos\phi \), \( C=m(N_1+N_2)/2 \); US customary uses
+\( P=N/d \) with \( m=25.4/P \).</li>
+<li>Contact ratio \( m_c=Z/p_b \) must exceed 1; the worked 20/40 pair at module 4 gives
+\( Z=19.31 \) mm, \( p_b=11.81 \) mm and \( m_c=1.635 \).</li>
+<li>The fractional part is the physics: two pairs share the load 63.5% of the time, one pair
+carries everything for the rest, and the stiffness step between them drives gear-mesh
+vibration.</li>
+<li>Interference is a tip gouging the flank below the base circle, where no involute exists;
+avoid it with \( N_{\min}=2k/\sin^2\phi \) &mdash; 31.9 at 14.5&#176;, 17.1 at 20&#176;, 11.2 at
+25&#176;.</li>
+<li>That curve is why 20&#176; is standard; 25&#176; buys smaller pinions at 28% more radial
+bearing load and less contact ratio.</li>
+<li>Opening the centre distance changes the operating pressure angle, the contact ratio
+(1.635 to 1.395 for +1 mm) and the backlash (0.73 mm) &mdash; but never the speed ratio.</li>
+<li>Backlash is required for lubricant and thermal growth: it is controlled, not
+eliminated.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 05 · Gear tooth geometry · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Higher pairs</b> (Lesson 1) &mdash; gear-tooth contact removes one freedom, the same
+class as the cam contact of Lesson 4.</li>
+<li><b>Instant centres</b> (Lesson 2) &mdash; the pitch point is the instant centre of the two
+gears, which is why the law of gearing is stated there.</li>
+<li><b>Rolling and sliding contact</b> (Dynamics L5) &mdash; pure rolling occurs only at the
+pitch point; everywhere else the flanks slide.</li>
+<li><b>Involute construction</b> (Mathematics I) &mdash; the unwinding-string curve and its
+tangent property.</li>
+<li><b>Contact stress</b> (Machine Design I L3) &mdash; what the tooth force does once the
+geometry has decided where it acts.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Module</td><td>\( m=d/N \)</td><td>Tooth size; two gears mesh only at equal module.</td></tr>
+<tr><td>Diametral pitch</td><td>\( P=N/d,\ m=25.4/P \)</td><td>US customary equivalent, teeth per inch.</td></tr>
+<tr><td>Base circle</td><td>\( d_b=d\cos\phi \)</td><td>The circle the involute is unwound from; fixed once cut.</td></tr>
+<tr><td>Base pitch</td><td>\( p_b=\pi m\cos\phi \)</td><td>Denominator of the contact ratio.</td></tr>
+<tr><td>Contact ratio</td><td>\( m_c=Z/p_b \)</td><td>Average tooth pairs in mesh; must exceed 1.</td></tr>
+<tr><td>Interference limit</td><td>\( N_{\min}=2k/\sin^2\phi \)</td><td>Smallest legal pinion; 17.1 at 20&#176;.</td></tr>
+<tr><td>Profile shift</td><td>hob withdrawn by \( xm \)</td><td>Legalising a pinion below \( N_{\min} \).</td></tr>
+<tr><td>Backlash</td><td>\( B \approx 2\Delta C\tan\phi \)</td><td>Consequence of opening the centre distance.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 06 · Gear trains</p><h3><span class="sum-n">Lesson 06</span>Gear trains</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Train value \( e = \pm\prod N_{\text{driving}}/\prod N_{\text{driven}} \), one sign change
+per external mesh; idlers cancel and only reverse direction.</li>
+<li>Compound trains multiply stage ratios: 51/17 then 76/19 gives 12:1, so 1750 rev/min in
+leaves at 145.83, with the intermediate shaft at 583.33.</li>
+<li>Torque multiplies by the ratio less the losses: \( 12\times0.97^2 = 11.29 \), and the missing
+6% is heat the casing must reject.</li>
+<li>Fixed-centre arithmetic fails for epicyclics because the planet centres move; the fix is to
+ride the carrier.</li>
+<li>Train equation \( e=(\omega_L-\omega_A)/(\omega_F-\omega_A) \), with \( e \) evaluated as if
+the carrier were fixed.</li>
+<li>Sun 20, planets 20, ring 60 (satisfying \( N_r=N_s+2N_p \)): ring held and sun at 1500 gives
+a carrier at 375 rev/min &mdash; \( 1+N_r/N_s = 4 \), not 3.</li>
+<li>The same set gives &#8722;500 rev/min at the ring with the carrier held, and 1:1 with any two
+members locked together.</li>
+<li>Planets spin at &#8722;750 rev/min, twice carrier speed and backwards &mdash; the speed the
+planet bearings actually see.</li>
+<li>Three planets share the torque, which is why an epicyclic set of a given rating is smaller;
+equal sharing needs a floating sun or ring.</li>
+<li>Gear-mesh frequency \( f = Nn/60 \): 495.8 Hz and 184.7 Hz for the two stages, 375 Hz for the
+planetary confirmed by two independent routes.</li>
+<li>\( \gcd(17,51)=17 \) means each pinion tooth meets only three gear teeth for life; 17/52 is a
+hunting pair and distributes wear, at a 1.9% change in ratio.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 06 · Gear trains · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Gear tooth geometry</b> (Lesson 5) &mdash; module, pressure angle and the contact-ratio
+fluctuation that becomes gear-mesh vibration here.</li>
+<li><b>Relative motion</b> (Lesson 2) &mdash; the train equation is an observer change onto the
+carrier, exactly the reasoning behind instant centres.</li>
+<li><b>Power and torque</b> (Physics I) &mdash; \( P=T\omega \), so a speed reduction is a torque
+multiplication less the losses.</li>
+<li><b>Frequency and rotational speed</b> (Electronics &amp; Sensors L9) &mdash; converting
+rev/min to Hz, and what a spectrum line means.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Train value</td><td>\( e=\pm\prod N_{\text{driving}}/\prod N_{\text{driven}} \)</td><td>Any fixed-centre train.</td></tr>
+<tr><td>Idler</td><td>cancels from the ratio</td><td>Simple trains; changes direction only.</td></tr>
+<tr><td>Compound train</td><td>stage ratios multiply</td><td>Large reductions in a small envelope.</td></tr>
+<tr><td>Train equation</td><td>\( e=\frac{\omega_L-\omega_A}{\omega_F-\omega_A} \)</td><td>Any epicyclic; \( e \) computed with the carrier fixed.</td></tr>
+<tr><td>Ring-held ratio</td><td>\( 1+N_r/N_s \)</td><td>The commonest planetary case &mdash; note the +1.</td></tr>
+<tr><td>Planet geometry</td><td>\( N_r=N_s+2N_p \)</td><td>Checking a planetary set is assemblable at all.</td></tr>
+<tr><td>Gear-mesh frequency</td><td>\( f=N\,n/60 \)</td><td>Naming a spectrum line before the machine runs.</td></tr>
+<tr><td>Hunting pair</td><td>\( \gcd(N_1,N_2)=1 \)</td><td>Distributing wear and damage over all teeth.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 07 · Static and inertia force analysis</p><h3><span class="sum-n">Lesson 07</span>Static and inertia force analysis</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>d'Alembert converts a moving link into a statics problem: add an inertia force
+\( -m\mathbf{a}_G \) and an inertia couple \( -I_G\alpha \) to its free body.</li>
+<li>The two combine into one equivalent offset inertia force, displaced by
+\( e = I_G\alpha/(ma_G) \) &mdash; 18.75 mm for the worked rod, and what splits the load between
+its two pins.</li>
+<li>A coupler is a two-force member, so its force acts along its own line and its moment about
+the rocker pivot is \( Fr_4\sin\mu \).</li>
+<li>The worked four-bar at \( \theta_2=60^\circ \) needs 767.4 N in the coupler and
+17.63 N&middot;m at the crank for 50 N&middot;m at the rocker.</li>
+<li>The power balance \( T_2\omega_2=T_4\omega_4 \) reproduces 17.63 N&middot;m exactly, sharing
+no arithmetic with the force route &mdash; use it every time.</li>
+<li>\( F=T_4/(r_4\sin\mu) \) makes the transmission angle a hardware cost: the same duty needs
+1148 N at \( \mu=29.0^\circ \) and 561 N at \( 82.3^\circ \), a factor of 2.05.</li>
+<li>That load cycles once per revolution &mdash; \( 854\pm294 \) N &mdash; so the pins are a
+fatigue and fretting problem, not a static bearing-pressure one.</li>
+<li>Inertia usually dominates: a 0.5 kg piston at 2500 m/s&#178; puts 1250 N through its pin,
+more than the entire static coupler force.</li>
+<li>Solve link by link, carrying pin forces along the chain; what emerges at the frame is the
+shaking force, and at the crank the shaking torque.</li>
+<li>Bearings are selected on the peak load and its direction, both of which move through the
+cycle; an average understates the duty and hides the reversal.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 07 · Static and inertia force analysis · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Acceleration analysis</b> (Lesson 3) &mdash; supplies \( \mathbf{a}_G \) and
+\( \alpha \) for every link, without which no force can be computed.</li>
+<li><b>Transmission angle</b> (Lesson 1) &mdash; reappears here as the divisor that sets the
+coupler force.</li>
+<li><b>Two-force members</b> (Statics L3) &mdash; why the coupler's force acts along its own
+line.</li>
+<li><b>Moment equilibrium</b> (Statics L2) &mdash; applied to a moving machine via
+d'Alembert.</li>
+<li><b>Fluctuating-load fatigue</b> (Machine Design I L4) &mdash; the pin load cycles once per
+revolution, so it is a Goodman problem.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Inertia force</td><td>\( -m\mathbf{a}_G \)</td><td>Added to a free body to make a moving link statically solvable.</td></tr>
+<tr><td>Inertia couple</td><td>\( -I_G\alpha \)</td><td>Needed whenever the link's angular velocity changes.</td></tr>
+<tr><td>Equivalent offset</td><td>\( e=I_G\alpha/(m a_G) \)</td><td>Replacing force plus couple with one displaced force.</td></tr>
+<tr><td>Coupler force</td><td>\( F=T_4/(r_4\sin\mu) \)</td><td>Static force in a four-bar from the output torque.</td></tr>
+<tr><td>Power balance</td><td>\( T_2\omega_2=T_4\omega_4 \)</td><td>Independent check on the crank torque.</td></tr>
+<tr><td>Shaking force</td><td>resultant on the frame</td><td>What the foundation feels; removed by balancing.</td></tr>
+<tr><td>Shaking torque</td><td>reaction at the crank</td><td>The fluctuating torque a flywheel smooths.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 08 · Clutches and brakes</p><h3><span class="sum-n">Lesson 08</span>Clutches and brakes</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Clutches and brakes are the same analysis &mdash; pressure distribution, friction,
+integration for torque. Only the destination of the energy differs.</li>
+<li>Uniform pressure describes a new, flat, rigid pair; uniform wear (\( pr \) constant)
+describes the run-in device and puts the peak pressure at the inner radius.</li>
+<li>\( T_{\text{wear}} = \mu F(D+d)/4 = 150.0 \) N&middot;m against
+\( T_{\text{pressure}} = 153.1 \) N&middot;m for the worked clutch &mdash; wear is lower and is
+the design value.</li>
+<li>Peak pressure differs far more than torque does: 0.212 MPa under wear against a uniform
+0.159 MPa, 33% higher on the lining.</li>
+<li>At a limiting pressure, torque is maximised at \( d = D/\sqrt3 = 0.577D \) &mdash; 144 mm for
+a 250 mm clutch.</li>
+<li>Band brake: \( T_1/T_2 = e^{\mu\theta} \), so 500 N on the slack side gives 2056 N tight and
+311 N&middot;m of torque at 270&#176; wrap.</li>
+<li>Wrap angle enters exponentially and radius linearly: going to 360&#176; adds 80% of torque
+where the same proportional radius increase adds 33%.</li>
+<li>A shoe is self-energizing when its friction moment aids the actuation, and self-locking when
+it equals it &mdash; and \( \mu \) rises when cold, wet or glazed, so the margin is a safety
+item.</li>
+<li>\( E = \tfrac12 I\omega^2 \) per engagement: 6169 J here, a harmless 2.7 K in a 5 kg disc,
+but 1028 W continuous at ten engagements a minute.</li>
+<li>Thermal duty, not torque, is usually the real limit; fade is the loop of heat lowering
+\( \mu \), which lengthens the slip, which adds heat.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 08 · Clutches and brakes · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Coulomb friction</b> (Statics L8) &mdash; \( F=\mu N \), integrated here over an area
+rather than applied at a point.</li>
+<li><b>Belt friction</b> (Statics L9) &mdash; \( T_1/T_2=e^{\mu\theta} \), used unchanged for
+the band brake.</li>
+<li><b>Rotational kinetic energy</b> (Dynamics L8) &mdash; \( \tfrac12 I\omega^2 \), the energy
+that becomes heat at every engagement.</li>
+<li><b>Specific heat</b> (Thermodynamics I) &mdash; converting that energy into a temperature
+rise.</li>
+<li><b>Contact pressure</b> (Machine Design I L3) &mdash; the limit the annulus proportions are
+chosen against.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Uniform wear</td><td>\( T=\mu F(D+d)/4 \)</td><td>Run-in clutch; the honest design assumption.</td></tr>
+<tr><td>Uniform pressure</td><td>\( T=\frac{\mu F}{3}\frac{D^3-d^3}{D^2-d^2} \)</td><td>New, rigid, flat surfaces only.</td></tr>
+<tr><td>Wear condition</td><td>\( pr = \) constant</td><td>Why pressure migrates inward with use.</td></tr>
+<tr><td>Optimum annulus</td><td>\( d=D/\sqrt3 \)</td><td>Maximum torque at a limiting pressure.</td></tr>
+<tr><td>Band brake</td><td>\( T_1/T_2=e^{\mu\theta} \)</td><td>Wrap angle enters exponentially, radius linearly.</td></tr>
+<tr><td>Self-energizing</td><td>friction moment aids actuation</td><td>Large torque from small force; watch the margin.</td></tr>
+<tr><td>Self-locking</td><td>friction moment equals actuation</td><td>Grabs with no applied force; usually a fault.</td></tr>
+<tr><td>Energy per engagement</td><td>\( E=\tfrac12 I\omega^2 \)</td><td>Thermal sizing; multiply by the engagement rate.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">KDM 252 · Lesson 09 · Flywheels and speed fluctuation</p><h3><span class="sum-n">Lesson 09</span>Flywheels and speed fluctuation</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A turning-moment diagram plots torque against crank angle; its area is work and its mean
+height is the motor duty.</li>
+<li>Punching a 20 mm hole in 10 mm of 350 MPa plate takes \( \pi dt\tau = 219.9 \) kN peak and
+about \( \tfrac12 Ft = 1100 \) J of work.</li>
+<li>At 30 strokes/min that is 550 W mean, while the demand during the punch is 1167 N&middot;m
+&mdash; 3.67 kW at the crank, 6.7 times the mean.</li>
+<li>\( \Delta E \) is the area between the curve and the mean line, here 935 J, equal to
+\( W(1-0.15) \) &mdash; two routes, same number.</li>
+<li>\( C_s=(\omega_{\max}-\omega_{\min})/\omega_{\text{mean}} \) is a specification: 0.2 for a
+crusher, 0.02 for machine tools, 0.003 for alternators.</li>
+<li>\( I = \Delta E/(C_s\omega^2) = 32.9\ \mathrm{kg\,m^2} \) on the 360 rev/min motor-side
+shaft &mdash; about 91 kg of rim at 0.6 m radius, against 4735 kg&middot;m&#178; on the 30 rev/min
+crank.</li>
+<li>Tightening \( C_s \) from 0.02 to 0.005 quadruples the inertia to 131.5 kg&middot;m&#178;;
+inertia buys smoothness linearly.</li>
+<li>Doubling the shaft speed quarters the inertia to 8.22 kg&middot;m&#178; &mdash; fit the wheel
+to the fastest shaft carrying the fluctuation.</li>
+<li>A flywheel governs fluctuation within a cycle; a governor sets the mean speed. They are
+different problems and different devices.</li>
+<li>Oversizing costs start-up time, starting current, rim stress (\( \sigma\propto\rho v^2 \))
+and gyroscopic couple &mdash; specify the loosest \( C_s \) the process allows.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">KDM 252 · Lesson 09 · Flywheels and speed fluctuation · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Work as an integral of torque</b> (Dynamics L8) &mdash; \( W=\int T\,d\theta \), which is
+why area on a turning-moment diagram is energy.</li>
+<li><b>Rotational kinetic energy</b> (Dynamics L8) &mdash; \( \tfrac12 I\omega^2 \), the store a
+flywheel draws on.</li>
+<li><b>Mass moment of inertia</b> (Dynamics L9) &mdash; \( I = mk^2 \), and why rim mass counts
+for so much more than hub mass.</li>
+<li><b>Shear strength in punching</b> (Manufacturing Processes I L6) &mdash; the source of the
+punch force and hence of the work per stroke.</li>
+<li><b>Shaking torque</b> (Lesson 7) &mdash; the fluctuating crank torque this lesson
+smooths.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Turning-moment diagram</td><td>\( T \) against \( \theta \)</td><td>Area is work; its mean height is the motor duty.</td></tr>
+<tr><td>Punch force</td><td>\( F=\pi d t\tau \)</td><td>Shearing a round slug; the peak, not the average.</td></tr>
+<tr><td>Work per stroke</td><td>\( W \approx \tfrac12 F t \)</td><td>Force builds and falls as the slug shears.</td></tr>
+<tr><td>Energy fluctuation</td><td>\( \Delta E \) = area above the mean line</td><td>Between successive crossings, summed.</td></tr>
+<tr><td>Coefficient of fluctuation</td><td>\( C_s=(\omega_{\max}-\omega_{\min})/\omega_{\text{mean}} \)</td><td>A specification: 0.2 for a crusher, 0.003 for an alternator.</td></tr>
+<tr><td>Flywheel inertia</td><td>\( I=\Delta E/(C_s\omega^2) \)</td><td>Sizing; note the inverse square in \( \omega \).</td></tr>
+<tr><td>Rim stress</td><td>\( \sigma \approx \rho v^2 \)</td><td>The burst-speed limit on any flywheel.</td></tr>
+</tbody></table></div></div></div></section>
 </article></div>
 </main>
 <footer class="nx-foot"><div class="in">
