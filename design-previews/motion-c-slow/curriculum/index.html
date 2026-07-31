@@ -5,14 +5,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FAF8F4">
 <title>Curriculum — MechEd</title>
-<meta name="description" content="48 courses, 528 lessons: the complete mechanical-engineering map from first principles to Industry 4.0; 264 at full depth.">
+<meta name="description" content="48 courses, 528 lessons: the complete mechanical-engineering map from first principles to Industry 4.0; 247 at full depth.">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="../assets/nx/logo.svg">
 <link rel="apple-touch-icon" href="../assets/nx/icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/nx/nexus.css?v=dc57f9c331">
+<link rel="stylesheet" href="../assets/nx/nexus.css?v=97c10d800f">
+<style id="mt-c">
+/* C — editorial: the old sheet lifts away fast, the new sheet settles onto the desk. */
+.appbar{view-transition-name:appbar}
+@keyframes mtc-lift{to{opacity:0}}
+@keyframes mtc-settle{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+::view-transition-old(root){animation:mtc-lift 0.96s ease-out both}
+::view-transition-new(root){animation:mtc-settle 0.24s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion: reduce){
+  .appbar{view-transition-name:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html.js .tabpanel.on{transition:opacity 1.76s ease,translate 1.76s cubic-bezier(.2,.7,.2,1)}
+  @starting-style{ html.js .tabpanel.on{opacity:0;translate:0 6px} }
+}
+
+.mt-tag{position:fixed;bottom:10px;inset-inline-start:10px;z-index:999;font:600 11px/1 var(--sans);
+color:var(--soft);background:var(--surface);border:1px solid var(--line-strong);
+border-radius:6px;padding:6px 9px;box-shadow:var(--shadow);pointer-events:none;opacity:.92}
+@media print{.mt-tag{display:none}}
+</style>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"a[target]"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 <header class="appbar">
@@ -67,9 +90,9 @@
   is a strict grid — 6 classes per semester, 11 lessons per class, 528 lessons — built
   as authored content, never as padding.</p>
   <div class="tracker">
-    <p class="small"><b>264 of 528</b> lessons at full teaching depth · 50% —
+    <p class="small"><b>247 of 528</b> lessons at full teaching depth · 47% —
     updated with every build. The rest are in production, in queue order.</p>
-    <div class="bar"><i style="width:50%"></i></div>
+    <div class="bar"><i style="width:47%"></i></div>
     <p class="small">Full depth = complete lecture + foundations + five-problem interactive
     quiz (or a Tier-1 lecture / Core-60 study guide).</p>
   </div>
@@ -263,7 +286,7 @@
 </section>
 <section class="semgroup" data-semgroup="y2s2">
   <div class="semgroup-head"><h3>Year 2 · Semester 2</h3><div class="rule"></div>
-  <span class="count">6 of 6 courses complete</span></div>
+  <span class="count">4 of 6 courses complete</span></div>
   <div class="course-grid">
 <a class="course-card" href="y2s2/thermo-2/index.html" data-sem="y2s2"
    data-key="y2s2/thermo-2" data-n="11">
@@ -306,7 +329,7 @@
   <span class="code">MET 204</span>
   <h4>Metrology &amp; Quality Control</h4>
   <p>Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit —…</p>
-  <span class="meta"><b>complete</b> · 11 lessons</span>
+  <span class="meta"><b>4 built</b> · 11 lessons</span>
   <span class="pbar"><i></i></span>
   <span class="pnote"></span>
 </a>
@@ -315,7 +338,7 @@
   <span class="code">MFG 254</span>
   <h4>Manufacturing Processes III — Sheet, Plastics &amp; Additive</h4>
   <p>The discrete-products half of manufacturing: sheet-metal working with springback treated properly, plastics…</p>
-  <span class="meta"><b>complete</b> · 11 lessons</span>
+  <span class="meta"><b>1 built</b> · 11 lessons</span>
   <span class="pbar"><i></i></span>
   <span class="pnote"></span>
 </a></div>
@@ -560,9 +583,9 @@
 <footer class="nx-foot"><div class="in">
   <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
   <nav><a href="../index.html">Home</a><a href="../about/index.html">About</a><a href="../mission/index.html">Mission</a><a href="../curriculum/index.html">Curriculum</a><a href="../reference/index.html">Resources</a><a href="../career/index.html">Career Paths</a><a href="../feedback/index.html">Feedback</a></nav>
-  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
   <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
 </div></footer>
-<script src="../assets/nx/nexus.js?v=dc57f9c331"></script>
-</body>
+<script src="../assets/nx/nexus.js?v=97c10d800f"></script>
+<div class="mt-tag">Treatment C — Paper Lay-down (8x slow capture rig)</div></body>
 </html>

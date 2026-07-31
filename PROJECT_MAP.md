@@ -1,7 +1,7 @@
 # PROJECT MAP — MechEd
 
-Live site: **https://nexuskw.github.io/** · Code home: `github.com/ilmshri/MechEd-Institute-of-Technology`
-Live-site repo: `github.com/nexuskw/nexuskw.github.io` (GitHub Pages source — one `git push origin main` updates both)
+Live site: **https://mechedkw.github.io/** · Code home: `github.com/ilmshri/Nexus-Institute-of-Technology`
+Live-site repo: `github.com/mechedkw/mechedkw.github.io` (GitHub Pages source — one `git push origin main` updates both)
 Local folder: `/Users/ilmshri/Social Media/nexus-institute`
 Companion guide: **[OWNER_MANUAL.md](OWNER_MANUAL.md)** — step-by-step editing instructions.
 
@@ -124,7 +124,7 @@ vector-only). Kept as archive; harmless either way.
 🔴 python3 nexus_build.py      (imports 🔴 build.py; copies 🔴 assets/nx + 🔴 nexus/logo.svg)
         │
         ▼
-🔴 docs/  ──git push──▶  https://nexuskw.github.io/  (GitHub Pages serves /docs)
+🔴 docs/  ──git push──▶  https://mechedkw.github.io/  (GitHub Pages serves /docs)
 ```
 
 Edit green → run the build → the build's own gates check your work → push → live.

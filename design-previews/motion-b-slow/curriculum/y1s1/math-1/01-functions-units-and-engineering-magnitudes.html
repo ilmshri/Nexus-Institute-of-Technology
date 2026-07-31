@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Functions, units, and engineering magnitudes — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="What a function is when its argument is a temperature or a flow rate. Unit discipline and dimensional homogeneity as the first error-check every engin">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=97c10d800f">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="mt-b">
+/* B — chrome holds still; the title you clicked travels into the page you land on. */
+.appbar{view-transition-name:appbar}
+.player .outline{view-transition-name:outline}
+::view-transition-old(root){animation-duration:1.12s;animation-timing-function:ease-out}
+::view-transition-new(root){animation-duration:1.76s;animation-timing-function:ease-in-out}
+::view-transition-group(*){animation-duration:0.24s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion: reduce){
+  .appbar,.player .outline{view-transition-name:none}
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html.js .tabpanel.on{transition:opacity 1.76s ease,translate 1.76s cubic-bezier(.2,.7,.2,1)}
+  @starting-style{ html.js .tabpanel.on{opacity:0;translate:0 0px} }
+}
+
+.mt-tag{position:fixed;bottom:10px;inset-inline-start:10px;z-index:999;font:600 11px/1 var(--sans);
+color:var(--soft);background:var(--surface);border:1px solid var(--line-strong);
+border-radius:6px;padding:6px 9px;box-shadow:var(--shadow);pointer-events:none;opacity:.92}
+@media print{.mt-tag{display:none}}
+</style>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"a[target]"}}]},"eagerness":"moderate"}]}</script>
+</head>
+<body data-key="y1s1/math-1/1">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a><a href="../../../curriculum/index.html#year-3">Year 3</a><a href="../../../curriculum/index.html#year-4">Year 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/math-1/01-functions-units-and-engineering-magnitudes.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol cur" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 01 of 11 · Year 1 · Semester 1</p>
+  <h1 style="view-transition-name:lesson-t-01">Functions, units, and engineering magnitudes</h1>
+  <p class="sub">What a function is when its argument is a temperature or a flow rate. Unit discipline and dimensional homogeneity as the first error-check every engineer owns. Orders of magnitude and sanity estimates.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/hIAdCTNi1S8" title="Treating Units Algebraically and Dimensional Analysis" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Treating Units Algebraically and Dimensional Analysis <span class="src">Khan Academy</span></figcaption></figure></div><div class="vh-bar"><span class="n">Treating Units Algebraically and Dimensional Analysis</span><span class="c">KHAN ACADEMY</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must every term of a physical equation share the same dimensions, and what error does this catch first?</li><li>A pump's flow is 'about 100' — cubic metres per hour or per day? Show how an order-of-magnitude check settles it.</li></ul></div><div class="measure">
+<h3>01 · Numbers that carry units</h3>
+<p>Engineering mathematics begins one step before calculus: every quantity you will ever
+differentiate or integrate carries a <em>unit</em>, and the units obey algebra just as the
+numbers do. When a pump curve says head is 42 m, that number is meaningless until you know it
+multiplies through the hydraulic-power relation \( P = \rho g Q H \) to give watts. Every letter in it is a named physical quantity: \( P \) is the power delivered to the fluid, \( \rho \) the fluid's density, \( g \) the acceleration due to gravity, \( Q \) the volumetric flow rate, and \( H \) the head the pump adds. Substitute the units of each and the result must come out in watts:</p>
+\[ [P] = \frac{\mathrm{kg}}{\mathrm{m}^3}\cdot\frac{\mathrm{m}}{\mathrm{s}^2}\cdot\frac{\mathrm{m}^3}{\mathrm{s}}\cdot \mathrm{m} = \frac{\mathrm{kg\,m^2}}{\mathrm{s}^3} = \mathrm{W} \tag{1} \]
+<p>Check the units first and half of all calculation errors die before they are born. This is
+the <em>dimensional analysis</em> discipline: both sides of any physical equation must carry
+identical dimensions, and arguments of \( \sin \), \( \ln \), \( e^x \) must be dimensionless.</p>
+<h3>02 · Functions as machine behavior</h3>
+<p>A function \( f(x) \) is a machine's behavior written down: give it a flow, it returns a
+pressure drop; give it a time, it returns a temperature. The pump curve \( H(Q) \), the motor
+torque curve \( T(\omega) \), the cooling curve \( T(t) \) — the whole plant is a library of
+functions. Domain matters physically: \( H(Q) \) exists only for \( Q \ge 0 \), and beyond
+runout flow the curve is not merely undefined but <em>forbidden</em>.</p>
+<h3>03 · Magnitudes and scales</h3>
+<p>An engineer estimates before calculating. Powers of ten are the estimating language:
+a 100 m³/h pump moves \(\sim\)28 L/s; a kilowatt is ten 100 W lamps; a bar is
+\(\sim\)10 m of water column. On the plant floor this means you can smell a wrong answer:
+if a small transfer pump computes to 300 kW, the arithmetic is wrong before you re-check it —
+the machine on the skid is the size of a suitcase, and suitcases don't dissipate 300 kW.</p>
+
+<h3>04 · The unit-check working method</h3>
+<p>Knowing that units must balance is not the same as having a method. Use this three-step
+protocol on every equation you meet, in this course and every one after it. <em>Step one:</em>
+write the equation symbolically and substitute <em>units</em>, not numbers — run the algebra on
+the units alone and confirm both sides match, exactly as equation (1) did for pump power.
+<em>Step two:</em> convert every input to base SI before any arithmetic: flows to m³/s,
+pressures to Pa, lengths to m. Most real-world calculation errors are unit errors, and most
+unit errors happen when kPa meets Pa or m³/h meets m³/s in the same line. <em>Step three:</em>
+after computing, translate the answer back into the working units of the trade — kW, bar,
+m³/h — and test it against an order-of-magnitude estimate before you write it down.</p>
+<p>Two traps deserve names. The <em>gauge trap:</em> gauge and absolute pressure differ by one
+atmosphere, and equations built on absolute pressure quietly fail when fed gauge readings.
+The <em>prefix trap:</em> a dropped factor of 1000 from k, M, or m survives every later step
+and grows more embarrassing the longer it lives. Scientific notation is the antidote — write
+\( 2.5\times10^5 \) Pa and exponents stay visible and checkable.</p>
+<p><strong>Closing.</strong> Units are algebra, functions are machine behavior, and
+order-of-magnitude sense is the cheapest error detector you will ever own. Every lesson that
+follows leans on all three.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Algebraic manipulation</b> — solving \( P=\rho g Q H \) for any one symbol.</li>
+<li><b>SI prefixes</b> — k, M, m, µ span nine orders of magnitude; conversion is exponent bookkeeping.</li>
+<li><b>Scientific notation</b> — \( 3.2\times10^4 \) beats 32000 for error-catching.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Dimensional homogeneity</td><td>\( [\mathrm{LHS}] = [\mathrm{RHS}] \)</td><td>Run on every equation before numbers go in; both sides must carry identical dimensions.</td></tr>
+<tr><td>Hydraulic power</td><td>\( P = \rho g Q H \)</td><td>Turning a pump duty (flow, head) into watts — with \( Q \) in m³/s, never m³/h.</td></tr>
+<tr><td>Pressure head</td><td>\( h = P/(\rho g) \)</td><td>Translating a pressure into a liquid column and back; 1 bar ≈ 10.2 m of water.</td></tr>
+<tr><td>Unit conversion</td><td>\( 1\ \mathrm{bar} = 100\ \mathrm{kPa} = 10^5\ \mathrm{Pa} \)</td><td>Moving between gauge readings, datasheets, and SI calculations without a factor-of-1000 slip.</td></tr>
+<tr><td>Function and domain</td><td>\( H = H(Q),\ Q \ge 0 \)</td><td>Reading curves as machine behavior; respect where the curve is physically forbidden.</td></tr>
+<tr><td>Order of magnitude</td><td>\( \sim 10^n \)</td><td>The first sanity screen of any computed answer — suitcase-sized machines don't dissipate megawatts.</td></tr>
+<tr><td>Dimensionless argument</td><td>\( \sin(\cdot),\ \ln(\cdot),\ e^{(\cdot)} \)</td><td>Whatever sits inside these functions must be a pure number.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Hydraulic and shaft power</b></p>
+<p><b>Problem.</b> A cooling-water pump at a Gulf petrochemical utility area delivers
+\( Q = 120\ \mathrm{m^3/h} \) of water against a total head \( H = 42\ \mathrm{m} \).
+Pump efficiency is 65%. <b>Given:</b> \( \rho = 1000\ \mathrm{kg/m^3},\ g = 9.81\ \mathrm{m/s^2} \).
+<b>Find:</b> hydraulic power and shaft power.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Convert flow: \( Q = 120/3600 = 0.0333\ \mathrm{m^3/s} \).
+(2) Hydraulic power: \( P_h = \rho g Q H = 1000 \times 9.81 \times 0.0333 \times 42 = 13.7\ \mathrm{kW} \).
+(3) Shaft power: \( P_s = P_h/\eta = 13.7/0.65 = 21.1\ \mathrm{kW} \).</p>
+<p><b>Answer:</b> \( P_h \approx 13.7\ \mathrm{kW},\ P_s \approx 21.1\ \mathrm{kW} \).
+<b>Sanity check:</b> a 22 kW motor frame on a 120 m³/h duty is entirely ordinary — had we
+forgotten the 3600, we'd have gotten 49 MW, a power-station number.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Unit conversion under pressure</b></p>
+<p><b>Problem.</b> A compressed-air header reads 6.0 bar(g). <b>Find:</b> the gauge pressure in
+kPa and psi, and the approximate equivalent water column.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( 6.0\ \mathrm{bar} = 600\ \mathrm{kPa} \).
+(2) \( 600 \times 0.145 = 87\ \mathrm{psi} \).
+(3) Water column: \( h = P/\rho g = 600{,}000 / (1000 \times 9.81) = 61.2\ \mathrm{m} \).</p>
+<p><b>Answer:</b> 600 kPa ≈ 87 psi ≈ 61 m H₂O. <b>Sanity check:</b> the 10 m-per-bar rule
+gives 60 m — our exact figure lands within 2%.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Scaling a transmitter signal</b></p>
+<p><b>Problem.</b> A level transmitter on a 2.5 m measuring range outputs a linear 4–20 mA signal: 0 m maps to 4 mA, 2.5 m maps to 20 mA. <b>Find:</b> the function \( L(I) \) converting current to level, the level at a reading of 11.2 mA, and the function's physical domain.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The span is 16 mA for 2.5 m, so \( L(I) = 2.5\,\dfrac{I - 4}{16} \) metres, with \( I \) in mA.
+(2) At \( I = 11.2 \): \( L = 2.5 \times 7.2/16 = 1.125\ \mathrm{m} \).
+(3) Domain: \( 4 \le I \le 20 \) mA — readings below 4 mA are not levels but fault signals, which is precisely why the live-zero convention exists.</p>
+<p><b>Answer:</b> \( L(I) = 2.5(I-4)/16 \); 1.125 m at 11.2 mA; domain 4–20 mA.
+<b>Sanity check:</b> 11.2 mA sits at \( 7.2/16 = 45\% \) of the current span, and 45% of 2.5 m is 1.125 m — the function agrees with the proportion.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A transfer pump delivers \( Q = 90\ \mathrm{m^3/h} \) of water (\( \rho = 1000\ \mathrm{kg/m^3} \)) against a total head \( H = 25\ \mathrm{m} \), with pump efficiency \( \eta = 75\% \). Taking \( g = 9.81\ \mathrm{m/s^2} \), what shaft power must the motor supply?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 4.6\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 6.1\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 8.2\ \mathrm{kW} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 29.4\ \mathrm{MW} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Convert the flow first: \( Q = 90/3600 = 0.025\ \mathrm{m^3/s} \), so the hydraulic power is \( P_h = \rho g Q H = 1000 \times 9.81 \times 0.025 \times 25 = 6.13\ \mathrm{kW} \), and the shaft power is \( P_s = P_h/\eta = 6.13/0.75 = 8.2\ \mathrm{kW} \). Efficiency divides rather than multiplies: the motor must supply more power than the water receives, which eliminates 4.6 kW (the classic multiply-by-\( \eta \) error) and 6.1 kW (efficiency ignored). The 29.4 MW figure comes from leaving \( Q \) in \( \mathrm{m^3/h} \) — an order-of-magnitude check rejects it at once, since a small transfer pump is not a power station.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>A tank cooling curve is modelled as \( T(t) = T_\infty + (T_0 - T_\infty)\,e^{-t/\tau} \), where \( t \) is time in seconds. What does dimensional homogeneity require of the constant \( \tau \)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \tau \) must carry units of seconds, so that the exponent \( t/\tau \) is dimensionless</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \tau \) must carry units of kelvin, to match the temperatures in the equation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \tau \) must be a pure number, since constants in physical equations are dimensionless</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tau \) may carry any units, because the exponential function converts them automatically</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The argument of \( e^x \) — like those of \( \sin \) and \( \ln \) — must be dimensionless, so \( \tau \) must share the dimension of \( t \): time. The kelvin answer commits the classic error of matching the constant to the equation's output units instead of to the argument it sits inside; the temperature dimensions are already balanced by the prefactor \( (T_0 - T_\infty) \). No function absorbs units, and constants in physical equations routinely carry dimensions — homogeneity is checked term by term and argument by argument.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A water pump moves \( 100\ \mathrm{m^3/h} \) against 30 m of head, with pump efficiency around 70%. Which shaft-power magnitude is plausible?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>about 120 W</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>about 12 kW</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>about 120 kW</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>about 1.2 MW</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Hydraulic power is \( \rho g Q H = 1000 \times 9.81 \times (100/3600) \times 30 \approx 8.2\ \mathrm{kW} \); dividing by the 0.70 efficiency gives ≈12 kW of shaft power. The 120 W and 1.2 MW answers are the classic unit slips — forgetting the 3600 in the flow conversion moves the result by exactly these factors. Order-of-magnitude sense is the fastest error detector: a pump this size is a two-person lift, not a power-station item.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A chilled-water line gauge reads \( 250\ \mathrm{kPa} \). Using \( \rho = 1000\ \mathrm{kg/m^3} \) and \( g = 9.81\ \mathrm{m/s^2} \), what height of water column does this pressure correspond to?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 25.5\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.025\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 2.55\ \mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 250\ \mathrm{m} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Convert to base units before substituting: \( h = P/(\rho g) = 250000/(1000 \times 9.81) = 25.5\ \mathrm{m} \). The rule of thumb that 1 bar is roughly 10 m of water confirms it: 250 kPa is 2.5 bar, hence about 25 m. The 0.025 m answer is the classic slip of feeding kPa into an SI formula without converting to Pa, and 250 m follows from misconverting 250 kPa into 25 bar — both fail the order-of-magnitude sanity check for a building chilled-water loop.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>An energy report lists a consumption of 3.6 MJ. What is that in kilowatt-hours?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>1.0 kWh</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>3.6 kWh</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.36 kWh</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>60 kWh</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>One kilowatt-hour is 1000 W sustained for 3600 s: \( 1000 \times 3600 = 3.6\times10^6\ \mathrm{J} = 3.6\ \mathrm{MJ} \) — so 3.6 MJ is exactly 1.0 kWh. Choosing 3.6 kWh treats MJ and kWh as the same unit with different labels, the classic energy-billing slip; the two differ by precisely the 3600 seconds in an hour.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette 1 — the suspicious kilowatt.</b> You arrive at a pump house during an energy
+audit and the datasheet claims a 15 kW motor delivers 260 m³/h at 35 m. Equation (1) says the
+water alone needs \( 1000 \times 9.81 \times 0.0722 \times 35 \approx 24.8\ \mathrm{kW} \) —
+more than the motor can give before efficiency. The datasheet is internally impossible; either
+the duty or the nameplate was transcribed wrong. Ten seconds of unit algebra just saved a
+warranty dispute.</p>
+<p><b>Vignette 2 — reading a foreign drawing.</b> A packaged unit arrives documented in psi and
+US gpm. Before the coordination meeting you convert the relief setting — 150 psi → 10.3 bar —
+and flag that the plant's 10 bar-rated header cannot legally receive it (ASME B31.3 pressure
+design basis). The catch costs one email now instead of a rework order later.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(13.72\\ \\mathrm{ft}\\)", "\\(147.6\\ \\mathrm{ft}\\)", "\\(1476\\ \\mathrm{ft}\\)", "\\(14.76\\ \\mathrm{ft}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9144\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(9.843\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.9843\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(3 \times 3.281 = 9.843\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{W}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.8046\\ \\mathrm{hp}\\)", "\\(4.474e+04\\ \\mathrm{hp}\\)", "\\(0.08046\\ \\mathrm{hp}\\)", "\\(0.008046\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{W} = 0.001341\\ \\mathrm{hp}\\): \\(60 \\times 0.001341 = 0.08046\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{W}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.06705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3729\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.006705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.0006705\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{W} = 0.001341\ \mathrm{hp}\): \(5 \times 0.001341 = 0.006705\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">All lessons · MTH 101</a><a href="02-limits-and-continuity.html">02 · Limits and continuity →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=97c10d800f"></script>
+<div class="mt-tag">Treatment B — Held Chrome, Threaded Titles (8x slow capture rig)</div></body>
+</html>

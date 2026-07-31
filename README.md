@@ -1,7 +1,7 @@
 # MechEd
 
 **Learn Mechanical Engineering from Scratch to Industry 4.0.**
-Live site: **https://nexuskw.github.io/**
+Live site: **https://mechedkw.github.io/**
 
 A textbook-sourced online mechanical-engineering curriculum for anyone,
 starting from zero background: the classic ME core (mathematics, mechanics,
@@ -36,7 +36,7 @@ never deploy from it directly.)
 
 ## Deploy
 
-GitHub Pages serves `main:/docs` at https://nexuskw.github.io/. After any
+GitHub Pages serves `main:/docs` at https://mechedkw.github.io/. After any
 content change:
 
 ```bash

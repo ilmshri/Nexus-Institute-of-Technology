@@ -60,7 +60,7 @@ git commit -m "describe what you changed"
 git push origin main
 #    this one command pushes to BOTH MechEd repos: the code home
 #    (ilmshri/MechEd-Institute-of-Technology) and the live-site repo
-#    (nexuskw/nexuskw.github.io). The live site updates ~1 minute later.
+#    (mechedkw/mechedkw.github.io). The live site updates ~1 minute later.
 ```
 
 ---

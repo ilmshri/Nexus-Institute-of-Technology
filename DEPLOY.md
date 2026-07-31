@@ -3,9 +3,9 @@
 The site is a fully static build committed to the repo. GitHub Pages serves the
 `docs/` folder of `main` directly — nothing runs on a server.
 
-- **Live URL:** https://nexuskw.github.io/
+- **Live URL:** https://mechedkw.github.io/
 - **Code home:** `github.com/ilmshri/MechEd-Institute-of-Technology` (origin fetch URL)
-- **Live-site repo:** `github.com/nexuskw/nexuskw.github.io` — GitHub Pages serves
+- **Live-site repo:** `github.com/mechedkw/mechedkw.github.io` — GitHub Pages serves
   the site from THIS repo (`main`, `/docs`); the Pages URL is bound to its name,
   so it must keep receiving pushes for the site to update
 - **Push config:** `origin` carries BOTH push URLs — one `git push origin main`
@@ -31,6 +31,6 @@ python3 -m http.server -d docs 8000    # → http://localhost:8000
 
 ## Verify after deploy
 
-Open https://nexuskw.github.io/curriculum/ and confirm the coverage counter and
+Open https://mechedkw.github.io/curriculum/ and confirm the coverage counter and
 your changed pages. If a push doesn't appear within ~2 minutes, check
 repo → Actions for the Pages build status.
