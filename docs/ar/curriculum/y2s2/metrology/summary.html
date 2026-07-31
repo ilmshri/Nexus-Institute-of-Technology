@@ -73,7 +73,7 @@
 </div>
 <article class="part tight sum-doc">
 <h2 class="sum-course" id="sum-metrology">MET 204 — Metrology &amp; Quality Control</h2>
-<p class="ref-thin">No recap is authored yet for lessons 03, 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
+<p class="ref-thin">No recap is authored yet for lessons 04, 05, 06, 07, 08, 09, 10, 11 — read those lessons in full on the course page.</p>
 <section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 01 · Measurement fundamentals</p><h3><span class="sum-n">Lesson 01</span>Measurement fundamentals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
 <ul>
 <li>Resolution is what the display can show, precision is agreement among repeats, bias is a
@@ -166,6 +166,53 @@ controlled rather than merely light.</li>
 <tr><td>Stack rule</td><td>clear the finest decimal first</td><td>Building a required length from fewest blocks.</td></tr>
 <tr><td>Ratchet / friction thimble</td><td>&mdash;</td><td>Fixes the measuring force so contact deformation is repeatable.</td></tr>
 <tr><td>Comparator</td><td>indicator + stand + block</td><td>Micrometre-level work by difference, not absolutely.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MET 204 · Lesson 03 · Uncertainty and calibration</p><h3><span class="sum-n">Lesson 03</span>Uncertainty and calibration</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Uncertainty is a computed interval, not a mistake or a tolerance; a result without one cannot
+be used for a decision.</li>
+<li>Type A and Type B classify how a component was <em>evaluated</em> &mdash; by statistics, or by
+any other means. It is not the random/systematic distinction.</li>
+<li>Convert to standard uncertainty first: \( s/\sqrt n \) for a mean, \( U/k \) from a
+certificate, \( a/\sqrt3 \) for a rectangular half-width.</li>
+<li>The worked micrometer budget: repeatability 0.327, resolution 0.289, temperature 0.166,
+block 0.100 &#181;m.</li>
+<li>\( u_c=\sqrt{\sum u_i^2}=0.477\ \mu\mathrm{m} \) and \( U=2u_c=0.95\ \mu\mathrm{m} \); the
+reported result is a \( -5.2\ \mu\mathrm{m} \) correction with that uncertainty.</li>
+<li>The bias is 5.5 times \( U \), so it is real and belongs corrected; a bias comparable with
+\( U \) would honestly be "none detected".</li>
+<li>Variance shares are the spending plan: 46.9% repeatability, 36.6% resolution, 12.1%
+temperature, 4.4% block.</li>
+<li>A ten-times-better block buys 2%; quadrupling the readings buys 19% and then leaves resolution
+dominant &mdash; rebuild the budget after every improvement.</li>
+<li>Guard banding pulls acceptance limits in by \( U \): a 21 &#181;m tolerance becomes a
+19.1 &#181;m band, protecting the customer and rejecting some good parts.</li>
+<li>A negative guard band means the measurement cannot support the decision &mdash; the 4:1 rule
+of Lesson 1 arriving from the other direction.</li>
+<li>An out-of-tolerance finding at calibration puts every measurement since the last good
+calibration in question, which is what records and intervals exist to bound.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MET 204 · Lesson 03 · Uncertainty and calibration · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Bias, precision and the standard error</b> (Lesson 1) &mdash; the ten readings reused here
+as the Type A component.</li>
+<li><b>Thermal error</b> (Lesson 1) &mdash; \( \Delta L=L\alpha\Delta T \), entering the budget as
+a temperature term.</li>
+<li><b>Instrument resolution</b> (Lesson 2) &mdash; which becomes a rectangular contribution
+rather than a rounding nuisance.</li>
+<li><b>Variance of a sum</b> (Engineering Statistics L4) &mdash; why independent contributions add
+in quadrature and not linearly.</li>
+<li><b>Normal and uniform distributions</b> (Engineering Statistics L3) &mdash; the source of the
+\( k=2 \) and \( \sqrt{3} \) divisors.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Type A evaluation</td><td>\( u=s/\sqrt{n} \)</td><td>Evaluated by statistics on repeats.</td></tr>
+<tr><td>Type B evaluation</td><td>certificates, specs, judgement</td><td>Evaluated by any other means &mdash; not "systematic".</td></tr>
+<tr><td>Rectangular</td><td>\( u=a/\sqrt3 \)</td><td>Known only to lie within \( \pm a \); resolution, temperature bands.</td></tr>
+<tr><td>From a certificate</td><td>\( u=U/k \)</td><td>Undoing the coverage factor before combining.</td></tr>
+<tr><td>Combined uncertainty</td><td>\( u_c=\sqrt{\sum u_i^2} \)</td><td>Independent components, added in quadrature.</td></tr>
+<tr><td>Expanded uncertainty</td><td>\( U=ku_c \), \( k=2 \)</td><td>What is reported; about 95% coverage.</td></tr>
+<tr><td>Variance share</td><td>\( u_i^2/u_c^2 \)</td><td>The ranking that tells you what to fix.</td></tr>
+<tr><td>Guard band</td><td>accept within \( T-2U \)</td><td>Confident conformity decisions near a limit.</td></tr>
 </tbody></table></div></div></div></section>
 </article></div>
 </main>

@@ -76,7 +76,7 @@
   <p class="eyebrow">MET 204 · Lesson 03 of 11 · Year 2 · Semester 2</p>
   <h1>Uncertainty and calibration</h1>
   <p class="sub">Uncertainty budgets built from type A and B components. Calibration intervals and out-of-tolerance investigations. A micrometer calibration worked end to end.</p>
-  <div class="metachips"><span class="mchip">Format <b>Scope + sources (in production)</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>2 checkpoint questions</b></span></div>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
 </div>
 <div class="lesson-tools">
   <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/3">Mark as complete</button>
@@ -91,23 +91,234 @@
   <button data-tab="t-examples">Examples and Quiz</button>
   <button data-tab="t-library">Library</button>
 </div>
-<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="measure"><div class="preview"><b>After this lesson you can answer:</b><ul><li>Type A versus Type B uncertainty: what distinguishes them?</li><li>Out-of-tolerance found at calibration: what must the investigation cover?</li></ul></div><p class="queued-note">In production: the scope above defines the lesson; full teaching depth arrives with its course's authoring slot.</p></div></section>
-<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2>
-<div class="measure">
-  
-  <p>This lesson belongs to <b>MET 204 · Metrology &amp; Quality Control</b>
-  (Year 2 · Semester 2). It stands on the course's primary texts:</p>
-  <ul class="plain"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
-  <p class="small">Course context: Measurement you can defend: instruments, uncertainty, calibration, GD&amp;T verification, and the SPC toolkit — the quality half of a production engineer's day job.</p>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Type A versus Type B uncertainty: what distinguishes them?</li><li>Out-of-tolerance found at calibration: what must the investigation cover?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A bar chart of the components of a micrometer calibration uncertainty budget, in micrometres. Repeatability is the largest single contributor at 0.33, followed by display resolution at 0.29, temperature at 0.17 and the reference gauge block at 0.10. They combine in quadrature to 0.48, and the expanded uncertainty at a coverage factor of two is 0.95 micrometres."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">An uncertainty budget shows you what to fix</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12"></text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">standard uncertainty (&#181;m)</text><path d="M86 250 L90 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 205.2 L90 205.2" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="209.2" text-anchor="end" fill="#5B6672" font-size="11">0.25</text><path d="M86 160.5 L90 160.5" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="164.5" text-anchor="end" fill="#5B6672" font-size="11">0.50</text><path d="M86 115.7 L90 115.7" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="119.7" text-anchor="end" fill="#5B6672" font-size="11">0.75</text><path d="M86 71 L90 71" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="75" text-anchor="end" fill="#5B6672" font-size="11">1.00</text><rect x="106.6" y="191.5" width="36" height="58.5" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.6"/><text x="124.6" y="183.5" text-anchor="middle" fill="#3a6ea5" font-size="11">0.33</text><text x="124.6" y="266" text-anchor="middle" fill="#5B6672" font-size="11">repeat</text><rect x="175.8" y="198.3" width="36" height="51.7" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.6"/><text x="193.8" y="190.3" text-anchor="middle" fill="#3a6ea5" font-size="11">0.29</text><text x="193.8" y="266" text-anchor="middle" fill="#5B6672" font-size="11">resol.</text><rect x="244.9" y="220.3" width="36" height="29.7" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.6"/><text x="262.9" y="212.3" text-anchor="middle" fill="#3a6ea5" font-size="11">0.17</text><text x="262.9" y="266" text-anchor="middle" fill="#5B6672" font-size="11">temp.</text><rect x="314.1" y="232.1" width="36" height="17.9" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.6"/><text x="332.1" y="224.1" text-anchor="middle" fill="#3a6ea5" font-size="11">0.10</text><text x="332.1" y="266" text-anchor="middle" fill="#5B6672" font-size="11">block</text><rect x="383.3" y="164.6" width="36" height="85.4" fill="#c2820f33" stroke="#c2820f" stroke-width="1.6"/><text x="401.2" y="156.6" text-anchor="middle" fill="#c2820f" font-size="11">0.48</text><text x="401.2" y="266" text-anchor="middle" fill="#5B6672" font-size="11">combined</text><rect x="452.4" y="79.2" width="36" height="170.8" fill="#9c2f2f33" stroke="#9c2f2f" stroke-width="1.6"/><text x="470.4" y="71.2" text-anchor="middle" fill="#9c2f2f" font-size="11">0.95</text><text x="470.4" y="266" text-anchor="middle" fill="#5B6672" font-size="11">U, k=2</text><text x="100" y="46" fill="#3a6ea5" font-size="11">type A: 1 component</text><text x="250" y="46" fill="#5B6672" font-size="11">type B: 3 components</text><text x="392" y="46" fill="#9c2f2f" font-size="11">bias found +5.2 &#181;m</text></svg><figcaption>Four components, combined in quadrature to \( u_c = 0.48\ \mu\mathrm{m} \) and reported as \( U = 0.95\ \mu\mathrm{m} \) at \( k=2 \). The budget's real value is the ranking: repeatability contributes 47% of the variance and the certified block only 4%, so buying a better block would be money spent on the smallest term. Quadrupling the readings to 40 cuts \( U \) by only 19%, because once repeatability is beaten down the display's own resolution dominates &mdash; and no amount of repeating fixes that.</figcaption></figure>
+<h3>&#167;1 &middot; A result without an uncertainty is not a result</h3>
+<p>Lesson 1 ended on that claim; this lesson makes it operational. An <b>uncertainty</b> is the
+width of the interval that can reasonably be attributed to the measurand &mdash; not a mistake,
+not a tolerance, and not a guess. It is computed, and the computation is a budget: list everything
+that could move the answer, put a standard deviation on each, and combine them.</p>
+<p>The vocabulary trips people at the first step. <b>Type A</b> and <b>Type B</b> classify how a
+component was <em>evaluated</em>, not what kind of error it is. Type A means evaluated by
+statistics on repeated observations; Type B means evaluated by any other means &mdash; a
+calibration certificate, a manufacturer's specification, the resolution of a display, or
+documented judgement. A systematic effect can be Type A and a random one Type B. The distinction
+that people import from elsewhere, random versus systematic, is a different axis entirely and does
+not appear in the arithmetic.</p>
+
+<h3>&#167;2 &middot; Building the budget</h3>
+<p>Each component enters as a <b>standard uncertainty</b>, which is a standard deviation. Getting
+it there depends on what you know about the component.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; converting to standard uncertainty</span>
+<p>\[ u = \frac{s}{\sqrt{n}}\ \text{(mean of \(n\) repeats)},\qquad
+u = \frac{U}{k}\ \text{(certificate)},\qquad
+u = \frac{a}{\sqrt{3}}\ \text{(rectangular, half-width \(a\))} \]</p>
+<p>The rectangular divisor applies when a value is known only to lie within limits with no reason
+to prefer the middle &mdash; the usual case for a display resolution or a temperature band.</p></div>
+<p>Take the micrometer of Lesson 1, calibrated against the 25 mm block. Four components:</p>
+<ul>
+<li><b>Repeatability</b> (Type A): ten readings gave \( s = 1.03\ \mu\mathrm{m} \), and the
+result is their mean, so \( u = 1.03/\sqrt{10} = 0.327\ \mu\mathrm{m} \).</li>
+<li><b>Display resolution</b> (Type B): 1 &#181;m steps, so the true value lies within
+\( \pm0.5\ \mu\mathrm{m} \) of what is shown; rectangular, \( u = 0.5/\sqrt{3}
+= 0.289\ \mu\mathrm{m} \).</li>
+<li><b>Temperature</b> (Type B): the room is held to \( \pm1\ \mathrm{K} \), and
+\( 25\ \mathrm{mm}\times11.5\times10^{-6}\times1\ \mathrm{K} = 0.288\ \mu\mathrm{m} \) of
+half-width; rectangular, \( u = 0.166\ \mu\mathrm{m} \).</li>
+<li><b>Reference block</b> (Type B): certificate says \( U = 0.2\ \mu\mathrm{m} \) at
+\( k=2 \), so \( u = 0.10\ \mu\mathrm{m} \).</li>
+</ul>
+<div class="keybox"><span class="tag">Key relation &mdash; combining and expanding</span>
+<p>\[ u_c=\sqrt{\textstyle\sum u_i^2},\qquad U=k\,u_c\ \ (k=2 \approx 95\%) \]</p>
+<p>Independent components add in quadrature, so the largest dominates and the small ones almost
+vanish.</p></div>
+<p>\( u_c=\sqrt{0.327^2+0.289^2+0.166^2+0.100^2}=0.477\ \mu\mathrm{m} \), and
+\( U = 0.95\ \mu\mathrm{m} \). The calibration therefore reports a correction of
+\( -5.2\ \mu\mathrm{m} \) with an uncertainty of \( 0.95\ \mu\mathrm{m} \) at \( k=2 \).</p>
+
+<h3>&#167;3 &middot; Reading the budget, which is the point of writing it</h3>
+<p>The single number \( U \) is what goes on the certificate; the <em>ranking</em> is what the
+budget is actually for. Because components add in quadrature, their variance shares are what
+matter: repeatability 47%, resolution 37%, temperature 12%, block 4%.</p>
+<p>That ordering is a spending plan. Buying a block certified ten times better would improve
+\( u_c \) by less than a tenth of a per cent, because 4% of the variance cannot be worth much.
+Taking more readings attacks the biggest term &mdash; but quadrupling them to 40 only reduces
+\( U \) from 0.95 to 0.77 &#181;m, a 19% gain for four times the work, because
+\( s/\sqrt{n} \) improves as a square root and the display's resolution is waiting underneath at
+0.289 &#181;m. Beyond that point the only remaining moves are a finer display or a different
+instrument.</p>
+<p>The budget also settles whether the bias is real. The measured offset is 5.2 &#181;m against an
+expanded uncertainty of 0.95 &#181;m &mdash; a factor of 5.5 &mdash; so it is not an artefact of
+the calibration, and it should be corrected rather than ignored. Had the bias come out at, say,
+0.6 &#181;m, the honest statement would have been that no bias was detected at this
+uncertainty.</p>
+
+<h3>&#167;4 &middot; From certificate to decision: intervals, guard bands, and the bad day</h3>
+<p>Calibration is not an event but a cycle. The <b>interval</b> is set by how the instrument
+actually behaves &mdash; its drift history, how hard it is used, and what it decides &mdash; not by
+a number copied from a supplier's leaflet. Instruments that pass comfortably every time earn a
+longer interval; one that drifts earns a shorter one, and the evidence for either is the
+calibration history.</p>
+<p>Using the certificate to accept a part introduces a second decision. A measured value sitting
+exactly on the tolerance limit is a coin toss, because the uncertainty straddles it. A
+<b>guard band</b> resolves this by accepting only within limits pulled in by \( U \): on a
+21 &#181;m tolerance with \( U = 0.95 \), accepting only within \( 21 - 2(0.95) = 19.1\ \mu\mathrm{m} \)
+of band gives a confident pass, at the cost of rejecting some good parts. Which risk to carry is a
+commercial decision, and it belongs written down in a decision rule rather than settled
+per-inspector.</p>
+<p>Finally, the case everyone hopes to avoid. When an instrument is found <b>out of tolerance</b>
+at calibration, the problem is not the instrument &mdash; it is every measurement made with it
+since the last good calibration, all of which are now suspect. That is why calibration records
+identify which instrument measured what, and why the interval matters commercially: it bounds how
+much work an out-of-tolerance finding puts back in question. A shop that cannot answer "what did
+this gauge measure since March" has a records problem that a calibration contract does not
+solve.</p>
 </div></section>
-<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2>
-<div class="measure">
-  <p>The five-problem interactive quiz for this lesson is in production. Until
-  it lands, use the lesson's checkpoint questions as practice prompts —
-  attempt them from the cited source before reading on:</p>
-  <div class="preview"><b>Practice prompts — solutions not yet published:</b>
-  <ul><li>Type A versus Type B uncertainty: what distinguishes them?</li><li>Out-of-tolerance found at calibration: what must the investigation cover?</li></ul></div>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bias, precision and the standard error</b> (Lesson 1) &mdash; the ten readings reused here
+as the Type A component.</li>
+<li><b>Thermal error</b> (Lesson 1) &mdash; \( \Delta L=L\alpha\Delta T \), entering the budget as
+a temperature term.</li>
+<li><b>Instrument resolution</b> (Lesson 2) &mdash; which becomes a rectangular contribution
+rather than a rounding nuisance.</li>
+<li><b>Variance of a sum</b> (Engineering Statistics L4) &mdash; why independent contributions add
+in quadrature and not linearly.</li>
+<li><b>Normal and uniform distributions</b> (Engineering Statistics L3) &mdash; the source of the
+\( k=2 \) and \( \sqrt{3} \) divisors.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Type A evaluation</td><td>\( u=s/\sqrt{n} \)</td><td>Evaluated by statistics on repeats.</td></tr>
+<tr><td>Type B evaluation</td><td>certificates, specs, judgement</td><td>Evaluated by any other means &mdash; not "systematic".</td></tr>
+<tr><td>Rectangular</td><td>\( u=a/\sqrt3 \)</td><td>Known only to lie within \( \pm a \); resolution, temperature bands.</td></tr>
+<tr><td>From a certificate</td><td>\( u=U/k \)</td><td>Undoing the coverage factor before combining.</td></tr>
+<tr><td>Combined uncertainty</td><td>\( u_c=\sqrt{\sum u_i^2} \)</td><td>Independent components, added in quadrature.</td></tr>
+<tr><td>Expanded uncertainty</td><td>\( U=ku_c \), \( k=2 \)</td><td>What is reported; about 95% coverage.</td></tr>
+<tr><td>Variance share</td><td>\( u_i^2/u_c^2 \)</td><td>The ranking that tells you what to fix.</td></tr>
+<tr><td>Guard band</td><td>accept within \( T-2U \)</td><td>Confident conformity decisions near a limit.</td></tr>
+</tbody></table></div>
 </div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>A micrometer calibration budget, end to end</b></p>
+<p><b>Problem.</b> Build the uncertainty budget for the Lesson 1 calibration. The components are:
+repeatability, \( s = 1.03\ \mu\mathrm{m} \) over ten readings, the result being their mean;
+display resolution 1 &#181;m; room temperature held to \( \pm1\ \mathrm{K} \) on a 25 mm steel
+block (\( \alpha = 11.5\times10^{-6}\ \mathrm{K^{-1}} \)); and a reference block certified at
+\( U = 0.2\ \mu\mathrm{m} \), \( k=2 \). Find each standard uncertainty, the combined and expanded
+uncertainty, and state the reported result given a measured bias of \( +5.2\ \mu\mathrm{m} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Repeatability, Type A:
+\( u_1 = s/\sqrt{n} = 1.03/\sqrt{10} = 0.327\ \mu\mathrm{m} \).</p>
+<p>(2) Resolution, Type B, rectangular with half-width 0.5 &#181;m:
+\( u_2 = 0.5/\sqrt{3} = 0.289\ \mu\mathrm{m} \).</p>
+<p>(3) Temperature, Type B: half-width
+\( 25(11.5\times10^{-6})(1) = 0.2875\ \mu\mathrm{m} \), rectangular, so
+\( u_3 = 0.2875/\sqrt{3} = 0.166\ \mu\mathrm{m} \).</p>
+<p>(4) Reference block, Type B: \( u_4 = U/k = 0.2/2 = 0.100\ \mu\mathrm{m} \).</p>
+<p>(5) \( u_c = \sqrt{0.327^2+0.289^2+0.166^2+0.100^2}
+= \sqrt{0.1069+0.0834+0.0276+0.0100} = \sqrt{0.2278} = 0.477\ \mu\mathrm{m} \).</p>
+<p>(6) \( U = 2u_c = 0.95\ \mu\mathrm{m} \).</p>
+<p><b>Answer:</b> the micrometer requires a correction of \( -5.2\ \mu\mathrm{m} \), with an
+expanded uncertainty of \( 0.95\ \mu\mathrm{m} \) at \( k=2 \).
+<b>Sanity check:</b> the bias is 5.5 times the expanded uncertainty, so it is unambiguously real
+and belongs corrected rather than noted. Note also that the four components span a factor of only
+3.3 between largest and smallest, yet in quadrature the smallest contributes 4% of the variance
+against the largest's 47% &mdash; quadrature punishes small terms hard, which is why chasing them
+is almost always wasted effort.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>What should we spend money on?</b></p>
+<p><b>Problem.</b> Using the budget above, compute each component's share of the total variance.
+Then evaluate two proposals: (a) buy a reference block certified ten times better, and (b)
+increase the repeat count from 10 to 40. Give the new \( U \) in each case and say which is worth
+doing.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Variance shares, \( u_i^2/u_c^2 \) with
+\( u_c^2 = 0.2278 \):</p>
+<p>repeatability \( 0.1069/0.2278 = 46.9\% \); resolution \( 0.0834/0.2278 = 36.6\% \);
+temperature \( 0.0276/0.2278 = 12.1\% \); block \( 0.0100/0.2278 = 4.4\% \).</p>
+<p>(2) Proposal (a): a block ten times better gives \( u_4 = 0.010 \), so
+\( u_c = \sqrt{0.2278-0.0100+0.0001} = \sqrt{0.2179} = 0.4668 \) and \( U = 0.93\ \mu\mathrm{m} \)
+&mdash; a 2% improvement for a large cost.</p>
+<p>(3) Proposal (b): \( u_1 = 1.03/\sqrt{40} = 0.163 \), so
+\( u_c = \sqrt{0.0266+0.0834+0.0276+0.0100} = \sqrt{0.1476} = 0.384 \) and
+\( U = 0.77\ \mu\mathrm{m} \) &mdash; a 19% improvement for four times the measuring effort.</p>
+<p><b>Answer:</b> shares 46.9 / 36.6 / 12.1 / 4.4 per cent; the better block buys 2% and the extra
+readings buy 19%. Take the readings if either.
+<b>Sanity check:</b> the diminishing return in (b) is the instructive part. Quadrupling \( n \)
+halves only the repeatability term, and once it has fallen to 0.163 the display resolution at
+0.289 is the largest contributor &mdash; a term that no number of repeats can touch. A budget is
+worth rebuilding after any improvement, because the thing to fix next is rarely the thing you just
+fixed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Guard banding a conformity decision (with a US customary check)</b></p>
+<p><b>Problem.</b> A 25 mm feature carries a 21 &#181;m tolerance and is measured with the
+calibrated micrometer, \( U = 0.95\ \mu\mathrm{m} \). (a) Find the guard-banded acceptance band if
+both limits are pulled in by \( U \). (b) A part measures 0.4 &#181;m inside the upper limit
+&mdash; state the correct decision. (c) Give the guard-banded band in thousandths of an inch.
+(d) Say what changes if the same feature is inspected with the Lesson 2 caliper.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (a) Pulling each limit in by \( U \) removes \( 2U \) from
+the band: \( 21 - 2(0.95) = 19.1\ \mu\mathrm{m} \).</p>
+<p>(b) The part sits 0.4 &#181;m inside the limit, which is less than \( U = 0.95 \). It is inside
+the tolerance as measured but inside the guard band's rejected zone: conformity cannot be
+demonstrated, so under a guarded-acceptance rule it is not accepted.</p>
+<p>(c) \( 19.1\ \mu\mathrm{m} = 0.0191\ \mathrm{mm} \div 25.4 = 0.00075\ \mathrm{in} \), that is
+0.75 thou, against a 0.83 thou tolerance.</p>
+<p>(d) The caliper's worst-case Abbe error alone is 69.8 &#181;m &mdash; more than three times the
+whole tolerance. There is no guard band to compute: \( T - 2U \) would be negative, meaning no
+measured value could demonstrate conformity at all.</p>
+<p><b>Answer:</b> a 19.1 &#181;m acceptance band (0.75 thou); the part at 0.4 &#181;m inside is
+not accepted; with the caliper the decision is impossible.
+<b>Sanity check:</b> part (d) is the useful one. A negative guard band is the arithmetic telling
+you the measurement cannot support the decision being asked of it &mdash; the same verdict the
+4:1 rule gave in Lesson 1, arrived at from the other direction. Note also that guard banding
+protects the customer by rejecting some good parts; pushing the band outward instead protects the
+supplier and ships some bad ones. Neither is neutral, which is why the choice belongs in a written
+decision rule rather than in an inspector's judgement.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Type A and Type B uncertainty components are distinguished by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>random versus systematic effects</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>how the component was evaluated</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>whether they are large or small</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>whether they appear on a certificate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Type A means evaluated by statistics on repeated observations; Type B means
+evaluated by any other means &mdash; a certificate, a specification, a display resolution, or
+documented judgement. Random versus systematic is a different axis: a systematic effect can be
+evaluated statistically and a random one from a specification. Nothing in the combination
+arithmetic depends on the classification at all.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A display resolves to 1 &#181;m. Its contribution to the uncertainty budget is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 1\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.5\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 0.5/\sqrt{3} = 0.289\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>zero, since it is not an error</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The true value lies within half a count either side of what is shown, with no
+reason to prefer the middle, so it is a rectangular distribution of half-width 0.5 &#181;m and its
+standard uncertainty is \( a/\sqrt3 = 0.289\ \mu\mathrm{m} \). Using the half-width directly
+overstates it by 73%; using the full count overstates it by more than three times.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A certificate states \( U = 0.2\ \mu\mathrm{m} \) at \( k = 2 \). The standard
+uncertainty to enter in a budget is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 0.4\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.2\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 0.1\ \mu\mathrm{m} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.2/\sqrt3\ \mu\mathrm{m} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( u = U/k = 0.2/2 = 0.1\ \mu\mathrm{m} \). The coverage factor has to be
+undone before combining, because budgets combine <em>standard</em> uncertainties and are expanded
+only once at the end. Entering the expanded value directly double-counts the coverage factor and
+inflates the final \( U \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Independent uncertainty components are combined</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>by adding them</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>in quadrature, \( u_c=\sqrt{\sum u_i^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>by taking the largest</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>by averaging them</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Variances add for independent contributions, so the standard uncertainties add
+in quadrature. The practical consequence is that quadrature punishes small terms severely: in the
+worked budget the smallest component is only 3.3 times smaller than the largest, yet contributes
+4% of the variance against 47%. Taking the largest alone would understate \( u_c \) by about
+a third here.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>In the worked budget, repeatability contributes 47% of the variance and the reference
+block 4%. Buying a block ten times better would</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>reduce U by about 40%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>reduce U by about 2%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>reduce U by about 10%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>have no effect at all</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Removing almost all of a 4% share leaves
+\( u_c=\sqrt{0.2278-0.0100} = 0.467 \) against 0.477, so \( U \) falls from 0.95 to 0.93 &#181;m
+&mdash; about 2%. It is not literally zero, but it is money spent on the smallest term in the
+budget. That ranking is the main reason to write a budget rather than merely quote its
+total.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Quadrupling the number of repeat readings from 10 to 40 reduces the worked
+\( U \) from 0.95 to 0.77 &#181;m. The reason the gain is only 19% is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the readings were taken badly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( s/\sqrt{n} \) improves only as a square root, and the resolution term then dominates</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the coverage factor changes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>temperature drifts over a longer session</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Four times the readings halve the repeatability term, from 0.327 to 0.163
+&mdash; but the display resolution sits underneath at 0.289 and is untouched by repeating. Once
+the biggest term has been beaten below another, further effort on it buys almost nothing. Rebuild
+the budget after any improvement: what to fix next is rarely what you just fixed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A measured value sits 0.4 &#181;m inside a tolerance limit, with
+\( U = 0.95\ \mu\mathrm{m} \). Under a guarded-acceptance rule the part is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>accepted, since it is inside the limit</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>not accepted, because conformity cannot be demonstrated within the uncertainty</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>re-measured until it passes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>accepted with a concession automatically</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The uncertainty straddles the limit, so the measurement cannot demonstrate
+conformity. Guarded acceptance pulls the acceptance limits in by \( U \) &mdash; a 21 &#181;m
+tolerance becomes a 19.1 &#181;m acceptance band &mdash; and protects the customer at the cost of
+rejecting some genuinely good parts. Re-measuring until a favourable reading appears is not a
+decision rule; it is selecting from noise.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>An instrument is found out of tolerance at its calibration. The most serious
+consequence is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it must be replaced</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>its calibration interval must be shortened</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>every measurement made with it since the last good calibration is suspect</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the calibration laboratory must be audited</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The instrument can be adjusted or replaced in an afternoon; the work it has
+already passed cannot. Everything measured since the last good calibration is now in question,
+which is why records must link instruments to the parts they measured, and why the calibration
+interval is a commercial decision as well as a technical one &mdash; it bounds how much work an
+out-of-tolerance finding puts back on the table.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the better gauge block that changed nothing.</b> An inspection
+department was asked to tighten its measurement uncertainty and responded by replacing its
+reference gauge blocks with a grade certified an order of magnitude better. The purchase was
+substantial, the certificates were impressive, and the reported uncertainty on the department's
+calibrations barely moved.</p>
+<p>The budget said why, and the budget had never been written. Of the four components in a typical
+micrometer calibration &mdash; repeatability 0.327, resolution 0.289, temperature 0.166 and the
+block 0.100 &#181;m &mdash; the block contributed 4.4% of the variance. Removing almost all of it
+took \( u_c \) from 0.477 to 0.467 &#181;m and \( U \) from 0.95 to 0.93: a 2% improvement.
+Meanwhile repeatability at 46.9% and display resolution at 36.6% together held five-sixths of the
+variance, and neither had been touched. Quadrature is unforgiving that way &mdash; a component
+three times smaller than the leader carries a ninth of its weight.</p>
+<p>Two practices follow. Write the budget before spending: it is an afternoon's arithmetic and it
+ranks every possible improvement by what it would actually buy, which no supplier's datasheet
+does. And rebuild it after each change, because the ranking moves &mdash; in this budget, taking
+four times as many readings would have been the right first move, and would then have left display
+resolution as the largest term and a finer instrument as the only remaining option.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.248\\ \\mathrm{lbf}\\)", "\\(444.8\\ \\mathrm{lbf}\\)", "\\(224.8\\ \\mathrm{lbf}\\)", "\\(22.48\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(100 \\times 0.2248 = 22.48\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1798\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(35.59\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(8 \times 0.2248 = 1.798\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(21.76\\ \\mathrm{psi}\\)", "\\(1034\\ \\mathrm{psi}\\)", "\\(217.6\\ \\mathrm{psi}\\)", "\\(2.176\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(150 \\times 0.145 = 21.76\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(1.74\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(82.74\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.4\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.174\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(12 \times 0.145 = 1.74\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
 <section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
 <div class="lib-block lib-video">
   <h3>Lesson video</h3>
