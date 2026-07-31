@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
 """Author-side gates for the per-lesson "revision" blocks.
 
-⚠️ THIS IS NOT THE PAGE-FIT GATE. The owner's brief assigns
-design-previews/tools/qa_revision_fit.py to the DESIGN session; it measures
-real rendered height in the print layout and is the authority on whether a
-block fits one A4 page. That file does not exist yet, so this checker stands
-in for the part an author can verify WITHOUT a renderer:
+⚠️ THIS IS NOT THE PAGE-FIT GATE. design-previews/tools/qa_revision_fit.py is,
+and it now EXISTS: it renders every block through the real renderer with the
+real stylesheet, webfonts and typeset MathJax inside the exact A4 content box
+and measures rendered height. Word counts play no part in its verdict. Run it
+before every build; this file is the fast pre-check you run while writing.
 
-  1. Schema shape — the fields exist and are the right types.
-  2. Budget    — a prose-length estimate against the owner's stated
-                 320-420 words/sheet, with equations and table rows costed as
-                 vertical space. An ESTIMATE, deliberately conservative; it
-                 cannot see the real layout and must not be reported as if it
-                 could.
-  3. TERMS FIRST — the owner's rule 1, and the one gate here that is exact:
-                 no symbol may appear in a sheet or example unless it was
-                 declared in intro.terms. This catches the defect the rule
-                 exists to prevent, and a renderer would never catch it.
+What this one does that the fit gate cannot:
+
+  1. Schema shape — fields exist and are the right types.
+  2. Budget — a prose estimate, RECALIBRATED 2026-08-01 against the fit gate's
+     real measurements. It replaced a provisional 320-420 words/page guess.
+  3. TERMS FIRST — the owner's rule 1, exact: no symbol may appear in a sheet
+     or example unless intro.terms declared it. A renderer cannot check this,
+     and neither can a height measurement.
 
 Run from the repo root:  python3 drafts/qa_revision.py [content-json ...]
 """
@@ -35,10 +33,21 @@ COST_TABLE_ROW = 10
 COST_LIST_ITEM = 4
 COST_HEADING = 12
 
-BUDGET_SHEET = 420          # owner's stated upper bound
-BUDGET_WARN = 380
-BUDGET_EXAMPLE = 460        # examples run a little denser (steps, not prose)
-BUDGET_INTRO = 430
+# MEASURED CAPACITY (design session, 2026-08-01, via qa_revision_fit.py against
+# the real A4 content box of 673x986px). These replace the provisional 320-420
+# guess the authors had been working to.
+#   median page capacity ~330 word-equivalents
+#   tightest page        ~253 word-equivalents
+# A block over the median is very likely to overflow; one between the tightest
+# page and the median is in a band where only the real gate can rule. Fail at
+# the median, warn below it — the warn band means "the fit gate decides".
+PAGE_MEDIAN = 330
+PAGE_MIN = 253
+
+# The renderer emits TWO opening sheets — an opener (what + keypoints) and a
+# separate "Terms & signs" sheet — because the original combined intro page
+# measured 175% of A4. Each is a page and each is budgeted as one.
+MAX_TERMS_PER_SHEET = 12
 
 # LaTeX control words that are structure or operators, never a quantity the
 # student must have been introduced to.
@@ -94,7 +103,9 @@ def symbols_in(html):
     return out
 
 
-def check_lesson(name, lid, lesson, issues, lesson_title=None):
+def check_lesson(name, lid, lesson, issues, lesson_title=None,
+                 warnings=None):
+    warnings = [] if warnings is None else warnings
     rev = lesson.get("revision")
     if rev is None:
         return False
@@ -149,22 +160,31 @@ def check_lesson(name, lid, lesson, issues, lesson_title=None):
                 issues.append(f"{tag}: {kind}[{i}] title duplicates the lesson "
                               f"title {lesson_title!r} — contents page owns it")
 
-    # ---- budget (ESTIMATE — see module docstring)
-    intro_cost = (_words(what) + COST_LIST_ITEM * len(kp)
-                  + COST_TABLE_ROW * len(terms))
-    if intro_cost > BUDGET_INTRO:
-        issues.append(f"{tag}: intro ~{intro_cost} word-equivalents > "
-                      f"{BUDGET_INTRO} — split the terms table or trim keypoints")
-    for i, s in enumerate(sheets):
-        c = cost(s.get("body", "")) + COST_HEADING if isinstance(s, dict) else cost(s)
-        if c > BUDGET_SHEET:
-            issues.append(f"{tag}: sheet[{i}] ~{c} word-equivalents > "
-                          f"{BUDGET_SHEET} — split it, do not shrink type")
+    # ---- budget (estimate; qa_revision_fit.py is the authority)
+    def _report(label, c):
+        if c > PAGE_MEDIAN:
+            issues.append(f"{tag}: {label} ~{c} word-equivalents > median page "
+                          f"capacity {PAGE_MEDIAN} — split it, do not shrink type")
+        elif c > PAGE_MIN:
+            warnings.append(f"{tag}: {label} ~{c} is between the tightest page "
+                            f"({PAGE_MIN}) and the median ({PAGE_MEDIAN}) — "
+                            f"qa_revision_fit.py decides")
+
+    # opening sheet 1: opener
+    _report("intro opener", _words(what) + COST_LIST_ITEM * len(kp))
+    # opening sheet 2: terms & signs
+    if len(terms) > MAX_TERMS_PER_SHEET:
+        issues.append(f"{tag}: {len(terms)} terms — more than "
+                      f"{MAX_TERMS_PER_SHEET} will not fit one terms sheet")
+    _report("terms sheet", COST_TABLE_ROW * len(terms))
+    for i, sh in enumerate(sheets):
+        _report(f"sheet[{i}]",
+                cost(sh.get("body", "")) + COST_HEADING if isinstance(sh, dict)
+                else cost(sh))
     for i, e in enumerate(examples):
-        c = cost(e.get("body", "")) + COST_HEADING if isinstance(e, dict) else cost(e)
-        if c > BUDGET_EXAMPLE:
-            issues.append(f"{tag}: example[{i}] ~{c} word-equivalents > "
-                          f"{BUDGET_EXAMPLE} — move one example to its own page")
+        _report(f"example[{i}]",
+                cost(e.get("body", "")) + COST_HEADING if isinstance(e, dict)
+                else cost(e))
 
     # ---- TERMS FIRST (exact, and the reason this file exists)
     declared = " ".join(t.get("symbol", "") + " " + t.get("term", "")
@@ -203,21 +223,26 @@ def _titles_for(stem):
 def main(argv):
     files = [Path(p) for p in argv[1:]] or sorted(
         Path("data/content").glob("*.json"))
-    issues, seen, withrev = [], 0, 0
+    issues, warns, seen, withrev = [], [], 0, 0
     for p in files:
         data = json.loads(p.read_text(encoding="utf-8"))
         titles = _titles_for(p.stem)
         for lid in sorted((k for k in data if k.isdigit()), key=int):
             seen += 1
-            if check_lesson(p.stem, lid, data[lid], issues, titles.get(lid)):
+            if check_lesson(p.stem, lid, data[lid], issues, titles.get(lid),
+                            warns):
                 withrev += 1
+    for w in warns:
+        print("WARN:", w)
     for s in issues:
         print("FAIL:", s)
     print(f"\n{len(files)} file(s), {seen} lesson(s), {withrev} carrying "
-          f"revision blocks — {len(issues)} issue(s).")
-    print("NOTE: budget numbers are an ESTIMATE. The authoritative page-fit "
-          "gate is design-previews/tools/qa_revision_fit.py, owned by the "
-          "design session and NOT YET PRESENT.")
+          f"revision blocks — {len(issues)} issue(s), {len(warns)} warning(s).")
+    print(f"Budget calibrated to measured capacity: median {PAGE_MEDIAN}, "
+          f"tightest {PAGE_MIN} word-equivalents, max {MAX_TERMS_PER_SHEET} "
+          f"terms/sheet.")
+    print("The AUTHORITY is design-previews/tools/qa_revision_fit.py — run it "
+          "before every build; this is the fast pre-check.")
     return 1 if issues else 0
 
 
