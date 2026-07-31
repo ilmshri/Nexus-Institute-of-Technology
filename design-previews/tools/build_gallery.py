@@ -219,6 +219,23 @@ html.lift ::view-transition-new(sim-page){animation:simsettle .3s cubic-bezier(.
 .pr-logo svg{width:34px;height:34px}
 .pr-title{font:600 12.5px var(--serif)}
 .pr-rule{width:70%;height:1px;background:var(--gold)}
+/* ---------------- round 2 ---------------- */
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0}
+.fam .cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 16px;text-align:center}
+.fam .cell svg{max-width:100%;height:auto}
+.fam .role{font:600 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:10px}
+.fam .roledesc{font-size:13px;color:var(--soft);margin:4px 0 0}
+.meaning p{margin:0 0 12px;font-size:15px}
+.pivotfig{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:center;background:var(--sunken);border:1px solid var(--line);border-radius:9px;padding:16px;margin-top:6px}
+.pivotfig figcaption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:4px}
+.sw-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.sw{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font-size:12px;color:var(--soft)}
+.sw b{display:block;color:var(--ink);font-size:12.5px;margin-bottom:6px}
+.sw .chips{display:flex;gap:6px;margin-bottom:6px}
+.sw .chip{width:34px;height:22px;border-radius:5px;border:1px solid var(--line2)}
+.sw.us{outline:2px solid var(--gold);outline-offset:2px}
+details.r1{margin:18px 0;border:1px solid var(--line2);border-radius:9px;background:var(--surface);padding:4px 16px}
+details.r1 summary{font:600 14.5px var(--sans);padding:10px 0;cursor:pointer;color:var(--soft)}
 /* ---------------- photo section ---------------- */
 .duo-toggle{display:flex;gap:8px;margin:10px 0}
 .duo-toggle button{font:600 12.5px var(--sans);border:1px solid var(--line2);background:var(--surface);border-radius:7px;padding:8px 14px;cursor:pointer;min-height:40px}
@@ -307,68 +324,136 @@ footer{margin-top:44px;border-top:1px solid var(--line2);padding-top:16px;font-s
 </section>
 
 <section class="pane" id="pane-logo">
-  <h2>The mark</h2>
-  <p class="lede">Six candidates, all flat vector, all drawn only from colours already in the system, no text
-  elements (every letter is an outlined path — nothing depends on a font being installed). C1 is the mark you have
-  today, kept in the running as the control.</p>
+  <h2>The mark — round 2</h2>
+  <p class="lede">You chose the shield and the wordmark, without the Arabic line. Built here into one family —
+  at this register an identity is rarely a single image; it is a system: <b>the word wherever there is room, the
+  emblem wherever there isn't.</b> That is exactly how the institutions you named operate.</p>
+
+  <h3>What it actually means</h3>
+  <div class="card meaning">
+    <p><b>The word is the brand.</b> “MechEd” set in Source Serif 4 — the same face every lecture on the site is
+    printed in — makes the brand and the site one voice. You said the name looks nice: agreed, so it leads.
+    Everywhere a word fits (site header, documents, the homepage), the full wordmark appears.</p>
+    <p><b>The M exists only where a word cannot.</b> A favicon is 16 pixels; a home-screen icon about sixty. No
+    six-letter word is legible there — every institution solves this the same way: Harvard’s H shield, the Royal
+    Institution’s “Ri”, Yale’s Y. The single letter is not the identity; it is the identity’s <em>smallest coin</em>.</p>
+    <p><b>The shield says “teaching institution”.</b> Heraldry is the oldest, fastest-read signal of an academy —
+    it is why Harvard, Yale, Oxford and Cambridge all keep one. Ours is cut to one navy outline and one gold
+    keyline: the shape carries the meaning, no illustration inside.</p>
+    <p><b>The gold dot is a pivot.</b> In every mechanism drawing an engineer makes, the fixed pivot — the point
+    the machine turns about — is drawn as a small filled circle. One gold pivot under the M is the entire
+    discipline in one dot: <em>everything above turns on this point.</em> It is also the only place the champagne
+    gold touches the emblem, which keeps it precious. If the story still doesn’t land for you, the no-dot cut is
+    below — it loses meaning, not elegance.</p>
+    <div class="pivotfig">
+      <figure style="margin:0">
+      <svg viewBox="0 0 320 128" width="300" role="img" aria-label="Four-bar linkage with fixed pivots drawn as filled dots">
+        <line x1="34" y1="104" x2="130" y2="104" stroke="#DBD7CF" stroke-width="2"/>
+        <line x1="200" y1="104" x2="296" y2="104" stroke="#DBD7CF" stroke-width="2"/>
+        <g stroke="#9AA0B0" stroke-width="1.4">
+          <line x1="52" y1="104" x2="44" y2="116"/><line x1="66" y1="104" x2="58" y2="116"/>
+          <line x1="80" y1="104" x2="72" y2="116"/><line x1="94" y1="104" x2="86" y2="116"/>
+          <line x1="222" y1="104" x2="214" y2="116"/><line x1="236" y1="104" x2="228" y2="116"/>
+          <line x1="250" y1="104" x2="242" y2="116"/><line x1="264" y1="104" x2="256" y2="116"/>
+        </g>
+        <line x1="72" y1="100" x2="112" y2="34" stroke="#14294B" stroke-width="4" stroke-linecap="round"/>
+        <line x1="112" y1="34" x2="216" y2="48" stroke="#14294B" stroke-width="4" stroke-linecap="round"/>
+        <line x1="216" y1="48" x2="242" y2="100" stroke="#14294B" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="112" cy="34" r="4.5" fill="#FFFFFF" stroke="#14294B" stroke-width="2"/>
+        <circle cx="216" cy="48" r="4.5" fill="#FFFFFF" stroke="#14294B" stroke-width="2"/>
+        <circle cx="72" cy="100" r="5" fill="#CBA85F"/>
+        <circle cx="242" cy="100" r="5" fill="#CBA85F"/>
+        <text x="72" y="127" font-family="SSans,sans-serif" font-size="10.5" fill="#6E7688" text-anchor="middle">fixed pivot</text>
+        <text x="242" y="127" font-family="SSans,sans-serif" font-size="10.5" fill="#6E7688" text-anchor="middle">fixed pivot</text>
+      </svg>
+      <figcaption>How every engineer draws a mechanism: the filled dot is the fixed pivot.</figcaption>
+      </figure>
+      <figure style="margin:0;text-align:center"><span style="display:inline-block;width:84px">__R2SHD__</span>
+      <figcaption>The same point, under the M.</figcaption></figure>
+    </div>
+  </div>
+
+  <h3>The family</h3>
+  <div class="fam">
+    <div class="cell" style="grid-column:1/-1">__R2WM__<span class="role">Primary — the wordmark</span>
+      <p class="roledesc">Site header, homepage, documents, anywhere the full name fits. This is the identity.</p></div>
+    <div class="cell">__R2LOCK__<span class="role">Crest lockup</span>
+      <p class="roledesc">Formal contexts: certificates, partnership letters, the About page.</p></div>
+    <div class="cell">__R2STACK__<span class="role">Ceremonial stack</span>
+      <p class="roledesc">Print covers — the course-summary PDF title page.</p></div>
+    <div class="cell"><span style="display:inline-block;width:104px">__R2SHD__</span>
+      <span style="display:inline-block;width:104px">__R2SHN__</span><span class="role">The emblem — with and without the pivot</span>
+      <p class="roledesc">App icon, favicon, avatars, stamps — everywhere smaller than a word. Your call on the dot.</p></div>
+  </div>
+
+  <h3>In place</h3>
+  <div class="insitu">
+    <div class="ctx-grid">
+      <div class="ctx ctx-wide"><div class="ctx-label">Site header — the wordmark replaces logo-plus-text</div>
+        <div class="mock-appbar"><span class="brand-wm">__R2WMONLY__</span><span class="tagline">ENGINEERED TO INNOVATE</span>
+          <nav><span>Home</span><span>About</span><span class="on">Curriculum</span><span>Resources</span><span>Career Paths</span></nav>
+        </div></div>
+      <div class="ctx"><div class="ctx-label">Favicon · 16&nbsp;px</div>
+        <div class="mock-tab"><span class="f16">__R2SHD__</span><span class="tabtxt">MechEd — Curriculum</span></div></div>
+      <div class="ctx"><div class="ctx-label">Phone app icon</div>
+        <div class="ios-wrap"><span class="ios">__R2SHD__</span><span class="ioslbl">MechEd</span></div></div>
+      <div class="ctx"><div class="ctx-label">Maskable (Android crop)</div>
+        <div class="mask-wrap"><span class="maskable">__R2SHD__</span></div></div>
+      <div class="ctx"><div class="ctx-label">Printed summary cover</div>
+        <div class="mock-print" style="padding:18px 14px">__R2STACKSMALL__</div></div>
+    </div>
+    <p class="figcap" style="padding:8px 0 0">The winning emblem gets a dedicated full-bleed maskable export (opaque
+    cream square, shield inside the 80% safe zone) — the crop shown here is the honest raw test.</p>
+  </div>
+
+  <h3>Should the colours change? My honest answer: no.</h3>
+  <div class="card">
+    <p style="margin-top:0">Elite-university colour lives in <b>two families</b>: deep reds
+    (Harvard, MIT, Stanford, ASU’s maroon) and deep blues (Yale, Oxford, Cambridge, Berkeley, Michigan,
+    Georgia Tech). Navy-and-gold isn’t a compromise route into that company — it <b>is</b> that company, and the
+    closest palette to yours belongs to <b>Georgia Tech, a top-five engineering school</b>. Verified from the
+    universities’ own brand guidelines today:</p>
+    <div class="sw-strip">
+      <div class="sw us"><b>MechEd</b><span class="chips"><span class="chip" style="background:#14294B"></span><span class="chip" style="background:#CBA85F"></span></span>#14294B · #CBA85F</div>
+      <div class="sw"><b>Georgia Tech</b><span class="chips"><span class="chip" style="background:#051E39"></span><span class="chip" style="background:#B39051"></span></span>#051E39 · #B39051</div>
+      <div class="sw"><b>UC Berkeley</b><span class="chips"><span class="chip" style="background:#002676"></span><span class="chip" style="background:#FDB515"></span></span>#002676 · #FDB515</div>
+      <div class="sw"><b>Yale</b><span class="chips"><span class="chip" style="background:#00356B"></span></span>deep navy (print-ink defined; no official hex published)</div>
+      <div class="sw"><b>Stanford</b><span class="chips"><span class="chip" style="background:#8C1515"></span></span>#8C1515</div>
+      <div class="sw"><b>MIT</b><span class="chips"><span class="chip" style="background:#A31F34"></span></span>#A31F34</div>
+      <div class="sw"><b>ASU</b><span class="chips"><span class="chip" style="background:#8C1D40"></span><span class="chip" style="background:#FFC627"></span></span>#8C1D40 · #FFC627</div>
+    </div>
+    <p>What actually separates those institutions visually is not the hue — it is <b>discipline</b>: one palette,
+    one type system, applied identically everywhere for decades. You already have that. Changing colours now would
+    mean a full design pass over ~1,262 pages × two language trees, mid-content-sprint, to arrive somewhere no more
+    prestigious than where you stand. My recommendation: <b>keep navy + gold and spend the ambition on consistency.</b>
+    If you want certainty rather than my word, say “explore colours” and I’ll build a proper exploration round —
+    two or three full-page palette drafts on real content, because colours can only be judged on pages, never on swatches.</p>
+  </div>
+
+  <details class="r1"><summary>Round 1 — all six original candidates, reference board, and sourcing advice (kept for the record)</summary>
   <div class="cands">__CARDS__</div>
-
-  <h3>Every candidate, everywhere it has to survive</h3>
   __INSITU__
-
-  <h3>Recommendation</h3>
-  <div class="card"><p><b>First choice: C3 — the wordmark lockup, with C2 as its icon.</b> Every serious institution
-  on the reference board — MIT, Imperial, Cambridge, IMechE, the university presses — leads with a wordmark; devices
-  are held in reserve. C3 is the only candidate that carries the Arabic descriptor <em>inside</em> the identity
-  (the itqan pattern you named), it is cut from the site’s own Source Serif so the brand and the page are one voice,
-  and its licence position is clean: OFL-outlined artwork is fully yours, no obligations. C2 gives it a
-  pixel-perfect square form for favicons and app icons that C1’s hand-drawn M never quite was.</p>
-  <p><b>Second choice: C1 — keep the incumbent.</b> It is already good: legible at 16&nbsp;px, honest, in production.
-  If nothing here clearly beats it for you, keeping it is a respectable decision, and the money conversation goes away.</p>
-  <p><b>A decision either way:</b> the incumbent’s gold is <code>#C9A45C</code> while the site token is
-  <code>#CBA85F</code> — two golds one step apart. Whichever mark wins, pick one gold and let the other die.</p></div>
-
   <h3>Reference board (all fetched and verified live, 2026-07-31)</h3>
   <div class="grid2">
     <div class="card"><b>Reads “official institution”</b><br>
-    <a href="https://www.imeche.org" target="_blank" rel="noopener">IMechE</a> — the name is the mark; nothing to degrade.<br>
-    <a href="https://ethz.ch/en.html" target="_blank" rel="noopener">ETH Zurich</a> — acronym wordmark, rigour from typesetting alone.<br>
-    <a href="https://www.mit.edu" target="_blank" rel="noopener">MIT</a> — lettermark of plain bars; survives one-colour, tiny, engraved.<br>
-    <a href="https://www.imperial.ac.uk" target="_blank" rel="noopener">Imperial College</a> — no crest; type-only reads more elite, not less.<br>
-    <a href="https://www.asme.org" target="_blank" rel="noopener">ASME</a> — acronym + spelled-out name, the engineering dual register.<br>
-    <a href="https://www.cam.ac.uk" target="_blank" rel="noopener">Cambridge</a> — even they lead digital with a shield-free wordmark.<br>
-    <a href="https://www.kfupm.edu.sa" target="_blank" rel="noopener">KFUPM</a> — Gulf technical university, per-language logo variants.<br>
-    <a href="https://www.theiet.org" target="_blank" rel="noopener">IET</a> — compact mark, chartered gravitas in the lockup.</div>
+    <a href="https://www.imeche.org" target="_blank" rel="noopener">IMechE</a> · <a href="https://ethz.ch/en.html" target="_blank" rel="noopener">ETH Zurich</a> · <a href="https://www.mit.edu" target="_blank" rel="noopener">MIT</a> · <a href="https://www.imperial.ac.uk" target="_blank" rel="noopener">Imperial</a> · <a href="https://www.asme.org" target="_blank" rel="noopener">ASME</a> · <a href="https://www.cam.ac.uk" target="_blank" rel="noopener">Cambridge</a> · <a href="https://www.kfupm.edu.sa" target="_blank" rel="noopener">KFUPM</a> · <a href="https://www.theiet.org" target="_blank" rel="noopener">IET</a></div>
     <div class="card"><b>Reads “quietly elegant”</b><br>
-    <a href="https://royalsociety.org" target="_blank" rel="noopener">The Royal Society</a> — 360 years carried by typography; crest in reserve.<br>
-    <a href="https://press.princeton.edu" target="_blank" rel="noopener">Princeton University Press</a> — no device at all; confidence by absence.<br>
-    <a href="https://yalebooks.yale.edu" target="_blank" rel="noopener">Yale University Press</a> — the institution’s own typeface is the brand.<br>
-    <a href="https://www.rigb.org" target="_blank" rel="noopener">Royal Institution</a> — two letters, two centuries.<br>
-    <a href="https://www.qnl.qa/en" target="_blank" rel="noopener">Qatar National Library</a> — the regional model: one thin device + Arabic-over-English stack, single colour.<br>
-    <a href="https://www.bodleian.ox.ac.uk" target="_blank" rel="noopener">Bodleian Libraries</a> — wordmark first, heritage second.</div>
+    <a href="https://royalsociety.org" target="_blank" rel="noopener">Royal Society</a> · <a href="https://press.princeton.edu" target="_blank" rel="noopener">Princeton UP</a> · <a href="https://yalebooks.yale.edu" target="_blank" rel="noopener">Yale UP</a> · <a href="https://www.rigb.org" target="_blank" rel="noopener">Royal Institution</a> · <a href="https://www.qnl.qa/en" target="_blank" rel="noopener">Qatar National Library</a> · <a href="https://www.bodleian.ox.ac.uk" target="_blank" rel="noopener">Bodleian</a></div>
   </div>
-
-  <h3>Where to get it — honestly</h3>
   <div class="card" style="font-size:14.5px">
-  <p><b>Set it in the faces you already use (what C2/C3 are)</b> — Source Serif 4 and Source Sans 3 are SIL OFL 1.1
-  (verified from the licence texts in Adobe’s repositories): commercial use and modified letterforms expressly
-  permitted, and outlined logo artwork carries <em>no licence obligation at all</em>. Free, immediate, fully owned,
-  consistent with the site by construction. For a minimal educational mark this is a first-class route, not a fallback.</p>
-  <p><b>Author it as SVG</b> (what C4–C6 are) — this repo already computes SVG programmatically; costs only time.</p>
-  <p><b>Commission a designer</b> — marketplace one-offs roughly $50–500 (quality lottery, check exclusivity in
-  writing); an independent identity designer roughly $1–5k for a small system; a studio $10k+. What you are buying
-  is <em>exclusive rights and a system</em>, and the rights clause is the part most often got wrong — insist on full
-  assignment, not a licence.</p>
-  <p><b>Stock/template marks</b> — non-exclusive: someone else can run the same mark. Unacceptable for an institution.</p>
-  <p><b>AI-generated marks</b> — sketching aid only; anything shipped must be redrawn as controlled vector, and
-  ownership of raw generated output is not settled enough to build an institution on.</p>
-  <p><b>Whichever route:</b> Kuwait MOCI trademark clearance has never been done. Do it before the mark is
-  everywhere — a forced rebrand after launch is the expensive version.</p></div>
-  <div class="rate"><b>To rate:</b> reply like “Logo: C3, second C1” — or name a direction to push further
-  (heavier M, no gold dot, tighter lockup…). Switching the deployed mark is a one-file swap plus regenerating the
-  PNG icon set; I’ll handle the full cascade (manifest, service worker, favicons, print) when you choose.</div>
-</section>
+  <p style="margin-top:0"><b>Sourcing, in short:</b> the wordmark route is cut from your own OFL-licensed faces —
+  free, immediate, fully owned (outlined artwork carries no licence obligation; verified from the licence texts).
+  Designer commissions run ~$50–500 (marketplace lottery), ~$1–5k (independent), $10k+ (studio) — what you buy is
+  exclusive rights; insist on full assignment. Stock marks are non-exclusive: unacceptable for an institution.
+  AI output: sketch aid only. <b>Whichever route: Kuwait MOCI trademark clearance has never been done — do it
+  before the mark is everywhere.</b></p></div>
+  </details>
 
+  <div class="rate"><b>To rate round 2:</b> reply like “Logo: the family — pivot dot yes/no” or push a direction
+  (“wordmark heavier”, “shield rounder”, “lose the descriptor line”…). Arabic in the lockup stays parked until you
+  ask for it — nothing in this family blocks adding it later. On your word I’ll cut final masters, regenerate the
+  full icon set (favicon, 180/192/512, true maskable), and swap the site over in one pass — the two golds
+  (<code>#C9A45C</code> vs <code>#CBA85F</code>) get unified at the same time.</div>
 <section class="pane" id="pane-photo">
   <h2>Photography — a proposal, not a fait accompli</h2>
   <p class="lede">You asked whether photos belong. My honest answer: <b>yes in three bounded places, no everywhere
@@ -565,6 +650,15 @@ subs = {
     "__CAP_DIV__": CAPTIONS["divider"], "__CAP_BAND__": CAPTIONS["band"],
     "__PHOTOSRC__": json.dumps(PH),
 }
+subs.update({
+    "__R2WM__": svg("r2-wordmark.svg"),
+    "__R2WMONLY__": svg("c3-wordmark-only.svg"),
+    "__R2LOCK__": svg("r2-lockup-h.svg"),
+    "__R2STACK__": svg("r2-stack.svg"),
+    "__R2STACKSMALL__": '<span style="display:inline-block;width:120px">' + svg("r2-stack.svg") + "</span>",
+    "__R2SHD__": svg("r2-shield-dot.svg"),
+    "__R2SHN__": svg("r2-shield-nodot.svg"),
+})
 for k, v in subs.items():
     html = html.replace(k, v)
 

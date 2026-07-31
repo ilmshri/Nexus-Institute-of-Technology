@@ -235,3 +235,17 @@ carries **no licence obligation at all**. Only constraints: a modified *font fil
 named "Source", must stay OFL, and font files can't be sold standalone. A wordmark drawn from
 the licensed faces and hand-corrected in vector is free, immediate, fully owned, and
 consistent with the site by construction.
+
+### Peer palette ground truth (added 2026-07-31, logo round 2)
+
+Fetched live from the universities' own brand-guideline pages this session:
+UC Berkeley — Berkeley Blue `#002676` + California Gold `#FDB515` (brand.berkeley.edu);
+Georgia Tech — Navy `#051E39` + Gold `#B39051` (brand.gatech.edu) — the closest published
+peer palette to MechEd's `#14294B`/`#CBA85F`; Stanford — Cardinal `#8C1515`
+(identity.stanford.edu; primary palette is cardinal/white/black/cool grey); Yale — Yale Blue
+is defined in print inks (PMS 648-class), no official hex published (yaleidentity.yale.edu);
+Michigan's colour page blocked automated fetch (403) and is cited nowhere. Previously
+verified in this file / the repo ledger: MIT crimson `#A31F34` (§1), ASU maroon+gold
+`#8C1D40`/`#FFC627`. Conclusion recorded for the owner: elite-university colour lives in two
+families (deep reds, deep blues); navy+gold IS the blue family's prestige register, so the
+recommendation is to keep the palette and spend ambition on consistency.
