@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Limits and continuity — Engineering Mathematics I — MechEd</title>
+<meta name="description" content="The limit as the formal version of 'what happens as we approach'. Continuity and why physical quantities are usually, but not always, continuous. One-">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=97c10d800f">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style id="mt-b">
+/* B — chrome holds still; the title you clicked travels into the page you land on. */
+.appbar{view-transition-name:appbar}
+.player .outline{view-transition-name:outline}
+::view-transition-old(root){animation-duration:.14s;animation-timing-function:ease-out}
+::view-transition-new(root){animation-duration:.22s;animation-timing-function:ease-in-out}
+::view-transition-group(*){animation-duration:.3s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion: reduce){
+  .appbar,.player .outline{view-transition-name:none}
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html.js .tabpanel.on{transition:opacity .22s ease,translate .22s cubic-bezier(.2,.7,.2,1)}
+  @starting-style{ html.js .tabpanel.on{opacity:0;translate:0 0px} }
+}
+
+.mt-tag{position:fixed;bottom:10px;inset-inline-start:10px;z-index:999;font:600 11px/1 var(--sans);
+color:var(--soft);background:var(--surface);border:1px solid var(--line-strong);
+border-radius:6px;padding:6px 9px;box-shadow:var(--shadow);pointer-events:none;opacity:.92}
+@media print{.mt-tag{display:none}}
+</style>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"a[target]"}}]},"eagerness":"moderate"}]}</script>
+</head>
+<body data-key="y1s1/math-1/2">
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a><a href="../../../curriculum/index.html#year-3">Year 3</a><a href="../../../curriculum/index.html#year-4">Year 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/math-1/02-limits-and-continuity.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 101 · Engineering Mathematics I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-functions-units-and-engineering-magnitudes.html" class="ol" data-key="y1s1/math-1/1"><span class="tick"></span><span>01 · Functions, units, and engineering magnitudes</span></a><a href="02-limits-and-continuity.html" class="ol cur" data-key="y1s1/math-1/2"><span class="tick"></span><span>02 · Limits and continuity</span></a><a href="03-the-derivative-as-a-rate.html" class="ol" data-key="y1s1/math-1/3"><span class="tick"></span><span>03 · The derivative as a rate</span></a><a href="04-differentiation-rules-and-the-chain-rule.html" class="ol" data-key="y1s1/math-1/4"><span class="tick"></span><span>04 · Differentiation rules and the chain rule</span></a><a href="05-exponentials-logarithms-and-growth-decay.html" class="ol" data-key="y1s1/math-1/5"><span class="tick"></span><span>05 · Exponentials, logarithms, and growth/decay</span></a><a href="06-extrema-curve-behavior-and-optimization.html" class="ol" data-key="y1s1/math-1/6"><span class="tick"></span><span>06 · Extrema, curve behavior, and optimization</span></a><a href="07-the-integral-as-accumulation.html" class="ol" data-key="y1s1/math-1/7"><span class="tick"></span><span>07 · The integral as accumulation</span></a><a href="08-integration-techniques.html" class="ol" data-key="y1s1/math-1/8"><span class="tick"></span><span>08 · Integration techniques</span></a><a href="09-applications-areas-volumes-work-and-averages.html" class="ol" data-key="y1s1/math-1/9"><span class="tick"></span><span>09 · Applications: areas, volumes, work, and averages</span></a><a href="10-first-order-differential-equations.html" class="ol" data-key="y1s1/math-1/10"><span class="tick"></span><span>10 · First-order differential equations</span></a><a href="11-taylor-series-and-approximation.html" class="ol" data-key="y1s1/math-1/11"><span class="tick"></span><span>11 · Taylor series and approximation</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 101</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 101 · Lesson 02 of 11 · Year 1 · Semester 1</p>
+  <h1 style="view-transition-name:lesson-t-02">Limits and continuity</h1>
+  <p class="sub">The limit as the formal version of 'what happens as we approach'. Continuity and why physical quantities are usually, but not always, continuous. One-sided limits at switching events.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.01 Single Variable Calculus</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/math-1/2">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.01 Single Variable Calculus (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/zLozwNf5r-8" title="Introduction to Limits" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Introduction to Limits <span class="src">The Organic Chemistry Tutor</span></figcaption></figure></div><div class="vh-bar"><span class="n">Introduction to Limits</span><span class="c">THE ORGANIC CHEMISTRY TUTOR</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Give a plant quantity that genuinely jumps discontinuously, and one that only appears to.</li><li>What does a one-sided limit describe at a relay switching instant?</li></ul></div><div class="measure">
+<h3>01 · Why limits exist in a plant</h3>
+<p>A limit answers one question: <em>what value does a function approach as its input
+approaches a point?</em> Formally, \( \lim_{x\to a} f(x) = L \) means we can force \( f(x) \)
+arbitrarily close to \( L \) by taking \( x \) close enough to \( a \). The definition sounds
+abstract; the plant meaning is concrete: what does the sensor settle toward, what does the
+ratio become, what happens at the operating edge?</p>
+<h3>02 · The ratio that defines everything</h3>
+<p>The most important limit in this course is a ratio of vanishing quantities,</p>
+\[ \lim_{\theta\to 0}\frac{\sin\theta}{\theta} = 1 \tag{1} \]
+<p>Try it numerically: at \( \theta = 0.1 \) rad the ratio is 0.9983; at 0.01, 0.99998. The
+two quantities shrink together but their <em>ratio</em> converges — that is the whole mental
+model for the derivative in the next lesson, where a vanishing rise over a vanishing run
+converges to a slope.</p>
+<h3>03 · Continuity — and what it means for signals</h3>
+<p>\( f \) is continuous at \( a \) when \( \lim_{x\to a} f(x) = f(a) \): no jump, no hole, no
+blow-up. Physical processes — temperature, level, pressure — are continuous; their
+<em>measurements</em> need not be. A thermocouple that jumps 40 °C between scans hasn't
+witnessed magic; it has witnessed electrical noise, a loose connection, or a step change in
+what is being touched. Knowing which physical variables can and cannot jump is a diagnostic
+tool: pressure can step (valve slam), metal temperature cannot.</p>
+<p>One-sided limits close the lesson: a relay approaching its trip point from below and from
+above sees two different worlds, \( \lim_{x\to a^-} \) and \( \lim_{x\to a^+} \). Hysteresis is
+one-sided limits wearing work clothes.</p>
+
+<h3>04 · How to evaluate a limit — the decision tree</h3>
+<p>Faced with a limit, work a fixed sequence. <em>First, substitute.</em> If the function is
+continuous there, the limit is the value and you are done — most limits in practice end here.
+<em>Second, if substitution returns 0/0,</em> the form is telling you a common factor is
+hiding: factor polynomials, or multiply by the conjugate when square roots appear, cancel, and
+substitute again. <em>Third, check the sides.</em> When the expression involves absolute
+values, piecewise definitions, or a physical threshold, compute the left and right limits
+separately; the two-sided limit exists only when they agree. <em>Fourth, verify numerically.</em>
+Evaluate the expression at inputs marching toward the point — 0.1, 0.01, 0.001 away — and
+watch the trend. This is not cheating; it is how an engineer confirms an algebraic result the
+same way a technician confirms a calibration: with converging evidence.</p>
+<p>Use continuity as a diagnostic tool the same disciplined way. Before blaming a sensor or
+believing a spike, ask which physical variables can genuinely jump (pressure, force, current)
+and which are integrals of finite flows and therefore cannot (metal temperature, tank level,
+accumulated volume). The mathematics sorts plant events from instrument events before the
+first work order is written.</p>
+<p><strong>Closing.</strong> Limits formalize approach; continuity formalizes no surprises.
+Tomorrow they combine into the derivative.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Function evaluation and graphs</b> (Lesson 1) — reading \( f \) near a point, not just at it.</li>
+<li><b>Radian measure</b> — the sine limit is false in degrees; radians make arc = radius × angle.</li>
+<li><b>Factoring</b> — resolving \( \tfrac{x^2-9}{x-3} \) requires \( (x-3)(x+3) \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Limit</td><td>\( \lim_{x\to a} f(x) = L \)</td><td>The settling value; approach, not arrival — may exist where the function value doesn't.</td></tr>
+<tr><td>The sine limit</td><td>\( \lim_{\theta\to 0}\tfrac{\sin\theta}{\theta} = 1 \)</td><td>Small-angle work and the derivative of sine; radians only.</td></tr>
+<tr><td>The 0/0 form</td><td>factor, or multiply by the conjugate</td><td>When substitution returns 0/0, a hidden common factor is waiting to cancel.</td></tr>
+<tr><td>Continuity</td><td>\( \lim_{x\to a} f(x) = f(a) \)</td><td>Deciding whether a logged jump can be physical or must be instrumental.</td></tr>
+<tr><td>One-sided limits</td><td>\( x\to a^-,\ x\to a^+ \)</td><td>Trip points, hysteresis, absolute values, piecewise behavior.</td></tr>
+<tr><td>Removable discontinuity</td><td>hole at \( x=a \)</td><td>The limit exists; the definition merely misses the point.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>A hole, not a wall</b></p>
+<p><b>Problem.</b> Evaluate \( \displaystyle\lim_{x\to 3}\frac{x^2-9}{x-3} \), which appears as a
+0/0 form. <b>Find:</b> the limit.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Factor: \( \frac{(x-3)(x+3)}{x-3} = x+3 \) for \( x \ne 3 \).
+(2) The simplified function is continuous, so the limit is \( 3+3 = 6 \).</p>
+<p><b>Answer:</b> 6. <b>Sanity check:</b> at \( x=3.001 \), the original ratio gives
+\( (9.006-9)/0.001 = 6.001 \) — converging on 6 as promised.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Sensor step or process step?</b></p>
+<p><b>Problem.</b> During pasteurizer start-up at a dairy filling plant, the product-outlet RTD
+logs 71.8, 71.9, 71.9, <b>112.4</b>, 72.0 °C at 1 s scan. <b>Find:</b> is the 112.4 reading a
+process event or an instrument event, and which continuity argument decides it?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Product temperature obeys a thermal time constant of tens of seconds:
+its true trajectory is continuous and cannot traverse +40 °C and −40 °C within 2 s.
+(2) An instrument channel — connector, noise burst, scan glitch — can jump discontinuously.
+(3) Therefore the spike violates physical continuity but not signal behavior: instrument event.</p>
+<p><b>Answer:</b> single-scan instrument artifact; flag the channel, don't chase a process
+excursion. <b>Sanity check:</b> energy to heat the product stream 40 °C in 1 s would exceed the
+pasteurizer's entire installed heating duty by an order of magnitude.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>A limit that will become a slope</b></p>
+<p><b>Problem.</b> Evaluate \( \displaystyle\lim_{h\to 0}\frac{\sqrt{4+h}-2}{h} \), which substitution renders as 0/0. (Next lesson this exact limit will be recognized as the derivative of \( \sqrt{x} \) at \( x=4 \).)</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Multiply by the conjugate: \( \dfrac{\sqrt{4+h}-2}{h}\cdot\dfrac{\sqrt{4+h}+2}{\sqrt{4+h}+2} = \dfrac{(4+h)-4}{h(\sqrt{4+h}+2)} = \dfrac{1}{\sqrt{4+h}+2} \).
+(2) Substitute \( h = 0 \): \( 1/(2+2) = 1/4 \).</p>
+<p><b>Answer:</b> 1/4.
+<b>Sanity check:</b> at \( h = 0.01 \), \( (\sqrt{4.01}-2)/0.01 = 0.2498 \) — marching on 0.25 exactly as the algebra promises.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\lim_{x\to 4}\frac{x^2-16}{x-4} \). Direct substitution gives the indeterminate form 0/0.</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>16</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The limit does not exist</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A 0/0 form signals a common factor, not a missing limit: \( x^2-16 = (x-4)(x+4) \), so the ratio equals \( x+4 \) everywhere except at \( x=4 \), and the limit is 8. Choosing "does not exist" is the classic division-by-zero reflex — the function value is undefined at 4, but a limit describes approach, not arrival, and it can exist exactly where the value does not. The answer 0 comes from reading a 0/0 form as literally zero; 16 comes from evaluating only the squared term after an illegal cancellation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>With \( \theta \) measured in radians, evaluate \( \displaystyle\lim_{\theta\to 0}\frac{\sin 3\theta}{\theta} \).</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>3</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1/3</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Rescale so the sine's argument and the denominator vanish as the same quantity: \( \frac{\sin 3\theta}{\theta} = 3\cdot\frac{\sin 3\theta}{3\theta} \to 3\cdot 1 = 3 \). Answering 1 is the classic pattern-match error: the standard limit \( \sin u/u \to 1 \) applies only when numerator argument and denominator are identical, which they are not here. The answer 0 comes from substituting \( \theta = 0 \) into the numerator alone, and 1/3 from performing the rescaling upside-down; note the whole computation also presumes radians, since the standard limit is false in degrees.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Evaluate \( \displaystyle\lim_{x\to 0}\frac{|x|}{x} \).</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>1</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>−1</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>The limit does not exist</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>From the right, \( |x|/x = 1 \); from the left, \( |x|/x = -1 \). The one-sided limits disagree, so the two-sided limit does not exist — the graph is a genuine step. This is the archetype of threshold behavior: whenever an expression contains an absolute value or a piecewise switch, check the sides separately before declaring a limit. Answering 1 or −1 reports only one approach direction; answering 0 averages two worlds the function never occupies.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A compressor trips and the check valve on its discharge line slams shut. Four plant variables are logged at a 1 s scan. Which one can genuinely change as a step at the trip instant — a true physical discontinuity rather than an instrument artifact?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Casing metal temperature of the compressor</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Line pressure downstream of the slamming check valve</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Liquid level in the suction knockout drum</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Pipe-wall temperature of the discharge line</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A slamming valve imposes a pressure step that is genuine at any practical scan rate — pressure is the lesson's example of a physical quantity that can truly jump. Metal temperatures and liquid level are accumulations of finite fluxes (heat through thermal mass, flow into a vessel), so their true trajectories are continuous, with time constants far longer than one scan. Selecting a temperature channel is the classic error of mistaking a logged jump for a process event: a step in a thermally massive variable indicates an instrument artifact, exactly as in the pasteurizer RTD case.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The function \( g(x) = \dfrac{x^2 - 1}{x - 1} \) is undefined at \( x = 1 \). What kind of discontinuity lives there?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Removable — the limit exists (it is 2) but the definition misses the point</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A jump — the one-sided limits disagree</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Infinite — the function blows up</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>None — the function is continuous at 1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Factoring gives \( g(x) = x + 1 \) for \( x \ne 1 \), so both one-sided limits equal 2: the graph is a straight line with a single hole at \( (1, 2) \) — a removable discontinuity. It is not a jump (the sides agree) and not a blow-up (nothing grows without bound); calling it continuous confuses the limit existing with the value existing, which is exactly the distinction this lesson draws.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the trip that "came from nowhere."</b> You arrive at a compressor package that
+tripped on high discharge temperature. The trend shows a smooth 8 °C/min climb for six minutes,
+then trip — continuous, physical, real: a cooler problem, not a sensor problem. The operator
+insists the temperature "jumped." The one-second historian data says otherwise: nothing jumped;
+it <em>approached</em>. You write the finding around the trend's continuity and the fouled
+cooler is confirmed at inspection. Limits are how you argue with certainty about what a signal
+was doing just before the event.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{W}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.8046\\ \\mathrm{hp}\\)", "\\(4.474e+04\\ \\mathrm{hp}\\)", "\\(0.08046\\ \\mathrm{hp}\\)", "\\(0.008046\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{W} = 0.001341\\ \\mathrm{hp}\\): \\(60 \\times 0.001341 = 0.08046\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{W}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.06705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3729\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.006705\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.0006705\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{W} = 0.001341\ \mathrm{hp}\): \(5 \times 0.001341 = 0.006705\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.45\\ \\mathrm{psi}\\)", "\\(689.5\\ \\mathrm{psi}\\)", "\\(145\\ \\mathrm{psi}\\)", "\\(14.5\\ \\mathrm{psi}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(100 \\times 0.145 = 14.5\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.116\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(55.16\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(11.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.16\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(8 \times 0.145 = 1.16\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" title="MIT OCW 18.01SC Single Variable Calculus" target="_blank" rel="noopener">MIT OCW 18.01</a> <a class="watch" href="https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Single Variable Calculus (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-functions-units-and-engineering-magnitudes.html">← 01 · Functions, units, and engineering magnitudes</a><a href="index.html">All lessons · MTH 101</a><a href="03-the-derivative-as-a-rate.html">03 · The derivative as a rate →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/physics-1/index.html">PHY 107 · Engineering Physics I — Mechanics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=97c10d800f"></script>
+<div class="mt-tag">Treatment B — Held Chrome, Threaded Titles</div></body>
+</html>

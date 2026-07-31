@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>MechEd — Learn Mechanical Engineering from Scratch to Industry 4.0</title>
+<meta name="description" content="A complete B.S.-shaped mechanical engineering curriculum for anyone — from zero background to Industry 4.0. Engineered to innovate. Preliminary open release.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/nx/nexus.css?v=97c10d800f">
+<style id="mt-c">
+/* C — editorial: the old sheet lifts away fast, the new sheet settles onto the desk. */
+.appbar{view-transition-name:appbar}
+@keyframes mtc-lift{to{opacity:0}}
+@keyframes mtc-settle{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+::view-transition-old(root){animation:mtc-lift .12s ease-out both}
+::view-transition-new(root){animation:mtc-settle .3s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion: reduce){
+  .appbar{view-transition-name:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}
+
+@media (prefers-reduced-motion: no-preference){
+  html.js .tabpanel.on{transition:opacity .22s ease,translate .22s cubic-bezier(.2,.7,.2,1)}
+  @starting-style{ html.js .tabpanel.on{opacity:0;translate:0 6px} }
+}
+
+.mt-tag{position:fixed;bottom:10px;inset-inline-start:10px;z-index:999;font:600 11px/1 var(--sans);
+color:var(--soft);background:var(--surface);border:1px solid var(--line-strong);
+border-radius:6px;padding:6px 9px;box-shadow:var(--shadow);pointer-events:none;opacity:.92}
+@media print{.mt-tag{display:none}}
+</style>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"a[target]"}}]},"eagerness":"moderate"}]}</script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in">
+    <a class="brand" href="index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>Engineered to Innovate</small></span>
+    </a>
+    <nav aria-label="Site">
+      <a href="index.html" class="on">Home</a>
+      <div class="navgrp">
+        <a href="about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="about/index.html">About the institute</a>
+          <a href="about/index.html#standards">Our standards</a>
+          <a href="feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="curriculum/index.html" class="grp">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="curriculum/index.html">Full curriculum</a>
+          <a href="curriculum/index.html#year-1">Year 1</a><a href="curriculum/index.html#year-2">Year 2</a><a href="curriculum/index.html#year-3">Year 3</a><a href="curriculum/index.html#year-4">Year 4</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="reference/index.html#tools">Tools &amp; Software</a>
+          <a href="reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="career/index.html">Career Paths</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="kbtn" href="curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+    <a class="lang-btn" href="ar/index.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+</header>
+
+<main class="wrap">
+<!-- MechEd homepage — fresh institutional structure (owner order 2026-07-26:
+     cancel all Nexus-era design; itqan/Stanford register, Gallery system).
+     247/47/<div class="year-card"><span class="yr">Year 1</span><h3><a href="curriculum/index.html">Foundations</a></h3><span class="badge done">Complete · 12 courses</span><span class="sum"><a href="curriculum/index.html#year-1">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 2</span><h3><a href="curriculum/index.html">The engineering core</a></h3><span class="badge">10 of 12 courses complete</span><span class="sum"><a href="curriculum/index.html#year-2">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 3</span><h3><a href="curriculum/index.html">Systems, control &amp; reliability</a></h3><span class="badge">In production</span><span class="sum"><a href="curriculum/index.html#year-3">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 4</span><h3><a href="curriculum/index.html">Advanced industry &amp; capstone</a></h3><span class="badge">In production</span><span class="sum"><a href="curriculum/index.html#year-4">Browse courses →</a></span></div>/<a class="feat-card" href="curriculum/y1s1/math-1/index.html"><span class="code">MTH 101 · 11 lessons</span><h3>Engineering Mathematics I</h3><p>Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, al…</p><span class="meta">Complete course</span></a><a class="feat-card" href="curriculum/y1s1/physics-1/index.html"><span class="code">PHY 107 · 11 lessons</span><h3>Engineering Physics I — Mechanics</h3><p>Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotati…</p><span class="meta">Complete course</span></a><a class="feat-card" href="curriculum/y1s1/statics/index.html"><span class="code">STA 103 · 11 lessons</span><h3>Engineering Statics</h3><p>Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the g…</p><span class="meta">Complete course</span></a> are injected at build time
+     from real curriculum data — nothing here is hand-counted. -->
+<header class="hero-p">
+  <div class="hp-in">
+    <p class="hp-eyebrow">Engineered to Innovate</p>
+    <h1>Learn Mechanical Engineering from Scratch to Industry 4.0.</h1>
+    <p class="hp-sub">Your complete path to engineering mastery — every core discipline of
+    the field, taught from first principles and carried forward into the advanced
+    industrial systems that power modern plants.</p>
+    <div class="cta-row hp-cta">
+      <a class="btn btn-primary" href="curriculum/index.html">Explore the curriculum →</a>
+      <a class="btn btn-ghost" href="about/index.html">About MechEd</a>
+    </div>
+    <p class="hp-meta">4 YEARS · 8 SEMESTERS · 48 COURSES · ENGLISH &amp; <span lang="ar">العربية</span></p>
+  </div>
+</header>
+
+<div class="nx-stats" id="stats">
+  <div class="stat"><b>4</b><span>years</span></div>
+  <div class="stat"><b>48</b><span>courses</span></div>
+  <div class="stat"><b>528</b><span>lessons</span></div>
+  <div class="stat"><b>247</b><span>at full depth · 47%</span></div>
+</div>
+
+<section class="part" id="standards">
+  <p class="kicker"><span class="n">01</span>The <span class="bw">MechEd</span> standards</p>
+  <h2>Three standards govern everything we publish.</h2>
+  <div class="std-grid">
+    <article class="std-card">
+      <h3>Mastery</h3>
+      <p>Every lesson is genuinely learnable from zero — full derivations, worked
+      arithmetic that is machine-verified before it is published, and honest depth
+      labels on anything still in production.</p>
+    </article>
+    <article class="std-card">
+      <h3>Integrity</h3>
+      <p>No fabricated references, no invented industrial data, no marketing numbers.
+      Representative figures say so — plainly.</p>
+    </article>
+    <article class="std-card">
+      <h3>Innovation</h3>
+      <p>Industry 4.0 as core engineering, not a footnote — PLCs, SCADA, IIoT and
+      digital twins woven through the classical spine.</p>
+    </article>
+  </div>
+</section>
+
+<section class="part" id="years">
+  <p class="kicker"><span class="n">02</span>The program</p>
+  <h2>Four years, engineered in order.</h2>
+  <div class="year-grid"><div class="year-card"><span class="yr">Year 1</span><h3><a href="curriculum/index.html">Foundations</a></h3><span class="badge done">Complete · 12 courses</span><span class="sum"><a href="curriculum/index.html#year-1">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 2</span><h3><a href="curriculum/index.html">The engineering core</a></h3><span class="badge">10 of 12 courses complete</span><span class="sum"><a href="curriculum/index.html#year-2">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 3</span><h3><a href="curriculum/index.html">Systems, control &amp; reliability</a></h3><span class="badge">In production</span><span class="sum"><a href="curriculum/index.html#year-3">Browse courses →</a></span></div><div class="year-card"><span class="yr">Year 4</span><h3><a href="curriculum/index.html">Advanced industry &amp; capstone</a></h3><span class="badge">In production</span><span class="sum"><a href="curriculum/index.html#year-4">Browse courses →</a></span></div></div>
+</section>
+
+<section class="part" id="featured">
+  <p class="kicker"><span class="n">03</span>Begin here</p>
+  <h2>Year 1 is complete. Start today.</h2>
+  <div class="feat-grid"><a class="feat-card" href="curriculum/y1s1/math-1/index.html"><span class="code">MTH 101 · 11 lessons</span><h3>Engineering Mathematics I</h3><p>Single-variable calculus rebuilt as a working tool: limits, derivatives, integrals, and first differential equations, al…</p><span class="meta">Complete course</span></a><a class="feat-card" href="curriculum/y1s1/physics-1/index.html"><span class="code">PHY 107 · 11 lessons</span><h3>Engineering Physics I — Mechanics</h3><p>Classical mechanics built from scratch for engineers: units and vectors, motion, Newton's laws, energy, momentum, rotati…</p><span class="meta">Complete course</span></a><a class="feat-card" href="curriculum/y1s1/statics/index.html"><span class="code">STA 103 · 11 lessons</span><h3>Engineering Statics</h3><p>Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the g…</p><span class="meta">Complete course</span></a></div>
+  <p class="allcta"><a class="btn btn-ghost" href="curriculum/index.html">See all 48 courses →</a></p>
+</section>
+
+<section class="part" id="career">
+  <p class="kicker"><span class="n">04</span>Where it leads</p>
+  <h2>From first principles to a career in advanced industry.</h2>
+  <p class="lead measure">The Career Paths guide maps every specialization this
+  curriculum feeds — reliability, asset integrity, production, planning, automation —
+  with the certification architecture and a twelve-month development plan.</p>
+  <p class="allcta"><a class="btn btn-ghost" href="career/index.html">Explore career paths →</a></p>
+</section>
+
+<section class="part tight" id="start">
+  <div class="wide"><div class="cta-band">
+    <div><p class="eyebrow">Engineered to Innovate</p><h2>Start with Lesson 01 — today.</h2></div>
+    <a class="btn btn-primary" href="curriculum/index.html">Open the curriculum →</a>
+  </div></div>
+</section>
+
+</main>
+<footer class="nx-foot"><div class="in">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="index.html">Home</a><a href="about/index.html">About</a><a href="mission/index.html">Mission</a><a href="curriculum/index.html">Curriculum</a><a href="reference/index.html">Resources</a><a href="career/index.html">Career Paths</a><a href="feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/nexuskw/nexuskw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="assets/nx/nexus.js?v=97c10d800f"></script>
+<div class="mt-tag">Treatment C — Paper Lay-down</div></body>
+</html>

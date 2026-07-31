@@ -132,3 +132,106 @@ ADOPT when the Arabic layer returns (all gated with that owner decision):
 
 NOT adopted: their green (palette comes from the round-2 winner), photography-led content
 (vector-only rule), the WordPress stack.
+
+## 6. Transition craft — verified reference study (added 2026-07-31, design session)
+
+Method: every URL below was fetched live this session (HTTP status recorded); where a technique
+is claimed, the marker (`@view-transition`, `view-transition-name`, `animation-timeline`,
+`@starting-style`, `prefers-reduced-motion`) was found in the fetched CSS/HTML itself.
+Existing sections above are untouched.
+
+### Browser ground truth (mid-2026; fetched from MDN + MDN browser-compat-data + caniuse raw JSON)
+
+- **Cross-document View Transitions** (`@view-transition` — the technique that matters for our
+  static MPA): Chrome/Edge 126+, Safari & iOS Safari 18.2+. **Firefox stable through 155: NOT
+  supported** (partial = same-document only; open bug bugzil.la/1860854). Not Baseline.
+- **Same-document** `document.startViewTransition`: Chrome 111+, Safari 18+, Firefox 144+ —
+  Baseline across all three engines.
+- **Scroll-driven animations** (`animation-timeline`): Chrome 115+, Safari 26+; Firefox stable
+  not shipped (Nightly flag only).
+- Implication: cross-document view transitions are a pure progressive enhancement here —
+  Firefox users keep instant plain navigation, zero breakage, zero JS. Scroll-driven animation
+  stays decorative-only. (Sources fetched: developer.mozilla.org View_Transition_API and
+  @view-transition pages; raw.githubusercontent.com mdn/browser-compat-data
+  css/at-rules/view-transition.json, api/Document.json, css/properties/animation-timeline.json;
+  Fyrd/caniuse features-json cross-document-view-transitions.json + view-transitions.json;
+  web-platform-dx/web-features cross-document-view-transitions.yml + scroll-driven-animations.yml.)
+
+### Reference sites (all fetched live 2026-07-31)
+
+| Site | Register | What it does well for us | Technique (verified in fetched source) | Reduced motion |
+|---|---|---|---|---|
+| worksinprogress.co | editorial | Best brand match: classical print-soul magazine; gentle whole-page cross-fade between pages + Speculation-Rules prefetch so a static MPA feels instant | `@view-transition{navigation:auto}` in Layout CSS + `<script type="speculationrules">` in HTML; Astro static | Yes (3 rules) |
+| daverupert.com | editorial | Canonical persistent-element morph: masthead logo carries `view-transition-name`, glides between sizes on every navigation — our curriculum→course→lesson continuity pattern | Cross-doc VT + named morph + spring easing on `::view-transition-group` + `@starting-style` | Yes — morph downgraded to plain fade |
+| thesession.org | archive | Tens of thousands of server-rendered pages (closest scale analogy to our 1,262); cross-doc VT as pure progressive enhancement, calm register | `@view-transition` + tuned `::view-transition-old/new`; plain MPA, no framework | Yes (3 rules) |
+| dladukedev.com | editorial | Cleanest minimal build: post title/date in the index morphs into the article header — exactly our course-syllabus-row → lesson-H1 journey | Cross-doc VT + 12 `view-transition-name`s; 11ty static | Not determinable from fetch |
+| utilitybend.com | editorial | Working catalogue of all four techniques composed in one restrained file, incl. tab-switch analogs via `@starting-style` instead of JS | `@view-transition`, old/new/group pseudo-elements, `@starting-style`, `animation-timeline` all in one Layout CSS | Yes (7 rules) |
+| una.im | editorial | **The gating pattern to copy verbatim**: `@media not (prefers-reduced-motion: reduce){@view-transition{navigation:auto}}` — motion-sensitive readers never opt in at all | Cross-doc VT inside a `not (prefers-reduced-motion)` media query; sparse `animation-timeline` | Structurally yes |
+| nerdy.dev | editorial | Technique ceiling, not register model: 636 auto-generated `view-transition-name`s prove per-lesson names can be stamped mechanically at build time | VT API (CSS + `startViewTransition`), `@starting-style`, scroll-driven | Yes (3 rules) |
+| events-3bg.pages.dev/jotter | documentation | The community's canonical VT pattern cookbook, itself a static docs MPA: sidebar/header hold still, content pane cross-fades — our lesson→next-lesson shape | Cross-doc VT on Astro/Starlight docs shell | Yes (3 rules) |
+| ocw.mit.edu | education | The honest baseline: zero page transitions, sub-second navigation, 19 reduced-motion guards — speed and stillness as the default to layer quiet enhancement onto | Plain CSS; restraint by omission (Yale/Princeton/Harvard homepages also fetched — no motion craft at all) | Yes (19 rules) |
+| rijksmuseum.nl/en | museum | Collection→artwork journey (mirrors curriculum→lesson) done with short plain-CSS fades; most motion-accessibility-disciplined production site found | Plain CSS only; craft is duration/easing restraint | Yes (43 rules) |
+| joshwcomeau.com | education | Teaching widgets animate, page chrome stays still — the right in-page register for our tabs; "motion as meaning, never decoration" | `@starting-style` (5), `animation-timeline` (2), one `view-transition-name`; Next.js so page-nav model translates less directly | JS-handled; not confirmable from fetch |
+| 11ty.dev/docs | documentation | Control reference: effortless feel is 80% payload discipline + stable layout + instant static navigation; VT is the last 20%, not the foundation | Plain CSS + reduced-motion guards | Yes |
+
+### Read against what MechEd already ships (nexus.css:835-845)
+
+We already have `@view-transition{navigation:auto}` with .18s/.26s root fades, disabled under
+reduced motion. The craft gap the references expose, in order of payoff: (1) named-element
+continuity (breadcrumb/title morphs — daverupert/dladukedev pattern); (2) Speculation-Rules
+prefetch (worksinprogress pattern) so lesson→next-lesson is already loaded; (3) una.im's
+opt-in-only-without-reduced-motion gating (stronger than our current disable-after-the-fact);
+(4) in-page tab switches via `@starting-style` (utilitybend pattern) — currently our tabs snap.
+
+## 7. Institutional logo reference board (added 2026-07-31, design session)
+
+All URLs fetched live this session, HTTP 200 confirmed. Two buckets per the owner's two
+possible registers.
+
+### Bucket A — reads "official educational institution"
+
+| Mark | URL | Why it holds up |
+|---|---|---|
+| IMechE | imeche.org | Pure wordmark — the institution's name IS the mark; nothing to degrade at small sizes; closest domain-mate to MechEd |
+| ETH Zurich | ethz.ch/en.html | Acronym-led grotesque wordmark backed by the spelled-out name; typesetting discipline alone signals rigor |
+| MIT | mit.edu | Lettermark built from plain geometric bars; reduces to rectangles, survives one-color/tiny/engraved |
+| Imperial College London | imperial.ac.uk | Single-color all-type wordmark, no crest — dropping heraldry reads as more elite, not less |
+| ASME | asme.org | Acronym mark + spelled-out name in support — the standard dual-register pattern for engineering authority |
+| University of Cambridge | cam.ac.uk | Even the most heraldic institution leads its digital header with a clean shield-free wordmark |
+| KFUPM | kfupm.edu.sa | Gulf technical university with explicit per-language logo variants (`kfupm_logo_en`) — a managed bilingual identity system |
+| IET | theiet.org | Acronym + full name in the lockup's second register: compact mark, chartered gravitas |
+
+### Bucket B — reads "quietly elegant / exclusive"
+
+| Mark | URL | Why it holds up |
+|---|---|---|
+| The Royal Society | royalsociety.org | Definite-article wordmark, classical setting; crest held in reserve rather than forced small |
+| Princeton University Press | press.princeton.edu | No device at all — restrained typography and hierarchy as the confidence signal |
+| Yale University Press | yalebooks.yale.edu | Wordmark set in the institution's own typeface — the type system itself is the brand (directly relevant to our Source Serif system) |
+| The Royal Institution | rigb.org | 200 years compressed to a two-letter "Ri" monogram — the template for a quiet short-form mark |
+| Qatar National Library | qnl.qa/en | Strongest regional model: one thin-line device + Arabic-over-English stacked wordmark, single color (logo PNG downloaded and inspected) |
+| Bodleian Libraries | bodleian.ox.ac.uk | Wordmark first, university crest demoted to the footer — the hierarchy that keeps serious marks usable small |
+
+### itqan.edu.sa lockup, dissected from the actual SVG (fetched + rendered)
+
+Downloaded https://itqan.edu.sa/wp-content/uploads/2021/06/logo.svg (48 KB) and rendered it.
+One two-color SVG serves BOTH language trees unchanged: (1) Arabic brand 'إتــقــان' in warm
+gray, letterspaced with kashida elongation; (2) Latin 'ITQAN' beneath in wide letterspaced
+light caps, optically width-matched to the Arabic; (3) a shared-baseline third tier
+'INSTITUTE' + 'معهد' joined by a thin rule — dual-script descriptor on one line; (4) a single
+flat green faceted-shield device to one side; (5) two full-width formal-name descriptor lines
+(AR kashida-justified above EN) beneath. Pattern confirmed: Latin brand + Arabic script line as
+equals in one neutral color, dual descriptors, one restrained device — never per-language logos.
+
+### Type licences, verified from the licence texts themselves
+
+Source Serif 4 and Source Sans 3 are both **SIL OFL 1.1** (fetched:
+raw.githubusercontent.com/adobe-fonts/source-serif/main/LICENSE.md and
+…/source-sans/main/LICENSE.md; corroborated by fonts.google.com metadata endpoints reporting
+license "ofl"). The fetched OFL text permits commercial use and modification of letterforms,
+and states the share-alike requirement "does not apply to any document created using the
+fonts" — outlined logo artwork is such a document, so a MechEd wordmark cut from these faces
+carries **no licence obligation at all**. Only constraints: a modified *font file* may not be
+named "Source", must stay OFL, and font files can't be sold standalone. A wordmark drawn from
+the licensed faces and hand-corrected in vector is free, immediate, fully owned, and
+consistent with the site by construction.
