@@ -1425,7 +1425,91 @@
     "solution": "<p>The derivative of the inner function \\( x^2 \\) is \\( 2x \\), sitting right there as a factor — substitution territory: \\( u = x^2 \\) gives \\( \\int\\cos u\\,du = \\sin u + C = \\sin(x^2) + C \\). Check by differentiating: \\( \\tfrac{d}{dx}\\sin(x^2) = 2x\\cos(x^2) \\) ✓. The \\( \\cos(x^3/3) \\) option \"integrates the inside,\" a move calculus never licenses; the sign-flipped option confuses the sine and cosine derivative pair.</p>"
    }
   ],
-  "recap": "<ul> <li><b>Substitution</b> is the chain rule run backwards — look for a function and its own derivative sitting in the same integrand.</li> <li><b>Integration by parts</b> is the product rule run backwards: \\( \\int u\\,dv = uv - \\int v\\,du \\). Choose \\( u \\) to be the factor that simplifies when differentiated.</li> <li>Know when to stop. Many perfectly ordinary integrals have no closed form, and a numerical answer is a legitimate engineering answer, not a defeat.</li> </ul>"
+  "recap": "<ul> <li><b>Substitution</b> is the chain rule run backwards — look for a function and its own derivative sitting in the same integrand.</li> <li><b>Integration by parts</b> is the product rule run backwards: \\( \\int u\\,dv = uv - \\int v\\,du \\). Choose \\( u \\) to be the factor that simplifies when differentiated.</li> <li>Know when to stop. Many perfectly ordinary integrals have no closed form, and a numerical answer is a legitimate engineering answer, not a defeat.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>Most integrals met in engineering are not in any table. Two techniques cover the great majority: substitution, which reverses the chain rule, and integration by parts, which reverses the product rule. Each is a differentiation rule read backwards, which is also how you decide which one a given integral needs.</p>",
+    "keypoints": [
+     "Substitution reverses the chain rule: look for an inner function whose derivative also appears as a factor.",
+     "When substituting in a definite integral, change the limits too, or convert back before evaluating &mdash; never mix the two.",
+     "Integration by parts reverses the product rule and is the tool for a product of unlike things, such as a power multiplied by an exponential.",
+     "The choice of which factor to differentiate decides whether the new integral is easier or worse; pick the one that simplifies when differentiated.",
+     "By parts may need repeating, and each pass should visibly reduce the difficulty.",
+     "Every indefinite integral carries an arbitrary constant, which cancels in a definite integral and matters in a differential equation.",
+     "Check any integration by differentiating the answer &mdash; it is fast and it is conclusive."
+    ],
+    "terms": [
+     {
+      "term": "Indefinite integral",
+      "symbol": "\\( \\int f(x)\\,dx \\)",
+      "read": "the integral of f of x d x",
+      "meaning": "The family of antiderivatives of \\( f \\), differing by a constant."
+     },
+     {
+      "term": "Constant of integration",
+      "symbol": "\\( C \\)",
+      "read": "C",
+      "meaning": "The arbitrary constant in an indefinite integral; cancels between limits."
+     },
+     {
+      "term": "Substitution",
+      "symbol": "\\( u = g(x) \\)",
+      "read": "u equals g of x",
+      "meaning": "Renaming an inner expression to reverse the chain rule."
+     },
+     {
+      "term": "Differential",
+      "symbol": "\\( du = g'(x)\\,dx \\)",
+      "read": "d u equals g prime of x d x",
+      "meaning": "How the new variable's element relates to the old one."
+     },
+     {
+      "term": "Integration by parts",
+      "symbol": "\\( \\int u\\,dv = uv - \\int v\\,du \\)",
+      "read": "the integral of u d v equals u v minus the integral of v d u",
+      "meaning": "Reverses the product rule; trades one integral for an easier one."
+     },
+     {
+      "term": "Exponential",
+      "symbol": "\\( e^{x} \\)",
+      "read": "e to the x",
+      "meaning": "Its own derivative and its own antiderivative."
+     },
+     {
+      "term": "Variable of integration",
+      "symbol": "\\( x \\)",
+      "read": "x",
+      "meaning": "The quantity being accumulated over; a dummy name in a definite integral."
+     },
+     {
+      "term": "Time",
+      "symbol": "\\( t \\)",
+      "read": "t",
+      "meaning": "Elapsed time, in seconds."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Substitution: the chain rule, read backwards",
+     "body": "<p>Differentiating a function of a function multiplies by the inner derivative. Integration therefore has to divide it out again, and <b>substitution</b> is the bookkeeping that does so safely.</p><p>The pattern to recognise is an integrand containing some inner expression together with that expression's own derivative as a factor. Name the inner expression \\( u = g(x) \\), form its <b>differential</b> \\( du = g'(x)\\,dx \\), and the integral rewrites in \\( u \\) alone. If the derivative is not present, up to a constant multiple, substitution is not the right tool and forcing it produces nonsense.</p><p>For a definite integral there are two honest routes and one common error. Either convert the limits into the new variable and evaluate there, or keep the old limits, integrate, and convert back to \\( x \\) before substituting them. The error is to change the variable and then use the original limits, which silently evaluates the right function at the wrong points.</p><p>Every indefinite integral carries a <b>constant of integration</b> \\( C \\), because differentiation destroys constants and integration cannot recover them. In a definite integral it cancels between the two endpoints and can be ignored. In a differential equation it is the whole point, since it is what the initial condition fixes &mdash; which is the subject two lessons ahead.</p>"
+    },
+    {
+     "title": "By parts: the product rule, read backwards",
+     "body": "<p>The product rule says a product's derivative has two terms. Rearranged and integrated, it gives <b>integration by parts</b>, \\( \\int u\\,dv = uv - \\int v\\,du \\), read as &lsquo;the integral of u d v equals u v minus the integral of v d u&rsquo;. It does not evaluate an integral outright; it trades one integral for another, and the technique is worth using only when the trade is favourable.</p><p>That makes the choice of which factor to call \\( u \\) the whole skill. The factor you name \\( u \\) gets differentiated, so choose the one that becomes simpler when differentiated. A power of the variable is the usual choice, because differentiating it lowers the power and repeating the process eventually reduces it to a constant. An exponential is the usual \\( dv \\), because integrating it changes nothing.</p><p>Choosing the other way round is not wrong so much as useless: the new integral comes out harder than the old one. The diagnostic is immediate &mdash; if one application leaves you worse off, swap the roles and start again rather than pressing on.</p><p>Integrals of the form &lsquo;a power times an exponential&rsquo; are the standard industrial case, appearing whenever an accumulating quantity is weighted by a decaying one: energy dissipated during a decaying transient, or the mean time associated with an exponential reliability model.</p><p>Whatever technique is used, the check is the same and takes seconds: differentiate the answer and confirm you recover the integrand.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A substitution, with the limits changed",
+     "body": "<p><b>Problem.</b> Evaluate \\( \\int_0^2 2x\\,e^{x^2}\\,dx \\).</p><p><b>Approach.</b> The exponent \\( x^2 \\) is an inner function and its derivative \\( 2x \\) is sitting right there as a factor, which is exactly the signature of a substitution. Change the limits along with the variable &mdash; when \\( x \\) runs 0 to 2, \\( u \\) runs 0 to 4. Using the original limits with the new variable would evaluate \\( e^{u} \\) between 0 and 2 instead of 0 and 4, giving 6.39 rather than the true value: a plausible-looking number with nothing wrong on the page.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; substitute.</em> \\( u = x^2 \\), so \\( du = 2x\\,dx \\).</p><p><em>Step 2 &mdash; convert the limits.</em> \\( x = 0 \\Rightarrow u = 0 \\); \\( x = 2 \\Rightarrow u = 4 \\).</p><p><em>Step 3 &mdash; rewrite and integrate.</em> \\( \\int_0^4 e^{u}\\,du = e^{u}\\big|_0^4 \\).</p><p><em>Step 4 &mdash; evaluate.</em> \\( e^4 - e^0 = 54.598 - 1 = 53.598 \\).</p><p><b>Answer.</b> 53.598. Check by differentiating \\( e^{x^2} \\): the chain rule returns \\( 2x\\,e^{x^2} \\), the original integrand.</p>"
+    },
+    {
+     "title": "By parts on a decaying transient",
+     "body": "<p><b>Problem.</b> Evaluate \\( \\int_0^{10} t\\,e^{-t/5}\\,dt \\).</p><p><b>Approach.</b> A power multiplied by an exponential: no substitution will help, because the exponent's derivative is a constant and not the other factor. Use by parts, and take \\( u = t \\) so that differentiating reduces it to 1. Taking \\( u = e^{-t/5} \\) instead would leave \\( t^2/2 \\) in the new integral &mdash; a higher power than you started with, which is the signal to swap the roles rather than continue.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; assign the parts.</em> \\( u = t \\), \\( dv = e^{-t/5}\\,dt \\), so \\( du = dt \\) and \\( v = -5e^{-t/5} \\).</p><p><em>Step 2 &mdash; apply the formula.</em> \\( \\left[-5t\\,e^{-t/5}\\right]_0^{10} + 5\\int_0^{10} e^{-t/5}\\,dt \\).</p><p><em>Step 3 &mdash; first term.</em> \\( -50e^{-2} - 0 = -6.767 \\).</p><p><em>Step 4 &mdash; second term.</em> \\( 5\\left[-5e^{-t/5}\\right]_0^{10} = 25(1 - e^{-2}) = 21.617 \\).</p><p><b>Answer.</b> \\( -6.767 + 21.617 = 14.850 \\). A numerical mid-point sum over the same interval gives 14.8499, confirming it. Note the first term is negative and the second positive &mdash; a sign pattern that is normal here and not an error.</p>"
+    }
+   ]
+  }
  },
  "9": {
   "lecture": "\n<h3>§1 · Average value — what the meter should have read</h3>\n<p>The average of a continuously varying quantity is its integral spread evenly across the\ninterval:</p>\n\\[ \\bar f = \\frac{1}{b-a}\\int_a^b f(t)\\,dt \\tag{1} \\]\n<p>Average demand, average flow, average temperature — every KPI that begins with the word\n\"average\" is equation (1), whether computed honestly or not. When someone averages three spot\nreadings taken at convenient times, you now know precisely what they did wrong.</p>\n<h3>§2 · RMS — the average that heats</h3>\n<p>Electrical heating goes as the <em>square</em> of current, so the meaningful \"average\" for\nAC is the root of the mean of the square:</p>\n\\[ f_{rms} = \\sqrt{\\frac{1}{T}\\int_0^T f^2(t)\\,dt}, \\qquad \\text{for } f = A\\sin\\omega t:\\ f_{rms} = \\frac{A}{\\sqrt 2} \\tag{2} \\]\n<p>The sine result follows because \\( \\sin^2 \\) averages to exactly ½ over a cycle. This is\nwhy 230 V mains has a 325 V peak, and why vibration severity standards quote RMS velocity:\nRMS tracks energy, and energy does the damage.</p>\n<h3>§3 · Work by integration</h3>\n<p>When force varies along the path, work is accumulated force-times-distance:\n\\( W = \\int F\\,dx \\). Pumping a tank empty is the signature case: each layer of liquid at\ndepth \\( y \\) has weight \\( \\rho g A\\,dy \\) — density \\( \\rho \\) times gravitational acceleration \\( g \\) times the tank's cross-sectional area \\( A \\) times the layer's own thickness \\( dy \\) — and must rise a different height. Summing layers\nis an integral, executed in §Worked Examples for a real tank. The same layer-summing pattern\ncomputes hydrostatic forces on gates and centroids of plates — one method, many billables.</p>\n\n<h3>§4 · Choosing the right average — a field guide</h3>\n<p>Three different averages answer three different questions, and choosing the wrong one is a\nquiet, expensive error. The <em>plain mean</em> — equation (1) — answers \"how much per unit\ntime on the invoice\": billing, throughput, duty totals. The <em>RMS</em> — equation (2) —\nanswers \"what steady level would heat, stress, or wear the same\": electrical heating,\nvibration severity, fatigue-relevant loading, because damage physics runs on squares. The\n<em>peak</em> answers \"will it survive the worst instant\": trips, relief sizing, insulation.\nA signal has all three numbers at once, and the crest factor — peak over RMS — is the single\nfigure that says how far apart they live: near 1.4 for a clean sine, climbing whenever\nimpacts and spikes enter, which is why analysts watch it as an early bearing-damage flag.</p>\n<p>On sampled data the integrals become sums without changing meaning: mean the samples for\nequation (1), mean the squares and take the root for equation (2), weighting by interval when\nthe sampling is uneven. For work-by-layers problems, the recipe is mechanical: draw the\nlayer, write its weight, write its travel distance as a function of position, integrate over\nthe geometry — then check against the centroid shortcut, which agrees every time the geometry\nis uniform and catches the setup when it isn't.</p>\n<p>The same layer-summing pattern prices hydrostatic force on a gate, the metal in a\ntapered column, and the moment of a distributed load — one method, many invoices. What\nchanges between problems is only what each layer carries: weight, pressure, or load per\nmetre. Master the pattern once, in the tank problem, and every later course that says\n\"integrate over the geometry\" is asking for a rerun.</p>\n<p><strong>Closing.</strong> Integrals define honest averages (1), energy-true averages (2),\nand path-dependent work — three tools that turn \"roughly\" into \"defensibly.\"</p>\n",
@@ -1508,7 +1592,103 @@
     "solution": "<p>For a sine, peak \\( = A \\) and RMS \\( = A/\\sqrt2 \\), so peak/RMS \\( = \\sqrt2 \\). A constant and a square wave both have RMS equal to their peak — crest factor 1 — while impulsive signals push the ratio well above 2, which is precisely why a rising crest factor on a bearing's vibration flags early impact-type damage while the RMS still looks calm. Crest factor is the one number that says how \"spiky\" a signal is.</p>"
    }
   ],
-  "recap": "<ul> <li><b>Average value</b> is the integral spread evenly across the interval. Every KPI beginning with the word \"average\" is this calculation — whether or not it was computed honestly.</li> <li>Averaging a few spot readings taken at convenient times is not this calculation, and you can now say precisely why.</li> <li><b>RMS is the average that heats.</b> Electrical heating goes as the square of current, so the meaningful average for an alternating quantity is the root of the mean of the square — which is why vibration severity standards quote RMS velocity.</li> <li><b>Work by integration</b> when force varies along the path: \\( W = \\int F\\,dx \\). Emptying a tank is the signature case, because each layer must rise a different height.</li> <li>Choosing the right average — mean, RMS, or time-weighted — is a field decision with different answers, not a matter of taste.</li> </ul>"
+  "recap": "<ul> <li><b>Average value</b> is the integral spread evenly across the interval. Every KPI beginning with the word \"average\" is this calculation — whether or not it was computed honestly.</li> <li>Averaging a few spot readings taken at convenient times is not this calculation, and you can now say precisely why.</li> <li><b>RMS is the average that heats.</b> Electrical heating goes as the square of current, so the meaningful average for an alternating quantity is the root of the mean of the square — which is why vibration severity standards quote RMS velocity.</li> <li><b>Work by integration</b> when force varies along the path: \\( W = \\int F\\,dx \\). Emptying a tank is the signature case, because each layer must rise a different height.</li> <li>Choosing the right average — mean, RMS, or time-weighted — is a field decision with different answers, not a matter of taste.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>Integration earns its keep when the thing being accumulated is not a rate in time. Areas between curves, volumes of revolution, work against a varying force and true averages are all the same operation applied to different integrands. This lesson is about choosing the integrand correctly, which is where the engineering sits.</p>",
+    "keypoints": [
+     "Every application is the same construction: slice the object, write one slice's contribution, then integrate.",
+     "Getting the slice right is the whole problem; the integration afterwards is routine.",
+     "Work is force integrated over distance, and it needs an integral exactly when the force varies.",
+     "For pumping problems the varying quantity is usually the lift, not the weight of the slice.",
+     "The average value of a quantity is its integral divided by the interval, not the mean of a few readings.",
+     "Root-mean-square is a different average again &mdash; square, average, then take the root, in that order.",
+     "For a sinusoid the RMS value is the peak divided by root two, which is why AC quantities are quoted that way."
+    ],
+    "terms": [
+     {
+      "term": "Slice contribution",
+      "symbol": "\\( dW,\\ dV \\)",
+      "read": "d W, d V",
+      "meaning": "What one thin slice contributes; the thing to be summed."
+     },
+     {
+      "term": "Density",
+      "symbol": "\\( \\rho \\)",
+      "read": "rho",
+      "meaning": "Mass per unit volume, in kg/m&sup3;."
+     },
+     {
+      "term": "Gravitational acceleration",
+      "symbol": "\\( g \\)",
+      "read": "g",
+      "meaning": "Taken as 9.81 m/s&sup2;."
+     },
+     {
+      "term": "Cross-sectional area",
+      "symbol": "\\( A \\)",
+      "read": "A",
+      "meaning": "Area of the tank's plan section, in m&sup2;."
+     },
+     {
+      "term": "Depth or height",
+      "symbol": "\\( H \\)",
+      "read": "H",
+      "meaning": "Vertical extent, in metres."
+     },
+     {
+      "term": "Work",
+      "symbol": "\\( W = \\int F\\,dx \\)",
+      "read": "W equals the integral of F d x",
+      "meaning": "Energy expended against a varying force, in joules."
+     },
+     {
+      "term": "Average value",
+      "symbol": "\\( \\bar{f} \\)",
+      "read": "f bar",
+      "meaning": "Integral over the interval, divided by the interval length."
+     },
+     {
+      "term": "Root-mean-square",
+      "symbol": "\\( f_{rms} \\)",
+      "read": "f R M S",
+      "meaning": "Square root of the average of the square; the effective value of a varying quantity."
+     },
+     {
+      "term": "Pi",
+      "symbol": "\\( \\pi \\)",
+      "read": "pi",
+      "meaning": "The circle constant, 3.1416."
+     },
+     {
+      "term": "Height coordinate",
+      "symbol": "\\( y \\)",
+      "read": "y",
+      "meaning": "Height of a slice above the tank bottom, in metres."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Slice, write one contribution, integrate",
+     "body": "<p>Every application in this lesson uses one construction. Cut the object or the process into slices thin enough that the varying quantity is effectively constant across each one. Write what a single slice contributes. Then integrate that expression over the range of slices.</p><p>The integration is routine. Writing the slice is where the engineering is, and it is where the errors are. The reliable discipline is to write the slice's contribution as a product of a small quantity and whatever varies, then check its units before integrating &mdash; a slice contribution to a work integral must come out in joules, and if it does not, the slice is wrong and no amount of correct integration will rescue it.</p><p>Consider emptying a tank. It is tempting to compute the total weight of liquid and multiply by some height, but that is only valid if every part of the liquid is lifted the same distance, and it is not. A slice near the top is barely lifted; a slice at the bottom is lifted the full depth. The thing that varies from slice to slice is the <em>lift</em>, so the lift must be inside the integral.</p><p>That single observation is what makes the answer come out as \\( \\rho gAH^2/2 \\) rather than \\( \\rho gAH^2 \\) &mdash; a factor of two, which is the difference between sizing a pump correctly and sizing it at twice the duty. The one-half is the average lift being half the depth, and it appears because the integration did the averaging for you.</p>"
+    },
+    {
+     "title": "Two averages that are not the same",
+     "body": "<p>The <b>average value</b> of a varying quantity over an interval is its integral divided by the interval length: the constant value that would have accumulated the same total. This is not the same as the mean of a handful of readings unless those readings happen to be evenly spaced and the quantity happens to be well behaved between them.</p><p>For many purposes that plain average is the wrong one anyway. A quantity that swings symmetrically about zero &mdash; an alternating current, a vibration velocity, a pressure pulsation &mdash; has a plain average of zero, which is true and useless. What matters is the magnitude of the swing, and the standard measure is the <b>root-mean-square</b>.</p><p>The name is the recipe, and the order is not negotiable: square the quantity, average the square, then take the square root. Squaring first is what removes the sign; averaging afterwards weights every instant by its duration; the root returns the result to the original units.</p><p>For a sinusoid the RMS value works out as the peak divided by root two, about 0.707 of the peak. It is worth contrasting with the average of the magnitude over half a cycle, which is \\( 2/\\pi \\) or about 0.637 of the peak &mdash; a different number for a different question. Quoting one where the other is meant is a standard source of an 11% discrepancy that nobody can find.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Work to empty a tank",
+     "body": "<p><b>Problem.</b> A vertical cylindrical tank of radius \\( 1.5\\ \\mathrm{m} \\) is filled with water to a depth of \\( 4\\ \\mathrm{m} \\). Find the work needed to pump it all up to the level of the tank top. Take \\( \\rho = 998\\ \\mathrm{kg/m^3} \\) and \\( g = 9.81\\ \\mathrm{m/s^2} \\).</p><p><b>Approach.</b> Slice horizontally. Each slice has the same area and the same weight, but a different lift, so the lift is what goes inside the integral. Measuring height upward from the bottom, a slice at height \\( y \\) must be raised \\( (H - y) \\). The classic error is to multiply the total weight by the full depth, which lifts every drop from the bottom and overstates the work by exactly a factor of two.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; area.</em> \\( A = \\pi(1.5)^2 = 7.069\\ \\mathrm{m^2} \\).</p><p><em>Step 2 &mdash; one slice.</em> Weight \\( \\rho gA\\,dy \\), lifted \\( (4 - y) \\), so \\( dW = \\rho gA(4-y)\\,dy \\).</p><p><em>Step 3 &mdash; integrate 0 to 4.</em> \\( \\int_0^4 (4-y)\\,dy = 8 \\), so \\( W = \\rho gA \\times 8 \\).</p><p><em>Step 4 &mdash; evaluate.</em> \\( 998 \\times 9.81 \\times 7.069 \\times 8 = 5.536\\times10^5 \\).</p><p><b>Answer.</b> \\( W = 554\\ \\mathrm{kJ} \\), or 0.554 MJ. Note the general form \\( \\rho gAH^2/2 \\): the average lift is half the depth, which the integral produced without being told.</p>"
+    },
+    {
+     "title": "RMS against mean, on the same waveform",
+     "body": "<p><b>Problem.</b> For a sinusoid of peak value 1, find the root-mean-square value over a full cycle and the average of its magnitude over a half cycle. Comment on the difference.</p><p><b>Approach.</b> Two different averages of the same waveform, so the point is to keep the operations in the right order. RMS squares first, which turns the sine into a squared sine whose average over a whole number of cycles is exactly one half. The magnitude average has no squaring, so it must be taken over a half cycle &mdash; over a full cycle the signed average is zero, which is the trap.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; mean square.</em> The average of \\( \\sin^2 \\) over a full cycle is \\( 1/2 \\).</p><p><em>Step 2 &mdash; take the root.</em> \\( 1/\\sqrt{2} = 0.7071 \\).</p><p><em>Step 3 &mdash; magnitude average.</em> Over a half cycle the mean of \\( \\sin \\) is \\( 2/\\pi = 0.6366 \\).</p><p><b>Answer.</b> RMS 0.707 of peak; magnitude average 0.637 of peak. The two differ by about 11%, and they answer different questions: RMS is the value that delivers the same heating or the same energy, while the magnitude average is what a simple rectifying instrument responds to. Instruments calibrated on one assumption and used on a distorted waveform are a routine source of disagreement between two meters on the same circuit.</p>"
+    }
+   ]
+  }
  },
  "10": {
   "lecture": "\n<h3>§1 · Equations that contain their own rates</h3>\n<p>A differential equation relates a quantity to its own rate of change. The plant's\narchetype: a hot mass losing heat in proportion to its excess over ambient,</p>\n\\[ \\frac{dT}{dt} = -\\frac{T - T_\\infty}{\\tau} \\tag{1} \\]\n<p>Read it aloud: <em>the hotter it is above ambient, the faster it cools.</em> Most\nfirst-order plant dynamics — thermal soak, tank draining, filter loading, RC circuits,\ninstrument response — are equation (1) with different nouns.</p>\n<h3>§2 · Solving by separation</h3>\n<p>Separable equations split variables to opposite sides and integrate:</p>\n\\[ \\int\\frac{dT}{T-T_\\infty} = -\\int\\frac{dt}{\\tau} \\;\\Rightarrow\\; \\ln|T-T_\\infty| = -\\frac{t}{\\tau}+C \\;\\Rightarrow\\; T = T_\\infty + (T_0-T_\\infty)e^{-t/\\tau} \\tag{2} \\]\n<p>Lesson 5's cooling curve wasn't handed down; it is <em>derived</em> here, in three lines,\nfrom a physical statement. The constant of integration is fixed by the initial condition\n\\( T(0) = T_0 \\) — every first-order ODE needs one known point to pin its trajectory.</p>\n<h3>§3 · Reading dynamics without solving</h3>\n<p>Much of an ODE's story is available without solution. Set the rate to zero and you find\nequilibria (here \\( T = T_\\infty \\)). The sign of the rate tells direction of travel; its size\nsets speed. The coefficient \\( 1/\\tau \\) is the speed of the whole approach — measure it from\ndata and you know the system's tempo. Engineers <em>read</em> ODEs more often than they solve\nthem; the solving builds the reading instinct.</p>\n\n<h3>§4 · From balance statement to equation — the modeling method</h3>\n<p>First-order models are not found; they are written, and the writing follows one template.\n<em>State the balance:</em> rate of change of the stored quantity equals rate in minus rate\nout. <em>Express each rate in the state variable:</em> outflow proportional to level, heat\nloss proportional to excess temperature, contaminant leaving at concentration times flow.\n<em>Divide through</em> until the equation reads \\( \\dot{y} = -(y - y_\\infty)/\\tau \\),\nand read \\( \\tau \\) directly from the coefficients — tank volume \\( V \\) over volumetric flow \\( Q \\) for a flushed tank,\nthermal mass over loss coefficient for a cooling body. The physics enters in the rates; the\nmathematics is the same three lines every time.</p>\n<p>Respect the sign conventions and the model's edges. A negative rate coefficient decays\ntoward equilibrium; a positive one runs away, and recognizing which you have written is a\nstability judgment made before any solving. Step inputs — a heater switching on, a setpoint\nmoving — reuse the same solution with the roles renamed: the response climbs\n\\( 1 - e^{-t/\\tau} \\) toward its new destination. And when the data refuses the model —\ncurved semilog plots, delayed starts — the honest conclusion is a second time constant or a\ndeadtime, not a forced fit. Write what the balance supports; report what the data shows.</p>\n<p>This template is the most reused page in the course. The same three lines will reappear\nas the RC circuit in the electrical course, the thermal soak in heat transfer, the flushed\nvolume in fluid mechanics, and the instrument lag in controls — identical mathematics under\ndifferent nouns. Learn to see the balance statement through the surface vocabulary and every\none of those courses starts a lesson ahead.</p>\n<p><strong>Closing.</strong> First-order ODEs encode self-referential change; separation\nsolves the classics; initial conditions select the one real trajectory among the many\npossible.</p>\n",
@@ -1591,7 +1771,109 @@
     "solution": "<p>The equation fixes the <em>shape</em> of all possible histories; the initial condition picks the one that passes through the known starting state — that is why every real prediction needs a measured starting point. The equilibrium and the time constant are properties of the equation itself (its coefficients), not of where you start; and the exponential term is the transient, removed only by waiting, not by initial conditions.</p>"
    }
   ],
-  "recap": "<ul> <li>An equation containing its own rate of change describes nearly every tank, thermal mass and mixing problem you will meet.</li> <li><b>Separation of variables:</b> gather each variable on its own side, integrate both, then apply the initial condition to fix the constant.</li> <li>Put the equation in the standard form \\( \\dot{y} = -(y - y_\\infty)/\\tau \\) and the time constant can be read straight off the coefficients — tank volume over volumetric flow for a flushed tank, thermal mass over loss coefficient for a cooling body.</li> <li>You can often read the dynamics without solving anything: the final value and the time constant answer most practical questions.</li> <li><b>Modelling method:</b> start from a balance statement — rate in minus rate out — and express each rate in terms of the state variable.</li> </ul>"
+  "recap": "<ul> <li>An equation containing its own rate of change describes nearly every tank, thermal mass and mixing problem you will meet.</li> <li><b>Separation of variables:</b> gather each variable on its own side, integrate both, then apply the initial condition to fix the constant.</li> <li>Put the equation in the standard form \\( \\dot{y} = -(y - y_\\infty)/\\tau \\) and the time constant can be read straight off the coefficients — tank volume over volumetric flow for a flushed tank, thermal mass over loss coefficient for a cooling body.</li> <li>You can often read the dynamics without solving anything: the final value and the time constant answer most practical questions.</li> <li><b>Modelling method:</b> start from a balance statement — rate in minus rate out — and express each rate in terms of the state variable.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>A differential equation states a rule about how fast something changes, and solving it recovers the quantity itself. Most first-order models in plant engineering are separable, meaning the two variables can be pushed to opposite sides and integrated independently. This lesson solves that class and fixes the arbitrary constant from an initial condition.</p>",
+    "keypoints": [
+     "A differential equation relates a quantity to its own rate of change.",
+     "Separable means the equation can be rearranged with each variable entirely on its own side before integrating.",
+     "Integrating both sides introduces one arbitrary constant, which the initial condition determines.",
+     "A general solution is a family of curves; a particular solution is the one that passes through the known starting point.",
+     "Proportional-rate models integrate to exponentials, which closes the loop with the growth-and-decay lesson.",
+     "Newton's law of cooling is the standard example, and its solution approaches ambient without ever reaching it.",
+     "Always verify by substituting the solution back into the original equation."
+    ],
+    "terms": [
+     {
+      "term": "Differential equation",
+      "symbol": "\\( dy/dx = f(x, y) \\)",
+      "read": "d y by d x equals f of x and y",
+      "meaning": "An equation relating a quantity to its own rate of change."
+     },
+     {
+      "term": "Separable equation",
+      "symbol": "\\( \\dfrac{dy}{g(y)} = f(x)\\,dx \\)",
+      "read": "d y over g of y equals f of x d x",
+      "meaning": "One whose variables can be fully separated before integrating."
+     },
+     {
+      "term": "General solution",
+      "symbol": "&mdash;",
+      "read": "general solution",
+      "meaning": "The family of solutions, carrying one arbitrary constant."
+     },
+     {
+      "term": "Particular solution",
+      "symbol": "&mdash;",
+      "read": "particular solution",
+      "meaning": "The single member of that family fixed by the initial condition."
+     },
+     {
+      "term": "Initial condition",
+      "symbol": "\\( T(0) = T_0 \\)",
+      "read": "T of nought equals T nought",
+      "meaning": "The known value at the start, used to determine the constant."
+     },
+     {
+      "term": "Temperature",
+      "symbol": "\\( T \\)",
+      "read": "T",
+      "meaning": "Temperature in degrees Celsius."
+     },
+     {
+      "term": "Ambient temperature",
+      "symbol": "\\( T_a \\)",
+      "read": "T sub a",
+      "meaning": "The surrounding temperature the body approaches."
+     },
+     {
+      "term": "Cooling constant",
+      "symbol": "\\( k \\)",
+      "read": "k",
+      "meaning": "Rate constant, in reciprocal minutes; the inverse of the time constant."
+     },
+     {
+      "term": "Time",
+      "symbol": "\\( t \\)",
+      "read": "t",
+      "meaning": "Elapsed time, in minutes."
+     },
+     {
+      "term": "Constant of integration",
+      "symbol": "\\( C \\)",
+      "read": "C",
+      "meaning": "The arbitrary constant fixed by the initial condition."
+     },
+     {
+      "term": "Exponential",
+      "symbol": "\\( e \\)",
+      "read": "e",
+      "meaning": "Base of natural growth, 2.7183."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Separating the variables",
+     "body": "<p>A <b>differential equation</b> is a statement about a rate. It does not give the quantity directly; it gives a rule the quantity's rate must obey, and solving means finding the quantity whose rate obeys it. That is why the previous lessons on integration are the prerequisite: solving is integrating, once the equation is arranged so that integration is possible.</p><p>An equation is <b>separable</b> when it can be rearranged so each variable sits entirely on its own side, each with its own differential. Once separated, both sides are integrated independently &mdash; and this is legitimate precisely because each side now involves only one variable.</p><p>Integrating both sides produces one arbitrary constant. That is not untidiness; it is the honest statement that the rate rule alone cannot know where the quantity started. A cooling law describes every component cooling in that environment, whatever its starting temperature, and the family of curves it describes is the <b>general solution</b>. Supplying an <b>initial condition</b> selects one curve from the family and gives the <b>particular solution</b>.</p><p><b>The working method.</b> <em>One:</em> get all of one variable with its differential on one side. <em>Two:</em> integrate both sides, writing the constant once. <em>Three:</em> apply the initial condition to evaluate it. <em>Four:</em> rearrange into the quantity you actually want. <em>Five:</em> substitute back into the original equation to verify.</p>"
+    },
+    {
+     "title": "Newton's law of cooling, and why it never finishes",
+     "body": "<p>The standard first-order model in plant work says a body's rate of temperature change is proportional to how far it is from its surroundings: fast when the gap is large, slow when the gap is small. Written out, the rate of change of temperature equals minus a constant times the difference between the body and ambient.</p><p>The minus sign is doing real work. It says the temperature moves towards ambient from whichever side it starts &mdash; a hot body cools and a cold body warms, and the same equation covers both without modification. The constant \\( k \\), read &lsquo;k&rsquo;, sets the pace and is the reciprocal of the time constant met earlier, so a large \\( k \\) is a fast process.</p><p>Separating and integrating turns the difference from ambient into an exponential decay, which closes the loop with the growth-and-decay lesson: the exponential curve met there as a description is produced here as a <em>consequence</em> of the rate rule. Both describe the same physics, and seeing them connect is the point of solving rather than quoting.</p><p>Two features are worth reading off the solution. It approaches ambient asymptotically and never arrives, so &lsquo;time to reach ambient&rsquo; is not a well-posed question &mdash; &lsquo;time to reach within two degrees&rsquo; is. And the constant appears only in the combination \\( kt \\), so doubling the rate constant is indistinguishable from waiting twice as long. That is why a single cooling curve can identify the constant, and why two curves at different ambients cannot distinguish mechanisms that share it.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Solving a cooling law from a rate rule",
+     "body": "<p><b>Problem.</b> A component obeys \\( dT/dt = -k(T - T_a) \\) with ambient \\( T_a = 20\\ ^\\circ\\mathrm{C} \\), rate constant \\( k = 1/12\\ \\mathrm{min^{-1}} \\), and an initial temperature of \\( 80\\ ^\\circ\\mathrm{C} \\). Solve for \\( T(t) \\) and find the temperature at 30 minutes.</p><p><b>Approach.</b> The equation is separable once the temperature difference is treated as the working variable. Integrate, then use the initial condition to fix the constant. The classic slip is to lose the minus sign during separation, which produces a component that heats up towards infinity &mdash; physically absurd, and therefore easy to catch if you glance at the sign of the exponent before continuing.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; separate.</em> \\( \\dfrac{dT}{T - 20} = -k\\,dt \\).</p><p><em>Step 2 &mdash; integrate both sides.</em> \\( \\ln(T - 20) = -kt + C \\).</p><p><em>Step 3 &mdash; apply the initial condition.</em> At \\( t = 0 \\), \\( T = 80 \\), so \\( \\ln 60 = C \\).</p><p><em>Step 4 &mdash; rearrange.</em> \\( T = 20 + 60e^{-t/12} \\).</p><p><em>Step 5 &mdash; evaluate at 30 min.</em> \\( 20 + 60e^{-2.5} = 24.93 \\).</p><p><b>Answer.</b> \\( T(t) = 20 + 60e^{-t/12} \\), giving 24.93&deg;C at 30 minutes. This is exactly the curve differentiated two lessons ago &mdash; there it was given, here it is derived from the rate rule that generates it.</p>"
+    },
+    {
+     "title": "Inverting the solution to find a time",
+     "body": "<p><b>Problem.</b> For the same component, how long until it reaches \\( 35\\ ^\\circ\\mathrm{C} \\)? And why is &lsquo;how long until it reaches 20&deg;C&rsquo; not a fair question?</p><p><b>Approach.</b> The solution gives temperature from time; this asks the reverse, so the exponential must be undone with a logarithm &mdash; the same manoeuvre used for half-lives. Work with the temperature difference from ambient rather than the temperature itself, because that is the quantity that actually decays exponentially. Subtracting ambient at the wrong moment is the usual error and gives a badly wrong time.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; work in the difference.</em> \\( 35 - 20 = 15 \\) against an initial difference of 60.</p><p><em>Step 2 &mdash; set up.</em> \\( 15 = 60e^{-t/12} \\), so \\( e^{-t/12} = 0.25 \\).</p><p><em>Step 3 &mdash; take logarithms.</em> \\( -t/12 = \\ln 0.25 = -1.386 \\).</p><p><em>Step 4 &mdash; solve.</em> \\( t = 12 \\times 1.386 = 16.64\\ \\mathrm{min} \\).</p><p><b>Answer.</b> 16.64 minutes. Reaching exactly 20&deg;C, however, requires the difference to be zero, and no finite time makes an exponential zero &mdash; the logarithm of zero is undefined. The question has to be posed as a tolerance: within one degree, within two. That is not pedantry, it is how a cooling-time acceptance criterion has to be written to be testable.</p>"
+    }
+   ]
+  }
  },
  "11": {
   "lecture": "\n<h3>§1 · Every smooth function is locally a polynomial</h3>\n<p>Zoom into any smooth curve and it straightens; zoom with more care and it bends like a\nparabola. Taylor's theorem makes this precise: near \\( x = a \\),</p>\n\\[ f(x) \\approx f(a) + f'(a)(x-a) + \\frac{f''(a)}{2}(x-a)^2 + \\cdots \\tag{1} \\]\n<p>The first two terms are the tangent line — <em>linearization</em> — and the third begins to\ntrack curvature. Engineering lives on truncations of (1): every \"small-angle,\" \"small-signal,\"\nand \"about the operating point\" argument you will ever meet is a Taylor series with the tail\ncut off.</p>\n<h3>§2 · The classic small approximations</h3>\n\\[ \\sin\\theta \\approx \\theta - \\frac{\\theta^3}{6}, \\qquad \\cos\\theta \\approx 1 - \\frac{\\theta^2}{2}, \\qquad e^x \\approx 1 + x + \\frac{x^2}{2} \\tag{2} \\]\n<p>At \\( \\theta = 10° = 0.1745 \\) rad, \\( \\sin\\theta = 0.17365 \\): the one-term approximation\n\\( \\theta \\) errs by 0.5%, and adding the cubic term shrinks the error to 0.0004%. This is why\npendulum periods, beam deflections, and control models replace \\( \\sin\\theta \\) with\n\\( \\theta \\) below ~15° and nobody blushes.</p>\n<h3>§3 · Knowing the size of the tail</h3>\n<p>An approximation without an error bound is a wish. The first neglected term estimates the\nerror: truncating after \\( \\theta \\) leaves \\( \\sim\\theta^3/6 \\). Professional habit: state\nthe operating range, evaluate the first dropped term at the range's edge, and write both down.\nThat habit is what separates \"we linearized about 50% flow\" from hand-waving — and it is\nexactly how instrument nonlinearity specs and control-model validity limits are written.</p>\n\n<h3>§4 · Building a linearization you can defend</h3>\n<p>Linearization is a contract with three clauses, written in this order. <em>Choose the\noperating point deliberately</em> — the flow, load, or angle the system actually lives at —\nbecause the model is exact there and degrades with distance. <em>Compute the two numbers:</em>\nthe function's value and its derivative at that point; the tangent model is just\n\\( f(a) + f'(a)(x-a) \\), a straight line wearing the local slope. <em>Price the error\nbefore anyone asks:</em> evaluate the first dropped term, \\( \\tfrac12 f''(a)(x-a)^2 \\), at\nthe edge of the range you intend to use, and write both the range and the error into the\nwork. A linearization delivered with its validity range and worst-case error is engineering;\ndelivered bare, it is a hope with a slope.</p>\n<p>The quadratic error growth is the practical lever: halve the excursion and the error\nquarters, which is why tight-range instruments tolerate linear scaling that wide-range ones\ncannot. Run the contract in reverse to audit existing systems — find where a legacy scaling\nblock or control model was linearized, evaluate the dropped term at today's operating range,\nand you have a defensible number for how much the old approximation now costs. The habit\ngeneralizes: every model is an approximation; professionals differ only in whether the error\nis priced.</p>\n<p>Carry that sentence out of the course. Instrument linearity specifications, control-model\nvalidity ranges, and datasheet accuracy classes are all Taylor-series contracts written by\nsomeone else — read them by asking where the expansion point sits and how far the promised\nrange strays from it. The engineer who can price an approximation can also audit one.</p>\n<p><strong>Closing.</strong> Taylor series turn smooth functions into local polynomials;\nlinearization is its two-term truncation; the first dropped term prices the honesty of the\napproximation. This lesson closes the course by naming the approximation culture the whole\ncurriculum will use.</p>\n",
@@ -1674,6 +1956,96 @@
     "solution": "<p>The first dropped term is \\( x^2/2 \\): at \\( x = 1 \\) that is 0.5 — a quarter of the true value — while at \\( x = 0.05 \\) it is 0.00125, about 0.12%. Truncation error is governed by the first term you dropped, and its power-of-\\( x \\) scaling is why \"small\" is the operative word in every small-signal model. Nothing cancels by luck, the exponential is defined everywhere, and the error is emphatically not scale-free — pricing it at the range edge is the whole discipline.</p>"
    }
   ],
-  "recap": "<ul> <li>Every smooth function is locally a polynomial. That is the entire idea, and it is what makes linearization defensible rather than lazy.</li> <li>The classic small approximations — \\( \\sin x \\approx x \\), \\( (1+x)^n \\approx 1 + nx \\), \\( e^x \\approx 1 + x \\) — are all the same theorem truncated after one term.</li> <li>The remainder term is not optional bookkeeping: it is how you state the size of the error you just agreed to accept.</li> <li>A linearization you can defend comes with its range of validity attached. Without that range, it is a guess wearing a formula.</li> </ul>"
+  "recap": "<ul> <li>Every smooth function is locally a polynomial. That is the entire idea, and it is what makes linearization defensible rather than lazy.</li> <li>The classic small approximations — \\( \\sin x \\approx x \\), \\( (1+x)^n \\approx 1 + nx \\), \\( e^x \\approx 1 + x \\) — are all the same theorem truncated after one term.</li> <li>The remainder term is not optional bookkeeping: it is how you state the size of the error you just agreed to accept.</li> <li>A linearization you can defend comes with its range of validity attached. Without that range, it is a guess wearing a formula.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "<p>A Taylor series replaces a complicated function near a point with a polynomial that matches its value and its derivatives there. That is the justification for every small-angle approximation, every linearised model and every controller tuned on a local slope. This lesson builds the series and, more importantly, bounds the error you accept by truncating it.</p>",
+    "keypoints": [
+     "A Taylor polynomial matches the function's value and first several derivatives at one chosen point.",
+     "Each extra term buys accuracy near that point and buys nothing far from it.",
+     "Truncating leaves a remainder; an approximation without an error estimate is an assertion, not a result.",
+     "The first-order truncation is linearisation &mdash; the tangent line &mdash; and is the basis of most control models.",
+     "The small-angle approximation is the first-order Taylor series of the sine, and its error grows as the cube of the angle.",
+     "Convergence is local: a series about one point may be useless at another.",
+     "Check an approximation by computing the first neglected term, which usually bounds the error well."
+    ],
+    "terms": [
+     {
+      "term": "Taylor series",
+      "symbol": "\\( \\sum \\dfrac{f^{(n)}(a)}{n!}(x-a)^n \\)",
+      "read": "the sum of f to the n of a, over n factorial, times x minus a to the n",
+      "meaning": "A polynomial matching the function's derivatives at \\( a \\)."
+     },
+     {
+      "term": "Expansion point",
+      "symbol": "\\( a \\)",
+      "read": "a",
+      "meaning": "The point about which the series is built; accuracy is best near it."
+     },
+     {
+      "term": "Factorial",
+      "symbol": "\\( n! \\)",
+      "read": "n factorial",
+      "meaning": "The product of the integers up to \\( n \\); it divides the nth term."
+     },
+     {
+      "term": "nth derivative",
+      "symbol": "\\( f^{(n)}(a) \\)",
+      "read": "f to the n of a",
+      "meaning": "The nth derivative evaluated at the expansion point."
+     },
+     {
+      "term": "Maclaurin series",
+      "symbol": "&mdash;",
+      "read": "Maclaurin series",
+      "meaning": "A Taylor series expanded about zero."
+     },
+     {
+      "term": "Truncation",
+      "symbol": "&mdash;",
+      "read": "truncation",
+      "meaning": "Keeping finitely many terms and discarding the rest."
+     },
+     {
+      "term": "Remainder",
+      "symbol": "\\( R_n \\)",
+      "read": "R sub n",
+      "meaning": "The error left by truncating after the nth term."
+     },
+     {
+      "term": "Linearisation",
+      "symbol": "\\( f(a) + f'(a)(x-a) \\)",
+      "read": "f of a plus f prime of a, times x minus a",
+      "meaning": "The first-order truncation: the tangent line at \\( a \\)."
+     },
+     {
+      "term": "Exponential",
+      "symbol": "\\( e \\)",
+      "read": "e",
+      "meaning": "Base of natural growth, 2.7183."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Matching derivatives at a point",
+     "body": "<p>The idea is direct. To approximate a function near some <b>expansion point</b> \\( a \\), build a polynomial that agrees with it there &mdash; not merely in value, but in slope, in curvature, and in as many further derivatives as you care to match. Each condition fixes one coefficient, and the coefficients come out as the derivatives divided by factorials.</p><p>The factorial is not decoration. Differentiating a power term repeatedly generates exactly a factorial, so dividing by \\( n! \\) is what makes the nth derivative of the polynomial equal the nth derivative of the function rather than some multiple of it.</p><p>An expansion about zero is called a <b>Maclaurin series</b> and is the common case, because most engineering approximations are about a rest state, a zero deflection or a nominal operating point.</p><p>Two properties govern how the result behaves. Accuracy is <em>local</em>: the approximation is excellent near \\( a \\) and degrades as you move away, so a series built about one operating point may be worthless at another. And adding terms improves accuracy near \\( a \\) without necessarily helping far from it &mdash; more terms is not a substitute for expanding about the right point.</p>"
+    },
+    {
+     "title": "The error you accept, and the linearisation you rely on",
+     "body": "<p>Every practical use of a series is a <b>truncation</b>: keep a few terms, discard the rest, and accept a <b>remainder</b>. An approximation quoted without an error estimate is an assertion rather than a result, and the usable estimate is simple &mdash; compute the first term you discarded. For the well-behaved series met in engineering it characterises the error closely.</p><p>The most important truncation is the shortest. Keeping only the constant and the linear term gives <b>linearisation</b>, \\( f(a) + f'(a)(x-a) \\), which is precisely the tangent line. Nearly every control model, sensitivity calculation and small-signal analysis in engineering is a linearisation, and the reason they work is that the discarded terms carry factors of the deviation squared &mdash; negligible while the deviation stays small, and not negligible otherwise.</p><p>The small-angle approximation is the standard case. Truncating the sine's series after the first term gives sine of an angle approximately equal to the angle itself, in radians. The first discarded term is the cube over six, so the error grows as the cube of the angle: tolerable at a tenth of a radian, visible at half a radian, and unacceptable beyond.</p><p>This is the honest content of every &lsquo;for small oscillations&rsquo; in a vibration analysis. The phrase is not a formality &mdash; it is a statement that a cubic error term has been discarded, and it carries an obligation to check that the amplitude actually stayed small.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Building a series and watching the error fall",
+     "body": "<p><b>Problem.</b> Use the Maclaurin series of \\( e^{x} \\) to approximate \\( e^{0.1} \\) to first, second and third order, and compare each with the exact value 1.1051709.</p><p><b>Approach.</b> The exponential is its own derivative, so every derivative at zero equals 1 and the coefficients are simply the reciprocal factorials. Compute each partial sum and the error it leaves, then check whether the first discarded term predicts that error &mdash; which is the practical reason for doing the exercise at all.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; first order.</em> \\( 1 + 0.1 = 1.1 \\); error 0.005171.</p><p><em>Step 2 &mdash; second order.</em> \\( 1 + 0.1 + 0.005 = 1.105 \\); error 0.000171.</p><p><em>Step 3 &mdash; third order.</em> \\( +\\,0.001^3/6 \\) gives 1.1051667; error 0.0000043.</p><p><em>Step 4 &mdash; test the rule.</em> The first term discarded at second order is \\( 0.1^3/6 = 0.000167 \\), against an actual error of 0.000171.</p><p><b>Answer.</b> Errors of 5.2&times;10&#8315;&sup3;, 1.7&times;10&#8315;&#8308; and 4.3&times;10&#8315;&#8310;. Each order gains roughly two decimal places here, and the first neglected term predicts the error to within 3% &mdash; which is what makes it a usable field estimate.</p>"
+    },
+    {
+     "title": "How small is a small angle",
+     "body": "<p><b>Problem.</b> The small-angle approximation replaces the sine of an angle by the angle in radians. Quantify its error at 0.1 rad and at 0.5 rad, and state the practical limit.</p><p><b>Approach.</b> Compare the approximation against the true sine at both angles, and express the discrepancy as a percentage of the true value &mdash; percentages, not absolute differences, are what an engineering tolerance is written in. Expect the error to scale roughly with the cube of the angle, since that is the first discarded term, so a fivefold increase in angle should cost far more than fivefold in error.</p><p><b>Solution.</b></p><p><em>Step 1 &mdash; at 0.1 rad.</em> True sine 0.0998334 against an approximation of 0.1: absolute error 0.000167, or 0.17%.</p><p><em>Step 2 &mdash; at 0.5 rad.</em> True sine 0.4794255 against 0.5: absolute error 0.020574, or 4.29%.</p><p><em>Step 3 &mdash; check the scaling.</em> The angle grew fivefold and the absolute error grew about 123-fold, close to the 125 that a cubic law predicts.</p><p><b>Answer.</b> 0.17% at 0.1 rad and 4.29% at 0.5 rad. Below about 0.1 rad, roughly 6 degrees, the approximation is good to a fifth of a percent and safe for most work; by 0.5 rad it is costing over 4% and should be stated explicitly if used at all. The cubic scaling is what makes the degradation so sudden.</p>"
+    }
+   ]
+  }
  }
 }

@@ -71,6 +71,8 @@ STRUCTURAL = {
     "circ", "deg", "prime", "langle", "rangle", "lvert", "rvert", "lVert",
     "rVert", "vert", "mid", "space", ";", ",", "!", "hat", "bar", "tilde",
     "vec", "overline", "underline", "limits", "nolimits", "substack",
+    "Rightarrow", "Leftarrow", "rightarrow", "leftarrow", "implies",
+    "therefore", "because", "big|", "bigg|",
 }
 
 
