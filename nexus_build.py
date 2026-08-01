@@ -1808,7 +1808,7 @@ def _rev_terms_table(terms):
             '<th>Meaning</th></tr></thead>'
             f'<tbody>{rows}</tbody></table></div>')
 
-def revision_lesson_pages(code, les, rev):
+def revision_lesson_pages(code, les, rev, folio_start=None):
     """One migrated lesson as a list of one-A4-page blocks: the intro page
     (what + key points + terms table), then each sheet, then each worked
     example. Sheet/example headings come from the data's "title" field — the
@@ -1843,32 +1843,63 @@ def revision_lesson_pages(code, les, rev):
             f'<section class="rev-page rev-example"><p class="sum-run">{run} · worked example {i}</p>'
             f'<h3 class="rev-sheet-h">{esc(ex["title"])}</h3>'
             f'<div class="rev-body">{ex["body"]}</div></section>')
+    if folio_start is not None:
+        # true folios: each block IS one printed page, so its page number is
+        # deterministic — stamped here, shown by print CSS at the sheet foot
+        pages = [pg[:-len('</section>')]
+                 + f'<span class="rev-folio">{folio_start + i}</span></section>'
+                 for i, pg in enumerate(pages)]
     return pages
 
-def revision_document_fragment(course, tabs_all):
-    """The revision-notes document for a FULLY migrated course (all 11 lessons
-    carry renderable revision blocks — the caller enforces all-or-legacy,
-    never mixed). Replaces the recap spread. Contents-page lesson titles come
-    from data/y*.json "t" (owner contract), never from the content JSON."""
+def revision_document_fragment(sem, course, tabs_all, prefix):
+    """The revision-notes document for a FULLY migrated course (caller enforces
+    all-or-legacy). Page 1 is a real front cover: identity masthead on top,
+    the course title centred and dominant (owner directive 2026-08-02).
+    Page 2 is the contents, mapping every lesson title (from data/y*.json "t")
+    to its exact printed page number — block counts make pagination
+    deterministic, and the same numbers are stamped as folios on every sheet.
+    The root-asset logo reference uses the baked EN prefix; nx_page rewrites
+    it (+1 level) for the ar/ mirror."""
     code = esc(course['code'])
-    heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
-               f'{code} — {esc(course["title"])}</h2>')
+    lessons_rev = [(les, tabs_all[str(les['n'])]['revision'])
+                   for les in course['lessons']]
+    starts, nxt = [], 3          # cover = 1, contents = 2, lessons from 3
+    for _les, rev in lessons_rev:
+        starts.append(nxt)
+        nxt += 2 + len(rev['sheets']) + len(rev.get('examples') or [])
+
+    cover = (
+        f'<section class="rev-page rev-cover">'
+        f'<div class="rev-mast"><img src="{prefix}assets/nx/logo.svg" alt="">'
+        f'<span class="rev-mast-name">MechEd'
+        f'<span class="rev-mast-tag">{esc(BRAND_SMALL_EN)}</span></span></div>'
+        f'<div class="rev-cover-mid">'
+        f'<p class="rev-cover-kicker">{code} · {esc(sem["title"])}</p>'
+        f'<h1 class="rev-cover-title">{esc(course["title"])}</h1>'
+        f'<span class="rev-cover-rule"></span>'
+        f'<p class="rev-cover-type">Revision Notes</p></div>'
+        f'<p class="rev-cover-foot">MechEd · mechedkw.github.io</p>'
+        f'</section>')
+
     toc_rows = []
-    for les in course['lessons']:
-        rev = tabs_all[str(les['n'])]['revision']
+    for (les, rev), start in zip(lessons_rev, starts):
         n_s, n_e = len(rev['sheets']), len(rev.get('examples') or [])
         counts = f'{n_s} sheet{"s" if n_s != 1 else ""}'
         if n_e:
             counts += f' · {n_e} example{"s" if n_e != 1 else ""}'
         toc_rows.append(f'<li><span class="rev-toc-n">{les["n"]:02d}</span>'
                         f'<span class="rev-toc-t">{esc(les["t"])}</span>'
-                        f'<span class="rev-toc-c">{counts}</span></li>')
-    pages = [f'<section class="rev-page rev-toc">{heading}'
-             f'<p class="sum-run">{code} · revision notes · contents</p>'
-             f'<ol class="rev-contents">{"".join(toc_rows)}</ol></section>']
-    for les in course['lessons']:
-        pages.extend(revision_lesson_pages(
-            code, les, tabs_all[str(les['n'])]['revision']))
+                        f'<span class="rev-toc-c">{counts}</span>'
+                        f'<span class="rev-toc-p">{start}</span></li>')
+    toc = (f'<section class="rev-page rev-toc">'
+           f'<p class="sum-run">{code} · revision notes</p>'
+           f'<h3 class="rev-sheet-h">Contents</h3>'
+           f'<ol class="rev-contents">{"".join(toc_rows)}</ol>'
+           f'<span class="rev-folio">2</span></section>')
+
+    pages = [cover, toc]
+    for (les, rev), start in zip(lessons_rev, starts):
+        pages.extend(revision_lesson_pages(code, les, rev, folio_start=start))
     return ''.join(pages)
 
 def course_summary_fragment(sem, course, prefix, tabs_all, ref):
@@ -1900,7 +1931,7 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
     # keeps the spread untouched until its last lesson lands.
     if course['lessons'] and all(_revision_ok(tabs_all.get(str(l['n'])))
                                  for l in course['lessons']):
-        return revision_document_fragment(course, tabs_all)
+        return revision_document_fragment(sem, course, tabs_all, prefix)
     heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
                f'{esc(course["code"])} — {esc(course["title"])}</h2>')
 
@@ -1962,6 +1993,25 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
     'Save as PDF' yields the downloadable document (no server-side PDF dependency
     on a static host). Content is course_summary_fragment; this just adds the
     page chrome + print button."""
+    rev_mode = course['lessons'] and all(
+        _revision_ok(tabs_all.get(str(l['n']))) for l in course['lessons'])
+    if rev_mode:
+        # The revision document opens on its own cover (owner directive
+        # 2026-08-02) — no web pagehead above it, just the screen-only actions.
+        body = f"""
+<div class="cta-row no-print rev-actions">
+  <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+  <a class="btn btn-ghost" href="index.html">Back to course</a>
+</div>
+<article class="part tight sum-doc">
+{course_summary_fragment(sem, course, prefix, tabs_all, ref)}
+</article>"""
+        nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
+                f"Revision notes — {course['title']} — MechEd",
+                f"Printable revision notes for {course['code']} "
+                f"{course['title']}: terms first, one sheet per A4 page.",
+                body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
+        return
     body = f"""
 <div class="pagehead sum-head">
   <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>

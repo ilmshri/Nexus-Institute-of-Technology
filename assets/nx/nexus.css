@@ -443,10 +443,12 @@ html.js .tabpanel.on{display:block}
 .rev-kp{margin:0;padding-inline-start:22px;list-style:disc}
 .rev-kp li{font-family:var(--serif);font-size:15px;line-height:1.8;margin:0 0 11px;padding-inline-start:4px}
 .rev-contents{list-style:none;margin:18px 0 0;padding:0;max-width:78ch}
-.rev-contents li{display:flex;gap:14px;align-items:baseline;border-bottom:1px solid var(--nx-line);
-  padding:9px 2px;font-family:var(--serif);font-size:15px;line-height:1.6}
+.rev-contents li{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
+  border-bottom:1px solid var(--nx-line);padding:9px 2px;font-family:var(--serif);
+  font-size:15px;line-height:1.6}
+.rev-toc-t{flex:1 1 14ch;min-width:0}
+.rev-toc-p{margin-inline-start:auto}
 .rev-toc-n{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.08em}
-.rev-toc-t{flex:1}
 .rev-toc-c{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
 .rev-sheet-h{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.35;
   margin:6px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--nx-ink);max-width:78ch}
@@ -455,8 +457,29 @@ html.js .tabpanel.on{display:block}
 .rev-body ul,.rev-body ol{margin:0 0 12px;padding-inline-start:22px}
 .rev-body li{margin:0 0 8px}
 .rev-body mjx-container[display="true"]{margin:16px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
+.rev-body mjx-container:not([display="true"]){max-width:100%;overflow-x:auto;overflow-y:hidden;
+  display:inline-block;vertical-align:middle}
 .rev-body mjx-container[display="true"][width="full"]{min-width:0 !important}
 .rev-terms .glossary-wrap{overflow-x:auto}
+.rev-cover{text-align:center;display:flex;flex-direction:column;min-height:74vh;padding:46px 0 40px;border-top:0}
+.rev-mast{display:flex;align-items:center;justify-content:center;gap:12px}
+.rev-mast img{width:44px;height:44px}
+.rev-mast-name{font-family:var(--serif);font-weight:700;font-size:23px;color:var(--ink);
+  line-height:1.15;display:flex;flex-direction:column;text-align:start}
+.rev-mast-tag{font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold)}
+.rev-cover-mid{margin:auto 0;padding:44px 0}
+.rev-cover-kicker{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+.rev-cover-title{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,44px);
+  line-height:1.18;color:var(--ink);margin:0 auto;max-width:16em;text-wrap:balance}
+.rev-cover-rule{display:block;width:76px;height:2px;background:var(--gold);margin:28px auto}
+.rev-cover-type{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--soft);margin:0}
+.rev-cover-foot{margin:auto 0 0;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--muted)}
+.rev-toc-p{font-family:var(--mono);font-size:11px;color:var(--ink);min-width:2.5ch;text-align:end}
+.rev-folio{display:none}
+.rev-actions{padding:18px 0 0;justify-content:flex-end}
 .rev-read{display:block;font-family:var(--sans);font-size:11.5px;font-style:italic;
   color:var(--muted);line-height:1.5;margin-top:3px}
 .rev-terms table.glossary td{line-height:1.55}
@@ -481,12 +504,20 @@ html.js .tabpanel.on{display:block}
   .sum-course{break-after:avoid}
   .sum-lesson>h3{break-after:avoid}
   .sum-block>h4{break-after:avoid}
-  /* Revision-notes: every block starts its own sheet (cover keeps the first
-     leaf to itself, same pattern as .sum-lesson). Blocks are gate-measured to
-     fit one A4 page — see design-previews/tools/qa_revision_fit.py. */
-  .rev-page{break-before:page;break-inside:avoid;border-top:0;padding:0 0 12px}
+  /* Revision-notes: every block IS one printed sheet. Fixed sheet height
+     (260mm of the 261mm A4 content box) with an 8mm folio zone at the foot;
+     content is gate-measured to fit the remaining 252mm — see
+     design-previews/tools/qa_revision_fit.py, the authority. The first sheet
+     is the cover; folios start at 2 on the contents page. */
+  .rev-page{break-before:page;break-inside:avoid;border-top:0;margin:0;
+    height:260mm;box-sizing:border-box;padding:0 0 8mm;position:relative;overflow:hidden}
   .rev-page h3,.rev-sheet-h{break-after:avoid}
   .rev-contents li{break-inside:avoid}
+  .rev-folio{display:block;position:absolute;bottom:0;inset-inline:0;text-align:center;
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--muted)}
+  .rev-cover{min-height:0;padding:10mm 0 8mm}
+  .rev-cover-title{font-size:40px}
+  .rev-cover-mid{padding:0}
   .sum-run{color:#555}
   .sum-block{max-width:none}
   .sum-recap,.sum-recap ul{max-width:none}
