@@ -1385,3 +1385,57 @@ X, which Lesson 5 will cover", and ordinary words that happen to head a
 glossary row ("method", "weight", "series") show up as noise. Triage before
 acting — the informative filter is whether the term is load-bearing in the
 earlier lesson's quiz or keybox.
+
+## STANDING DIRECTIVE — figures, page growth, solved problems (owner, 2026-08-02)
+
+Binding and permanent, and binding on BOTH sessions — the content session and
+the design session. It is written here, not only in a session's memory, so
+neither can claim it did not apply to them.
+
+### (a) Figures
+
+**Site lessons go from one figure to THREE.** One per section, each carrying
+exactly one idea. A figure that carries two ideas is two figures. Where it
+helps the student, **pair a physical sketch with its abstracted diagram** — the
+real object beside the free body, the real shaft beside the line diagram — so
+the abstraction is visibly earned rather than asserted.
+
+**The revision notes get figures too.** They are notes, not a text dump.
+
+**No figure may take half a page.** Measured 2026-08-02 against the real print
+box: a figure's rendered height is `93px + 1.05px per viewBox unit`, so on the
+952px content box the ceiling is a **viewBox height of 365 units**. The house
+560x300 diagram is 409px — 43% of a page, legal but leaving a sheet no room for
+prose, which is why in the notes a figure earns its own page. `drafts/qa_revision.py`
+enforces the ceiling automatically.
+
+**Nothing is copied from anywhere.** Computed SVGs stay this session's, authored
+through `drafts/lessonlib.py` so `Fig.verify()` catches a label landing on
+artwork at authoring time. Pictorial illustration is the design session's.
+Neither borrows artwork from outside the project.
+
+### (b) Page growth — allowed, CONDITIONALLY
+
+A revision-notes lesson may grow from 4 blocks to **5 or 6**, so a course prints
+**~57-68 pages** instead of 46. (Printed pages = block count + 2: the cover and
+the contents page are themselves `.rev-page` blocks since 02999f1c, so the old
+"+1" arithmetic note is superseded.)
+
+**Every added page must carry a figure or a worked example.** Extra prose alone
+does not justify a page. A page that is only more words is a regression to the
+compiled dump the owner rejected.
+
+### (c) Solved problems on the site — NO CHANGE
+
+Lessons already carry 3 worked solves + 8 explained MCs. **Do not add more.**
+Instead, tie the existing solutions to the new figures: a solve should refer to
+the figure that shows its geometry, so the figure is load-bearing rather than
+decorative.
+
+### (d) Scope
+
+Applies to **NEW lessons, from statics (STA 103) onward**. Retrofitting the 266
+existing lessons is a **separate later pass, covering site lessons only, not the
+notes** — and it starts only when the owner says so. Do not begin it
+opportunistically.
+
