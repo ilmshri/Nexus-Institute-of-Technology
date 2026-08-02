@@ -33,16 +33,53 @@ COST_TABLE_ROW = 10
 COST_LIST_ITEM = 4
 COST_HEADING = 12
 
-# MEASURED CAPACITY (design session, 2026-08-01, via qa_revision_fit.py against
-# the real A4 content box of 673x986px). These replace the provisional 320-420
-# guess the authors had been working to.
-#   median page capacity ~330 word-equivalents
-#   tightest page        ~253 word-equivalents
-# A block over the median is very likely to overflow; one between the tightest
-# page and the median is in a band where only the real gate can rule. Fail at
-# the median, warn below it — the warn band means "the fit gate decides".
-PAGE_MEDIAN = 330
-PAGE_MIN = 253
+# MEASURED CAPACITY — recalibrated 2026-08-02 by drafts/calibrate_revision.py
+# after the design session's folio work (02999f1c) shrank the content box from
+# 261mm to 252mm (a fixed 260mm sheet less an 8mm folio zone): 986px -> 952px.
+#
+# TWO THINGS CHANGED, and the second matters more than the box did.
+#
+# (1) Capacity is now PER BLOCK KIND. The old single PAGE_MEDIAN 330 / PAGE_MIN
+#     253 pair could not be right for all four kinds, because this file spends
+#     three different cost models and each omits different fixed furniture. An
+#     opener costed at 78 word-equivalents really renders 631px, since its model
+#     prices neither the lesson-title rule nor the key-point line-height; a
+#     sheet costed at 288 renders 751px. Pooling them put the "floor" near 110
+#     and would flag every sheet in the document.
+# (2) The old numbers were in the WRONG UNIT. They were lifted from
+#     qa_revision_fit.py's capacity line, which extrapolates in RAW WORDS, and
+#     then used to judge WORD-EQUIVALENTS. On prose the two agree; on an
+#     equation-heavy block they do not, so the error was invisible.
+#     calibrate_revision.py now extrapolates in word-equivalents — the same
+#     unit this file spends.
+#
+# Measured over MTH 101's 44 blocks (min / median capacity, word-equivalents):
+PAGE_CAP = {
+    "opener":  (107, 120),
+    "terms":   (221, 263),
+    "sheet":   (361, 392),
+    "example": (262, 291),
+}
+# Fail above a kind's median — at typical density that cost exactly fills the
+# sheet. Warn between its min and median: at the worst density observed it
+# would fill the sheet, so only qa_revision_fit.py can rule.
+
+# A FIGURE'S VERTICAL COST, measured directly (2026-08-02) by rendering the
+# same sheet with and without a figure at six viewBox heights: the cost is
+# linear in viewBox height, 93px of fixed furniture (frame, padding, caption,
+# margins) plus 1.05px per viewBox unit. Converted to word-equivalents at the
+# sheet's measured 2.43px per word-equivalent:
+#
+#   COST_FIGURE(H) = (93 + 1.05*H) / 2.43  ~=  38 + 0.43*H
+#
+# so the house 560x300 diagram costs ~168 word-equivalents and a 560x200 one
+# ~124. Worth knowing while authoring: 560x300 renders 409px = 43% of a page.
+# That is under the owner's half-page ceiling but leaves a sheet no room for
+# prose, which is why a figure earns its own page rather than riding on one.
+FIG_FURNITURE_PX = 93.0
+FIG_PX_PER_UNIT = 1.05
+PX_PER_WORD_EQ = 2.43
+HALF_PAGE_PX = 476.0            # 952px content box / 2 — the owner's ceiling
 
 # The renderer emits TWO opening sheets — an opener (what + keypoints) and a
 # separate "Terms & signs" sheet — because the original combined intro page
@@ -88,6 +125,18 @@ def _words(html):
     return len(_text(html).split())
 
 
+def figure_heights(html):
+    """viewBox heights of every <svg> in the block, in viewBox units."""
+    return [float(m) for m in
+            re.findall(r'viewBox="\s*[-\d.]+\s+[-\d.]+\s+[-\d.]+\s+([\d.]+)',
+                       html)]
+
+
+def figure_px(vb_height):
+    """Rendered height of one figure, in px, from the measured linear fit."""
+    return FIG_FURNITURE_PX + FIG_PX_PER_UNIT * vb_height
+
+
 def cost(html):
     """Word-equivalent vertical cost of one block."""
     w = _words(html)
@@ -95,6 +144,8 @@ def cost(html):
     w += COST_TABLE_ROW * len(re.findall(r"<tr\b", html))
     w += COST_LIST_ITEM * len(re.findall(r"<li\b", html))
     w += COST_HEADING * len(re.findall(r"<h[3-5]\b", html))
+    for vb in figure_heights(html):
+        w += round(figure_px(vb) / PX_PER_WORD_EQ)
     return w
 
 
@@ -176,32 +227,42 @@ def check_lesson(name, lid, lesson, issues, lesson_title=None,
                               f"title {lesson_title!r} — contents page owns it")
 
     # ---- budget (estimate; qa_revision_fit.py is the authority)
-    def _report(label, c):
-        if c > PAGE_MEDIAN:
-            issues.append(f"{tag}: {label} ~{c} word-equivalents > median page "
-                          f"capacity {PAGE_MEDIAN} — split it, do not shrink type")
-        elif c > PAGE_MIN:
-            warnings.append(f"{tag}: {label} ~{c} is between the tightest page "
-                            f"({PAGE_MIN}) and the median ({PAGE_MEDIAN}) — "
+    def _report(label, c, kind):
+        lo, med = PAGE_CAP[kind]
+        if c > med:
+            issues.append(f"{tag}: {label} ~{c} word-equivalents > the median "
+                          f"{kind} capacity {med} — split it or move a figure "
+                          f"to its own page; never shrink type")
+        elif c > lo:
+            warnings.append(f"{tag}: {label} ~{c} is between the tightest "
+                            f"{kind} page ({lo}) and the median ({med}) — "
                             f"qa_revision_fit.py decides")
 
+    # ---- the owner's figure rules (2026-08-02)
+    def _check_figures(label, html):
+        for vb in figure_heights(html):
+            px = figure_px(vb)
+            if px > HALF_PAGE_PX:
+                issues.append(
+                    f"{tag}: {label} has a figure {px:.0f}px tall — more than "
+                    f"half the {HALF_PAGE_PX*2:.0f}px page. Owner rule: no "
+                    f"figure may take half a page. Use a shorter viewBox "
+                    f"(max ~{(HALF_PAGE_PX - FIG_FURNITURE_PX)/FIG_PX_PER_UNIT:.0f} units).")
+
     # opening sheet 1: opener
-    _report("intro opener", _words(what) + COST_LIST_ITEM * len(kp))
+    _report("intro opener", _words(what) + COST_LIST_ITEM * len(kp), "opener")
     # opening sheet 2: terms & signs
     if len(terms) > MAX_TERMS_PER_SHEET:
         issues.append(f"{tag}: {len(terms)} terms — more than "
                       f"{MAX_TERMS_PER_SHEET} will not fit one terms sheet")
     terms_words = sum(_words(t.get("term", "") + " " + t.get("read", "")
                              + " " + t.get("meaning", "")) for t in terms)
-    _report("terms sheet", terms_words + COST_TERM_ROW * len(terms))
-    for i, sh in enumerate(sheets):
-        _report(f"sheet[{i}]",
-                cost(sh.get("body", "")) + COST_HEADING if isinstance(sh, dict)
-                else cost(sh))
-    for i, e in enumerate(examples):
-        _report(f"example[{i}]",
-                cost(e.get("body", "")) + COST_HEADING if isinstance(e, dict)
-                else cost(e))
+    _report("terms sheet", terms_words + COST_TERM_ROW * len(terms), "terms")
+    for kind, blocks in (("sheet", sheets), ("example", examples)):
+        for i, blk in enumerate(blocks):
+            body = blk.get("body", "") if isinstance(blk, dict) else blk
+            _report(f"{kind}[{i}]", cost(body) + COST_HEADING, kind)
+            _check_figures(f"{kind}[{i}]", body)
 
     # ---- TERMS FIRST (exact, and the reason this file exists)
     declared = " ".join(t.get("symbol", "") + " " + t.get("term", "")
@@ -255,9 +316,11 @@ def main(argv):
         print("FAIL:", s)
     print(f"\n{len(files)} file(s), {seen} lesson(s), {withrev} carrying "
           f"revision blocks — {len(issues)} issue(s), {len(warns)} warning(s).")
-    print(f"Budget calibrated to measured capacity: median {PAGE_MEDIAN}, "
-          f"tightest {PAGE_MIN} word-equivalents, max {MAX_TERMS_PER_SHEET} "
-          f"terms/sheet.")
+    caps = "  ".join(f"{k} {lo}-{med}" for k, (lo, med) in PAGE_CAP.items())
+    print(f"Per-kind capacity, word-equivalents (min-median): {caps}")
+    print(f"Max {MAX_TERMS_PER_SHEET} terms/sheet. A figure costs "
+          f"~{FIG_FURNITURE_PX:.0f}px + {FIG_PX_PER_UNIT}px per viewBox unit; "
+          f"none may exceed half a page.")
     print("The AUTHORITY is design-previews/tools/qa_revision_fit.py — run it "
           "before every build; this is the fast pre-check.")
     return 1 if issues else 0
