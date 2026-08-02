@@ -1412,6 +1412,15 @@ REVISION-NOTES CONTRACT (ratified by owner):
   layout, real fonts, typeset MathJax, content gated against the 252mm zone.
   drafts/qa_revision.py is the author-side fast pre-check only; its word
   budgets are estimates and drift — the gate's measured numbers win.
+- CAPACITY CALIBRATION after the 2026-08-02 breathing-room pass (owner-decided
+  spacing: rev-body p 16px, kp li 14px, contents rows 14px, terms cells
+  line-height 1.7 + 12px padding, sheet-h gap 22px): measured capacity is now
+  median ~289 / min ~169 word-equivalents per page (was ~306/~182). Authoring
+  targets stay sheet ~300 / examples ~230, but TERMS sheets are the pressure
+  point — keep them to ~10 rows; 12 dense rows no longer fit. Known overflow
+  from the calibration run: MTH 101 L4 terms measures 102% (972px/952) and
+  needs a one-row trim or shorter meanings — content-side fix, not urgent
+  (screen rendering is unaffected; print would clip the last row).
 - PAGE-COUNT COORDINATION (owner, 2026-08-02): content shape is in flux
   (figures + an extra worked-example page incoming; ~57-68 pages/course
   expected). The design session HOLDS folio/contents-number re-verification

@@ -47,23 +47,30 @@ a:hover{color:var(--accent-deep)}
 ::selection{background:var(--tint);color:var(--accent-ink)}
 .wrap{max-width:1140px;margin:0 auto;padding:0 5vw 70px}
 
-/* ---------- top app bar (prestige lockup + dropdown groups) ---------- */
+/* ---------- top app bar (two-row centred chrome, owner 2026-08-02) ----------
+   Row 1: brand centred, language toggle pinned inline-end. Row 2: nav centred
+   with the search button. Sticky offsets below derive from --appbar-h. */
+:root{--appbar-h:103px}
 .appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 92%,transparent);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.appbar .in{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:0 20px;height:64px}
+.appbar .in{max-width:1240px;margin:0 auto;padding:0 20px}
+.appbar .brandrow{position:relative;display:flex;align-items:center;justify-content:center;height:58px}
 .appbar .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);white-space:nowrap}
-.appbar .brand img{width:30px;height:30px}
-.appbar .brand .txt{font-family:var(--serif);font-size:18.5px;font-weight:700;letter-spacing:.01em}
-.appbar .brand .txt small{display:block;font-family:var(--sans);font-size:8.5px;font-weight:600;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-top:2px}
+.appbar .brand img{width:40px;height:40px}
+.appbar .brand .txt{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.01em}
 .appbar .brand .teal{color:var(--navy)}
-.appbar nav{display:flex;gap:0;margin-inline-start:10px;align-items:center}
+/* The toggle carries its own dir attribute (label in the destination
+   language), so inset-inline-* would resolve against the ELEMENT's direction
+   and land on the wrong side — position physically, keyed off the root dir. */
+.appbar .lang-btn{position:absolute;right:20px;top:50%;transform:translateY(-50%)}
+[dir="rtl"] .appbar .lang-btn{right:auto;left:20px}
+.appbar .navrow{display:flex;align-items:center;justify-content:center;gap:10px;height:44px}
+.appbar nav{display:flex;gap:0;align-items:center}
 .appbar nav a{color:var(--soft);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;
   border-radius:var(--r-sm);position:relative}
 .appbar nav a.on{color:var(--navy)}
 .appbar nav a.on::after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--gold)}
 .appbar nav a:hover{color:var(--navy);background:var(--sunken)}
-.appbar .spacer{flex:1}
 /* dropdown groups */
 .navgrp{position:relative;display:flex}
 .navgrp>a.grp::before{content:"";display:inline-block;position:absolute;inset:auto 2px 6px auto}
@@ -96,10 +103,15 @@ a:hover{color:var(--accent-deep)}
 .lang-btn:hover{border-color:var(--gold);background:var(--gold-tint)}
 [dir="rtl"] .lang-btn{font-family:var(--sans)}
 @media(max-width:920px){
-  .appbar .in{gap:8px;padding:0 12px}
-  .appbar .brand .txt small{display:none}
-  .appbar .brand .txt{font-size:15px}
-  .appbar nav{flex:1;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-inline-start:0}
+  :root{--appbar-h:93px}
+  .appbar .in{padding:0 12px}
+  .appbar .brandrow{height:50px}
+  .appbar .brand img{width:34px;height:34px}
+  .appbar .brand .txt{font-size:18px}
+  .appbar .lang-btn{right:12px}
+  [dir="rtl"] .appbar .lang-btn{right:auto;left:12px}
+  .appbar .navrow{height:42px;justify-content:flex-start}
+  .appbar nav{flex:1;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .appbar nav::-webkit-scrollbar{display:none}
   .appbar nav a{flex:0 0 auto;padding:7px 10px;font-size:12.5px;white-space:nowrap}
   .navgrp{flex:0 0 auto}
@@ -125,7 +137,7 @@ a:hover{color:var(--accent-deep)}
 /* ---------- learning player (lesson pages) ---------- */
 .player{display:grid;grid-template-columns:280px minmax(0,1fr);gap:26px;align-items:start;
   max-width:1240px;margin:0 auto;padding:18px 20px 70px}
-.outline{position:sticky;top:72px;max-height:calc(100vh - 92px);overflow:auto;overflow-x:hidden;
+.outline{position:sticky;top:calc(var(--appbar-h) + 8px);max-height:calc(100vh - var(--appbar-h) - 28px);overflow:auto;overflow-x:hidden;
   border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);padding:0 0 8px}
 .outline .oh{padding:13px 15px 11px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .outline .oh a{font-family:var(--sans);font-size:12.5px;font-weight:650;color:var(--ink);text-decoration:none}
@@ -168,7 +180,7 @@ a:hover{color:var(--accent-deep)}
 .course-shell{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start;
   max-width:1240px;margin:0 auto;padding:18px 20px 80px}
 @media(max-width:1020px){.course-shell{display:block;padding:12px 5vw 60px}}
-.rail{position:sticky;top:72px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.rail{position:sticky;top:calc(var(--appbar-h) + 8px);display:flex;flex-direction:column;gap:16px;min-width:0}
 @media(max-width:1020px){.rail{position:static;margin-top:24px}}
 .facts{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px}
 .facts h3{margin:0 0 10px;font-size:12.5px;font-weight:650;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
@@ -197,7 +209,7 @@ a:hover{color:var(--accent-deep)}
 .syl details li{font-size:13px;font-family:var(--sans);color:var(--soft);margin:4px 0}
 
 /* ---------- catalog (curriculum) ---------- */
-.toolbar{position:sticky;top:56px;z-index:60;background:color-mix(in srgb,var(--bg) 92%,transparent);
+.toolbar{position:sticky;top:calc(var(--appbar-h) - 8px);z-index:60;background:color-mix(in srgb,var(--bg) 92%,transparent);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 0;margin:20px 0 4px;border-bottom:1px solid var(--line)}
 .toolbar .searchbox{flex:1;min-width:250px;margin:0}
@@ -295,6 +307,8 @@ h3{font-size:18px;margin:36px 0 12px;font-weight:650;letter-spacing:-.015em}
 .lead{font-size:16.5px;font-family:var(--sans);color:var(--soft);line-height:1.75}
 p,li{font-size:15px}
 .measure p,.measure li{font-family:var(--sans);line-height:1.8;color:var(--soft)}
+.measure p{margin:0 0 18px}
+.measure li{margin:0 0 7px}
 .measure h3,.measure h4{color:var(--ink)}
 .small{font-size:12.5px;color:var(--muted)}
 .eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
@@ -308,7 +322,7 @@ ul.plain li{padding:7px 0;border-bottom:1px solid var(--line)}
 .crumbs a:hover{color:var(--accent-ink)}
 
 /* ---------- lesson page tabs: segmented control ---------- */
-.tabs{position:sticky;top:68px;z-index:50;display:inline-flex;gap:2px;background:var(--sunken);
+.tabs{position:sticky;top:calc(var(--appbar-h) + 4px);z-index:50;display:inline-flex;gap:2px;background:var(--sunken);
   border:1px solid var(--line);border-radius:var(--r-sm);padding:3px;margin-top:20px;box-shadow:var(--shadow);flex-wrap:nowrap;max-width:100%}
 .tabs button{background:transparent;border:0;padding:8px 16px;border-radius:5px;
   font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:0;text-transform:none;
@@ -441,20 +455,20 @@ html.js .tabpanel.on{display:block}
 .rev-page:first-of-type{border-top:0}
 .rev-what{font-family:var(--serif);font-size:15.5px;line-height:1.8;max-width:78ch;margin:0 0 18px}
 .rev-kp{margin:0;padding-inline-start:22px;list-style:disc}
-.rev-kp li{font-family:var(--serif);font-size:15px;line-height:1.8;margin:0 0 11px;padding-inline-start:4px}
+.rev-kp li{font-family:var(--serif);font-size:15px;line-height:1.8;margin:0 0 14px;padding-inline-start:4px}
 .rev-contents{list-style:none;margin:18px 0 0;padding:0;max-width:78ch}
 .rev-contents li{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
-  border-bottom:1px solid var(--nx-line);padding:9px 2px;font-family:var(--serif);
+  border-bottom:1px solid var(--nx-line);padding:14px 2px;font-family:var(--serif);
   font-size:15px;line-height:1.6}
 .rev-toc-t{flex:1 1 14ch;min-width:0}
 .rev-toc-p{margin-inline-start:auto}
 .rev-toc-n{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.08em}
 .rev-toc-c{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
 .rev-sheet-h{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.35;
-  margin:6px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--nx-ink);max-width:78ch}
+  margin:6px 0 22px;padding-bottom:10px;border-bottom:1px solid var(--nx-ink);max-width:78ch}
 .rev-body{font-family:var(--serif);font-size:15px;line-height:1.8;max-width:78ch}
-.rev-body p{margin:0 0 12px}
-.rev-body ul,.rev-body ol{margin:0 0 12px;padding-inline-start:22px}
+.rev-body p{margin:0 0 16px}
+.rev-body ul,.rev-body ol{margin:0 0 16px;padding-inline-start:22px}
 .rev-body li{margin:0 0 8px}
 .rev-body mjx-container[display="true"]{margin:16px 0;overflow-x:auto;overflow-y:hidden;max-width:100%}
 .rev-body mjx-container:not([display="true"]){max-width:100%;overflow-x:auto;overflow-y:hidden;
@@ -462,12 +476,12 @@ html.js .tabpanel.on{display:block}
 .rev-body mjx-container[display="true"][width="full"]{min-width:0 !important}
 .rev-terms .glossary-wrap{overflow-x:auto}
 .rev-cover{text-align:center;display:flex;flex-direction:column;min-height:74vh;padding:46px 0 40px;border-top:0}
-.rev-mast{display:flex;align-items:center;justify-content:center;gap:12px}
-.rev-mast img{width:44px;height:44px}
-.rev-mast-name{font-family:var(--serif);font-weight:700;font-size:23px;color:var(--ink);
-  line-height:1.15;display:flex;flex-direction:column;text-align:start}
+.rev-mast{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.rev-mast img{width:56px;height:56px}
+.rev-mast-name{font-family:var(--serif);font-weight:700;font-size:26px;color:var(--ink);
+  line-height:1.15;display:flex;flex-direction:column;align-items:center;text-align:center}
 .rev-mast-tag{font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--gold)}
+  text-transform:uppercase;color:var(--gold);margin-top:5px}
 .rev-cover-mid{margin:auto 0;padding:44px 0}
 .rev-cover-kicker{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.18em;
   text-transform:uppercase;color:var(--gold);margin:0 0 20px}
@@ -482,7 +496,7 @@ html.js .tabpanel.on{display:block}
 .rev-actions{padding:18px 0 0;justify-content:flex-end}
 .rev-read{display:block;font-family:var(--sans);font-size:11.5px;font-style:italic;
   color:var(--muted);line-height:1.5;margin-top:3px}
-.rev-terms table.glossary td{line-height:1.55}
+.rev-terms table.glossary td{line-height:1.7;padding:12px 14px}
 
 @media print{
   @page{margin:18mm 16mm}
@@ -733,23 +747,23 @@ bdi,[dir="ltr"]{unicode-bidi:isolate}
 [dir="rtl"] .ar-note{border-radius:var(--r-sm) 0 0 var(--r-sm)}
 
 /* ---------- footer ---------- */
-.nx-foot{border-top:1px solid var(--gold);margin-top:60px;padding:32px 0 42px;background:var(--surface)}
-.nx-foot .in{max-width:1140px;margin:0 auto;padding:0 5vw;display:flex;gap:14px 22px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:start}
+.nx-foot{border-top:1px solid var(--gold);margin-top:60px;padding:38px 0 44px;background:var(--surface)}
+.nx-foot .in{max-width:1140px;margin:0 auto;padding:0 5vw;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.nx-foot .foot-shield{width:34px;height:34px}
 .nx-foot .mark{font-family:var(--serif);font-weight:700;letter-spacing:.01em;font-size:15.5px}
 .nx-foot .mark .teal{color:var(--navy)}
 .nx-foot .slogan{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.2em;
   text-transform:uppercase;color:var(--amber);margin-top:4px}
 [dir="rtl"] .nx-foot .mark{letter-spacing:.12em}
 [dir="rtl"] .nx-foot .slogan{font-family:var(--ar-sans);letter-spacing:0;text-transform:none;font-size:12.5px}
-.nx-foot nav{font-size:12.5px;margin:0;display:flex;gap:4px 16px;flex-wrap:wrap}
+.nx-foot nav{font-size:12.5px;margin:0;display:flex;gap:4px 16px;flex-wrap:wrap;justify-content:center}
 .nx-foot nav a{padding:0;text-decoration:none;color:var(--muted)}
 .nx-foot nav a:hover{color:var(--accent-ink)}
 .nx-foot .proto{width:100%;margin:6px 0 0;font-size:12px;color:var(--soft)}
 .nx-foot .proto a{font-weight:600}
-.nx-foot p{font-size:11.5px;color:var(--faint);max-width:100%;margin:4px 0 0;line-height:1.7;width:100%}
+.nx-foot p{font-size:11.5px;color:var(--faint);max-width:72ch;margin:4px 0 0;line-height:1.7;width:100%}
 
 @media(max-width:720px){
-  .lang-btn{position:static;margin-top:10px}
   .lesson-row{flex-direction:column;gap:6px}
   .plan article{flex-direction:column;gap:6px}
 }

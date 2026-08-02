@@ -242,16 +242,16 @@ NX_PAGE = """<!doctype html>
 {extra_head}</head>
 <body{body_attrs}>
 <header class="appbar">
-  <div class="in">
+  <div class="in brandrow">
     <a class="brand" href="{prefix}index.html" aria-label="MechEd — {brand_small}">
       <img src="{aprefix}assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">MechEd</span>
-        <small>{brand_small}</small></span>
+      <span class="txt"><span class="teal">MechEd</span></span>
     </a>
-    {navblock}
-    <span class="spacer"></span>
-    <a class="kbtn" href="{prefix}curriculum/index.html#lessonSearch">{search_label} <span class="kbd">&#8984;K</span></a>
     <a class="lang-btn" href="{toggle_href}" lang="{toggle_lang}" dir="{toggle_dir}">{toggle_label}</a>
+  </div>
+  <div class="in navrow">
+    {navblock}
+    <a class="kbtn" href="{prefix}curriculum/index.html#lessonSearch">{search_label} <span class="kbd">&#8984;K</span></a>
   </div>
 </header>
 {sidemenu}
@@ -259,6 +259,7 @@ NX_PAGE = """<!doctype html>
 {body}
 </main>
 <footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="{aprefix}assets/nx/logo.svg" alt="">
   <div class="mark"><span class="teal">MechEd</span><span class="slogan">{slogan}</span></div>
   {footnav}
   <p class="proto">{proto_line}</p>
