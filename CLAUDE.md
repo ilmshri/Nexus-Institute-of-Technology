@@ -1385,3 +1385,49 @@ X, which Lesson 5 will cover", and ordinary words that happen to head a
 glossary row ("method", "weight", "series") show up as noise. Triage before
 acting — the informative filter is whether the term is load-bearing in the
 earlier lesson's quiz or keybox.
+
+## SHARED CONTRACT — revision notes, figures, and cross-session coordination (owner, 2026-08-02)
+
+Binding on BOTH sessions (content/Opus and design/Fable). This section exists
+because the sessions' memories are private to each other; anything both must
+obey lives HERE, not in either session's memory. Keep it current: whoever
+changes a shared fact updates this section in the same commit.
+
+REVISION-NOTES CONTRACT (ratified by owner):
+- Schema per lesson: revision = intro{what 2-4 sentences, keypoints 5-8,
+  terms[{term,symbol,read,meaning}]} + sheets[{title,body}] +
+  examples[{title,body}]. Bodies are HEADING-FREE — the renderer emits every
+  heading from "title"; examples get the same treatment as sheets (bare title,
+  no "Worked example N —" prefix in the heading; the run-line carries kind).
+- Renderer emits per lesson: opener page (what+keypoints), Terms & signs page
+  (3-col glossary-family table, "read as" folded under the symbol), one page
+  per sheet, one page per example. Contents-page titles come from data/y*.json
+  "t". Fallback is per-course: ALL lessons migrated or the legacy spread —
+  never mixed.
+- Document: page 1 cover (identity masthead, course title dominant), page 2
+  contents with exact page numbers, then blocks; true folios are
+  renderer-stamped (block N IS printed page N — print CSS pins sheets at
+  260mm with an 8mm folio zone).
+- THE FIT AUTHORITY is design-previews/tools/qa_revision_fit.py — real print
+  layout, real fonts, typeset MathJax, content gated against the 252mm zone.
+  drafts/qa_revision.py is the author-side fast pre-check only; its word
+  budgets are estimates and drift — the gate's measured numbers win.
+- PAGE-COUNT COORDINATION (owner, 2026-08-02): content shape is in flux
+  (figures + an extra worked-example page incoming; ~57-68 pages/course
+  expected). The design session HOLDS folio/contents-number re-verification
+  until the owner says the shape has settled. Page numbers are computed
+  dynamically at build, so builds stay correct meanwhile — only the formal
+  verification pass is deferred.
+
+FIGURE SPLIT (owner, 2026-08-02):
+- COMPUTED technical diagrams (plots, FBDs, cycles, anything data-driven)
+  are CONTENT-side, authored via drafts/lessonlib.py, which gates label
+  collisions at authoring time.
+- PICTORIAL/ILLUSTRATIVE figures are DESIGN-side, drawn original after
+  studying correct conventions from real textbooks / official lecture notes.
+  Reference style: a physical sketch PAIRED with its abstracted diagram
+  (free-body, cycle, mechanism). A paired figure needs both halves — neither
+  session ships half a pair alone.
+- Hard rules, both sides: NOTHING copied or traced from any source; no
+  figure may exceed HALF an A4 content page (the fit gate enforces ~45%);
+  flat vectors, existing palette tokens only, labels collision-free.
