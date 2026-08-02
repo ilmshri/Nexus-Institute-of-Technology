@@ -31,7 +31,9 @@ from playwright.sync_api import sync_playwright  # noqa: E402
 
 MM = 96 / 25.4
 CONTENT_W = round((210 - 2 * 16) * MM)          # 673 px
-CONTENT_H = (297 - 2 * 18) * MM                 # 986.5 px
+# The print CSS fixes each sheet at 260mm with an 8mm folio zone at the foot
+# (see .rev-page in @media print) — content must fit the remaining 252mm.
+CONTENT_H = (260 - 8) * MM                      # 952.5 px
 
 FONTS = ('<link rel="stylesheet" href="https://fonts.googleapis.com/css2'
          '?family=Source+Serif+4:opsz,wght@8..60,400..700'
@@ -77,7 +79,13 @@ def measure(blocks):
 <style>{css}</style>
 <style>body{{margin:0;background:#fff}}
 .qa-wrap{{width:{CONTENT_W}px}}
-.qa-block{{outline:1px dotted #ccc;margin-bottom:4px}}</style>
+.qa-block{{outline:1px dotted #ccc;margin-bottom:4px}}
+/* measure CONTENT height, not the fixed printed sheet box: the print CSS
+   pins .rev-page at 260mm, which would make every block "measure" exactly
+   the box. Neutralise the box here; the verdict compares natural content
+   height against the 252mm content zone of that box. */
+.qa-block .rev-page{{height:auto !important;min-height:0 !important;
+  padding:0 !important;overflow:visible !important}}</style>
 {nb.MATHJAX}</head>
 <body><article class="part tight sum-doc qa-wrap">{body}</article></body></html>"""
     tmp = ROOT / "design-previews" / "tools" / "_qa_fit_tmp.html"
@@ -116,8 +124,8 @@ def main(argv):
         return 0
     heights = measure(blocks)
     fails, capacities = 0, []
-    print(f"A4 content box: {CONTENT_W} x {CONTENT_H:.0f} px "
-          f"(210x297mm, margins 18/16mm)\n")
+    print(f"A4 sheet content box: {CONTENT_W} x {CONTENT_H:.0f} px "
+          f"(210x297mm, margins 18/16mm, 260mm fixed sheet, 8mm folio zone)\n")
     print(f'{"block":<44}{"words":>6}{"height":>9}{"page%":>7}  verdict')
     for (bid, _html, w), h in zip(blocks, heights):
         pct = h / CONTENT_H * 100
