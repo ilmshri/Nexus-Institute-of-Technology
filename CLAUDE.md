@@ -1440,3 +1440,15 @@ FIGURE SPLIT (owner, 2026-08-02):
 - Hard rules, both sides: NOTHING copied or traced from any source; no
   figure may exceed HALF an A4 content page (the fit gate enforces ~45%);
   flat vectors, existing palette tokens only, labels collision-free.
+- FOUNDATIONS BUILT (design, 2026-08-03): spec at
+  design-previews/figures/FIGURES.md (conventions studied live from NASA BGA
+  + MIT OCW 8.01SC, sources cited there); library at
+  design-previews/tools/figlib.py (geometry-computed SVG, palette tokens,
+  authoring-time label-collision gate — design-side sibling of lessonlib);
+  exemplar pair design-previews/figures/exemplar-incline-pair.svg (crate on
+  incline + FBD, 31% of zone). MARKUP CONTRACT: a pictorial pair is ONE
+  combined SVG emitted as <figure class="rev-fig">…<figcaption>…</figcaption>
+  </figure> inside .rev-body; qa_revision_fit.py now measures every
+  figure.rev-fig and FAILS any taller than 45% of the 252mm zone (verified
+  both directions). The renderer's figure slot is not wired yet — waits for
+  the content shape to settle (same hold as folio verification).

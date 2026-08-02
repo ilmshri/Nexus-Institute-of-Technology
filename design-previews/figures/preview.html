@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Figure pair preview — exemplar incline</title>
+<style>
+  body{background:#FDFCFB;color:#20325A;font-family:'Source Serif 4',Georgia,serif;margin:0;padding:30px}
+  h2{font-size:15px;font-family:'Source Sans 3',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6E7688}
+  .box{border:1px dashed #DBD7CF;margin:0 0 40px}
+  .w673{width:673px}
+  .w320{width:320px}
+  figure.rev-fig{margin:0;padding:8px 0}
+  figure.rev-fig svg{width:100%;height:auto;display:block}
+  figure.rev-fig figcaption{font-size:13px;line-height:1.6;color:#44506B;margin-top:8px}
+</style>
+<h2>Print width — 673px (A4 content box)</h2>
+<div class="box w673"><figure class="rev-fig" id="f1"></figure></div>
+<h2>Mobile — 320px</h2>
+<div class="box w320"><figure class="rev-fig" id="f2"></figure></div>
+<script>
+fetch('exemplar-incline-pair.svg').then(r=>r.text()).then(t=>{
+  for (const id of ['f1','f2']){
+    const fig=document.getElementById(id);
+    fig.innerHTML=t+'<figcaption>A crate held on a rough incline — and the same crate isolated as a free-body diagram. <i>N</i> is the surface reaction, <i>mg</i> the weight, <i>f<sub>s</sub></i> static friction opposing the sliding tendency.</figcaption>';
+  }
+});
+</script>

@@ -13,6 +13,10 @@ A4 geometry (must match @page in assets/nx/nexus.css):
     sheet 210x297mm, margins 18mm top/bottom + 16mm left/right
     -> content box 178mm x 261mm = 672.8px x 986.5px at CSS 96dpi.
 
+Pictorial figures (FIGURES.md): every `figure.rev-fig` inside a block is
+also measured; any figure taller than 45% of the print zone fails the gate
+(the "no figure may exceed half a page" rule, with caption margin).
+
 Usage, from the repo root:
     python3 design-previews/tools/qa_revision_fit.py            # all content files
     python3 design-previews/tools/qa_revision_fit.py data/content/y1s1-math-1.json
@@ -105,8 +109,10 @@ def measure(blocks):
             pg.evaluate("() => document.fonts.ready")
             pg.wait_for_timeout(200)
             heights = pg.evaluate(
-                "[...document.querySelectorAll('.qa-block')]"
-                ".map(e=>e.getBoundingClientRect().height)")
+                "[...document.querySelectorAll('.qa-block')].map(e=>({"
+                "h: e.getBoundingClientRect().height,"
+                "figs: [...e.querySelectorAll('figure.rev-fig')]"
+                ".map(f=>f.getBoundingClientRect().height)}))")
             b.close()
     finally:
         tmp.unlink(missing_ok=True)
@@ -122,19 +128,32 @@ def main(argv):
     if not blocks:
         print("no renderable revision blocks found")
         return 0
-    heights = measure(blocks)
+    results = measure(blocks)
     fails, capacities = 0, []
+    # Pictorial-figure ceiling (FIGURES.md): no figure.rev-fig may exceed
+    # ~45% of the print zone — "no figure may exceed HALF an A4 content
+    # page" with margin for its caption and surrounding rhythm.
+    fig_max = 0.45 * CONTENT_H
     print(f"A4 sheet content box: {CONTENT_W} x {CONTENT_H:.0f} px "
-          f"(210x297mm, margins 18/16mm, 260mm fixed sheet, 8mm folio zone)\n")
+          f"(210x297mm, margins 18/16mm, 260mm fixed sheet, 8mm folio zone); "
+          f"figure ceiling {fig_max:.0f}px (45%)\n")
     print(f'{"block":<44}{"words":>6}{"height":>9}{"page%":>7}  verdict')
-    for (bid, _html, w), h in zip(blocks, heights):
+    for (bid, _html, w), r in zip(blocks, results):
+        h, figs = r["h"], r["figs"]
         pct = h / CONTENT_H * 100
         ok = h <= CONTENT_H
-        fails += (not ok)
+        big = [fh for fh in figs if fh > fig_max]
+        fails += (not ok) + len(big)
         if w > 40:                       # prose-bearing blocks calibrate capacity
             capacities.append(w * CONTENT_H / h)
-        print(f'{bid:<44}{w:>6}{h:>8.0f}px{pct:>6.0f}%  '
-              f'{"PASS" if ok else "OVERFLOW"}')
+        verdict = "PASS" if ok else "OVERFLOW"
+        if big:
+            verdict += " FIG-OVERSIZE(" + ",".join(
+                f"{fh/CONTENT_H*100:.0f}%" for fh in big) + ")"
+        elif figs:
+            verdict += " figs " + ",".join(
+                f"{fh/CONTENT_H*100:.0f}%" for fh in figs)
+        print(f'{bid:<44}{w:>6}{h:>8.0f}px{pct:>6.0f}%  {verdict}')
     if capacities:
         capacities.sort()
         med = capacities[len(capacities) // 2]
