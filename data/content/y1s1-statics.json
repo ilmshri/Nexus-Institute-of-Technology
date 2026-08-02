@@ -80,7 +80,96 @@
     "solution": "<p>Perpendicular forces add vectorially: \\( R = \\sqrt{100^2 + 100^2} = 141\\ \\mathrm{N} \\). Answering 200 N adds magnitudes algebraically — only legal when forces are collinear and aligned; 0 N would require them opposed. The resultant of two forces always lies between their difference and their sum: here between 0 and 200, and 141 sits exactly where the right angle puts it.</p>"
    }
   ],
-  "recap": "<ul> <li>A force is a vector: magnitude, direction and line of action. The arrow on the diagram is a contract about all three.</li> <li><b>Weight is not mass.</b> \\( W = mg \\) converts one to the other; kilograms are mass, newtons are force, and the distinction survives every later course.</li> <li>Resolve into components to add, then recombine with \\( R = \\sqrt{R_x^2 + R_y^2} \\) and a direction angle.</li> <li>Cables pull only; struts can also push. What a member can carry is part of the geometry.</li> <li><b>Working method:</b> choose axes that kill the most unknowns — usually one axis along an unknown force.</li> </ul>"
+  "recap": "<ul> <li>A force is a vector: magnitude, direction and line of action. The arrow on the diagram is a contract about all three.</li> <li><b>Weight is not mass.</b> \\( W = mg \\) converts one to the other; kilograms are mass, newtons are force, and the distinction survives every later course.</li> <li>Resolve into components to add, then recombine with \\( R = \\sqrt{R_x^2 + R_y^2} \\) and a direction angle.</li> <li>Cables pull only; struts can also push. What a member can carry is part of the geometry.</li> <li><b>Working method:</b> choose axes that kill the most unknowns — usually one axis along an unknown force.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "A force is a vector: it has a magnitude, a direction and a line of action, and all three matter. This lesson resolves forces into components so they can be added as numbers, then recombines the total into a single resultant. It also separates mass from weight, a distinction every later course depends on.",
+    "keypoints": [
+     "A force needs magnitude AND direction; a number alone is not a force.",
+     "Resolve into perpendicular components, add the components, then recombine — never add magnitudes directly.",
+     "The resultant of 300 N and 200 N is not 500 N unless they are parallel and same-sense.",
+     "Weight is mass times gravitational acceleration; kilograms are mass and newtons are force.",
+     "A cable can only pull. Drawing a cable pushing is a physical error, not an arithmetic one.",
+     "The line of action matters as soon as moments appear in Lesson 2."
+    ],
+    "terms": [
+     {
+      "term": "Force",
+      "symbol": "\\( F \\)",
+      "read": "eff",
+      "meaning": "A push or pull, in newtons; a vector."
+     },
+     {
+      "term": "Components",
+      "symbol": "\\( F_x,\\ F_y \\)",
+      "read": "eff ex, eff why",
+      "meaning": "The projections of a force on two perpendicular axes."
+     },
+     {
+      "term": "Resultant",
+      "symbol": "\\( R \\)",
+      "read": "arr",
+      "meaning": "The single force with the same effect as a whole set."
+     },
+     {
+      "term": "Direction angle",
+      "symbol": "\\( \\theta \\)",
+      "read": "theta",
+      "meaning": "Angle from the positive x axis, anticlockwise positive."
+     },
+     {
+      "term": "Magnitude",
+      "symbol": "\\( |R| \\)",
+      "read": "mod arr",
+      "meaning": "The size of a vector, always positive."
+     },
+     {
+      "term": "Mass",
+      "symbol": "\\( m \\)",
+      "read": "em",
+      "meaning": "Quantity of matter, in kilograms. Not a force."
+     },
+     {
+      "term": "Weight",
+      "symbol": "\\( W = mg \\)",
+      "read": "double-you",
+      "meaning": "The force of gravity on a mass, in newtons."
+     },
+     {
+      "term": "Gravitational acceleration",
+      "symbol": "\\( g \\)",
+      "read": "gee",
+      "meaning": "Taken as 9.81 metres per second squared."
+     },
+     {
+      "term": "Line of action",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "The infinite line a force acts along."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Resolving, adding, and recombining",
+     "body": "<p>A <b>force</b> is a vector, so two forces cannot be combined by adding their sizes. What can be added are components. Choose perpendicular axes, project each force onto them, and the projections are ordinary signed numbers that obey ordinary arithmetic.</p><p>For a force of magnitude \\( F \\) at <b>direction angle</b> \\( \\theta \\), read &lsquo;theta&rsquo;, the components are \\( F_x = F\\cos\\theta \\) and \\( F_y = F\\sin\\theta \\). Sum them separately over every force acting, and the totals are the components of the <b>resultant</b>:</p><p>\\[ R_x = \\sum F_x, \\qquad R_y = \\sum F_y \\]</p><p>Recombine with Pythagoras and an inverse tangent, \\( |R| = \\sqrt{R_x^2 + R_y^2} \\) and \\( \\theta = \\tan^{-1}(R_y/R_x) \\). The inverse tangent returns an angle in only two of the four quadrants, so check the SIGNS of \\( R_x \\) and \\( R_y \\) against the answer rather than trusting the calculator &mdash; a resultant pointing up and to the left is the commonest place to lose 180&deg;.</p><p>Keep <b>mass</b> and <b>weight</b> apart from the first line. A quantity given in kilograms is not yet a force and cannot enter a force equation; convert it with \\( W = mg \\) first. Writing 85 into a force sum because the problem said 85&nbsp;kg is the single most common error in this lesson, and it is out by a factor of about ten.</p>"
+    },
+    {
+     "title": "Two pulls, and the triangle that adds them",
+     "body": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 180\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Two cables pulling on a wall bracket, one at 30 degrees and one at 120 degrees\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"180\" fill=\"#ffffff\"/><line x1=\"96.0\" y1=\"44.0\" x2=\"96.0\" y2=\"148.0\" stroke=\"#14181F\" stroke-width=\"2.2\"/><line x1=\"96.0\" y1=\"44.0\" x2=\"87.0\" y2=\"52.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"64.8\" x2=\"87.0\" y2=\"72.8\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"85.6\" x2=\"87.0\" y2=\"93.6\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"106.4\" x2=\"87.0\" y2=\"114.4\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"127.2\" x2=\"87.0\" y2=\"135.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"148.0\" x2=\"87.0\" y2=\"156.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"96.0\" y1=\"96.0\" x2=\"214.0\" y2=\"96.0\" stroke=\"#14181F\" stroke-width=\"3.0\"/><circle cx=\"214.0\" cy=\"96.0\" r=\"7\" fill=\"#ffffff\" stroke=\"#14181F\" stroke-width=\"2.0\"/><line x1=\"214.0\" y1=\"96.0\" x2=\"317.9\" y2=\"36.0\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"317.9\" y1=\"36.0\" x2=\"312.8\" y2=\"43.4\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"317.9\" y1=\"36.0\" x2=\"309.0\" y2=\"36.8\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"214.0\" y1=\"96.0\" x2=\"168.0\" y2=\"16.3\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><line x1=\"168.0\" y1=\"16.3\" x2=\"175.4\" y2=\"21.5\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><line x1=\"168.0\" y1=\"16.3\" x2=\"168.8\" y2=\"25.3\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><text x=\"348\" y=\"40\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"700\">F₁ = 300 N at 30°</text><text x=\"150\" y=\"30\" text-anchor=\"end\" fill=\"#1f7a5c\" font-size=\"11\" font-weight=\"700\">F₂ = 200 N at 120°</text><text x=\"214\" y=\"128\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"10\">one point, two pulls</text></svg></figure><figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 190\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"The same two forces added tip to tail, giving a resultant of 361 newtons at 64 degrees\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"190\" fill=\"#ffffff\"/><line x1=\"150.0\" y1=\"158.0\" x2=\"227.9\" y2=\"113.0\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"227.9\" y1=\"113.0\" x2=\"222.8\" y2=\"120.4\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"227.9\" y1=\"113.0\" x2=\"219.0\" y2=\"113.8\" stroke=\"#3a6ea5\" stroke-width=\"2.4\"/><line x1=\"227.9\" y1=\"113.0\" x2=\"197.9\" y2=\"61.0\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><line x1=\"197.9\" y1=\"61.0\" x2=\"205.3\" y2=\"66.2\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><line x1=\"197.9\" y1=\"61.0\" x2=\"198.7\" y2=\"70.0\" stroke=\"#1f7a5c\" stroke-width=\"2.4\"/><line x1=\"150.0\" y1=\"158.0\" x2=\"197.9\" y2=\"61.0\" stroke=\"#c2820f\" stroke-width=\"2.8\"/><line x1=\"197.9\" y1=\"61.0\" x2=\"197.7\" y2=\"70.0\" stroke=\"#c2820f\" stroke-width=\"2.8\"/><line x1=\"197.9\" y1=\"61.0\" x2=\"190.9\" y2=\"66.7\" stroke=\"#c2820f\" stroke-width=\"2.8\"/><text x=\"196\" y=\"150\" fill=\"#3a6ea5\" font-size=\"12\" font-weight=\"700\">F₁</text><text x=\"268\" y=\"78\" fill=\"#1f7a5c\" font-size=\"12\" font-weight=\"700\">F₂</text><text x=\"140\" y=\"56\" text-anchor=\"end\" fill=\"#c2820f\" font-size=\"11\" font-weight=\"700\">R = 361 N at 63.7°</text><text x=\"336\" y=\"104\" fill=\"#5B6672\" font-size=\"10\">tip to tail: order does not matter</text><text x=\"336\" y=\"122\" fill=\"#9c2f2f\" font-size=\"10\">|R| = 361 N, not 500 N</text></svg></figure><p>The upper figure is the installation: one bracket eye, two cables, each pulling along its own <b>line of action</b>. The lower one is the same situation with the bracket removed and the two arrows laid tip to tail.</p><p>The amber arrow closing the triangle is the <b>resultant</b>. Its length is 361&nbsp;N, not the 500 that adding the two magnitudes would give, because the second cable pulls back across the first. Laying them in the other order gives the same closing arrow, which is why components may be summed in any sequence.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A resultant from components",
+     "body": "<p><b>Problem 1.</b> Find the resultant of \\( F_1 = 300\\ \\mathrm{N} \\) at 30&deg; and \\( F_2 = 200\\ \\mathrm{N} \\) at 120&deg;.</p><p><b>Approach.</b> Resolve both, sum each direction, recombine. The second angle is past 90&deg;, so its x component is negative &mdash; taking the cosine of 120&deg; as positive is the classic slip, and it inflates the answer.</p><p><b>Solution.</b> \\( R_x = 300\\cos 30^\\circ + 200\\cos 120^\\circ = 259.8 - 100.0 = 159.8\\ \\mathrm{N} \\). \\( R_y = 300\\sin 30^\\circ + 200\\sin 120^\\circ = 150.0 + 173.2 = 323.2\\ \\mathrm{N} \\). Then \\( |R| = \\sqrt{159.8^2 + 323.2^2} = 360.6\\ \\mathrm{N} \\) at \\( \\theta = \\tan^{-1}(323.2/159.8) = 63.7^\\circ \\).</p><p><b>Answer.</b> \\( 361\\ \\mathrm{N} \\) at 63.7&deg;. Both components are positive, so the first quadrant is right and no 180&deg; correction is needed. Note the resultant is well under 500&nbsp;N: the forces are 90&deg; apart in effect, so each partly wastes the other.</p><p><b>Problem 2.</b> A crate of mass \\( 85\\ \\mathrm{kg} \\) hangs from a single vertical cable. State the cable tension.</p><p><b>Approach.</b> The question hands over a <b>mass</b> and asks for a force, so a conversion is compulsory before anything is written down.</p><p><b>Solution.</b> \\( W = mg = 85 \\times 9.81 = 833.9\\ \\mathrm{N} \\), and with one vertical cable the tension equals the weight.</p><p><b>Answer.</b> \\( 834\\ \\mathrm{N} \\). Answering &lsquo;85&nbsp;N&rsquo; is wrong by a factor of 9.81, and it is wrong in the direction that makes a design look safe.</p>"
+    },
+    {
+     "title": "When a cable cannot help, and a quadrant check",
+     "body": "<p><b>Problem 3.</b> The 200&nbsp;N cable in Problem 1 is slackened so it carries nothing. What is the resultant then, and what does that say about the bracket?</p><p><b>Approach.</b> A cable carries only tension, so a slack one contributes exactly zero &mdash; not a small force, and never a push. Remove its terms rather than reversing them.</p><p><b>Solution.</b> Only \\( F_1 \\) remains, so the resultant is \\( 300\\ \\mathrm{N} \\) at 30&deg;.</p><p><b>Answer.</b> \\( 300\\ \\mathrm{N} \\) at 30&deg;. The magnitude falls by only 17 per cent but the direction swings 34&deg;, so the bracket is loaded along a quite different line &mdash; a reminder that a resultant is not summarised by its size alone.</p><p><b>Problem 4.</b> A resultant has \\( R_x = -120\\ \\mathrm{N} \\) and \\( R_y = -90\\ \\mathrm{N} \\). Give its magnitude and true <b>direction angle</b>.</p><p><b>Approach.</b> Compute the magnitude first, since it is unaffected by signs, then place the angle by the signs of the components rather than by the inverse tangent alone.</p><p><b>Solution.</b> \\( |R| = \\sqrt{120^2 + 90^2} = 150\\ \\mathrm{N} \\). The inverse tangent of \\( (-90)/(-120) \\) returns 36.9&deg;, but both components are negative, so the force points into the third quadrant: \\( 36.9 + 180 = 216.9^\\circ \\).</p><p><b>Answer.</b> \\( 150\\ \\mathrm{N} \\) at 216.9&deg;. The calculator's 36.9&deg; is exactly opposite the truth, which is why the sign check is a step and not a formality.</p>"
+    }
+   ]
+  }
  },
  "2": {
   "lecture": "\n<h3>§1 · Moment: the turning effect of a force</h3>\n<p>The moment of a force about a point measures its tendency to rotate a body about that point:</p>\n\\[ M = F d \\tag{1} \\]\n<p>where \\( d \\) is the <em>perpendicular</em> distance from the point to the force's line of action — not the distance to where the force happens to be applied. A 500 N pull on a 0.6 m wrench gives 300 N·m only if the pull is perpendicular to the handle; at \\( 60^\\circ \\) to it, the effective arm shrinks and \\( M = 500 \\times 0.6 \\sin 60^\\circ = 259.8\\ \\mathrm{N \\cdot m} \\). Sign convention: pick counterclockwise positive and never renegotiate mid-problem.</p>\n<h3>§2 · Varignon's theorem</h3>\n<p>The moment of a force equals the sum of the moments of its components. This is not a curiosity — it is the standard labor-saving device. Rather than hunt for a perpendicular distance through awkward geometry, resolve the force into \\( F_x \\) and \\( F_y \\) at its point of application and take each component's moment with its own easy arm. The wrench case above: \\( F_y = 500\\sin 60^\\circ \\) acting 0.6 m from the nut gives the same 259.8 N·m in one line.</p>\n<h3>§3 · Couples: pure rotation</h3>\n<p>Two equal, opposite, non-collinear forces form a <em>couple</em>. Their force resultant is zero — a couple does not push a body anywhere — but their moment \\( M = Fd \\) (\\( d \\) the separation) is the same about <em>every</em> point in the plane. That free-floating property is why we may slide a couple anywhere on a rigid body, and why any force system reduces to one force plus one couple at a chosen point — the standard equivalent system used from here to machine design.</p>\n\n<h3>§4 · The moment working method</h3>\n<p>Moments punish improvisation, so fix the routine. <em>Declare the convention first</em> —\ncounterclockwise positive, written at the top of the page — and never renegotiate it\nmid-problem. <em>Choose the moment center tactically:</em> the point that kills the most\nunknowns, usually where reaction lines cross; the moment of a force through the chosen point\nis zero, and that choice is free information. <em>Pick the computation route per force:</em>\nif the perpendicular distance is visible, \\( M = Fd \\) is fastest; if the geometry is\nangled and awkward, split the force into components at its point of application and let\nVarignon's theorem sum the pieces — components times their own clean arms beat one force\ntimes a distance you can't see.</p>\n<p>Treat couples as the privileged objects they are: a couple's moment is the same about\nevery point, so it moves freely around the diagram without recalculation — the one moment\nthat never asks \"about where?\". And keep the units honest: newton-metres, force times\nlength, always stated. A moment reported as a bare number is an invitation to the classic\nerror of adding it to a force — dimensional homogeneity, learned in the mathematics course,\npolices this line for free.</p>\n<p><strong>Closing.</strong> Moment is force times perpendicular arm; Varignon converts geometry into components; couples turn without pushing and belong to no particular point. These three facts carry every equilibrium equation that follows.</p>",
@@ -163,7 +252,96 @@
     "solution": "<p>The moment of a force about a point equals the sum of the moments of its components about that point — which is why splitting an angled force at its point of application and using each component's clean perpendicular arm is both legal and usually faster. \"Any convenient distance\" is the classic error the theorem prevents: the arm must be perpendicular to each force line, and components make those arms visible.</p>"
    }
   ],
-  "recap": "<ul> <li>A moment is the turning effect of a force: magnitude times perpendicular distance to the point.</li> <li><b>Varignon's theorem:</b> the moment of a force equals the sum of the moments of its components — so you may replace an awkward perpendicular distance with convenient component distances.</li> <li>A couple is two equal, opposite, non-collinear forces: pure rotation, no net force, and the <i>same</i> moment about every point in the plane.</li> <li><b>Working method:</b> choose the moment centre to eliminate unknowns — put it where the forces you do not want to solve for intersect.</li> </ul>"
+  "recap": "<ul> <li>A moment is the turning effect of a force: magnitude times perpendicular distance to the point.</li> <li><b>Varignon's theorem:</b> the moment of a force equals the sum of the moments of its components — so you may replace an awkward perpendicular distance with convenient component distances.</li> <li>A couple is two equal, opposite, non-collinear forces: pure rotation, no net force, and the <i>same</i> moment about every point in the plane.</li> <li><b>Working method:</b> choose the moment centre to eliminate unknowns — put it where the forces you do not want to solve for intersect.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "A moment measures the turning effect of a force about a point, and it depends on the perpendicular distance to the line of action rather than the distance to where the force is applied. This lesson computes moments directly and by Varignon's theorem, and introduces the couple, which turns without pushing.",
+    "keypoints": [
+     "The moment is force times PERPENDICULAR distance to the point.",
+     "The perpendicular distance is not the spanner's length unless the force is at right angles to it.",
+     "Varignon's theorem lets you replace an awkward perpendicular distance with the moments of the components.",
+     "A couple is two equal, opposite, non-collinear forces: pure turning, zero resultant force.",
+     "A couple's moment is the same about every point, so no reference point need be stated.",
+     "Fix a sign convention before writing anything; anticlockwise positive is the usual choice."
+    ],
+    "terms": [
+     {
+      "term": "Moment of a force",
+      "symbol": "\\( M = F d \\)",
+      "read": "em",
+      "meaning": "Turning effect about a point, in newton-metres."
+     },
+     {
+      "term": "Perpendicular distance",
+      "symbol": "\\( d \\)",
+      "read": "dee",
+      "meaning": "Shortest distance from the point to the line of action."
+     },
+     {
+      "term": "Force",
+      "symbol": "\\( F \\)",
+      "read": "eff",
+      "meaning": "The applied push or pull, in newtons."
+     },
+     {
+      "term": "Angle to the arm",
+      "symbol": "\\( \\theta \\)",
+      "read": "theta",
+      "meaning": "Angle between the force and the arm it acts on."
+     },
+     {
+      "term": "Arm length",
+      "symbol": "\\( L \\)",
+      "read": "ell",
+      "meaning": "Distance from the point to where the force is applied."
+     },
+     {
+      "term": "Varignon's theorem",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "A force's moment equals the sum of its components' moments."
+     },
+     {
+      "term": "Couple",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Two equal opposite parallel forces: turning with no net force."
+     },
+     {
+      "term": "Couple arm",
+      "symbol": "\\( a \\)",
+      "read": "ay",
+      "meaning": "Separation between the two forces of a couple."
+     },
+     {
+      "term": "Sense",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Which way it turns; anticlockwise taken positive here."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Turning effect, and the distance that counts",
+     "body": "<p>The <b>moment of a force</b> about a point is \\( M = F d \\), where \\( d \\) is the <b>perpendicular distance</b> from that point to the force's line of action. The word perpendicular is load-bearing. If a force acts at the end of an arm of length \\( L \\) but at an angle \\( \\theta \\) to it, the perpendicular distance is \\( L\\sin\\theta \\), not \\( L \\):</p><p>\\[ M = F L \\sin\\theta \\]</p><p>So a force applied along the arm has no moment at all, whatever its size, because its line of action passes through the point.</p><p><b>Varignon's theorem</b> offers a second route that avoids measuring any perpendicular distance. Resolve the force into components, take each component's moment using the distances already on the drawing, and add them. Both routes give the same number, and the component route is usually the one that survives a messy geometry.</p><p>A <b>couple</b> is different in kind. Two equal, opposite, parallel forces separated by a <b>couple arm</b> \\( a \\) have zero resultant force but a moment \\( M = F a \\). Compute it about any point and the same number appears, because the point's distance cancels between the two forces. That is why a couple is quoted without a reference point, while a single force's moment is meaningless without one.</p>"
+    },
+    {
+     "title": "The spanner, and the distance that is not its length",
+     "body": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"A spanner turned by a force inclined at 60 degrees, with the true perpendicular distance from the bolt drawn shorter than the spanner\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"300\" fill=\"#ffffff\"/><line x1=\"150.0\" y1=\"110.0\" x2=\"360.0\" y2=\"110.0\" stroke=\"#14181F\" stroke-width=\"7.0\"/><circle cx=\"150.0\" cy=\"110.0\" r=\"16\" fill=\"#eef1f5\" stroke=\"#14181F\" stroke-width=\"2.0\"/><circle cx=\"150.0\" cy=\"110.0\" r=\"5\" fill=\"#14181F\"/><line x1=\"360.0\" y1=\"110.0\" x2=\"414.0\" y2=\"16.5\" stroke=\"#3a6ea5\" stroke-width=\"2.6\"/><line x1=\"414.0\" y1=\"16.5\" x2=\"413.2\" y2=\"25.4\" stroke=\"#3a6ea5\" stroke-width=\"2.6\"/><line x1=\"414.0\" y1=\"16.5\" x2=\"406.6\" y2=\"21.6\" stroke=\"#3a6ea5\" stroke-width=\"2.6\"/><line x1=\"307.5\" y1=\"200.9\" x2=\"408.0\" y2=\"26.9\" stroke=\"#5B6672\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><line x1=\"150.0\" y1=\"110.0\" x2=\"307.5\" y2=\"200.9\" stroke=\"#9c2f2f\" stroke-width=\"2.0\" stroke-dasharray=\"5 3\"/><line x1=\"150.0\" y1=\"268.0\" x2=\"360.0\" y2=\"268.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"150.0\" y1=\"264.0\" x2=\"150.0\" y2=\"272.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"360.0\" y1=\"264.0\" x2=\"360.0\" y2=\"272.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><text x=\"255.0\" y=\"255\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"11\">0.40 m — the spanner</text><text x=\"290\" y=\"232\" text-anchor=\"end\" fill=\"#9c2f2f\" font-size=\"11\" font-weight=\"700\">d = 0.40 sin60° = 0.346 m</text><text x=\"422.0\" y=\"20.469256391280638\" fill=\"#3a6ea5\" font-size=\"11\" font-weight=\"700\">F = 250 N</text><text x=\"150\" y=\"292\" fill=\"#14181F\" font-size=\"11\" font-weight=\"700\">M = F d = 250 × 0.346 = 86.6 N·m</text></svg></figure><p>The force is applied at the end of a 0.40&nbsp;m spanner, but the distance that enters the moment is the red one &mdash; the perpendicular dropped from the bolt centre onto the force's line of action, drawn dashed beyond the tip.</p><p>At 60&deg; that perpendicular is \\( 0.40\\sin 60^\\circ = 0.346 \\) metres, so the moment is 86.6&nbsp;N&middot;m rather than the 100 the spanner's length alone would suggest. Pulling at right angles would recover the full 100; pulling straight along the shaft would give nothing, however hard. The same 250&nbsp;N is worth anywhere between zero and 100&nbsp;N&middot;m depending only on the angle, which is the whole reason the perpendicular distance is defined the way it is.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "A moment two ways, and a couple that ignores the point",
+     "body": "<p><b>Problem 1.</b> A force of \\( 250\\ \\mathrm{N} \\) acts at the end of a \\( 0.40\\ \\mathrm{m} \\) spanner, at 60&deg; to the shaft. Find the moment about the bolt, directly and by <b>Varignon's theorem</b>.</p><p><b>Approach.</b> The direct route needs the perpendicular distance; Varignon's needs only the component perpendicular to the shaft. They must agree, and doing both is a free check. Using 0.40 as the distance is the standard error and overstates the moment by 15 per cent.</p><p><b>Solution.</b> Directly, \\( d = 0.40\\sin 60^\\circ = 0.346\\ \\mathrm{m} \\), so \\( M = 250 \\times 0.346 = 86.6\\ \\mathrm{N\\,m} \\). By Varignon, the component across the shaft is \\( 250\\sin 60^\\circ = 216.5\\ \\mathrm{N} \\) acting at \\( 0.40\\ \\mathrm{m} \\), giving \\( 216.5 \\times 0.40 = 86.6\\ \\mathrm{N\\,m} \\); the component along the shaft passes through the bolt and contributes nothing.</p><p><b>Answer.</b> \\( 86.6\\ \\mathrm{N\\,m} \\) by both routes. The component along the shaft is not small &mdash; it is 125&nbsp;N &mdash; yet it is worth exactly zero moment, which is the clearest statement of what the perpendicular distance measures.</p><p><b>Problem 2.</b> Two parallel \\( 180\\ \\mathrm{N} \\) forces act in opposite senses, \\( 0.25\\ \\mathrm{m} \\) apart. Find the moment about a point on the first force's line, and about a point \\( 0.60\\ \\mathrm{m} \\) away.</p><p><b>Approach.</b> Take moments about each point in turn and compare. The expectation is that the reference point drops out.</p><p><b>Solution.</b> About the first line, only the second force has an arm: \\( 180 \\times 0.25 = 45\\ \\mathrm{N\\,m} \\). About the far point, the two arms are 0.60 and 0.85&nbsp;m, giving \\( 180 \\times 0.85 - 180 \\times 0.60 = 45\\ \\mathrm{N\\,m} \\).</p><p><b>Answer.</b> \\( 45\\ \\mathrm{N\\,m} \\) about both &mdash; and about any other point. That is what makes it a <b>couple</b> rather than a pair of forces that happen to be opposed.</p>"
+    },
+    {
+     "title": "Where the force must act, and a sign that decides the sense",
+     "body": "<p><b>Problem 3.</b> A bolt needs \\( 120\\ \\mathrm{N\\,m} \\) and only \\( 300\\ \\mathrm{N} \\) can be applied at the end of the same \\( 0.40\\ \\mathrm{m} \\) spanner. Is the job possible, and at what angle?</p><p><b>Approach.</b> The largest moment this force can give on this arm is at 90&deg;. Check that ceiling before solving for an angle, because if the target is above it no angle exists and solving would return a sine greater than one.</p><p><b>Solution.</b> The ceiling is \\( 300 \\times 0.40 = 120\\ \\mathrm{N\\,m} \\), exactly the requirement. So \\( \\sin\\theta = 1 \\) and \\( \\theta = 90^\\circ \\).</p><p><b>Answer.</b> Just possible, and only with the force exactly perpendicular to the shaft. There is no margin: at 80&deg; the moment falls to \\( 120\\sin 80^\\circ = 118\\ \\mathrm{N\\,m} \\) and the bolt is undertightened. In practice the answer is to use a longer arm.</p><p><b>Problem 4.</b> A \\( 60\\ \\mathrm{N} \\) force acts vertically downward \\( 0.30\\ \\mathrm{m} \\) to the RIGHT of a pivot, and a \\( 40\\ \\mathrm{N} \\) force vertically downward \\( 0.50\\ \\mathrm{m} \\) to the LEFT. Find the net moment and its <b>sense</b>.</p><p><b>Approach.</b> Fix the convention first &mdash; anticlockwise positive &mdash; and then a downward force to the right turns clockwise while one to the left turns anticlockwise. Adding magnitudes without signs is the error this problem is built around.</p><p><b>Solution.</b> \\( M = +40 \\times 0.50 - 60 \\times 0.30 = 20 - 18 = +2\\ \\mathrm{N\\,m} \\).</p><p><b>Answer.</b> \\( 2\\ \\mathrm{N\\,m} \\) anticlockwise. The two moments very nearly cancel, so the net turning is small even though neither force is &mdash; and had the signs been dropped the answer would have read 38, nineteen times too large.</p>"
+    }
+   ]
+  }
  },
  "3": {
   "lecture": "\n<h3>§1 · Isolate, replace, label</h3>\n<p>A free-body diagram is built in three deliberate moves. <em>Isolate:</em> draw the body alone, severed from every support and contact. <em>Replace:</em> at each cut, draw the force or moment that the removed part exerted on the body. <em>Label:</em> every force gets a symbol, a direction, and — for knowns — a value with units. The most common omission is the body's own weight, acting at its center of gravity; the second most common is a forgotten contact force at a surface the sketch made look innocent.</p>\n<h3>§2 · Supports are force vocabularies</h3>\n<p>Each support type supplies a fixed menu of reactions. A <b>roller</b> or smooth surface: one force, normal to the rolling surface. A <b>pin</b>: two force components, unknown in direction until solved. A <b>fixed (built-in) support</b>: two force components <em>plus a moment</em> — that resisting moment is what a pin cannot supply, and it is why a flagpole stays up while a pinned pole would fall. A taut <b>cable</b>: one pull, along the cable, never a push.</p>\n<h3>§3 · Every equilibrium error is an FBD error</h3>\n<p>When a statics answer comes out wrong, the algebra is rarely the culprit; the diagram is. A force drawn at the wrong point, a reaction assumed in a direction the support cannot supply, an internal force shown on a body that was never cut — each corrupts the equations before they are written. The professional habit is to treat the FBD as a deliverable in itself: a diagram a colleague could take and write the equations from without asking you anything. §Worked Examples applies the discipline to a simply supported beam and a cantilever.</p>\n\n<h3>§4 · The FBD checklist</h3>\n<p>The free-body diagram is a procedure, not an artwork. Run the checklist in order.\n<em>One — isolate:</em> redraw ONLY the chosen body, stripped of everything it touches.\n<em>Two — replace every contact:</em> each support, cable, surface, and neighbor becomes the\nforce set it can transmit — a cable becomes one pull along its line, a smooth surface one\nnormal push, a pin two components. <em>Three — add the field forces:</em> weight at the\ncenter of gravity, always. <em>Four — name every unknown</em> with a symbol and an assumed\ndirection; a wrong assumption costs nothing — the algebra answers with a minus sign.\n<em>Five — count:</em> unknowns versus available equations, before solving; a mismatch caught\nhere saves a page of doomed algebra.</p>\n<p>Two disciplines keep diagrams honest. Forces the body exerts on other things never appear\n— an FBD shows only what acts <em>on</em> the body, and mixing the action–reaction pair onto\none diagram is the classic corruption. And when a problem involves several connected bodies,\ndraw a separate FBD per body plus, where helpful, one of the whole assembly — the pair of\nviews cross-checks itself, because the internal forces must cancel in the assembly view.</p>\n<p><strong>Closing.</strong> Isolate, replace, label; know each support's force menu; never write \\( \\Sigma F = 0 \\) until the picture is finished. The FBD is not preparation for the analysis — it <em>is</em> the analysis.</p>",
@@ -246,7 +424,96 @@
     "solution": "<p>The pin contributes two components; the roller one, normal to its surface: three unknowns — exactly matching the three planar equilibrium equations, which is why pin-plus-roller is THE standard determinate support scheme. Four would demand more equations than statics owns; two would leave the body a mechanism.</p>"
    }
   ],
-  "recap": "<ul> <li>Isolate the body, replace every contact with the force it can transmit, then label everything. Nothing else.</li> <li><b>Supports are force vocabularies:</b> a roller supplies one force, a pin two, a fixed support two plus a moment. Learn the menu and the diagram writes itself.</li> <li>Practically every equilibrium error is a free-body-diagram error, not an algebra error.</li> <li>Never write \\( \\Sigma F = 0 \\) until the picture is finished.</li> </ul>"
+  "recap": "<ul> <li>Isolate the body, replace every contact with the force it can transmit, then label everything. Nothing else.</li> <li><b>Supports are force vocabularies:</b> a roller supplies one force, a pin two, a fixed support two plus a moment. Learn the menu and the diagram writes itself.</li> <li>Practically every equilibrium error is a free-body-diagram error, not an algebra error.</li> <li>Never write \\( \\Sigma F = 0 \\) until the picture is finished.</li> </ul>",
+  "revision": {
+   "intro": {
+    "what": "A free-body diagram isolates one body and replaces every contact with the force or forces that contact can transmit. It is the step where the physics is decided; everything after it is algebra. This lesson gives the support vocabulary and the unknown-counting that tells you whether the problem can be solved by statics at all.",
+    "keypoints": [
+     "Isolate ONE body, then replace each contact with what it can transmit.",
+     "A roller supplies one force, a pin two, a fixed support two and a moment.",
+     "A cable pulls only; a smooth surface pushes only, normal to itself.",
+     "Include self-weight at the centre of gravity when it is not negligible.",
+     "A planar body gives exactly three equations, so more than three unknowns cannot be solved by statics alone.",
+     "Most equilibrium errors are free-body-diagram errors, not algebra errors."
+    ],
+    "terms": [
+     {
+      "term": "Free-body diagram",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "One body drawn alone with every external force shown."
+     },
+     {
+      "term": "Reaction",
+      "symbol": "\\( R \\)",
+      "read": "arr",
+      "meaning": "The force a support exerts back on the body."
+     },
+     {
+      "term": "Roller support",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "One unknown: a force normal to its surface."
+     },
+     {
+      "term": "Pin support",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Two unknowns: a force with two components, no moment."
+     },
+     {
+      "term": "Fixed support",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Three unknowns: two force components and a moment."
+     },
+     {
+      "term": "Cable",
+      "symbol": "\\( T \\)",
+      "read": "tee",
+      "meaning": "Carries tension only, along its own length."
+     },
+     {
+      "term": "Self-weight",
+      "symbol": "\\( W \\)",
+      "read": "double-you",
+      "meaning": "The body's own weight, acting at its centre of gravity."
+     },
+     {
+      "term": "Two-force member",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Loaded at two points only: the force runs along the line joining them."
+     },
+     {
+      "term": "Statically determinate",
+      "symbol": "&mdash;",
+      "read": "&mdash;",
+      "meaning": "Unknowns equal the available equilibrium equations."
+     }
+    ]
+   },
+   "sheets": [
+    {
+     "title": "Isolate, replace, label — and then count",
+     "body": "<p>The <b>free-body diagram</b> is one body, drawn alone, with every external force on it and nothing else. Draw the outline, then walk the boundary and ask at each contact what that contact can transmit. Erase the supports and put their <b>reaction</b> forces in their place.</p><p>The support types are a short vocabulary, worth memorising once. A <b>roller support</b> can only push normal to its surface: one unknown. A <b>pin support</b> can push in any direction but cannot resist turning: two unknowns, usually drawn as horizontal and vertical components. A <b>fixed support</b> resists both translation and rotation: three unknowns. A <b>cable</b> pulls along its own length and cannot push, and a smooth surface pushes normal to itself and cannot pull.</p><p>Then count, before any equation is written. A body in a plane gives three independent equilibrium equations, so three unknowns can be found and four cannot. A beam on two pin supports has four, which is not a harder problem but a different one &mdash; it is statically indeterminate and needs the deflections of a later course. Counting first costs a few seconds and saves discovering the impossibility halfway through the algebra.</p><p>One shortcut is worth spotting early. A <b>two-force member</b> carries load at exactly two points and no moment; its force must therefore act along the line joining those two points, whatever the member's shape.</p>"
+    },
+    {
+     "title": "The support vocabulary, at a glance",
+     "body": "<figure class=\"lesson-diagram\"><svg viewBox=\"0 0 560 235\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"ui-sans-serif,system-ui,sans-serif\" role=\"img\" aria-label=\"Roller, pin and fixed supports side by side with the reactions each one can supply\"><rect x=\"0\" y=\"0\" width=\"560\" height=\"235\" fill=\"#ffffff\"/><line x1=\"54.0\" y1=\"96.0\" x2=\"158.0\" y2=\"96.0\" stroke=\"#14181F\" stroke-width=\"5.0\"/><polygon points=\"106.0,96.0 93.0,114.2 119.0,114.2\" fill=\"none\" stroke=\"#14181F\" stroke-width=\"1.6\"/><circle cx=\"98.8\" cy=\"118.2\" r=\"4\" fill=\"none\" stroke=\"#14181F\" stroke-width=\"1.4\"/><circle cx=\"113.2\" cy=\"118.2\" r=\"4\" fill=\"none\" stroke=\"#14181F\" stroke-width=\"1.4\"/><line x1=\"85.0\" y1=\"122.2\" x2=\"127.0\" y2=\"122.2\" stroke=\"#14181F\" stroke-width=\"1.6\"/><line x1=\"85.0\" y1=\"123.2\" x2=\"78.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"91.0\" y1=\"123.2\" x2=\"84.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"97.0\" y1=\"123.2\" x2=\"90.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"103.0\" y1=\"123.2\" x2=\"96.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"109.0\" y1=\"123.2\" x2=\"102.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"115.0\" y1=\"123.2\" x2=\"108.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"121.0\" y1=\"123.2\" x2=\"114.0\" y2=\"131.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"106.0\" y1=\"156.0\" x2=\"106.0\" y2=\"108.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"106.0\" y1=\"108.0\" x2=\"109.8\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"106.0\" y1=\"108.0\" x2=\"102.2\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><text x=\"106\" y=\"46\" text-anchor=\"middle\" fill=\"#14181F\" font-size=\"12\" font-weight=\"700\">roller</text><text x=\"106\" y=\"200\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"11\">1 unknown</text><line x1=\"228.0\" y1=\"96.0\" x2=\"332.0\" y2=\"96.0\" stroke=\"#14181F\" stroke-width=\"5.0\"/><polygon points=\"280.0,96.0 265.0,118.5 295.0,118.5\" fill=\"none\" stroke=\"#14181F\" stroke-width=\"1.6\"/><line x1=\"257.0\" y1=\"118.5\" x2=\"303.0\" y2=\"118.5\" stroke=\"#14181F\" stroke-width=\"1.6\"/><line x1=\"257.0\" y1=\"119.5\" x2=\"250.0\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"263.6\" y1=\"119.5\" x2=\"256.6\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"270.1\" y1=\"119.5\" x2=\"263.1\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"276.7\" y1=\"119.5\" x2=\"269.7\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"283.3\" y1=\"119.5\" x2=\"276.3\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"289.9\" y1=\"119.5\" x2=\"282.9\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"296.4\" y1=\"119.5\" x2=\"289.4\" y2=\"127.5\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"280.0\" y1=\"160.0\" x2=\"280.0\" y2=\"108.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"280.0\" y1=\"108.0\" x2=\"283.8\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"280.0\" y1=\"108.0\" x2=\"276.2\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"226.0\" y1=\"96.0\" x2=\"272.0\" y2=\"96.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"272.0\" y1=\"96.0\" x2=\"263.8\" y2=\"99.8\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"272.0\" y1=\"96.0\" x2=\"263.8\" y2=\"92.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><text x=\"280\" y=\"46\" text-anchor=\"middle\" fill=\"#14181F\" font-size=\"12\" font-weight=\"700\">pin</text><text x=\"280\" y=\"200\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"11\">2 unknowns</text><line x1=\"402.0\" y1=\"96.0\" x2=\"506.0\" y2=\"96.0\" stroke=\"#14181F\" stroke-width=\"5.0\"/><line x1=\"402.0\" y1=\"64.0\" x2=\"402.0\" y2=\"128.0\" stroke=\"#14181F\" stroke-width=\"2.2\"/><line x1=\"402.0\" y1=\"64.0\" x2=\"393.0\" y2=\"72.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"76.8\" x2=\"393.0\" y2=\"84.8\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"89.6\" x2=\"393.0\" y2=\"97.6\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"102.4\" x2=\"393.0\" y2=\"110.4\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"115.2\" x2=\"393.0\" y2=\"123.2\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"128.0\" x2=\"393.0\" y2=\"136.0\" stroke=\"#5B6672\" stroke-width=\"1.0\"/><line x1=\"402.0\" y1=\"160.0\" x2=\"402.0\" y2=\"108.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"402.0\" y1=\"108.0\" x2=\"405.8\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"402.0\" y1=\"108.0\" x2=\"398.2\" y2=\"116.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"358.0\" y1=\"96.0\" x2=\"394.0\" y2=\"96.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"394.0\" y1=\"96.0\" x2=\"385.8\" y2=\"99.8\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"394.0\" y1=\"96.0\" x2=\"385.8\" y2=\"92.2\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><path d=\"M 424 74 a 26 26 0 1 1 -20 12\" fill=\"none\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"404.0\" y1=\"86.0\" x2=\"408.0\" y2=\"98.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"408.0\" y1=\"98.0\" x2=\"403.2\" y2=\"92.9\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><line x1=\"408.0\" y1=\"98.0\" x2=\"408.8\" y2=\"91.0\" stroke=\"#3a6ea5\" stroke-width=\"2.2\"/><text x=\"454\" y=\"46\" text-anchor=\"middle\" fill=\"#14181F\" font-size=\"12\" font-weight=\"700\">fixed</text><text x=\"454\" y=\"200\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"11\">3 unknowns</text><text x=\"280\" y=\"226\" text-anchor=\"middle\" fill=\"#5B6672\" font-size=\"10\">a planar body gives three equations — count the unknowns before writing any</text></svg></figure><p>Each support is drawn beside the reactions it can actually supply. Read it as a price list: the roller costs one unknown, the pin two, the fixed support three.</p><p>Since a planar body supplies exactly three equations, the combinations follow at once. A pin with a roller gives three unknowns and is solvable &mdash; which is why the simply supported beam is the standard arrangement. One fixed support alone also gives three, which is why a cantilever works. Two pins give four and cannot be solved by statics, however carefully the equations are written.</p>"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Counting unknowns before solving",
+     "body": "<p><b>Problem 1.</b> A beam rests on a <b>pin support</b> at one end and a <b>roller support</b> at the other. How many unknowns, and is it <b>statically determinate</b>?</p><p><b>Approach.</b> Count what each support contributes, then compare with the three equations a planar body supplies. Do this before drawing any equation.</p><p><b>Solution.</b> Pin two plus roller one is three unknowns, against three equations.</p><p><b>Answer.</b> Three unknowns, three equations: determinate, and solvable by statics alone. This is the simply supported beam of Lesson 5.</p><p><b>Problem 2.</b> The roller is now replaced by a second pin. What changes?</p><p><b>Approach.</b> Recount rather than re-deriving. The question is whether the unknowns still match the equations.</p><p><b>Solution.</b> Two pins give four unknowns against the same three equations.</p><p><b>Answer.</b> Four unknowns, three equations &mdash; statically indeterminate, and no rearrangement of the equilibrium equations will solve it. The extra support does not make the beam harder to analyse by degree; it puts the problem outside statics entirely, and a fourth relation from the beam's stiffness is required.</p>"
+    },
+    {
+     "title": "Reading a member, and what a cable cannot do",
+     "body": "<p><b>Problem 3.</b> A curved bracket is pinned to a wall at one end and to a strut at the other, and carries no other load. In which direction does its force act?</p><p><b>Approach.</b> Check the definition of a <b>two-force member</b> before looking at the shape. If load enters at only two points and no moment is applied, moment equilibrium about either pin forces the line of action; the member's curvature is irrelevant.</p><p><b>Solution.</b> Taking moments about one pin, the force at the other must have zero perpendicular distance, so it acts along the straight line joining the two pins.</p><p><b>Answer.</b> Along the line joining the pins &mdash; a straight line through a curved part. This single observation removes two unknowns and is the reason truss analysis in Lesson 6 is tractable.</p><p><b>Problem 4.</b> A student's free-body diagram shows a cable pushing a bracket outward with 400&nbsp;N. What has gone wrong, and what is the correct reading?</p><p><b>Approach.</b> Test each drawn force against what its contact can physically transmit. A <b>cable</b> pulls only; an arrow pushing along one is not a sign error to be fixed later but a diagram that cannot occur.</p><p><b>Solution.</b> If the algebra genuinely requires a push there, the cable would go slack and carry zero, and the arrangement must be re-analysed without it.</p><p><b>Answer.</b> The cable carries nothing in that case, not &minus;400&nbsp;N. A negative answer for a pin reaction simply means the arrow was drawn the wrong way and is harmless; a negative answer for a cable tension means the model itself is wrong. Knowing which kind of negative you are looking at is the point of the support vocabulary.</p>"
+    }
+   ]
+  }
  },
  "4": {
   "lecture": "\n<h3>§1 · Concurrent forces, one point, two (or three) equations</h3>\n<p>A particle in statics is any body whose forces all pass through one point — a hook, a ring, a connection node. Equilibrium then needs only force balance:</p>\n\\[ \\Sigma F_x = 0, \\qquad \\Sigma F_y = 0 \\tag{1} \\]\n<p>(add \\( \\Sigma F_z = 0 \\) in 3-D). No moment equation exists to help: concurrent forces have no arm about their common point. Two equations means two unknowns per 2-D node — count before solving, and if unknowns exceed equations, another FBD is required, not more algebra.</p>\n<h3>§2 · Components or geometry — choose deliberately</h3>\n<p>With exactly three concurrent forces in equilibrium, the vectors must close into a triangle tip-to-tail; the law of sines then hands over the answer quickly and the geometric fact is worth having on its own. With four or more forces, or awkward angles, components (1) win every time and never mislead. The professional default is components; the triangle is a fast lane you take when the problem is small and the geometry clean.</p>\n<h3>§3 · Cables, rings, and pulleys</h3>\n<p>Cable systems are particle equilibrium in the field. Each cable pulls along its axis; a frictionless pulley changes a cable's <em>direction</em> but not its tension — the same \\( T \\) runs through. A single movable pulley therefore halves the holding force: two rope parts share the load. These idealizations (massless cable, frictionless sheave) are stated assumptions, not truths — real sheave friction adds a few percent, which is why rigging tables carry efficiency factors. §Worked Examples solves the classic two-cable suspension and a movable-pulley hold.</p>\n\n<h3>§4 · The particle equilibrium recipe</h3>\n<p>Concurrent-force problems yield to a fixed sequence. <em>FBD of the point</em> — the ring,\nhook, or knot where the forces meet — with every cable's pull drawn along its own line.\n<em>Axes and components:</em> resolve each force with the sign table from Lesson 1.\n<em>Write both equations:</em> \\( \\Sigma F_x = 0 \\) and \\( \\Sigma F_y = 0 \\), giving two\nequations for at most two unknowns. <em>Solve simultaneously</em> — substitution is usually\ncleanest: express one tension from the x-equation, feed it to the y-equation.\n<em>Check physically:</em> substitute the answers back until both sums close to zero within\nrounding, and confirm every cable came out in tension — a negative cable force is not a\nsolution, it is a diagnosis that the geometry cannot hang that load that way.</p>\n<p>Read the answers like an engineer afterward. The steeper cable always carries more of a\nhung load's weight; as a cable approaches horizontal its tension grows without bound —\nwhich is why \"just pull it a little tighter\" is how straight spans of cable snap hardware.\nThe recipe produces numbers; the reading of them produces judgment, and the judgment is\nwhat the courses downstream — and the plant floor — actually pay for.</p>\n<p><strong>Closing.</strong> One point, force balance only, unknowns counted against equations, triangle for three clean forces, components for everything else. Particle equilibrium is small — and it is the kernel of every truss joint in Lesson 6.</p>",
