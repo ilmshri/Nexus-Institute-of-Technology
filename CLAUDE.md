@@ -1414,13 +1414,14 @@ REVISION-NOTES CONTRACT (ratified by owner):
   budgets are estimates and drift — the gate's measured numbers win.
 - CAPACITY CALIBRATION after the 2026-08-02 breathing-room pass (owner-decided
   spacing: rev-body p 16px, kp li 14px, contents rows 14px, terms cells
-  line-height 1.7 + 12px padding, sheet-h gap 22px): measured capacity is now
-  median ~289 / min ~169 word-equivalents per page (was ~306/~182). Authoring
-  targets stay sheet ~300 / examples ~230, but TERMS sheets are the pressure
-  point — keep them to ~10 rows; 12 dense rows no longer fit. Known overflow
-  from the calibration run: MTH 101 L4 terms measures 102% (972px/952) and
-  needs a one-row trim or shorter meanings — content-side fix, not urgent
-  (screen rendering is unaffected; print would clip the last row).
+  line-height 1.7 + 12px padding, sheet-h gap 22px): design-side run against
+  the PRE-restructure MTH 101 measured median ~289 / min ~169
+  word-equivalents/page and terms sheets ≤ ~10 rows. SUPERSEDED for
+  authoring by the content session's per-kind capacities in
+  drafts/qa_revision.py (calibrated against this spacing; MTH 101 was then
+  re-authored to the 6-block standard with both gates green — the earlier
+  L4-terms 102% finding no longer applies). The fit gate remains the
+  authority; qa_revision.py's constants are the author-side reference.
 - PAGE-COUNT COORDINATION (owner, 2026-08-02): content shape is in flux
   (figures + an extra worked-example page incoming; ~57-68 pages/course
   expected). The design session HOLDS folio/contents-number re-verification
@@ -1446,9 +1447,64 @@ FIGURE SPLIT (owner, 2026-08-02):
   design-previews/tools/figlib.py (geometry-computed SVG, palette tokens,
   authoring-time label-collision gate — design-side sibling of lessonlib);
   exemplar pair design-previews/figures/exemplar-incline-pair.svg (crate on
-  incline + FBD, 31% of zone). MARKUP CONTRACT: a pictorial pair is ONE
-  combined SVG emitted as <figure class="rev-fig">…<figcaption>…</figcaption>
-  </figure> inside .rev-body; qa_revision_fit.py now measures every
+  incline + FBD, 31% of zone). MARKUP CONTRACT: a design-side pictorial pair
+  is ONE combined SVG emitted as <figure class="rev-fig">…<figcaption>…
+  </figcaption></figure> inside .rev-body; qa_revision_fit.py measures every
   figure.rev-fig and FAILS any taller than 45% of the 252mm zone (verified
-  both directions). The renderer's figure slot is not wired yet — waits for
-  the content shape to settle (same hold as folio verification).
+  both directions). Content-side computed figures ride in sheet/example
+  bodies as figure.lesson-diagram (no dedicated renderer slot exists or is
+  needed); their author-side ceiling lives in drafts/qa_revision.py — the
+  two figure gates are complementary, not competing.
+
+## STANDING DIRECTIVE — figures, page growth, solved problems (owner, 2026-08-02)
+
+Binding and permanent, and binding on BOTH sessions — the content session and
+the design session. It is written here, not only in a session's memory, so
+neither can claim it did not apply to them.
+
+### (a) Figures
+
+**Site lessons go from one figure to THREE.** One per section, each carrying
+exactly one idea. A figure that carries two ideas is two figures. Where it
+helps the student, **pair a physical sketch with its abstracted diagram** — the
+real object beside the free body, the real shaft beside the line diagram — so
+the abstraction is visibly earned rather than asserted.
+
+**The revision notes get figures too.** They are notes, not a text dump.
+
+**No figure may take half a page.** Measured 2026-08-02 against the real print
+box: a figure's rendered height is `93px + 1.05px per viewBox unit`, so on the
+952px content box the ceiling is a **viewBox height of 365 units**. The house
+560x300 diagram is 409px — 43% of a page, legal but leaving a sheet no room for
+prose, which is why in the notes a figure earns its own page. `drafts/qa_revision.py`
+enforces the ceiling automatically.
+
+**Nothing is copied from anywhere.** Computed SVGs stay this session's, authored
+through `drafts/lessonlib.py` so `Fig.verify()` catches a label landing on
+artwork at authoring time. Pictorial illustration is the design session's.
+Neither borrows artwork from outside the project.
+
+### (b) Page growth — allowed, CONDITIONALLY
+
+A revision-notes lesson may grow from 4 blocks to **5 or 6**, so a course prints
+**~57-68 pages** instead of 46. (Printed pages = block count + 2: the cover and
+the contents page are themselves `.rev-page` blocks since 02999f1c, so the old
+"+1" arithmetic note is superseded.)
+
+**Every added page must carry a figure or a worked example.** Extra prose alone
+does not justify a page. A page that is only more words is a regression to the
+compiled dump the owner rejected.
+
+### (c) Solved problems on the site — NO CHANGE
+
+Lessons already carry 3 worked solves + 8 explained MCs. **Do not add more.**
+Instead, tie the existing solutions to the new figures: a solve should refer to
+the figure that shows its geometry, so the figure is load-bearing rather than
+decorative.
+
+### (d) Scope
+
+Applies to **NEW lessons, from statics (STA 103) onward**. Retrofitting the 266
+existing lessons is a **separate later pass, covering site lessons only, not the
+notes** — and it starts only when the owner says so. Do not begin it
+opportunistically.

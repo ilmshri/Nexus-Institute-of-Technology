@@ -257,3 +257,79 @@ def write_lesson(path, lid, lesson):
     p.write_text(json.dumps(data, indent=1, ensure_ascii=False) + "\n",
                  encoding="utf-8")
     return len(data)
+
+
+# ---------------------------------------------------------------------------
+# Mechanics primitives (added 2026-08-02 for STA 103's figures).
+#
+# A statics diagram is mostly ARROWS and SUPPORTS, and Fig had neither — every
+# course was about to hand-roll them. They live here rather than in a per-course
+# scratchpad module for the reason at the top of this file: scratchpad libraries
+# have been wiped twice. All of them are built from primitives Fig already
+# records, so Fig.verify() still sees every label they place.
+# ---------------------------------------------------------------------------
+
+def arrow(f, x1, y1, x2, y2, colour=BLUE, width=2.2, head=9.0, dash=None):
+    """A force arrow from (x1,y1) to (x2,y2), head at the far end."""
+    f.line(x1, y1, x2, y2, colour, width, dash)
+    ang = math.atan2(y2 - y1, x2 - x1)
+    for s in (+1, -1):
+        a = ang + s * math.radians(155)
+        f.line(x2, y2, x2 + head * math.cos(a), y2 + head * math.sin(a),
+               colour, width)
+
+
+def arrow_polar(f, x, y, mag, deg, colour=BLUE, width=2.2, head=9.0):
+    """Arrow from (x,y), `deg` anticlockwise from +x. Screen y runs DOWN, so
+    the sine is negated and the angle reads the way a student draws it.
+    Returns the tip, so a label can be hung off it."""
+    a = math.radians(deg)
+    x2, y2 = x + mag * math.cos(a), y - mag * math.sin(a)
+    arrow(f, x, y, x2, y2, colour, width, head)
+    return x2, y2
+
+
+def ground(f, x0, x1, y, n=9, colour=GREY):
+    """Hatched ground line."""
+    f.line(x0, y, x1, y, INK, 1.6)
+    step = (x1 - x0) / float(n)
+    for i in range(n):
+        gx = x0 + i * step
+        f.line(gx, y + 1, gx - 7, y + 9, colour, 1.0)
+
+
+def pin_support(f, x, y, size=15, colour=INK):
+    """Pin: apex on the body, two reaction components."""
+    f.raw(f'<polygon points="{x:.1f},{y:.1f} {x-size:.1f},{y+size*1.5:.1f} '
+          f'{x+size:.1f},{y+size*1.5:.1f}" fill="none" stroke="{colour}" '
+          f'stroke-width="1.6"/>')
+    ground(f, x - size - 8, x + size + 8, y + size * 1.5, 7)
+
+
+def roller_support(f, x, y, size=13, colour=INK):
+    """Roller: one reaction, normal to the surface."""
+    f.raw(f'<polygon points="{x:.1f},{y:.1f} {x-size:.1f},{y+size*1.4:.1f} '
+          f'{x+size:.1f},{y+size*1.4:.1f}" fill="none" stroke="{colour}" '
+          f'stroke-width="1.6"/>')
+    for dx in (-size * 0.55, size * 0.55):
+        f.circle(x + dx, y + size * 1.4 + 4, 4, fill="none", stroke=colour,
+                 width=1.4)
+    ground(f, x - size - 8, x + size + 8, y + size * 1.4 + 8, 7)
+
+
+def fixed_support(f, x, y, h=34, colour=INK, side="left"):
+    """Wall: two components plus a moment."""
+    f.line(x, y - h / 2, x, y + h / 2, colour, 2.2)
+    s = -1 if side == "left" else 1
+    for i in range(6):
+        gy = y - h / 2 + i * (h / 5.0)
+        f.line(x, gy, x + s * 9, gy + 8, GREY, 1.0)
+
+
+def dim(f, x1, y1, x2, label, colour=GREY, size=11, off=13):
+    """Horizontal dimension line with end ticks and a centred label."""
+    f.line(x1, y1, x2, y1, colour, 1.0)
+    for px in (x1, x2):
+        f.line(px, y1 - 4, px, y1 + 4, colour, 1.0)
+    f.text((x1 + x2) / 2.0, y1 - off, label, size=size, colour=colour,
+           anchor="middle")
