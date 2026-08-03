@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Friction — Engineering Statics — MechEd</title>
+<meta name="description" content="Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios gover">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/statics/9">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s1/statics/09-friction.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STA 103 · Engineering Statics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-forces-vectors-and-resultants.html" class="ol" data-key="y1s1/statics/1"><span class="tick"></span><span>01 · Forces, vectors, and resultants</span></a><a href="02-moments-and-couples.html" class="ol" data-key="y1s1/statics/2"><span class="tick"></span><span>02 · Moments and couples</span></a><a href="03-the-free-body-diagram.html" class="ol" data-key="y1s1/statics/3"><span class="tick"></span><span>03 · The free-body diagram</span></a><a href="04-equilibrium-of-a-particle.html" class="ol" data-key="y1s1/statics/4"><span class="tick"></span><span>04 · Equilibrium of a particle</span></a><a href="05-equilibrium-of-rigid-bodies.html" class="ol" data-key="y1s1/statics/5"><span class="tick"></span><span>05 · Equilibrium of rigid bodies</span></a><a href="06-trusses.html" class="ol" data-key="y1s1/statics/6"><span class="tick"></span><span>06 · Trusses</span></a><a href="07-frames-and-machines.html" class="ol" data-key="y1s1/statics/7"><span class="tick"></span><span>07 · Frames and machines</span></a><a href="08-internal-forces-shear-and-bending-moment.html" class="ol" data-key="y1s1/statics/8"><span class="tick"></span><span>08 · Internal forces: shear and bending moment</span></a><a href="09-friction.html" class="ol cur" data-key="y1s1/statics/9"><span class="tick"></span><span>09 · Friction</span></a><a href="10-centroids-and-centers-of-gravity.html" class="ol" data-key="y1s1/statics/10"><span class="tick"></span><span>10 · Centroids and centers of gravity</span></a><a href="11-moments-of-inertia.html" class="ol" data-key="y1s1/statics/11"><span class="tick"></span><span>11 · Moments of inertia</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">STA 103</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STA 103 · Lesson 09 of 11 · Year 1 · Semester 1</p>
+  <h1>Friction</h1>
+  <p class="sub">Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/statics/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/RBlxyyUw8Xc" title="Statics: Lesson 62 - Friction is Fun, Box on an Incline" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Statics: Lesson 62 - Friction is Fun, Box on an Incline <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">Statics: Lesson 62 - Friction is Fun, Box on an Incline</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></div><div class="measure">
+<h3>01 · Dry friction and the threshold</h3>
+<p>A stationary block resists sliding with whatever friction force equilibrium demands — up to a ceiling:</p>
+\[ F \le \mu_s N \tag{1} \]
+<p>Equality holds only at <em>impending motion</em>; below it, friction is found from equilibrium, not from (1). Once sliding starts, kinetic friction \( \mu_k N \) (with \( \mu_k < \mu_s \)) takes over — which is why things lurch. The resultant of \( N \) and limiting \( F \) leans at the friction angle \( \phi = \tan^{-1}\mu_s \) from the normal; the cone it sweeps contains every possible contact reaction. If the applied load's line falls inside the cone, no sliding — geometry answering a force question.</p>
+<h3>02 · Wedges and screws</h3>
+<p>A wedge is friction's canonical machine: driving it must beat friction on <em>both</em> faces, and the friction directions always oppose the impending relative motion — set them by asking "which way does each surface slide?" before writing equations. A power screw is a wedge wrapped around a cylinder: the thread's helix angle plays the wedge angle, and self-locking (the jack that holds under load) occurs when the friction angle exceeds the helix angle. Every jack, clamp, and threaded fastener trades on this.</p>
+<h3>03 · Belt friction: the exponential surprise</h3>
+<p>A belt or rope wrapped on a drum can hold a large tension with a small one. Integrating the friction on each element of wrap gives the capstan equation:</p>
+\[ \frac{T_2}{T_1} = e^{\mu \beta} \tag{2} \]
+<p>with \( \beta \) the wrap angle in radians. The ratio is <em>exponential</em> in wrap — each added turn multiplies. Three turns of rope on a bollard hold a ship; the same law sets how much power a conveyor drive pulley can transmit before the belt slips.</p>
+
+<h3>04 · The friction working method</h3>
+<p>Friction problems have one trap and one discipline. The trap: writing
+\( F = \mu_s N \) by reflex. Static friction is adaptive — it supplies exactly what
+equilibrium demands, UP TO the ceiling \( \mu_s N \), and equals the ceiling only at
+impending motion. So the method is: <em>assume equilibrium, solve for the friction force
+required,</em> then <em>compare</em> with the available maximum. Required below available —
+the body holds, and the actual friction is the required value, not the ceiling. Required
+above available — motion begins, and kinetic friction \( \mu_k N \) takes over at its
+lower, fixed value.</p>
+<p>The discipline: recompute \( N \) from equilibrium every time the loading changes.
+A downward push on a crate raises N and buys holding capacity; an upward-angled pull robs
+it — the same pull that helps horizontally hurts vertically, and the trade is decided by
+the numbers, not intuition. Complete the method by checking the second failure mode: tall
+narrow bodies may TIP before they slide, so compare the moment of the push about the
+tipping edge with the restoring moment of the weight. Slip-or-tip is answered by whichever
+threshold arrives first, and rigging, racking, and machine-skid problems ask it weekly.</p>
+<p>Treat published coefficients as estimates, not constants. Surface condition, moisture,
+paint, and dust move \( \mu \) by tens of percent, which is why lift plans and skid
+calculations carry margin on top of the friction arithmetic. When a job genuinely hinges on
+friction, the professional move is to measure — the tilt test that reads \( \mu_s \)
+straight off the angle of repose — and then still design as if the measured number were
+optimistic.</p>
+<p><strong>Closing.</strong> Friction is an inequality until motion impends; wedges and screws are friction geometrized; and wrap buys holding power exponentially. Get the impending-motion direction right and the rest is bookkeeping.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Equilibrium with inequalities in mind</b> (Lesson 5) — friction saturates; it is not always \( \mu N \).</li>
+<li><b>FBD discipline</b> (Lesson 3) — friction direction set by impending motion, drawn before solving.</li>
+<li><b>Exponentials</b> — the capstan equation lives on \( e^{\mu\beta} \).</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Static friction</td><td>\( F_s \le \mu_s N \)</td><td>Adaptive holding force up to a ceiling; equality only at impending slip.</td></tr>
+<tr><td>Kinetic friction</td><td>\( F_k = \mu_k N \)</td><td>Once sliding, friction drops to this steady value.</td></tr>
+<tr><td>Impending motion</td><td>\( F_s = \mu_s N \)</td><td>The boundary case where friction problems are solved.</td></tr>
+<tr><td>Angle of repose</td><td>\( \tan\phi = \mu_s \)</td><td>The steepest slope a body rests on; a field measurement of \( \mu_s \).</td></tr>
+<tr><td>Slip vs tip</td><td>compare \( \mu_s N \) with the tipping ratio</td><td>Tall loads may tip before they slide; check both failure modes.</td></tr>
+<tr><td>Normal-force honesty</td><td>N from equilibrium, not assumption</td><td>Pushes and pulls change N — recompute it before multiplying by \( \mu \).</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Dragging a crate, and why angle helps</b></p>
+<p><b>Problem.</b> An 80 kg crate sits on a floor with \( \mu_s = 0.35 \). <b>Find:</b> the horizontal force to start it moving, and the force if pulling at \( 20^\circ \) above horizontal.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( W = 80 \times 9.81 = 784.8\ \mathrm{N} \).
+(2) Horizontal pull: \( P = \mu_s W = 0.35 \times 784.8 = 274.7\ \mathrm{N} \).
+(3) Angled pull: the vertical component unloads the floor. \( N = W - P\sin 20^\circ \), and impending motion demands \( P\cos 20^\circ = \mu_s N \).
+(4) \( P = \dfrac{\mu_s W}{\cos 20^\circ + \mu_s \sin 20^\circ} = \dfrac{274.7}{0.940 + 0.120} = 259.3\ \mathrm{N} \).</p>
+<p><b>Answer:</b> 274.7 N flat; 259.3 N at 20° — about 6% less.
+<b>Sanity check:</b> lifting-while-pulling reduces \( N \), hence friction; too steep an angle wastes pull on lift instead of advance, so an optimum angle exists (it equals the friction angle, \( \tan^{-1}0.35 \approx 19.3^\circ \) — our 20° is nearly optimal).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Conveyor drive pulley</b></p>
+<p><b>Problem.</b> A belt wraps a drive pulley \( 180^\circ \) with \( \mu = 0.3 \); the slack side runs at \( T_1 = 1.2\ \mathrm{kN} \). <b>Find:</b> the maximum tight-side tension and transmittable belt pull before slip.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Wrap: \( \beta = \pi\ \mathrm{rad} \).
+(2) Capstan: \( T_2/T_1 = e^{0.3\pi} = 2.566 \).
+(3) \( T_2 = 1.2 \times 2.566 = 3.08\ \mathrm{kN} \).
+(4) Transmittable pull: \( T_2 - T_1 = 1.88\ \mathrm{kN} \).</p>
+<p><b>Answer:</b> \( T_2 = 3.08\ \mathrm{kN} \); usable pull 1.88 kN.
+<b>Sanity check:</b> increase wrap to \( 270^\circ \) (snub pulley): ratio \( e^{0.3 \times 4.71} = 4.11 \) — the exponential means modest extra wrap buys disproportionate capacity, which is exactly why snub pulleys exist.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Will the crate move?</b></p>
+<p><b>Problem.</b> A 40 kg crate sits on a concrete floor, \( \mu_s = 0.35 \), \( \mu_k = 0.28 \). A horizontal push of 120 N is applied. <b>Find:</b> whether the crate moves, the actual friction force, and the push needed to start motion.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( N = W = 40 \times 9.81 = 392\ \mathrm{N} \); maximum static friction \( = 0.35 \times 392 = 137\ \mathrm{N} \).
+(2) Required friction for equilibrium = 120 N < 137 N → the crate stays put.
+(3) Actual friction = <b>120 N</b> — what equilibrium demands, not the ceiling.
+(4) To start motion: push > 137 N; once moving, only \( 0.28 \times 392 = 110\ \mathrm{N} \) sustains it.</p>
+<p><b>Answer:</b> no motion; friction = 120 N; break-away at ≈137 N, then ≈110 N to keep sliding.
+<b>Sanity check:</b> the drop from 137 to 110 N is why a stuck skid lurches when it finally breaks free — the classic static-to-kinetic step, predicted entirely by the two coefficients.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A block presses on the floor with \( N = 200\ \mathrm{N} \), \( \mu_s = 0.4 \). A 50 N horizontal push is applied. The friction force is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>80 N</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>50 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>200 N</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>20 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Below the threshold, friction equals whatever equilibrium demands: 50 N. The ceiling \( \mu_s N = 80\ \mathrm{N} \) applies only at impending motion — quoting 80 N for a 50 N push is the single most common friction error, and it fails the sanity check that the block would accelerate backwards.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Doubling a belt's wrap angle on a drum multiplies its holding ratio \( T_2/T_1 \) by:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the original ratio again (it squares)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \mu \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing — wrap doesn't matter</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( T_2/T_1 = e^{\mu\beta} \), so \( \beta \to 2\beta \) squares the ratio: \( e^{\mu \cdot 2\beta} = (e^{\mu\beta})^2 \). Exponentials multiply where intuitions add — three turns on a bollard hold a ship precisely because each turn multiplies the previous total.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A crate needs 137 N to start sliding. It is pushed with 50 N and does not move. The friction force acting on it is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>50 N</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>137 N</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The average, about 94 N</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Static friction is adaptive: it supplies exactly what equilibrium requires — here 50 N to balance the push — and not one newton more. The ceiling \( \mu_s N = 137\ \mathrm{N} \) is reached only at impending motion. Writing \( \mu_s N \) by reflex whenever friction appears is the single most common friction error, and this question is its vaccine.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A power screw is self-locking (holds its load with no applied torque) when:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the friction angle exceeds the helix angle</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the helix angle exceeds the friction angle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the load exceeds the friction force</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it is lubricated</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Self-locking requires friction to beat the thread's slope: \( \phi > \alpha \). A jack that stays up under load is exactly this inequality. Lubrication <em>reduces</em> \( \phi \) and can therefore un-lock a marginal screw — the opposite of choice D's instinct.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A crate just barely rests without sliding on a ramp inclined at 21.8°. Its coefficient of static friction is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>0.40</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0.22</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.80</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.37</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At the angle of repose, \( \tan\phi = \mu_s \): \( \tan 21.8° = 0.40 \). This is also a practical field measurement — tilt a sample surface until sliding begins and read the coefficient off the angle. Choosing 0.37 uses \( \sin \) instead of \( \tan \); 0.22 mistakes the angle-over-degrees ratio for physics; 0.80 doubles the truth by using the wrong triangle side.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the capstan that is literally called a capstan.</b> You arrive at a wire-drawing line in a cable plant where wire is hauled through dies by motor-driven capstan drums — the machine's name is the equation's name. Tension into the die must stay controlled: too little grip and the wire slips and scores; the fix on the floor is more wrap, because \( T_2/T_1 = e^{\mu\beta} \) grows exponentially with each added turn (figures representative). When a worn drum surface drops \( \mu \), the symptom — slip at the same wrap — walks straight out of Lesson 9's derivation.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kN}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.05338\\ \\mathrm{lbf}\\)", "\\(2698\\ \\mathrm{lbf}\\)", "\\(2.698e+04\\ \\mathrm{lbf}\\)", "\\(269.8\\ \\mathrm{lbf}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kN} = 224.8\\ \\mathrm{lbf}\\): \\(12 \\times 224.8 = 2698\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kN}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.6672\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(3.372e+04\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3.372e+05\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(3372\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kN} = 224.8\ \mathrm{lbf}\): \(150 \times 224.8 = 3.372e+04\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(656.2\\ \\mathrm{ft}\\)", "\\(6.096\\ \\mathrm{ft}\\)", "\\(65.62\\ \\mathrm{ft}\\)", "\\(6.562\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(20 \\times 3.281 = 65.62\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(65.62\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.6096\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(6.562\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.6562\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(2 \times 3.281 = 6.562\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865037W" target="_blank" rel="noopener">Engineering Mechanics: Statics — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL279741W" target="_blank" rel="noopener">Vector Mechanics for Engineers — Beer &amp; Johnston</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-internal-forces-shear-and-bending-moment.html">← 08 · Internal forces: shear and bending moment</a><a href="index.html">All lessons · STA 103</a><a href="10-centroids-and-centers-of-gravity.html">10 · Centroids and centers of gravity →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

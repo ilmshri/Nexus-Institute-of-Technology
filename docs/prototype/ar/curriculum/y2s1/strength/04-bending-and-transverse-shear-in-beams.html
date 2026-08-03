@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Bending and transverse shear in beams — Strength of Materials — MechEd</title>
+<meta name="description" content="The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/strength/4">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">SOM 201 · Strength of Materials</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-stress-and-strain-under-axial-load.html" class="ol" data-key="y2s1/strength/1"><span class="tick"></span><span>01 · Stress and strain under axial load</span></a><a href="02-axial-members-and-thermal-stress.html" class="ol" data-key="y2s1/strength/2"><span class="tick"></span><span>02 · Axial members and thermal stress</span></a><a href="03-torsion-of-shafts.html" class="ol" data-key="y2s1/strength/3"><span class="tick"></span><span>03 · Torsion of shafts</span></a><a href="04-bending-and-transverse-shear-in-beams.html" class="ol cur" data-key="y2s1/strength/4"><span class="tick"></span><span>04 · Bending and transverse shear in beams</span></a><a href="05-beam-deflection.html" class="ol" data-key="y2s1/strength/5"><span class="tick"></span><span>05 · Beam deflection</span></a><a href="06-combined-loading.html" class="ol" data-key="y2s1/strength/6"><span class="tick"></span><span>06 · Combined loading</span></a><a href="07-stress-transformation-and-mohr-s-circle.html" class="ol" data-key="y2s1/strength/7"><span class="tick"></span><span>07 · Stress transformation and Mohr's circle</span></a><a href="08-pressure-vessels-thin-walled-theory.html" class="ol" data-key="y2s1/strength/8"><span class="tick"></span><span>08 · Pressure vessels: thin-walled theory</span></a><a href="09-failure-theories.html" class="ol" data-key="y2s1/strength/9"><span class="tick"></span><span>09 · Failure theories</span></a><a href="10-buckling-of-columns.html" class="ol" data-key="y2s1/strength/10"><span class="tick"></span><span>10 · Buckling of columns</span></a><a href="11-stress-concentration-and-fatigue-preview.html" class="ol" data-key="y2s1/strength/11"><span class="tick"></span><span>11 · Stress concentration and fatigue preview</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">SOM 201</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">SOM 201 · Lesson 04 of 11 · Year 2 · Semester 1</p>
+  <h1>Bending and transverse shear in beams</h1>
+  <p class="sub">The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/strength/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/9Y448EOR2vk" title="MoM Lesson 31 — The Flexure Formula" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MoM Lesson 31 — The Flexure Formula <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">MoM Lesson 31 — The Flexure Formula</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does bending stress vanish at the neutral axis and peak at the surface?</li><li>Why do I-beam webs carry the shear while flanges carry the moment?</li></ul></div><div class="measure">
+<h3>01 · Bending stress from plane sections</h3>
+<p>A beam resists transverse load by bending, and bending puts one face in tension and the
+other in compression, with a neutral axis of zero stress between. Assuming plane sections
+stay plane, strain varies linearly with distance \(y\) from the neutral axis, and so — through
+Hooke's law — does stress. Integrating that stress into a resisting moment gives the
+<b>flexure formula</b> \( \sigma=\dfrac{My}{I} \), where \(I\) is the second moment of area
+of the cross-section. Stress is largest at the extreme fibre, farthest from the neutral
+axis.</p>
+<h3>02 · Section modulus, the designer's currency</h3>
+<p>Evaluating the flexure formula at the extreme fibre \(c\) gives
+\( \sigma_{\max}=\dfrac{M}{S} \), where \( S=I/c \) is the <b>section modulus</b> — a single
+number that captures a section's bending efficiency. A rectangular section
+\(b\times h\) has \( I=\dfrac{bh^3}{12} \) and \( S=\dfrac{bh^2}{6} \). For \(b=50\),
+\(h=100\) mm: \( I=4.17\times10^6\ \text{mm}^4 \), \( S=83{,}333\ \text{mm}^3 \), so a
+10&nbsp;kN·m moment gives \( \sigma=M/S=10\times10^6/83{,}333=120\ \text{MPa} \). Because
+\(S\propto h^2\), depth matters far more than width — the reason beams are tall, not fat.</p>
+<h3>03 · Transverse shear and shear flow</h3>
+<p>Bending rarely comes alone; the transverse load also produces a <b>shear stress</b>
+\( \tau=\dfrac{VQ}{Ib} \), where \(V\) is the shear force, \(Q\) the first moment of the area
+beyond the level of interest, and \(b\) the width there. Shear stress is greatest at the
+neutral axis — opposite to bending stress — which is why an I-beam puts material in flanges
+(far out, for bending) and a thin web at the centre (to carry shear). The related idea of
+<b>shear flow</b> \( q=VQ/I \) sizes the fasteners or welds that hold a built-up section
+together.</p>
+<h3>04 · Designing a beam</h3>
+<p>The design task inverts the flexure formula: for a required moment and an allowable
+stress, the section must supply \( S\ge M/\sigma_{\text{allow}} \). Choosing the lightest
+section that meets this — a deep, thin-webbed shape — is the everyday work of structural and
+machine design, and \(S\) is the number tabulated for every standard beam. Bending stress
+usually governs, but the shear check at the neutral axis must not be skipped for short, heavily
+loaded beams, where shear can control. Reading which of the two governs — long slender beams
+by bending, short stubby ones by shear — is the judgement this lesson trains.</p>
+<h3>05 · Bending as the course's capstone stress</h3>
+<p>Bending combines everything before it: an internal moment (from statics), a linear stress
+distribution (from plane sections and Hooke's law), a geometry factor (\(I\) and \(S\)), and
+an allowable (from the tensile contract). It is the axial and torsional grammar applied to a
+stress that varies across the section rather than being uniform or radial. Mastering the
+section modulus — why depth is cubed into \(I\) but squared into \(S\), why beams are oriented
+tall — equips the machine-design and structures courses that follow, where beam selection is
+routine. The through-line of Strength of Materials is now complete: define the stress, relate
+it to strain, judge it against an allowable — for axial, torsional, and bending members alike.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Shear and moment</b> — internal \(V\) and \(M\) from statics.</li>
+<li><b>Second moment of area</b> — \(I=bh^3/12\) for rectangles.</li>
+<li><b>The flexure logic</b> — plane sections + Hooke's law.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Flexure formula</td><td>\( \sigma=My/I \)</td><td>Bending stress at height \(y\).</td></tr>
+<tr><td>Section modulus</td><td>\( S=I/c,\ \sigma_{max}=M/S \)</td><td>Max bending stress; beam sizing.</td></tr>
+<tr><td>Rect. properties</td><td>\( I=bh^3/12,\ S=bh^2/6 \)</td><td>Solid rectangular section.</td></tr>
+<tr><td>Transverse shear</td><td>\( \tau=VQ/Ib \)</td><td>Shear stress, peaks at neutral axis.</td></tr>
+<tr><td>Shear flow</td><td>\( q=VQ/I \)</td><td>Sizing fasteners in built-up beams.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Second moment and section modulus</b></p><p><b>Problem.</b> A rectangular beam has b=50 mm, h=100 mm. Find \(I\) and the section modulus \(S\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( I=\dfrac{bh^3}{12}=\dfrac{50(100)^3}{12}=4.17\times10^6\ \text{mm}^4 \). \( S=I/c=4.17\times10^6/50=83{,}333\ \text{mm}^3 \) (also \(bh^2/6\)). <b>Answer:</b> \(I=4.17\times10^6\ \text{mm}^4,\ S=83{,}333\ \text{mm}^3\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Bending stress</b></p><p><b>Problem.</b> The same beam carries a bending moment of 10 kN·m. Find the maximum bending stress.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \sigma_{max}=M/S=\dfrac{10\times10^6\ \text{N·mm}}{83{,}333\ \text{mm}^3}=120\ \text{MPa} \). <b>Answer:</b> 120 MPa. <b>Check:</b> N·mm / mm³ = N/mm² = MPa.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Depth versus width</b></p><p><b>Problem.</b> To halve the bending stress most cheaply, is it better to double the width or increase the depth — and why?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( S=bh^2/6 \): \(S\propto b\) but \(S\propto h^2\). Doubling width doubles \(S\); increasing depth by \(\sqrt2\) also doubles \(S\) for far less added material. <b>Answer:</b> add depth — it is squared into \(S\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Maximum bending stress in a beam occurs:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At the extreme fibre, farthest from the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Uniformly across the depth</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>At the supports only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\sigma=My/I\) grows with \(y\), so it peaks at the top/bottom fibre. The neutral axis has zero bending stress.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The section modulus of a rectangle is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( bh^2/6 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( bh^3/12 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \pi d^4/32 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( bh/2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(S=I/c=(bh^3/12)/(h/2)=bh^2/6\). \(bh^3/12\) is \(I\); \(\pi d^4/32\) is the polar \(J\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Transverse shear stress \( \tau=VQ/Ib \) in a beam is greatest:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At the neutral axis</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the extreme fibre</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At the supports' bolts</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Uniform across depth</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(Q\) is largest at the neutral axis, so shear peaks there — opposite to bending stress, which peaks at the fibres.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Beams are made tall rather than wide because \(S=bh^2/6\) makes stress most sensitive to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Depth \(h\) (squared)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Width \(b\) (linear)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Length</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Material only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Depth enters as \(h^2\), width only as \(b\); adding height buys bending capacity far more efficiently than adding width.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>At the neutral axis of a beam in pure bending, the bending stress is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Maximum tension</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Maximum compression</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Equal to the shear stress</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\sigma=My/I\) with \(y=0\) at the neutral axis gives zero bending stress; the extreme fibres carry the peaks.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{rad/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1432\\ \\mathrm{rpm}\\)", "\\(15.71\\ \\mathrm{rpm}\\)", "\\(1.432e+04\\ \\mathrm{rpm}\\)", "\\(143.2\\ \\mathrm{rpm}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{rad/s} = 9.549\\ \\mathrm{rpm}\\): \\(150 \\times 9.549 = 1432\\ \\mathrm{rpm}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{rad/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(114.6\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.257\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1146\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(11.46\ \mathrm{rpm}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{rad/s} = 9.549\ \mathrm{rpm}\): \(12 \times 9.549 = 114.6\ \mathrm{rpm}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.9072\\ \\mathrm{lb}\\)", "\\(4.409\\ \\mathrm{lb}\\)", "\\(44.09\\ \\mathrm{lb}\\)", "\\(0.4409\\ \\mathrm{lb}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(2 \\times 2.205 = 4.409\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(9.072\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(44.09\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(440.9\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.409\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(20 \times 2.205 = 44.09\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865035W" target="_blank" rel="noopener">Mechanics of Materials — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL284163W" target="_blank" rel="noopener">Mechanics of Materials — Beer, Johnston et al.</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li><li>NPTEL: Strength of Materials (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-torsion-of-shafts.html">← 03 · Torsion of shafts</a><a href="index.html">كل الدروس · SOM 201</a><a href="05-beam-deflection.html">05 · Beam deflection →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/fluids/index.html">FLD 203 · Fluid Mechanics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

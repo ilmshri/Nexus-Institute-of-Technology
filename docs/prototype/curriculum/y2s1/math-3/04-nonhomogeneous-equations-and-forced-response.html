@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Nonhomogeneous equations and forced response — Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient ve">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/math-3/4">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/math-3/04-nonhomogeneous-equations-and-forced-response.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-first-order-equations-revisited-separable-and-linear.html" class="ol" data-key="y2s1/math-3/1"><span class="tick"></span><span>01 · First-order equations revisited: separable and linear</span></a><a href="02-modeling-with-first-order-equations.html" class="ol" data-key="y2s1/math-3/2"><span class="tick"></span><span>02 · Modeling with first-order equations</span></a><a href="03-second-order-equations-the-homogeneous-story.html" class="ol" data-key="y2s1/math-3/3"><span class="tick"></span><span>03 · Second-order equations: the homogeneous story</span></a><a href="04-nonhomogeneous-equations-and-forced-response.html" class="ol cur" data-key="y2s1/math-3/4"><span class="tick"></span><span>04 · Nonhomogeneous equations and forced response</span></a><a href="05-free-and-forced-oscillations.html" class="ol" data-key="y2s1/math-3/5"><span class="tick"></span><span>05 · Free and forced oscillations</span></a><a href="06-laplace-transforms-i.html" class="ol" data-key="y2s1/math-3/6"><span class="tick"></span><span>06 · Laplace transforms I</span></a><a href="07-laplace-transforms-ii-solving-problems.html" class="ol" data-key="y2s1/math-3/7"><span class="tick"></span><span>07 · Laplace transforms II: solving problems</span></a><a href="08-systems-of-equations-the-matrix-view.html" class="ol" data-key="y2s1/math-3/8"><span class="tick"></span><span>08 · Systems of equations: the matrix view</span></a><a href="09-matrices-and-linear-systems.html" class="ol" data-key="y2s1/math-3/9"><span class="tick"></span><span>09 · Matrices and linear systems</span></a><a href="10-eigenvalues-and-eigenvectors.html" class="ol" data-key="y2s1/math-3/10"><span class="tick"></span><span>10 · Eigenvalues and eigenvectors</span></a><a href="11-numerical-solution-of-differential-equations.html" class="ol" data-key="y2s1/math-3/11"><span class="tick"></span><span>11 · Numerical solution of differential equations</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 207</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 207 · Lesson 04 of 11 · Year 2 · Semester 1</p>
+  <h1>Nonhomogeneous equations and forced response</h1>
+  <p class="sub">Undetermined coefficients for constant, ramp, and sinusoidal forcing. The structure theorem: general solution = homogeneous + particular. Transient versus steady-state response — the vocabulary the controls course inherits whole.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.03 Differential Equations</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/P3fc6v191mA" title="Method of Undetermined Coefficients - Nonhomogeneous 2nd Order Differential Equations" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Method of Undetermined Coefficients - Nonhomogeneous 2nd Order Differential Equations <span class="src">The Organic Chemistry Tutor</span></figcaption></figure></div><div class="vh-bar"><span class="n">Method of Undetermined Coefficients - Nonhomogeneous 2nd Order Differential Equations</span><span class="c">THE ORGANIC CHEMISTRY TUTOR</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does the transient die out while the forced response persists?</li><li>What particular-solution form do you try for a constant force input?</li></ul></div><div class="measure">
+<h3>01 · The structure theorem</h3>
+<p>A nonhomogeneous equation \( m x''+cx'+kx=f(t) \) carries forcing on the right-hand side. Its general solution is always \( x=x_h+x_p \): the <b>homogeneous</b> solution \(x_h\) from Lesson 3, which carries the two arbitrary constants, plus any single <b>particular</b> solution \(x_p\) that matches the forcing. This is a theorem, not a convenience — the difference of any two full solutions satisfies the homogeneous equation, so every solution differs from any one particular solution only by some \(x_h\). Practically it splits the work cleanly: solve the homogeneous problem for the transient, find one \(x_p\) for the steady behaviour, and add them. The two halves answer two different questions — how the system settles, and where.</p>
+<h3>02 · Undetermined coefficients</h3>
+<p>When \(f(t)\) is a constant, polynomial, exponential, or sinusoid, guess an \(x_p\) of the same shape with unknown coefficients and solve for them. Constant forcing \( x''+3x'+2x=10 \): try a constant, so \(x''=x'=0\) and \(2x_p=10\Rightarrow x_p=5\) — the steady state. Ramp forcing \( x''+3x'+2x=2t \): try \(x_p=at+b\); then \(x'_p=a,\ x''_p=0\), giving \(3a+2(at+b)=2t\). Matching powers of \(t\): \(2a=2\Rightarrow a=1\); matching constants: \(3a+2b=0\Rightarrow b=-1.5\). So \(x_p=t-1.5\). The method is entirely mechanical once the trial shape is chosen correctly, which is its great virtue for hand computation.</p>
+<h3>03 · Transient versus steady state</h3>
+<p>For \( x''+3x'+2x=10 \) the homogeneous roots are \(-1\) and \(-2\), both stable, so the full solution is \( x=Ae^{-t}+Be^{-2t}+5 \). The exponentials are the transient — the record of how the system approaches its destination — and the \(5\) is the steady state, that destination itself. After a few time constants only the \(5\) survives, regardless of the initial conditions, which is precisely why a steady-state calculation predicts the long-run answer without ever solving the full transient. Controls engineers exploit this split constantly: the steady-state value fixes accuracy, while the transient fixes speed and overshoot, and the two are designed almost separately.</p>
+<h3>04 · Sinusoidal forcing and the working method</h3>
+<p>Sinusoidal forcing \(f(t)=F_0\cos\omega t\) produces a sinusoidal \(x_p\) of the same frequency but with shifted phase and scaled amplitude, and that amplitude depends on how close the forcing frequency \(\omega\) sits to the natural frequency \(\omega_n\) — the seed of resonance, developed in Lesson 5. The working method is uniform: (1) solve the homogeneous equation for \(x_h\); (2) guess an \(x_p\) matching the form of \(f\), and if that trial already solves the homogeneous equation, multiply it by \(t\) (or \(t^2\) for a double root); (3) fix the constants from the initial conditions applied to the <em>full</em> \(x_h+x_p\), never to \(x_h\) alone. That last rule is the single most common error in the whole topic, and it is worth restating on every problem until it is automatic. A final caution on stability closes the topic: everything here assumed the homogeneous roots have negative real parts, so the transient decays and a steady state exists. If a root has a positive real part the transient grows without bound and there is no steady state to settle to — the system is unstable, and no particular solution rescues it. Checking that the characteristic roots are stable before trusting a steady-state answer is therefore not a formality but the precondition that makes the whole transient-plus-steady framework meaningful, and it is exactly the check the controls course formalises later.</p>
+<h3>05 · The resonance the constant hid</h3>
+<p>The steady part of a forced response is a genuine physical prediction, not an algebra by-product. For constant forcing it is a fixed offset — the \( x_p=5 \) of 2 is where the system sits once the transient dies. For sinusoidal forcing it is an oscillation whose amplitude depends sharply on the driving frequency \( \omega \), and that dependence is the entire subject of Lesson 5: as \( \omega \) approaches \( \omega_n \) the steady amplitude peaks, limited only by damping. The structural point to carry forward is that the split \( x=x_h+x_p \) survives every kind of forcing — the transient \( x_h \) always decays on its own timescale set by \( \zeta,\omega_n \), while \( x_p \) is dictated entirely by \( f(t) \). Keep the two questions — how it settles, and where — permanently separate, and forced problems stop being hard.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Homogeneous solutions</b> (Lesson 3) — \(x_h\) is half the answer.</li><li><b>Differentiating trial forms</b> — polynomials, exponentials, sinusoids.</li><li><b>Matching coefficients</b> — the algebra that fixes \(x_p\).</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>General solution</td><td>\( x=x_h+x_p \)</td><td>Always: transient plus forced response.</td></tr>
+<tr><td>Particular solution</td><td>\( x_p \) matches \(f(t)\)</td><td>One solution capturing the forcing.</td></tr>
+<tr><td>Undetermined coeffs</td><td>guess same shape as \(f\)</td><td>\(f\) constant/poly/exp/sinusoid.</td></tr>
+<tr><td>Resonance rule</td><td>multiply guess by \(t\)</td><td>Trial already solves homogeneous eqn.</td></tr>
+<tr><td>Steady state</td><td>\( x_p \) as \(t\to\infty\)</td><td>Where a stable system settles.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Constant forcing</b></p><p><b>Problem.</b> Solve \( x''+3x'+2x=10 \) (general solution).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Roots of \(r^2+3r+2\) are \(-1,-2\), so \(x_h=Ae^{-t}+Be^{-2t}\); \(2x_p=10\Rightarrow x_p=5\). <b>Answer:</b> \( x=Ae^{-t}+Be^{-2t}+5 \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Ramp forcing coefficients</b></p><p><b>Problem.</b> Particular solution of \( x''+3x'+2x=2t \)?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(x_p=at+b\): \(3a+2(at+b)=2t\); \(2a=2\Rightarrow a=1\); \(3a+2b=0\Rightarrow b=-1.5\). <b>Answer:</b> \( x_p=t-1.5 \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Sinusoidal amplitude</b></p><p><b>Problem.</b> For \( x'+2x=\cos t \), amplitude \( 1/\sqrt{2^2+1^2} \). Evaluate.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( 1/\sqrt5\approx0.447 \). <b>Answer:</b> \(\approx0.447\); denominator \(\sqrt{a^2+\omega^2}\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The general solution of a forced linear ODE is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( x_h+x_p \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( x_h\cdot x_p \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( x_p \) only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( x_h \) only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Transient plus one particular.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>For \( x''+3x'+2x=10 \), the steady state is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(5\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(10\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(2x=10\Rightarrow x=5\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Initial conditions are applied to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The full \( x_h+x_p \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( x_h \) alone</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( x_p \) alone</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Neither</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Constants live in \(x_h\) but constrain the actual solution.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>If the trial \(x_p\) already solves the homogeneous equation:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Multiply the trial by \(t\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>No solution exists</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Use \(x_p=0\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Double the forcing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The resonance rule.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>As sinusoidal forcing frequency approaches \( \omega_n \), the steady amplitude:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Grows large (resonance)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Goes to zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Stays at the forcing amplitude</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Becomes constant</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Near resonance the denominator shrinks and amplitude peaks — the subject of Lesson 5.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(201.2\\ \\mathrm{hp}\\)", "\\(111.9\\ \\mathrm{hp}\\)", "\\(2012\\ \\mathrm{hp}\\)", "\\(20.12\\ \\mathrm{hp}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(150 \\times 1.341 = 201.2\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(16.09\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.948\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(160.9\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.609\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(12 \times 1.341 = 16.09\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.6096\\ \\mathrm{ft/s}\\)", "\\(6.562\\ \\mathrm{ft/s}\\)", "\\(65.62\\ \\mathrm{ft/s}\\)", "\\(0.6562\\ \\mathrm{ft/s}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(2 \\times 3.281 = 6.562\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(6.096\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(65.62\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(656.2\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.562\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(20 \times 3.281 = 65.62\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3270760W" target="_blank" rel="noopener">Elementary Differential Equations and Boundary Value Problems — Boyce &amp; DiPrima</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-second-order-equations-the-homogeneous-story.html">← 03 · Second-order equations: the homogeneous story</a><a href="index.html">All lessons · MTH 207</a><a href="05-free-and-forced-oscillations.html">05 · Free and forced oscillations →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/strength/index.html">SOM 201 · Strength of Materials →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Engineering Statics — MechEd</title>
+<meta name="description" content="Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/statics/index.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>STA 103</span></nav>
+
+<div class="nx-hero">
+  <div class="txt">
+    <p class="eyebrow">STA 103 · YEAR 1 · SEMESTER 1</p>
+    <h1>Engineering Statics</h1>
+    <p class="sub">Equilibrium as a habit of mind: forces, moments, free-body diagrams, trusses and frames, friction, and centroids — the grammar under every strength-of-materials and machine-design calculation that follows.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">11 of 11 at full depth</span><span class="mchip">11 interactive quizzes</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-forces-vectors-and-resultants.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Force as a vector; components and resultants in 2-D and 3-D.</span></div><div><span class="ck">✓</span><span>Moment of a force about a point and an axis.</span></div><div><span class="ck">✓</span><span>The single most important skill in this course: isolate, replace, label.</span></div><div><span class="ck">✓</span><span>Concurrent force systems in 2-D and 3-D.</span></div><div><span class="ck">✓</span><span>The full ΣF = 0, ΣM = 0 toolkit.</span></div><div><span class="ck">✓</span><span>Method of joints and method of sections.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y1s1/statics/1" data-href="01-forces-vectors-and-resultants.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-forces-vectors-and-resultants.html">Forces, vectors, and resultants</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Force as a vector; components and resultants in 2-D and 3-D. Units and the weight–mass distinction that still catches graduates. Resolving cable and strut forces.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why is weight not mass, and where does the confusion bite in bolt-load calculations?</li><li>Resolve a 10 kN cable force at 30° to horizontal into components.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/2" data-href="02-moments-and-couples.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-moments-and-couples.html">Moments and couples</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Moment of a force about a point and an axis. Couples as pure turning effect. Varignon's theorem used to simplify real load cases.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does a couple do that a single force cannot?</li><li>State Varignon's theorem and one situation where it saves work.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/3" data-href="03-the-free-body-diagram.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-the-free-body-diagram.html">The free-body diagram</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The single most important skill in this course: isolate, replace, label. Support types and their reactions. Every equilibrium error traces back to a bad FBD.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Name the three steps of a free-body diagram and the most common omission.</li><li>What reactions does a fixed support supply that a pin does not?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/4" data-href="04-equilibrium-of-a-particle.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-equilibrium-of-a-particle.html">Equilibrium of a particle</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Concurrent force systems in 2-D and 3-D. Cable-and-pulley systems and spring balances. Solving cleanly with components versus geometry.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A particle under three concurrent forces is in equilibrium: what geometric fact must the forces obey?</li><li>When do you solve by components versus by force triangle?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/5" data-href="05-equilibrium-of-rigid-bodies.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-equilibrium-of-rigid-bodies.html">Equilibrium of rigid bodies</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The full ΣF = 0, ΣM = 0 toolkit. Two- and three-force members as shortcuts. Statically determinate versus indeterminate — and why the distinction matters later.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does a two-force member carry load only along its axis?</li><li>Statically determinate versus indeterminate: what changes in how you must solve?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/6" data-href="06-trusses.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-trusses.html">Trusses</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Method of joints and method of sections. Zero-force members by inspection. Reading a pipe-rack or roof truss as a load path, not a picture.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>How do you spot a zero-force member by inspection?</li><li>Method of sections: when does it beat method of joints, and why?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/7" data-href="07-frames-and-machines.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-frames-and-machines.html">Frames and machines</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Multi-member structures with internal pins. Dismembering frames correctly — action and reaction at every pin. Mechanical advantage of linkages and clamps.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why must frames be dismembered at pins with action–reaction pairs?</li><li>What is mechanical advantage in a toggle clamp, statically speaking?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/8" data-href="08-internal-forces-shear-and-bending-moment.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-internal-forces-shear-and-bending-moment.html">Internal forces: shear and bending moment</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Cutting a beam and exposing N, V, M. Shear and moment diagrams for point and distributed loads. The diagrams as the input strength-of-materials will demand.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What sign convention makes shear and moment diagrams consistent?</li><li>Where is bending moment maximum when shear crosses zero — and why?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/9" data-href="09-friction.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-friction.html">Friction</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Dry friction, impending motion, and the friction cone. Wedges, screws, and belt friction — the capstan equation derived. Why belt tension ratios govern conveyor drives.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Derive the direction of impending motion's friction force on a wedge being driven.</li><li>Why does belt tension ratio grow exponentially with wrap angle?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/10" data-href="10-centroids-and-centers-of-gravity.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-centroids-and-centers-of-gravity.html">Centroids and centers of gravity</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Centroids by integration and by composite parts. Center of gravity of built-up sections and equipment skids. Lifting-plan relevance: where the hook must sit.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does a lifting hook need to sit over the center of gravity, and what happens if it doesn't?</li><li>Composite centroid: outline the tabular method for an L-section.</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y1s1/statics/11" data-href="11-moments-of-inertia.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-moments-of-inertia.html">Moments of inertia</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Second moment of area by integration and parallel-axis theorem. Composite sections used in structural tables. The property that will set bending stress in Strength of Materials.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos" target="_blank" rel="noopener">Jeff Hanson (Texas Tech)</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLVgrGgkWLpZZBAvvS0I-6JUtCZM_3b-Db" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What does the parallel-axis theorem add, and when must you use it?</li><li>Why does an I-beam's shape maximize second moment for its area?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[F_x = F\cos\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = F\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{R_x^2 + R_y^2}, \qquad \theta = \tan^{-1}\!\frac{R_y}{R_x} \tag{1}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[g = 9.81\ \mathrm{m/s^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[250 \times 9.81 = 2452.5\ \mathrm{N} \approx 2.45\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = F\cos\theta,\ F_y = F\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{(\Sigma F_x)^2 + (\Sigma F_y)^2}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\theta = \tan^{-1}(\Sigma F_y/\Sigma F_x)\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[4800 \times 9.81 \approx 47.1\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F = 10\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 10\cos 30^\circ = 8.66\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 10\sin 30^\circ = 5.00\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\sqrt{8.66^2 + 5.00^2} = 10.0\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 8.66\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 5.00\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg = 250 \times 9.81 = 2452.5\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[2T\sin 60^\circ = W\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[T = 2452.5 / (2 \times 0.866) = 1416\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W \approx 2.45\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\approx 1.42\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W/2 = 1226\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\Sigma F_x = 300 + 0 + 150\cos 210° = 300 - 129.9 = 170.1\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\Sigma F_y = 0 + 200 + 150\sin 210° = 200 - 75 = 125\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{170.1^2 + 125^2} = 211\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[\theta = \tan^{-1}(125/170.1) = 36.3°\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R \approx 211\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = F\sin\theta = 20\sin 60^\circ = 17.3\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[|8-6| = 2\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[8+6 = 14\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_x = 100\cos 60° = 50.0\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[F_y = 100\sin 60° = 86.6\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[W = mg = 500 \times 9.81 = 4905\ \mathrm{N} \approx 4.9\ \mathrm{kN}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[R = \sqrt{100^2 + 100^2} = 141\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></li><li><span class="ref-eq">\[M = F d \tag{1}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 500 \times 0.6 \sin 60^\circ = 259.8\ \mathrm{N \cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[F_y = 500\sin 60^\circ\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = Fd\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,d\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[\mathbf{M} = \mathbf{r} \times \mathbf{F}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,r\sin\theta\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = F\,s\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M_O(\mathbf{F}) = \Sigma M_O(\text{components})\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[d = 0.6\sin 60^\circ = 0.520\ \mathrm{m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 500 \times 0.520 = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[500\sin 60^\circ = 433.0\ \mathrm{N}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 433.0 \times 0.6 = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li><li><span class="ref-eq">\[M = 259.8\ \mathrm{N\cdot m}\]</span><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\theta\)</span><span class="chip">\(\Sigma\)</span><span class="chip">\(\phi\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\beta\)</span><span class="chip">\(\pi\)</span><span class="chip">\(\alpha\)</span><span class="chip unit">m/s^2</span><span class="chip unit">N</span><span class="chip unit">kN</span><span class="chip unit">m</span><span class="chip unit">rad</span><span class="chip unit">mm</span><span class="chip unit">kg</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>SI units</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Trigonometry</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Vector idea</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/01-forces-vectors-and-resultants.html">L01</a></td></tr><tr><td>Force components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></td></tr><tr><td>Perpendicular distance</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/02-moments-and-couples.html">L02</a></td></tr><tr><td>cable</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>fixed (built-in) support</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>Forces as vectors</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>Moments</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>pin</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>roller</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/03-the-free-body-diagram.html">L03</a></td></tr><tr><td>FBD discipline</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>Resolution into components</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>Simultaneous equations</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/04-equilibrium-of-a-particle.html">L04</a></td></tr><tr><td>FBDs and support menus</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>Moments and Varignon</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>Particle equilibrium</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/05-equilibrium-of-rigid-bodies.html">L05</a></td></tr><tr><td>method of joints</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>method of sections</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Rigid-body equilibrium</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Two-force members</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/06-trusses.html">L06</a></td></tr><tr><td>Truss thinking</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/07-frames-and-machines.html">L07</a></td></tr><tr><td>Two-force member recognition</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/07-frames-and-machines.html">L07</a></td></tr><tr><td>Basic calculus</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Equilibrium of a cut body</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Support reactions</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/08-internal-forces-shear-and-bending-moment.html">L08</a></td></tr><tr><td>Equilibrium with inequalities in mind</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/09-friction.html">L09</a></td></tr><tr><td>Exponentials</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/09-friction.html">L09</a></td></tr><tr><td>Basic integration</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/10-centroids-and-centers-of-gravity.html">L10</a></td></tr><tr><td>Weight vs mass</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/10-centroids-and-centers-of-gravity.html">L10</a></td></tr><tr><td>Centroids</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr><tr><td>Composite bookkeeping</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr><tr><td>Integration</td><td><a class="ref-jump" href="../../../curriculum/y1s1/statics/11-moments-of-inertia.html">L11</a></td></tr></tbody></table></div>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="src"><b>Software used in this course</b> — see the <a href="../../../reference/index.html">Resources</a> page for the full directory grouped by category:</p><ul class="plain small"><li><a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener"><b>MATLAB</b> (MathWorks) — Free student-priced license at most universities; the standard numerical/matrix computing environment for engineering coursework.</a></li><li><a href="https://www.ansys.com/products/structures/ansys-mechanical" target="_blank" rel="noopener"><b>ANSYS Mechanical</b> (ANSYS) — The standard structural finite-element analysis package — stress, fatigue, and vibration simulation.</a></li></ul>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>STA 103</b></div><div class="frow"><span>Placement</span><b>Year 1 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Statics is the entry ticket to every role that touches structure, rigging, or load — and
+those roles span far more sectors than heavy industry. Three snapshots for this course:</p>
+<ul>
+<li><b>Construction &amp; contracting</b> — site and structural-steel engineers at major Kuwaiti
+contractors and building-products firms such as <b>Asico</b> live on reactions, connections, and
+bracing checks: every scaffold plan, formwork scheme, and pre-engineered building erection
+sequence is applied statics with a permit attached.</li>
+<li><b>Automotive &amp; heavy equipment</b> — workshop and fleet engineers at dealerships and
+equipment houses (think lift platforms, two-post hoists, crane trucks) answer statics questions
+daily: axle-load distribution, jacking points, sling angles, and counterweight arithmetic —
+the friction and tipping checks of this course, word for word.</li>
+<li><b>Specialized manufacturing</b> — plant engineers at producers such as <b>Gulf Glass</b>
+handle racking, fixtures, and material-handling frames where centroids and tipping margins
+decide what may be stacked, tilted, and transported without incident reports.</li>
+</ul>
+<p><b>Interview angle:</b> employers in all three sectors test statics through sketches — "draw
+the forces on this bracket / this sling / this jacked axle." The free-body diagram discipline of
+this course is precisely that test; the candidate who isolates the body cleanly wins the room.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/materials-1/index.html">MAT 104 · Materials Science I →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

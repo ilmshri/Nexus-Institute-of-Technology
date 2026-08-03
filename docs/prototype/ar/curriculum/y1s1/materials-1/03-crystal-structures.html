@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Crystal structures — Materials Science I — MechEd</title>
+<meta name="description" content="BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC —">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/materials-1/3">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/materials-1/03-crystal-structures.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MAT 104 · Materials Science I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-why-materials-fail-the-plant.html" class="ol" data-key="y1s1/materials-1/1"><span class="tick"></span><span>01 · Why materials fail the plant</span></a><a href="02-atomic-bonding.html" class="ol" data-key="y1s1/materials-1/2"><span class="tick"></span><span>02 · Atomic bonding</span></a><a href="03-crystal-structures.html" class="ol cur" data-key="y1s1/materials-1/3"><span class="tick"></span><span>03 · Crystal structures</span></a><a href="04-crystallographic-directions-and-planes.html" class="ol" data-key="y1s1/materials-1/4"><span class="tick"></span><span>04 · Crystallographic directions and planes</span></a><a href="05-defects-in-solids.html" class="ol" data-key="y1s1/materials-1/5"><span class="tick"></span><span>05 · Defects in solids</span></a><a href="06-diffusion.html" class="ol" data-key="y1s1/materials-1/6"><span class="tick"></span><span>06 · Diffusion</span></a><a href="07-mechanical-properties-i-elasticity-and-the-tension-test.html" class="ol" data-key="y1s1/materials-1/7"><span class="tick"></span><span>07 · Mechanical properties I: elasticity and the tension test</span></a><a href="08-mechanical-properties-ii-hardness-and-toughness.html" class="ol" data-key="y1s1/materials-1/8"><span class="tick"></span><span>08 · Mechanical properties II: hardness and toughness</span></a><a href="09-dislocations-and-strengthening.html" class="ol" data-key="y1s1/materials-1/9"><span class="tick"></span><span>09 · Dislocations and strengthening</span></a><a href="10-recovery-recrystallization-and-grain-growth.html" class="ol" data-key="y1s1/materials-1/10"><span class="tick"></span><span>10 · Recovery, recrystallization, and grain growth</span></a><a href="11-solidification-and-cast-structure.html" class="ol" data-key="y1s1/materials-1/11"><span class="tick"></span><span>11 · Solidification and cast structure</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MAT 104</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MAT 104 · Lesson 03 of 11 · Year 1 · Semester 1</p>
+  <h1>Crystal structures</h1>
+  <p class="sub">BCC, FCC, and HCP cells; coordination and packing factors. Density calculations from lattice data. Why FCC metals form and slip differently from BCC — a fact with cold-weather consequences.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Callister &amp; Rethwisch, Materials Science and</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/materials-1/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Callister &amp; Rethwisch, Materials Science and Engineering: An Introduction (Wiley)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/64la8laTIfc" title="Materials Science - Cystal Structure" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Materials Science - Cystal Structure <span class="src">RE-Lecture</span></figcaption></figure></div><div class="vh-bar"><span class="n">Materials Science - Cystal Structure</span><span class="c">RE-LECTURE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Compute-style: which is denser at equal atomic mass, FCC or BCC, and why?</li><li>Why do BCC steels turn brittle in cold weather while FCC metals don't?</li></ul></div><div class="measure">
+<h3>01 · Three cells carry most of metallurgy</h3>
+<p>Most engineering metals crystallize into one of three unit cells. <b>FCC</b> (face-centered cubic): atoms at corners and face centers — copper, aluminum, nickel, austenitic stainless. <b>BCC</b> (body-centered cubic): corners plus one center atom — ferritic iron, chromium, tungsten. <b>HCP</b> (hexagonal close-packed): zinc, magnesium, titanium. Geometry first: in FCC atoms touch along the face diagonal, so \( a = 2R\sqrt{2} \) with 4 atoms per cell; in BCC they touch along the body diagonal, \( a = 4R/\sqrt{3} \), 2 atoms per cell.</p>
+<h3>02 · Packing predicts behavior</h3>
+<p>The atomic packing factor — fraction of cell volume occupied — is 0.74 for FCC and HCP against 0.68 for BCC. FCC's close packing comes with close-packed planes on which slip is easy in many directions at any temperature: FCC metals stay ductile from cryogenic cold to near melting. BCC's slightly open structure makes slip thermally assisted — cool a BCC steel enough and slip stalls before fracture does, the root of the ductile–brittle transition that Lesson 8 prices in joules. HCP's single close-packed plane family gives few slip systems and the notorious formability limits of magnesium and zinc.</p>
+<h3>03 · Density from first principles</h3>
+<p>The unit cell converts crystallography into a checkable number:</p>
+\[ \rho = \frac{nA}{V_C N_A} \tag{1} \]
+<p>\( n \) atoms per cell, \( A \) the atomic weight, \( V_C \) the cell volume, \( N_A \) Avogadro's number. the Worked Examples tab runs copper and lands within 1% of the handbook value — a satisfying audit that the atomic picture is not a metaphor but a measurement.</p>
+
+<h3>04 · The unit-cell bookkeeping method</h3>
+<p>Crystal arithmetic rewards the same tabular discipline as statics. <em>Fix the cell
+geometry first:</em> for FCC, atoms touch along the face diagonal, so \( a = 2R\sqrt{2} \);
+for BCC, along the body diagonal, \( a = 4R/\sqrt{3} \) — derive the relation from the
+touching direction rather than memorizing it, and it cannot betray you. <em>Count atoms the
+honest way:</em> corners contribute an eighth each, faces a half, body atoms a whole —
+4 per FCC cell, 2 per BCC. <em>Then let the density formula audit everything:</em>
+\( \rho = nA/(V_C N_A) \) predicts copper at 8.90 g/cm³ from nothing but a radius and an
+atomic mass; agreement with the handbook to within a percent certifies the whole chain of
+geometry, counting, and units in one number.</p>
+<p>Use the same audit in reverse on real parts: a measured density falling meaningfully below
+the theoretical value is porosity talking — castings and additive parts confess their voids
+this way, and the quality lab's densitometer is running this lesson's equation as a routine
+instrument. Structure is not an abstraction; it is a number you can weigh — and the first
+crystal-level measurement most engineers ever make is a bathroom-scale argument about
+atoms, which is precisely what makes it trustworthy on a shop floor.</p>
+<p><strong>Closing.</strong> Three cells, two touching rules, one packing-factor gap that explains why austenitic steel stays tough in liquid nitrogen while ferritic steel turns to glass in a cold snap. Crystal structure is destiny, slightly exaggerated — but only slightly.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bonding</b> (Lesson 2) — non-directional metallic bonding is what permits dense packing.</li>
+<li><b>Solid geometry</b> — cube diagonals: face \( a\sqrt{2} \), body \( a\sqrt{3} \).</li>
+<li><b>Avogadro's number</b> — the mole-to-atoms bridge for density.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Unit cell</td><td>the repeating box</td><td>The whole crystal is this cell tiled in three directions.</td></tr>
+<tr><td>FCC</td><td>\( a = 2R\sqrt{2} \), 4 atoms/cell, APF 0.74</td><td>Cu, Al, Ni, austenite — the ductile close-packed family.</td></tr>
+<tr><td>BCC</td><td>\( a = 4R/\sqrt{3} \), 2 atoms/cell, APF 0.68</td><td>Ferrite, Cr, W — strong, with a ductile-brittle transition.</td></tr>
+<tr><td>HCP</td><td>ABAB stacking, APF 0.74</td><td>Zn, Mg, Ti — close-packed but with fewer slip options.</td></tr>
+<tr><td>Theoretical density</td><td>\( \rho = nA/(V_C N_A) \)</td><td>Predicting density from the cell; auditing porosity when measurements fall short.</td></tr>
+<tr><td>Polymorphism</td><td>same atoms, different cells</td><td>Iron's BCC↔FCC switch — the lever all steel heat treatment pulls.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Packing factor of FCC</b></p>
+<p><b>Problem.</b> Derive the FCC atomic packing factor.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Face-diagonal touching: \( 4R = a\sqrt{2} \Rightarrow a = 2R\sqrt{2} \).
+(2) Atoms per cell: \( 8 \times \tfrac{1}{8} + 6 \times \tfrac{1}{2} = 4 \).
+(3) \( APF = \dfrac{4 \times \tfrac{4}{3}\pi R^3}{(2R\sqrt{2})^3} = \dfrac{16.76\,R^3}{22.63\,R^3} = 0.740 \).</p>
+<p><b>Answer:</b> 0.74 — the maximum possible for equal spheres.
+<b>Sanity check:</b> the same computation for BCC (\( a = 4R/\sqrt{3} \), 2 atoms) gives 0.68; FCC is measurably tighter, consistent with its higher coordination (12 vs 8).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Density of copper from its lattice</b></p>
+<p><b>Problem.</b> Copper: FCC, \( R = 0.128\ \mathrm{nm} \), \( A = 63.55\ \mathrm{g/mol} \) (Callister &amp; Rethwisch). <b>Find:</b> the theoretical density.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( a = 2R\sqrt{2} = 0.362\ \mathrm{nm} = 3.62 \times 10^{-8}\ \mathrm{cm} \).
+(2) \( V_C = a^3 = 4.75 \times 10^{-23}\ \mathrm{cm^3} \).
+(3) \( \rho = \dfrac{nA}{V_C N_A} = \dfrac{4 \times 63.55}{4.75 \times 10^{-23} \times 6.022 \times 10^{23}} = 8.90\ \mathrm{g/cm^3} \).</p>
+<p><b>Answer:</b> \( 8.90\ \mathrm{g/cm^3} \).
+<b>Sanity check:</b> the measured density of copper is 8.94 g/cm³ — agreement within half a percent, from nothing but an atomic radius, a molar mass, and geometry. The unit cell is bookkeeping that nature audits.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Predicting copper's density from its cell</b></p>
+<p><b>Problem.</b> Copper is FCC with atomic radius 0.128 nm and atomic mass 63.55 g/mol. <b>Find:</b> the lattice parameter and the theoretical density.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) FCC touching along the face diagonal: \( a = 2R\sqrt{2} = 2 \times 0.128 \times 1.414 = 0.362\ \mathrm{nm} \).
+(2) Cell volume: \( a^3 = (3.62\times10^{-8}\ \mathrm{cm})^3 = 4.74\times10^{-23}\ \mathrm{cm^3} \); FCC holds \( n = 4 \) atoms.
+(3) \( \rho = nA/(V_C N_A) = 4 \times 63.55/(4.74\times10^{-23} \times 6.022\times10^{23}) = 8.90\ \mathrm{g/cm^3} \).</p>
+<p><b>Answer:</b> \( a \approx 0.362\ \mathrm{nm} \); \( \rho \approx 8.90\ \mathrm{g/cm^3} \).
+<b>Sanity check:</b> handbook copper is 8.94 g/cm³ — agreement within half a percent from nothing but a radius, a mass, and geometry; a real part measuring well below this value is declaring porosity.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Atomic packing factors of FCC and BCC are, respectively:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>0.68 and 0.74</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>0.74 and 0.68</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0.52 and 0.74</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.74 and 0.74</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>FCC (and HCP) reach 0.74, the densest possible equal-sphere packing; BCC manages 0.68. The gap sounds small but carries consequences: FCC's close-packed planes slip easily at any temperature, while BCC's slip needs thermal help — the seed of the ductile–brittle transition.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Atoms per unit cell in FCC:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>14</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Eight corners shared eight ways (= 1) plus six faces shared two ways (= 3): 4 atoms. Counting 14 forgets the sharing; 2 is the BCC count. This little census feeds directly into the density formula \( \rho = nA/(V_C N_A) \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>How many atoms belong to one FCC unit cell?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>14</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Eight corners at one-eighth each (1) plus six faces at one-half each (3): four atoms. Counting 14 tallies the atoms TOUCHING the cell rather than the shares INSIDE it — the classic double-count; 2 belongs to BCC. The shares matter because density, packing factor, and every per-cell quantity stand on this count.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Ferritic (BCC) steels turn brittle in the cold; austenitic (FCC) stainless does not. The root cause is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>carbon content</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>slip in BCC needs thermal activation; FCC slip does not</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>FCC is denser, hence tougher</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>grain size differences</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>BCC lacks truly close-packed planes, so its dislocations need thermal assistance; cool the steel and slip stalls before fracture does — the ductile–brittle transition. FCC's close-packed slip systems work at any temperature, which is why cryogenic plant is austenitic. Density itself (choice C) is not the mechanism.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A cast component's measured density is 3% below the theoretical value computed from its crystal structure. The most likely explanation is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Internal porosity from casting</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The crystal switched structure</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The atomic mass changed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Measurement is always low</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Theoretical density assumes a void-free lattice; real castings trap gas and shrinkage porosity, and every void subtracts mass but not volume. A 3% deficit is a 3% void fraction to first order — quality labs run exactly this comparison as a porosity screen. Structure changes and mass changes are not things service life does to a part; blaming the instrument is not analysis.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Vignette — the caster crosses a crystal boundary.</b> You arrive at a steel mill's billet caster, where solidifying steel is FCC austenite — and by the time the billet reaches the cooling bed it has transformed to BCC ferrite (plus carbide), shedding volume and packing density on the way (figures representative). That allotropic change is not trivia: it drives the transformation stresses the caster's cooling practice must manage, and it is the switch that all of steel heat treatment will later throw on purpose. One element, two unit cells, and an entire industry operating in the gap between 0.74 and 0.68.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{cm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(3.937\\ \\mathrm{in}\\)", "\\(254\\ \\mathrm{in}\\)", "\\(393.7\\ \\mathrm{in}\\)", "\\(39.37\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{cm} = 0.3937\\ \\mathrm{in}\\): \\(100 \\times 0.3937 = 39.37\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{cm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.315\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(20.32\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(31.5\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(3.15\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{cm} = 0.3937\ \mathrm{in}\): \(8 \times 0.3937 = 3.15\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(492.1\\ \\mathrm{ft}\\)", "\\(45.72\\ \\mathrm{ft}\\)", "\\(4921\\ \\mathrm{ft}\\)", "\\(49.21\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(150 \\times 3.281 = 492.1\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(39.37\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3.658\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(393.7\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(3.937\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(12 \times 3.281 = 39.37\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3268933W" target="_blank" rel="noopener">Materials Science and Engineering: An Introduction — Callister &amp; Rethwisch</a></li><li><a href="https://openlibrary.org/works/OL3927645W" target="_blank" rel="noopener">The Science and Engineering of Materials — Askeland</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 3</p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Materials Science and Engineering: An Introduction (Wiley)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-atomic-bonding.html">← 02 · Atomic bonding</a><a href="index.html">كل الدروس · MAT 104</a><a href="04-crystallographic-directions-and-planes.html">04 · Crystallographic directions and planes →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/computing/index.html">CMP 106 · Engineering Computing →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

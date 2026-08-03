@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Machine Design I — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for MDN 251 Machine Design I.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/summary.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div lang="en" dir="ltr" class="en-body">
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>MDN 251 · Year 2 · Semester 2</p>
+  <h1>MDN 251 — Machine Design I</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-machine-design-1">MDN 251 — Machine Design I</h2>
+
+<section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 01 · Design methodology and factors of safety</p><h3><span class="sum-n">Lesson 01</span>Design methodology and factors of safety</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Analysis asks what stress a given part sees; design asks the inverse — given the load and
+the consequence of failure, what part? Analysis has one answer, design has a family.</li>
+<li>Write the load cases before sizing anything: start-up, upset, thermal growth against a fixed
+anchor, dropped tool, maintenance lifting, wind or seismic. The part must survive the worst, not
+the average.</li>
+<li>Parts that fail in service rarely failed under the load that was analysed — they failed under
+the one nobody wrote down.</li>
+<li>The design margin is \( n = S/\sigma \), with \( S \) the strength governing the
+<em>failure mode</em>: yield for permanent set, ultimate for rupture, endurance limit for
+fatigue.</li>
+<li>\( n \) covers several distinct things — material scatter, load uncertainty, idealisation
+error, service degradation, and the consequence of failure. A cable-tray bracket and a
+pressure-vessel bracket differ on the last alone.</li>
+<li>A large \( n \) is not conservatism but an admission of ignorance, and it costs mass, money
+and — on rotating equipment — the inertia the design is trying to control.</li>
+<li>Work the same sequence every time: load cases, failure modes, choose and record \( n \),
+size, then re-check every other mode against that size — the governing mode is rarely the one you
+started with.</li>
+<li>Codes and standards are encoded experience: they carry the failures that shaped them, which
+is why departing from one requires an argument rather than a preference.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 01 · Design methodology and factors of safety · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Axial stress and strain</b> (Strength of Materials L1) — \( \sigma = F/A \) and what yield means physically.</li>
+<li><b>Material property vocabulary</b> (Materials I L7) — yield strength, tensile strength, ductility, and which is a design stress.</li>
+<li><b>Free-body diagrams</b> (Statics L3) — every load case begins as one.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Factor of safety</td><td>\( n = S/\sigma \)</td><td>Comparing the strength relied on against the stress expected; state which \( S \).</td></tr>
+<tr><td>Allowable stress</td><td>\( \sigma_{allow} = S/n \)</td><td>The number you actually size against, once \( n \) is chosen.</td></tr>
+<tr><td>Load case</td><td>—</td><td>One credible loading condition with its own magnitude and source; parts fail under unlisted ones.</td></tr>
+<tr><td>Failure mode</td><td>—</td><td>Yield, rupture, fatigue, buckling, wear, leakage — decides which strength governs.</td></tr>
+<tr><td>Margin of safety</td><td>\( MS = n - 1 \)</td><td>Aerospace-style reporting; \( MS \ge 0 \) means the case is satisfied.</td></tr>
+<tr><td>Design vs analysis</td><td>—</td><td>Analysis returns a stress; design returns a size plus the reason for it.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 02 · Static failure design</p><h3><span class="sum-n">Lesson 02</span>Static failure design</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Strength is quoted from a uniaxial tension test; real parts carry combined stress. A failure
+theory collapses a multiaxial state into one equivalent stress that can be compared against that
+single number honestly.</li>
+<li>Von Mises: \( \sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2} \)
+— the most accurate predictor of yielding in ductile metals.</li>
+<li>Tresca: \( \sigma_{max}-\sigma_{min} \) — always the more conservative, by up to about
+15%, and never predicting a higher capacity than von Mises.</li>
+<li>A factor of safety quoted without naming the theory used is an incomplete statement.</li>
+<li>A discontinuity multiplies nominal stress geometrically:
+\( \sigma_{max}=K_t\sigma_{nom} \).</li>
+<li>For a <em>static</em> load on a <em>ductile</em> material, local yielding blunts and
+redistributes the peak, so \( K_t \) is commonly set aside. That permission is withdrawn
+entirely for brittle materials and under fatigue — the bridge into Lesson 3.</li>
+<li>Method: resolve the stress state at the worst point, get the principal stresses, name a
+theory, compare against \( S_y/n \), then decide whether \( K_t \) applies.</li>
+<li>The commonest practical error is comparing a raw shear stress against a tensile yield
+strength — optimistic by roughly \( \sqrt3 \).</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 02 · Static failure design · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Principal stresses and Mohr's circle</b> (Strength of Materials) — the transformation itself, not just the formula.</li>
+<li><b>Yield strength</b> (Materials I L7) — a tensile-test number being borrowed for a multiaxial state.</li>
+<li><b>Factor of safety</b> (Lesson 1) — the allowable stress this lesson compares against.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Von Mises stress</td><td>\( \sigma' = \sqrt{\sigma_x^2-\sigma_x\sigma_y+\sigma_y^2+3\tau_{xy}^2} \)</td><td>Ductile metals under static combined stress; the accurate default.</td></tr>
+<tr><td>Tresca stress</td><td>\( \sigma_{max}-\sigma_{min} \)</td><td>When the code or the consequence calls for the conservative theory.</td></tr>
+<tr><td>Principal stresses</td><td>\( \tfrac{\sigma_x+\sigma_y}{2}\pm\sqrt{(\tfrac{\sigma_x-\sigma_y}{2})^2+\tau_{xy}^2} \)</td><td>The input both theories need; remember the third principal is zero in plane stress.</td></tr>
+<tr><td>Stress concentration</td><td>\( \sigma_{max}=K_t\sigma_{nom} \)</td><td>Holes, fillets, keyways; mandatory under fatigue or in brittle material.</td></tr>
+<tr><td>Pure shear equivalence</td><td>\( S_{sy}\approx 0.577\,S_y \)</td><td>Shear yield from tensile yield, via von Mises.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 03 · Fatigue design I: the S–N method</p><h3><span class="sum-n">Lesson 03</span>Fatigue design I: the S–N method</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A part that never approaches yield can still fail: fatigue accumulates damage under
+<em>fluctuating</em> stress, and most rotating-machinery failures are fatigue failures invisible
+to a yield check.</li>
+<li>For wrought steels a first estimate of the specimen endurance limit is
+\( S_e' = 0.5S_{ut} \), capped near 700 MPa — a mirror-polished laboratory value, not a design
+stress.</li>
+<li>The Marin factors correct it to the real part:
+\( S_e = k_ak_bk_ck_dk_e S_e' \). Each is at most 1.0, and because they multiply they stack
+fast.</li>
+<li>Surface finish dominates, because fatigue cracks start at the surface and roughness supplies
+ready-made initiation sites. Size punishes the larger stressed volume; reliability is a choice
+about where in the scatter band you design, not a material property.</li>
+<li>On the worked 30 mm machined shaft, five modest factors left 58% of the specimen value —
+\( S_e = 174 \) MPa against \( S_e' = 300 \).</li>
+<li>Compare the stress <em>amplitude</em> against \( S_e/n \), never the peak: fatigue is
+driven by the alternating component.</li>
+<li>Carry \( K_f \) always — the ductile-static permission of Lesson 2 does not survive cyclic
+loading, because the notch root is where the crack grows a little on every cycle.</li>
+<li>Designing directly against \( 0.5S_{ut} \) claims about 1.7 times the fatigue strength the
+part actually has, with every individual arithmetic step correct.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 03 · Fatigue design I: the S–N method · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Fatigue, S–N curves and crack initiation</b> (Materials I L8) — the physical mechanism this lesson quantifies.</li>
+<li><b>Stress concentration</b> (Lesson 2) — \( K_t \), and why fatigue withdraws the permission to ignore it.</li>
+<li><b>Tensile strength</b> (Materials I L7) — \( S_{ut} \) is the input the whole estimate hangs on.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Specimen endurance limit</td><td>\( S_e' \approx 0.5\,S_{ut} \)</td><td>First estimate for wrought steel; a laboratory value, never a design stress.</td></tr>
+<tr><td>Corrected endurance limit</td><td>\( S_e = k_ak_bk_ck_dk_e S_e' \)</td><td>The number you actually design against.</td></tr>
+<tr><td>Surface factor</td><td>\( k_a = a\,S_{ut}^{\,b} \)</td><td>Machined, ground, hot-rolled, forged — the largest single knockdown.</td></tr>
+<tr><td>Size factor</td><td>\( k_b = 1.24\,d^{-0.107} \)</td><td>Round sections roughly 3–51 mm in bending or torsion.</td></tr>
+<tr><td>Reliability factor</td><td>\( k_e \)</td><td>A design choice about scatter: 0.897 at 90%, 0.814 at 99%, 0.753 at 99.9%.</td></tr>
+<tr><td>Stress amplitude</td><td>\( \sigma_a = (\sigma_{max}-\sigma_{min})/2 \)</td><td>The quantity fatigue responds to; compare this against \( S_e \).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 04 · Fatigue design II: mean stress and cumulative damage</p><h3><span class="sum-n">Lesson 04</span>Fatigue design II: mean stress and cumulative damage</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A tensile mean stress reduces the amplitude a part can survive, so a fatigue state needs
+two coordinates — \( \sigma_a \) and \( \sigma_m \) — not one.</li>
+<li>Constant-life criteria all run between \( S_e \) on the amplitude axis and
+\( S_{ut} \) on the mean axis. Goodman is the straight line between them:
+\( \sigma_a/S_e + \sigma_m/S_{ut} = 1/n \).</li>
+<li>Gerber's parabola is less conservative (2.56 vs Goodman's 2.09 on this lesson's case);
+Soderberg anchors at \( S_y \) and alone rules out first-cycle yielding.</li>
+<li>Setting \( \sigma_m = 0 \) returns every criterion to \( n = S_e/\sigma_a \), Lesson 3's
+result.</li>
+<li>Variable-amplitude duty is summed with Miner's rule, \( D=\sum n_i/N_i \), with lives
+read off the finite-life line \( S_f = aN^{\,b} \).</li>
+<li>Miner's rule ignores load order and real failures scatter between \( D\approx0.5 \) and
+\( D\approx2 \). Treat \( D=0.9 \) as no demonstrated margin.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 04 · Fatigue design II: mean stress and cumulative damage · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>The corrected endurance limit</b> (Lesson 3) — \( S_e \) is the vertical anchor of every
+diagram drawn here; this lesson does not re-derive it.</li>
+<li><b>Stress amplitude and mean stress</b> (Lesson 3) — \( \sigma_a \) and \( \sigma_m \)
+as the two coordinates a fatigue state is expressed in.</li>
+<li><b>Ultimate and yield strength</b> (Materials I L7) — \( S_{ut} \) and \( S_y \), the two
+candidate anchors on the mean-stress axis.</li>
+<li><b>Logarithms</b> (Mathematics I) — the S–N line is a power law; solving it for life means
+taking logs.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Goodman criterion</td><td>\( \sigma_a/S_e + \sigma_m/S_{ut} = 1/n \)</td><td>Default fatigue check with mean stress present; conservative and easy to invert for design.</td></tr>
+<tr><td>Gerber criterion</td><td>\( n\sigma_a/S_e + (n\sigma_m/S_{ut})^2 = 1 \)</td><td>When a less punishing, better-centred estimate is wanted and the extra algebra is acceptable.</td></tr>
+<tr><td>Soderberg criterion</td><td>\( \sigma_a/S_e + \sigma_m/S_y = 1/n \)</td><td>When no first-cycle yielding may be permitted at all.</td></tr>
+<tr><td>Finite-life line</td><td>\( S_f = aN^{\,b} \)</td><td>Reading a life off the S–N curve between \( 10^3 \) and \( 10^6 \) cycles.</td></tr>
+<tr><td>Line coefficients</td><td>\( a=(0.9S_{ut})^2/S_e \), \( b=-\tfrac13\log_{10}(0.9S_{ut}/S_e) \)</td><td>Fitting that line from two known endpoints.</td></tr>
+<tr><td>Miner's rule</td><td>\( D=\sum n_i/N_i \)</td><td>Summing damage over a duty spectrum; failure predicted at \( D=1 \), with real scatter of roughly 0.5–2.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 05 · Shaft design</p><h3><span class="sum-n">Lesson 05</span>Shaft design</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A rotating shaft under fixed transverse load sees <em>fully reversed</em> bending
+(\( \sigma_m=0 \)) but <em>steady</em> torque (\( \tau_a=0 \)) — the two loads enter the
+fatigue criterion through different terms.</li>
+<li>DE-Goodman inverts to a diameter directly:
+\( d^3=\frac{16n}{\pi}\left[\frac{2K_fM_a}{S_e}+\frac{\sqrt3K_{fs}T_m}{S_{ut}}\right] \).</li>
+<li>Size at the critical section, not the maximum-moment section — a shoulder or keyway with a
+high \( K_f \) often governs.</li>
+<li>Diameter responds to the cube root: doubling the factor of safety costs only 26% more
+diameter, so fatigue margin on a shaft is cheap.</li>
+<li>Strength is not enough. Check bearing slope (about 0.001 rad) and gear-mesh deflection —
+stiffness depends on \( d^4 \) and \( E \), so a stronger steel does not help.</li>
+<li>Check first critical speed, \( \omega_n=\sqrt{k/m}=\sqrt{g/\delta} \), and keep the
+operating speed well below it.</li>
+<li>When a shaft is marginal, a bigger fillet radius, a ground finish, or a relocated keyway
+usually buys more life per unit cost than extra diameter.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 05 · Shaft design · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Bending and torsional stress formulae</b> (Strength of Materials L2–L4) —
+\( \sigma=32M/\pi d^3 \) and \( \tau=16T/\pi d^3 \) for solid round sections.</li>
+<li><b>Von Mises equivalent stress</b> (Lesson 2) — how a bending–torsion state collapses to one
+number for comparison against a strength.</li>
+<li><b>Corrected endurance limit</b> (Lesson 3) — \( S_e \), the amplitude-side denominator.</li>
+<li><b>Goodman criterion</b> (Lesson 4) — the mean-stress treatment the shaft equation is derived
+from.</li>
+<li><b>Natural frequency of a spring–mass system</b> (Physics I / Dynamics) —
+\( \omega_n=\sqrt{k/m} \), reused here as critical speed.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Reversed bending stress</td><td>\( \sigma_a=32K_fM_a/\pi d^3 \)</td><td>Rotating shaft under a fixed transverse load — the amplitude term.</td></tr>
+<tr><td>Steady torsional stress</td><td>\( \tau_m=16K_{fs}T_m/\pi d^3 \)</td><td>Continuously driven shaft — the mean term.</td></tr>
+<tr><td>DE-Goodman diameter</td><td>\( d^3=\frac{16n}{\pi}\left[\frac{2K_fM_a}{S_e}+\frac{\sqrt3K_{fs}T_m}{S_{ut}}\right] \)</td><td>Sizing a shaft carrying reversed bending and steady torque.</td></tr>
+<tr><td>Transmitted torque</td><td>\( T=P/\omega \)</td><td>Converting a drive rating in kilowatts to the torque the shaft actually carries.</td></tr>
+<tr><td>Shaft stiffness</td><td>\( k=48EI/L^3 \)</td><td>Central mass on simple supports; the deflection and critical-speed input.</td></tr>
+<tr><td>First critical speed</td><td>\( \omega_n=\sqrt{k/m}=\sqrt{g/\delta} \)</td><td>Checking the operating speed is clear of resonance.</td></tr>
+<tr><td>Bearing slope limit</td><td>\( \theta \lesssim 0.001\ \mathrm{rad} \)</td><td>Stiffness check that strength never covers.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 06 · Keys, splines, and retaining hardware</p><h3><span class="sum-n">Lesson 06</span>Keys, splines, and retaining hardware</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Torque reaches a clearance-fitted hub through a key; everything else follows from the
+tangential force \( F = 2T/d \).</li>
+<li>Two checks, same force, different areas: shear over \( wL \) along the interface, bearing
+over \( (h/2)L \) on the driving faces.</li>
+<li>The capacities divide down to \( T_{bearing}/T_{shear} = h/w \) — bearing governs for any
+key flatter than it is wide, and the two are equal for a square key.</li>
+<li>Key length is set by the hub, not by the torque: the Lesson 5 duty needs 7.3 mm and gets
+60 mm, about eight times the strength requirement.</li>
+<li>That surplus is intentional. Keys must survive start and stall transients, and the key is
+designed as the mechanical fuse — yielding near 1630 N·m against the shaft's 2610 N·m.</li>
+<li>A keyway costs \( K_f \ge 2 \) in the shaft. Splines (about 1070 N·m here, only ~25% of
+teeth assumed loaded) and interference fits (\( T=\mu p\pi d^2L/2 \), about 905 N·m) avoid
+the slot.</li>
+<li>Retaining rings carry thrust, not torque, and their groove dimensions — depth, width, corner
+radius — are structural, not cosmetic.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 06 · Keys, splines, and retaining hardware · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Torque and tangential force</b> (Statics) — \( T = F r \), the conversion this whole
+lesson rests on.</li>
+<li><b>Direct shear and bearing stress</b> (Strength of Materials L1) — force over the area that
+resists it, with no bending involved.</li>
+<li><b>Yield strength and the factor of safety</b> (Lesson 1) — how an allowable stress is set.</li>
+<li><b>Maximum-shear-stress theory</b> (Lesson 2) — why the shear allowable is half the tensile
+allowable.</li>
+<li><b>Stress concentration</b> (Lessons 2 and 5) — the keyway's \( K_f \), which is the cost
+this lesson weighs alternatives against.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Tangential force on a key</td><td>\( F = 2T/d \)</td><td>First step of every key, spline or fit calculation.</td></tr>
+<tr><td>Key shear check</td><td>\( \tau = F/(wL) \)</td><td>Failure along the shaft–hub interface; area is the full key plan.</td></tr>
+<tr><td>Key bearing check</td><td>\( \sigma_b = F/\big((h/2)L\big) \)</td><td>Crushing on the driving faces; only half the key height bears.</td></tr>
+<tr><td>Governing-mode ratio</td><td>\( T_{bearing}/T_{shear} = h/w \)</td><td>Deciding which check governs before computing either.</td></tr>
+<tr><td>Interference-fit torque</td><td>\( T = \mu p \pi d^2 L/2 \)</td><td>Friction-only torque path with no keyway cut in the shaft.</td></tr>
+<tr><td>Spline torque</td><td>\( T \approx \sigma_b\, h L (0.25N) r_m \)</td><td>Multi-tooth torque path; the 0.25 allows for unequal tooth loading.</td></tr>
+<tr><td>Shaft torsional yield</td><td>\( T_y = 0.5 S_y \pi d^3/16 \)</td><td>Confirming the key gives way before the shaft does.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 07 · Threaded fasteners and bolted joints</p><h3><span class="sum-n">Lesson 07</span>Threaded fasteners and bolted joints</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A preloaded joint is two springs in opposition: the bolt stretches, the members are
+compressed, and an external load is shared between them.</li>
+<li>\( C=k_b/(k_b+k_m) \) is the fraction of external load reaching the bolt. For M12 through
+a 40 mm steel grip, \( C=0.156 \) — a 20 kN load raises bolt tension by only 3.1 kN.</li>
+<li>\( F_b=F_i+CP \) and \( F_m=F_i-(1-C)P \), and always \( F_b-F_m=P \).</li>
+<li>Separation at \( P_0=F_i/(1-C) \) is usually the governing failure, not bolt yield — here
+2.25 against 4.05. Design for clamp force.</li>
+<li>Preload is normally \( 0.75A_tS_p \) for reusable joints; the tensile stress area follows
+from \( A_t=\frac{\pi}{4}(d-0.9382p)^2 \).</li>
+<li>Under cyclic load the bolt's amplitude is \( CP/2A_t \) — smaller than an unpreloaded bolt's
+by exactly \( 1/C \), here 6.4×. Tightening a bolt properly makes it last longer.</li>
+<li>Softening the members raises \( C \). A gasket at \( k_m/4 \) takes the bolt's stress
+amplitude from 18.5 to 50.4 MPa with no change to the applied load.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 07 · Threaded fasteners and bolted joints · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Torque–preload and the nut factor</b> (Manufacturing Processes II L10) — \( T=KdF_i \)
+and why \( K \) is an assumption; this lesson takes preload as achieved and asks what it does.</li>
+<li><b>Axial stiffness</b> (Strength of Materials L1) — \( k=AE/L \), the model for the bolt
+spring.</li>
+<li><b>Springs in parallel</b> (Physics I) — two elements sharing a common deflection share load
+in proportion to stiffness.</li>
+<li><b>Goodman criterion</b> (Lesson 4) — the fatigue check applied to the bolt, with preload
+supplying a large mean stress.</li>
+<li><b>Proof strength</b> — the fastener-specific allowable, below yield, that grade markings are
+defined against.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Tensile stress area</td><td>\( A_t=\frac{\pi}{4}(d-0.9382p)^2 \)</td><td>The area a threaded fastener actually carries on; 84.3 mm² for M12 × 1.75.</td></tr>
+<tr><td>Bolt stiffness</td><td>\( k_b=A_tE/l \)</td><td>Grip-length spring rate of the fastener.</td></tr>
+<tr><td>Member stiffness</td><td>\( k_m=EdA\,e^{Bd/l} \)</td><td>Wileman approximation for steel members; \( A=0.78715 \), \( B=0.62873 \).</td></tr>
+<tr><td>Stiffness constant</td><td>\( C=k_b/(k_b+k_m) \)</td><td>The fraction of external load reaching the bolt — the number that governs everything else.</td></tr>
+<tr><td>Bolt and member loads</td><td>\( F_b=F_i+CP \), \( F_m=F_i-(1-C)P \)</td><td>Splitting an external load once preload is known.</td></tr>
+<tr><td>Recommended preload</td><td>\( F_i=0.75A_tS_p \)</td><td>Reusable connections; 0.90 for permanent ones.</td></tr>
+<tr><td>Separation load</td><td>\( P_0=F_i/(1-C) \)</td><td>The load at which clamp force reaches zero and protection ends.</td></tr>
+<tr><td>Bolt fatigue amplitude</td><td>\( \sigma_a=CP/2A_t \)</td><td>Cyclic load from 0 to \( P \); the factor \( C \) is why preload extends bolt life.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 08 · Welded joint design</p><h3><span class="sum-n">Lesson 08</span>Welded joint design</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>Fillet welds are specified by leg \( h \) but fail on the throat \( t=0.707h \) — a
+6 mm fillet resists on 4.24 mm.</li>
+<li>Weld volume grows as \( h^2 \) while strength grows as \( h \), so long small fillets
+beat short large ones for the same capacity.</li>
+<li>An eccentric load on a weld group is solved exactly like a bolt group: direct shear
+\( P/A_w \) plus torsional shear \( Tr/J_u \), added as vectors at each corner.</li>
+<li>Use the unit-throat method — treat welds as lines, work in force per unit length, and divide
+by the allowable at the end to get the throat.</li>
+<li>On the worked bracket, eccentricity took 66.7 N/mm of direct shear to a resultant of
+316.6 N/mm — a factor of 4.75 from the moment alone.</li>
+<li>Welds crack at the toe, where a geometric notch, near-yield tensile residual stress, and the
+worst defects coincide.</li>
+<li>Weld fatigue strength is essentially independent of the parent steel's grade; details are
+classified by geometry, on \( \Delta\sigma^3N=\text{const} \).</li>
+<li>The cube law is severe: 80 → 100 MPa of stress range halves the life. Improve the detail or
+cut the range; do not upgrade the steel.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 08 · Welded joint design · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Direct and torsional shear</b> (Strength of Materials L3–L4) — \( \tau=Tr/J \) applied
+here to a group of lines rather than a solid section.</li>
+<li><b>Second moment of area and the parallel-axis theorem</b> (Statics) — assembling
+\( I_x \) and \( I_y \) for a weld pattern.</li>
+<li><b>Vector addition</b> — the two shears act in different directions and must be combined by
+components.</li>
+<li><b>Fatigue and stress range</b> (Lessons 3–4) — the S–N idea, restated here with a fixed
+exponent and geometry-based categories.</li>
+<li><b>Welding processes and defects</b> (Manufacturing Processes II) — undercut, slag, and the
+residual stresses this lesson attributes toe cracking to.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Fillet throat</td><td>\( t=0.707h \)</td><td>Converting a specified leg size to the dimension that carries load.</td></tr>
+<tr><td>Fillet weld stress</td><td>\( \tau=F/(0.707hL) \)</td><td>Concentrically loaded fillet, any load direction.</td></tr>
+<tr><td>Direct shear on a group</td><td>\( \tau'=P/A_w \)</td><td>Uniform component; \( A_w \) is total weld length at unit throat.</td></tr>
+<tr><td>Torsional shear on a group</td><td>\( \tau''=Tr/J_u \)</td><td>Component from the couple; take \( x \) and \( y \) parts, not the magnitude.</td></tr>
+<tr><td>Unit polar moment</td><td>\( J_u=I_x+I_y \)</td><td>Weld lines treated as unit-thickness; keeps the throat out of the algebra until the end.</td></tr>
+<tr><td>Required throat</td><td>\( t=R/\tau_{all} \)</td><td>Final step; convert to leg with \( h=t/0.707 \).</td></tr>
+<tr><td>Weld fatigue law</td><td>\( \Delta\sigma^3N=\text{const} \)</td><td>Welded details; the category fixes the constant, and material strength does not enter.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 09 · Springs</p><h3><span class="sum-n">Lesson 09</span>Springs</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A helical spring works in torsion: the axial force acts at the mean coil radius, so
+\( T=FD/2 \).</li>
+<li>The Wahl factor \( K_W \) collects coil curvature and direct shear, putting peak stress on
+the inner fibre — 1.197 at \( C=7.5 \), and that is where springs fail.</li>
+<li>Spring index \( C=D/d \) should sit between about 4 and 12; below 4 the coil is hard to
+wind and \( K_W \) climbs steeply.</li>
+<li>Rate \( k=Gd^4/(8D^3N_a) \) — the fourth power means a 12% thinner wire loses 41% of the
+rate. Wire diameter is the design, not a tolerance.</li>
+<li>Check solid height \( L_s=dN_t \): a good spring survives being closed solid without
+yielding (here 564 MPa against 814, \( n=1.44 \)).</li>
+<li>Check buckling: stable while \( L_0<2.63D/\alpha \), with \( \alpha \) set by the end
+conditions.</li>
+<li>Springs cycle between two positive forces, so fatigue is a large-mean, small-amplitude
+Goodman problem in shear.</li>
+<li>Shot peening puts compression into the inner fibre where cracks start and typically buys 20%
+or more on endurance — usually the cheapest life available.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 09 · Springs · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Torsion of a round bar</b> (Strength of Materials L4) — \( \tau=16T/\pi d^3 \), the
+formula the spring equation is built on.</li>
+<li><b>Direct shear</b> (Strength of Materials L1) — the second of the two effects the Wahl
+factor collects.</li>
+<li><b>Spring rate and stiffness</b> (Physics I) — \( F=k\delta \), used here as a design
+target rather than a given.</li>
+<li><b>Column buckling</b> (Strength of Materials L10) — the end-condition idea reused for a
+spring's stability limit.</li>
+<li><b>Goodman criterion</b> (Lesson 4) — applied in shear, with torsional endurance and ultimate
+strengths.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Spring index</td><td>\( C=D/d \)</td><td>Manufacturability and stress; keep between about 4 and 12.</td></tr>
+<tr><td>Wahl factor</td><td>\( K_W=\frac{4C-1}{4C-4}+\frac{0.615}{C} \)</td><td>Curvature plus direct shear; puts the peak stress on the inner fibre.</td></tr>
+<tr><td>Spring stress</td><td>\( \tau=K_W\,8FD/\pi d^3 \)</td><td>Any helical compression or extension spring under axial load.</td></tr>
+<tr><td>Spring rate</td><td>\( k=Gd^4/(8D^3N_a) \)</td><td>Sizing to a required stiffness; note \( d^4 \) and \( 1/D^3 \).</td></tr>
+<tr><td>Solid length</td><td>\( L_s=dN_t \)</td><td>Checking the spring survives being fully closed.</td></tr>
+<tr><td>Buckling limit</td><td>\( L_0<2.63D/\alpha \)</td><td>\( \alpha=0.5 \) squared and ground on flat surfaces, 0.707 with one end pivoted.</td></tr>
+<tr><td>Spring fatigue</td><td>\( \tau_a/S_{se}+\tau_m/S_{su}=1/n \)</td><td>Cycling between two positive forces; large mean, small amplitude.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 10 · Power screws</p><h3><span class="sum-n">Lesson 10</span>Power screws</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>A screw thread is an inclined plane wrapped round a cylinder:
+\( \tan\lambda=l/\pi d_m \), with \( d_m=d-p/2 \).</li>
+<li>Lead is travel per revolution and equals pitch only for a single start — a double start
+doubles the lead and the efficiency benefit that comes with it.</li>
+<li>Raising and lowering torques differ only in the sign of the friction terms; a positive
+\( T_L \) means the screw is self-locking.</li>
+<li>Self-locking requires \( \mu>\tan\lambda\cos\alpha \) — independent of load, but
+dependent on a friction coefficient that can drift with lubricant and wear.</li>
+<li>Self-locking caps efficiency: at the boundary it is 48.9%, and no self-locking screw exceeds
+50%. The worked screw runs at 30% on the thread alone.</li>
+<li>Thread angle enters through \( \sec\alpha \) — a square thread is the most efficient form
+and the hardest to manufacture.</li>
+<li>Collar friction \( T_c=F\mu_cd_c/2 \) does no useful work. Here it is 46% of the total
+torque and drops overall efficiency from 29.5% to 16.1%.</li>
+<li>A thrust bearing in place of a plain collar is usually the cheapest large improvement
+available.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 10 · Power screws · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Friction on an inclined plane</b> (Statics L5) — the model the whole screw analysis is
+built from.</li>
+<li><b>Coefficient of friction</b> (Statics) — including that it is an empirical band, not a
+material constant.</li>
+<li><b>Torque, work and efficiency</b> (Physics I) — work in per revolution is
+\( 2\pi T \), work out is \( Fl \).</li>
+<li><b>Thread geometry</b> (Drawing &amp; CAD L8) — pitch, lead, starts, and the Acme form.</li>
+<li><b>Bearing pressure</b> (Lesson 6) — the check on thread flank pressure that governs wear
+life.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Mean diameter</td><td>\( d_m=d-p/2 \)</td><td>The diameter every screw formula uses; not the nominal size.</td></tr>
+<tr><td>Lead</td><td>\( l = n_{starts}\times p \)</td><td>Axial travel per revolution; equals pitch only for a single start.</td></tr>
+<tr><td>Lead angle</td><td>\( \tan\lambda=l/\pi d_m \)</td><td>The unwrapped incline; sets both efficiency and self-locking.</td></tr>
+<tr><td>Raising torque</td><td>\( T_R=\frac{Fd_m}{2}\frac{l+\pi\mu d_m\sec\alpha}{\pi d_m-\mu l\sec\alpha} \)</td><td>Lifting or clamping; friction adds.</td></tr>
+<tr><td>Lowering torque</td><td>\( T_L=\frac{Fd_m}{2}\frac{\pi\mu d_m\sec\alpha-l}{\pi d_m+\mu l\sec\alpha} \)</td><td>Releasing; positive result means self-locking.</td></tr>
+<tr><td>Self-locking</td><td>\( \mu>\tan\lambda\cos\alpha \)</td><td>Checking a screw holds its load unpowered; independent of load.</td></tr>
+<tr><td>Collar torque</td><td>\( T_c=F\mu_cd_c/2 \)</td><td>Thrust-face loss; adds torque and no useful work.</td></tr>
+<tr><td>Efficiency</td><td>\( e=Fl/\big(2\pi(T_R+T_c)\big) \)</td><td>Work out over work in per revolution; include the collar or the figure is fiction.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MDN 251 · Lesson 11 · Design project: a driven shaft assembly</p><h3><span class="sum-n">Lesson 11</span>Design project: a driven shaft assembly</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap">
+<ul>
+<li>State the duty once — \( T=P/\omega=108.3\ \mathrm{N\,m} \) — and reference it
+everywhere; every downstream number inherits it.</li>
+<li>Trace the load path: belt → pulley → key → shaft → bearings → pedestals → welds, with torque
+branching through the coupling.</li>
+<li>A belt drives on \( T_1-T_2 \) but loads the shaft with \( T_1+T_2 \) — here 866 N of
+useful force against a 1733 N transverse pull.</li>
+<li>Bending (130 N·m) exceeds torque (108 N·m), so this shaft is bending-governed, as belt drives
+usually are.</li>
+<li>Results: shaft 34.0 mm computed and 35 mm specified (\( n=2.19 \)); key \( n=6.0 \);
+friction-driven coupling bolts \( n=6.5 \); pedestal welds \( n=55 \).</li>
+<li>The margins span 25×. The design lives in the shaft; everything else is set by hub length,
+standard bolt size or minimum fillet — so that is where any improvement or uprate must go.</li>
+<li>Document so it can be reviewed: assumptions attributed, governing criterion named per
+component, and the computed answer kept distinct from the specified size.</li>
+</ul>
+</div></div><div class="sum-fund"><p class="sum-run">MDN 251 · Lesson 11 · Design project: a driven shaft assembly · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain">
+<li><b>Every preceding lesson in this course.</b> Lesson 3 for \( S_e \), Lesson 4 for Goodman,
+Lesson 5 for the shaft, Lesson 6 for the key, Lesson 7 for the bolted flange, Lesson 8 for the
+welds. Nothing here is new theory.</li>
+<li><b>Belt drive mechanics</b> — that torque comes from \( T_1-T_2 \) while shaft load comes
+from \( T_1+T_2 \).</li>
+<li><b>Beam reactions and bending moments</b> (Statics) — locating the peak moment on a simply
+supported shaft.</li>
+<li><b>Power, torque and speed</b> (Physics I) — \( T=P/\omega \) with \( \omega \) in
+rad/s.</li>
+</ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Duty torque</td><td>\( T=P/\omega \)</td><td>The single quantity the whole assembly shares; state it once.</td></tr>
+<tr><td>Belt driving force</td><td>\( T_1-T_2=T/r \)</td><td>The part of belt tension that does useful work.</td></tr>
+<tr><td>Belt shaft load</td><td>\( T_1+T_2 \)</td><td>The transverse pull the shaft and bearings actually carry — larger, and easily forgotten.</td></tr>
+<tr><td>Shaft sizing</td><td>\( d^3=\frac{16n}{\pi}\left[\frac{2K_fM_a}{S_e}+\frac{\sqrt3K_{fs}T_m}{S_{ut}}\right] \)</td><td>Reversed bending with steady torque (Lesson 5).</td></tr>
+<tr><td>Key bearing check</td><td>\( \sigma_b=2T/\big(d(h/2)L\big) \)</td><td>Governing key mode for standard rectangular keys (Lesson 6).</td></tr>
+<tr><td>Friction flange coupling</td><td>\( T=\mu nF_ir_{bc} \)</td><td>Preloaded bolted flange where torque crosses by friction, not bolt shear.</td></tr>
+<tr><td>Weld group in bending</td><td>\( \sigma=M/S_u \), \( S_u=I_u/c \)</td><td>Tipping moment on a pedestal weld pattern, unit throat (Lesson 8).</td></tr>
+</tbody></table></div></div></div></section>
+</article></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Electronics &amp; Sensors — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for ELX 205 Electronics &amp; Sensors.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/electronics-sensors/summary.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>ELX 205 · Year 2 · Semester 1</p>
+  <h1>ELX 205 — Electronics &amp; Sensors</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-electronics-sensors">ELX 205 — Electronics &amp; Sensors</h2>
+
+<section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 01 · Semiconductors, diodes, and power supplies</p><h3><span class="sum-n">Lesson 01</span>Semiconductors, diodes, and power supplies</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A diode conducts one way, which is what makes rectification possible; a bridge rectifier uses both half-cycles.</li>
+<li>A capacitor then holds the peak between charging pulses, converting pulsating DC toward steady DC.</li>
+<li>Ripple is the droop the capacitor allows between refills, and it grows with load current and shrinks with capacitance.</li>
+<li>A regulator holds output constant against both line and load variation; its datasheet dropout voltage sets the minimum input it needs.</li>
+<li>Regulator power dissipation is the voltage it drops times the current it passes — the number that sizes the heatsink.</li>
+<li>24 VDC is the industrial standard because it is high enough for noise immunity over long runs and low enough to be touch-safe.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 01 · Semiconductors, diodes, and power supplies · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li>No prior electronics coursework — this lesson fixes vocabulary for the rest of the course.</li><li><b>Sinusoidal voltage and RMS</b> (Electrical Fundamentals, if taken) or basic AC familiarity.</li></ul>
+<h4>Toolkit — rectification and supplies</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Half-wave rectifier</td><td>1 diode, one half-cycle passes</td><td>Simple, more ripple.</td></tr>
+<tr><td>Full-wave (bridge) rectifier</td><td>4 diodes, both half-cycles redirected</td><td>Standard practice; less ripple.</td></tr>
+<tr><td>Ripple</td><td>residual AC on filtered DC</td><td>Falls with more capacitance.</td></tr>
+<tr><td>Line / load regulation</td><td>output response to input / load changes</td><td>Separate specs from ripple.</td></tr>
+<tr><td>24 VDC</td><td>below extra-low-voltage threshold</td><td>The industrial field-wiring standard.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 02 · Transistors and switching</p><h3><span class="sum-n">Lesson 02</span>Transistors and switching</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A transistor used as a switch has two intended states: fully off with no current, and fully saturated with almost no voltage across it.</li>
+<li>In both states the power dissipated is small, because either current or voltage is near zero.</li>
+<li>The linear region between them is where both are significant at once, so that is where the heat is made.</li>
+<li>Switching fast is therefore about minimising time spent in transit, not about speed for its own sake.</li>
+<li>An inductive load such as a relay coil needs a flyback diode, or turning it off generates a destructive voltage spike.</li>
+<li>Solid-state relays switch silently with no contacts to wear but leak slightly and drop voltage; electromechanical relays isolate truly and switch cleanly but wear out.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 02 · Transistors and switching · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Inductive-circuit interruption and flyback</b> (Electrical Fundamentals, Lesson 3).</li><li>No prior semiconductor device theory beyond Lesson 1's diode.</li></ul>
+<h4>Toolkit — transistor switching</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Cutoff</td><td>fully off, ~0 current</td><td>The switch-open state.</td></tr>
+<tr><td>Saturation</td><td>fully on, ~0 V drop</td><td>The switch-closed state.</td></tr>
+<tr><td>Linear region</td><td>partial conduction</td><td>Where power dissipation is worst; avoided in switching.</td></tr>
+<tr><td>Flyback diode</td><td>protects against inductive spikes</td><td>Required for relay/solenoid loads.</td></tr>
+<tr><td>SSR vs. EMR</td><td>solid-state vs. mechanical relay</td><td>Speed/life vs. isolation/surge tolerance.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 03 · Op-amps and signal conditioning</p><h3><span class="sum-n">Lesson 03</span>Op-amps and signal conditioning</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Op-amps amplify, filter and buffer, and in instrumentation the differential configuration is the one that matters.</li>
+<li>An instrumentation amplifier amplifies the difference between its inputs while rejecting what is common to both.</li>
+<li>Common-mode rejection ratio measures that rejection, and it is the primary defence against plant noise.</li>
+<li>Noise picked up on a twisted pair appears almost equally on both conductors, so it is common-mode and gets rejected.</li>
+<li>That is how a thermocouple's few tens of microvolts survive a plant full of motors and drives.</li>
+<li>Signal conditioning also sets bandwidth: filtering out what is not signal is part of the measurement, not an afterthought.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 03 · Op-amps and signal conditioning · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Basic op-amp behavior</b> (amplification of a voltage difference).</li><li><b>Thermocouples generate a small millivolt/microvolt-level signal</b> (introduced here, developed fully in Lesson 6).</li></ul>
+<h4>Toolkit — signal conditioning</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Instrumentation amplifier</td><td>high-impedance differential amp</td><td>Standard for small sensor signals.</td></tr>
+<tr><td>Common-mode signal</td><td>identical on both inputs</td><td>Usually noise, not the real measurement.</td></tr>
+<tr><td>Differential signal</td><td>the difference between inputs</td><td>The actual measured quantity.</td></tr>
+<tr><td>CMRR</td><td>common-mode rejection ratio, dB</td><td>How strongly common-mode is suppressed.</td></tr>
+<tr><td>Twisted pair</td><td>equal noise pickup on both wires</td><td>Physical partner to electronic CMRR.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 04 · Digital logic and interfaces</p><h3><span class="sum-n">Lesson 04</span>Digital logic and interfaces</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Digital logic works in defined levels, with a deliberate gap between the highest valid low and the lowest valid high — the noise margin.</li>
+<li>Gates combine those levels; combinational logic is described by truth tables and Boolean algebra.</li>
+<li>A PLC discrete input is a logic-level detector, so it reports presence or absence, not magnitude.</li>
+<li>Sinking and sourcing describe which side of the load carries the switched connection, and mismatching them is the classic commissioning fault.</li>
+<li>A sourcing output must be paired with a sinking input, and the convention differs by region and vendor.</li>
+<li>Getting it right on paper before wiring is far cheaper than finding it at the terminal strip.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 04 · Digital logic and interfaces · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The transistor as a switch</b> (Lesson 2) — the physical basis of a discrete output.</li><li><b>24 VDC field-wiring convention</b> (Lesson 1).</li></ul>
+<h4>Toolkit — digital I/O</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Discrete input/output</td><td>two-state (on/off), not a measured quantity</td><td>Switches, indicators, solenoids.</td></tr>
+<tr><td>Sourcing output</td><td>supplies positive voltage; load returns to common</td><td>Must match a sinking input card.</td></tr>
+<tr><td>Sinking output</td><td>pulls to common; load's other end at supply</td><td>Must match a sourcing input card.</td></tr>
+<tr><td>Logic level</td><td>0 or supply-referenced high</td><td>How digital I/O represents state.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 05 · Sensors on a production line</p><h3><span class="sum-n">Lesson 05</span>Sensors on a production line</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The 4–20 mA current loop is an engineering decision, not a convention: current is the same everywhere in a series loop, so wire resistance does not corrupt the reading.</li>
+<li>That immunity to voltage drop is why it survives long plant cable runs where a voltage signal would not.</li>
+<li>The live zero is the key feature — 4 mA means "zero measurand", while 0 mA means broken wire.</li>
+<li>A voltage signal cannot distinguish those two states at all, which is a safety difference, not a convenience.</li>
+<li>The transfer function is linear: current maps to the calibrated range, so any value converts by simple proportion.</li>
+<li>Loop-powered transmitters draw their supply from the same two wires, which is why the budget for loop resistance has to be checked.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 05 · Sensors on a production line · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Discrete vs. analog signals</b> (Lesson 4).</li><li>Basic linear-equation algebra (interpolation).</li></ul>
+<h4>Toolkit — the 4-20 mA loop</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>4-20 mA transfer function</td><td>\( I=4+16\frac{x-x_{min}}{x_{max}-x_{min}} \)</td><td>Converts measured value to loop current.</td></tr>
+<tr><td>Live zero</td><td>4 mA = the bottom of range</td><td>0 mA is unambiguously a fault.</td></tr>
+<tr><td>Current loop (vs. voltage)</td><td>unaffected by wire resistance drop</td><td>Why current, not voltage, is used for long runs.</td></tr>
+<tr><td>Sensor family</td><td>each has its own native signal type</td><td>Reading a live value requires knowing the signal type.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 06 · Temperature measurement in depth</p><h3><span class="sum-n">Lesson 06</span>Temperature measurement in depth</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>RTDs are resistance-versus-temperature devices, accurate, stable and nearly linear, with Pt100 the industrial standard.</li>
+<li>They need excitation current, which self-heats the element — so the sensor can warm what it is measuring.</li>
+<li>Three- and four-wire connections cancel lead resistance, which otherwise reads as a temperature offset.</li>
+<li>Thermocouples generate a voltage from a junction of dissimilar metals; they are wide-range, rugged, cheap and less accurate.</li>
+<li>They measure a <em>difference</em>, so a cold-junction reference is mandatory and matched extension wire must be used all the way.</li>
+<li>A thermowell protects the sensor and lets it be replaced live, at the cost of a real response lag — an installation decision, not a detail.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 06 · Temperature measurement in depth · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Power dissipation, P=I²R</b> (Electrical Fundamentals, Lesson 1).</li><li><b>4-20 mA signal basics</b> (Lesson 5) — how a temperature transmitter reports its reading.</li></ul>
+<h4>Toolkit — temperature measurement</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>RTD (e.g. Pt100)</td><td>resistance-based, highly linear</td><td>High accuracy, moderate temperature range.</td></tr>
+<tr><td>Self-heating</td><td>\( P=I^2R \), biases reading high</td><td>Keep excitation current low.</td></tr>
+<tr><td>Thermocouple</td><td>voltage from dissimilar-metal junction</td><td>Wide range, rugged, needs cold-junction compensation.</td></tr>
+<tr><td>Extension wire</td><td>must match the thermocouple alloy pair</td><td>Ordinary copper creates a second junction.</td></tr>
+<tr><td>Thermowell</td><td>protective closed-end tube</td><td>Trades response lag for protection/maintainability.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 07 · Pressure and level measurement in depth</p><h3><span class="sum-n">Lesson 07</span>Pressure and level measurement in depth</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Pressure is measured as gauge, absolute or differential, and naming which is the first step of any specification.</li>
+<li>Hydrostatic level measurement infers level from \( p=\rho gh \), so it depends on density and reads wrongly if the fluid changes.</li>
+<li>A closed, pressurised tank needs a differential transmitter to subtract the vapour-space pressure.</li>
+<li>The reference leg fills with condensate over time, which is exactly why the wet leg is deliberately filled and accounted for.</li>
+<li>Zero suppression and elevation correct for a transmitter mounted above or below the tapping point.</li>
+<li>Specify range, over-range limit, wetted materials, process connection and accuracy together — a transmitter is not specified by range alone.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 07 · Pressure and level measurement in depth · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Hydrostatic pressure, \( P=\rho gh \)</b> (Fluid Mechanics / Thermodynamics).</li><li><b>4-20 mA transfer function</b> (Lesson 5) — how the transmitter reports its (suppressed) reading.</li></ul>
+<h4>Toolkit — pressure and level</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Gauge pressure</td><td>relative to atmosphere</td><td>Everyday industrial convention.</td></tr>
+<tr><td>Differential pressure (DP)</td><td>difference between two points</td><td>Basis of closed-tank level and flow.</td></tr>
+<tr><td>Wet leg</td><td>reference fluid, always full</td><td>Makes the low-side offset fixed, calculable.</td></tr>
+<tr><td>Zero suppression</td><td>calibration offset removing a fixed bias</td><td>Corrects for the wet leg's own weight.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 08 · Vibration and speed sensors</p><h3><span class="sum-n">Lesson 08</span>Vibration and speed sensors</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Vibration is measured because rotating machinery announces its faults through it long before failure.</li>
+<li>An accelerometer's piezoelectric element outputs charge proportional to acceleration, integrated to velocity or displacement as needed.</li>
+<li>Velocity is the usual overall health measure across mid frequencies; displacement suits low frequencies and acceleration high ones.</li>
+<li>Mounting sets the usable bandwidth: stud mounting gives the widest, adhesive less, and a magnet or handheld probe far less.</li>
+<li>A handheld reading is therefore not comparable with a stud-mounted one, which matters when trending data over time.</li>
+<li>Proximity probes measure shaft displacement directly, which is what journal-bearing machines actually need; encoders and tachometers supply the speed reference every spectrum is interpreted against.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 08 · Vibration and speed sensors · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Piezoelectric effect</b> (introduced conceptually here; consistent with Instrumentation-family sensing principles).</li><li>Basic familiarity with rotating machinery (imbalance, misalignment) from Kinematics of Machinery, if taken.</li></ul>
+<h4>Toolkit — vibration and speed sensing</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Piezoelectric accelerometer</td><td>charge proportional to acceleration</td><td>Standard vibration sensor.</td></tr>
+<tr><td>Mounting resonance</td><td>limits usable frequency range</td><td>Stud &gt; adhesive &gt; magnet &gt; probe.</td></tr>
+<tr><td>Condition-based monitoring</td><td>trend vibration to catch faults early</td><td>Alternative to run-to-failure or fixed-interval maintenance.</td></tr>
+<tr><td>Orders of running speed</td><td>fault frequency expressed as ×RPM</td><td>1× imbalance, 2× misalignment (typical).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 09 · Analog-to-digital and sampling</p><h3><span class="sum-n">Lesson 09</span>Analog-to-digital and sampling</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>An ADC samples in time and quantises in amplitude, and both introduce error.</li>
+<li>Resolution sets the quantisation step — the smallest change the converter can represent.</li>
+<li>Nyquist requires sampling at more than twice the highest frequency present in the signal.</li>
+<li>Undersampling does not lose the high frequency, it disguises it: aliasing reports a false low frequency that looks entirely genuine.</li>
+<li>Nothing downstream can undo it, because the data no longer contain the information needed to tell truth from alias.</li>
+<li>An analogue anti-aliasing filter before the converter is the only fix — it must remove the content before sampling, not after.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 09 · Analog-to-digital and sampling · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Vibration frequency content</b> (Lesson 8) — a natural source of the higher frequencies that risk aliasing.</li><li>Basic frequency/period relationships (\( f=1/T \)).</li></ul>
+<h4>Toolkit — sampling and aliasing</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula / meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Resolution</td><td>\( 2^{bits} \) discrete levels</td><td>Limits per-reading precision.</td></tr>
+<tr><td>Sampling rate, \(F_s\)</td><td>samples per second</td><td>Limits how fast a signal can be tracked.</td></tr>
+<tr><td>Nyquist frequency</td><td>\( F_s/2 \)</td><td>Highest frequency capturable without aliasing.</td></tr>
+<tr><td>Aliasing</td><td>\( f_{alias}=|f_{true}-F_s| \)</td><td>Undersampled signal appears as a false lower frequency.</td></tr>
+<tr><td>Anti-aliasing filter</td><td>analog low-pass, before the ADC</td><td>The only real fix — prevention, not correction.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 10 · Signal transmission and noise</p><h3><span class="sum-n">Lesson 10</span>Signal transmission and noise</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Ground is not one potential everywhere: separated points differ by real millivolts from currents in the structure.</li>
+<li>A ground loop forms when a signal circuit is earthed at more than one point, so that difference is injected straight into the measurement.</li>
+<li>The result is noise proportional to plant activity, which is why it appears and disappears with other equipment starting.</li>
+<li>The fix is single-point grounding: earth the shield at one end only, normally the control-system end.</li>
+<li>Shielding intercepts capacitive coupling; twisting the pair defeats magnetic coupling — the two techniques address different mechanisms.</li>
+<li>Galvanic isolation breaks the loop entirely and is worth its cost on long runs, on high-noise areas and across separate earthing systems.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 10 · Signal transmission and noise · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Common-mode noise and twisted-pair wiring</b> (Lesson 3) — the shield is a second, complementary layer of noise defense.</li><li><b>4-20 mA current loops for long field runs</b> (Lesson 5).</li></ul>
+<h4>Toolkit — grounding and isolation</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Meaning</th><th>Use</th></tr></thead><tbody>
+<tr><td>Ground potential difference</td><td>two grounds, slightly different actual voltage</td><td>Normally harmless — until bridged.</td></tr>
+<tr><td>Ground loop</td><td>current driven through a shield grounded at both ends</td><td>Couples noise/offset into the signal.</td></tr>
+<tr><td>Single-point grounding</td><td>shield grounded at one end only</td><td>Standard fix — leaves the loop open.</td></tr>
+<tr><td>Signal isolator</td><td>transformer/optical coupling, no galvanic path</td><td>Lets both ends ground locally, safely.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">ELX 205 · Lesson 11 · Sensor selection and installation project</p><h3><span class="sum-n">Lesson 11</span>Sensor selection and installation project</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Sensor selection starts from the measurement itself: quantity, range, required accuracy and how fast it must respond.</li>
+<li>Then the interface: signal type, loop power, sinking or sourcing, and what the controller can actually accept.</li>
+<li>Then the environment: temperature, vibration, washdown, hazardous-area classification and ingress protection.</li>
+<li>Then installation: mounting location, thermowell or direct, orientation, straight-run requirements and access for calibration.</li>
+<li>A sensor installed in the wrong place is wrong however good its specification — position is part of the measurement.</li>
+<li>Document range, calibration, tag number, wiring and rationale so the next engineer inherits the reasoning, not just the hardware.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">ELX 205 · Lesson 11 · Sensor selection and installation project · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li>Every prior lesson in this course — this is the course's synthesis and capstone.</li></ul>
+<h4>Toolkit — the specification process</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Step</th><th>Question</th><th>Drawn from</th></tr></thead><tbody>
+<tr><td>1. Define</td><td>Quantity, range, required accuracy</td><td>Course-wide first principle</td></tr>
+<tr><td>2. Match</td><td>Signal type, sourcing/sinking, CMRR</td><td>Lessons 3-5</td></tr>
+<tr><td>3. Install</td><td>Mounting, protection, noise environment</td><td>Lessons 6, 8, 10</td></tr>
+<tr><td>4. Document</td><td>The specification sheet</td><td>Synthesis</td></tr>
+</tbody></table></div></div></div></section>
+</article>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

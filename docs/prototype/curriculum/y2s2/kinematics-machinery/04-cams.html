@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Cams — Kinematics &amp; Dynamics of Machinery — MechEd</title>
+<meta name="description" content="Follower motion laws — uniform, harmonic, cycloidal — and their acceleration signatures. Profile synthesis and pressure angle. Why cam wear patterns e">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/kinematics-machinery/4">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/kinematics-machinery/04-cams.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-mobility.html" class="ol" data-key="y2s2/kinematics-machinery/1"><span class="tick"></span><span>01 · Mechanisms and mobility</span></a><a href="02-position-and-velocity-analysis.html" class="ol" data-key="y2s2/kinematics-machinery/2"><span class="tick"></span><span>02 · Position and velocity analysis</span></a><a href="03-acceleration-analysis.html" class="ol" data-key="y2s2/kinematics-machinery/3"><span class="tick"></span><span>03 · Acceleration analysis</span></a><a href="04-cams.html" class="ol cur" data-key="y2s2/kinematics-machinery/4"><span class="tick"></span><span>04 · Cams</span></a><a href="05-gear-tooth-geometry.html" class="ol" data-key="y2s2/kinematics-machinery/5"><span class="tick"></span><span>05 · Gear tooth geometry</span></a><a href="06-gear-trains.html" class="ol" data-key="y2s2/kinematics-machinery/6"><span class="tick"></span><span>06 · Gear trains</span></a><a href="07-static-and-inertia-force-analysis.html" class="ol" data-key="y2s2/kinematics-machinery/7"><span class="tick"></span><span>07 · Static and inertia force analysis</span></a><a href="08-clutches-and-brakes.html" class="ol" data-key="y2s2/kinematics-machinery/8"><span class="tick"></span><span>08 · Clutches and brakes</span></a><a href="09-flywheels-and-speed-fluctuation.html" class="ol" data-key="y2s2/kinematics-machinery/9"><span class="tick"></span><span>09 · Flywheels and speed fluctuation</span></a><a href="10-balancing-of-rotating-and-reciprocating-masses.html" class="ol" data-key="y2s2/kinematics-machinery/10"><span class="tick"></span><span>10 · Balancing of rotating and reciprocating masses</span></a><a href="11-governors-and-gyroscopic-effects.html" class="ol" data-key="y2s2/kinematics-machinery/11"><span class="tick"></span><span>11 · Governors and gyroscopic effects</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">KDM 252</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">KDM 252 · Lesson 04 of 11 · Year 2 · Semester 2</p>
+  <h1>Cams</h1>
+  <p class="sub">Follower motion laws — uniform, harmonic, cycloidal — and their acceleration signatures. Profile synthesis and pressure angle. Why cam wear patterns encode their motion law. Filling-machine cams as the local example.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/kinematics-machinery/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Theory of Machines (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/oyjXA0DYWtM" title="HOW TO DRAW THE CAM PROFILE (ROLLER FOLLOWER) I CYCLOIDAL MOTION" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>HOW TO DRAW THE CAM PROFILE (ROLLER FOLLOWER) I CYCLOIDAL MOTION <span class="src">TECH CAD</span></figcaption></figure></div><div class="vh-bar"><span class="n">HOW TO DRAW THE CAM PROFILE (ROLLER FOLLOWER) I CYCLOIDAL MOTION</span><span class="c">TECH CAD</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does cycloidal motion beat harmonic for high-speed cams?</li><li>What does pressure angle limit in a cam-follower?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of follower acceleration against cam angle across a dwell, a 90 degree rise and a second dwell. The harmonic curve jumps vertically from zero to plus 39.5 metres per second squared at the start of the rise and back from minus 39.5 to zero at its end. The cycloidal curve leaves and rejoins zero smoothly, at the cost of a higher peak of 50.3."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Follower acceleration: harmonic against cycloidal</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">cam angle &#952; (degrees)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">follower acceleration (m/s&#178;)</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">-30</text><path d="M173 250 L173 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="173" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M256 250 L256 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="256" y="266" text-anchor="middle" fill="#5B6672" font-size="11">30</text><path d="M339 250 L339 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="339" y="266" text-anchor="middle" fill="#5B6672" font-size="11">60</text><path d="M422 250 L422 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="422" y="266" text-anchor="middle" fill="#5B6672" font-size="11">90</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">120</text><path d="M86 218.7 L90 218.7" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="222.7" text-anchor="end" fill="#5B6672" font-size="11">&#8722;40</text><path d="M86 187.3 L90 187.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="191.3" text-anchor="end" fill="#5B6672" font-size="11">&#8722;20</text><path d="M86 156 L90 156" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="160" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 124.7 L90 124.7" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="128.7" text-anchor="end" fill="#5B6672" font-size="11">20</text><path d="M86 93.3 L90 93.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="97.3" text-anchor="end" fill="#5B6672" font-size="11">40</text><path d="M90 156 L505 156" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><path d="M173 62 L173 190" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M422 62 L422 190" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M90 156 L173 156 L173 94.2 L173 94.2 L178.5 94.3 L184.1 94.8 L189.6 95.5 L195.1 96.5 L200.7 97.9 L206.2 99.5 L211.7 101.4 L217.3 103.5 L222.8 106 L228.3 108.6 L233.9 111.5 L239.4 114.6 L244.9 117.9 L250.5 121.4 L256 125.1 L261.5 128.9 L267.1 132.8 L272.6 136.9 L278.1 141 L283.7 145.3 L289.2 149.5 L294.7 153.8 L300.3 158.2 L305.8 162.5 L311.3 166.7 L316.9 171 L322.4 175.1 L327.9 179.2 L333.5 183.1 L339 186.9 L344.5 190.6 L350.1 194.1 L355.6 197.4 L361.1 200.5 L366.7 203.4 L372.2 206 L377.7 208.5 L383.3 210.6 L388.8 212.5 L394.3 214.1 L399.9 215.5 L405.4 216.5 L410.9 217.2 L416.5 217.7 L422 217.8 L422 156 L505 156" fill="none" stroke="#1f7a5c" stroke-width="2.4"/><path d="M90 156 L90 156 L95.5 156 L101.1 156 L106.6 156 L112.1 156 L117.7 156 L123.2 156 L128.7 156 L134.3 156 L139.8 156 L145.3 156 L150.9 156 L156.4 156 L161.9 156 L167.5 156 L173 156 L178.5 145 L184.1 134.3 L189.6 124 L195.1 114.3 L200.7 105.4 L206.2 97.5 L211.7 90.7 L217.3 85.2 L222.8 81.1 L228.3 78.4 L233.9 77.3 L239.4 77.7 L244.9 79.6 L250.5 83 L256 87.8 L261.5 93.9 L267.1 101.3 L272.6 109.7 L278.1 119 L283.7 129.1 L289.2 139.6 L294.7 150.5 L300.3 161.5 L305.8 172.4 L311.3 182.9 L316.9 193 L322.4 202.3 L327.9 210.7 L333.5 218.1 L339 224.2 L344.5 229 L350.1 232.4 L355.6 234.3 L361.1 234.7 L366.7 233.6 L372.2 230.9 L377.7 226.8 L383.3 221.3 L388.8 214.5 L394.3 206.6 L399.9 197.7 L405.4 188 L410.9 177.7 L416.5 167 L422 156 L427.5 156 L433.1 156 L438.6 156 L444.1 156 L449.7 156 L455.2 156 L460.7 156 L466.3 156 L471.8 156 L477.3 156 L482.9 156 L488.4 156 L493.9 156 L499.5 156 L505 156 L505 156" fill="none" stroke="#c2820f" stroke-width="2" stroke-dasharray="6 4"/><text x="112.1" y="68" fill="#5B6672" font-size="11">dwell</text><text x="297.5" y="68" text-anchor="middle" fill="#5B6672" font-size="11">rise, &#946; = 90&#176;</text><text x="444.1" y="68" fill="#5B6672" font-size="11">dwell</text><text x="105" y="214" fill="#1f7a5c" font-size="11">simple harmonic &#8212; peak 39.5</text><text x="105" y="232" fill="#c2820f" font-size="11">cycloidal &#8212; peak 50.3</text></svg><figcaption>Same lift, same rise angle, same cam speed &mdash; and the cycloidal law has the higher peak acceleration, 50.3 against 39.5 m/s&#178;, exactly \( 4/\pi \) times as much. It is still the better choice at speed, because the harmonic curve steps discontinuously at both ends of the rise. A step in acceleration is infinite jerk, and infinite jerk is what rings the follower train, not the peak value.</figcaption></figure>
+<h3>&#167;1 &middot; The cam is the motion, written down</h3>
+<p>A linkage produces the motion its proportions allow. A cam produces the motion you specify:
+its profile <em>is</em> the displacement schedule, machined into steel. That is the trade &mdash;
+complete freedom over the follower's motion, paid for with a higher pair, line contact, contact
+stress and wear, in place of the linkage's comfortable pins.</p>
+<p>Design starts from the <b>displacement diagram</b>: follower lift against cam angle, laid out
+as a sequence of rises, dwells and returns that the machine's timing demands. The dwells are
+usually why the cam was chosen at all &mdash; no linkage holds an output perfectly still for a
+third of a revolution. What has to be decided is what happens <em>during</em> a rise, and that
+choice is called the <b>motion law</b>.</p>
+<p>The lift is a given: 20 mm here, over a rise of \( \beta = 90^\circ \), at 300 rev/min so
+\( \omega = 31.42 \) rad/s. Every motion law delivers the same 20 mm over the same 90&#176;.
+They differ entirely in the derivatives, and the derivatives are what break the machine.</p>
+
+<h3>&#167;2 &middot; Three laws, and what their derivatives say</h3>
+<p>Uniform (constant-velocity) motion is the naive answer: divide the lift evenly across the
+rise, \( v = h\omega/\beta = 0.400 \) m/s throughout. Its acceleration is zero in the middle and
+infinite at both ends, where the follower is asked to reach full speed instantly. It exists in
+practice only with its corners rounded, which means it is not really this law at all.</p>
+<p>Simple harmonic motion, \( s=\tfrac{h}{2}\left(1-\cos\frac{\pi\theta}{\beta}\right) \), is
+the sine wave's projection and is smooth in the middle. Cycloidal motion,
+\( s=h\left(\frac{\theta}{\beta}-\frac{1}{2\pi}\sin\frac{2\pi\theta}{\beta}\right) \), is a
+constant-magnitude acceleration vector rotating at constant speed, projected on the axis.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; peak velocity and acceleration</span>
+<p>\[ \text{SHM:}\quad v_{\max}=\frac{\pi h\omega}{2\beta},\qquad
+a_{\max}=\frac{\pi^2h\omega^2}{2\beta^2} \]</p>
+<p>\[ \text{Cycloidal:}\quad v_{\max}=\frac{2h\omega}{\beta},\qquad
+a_{\max}=\frac{2\pi h\omega^2}{\beta^2} \]</p>
+<p>Both cycloidal peaks are exactly \( 4/\pi = 1.273 \) times the harmonic ones, for any lift,
+any rise angle and any speed.</p></div>
+<p>For the worked cam: harmonic gives 0.628 m/s and 39.48 m/s&#178;; cycloidal gives 0.800 m/s
+and 50.26 m/s&#178;. On peak numbers alone the harmonic law wins, and at low speed it is
+chosen for exactly that reason.</p>
+
+<h3>&#167;3 &middot; Why cycloidal wins anyway, and what wear tells you</h3>
+<p>Look at the ends of the rise rather than the middle. Harmonic acceleration begins at
+\( +39.48 \) m/s&#178; the instant the rise starts &mdash; a step, from the zero of the
+preceding dwell. A step in acceleration is infinite <b>jerk</b>, \( da/dt \). No real follower
+train is infinitely stiff, so it responds to that step by ringing: the follower, its spring and
+its linkage form a spring-mass system, and a step excites every mode it has. The result is
+vibration, noise, and contact stress well above the value the steady analysis predicted.</p>
+<p>Cycloidal acceleration leaves zero smoothly and returns to zero smoothly. Its jerk is finite
+everywhere. It pays 27% more peak acceleration &mdash; a quantity that can simply be designed
+for &mdash; to eliminate a quantity that cannot. Above a few hundred rev/min, that is not a
+close decision.</p>
+<p>The exchange shows in wear. A cam cut to a harmonic law and run fast wears in two narrow bands
+at the ends of the rise, where the step lands and the follower hammers. A cycloidal cam of the
+same duty wears more evenly and most at mid-rise, where its acceleration and hence its contact
+force genuinely peak. A worn cam is a record of its own acceleration history, and reading that
+record is a legitimate diagnostic: bands at the transitions mean the motion law, or its
+manufacture, has a discontinuity in it.</p>
+
+<h3>&#167;4 &middot; Pressure angle, base circle, and keeping the follower on the cam</h3>
+<p>The cam pushes the follower along the contact normal, which is not the direction the follower
+moves. The angle between them is the <b>pressure angle</b> \( \phi \), and it does to a cam what
+the transmission angle does to a linkage.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; pressure angle, radial roller follower</span>
+<p>\[ \tan\phi=\frac{ds/d\theta}{R_p+s} \]</p>
+<p>\( R_p \) is the prime-circle radius and \( s \) the lift at that instant. Practice keeps
+\( \phi \le 30^\circ \) on a translating follower.</p></div>
+<p>The numerator belongs to the motion law and the denominator to the cam's size. Harmonic
+motion on this cam has \( ds/d\theta = \pi h/2\beta = 20 \) mm/rad at mid-rise, so with
+\( R_p = 40 \) mm and \( s = 10 \) mm, \( \phi = 21.8^\circ \) &mdash; comfortable. Shrink the
+prime circle to 25 mm and \( \phi = 29.7^\circ \), on the limit. Grow it to 60 mm and
+\( \phi = 15.9^\circ \). The base circle is the pressure-angle control, and a cam that is too
+small is the usual cause of a cam that jams. Cycloidal motion, with its steeper mid-rise
+\( ds/d\theta = 2h/\beta = 25.5 \) mm/rad, gives \( \phi = 27.0^\circ \) on the same 40 mm
+prime circle &mdash; the same trade as before, appearing in a second place.</p>
+<p>One more check closes the design. The cam can only push; the follower is returned by a spring,
+and the spring must hold contact through the whole negative-acceleration phase or the follower
+lifts off and lands again &mdash; <b>follower jump</b>, which destroys cams. The requirement is
+\( F_{\text{spring}} \ge m\,a_{\max} \) with margin. A 1.2 kg follower on the cycloidal law needs
+\( 1.2 \times 50.26 = 60.3 \) N at the worst point, so a spring giving about 78 N there carries
+a 30% margin. Note that the harmonic law would have needed only 47.4 N: the 27% acceleration
+penalty is paid twice, once in contact stress and once in the spring that has to be
+carried against it for the whole life of the machine.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Higher pairs</b> (Lesson 1) &mdash; the cam-follower contact removes one freedom, which is
+what lets one input position a follower arbitrarily.</li>
+<li><b>Acceleration and inertia force</b> (Lesson 3) &mdash; the follower's acceleration is what
+the spring and the contact stress have to carry.</li>
+<li><b>Simple harmonic motion</b> (Physics I) &mdash; the projection argument behind the harmonic
+law and its derivatives.</li>
+<li><b>Differentiation of a specified displacement</b> (Mathematics I) &mdash; every result here
+is \( s(\theta) \) differentiated once and twice.</li>
+<li><b>Transmission angle</b> (Lesson 1) &mdash; the pressure angle is the same idea for a
+higher pair.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Motion law</td><td>\( s(\theta) \)</td><td>The specification; everything else is its derivative.</td></tr>
+<tr><td>Harmonic peak accel.</td><td>\( \pi^2h\omega^2/2\beta^2 \)</td><td>Low-speed cams; smallest peak of the smooth laws.</td></tr>
+<tr><td>Cycloidal peak accel.</td><td>\( 2\pi h\omega^2/\beta^2 \)</td><td>High-speed cams; \( 4/\pi \) times the harmonic peak.</td></tr>
+<tr><td>Jerk</td><td>\( da/dt \)</td><td>Infinite for harmonic at the rise ends; finite for cycloidal.</td></tr>
+<tr><td>Pressure angle</td><td>\( \tan\phi=\frac{ds/d\theta}{R_p+s} \)</td><td>Keep \( \le 30^\circ \) on a translating follower.</td></tr>
+<tr><td>Prime circle</td><td>\( R_p \)</td><td>The pressure-angle control: bigger cam, smaller angle.</td></tr>
+<tr><td>Follower jump</td><td>\( F_{\text{spring}} \ge ma_{\max} \)</td><td>Spring sizing; loss of contact destroys cams.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Harmonic against cycloidal, same duty</b></p>
+<p><b>Problem.</b> A cam lifts a follower 20 mm over a 90&#176; rise and runs at 300 rev/min.
+Find the peak velocity and peak acceleration for simple harmonic motion and for cycloidal
+motion, and state the ratio between them.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \omega = 2\pi(300)/60 = 31.416 \) rad/s,
+\( \beta = 90^\circ = \pi/2 = 1.5708 \) rad, \( h = 0.020 \) m.</p>
+<p>(1) SHM: \( v_{\max} = \frac{\pi h\omega}{2\beta}
+= \frac{\pi(0.020)(31.416)}{2(1.5708)} = \frac{1.9739}{3.1416} = 0.628\ \mathrm{m/s} \).</p>
+<p>(2) SHM: \( a_{\max} = \frac{\pi^2h\omega^2}{2\beta^2}
+= \frac{9.8696(0.020)(987.0)}{2(2.4674)} = \frac{194.82}{4.9348}
+= 39.48\ \mathrm{m/s^2} \).</p>
+<p>(3) Cycloidal: \( v_{\max} = \frac{2h\omega}{\beta}
+= \frac{2(0.020)(31.416)}{1.5708} = 0.800\ \mathrm{m/s} \).</p>
+<p>(4) Cycloidal: \( a_{\max} = \frac{2\pi h\omega^2}{\beta^2}
+= \frac{6.2832(0.020)(987.0)}{2.4674} = \frac{124.02}{2.4674}
+= 50.26\ \mathrm{m/s^2} \).</p>
+<p><b>Answer:</b> SHM 0.628 m/s and 39.48 m/s&#178;; cycloidal 0.800 m/s and
+50.26 m/s&#178;; both cycloidal peaks are \( 4/\pi = 1.273 \) times the harmonic ones.
+<b>Sanity check:</b> the ratio is exactly \( 4/\pi \) in both velocity and acceleration, and it
+is independent of \( h \), \( \beta \) and \( \omega \) &mdash; the constants cancel. That is
+worth remembering as a design fact: choosing cycloidal over harmonic always costs 27%, never
+more, and buys finite jerk. For reference, uniform motion would give the lowest peak velocity of
+all, \( h\omega/\beta = 0.400 \) m/s, and infinite acceleration at both ends.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Pressure angle and the base circle</b></p>
+<p><b>Problem.</b> The cam above uses a radial translating roller follower on a prime circle of
+radius \( R_p = 40 \) mm, with harmonic motion. Find the pressure angle at mid-rise, where
+\( ds/d\theta \) is greatest and the lift is \( h/2 \). Then find what \( R_p = 25 \) mm and
+\( R_p = 60 \) mm would give, and say which designs are acceptable.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> For SHM the slope peaks at mid-rise:
+\( ds/d\theta = \frac{\pi h}{2\beta} = \frac{\pi(20)}{2(1.5708)} = 20.0\ \mathrm{mm/rad} \),
+and there \( s = h/2 = 10 \) mm.</p>
+<p>(1) \( R_p = 40 \): \( \tan\phi = \frac{20.0}{40+10} = 0.4000 \), so
+\( \phi = 21.80^\circ \) &#10003;.</p>
+<p>(2) \( R_p = 25 \): \( \tan\phi = \frac{20.0}{25+10} = 0.5714 \), so
+\( \phi = 29.74^\circ \) &mdash; on the 30&#176; limit.</p>
+<p>(3) \( R_p = 60 \): \( \tan\phi = \frac{20.0}{60+10} = 0.2857 \), so
+\( \phi = 15.95^\circ \) &#10003;.</p>
+<p><b>Answer:</b> 21.8&#176;, 29.7&#176; and 16.0&#176;; the 40 and 60 mm cams are comfortable and
+the 25 mm cam is at the limit with nothing in hand.
+<b>Sanity check:</b> the motion law appears only in the numerator and the cam size only in the
+denominator, so the two are independent controls. Switching this cam to cycloidal motion raises
+the slope to \( 2h/\beta = 25.5 \) mm/rad and, on the 40 mm prime circle, the pressure angle to
+27.0&#176; &mdash; still acceptable, but the 27% penalty has now appeared in a second place. The
+general fix for a high pressure angle is a bigger cam, which is also the general reason cams are
+larger than a first sketch suggests.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Spring sizing against follower jump (with a US customary check)</b></p>
+<p><b>Problem.</b> The follower assembly on the cycloidal cam weighs 1.2 kg. Find the spring
+force needed at the worst point to keep contact, apply a 30% margin, and convert the result to
+pounds-force. Then state what happens if the spring is 40 N instead.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The cam can only push, so the spring alone supplies the
+force during the negative-acceleration phase. The requirement is
+\( F \ge m\,a_{\max} = 1.2(50.26) = 60.3\ \mathrm{N} \).</p>
+<p>(2) With a 30% margin, \( F = 1.3(60.3) = 78.4\ \mathrm{N} \).</p>
+<p>(3) \( 78.4\ \mathrm{N} \times \frac{1\ \mathrm{lbf}}{4.448\ \mathrm{N}}
+= 17.6\ \mathrm{lbf} \).</p>
+<p>(4) With 40 N the spring can decelerate only
+\( a = 40/1.2 = 33.3\ \mathrm{m/s^2} \), well short of the 50.26 the cam demands. The follower
+leaves the cam surface, flies for part of the cycle, and lands on the profile with an impact the
+design never accounted for.</p>
+<p><b>Answer:</b> 78.4 N (17.6 lbf); a 40 N spring allows follower jump.
+<b>Sanity check:</b> the same follower on the harmonic law would need only
+\( 1.2(39.48) = 47.4 \) N before margin, so the 40 N spring would still be marginal but far
+closer. Two consequences worth naming: the jump condition scales as \( \omega^2 \), so a cam
+that is safe at 300 rev/min is not automatically safe at 400; and the spring is not a return
+device that can be sized by feel &mdash; it is the component holding a higher pair
+together.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Cycloidal motion is preferred over simple harmonic for high-speed cams because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>its peak acceleration is lower</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>its acceleration is continuous at the ends of the rise, so the jerk is finite</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it produces a smaller cam</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>its peak velocity is lower</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Cycloidal acceleration starts and ends at zero, so there is no step and the
+jerk stays finite. Harmonic acceleration steps from zero to its peak the instant the rise
+begins, which is infinite jerk and excites every mode of the follower train. Cycloidal is worse
+on both peaks &mdash; velocity and acceleration are each \( 4/\pi \) times the harmonic values
+&mdash; and needs a larger cam for the same pressure angle. It wins on the derivative that
+cannot be designed around.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>For the same lift, rise angle and speed, the cycloidal peak acceleration exceeds the
+harmonic by a factor of</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( \pi/4 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 4/\pi \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \pi/2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>2</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \frac{2\pi h\omega^2/\beta^2}{\pi^2h\omega^2/2\beta^2}
+= \frac{4}{\pi} = 1.273 \). Every parameter cancels, so the 27% penalty is a property of the two
+motion laws and nothing else &mdash; it does not shrink at low lift or long rise. The same
+factor governs the peak velocities.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Uniform (constant-velocity) follower motion is unusable in its pure form because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>its velocity is too high</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the acceleration is infinite at both ends of the rise</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it cannot be machined</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the pressure angle is always too large</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Constant velocity means the follower must reach full speed instantly at the
+start and stop instantly at the end: an acceleration step of infinite height, and therefore an
+infinite inertia force. In practice the transitions are blended with arcs or a smooth law, which
+is really a different motion law with a constant-velocity segment in the middle. Its peak
+velocity is actually the <em>lowest</em> of the three laws, at \( h\omega/\beta \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A cam has a pressure angle of 34&#176; at mid-rise. The most direct fix is to</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>increase the base (prime) circle radius</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>increase the spring force</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>reduce the cam speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>use a flat-faced follower and keep the same size</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \tan\phi = (ds/d\theta)/(R_p+s) \): the cam's size is the denominator, so
+enlarging the prime circle lowers the angle directly &mdash; the worked cam drops from
+29.7&#176; to 16.0&#176; going from a 25 to a 60 mm prime circle. Speed does not appear in the
+formula at all. A flat-faced follower does sidestep the pressure angle, but it changes the
+contact geometry and brings its own curvature constraint, so it is a redesign rather than the
+direct fix.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Follower jump occurs when</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the pressure angle exceeds 30&#176;</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the spring force is less than the follower's inertia force during deceleration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the cam runs below its design speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the follower is too stiff</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A cam can only push. Through the negative-acceleration phase the spring is
+the only thing decelerating the follower, so it must supply at least \( ma_{\max} \) &mdash;
+60.3 N for a 1.2 kg follower at 50.26 m/s&#178;. Below that the follower separates and returns
+as an impact. Because the requirement scales with \( \omega^2 \), jump appears when a machine is
+sped up, never when it is slowed down.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A cam is found worn in two narrow bands at the start and end of its rise, with the
+mid-rise region comparatively unmarked. This points to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>excessive spring force</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a motion law with an acceleration discontinuity there</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>a pressure angle problem at mid-rise</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>insufficient lubrication only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Wear follows contact force, and contact force follows acceleration. Bands at
+the transitions rather than at mid-rise say the load is spiking where the acceleration steps
+&mdash; the signature of a harmonic or uniform law run too fast, or of a manufacturing
+discontinuity at the blend. A pressure-angle problem or excessive spring force would show as
+heavier, broader wear where the pressure angle or the lift peaks, which is mid-rise.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The same cam and follower are run at 400 rev/min instead of 300. The spring force
+needed to prevent jump increases by a factor of about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1.33</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>1.78</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>2.37</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>unchanged</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Peak acceleration goes as \( \omega^2 \), so the factor is
+\( (400/300)^2 = 1.78 \). The 60.3 N requirement becomes 107 N, and the 78.4 N spring chosen with
+a 30% margin at 300 rev/min is now below the bare minimum. Speed increases on cam-driven
+machinery have to be checked against the jump condition before anything else.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The dwell is usually the reason a cam is chosen rather than a linkage because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>cams are cheaper</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a linkage cannot hold an output exactly stationary for a finite interval</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>cams have lower contact stress</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>linkages cannot be driven continuously</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A linkage output passes through zero velocity instantaneously at a toggle,
+but it does not stay there; holding a follower genuinely still for a specified arc of the cycle
+is what a cam does and a four-bar cannot. The price is the higher pair &mdash; line contact,
+high contact stress and wear &mdash; where the linkage enjoys surface contact at every
+joint.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the filling machine that got faster.</b> A rotary filling machine used
+a cam to raise each container against the filling head, hold it through the fill, and lower it.
+Throughput was raised by running the cam shaft from 300 to 400 rev/min, with no other change: the
+fill volume was corrected in software and the machine passed its trials. Within weeks the cam
+began showing bright bands and pitting at the two ends of the rise, and containers were
+occasionally being struck rather than lifted.</p>
+<p>Two things changed at once, and both scale as \( \omega^2 \). The peak follower acceleration
+on this cam's cycloidal rise, \( 2\pi h\omega^2/\beta^2 \), rose by
+\( (400/300)^2 = 1.78 \) &mdash; from 50.3 to 89.4 m/s&#178; &mdash; so the 1.2 kg follower
+assembly now needed \( 1.2 \times 89.4 = 107 \) N to stay on the cam, against a spring chosen
+to deliver about 78 N. The follower was leaving the profile during the deceleration and landing
+on it, which is precisely what produces localised bands rather than distributed wear, and what
+turns a controlled lift into an impact.</p>
+<p>Two practices follow. A cam machine's speed is limited by its <em>spring</em> at least as
+often as by its motor, and the jump check &mdash; \( F_{\text{spring}} \ge ma_{\max} \) with
+margin &mdash; must be repeated at the new speed before a rate increase is accepted. And wear
+patterns are evidence: bands at the transitions of a rise say the follower is losing and
+regaining contact there, which is a different failure from the even wear of an honestly loaded
+cam and calls for a different fix.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(492.1\\ \\mathrm{ft}\\)", "\\(45.72\\ \\mathrm{ft}\\)", "\\(4921\\ \\mathrm{ft}\\)", "\\(49.21\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(150 \\times 3.281 = 492.1\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(39.37\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3.658\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(393.7\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(3.937\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(12 \times 3.281 = 39.37\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.01379\\ \\mathrm{psi}\\)", "\\(290.1\\ \\mathrm{psi}\\)", "\\(2901\\ \\mathrm{psi}\\)", "\\(29.01\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(2 \\times 145 = 290.1\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1379\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(2.901e+04\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(290.1\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(20 \times 145 = 2901\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1802157W" target="_blank" rel="noopener">Design of Machinery — Robert L. Norton</a></li><li><a href="https://openlibrary.org/works/OL18699414W" target="_blank" rel="noopener">Theory of Machines and Mechanisms — Uicker, Pennock &amp; Shigley</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Theory of Machines</p>
+  <ul class="plain small"><li>NPTEL: Theory of Machines (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-acceleration-analysis.html">← 03 · Acceleration analysis</a><a href="index.html">All lessons · KDM 252</a><a href="05-gear-tooth-geometry.html">05 · Gear tooth geometry →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/metrology/index.html">MET 204 · Metrology &amp; Quality Control →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Keys, splines, and retaining hardware — Machine Design I — MechEd</title>
+<meta name="description" content="Key sizing by shear and bearing. Splines and interference fits as torque paths. Retaining rings and their groove-stress fine print.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/machine-design-1/6">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/06-keys-splines-and-retaining-hardware.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MDN 251 · Machine Design I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-design-methodology-and-factors-of-safety.html" class="ol" data-key="y2s2/machine-design-1/1"><span class="tick"></span><span>01 · Design methodology and factors of safety</span></a><a href="02-static-failure-design.html" class="ol" data-key="y2s2/machine-design-1/2"><span class="tick"></span><span>02 · Static failure design</span></a><a href="03-fatigue-design-i-the-s-n-method.html" class="ol" data-key="y2s2/machine-design-1/3"><span class="tick"></span><span>03 · Fatigue design I: the S–N method</span></a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" class="ol" data-key="y2s2/machine-design-1/4"><span class="tick"></span><span>04 · Fatigue design II: mean stress and cumulative damage</span></a><a href="05-shaft-design.html" class="ol" data-key="y2s2/machine-design-1/5"><span class="tick"></span><span>05 · Shaft design</span></a><a href="06-keys-splines-and-retaining-hardware.html" class="ol cur" data-key="y2s2/machine-design-1/6"><span class="tick"></span><span>06 · Keys, splines, and retaining hardware</span></a><a href="07-threaded-fasteners-and-bolted-joints.html" class="ol" data-key="y2s2/machine-design-1/7"><span class="tick"></span><span>07 · Threaded fasteners and bolted joints</span></a><a href="08-welded-joint-design.html" class="ol" data-key="y2s2/machine-design-1/8"><span class="tick"></span><span>08 · Welded joint design</span></a><a href="09-springs.html" class="ol" data-key="y2s2/machine-design-1/9"><span class="tick"></span><span>09 · Springs</span></a><a href="10-power-screws.html" class="ol" data-key="y2s2/machine-design-1/10"><span class="tick"></span><span>10 · Power screws</span></a><a href="11-design-project-a-driven-shaft-assembly.html" class="ol" data-key="y2s2/machine-design-1/11"><span class="tick"></span><span>11 · Design project: a driven shaft assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MDN 251</a> /
+<span>Lesson 06 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MDN 251 · Lesson 06 of 11 · Year 2 · Semester 2</p>
+  <h1>Keys, splines, and retaining hardware</h1>
+  <p class="sub">Key sizing by shear and bearing. Splines and interference fits as torque paths. Retaining rings and their groove-stress fine print.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/6">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.72 Elements of Mechanical Design (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/G0bShPqHn5c" title="Lecture -15 Design Of Keys and Splines" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lecture -15 Design Of Keys and Splines <span class="src">nptelhrd</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lecture -15 Design Of Keys and Splines</span><span class="c">NPTELHRD</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Size a key: which two failure checks apply?</li><li>When does an interference fit beat a key for torque?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A magnified cross-section of a key seated half in a shaft keyway and half in a hub keyway. A thick line along the shaft-hub interface marks the shear plane through the key, of area width times length. Two thick vertical segments on opposite key faces, one above and one below the interface, mark the bearing faces, each of area half the key height times the length. Arrows show the hub driving one way and the shaft resisting the other."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">A key has two failure planes, not one</text><rect x="60" y="62" width="440" height="108" fill="#eef1f5" stroke="#14181F" stroke-width="1.3"/><rect x="60" y="170" width="440" height="90" fill="#e2e7ee" stroke="#14181F" stroke-width="1.3"/><text x="96" y="104" fill="#5B6672" font-size="12">hub</text><text x="96" y="240" fill="#5B6672" font-size="12">shaft</text><rect x="240" y="130" width="80" height="80" fill="#ffffff" stroke="#14181F" stroke-width="1.6"/><text x="280" y="120" text-anchor="middle" fill="#14181F" font-size="11">key</text><path d="M240 170 L320 170" stroke="#9c2f2f" stroke-width="4"/><path d="M240 130 L240 170" stroke="#8A5A0F" stroke-width="4"/><path d="M320 170 L320 210" stroke="#8A5A0F" stroke-width="4"/><path d="M150 116 L215 116" stroke="#14181F" stroke-width="2"/><path d="M215 116 l-8 -4 l0 8 z" fill="#14181F"/><text x="150" y="110" fill="#14181F" font-size="11">hub drives</text><path d="M410 224 L345 224" stroke="#14181F" stroke-width="2"/><path d="M345 224 l8 -4 l0 8 z" fill="#14181F"/><text x="410" y="218" fill="#14181F" font-size="11">shaft resists</text><path d="M324 170 L358 170" stroke="#9c2f2f" stroke-width="1.2"/><text x="362" y="168" fill="#9c2f2f" font-size="11">shear plane — area w × L</text><path d="M240 146 L206 146" stroke="#8A5A0F" stroke-width="1.2"/><text x="202" y="150" text-anchor="end" fill="#8A5A0F" font-size="11">bearing faces</text><text x="202" y="166" text-anchor="end" fill="#8A5A0F" font-size="11">area (h/2) × L</text><text x="280" y="276" text-anchor="middle" fill="#14181F" font-size="11">bearing governs whenever h < w</text></svg><figcaption>The two checks a key must pass. Torque arrives through the hub,
+crosses the key, and leaves through the shaft — so the key is sheared along the interface and
+crushed on the two faces that do the pushing. Both are computed from the same tangential force;
+they differ only in the area resisting it.</figcaption></figure>
+<h3>01 · The torque path, and why it needs its own component</h3>
+<p>Lesson 5 sized a shaft to carry 98.8 N·m. It did not say how the torque gets onto the shaft.
+A pulley or impeller bore is a clearance fit — it must be, or the machine could not be
+assembled — and a clearance fit transmits nothing. Something has to bridge the gap, and the
+cheapest something is a rectangular bar dropped into matching slots in both parts. That is a key.</p>
+<p>The tangential force it carries follows from the torque and the shaft radius,
+\( F = T/(d/2) \). For the Lesson 5 shaft that is \( 98.8/0.020 = 4939\ \mathrm{N} \).
+Everything else in this lesson is that force divided by an area.</p>
+<h3>02 · Two areas, two checks</h3>
+<p>Look at the diagram and the two failure modes separate cleanly. The key can shear along the
+plane where shaft meets hub, resisted by the full plan area \( w \times L \). Or it can be
+crushed on the faces that transmit the push — and only half the key's height is available on
+each side, so the bearing area is \( (h/2) \times L \).</p>
+<div class="keybox"><span class="tag">Key relation — the two key checks</span>
+<p>\[ \tau = \frac{F}{wL} \le \frac{0.5S_y}{n}, \qquad
+\sigma_b = \frac{F}{(h/2)L} \le \frac{S_y}{n}, \qquad F=\frac{2T}{d} \]</p>
+<p>Dividing one capacity by the other, the allowables cancel — shear is permitted half of what
+bearing is, and bearing has half the area — leaving simply \( T_{bearing}/T_{shear} = h/w \).
+A square key (\( h=w \)) is equally strong in both. Any key flatter than it is wide is
+bearing-governed.</p></div>
+<p>That single ratio removes most of the guesswork. Standard keys for shafts in this size range
+are rectangular and flatter than they are wide — 12 × 8 mm on a 40 mm shaft — so bearing governs
+and the shear check is a formality. It is still worth running: a key that has been shortened to
+clear an obstruction, or a soft key in a hard hub, can move the answer.</p>
+<h3>03 · Keys are sized by the hub, not by the torque</h3>
+<p>Run the numbers for the Lesson 5 shaft and something surprising falls out. The bearing check
+needs only 7.3 mm of key length to carry the running torque at a factor of safety of two. The
+hub is 60 mm long, and the key is made the full length of the hub, as it always is. The fitted
+key is therefore about eight times stronger than the running duty requires.</p>
+<p>This is not waste. A key must survive the worst transient the drive can deliver — a
+direct-on-line motor start, a seized impeller, a pump ingesting a solid — and those can be many
+times running torque. Sizing a key to running load would be a design error. The real design
+decision is a different one: the key is deliberately the weakest link. At yield the fitted key
+lets go at about 1630 N·m while the shaft itself does not yield until around 2610 N·m, so an
+overload shears a two-dinar key rather than twisting a shaft that has to be pulled, machined and
+re-fitted. Keys are a mechanical fuse, and that is a feature.</p>
+<h3>04 · When a key is not enough</h3>
+<p>A key has one structural cost, and Lesson 5 already priced it: the keyway is a stress raiser
+in the shaft, typically \( K_f \ge 2 \) in bending, sitting exactly where the torque is
+applied. Three alternatives avoid it.</p>
+<p>A <em>spline</em> cuts many teeth around the shaft, so torque is shared and no single slot
+dominates the concentration. Do not over-credit it: misalignment means the teeth do not load
+equally, and standard practice assumes only about a quarter of them carry. Even so, ten teeth on
+the same seat as our key give roughly 1070 N·m against the key's 816 — around 30% more, with a
+far gentler concentration and a self-centring torque path.</p>
+<p>An <em>interference fit</em> transmits torque by friction alone, with no slot at all:
+\( T = \mu p \pi d^2 L/2 \). At a modest 40 MPa contact pressure the same 40 mm seat carries
+about 905 N·m. The catch is assembly — the joint needs heating, pressing, or hydraulic
+dilation — and it is not designed to be taken apart.</p>
+<p><em>Retaining rings</em> solve a different problem: they locate a component axially, and they
+carry thrust, not torque. Their fine print is the groove. The ring is rarely what fails; what
+fails is the groove wall shearing or the ring dishing out of a groove machined too shallow or
+with too generous a corner radius. Groove depth, width and corner radius are catalogue values,
+and they are structural dimensions, not conveniences.</p>
+<p><strong>Closing.</strong> Compute the tangential force once, then divide by two different
+areas. Expect bearing to govern, expect the hub length to set the key size, and expect the key to
+be the component you would rather lose.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Torque and tangential force</b> (Statics) — \( T = F r \), the conversion this whole
+lesson rests on.</li>
+<li><b>Direct shear and bearing stress</b> (Strength of Materials L1) — force over the area that
+resists it, with no bending involved.</li>
+<li><b>Yield strength and the factor of safety</b> (Lesson 1) — how an allowable stress is set.</li>
+<li><b>Maximum-shear-stress theory</b> (Lesson 2) — why the shear allowable is half the tensile
+allowable.</li>
+<li><b>Stress concentration</b> (Lessons 2 and 5) — the keyway's \( K_f \), which is the cost
+this lesson weighs alternatives against.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Tangential force on a key</td><td>\( F = 2T/d \)</td><td>First step of every key, spline or fit calculation.</td></tr>
+<tr><td>Key shear check</td><td>\( \tau = F/(wL) \)</td><td>Failure along the shaft–hub interface; area is the full key plan.</td></tr>
+<tr><td>Key bearing check</td><td>\( \sigma_b = F/\big((h/2)L\big) \)</td><td>Crushing on the driving faces; only half the key height bears.</td></tr>
+<tr><td>Governing-mode ratio</td><td>\( T_{bearing}/T_{shear} = h/w \)</td><td>Deciding which check governs before computing either.</td></tr>
+<tr><td>Interference-fit torque</td><td>\( T = \mu p \pi d^2 L/2 \)</td><td>Friction-only torque path with no keyway cut in the shaft.</td></tr>
+<tr><td>Spline torque</td><td>\( T \approx \sigma_b\, h L (0.25N) r_m \)</td><td>Multi-tooth torque path; the 0.25 allows for unequal tooth loading.</td></tr>
+<tr><td>Shaft torsional yield</td><td>\( T_y = 0.5 S_y \pi d^3/16 \)</td><td>Confirming the key gives way before the shaft does.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Torque capacity of a fitted key</b></p>
+<p><b>Problem.</b> A 12 × 8 mm key, 60 mm long, drives a hub on the 40 mm shaft of Lesson 5. The key steel has \( S_y = 340\ \mathrm{MPa} \) and the design factor is \( n = 2 \). Take the shear allowable as \( 0.5S_y/n \) and the bearing allowable as \( S_y/n \). <b>Find:</b> the torque capacity in each mode, which governs, and how it compares with the 98.8 N·m running torque.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Allowables: \( \tau_{all}=0.5(340)/2=85 \), \( \sigma_{all}=340/2=170\ \mathrm{MPa} \).
+(2) Shear: \( F = wL\tau_{all} = (0.012)(0.060)(85\times10^6) = 61{,}200\ \mathrm{N} \), so \( T = F d/2 = 61{,}200(0.020) = 1224\ \mathrm{N\,m} \).
+(3) Bearing: \( F = (h/2)L\sigma_{all} = (0.004)(0.060)(170\times10^6) = 40{,}800\ \mathrm{N} \), so \( T = 816\ \mathrm{N\,m} \).
+(4) Bearing governs at 816 N·m, which is \( 816/98.8 = 8.3 \) times the running torque.</p>
+<p><b>Answer:</b> 1224 N·m in shear, 816 N·m in bearing; bearing governs at 816 N·m, 8.3× the running duty.
+<b>Sanity check:</b> the ratio of the two capacities is \( 816/1224 = 0.667 \), which is exactly \( h/w = 8/12 \) as the general result predicts — the allowables and the length cancel. That agreement is worth checking on every key: if the computed ratio is not \( h/w \), an area or an allowable has been entered wrongly.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>How much key the torque actually needs</b></p>
+<p><b>Problem.</b> Same key section and material, same 40 mm shaft and 98.8 N·m running torque, same \( n = 2 \). <b>Find:</b> the minimum key length required by each check, and comment on the 60 mm length actually fitted.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F = 2T/d = 2(98.8)/0.040 = 4939\ \mathrm{N} \).
+(2) Shear: \( L = F/(w\tau_{all}) = 4939/\big((0.012)(85\times10^6)\big) = 4.84\ \mathrm{mm} \).
+(3) Bearing: \( L = F/\big((h/2)\sigma_{all}\big) = 4939/\big((0.004)(170\times10^6)\big) = 7.26\ \mathrm{mm} \).
+(4) Bearing governs; 7.3 mm is required and 60 mm is fitted, a factor of 8.3.</p>
+<p><b>Answer:</b> 4.8 mm by shear, 7.3 mm by bearing; the fitted 60 mm is 8.3× the requirement.
+<b>Sanity check:</b> this is the same 8.3 factor as the previous problem, as it must be — capacity is linear in length, so the ratio of lengths and the ratio of torques are the same number computed two ways. The engineering point is that the key was never sized by this calculation: the hub length set it, and the calculation only confirms the transient capacity that surplus provides.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Which one is the fuse?</b></p>
+<p><b>Problem.</b> Compare the ultimate torque paths at \( n = 1 \). The 12 × 8 × 60 mm key has \( S_y = 340\ \mathrm{MPa} \); the 40 mm shaft has \( S_y = 415\ \mathrm{MPa} \), and yields in torsion when \( \tau = 0.5S_y \), with polar section modulus \( \pi d^3/16 \). <b>Find:</b> the torque at which each yields, and say which gives way first.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Key, bearing mode at \( n=1 \): \( F = (0.004)(0.060)(340\times10^6) = 81{,}600\ \mathrm{N} \), so \( T = 81{,}600(0.020) = 1632\ \mathrm{N\,m} \).
+(2) Shaft: \( \pi d^3/16 = \pi(0.040)^3/16 = 1.2566\times10^{-5}\ \mathrm{m^3} \), and \( \tau_y = 0.5(415) = 207.5\ \mathrm{MPa} \), so \( T = (207.5\times10^6)(1.2566\times10^{-5}) = 2608\ \mathrm{N\,m} \).
+(3) Ratio \( 1632/2608 = 0.63 \).</p>
+<p><b>Answer:</b> key at 1632 N·m, shaft at 2608 N·m — the key yields first, at 63% of the shaft's torque.
+<b>Sanity check:</b> a 37% margin between fuse and protected part is comfortable but not extravagant, which is about right — too small and normal scatter lets the shaft go first, too large and the key shears during ordinary transients. Note that hardening the key to \( S_y = 560\ \mathrm{MPa} \) would put its capacity at 2688 N·m, above the shaft's, and silently transfer every future overload into the shaft.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>For a key of width \( w \) and height \( h \), the ratio of bearing capacity to shear capacity is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( w/h \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( h/w \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( h/(2w) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>always 1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Bearing capacity uses area \( (h/2)L \) with allowable \( S_y/n \); shear uses \( wL \) with allowable \( 0.5S_y/n \). The factor of two in the area and the factor of two in the allowable cancel exactly, leaving \( h/w \). The consequence is clean: a square key is balanced, and any key flatter than it is wide — which is the standard proportion — is bearing-governed. The \( h/(2w) \) answer forgets that the shear allowable is itself halved.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A 12 × 8 mm key 60 mm long carries 816 N·m while the running torque is 98.8 N·m. This eightfold surplus is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a design error — the key should be shortened</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>intended: the key length is set by the hub, and the surplus covers start and stall transients while keeping the key as the weakest link</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>evidence the shaft is undersized</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>irrelevant, since keys are not load-bearing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Keys are made the length of the hub as a matter of course, so the strength that results is an outcome rather than a target. The surplus is doing real work: a direct-on-line start or a jam can deliver several times running torque, and the key must survive those. It is also deliberately capped — at yield the key lets go before the shaft does, so an overload costs a key rather than a shaft. Shortening the key to the 7.3 mm the running torque needs would remove the transient capacity entirely.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The main structural argument for a spline over a single key is that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>splines are always cheaper to manufacture</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>torque is shared over many teeth and no single deep slot dominates the shaft's stress concentration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>splines need no lubrication</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>splines eliminate the tangential force entirely</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A keyway is a single deep notch at the point of torque transfer, typically carrying \( K_f \ge 2 \) in bending. Spreading the same torque over many shallow teeth both raises capacity and, more importantly, gentles the concentration, while centring the torque path. Splines are generally <em>more</em> expensive to cut, not less, which is why keys remain the default. The tangential force is set by torque and radius and does not go anywhere.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Standard practice assumes only about 25% of a spline's teeth carry load because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the other teeth are undersized by design</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>manufacturing tolerance and misalignment prevent all teeth from sharing equally</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>splines are loaded in only one direction</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the outer teeth are outside the torque path</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Perfect load sharing would need every tooth flank on both parts to contact simultaneously, which no achievable tolerance delivers; small pitch and alignment errors concentrate the load on a minority of teeth. The 25% figure is a design allowance for that reality, not a statement about the teeth themselves — all of them are the same size and all lie in the torque path. This is why a spline's advantage over a key is a useful 30% or so, not the several-fold gain a naive tooth count would suggest.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>An interference fit transmits torque by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>shear in a bridging component</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>friction at the contact pressure between shaft and hub</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>bearing on a machined flat</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>elastic bending of the hub</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>There is no bridging component at all — that is the point. Pressing an oversized shaft into an undersized bore develops a contact pressure \( p \), and friction over the contact area carries the torque: \( T = \mu p \pi d^2 L/2 \). The shaft is left unslotted, so the keyway concentration disappears. The price is assembly: the joint must be heated, pressed or hydraulically dilated, and it is not intended to come apart again.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A retaining ring in a shaft groove is loaded primarily in</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>torsion</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>axial thrust</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>bending about the shaft axis</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>shear from the key</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Retaining rings locate components axially and react the thrust that tries to push them off — they have no role in the torque path, which is the key's or the spline's job. The failure to watch for is not usually the ring: it is the groove, whose wall can shear or whose too-shallow depth or over-generous corner radius lets the ring dish and climb out under load. Groove depth, width and corner radius are catalogue values and should be treated as structural dimensions.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A drive shears its key twice a year on jams. A team replaces it with a much harder key and the shearing stops. The most likely consequence is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the problem is solved at no cost</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the next overload damages the shaft or hub instead, at far greater cost</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the running torque increases</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the keyway stress concentration disappears</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Hardening the key does not remove the overload; it moves the weakest link. Once the key's capacity exceeds the shaft's torsional yield, the next jam twists the shaft through its keyway — a repair measured in days against the key's hour. The correct responses are to address why the drive jams or to fit a torque limiter designed for the duty. Note the general habit this teaches: changing any component's material is a decision about which component fails first, and that question is worth asking explicitly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A 40 mm shaft transmits 98.8 N·m. The tangential force the key must carry is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 2470\ \mathrm{N} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 4939\ \mathrm{N} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 3.95\ \mathrm{N} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 9878\ \mathrm{N} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The force acts at the shaft surface, one radius from the axis, so \( F = T/(d/2) = 2T/d = 2(98.8)/0.040 = 4939\ \mathrm{N} \). The 2470 N answer divides by the diameter instead of the radius — the single most common slip in this calculation, and it halves every stress that follows. The 9878 N figure multiplies by the diameter's reciprocal twice over, and 3.95 N confuses a torque with a force outright.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the upgrade that removed the fuse.</b> A conveyor drive shears its drive
+key roughly twice a year, always on a jam. Each event costs two hours: back the drive off, drift
+out the remains of the key, fit a new one, restart. A maintenance team decides to end the
+nuisance by fitting keys cut from a much harder alloy steel. The shearing stops immediately. Nine
+months later the drive shaft twists through its keyway during a jam, and the repair takes eleven
+days — shaft removal, a replacement machined to order, re-alignment of the whole drive train. The
+original key was not a defect; it was the cheapest component in the torque path, deliberately
+sized to yield around 1630 N·m against a shaft that holds to roughly 2610 N·m, so that an
+overload destroyed something a fitter could replace in an hour. Hardening the key moved the
+weakest link into the shaft. The correct response to twice-yearly key failures was to ask why the
+conveyor jams twice a year, or to fit a proper torque limiter — not to strengthen the fuse. Any
+change to a component's material is a change to which component fails first, and that question
+should be asked before the order is placed.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(98.43\\ \\mathrm{ft}\\)", "\\(0.9144\\ \\mathrm{ft}\\)", "\\(9.843\\ \\mathrm{ft}\\)", "\\(0.9843\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(3 \\times 3.281 = 9.843\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1476\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(13.72\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(147.6\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(14.76\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(45 \times 3.281 = 147.6\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.102\\ \\mathrm{lb}\\)", "\\(2.268\\ \\mathrm{lb}\\)", "\\(110.2\\ \\mathrm{lb}\\)", "\\(11.02\\ \\mathrm{lb}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(5 \\times 2.205 = 11.02\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(13.23\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(27.22\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1323\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(132.3\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(60 \times 2.205 = 132.3\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1923658W" target="_blank" rel="noopener">Shigley's Mechanical Engineering Design — Budynas &amp; Nisbett</a></li><li>Machine Design: An Integrated Approach — Robert L. Norton</li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="05-shaft-design.html">← 05 · Shaft design</a><a href="index.html">كل الدروس · MDN 251</a><a href="07-threaded-fasteners-and-bolted-joints.html">07 · Threaded fasteners and bolted joints →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Matrices and linear systems — Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and ">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/math-3/9">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/math-3/09-matrices-and-linear-systems.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-first-order-equations-revisited-separable-and-linear.html" class="ol" data-key="y2s1/math-3/1"><span class="tick"></span><span>01 · First-order equations revisited: separable and linear</span></a><a href="02-modeling-with-first-order-equations.html" class="ol" data-key="y2s1/math-3/2"><span class="tick"></span><span>02 · Modeling with first-order equations</span></a><a href="03-second-order-equations-the-homogeneous-story.html" class="ol" data-key="y2s1/math-3/3"><span class="tick"></span><span>03 · Second-order equations: the homogeneous story</span></a><a href="04-nonhomogeneous-equations-and-forced-response.html" class="ol" data-key="y2s1/math-3/4"><span class="tick"></span><span>04 · Nonhomogeneous equations and forced response</span></a><a href="05-free-and-forced-oscillations.html" class="ol" data-key="y2s1/math-3/5"><span class="tick"></span><span>05 · Free and forced oscillations</span></a><a href="06-laplace-transforms-i.html" class="ol" data-key="y2s1/math-3/6"><span class="tick"></span><span>06 · Laplace transforms I</span></a><a href="07-laplace-transforms-ii-solving-problems.html" class="ol" data-key="y2s1/math-3/7"><span class="tick"></span><span>07 · Laplace transforms II: solving problems</span></a><a href="08-systems-of-equations-the-matrix-view.html" class="ol" data-key="y2s1/math-3/8"><span class="tick"></span><span>08 · Systems of equations: the matrix view</span></a><a href="09-matrices-and-linear-systems.html" class="ol cur" data-key="y2s1/math-3/9"><span class="tick"></span><span>09 · Matrices and linear systems</span></a><a href="10-eigenvalues-and-eigenvectors.html" class="ol" data-key="y2s1/math-3/10"><span class="tick"></span><span>10 · Eigenvalues and eigenvectors</span></a><a href="11-numerical-solution-of-differential-equations.html" class="ol" data-key="y2s1/math-3/11"><span class="tick"></span><span>11 · Numerical solution of differential equations</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 207</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 207 · Lesson 09 of 11 · Year 2 · Semester 1</p>
+  <h1>Matrices and linear systems</h1>
+  <p class="sub">Gaussian elimination, rank, and solvability; determinants at working strength. The numerical caution: ill-conditioned systems amplify data noise, and engineering data is never clean. Where matrix solving hides inside every simulation tool.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.03 Differential Equations</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/eYSASx8_nyg" title="Gauss Jordan Elimination &amp; Reduced Row Echelon Form" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Gauss Jordan Elimination &amp; Reduced Row Echelon Form <span class="src">The Organic Chemistry Tutor</span></figcaption></figure></div><div class="vh-bar"><span class="n">Gauss Jordan Elimination &amp; Reduced Row Echelon Form</span><span class="c">THE ORGANIC CHEMISTRY TUTOR</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Solve a 3×3 system by elimination, tracking each pivot.</li><li>What does a near-zero determinant warn you about the answer?</li></ul></div><div class="measure">
+<h3>01 · Elimination: the universal method</h3>
+<p>Cramer's rule and the inverse are elegant for \( 2\times2 \) systems but grow impossibly expensive with size. The method that scales is <b>Gaussian elimination</b>: use row operations to carve the system into an upper-triangular staircase, then read the unknowns off by back-substitution. Three operations are legal because none changes the solution set — swap two rows, scale a row by a nonzero constant, or add a multiple of one row to another. The strategy is to use the first equation to remove the first unknown from all the others, then the second to remove the second unknown from those below it, and so on, until the last equation involves a single unknown. Every computational linear-algebra library does exactly this.</p>
+<h3>02 · A 3×3 system, worked</h3>
+<p>Solve \( x+y+z=6,\ 2x+y-z=1,\ x-y+2z=5 \). Subtract \(2\times\)row 1 from row 2: \( -y-3z=-11 \). Subtract row 1 from row 3: \( -2y+z=-1 \). Now eliminate \(y\): subtract \(2\times\)the new row 2 from the new row 3, giving \( 7z=21 \), so \( z=3 \). Back-substitute into \( -y-3z=-11 \): \( -y-9=-11\Rightarrow y=2 \). Finally row 1: \( x+2+3=6\Rightarrow x=1 \). The solution is \( (x,y,z)=(1,2,3) \), and substituting back into all three originals confirms \( 6,1,5 \) exactly. The staircase turned a coupled system into three one-line reads.</p>
+<h3>03 · Pivots, rank, and when there is no unique answer</h3>
+<p>The nonzero leading entries the method produces are the <b>pivots</b>, and their count is the <b>rank</b> of the matrix — the number of genuinely independent equations. A \( 3\times3 \) system with three pivots has a unique solution. Fewer pivots means a row has collapsed to \( 0=0 \) (a redundant equation, giving infinitely many solutions) or to \( 0=c \) with \( c\neq0 \) (a contradiction, giving none). The matrix \( \begin{pmatrix}1&2\\2&4\end{pmatrix} \), with \( \det=0 \), has rank 1: elimination turns its second row into zeros, exposing that the two equations were one. Rank, read straight off the pivots, is how elimination reports the solvability that the determinant only summarised.</p>
+<h3>04 · The working method</h3>
+<p>The procedure is fixed and mechanical: (1) form the augmented matrix \( [A\,|\,\mathbf{b}] \); (2) sweep top-to-bottom, using each pivot to zero the entries below it, swapping rows if a pivot is zero; (3) once triangular, back-substitute bottom-to-top. Two habits guard accuracy — pick the largest available pivot at each step so you never divide by a tiny number (this is <em>partial pivoting</em>, the reason the method is numerically stable), and count pivots at the end to declare the rank before trusting a "unique solution." Elimination is not one trick among many; it is the single algorithm behind solving systems, inverting matrices, and computing determinants at any size.</p>
+<h3>05 · Elimination as the engine underneath</h3>
+<p>It is worth seeing how much rests on this one algorithm. The determinant of any square matrix is the product of the pivots elimination produces (with a sign for row swaps); a matrix inverse is found by running elimination on \( [A\,|\,I] \) until the left block becomes \(I\); and the rank that decides solvability is just the pivot count. So the three separate-looking operations of Lesson 8 — solve, invert, take a determinant — are one procedure seen from three angles. This is also why numerical libraries implement elimination once, carefully, and build everything else on it: get the sweep-and-back-substitute loop right, with partial pivoting for stability, and the whole of computational linear algebra follows.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Matrix form \( A\mathbf{x}=\mathbf{b} \)</b> — the object being reduced (Lesson 8).</li><li><b>Determinants</b> — the existence test elimination refines into rank.</li><li><b>Back-substitution</b> — solving a triangular system upward.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Row operations</td><td>swap · scale · add-multiple</td><td>Simplify a system without changing its solution.</td></tr>
+<tr><td>Upper triangular</td><td>zeros below the diagonal</td><td>Target form for back-substitution.</td></tr>
+<tr><td>Pivot</td><td>leading nonzero in a row</td><td>Used to eliminate entries below it.</td></tr>
+<tr><td>Rank</td><td>number of pivots</td><td>Count of independent equations; solvability.</td></tr>
+<tr><td>Partial pivoting</td><td>largest \(|\)pivot\(|\) first</td><td>Keeps the elimination numerically stable.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>3×3 by elimination</b></p><p><b>Problem.</b> Solve \( x+y+z=6,\ 2x+y-z=1,\ x-y+2z=5 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> R2−2R1: \( -y-3z=-11 \). R3−R1: \( -2y+z=-1 \). Eliminate \(y\): (R3′)−2(R2′): \( 7z=21\Rightarrow z=3 \). Back-substitute: \( -y-9=-11\Rightarrow y=2 \); then \( x+2+3=6\Rightarrow x=1 \). So \( (x,y,z)=(1,2,3) \), which checks in all three equations (6, 1, 5).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Rank of a matrix</b></p><p><b>Problem.</b> Find the rank of \( \begin{pmatrix}1&2\\2&4\end{pmatrix} \) by elimination.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> R2−2R1 gives \( (0,0) \). One nonzero (pivot) row remains, so the rank is \( 1 \). The rows were dependent — the second is twice the first — matching \( \det=0 \). A rank-deficient \( 2\times2 \) system has no unique solution.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Back-substitution</b></p><p><b>Problem.</b> A system has been reduced to \( x+y+z=6,\ -y-3z=-11,\ 7z=21 \). Recover \( x,y,z \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> From the last row \( z=21/7=3 \). Substitute into the middle: \( -y-3(3)=-11\Rightarrow -y=-2\Rightarrow y=2 \). Substitute both into the first: \( x+2+3=6\Rightarrow x=1 \). Back-substitution reads the answer off the triangle from the bottom up.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Which is NOT a legal elementary row operation?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>squaring every entry of a row</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>swapping two rows</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>scaling a row by a nonzero constant</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>adding a multiple of one row to another</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Only swap, scale (nonzero), and add-a-multiple preserve the solution set. Squaring entries does not.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The number of pivots produced by elimination is the matrix's:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>rank</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>determinant</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>trace</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>order</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Pivots count the independent rows — that count is the rank.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>If elimination produces a row \( 0=5 \), the system has:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>no solution</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>a unique solution</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>infinitely many solutions</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>exactly two solutions</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 0=5 \) is a contradiction — the equations are inconsistent, so no solution exists.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The solution of \( x+y+z=6,\ 2x+y-z=1,\ x-y+2z=5 \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( (1,2,3) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( (3,2,1) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( (2,2,2) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( (1,1,4) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Elimination gives \( z=3,\ y=2,\ x=1 \). Substitution confirms \( 6,1,5 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Partial pivoting (choosing the largest available pivot) is used to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>improve numerical stability</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>change the solution</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>reduce the rank</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>make the matrix symmetric</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Dividing by the largest available entry avoids amplifying round-off from tiny pivots — it keeps elimination stable.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(82.74\\ \\mathrm{psi}\\)", "\\(1.74\\ \\mathrm{psi}\\)", "\\(17.4\\ \\mathrm{psi}\\)", "\\(0.174\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(12 \\times 0.145 = 1.74\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1034\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(21.76\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(217.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.176\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(150 \times 0.145 = 21.76\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(268.2\\ \\mathrm{hp}\\)", "\\(14.91\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(20 \\times 1.341 = 26.82\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.491\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(2.682\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(2 \times 1.341 = 2.682\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3270760W" target="_blank" rel="noopener">Elementary Differential Equations and Boundary Value Problems — Boyce &amp; DiPrima</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-systems-of-equations-the-matrix-view.html">← 08 · Systems of equations: the matrix view</a><a href="index.html">All lessons · MTH 207</a><a href="10-eigenvalues-and-eigenvectors.html">10 · Eigenvalues and eigenvectors →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/strength/index.html">SOM 201 · Strength of Materials →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

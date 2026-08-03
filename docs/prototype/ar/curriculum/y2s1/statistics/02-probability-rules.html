@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Probability rules — Engineering Statistics — MechEd</title>
+<meta name="description" content="Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test res">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/statistics/2">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/statistics/02-probability-rules.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STS 206 · Engineering Statistics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-describing-data.html" class="ol" data-key="y2s1/statistics/1"><span class="tick"></span><span>01 · Describing data</span></a><a href="02-probability-rules.html" class="ol cur" data-key="y2s1/statistics/2"><span class="tick"></span><span>02 · Probability rules</span></a><a href="03-discrete-distributions.html" class="ol" data-key="y2s1/statistics/3"><span class="tick"></span><span>03 · Discrete distributions</span></a><a href="04-continuous-distributions.html" class="ol" data-key="y2s1/statistics/4"><span class="tick"></span><span>04 · Continuous distributions</span></a><a href="05-sampling-distributions-and-the-clt.html" class="ol" data-key="y2s1/statistics/5"><span class="tick"></span><span>05 · Sampling distributions and the CLT</span></a><a href="06-estimation-and-confidence-intervals.html" class="ol" data-key="y2s1/statistics/6"><span class="tick"></span><span>06 · Estimation and confidence intervals</span></a><a href="07-hypothesis-testing.html" class="ol" data-key="y2s1/statistics/7"><span class="tick"></span><span>07 · Hypothesis testing</span></a><a href="08-regression.html" class="ol" data-key="y2s1/statistics/8"><span class="tick"></span><span>08 · Regression</span></a><a href="09-design-of-experiments-first-contact.html" class="ol" data-key="y2s1/statistics/9"><span class="tick"></span><span>09 · Design of experiments first contact</span></a><a href="10-reliability-statistics-preview.html" class="ol" data-key="y2s1/statistics/10"><span class="tick"></span><span>10 · Reliability statistics preview</span></a><a href="11-statistical-malpractice-and-honest-reporting.html" class="ol" data-key="y2s1/statistics/11"><span class="tick"></span><span>11 · Statistical malpractice and honest reporting</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STS 206</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STS 206 · Lesson 02 of 11 · Year 2 · Semester 1</p>
+  <h1>Probability rules</h1>
+  <p class="sub">Sample spaces, independence, and conditional probability. Bayes' theorem worked on an inspection-alarm example. The base-rate trap that fools test results everywhere.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.05 Introduction to Probability an</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/statistics/2">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/_IgyaD7vOOA" title="Conditional Probabilities, Clearly Explained!!!" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Conditional Probabilities, Clearly Explained!!! <span class="src">StatQuest with Josh Starmer</span></figcaption></figure></div><div class="vh-bar"><span class="n">Conditional Probabilities, Clearly Explained!!!</span><span class="c">STATQUEST WITH JOSH STARMER</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Bayes in one line: why do false alarms dominate rare-event detection?</li><li>Independence: what does assuming it wrongly do to risk estimates?</li></ul></div><div class="measure">
+<h3>01 · Probability as the language of chance</h3>
+<p>Inference runs on probability, so the rules must be exact. A <b>probability</b> is a number between 0 and 1 measuring how likely an event is; for equally likely outcomes it is favourable outcomes over total outcomes. A fair die shows an even number with probability \( 3/6=0.5 \). Two ideas organise everything else: how probabilities <b>combine</b> across events (this lesson), and how they build into <b>distributions</b> (Lessons 3–4). Getting the combination rules right is what separates a sound reliability estimate from a plausible-sounding wrong one.</p>
+<h3>02 · The addition and multiplication rules</h3>
+<p>The <b>addition rule</b> gives the probability that A <em>or</em> B occurs: \( P(A\cup B)=P(A)+P(B)-P(A\cap B) \), subtracting the overlap so it is not counted twice. For \( P(A)=0.5,\ P(B)=0.4,\ P(A\cap B)=0.2 \), \( P(A\cup B)=0.5+0.4-0.2=0.7 \). The <b>multiplication rule</b> gives the probability that A <em>and</em> B both occur; when the events are <b>independent</b> — one does not affect the other — it is simply the product \( P(A\cap B)=P(A)P(B) \). Two fair coins both landing heads is \( 0.5\times0.5=0.25 \). Independence is an assumption to be checked, not assumed: correlated failures are exactly where naive multiplication underestimates risk.</p>
+<h3>03 · Conditional probability and Bayes</h3>
+<p>When events are not independent, the <b>conditional probability</b> of A given B is \( P(A\mid B)=\dfrac{P(A\cap B)}{P(B)} \) — the chance of A restricted to the world where B has happened. With \( P(A\cap B)=0.2 \) and \( P(B)=0.4 \), \( P(A\mid B)=0.2/0.4=0.5 \). Reversing the condition is the job of <b>Bayes' theorem</b>, \( P(A\mid B)=\dfrac{P(B\mid A)P(A)}{P(B)} \), which updates a prior belief with new evidence. Bayes is the reason a positive result on a rare-fault test can still, correctly, mean the fault is probably absent — the base rate dominates — and it underpins modern diagnostics and reliability updating.</p>
+<h3>04 · The probability working method</h3>
+<p>Translate carefully: "or" invokes the addition rule (watch the overlap), "and" the multiplication rule (check independence first), "given that" a conditional. Draw the sample space or a tree for anything with more than two events, because intuition fails fast — the birthday and false-positive paradoxes are famous precisely because the correct rules override the gut. Keep every probability in \([0,1]\) and confirm a partition sums to 1 as an arithmetic check. These rules are the grammar of the distributions in the next lessons and of every reliability, quality, and risk calculation the curriculum returns to, so precision here pays compound interest. Two structural ideas make large problems tractable. <b>Complementary</b> events — \( P(\text{not }A)=1-P(A) \) — often turn a hard "at least one" calculation into an easy "none": the probability that at least one of several independent components fails is one minus the probability that all survive, the backbone of system-reliability analysis. And the <b>law of total probability</b> assembles an overall chance from mutually exclusive cases, weighting each conditional by how often its case occurs. Both are just the addition and multiplication rules applied with care, and both recur constantly once systems have more than a couple of parts.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Fractions and ratios</b> — probabilities as proportions.</li><li><b>Sets</b> — union, intersection, complement.</li><li><b>Counting outcomes</b> — for equally likely cases.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Addition rule</td><td>\( P(A\cup B)=P(A)+P(B)-P(A\cap B) \)</td><td>Probability of A or B.</td></tr>
+<tr><td>Multiplication (indep.)</td><td>\( P(A\cap B)=P(A)P(B) \)</td><td>Both occur, independent events.</td></tr>
+<tr><td>Conditional</td><td>\( P(A\mid B)=\frac{P(A\cap B)}{P(B)} \)</td><td>A given B has occurred.</td></tr>
+<tr><td>Independence</td><td>\( P(A\mid B)=P(A) \)</td><td>B tells nothing about A.</td></tr>
+<tr><td>Bayes' theorem</td><td>\( P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)} \)</td><td>Update a prior with evidence.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Addition rule</b></p><p><b>Problem.</b> With \( P(A)=0.5 \), \( P(B)=0.4 \), \( P(A\cap B)=0.2 \), find \( P(A\cup B) \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( P(A\cup B)=0.5+0.4-0.2=0.7 \). <b>Answer:</b> 0.7. <b>Check:</b> subtract the overlap once.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Independent events</b></p><p><b>Problem.</b> Two fair coins are tossed. Find the probability of two heads.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Independent, so \( P=0.5\times0.5=0.25 \). <b>Answer:</b> 0.25.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Conditional probability</b></p><p><b>Problem.</b> With \( P(A\cap B)=0.2 \) and \( P(B)=0.4 \), find \( P(A\mid B) \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( P(A\mid B)=\frac{P(A\cap B)}{P(B)}=\frac{0.2}{0.4}=0.5 \). <b>Answer:</b> 0.5.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The addition rule subtracts \( P(A\cap B) \) because:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The overlap would be double-counted</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It is always zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>B causes A</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Events are independent</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A and B share outcomes; counting both alone counts the overlap twice.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>For independent events, \( P(A\cap B) \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( P(A)P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( P(A)+P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( P(A)/P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( P(A)-P(B) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Multiplication rule for independence.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Conditional probability \( P(A\mid B) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( P(A\cap B)/P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( P(A)P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( P(A)+P(B) \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( P(B)/P(A) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The joint probability restricted to the world where B occurred.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Assuming independence when failures are actually correlated tends to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Underestimate combined risk</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Overestimate it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Have no effect</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Make probabilities exceed 1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Correlated failures co-occur more than the product predicts, so risk is understated.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Bayes' theorem is used to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Update a prior with new evidence</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Add probabilities</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Compute a mean</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Sort data</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It reverses the conditioning to revise belief given data.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(134.9\\ \\mathrm{lbf}\\)", "\\(266.9\\ \\mathrm{lbf}\\)", "\\(13.49\\ \\mathrm{lbf}\\)", "\\(1.349\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(60 \\times 0.2248 = 13.49\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(11.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(22.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(1.124\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.1124\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(5 \times 0.2248 = 1.124\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.45\\ \\mathrm{psi}\\)", "\\(689.5\\ \\mathrm{psi}\\)", "\\(145\\ \\mathrm{psi}\\)", "\\(14.5\\ \\mathrm{psi}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(100 \\times 0.145 = 14.5\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.116\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(55.16\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(11.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.16\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(8 \times 0.145 = 1.16\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  <div class="lib-alts"><h4>فيديوهات بديلة</h4><ul class="plain small"><li><a href="https://www.youtube.com/watch?v=84Nkyd8A0Qw" target="_blank" rel="noopener">Common Discrete Distributions: Bernoulli, Binomial, Poisson</a> <span class="src">BIOS 6611</span></li></ul></div>
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-describing-data.html">← 01 · Describing data</a><a href="index.html">كل الدروس · STS 206</a><a href="03-discrete-distributions.html">03 · Discrete distributions →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

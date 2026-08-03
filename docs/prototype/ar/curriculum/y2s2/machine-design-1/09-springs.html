@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Springs — Machine Design I — MechEd</title>
+<meta name="description" content="Helical spring stress and rate derived; solid height and buckling checks. Fatigue of springs under fluctuating load. Valve and relief springs as worki">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/machine-design-1/9">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/09-springs.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MDN 251 · Machine Design I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-design-methodology-and-factors-of-safety.html" class="ol" data-key="y2s2/machine-design-1/1"><span class="tick"></span><span>01 · Design methodology and factors of safety</span></a><a href="02-static-failure-design.html" class="ol" data-key="y2s2/machine-design-1/2"><span class="tick"></span><span>02 · Static failure design</span></a><a href="03-fatigue-design-i-the-s-n-method.html" class="ol" data-key="y2s2/machine-design-1/3"><span class="tick"></span><span>03 · Fatigue design I: the S–N method</span></a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" class="ol" data-key="y2s2/machine-design-1/4"><span class="tick"></span><span>04 · Fatigue design II: mean stress and cumulative damage</span></a><a href="05-shaft-design.html" class="ol" data-key="y2s2/machine-design-1/5"><span class="tick"></span><span>05 · Shaft design</span></a><a href="06-keys-splines-and-retaining-hardware.html" class="ol" data-key="y2s2/machine-design-1/6"><span class="tick"></span><span>06 · Keys, splines, and retaining hardware</span></a><a href="07-threaded-fasteners-and-bolted-joints.html" class="ol" data-key="y2s2/machine-design-1/7"><span class="tick"></span><span>07 · Threaded fasteners and bolted joints</span></a><a href="08-welded-joint-design.html" class="ol" data-key="y2s2/machine-design-1/8"><span class="tick"></span><span>08 · Welded joint design</span></a><a href="09-springs.html" class="ol cur" data-key="y2s2/machine-design-1/9"><span class="tick"></span><span>09 · Springs</span></a><a href="10-power-screws.html" class="ol" data-key="y2s2/machine-design-1/10"><span class="tick"></span><span>10 · Power screws</span></a><a href="11-design-project-a-driven-shaft-assembly.html" class="ol" data-key="y2s2/machine-design-1/11"><span class="tick"></span><span>11 · Design project: a driven shaft assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MDN 251</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MDN 251 · Lesson 09 of 11 · Year 2 · Semester 2</p>
+  <h1>Springs</h1>
+  <p class="sub">Helical spring stress and rate derived; solid height and buckling checks. Fatigue of springs under fluctuating load. Valve and relief springs as working examples.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.72 Elements of Mechanical Design (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/r8GklGTjDQw" title="Helical Compression spring | Lecture - 1| Design of helical compression spring" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Helical Compression spring | Lecture - 1| Design of helical compression spring <span class="src">The Mechanical Engineer</span></figcaption></figure></div><div class="vh-bar"><span class="n">Helical Compression spring | Lecture - 1| Design of helical compression spring</span><span class="c">THE MECHANICAL ENGINEER</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What stress does a helical spring's wire actually carry?</li><li>What does solid height check against?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A force against deflection plot for a helical compression spring. A solid green line of slope 9.40 newtons per millimetre runs from the origin, passing a working point at 20 millimetres and 188 newtons and reaching 395 newtons where a vertical red dashed line marks the solid height at 42 millimetres. A dashed gold line of slope 5.51 shows the much softer spring obtained from 3.5 millimetre wire."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Spring rate, the working point, and the solid check</text><path d="M90 244 L490 244" stroke="#14181F" stroke-width="1.5"/><path d="M90 244 L90 62" stroke="#14181F" stroke-width="1.5"/><text x="290" y="276" text-anchor="middle" fill="#14181F" font-size="12">deflection δ (mm)</text><text x="26" y="153" font-size="12" fill="#14181F" transform="rotate(-90 26 153)" text-anchor="middle">force F (N)</text><path d="M90.0 244 L90.0 248" stroke="#5B6672" stroke-width="1"/><text x="90" y="260" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M178.9 244 L178.9 248" stroke="#5B6672" stroke-width="1"/><text x="179" y="260" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M267.8 244 L267.8 248" stroke="#5B6672" stroke-width="1"/><text x="268" y="260" text-anchor="middle" fill="#5B6672" font-size="11">20</text><path d="M356.7 244 L356.7 248" stroke="#5B6672" stroke-width="1"/><text x="357" y="260" text-anchor="middle" fill="#5B6672" font-size="11">30</text><path d="M445.6 244 L445.6 248" stroke="#5B6672" stroke-width="1"/><text x="446" y="260" text-anchor="middle" fill="#5B6672" font-size="11">40</text><path d="M86 244.0 L90 244.0" stroke="#5B6672" stroke-width="1"/><text x="82" y="248" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 157.3 L90 157.3" stroke="#5B6672" stroke-width="1"/><text x="82" y="161" text-anchor="end" fill="#5B6672" font-size="11">200</text><path d="M86 70.7 L90 70.7" stroke="#5B6672" stroke-width="1"/><text x="82" y="75" text-anchor="end" fill="#5B6672" font-size="11">400</text><path d="M90.0 244.0 L463.3 72.9" fill="none" stroke="#07785C" stroke-width="2.4"/><path d="M90.0 244.0 L463.3 143.7" fill="none" stroke="#8A5A0F" stroke-width="2" stroke-dasharray="6 4"/><path d="M463.3 244 L463.3 62" stroke="#9c2f2f" stroke-width="1.4" stroke-dasharray="4 3"/><text x="445" y="81" text-anchor="end" fill="#9c2f2f" font-size="11">solid height</text><circle cx="267.8" cy="162.5" r="4" fill="#07785C"/><text x="255" y="167" text-anchor="end" fill="#07785C" font-size="11">working: 188 N, 269 MPa</text><circle cx="463.3" cy="73.0" r="4" fill="#9c2f2f"/><text x="453" y="67" text-anchor="end" fill="#9c2f2f" font-size="11">solid: 395 N, 564 MPa</text><text x="469" y="144" fill="#8A5A0F" font-size="11">3.5 mm wire</text><text x="120" y="100" fill="#07785C" font-size="11">4.0 mm wire — k = 9.40 N/mm</text><text x="120" y="118" fill="#8A5A0F" font-size="11">3.5 mm wire — k = 5.51 N/mm</text></svg><figcaption>A spring is defined by its slope. The working point sits at
+188 N with a factor of safety of 3.0; closing the spring solid takes it to 395 N and a margin
+of 1.44, so it survives being fully compressed — the check that separates a spring from a
+one-use component. The dashed line is the same spring in 3.5 mm wire: 12% less wire diameter,
+41% less rate.</figcaption></figure>
+<h3>01 · A spring is a torsion bar wound up</h3>
+<p>Push down on a helical compression spring and the wire does not bend in any useful sense — it
+<em>twists</em>. Cut the wire anywhere and the internal action is almost entirely a torque
+\( T=FD/2 \), the axial force acting at the mean coil radius. That single observation gives the
+whole component, because the torsion of a round bar is already known from Strength of Materials.</p>
+<p>Two corrections separate the real spring from that idealisation. The applied force also
+produces a direct transverse shear across the wire, and because the coil is curved, the material
+on the inside of the coil is shorter and carries more of the twist than the outside. Both effects
+raise stress on the inner fibre, and both are collected into a single multiplier.</p>
+<div class="keybox"><span class="tag">Key relation — spring stress and the Wahl factor</span>
+<p>\[ \tau = K_W\frac{8FD}{\pi d^3}, \qquad
+K_W = \frac{4C-1}{4C-4}+\frac{0.615}{C}, \qquad C=\frac{D}{d} \]</p>
+<p>\( C \) is the spring index. At \( C=7.5 \), \( K_W = 1.197 \) — the inner fibre carries
+20% more stress than the plain torsion formula predicts, and it is where every spring
+fails.</p></div>
+<p>The spring index is worth reading as a manufacturability number as well as a stress one. Below
+about 4 the coil is so tightly wound that \( K_W \) climbs steeply and the wire is hard to
+form; above about 12 the spring is floppy and tangles in handling. Designs live between, and
+\( C \) between 6 and 9 is comfortable.</p>
+<h3>02 · Rate, and how violently it responds to wire size</h3>
+<p>Deflection accumulates twist over the whole developed length of the wire, which gives the
+rate directly.</p>
+<div class="keybox"><span class="tag">Key relation — spring rate</span>
+<p>\[ k=\frac{Gd^4}{8D^3N_a} \]</p>
+<p>\( N_a \) is the number of <em>active</em> coils — the total less the dead coils at each
+end. Note the exponents: rate goes as the fourth power of wire diameter and the inverse cube of
+coil diameter.</p></div>
+<p>Those exponents dominate spring design in practice. Changing the wire from 4.0 to 3.5 mm — a
+12.5% reduction that no drawing reader would call significant — takes the rate from 9.40 to
+5.51 N/mm, a loss of 41%. Wire diameter is not a tolerance-band decision; it is the design. It is
+also why a spring that has been substituted "like for like" from a bin of similar-looking parts
+is a real hazard on a machine whose behaviour depends on a specific rate.</p>
+<h3>03 · The two checks that are not stress</h3>
+<p>A spring can pass its stress calculation and still be unusable, in two distinct ways.</p>
+<p><em>Solid height.</em> Compress a spring far enough and the coils touch; it stops being a
+spring and becomes a steel tube. Solid length is \( L_s = d\,N_t \) with \( N_t \) the total
+coil count. Good practice is that a spring must survive being closed solid without yielding,
+because sooner or later something will close it — an overtravel, a misassembly, a maintenance
+hand. The worked spring reaches 564 MPa at solid against an 814 MPa allowable, a margin of 1.44:
+it takes the abuse and recovers.</p>
+<p><em>Buckling.</em> A compression spring is a slender column and will buckle sideways if it is
+too long for its diameter. The criterion depends on how the ends are held: a spring squared and
+ground at both ends against flat parallel surfaces is stable while \( L_0 < 2.63D/\alpha \)
+with \( \alpha=0.5 \), and one end free to pivot takes \( \alpha \) to 0.707 and the
+allowance down with it. The worked spring at \( L_0=90 \) against a limit of 158 mm has room;
+a long, slender relief-valve spring frequently does not, which is why such springs so often run
+inside a guide bore or over a rod.</p>
+<h3>04 · Springs under fluctuating load</h3>
+<p>A valve spring is a fatigue component by definition, and springs are unusual in one respect:
+they are almost never fully reversed. A compression spring is installed with preload and cycles
+between two positive forces, so the mean stress is large and the amplitude comparatively small —
+which is exactly the situation Lesson 4's constant-life diagram was built for, transposed into
+shear.</p>
+<p>Compute \( \tau_a \) and \( \tau_m \) from the force amplitude and mean, then apply
+Goodman with torsional strengths: \( \tau_a/S_{se} + \tau_m/S_{su} = 1/n \). For the worked
+spring cycling between 100 and 250 N, that gives \( \tau_a=107 \) and
+\( \tau_m=250\ \mathrm{MPa} \), and a margin of 1.81 — acceptable but not generous, which is
+honest for a spring working that hard.</p>
+<p>One design lever is specific to springs. Shot peening the wire leaves a compressive residual
+stress in exactly the inner-fibre surface where cracks start, and it routinely raises the
+torsional endurance limit by 20% or more. For a highly cycled spring it is usually the cheapest
+life available — the same reasoning as grinding a shaft fillet in Lesson 3, applied to a surface
+that is otherwise impossible to improve.</p>
+<p><strong>Closing.</strong> Torsion in a wound bar, with the Wahl factor putting the peak on the
+inside. Rate goes as \( d^4 \), so wire size is the design. Then check solid height and
+buckling, which stress never covers, and peen anything that cycles.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Torsion of a round bar</b> (Strength of Materials L4) — \( \tau=16T/\pi d^3 \), the
+formula the spring equation is built on.</li>
+<li><b>Direct shear</b> (Strength of Materials L1) — the second of the two effects the Wahl
+factor collects.</li>
+<li><b>Spring rate and stiffness</b> (Physics I) — \( F=k\delta \), used here as a design
+target rather than a given.</li>
+<li><b>Column buckling</b> (Strength of Materials L10) — the end-condition idea reused for a
+spring's stability limit.</li>
+<li><b>Goodman criterion</b> (Lesson 4) — applied in shear, with torsional endurance and ultimate
+strengths.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Spring index</td><td>\( C=D/d \)</td><td>Manufacturability and stress; keep between about 4 and 12.</td></tr>
+<tr><td>Wahl factor</td><td>\( K_W=\frac{4C-1}{4C-4}+\frac{0.615}{C} \)</td><td>Curvature plus direct shear; puts the peak stress on the inner fibre.</td></tr>
+<tr><td>Spring stress</td><td>\( \tau=K_W\,8FD/\pi d^3 \)</td><td>Any helical compression or extension spring under axial load.</td></tr>
+<tr><td>Spring rate</td><td>\( k=Gd^4/(8D^3N_a) \)</td><td>Sizing to a required stiffness; note \( d^4 \) and \( 1/D^3 \).</td></tr>
+<tr><td>Solid length</td><td>\( L_s=dN_t \)</td><td>Checking the spring survives being fully closed.</td></tr>
+<tr><td>Buckling limit</td><td>\( L_0<2.63D/\alpha \)</td><td>\( \alpha=0.5 \) squared and ground on flat surfaces, 0.707 with one end pivoted.</td></tr>
+<tr><td>Spring fatigue</td><td>\( \tau_a/S_{se}+\tau_m/S_{su}=1/n \)</td><td>Cycling between two positive forces; large mean, small amplitude.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Rate and stress at the working point</b></p>
+<p><b>Problem.</b> A helical compression spring has wire diameter \( d=4\ \mathrm{mm} \), mean coil diameter \( D=30\ \mathrm{mm} \), 10 active coils, and \( G=79.3\ \mathrm{GPa} \). It works at 20 mm deflection. The allowable shear stress is \( S_{sy}=814\ \mathrm{MPa} \). <b>Find:</b> the spring index, the Wahl factor, the rate, the working force, the stress and the factor of safety.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( C = 30/4 = 7.5 \).
+(2) \( K_W = \frac{4(7.5)-1}{4(7.5)-4}+\frac{0.615}{7.5} = \frac{29}{26}+0.082 = 1.197 \).
+(3) \( k = \frac{(79.3\times10^9)(0.004)^4}{8(0.030)^3(10)} = \frac{20.30}{2.16\times10^{-3}} = 9399\ \mathrm{N/m} = 9.40\ \mathrm{N/mm} \).
+(4) \( F = k\delta = 9.40(20) = 188\ \mathrm{N} \).
+(5) \( \tau = 1.197\frac{8(188)(0.030)}{\pi(0.004)^3} = 1.197(224.4) = 268.7\ \mathrm{MPa} \).
+(6) \( n = 814/268.7 = 3.03 \).</p>
+<p><b>Answer:</b> \( C=7.5 \), \( K_W=1.197 \), \( k=9.40\ \mathrm{N/mm} \), \( F=188\ \mathrm{N} \), \( \tau=269\ \mathrm{MPa} \), \( n=3.03 \).
+<b>Sanity check:</b> the uncorrected torsion formula alone would have given 224 MPa and reported \( n=3.63 \) — 20% optimistic, and optimistic exactly at the inner fibre where the spring actually breaks. \( C=7.5 \) sits mid-range, so this spring is comfortable to wind as well as to load.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Will it survive being closed solid?</b></p>
+<p><b>Problem.</b> The same spring is squared and ground, so total coils \( N_t = N_a+2 \), and its free length is 90 mm. <b>Find:</b> the solid length, the deflection and force at solid, the stress there, and the factor of safety against the 814 MPa allowable.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( N_t = 10+2 = 12 \), so \( L_s = dN_t = 4(12) = 48\ \mathrm{mm} \).
+(2) Deflection to solid: \( 90-48 = 42\ \mathrm{mm} \).
+(3) \( F = 9.40(42) = 394.7\ \mathrm{N} \).
+(4) Stress scales linearly with force: \( \tau = 268.7\times(394.7/188) = 564.2\ \mathrm{MPa} \).
+(5) \( n = 814/564.2 = 1.44 \).</p>
+<p><b>Answer:</b> \( L_s=48\ \mathrm{mm} \), 42 mm to solid at 395 N, \( \tau=564\ \mathrm{MPa} \), \( n=1.44 \) — it survives closure.
+<b>Sanity check:</b> the margin at solid is above 1, which is the design requirement, and the ratio \( 564/269 = 2.1 \) is exactly \( 42/20 \), confirming the linear scaling used in step 4. A spring that failed this check would take a permanent set the first time anything bottomed it out, and would then be a different spring — lower free length, lower installed force — without anyone having replaced a part.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>The spring as a fatigue component</b></p>
+<p><b>Problem.</b> The same spring cycles between 100 N and 250 N in service. Take the torsional endurance limit \( S_{se}=310\ \mathrm{MPa} \) and the torsional ultimate \( S_{su}=1212\ \mathrm{MPa} \). <b>Find:</b> the shear stress amplitude and mean, and the Goodman factor of safety.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( F_a=(250-100)/2 = 75\ \mathrm{N} \), \( F_m=(250+100)/2 = 175\ \mathrm{N} \).
+(2) Stress is proportional to force, and 188 N gave 268.7 MPa, so \( \tau_a = 268.7(75/188) = 107.2 \) and \( \tau_m = 268.7(175/188) = 250.1\ \mathrm{MPa} \).
+(3) Goodman: \( 107.2/310 + 250.1/1212 = 0.3458+0.2064 = 0.5522 \).
+(4) \( n = 1/0.5522 = 1.81 \).</p>
+<p><b>Answer:</b> \( \tau_a=107\ \mathrm{MPa} \), \( \tau_m=250\ \mathrm{MPa} \), \( n=1.81 \).
+<b>Sanity check:</b> the mean stress is more than twice the amplitude, which is the normal signature of a preloaded compression spring and the reason the mean-stress treatment of Lesson 4 cannot be skipped here. Note where the margin is being spent: the amplitude term contributes 0.35 of the 0.55 total, so shot peening — which acts on \( S_{se} \) — attacks the larger term and is the effective intervention.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The dominant internal action in the wire of a helical compression spring under axial load is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>bending</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>torsion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>direct tension</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>buckling of the wire</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The axial force acts at the mean coil radius, so a section cut through the wire carries a torque \( T=FD/2 \); the spring is a torsion bar that has been wound into a helix. Direct transverse shear is present but secondary, and it is folded into the Wahl factor along with the curvature effect. Recognising the action as torsion is what lets the whole component be built from a formula already known from Strength of Materials.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The Wahl factor exceeds 1 because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>springs are made from work-hardened wire</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>coil curvature and direct shear both raise the stress on the inner fibre</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the wire diameter is measured before coiling</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the spring index is always greater than 4</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Two effects act in the same direction on the same side of the wire. The inside of the coil is on a shorter radius, so it takes more than its share of the twist, and the direct transverse shear adds to the torsional shear there rather than opposing it. The result is a peak on the inner fibre — 20% above plain torsion at \( C=7.5 \) — which is precisely where spring fractures initiate. Work hardening affects the material's strength, not the stress distribution.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A spring's wire diameter is increased from 4.0 mm to 4.5 mm with \( D \) and \( N_a \) unchanged. The rate increases by a factor of about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 1.13 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 1.27 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 1.60 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 2.00 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Rate goes as \( d^4 \), so the factor is \( (4.5/4.0)^4 = 1.60 \). The 1.13 answer is the diameter ratio itself and 1.27 its square — both badly understate how sharply a spring responds to wire size. This sensitivity cuts both ways and is the single most important practical fact about springs: it makes wire diameter a powerful design lever and makes an approximate substitution a genuine hazard.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Good practice requires a compression spring to withstand being compressed to its solid length without yielding because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>springs are always used at solid height</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>overtravel, misassembly or maintenance will eventually close it, and a spring that takes a set becomes a different spring</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>solid height is where the rate is measured</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the Wahl factor only applies at solid height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Springs are not designed to work solid, but over a service life something will close one — an overtravelling mechanism, an assembly error, a hand during maintenance. If that yields the wire the spring takes a permanent set, and it returns to service with a shorter free length and a lower installed force while looking entirely normal. That is a silent change to a machine's calibration, which is why the solid check is a standard requirement rather than a refinement.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A compression spring with \( D = 30\ \mathrm{mm} \) is squared and ground on flat parallel surfaces (\( \alpha = 0.5 \)). It is stable against buckling while its free length is less than about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 79\ \mathrm{mm} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 158\ \mathrm{mm} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 112\ \mathrm{mm} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 40\ \mathrm{mm} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( L_0 < 2.63D/\alpha = 2.63(30)/0.5 = 158\ \mathrm{mm} \). The 112 mm figure is the answer for \( \alpha = 0.707 \), one end free to pivot — a real and much tighter limit, which is why end conditions must be identified before this check means anything. A spring that fails it does not lose strength; it bows sideways, rubs its bore, and delivers an unpredictable force, which is normally solved by running it over a rod or inside a guide.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Shot peening a spring's wire improves fatigue life primarily by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increasing the wire diameter slightly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>leaving a compressive residual stress in the inner-fibre surface where cracks start</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>raising the shear modulus \( G \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>reducing the spring index</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Peening plastically works the surface and leaves it in residual compression, which must be overcome before an applied tensile or shear cycle can open a crack. Applied to the inner fibre — the one location the Wahl factor identifies as critical and the one that cannot be improved by machining — it routinely buys 20% or more on the torsional endurance limit. It changes no dimension, no modulus, and no index; \( G \) is a material constant that no surface treatment alters.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A relief-valve spring is replaced by one identical in free length and coil diameter but wound from 3.5 mm wire instead of 4.0 mm. The valve will</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>lift at the same pressure, since the geometry matches</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>lift early, because the rate falls by about 41% and the installed force falls with it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>lift late, because the softer spring compresses less</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>be unaffected until the spring reaches solid height</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Rate goes as \( d^4 \), so \( (3.5/4.0)^4 = 0.586 \) — a 41% loss. Installed at the same compression, the spring delivers 41% less seat load and the valve lifts well below its set pressure. Nothing about this is visible on inspection: free length and coil diameter match, and the half-millimetre of wire is easy to overlook. It is the reason a spring whose job is a set pressure should be identified by its measured rate and treated as a calibrated item.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Compared with a fully reversed load, the fatigue state of a typical installed compression spring is</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>large mean stress with a comparatively small amplitude</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>zero mean stress with a large amplitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>identical, since springs always return to free length</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>impossible to assess with a Goodman construction</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A compression spring is installed with preload and cycles between two positive forces, so it never sees a reversal — the worked spring runs at 250 MPa mean against only 107 MPa amplitude. That is exactly the regime Lesson 4's constant-life diagram addresses, transposed into shear with \( S_{se} \) and \( S_{su} \). Far from being inapplicable, Goodman is the standard tool here, and ignoring the mean stress would badly overstate the margin.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the relief spring that was replaced with a near-enough one.</b> A pressure
+relief valve begins lifting early and chattering. Records show the spring was replaced during a
+routine overhaul with a part from stores that measured correctly on free length and coil diameter
+and looked identical. Its wire measured 3.5 mm against the original 4.0. Because rate goes as
+\( d^4 \), that half-millimetre took the spring from 9.40 to 5.51 N/mm — 41% softer — so the
+same installed compression produced 41% less seat load and the valve lifted well below its set
+pressure. Chattering followed for a related reason: with a softer spring the valve's own dynamics
+sit closer to the flow's, so the disc oscillates rather than lifting cleanly. Nothing was
+mismeasured and nothing was worn. The fault was treating wire diameter as a dimension to be
+matched approximately, when it is the single most sensitive parameter in the component. Two
+practices follow: a spring is identified by its rate, verified on a tester, not by its
+appearance; and any spring whose function is a set pressure or a set force should be treated as a
+calibrated item, not a consumable.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(8.948\\ \\mathrm{hp}\\)", "\\(16.09\\ \\mathrm{hp}\\)", "\\(160.9\\ \\mathrm{hp}\\)", "\\(1.609\\ \\mathrm{hp}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(12 \\times 1.341 = 16.09\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(111.9\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(201.2\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(2012\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(20.12\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(150 \times 1.341 = 201.2\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(656.2\\ \\mathrm{ft/s}\\)", "\\(6.096\\ \\mathrm{ft/s}\\)", "\\(65.62\\ \\mathrm{ft/s}\\)", "\\(6.562\\ \\mathrm{ft/s}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(20 \\times 3.281 = 65.62\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(65.62\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.6096\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(6.562\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.6562\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(2 \times 3.281 = 6.562\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1923658W" target="_blank" rel="noopener">Shigley's Mechanical Engineering Design — Budynas &amp; Nisbett</a></li><li>Machine Design: An Integrated Approach — Robert L. Norton</li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-welded-joint-design.html">← 08 · Welded joint design</a><a href="index.html">كل الدروس · MDN 251</a><a href="10-power-screws.html">10 · Power screws →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

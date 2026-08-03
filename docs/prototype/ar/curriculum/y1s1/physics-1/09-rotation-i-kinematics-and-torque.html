@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Rotation I: kinematics and torque — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="Angular position, velocity, and acceleration; the rolling connection v = ωr. Torque defined properly and computed about real axes; moment of inertia a">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/physics-1/9">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/physics-1/09-rotation-i-kinematics-and-torque.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">PHY 107 · Engineering Physics I — Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-units-and-vectors.html" class="ol" data-key="y1s1/physics-1/1"><span class="tick"></span><span>01 · Measurement, units, and vectors</span></a><a href="02-kinematics-in-one-dimension.html" class="ol" data-key="y1s1/physics-1/2"><span class="tick"></span><span>02 · Kinematics in one dimension</span></a><a href="03-kinematics-in-two-dimensions.html" class="ol" data-key="y1s1/physics-1/3"><span class="tick"></span><span>03 · Kinematics in two dimensions</span></a><a href="04-newton-s-laws-of-motion.html" class="ol" data-key="y1s1/physics-1/4"><span class="tick"></span><span>04 · Newton's laws of motion</span></a><a href="05-applying-newton-s-laws.html" class="ol" data-key="y1s1/physics-1/5"><span class="tick"></span><span>05 · Applying Newton's laws</span></a><a href="06-work-and-energy.html" class="ol" data-key="y1s1/physics-1/6"><span class="tick"></span><span>06 · Work and energy</span></a><a href="07-potential-energy-and-conservation.html" class="ol" data-key="y1s1/physics-1/7"><span class="tick"></span><span>07 · Potential energy and conservation</span></a><a href="08-momentum-impulse-and-collisions.html" class="ol" data-key="y1s1/physics-1/8"><span class="tick"></span><span>08 · Momentum, impulse, and collisions</span></a><a href="09-rotation-i-kinematics-and-torque.html" class="ol cur" data-key="y1s1/physics-1/9"><span class="tick"></span><span>09 · Rotation I: kinematics and torque</span></a><a href="10-rotation-ii-dynamics-and-angular-momentum.html" class="ol" data-key="y1s1/physics-1/10"><span class="tick"></span><span>10 · Rotation II: dynamics and angular momentum</span></a><a href="11-oscillations-first-contact.html" class="ol" data-key="y1s1/physics-1/11"><span class="tick"></span><span>11 · Oscillations first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">PHY 107</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">PHY 107 · Lesson 09 of 11 · Year 1 · Semester 1</p>
+  <h1>Rotation I: kinematics and torque</h1>
+  <p class="sub">Angular position, velocity, and acceleration; the rolling connection v = ωr. Torque defined properly and computed about real axes; moment of inertia as rotational mass. RPM fluency — the native unit of the machine floor.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 8.01SC Classical Mechanics</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/EbtemXLK7PM" title="Dynamics — Rigid Body Kinematics: Linear vs Angular Velocity" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Dynamics — Rigid Body Kinematics: Linear vs Angular Velocity <span class="src">Engineering Deciphered</span></figcaption></figure></div><div class="vh-bar"><span class="n">Dynamics — Rigid Body Kinematics: Linear vs Angular Velocity</span><span class="c">ENGINEERING DECIPHERED</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Convert 1450 rpm to rad/s. (≈152)</li><li>Why does the same force produce different torques at different radii?</li></ul></div><div class="measure">
+<h3>01 · The angular vocabulary</h3>
+<p>Rotation replays kinematics with angular characters. Angular position \( \theta \) is
+measured in radians — the natural unit, because it makes arc length \( s = \theta r \)
+with no conversion factor. Angular velocity \( \omega = d\theta/dt \) in rad/s, and
+angular acceleration \( \alpha = d\omega/dt \) in rad/s², chain exactly as their linear
+siblings did, and the constant-\( \alpha \) toolkit is Lesson 2's kit with letters
+swapped: \( \omega = \omega_0 + \alpha t \),
+\( \theta = \omega_0 t + \tfrac12\alpha t^2 \),
+\( \omega^2 = \omega_0^2 + 2\alpha\theta \). The machine floor speaks rpm; physics
+speaks rad/s; the exchange rate \( \omega = 2\pi N/60 \) is crossed so often it should
+be reflex — 1450 rpm, the standard 4-pole motor speed, is 152 rad/s.</p>
+<h3>02 · The rolling connection</h3>
+<p>Rotation meets translation at the rim: a point at radius \( r \) moves at
+\( v = \omega r \) and, under angular acceleration, gains speed at \( a_t = \alpha r \).
+The relation runs every belt, chain, and traction drive: pulleys sharing a belt share rim
+speed, so their angular velocities trade inversely with radius — the speed-ratio law of
+every pulley pair and gear mesh. Radians earn their keep here: the formulas hold ONLY with
+angles in radians, and feeding degrees or rpm into \( v = \omega r \) is the classic
+rotational unit error.</p>
+<h3>03 · Torque: force's rotational agent</h3>
+<p>What force is to translation, torque is to rotation: \( \tau = Fr\sin\theta \), the
+force times its perpendicular lever arm, in newton-metres. The statics course built moments
+for equilibrium; dynamics now lets them cause angular acceleration. On a belt drive, the
+torque delivered is the TENSION DIFFERENCE times radius — \( (T_1 - T_2)r \) — because
+both belt runs pull, in opposition; on a bolted coupling, torque is what the wrench and the
+torque spec are negotiating. The moment of inertia \( I \), rotation's mass, waits one
+lesson ahead as torque's partner.</p>
+<h3>04 · The rotational working method</h3>
+<p>Run rotation problems with a currency-exchange discipline. Convert everything to SI
+angular units at the border — rpm to rad/s, revolutions to radians — work entirely inside,
+and convert back only for the final answer if the floor wants rpm. Choose the angular
+toolkit by the same known-versus-wanted matching as Lesson 2, and pass between the angular
+and linear worlds only through the radius: \( v = \omega r \), \( a_t = \alpha r \),
+\( s = \theta r \). Audit with the two standard checks — units (a radian is
+dimensionless, so \( \omega r \) lands in m/s cleanly) and magnitude sense (industrial
+machines mostly live between 0.5 and 300 rad/s; an answer of 15,000 rad/s is a units error
+announcing itself). The kinematics is deliberately familiar; fluency in the conversion
+discipline is what this lesson actually installs, because every machine after it — pumps,
+gearboxes, turbines — speaks both languages at once.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Linear kinematics</b> (Lesson 2) — the toolkit transfers letter-for-letter.</li>
+<li><b>Vectors and the perpendicular component</b> (Lesson 1) — all that torque needs. The moment of a force is defined in this lesson as force times perpendicular arm; Engineering Statics takes it up afterwards for bodies in equilibrium.</li>
+<li><b>Radian measure</b> (Math I) — arc = radius × angle, the native unit.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Angular kinematics</td><td>\( \omega = \omega_0 + \alpha t \), etc.</td><td>Lesson 2's kit with \( \theta, \omega, \alpha \) — same selection rules.</td></tr>
+<tr><td>rpm ↔ rad/s</td><td>\( \omega = 2\pi N/60 \)</td><td>The border crossing every machine problem makes; 1450 rpm ≈ 152 rad/s.</td></tr>
+<tr><td>Rim speed</td><td>\( v = \omega r \)</td><td>Belts, wheels, and cutting speeds; radians only.</td></tr>
+<tr><td>Tangential acceleration</td><td>\( a_t = \alpha r \)</td><td>How rim speed changes during spin-up and coast-down.</td></tr>
+<tr><td>Torque</td><td>\( \tau = Fr\sin\theta \)</td><td>Force's turning agent; N·m.</td></tr>
+<tr><td>Belt-drive torque</td><td>\( \tau = (T_1 - T_2)\,r \)</td><td>The tension DIFFERENCE does the work — both runs pull.</td></tr>
+<tr><td>Speed ratio</td><td>\( \omega_1 r_1 = \omega_2 r_2 \)</td><td>Shared rim speed across pulleys and meshing gears.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>From nameplate to belt speed</b></p>
+<p><b>Problem.</b> A motor runs at 1450 rpm carrying a 60 mm-radius pulley. <b>Find:</b> the angular velocity in rad/s and the belt speed.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \omega = 2\pi N/60 = 2\pi \times 1450/60 = 152\ \mathrm{rad/s} \).
+(2) \( v = \omega r = 152 \times 0.060 = 9.1\ \mathrm{m/s} \).</p>
+<p><b>Answer:</b> ≈152 rad/s; ≈9.1 m/s of belt.
+<b>Sanity check:</b> the rim of a 12 cm pulley at motor speed doing ~9 m/s (33 km/h) is entirely typical of belt drives — and the number is why guards exist. The rpm-to-rad/s crossing (×0.1047) is the single most repeated conversion in machine work; owning it cold is the lesson's toll.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Torque through a belt</b></p>
+<p><b>Problem.</b> A belt drives a 100 mm-radius pulley with 350 N tension in the tight side and 150 N in the slack side. <b>Find:</b> the torque delivered to the shaft.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Both runs pull the pulley rim in opposite rotational senses; the net turning agent is the difference.
+(2) \( \tau = (T_1 - T_2)\,r = (350 - 150) \times 0.100 = 20\ \mathrm{N\,m} \).</p>
+<p><b>Answer:</b> 20 N·m.
+<b>Sanity check:</b> using the tight side alone (35 N·m) forgets that the slack side fights back — the classic belt error; the 200 N difference is also exactly the net force the belt applies to the shaft bearings, which is why belt tension and bearing life are one conversation.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>The fan's spin-up</b></p>
+<p><b>Problem.</b> A fan accelerates uniformly from rest to 1200 rpm in 8.0 s. <b>Find:</b> the angular acceleration and the number of revolutions completed during the spin-up.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \omega = 1200 \times 2\pi/60 = 125.7\ \mathrm{rad/s} \); \( \alpha = 125.7/8 = 15.7\ \mathrm{rad/s^2} \).
+(2) \( \theta = \tfrac12\alpha t^2 = 0.5 \times 15.7 \times 64 = 503\ \mathrm{rad} \).
+(3) Revolutions: \( 503/2\pi = 80 \).</p>
+<p><b>Answer:</b> ≈15.7 rad/s²; 80 revolutions.
+<b>Sanity check:</b> average speed during a uniform spin-up is half the final — 600 rpm = 10 rev/s — over 8 s: 80 revolutions ✓. The linear world's triangle-area logic transplants perfectly, which is the entire point of the shared toolkit.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A machine spindle at 3000 rpm is turning at about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>314 rad/s</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>50 rad/s</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>3000 rad/s</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>188,500 rad/s</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \omega = 2\pi \times 3000/60 = 314\ \mathrm{rad/s} \). Treating rpm as rad/s (3000) skips the conversion; 50 is rev/s mistaken for rad/s (missing the \( 2\pi \)); the huge option multiplies by 60 instead of dividing. The three distractors are precisely the three ways this conversion goes wrong in practice — one per forgotten factor.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Two points on the same rotating disc, one at 50 mm radius and one at 150 mm, have:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The same \( \omega \), but the outer point moves three times faster</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The same linear speed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Different angular velocities</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing in common</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A rigid body shares one angular velocity — every point sweeps the same angle per second — while linear speed grows with radius: \( v = \omega r \), so triple the radius is triple the speed. This is why cutting speed depends on workpiece diameter at fixed spindle rpm, and why rim damage on large rotors is a higher-energy affair than hub damage: same \( \omega \), very different v.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>To maximize the torque from a 200 N pull on a 0.3 m wrench, the pull should be applied:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Perpendicular to the wrench, giving 60 N·m</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Along the wrench handle</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At 45°, for balance</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>As close to the nut as possible</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \tau = Fr\sin\theta \) peaks at \( \sin 90° = 1 \): \( 200 \times 0.3 = 60\ \mathrm{N\,m} \). Pulling along the handle gives zero torque however hard; 45° delivers only 71%; and shrinking r shrinks everything. Statics taught this as moments — rotation now spends the same geometry on causing angular acceleration rather than preventing it.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A shaft turns through 5 complete revolutions. In radians, that is about:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>31.4 rad</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>5 rad</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>1800 rad</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>0.8 rad</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>One revolution is \( 2\pi \) radians: \( 5 \times 2\pi = 31.4\ \mathrm{rad} \). Calling a revolution one radian (5) is the quiet error that breaks every later formula; 1800 converts to degrees, a unit the rotational toolkit never uses. Radians are the native currency because they make \( s = \theta r \) exact — everything else is exchange-rate arithmetic.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A small motor pulley (60 mm) drives a large fan pulley (180 mm) by belt. The fan turns:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>At one-third of the motor speed</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At three times the motor speed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>At the same speed</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>In reverse</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The belt imposes one rim speed on both pulleys: \( \omega_1 r_1 = \omega_2 r_2 \), so the triple-radius fan turns at a third the angular speed — and, by the coming lessons, with triple the torque, power flowing through unchanged (minus losses). Every belt-drive speed reduction and every gear ratio is this one equality, applied at the point of contact.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(82.74\\ \\mathrm{psi}\\)", "\\(1.74\\ \\mathrm{psi}\\)", "\\(17.4\\ \\mathrm{psi}\\)", "\\(0.174\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(12 \\times 0.145 = 1.74\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1034\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(21.76\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(217.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.176\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(150 \times 0.145 = 21.76\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(44.96\\ \\mathrm{lbf}\\)", "\\(88.96\\ \\mathrm{lbf}\\)", "\\(4.496\\ \\mathrm{lbf}\\)", "\\(0.4496\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(20 \\times 0.2248 = 4.496\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(4.496\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(8.896\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.4496\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.04496\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(2 \times 0.2248 = 0.4496\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2538490W" target="_blank" rel="noopener">Fundamentals of Physics — Halliday, Resnick &amp; Walker</a></li><li><a href="https://openlibrary.org/works/OL4797379W" target="_blank" rel="noopener">University Physics — Young &amp; Freedman</a></li></ul>
+  <p class="src"><b>Taught from</b> — MIT OCW 8.01SC</p>
+  <ul class="plain small"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-momentum-impulse-and-collisions.html">← 08 · Momentum, impulse, and collisions</a><a href="index.html">كل الدروس · PHY 107</a><a href="10-rotation-ii-dynamics-and-angular-momentum.html">10 · Rotation II: dynamics and angular momentum →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

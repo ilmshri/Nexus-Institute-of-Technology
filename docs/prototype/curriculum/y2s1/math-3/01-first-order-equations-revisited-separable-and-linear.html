@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>First-order equations revisited: separable and linear — Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than de">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/math-3/1">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/math-3/01-first-order-equations-revisited-separable-and-linear.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-first-order-equations-revisited-separable-and-linear.html" class="ol cur" data-key="y2s1/math-3/1"><span class="tick"></span><span>01 · First-order equations revisited: separable and linear</span></a><a href="02-modeling-with-first-order-equations.html" class="ol" data-key="y2s1/math-3/2"><span class="tick"></span><span>02 · Modeling with first-order equations</span></a><a href="03-second-order-equations-the-homogeneous-story.html" class="ol" data-key="y2s1/math-3/3"><span class="tick"></span><span>03 · Second-order equations: the homogeneous story</span></a><a href="04-nonhomogeneous-equations-and-forced-response.html" class="ol" data-key="y2s1/math-3/4"><span class="tick"></span><span>04 · Nonhomogeneous equations and forced response</span></a><a href="05-free-and-forced-oscillations.html" class="ol" data-key="y2s1/math-3/5"><span class="tick"></span><span>05 · Free and forced oscillations</span></a><a href="06-laplace-transforms-i.html" class="ol" data-key="y2s1/math-3/6"><span class="tick"></span><span>06 · Laplace transforms I</span></a><a href="07-laplace-transforms-ii-solving-problems.html" class="ol" data-key="y2s1/math-3/7"><span class="tick"></span><span>07 · Laplace transforms II: solving problems</span></a><a href="08-systems-of-equations-the-matrix-view.html" class="ol" data-key="y2s1/math-3/8"><span class="tick"></span><span>08 · Systems of equations: the matrix view</span></a><a href="09-matrices-and-linear-systems.html" class="ol" data-key="y2s1/math-3/9"><span class="tick"></span><span>09 · Matrices and linear systems</span></a><a href="10-eigenvalues-and-eigenvectors.html" class="ol" data-key="y2s1/math-3/10"><span class="tick"></span><span>10 · Eigenvalues and eigenvectors</span></a><a href="11-numerical-solution-of-differential-equations.html" class="ol" data-key="y2s1/math-3/11"><span class="tick"></span><span>11 · Numerical solution of differential equations</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MTH 207</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 207 · Lesson 01 of 11 · Year 2 · Semester 1</p>
+  <h1>First-order equations revisited: separable and linear</h1>
+  <p class="sub">Separable equations recapped from the calculus course, then the linear first-order equation solved with the integrating factor, derived rather than decreed. Solution families and the initial condition that picks one. The course's working vocabulary set in one lesson.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.03 Differential Equations</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/gd1FYn86P0c" title="First Order Linear Differential Equations" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>First Order Linear Differential Equations <span class="src">The Organic Chemistry Tutor</span></figcaption></figure></div><div class="vh-bar"><span class="n">First Order Linear Differential Equations</span><span class="c">THE ORGANIC CHEMISTRY TUTOR</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Solve y' + 2y = 6 with y(0) = 0: what value does y approach, and how fast? (3, with τ = 0.5)</li><li>What exactly does the integrating factor multiply away?</li></ul></div><div class="measure">
+<h3>01 · Two shapes of first-order equation</h3>
+<p>A first-order ordinary differential equation relates a function to its first derivative. It is the mathematics of anything whose rate of change depends on its present state, which is most of engineering: a cooling casting, a draining tank, a charging capacitor. Two shapes cover the great majority of models. The <b>separable</b> form \( \frac{dy}{dx}=g(x)\,h(y) \) can be split so each variable sits with its own differential: \( \frac{dy}{h(y)}=g(x)\,dx \), after which both sides are integrated independently. The <b>linear</b> form \( y'+p(x)y=q(x) \) cannot generally be separated — the unknown appears both differentiated and undifferentiated, entangled — and needs the integrating-factor method of 3. Recognising which shape you hold is the first and most important decision, because it selects the entire solution route; misreading it wastes effort on a method that cannot close.</p>
+<h3>02 · Separable equations, worked as a method</h3>
+<p>Take \( \frac{dy}{dx}=xy \): divide by \(y\), multiply by \(dx\), and integrate each side to get \( \ln|y|=\tfrac12 x^2+C \), so \( y=Ae^{x^2/2} \). The constant \(A\) is then fixed by one initial condition — with \( y(0)=1 \), \(A=1\). The pattern is invariant across every separable problem: isolate the variables, integrate both sides, and apply the condition <em>last</em>, after the general solution is in hand. It is cleaner to carry a single constant \(C\) through the integration and resolve it once than to guess its final algebraic form; and it pays to keep the absolute value in \( \ln|y| \) until the sign is settled by the data, because a dropped sign is the commonest error in the whole method.</p>
+<h3>03 · The linear equation and its integrating factor</h3>
+<p>For \( y'+p(x)y=q(x) \), multiply through by \( \mu(x)=e^{\int p\,dx} \). The left side then collapses, by the product rule, into a single exact derivative \( \frac{d}{dx}(\mu y) \). This is the whole trick, and it is <em>derived</em>, not asserted: \( \frac{d}{dx}(\mu y)=\mu y'+\mu' y \), and because \( \mu'=p\mu \) by construction, \( \mu y'+p\mu y=\mu q \) is exactly \(\mu\) times the original equation. Integrating once gives \( \mu y=\int \mu q\,dx+C \). For \( y'+2y=4 \), \( \mu=e^{2x} \), so \( (e^{2x}y)'=4e^{2x} \), giving \( e^{2x}y=2e^{2x}+C \) and \( y=2+Ce^{-2x} \). The condition \( y(0)=5 \) fixes \( C=3 \). The factor is not magic — it is precisely the function that makes the product rule run backwards.</p>
+<h3>04 · Reading the answer: transient and steady state</h3>
+<p>Every solution above splits the same way — a part that decays and a part that remains. In \( y=2+3e^{-2x} \) the \( 3e^{-2x} \) is the <b>transient</b>, vanishing as \(x\) grows, and the \(2\) is the <b>steady state</b>, the value the system settles to. The steady state of \( y'+py=q \) with constant coefficients is simply \( q/p \), found by setting \(y'=0\); it is worth computing <em>before</em> any integration, because it names the destination, so a full solution that heads anywhere else is wrong and can be caught immediately. This transient-plus-steady decomposition is not a curiosity of these examples — it is the structural signature of every stable first-order system, and it returns in every modelling lesson that follows, which is why first-order linear equations are treated as the backbone of the entire course.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Integration</b> — the engine of both methods.</li><li><b>The product rule</b> — makes the integrating factor collapse.</li><li><b>Exponentials and logs</b> — the language of first-order decay.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Separable</td><td>\( \frac{dy}{dx}=g(x)h(y) \)</td><td>Variables split; integrate each side alone.</td></tr>
+<tr><td>Linear first-order</td><td>\( y'+p(x)y=q(x) \)</td><td>Unknown differentiated and not; use \(\mu\).</td></tr>
+<tr><td>Integrating factor</td><td>\( \mu=e^{\int p\,dx} \)</td><td>Turns the equation into an exact derivative.</td></tr>
+<tr><td>General solution</td><td>homogeneous + particular</td><td>Carries the arbitrary constant \(C\).</td></tr>
+<tr><td>Steady state</td><td>\( q/p \)</td><td>The destination; a fast sanity check.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Separable with a condition</b></p><p><b>Problem.</b> Solve \( \frac{dy}{dx}=xy \) with \( y(0)=1 \), evaluate at \( x=2 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Separate: \( \frac{dy}{y}=x\,dx\Rightarrow\ln|y|=\tfrac12 x^2+C \), so \( y=Ae^{x^2/2} \); \(y(0)=1\Rightarrow A=1\). At \(x=2\): \( y=e^{2}\approx7.389 \). <b>Answer:</b> \( y=e^{x^2/2},\ y(2)=e^2\approx7.389 \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Linear by integrating factor</b></p><p><b>Problem.</b> Solve \( y'+2y=4 \) with \( y(0)=5 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \mu=e^{2x} \); \( (e^{2x}y)'=4e^{2x} \), so \( e^{2x}y=2e^{2x}+C \), \( y=2+Ce^{-2x} \); \(y(0)=5\Rightarrow C=3\). <b>Answer:</b> \( y=2+3e^{-2x} \); steady state \(4/2=2\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Steady state before integrating</b></p><p><b>Problem.</b> State the steady state of \( y'+3y=6 \) and its integrating factor.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Set \(y'=0\Rightarrow3y=6\Rightarrow y=2\). \( \mu=e^{3x} \). <b>Answer:</b> steady state \(2\), \( \mu=e^{3x} \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Which is separable but NOT linear in \(y\)?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{dy}{dx}=xy^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( y'+2y=4 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( y'+xy=x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( y'=3y \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(y'=xy^2\) separates but the \(y^2\) is nonlinear. The others are linear.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The integrating factor for \( y'+p(x)y=q(x) \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( e^{\int p\,dx} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( e^{\int q\,dx} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \int p\,dx \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( e^{-\int p\,dx} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mu=e^{\int p\,dx} \) makes the left side \((\mu y)'\) since \(\mu'=p\mu\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>For \( y=2+3e^{-2x} \), the transient part is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 3e^{-2x} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 2 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( -2x \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( e^{-2x}+2 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The transient decays to zero: \(3e^{-2x}\). The \(2\) is steady state.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A first-order linear equation needs how many initial conditions?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>One</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Two</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Zero</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Depends on \(q(x)\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>One constant \(C\), so one condition. Order equals number of conditions.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The steady state of \( y'+5y=10 \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(2\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(10\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(5\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(5y=10\Rightarrow y=2=q/p\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(20.41\\ \\mathrm{lb}\\)", "\\(99.21\\ \\mathrm{lb}\\)", "\\(992.1\\ \\mathrm{lb}\\)", "\\(9.921\\ \\mathrm{lb}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(45 \\times 2.205 = 99.21\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1.361\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(6.614\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(66.14\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.6614\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(3 \times 2.205 = 6.614\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(134.9\\ \\mathrm{lbf}\\)", "\\(266.9\\ \\mathrm{lbf}\\)", "\\(13.49\\ \\mathrm{lbf}\\)", "\\(1.349\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(60 \\times 0.2248 = 13.49\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(11.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(22.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(1.124\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.1124\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(5 \times 0.2248 = 1.124\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3270760W" target="_blank" rel="noopener">Elementary Differential Equations and Boundary Value Problems — Boyce &amp; DiPrima</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">All lessons · MTH 207</a><a href="02-modeling-with-first-order-equations.html">02 · Modeling with first-order equations →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/strength/index.html">SOM 201 · Strength of Materials →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

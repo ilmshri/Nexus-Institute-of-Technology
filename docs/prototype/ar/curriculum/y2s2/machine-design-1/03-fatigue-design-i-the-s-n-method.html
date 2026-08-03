@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Fatigue design I: the S–N method — Machine Design I — MechEd</title>
+<meta name="description" content="Endurance limits and the modification factors — surface, size, load, temperature, reliability. Where the knockdowns come from and why they stack. Infi">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/machine-design-1/3">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/03-fatigue-design-i-the-s-n-method.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MDN 251 · Machine Design I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-design-methodology-and-factors-of-safety.html" class="ol" data-key="y2s2/machine-design-1/1"><span class="tick"></span><span>01 · Design methodology and factors of safety</span></a><a href="02-static-failure-design.html" class="ol" data-key="y2s2/machine-design-1/2"><span class="tick"></span><span>02 · Static failure design</span></a><a href="03-fatigue-design-i-the-s-n-method.html" class="ol cur" data-key="y2s2/machine-design-1/3"><span class="tick"></span><span>03 · Fatigue design I: the S–N method</span></a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" class="ol" data-key="y2s2/machine-design-1/4"><span class="tick"></span><span>04 · Fatigue design II: mean stress and cumulative damage</span></a><a href="05-shaft-design.html" class="ol" data-key="y2s2/machine-design-1/5"><span class="tick"></span><span>05 · Shaft design</span></a><a href="06-keys-splines-and-retaining-hardware.html" class="ol" data-key="y2s2/machine-design-1/6"><span class="tick"></span><span>06 · Keys, splines, and retaining hardware</span></a><a href="07-threaded-fasteners-and-bolted-joints.html" class="ol" data-key="y2s2/machine-design-1/7"><span class="tick"></span><span>07 · Threaded fasteners and bolted joints</span></a><a href="08-welded-joint-design.html" class="ol" data-key="y2s2/machine-design-1/8"><span class="tick"></span><span>08 · Welded joint design</span></a><a href="09-springs.html" class="ol" data-key="y2s2/machine-design-1/9"><span class="tick"></span><span>09 · Springs</span></a><a href="10-power-screws.html" class="ol" data-key="y2s2/machine-design-1/10"><span class="tick"></span><span>10 · Power screws</span></a><a href="11-design-project-a-driven-shaft-assembly.html" class="ol" data-key="y2s2/machine-design-1/11"><span class="tick"></span><span>11 · Design project: a driven shaft assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MDN 251</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MDN 251 · Lesson 03 of 11 · Year 2 · Semester 2</p>
+  <h1>Fatigue design I: the S–N method</h1>
+  <p class="sub">Endurance limits and the modification factors — surface, size, load, temperature, reliability. Where the knockdowns come from and why they stack. Infinite-life design for steel done properly.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.72 Elements of Mechanical Design (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/CDtaaMhMu6w" title="Marin Factors | Corrected Endurance Limit | Fatigue Stress Concentration" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Marin Factors | Corrected Endurance Limit | Fatigue Stress Concentration <span class="src">TheBom_PE</span></figcaption></figure></div><div class="vh-bar"><span class="n">Marin Factors | Corrected Endurance Limit | Fatigue Stress Concentration</span><span class="c">THEBOM_PE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Name three endurance-limit knockdown factors and what each punishes.</li><li>Why does a ground surface out-live a machined one in fatigue?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="An S-N diagram on logarithmic life axis. Strength falls from 0.9 times ultimate at one thousand cycles to the endurance limit at one million cycles, where the line becomes horizontal. A lower corrected endurance limit is shown beneath the ideal specimen value."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M80 240 L520 240" stroke="#14181F" stroke-width="1.5"/><path d="M80 40 L80 240" stroke="#14181F" stroke-width="1.5"/><text x="300" y="275" font-size="12" fill="#14181F" text-anchor="middle">life N (log cycles)</text><text x="26" y="140" font-size="12" fill="#14181F" transform="rotate(-90 26 140)" text-anchor="middle">stress amplitude</text><text x="140" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10³</text><text x="235" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁴</text><text x="330" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁵</text><text x="425" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁶</text><text x="500" y="258" font-size="11" fill="#5B6672" text-anchor="middle">10⁷</text><path d="M140 70 L425 140 L515 140" fill="none" stroke="#07785C" stroke-width="2.2"/><text x="150" y="62" font-size="11" fill="#07785C">0.9·Sut = 540</text><text x="432" y="134" font-size="11" fill="#07785C">Se′ = 300</text><path d="M140 96 L425 186 L515 186" fill="none" stroke="#8A5A0F" stroke-width="2.2" stroke-dasharray="6 4"/><text x="432" y="200" font-size="11" fill="#8A5A0F">Se = 174</text><path d="M405 142 L405 184" stroke="#9c2f2f" stroke-width="1.6"/><path d="M405 184 l-4 -7 l8 0 z" fill="#9c2f2f"/><text x="405" y="156" font-size="11" fill="#9c2f2f" text-anchor="end">Marin factors</text><path d="M425 140 L425 240" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3"/></svg><figcaption>The S-N picture and what the Marin factors do to it. The upper line is an ideal polished specimen; the lower dashed line is the same steel once surface finish, size and a reliability requirement are paid for. The endurance limit falls from 300 MPa to 174 MPa — the part did not change, the honesty did.</figcaption></figure>
+<h3>01 · Why static strength is not the answer</h3>
+<p>A shaft that never approaches yield can still fail, and usually does. Fatigue is damage
+accumulated by <em>fluctuating</em> stress: a crack initiates at a surface discontinuity, grows
+a little on each cycle, and severs the section at a nominal stress the static calculation
+declared safe by a wide margin. Most rotating-machinery failures are fatigue failures, and none
+of them are visible to a yield check.</p>
+<h3>02 · The endurance limit and where it comes from</h3>
+<p>Test enough polished specimens and steels show a stress amplitude below which life becomes
+effectively unlimited — the endurance limit. For wrought steels a serviceable first estimate is
+\( S_e' = 0.5\,S_{ut} \) (capped near 700 MPa). The prime matters: that value belongs to a
+mirror-polished 7.6 mm rotating-bending specimen tested at room temperature, which is not the
+part you are designing.</p>
+<h3>03 · The Marin factors — paying for reality</h3>
+<div class="keybox"><span class="tag">Key relation — corrected endurance limit</span>
+<p>\[ S_e = k_a k_b k_c k_d k_e \, S_e' \]</p>
+<p>\( k_a \) surface finish, \( k_b \) size, \( k_c \) load type, \( k_d \) temperature,
+\( k_e \) reliability. Each is at most 1.0, so they only ever reduce — and because they
+multiply, they stack fast.</p></div>
+<p>Their physical logic is worth holding onto rather than memorising. Surface finish dominates
+because fatigue cracks start at the surface, so roughness supplies ready-made initiation sites:
+a machined finish costs about 17% at 600 MPa, and a hot-rolled or forged surface costs far more.
+Size reduces strength because a larger section exposes more highly-stressed volume, so the
+worst flaw present is statistically worse. Reliability is not a physical property at all but a
+choice about how far into the scatter band you design: 50% reliability means half of parts fail
+sooner than predicted, which is why 90%, 99% or 99.9% carry escalating penalties.</p>
+<h3>04 · The estimating method</h3>
+<p><em>One:</em> get \( S_{ut} \) for the actual material and condition, not the generic grade.
+<em>Two:</em> take \( S_e' = 0.5 S_{ut} \). <em>Three:</em> evaluate each Marin factor against
+the real part — its finish, its diameter, its loading, its service temperature, and the
+reliability the duty demands. <em>Four:</em> multiply. <em>Five:</em> compare the stress
+<em>amplitude</em> against \( S_e/n \), never the peak stress, because fatigue is driven by the
+alternating component. And carry \( K_f \), the fatigue concentration factor, always — the
+ductile-static permission of Lesson 2 does not survive here.</p>
+<p>The characteristic number to remember is the size of the total knockdown. In the worked case
+below, five factors that each look modest combine to leave 58% of the specimen value. An
+engineer who designs to \( 0.5 S_{ut} \) directly is not being slightly optimistic; they are
+claiming nearly twice the fatigue strength the part has.</p>
+<p><strong>Closing.</strong> The endurance limit is a laboratory number until you have paid for
+your part's surface, size and required reliability. Then it is a design stress.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Fatigue, S–N curves and crack initiation</b> (Materials I L8) — the physical mechanism this lesson quantifies.</li>
+<li><b>Stress concentration</b> (Lesson 2) — \( K_t \), and why fatigue withdraws the permission to ignore it.</li>
+<li><b>Tensile strength</b> (Materials I L7) — \( S_{ut} \) is the input the whole estimate hangs on.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Specimen endurance limit</td><td>\( S_e' \approx 0.5\,S_{ut} \)</td><td>First estimate for wrought steel; a laboratory value, never a design stress.</td></tr>
+<tr><td>Corrected endurance limit</td><td>\( S_e = k_ak_bk_ck_dk_e S_e' \)</td><td>The number you actually design against.</td></tr>
+<tr><td>Surface factor</td><td>\( k_a = a\,S_{ut}^{\,b} \)</td><td>Machined, ground, hot-rolled, forged — the largest single knockdown.</td></tr>
+<tr><td>Size factor</td><td>\( k_b = 1.24\,d^{-0.107} \)</td><td>Round sections roughly 3–51 mm in bending or torsion.</td></tr>
+<tr><td>Reliability factor</td><td>\( k_e \)</td><td>A design choice about scatter: 0.897 at 90%, 0.814 at 99%, 0.753 at 99.9%.</td></tr>
+<tr><td>Stress amplitude</td><td>\( \sigma_a = (\sigma_{max}-\sigma_{min})/2 \)</td><td>The quantity fatigue responds to; compare this against \( S_e \).</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>What the specimen value costs after correction</b></p>
+<p><b>Problem.</b> A machined steel shaft of 30 mm diameter runs in rotating bending at room
+temperature. The steel has \( S_{ut} = 600\ \mathrm{MPa} \); the duty requires 99%
+reliability (\( k_e = 0.814 \)). Use \( k_a = 4.51\,S_{ut}^{-0.265} \) and
+\( k_b = 1.24\,d^{-0.107} \). <b>Find:</b> \( S_e' \), each Marin factor, and the corrected
+endurance limit \( S_e \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( S_e' = 0.5\times600 = 300\ \mathrm{MPa} \).
+(2) \( k_a = 4.51\times600^{-0.265} = 0.828 \).
+(3) \( k_b = 1.24\times30^{-0.107} = 0.862 \).
+(4) \( k_c = 1 \) (bending), \( k_d = 1 \) (room temperature), \( k_e = 0.814 \).
+(5) \( S_e = 0.828\times0.862\times1\times1\times0.814\times300 = 174.2\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> \( S_e \approx 174\ \mathrm{MPa} \).
+<b>Sanity check:</b> the total knockdown is \( 174.2/300 = 0.581 \) — the corrected limit is 58%
+of the specimen value, and 29% of \( S_{ut} \). Designing against \( 0.5S_{ut} = 300 \) would
+have claimed 1.72 times the fatigue strength this shaft actually possesses.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Buying strength with surface finish</b></p>
+<p><b>Problem.</b> The same shaft is ground rather than machined, so
+\( k_a = 1.58\,S_{ut}^{-0.085} \). All other factors are unchanged. <b>Find:</b> the new
+\( k_a \), the new \( S_e \), and the percentage gain in endurance limit.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( k_a = 1.58\times600^{-0.085} = 0.917 \).
+(2) \( S_e = 0.917\times0.862\times0.814\times300 = 193.0\ \mathrm{MPa} \).
+(3) Gain: \( 193.0/174.2 - 1 = 0.108 \), i.e. 10.8%.</p>
+<p><b>Answer:</b> \( k_a = 0.917 \), \( S_e = 193\ \mathrm{MPa} \), a 10.8% gain.
+<b>Sanity check:</b> grinding buys about a tenth more fatigue strength for one extra
+manufacturing operation — often the cheapest strength available, and far cheaper than the
+larger diameter that would otherwise be needed. It is also why a drawing note specifying
+surface finish in a fillet is a structural requirement, not cosmetic.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Amplitude, not peak</b></p>
+<p><b>Problem.</b> A component cycles between \( \sigma_{min} = 20\ \mathrm{MPa} \) and
+\( \sigma_{max} = 140\ \mathrm{MPa} \). <b>Find:</b> the stress amplitude and mean stress,
+and the factor of safety on infinite life against \( S_e = 174\ \mathrm{MPa} \), ignoring the
+mean-stress effect for now.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Amplitude:
+\( \sigma_a = (140-20)/2 = 60\ \mathrm{MPa} \).
+(2) Mean: \( \sigma_m = (140+20)/2 = 80\ \mathrm{MPa} \).
+(3) \( n = S_e/\sigma_a = 174/60 = 2.9 \).</p>
+<p><b>Answer:</b> \( \sigma_a = 60 \), \( \sigma_m = 80\ \mathrm{MPa} \), \( n = 2.9 \).
+<b>Sanity check:</b> comparing the peak 140 MPa against \( S_e \) instead would have reported
+\( n = 1.24 \) — needlessly alarming — while ignoring that the 80 MPa mean stress is itself
+damaging in a way this calculation has not yet accounted for. Lesson 4 supplies the Goodman
+treatment that reconciles the two.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>For a wrought steel with \( S_{ut} = 800\ \mathrm{MPa} \), the first estimate of the specimen endurance limit \( S_e' \) is</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 400\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 800\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 240\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 1600\ \mathrm{MPa} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The standard first estimate for wrought steel is \( S_e' = 0.5\,S_{ut} = 400\ \mathrm{MPa} \), subject to the cap near 700 MPa that applies to very high-strength steels. Answering 800 MPa confuses the endurance limit with the ultimate strength itself. The 240 MPa figure applies 0.3 rather than 0.5, and 1600 MPa doubles instead of halving — fatigue strength is always below static strength, so any answer above \( S_{ut} \) can be rejected on sight.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Which Marin factor is typically the largest single knockdown for an as-forged component?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Size, \( k_b \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Surface finish, \( k_a \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Load type, \( k_c \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Temperature, \( k_d \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Fatigue cracks initiate at the surface, so surface condition dominates: a rough as-forged skin supplies ready-made initiation sites and can cut the endurance limit by more than half on a strong steel. Size is real but milder over ordinary shaft diameters — around 0.86 at 30 mm. Load type applies a fixed adjustment for axial or torsional loading rather than a finish-dependent one, and temperature is 1.0 until the part runs hot. This ranking is why grinding a fillet is such a cost-effective structural intervention.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Five Marin factors of 0.83, 0.86, 1.0, 1.0 and 0.81 are applied to \( S_e' = 300\ \mathrm{MPa} \). The corrected endurance limit is closest to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 300\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 174\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 250\ \mathrm{MPa} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 90\ \mathrm{MPa} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The factors multiply: \( 0.83\times0.86\times0.81 = 0.578 \), and \( 0.578\times300 \approx 174\ \mathrm{MPa} \). The 250 MPa answer comes from averaging the factors instead of multiplying, which badly understates the stacking; 300 MPa ignores the correction entirely. The 90 MPa answer roughly adds the shortfalls rather than compounding the factors, over-penalising the part. Multiplication is the point: several individually modest factors combine to remove more than 40% of the specimen value.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Fatigue design compares which stress quantity against the corrected endurance limit?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The maximum stress in the cycle</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The stress amplitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The mean stress</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The static yield stress</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Fatigue damage is driven by the alternating component, so the stress amplitude \( \sigma_a = (\sigma_{max}-\sigma_{min})/2 \) is the quantity compared against \( S_e \). Using the maximum stress conflates the steady and fluctuating parts and reports a needlessly low factor of safety. The mean stress is not ignored — it genuinely reduces allowable amplitude — but it enters through a Goodman or Gerber construction rather than by direct comparison. The yield stress governs a different failure mode entirely.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Raising the required reliability from 50% to 99% changes \( k_e \) from 1.000 to 0.814. What does this represent physically?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The material becomes weaker at higher reliability</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>A choice about how far into the strength scatter band the design sits</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>An allowance for higher operating temperature</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>A correction for the larger size of reliable parts</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Reliability is not a property of the material but a decision about scatter. The endurance limit measured across many specimens is a distribution; designing at 50% reliability means half of parts are expected to fail earlier than predicted, which is rarely acceptable, so the design stress is moved down the distribution and \( k_e \) falls. The steel is unchanged. Temperature is handled separately by \( k_d \), and size by \( k_b \); neither has anything to do with the reliability choice.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Why must the fatigue stress-concentration factor be carried through a fatigue calculation, when \( K_t \) is often set aside for static ductile design?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Fatigue loads are always larger than static loads</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Local yielding cannot blunt a peak that recurs every cycle at the crack initiation site</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( K_t \) is only defined for cyclic loading</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Fatigue calculations use nominal stress, so the factor compensates</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The static permission rests on local yielding redistributing the peak once. Under cyclic loading the notch root is exactly where a crack initiates and then grows a little on every cycle, so the concentration governs the life rather than being blunted away. Fatigue loads are typically <em>smaller</em> than the static ones a part survives, which is what makes fatigue failures surprising. \( K_t \) is a purely geometric factor defined regardless of loading, and the last option inverts the logic of nominal stress.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A shaft's diameter is increased from 30 mm to 60 mm. Using \( k_b = 1.24\,d^{-0.107} \), the size factor</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>increases, because a bigger shaft is stronger</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>decreases slightly, because more highly-stressed material is exposed</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is unchanged, because \( k_b \) depends only on material</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>halves, in proportion to the diameter</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The exponent is negative, so \( k_b \) falls as diameter grows: from 0.862 at 30 mm to about 0.800 at 60 mm, a reduction of roughly 7%. The physical reason is statistical — a larger section exposes a greater volume of highly-stressed material, so the worst flaw present is likely to be worse. Note this concerns <em>strength per unit area</em>: the bigger shaft still carries far more load, because section modulus grows with the cube of diameter while \( k_b \) declines only weakly. The factor certainly depends on geometry, and the decline is nothing like proportional.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A designer sizes a machined 30 mm shaft directly against \( 0.5\,S_{ut} \), omitting the Marin factors. Compared with the corrected value of 174 MPa, the claimed fatigue strength is too high by a factor of about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1.1</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>1.7</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>3.0</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1.0 — the omission is harmless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The claim is 300 MPa against an actual 174 MPa, a ratio of \( 300/174 = 1.72 \). This is the practical significance of the whole lesson: the omission is not a rounding matter but nearly a factor of two, and it is invisible in the arithmetic because every individual step is correct. A part designed this way can pass every check in the calculation package and still fail in service, which is precisely the pattern that makes fatigue the dominant failure mode in rotating machinery.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the shaft that passed every static check.</b> A cooling-water pump shaft
+fails through a keyway after eighteen months. The original calculation is retrieved and is
+arithmetically flawless: peak stress well below yield, factor of safety above four. It contains
+no fatigue check at all. Re-worked under this lesson's method, the picture inverts — the
+corrected endurance limit for the machined 30 mm section at 99% reliability is about 174 MPa,
+not the 300 MPa a bare \( 0.5S_{ut} \) would have claimed, and the keyway's fatigue
+concentration applies in full because the ductile-static permission does not survive cyclic
+loading. The replacement shaft is ground at the fillet and the keyway radius increased; both
+changes buy fatigue strength rather than section. The instructive part is that no one made a
+calculation error. They answered the wrong question, thoroughly.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.3937\\ \\mathrm{in}\\)", "\\(2540\\ \\mathrm{in}\\)", "\\(39.37\\ \\mathrm{in}\\)", "\\(3.937\\ \\mathrm{in}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(100 \\times 0.03937 = 3.937\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.0315\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(203.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(3.15\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.315\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(8 \times 0.03937 = 0.315\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(33.72\\ \\mathrm{lbf}\\)", "\\(667.2\\ \\mathrm{lbf}\\)", "\\(337.2\\ \\mathrm{lbf}\\)", "\\(3.372\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(150 \\times 0.2248 = 33.72\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(2.698\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(53.38\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(26.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2698\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(12 \times 0.2248 = 2.698\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1923658W" target="_blank" rel="noopener">Shigley's Mechanical Engineering Design — Budynas &amp; Nisbett</a></li><li>Machine Design: An Integrated Approach — Robert L. Norton</li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Machine Design; <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 8</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-static-failure-design.html">← 02 · Static failure design</a><a href="index.html">كل الدروس · MDN 251</a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html">04 · Fatigue design II: mean stress and cumulative damage →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

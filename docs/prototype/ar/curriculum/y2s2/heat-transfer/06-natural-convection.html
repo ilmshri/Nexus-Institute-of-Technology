@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Natural convection — Heat Transfer — MechEd</title>
+<meta name="description" content="Grashof and Rayleigh numbers; vertical plates and enclosures. Hot cabinets and un-fanned motors in Gulf ambient. Why still summer air is an equipment ">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/6">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/06-natural-convection.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol cur" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 06 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 06 of 11 · Year 2 · Semester 2</p>
+  <h1>Natural convection</h1>
+  <p class="sub">Grashof and Rayleigh numbers; vertical plates and enclosures. Hot cabinets and un-fanned motors in Gulf ambient. Why still summer air is an equipment rating problem.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/6">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/QB4yD7Gb5wI" title="Heat Transfer - Chapter 9 - Conceptual Introduction to Natural (Free) Convection)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Heat Transfer - Chapter 9 - Conceptual Introduction to Natural (Free) Convection) <span class="src">Kody Powell</span></figcaption></figure></div><div class="vh-bar"><span class="n">Heat Transfer - Chapter 9 - Conceptual Introduction to Natural (Free) Convection)</span><span class="c">KODY POWELL</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does natural convection depend on orientation?</li><li>What does Rayleigh number decide?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Four horizontal bars on a logarithmic scale from 1 to 100,000 comparing typical convection coefficient ranges for natural convection in a gas, forced convection in a gas, forced convection in a liquid, and boiling or condensation, with this lesson's own computed value marked near the bottom of the natural-convection gas range"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Natural convection sits at the very bottom of the h ladder</text><rect x="152.3" y="91" width="81.2" height="18" fill="#3a6ea5" fill-opacity="0.25" stroke="#3a6ea5" stroke-width="1.4"/><text x="173.3" y="86" fill="#3a6ea5" font-size="9.5">Natural convection, gas</text><rect x="233.4" y="131" width="74.0" height="18" fill="#c2820f" fill-opacity="0.25" stroke="#c2820f" stroke-width="1.4"/><text x="233.4" y="126" fill="#c2820f" font-size="9.5">Forced convection, gas</text><rect x="255.7" y="171" width="192.6" height="18" fill="#1f7a5c" fill-opacity="0.25" stroke="#1f7a5c" stroke-width="1.4"/><text x="255.7" y="166" fill="#1f7a5c" font-size="9.5">Forced convection, liquid</text><rect x="381.4" y="211" width="118.6" height="18" fill="#8a4b9e" fill-opacity="0.25" stroke="#8a4b9e" stroke-width="1.4"/><text x="381.4" y="206" fill="#8a4b9e" font-size="9.5">Boiling / condensation</text><line x1="130.0" y1="250" x2="130.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="130.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">1</text><line x1="204.0" y1="250" x2="204.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="204.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">10</text><line x1="278.0" y1="250" x2="278.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="278.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">100</text><line x1="352.0" y1="250" x2="352.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="352.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">1k</text><line x1="426.0" y1="250" x2="426.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="426.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">10k</text><line x1="500.0" y1="250" x2="500.0" y2="255" stroke="#16202e" stroke-width="1"/><text x="500.0" y="267" text-anchor="middle" fill="#16202e" font-size="9.5">100k</text><line x1="130" y1="250" x2="500" y2="250" stroke="#16202e" stroke-width="1"/><line x1="174.5" y1="72" x2="174.5" y2="250" stroke="#16202e" stroke-width="1.4" stroke-dasharray="2,3"/><circle cx="174.5" cy="100" r="4.5" fill="#16202e"/><text x="174.5" y="66" text-anchor="middle" fill="#16202e" font-size="10" font-weight="700">h=4.0</text></svg><figcaption>Representative h ranges by regime — natural convection in a gas sits one to two orders of magnitude below even modest forced convection, which is exactly why Lesson 2's fins pay off so much more decisively here than anywhere else in this course.</figcaption></figure>
+
+<h3>01 · Grashof and Rayleigh — natural convection's own dimensionless numbers</h3>
+<p>Natural convection has no imposed velocity to build a Reynolds number from — buoyancy itself
+drives the flow. The <b>Grashof number</b>,
+\(Gr=g\beta\Delta T L^3/\nu^2\), compares buoyancy force to viscous force, playing the role
+Reynolds number plays in forced convection. Multiplying by Prandtl number gives the
+<b>Rayleigh number</b>, \(Ra=Gr\cdot Pr\), which folds in a comparison of buoyancy to thermal
+diffusion as well — and it is \(Ra\), not \(Gr\) and \(Pr\) separately, that almost every
+natural-convection correlation is actually written in terms of.</p>
+
+<h3>02 · Correlations, and why orientation changes everything</h3>
+<p>A vertical plate or enclosure wall follows a Churchill–Chu-type correlation,
+\(Nu=0.68+\dfrac{0.670\,Ra^{1/4}}{[1+(0.492/Pr)^{9/16}]^{4/9}}\) for the laminar
+range (\(Ra\lesssim10^9\)). Orientation matters far more here than in forced convection: a
+horizontal plate with its hot face <i>up</i> lets buoyant plumes rise away freely, giving a
+meaningfully higher \(h\); the same plate hot face <i>down</i> traps warm, buoyant fluid
+directly underneath a cooler layer above it — a stable arrangement with almost none of the
+free plume motion, and a correspondingly much lower \(h\). The same \(\Delta T\), the same
+plate, a different number, purely from which way it faces.</p>
+
+<h3>03 · The Gulf-summer double penalty</h3>
+<p>A sealed, un-fanned electrical enclosure rejects heat by natural convection (and radiation,
+Lesson 9) alone. Two effects compound against it as ambient temperature climbs: \(h\) itself
+depends only weakly on \(\Delta T\) (roughly \(\Delta T^{1/4}\) in the laminar range, per
+2's correlation), so it barely improves even as the surface runs hotter; meanwhile the
+<i>available</i> \(\Delta T\) between a fixed-rating surface and a hotter ambient shrinks
+directly. Both effects point the same unfavorable way at once — a genuine double penalty, not
+merely "it's hotter outside so everything runs a bit warmer."</p>
+
+<h3>04 · A worked cabinet wall</h3>
+<p>A sealed cabinet's vertical wall, height \(L=0.3\ \text{m}\), runs at
+\(T_s=70\)°C in \(T_\infty=45\)°C still Gulf-summer air
+(\(\Delta T=25\)°C). At the film temperature, \(Pr=0.71\),
+\(Gr=5.85e+07\), \(Ra=Gr\cdot Pr=4.16e+07\) — under \(10^9\), the laminar
+correlation applies. \(Nu=42.0\), giving
+\(h=Nu\,k/L=3.99\ \text{W/m}^2\text{K}\) — a strikingly low number next to
+Lesson 4's forced-air 20 W/m²K, and the reason natural convection sits at the very bottom of
+this lesson's own comparison chart. If ambient instead climbs to
+\(T_\infty=50\)°C (\(\Delta T=20\)°C) at the same surface temperature,
+\(h\) falls only slightly to 3.77 W/m²K, but the heat actually rejected,
+\(q''=h\Delta T\), falls from 99.7 to 75.4 W/m² — a 24% drop in
+cooling capacity from a mere 5°C rise in ambient, the double penalty of 3 made
+concrete.</p>
+<div class="keybox"><span class="tag">Key relation — natural convection</span>
+<p>\[ Ra=Gr\cdot Pr=\frac{g\beta\Delta T L^3}{\nu^2}\cdot Pr \]</p>
+<p>Almost every correlation in this lesson is stated as \(Nu=f(Ra)\) — one number replaces the
+separate Reynolds and Prandtl numbers forced convection needed.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — natural convection keeps the same
+\(Nu\) idea but replaces the imposed-flow Reynolds number with the buoyancy-driven Grashof/
+Rayleigh number, since there is no external velocity to build Re from.</li></ul>
+<h4>Toolkit — natural convection</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Grashof number</td><td>\( Gr=g\beta\Delta T L^3/\nu^2 \)</td><td>Buoyancy vs. viscous force.</td></tr>
+<tr><td>Rayleigh number</td><td>\( Ra=Gr\cdot Pr \)</td><td>The number correlations are actually fitted to.</td></tr>
+<tr><td>Vertical plate (laminar)</td><td>Churchill–Chu form, 2</td><td>\(Ra\lesssim10^9\).</td></tr>
+<tr><td>Orientation effect</td><td>hot-face-up ≫ hot-face-down, same ΔT</td><td>Same plate, different h.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The worked cabinet wall</b></p><p><b>Problem.</b> A cabinet wall, \(L=0.3\ \text{m}\) tall, runs at \(T_s=70\)°C in \(T_\infty=45\)°C air (\(Pr=0.71\), film properties as in 4). Find \(Gr\), \(Ra\), \(Nu\), and \(h\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(Gr=g\beta\Delta TL^3/\nu^2=5.85e+07\). \(Ra=Gr\cdot Pr=4.16e+07\) (laminar range). \(Nu=42.0\). \(h=Nu\,k/L=3.99\ \text{W/m}^2\text{K}\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>A hotter ambient, same surface temperature</b></p><p><b>Problem.</b> The same wall stays at \(T_s=70\)°C, but ambient rises to \(T_\infty=50\)°C. Find the new h and the new heat flux \(q''=h\Delta T\), and compare the heat flux to the original 45°C-ambient case.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(\Delta T=20\)°C now. Recomputing, \(Ra=3.31e+07\), \(Nu=39.7\), \(h=3.77\ \text{W/m}^2\text{K}\) — only slightly lower than 3.99. But \(q''=h\Delta T=75.4\ \text{W/m}^2\), down from 99.7 W/m² — a 24% drop in rejected heat from a 5°C ambient rise alone.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>A shorter cabinet wall</b></p><p><b>Problem.</b> A second, shorter cabinet has a wall only \(L=0.15\ \text{m}\) tall, same \(T_s=70\)°C and \(T_\infty=45\)°C as 4. Find its Ra, Nu, and h, and compare h to the taller 0.3 m wall.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(Ra=5.20e+06\) (still laminar range), \(Nu=25.2\), \(h=4.80\ \text{W/m}^2\text{K}\) — <i>higher</i> than the taller wall's 3.99 W/m²K, since \(h=Nu\,k/L\) and \(Nu\) grows more slowly than \(L\) does; natural-convection h weakly falls as the characteristic length grows, the opposite of what 'bigger surface, better cooling' might suggest.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The Grashof number \(Gr=g\beta\Delta TL^3/\nu^2\) plays which role in natural convection that Reynolds number plays in forced convection?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>It compares buoyancy force to viscous force, since there is no imposed velocity to build Re from</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>It compares momentum diffusivity to thermal diffusivity</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It measures the fraction of flow that is turbulent</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It replaces the Nusselt number entirely</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>With no external velocity, buoyancy itself drives the flow, and Gr compares that buoyant driving force to viscous resistance — the natural-convection analog of Re.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The Rayleigh number \(Ra=Gr\cdot Pr\) adds which comparison beyond Gr alone?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>A comparison of buoyancy to thermal diffusion, not just viscosity</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>A comparison of inertial to viscous forces</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>A comparison of radiative to convective heat transfer</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing — Ra and Gr are interchangeable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Multiplying by Pr (momentum vs. thermal diffusivity) folds thermal diffusion into the comparison, which is why almost every correlation is fitted to Ra directly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A horizontal hot plate facing UP versus the same plate facing DOWN, same ΔT:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Has identical h in both orientations</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Has higher h facing up — free plumes rise away, versus down, where stable stratification suppresses motion</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Has higher h facing down, since heat 'wants' to sink</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Cannot be compared without knowing the fluid</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Facing up allows buoyant plumes to rise freely; facing down traps stable stratified fluid beneath a cooler layer, suppressing motion and lowering h substantially.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>In the laminar range, natural-convection h depends on ΔT roughly as:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(\Delta T\) (linearly)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(\Delta T^{1/4}\) — weakly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(\Delta T^2\) — strongly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Not at all</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The Churchill–Chu form gives \(Nu\propto Ra^{1/4}\propto\Delta T^{1/4}\): h barely improves even as the surface runs much hotter.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>As Gulf-summer ambient temperature rises (fixed surface rating), a sealed enclosure's actual rejected heat flux \(q''=h\Delta T\):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Rises, since hotter air always convects better</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Falls — both a shrinking ΔT and an only weakly-changing h point the same unfavorable way</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Stays exactly constant, since h compensates perfectly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Is undefined once ambient exceeds surface temperature</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both effects compound: h barely improves and the available ΔT shrinks, so rejected heat falls — verified numerically in this lesson's second solve problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>This lesson's own computed \(h\approx4\ \text{W/m}^2\text{K}\) compares to Lesson 4's forced-air result (\(h\approx20\ \text{W/m}^2\text{K}\)) as:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Roughly five times higher</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Roughly five times lower</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Essentially identical</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Natural convection is always higher than forced convection</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Natural convection in a gas sits near the bottom of the h ladder — a fraction of even modest forced-air values, as this lesson's comparison chart shows directly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A shorter wall (smaller characteristic length L), same ΔT and fluid, has natural-convection h that is:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Lower than a taller wall's — bigger surfaces always convect better</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Slightly higher than a taller wall's — h weakly falls as L grows</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Exactly the same regardless of L</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Impossible to determine without Re</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Since \(h=Nu\,k/L\) and \(Nu\propto Ra^{1/4}\propto L^{3/4}\), h scales as roughly \(L^{-1/4}\) — a weak decrease with increasing L, confirmed in this lesson's third solve problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Why does Lesson 2's fin effectiveness argument apply especially strongly to natural-convection surfaces?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Fin effectiveness scales with \(\sqrt{k/h}\), and natural convection's very low h is exactly the regime where that ratio — and the payoff — is largest</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Fins do not work at all under natural convection</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Natural convection eliminates the need for fins entirely</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Fin effectiveness is independent of h</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Low h is precisely where \(\varepsilon_{fin}\propto\sqrt{k/h}\) is largest — exactly why finned, un-fanned enclosures are such a common design pattern.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>An engineer specifying a sealed, un-fanned electrical enclosure for outdoor Gulf installation
+checks natural-convection h at the design ambient temperature, not at a mild reference
+temperature, before setting the enclosure's maximum internal dissipation rating — per 3 and
+4's own numbers, a modest ambient rise can cut real cooling capacity by roughly a quarter even
+though h itself barely changes, so a catalog rating benchmarked at a temperate ambient overstates
+what the same enclosure can actually reject on a Gulf summer day.</p>
+<p>A technician orienting a horizontal hot surface — an outdoor junction-box lid, a horizontal
+duct run — checks which face is up before assuming a handbook horizontal-plate h applies as
+written: per 2, the same \(\Delta T\) gives a meaningfully higher h with the hot face up
+(free plumes) than with the hot face down (stable, trapped stratification), and mixing the two
+up is an easy, checkable mistake.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(40.23\\ \\mathrm{hp}\\)", "\\(2.237\\ \\mathrm{hp}\\)", "\\(4.023\\ \\mathrm{hp}\\)", "\\(0.4023\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(3 \\times 1.341 = 4.023\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(603.5\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(33.56\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(60.35\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.035\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(45 \times 1.341 = 60.35\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.1124\\ \\mathrm{lbf}\\)", "\\(22.24\\ \\mathrm{lbf}\\)", "\\(11.24\\ \\mathrm{lbf}\\)", "\\(1.124\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(5 \\times 0.2248 = 1.124\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1.349\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(266.9\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(134.9\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(13.49\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(60 \times 0.2248 = 13.49\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 9; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="05-forced-convection-internal.html">← 05 · Forced convection: internal</a><a href="index.html">كل الدروس · HTX 253</a><a href="07-boiling-and-condensation.html">07 · Boiling and condensation →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

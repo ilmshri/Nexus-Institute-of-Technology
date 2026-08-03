@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Laplace transforms — Engineering Mathematics II — MechEd</title>
+<meta name="description" content="Transform pairs and properties; solving ODEs by algebra. Transfer functions previewed. The s-domain as the control engineer's home ground.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s2/math-2/10">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y1s2/math-2/10-laplace-transforms.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 151 · Engineering Mathematics II</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-vectors-and-vector-geometry.html" class="ol" data-key="y1s2/math-2/1"><span class="tick"></span><span>01 · Vectors and vector geometry</span></a><a href="02-partial-derivatives.html" class="ol" data-key="y1s2/math-2/2"><span class="tick"></span><span>02 · Partial derivatives</span></a><a href="03-chain-rule-and-total-differentials.html" class="ol" data-key="y1s2/math-2/3"><span class="tick"></span><span>03 · Chain rule and total differentials</span></a><a href="04-multiple-integrals.html" class="ol" data-key="y1s2/math-2/4"><span class="tick"></span><span>04 · Multiple integrals</span></a><a href="05-vector-fields-flux-and-circulation.html" class="ol" data-key="y1s2/math-2/5"><span class="tick"></span><span>05 · Vector fields, flux, and circulation</span></a><a href="06-matrices-and-linear-systems.html" class="ol" data-key="y1s2/math-2/6"><span class="tick"></span><span>06 · Matrices and linear systems</span></a><a href="07-eigenvalues-and-eigenvectors.html" class="ol" data-key="y1s2/math-2/7"><span class="tick"></span><span>07 · Eigenvalues and eigenvectors</span></a><a href="08-second-order-linear-odes.html" class="ol" data-key="y1s2/math-2/8"><span class="tick"></span><span>08 · Second-order linear ODEs</span></a><a href="09-forced-oscillations-and-resonance.html" class="ol" data-key="y1s2/math-2/9"><span class="tick"></span><span>09 · Forced oscillations and resonance</span></a><a href="10-laplace-transforms.html" class="ol cur" data-key="y1s2/math-2/10"><span class="tick"></span><span>10 · Laplace transforms</span></a><a href="11-fourier-series-first-contact.html" class="ol" data-key="y1s2/math-2/11"><span class="tick"></span><span>11 · Fourier series first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MTH 151</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 151 · Lesson 10 of 11 · Year 1 · Semester 2</p>
+  <h1>Laplace transforms</h1>
+  <p class="sub">Transform pairs and properties; solving ODEs by algebra. Transfer functions previewed. The s-domain as the control engineer's home ground.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.02 Multivariable Calculus</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s2/math-2/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.02 Multivariable Calculus; 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/KqokoYr_h1A" title="Intro to the Laplace Transform &amp; Three Examples" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Intro to the Laplace Transform &amp; Three Examples <span class="src">Dr. Trefor Bazett</span></figcaption></figure></div><div class="vh-bar"><span class="n">Intro to the Laplace Transform &amp; Three Examples</span><span class="c">DR. TREFOR BAZETT</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does the Laplace transform turn an ODE into algebra?</li><li>What does a pole's location say about a response's shape?</li></ul></div><div class="measure">
+<figure class="lesson-diagram"><svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="The Laplace method: transform the time-domain ODE to the s-domain, solve algebraically, then invert back to the time solution"><rect width="560" height="230" fill="#fbfdfe"/><text x="16" y="24" fill="#16202e" font-size="12" font-weight="700">The Laplace detour: hard calculus becomes easy algebra</text><rect x="30" y="60" width="150" height="54" rx="8" fill="#fff" stroke="#8a99a8" stroke-width="1.8"/><text x="105.0" y="81.0" text-anchor="middle" fill="#16202e" font-size="12" font-weight="700">ODE in t</text><text x="105.0" y="99.0" text-anchor="middle" fill="#8a99a8" font-size="10">differential — hard</text><rect x="205" y="60" width="150" height="54" rx="8" fill="#fff" stroke="#1f7a5c" stroke-width="1.8"/><text x="280.0" y="81.0" text-anchor="middle" fill="#16202e" font-size="12" font-weight="700">Algebra in s</text><text x="280.0" y="99.0" text-anchor="middle" fill="#1f7a5c" font-size="10">rational Y(s) — easy</text><rect x="380" y="60" width="150" height="54" rx="8" fill="#fff" stroke="#c2820f" stroke-width="1.8"/><text x="455.0" y="81.0" text-anchor="middle" fill="#16202e" font-size="12" font-weight="700">Solution x(t)</text><text x="455.0" y="99.0" text-anchor="middle" fill="#c2820f" font-size="10">read from table</text><line x1="180" y1="87" x2="205" y2="87" stroke="#1f7a5c" stroke-width="2"/><path d="M205,87 l-8,-4 M205,87 l-8,4" stroke="#1f7a5c" stroke-width="2" fill="none"/><text x="192.5" y="58" text-anchor="middle" fill="#1f7a5c" font-size="10" font-style="italic">ℒ transform</text><line x1="280" y1="114" x2="280" y2="150" stroke="#1f7a5c" stroke-width="2"/><text x="292" y="140" fill="#1f7a5c" font-size="10" font-style="italic">solve for Y(s)</text><line x1="355" y1="175" x2="380" y2="175" stroke="#c2820f" stroke-width="2"/><path d="M380,175 l-8,-4 M380,175 l-8,4" stroke="#c2820f" stroke-width="2" fill="none"/><text x="367.5" y="167" text-anchor="middle" fill="#c2820f" font-size="10" font-style="italic">ℒ⁻¹ invert</text><line x1="280" y1="150" x2="455" y2="150" stroke="#1f7a5c" stroke-width="2"/><line x1="455" y1="150" x2="455" y2="114" stroke="#c2820f" stroke-width="2"/><path d="M455,114 l-4,8 M455,114 l4,8" stroke="#c2820f" stroke-width="2" fill="none"/><text x="16" y="205" fill="#16202e" font-size="11">Differentiation in t → multiplication by s: ℒ{y′} = sY − y(0)</text></svg><figcaption>The Laplace transform is a detour: convert a hard differential equation in time into an easy algebraic equation in the variable s, solve it by rearrangement, then convert back. Differentiation becomes multiplication.</figcaption></figure>
+
+<h3>01 · What the transform is for</h3>
+<p>The <b>Laplace transform</b> \( \mathcal{L}\{f\}=F(s)=\displaystyle\int_0^\infty e^{-st}f(t)\,dt \) trades a function of time for a function of a new variable \( s \). Its purpose is not the integral but its consequence: <b>differentiation in \( t \) becomes multiplication in \( s \)</b>. A differential equation therefore turns into an ordinary algebraic equation in \( F(s) \), which you solve by rearrangement rather than calculus. It is the same strategic move as the \( e^{rt} \) guess of Lesson 8, generalised — and it pays off most when the forcing is awkward: a switch thrown, a step applied, an impulse struck, all handled by the same bookkeeping.</p>
+
+<h3>02 · The table and the derivative rule</h3>
+<p>A handful of transforms, plus two rules, cover most problems: \( \mathcal{L}\{1\}=\tfrac1s \), \( \mathcal{L}\{e^{at}\}=\tfrac{1}{s-a} \), \( \mathcal{L}\{t\}=\tfrac{1}{s^2} \), and \( \mathcal{L}\{\sin\omega t\}=\tfrac{\omega}{s^2+\omega^2} \), so \( \mathcal{L}\{\sin4t\}=\tfrac{4}{s^2+16} \). <b>Linearity</b> lets you transform term by term, and the <b>derivative rule</b> is the engine:</p>
+\[ \mathcal{L}\{y'\}=sY-y(0),\qquad \mathcal{L}\{y''\}=s^2Y-sy(0)-y'(0). \]
+<p>Read what this does: each derivative becomes a power of \( s \), and the initial conditions are folded in automatically at the transform step — no separate constant-fixing stage to forget.</p>
+<div class="keybox"><span class="tag">Key rule — transform &amp; solve</span><p>Method: <b>transform</b> every term (\( \mathcal{L}\{y'\}=sY-y(0) \)) → <b>solve</b> the algebra for \( Y(s) \) → <b>invert</b> with the table. Differentiation in \(t\) becomes multiplication by \(s\).</p></div>
+
+<h3>03 · Solving an equation by algebra</h3>
+<p>The method is three steps: transform, solve for \( Y(s) \), invert. Take \( y'+2y=0,\ y(0)=3 \): transforming gives \( sY-3+2Y=0 \), so \( Y=\tfrac{3}{s+2} \), and the table inverts this to \( y=3e^{-2t} \). A forced example \( y'+3y=6,\ y(0)=0 \): transforming gives \( sY+3Y=\tfrac6s \), so \( Y=\tfrac{6}{s(s+3)} \); splitting by partial fractions into \( \tfrac2s-\tfrac{2}{s+3} \) inverts to \( y=2-2e^{-3t} \). The constant \(2\) is the steady state, the \(-2e^{-3t}\) the transient — the whole solution, initial condition included, produced by algebra.</p>
+
+<h3>04 · The s-domain and the method</h3>
+<p>The ratio of output transform to input transform, with zero initial conditions, is the <b>transfer function</b> — the compact description of a system in the \( s \)-domain that control engineering is built on. The location of its poles (the roots of the denominator) is the system's stability: poles with negative real part mean decay, imaginary poles mean oscillation, exactly the eigenvalue reading of Lesson 7 in another language. The working method never changes: (1) transform every term, folding in initial data; (2) solve the algebraic equation for \( Y(s) \); (3) break \( Y(s) \) into table pieces by partial fractions and invert. Master this on the smooth cases here, and the same recipe handles the switched and impulsive inputs that real systems face.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Improper integrals</b> — the transform is one.</li><li><b>Partial fractions</b> — for the inverse step.</li><li><b>Initial-value problems</b> (Lessons 8, 9) — what is being solved.</li></ul>
+<h4>Toolkit — transform pairs and rules</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Definition</td><td>\( F(s)=\int_0^\infty e^{-st}f\,dt \)</td><td>The transform.</td></tr>
+<tr><td>Basic pairs</td><td>\( 1\!\to\!\tfrac1s,\ e^{at}\!\to\!\tfrac1{s-a},\ t\!\to\!\tfrac1{s^2} \)</td><td>Look-up table.</td></tr>
+<tr><td>Sine</td><td>\( \sin\omega t\to\tfrac{\omega}{s^2+\omega^2} \)</td><td>Oscillatory terms.</td></tr>
+<tr><td>Derivative rule</td><td>\( \mathcal{L}\{y'\}=sY-y(0) \)</td><td>ODE → algebra.</td></tr>
+<tr><td>Method</td><td>transform · solve · invert</td><td>The three steps.</td></tr>
+<tr><td>Transfer function</td><td>output/input in \(s\)</td><td>System description; poles ⇒ stability.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>From the table</b></p><p><b>Problem.</b> Find \( \mathcal{L}\{3+2t\} \) and \( \mathcal{L}\{e^{3t}\} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> By linearity \( \mathcal{L}\{3+2t\}=\dfrac{3}{s}+\dfrac{2}{s^2} \). From the exponential pair \( \mathcal{L}\{e^{3t}\}=\dfrac{1}{s-3} \) (for \(s>3\)).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Solve an IVP</b></p><p><b>Problem.</b> Solve \( y'+2y=0 \), \( y(0)=3 \) using the Laplace transform.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Transform: \( sY-3+2Y=0\Rightarrow (s+2)Y=3 \), so \( Y=\dfrac{3}{s+2} \). Invert: \( y=3e^{-2t} \). Check: \( y(0)=3 \) ✓, \( y'=-6e^{-2t}=-2y \) ✓.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Forced first-order</b></p><p><b>Problem.</b> Solve \( y'+3y=6 \), \( y(0)=0 \), and identify the steady state.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Transform: \( sY+3Y=\dfrac6s\Rightarrow Y=\dfrac{6}{s(s+3)} \). Partial fractions: \( \dfrac{2}{s}-\dfrac{2}{s+3} \). Invert: \( y=2-2e^{-3t} \). Steady state \(=2\); the transient \(-2e^{-3t}\) carries \(y\) from \(0\) up to \(2\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>\( \mathcal{L}\{e^{3t}\} \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{1}{s-3} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \frac{1}{s+3} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \frac{3}{s} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \frac{1}{s^2-3} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mathcal{L}\{e^{at}\}=1/(s-a) \) with \(a=3\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The derivative rule \( \mathcal{L}\{y'\} \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( sY-y(0) \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( Y/s \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( sY \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( Y-y(0) \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mathcal{L}\{y'\}=sY(s)-y(0) \): each derivative becomes a factor of \(s\), initial value subtracted.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>\( \mathcal{L}\{t\} \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{1}{s^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \frac{1}{s} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \frac{2}{s^3} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( s \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mathcal{L}\{t^n\}=n!/s^{n+1} \); with \(n=1\), \( 1/s^2 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>The three Laplace steps for an IVP are:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>transform, solve for \( Y(s) \), invert</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>invert, solve, transform</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>guess, substitute, match</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>integrate, differentiate, check</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Transform the ODE (with initial data), solve the algebraic equation for \( Y(s) \), invert with the table.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>\( \mathcal{L}\{\sin 4t\} \) equals:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{4}{s^2+16} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \frac{s}{s^2+16} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \frac{4}{s^2-16} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \frac{1}{s-4} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mathcal{L}\{\sin\omega t\}=\omega/(s^2+\omega^2) \) with \( \omega=4 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Transforming \( y'+2y=0,\ y(0)=3 \) gives \( Y(s)= \):</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \frac{3}{s+2} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \frac{3}{s-2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \frac{2}{s+3} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \frac{3}{s} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( (s+2)Y=3\Rightarrow Y=3/(s+2)\Rightarrow y=3e^{-2t} \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The inverse transform of \( \frac{1}{s^2+9} \) is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \tfrac13\sin 3t \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \cos 3t \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \sin 3t \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \tfrac13\cos 3t \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Since \( \mathcal{L}\{\sin3t\}=3/(s^2+9) \), dividing by 3 gives \( \tfrac13\sin3t \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The Laplace transform turns differentiation into:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>multiplication by \(s\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>division by \(s\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>integration</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>addition of \(s\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \mathcal{L}\{y'\}=sY-y(0) \): a derivative becomes a factor of \(s\) — the whole point of the method.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>A controls or instrumentation engineer lives in the s-domain. When tuning a
+temperature loop or a level controller, the process and the controller are each
+written as transfer functions — output-over-input in \(s\) — and the loop's behaviour
+is read from where the combined poles sit. Poles in the left half-plane (negative
+real part) mean the loop settles; a pole crossing to the right means it will hunt or
+run away. The Laplace method is what turns a plant's differential equations into
+those algebraic transfer functions in the first place, which is why every controller
+datasheet and tuning rule is stated in \(s\).</p>
+<p>The step-input case is the everyday test. Bumping a setpoint and watching the
+response is applying a step \( \tfrac{1}{s} \); the observed rise and settling are the
+inverse transform of the transfer function times that step. Reading whether the
+response is sluggish, snappy, or oscillatory — and adjusting the controller to fix
+it — is exactly the transform-solve-invert cycle of this lesson, run on real
+hardware.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(268.2\\ \\mathrm{hp}\\)", "\\(14.91\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(20 \\times 1.341 = 26.82\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.491\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(2.682\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(2 \times 1.341 = 2.682\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(14.76\\ \\mathrm{ft/s}\\)", "\\(13.72\\ \\mathrm{ft/s}\\)", "\\(1476\\ \\mathrm{ft/s}\\)", "\\(147.6\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9843\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.9144\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(9.843\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(3 \times 3.281 = 9.843\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL7950355W" target="_blank" rel="noopener">Calculus: Early Transcendentals — James Stewart</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/" title="MIT OCW 18.02SC Multivariable Calculus" target="_blank" rel="noopener">MIT OCW 18.02</a> <a class="watch" href="https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> Multivariable Calculus; <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-forced-oscillations-and-resonance.html">← 09 · Forced oscillations and resonance</a><a href="index.html">كل الدروس · MTH 151</a><a href="11-fourier-series-first-contact.html">11 · Fourier series first contact →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s2/dynamics/index.html">DYN 152 · Engineering Dynamics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

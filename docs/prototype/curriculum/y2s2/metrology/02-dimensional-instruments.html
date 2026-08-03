@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Dimensional instruments — Metrology &amp; Quality Control — MechEd</title>
+<meta name="description" content="Calipers, micrometers, dial indicators, gauge blocks, and comparators — use, care, and abuse. Abbe error and why instrument geometry matters. Temperat">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/metrology/2">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/metrology/02-dimensional-instruments.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MET 204 · Metrology &amp; Quality Control</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-fundamentals.html" class="ol" data-key="y2s2/metrology/1"><span class="tick"></span><span>01 · Measurement fundamentals</span></a><a href="02-dimensional-instruments.html" class="ol cur" data-key="y2s2/metrology/2"><span class="tick"></span><span>02 · Dimensional instruments</span></a><a href="03-uncertainty-and-calibration.html" class="ol" data-key="y2s2/metrology/3"><span class="tick"></span><span>03 · Uncertainty and calibration</span></a><a href="04-form-fits-and-gd-t-verification.html" class="ol" data-key="y2s2/metrology/4"><span class="tick"></span><span>04 · Form, fits, and GD&amp;T verification</span></a><a href="05-limit-gauging-and-taylor-s-principle.html" class="ol" data-key="y2s2/metrology/5"><span class="tick"></span><span>05 · Limit gauging and Taylor's principle</span></a><a href="06-surface-texture-measurement.html" class="ol" data-key="y2s2/metrology/6"><span class="tick"></span><span>06 · Surface texture measurement</span></a><a href="07-statistical-process-control-i.html" class="ol" data-key="y2s2/metrology/7"><span class="tick"></span><span>07 · Statistical process control I</span></a><a href="08-statistical-process-control-ii-and-capability.html" class="ol" data-key="y2s2/metrology/8"><span class="tick"></span><span>08 · Statistical process control II and capability</span></a><a href="09-acceptance-sampling.html" class="ol" data-key="y2s2/metrology/9"><span class="tick"></span><span>09 · Acceptance sampling</span></a><a href="10-gauge-r-r-and-measurement-systems.html" class="ol" data-key="y2s2/metrology/10"><span class="tick"></span><span>10 · Gauge R&amp;R and measurement systems</span></a><a href="11-quality-systems-and-audits.html" class="ol" data-key="y2s2/metrology/11"><span class="tick"></span><span>11 · Quality systems and audits</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MET 204</a> /
+<span>Lesson 02 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MET 204 · Lesson 02 of 11 · Year 2 · Semester 2</p>
+  <h1>Dimensional instruments</h1>
+  <p class="sub">Calipers, micrometers, dial indicators, gauge blocks, and comparators — use, care, and abuse. Abbe error and why instrument geometry matters. Temperature effects at the micron level.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/2">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/Bup30r-n43Q" title="Gage Block Introduction - How To Use and Calibrate Gage Blocks" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Gage Block Introduction - How To Use and Calibrate Gage Blocks <span class="src">Mitutoyo America Corporation</span></figcaption></figure></div><div class="vh-bar"><span class="n">Gage Block Introduction - How To Use and Calibrate Gage Blocks</span><span class="c">MITUTOYO AMERICA CORPORATION</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does Abbe error make a caliper worse than a micrometer?</li><li>What does 20 °C have to do with a certified gauge block?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of Abbe error against the offset between the measuring line and the instrument's scale, for three angular tilts. Every line passes through the origin, so an instrument with no offset has no Abbe error however much it tilts. At the 40 millimetre offset typical of a caliper jaw, a tenth-of-a-degree tilt produces 70 micrometres of error, while a micrometer at the same tilt produces 0.04 micrometres."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Abbe error: the offset does the damage, not the tilt</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">Abbe offset (mm)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">error (&#181;m)</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M173 250 L173 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="173" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M256 250 L256 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="256" y="266" text-anchor="middle" fill="#5B6672" font-size="11">20</text><path d="M339 250 L339 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="339" y="266" text-anchor="middle" fill="#5B6672" font-size="11">30</text><path d="M422 250 L422 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="422" y="266" text-anchor="middle" fill="#5B6672" font-size="11">40</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">50</text><path d="M86 250 L90 250" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="254" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 187.3 L90 187.3" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="191.3" text-anchor="end" fill="#5B6672" font-size="11">60</text><path d="M86 124.7 L90 124.7" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="128.7" text-anchor="end" fill="#5B6672" font-size="11">120</text><path d="M86 62 L90 62" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="66" text-anchor="end" fill="#5B6672" font-size="11">180</text><path d="M90 250 L98.3 246.4 L106.6 242.7 L114.9 239.1 L123.2 235.4 L131.5 231.8 L139.8 228.1 L148.1 224.5 L156.4 220.8 L164.7 217.2 L173 213.5 L181.3 209.9 L189.6 206.3 L197.9 202.6 L206.2 199 L214.5 195.3 L222.8 191.7 L231.1 188 L239.4 184.4 L247.7 180.7 L256 177.1 L264.3 173.4 L272.6 169.8 L280.9 166.1 L289.2 162.5 L297.5 158.9 L305.8 155.2 L314.1 151.6 L322.4 147.9 L330.7 144.3 L339 140.6 L347.3 137 L355.6 133.3 L363.9 129.7 L372.2 126 L380.5 122.4 L388.8 118.8 L397.1 115.1 L405.4 111.5 L413.7 107.8 L422 104.2 L430.3 100.5 L438.6 96.9 L446.9 93.2 L455.2 89.6 L463.5 85.9 L471.8 82.3 L480.1 78.6 L488.4 75 L496.7 71.4 L505 67.7" fill="none" stroke="#9c2f2f" stroke-width="2.2"/><path d="M90 250 L98.3 248.2 L106.6 246.4 L114.9 244.5 L123.2 242.7 L131.5 240.9 L139.8 239.1 L148.1 237.2 L156.4 235.4 L164.7 233.6 L173 231.8 L181.3 229.9 L189.6 228.1 L197.9 226.3 L206.2 224.5 L214.5 222.7 L222.8 220.8 L231.1 219 L239.4 217.2 L247.7 215.4 L256 213.5 L264.3 211.7 L272.6 209.9 L280.9 208.1 L289.2 206.3 L297.5 204.4 L305.8 202.6 L314.1 200.8 L322.4 199 L330.7 197.1 L339 195.3 L347.3 193.5 L355.6 191.7 L363.9 189.8 L372.2 188 L380.5 186.2 L388.8 184.4 L397.1 182.6 L405.4 180.7 L413.7 178.9 L422 177.1 L430.3 175.3 L438.6 173.4 L446.9 171.6 L455.2 169.8 L463.5 168 L471.8 166.1 L480.1 164.3 L488.4 162.5 L496.7 160.7 L505 158.9" fill="none" stroke="#c2820f" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M90 250 L98.3 249.1 L106.6 248.2 L114.9 247.3 L123.2 246.4 L131.5 245.4 L139.8 244.5 L148.1 243.6 L156.4 242.7 L164.7 241.8 L173 240.9 L181.3 240 L189.6 239.1 L197.9 238.2 L206.2 237.2 L214.5 236.3 L222.8 235.4 L231.1 234.5 L239.4 233.6 L247.7 232.7 L256 231.8 L264.3 230.9 L272.6 229.9 L280.9 229 L289.2 228.1 L297.5 227.2 L305.8 226.3 L314.1 225.4 L322.4 224.5 L330.7 223.6 L339 222.7 L347.3 221.7 L355.6 220.8 L363.9 219.9 L372.2 219 L380.5 218.1 L388.8 217.2 L397.1 216.3 L405.4 215.4 L413.7 214.5 L422 213.5 L430.3 212.6 L438.6 211.7 L446.9 210.8 L455.2 209.9 L463.5 209 L471.8 208.1 L480.1 207.2 L488.4 206.3 L496.7 205.3 L505 204.4" fill="none" stroke="#3a6ea5" stroke-width="2.2" stroke-dasharray="3 3"/><circle cx="422" cy="177.1" r="4.5" fill="#c2820f"/><path d="M90 250 L90 62" stroke="#1f7a5c" stroke-width="2" fill="none"/><text x="100" y="46" fill="#1f7a5c" font-size="11">micrometer: offset 0</text><text x="250" y="46" fill="#5B6672" font-size="11">tilt 0.05&#176; / 0.10&#176; / 0.20&#176;</text><text x="392" y="46" fill="#c2820f" font-size="11">caliper: 40 mm, 70 &#181;m</text></svg><figcaption>Abbe's principle: the measuring line should be collinear with the instrument's scale. Where it is not, any angular error is multiplied by the offset, and the multiplication is what hurts &mdash; all three lines pass through the origin, so an instrument with zero offset has no first-order tilt error at all. A caliper jaw sits about 40 mm off its scale, so a tilt too small to see gives 70 &#181;m; a micrometer's anvil sits on its screw axis and the same tilt costs 0.04 &#181;m, a factor of 1833.</figcaption></figure>
+<h3>&#167;1 &middot; The instruments, ranked honestly</h3>
+<p>A workshop's dimensional instruments are not interchangeable, and the ranking is not about
+price. It is about how each one turns a physical contact into a number, and where that conversion
+leaks.</p>
+<p>A <b>vernier or digital caliper</b> is the general-purpose instrument: wide range, quick, and
+the least accurate of the set for reasons that are structural rather than fixable. A
+<b>micrometer</b> trades range for accuracy, measuring over perhaps 25 mm per instrument with a
+calibrated screw. A <b>dial indicator</b> measures nothing absolutely at all &mdash; it reads
+<em>differences</em> against a set reference, which is why it is the natural instrument for
+runout, flatness and comparison work. <b>Gauge blocks</b> are not instruments but embodied
+lengths, the artefacts everything else is set against. And a <b>comparator</b> is a dial indicator
+given a rigid stand and a gauge-block reference, which is how a workshop reaches micrometre work
+without buying a laboratory.</p>
+<p>The order matters because the usual failure is to reach for the convenient instrument and then
+believe its last digit. A caliper displaying 0.01 mm invites a confidence its construction does
+not support.</p>
+
+<h3>&#167;2 &middot; Abbe's principle, and why a caliper cannot win</h3>
+<p>In 1890 Ernst Abbe stated the rule that still separates good instrument design from bad: the
+line along which you measure should be collinear with the instrument's scale. When it is not, the
+perpendicular distance between them &mdash; the <b>Abbe offset</b> &mdash; turns any angular error
+into a length error.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; Abbe error</span>
+<p>\[ \varepsilon = h\tan\theta \approx h\theta \]</p>
+<p>\( h \) is the Abbe offset and \( \theta \) the angular error. The error is <b>first order</b>
+in \( \theta \) and proportional to \( h \) &mdash; so it vanishes only when \( h = 0 \).</p></div>
+<p>A caliper measures at the jaw tips while its scale runs along the beam, perhaps 40 mm away. Tilt
+the jaws by a tenth of a degree &mdash; an angle no operator can see, easily produced by
+measuring-force rock in the slide &mdash; and
+\( \varepsilon = 40\tan(0.1^\circ) = 69.8\ \mu\mathrm{m} \).</p>
+<p>A micrometer has its anvil and spindle on the axis of the screw that does the measuring, so
+\( h \approx 0 \). The same tilt leaves only a <b>cosine error</b>,
+\( L(1-\cos\theta) \), which is second order: \( 25(1-\cos 0.1^\circ) = 0.038\ \mu\mathrm{m} \).
+The micrometer is better by a factor of 1833 for the same misalignment, and it is the geometry
+that earns it, not the workmanship.</p>
+<p>The orders of magnitude in \( \theta \) are the part worth carrying. Double the tilt and the
+caliper's Abbe error doubles, from 69.8 to 139.6 &#181;m, while the micrometer's cosine error
+<em>quadruples</em> &mdash; from 0.038 to 0.152 &#181;m, which is still nothing. A first-order
+error with a lever on it beats a second-order error every time, and that is the whole argument for
+Abbe's principle.</p>
+
+<h3>&#167;3 &middot; Gauge blocks: length you can put on the bench</h3>
+<p>Gauge blocks are hardened, lapped rectangular blocks whose length between opposite faces is
+certified. Their surfaces are flat and fine enough to <b>wring</b> &mdash; pressed and twisted
+together they adhere strongly, and a stack behaves as one block of the summed length.</p>
+<p>Building a stack follows one rule: work from the finest decimal place and eliminate it first.
+For 41.275 mm from a standard set &mdash; take 1.005 to clear the third decimal, then 1.27 to
+clear the second and first, then 8.0, then 31.0. Four blocks, and the check is trivial:
+\( 1.005+1.27+8.0+31.0 = 41.275 \).</p>
+<p>Use as few blocks as the set allows. Every wrung interface contributes a small uncertainty and
+a small risk of contamination, so a four-block stack is better than a seven-block one of the same
+length. Blocks are also the reason the previous lesson's temperature discussion is not academic:
+they are the reference the whole shop is traceable to, and they are steel.</p>
+
+<h3>&#167;4 &middot; Measuring force, contact, and the errors of use</h3>
+<p>Every contact instrument deforms what it measures and deforms itself. A micrometer's
+<b>ratchet or friction thimble</b> exists to make that deformation repeatable rather than to make
+it small: a fixed measuring force means a fixed elastic compression at the contact, which becomes
+part of the calibration instead of part of the scatter. An operator who bypasses the ratchet and
+"feels" the fit has replaced a controlled force with a variable one, and has converted a bias into
+a scatter &mdash; which, as Lesson 1 showed, is the harder of the two to detect.</p>
+<p>The other errors of use are worth naming because they are all systematic:</p>
+<ul>
+<li><b>Parallax</b> on any analogue scale &mdash; read square to the dial, not at an angle.</li>
+<li><b>Anvil wear</b> on a micrometer, checked by closing it on nothing and confirming zero, and
+by checking at several points in the range rather than only at zero.</li>
+<li><b>Dirt and burrs</b>, which are not small at this scale: a fingerprint is around
+1 &#181;m thick and a wrung interface is cleaner than that.</li>
+<li><b>Heat from the hand</b>, which is why blocks and micrometers are handled with a cloth or by
+their insulating pads for precise work &mdash; Lesson 1's \( \Delta L=L\alpha\Delta T \) does not
+care that the heat came from an operator.</li>
+</ul>
+<p>None of these is exotic and none is eliminated by buying a better instrument. They are the
+reason an instrument's specification is an upper bound on its performance rather than a
+description of it.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Bias and precision</b> (Lesson 1) &mdash; the distinction that decides which errors of use
+matter and how they show up.</li>
+<li><b>Thermal error</b> (Lesson 1) &mdash; \( \Delta L=L\alpha\Delta T \), applied here to hand
+heat and to steel gauge blocks.</li>
+<li><b>Small-angle behaviour</b> (Engineering Mathematics I L11) &mdash; why
+\( \tan\theta\approx\theta \) is first order and \( 1-\cos\theta \) is second.</li>
+<li><b>Tolerances and IT grades</b> (Engineering Drawing &amp; CAD L6) &mdash; the bands these
+instrument errors are spent against.</li>
+<li><b>Elastic contact</b> (Strength of Materials L1) &mdash; why a measuring force must be
+controlled rather than merely light.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Abbe offset</td><td>\( h \)</td><td>Perpendicular distance from the measuring line to the scale.</td></tr>
+<tr><td>Abbe error</td><td>\( \varepsilon=h\tan\theta \)</td><td>First order in tilt; the caliper's structural weakness.</td></tr>
+<tr><td>Cosine error</td><td>\( L(1-\cos\theta) \)</td><td>Second order; what remains when \( h=0 \).</td></tr>
+<tr><td>Wringing</td><td>&mdash;</td><td>Adhesion of lapped block faces; a stack acts as one length.</td></tr>
+<tr><td>Stack rule</td><td>clear the finest decimal first</td><td>Building a required length from fewest blocks.</td></tr>
+<tr><td>Ratchet / friction thimble</td><td>&mdash;</td><td>Fixes the measuring force so contact deformation is repeatable.</td></tr>
+<tr><td>Comparator</td><td>indicator + stand + block</td><td>Micrometre-level work by difference, not absolutely.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Abbe error against cosine error</b></p>
+<p><b>Problem.</b> A caliper measures at jaw tips 40 mm from its scale; a micrometer measures a
+25 mm length on the axis of its screw. Both are tilted by 0.1&#176;. Find each instrument's error,
+their ratio, and then find both errors again at 0.2&#176;. State how each error scales with
+tilt.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Caliper, Abbe error with \( h = 40 \) mm:
+\( \varepsilon = 40\tan(0.1^\circ) = 40(0.0017453) = 0.06981\ \mathrm{mm}
+= 69.8\ \mu\mathrm{m} \).</p>
+<p>(2) Micrometer, \( h \approx 0 \), so only cosine error remains:
+\( \varepsilon = 25(1-\cos 0.1^\circ) = 25(1.523\times10^{-6}) = 3.81\times10^{-5}\ \mathrm{mm}
+= 0.038\ \mu\mathrm{m} \).</p>
+<p>(3) Ratio \( = 69.8/0.0381 = 1833 \).</p>
+<p>(4) At 0.2&#176;: caliper \( 40\tan(0.2^\circ) = 139.6\ \mu\mathrm{m} \); micrometer
+\( 25(1-\cos 0.2^\circ) = 0.152\ \mu\mathrm{m} \).</p>
+<p>(5) The Abbe error <b>doubled</b> (linear in \( \theta \)); the cosine error
+<b>quadrupled</b> (quadratic).</p>
+<p><b>Answer:</b> 69.8 &#181;m against 0.038 &#181;m, a ratio of 1833; at twice the tilt, 139.6
+and 0.152 &#181;m.
+<b>Sanity check:</b> the scaling is the real result. A first-order error multiplied by a 40 mm
+lever is in a different category from a second-order error with no lever, and no amount of
+manufacturing quality in the caliper closes the gap &mdash; it is decided by where the scale sits
+relative to the jaws. That is why Abbe's principle is an instrument-design rule and not an
+operating instruction, and why a caliper's last displayed digit should be treated as decoration on
+anything tighter than a few hundredths.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Building a gauge block stack (with a US customary check)</b></p>
+<p><b>Problem.</b> Build 41.275 mm from a standard metric set containing 1.005, then 1.01&ndash;1.49
+in 0.01 steps, 0.5&ndash;9.5 in 0.5 steps, and 10&ndash;100 in 10 steps. Use as few blocks as
+possible and state the rule you followed. Then express the stack height in inches, and say why
+using seven blocks instead of four would be worse.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Work from the finest decimal and eliminate it first.</p>
+<p>(1) The third decimal is 5, cleared only by the 1.005 block. Remainder
+\( 41.275 - 1.005 = 40.270 \).</p>
+<p>(2) The 0.07 and 0.2 are cleared together by 1.27 from the hundredths series. Remainder
+\( 40.270 - 1.27 = 39.000 \).</p>
+<p>(3) The 9 is cleared by 8.0 plus the 31.0 &mdash; taking 8.0 leaves 31.000, which the tens
+series supplies directly.</p>
+<p>(4) Stack: \( 1.005 + 1.27 + 8.0 + 31.0 = 41.275\ \mathrm{mm} \) &#10003;, four blocks.</p>
+<p>(5) \( 41.275/25.4 = 1.6250\ \mathrm{in} \) exactly.</p>
+<p><b>Answer:</b> 1.005 + 1.27 + 8.0 + 31.0 mm, four blocks; 1.6250 in.
+<b>Sanity check:</b> the arithmetic check is trivial and should always be done &mdash; the sum
+must be exact, not close. Fewer blocks is better because each wrung interface adds a small
+uncertainty and one more opportunity for a trapped particle; a seven-block stack has nearly twice
+the interfaces of a four-block one for no benefit. The inch value coming out exact is a
+coincidence of this number, not a rule.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Is the caliper fit for the tolerance?</b></p>
+<p><b>Problem.</b> A 25 mm shaft carries an IT7 tolerance of 21 &#181;m. The workshop proposes to
+inspect it with the caliper above, whose jaws can tilt by up to 0.1&#176; in normal use. Apply the
+4:1 rule from Lesson 1 and decide. Then say what a micrometer would give, and what the correct
+instrument choice is.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The 4:1 rule asks for
+\( u \le T/4 = 21/4 = 5.25\ \mu\mathrm{m} \).</p>
+<p>(2) The caliper's Abbe error alone is 69.8 &#181;m &mdash; not an uncertainty contribution but
+a single error term, and it is \( 69.8/21 = 3.3 \) times the entire tolerance band.</p>
+<p>(3) The micrometer's cosine error is 0.038 &#181;m, which is \( 0.2\% \) of the 21 &#181;m
+band and utterly negligible; its uncertainty will be dominated by other terms such as the
+0.2 &#181;m of its setting standard.</p>
+<p>(4) The caliper is not merely outside the 4:1 rule &mdash; it cannot resolve the tolerance at
+all. The micrometer is the correct instrument, and for a production run a comparator set against a
+gauge block stack would be faster and no worse.</p>
+<p><b>Answer:</b> the caliper is unfit by a factor of more than thirteen against the 4:1 rule; use
+a micrometer, or a comparator for a run.
+<b>Sanity check:</b> the comparison is worth stating carefully, because the caliper's Abbe error
+is a worst case rather than a value present at every measurement &mdash; a careful operator will
+often do far better. That is exactly what makes it dangerous: an error that is sometimes 70
+&#181;m and sometimes near zero is invisible in a repeatability check and shows up as
+inexplicable scatter between operators. An instrument whose error depends on technique has
+converted a design fault into a personnel problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Abbe's principle states that the measuring line should be</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>as short as possible</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>collinear with the instrument's scale</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>perpendicular to the scale</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>at the centre of the workpiece</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Collinear &mdash; that is, with zero offset between the axis you measure along
+and the scale that does the measuring. Where an offset \( h \) exists, any angular error
+\( \theta \) becomes a length error \( h\tan\theta \). It is a rule about instrument geometry, so
+it is satisfied or violated at the design stage and cannot be fixed by careful use.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Abbe error is first order in the tilt angle, which means that doubling the tilt</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>doubles the error</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>quadruples the error</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>leaves the error unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>halves the error</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \varepsilon = h\tan\theta \approx h\theta \), so the error scales linearly:
+69.8 &#181;m at 0.1&#176; becomes 139.6 at 0.2&#176;. Cosine error, \( L(1-\cos\theta) \), is the
+second-order one and quadruples over the same change &mdash; from 0.038 to 0.152 &#181;m, which is
+still negligible. The difference in order, multiplied by the offset, is the whole
+argument.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>A micrometer suffers far less tilt error than a caliper mainly because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>its screw is finely made</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>its measuring axis is collinear with its scale, so the Abbe offset is near zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it has a ratchet</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it measures a shorter length</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The anvil and spindle sit on the axis of the measuring screw, so \( h\approx0 \)
+and the first-order term vanishes, leaving only second-order cosine error. Workmanship matters for
+other error sources, and the ratchet fixes the measuring force rather than the geometry &mdash;
+but the factor of 1833 against the caliper is bought by where the scale is, not by how well it is
+cut.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Gauge blocks wring together in order to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>prevent corrosion</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>behave as a single block of the summed length</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>reduce their weight</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>compensate for temperature</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Wrung blocks adhere strongly enough that the stack behaves as one artefact of
+the summed length, which is what makes a set of a few dozen blocks able to embody thousands of
+lengths. Each interface does add a small uncertainty, which is why a stack uses as few blocks as
+the set allows &mdash; four for 41.275 mm rather than seven.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>When building a gauge block stack, you start by choosing the block that</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is largest</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>clears the finest decimal place</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is nearest the target</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is cleanest</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Eliminate the finest decimal first, because only one or two blocks in the set
+can supply it &mdash; the 1.005 for the third decimal in 41.275 mm. Working downward from the
+largest block leaves a remainder the fine series may be unable to make exactly. The check at the
+end is arithmetic and must be exact: \( 1.005+1.27+8.0+31.0 = 41.275 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A micrometer's ratchet exists to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>prevent over-tightening damage only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>make the measuring force repeatable, so contact deformation becomes part of the calibration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>speed up measurement</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>compensate for anvil wear</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Every contact instrument deforms the part and itself; a fixed force makes that
+deformation a fixed, repeatable amount that calibration absorbs. An operator who bypasses the
+ratchet and feels the fit replaces a controlled force with a variable one and converts a bias into
+scatter &mdash; which Lesson 1 showed is the harder of the two to notice. Protection from damage
+is a side benefit, not the reason.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A dial indicator is best described as an instrument that measures</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>absolute length</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>differences against a set reference</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>angle</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>surface finish</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It reads displacement from wherever it was zeroed, which is why it is the
+natural instrument for runout, flatness and comparison work, and why it is useless on its own for
+an absolute size. Give it a rigid stand and a gauge-block reference and it becomes a comparator
+&mdash; the standard route to micrometre-level work without a metrology laboratory.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>An instrument whose error depends heavily on operator technique is dangerous
+because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it is slower to use</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the error is invisible in a repeatability check and appears as scatter between operators</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it needs calibrating more often</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>it cannot be traceable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A single operator repeating their own technique will repeat their own error,
+so the instrument looks precise. The variation only appears when a second operator measures the
+same part &mdash; which is why Lesson 10's gauge R&amp;R study separates repeatability
+(one operator) from reproducibility (between operators), and why a caliper with a 70 &#181;m
+worst-case Abbe error can pass an informal check and still fail in production.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the bore that two inspectors could not agree on.</b> A 25 mm bore with a
+21 &#181;m tolerance was checked by two inspectors on the same shift using the same digital
+caliper. One passed the batch, the other rejected roughly a third of it. The caliper was sent for
+calibration, came back within specification, and the disagreement continued.</p>
+<p>The calibration certificate was not wrong; it was answering a different question. A caliper's
+jaws sit about 40 mm from its scale, so a tilt of a tenth of a degree &mdash; produced by nothing
+more than how firmly each inspector held the slide &mdash; contributes
+\( 40\tan(0.1^\circ) = 69.8\ \mu\mathrm{m} \). That is 3.3 times the entire tolerance band, and it
+is technique-dependent, so each inspector repeated their own reading faithfully and the two of
+them differed. Calibration checks an instrument against a standard under controlled conditions; it
+cannot certify a measuring <em>process</em> that includes a 40 mm lever on operator grip.</p>
+<p>Two practices follow. Instrument selection is part of the inspection method and belongs on the
+inspection sheet with the tolerance in view &mdash; a 21 &#181;m band calls for a micrometer or a
+comparator set against blocks, and no caliper of any price is a candidate. And when two inspectors
+disagree while one instrument passes calibration, the question to ask is not "which is right" but
+"what in this method depends on who is holding it" &mdash; which is the question a gauge R&amp;R
+study (Lesson 10) is built to answer.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(134.9\\ \\mathrm{lbf}\\)", "\\(266.9\\ \\mathrm{lbf}\\)", "\\(13.49\\ \\mathrm{lbf}\\)", "\\(1.349\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(60 \\times 0.2248 = 13.49\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(11.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(22.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(1.124\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.1124\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(5 \times 0.2248 = 1.124\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{rad/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(95.49\\ \\mathrm{rpm}\\)", "\\(10.47\\ \\mathrm{rpm}\\)", "\\(9549\\ \\mathrm{rpm}\\)", "\\(954.9\\ \\mathrm{rpm}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{rad/s} = 9.549\\ \\mathrm{rpm}\\): \\(100 \\times 9.549 = 954.9\\ \\mathrm{rpm}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{rad/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(7.639\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.8378\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(763.9\ \mathrm{rpm}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(76.39\ \mathrm{rpm}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{rad/s} = 9.549\ \mathrm{rpm}\): \(8 \times 9.549 = 76.39\ \mathrm{rpm}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL8759773W" target="_blank" rel="noopener">Fundamentals of Dimensional Metrology — Dotson</a></li><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Metrology</p>
+  <ul class="plain small"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="01-measurement-fundamentals.html">← 01 · Measurement fundamentals</a><a href="index.html">All lessons · MET 204</a><a href="03-uncertainty-and-calibration.html">03 · Uncertainty and calibration →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

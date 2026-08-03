@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Statistics — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for STS 206 Engineering Statistics.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/statistics/summary.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div lang="en" dir="ltr" class="en-body">
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>STS 206 · Year 2 · Semester 1</p>
+  <h1>STS 206 — Engineering Statistics</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-statistics">STS 206 — Engineering Statistics</h2>
+
+<section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 01 · Describing data</p><h3><span class="sum-n">Lesson 01</span>Describing data</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Engineering measurements always scatter, so a single reading is a sample, never the truth.</li>
+<li>Statistics is the discipline for saying what a scattered set of numbers does and does not support.</li>
+<li>Centre is described by mean, median or mode; the median resists outliers, the mean does not.</li>
+<li>Spread matters as much as centre — two processes with identical means can behave completely differently.</li>
+<li>Variance is the mean squared deviation; standard deviation returns it to the original units, which is why it is the one quoted.</li>
+<li>Always plot the data before computing anything: a histogram exposes skew, bimodality and outliers that summary statistics hide.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 01 · Describing data · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Summation notation</b> — \( \sum x_i \) and averages.</li><li><b>Ordering data</b> — for the median and quartiles.</li><li><b>Squares and roots</b> — variance to standard deviation.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Mean</td><td>\( \bar x=\frac1n\sum x_i \)</td><td>Centre of symmetric data.</td></tr>
+<tr><td>Median</td><td>middle ordered value</td><td>Skewed or outlier-prone data.</td></tr>
+<tr><td>Mode</td><td>most frequent value</td><td>Categorical data.</td></tr>
+<tr><td>Variance</td><td>\( s^2=\frac{\sum(x-\bar x)^2}{n-1} \)</td><td>Spread of a sample.</td></tr>
+<tr><td>Standard deviation</td><td>\( s=\sqrt{s^2} \)</td><td>Spread in the data's units.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 02 · Probability rules</p><h3><span class="sum-n">Lesson 02</span>Probability rules</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Probability is the language for chance, defined on a sample space of outcomes.</li>
+<li>The addition rule handles "or" and must subtract the overlap unless the events are mutually exclusive.</li>
+<li>The multiplication rule handles "and" and only becomes a simple product when the events are independent.</li>
+<li>Independence is an assumption to be justified, not assumed — common-cause failures are exactly where it breaks.</li>
+<li>Conditional probability \( P(A|B) \) updates a belief given evidence, and Bayes' theorem inverts the conditioning.</li>
+<li>That inversion is the basis of diagnostics: the probability of a fault given an alarm is not the probability of the alarm given the fault.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 02 · Probability rules · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Fractions and ratios</b> — probabilities as proportions.</li><li><b>Sets</b> — union, intersection, complement.</li><li><b>Counting outcomes</b> — for equally likely cases.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Addition rule</td><td>\( P(A\cup B)=P(A)+P(B)-P(A\cap B) \)</td><td>Probability of A or B.</td></tr>
+<tr><td>Multiplication (indep.)</td><td>\( P(A\cap B)=P(A)P(B) \)</td><td>Both occur, independent events.</td></tr>
+<tr><td>Conditional</td><td>\( P(A\mid B)=\frac{P(A\cap B)}{P(B)} \)</td><td>A given B has occurred.</td></tr>
+<tr><td>Independence</td><td>\( P(A\mid B)=P(A) \)</td><td>B tells nothing about A.</td></tr>
+<tr><td>Bayes' theorem</td><td>\( P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)} \)</td><td>Update a prior with evidence.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 03 · Discrete distributions</p><h3><span class="sum-n">Lesson 03</span>Discrete distributions</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A random variable assigns a number to each outcome; its distribution says how likely each value is.</li>
+<li>The binomial applies to a fixed number of independent trials with constant success probability — pass/fail inspection is the standard case.</li>
+<li>Its mean is \( np \) and its variance \( np(1-p) \).</li>
+<li>The Poisson applies to counts of events in a fixed interval when the rate is constant: defects per metre, breakdowns per month.</li>
+<li>Poisson has the striking property that its mean and variance are equal, which is itself a quick test of whether it fits.</li>
+<li>Choosing the distribution is the modelling decision — the arithmetic after it is routine.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 03 · Discrete distributions · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Probability rules</b> (Lesson 2) — independence and multiplication.</li><li><b>Combinations</b> — \( \binom{n}{k} \).</li><li><b>Factorials and \(e\)</b> — for the Poisson mass.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Random variable</td><td>outcome → number</td><td>Quantifying a random result.</td></tr>
+<tr><td>Binomial</td><td>\( \binom{n}{k}p^k(1-p)^{n-k} \)</td><td>Fixed \(n\) yes/no trials.</td></tr>
+<tr><td>Binomial moments</td><td>\( \mu=np,\ \sigma^2=np(1-p) \)</td><td>Expected count and spread.</td></tr>
+<tr><td>Poisson</td><td>\( \frac{\lambda^k e^{-\lambda}}{k!} \)</td><td>Events per interval, steady rate.</td></tr>
+<tr><td>Poisson moments</td><td>\( \mu=\sigma^2=\lambda \)</td><td>Rate is mean and variance.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 04 · Continuous distributions</p><h3><span class="sum-n">Lesson 04</span>Continuous distributions</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Continuous variables need a density function, where probability is the area under the curve and any exact value has probability zero.</li>
+<li>The normal distribution dominates because sums of many small effects tend toward it.</li>
+<li>The z-score \( z=(x-\mu)/\sigma \) converts any normal problem to the standard normal, making one table serve all cases.</li>
+<li>The empirical rule gives the working feel: roughly 68%, 95% and 99.7% within one, two and three standard deviations.</li>
+<li>Not everything is normal — lifetimes are skewed and better served by exponential, lognormal or Weibull models.</li>
+<li>Assuming normality for a skewed quantity is one of the most common and most consequential errors in engineering data.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 04 · Continuous distributions · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Mean and standard deviation</b> (Lesson 1) — the normal's parameters.</li><li><b>Area as probability</b> — the density integrates to 1.</li><li><b>Reading a table</b> — the standard-normal CDF.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Normal distribution</td><td>bell curve \( (\mu,\sigma) \)</td><td>Measurement error, natural variation.</td></tr>
+<tr><td>z-score</td><td>\( z=\frac{x-\mu}{\sigma} \)</td><td>Standardise to the standard normal.</td></tr>
+<tr><td>Empirical rule</td><td>68–95–99.7%</td><td>Spread within 1/2/3 σ.</td></tr>
+<tr><td>Exponential</td><td>mean \( 1/\lambda \)</td><td>Time between random events.</td></tr>
+<tr><td>Uniform</td><td>flat over \([a,b]\)</td><td>Rounding, first-guess ignorance.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 05 · Sampling distributions and the CLT</p><h3><span class="sum-n">Lesson 05</span>Sampling distributions and the CLT</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Inference is the leap from a sample to a statement about the population it came from.</li>
+<li>A sample statistic is itself a random variable with its own distribution — the sampling distribution.</li>
+<li>The standard error \( \sigma/\sqrt n \) measures how much the sample mean itself scatters.</li>
+<li>The square root is the practical sting: quartering the uncertainty needs sixteen times the data.</li>
+<li>The central limit theorem says the sample mean tends to normal as \( n \) grows, whatever the parent distribution.</li>
+<li>That is why normal-based methods work so widely, and it is the theoretical licence for everything in the next two lessons.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 05 · Sampling distributions and the CLT · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Standard deviation</b> (Lesson 1) — the population spread \( \sigma \).</li><li><b>The normal distribution</b> (Lesson 4) — the CLT's output shape.</li><li><b>z-scores</b> — standardising the statistic.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Sampling distribution</td><td>dist. of a statistic</td><td>How \( \bar x \) varies across samples.</td></tr>
+<tr><td>Standard error</td><td>\( \text{SE}=\sigma/\sqrt n \)</td><td>Spread of the sample mean.</td></tr>
+<tr><td>Central limit theorem</td><td>\( \bar x\sim N(\mu,\sigma/\sqrt n) \)</td><td>Mean is normal for large \(n\).</td></tr>
+<tr><td>√n law</td><td>precision \(\propto\sqrt n\)</td><td>Diminishing returns of sampling.</td></tr>
+<tr><td>z of the mean</td><td>\( z=\frac{\bar x-\mu}{\text{SE}} \)</td><td>Locate a sample mean.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 06 · Estimation and confidence intervals</p><h3><span class="sum-n">Lesson 06</span>Estimation and confidence intervals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A point estimate alone is unfalsifiable; an interval states the uncertainty with it.</li>
+<li>A confidence interval is estimate ± critical value × standard error.</li>
+<li>The confidence level describes the <em>procedure</em>: 95% of intervals built this way contain the true value.</li>
+<li>It is not a probability that the parameter lies in this particular interval — a distinction worth keeping straight in any report.</li>
+<li>With small samples and unknown \( \sigma \), the t-distribution replaces the normal, with heavier tails and wider intervals.</li>
+<li>The t-distribution approaches the normal as degrees of freedom grow, which is why the correction stops mattering above roughly 30 samples.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 06 · Estimation and confidence intervals · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Standard error & the CLT</b> (Lesson 5).</li><li><b>The normal distribution</b> (Lesson 4) — the \(z^*\) values.</li><li><b>Degrees of freedom</b> — \(n-1\) for the t.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Point estimate</td><td>\( \bar x \)</td><td>Single best guess.</td></tr>
+<tr><td>Confidence interval</td><td>\( \bar x\pm z^*\frac{\sigma}{\sqrt n} \)</td><td>Estimate with an uncertainty band.</td></tr>
+<tr><td>Margin of error</td><td>\( z^*\,\text{SE} \)</td><td>Half-width of the interval.</td></tr>
+<tr><td>95% \(z^*\)</td><td>\( 1.96 \)</td><td>Standard-normal critical value.</td></tr>
+<tr><td>t-distribution</td><td>df \( =n-1 \)</td><td>Unknown \(\sigma\), small sample.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 07 · Hypothesis testing</p><h3><span class="sum-n">Lesson 07</span>Hypothesis testing</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A hypothesis test asks whether data are consistent with a stated claim, the null hypothesis.</li>
+<li>The test statistic measures how far the data sit from the null in standard-error units, and the p-value is the probability of a result at least that extreme if the null is true.</li>
+<li>A p-value is not the probability the null is true, and "failing to reject" is not proof of it.</li>
+<li>Type I error rejects a true null; Type II error fails to reject a false one, and reducing one raises the other at fixed sample size.</li>
+<li>Only more data improves both at once — which is what power analysis quantifies before an experiment runs.</li>
+<li>Statistical significance is not engineering significance: a tiny, useless difference becomes significant with a large enough sample.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 07 · Hypothesis testing · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Standard error & CLT</b> (Lesson 5) — the statistic's distribution.</li><li><b>z-scores and tails</b> (Lesson 4) — the p-value.</li><li><b>Confidence intervals</b> (Lesson 6) — the complementary view.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Null / alternative</td><td>\( H_0 \) vs \( H_1 \)</td><td>The competing claims.</td></tr>
+<tr><td>Test statistic</td><td>\( z=\frac{\bar x-\mu_0}{\sigma/\sqrt n} \)</td><td>Distance from the null, in SEs.</td></tr>
+<tr><td>p-value</td><td>\( P(\text{data}\mid H_0) \) extreme</td><td>How surprising the data are.</td></tr>
+<tr><td>Significance</td><td>reject if \( p<\alpha \)</td><td>Decision threshold (e.g. 0.05).</td></tr>
+<tr><td>Type I / II</td><td>false alarm / missed effect</td><td>The two error kinds; power \(=1-\beta\).</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 08 · Regression</p><h3><span class="sum-n">Lesson 08</span>Regression</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Regression describes how one variable moves with another and lets it be predicted.</li>
+<li>Least squares fits the line minimising the sum of squared vertical residuals.</li>
+<li>\( R^2 \) reports the fraction of variance explained, but a high \( R^2 \) does not mean the model is right.</li>
+<li>Always plot the residuals: structure in them means the model form is wrong, however good the fit statistic looks.</li>
+<li>Extrapolating beyond the fitted range is unsupported by the data, no matter how strong the correlation inside it.</li>
+<li>Correlation is not causation — a lurking variable can produce a strong relationship between two effects of a common cause.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 08 · Regression · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Mean and variance</b> (Lesson 1) — the sums of squares.</li><li><b>Correlation idea</b> — how two variables move together.</li><li><b>Coordinate geometry</b> — a line \( y=a+bx \).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Regression line</td><td>\( \hat y=a+bx \)</td><td>Model a linear relationship.</td></tr>
+<tr><td>Least-squares slope</td><td>\( b=\frac{\sum(x-\bar x)(y-\bar y)}{\sum(x-\bar x)^2} \)</td><td>Best-fit trend.</td></tr>
+<tr><td>Intercept</td><td>\( a=\bar y-b\bar x \)</td><td>Line passes through \((\bar x,\bar y)\).</td></tr>
+<tr><td>\( R^2 \)</td><td>fraction of variance explained</td><td>Goodness of fit (0–1).</td></tr>
+<tr><td>Residual</td><td>\( y-\hat y \)</td><td>Check the model with a residual plot.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 09 · Design of experiments first contact</p><h3><span class="sum-n">Lesson 09</span>Design of experiments first contact</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Designed experiments change factors deliberately instead of watching whatever the process happens to do.</li>
+<li>Changing one factor at a time is inefficient and, worse, cannot detect interactions at all.</li>
+<li>A full factorial runs every combination, revealing main effects and interactions together.</li>
+<li>An interaction means a factor's effect depends on another's level — common in real processes and invisible to one-at-a-time testing.</li>
+<li>Fractional factorials cut the run count by deliberately confounding high-order effects that are rarely important.</li>
+<li>Randomisation, replication and blocking protect against lurking variables and give a valid estimate of experimental error.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 09 · Design of experiments first contact · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Hypothesis testing</b> (Lesson 7) — testing an effect against noise.</li><li><b>Factors and levels</b> — inputs set high/low.</li><li><b>Powers of two</b> — the \( 2^k \) run count.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Full factorial</td><td>\( 2^k \) runs</td><td>Every combination of \(k\) two-level factors.</td></tr>
+<tr><td>Main effect</td><td>avg. low→high change</td><td>A factor's overall influence.</td></tr>
+<tr><td>Interaction</td><td>effect depends on another</td><td>What OFAT cannot detect.</td></tr>
+<tr><td>Fractional factorial</td><td>\( 2^{k-1} \)</td><td>Fewer runs, sacrifice high orders.</td></tr>
+<tr><td>Randomise/replicate/block</td><td>the three safeguards</td><td>Guard against drift and noise.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 10 · Reliability statistics preview</p><h3><span class="sum-n">Lesson 10</span>Reliability statistics preview</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Reliability is the probability of surviving to a stated time under stated conditions, so the statement is meaningless without both.</li>
+<li>The exponential model assumes a constant hazard rate and gives \( R(t)=e^{-\lambda t} \) with \( MTBF=1/\lambda \).</li>
+<li>Constant hazard means memoryless — a used item is as good as new, which is a strong claim and often false.</li>
+<li>MTBF is not a service life, and reading it as one is a routine and expensive mistake.</li>
+<li>The bathtub curve has three regimes — infant mortality, useful life, wearout — and only the middle one is exponential; Weibull covers all three.</li>
+<li>Components in series multiply reliabilities, so a chain of good parts can still be an unreliable system; redundancy is what counters it.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 10 · Reliability statistics preview · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Exponential distribution</b> (Lesson 4) — the constant-rate model.</li><li><b>Probability rules</b> (Lesson 2) — series/parallel combination.</li><li><b>Complement</b> — \( F=1-R \).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Reliability function</td><td>\( R(t)=e^{-\lambda t} \)</td><td>Survival probability to time \(t\).</td></tr>
+<tr><td>MTBF</td><td>\( 1/\lambda \)</td><td>Mean life, constant rate.</td></tr>
+<tr><td>Bathtub curve</td><td>infant / random / wearout</td><td>Failure rate over life.</td></tr>
+<tr><td>Series system</td><td>\( R=\prod R_i \)</td><td>All parts must work.</td></tr>
+<tr><td>Parallel system</td><td>\( R=1-\prod(1-R_i) \)</td><td>Redundancy; one suffices.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">STS 206 · Lesson 11 · Statistical malpractice and honest reporting</p><h3><span class="sum-n">Lesson 11</span>Statistical malpractice and honest reporting</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Statistics goes wrong in predictable ways, and knowing them is part of using it honestly.</li>
+<li>P-hacking is testing until something is significant; with enough comparisons, significance appears by chance alone.</li>
+<li>Twenty independent tests at the 5% level give roughly a two-in-three chance of at least one false positive.</li>
+<li>State the hypothesis before seeing the data, and correct for multiple comparisons when several tests are run.</li>
+<li>Ignoring base rates makes a good test look decisive on a rare fault, when most positives are actually false.</li>
+<li>Simpson's paradox shows a trend can reverse when a confounder is accounted for — which is why the analysis must report what was controlled, what was assumed, and what remains unexplained.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">STS 206 · Lesson 11 · Statistical malpractice and honest reporting · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Hypothesis testing</b> (Lesson 7) — p-values and \( \alpha \).</li><li><b>Bayes / conditional probability</b> (Lesson 2) — base rates.</li><li><b>Regression cautions</b> (Lesson 8) — correlation vs causation.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>P-hacking</td><td>report only \(p<\alpha\)</td><td>Manufactured significance.</td></tr>
+<tr><td>Multiple comparisons</td><td>\( 1-(1-\alpha)^m \)</td><td>False positives across \(m\) tests.</td></tr>
+<tr><td>Base-rate fallacy</td><td>Bayes with rare events</td><td>Ignoring prevalence.</td></tr>
+<tr><td>Confounding</td><td>lurking variable</td><td>Correlation ≠ causation.</td></tr>
+<tr><td>Simpson's paradox</td><td>trend reverses on pooling</td><td>Aggregating heterogeneous groups.</td></tr></tbody></table></div></div></div></section>
+</article></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>
