@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Mass transfer analogy — Heat Transfer — MechEd</title>
+<meta name="description" content="Diffusion and convective mass transfer via the heat-transfer analogy. Evaporation and drying estimates. The shared mathematics made explicit.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/10">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/heat-transfer/10-mass-transfer-analogy.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol cur" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 10 of 11 · Year 2 · Semester 2</p>
+  <h1>Mass transfer analogy</h1>
+  <p class="sub">Diffusion and convective mass transfer via the heat-transfer analogy. Evaporation and drying estimates. The shared mathematics made explicit.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/jPgO_OAcAqI" title="Lecture 16: Heat and mass transfer analogy, flow over a flat plate" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Lecture 16: Heat and mass transfer analogy, flow over a flat plate <span class="src">Amit Gupta</span></figcaption></figure></div><div class="vh-bar"><span class="n">Lecture 16: Heat and mass transfer analogy, flow over a flat plate</span><span class="c">AMIT GUPTA</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>State the heat–mass transfer analogy in one sentence.</li><li>Why does evaporation cool the liquid left behind?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Two side by side panels, a temperature profile falling from a hot surface to cooler surroundings on the left, and a water vapor density profile falling from a wet surface to drier surrounding air on the right, drawn as mirror images to show the same underlying diffusion mathematics"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Same equation, two names: heat diffusion beside mass diffusion</text><line x1="60" y1="235" x2="250" y2="235" stroke="#16202e" stroke-width="1"/><line x1="60" y1="235" x2="60" y2="80" stroke="#16202e" stroke-width="1"/><polyline points="60.0,90.0 250.0,235.0" fill="none" stroke="#c2820f" stroke-width="2.6"/><text x="155" y="255" text-anchor="middle" fill="#16202e" font-size="10">heat: T(x), Fourier's law</text><text x="54" y="88" text-anchor="end" fill="#c2820f" font-size="9">T_s (hot)</text><text x="54" y="233" text-anchor="end" fill="#c2820f" font-size="9">T_∞</text><line x1="330" y1="235" x2="520" y2="235" stroke="#16202e" stroke-width="1"/><line x1="330" y1="235" x2="330" y2="80" stroke="#16202e" stroke-width="1"/><polyline points="330.0,90.0 520.0,235.0" fill="none" stroke="#3a6ea5" stroke-width="2.6"/><text x="425" y="255" text-anchor="middle" fill="#16202e" font-size="10">mass: ρ_v(x), Fick's law</text><text x="324" y="88" text-anchor="end" fill="#3a6ea5" font-size="9">ρ_v,s (wet surface)</text><text x="324" y="233" text-anchor="end" fill="#3a6ea5" font-size="9">ρ_v,∞</text><text x="16" y="278" fill="#16202e" font-size="11">Both profiles obey the same diffusion law — only the transported quantity differs</text></svg><figcaption>Redraw one profile and you have redrawn the other — the heat-mass analogy is this literal, not merely an inspirational comparison.</figcaption></figure>
+
+<h3>01 · One mathematics, two names</h3>
+<p>Fick's law of diffusion, \(N''=-D_{AB}\,dC/dx\), has exactly the shape of Fourier's law,
+\(q''=-k\,dT/dx\) — mass diffusing down a concentration gradient the same way heat diffuses
+down a temperature gradient. Convective mass transfer carries the same structure forward too: a
+<b>convective mass transfer coefficient</b> \(h_m\) plays the role \(h\) plays in Newton's law,
+\(N''=h_m(C_s-C_\infty)\) standing in for \(q''=h(T_s-T_\infty)\).</p>
+
+<h3>02 · The heat–mass analogy, and why it works so well for air and water specifically</h3>
+<p>The Chilton–Colburn analogy connects the two convection coefficients,
+\(h/h_m\approx\rho c_p\,Le^{2/3}\), where the <b>Lewis number</b>
+\(Le=\alpha/D_{AB}\) compares thermal diffusivity to mass diffusivity. For water vapor
+diffusing in air specifically, \(D_{AB}\approx2.5\times10^{-5}\ \text{m}^2\text{/s}\)
+happens to sit very close to air's own thermal diffusivity — a genuine physical coincidence for
+this particular pair of substances, not a universal law — giving \(Le\approx1\) and the
+simplified <b>Lewis relation</b> \(h/h_m\approx\rho c_p\). That coincidence is exactly why
+wet-bulb thermometry and simple evaporative-cooling estimates work as well, and as simply, as they
+do for air-water problems, and why the same shortcut should not be assumed for an arbitrary pair
+of substances.</p>
+
+<h3>03 · Why evaporation cools what is left behind</h3>
+<p>Vaporizing a mass of liquid costs its latent heat of vaporization. With no external heat
+source feeding that cost, the energy has to come from somewhere — and the only reservoir on hand
+is the sensible heat of the liquid (and immediate surroundings) left behind, which cools as a
+direct result. This is the entire physical mechanism behind a wet-bulb thermometer, evaporative
+cooling pads, and the cooling felt from wet skin in moving air — not a separate "evaporation is
+cold" fact, but the same energy balance as every other lesson in this course, applied to a phase
+change instead of a temperature difference.</p>
+
+<h3>04 · A worked evaporation estimate, reusing this course's own convection numbers</h3>
+<p>Lesson 4's flat-plate result gave \(h=20\ \text{W/m}^2\text{K}\) for forced air at
+a modest speed. Using the Lewis relation with \(\rho_{air}=1.15\
+\ \text{kg/m}^3\), \(c_{p,air}=1007\ \text{J/kgK}\):
+\(h_m=h/(\rho c_p)=0.0173\ \text{m/s}\). Taking a representative (given, not a claimed
+precise psychrometric lookup) vapor-density difference between a wet surface and hot, dry Gulf
+air, \(\Delta\rho_v=0.018\ \text{kg/m}^3\):
+\(N''=h_m\Delta\rho_v=3.11e-04\ \text{kg/m}^2\text{s}=1.12\
+\ \text{kg/m}^2\text{hr}\) — a real, order-of-magnitude-plausible desert evaporation
+rate. Converted through \(h_{fg}\approx2.45\ \text{MJ/kg}\), this is
+\(q_{evap}=N''h_{fg}=763\ \text{W/m}^2\) of cooling drawn from the surface
+left behind — a substantial number, on the same order as this course's other worked convective
+fluxes, and the same "sensible heat pays for the latent heat" bookkeeping 3 describes.</p>
+<div class="keybox"><span class="tag">Key relation — the Lewis relation, air-water only</span>
+<p>\[ \frac{h}{h_m}\approx\rho c_p \qquad (Le\approx1\text{ for water vapor in air})
+\]</p>
+<p>A shortcut earned by a specific numerical coincidence — check \(Le\) before reusing it for
+any other fluid pair.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — mass transfer reuses the identical
+dimensionless structure (Sherwood, Reynolds, Schmidt in place of Nusselt, Reynolds, Prandtl).</li>
+<li><b>Psychrometrics</b> (Thermodynamics II) — the sensible/latent energy split this lesson's
+evaporative cooling relies on was introduced there for cooling-load estimates.</li></ul>
+<h4>Toolkit — the heat–mass analogy</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Fick's law</td><td>\( N''=-D_{AB}\,dC/dx \)</td><td>Diffusive mass transfer.</td></tr>
+<tr><td>Convective mass transfer</td><td>\( N''=h_m(C_s-C_\infty) \)</td><td>Mass-transfer analog of Newton's law.</td></tr>
+<tr><td>Lewis number</td><td>\( Le=\alpha/D_{AB} \)</td><td>Thermal vs. mass diffusivity.</td></tr>
+<tr><td>Lewis relation</td><td>\( h/h_m\approx\rho c_p \)</td><td>Valid when \(Le\approx1\) (air-water).</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The worked evaporation estimate</b></p><p><b>Problem.</b> Reusing Lesson 4's \(h=20\ \text{W/m}^2\text{K}\), with \(\rho_{air}=1.15\ \text{kg/m}^3\), \(c_{p,air}=1007\ \text{J/kgK}\), and a representative \(\Delta\rho_v=0.018\ \text{kg/m}^3\), find \(h_m\), the evaporation flux \(N''\), and the equivalent cooling flux \(q_{evap}\) (\(h_{fg}\approx2.45\ \text{MJ/kg}\)).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(h_m=h/(\rho c_p)=0.0173\ \text{m/s}\). \(N''=h_m\Delta\rho_v=3.11e-04\ \text{kg/m}^2\text{s}\). \(q_{evap}=N''h_{fg}=763\ \text{W/m}^2\).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>The same estimate at Lesson 6's much lower h</b></p><p><b>Problem.</b> Repeat the estimate using Lesson 6's natural-convection result instead, \(h=3.99\ \text{W/m}^2\text{K}\), same air properties and \(\Delta\rho_v\). Find the new \(h_m\), \(N''\), and \(q_{evap}\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(h_m=h/(\rho c_p)=0.00345\ \text{m/s}\). \(N''=h_m\Delta\rho_v=6.20e-05\ \text{kg/m}^2\text{s}\). \(q_{evap}=N''h_{fg}=152\ \text{W/m}^2\) — about \(5\times\) smaller than the forced-air case, since $h_m$ scales directly with the (much lower) natural-convection h.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Mass evaporated from a real surface</b></p><p><b>Problem.</b> At 4's flux, how much water evaporates from a 2 m² open surface over 1 hour?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(m=N''\times A\times t=3.11e-04\times2\times3600=2.24\ \text{kg}\) over the hour.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Fick's law and Fourier's law share which structural relationship?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>They are unrelated equations that happen to look similar by coincidence</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Both state that a flux is proportional to minus a property times a concentration or temperature gradient — the same mathematical form, different transported quantity</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Fick's law only applies to gases, Fourier's law only to solids</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Fick's law replaces Fourier's law whenever radiation is present</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both are linear diffusion laws of identical form, \(-(\text{property})\times(\text{gradient})\) — heat and mass diffuse by the same mathematics.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>The Lewis number \(Le=\alpha/D_{AB}\) compares which two quantities?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Momentum diffusivity to thermal diffusivity</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Thermal diffusivity to mass diffusivity</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Convective to conductive heat transfer</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Buoyancy force to viscous force</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Le compares how fast heat diffuses (α) to how fast mass diffuses (\(D_{AB}\)) — when the two rates are similar, \(Le\approx1\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The simplified Lewis relation \(h/h_m\approx\rho c_p\) is a reliable shortcut specifically because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It holds for any two substances, by definition</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>For water vapor in air, \(D_{AB}\) happens to be numerically close to air's thermal diffusivity, giving \(Le\approx1\) — a specific coincidence, not a universal law</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Air has zero viscosity</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Water always evaporates at a fixed rate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>This is a property coincidence specific to the air-water pair; 2 is explicit that it should not be assumed to transfer to other fluid combinations.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Physically, why does evaporation cool the liquid left behind, with no external heat source present?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>It does not — evaporation has no thermal effect on the remaining liquid</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The latent heat needed to vaporize the escaping mass is drawn from the remaining liquid's own sensible heat, cooling it</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The remaining liquid gains heat from the vapor that just left</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Evaporation only cools the surrounding air, never the liquid</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>With no external heat input, the energy balance has nowhere else to draw the latent heat from except the sensible heat of what remains — this is the literal mechanism, not a figure of speech.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>In this lesson's worked estimate, moving from Lesson 4's forced-air \(h=20\ \text{W/m}^2\text{K}\) to Lesson 6's natural-convection \(h\approx4\ \text{W/m}^2\text{K}\) changes the evaporation flux by:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>No change — evaporation is independent of h</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>It falls by roughly the same factor h itself fell, since \(h_m\propto h\) via the Lewis relation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>It rises, since lower h means less convective cooling competition</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It becomes negative</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(h_m=h/(\rho c_p)\) is directly proportional to h; a lower h gives a proportionally lower \(h_m\) and evaporation flux, confirmed in this lesson's second solve problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A wet-bulb thermometer reads a lower temperature than a dry-bulb thermometer in the same air primarily because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Wet-bulb thermometers are less accurate</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Evaporation from the wet wick draws latent heat from the wick's own sensible heat, cooling it below the surrounding dry-bulb air temperature</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Water is inherently colder than air</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The wick blocks radiation to the thermometer</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>This is exactly 3's mechanism in its most common instrument form — the wick cools itself by evaporating into the surrounding air.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A representative vapor-density difference \(\Delta\rho_v\) used in a worked example should be presented as:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>A precise psychrometric-chart value recalled exactly from memory</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>A given, representative input value — honestly labeled as such, not claimed as a precise lookup</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Irrelevant — any value produces the same q_evap</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Always exactly zero for hot, dry air</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>This course's standing practice (also used for steam-table values in Thermodynamics II) is to present such figures as honest, representative GIVEN inputs, never as claimed precise recalled lookups.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>This lesson's evaporation estimate reused convection coefficients from which two earlier lessons?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Lesson 1 and Lesson 2</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Lesson 4 (forced convection) and Lesson 6 (natural convection)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Lesson 7 and Lesson 8</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>No earlier lesson's numbers were reused</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The worked example and its second solve problem explicitly reuse Lesson 4's forced-air h and Lesson 6's natural-convection h, tying the analogy back to numbers already computed and verified earlier in this course.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>An engineer estimating water loss from an open process-water surface or a cooling pond in
+Gulf summer heat uses the Lewis relation to convert an already-known or already-estimated h into
+\(h_m\), rather than deriving a mass-transfer correlation from scratch — per 4, this shortcut
+is earned specifically by \(Le\approx1\) for air and water vapor, and should not be assumed to
+carry over unchanged to a different fluid pair.</p>
+<p>A technician noticing that a wetted evaporative cooling pad, or curing concrete kept damp,
+stays noticeably cooler than the surrounding dry air is watching the same mechanism as a wet-bulb
+thermometer — per 3, the energy leaving as vapor is drawn directly from the remaining liquid's
+own sensible heat, a real, quantifiable effect rather than a vague "evaporation feels cool"
+impression.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(7.874\\ \\mathrm{in}\\)", "\\(508\\ \\mathrm{in}\\)", "\\(0.7874\\ \\mathrm{in}\\)", "\\(0.07874\\ \\mathrm{in}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(20 \\times 0.03937 = 0.7874\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.7874\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(50.8\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(0.07874\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.007874\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(2 \times 0.03937 = 0.07874\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{W}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.006035\\ \\mathrm{hp}\\)", "\\(3.356e+04\\ \\mathrm{hp}\\)", "\\(0.6035\\ \\mathrm{hp}\\)", "\\(0.06035\\ \\mathrm{hp}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{W} = 0.001341\\ \\mathrm{hp}\\): \\(45 \\times 0.001341 = 0.06035\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{W}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.0004023\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2237\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(0.04023\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(0.004023\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{W} = 0.001341\ \mathrm{hp}\): \(3 \times 0.001341 = 0.004023\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 14; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-radiation-fundamentals-and-exchange.html">← 09 · Radiation: fundamentals and exchange</a><a href="index.html">All lessons · HTX 253</a><a href="11-thermal-design-mini-project.html">11 · Thermal design mini-project →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

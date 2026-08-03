@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Fatigue design II: mean stress and cumulative damage — Machine Design I — MechEd</title>
+<meta name="description" content="Goodman and Gerber treatments of mean stress. Miner's rule with its known dishonesty acknowledged. Fluctuating-load components assessed end to end.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/machine-design-1/4">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/machine-design-1/04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MDN 251 · Machine Design I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-design-methodology-and-factors-of-safety.html" class="ol" data-key="y2s2/machine-design-1/1"><span class="tick"></span><span>01 · Design methodology and factors of safety</span></a><a href="02-static-failure-design.html" class="ol" data-key="y2s2/machine-design-1/2"><span class="tick"></span><span>02 · Static failure design</span></a><a href="03-fatigue-design-i-the-s-n-method.html" class="ol" data-key="y2s2/machine-design-1/3"><span class="tick"></span><span>03 · Fatigue design I: the S–N method</span></a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" class="ol cur" data-key="y2s2/machine-design-1/4"><span class="tick"></span><span>04 · Fatigue design II: mean stress and cumulative damage</span></a><a href="05-shaft-design.html" class="ol" data-key="y2s2/machine-design-1/5"><span class="tick"></span><span>05 · Shaft design</span></a><a href="06-keys-splines-and-retaining-hardware.html" class="ol" data-key="y2s2/machine-design-1/6"><span class="tick"></span><span>06 · Keys, splines, and retaining hardware</span></a><a href="07-threaded-fasteners-and-bolted-joints.html" class="ol" data-key="y2s2/machine-design-1/7"><span class="tick"></span><span>07 · Threaded fasteners and bolted joints</span></a><a href="08-welded-joint-design.html" class="ol" data-key="y2s2/machine-design-1/8"><span class="tick"></span><span>08 · Welded joint design</span></a><a href="09-springs.html" class="ol" data-key="y2s2/machine-design-1/9"><span class="tick"></span><span>09 · Springs</span></a><a href="10-power-screws.html" class="ol" data-key="y2s2/machine-design-1/10"><span class="tick"></span><span>10 · Power screws</span></a><a href="11-design-project-a-driven-shaft-assembly.html" class="ol" data-key="y2s2/machine-design-1/11"><span class="tick"></span><span>11 · Design project: a driven shaft assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">MDN 251</a> /
+<span>Lesson 04 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MDN 251 · Lesson 04 of 11 · Year 2 · Semester 2</p>
+  <h1>Fatigue design II: mean stress and cumulative damage</h1>
+  <p class="sub">Goodman and Gerber treatments of mean stress. Miner's rule with its known dishonesty acknowledged. Fluctuating-load components assessed end to end.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/4">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.72 Elements of Mechanical Design (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/mAJsN1_IY2U" title="Fatigue FAILURE CRITERIA in Just Over 10 Minutes!" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Fatigue FAILURE CRITERIA in Just Over 10 Minutes! <span class="src">Less Boring Lectures</span></figcaption></figure></div><div class="vh-bar"><span class="n">Fatigue FAILURE CRITERIA in Just Over 10 Minutes!</span><span class="c">LESS BORING LECTURES</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does the Goodman line trade between mean and alternating stress?</li><li>State Miner's rule and its known dishonesty.</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A constant-life diagram with mean stress on the horizontal axis and stress amplitude on the vertical. A straight Goodman line runs from the corrected endurance limit of 174 megapascals down to the ultimate strength of 600 megapascals. A dashed Gerber parabola bulges above it. A load line from the origin through the load point at 80 mean and 60 amplitude meets the Goodman line at a factor of safety of 2.09."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><path d="M80 240 L500 240" stroke="#14181F" stroke-width="1.5"/><path d="M80 240 L80 60" stroke="#14181F" stroke-width="1.5"/><text x="290" y="272" text-anchor="middle" fill="#14181F" font-size="12">mean stress σm (MPa)</text><text x="26" y="150" font-size="12" fill="#14181F" transform="rotate(-90 26 150)" text-anchor="middle">amplitude σa (MPa)</text><path d="M80.0 240 L80.0 244" stroke="#5B6672" stroke-width="1"/><text x="80" y="256" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M220.0 240 L220.0 244" stroke="#5B6672" stroke-width="1"/><text x="220" y="256" text-anchor="middle" fill="#5B6672" font-size="11">200</text><path d="M360.0 240 L360.0 244" stroke="#5B6672" stroke-width="1"/><text x="360" y="256" text-anchor="middle" fill="#5B6672" font-size="11">400</text><path d="M500.0 240 L500.0 244" stroke="#5B6672" stroke-width="1"/><text x="500" y="256" text-anchor="middle" fill="#5B6672" font-size="11">600</text><path d="M76 240.0 L80 240.0" stroke="#5B6672" stroke-width="1"/><text x="72" y="244" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M76 150.0 L80 150.0" stroke="#5B6672" stroke-width="1"/><text x="72" y="154" text-anchor="end" fill="#5B6672" font-size="11">100</text><path d="M76 60.0 L80 60.0" stroke="#5B6672" stroke-width="1"/><text x="72" y="64" text-anchor="end" fill="#5B6672" font-size="11">200</text><path d="M80.0 83.4 L500.0 240.0" fill="none" stroke="#07785C" stroke-width="2.2"/><path d="M80.0 83.4 L97.5 83.7 L115.0 84.5 L132.5 85.8 L150.0 87.8 L167.5 90.2 L185.0 93.2 L202.5 96.7 L220.0 100.8 L237.5 105.4 L255.0 110.6 L272.5 116.3 L290.0 122.6 L307.5 129.3 L325.0 136.7 L342.5 144.6 L360.0 153.0 L377.5 162.0 L395.0 171.5 L412.5 181.5 L430.0 192.2 L447.5 203.3 L465.0 215.0 L482.5 227.2 L500.0 240.0" fill="none" stroke="#8A5A0F" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M80.0 240.0 L197.1 127.1" stroke="#5B6672" stroke-width="1.4" stroke-dasharray="3 3" fill="none"/><circle cx="136.0" cy="186.0" r="4" fill="#9c2f2f"/><circle cx="197.1" cy="127.1" r="3.5" fill="#07785C"/><text x="88" y="77" fill="#07785C" font-size="11">Se = 174</text><text x="145" y="190" fill="#9c2f2f" font-size="11">load point (80, 60)</text><text x="215" y="99" fill="#07785C" font-size="11">Goodman limit — n = 2.09</text><text x="309" y="129" fill="#07785C" font-size="11">Goodman — linear</text><text x="294" y="211" fill="#8A5A0F" font-size="11">Gerber — parabolic</text></svg><figcaption>The constant-life diagram. Lesson 3 gave the vertical
+intercept — the corrected endurance limit, 174 MPa. This lesson supplies everything to the right
+of it: a mean stress eats into the amplitude a part can survive. The load point sits safely
+inside both boundaries; the load line shows how much room is left before it does not.</figcaption></figure>
+<h3>01 · The gap Lesson 3 left open</h3>
+<p>Lesson 3 finished with a factor of safety of 2.9 on a component cycling between 20 and
+140 MPa, and flagged the omission plainly: the calculation compared the amplitude against
+\( S_e \) and ignored the 80 MPa mean stress entirely. That mean stress is not harmless. A
+steady tensile load holds a crack open, so each cycle does more damage than the same amplitude
+would about zero mean. Fatigue strength therefore depends on <em>two</em> numbers, and a
+one-dimensional comparison cannot express the answer.</p>
+<h3>02 · Constant-life criteria</h3>
+<p>The standard treatment plots mean stress horizontally and amplitude vertically, and draws a
+boundary between the survivable region and the rest. Every criterion in use passes through the
+same two anchors — \( S_e \) on the amplitude axis, where there is no mean stress, and
+\( S_{ut} \) on the mean axis, where there is no alternation and the part simply pulls
+apart. They differ only in the curve drawn between them.</p>
+<div class="keybox"><span class="tag">Key relation — the Goodman criterion</span>
+<p>\[ \frac{\sigma_a}{S_e} + \frac{\sigma_m}{S_{ut}} = \frac{1}{n} \]</p>
+<p>A straight line between the two anchors. Gerber replaces the second term with
+\( (\sigma_m/S_{ut})^2 \), bulging above the line; Soderberg replaces \( S_{ut} \) with the
+yield strength \( S_y \), pulling below it. Setting \( \sigma_m = 0 \) collapses all three to
+\( n = S_e/\sigma_a \) — Lesson 3's calculation, recovered exactly.</p></div>
+<p>Which to use is a judgement, not a lookup. Goodman is linear, always conservative against
+test data, and trivially invertible for design — which is why it dominates practice. Gerber
+follows the experimental scatter band more closely and returns a less punishing answer: on the
+worked case below, 2.56 against Goodman's 2.09, a 22% difference that is real money in material.
+Soderberg alone guarantees no yielding at the first peak, because it is anchored at \( S_y \),
+but it is conservative enough that most designers run Goodman for fatigue and a separate
+first-cycle yield check instead.</p>
+<h3>03 · Variable amplitude and Miner's rule</h3>
+<p>Real duty is not one amplitude. A crane hoists light loads often and heavy loads rarely; a
+pump shaft sees startup transients on top of running load. The standard accounting device is the
+Palmgren–Miner rule: each block of \( n_i \) cycles at an amplitude whose life is \( N_i \)
+consumes the fraction \( n_i/N_i \), and failure is predicted when the fractions sum to one.</p>
+<div class="keybox"><span class="tag">Key relation — cumulative damage</span>
+<p>\[ D = \sum_i \frac{n_i}{N_i} \qquad \text{failure predicted at } D = 1 \]</p>
+<p>\( N_i \) comes from the finite-life line \( S_f = a N^{\,b} \), fitted between
+\( 0.9 S_{ut} \) at \( 10^3 \) cycles and \( S_e \) at \( 10^6 \).</p></div>
+<h3>04 · Miner's rule is known to be wrong</h3>
+<p>It is worth being blunt about this, because the rule is used everywhere and defended nowhere.
+Miner's rule assumes damage accumulates linearly and independently of order. Neither is true.
+Test data puts failure anywhere from \( D \approx 0.5 \) to \( D \approx 2 \), and sequence
+matters: a few high-amplitude cycles early can drive a crack that subsequent low-amplitude cycles
+then extend, whereas the same high cycles applied last may find nothing to grow. A large overload
+can even be <em>beneficial</em>, leaving a compressive residual stress at the notch root that
+retards later growth.</p>
+<p>The rule survives because it is simple, because it is roughly unbiased across many
+tests, and because nothing appreciably better is available without crack-growth analysis.
+Use it — and treat a computed \( D \) of 0.9 as "no margin demonstrated", not as "passed".</p>
+<p><strong>Closing.</strong> Mean stress costs amplitude, and the constant-life diagram is where
+that trade is priced. Variable duty is summed with Miner's rule, whose answer is an estimate with
+a factor of two around it, not a number to design to the last digit.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>The corrected endurance limit</b> (Lesson 3) — \( S_e \) is the vertical anchor of every
+diagram drawn here; this lesson does not re-derive it.</li>
+<li><b>Stress amplitude and mean stress</b> (Lesson 3) — \( \sigma_a \) and \( \sigma_m \)
+as the two coordinates a fatigue state is expressed in.</li>
+<li><b>Ultimate and yield strength</b> (Materials I L7) — \( S_{ut} \) and \( S_y \), the two
+candidate anchors on the mean-stress axis.</li>
+<li><b>Logarithms</b> (Mathematics I) — the S–N line is a power law; solving it for life means
+taking logs.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Goodman criterion</td><td>\( \sigma_a/S_e + \sigma_m/S_{ut} = 1/n \)</td><td>Default fatigue check with mean stress present; conservative and easy to invert for design.</td></tr>
+<tr><td>Gerber criterion</td><td>\( n\sigma_a/S_e + (n\sigma_m/S_{ut})^2 = 1 \)</td><td>When a less punishing, better-centred estimate is wanted and the extra algebra is acceptable.</td></tr>
+<tr><td>Soderberg criterion</td><td>\( \sigma_a/S_e + \sigma_m/S_y = 1/n \)</td><td>When no first-cycle yielding may be permitted at all.</td></tr>
+<tr><td>Finite-life line</td><td>\( S_f = aN^{\,b} \)</td><td>Reading a life off the S–N curve between \( 10^3 \) and \( 10^6 \) cycles.</td></tr>
+<tr><td>Line coefficients</td><td>\( a=(0.9S_{ut})^2/S_e \), \( b=-\tfrac13\log_{10}(0.9S_{ut}/S_e) \)</td><td>Fitting that line from two known endpoints.</td></tr>
+<tr><td>Miner's rule</td><td>\( D=\sum n_i/N_i \)</td><td>Summing damage over a duty spectrum; failure predicted at \( D=1 \), with real scatter of roughly 0.5–2.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>What the mean stress actually costs</b></p>
+<p><b>Problem.</b> Lesson 3 left a component cycling between \( \sigma_{min}=20 \) and \( \sigma_{max}=140\ \mathrm{MPa} \) with a reported factor of safety of 2.9 against \( S_e = 174\ \mathrm{MPa} \), the mean stress ignored. The steel has \( S_{ut}=600\ \mathrm{MPa} \). <b>Find:</b> the factor of safety by Goodman and by Gerber, and say what the mean stress cost.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \sigma_a=(140-20)/2=60 \), \( \sigma_m=(140+20)/2=80\ \mathrm{MPa} \).
+(2) Goodman: \( 60/174 + 80/600 = 0.3448+0.1333=0.4782 \), so \( n=1/0.4782=2.09 \).
+(3) Gerber: solve \( 0.3448\,n + (0.1333\,n)^2 = 1 \), i.e. \( 0.01778n^2+0.3448n-1=0 \), giving \( n=2.56 \).</p>
+<p><b>Answer:</b> Goodman \( n=2.09 \), Gerber \( n=2.56 \).
+<b>Sanity check:</b> both are below Lesson 3's 2.9, as they must be — adding a damaging mean stress cannot raise the margin. Goodman costs 28% of the mean-free answer and Gerber 12%. Setting \( \sigma_m=0 \) in either expression returns exactly 2.90, which is the arithmetic confirming the two lessons agree where they overlap.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Adding up a duty cycle</b></p>
+<p><b>Problem.</b> A shaft of the same steel (\( S_{ut}=600 \), \( S_e=174\ \mathrm{MPa} \)) sees, per year: 10,000 cycles at 300 MPa amplitude, 30,000 at 250 MPa, and 100,000 at 200 MPa, all fully reversed. Fit the finite-life line between \( 0.9S_{ut} \) at \( 10^3 \) cycles and \( S_e \) at \( 10^6 \). <b>Find:</b> the annual damage \( D \), and how many years of this duty Miner's rule allows.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Endpoints: \( 0.9\times600=540\ \mathrm{MPa} \) at \( 10^3 \), \( 174\ \mathrm{MPa} \) at \( 10^6 \).
+(2) \( b=-\tfrac13\log_{10}(540/174)=-0.1639 \); \( a=540^2/174=1675.9\ \mathrm{MPa} \).
+(3) Lives from \( N=(S_f/a)^{1/b} \): at 300 MPa, \( N=36{,}060 \); at 250 MPa, \( N=109{,}647 \); at 200 MPa, \( N=427{,}660 \).
+(4) \( D = 10{,}000/36{,}060 + 30{,}000/109{,}647 + 100{,}000/427{,}660 = 0.2773+0.2736+0.2338 = 0.785 \).
+(5) Years to \( D=1 \): \( 1/0.785 = 1.27 \).</p>
+<p><b>Answer:</b> \( D=0.785 \) per year; failure predicted at about 1.3 years.
+<b>Sanity check:</b> the line is verified at its own endpoint — \( 1675.9\times(10^6)^{-0.1639}=174.0\ \mathrm{MPa} \), the corrected endurance limit it was fitted to. Note how evenly the three blocks contribute, 0.23 to 0.28 each: the rare high-amplitude cycles do as much damage as the hundred thousand mild ones, which is exactly the intuition a running-load-only calculation lacks.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Designing to a target margin</b></p>
+<p><b>Problem.</b> The same steel and \( S_e=174\ \mathrm{MPa} \). A joint carries an unavoidable mean stress of 80 MPa and must show a Goodman factor of safety of 2.0. <b>Find:</b> the largest stress amplitude permitted, and the peak stress that corresponds to.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Rearranging Goodman for amplitude: \( \sigma_a = S_e\left(\tfrac1n - \tfrac{\sigma_m}{S_{ut}}\right) \).
+(2) \( \sigma_a = 174\,(0.5 - 80/600) = 174\times0.3667 = 63.8\ \mathrm{MPa} \).
+(3) Peak: \( \sigma_{max} = \sigma_m+\sigma_a = 80+63.8 = 143.8\ \mathrm{MPa} \).</p>
+<p><b>Answer:</b> \( \sigma_a \le 63.8\ \mathrm{MPa} \), peak 143.8 MPa.
+<b>Sanity check:</b> substituting back, \( 63.8/174 + 80/600 = 0.3667+0.1333 = 0.500 = 1/2 \) — the target margin exactly. Note the peak stress of 144 MPa is a quarter of \( S_{ut} \) and well under any plausible yield strength: the part is nowhere near static failure, which is the ordinary condition of a fatigue-governed design.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>On a constant-life diagram, the Goodman line runs between which two anchor points?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( S_y \) on the amplitude axis and \( S_{ut} \) on the mean axis</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( S_e \) on the amplitude axis and \( S_{ut} \) on the mean axis</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( S_e \) on both axes</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.5S_{ut} \) on the amplitude axis and \( S_y \) on the mean axis</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>With no mean stress the part survives an amplitude of \( S_e \), fixing the vertical anchor; with no alternation it is a static tensile member that fails at \( S_{ut} \), fixing the horizontal one. Soderberg is the criterion that anchors at \( S_y \) instead, and it does so on the mean axis, not the amplitude axis. Using \( 0.5S_{ut} \) would put the uncorrected specimen value on the diagram, discarding the Marin factors Lesson 3 spent its length establishing.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A component has \( \sigma_a = 90 \) and \( \sigma_m = 150\ \mathrm{MPa} \), with \( S_e = 174 \) and \( S_{ut} = 600\ \mathrm{MPa} \). The Goodman factor of safety is closest to</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( 1.30 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 1.93 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 0.77 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 2.40 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 90/174 + 150/600 = 0.5172 + 0.2500 = 0.7672 \), and \( n = 1/0.7672 = 1.30 \). The 1.93 answer is \( S_e/\sigma_a \), the mean stress ignored — the very error this lesson exists to correct. The 0.77 figure is the sum itself, which is \( 1/n \) and not the margin. A margin of 1.30 on a fatigue calculation is thin: the inputs carry more scatter than that.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Compared with Goodman, the Gerber criterion generally</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>predicts a lower factor of safety for the same load</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>predicts a higher factor of safety, following the test scatter more closely</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>gives an identical answer whenever \( \sigma_m > 0 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>applies only to brittle materials</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Gerber's parabola bulges above Goodman's straight line everywhere between the two shared anchors, so it permits more amplitude at a given mean stress and returns the larger margin — 2.56 against 2.09 on this lesson's worked case. That is the point of it: the straight line is a deliberately conservative simplification of a data set the parabola sits centrally within. The two agree only at the anchors themselves, where \( \sigma_m \) is zero or \( \sigma_a \) is zero.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Which criterion is the one that guarantees no yielding on the first load cycle?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Goodman</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Gerber</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>Soderberg</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Miner</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Soderberg anchors the mean-stress axis at \( S_y \) rather than \( S_{ut} \), so satisfying it necessarily keeps \( \sigma_m + \sigma_a \) below yield. Goodman and Gerber both anchor at \( S_{ut} \) and can therefore pass a combination that yields locally on the first cycle, which is why they are normally run alongside a separate static yield check. Miner is not a constant-life criterion at all — it is the damage-summation rule for variable amplitude.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>A duty spectrum gives \( n_1/N_1 = 0.45 \) and \( n_2/N_2 = 0.40 \). Miner's rule predicts</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>failure, because two blocks were applied</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>survival with \( D = 0.85 \), though with little demonstrated margin</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>survival with \( D = 0.18 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>nothing, because the blocks have different amplitudes</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The fractions add: \( D = 0.45+0.40 = 0.85 \), below the predicted failure value of 1. The 0.18 answer multiplies them, which has no physical meaning. Miner's rule exists precisely to combine blocks of <em>different</em> amplitude, so the last option inverts its purpose. The honest reading of 0.85 is that the design has consumed most of its predicted life with the rule's own scatter — roughly 0.5 to 2 — wider than the remaining 0.15.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Why can the order in which load blocks are applied change the actual life, contrary to Miner's assumption?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Because the material's \( S_{ut} \) changes with load history</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Because early high-amplitude cycles can start a crack that later mild cycles extend, and a large overload can leave a retarding compressive residual stress</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Because \( N_i \) is measured only for constant-amplitude tests</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Because damage fractions are dimensionless</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Sequence matters through the crack itself. High cycles applied early initiate damage that subsequent low-amplitude cycles — which alone might never start a crack — are perfectly able to grow; applied last, the same cycles may find nothing to extend. Separately, a single large overload can yield the notch root and leave a compressive residual stress there that retards later growth, so an overload can lengthen life. Neither effect exists in a linear sum. The ultimate strength is not altered by this, and the dimensionlessness of \( D \) is beside the point.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A finite-life line is fitted between 540 MPa at \( 10^3 \) cycles and 174 MPa at \( 10^6 \) cycles. The exponent \( b \) is closest to</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( -0.164 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( -0.492 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( +0.164 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( -3.00 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( b = -\tfrac13\log_{10}(540/174) = -\tfrac13(0.4916) = -0.164 \). The \( -0.492 \) answer omits the factor of one third, which is the three decades of life between the endpoints. A positive exponent would make fatigue strength <em>rise</em> with life, which is backwards. The \( -3.00 \) figure inverts the relationship — it is roughly \( 1/b \), the exponent used when solving for \( N \) from a known stress rather than the reverse.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A designer reports a Goodman margin of 2.09 and a Gerber margin of 2.56 for the same component and asks which to put in the calculation package. The defensible answer is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Gerber, because it is the more accurate criterion</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Goodman, stating the criterion used — the choice is a documented judgement, and the conservative line is the normal default</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The average of the two</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Whichever exceeds the required margin</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>What makes a fatigue number defensible is that the criterion is named and the inputs are traceable, not that a particular curve was chosen. Goodman is the ordinary default because it is conservative against the data and invertible for design, so it is the natural entry — with Gerber available as the argued case if the extra 22% is needed and justified. Averaging two criteria produces a curve nobody has validated. Choosing whichever clears the target is selecting the answer first and the method afterwards, which is the one approach that cannot be defended in review.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the duty cycle nobody added up.</b> A reciprocating-compressor tie rod is
+specified against its running load and passes comfortably. It fails after three years. The
+running load was never the problem: the rod also sees a startup transient at roughly 300 MPa
+amplitude, a few thousand cycles per year of unloaded-to-loaded transition near 250 MPa, and the
+steady running cycles near 200 MPa. Each block on its own is survivable — the 200 MPa duty alone
+would run past four hundred thousand cycles. Summed with Miner's rule the annual damage comes to
+0.78, which is not a pass; it means the rod is predicted to fail somewhere in the second year of
+identical duty, and the observed three years sits inside the rule's normal factor-of-two scatter.
+Two changes follow. The startup ramp is lengthened so the transient amplitude drops, which is
+free, and the rod is re-specified with a rolled rather than cut thread, which raises \( S_e \)
+and lengthens every block at once. The instructive part is that the original calculation was not
+wrong about any single load. It simply never asked what the loads did together.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(33.72\\ \\mathrm{lbf}\\)", "\\(667.2\\ \\mathrm{lbf}\\)", "\\(337.2\\ \\mathrm{lbf}\\)", "\\(3.372\\ \\mathrm{lbf}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(150 \\times 0.2248 = 33.72\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(2.698\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(53.38\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(26.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2698\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(12 \times 0.2248 = 2.698\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{J}\\). In CGS units, this is closest to:&lt;/p>", "choices": ["\\(2e-07\\ \\mathrm{erg}\\)", "\\(2e+07\\ \\mathrm{erg}\\)", "\\(2e+08\\ \\mathrm{erg}\\)", "\\(2e+06\\ \\mathrm{erg}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{J} = 1e+07\\ \\mathrm{erg}\\): \\(2 \\times 1e+07 = 2e+07\\ \\mathrm{erg}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{J}\). In CGS units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(2e-06\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2e+08\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(2e+09\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2e+07\ \mathrm{erg}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{J} = 1e+07\ \mathrm{erg}\): \(20 \times 1e+07 = 2e+08\ \mathrm{erg}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1923658W" target="_blank" rel="noopener">Shigley's Mechanical Engineering Design — Budynas &amp; Nisbett</a></li><li>Machine Design: An Integrated Approach — Robert L. Norton</li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="03-fatigue-design-i-the-s-n-method.html">← 03 · Fatigue design I: the S–N method</a><a href="index.html">All lessons · MDN 251</a><a href="05-shaft-design.html">05 · Shaft design →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

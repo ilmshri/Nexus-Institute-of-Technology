@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Forced convection: internal — Heat Transfer — MechEd</title>
+<meta name="description" content="Developing versus developed flow; constant-flux and constant-temperature results. The Dittus–Boelter workhorse with its fine print. Heat pickup in rea">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/heat-transfer/5">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/05-forced-convection-internal.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">HTX 253 · Heat Transfer</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-the-thermal-circuit.html" class="ol" data-key="y2s2/heat-transfer/1"><span class="tick"></span><span>01 · Mechanisms and the thermal circuit</span></a><a href="02-steady-conduction-and-fins.html" class="ol" data-key="y2s2/heat-transfer/2"><span class="tick"></span><span>02 · Steady conduction and fins</span></a><a href="03-transient-conduction.html" class="ol" data-key="y2s2/heat-transfer/3"><span class="tick"></span><span>03 · Transient conduction</span></a><a href="04-forced-convection-external.html" class="ol" data-key="y2s2/heat-transfer/4"><span class="tick"></span><span>04 · Forced convection: external</span></a><a href="05-forced-convection-internal.html" class="ol cur" data-key="y2s2/heat-transfer/5"><span class="tick"></span><span>05 · Forced convection: internal</span></a><a href="06-natural-convection.html" class="ol" data-key="y2s2/heat-transfer/6"><span class="tick"></span><span>06 · Natural convection</span></a><a href="07-boiling-and-condensation.html" class="ol" data-key="y2s2/heat-transfer/7"><span class="tick"></span><span>07 · Boiling and condensation</span></a><a href="08-heat-exchangers.html" class="ol" data-key="y2s2/heat-transfer/8"><span class="tick"></span><span>08 · Heat exchangers</span></a><a href="09-radiation-fundamentals-and-exchange.html" class="ol" data-key="y2s2/heat-transfer/9"><span class="tick"></span><span>09 · Radiation: fundamentals and exchange</span></a><a href="10-mass-transfer-analogy.html" class="ol" data-key="y2s2/heat-transfer/10"><span class="tick"></span><span>10 · Mass transfer analogy</span></a><a href="11-thermal-design-mini-project.html" class="ol" data-key="y2s2/heat-transfer/11"><span class="tick"></span><span>11 · Thermal design mini-project</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">HTX 253</a> /
+<span>Lesson 05 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">HTX 253 · Lesson 05 of 11 · Year 2 · Semester 2</p>
+  <h1>Forced convection: internal</h1>
+  <p class="sub">Developing versus developed flow; constant-flux and constant-temperature results. The Dittus–Boelter workhorse with its fine print. Heat pickup in real piping runs.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fun</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/heat-transfer/5">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Ghajar, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/osMOsAGrs6s" title="Internal Forced Convection Heat Transfer | Nusselt Number, Reynolds Number &amp; Pipe Flow Explained" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Internal Forced Convection Heat Transfer | Nusselt Number, Reynolds Number &amp; Pipe Flow Explained <span class="src">Ibham Veza</span></figcaption></figure></div><div class="vh-bar"><span class="n">Internal Forced Convection Heat Transfer | Nusselt Number, Reynolds Number &amp; Pipe Flow Explained</span><span class="c">IBHAM VEZA</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Constant flux versus constant wall temperature: which internal-flow result applies to a steam-jacketed pipe?</li><li>What does 'fully developed' mean thermally?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A water temperature curve rising from a cool inlet value and approaching, but never quite reaching, a hot constant wall temperature line, following an exponential-approach shape along the length of a steam-jacketed pipe"><rect width="560" height="300" fill="#fbfdfe"/><text x="16" y="22" fill="#16202e" font-size="12" font-weight="700">Water approaches the jacket wall temperature — it never linearly ramps to it</text><line x1="70" y1="95" x2="480" y2="95" stroke="#c2820f" stroke-width="1.2" stroke-dasharray="4,3"/><text x="76" y="89" fill="#c2820f" font-size="9.5">T_s=120°C (jacket wall)</text><line x1="70" y1="225" x2="70" y2="245" stroke="#16202e" stroke-width="1"/><line x1="70" y1="245" x2="480" y2="245" stroke="#16202e" stroke-width="1"/><text x="275" y="272" text-anchor="middle" fill="#16202e" font-size="10.5">distance along pipe, x (0 → 10 m)</text><polyline points="70.0,235.0 78.2,231.9 86.4,228.8 94.6,225.8 102.8,222.9 111.0,220.1 119.2,217.3 127.4,214.6 135.6,211.9 143.8,209.3 152.0,206.7 160.2,204.2 168.4,201.8 176.6,199.4 184.8,197.1 193.0,194.8 201.2,192.6 209.4,190.4 217.6,188.3 225.8,186.2 234.0,184.2 242.2,182.2 250.4,180.3 258.6,178.4 266.8,176.5 275.0,174.7 283.2,172.9 291.4,171.2 299.6,169.5 307.8,167.8 316.0,166.2 324.2,164.6 332.4,163.0 340.6,161.5 348.8,160.0 357.0,158.6 365.2,157.2 373.4,155.8 381.6,154.4 389.8,153.1 398.0,151.8 406.2,150.5 414.4,149.3 422.6,148.1 430.8,146.9 439.0,145.8 447.2,144.6 455.4,143.5 463.6,142.4 471.8,141.4 480.0,140.3" fill="none" stroke="#3a6ea5" stroke-width="2.4"/><circle cx="70.0" cy="235.0" r="4" fill="#16202e"/><text x="78" y="254" fill="#16202e" font-size="9.5">inlet 20°C</text><circle cx="480.0" cy="140.3" r="4" fill="#1f7a5c"/><text x="472.0" y="130.3" text-anchor="end" fill="#1f7a5c" font-size="9.5">exit 87.6°C</text></svg><figcaption>Constant wall temperature forces an exponential approach, not a straight ramp — the last few metres of any such pipe buy far less temperature rise than the first few.</figcaption></figure>
+
+<h3>01 · The entrance region, and what "fully developed" really means</h3>
+<p>Flow entering a pipe with a uniform inlet profile takes a <b>hydrodynamic entry length</b> to
+settle into its fully developed velocity shape, and — separately — a <b>thermal entry length</b>
+to settle into a fully developed temperature profile. "Thermally fully developed" is a specific,
+easy-to-misread claim: it means the <i>dimensionless</i> temperature profile shape stops changing
+with distance, not that the fluid's actual bulk temperature stops changing — the bulk temperature
+keeps rising (or falling) the entire pipe length; only the shape of the profile riding on top of
+it has settled down.</p>
+
+<h3>02 · Constant flux versus constant wall temperature</h3>
+<p>For laminar, fully developed flow, the two common thermal boundary conditions give genuinely
+different Nusselt numbers even at identical Reynolds and Prandtl numbers: \(Nu=4.36\) for
+constant surface heat flux, \(Nu=3.66\) for constant surface temperature — different because the
+boundary condition itself reshapes the developed temperature profile. For turbulent flow, the
+Dittus–Boelter correlation \(Nu=0.023\,Re^{0.8}Pr^{n}\) (\(n=0.4\) heating the fluid,
+\(n=0.3\) cooling it) is the workhorse, with its own fine print: \(Re\gtrsim10{,}000\),
+\(0.6\lesssim Pr\lesssim160\), and \(L/D\gtrsim10\) — short pipes still carry an enhanced
+entrance-region \(h\) this fully developed correlation does not capture, so applying it
+uncorrected to a short pipe underpredicts the true average \(h\), not overpredicts it.</p>
+
+<h3>03 · Heat pickup along a real pipe run</h3>
+<p>An energy balance on the fluid, \(\dot m c_p\,dT_m/dx=q''P\), integrates very differently
+depending on which quantity is held constant. Constant heat flux gives a bulk temperature that
+rises <i>linearly</i> with \(x\) — a fixed \(q''\) delivers a fixed temperature rise per metre,
+the whole length. Constant wall temperature instead gives
+\(\ln\!\left(\dfrac{T_s-T_o}{T_s-T_i}\right)=-\dfrac{hPL}{\dot m c_p}\), an
+<i>exponential approach</i> toward \(T_s\) that never quite arrives. A steam-jacketed pipe is
+the constant-\(T_s\) case: steam condensing on the jacket's exterior releases a large latent heat
+at essentially one saturation temperature, holding the wall close to a fixed value regardless of
+how much heat the process fluid inside is drawing — unlike, say, a uniformly electrically heated
+pipe, which is closer to the constant-flux case instead.</p>
+
+<h3>04 · A worked steam-jacketed pipe</h3>
+<p>Water at \(\dot m=0.5\ \text{kg/s}\) (\(c_p=4180\ \text{J/kgK}\)) enters
+a \(D=50\ \text{mm}\), \(L=10\ \text{m}\) pipe at
+\(T_i=20\)°C; the jacket holds the wall at \(T_s=120\)°C, with
+\(h=1500\ \text{W/m}^2\text{K}\). \(P=\pi D=0.1571\ \text{m}\), so
+\(hPL/(\dot m c_p)=1.127\) and \((T_s-T_o)/(T_s-T_i)=e^{-1.127}=0.324\), giving
+\(T_o=T_s-0.324(T_s-T_i)=87.6\)°C — a substantial rise for a single 10 m run.
+As a check on the assumed \(h\): using representative water properties at the pipe's mean film
+temperature (\(\mu\approx5.5e-04\ \text{Pa·s}\), \(k\approx0.64\
+\ \text{W/mK}\), \(Pr\approx3.5\) — given, representative values, not a claimed
+precise lookup), \(Re=4\dot m/(\pi D\mu)=23,150\) (turbulent), and Dittus–Boelter gives
+\(Nu=0.023\,Re^{0.8}Pr^{0.4}=117.8\), \(h=1507\ \text{W/m}^2\text{K}\)
+— within 1% of the 1500 W/m²K assumed, a reassuring cross-check rather than a coincidence.</p>
+<div class="keybox"><span class="tag">Key relation — constant wall temperature</span>
+<p>\[ \frac{T_s-T_o}{T_s-T_i}=\exp\!\left(-\frac{hPL}{\dot m c_p}\right) \]</p>
+<p>An exponential approach, never a straight ramp — the signature of a constant-\(T_s\)
+boundary.</p></div></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar and boundary-layer ideas</b> (Lesson 4) — internal
+flow reuses the same dimensionless structure, adapted to a duct instead of an open plate.</li></ul>
+<h4>Toolkit — internal forced convection</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Laminar, constant q''</td><td>\( Nu=4.36 \)</td><td>Fully developed, constant flux.</td></tr>
+<tr><td>Laminar, constant Ts</td><td>\( Nu=3.66 \)</td><td>Fully developed, constant wall temperature.</td></tr>
+<tr><td>Dittus–Boelter</td><td>\( Nu=0.023\,Re^{0.8}Pr^{n} \)</td><td>Turbulent, \(Re\gtrsim10^4\), \(L/D\gtrsim10\).</td></tr>
+<tr><td>Constant-Ts approach</td><td>\( \ln\frac{T_s-T_o}{T_s-T_i}=-\frac{hPL}{\dot m c_p} \)</td><td>Exit temperature, exponential approach.</td></tr>
+</tbody></table></div></div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>The worked steam-jacketed pipe</b></p><p><b>Problem.</b> Water, \(\dot m=0.5\ \text{kg/s}\), \(c_p=4180\ \text{J/kgK}\), enters a \(D=50\ \text{mm}\), \(L=10\ \text{m}\) pipe at \(T_i=20\)°C. The jacket holds \(T_s=120\)°C, \(h=1500\ \text{W/m}^2\text{K}\). Find the exit temperature.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(P=\pi D=0.1571\ \text{m}\), \(hPL/(\dot m c_p)=1.127\). \((T_s-T_o)/(T_s-T_i)=e^{-1.127}=0.324\). \(T_o=120-0.324\times(120-20)=87.6\)°C.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Cross-checking h against Dittus–Boelter</b></p><p><b>Problem.</b> For the same pipe and flow, representative water properties give \(\mu\approx5.5e-04\ \text{Pa·s}\), \(k\approx0.64\ \text{W/mK}\), \(Pr\approx3.5\). Find \(Re\), confirm turbulence, then find \(Nu\) and \(h\) from Dittus–Boelter, and compare to the assumed 1500 W/m²K.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(Re=4\dot m/(\pi D\mu)=23,150\) — turbulent, and \(L/D=200\) clears the \(\gtrsim10\) entrance-length rule. \(Nu=0.023\,Re^{0.8}Pr^{0.4}=117.8\), \(h=Nu\,k/D=1507\ \text{W/m}^2\text{K}\) — within about 1% of the 1500 W/m²K assumed.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Doubling the pipe length</b></p><p><b>Problem.</b> The same jacketed pipe is extended to \(L=20\ \text{m}\), all else unchanged. Find the new exit temperature, and the additional temperature rise bought by the second 10 m compared with the first.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(hPL/(\dot m c_p)=2.255\), \((T_s-T_o)/(T_s-T_i)=e^{-2.255}=0.105\), \(T_o=120-0.105\times(120-20)=109.5\)°C. The first 10 m bought \(87.6-20=67.6\)°C of rise; the second 10 m bought only \(109.5-87.6=21.9\)°C more — the exponential approach paying off far less on the back half of the pipe.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>For internal pipe flow, "thermally fully developed" specifically means:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The bulk fluid temperature stops changing with x</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The dimensionless temperature profile shape stops changing with x, even though the bulk temperature keeps changing</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The flow has become turbulent</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The wall temperature has become uniform</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The bulk temperature keeps evolving the whole pipe length; only the shape of the profile riding on it has settled down, per 1.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>At identical Re and Pr, laminar fully developed pipe flow gives \(Nu=4.36\) for constant heat flux but \(Nu=3.66\) for constant wall temperature. Why do these differ?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>They do not actually differ; this is a textbook rounding artifact</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>The thermal boundary condition itself reshapes the developed temperature profile</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Constant flux only applies to turbulent flow</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Pr must be different in the two cases</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Different boundary conditions produce genuinely different developed temperature profile shapes, and Nu is a property of that profile.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Applying Dittus–Boelter, uncorrected, to a short pipe with \(L/D<10\) tends to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Overpredict the true average h, since entrance effects add extra resistance</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Underpredict the true average h, since the entrance region actually carries an enhanced h that a fully developed correlation does not include</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Have no effect — Dittus–Boelter is valid at any L/D</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Only affect laminar flow, never turbulent flow</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The entrance region carries a higher true h than the fully developed value; a fully developed correlation applied to a short pipe misses that enhancement and underpredicts.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A steam jacket condensing on a pipe's exterior holds the wall close to constant temperature primarily because:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Steam has an unusually high thermal conductivity</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Condensation releases a large latent heat at essentially one saturation temperature, regardless of the process-side duty</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The jacket is electrically heated at fixed power</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Steam jackets are always thin enough to ignore</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Latent heat release at a fixed saturation temperature is what pins the wall near a constant value — unlike a fixed-power electric heater, which is closer to constant flux.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Under constant heat flux, the pipe's bulk mean temperature rises with distance x:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Linearly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Exponentially, approaching an asymptote</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Logarithmically</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It falls, not rises</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\dot m c_p\,dT_m/dx=q''P=\)const integrates directly to a linear rise in \(T_m\) with x.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Under constant wall temperature, the bulk mean temperature approaches \(T_s\):</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>Linearly, reaching \(T_s\) at a finite length</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Exponentially — always approaching, never exactly arriving within a finite length</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Instantaneously at the inlet</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Only if the flow is laminar</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The governing equation integrates to the exponential-approach form derived in 3 and used throughout this lesson's worked example.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>In this lesson's own numbers, doubling the pipe length from 10 m to 20 m added how much additional temperature rise, compared with the first 10 m?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>About the same again (roughly 68°C more)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Much less — only about 22°C more, versus 67.6°C from the first 10 m</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Exactly zero — length beyond 10 m has no effect</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>More than the first stretch, not less</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The exponential approach means each additional metre buys less than the one before; the second 10 m added only 21.9°C versus the first stretch's 67.6°C, verified in this lesson's third solve problem.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>This lesson's assumed \(h=1500\ \text{W/m}^2\text{K}\) was cross-checked against which correlation?</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>The laminar constant-flux result, Nu=4.36</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>Dittus–Boelter, using representative turbulent water properties</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The flat-plate correlation from Lesson 4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>It was not cross-checked at all</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>4's cross-check computes Re, confirms turbulence, and applies Dittus–Boelter, landing within about 1% of the assumed value.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p>An engineer sizing a jacketed or coil heat-traced pipe run identifies which thermal boundary
+condition actually applies before reaching for a formula — per 3, a condensing-steam jacket
+behaves as constant wall temperature, giving an exponential approach that delivers most of its
+temperature rise in the first few metres, while an electrically traced line closer to constant
+flux delivers its rise linearly instead; treating one as the other misestimates exactly where
+along the run the temperature change actually happens.</p>
+<p>A maintenance engineer troubleshooting a short jacketed spool that underperforms its rated duty
+checks the pipe's \(L/D\) against Dittus–Boelter's own \(L/D\gtrsim10\) fine print before
+assuming the correlation used to size it was ever valid — per 2, a short run actually carries a
+higher true average h from its entrance region than the fully developed correlation predicts, so
+the correlation itself, not the hardware, may be the source of an apparent underperformance.</p></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.9072\\ \\mathrm{lb}\\)", "\\(4.409\\ \\mathrm{lb}\\)", "\\(44.09\\ \\mathrm{lb}\\)", "\\(0.4409\\ \\mathrm{lb}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(2 \\times 2.205 = 4.409\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(9.072\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(44.09\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(440.9\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(4.409\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(20 \times 2.205 = 44.09\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(40.23\\ \\mathrm{hp}\\)", "\\(2.237\\ \\mathrm{hp}\\)", "\\(4.023\\ \\mathrm{hp}\\)", "\\(0.4023\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(3 \\times 1.341 = 4.023\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(603.5\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(33.56\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(60.35\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.035\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(45 \times 1.341 = 60.35\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2975219W" target="_blank" rel="noopener">Fundamentals of Heat and Mass Transfer — Incropera, DeWitt et al.</a></li><li>Heat and Mass Transfer: Fundamentals and Applications — Çengel &amp; Ghajar</li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Ch. 8; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — heat transfer</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL44718382W" title="Çengel &amp; Ghajar — Heat and Mass Transfer (Open Library)" target="_blank" rel="noopener">Çengel &amp; Ghajar</a>, Heat and Mass Transfer: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="04-forced-convection-external.html">← 04 · Forced convection: external</a><a href="index.html">كل الدروس · HTX 253</a><a href="06-natural-convection.html">06 · Natural convection →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/machine-design-1/index.html">MDN 251 · Machine Design I →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Strength of Materials — MechEd</title>
+<meta name="description" content="Stress where it lives: axial members, torsion, bending, combined loading, and failure theories — the course that turns statics diagrams into the numbe">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/strength/index.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="course-shell">
+<div class="course-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<span>SOM 201</span></nav>
+
+<div class="nx-hero">
+  <div class="txt">
+    <p class="eyebrow">SOM 201 · YEAR 2 · SEMESTER 1</p>
+    <h1>Strength of Materials</h1>
+    <p class="sub">Stress where it lives: axial members, torsion, bending, combined loading, and failure theories — the course that turns statics diagrams into the numbers written on repair procedures and fitness-for-service notes.</p>
+  </div>
+  <div class="metachips"><span class="mchip">11 lessons</span><span class="mchip">11 of 11 at full depth</span><span class="mchip">11 interactive quizzes</span><span class="mchip">1 Core-60 lessons</span></div>
+</div>
+<div class="cta-row">
+  <a id="resumeBtn" class="btn btn-primary" href="01-stress-and-strain-under-axial-load.html">Start lesson 01</a>
+  <a class="btn btn-ghost" href="summary.html">Course summary (PDF)</a>
+  <a class="btn btn-ghost" href="../../../curriculum/index.html">المنهج</a>
+</div>
+<div class="learn"><h3>ما الذي ستتعلمه</h3><div class="learn-grid"><div><span class="ck">✓</span><span>Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility.</span></div><div><span class="ck">✓</span><span>Deformation of stepped and composite bars.</span></div><div><span class="ck">✓</span><span>Shear stress and angle of twist in circular shafts derived.</span></div><div><span class="ck">✓</span><span>The flexure formula derived from plane sections; section modulus as the designer's currency.</span></div><div><span class="ck">✓</span><span>Elastic curve by integration; superposition with standard cases.</span></div><div><span class="ck">✓</span><span>Axial, torsion, bending, and pressure superposed at a point.</span></div></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="ct-syllabus">Syllabus</button>
+  <button data-tab="ct-reference">Reference</button>
+  <button data-tab="ct-tools">Tools &amp; Software</button>
+</div>
+<section class="tabpanel on" id="ct-syllabus">
+  <h3>المنهج الدراسي</h3>
+  <div class="lessons">
+<div class="syl" data-key="y2s1/strength/1" data-href="01-stress-and-strain-under-axial-load.html">
+  <span class="tick"></span>
+  <div class="no">01</div>
+  <div class="body">
+    <h4><a href="01-stress-and-strain-under-axial-load.html">Stress and strain under axial load</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility. Allowable stress and factor of safety as institutional honesty. Saint-Venant's caution about where formulas apply.</p>
+    <p class="src"><b>Taught from</b> — <b>CORE 60 · B1</b> · <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 6; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>A 16 mm bar carries 45 kN: compute the stress and the safety factor against 355 MPa yield.</li><li>Engineering versus true stress: which keeps rising after necking, and why?</li><li>Why do aluminum alloys need the 0.2% offset construction to define yield at all?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/2" data-href="02-axial-members-and-thermal-stress.html">
+  <span class="tick"></span>
+  <div class="no">02</div>
+  <div class="body">
+    <h4><a href="02-axial-members-and-thermal-stress.html">Axial members and thermal stress</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Deformation of stepped and composite bars. Statically indeterminate axial problems. Thermal expansion against restraint — the piping stress problem in embryo.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Two bars in series under one load: which stretches more and why?</li><li>Why does restrained thermal expansion create stress without any external load?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/3" data-href="03-torsion-of-shafts.html">
+  <span class="tick"></span>
+  <div class="no">03</div>
+  <div class="body">
+    <h4><a href="03-torsion-of-shafts.html">Torsion of shafts</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Shear stress and angle of twist in circular shafts derived. Power–torque–speed relations for drivelines. Sizing a pump shaft and reading a torsional failure surface's 45° signature.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does a torsional fatigue crack spiral at 45°?</li><li>Double a shaft's diameter: what happens to its torsional stress at the same torque?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/4" data-href="04-bending-and-transverse-shear-in-beams.html">
+  <span class="tick"></span>
+  <div class="no">04</div>
+  <div class="body">
+    <h4><a href="04-bending-and-transverse-shear-in-beams.html">Bending and transverse shear in beams</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">The flexure formula derived from plane sections; section modulus as the designer's currency. Shear stress distribution and shear flow — why webs carry shear and flanges carry moment in an I-beam. Built-up sections and their fastener spacing, and where beams actually fail.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does bending stress vanish at the neutral axis and peak at the surface?</li><li>Why do I-beam webs carry the shear while flanges carry the moment?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/5" data-href="05-beam-deflection.html">
+  <span class="tick"></span>
+  <div class="no">05</div>
+  <div class="body">
+    <h4><a href="05-beam-deflection.html">Beam deflection</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Elastic curve by integration; superposition with standard cases. Stiffness as a serviceability limit distinct from strength. Machinery baseplate and walkway deflection checks.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Stiffness and strength are different failures: give a case where deflection governs.</li><li>Why does superposition work for beam deflections?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/6" data-href="06-combined-loading.html">
+  <span class="tick"></span>
+  <div class="no">06</div>
+  <div class="body">
+    <h4><a href="06-combined-loading.html">Combined loading</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Axial, torsion, bending, and pressure superposed at a point. Critical-point hunting on real components. A shaft with a pulley worked completely — the pattern for machine design.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>At a shaft surface point under bending plus torsion: which stresses combine, and how?</li><li>Why is the critical point rarely obvious before you check candidates?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/7" data-href="07-stress-transformation-and-mohr-s-circle.html">
+  <span class="tick"></span>
+  <div class="no">07</div>
+  <div class="body">
+    <h4><a href="07-stress-transformation-and-mohr-s-circle.html">Stress transformation and Mohr's circle</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Plane-stress transformation derived, then Mohr's circle as its graphical engine. Principal stresses and maximum shear located. Why fatigue cracks pick their planes.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>What do Mohr's circle's center and radius each represent?</li><li>Why do principal planes carry no shear?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/8" data-href="08-pressure-vessels-thin-walled-theory.html">
+  <span class="tick"></span>
+  <div class="no">08</div>
+  <div class="body">
+    <h4><a href="08-pressure-vessels-thin-walled-theory.html">Pressure vessels: thin-walled theory</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Hoop and axial stress derived from equilibrium. The 2:1 hoop-to-axial ratio and what it predicts about vessel failure orientation. First contact with the equipment class Asset Integrity will govern.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Derive the 2:1 hoop-to-axial ratio and say which way a vessel should split first.</li><li>When does thin-wall theory stop being honest?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/9" data-href="09-failure-theories.html">
+  <span class="tick"></span>
+  <div class="no">09</div>
+  <div class="body">
+    <h4><a href="09-failure-theories.html">Failure theories</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Tresca and von Mises for ductile metals; maximum normal stress for brittle ones. Using them on combined-stress states from lesson 7. What 'the stress' means when there are six components.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does von Mises predict yielding better than max-normal-stress for ductile metals?</li><li>A pure-shear state: what does each theory predict for yield?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/10" data-href="10-buckling-of-columns.html">
+  <span class="tick"></span>
+  <div class="no">10</div>
+  <div class="body">
+    <h4><a href="10-buckling-of-columns.html">Buckling of columns</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Euler buckling derived; effective length and slenderness. The crossover between yielding and buckling. Why long slender compression members fail sideways without warning.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does buckling depend on stiffness and length but not strength?</li><li>What does effective length encode about end conditions?</li></ul></details>
+  </div>
+</div>
+<div class="syl" data-key="y2s1/strength/11" data-href="11-stress-concentration-and-fatigue-preview.html">
+  <span class="tick"></span>
+  <div class="no">11</div>
+  <div class="body">
+    <h4><a href="11-stress-concentration-and-fatigue-preview.html">Stress concentration and fatigue preview</a><span class="badge t1">Full lesson</span></h4>
+    <p class="scope">Kt at holes, fillets, and keyways; the geometry tax on nominal stress. Notch sensitivity in brief. The handshake with Materials II's fatigue lesson — geometry and metallurgy jointly set life.</p>
+    <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 8; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+    <details><summary>أسئلة التحقق</summary><ul><li>Why does a keyway multiply nominal stress, and by roughly how much order-wise?</li><li>What does notch sensitivity add to the geometric Kt story?</li></ul></details>
+  </div>
+</div></div>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li><li>NPTEL: Strength of Materials (nptel.ac.in)</li></ul>
+  
+</section>
+<section class="tabpanel" id="ct-reference">
+  <h3>Reference</h3>
+  <h4>Equations</h4><ul class="ref-eqs"><li><span class="ref-eq">\[\sigma = P/A\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}d^2=490.9\ \text{mm}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma=100{,}000/490.9\times10^{-6}\approx204\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\varepsilon = \delta/L\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\varepsilon=0.001\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma = E\varepsilon\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta = \dfrac{PL}{AE}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9} \approx2.55\ \text{mm}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\text{FoS}=\sigma_{\text{yield}}/\sigma_{\text{allow}}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}d^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=PL/AE\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}(25)^2=490.9\ \text{mm}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\sigma=P/A=100{,}000/490.9=203.7\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx204\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[A=\tfrac{\pi}{4}(20)^2=314\ \text{mm}^2=314\times10^{-6}\,\text{m}^2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\dfrac{PL}{AE}=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}=2.55\times10^{-3}\,\text{m}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx2.55\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\text{FoS}=\sigma_y/\sigma_{allow}=250/160=1.56\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\approx1.56\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[E=\sigma/\varepsilon\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta\propto L\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></li><li><span class="ref-eq">\[\delta=\sum \dfrac{P_iL_i}{A_iE_i}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\,\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\approx12\times10^{-6} /^\circ\text{C}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\,\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=200\times10^9\times12\times10^{-6}\times50=120\ \text{MPa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta=\sum P_iL_i/A_iE_i\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\Delta T\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\alpha=12\times10^{-6}/^\circ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\varepsilon_T=\alpha\Delta T=12\times10^{-6}\times50=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\sigma=E\alpha\Delta T=200\times10^9\times12\times10^{-6}\times50=120\times10^6\,\text{Pa}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta\propto1/A\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\delta_A/\delta_B=2\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\alpha=12\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[12\times10^{-6}\times50=600\times10^{-6}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></li><li><span class="ref-eq">\[\tau=\dfrac{Tr}{J}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[J=\dfrac{\pi d^4}{32}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\tau_{\max}=\dfrac{16T}{\pi d^3}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\varphi=\dfrac{TL}{GJ}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[P=T\omega\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\omega=\dfrac{2\pi N}{60}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\omega=157.1\ \text{rad/s}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[T=P/\omega=15{,}000/157.1=95.5\ \text{N·m}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[d=\left(\dfrac{16T}{\pi\tau_{\text{allow}}}\right)^{1/3}\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[\varphi=TL/GJ\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li><li><span class="ref-eq">\[J=\pi d^4/32\]</span><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></li></ul>
+<h4>Notation &amp; units</h4><div class="ref-chips"><span class="chip">\(\sigma\)</span><span class="chip">\(\pi\)</span><span class="chip">\(\varepsilon\)</span><span class="chip">\(\delta\)</span><span class="chip">\(\alpha\)</span><span class="chip">\(\Delta\)</span><span class="chip">\(\mu\)</span><span class="chip">\(\tau\)</span><span class="chip">\(\varphi\)</span><span class="chip">\(\omega\)</span><span class="chip">\(\rho\)</span><span class="chip">\(\theta\)</span><span class="chip unit">mm</span><span class="chip unit">MPa</span><span class="chip unit">m</span><span class="chip unit">Pa</span><span class="chip unit">rad/s</span><span class="chip unit">N·m</span><span class="chip unit">GPa</span></div>
+<h4>Key terms &amp; concepts</h4><div class="table-wrap"><table class="ref-terms"><thead><tr><th>Term</th><th>Introduced</th></tr></thead><tbody><tr><td>Areas of sections</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>ductility</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>factor of safety</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Normal strain</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Normal stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>proportional limit</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Statics</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>ultimate strength</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Unit discipline</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>yield strength</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Young's modulus</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html">L01</a></td></tr><tr><td>Axial stress/strain</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>compatibility</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Equilibrium equations</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Free-body cuts</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>stepped bar</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/02-axial-members-and-thermal-stress.html">L02</a></td></tr><tr><td>Axial member logic</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>Rotational kinematics</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>Second moments of area</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>torsion formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/03-torsion-of-shafts.html">L03</a></td></tr><tr><td>flexure formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>Second moment of area</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>section modulus</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>Shear and moment</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>shear flow</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>shear stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>The flexure logic</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/04-bending-and-transverse-shear-in-beams.html">L04</a></td></tr><tr><td>Stiffness</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/05-beam-deflection.html">L05</a></td></tr><tr><td>strength</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/05-beam-deflection.html">L05</a></td></tr><tr><td>superposition</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/05-beam-deflection.html">L05</a></td></tr><tr><td>The flexure formula and section modulus</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/05-beam-deflection.html">L05</a></td></tr><tr><td>Bending stress and the flexure formula</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/06-combined-loading.html">L06</a></td></tr><tr><td>critical point</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/06-combined-loading.html">L06</a></td></tr><tr><td>superpose</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/06-combined-loading.html">L06</a></td></tr><tr><td>Torsional shear stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/06-combined-loading.html">L06</a></td></tr><tr><td>Combined stress states (σ, τ) at a point</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/07-stress-transformation-and-mohr-s-circle.html">L07</a></td></tr><tr><td>Maximum in-plane shear</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/07-stress-transformation-and-mohr-s-circle.html">L07</a></td></tr><tr><td>Principal stresses</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/07-stress-transformation-and-mohr-s-circle.html">L07</a></td></tr><tr><td>Equilibrium of a free body</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/08-pressure-vessels-thin-walled-theory.html">L08</a></td></tr><tr><td>longitudinally</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/08-pressure-vessels-thin-walled-theory.html">L08</a></td></tr><tr><td>brittle</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>Ductile vs. brittle behavior</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>ellipse</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>hexagon</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>maximum-normal-stress</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>Principal stresses from Mohr’s circle</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>Tresca</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>Von Mises</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/09-failure-theories.html">L09</a></td></tr><tr><td>effective length</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>Euler buckling load</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>radius of gyration</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>Second moment of area and radius of gyration</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>slenderness ratio</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>The elastic curve equation, EIv''=M(x)</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/10-buckling-of-columns.html">L10</a></td></tr><tr><td>nominal</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/11-stress-concentration-and-fatigue-preview.html">L11</a></td></tr><tr><td>Notch sensitivity</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/11-stress-concentration-and-fatigue-preview.html">L11</a></td></tr><tr><td>S-N curves and fatigue</td><td><a class="ref-jump" href="../../../curriculum/y2s1/strength/11-stress-concentration-and-fatigue-preview.html">L11</a></td></tr></tbody></table></div>
+</section>
+<section class="tabpanel" id="ct-tools">
+  <h3>Tools &amp; Software</h3>
+  <p class="src"><b>Software used in this course</b> — see the <a href="../../../reference/index.html">Resources</a> page for the full directory grouped by category:</p><ul class="plain small"><li><a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener"><b>MATLAB</b> (MathWorks) — Free student-priced license at most universities; the standard numerical/matrix computing environment for engineering coursework.</a></li><li><a href="https://www.ansys.com/products/structures/ansys-mechanical" target="_blank" rel="noopener"><b>ANSYS Mechanical</b> (ANSYS) — The standard structural finite-element analysis package — stress, fatigue, and vibration simulation.</a></li></ul>
+</section>
+</div>
+<aside class="rail">
+<div class="facts"><h3>Course facts</h3><div class="frow"><span>Course code</span><b>SOM 201</b></div><div class="frow"><span>Placement</span><b>Year 2 · Semester 1</b></div><div class="frow"><span>Lessons</span><b>11 · all full depth</b></div><div class="frow"><span>Assessment</span><b>11 interactive quizzes</b></div><div class="frow"><span>Core-60 lessons</span><b>1</b></div></div>
+<div class="career-block"><span class="tag">Career outlook — where this course pays</span><p>Strength of Materials is the sizing calculation behind every load-bearing part — the
+sector picks which parts:</p>
+<ul>
+<li><b>Construction &amp; heavy structures</b> — structural engineers at contractors such as
+<b>Bechtel</b> size beams and columns by the section modulus and allowable-stress logic of
+this course; the flexure formula is their daily tool.</li>
+<li><b>Oil, gas &amp; process plant</b> — piping and pressure engineers at operators such as
+<b>Shell</b> live in the thermal-stress and restraint problem of Lesson 2 — expansion loops
+and supports exist to keep \( E\alpha\Delta T \) below allowable.</li>
+<li><b>Automotive &amp; rotating machinery</b> — driveline and machine engineers at makers such
+as <b>Caterpillar</b> size shafts by \( \tau_{max}=16T/\pi d^3 \) and read torsional fracture
+surfaces exactly as Lesson 3 teaches.</li>
+</ul>
+<p><b>Interview angle:</b> the classic probe is "size this shaft/beam for this load" — the
+allowable-stress inversion (\( S\ge M/\sigma_{allow} \), \( d=(16T/\pi\tau)^{1/3} \)) is the
+expected working answer, with the factor of safety stated explicitly.</p><p class="small"><a href="../../../career/index.html">Explore career paths →</a></p></div>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/fluids/index.html">FLD 203 · Fluid Mechanics →</a></nav>
+</aside>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

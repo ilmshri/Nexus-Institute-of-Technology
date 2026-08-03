@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Eigenvalues and eigenvectors — Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its m">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/math-3/10">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/math-3/10-eigenvalues-and-eigenvectors.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MTH 207 · Engineering Mathematics III — Differential Equations &amp; Linear Algebra</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-first-order-equations-revisited-separable-and-linear.html" class="ol" data-key="y2s1/math-3/1"><span class="tick"></span><span>01 · First-order equations revisited: separable and linear</span></a><a href="02-modeling-with-first-order-equations.html" class="ol" data-key="y2s1/math-3/2"><span class="tick"></span><span>02 · Modeling with first-order equations</span></a><a href="03-second-order-equations-the-homogeneous-story.html" class="ol" data-key="y2s1/math-3/3"><span class="tick"></span><span>03 · Second-order equations: the homogeneous story</span></a><a href="04-nonhomogeneous-equations-and-forced-response.html" class="ol" data-key="y2s1/math-3/4"><span class="tick"></span><span>04 · Nonhomogeneous equations and forced response</span></a><a href="05-free-and-forced-oscillations.html" class="ol" data-key="y2s1/math-3/5"><span class="tick"></span><span>05 · Free and forced oscillations</span></a><a href="06-laplace-transforms-i.html" class="ol" data-key="y2s1/math-3/6"><span class="tick"></span><span>06 · Laplace transforms I</span></a><a href="07-laplace-transforms-ii-solving-problems.html" class="ol" data-key="y2s1/math-3/7"><span class="tick"></span><span>07 · Laplace transforms II: solving problems</span></a><a href="08-systems-of-equations-the-matrix-view.html" class="ol" data-key="y2s1/math-3/8"><span class="tick"></span><span>08 · Systems of equations: the matrix view</span></a><a href="09-matrices-and-linear-systems.html" class="ol" data-key="y2s1/math-3/9"><span class="tick"></span><span>09 · Matrices and linear systems</span></a><a href="10-eigenvalues-and-eigenvectors.html" class="ol cur" data-key="y2s1/math-3/10"><span class="tick"></span><span>10 · Eigenvalues and eigenvectors</span></a><a href="11-numerical-solution-of-differential-equations.html" class="ol" data-key="y2s1/math-3/11"><span class="tick"></span><span>11 · Numerical solution of differential equations</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MTH 207</a> /
+<span>Lesson 10 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MTH 207 · Lesson 10 of 11 · Year 2 · Semester 1</p>
+  <h1>Eigenvalues and eigenvectors</h1>
+  <p class="sub">Eigenvalues computed for 2×2 and 3×3 matrices; eigenvalues as the system's tempo — decay rates and oscillation frequencies — and eigenvectors as its mode shapes. The modal language of the vibrations course is born here.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.03 Differential Equations</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/math-3/10">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.03 Differential Equations (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/TQvxWaQnrqI" title="Finding Eigenvalues and Eigenvectors" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Finding Eigenvalues and Eigenvectors <span class="src">Professor Dave Explains</span></figcaption></figure></div><div class="vh-bar"><span class="n">Finding Eigenvalues and Eigenvectors</span><span class="c">PROFESSOR DAVE EXPLAINS</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Find the eigenvalues of [[2,1],[1,2]]. (1 and 3)</li><li>Why do the signs of eigenvalues decide stability?</li></ul></div><div class="measure">
+<h3>01 · The special directions of a matrix</h3>
+<p>Most vectors are turned when a matrix acts on them. A few special ones are only stretched, keeping their direction: these are the <b>eigenvectors</b>, and the stretch factor is the <b>eigenvalue</b>. The defining relation is \( A\mathbf{v}=\lambda\mathbf{v} \) with \( \mathbf{v}\neq\mathbf{0} \). It says the complicated action of \(A\) reduces, along \(\mathbf{v}\), to simple multiplication by the number \(\lambda\). Finding these directions diagonalises a problem — it picks the coordinates in which the matrix does nothing but scale — and that is why eigenvalues govern the stability of dynamic systems, the resonant modes of structures, and the principal axes of stress. The whole subject is the search for the directions a matrix leaves alone.</p>
+<h3>02 · The characteristic equation</h3>
+<p>Rewrite \( A\mathbf{v}=\lambda\mathbf{v} \) as \( (A-\lambda I)\mathbf{v}=\mathbf{0} \). A nonzero \(\mathbf{v}\) can satisfy this only if \( A-\lambda I \) is singular, i.e. \( \det(A-\lambda I)=0 \) — the <b>characteristic equation</b>. For a \( 2\times2 \) matrix it is always \( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \), using the trace (sum of diagonal) and determinant. Take \( A=\begin{pmatrix}4&1\\2&3\end{pmatrix} \): \( \operatorname{tr}=7,\ \det=10 \), so \( \lambda^2-7\lambda+10=0 \), giving \( \lambda=2 \) and \( \lambda=5 \). A quick sanity check is built in — the eigenvalues must sum to the trace (\(2+5=7\)) and multiply to the determinant (\(2\times5=10\)).</p>
+<h3>03 · Finding the eigenvectors</h3>
+<p>Each eigenvalue has its own direction, found by solving \( (A-\lambda I)\mathbf{v}=\mathbf{0} \). For \( A=\begin{pmatrix}0&1\\-2&-3\end{pmatrix} \) the characteristic equation is \( \lambda^2+3\lambda+2=0 \), so \( \lambda=-1,-2 \). For \( \lambda=-1 \), \( A-\lambda I=\begin{pmatrix}1&1\\-2&-2\end{pmatrix} \); the equation \( v_1+v_2=0 \) gives the direction \( \mathbf{v}=(1,-1) \). Check: \( A(1,-1)^\top=(0\cdot1+1\cdot(-1),\,-2\cdot1-3\cdot(-1))=(-1,1)=-1\cdot(1,-1) \) ✓. Eigenvectors come as directions, not unique vectors — any nonzero multiple works — because the relation scales freely. What matters is the line the eigenvector picks out.</p>
+<h3>04 · Why engineers compute eigenvalues</h3>
+<p>The payoff is the coupled system of differential equations \( \mathbf{x}'=A\mathbf{x} \), the multi-variable successor to Lesson 3. Its solutions are built from \( e^{\lambda t}\mathbf{v} \) — one exponential mode per eigenvalue, evolving along its eigenvector. The <b>sign</b> of each eigenvalue's real part then decides stability at a glance: all negative means every mode decays and the system is stable; any positive means a mode grows and it is unstable; imaginary parts set oscillation. This is the direct generalisation of "roots of the characteristic equation" from second-order scalar ODEs to systems, and it is why a controls or vibrations engineer reads a system's fate straight from the spectrum of its matrix.</p>
+<h3>05 · Reading a system's fate from its spectrum</h3>
+<p>The set of eigenvalues — the <b>spectrum</b> of \(A\) — is a compact summary of everything \( \mathbf{x}'=A\mathbf{x} \) will do. Real negative eigenvalues give decaying modes; a positive one gives a growing, unstable mode; a complex conjugate pair \( \sigma\pm i\omega \) gives an oscillation at frequency \(\omega\) whose envelope decays if \( \sigma<0 \) and grows if \( \sigma>0 \). This is the exact multi-variable echo of Lesson 3, where the roots of the scalar characteristic equation played the same role: negative real parts meant a settling system, imaginary parts meant ringing. An engineer handed a matrix therefore computes its eigenvalues first — the signs of their real parts answer the only question that usually matters, will it stay bounded, before any trajectory is drawn.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Matrix–vector products</b> — the action \( A\mathbf{v} \) (Lesson 8).</li><li><b>Determinants</b> — the singularity condition \( \det(A-\lambda I)=0 \).</li><li><b>The quadratic formula</b> — for the \( 2\times2 \) characteristic equation.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Eigenvalue relation</td><td>\( A\mathbf{v}=\lambda\mathbf{v} \)</td><td>Direction \(\mathbf{v}\) only scaled, by factor \(\lambda\).</td></tr>
+<tr><td>Characteristic equation</td><td>\( \det(A-\lambda I)=0 \)</td><td>Solve for the eigenvalues.</td></tr>
+<tr><td>2×2 shortcut</td><td>\( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \)</td><td>Fast eigenvalues; trace &amp; determinant checks.</td></tr>
+<tr><td>Eigenvector</td><td>\( (A-\lambda I)\mathbf{v}=\mathbf{0} \)</td><td>The direction belonging to each \(\lambda\).</td></tr>
+<tr><td>Stability of \( \mathbf{x}'=A\mathbf{x} \)</td><td>sign of \( \operatorname{Re}\lambda \)</td><td>All negative ⇒ stable; any positive ⇒ unstable.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Eigenvalues by the shortcut</b></p><p><b>Problem.</b> Find the eigenvalues of \( A=\begin{pmatrix}4&1\\2&3\end{pmatrix} \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \operatorname{tr}A=4+3=7 \), \( \det A=4\cdot3-1\cdot2=10 \). The characteristic equation is \( \lambda^2-7\lambda+10=0 \), i.e. \( (\lambda-2)(\lambda-5)=0 \), so \( \lambda=2,5 \). Check: sum \(2+5=7=\operatorname{tr}\) ✓, product \(2\cdot5=10=\det\) ✓.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>An eigenvector</b></p><p><b>Problem.</b> For \( A=\begin{pmatrix}0&1\\-2&-3\end{pmatrix} \) (eigenvalues \(-1,-2\)), find an eigenvector for \( \lambda=-1 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( A-\lambda I=A+I=\begin{pmatrix}1&1\\-2&-2\end{pmatrix} \). The row \( v_1+v_2=0 \) gives \( \mathbf{v}=(1,-1) \). Verify: \( A(1,-1)^\top=(-1,\,1)=-1\cdot(1,-1) \) ✓. Any nonzero multiple is also an eigenvector.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Stability of a system</b></p><p><b>Problem.</b> The system \( \mathbf{x}'=A\mathbf{x} \) has \( A=\begin{pmatrix}0&1\\-2&-3\end{pmatrix} \). Is it stable?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> The eigenvalues solve \( \lambda^2+3\lambda+2=0 \), giving \( \lambda=-1 \) and \( \lambda=-2 \). Both are negative, so every mode \( e^{\lambda t}\mathbf{v} \) decays and the system is <b>stable</b>. (This matches the \(m=1,c=3,k=2\) damped oscillator written as a first-order system.)</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>An eigenvector \( \mathbf{v} \) of \(A\) satisfies:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( A\mathbf{v}=\lambda\mathbf{v} \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( A\mathbf{v}=\mathbf{0} \) always</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( A\mathbf{v}=\mathbf{v}+\lambda \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \mathbf{v}A=I \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>By definition \( A\mathbf{v}=\lambda\mathbf{v} \): the matrix only scales the eigenvector.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>For a \( 2\times2 \) matrix, the characteristic equation is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( \lambda^2-\det A=0 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \lambda=\operatorname{tr}A \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \lambda^2+\det A=0 \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \det(A-\lambda I)=0 \) expands to \( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>The eigenvalues of \( \begin{pmatrix}2&0\\0&3\end{pmatrix} \) are:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>2 and 3</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>0 and 0</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>5 and 6</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>1 and 1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A diagonal matrix has its diagonal entries as eigenvalues: \( 2 \) and \( 3 \).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The system \( \mathbf{x}'=A\mathbf{x} \) is stable when every eigenvalue of \(A\) has:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>negative real part</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>positive real part</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>zero value</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>magnitude greater than 1</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Each mode is \( e^{\lambda t}\mathbf{v} \); a negative real part makes it decay. All negative ⇒ stable.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>The eigenvalues of a \( 2\times2 \) matrix always sum to its:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>trace</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>determinant</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>rank</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>largest entry</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>From \( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \), the roots sum to \( \operatorname{tr}A \) and multiply to \( \det A \).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(268.2\\ \\mathrm{hp}\\)", "\\(14.91\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(20 \\times 1.341 = 26.82\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.491\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(2.682\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(2 \times 1.341 = 2.682\ \mathrm{hp}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m/s}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(14.76\\ \\mathrm{ft/s}\\)", "\\(13.72\\ \\mathrm{ft/s}\\)", "\\(1476\\ \\mathrm{ft/s}\\)", "\\(147.6\\ \\mathrm{ft/s}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m/s} = 3.281\\ \\mathrm{ft/s}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft/s}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m/s}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9843\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.9144\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft/s}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(9.843\ \mathrm{ft/s}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m/s} = 3.281\ \mathrm{ft/s}\): \(3 \times 3.281 = 9.843\ \mathrm{ft/s}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3270760W" target="_blank" rel="noopener">Elementary Differential Equations and Boundary Value Problems — Boyce &amp; DiPrima</a></li><li><a href="https://openlibrary.org/works/OL1400344W" target="_blank" rel="noopener">Advanced Engineering Mathematics — Erwin Kreyszig</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">MIT OCW 18.03</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a></p>
+  <ul class="plain small"><li>MIT OCW <a href="https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/" title="MIT OCW 18.03SC Differential Equations" target="_blank" rel="noopener">18.03 Differential Equations</a> <a class="watch" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/video_galleries/video-lectures/" target="_blank" rel="noopener">Watch lectures ▶</a> (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="09-matrices-and-linear-systems.html">← 09 · Matrices and linear systems</a><a href="index.html">كل الدروس · MTH 207</a><a href="11-numerical-solution-of-differential-equations.html">11 · Numerical solution of differential equations →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/strength/index.html">SOM 201 · Strength of Materials →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

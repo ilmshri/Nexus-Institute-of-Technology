@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Oscillations first contact — Engineering Physics I — Mechanics — MechEd</title>
+<meta name="description" content="Simple harmonic motion: the spring–mass system and the pendulum, with period formulas derived from F = ma. Natural frequency as a machine's fingerprin">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y1s1/physics-1/11">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y1s1/physics-1/11-oscillations-first-contact.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">PHY 107 · Engineering Physics I — Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-units-and-vectors.html" class="ol" data-key="y1s1/physics-1/1"><span class="tick"></span><span>01 · Measurement, units, and vectors</span></a><a href="02-kinematics-in-one-dimension.html" class="ol" data-key="y1s1/physics-1/2"><span class="tick"></span><span>02 · Kinematics in one dimension</span></a><a href="03-kinematics-in-two-dimensions.html" class="ol" data-key="y1s1/physics-1/3"><span class="tick"></span><span>03 · Kinematics in two dimensions</span></a><a href="04-newton-s-laws-of-motion.html" class="ol" data-key="y1s1/physics-1/4"><span class="tick"></span><span>04 · Newton's laws of motion</span></a><a href="05-applying-newton-s-laws.html" class="ol" data-key="y1s1/physics-1/5"><span class="tick"></span><span>05 · Applying Newton's laws</span></a><a href="06-work-and-energy.html" class="ol" data-key="y1s1/physics-1/6"><span class="tick"></span><span>06 · Work and energy</span></a><a href="07-potential-energy-and-conservation.html" class="ol" data-key="y1s1/physics-1/7"><span class="tick"></span><span>07 · Potential energy and conservation</span></a><a href="08-momentum-impulse-and-collisions.html" class="ol" data-key="y1s1/physics-1/8"><span class="tick"></span><span>08 · Momentum, impulse, and collisions</span></a><a href="09-rotation-i-kinematics-and-torque.html" class="ol" data-key="y1s1/physics-1/9"><span class="tick"></span><span>09 · Rotation I: kinematics and torque</span></a><a href="10-rotation-ii-dynamics-and-angular-momentum.html" class="ol" data-key="y1s1/physics-1/10"><span class="tick"></span><span>10 · Rotation II: dynamics and angular momentum</span></a><a href="11-oscillations-first-contact.html" class="ol cur" data-key="y1s1/physics-1/11"><span class="tick"></span><span>11 · Oscillations first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">PHY 107</a> /
+<span>Lesson 11 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">PHY 107 · Lesson 11 of 11 · Year 1 · Semester 1</p>
+  <h1>Oscillations first contact</h1>
+  <p class="sub">Simple harmonic motion: the spring–mass system and the pendulum, with period formulas derived from F = ma. Natural frequency as a machine's fingerprint — the seed the vibrations course will grow. Waves in outline: propagation, frequency, wavelength.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 8.01SC Classical Mechanics</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y1s1/physics-1/11">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/YbFgNsM6r44" title="MIT 8.03 Lec 1 — Simple Harmonic Motion (reinforcement/bridge lecture)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MIT 8.03 Lec 1 — Simple Harmonic Motion (reinforcement/bridge lecture) <span class="src">MIT OpenCourseWare</span></figcaption></figure></div><div class="vh-bar"><span class="n">MIT 8.03 Lec 1 — Simple Harmonic Motion (reinforcement/bridge lecture)</span><span class="c">MIT OPENCOURSEWARE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A 2 kg mass hangs on an 800 N/m spring: natural frequency? (≈3.2 Hz)</li><li>Why does a pendulum's period not care about its mass?</li></ul></div><div class="measure">
+<h3>01 · The restoring recipe</h3>
+<p>Oscillation needs exactly two ingredients: a restoring force that pulls toward
+equilibrium in proportion to displacement, and inertia that overshoots it. The spring–mass
+system is the archetype — \( F = -kx \) feeding \( m\ddot{x} \) — and its motion is
+simple harmonic: \( x(t) = A\sin(\omega_n t) \), a sine forever, with amplitude \( A \)
+set by how the motion started and angular frequency set by the system itself:
+\( \omega_n = \sqrt{k/m} \). Stiffness accelerates the cycle; mass slows it; amplitude,
+remarkably, does not enter — small or large swings keep the same beat, which is what makes
+natural frequency a property of the MACHINE, not of the disturbance.</p>
+<h3>02 · The pendulum and the family of oscillators</h3>
+<p>The pendulum repeats the recipe with gravity as the spring:
+\( T = 2\pi\sqrt{L/g} \) for small swings, with \( L \) the pendulum length (not Lesson 10's angular momentum) and \( g \) the acceleration due to gravity — mass absent, length and gravity only. Every
+oscillator in the family carries the same signature quantities: period \( T = 2\pi/\omega_n \),
+frequency \( f = 1/T \) in hertz, and the energy sloshing between kinetic (maximum at
+equilibrium, where speed peaks at \( v_{max} = A\omega_n \)) and potential (maximum at
+the extremes, where motion pauses). Reading \( x(t) = A\sin(\omega t) \) fluently —
+amplitude from the coefficient, frequency from the argument — is reading the native
+language of every vibration trace the later courses will put on screen.</p>
+<h3>03 · Why machines care: resonance previewed</h3>
+<p>Every machine element has natural frequencies, and rotating machinery supplies periodic
+forcing at running speed and its multiples. When forcing frequency approaches natural
+frequency, amplitude grows dramatically — resonance — and structures that seemed rigid
+begin to breathe. This lesson only introduces the actors; the vibrations course will
+quantify their meeting. But the design instinct starts now: know your \( \omega_n \),
+know your running speeds, and keep them apart.</p>
+<h3>04 · The oscillation working method</h3>
+<p>Identify the stiffness and the inertia — every oscillator has both, whatever it looks
+like — and form \( \omega_n = \sqrt{k/m} \) (or the pendulum's \( \sqrt{g/L} \)).
+Convert consciously among \( \omega_n \), \( f \), and \( T \): the \( 2\pi \) that
+separates rad/s from Hz is this chapter's border crossing, as rpm's was the last one's.
+Extract amplitude and frequency from any given \( x(t) \) by inspection, and derive the
+speed and acceleration peaks as \( A\omega \) and \( A\omega^2 \). Audit with the
+scaling instincts: quadrupling stiffness only doubles frequency (the square root taxes
+enthusiasm), adding mass always slows the beat, and amplitude never changes the clock.
+Where a real trace disagrees with these instincts — frequency shifting with load, beat
+patterns, growth over time — the disagreement is information, and the vibrations course
+will teach you to read it. Here, the assignment is fluency with the clean case that all
+the diagnostics measure against — the sine every analyzer decomposes real signals into,
+and the natural frequency every balancing report quotes. First courses end where careers
+begin; this one ends on the exact frequency.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Newton's second law</b> (Lesson 4) — SHM is F = ma with a restoring F.</li>
+<li><b>Energy conservation</b> (Lesson 7) — the KE–PE slosh at constant total.</li>
+<li><b>Radian fluency</b> (Lesson 9) — \( \omega \), f, and T, converted consciously.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Restoring force</td><td>\( F = -kx \)</td><td>Proportional pull toward equilibrium — the oscillation ingredient.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n = \sqrt{k/m} \)</td><td>The machine's own beat; stiffness up, mass down.</td></tr>
+<tr><td>Period and frequency</td><td>\( T = 2\pi/\omega_n,\ f = 1/T \)</td><td>The 2π border between rad/s and Hz.</td></tr>
+<tr><td>Pendulum</td><td>\( T = 2\pi\sqrt{L/g} \)</td><td>Gravity as the spring; mass cancels, small swings only.</td></tr>
+<tr><td>SHM motion</td><td>\( x = A\sin(\omega_n t) \)</td><td>Amplitude from the start; frequency from the system.</td></tr>
+<tr><td>Peak speed</td><td>\( v_{max} = A\omega_n \) at equilibrium</td><td>Where the energy is all kinetic.</td></tr>
+<tr><td>Resonance (preview)</td><td>forcing ≈ \( \omega_n \) → growth</td><td>Keep running speeds and natural frequencies apart.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>The isolator's beat</b></p>
+<p><b>Problem.</b> A 2.0 kg instrument sits on a mount of stiffness 800 N/m. <b>Find:</b> the natural frequency in rad/s and Hz, and the period.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \omega_n = \sqrt{k/m} = \sqrt{800/2} = 20\ \mathrm{rad/s} \).
+(2) \( f = \omega_n/2\pi = 3.18\ \mathrm{Hz} \); \( T = 1/f = 0.314\ \mathrm{s} \).</p>
+<p><b>Answer:</b> 20 rad/s = 3.2 Hz; period ≈0.31 s.
+<b>Sanity check:</b> quadrupling the stiffness would only double the frequency (√), and doubling the mass would divide it by √2 — the square root damping every intuition of proportionality. A 3 Hz mount under a 24 Hz (1450 rpm) machine is comfortably clear of resonance: the design arithmetic in miniature.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>The inspection pendulum</b></p>
+<p><b>Problem.</b> A 0.70 m lanyard with a small tool swings as a pendulum. <b>Find:</b> its period, and what changes if the tool is twice as heavy.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( T = 2\pi\sqrt{L/g} = 2\pi\sqrt{0.70/9.81} = 1.68\ \mathrm{s} \).
+(2) Mass does not appear: the heavier tool swings with exactly the same period.</p>
+<p><b>Answer:</b> ≈1.7 s, at any mass.
+<b>Sanity check:</b> gravity provides both the restoring pull AND acts on the inertia, so mass cancels — the same cancellation as free fall. Only length and gravity remain: to slow a pendulum, lengthen it (fourfold length for double period, the square root again).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Reading a vibration trace</b></p>
+<p><b>Problem.</b> A bearing housing's displacement follows \( x(t) = 0.030\sin(12t) \) (metres, seconds). <b>Find:</b> the amplitude, frequency in Hz, and peak velocity.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Amplitude by inspection: \( A = 0.030\ \mathrm{m} = 30\ \mathrm{mm} \).
+(2) \( \omega = 12\ \mathrm{rad/s} \Rightarrow f = 12/2\pi = 1.9\ \mathrm{Hz} \).
+(3) \( v_{max} = A\omega = 0.030 \times 12 = 0.36\ \mathrm{m/s} \).</p>
+<p><b>Answer:</b> 30 mm at 1.9 Hz; peak speed 0.36 m/s.
+<b>Sanity check:</b> peak velocity occurs at mid-swing where the trace crosses zero — displacement and velocity peaks alternate, a quarter-cycle apart. Reading A and ω off a sine by inspection is the exact skill vibration analyzers automate; learning it manually first is what makes their output meaningful.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>For small oscillations, increasing a pendulum's swing amplitude:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Leaves the period unchanged</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Increases the period</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Decreases the period</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Stops the swing</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Amplitude independence is SHM's defining courtesy: larger swings travel farther but proportionally faster, and the clock holds — which is why pendulums could keep time. (At LARGE angles the approximation frays and the period does grow, but that correction belongs to a later course.) The natural frequency is the system's property; the amplitude merely reports how hard it was disturbed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>To raise a machine mount's natural frequency, you should:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Stiffen the mount or lighten the machine</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Soften the mount</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Add mass</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Increase the operating amplitude</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \omega_n = \sqrt{k/m} \): frequency rises with stiffness and falls with mass. Softening and adding mass LOWER it — which is itself a design tool (isolation mounts deliberately sit far below forcing frequencies). Amplitude has no vote. The k-and-m tuning of natural frequencies against running speeds is the first design instinct of vibration engineering.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>In SHM, the speed of the mass is greatest:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Passing through equilibrium</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At the extremes of travel</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Constant throughout</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>At the quarter points</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At the extremes the motion pauses (all energy potential); at equilibrium the restoring force has finished accelerating it and the energy is all kinetic: \( v_{max} = A\omega_n \). The energy slosh of Lesson 7 sets this geography — and vibration instruments exploit it, velocity sensors reading peak values a quarter-cycle from displacement peaks.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>Quadrupling a spring's stiffness multiplies the oscillation frequency by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>16</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( \sqrt{2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( \omega_n \propto \sqrt{k} \): four times the stiffness, twice the frequency — the square root taxing the investment, exactly as it taxed grain refinement and case depth in other courses. Linear thinking (×4) overpays; the lesson's scaling instincts exist to prevent precisely that procurement conversation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>A machine's natural frequency is 24 Hz and its rotor runs at 1440 rpm (24 Hz). The expected behavior is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Resonant amplitude growth — forcing sits on the natural frequency</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Perfect smoothness</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The machine cannot rotate</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Nothing observable</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Forcing at the natural frequency is the resonance condition: each cycle's push arrives in step with the motion, and amplitude climbs until damping or damage caps it. The numbers were chosen to collide — 1440 rpm IS 24 Hz. Real design keeps margins between running speeds and natural frequencies precisely to avoid this meeting; the vibrations course quantifies how much margin buys how much peace.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(14.76\\ \\mathrm{ft}\\)", "\\(13.72\\ \\mathrm{ft}\\)", "\\(1476\\ \\mathrm{ft}\\)", "\\(147.6\\ \\mathrm{ft}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(45 \\times 3.281 = 147.6\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.9843\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.9144\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(98.43\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(9.843\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(3 \times 3.281 = 9.843\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{J}\\). In CGS units, this is closest to:&lt;/p>", "choices": ["\\(6e+08\\ \\mathrm{erg}\\)", "\\(6e-06\\ \\mathrm{erg}\\)", "\\(6e+09\\ \\mathrm{erg}\\)", "\\(6e+07\\ \\mathrm{erg}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{J} = 1e+07\\ \\mathrm{erg}\\): \\(60 \\times 1e+07 = 6e+08\\ \\mathrm{erg}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{J}\). In CGS units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(5e+07\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(5e-07\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(5e+08\ \mathrm{erg}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(5e+06\ \mathrm{erg}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{J} = 1e+07\ \mathrm{erg}\): \(5 \times 1e+07 = 5e+07\ \mathrm{erg}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL2538490W" target="_blank" rel="noopener">Fundamentals of Physics — Halliday, Resnick &amp; Walker</a></li><li><a href="https://openlibrary.org/works/OL4797379W" target="_blank" rel="noopener">University Physics — Young &amp; Freedman</a></li></ul>
+  <p class="src"><b>Taught from</b> — MIT OCW 8.01SC</p>
+  <ul class="plain small"><li>MIT OCW 8.01SC Classical Mechanics (ocw.mit.edu)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="10-rotation-ii-dynamics-and-angular-momentum.html">← 10 · Rotation II: dynamics and angular momentum</a><a href="index.html">كل الدروس · PHY 107</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y1s1/drawing-cad/index.html">DRW 102 · Engineering Drawing &amp; CAD →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

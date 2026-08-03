@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Dimensional analysis and similarity — Fluid Mechanics — MechEd</title>
+<meta name="description" content="Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/fluids/6">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/fluids/06-dimensional-analysis-and-similarity.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">FLD 203 · Fluid Mechanics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-fluid-properties.html" class="ol" data-key="y2s1/fluids/1"><span class="tick"></span><span>01 · Fluid properties</span></a><a href="02-pressure-and-fluid-statics.html" class="ol" data-key="y2s1/fluids/2"><span class="tick"></span><span>02 · Pressure and fluid statics</span></a><a href="03-flow-description-reynolds-number-and-continuity.html" class="ol" data-key="y2s1/fluids/3"><span class="tick"></span><span>03 · Flow description, Reynolds number, and continuity</span></a><a href="04-bernoulli-energy-equation-pipe-flow-and-pump-curves.html" class="ol" data-key="y2s1/fluids/4"><span class="tick"></span><span>04 · Bernoulli, energy equation, pipe flow, and pump curves</span></a><a href="05-momentum-analysis.html" class="ol" data-key="y2s1/fluids/5"><span class="tick"></span><span>05 · Momentum analysis</span></a><a href="06-dimensional-analysis-and-similarity.html" class="ol cur" data-key="y2s1/fluids/6"><span class="tick"></span><span>06 · Dimensional analysis and similarity</span></a><a href="07-laminar-and-turbulent-pipe-flow-in-depth.html" class="ol" data-key="y2s1/fluids/7"><span class="tick"></span><span>07 · Laminar and turbulent pipe flow in depth</span></a><a href="08-piping-networks-and-valves.html" class="ol" data-key="y2s1/fluids/8"><span class="tick"></span><span>08 · Piping networks and valves</span></a><a href="09-flow-measurement.html" class="ol" data-key="y2s1/fluids/9"><span class="tick"></span><span>09 · Flow measurement</span></a><a href="10-turbomachinery-fundamentals.html" class="ol" data-key="y2s1/fluids/10"><span class="tick"></span><span>10 · Turbomachinery fundamentals</span></a><a href="11-compressible-flow-first-contact.html" class="ol" data-key="y2s1/fluids/11"><span class="tick"></span><span>11 · Compressible flow first contact</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">FLD 203</a> /
+<span>Lesson 06 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">FLD 203 · Lesson 06 of 11 · Year 2 · Semester 1</p>
+  <h1>Dimensional analysis and similarity</h1>
+  <p class="sub">Buckingham Pi with engineering judgment. Model testing and scale-up logic. The affinity-law preview: why pump performance scales the way it does.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Çengel &amp; Cimbala, Fluid Mechanics: Fundament</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/fluids/6">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Çengel &amp; Cimbala, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/eRBEPV8NCHI" title="Buckingham Pi Theorem (Fluid Mechanics)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Buckingham Pi Theorem (Fluid Mechanics) <span class="src">Prof. Van Buren</span></figcaption></figure></div><div class="vh-bar"><span class="n">Buckingham Pi Theorem (Fluid Mechanics)</span><span class="c">PROF. VAN BUREN</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What does Buckingham Pi promise about model tests?</li><li>Why do pump affinity laws follow from similarity?</li></ul></div><div class="measure">
+<h3>01 · Why make things dimensionless</h3>
+<p>Experiments are expensive and variables are many. <b>Dimensional analysis</b> cuts both by grouping physical variables into a smaller set of dimensionless numbers, so a single curve replaces a family of tests. The tool is the <b>Buckingham Pi theorem</b>: a relationship among \(n\) physical variables involving \(k\) independent base dimensions (mass, length, time…) reduces to \( n-k \) independent dimensionless groups, the "Pi" groups. Fewer knobs means fewer experiments and a result that transfers across scales and fluids.</p>
+<h3>02 · Buckingham Pi in practice</h3>
+<p>Take the drag force \(F\) on a sphere, which depends on velocity \(V\), diameter \(D\), density \( \rho \), and viscosity \( \mu \): that is \(n=5\) variables in \(k=3\) dimensions (M, L, T), so \( n-k=2 \) dimensionless groups. Choosing repeating variables and combining, they come out as the <b>drag coefficient</b> \( C_D=\dfrac{F}{\tfrac12\rho V^2 A} \) and the <b>Reynolds number</b> \( Re=\rho VD/\mu \). The entire physics collapses to one relationship \( C_D=f(Re) \) — a single experimental curve valid for any sphere in any Newtonian fluid, which is exactly the drag chart every design handbook prints.</p>
+<h3>03 · Similarity and model testing</h3>
+<p>The same theorem underwrites scale-model testing. A model reproduces the prototype's behaviour when three similarities hold: <b>geometric</b> (same shape, scaled lengths), <b>kinematic</b> (same velocity-pattern shape), and <b>dynamic</b> (matching the governing dimensionless groups). For a fully submerged flow dominated by viscosity, dynamic similarity means matching the Reynolds number: \( Re_{\text{model}}=Re_{\text{prototype}} \). A quarter-scale model in the same fluid must therefore run four times faster (\( V_m=V_p\,D_p/D_m=4V_p \)) to keep \(Re\) equal — a demand that often forces a bigger tunnel or a different fluid, and explains why some flows are tested in pressurised or cryogenic wind tunnels.</p>
+<h3>04 · The similarity working method</h3>
+<p>To plan a test: list the variables, count the base dimensions, and read off \( n-k \) groups; then identify which group governs the physics (Reynolds for viscous flows, Froude for free-surface flows, Mach for compressible ones) and match it between model and prototype. Report results as dimensionless curves, not raw numbers, so they generalise. The discipline pays twice: it slashes the experimental matrix, and it is the only rigorous way to carry a wind-tunnel or water-channel result onto a full-scale machine. Where two groups cannot be matched at once — the classic ship-model conflict between Reynolds and Froude — the engineer must know which one dominates and correct for the other, a judgement this method makes explicit rather than hidden. It is worth naming the common groups, because each encodes a force ratio and each rules a different flow: Reynolds (inertia vs viscosity) for internal and submerged flows, Froude (inertia vs gravity) for open channels and ship hulls, Mach (speed vs sound speed) for compressible gas flow, Weber (inertia vs surface tension) for droplets and sprays, and Euler or the pressure coefficient for cavitation and pressure-driven problems. Recognising which of these governs a given situation is the real skill — the algebra of forming the groups is mechanical, but choosing the one to match is engineering judgement, and it decides whether a scale test means anything at all.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Base dimensions</b> — mass, length, time and their combinations.</li><li><b>Reynolds number</b> (Lesson 3) — the archetypal group.</li><li><b>Algebra of exponents</b> — forming dimensionless products.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Buckingham Pi</td><td>groups \(=n-k\)</td><td>Count dimensionless groups.</td></tr>
+<tr><td>Drag coefficient</td><td>\( C_D=\frac{F}{\frac12\rho V^2A} \)</td><td>Non-dimensional drag.</td></tr>
+<tr><td>Geometric similarity</td><td>scaled lengths</td><td>Same shape, model vs prototype.</td></tr>
+<tr><td>Dynamic similarity</td><td>\( Re_m=Re_p \)</td><td>Matching governing groups.</td></tr>
+<tr><td>Froude / Mach</td><td>free-surface / compressible</td><td>Which group governs the test.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Counting Pi groups</b></p><p><b>Problem.</b> Drag on a sphere depends on \(F,V,D,\rho,\mu\). How many dimensionless groups describe it?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(n=5\) variables, \(k=3\) base dimensions (M,L,T), so \(n-k=2\) groups — the drag coefficient and the Reynolds number. <b>Answer:</b> 2 groups.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Reynolds matching for a model</b></p><p><b>Problem.</b> A quarter-scale model runs in the same fluid. What velocity keeps \(Re\) equal to a prototype at \(V_p\)?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \(Re=VD/\nu\); equal \(\nu\) and \(D_m=D_p/4\) require \(V_m=V_p(D_p/D_m)=4V_p\). <b>Answer:</b> four times the prototype velocity.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Drag coefficient</b></p><p><b>Problem.</b> A sphere feels \(F=2\) N at \(V=10\) m/s, \(A=0.01\) m², in water. Find \(C_D\).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( C_D=\frac{F}{\frac12\rho V^2A}=\frac{2}{0.5\times1000\times100\times0.01}=\frac{2}{500}=0.004 \). <b>Answer:</b> \(C_D=0.004\).</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>The Buckingham Pi theorem gives the number of dimensionless groups as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(n-k\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(n+k\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(n\times k\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(k-n\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Variables minus independent base dimensions.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Dynamic similarity for a fully-submerged viscous flow requires matching:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Reynolds number</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Only geometry</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Temperature</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Density only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The governing dimensionless group — here \(Re\) — must be equal.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>The drag coefficient \(C_D\) is a function of:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Reynolds number</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Pressure only</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Pipe length</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Time</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(C_D=f(Re)\) collapses all sphere-drag data to one curve.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A free-surface flow (waves, ships) is governed by which group?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Froude number</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Mach number</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Prandtl number</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Weber only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Froude (inertia vs gravity) governs free-surface flows; Mach governs compressible ones.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Geometric similarity alone (same shape) guarantees:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Same shape, not matched forces</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Dynamic similarity</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Equal Reynolds numbers</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Identical behaviour</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Matching forces needs dynamic similarity too — equal governing dimensionless groups, not just scaled geometry.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(98.43\\ \\mathrm{ft}\\)", "\\(0.9144\\ \\mathrm{ft}\\)", "\\(9.843\\ \\mathrm{ft}\\)", "\\(0.9843\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(3 \\times 3.281 = 9.843\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1476\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(13.72\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(147.6\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(14.76\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(45 \times 3.281 = 147.6\ \mathrm{ft}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.102\\ \\mathrm{lb}\\)", "\\(2.268\\ \\mathrm{lb}\\)", "\\(110.2\\ \\mathrm{lb}\\)", "\\(11.02\\ \\mathrm{lb}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(5 \\times 2.205 = 11.02\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(13.23\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(27.22\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1323\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(132.3\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(60 \times 2.205 = 132.3\ \mathrm{lb}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  <div class="lib-alts"><h4>فيديوهات بديلة</h4><ul class="plain small"><li><a href="https://www.youtube.com/watch?v=TOhCNYcg5Lc" target="_blank" rel="noopener">Dimensional Analysis: Buckingham Pi Theorem</a> <span class="src">Fluid Matters</span></li><li><a href="https://www.youtube.com/watch?v=ELDJGLDtCy4" target="_blank" rel="noopener">Dimensional Analysis &amp; Buckingham Pi Theorem</a> <span class="src">Spoon Feed Me</span></li><li><a href="https://www.youtube.com/watch?v=pBkfjNMW26Y" target="_blank" rel="noopener">Dimensional Analysis: Buckingham Pi Theorem</a> <span class="src">Study from Home with Us</span></li></ul></div>
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li>Fluid Mechanics: Fundamentals and Applications — Çengel &amp; Cimbala</li><li><a href="https://openlibrary.org/works/OL1911850W" target="_blank" rel="noopener">Fluid Mechanics — Frank M. White</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL18026047W" title="Çengel &amp; Cimbala — Fluid Mechanics (Open Library)" target="_blank" rel="noopener">Çengel &amp; Cimbala</a>, Ch. 7; video: <a href="https://www.youtube.com/@LearnChemE" title="LearnChemE (University of Colorado Boulder) — thermodynamics, fluids, heat transfer, process control screencasts" target="_blank" rel="noopener">LearnChemE (CU Boulder) — fluids</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLGED90Y_uL1IMZkaD9wTnlFdC3F9DpUkJ" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL18026047W" title="Çengel &amp; Cimbala — Fluid Mechanics (Open Library)" target="_blank" rel="noopener">Çengel &amp; Cimbala</a>, Fluid Mechanics: Fundamentals and Applications (McGraw-Hill)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="05-momentum-analysis.html">← 05 · Momentum analysis</a><a href="index.html">كل الدروس · FLD 203</a><a href="07-laminar-and-turbulent-pipe-flow-in-depth.html">07 · Laminar and turbulent pipe flow in depth →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/statistics/index.html">STS 206 · Engineering Statistics →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

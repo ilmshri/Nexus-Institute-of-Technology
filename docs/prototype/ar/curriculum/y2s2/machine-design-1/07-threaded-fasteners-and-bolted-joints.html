@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Threaded fasteners and bolted joints — Machine Design I — MechEd</title>
+<meta name="description" content="Bolt mechanics: preload, joint stiffness, and the load-sharing triangle. Torque–preload relations and their scatter. Gasketed-joint implications for e">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/machine-design-1/7">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/machine-design-1/07-threaded-fasteners-and-bolted-joints.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MDN 251 · Machine Design I</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-design-methodology-and-factors-of-safety.html" class="ol" data-key="y2s2/machine-design-1/1"><span class="tick"></span><span>01 · Design methodology and factors of safety</span></a><a href="02-static-failure-design.html" class="ol" data-key="y2s2/machine-design-1/2"><span class="tick"></span><span>02 · Static failure design</span></a><a href="03-fatigue-design-i-the-s-n-method.html" class="ol" data-key="y2s2/machine-design-1/3"><span class="tick"></span><span>03 · Fatigue design I: the S–N method</span></a><a href="04-fatigue-design-ii-mean-stress-and-cumulative-damage.html" class="ol" data-key="y2s2/machine-design-1/4"><span class="tick"></span><span>04 · Fatigue design II: mean stress and cumulative damage</span></a><a href="05-shaft-design.html" class="ol" data-key="y2s2/machine-design-1/5"><span class="tick"></span><span>05 · Shaft design</span></a><a href="06-keys-splines-and-retaining-hardware.html" class="ol" data-key="y2s2/machine-design-1/6"><span class="tick"></span><span>06 · Keys, splines, and retaining hardware</span></a><a href="07-threaded-fasteners-and-bolted-joints.html" class="ol cur" data-key="y2s2/machine-design-1/7"><span class="tick"></span><span>07 · Threaded fasteners and bolted joints</span></a><a href="08-welded-joint-design.html" class="ol" data-key="y2s2/machine-design-1/8"><span class="tick"></span><span>08 · Welded joint design</span></a><a href="09-springs.html" class="ol" data-key="y2s2/machine-design-1/9"><span class="tick"></span><span>09 · Springs</span></a><a href="10-power-screws.html" class="ol" data-key="y2s2/machine-design-1/10"><span class="tick"></span><span>10 · Power screws</span></a><a href="11-design-project-a-driven-shaft-assembly.html" class="ol" data-key="y2s2/machine-design-1/11"><span class="tick"></span><span>11 · Design project: a driven shaft assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MDN 251</a> /
+<span>Lesson 07 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MDN 251 · Lesson 07 of 11 · Year 2 · Semester 2</p>
+  <h1>Threaded fasteners and bolted joints</h1>
+  <p class="sub">Bolt mechanics: preload, joint stiffness, and the load-sharing triangle. Torque–preload relations and their scatter. Gasketed-joint implications for every flange a plant owns.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.72 Elements of Mechanical Design</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/machine-design-1/7">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.72 Elements of Mechanical Design (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/IpT4JzZ-4IE" title="Bolted Joint Stiffness: Spring Constants of Bolts and Clamped Members | Joint Stiffness Constant" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Bolted Joint Stiffness: Spring Constants of Bolts and Clamped Members | Joint Stiffness Constant <span class="src">TheBom_PE</span></figcaption></figure></div><div class="vh-bar"><span class="n">Bolted Joint Stiffness: Spring Constants of Bolts and Clamped Members | Joint Stiffness Constant</span><span class="c">THEBOM_PE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does preload protect a bolt from fatigue?</li><li>What fraction of external load does a stiff joint's bolt actually see?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A joint diagram with deflection horizontal and force vertical. A shallow green line from the origin is the bolt's stiffness; a steep blue line falling to the right is the members' much greater stiffness. They meet at the preload of 37.9 kilonewtons. Under a 20 kilonewton external load the state moves right, the bolt force rising only to 41.0 kilonewtons while the member clamp force drops to 21.0 kilonewtons; the vertical gap between the two is the external load."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">The joint diagram: an external load is shared, not carried</text><path d="M90 250 L490 250" stroke="#14181F" stroke-width="1.4"/><path d="M90 250 L90 55" stroke="#14181F" stroke-width="1.4"/><text x="16" y="274" fill="#14181F" font-size="11">deflection — bolt stretches right, members relax right</text><text x="26" y="155" font-size="11" fill="#14181F" transform="rotate(-90 26 155)" text-anchor="middle">force</text><path d="M90.0 250.0 L365.1 94.1" fill="none" stroke="#07785C" stroke-width="2.2"/><path d="M391.1 250.0 L323.3 170.1" fill="none" stroke="#28527a" stroke-width="2.2"/><path d="M344.2 105.9 L344.2 250" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3"/><circle cx="344.2" cy="105.9" r="3.5" fill="#5B6672"/><text x="336" y="98" text-anchor="end" fill="#5B6672" font-size="11">preload Fi = 37.9 kN</text><path d="M365.1 94.1 L365.1 170.1" stroke="#9c2f2f" stroke-width="2.4"/><circle cx="365.1" cy="94.1" r="3.5" fill="#07785C"/><circle cx="365.1" cy="170.1" r="3.5" fill="#28527a"/><text x="373" y="98" fill="#07785C" font-size="11">Fb = 41.0 kN</text><text x="373" y="174" fill="#28527a" font-size="11">Fm = 21.0 kN</text><text x="345" y="145" text-anchor="end" fill="#9c2f2f" font-size="11">P = 20 kN</text><text x="120" y="120" fill="#07785C" font-size="11">bolt, kb = 436 MN/m</text><text x="340" y="232" text-anchor="end" fill="#28527a" font-size="11">members, km = 2361 MN/m</text><text x="120" y="140" fill="#14181F" font-size="11">bolt gains only C·P = 3.1 kN</text></svg><figcaption>Why a preloaded joint protects its bolt. The members are more
+than five times stiffer than the bolt, so when an external load arrives it is mostly taken by the
+members letting go of clamp force rather than by the bolt stretching. A 20 kN load raises the
+bolt tension by 3.1 kN. That ratio is the whole design idea.</figcaption></figure>
+<h3>01 · What the manufacturing course established, and what it left</h3>
+<p>Manufacturing Processes II settled how preload is <em>achieved</em>: torque is only a proxy,
+the nut factor \( K \) is an assumption rather than a constant, and the same torque on a
+lubricated bolt delivers substantially more preload than on a dry one. Take all of that as given
+here. This lesson answers the design question underneath it — why the joint wants preload at all,
+and how much.</p>
+<p>The naive picture is that a bolt holds a joint the way a hook holds a bucket: apply 20 kN to
+the joint and the bolt carries 20 kN. That picture is wrong, and the extent to which it is wrong
+is the most useful number in fastener design.</p>
+<h3>02 · Two springs, and the load-sharing constant</h3>
+<p>Tightening a bolt stretches it and compresses the members it clamps. Both are elastic, so both
+are springs, and they are loaded in <em>opposition</em>: an external load that stretches the bolt
+further simultaneously lets the members expand back toward their free length. The two share the
+load in proportion to their stiffnesses.</p>
+<div class="keybox"><span class="tag">Key relation — load sharing in a preloaded joint</span>
+<p>\[ C=\frac{k_b}{k_b+k_m}, \qquad F_b=F_i+CP, \qquad F_m=F_i-(1-C)P \]</p>
+<p>\( C \) is the fraction of an external load \( P \) that reaches the bolt. Since
+\( F_b - F_m = P \) always, the two expressions are one statement: whatever the members stop
+carrying, the bolt picks up.</p></div>
+<p>For an M12 bolt through a 40 mm steel grip, \( k_b \approx 436 \) and
+\( k_m \approx 2361\ \mathrm{MN/m} \), giving \( C = 0.156 \). A 20 kN external load
+raises bolt tension by 3.1 kN and reduces clamp force by 16.9 kN. The bolt barely notices. What
+the joint actually spends under load is not bolt strength — it is clamp force.</p>
+<h3>03 · The two ways a preloaded joint fails</h3>
+<p>Because clamp force is the currency, the first failure mode is <em>separation</em>: when
+\( F_m \) reaches zero the members part, and from that instant the bolt carries the entire
+external load directly. Every protective property in the paragraph above vanishes at once. The
+separation load is \( P_0 = F_i/(1-C) \), which for the worked joint is 44.9 kN against an
+applied 20 kN — a margin of 2.25.</p>
+<p>The second is bolt <em>yielding</em>, checked against the proof strength:
+\( n = (S_pA_t-F_i)/(CP) \), here 4.05. Note which of the two governs. The bolt is the strong
+part of this joint by a wide margin; separation arrives first, and a designer worrying about bolt
+strength while ignoring clamp force is watching the wrong number. Preload is normally set at
+about 75% of proof load for a reusable connection precisely to push separation as far away as
+possible without yielding the bolt on assembly.</p>
+<h3>04 · Fatigue, and why preload is the cheapest fix available</h3>
+<p>Fluctuating loads are where the stiffness ratio pays for itself. For a load cycling between
+zero and \( P \), the bolt's stress amplitude is \( \sigma_a = CP/2A_t \) — the external
+amplitude scaled by \( C \). In the worked joint that is 18.5 MPa. Remove the preload and the
+bolt would see \( P/2A_t = 118.7\ \mathrm{MPa} \) instead, larger by a factor of exactly
+\( 1/C = 6.4 \).</p>
+<p>This is worth stating plainly, because it inverts an intuition. <em>Tightening a bolt more
+makes it last longer under cyclic load.</em> The mean stress rises, which Lesson 4 says is
+damaging, but the amplitude falls by far more, and fatigue answers to amplitude first. The
+overwhelming majority of fatigue failures in bolted joints are loose-joint failures.</p>
+<p>The same reasoning explains why gaskets are treated with suspicion in dynamically loaded
+joints. A soft gasket collapses \( k_m \), which drives \( C \) up, which routes the external
+load into the bolt:</p>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Joint construction</th><th>\( C \)</th><th>Bolt stress amplitude</th></tr></thead>
+<tbody>
+<tr><td>Steel on steel</td><td>0.156</td><td>18.5 MPa</td></tr>
+<tr><td>Gasketed, \( k_m/4 \)</td><td>0.425</td><td>50.4 MPa</td></tr>
+<tr><td>Soft gasket, \( k_m/10 \)</td><td>0.649</td><td>77.0 MPa</td></tr>
+</tbody></table></div>
+<p>A soft gasket has multiplied the bolt's fatigue loading fourfold without a single number in
+the load specification changing. This is the design fact behind a rule most plants enforce by
+habit: use the hardest, thinnest gasket the sealing duty permits, and never substitute a softer
+one because it seals more easily.</p>
+<p><strong>Closing.</strong> A preloaded joint is two springs in opposition, and \( C \) says
+how the load divides between them. Design for clamp force, check separation before bolt strength,
+and treat any change that softens the members as a change to the bolt's fatigue life.</p></div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Torque–preload and the nut factor</b> (Manufacturing Processes II L10) — \( T=KdF_i \)
+and why \( K \) is an assumption; this lesson takes preload as achieved and asks what it does.</li>
+<li><b>Axial stiffness</b> (Strength of Materials L1) — \( k=AE/L \), the model for the bolt
+spring.</li>
+<li><b>Springs in parallel</b> (Physics I) — two elements sharing a common deflection share load
+in proportion to stiffness.</li>
+<li><b>Goodman criterion</b> (Lesson 4) — the fatigue check applied to the bolt, with preload
+supplying a large mean stress.</li>
+<li><b>Proof strength</b> — the fastener-specific allowable, below yield, that grade markings are
+defined against.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Tensile stress area</td><td>\( A_t=\frac{\pi}{4}(d-0.9382p)^2 \)</td><td>The area a threaded fastener actually carries on; 84.3 mm² for M12 × 1.75.</td></tr>
+<tr><td>Bolt stiffness</td><td>\( k_b=A_tE/l \)</td><td>Grip-length spring rate of the fastener.</td></tr>
+<tr><td>Member stiffness</td><td>\( k_m=EdA\,e^{Bd/l} \)</td><td>Wileman approximation for steel members; \( A=0.78715 \), \( B=0.62873 \).</td></tr>
+<tr><td>Stiffness constant</td><td>\( C=k_b/(k_b+k_m) \)</td><td>The fraction of external load reaching the bolt — the number that governs everything else.</td></tr>
+<tr><td>Bolt and member loads</td><td>\( F_b=F_i+CP \), \( F_m=F_i-(1-C)P \)</td><td>Splitting an external load once preload is known.</td></tr>
+<tr><td>Recommended preload</td><td>\( F_i=0.75A_tS_p \)</td><td>Reusable connections; 0.90 for permanent ones.</td></tr>
+<tr><td>Separation load</td><td>\( P_0=F_i/(1-C) \)</td><td>The load at which clamp force reaches zero and protection ends.</td></tr>
+<tr><td>Bolt fatigue amplitude</td><td>\( \sigma_a=CP/2A_t \)</td><td>Cyclic load from 0 to \( P \); the factor \( C \) is why preload extends bolt life.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>How an external load actually divides</b></p>
+<p><b>Problem.</b> An M12 × 1.75 grade 8.8 bolt (\( S_p=600\ \mathrm{MPa} \)) clamps a 40 mm grip of steel members. Take \( E=207\ \mathrm{GPa} \), \( k_b=A_tE/l \), and the Wileman member stiffness \( k_m=EdA e^{Bd/l} \) with \( A=0.78715 \), \( B=0.62873 \). The joint carries an external load of 20 kN per bolt, and preload is set at 75% of proof load. <b>Find:</b> \( A_t \), \( C \), the preload, and the bolt and member loads under the external load.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( A_t=\frac{\pi}{4}(12-0.9382\times1.75)^2 = \frac{\pi}{4}(10.358)^2 = 84.3\ \mathrm{mm^2} \).
+(2) \( k_b = (84.3\times10^{-6})(207\times10^9)/0.040 = 436\ \mathrm{MN/m} \).
+(3) \( k_m = (207\times10^9)(0.012)(0.78715)e^{0.62873(0.012)/0.040} = 1.955\times10^9 \times e^{0.1886} = 2361\ \mathrm{MN/m} \).
+(4) \( C = 436/(436+2361) = 0.156 \).
+(5) \( F_i = 0.75(84.3\times10^{-6})(600\times10^6) = 37{,}920\ \mathrm{N} \).
+(6) \( F_b = 37{,}920+0.156(20{,}000) = 41{,}038\ \mathrm{N} \); \( F_m = 37{,}920-0.844(20{,}000) = 21{,}038\ \mathrm{N} \).</p>
+<p><b>Answer:</b> \( A_t=84.3\ \mathrm{mm^2} \), \( C=0.156 \), \( F_i=37.9 \), \( F_b=41.0 \), \( F_m=21.0\ \mathrm{kN} \).
+<b>Sanity check:</b> \( F_b-F_m = 41{,}038-21{,}038 = 20{,}000\ \mathrm{N} \), exactly the applied load — the check that catches almost any arithmetic slip in this calculation. Note the physical result: a 20 kN load added 3.1 kN to the bolt and removed 16.9 kN of clamp force. The joint spends clamp force, not bolt strength.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Which failure arrives first</b></p>
+<p><b>Problem.</b> For the same joint (\( C=0.156 \), \( F_i=37{,}920\ \mathrm{N} \), \( A_t=84.3\ \mathrm{mm^2} \), \( S_p=600\ \mathrm{MPa} \), \( P=20\ \mathrm{kN} \)) <b>find:</b> the load at which the joint separates, the factor of safety against separation, and the factor of safety against bolt yielding. State which governs.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Separation when \( F_m=0 \): \( P_0 = F_i/(1-C) = 37{,}920/0.844 = 44{,}923\ \mathrm{N} \).
+(2) \( n_{sep} = P_0/P = 44{,}923/20{,}000 = 2.25 \).
+(3) Yielding when \( F_b = S_pA_t = (600\times10^6)(84.3\times10^{-6}) = 50{,}580\ \mathrm{N} \): \( n_{yield} = (50{,}580-37{,}920)/(0.156\times20{,}000) = 12{,}660/3{,}118 = 4.05 \).</p>
+<p><b>Answer:</b> \( P_0=44.9\ \mathrm{kN} \), \( n_{sep}=2.25 \), \( n_{yield}=4.05 \) — separation governs.
+<b>Sanity check:</b> the bolt is nearly twice as far from yielding as the joint is from opening, which is the normal state of a properly preloaded steel joint and the reason clamp force is the design variable. A useful cross-check on \( n_{sep} \): at \( P=P_0 \) the member load should compute to zero, and indeed \( 37{,}920-0.844(44{,}923)=0 \).</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>What preload buys under cyclic load</b></p>
+<p><b>Problem.</b> The 20 kN external load on the same joint fluctuates between zero and its full value. <b>Find:</b> the bolt's stress amplitude, and the amplitude the same bolt would see if the joint were assembled with no effective preload so that the bolt carried the whole external load. Express the improvement as a ratio.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Preloaded: the bolt's share of the load range is \( CP = 0.156(20{,}000) = 3{,}118\ \mathrm{N} \), so the force amplitude is \( CP/2 = 1{,}559\ \mathrm{N} \) and \( \sigma_a = 1{,}559/(84.3\times10^{-6}) = 18.5\ \mathrm{MPa} \).
+(2) Unpreloaded: the bolt takes all of \( P \), so \( \sigma_a = 10{,}000/(84.3\times10^{-6}) = 118.7\ \mathrm{MPa} \).
+(3) Ratio \( 118.7/18.5 = 6.4 \).</p>
+<p><b>Answer:</b> 18.5 MPa preloaded against 118.7 MPa unpreloaded — a factor of 6.4.
+<b>Sanity check:</b> that ratio is exactly \( 1/C = 1/0.156 = 6.4 \), which it must be, since preload divides the bolt's share of the load range by \( C \) and changes nothing else about the amplitude. The counter-intuitive conclusion is sound: tightening the bolt raises its mean stress but cuts its amplitude sixfold, and fatigue answers to amplitude first. Loose joints, not overtightened ones, are what break bolts.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>In a preloaded bolted joint, the stiffness constant \( C=k_b/(k_b+k_m) \) represents</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the fraction of the preload carried by the members</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the fraction of an external load that reaches the bolt</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the ratio of bolt stress to member stress</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the efficiency of the torque–preload conversion</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( C \) partitions the <em>external</em> load: the bolt takes \( CP \) and the members give up \( (1-C)P \) of clamp force. Preload itself is not divided by \( C \) — it is equal and opposite in the two elements by definition. The torque–preload conversion is governed by the nut factor \( K \), an entirely separate quantity covered in Manufacturing Processes II. Because members are typically several times stiffer than the bolt, \( C \) is usually small, around 0.1 to 0.2 for steel-on-steel.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A joint has \( F_i = 30\ \mathrm{kN} \) and \( C = 0.20 \). Under a 25 kN external load, the clamp force remaining between the members is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 5\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 10\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 30\ \mathrm{kN} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 35\ \mathrm{kN} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F_m = F_i - (1-C)P = 30 - 0.8(25) = 30 - 20 = 10\ \mathrm{kN} \). The 5 kN answer subtracts the full external load, which would be right only if the members were infinitely stiff. The bolt meanwhile rises to \( 30+0.2(25)=35\ \mathrm{kN} \) — that is the last option, the bolt load rather than the clamp force. Note how close this joint is to separating: 10 kN of clamp force left from 30, at only 25 kN of a load that would separate it at 37.5 kN.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Once an external load exceeds the separation load \( P_0 \),</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>the bolt begins to carry the entire external load directly</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the members carry the excess</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the preload increases to compensate</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the stiffness constant \( C \) falls toward zero</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Separation is the point at which clamp force reaches zero. Beyond it there is nothing for the members to give up, so the sharing mechanism ends and the bolt takes the whole load — with the fatigue amplitude jumping by the factor \( 1/C \) that preload had been buying. This is why separation, not bolt yield, is normally the governing check: crossing it does not merely reduce a margin, it removes the protective behaviour the joint was designed around.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Replacing a thin hard gasket with a thick soft one, all loads unchanged, will</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>reduce the bolt's stress amplitude because the gasket absorbs the load</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>raise \( C \) and therefore raise the bolt's stress amplitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>leave the bolt's fatigue loading unchanged</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>raise the separation load</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A soft gasket lowers \( k_m \), and since \( C=k_b/(k_b+k_m) \), lowering \( k_m \) raises \( C \) — routing more of the external load into the bolt. Cutting \( k_m \) to a quarter takes \( C \) from 0.156 to 0.425 and the bolt's amplitude from 18.5 to 50.4 MPa. The gasket does not absorb load in any protective sense; it makes the joint's stiff element less stiff. Separation load also falls, since \( P_0=F_i/(1-C) \) shrinks as \( C \) grows.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>The tensile stress area of an M12 × 1.75 bolt, from \( A_t=\frac{\pi}{4}(d-0.9382p)^2 \), is closest to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 113\ \mathrm{mm^2} \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\( 84\ \mathrm{mm^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( 76\ \mathrm{mm^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 96\ \mathrm{mm^2} \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 12-0.9382(1.75)=10.358\ \mathrm{mm} \), and \( \frac{\pi}{4}(10.358)^2=84.3\ \mathrm{mm^2} \). The 113 mm² answer is the area of the full 12 mm shank, which overstates capacity by a third — threads remove real material and the stress area exists precisely to account for that. Using the minor diameter alone would give about 76 mm², slightly conservative; the standard formula sits between the two because the failure surface runs through neither extreme exactly.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Preload for a reusable connection is commonly specified as \( 0.75A_tS_p \) rather than a smaller fraction because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>it makes the bolt easier to remove</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>high preload pushes the separation load up and cuts the bolt's fatigue amplitude, while staying below proof on assembly</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>it compensates for an unknown nut factor</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>lower preloads would yield the members</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both benefits scale with preload. Separation load is \( F_i/(1-C) \), so more preload directly buys more margin before the joint opens, and staying clamped is what keeps the bolt's fatigue amplitude at \( CP/2A_t \) rather than the far larger unpreloaded value. The 0.75 factor is where those gains stop before assembly stress reaches proof. It does not compensate for nut-factor uncertainty — that scatter is exactly why the remaining 25% margin is needed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A bolt in a dynamically loaded joint keeps failing in fatigue at the first engaged thread. Of the following, the change most likely to help is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>reducing the assembly torque so the bolt carries less mean stress</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>restoring or increasing preload, and stiffening the members</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>fitting a softer gasket to cushion the load</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>using a longer bolt of the same grade</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Fatigue answers to amplitude, and amplitude is \( CP/2A_t \) — reduced by keeping the joint clamped and by anything that lowers \( C \), which means stiffer members. Reducing torque moves the joint toward separation and can increase the amplitude several-fold; it is the intuitive answer and the wrong one. A softer gasket raises \( C \) and makes matters worse. A longer bolt lowers \( k_b \) and so lowers \( C \) slightly, which is a genuine if modest help — but it is second-order beside simply having the joint properly tight.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>Two joints carry the same external load. Joint A has \( C=0.15 \); joint B, identical but with a much less stiff member stack, has \( C=0.60 \). Compared with A, the bolt in B experiences</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>four times the stress amplitude</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the same stress amplitude</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>one quarter the stress amplitude</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>no cyclic stress at all</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Amplitude scales directly with \( C \), so \( 0.60/0.15 = 4 \). The whole of a preloaded joint's fatigue advantage lives in keeping \( C \) small, which means keeping the members far stiffer than the bolt. It is worth noticing that nothing about the bolt itself changed between the two joints — same grade, same size, same load — and its fatigue duty still quadrupled. Joint stiffness is a design variable, not a detail.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case — the gasket substitution that broke the bolts.</b> A pump discharge flange
+has sealed without complaint for years on a thin, hard gasket. During a shutdown the specified
+gasket is unavailable and a softer, thicker one is fitted instead — it seals immediately, at
+lower torque, and everyone regards this as an improvement. Within four months bolts begin failing
+one at a time, always fracturing at the first engaged thread, always with the beach marks of
+fatigue rather than the cup-and-cone of overload. Nothing about the process changed: same
+pressure, same pump, same pulsation from the same reciprocating source. What changed was
+\( k_m \). The softer gasket cut member stiffness roughly fourfold, which raised \( C \) from
+about 0.16 to about 0.43, which raised the bolts' stress amplitude from roughly 18 to roughly
+50 MPa — a load the bolts had never seen and were never selected for. The lower torque made it
+worse, since less preload meant a lower separation load as well. The repair was to return to the
+specified gasket, not to upgrade the bolts. The transferable point is that a gasket is a
+structural member of the joint, and substituting one is a stiffness change that silently
+re-rates every bolt around it.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(5\\ \\mathrm{kg}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.102\\ \\mathrm{lb}\\)", "\\(2.268\\ \\mathrm{lb}\\)", "\\(110.2\\ \\mathrm{lb}\\)", "\\(11.02\\ \\mathrm{lb}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{kg} = 2.205\\ \\mathrm{lb}\\): \\(5 \\times 2.205 = 11.02\\ \\mathrm{lb}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(60\ \mathrm{kg}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(13.23\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(27.22\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1323\ \mathrm{lb}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(132.3\ \mathrm{lb}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kg} = 2.205\ \mathrm{lb}\): \(60 \times 2.205 = 132.3\ \mathrm{lb}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(8\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1.16\\ \\mathrm{psi}\\)", "\\(55.16\\ \\mathrm{psi}\\)", "\\(11.6\\ \\mathrm{psi}\\)", "\\(0.116\\ \\mathrm{psi}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(8 \\times 0.145 = 1.16\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(100\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(14.5\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(689.5\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(145\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.45\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(100 \times 0.145 = 14.5\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1923658W" target="_blank" rel="noopener">Shigley's Mechanical Engineering Design — Budynas &amp; Nisbett</a></li><li>Machine Design: An Integrated Approach — Robert L. Norton</li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Machine Design</p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-72-elements-of-mechanical-design-spring-2009/" title="MIT OCW 2.72 Elements of Mechanical Design" target="_blank" rel="noopener">MIT OCW 2.72</a> Elements of Mechanical Design (ocw.mit.edu)</li><li>NPTEL: Machine Design (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="06-keys-splines-and-retaining-hardware.html">← 06 · Keys, splines, and retaining hardware</a><a href="index.html">كل الدروس · MDN 251</a><a href="08-welded-joint-design.html">08 · Welded joint design →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/kinematics-machinery/index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1508,3 +1508,47 @@ Applies to **NEW lessons, from statics (STA 103) onward**. Retrofitting the 266
 existing lessons is a **separate later pass, covering site lessons only, not the
 notes** — and it starts only when the owner says so. Do not begin it
 opportunistically.
+
+## STANDING DIRECTIVE — public prototype scope (owner, 2026-08-03, "scope = C")
+
+**The shareable prototype covers YEARS 1 AND 2** — 24 courses, 264 lessons, all
+at full depth. Years 3-4 are ABSENT, not locked or greyed: a visitor must not be
+able to reach an unauthored course by any route.
+
+This supersedes the 2026-07-26 Year-1-only scope, and revives the tooling that
+was deleted in `c9c94942` when the prototype was cancelled. Recovered from
+`ee24517d` and adapted:
+
+- `build_prototype.py` — filters the curriculum to `y1s1,y1s2,y2s1,y2s2` by
+  rebinding `nexus_build.load_curriculum` / `OUT` / `_emit`. **It does not edit
+  design-owned code**; nexus_build.py, nexus.css and nexus.js stay
+  byte-identical, so it inherits design changes automatically.
+- `verify_prototype.py` — 16 assertions. Run it before any prototype deploy.
+  Emits `docs/prototype/`; the full site at `docs/` is unaffected.
+
+**Two things the recovered script got wrong for the current site, both fixed —
+do not reintroduce them:**
+
+1. **The stat band lied.** `content/pages/home-nexus.html` hardcodes
+   "4 years / 48 courses / 528 lessons". Those are TRUE of the full site, so the
+   fragment must never be edited to suit the prototype — the prototype rewrites
+   them on the way out (2 / 24 / 264). This exact defect shipped in the
+   2026-07-26 prototype as its one untrue claim and was never fixed; it is now
+   an assertion, not a note.
+2. **The chrome trim was stale.** The `year-N/summary.html` links it targeted no
+   longer exist anywhere (per-year summaries were retired 2026-07-30), the
+   homepage now emits the year cards TWICE, and the Curriculum nav dropdown
+   lists years 1-4 as in-page anchors. **Re-derive the trim against a real
+   build; never inherit it on trust.**
+
+**The nav-anchor leak was found by looking at the page, not by the gate** — the
+semester-id scan passes `#year-3` because it does not contain `y3s1`. The gate
+now checks anchors and nav links too.
+
+⚠️ **That check is deliberately scoped to ANCHORS AND LINKS, never bare prose.**
+Lesson bodies legitimately say things like "the bridge lesson into the Year 3
+Vibrations course"; those are a curriculum telling a student what comes next,
+not a route. Widening the check flags 12 of them and pushes someone into
+deleting good editorial copy.
+
+A live link still REQUIRES A PUSH, which remains owner-gated.

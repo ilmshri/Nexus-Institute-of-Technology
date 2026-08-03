@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Design of experiments first contact — Engineering Statistics — MechEd</title>
+<meta name="description" content="One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma w">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/statistics/9">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s1/statistics/09-design-of-experiments-first-contact.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">STS 206 · Engineering Statistics</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-describing-data.html" class="ol" data-key="y2s1/statistics/1"><span class="tick"></span><span>01 · Describing data</span></a><a href="02-probability-rules.html" class="ol" data-key="y2s1/statistics/2"><span class="tick"></span><span>02 · Probability rules</span></a><a href="03-discrete-distributions.html" class="ol" data-key="y2s1/statistics/3"><span class="tick"></span><span>03 · Discrete distributions</span></a><a href="04-continuous-distributions.html" class="ol" data-key="y2s1/statistics/4"><span class="tick"></span><span>04 · Continuous distributions</span></a><a href="05-sampling-distributions-and-the-clt.html" class="ol" data-key="y2s1/statistics/5"><span class="tick"></span><span>05 · Sampling distributions and the CLT</span></a><a href="06-estimation-and-confidence-intervals.html" class="ol" data-key="y2s1/statistics/6"><span class="tick"></span><span>06 · Estimation and confidence intervals</span></a><a href="07-hypothesis-testing.html" class="ol" data-key="y2s1/statistics/7"><span class="tick"></span><span>07 · Hypothesis testing</span></a><a href="08-regression.html" class="ol" data-key="y2s1/statistics/8"><span class="tick"></span><span>08 · Regression</span></a><a href="09-design-of-experiments-first-contact.html" class="ol cur" data-key="y2s1/statistics/9"><span class="tick"></span><span>09 · Design of experiments first contact</span></a><a href="10-reliability-statistics-preview.html" class="ol" data-key="y2s1/statistics/10"><span class="tick"></span><span>10 · Reliability statistics preview</span></a><a href="11-statistical-malpractice-and-honest-reporting.html" class="ol" data-key="y2s1/statistics/11"><span class="tick"></span><span>11 · Statistical malpractice and honest reporting</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">STS 206</a> /
+<span>Lesson 09 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">STS 206 · Lesson 09 of 11 · Year 2 · Semester 1</p>
+  <h1>Design of experiments first contact</h1>
+  <p class="sub">One factor at a time versus factorial thinking. Main effects and interactions read from a 2² experiment. The efficiency argument that Lean Six Sigma will later monetize.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 18.05 Introduction to Probability an</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/statistics/9">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 18.05 Introduction to Probability and Statistics (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/cHoYAyYHzB0" title="Full Factorial Design (DoE - Design of Experiments) Simply explained" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Full Factorial Design (DoE - Design of Experiments) Simply explained <span class="src">numiqo</span></figcaption></figure></div><div class="vh-bar"><span class="n">Full Factorial Design (DoE - Design of Experiments) Simply explained</span><span class="c">NUMIQO</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>What is an interaction, and why does one-factor-at-a-time miss it?</li><li>Read main effects from a 2² experiment table.</li></ul></div><div class="measure">
+<h3>01 · Experimenting on purpose</h3>
+<p><b>Design of experiments</b> (DOE) is the discipline of planning tests so that the data answer the question with the fewest runs and the clearest conclusions. Its target is the relationship between input <b>factors</b> (temperature, pressure, feed rate) and an output <b>response</b> (yield, strength). The naive approach — change <b>one factor at a time</b> (OFAT), holding the rest fixed — is intuitive but wasteful and, worse, blind: it cannot detect <b>interactions</b>, where the effect of one factor depends on the level of another. Factorial design fixes both problems at once.</p>
+<h3>02 · Factorial designs</h3>
+<p>A <b>full factorial</b> tests every combination of factor levels. With \(k\) factors each at two levels (low and high), the design has \( 2^k \) runs: three factors need \( 2^3=8 \) runs, four need \( 2^4=16 \). From these runs the analysis extracts two things OFAT cannot. The <b>main effect</b> of a factor is the average change in response as it moves from low to high — computed across all the other factors' settings, so it is more reliable than a single OFAT sweep. The <b>interaction</b> effect measures how one factor's influence shifts with another's level, which is often where the real engineering lives: a catalyst that helps at high temperature but hurts at low is an interaction no one-factor study would ever reveal.</p>
+<h3>03 · Efficiency and fractional designs</h3>
+<p>Factorial designs are efficient because every run contributes to estimating every effect — the data are reused, not spent one factor at a time. When \(k\) is large, \( 2^k \) grows fast (seven factors would need 128 runs), so a <b>fractional factorial</b> runs a carefully chosen subset — a half-fraction \( 2^{k-1} \) uses 8 runs for four factors instead of 16 — trading the ability to resolve high-order interactions (usually negligible) for a large saving in runs. Good DOE also uses <b>randomisation</b> (to protect against unknown drifts), <b>replication</b> (to estimate noise), and <b>blocking</b> (to remove known nuisance variation), the three safeguards that separate a designed experiment from a mere collection of trials.</p>
+<h3>04 · The DOE working method</h3>
+<p>To design an experiment: list the factors and the response; choose two levels (or more for curvature); pick a full or fractional factorial sized to the run budget; and randomise the run order. Analyse by computing main effects and interactions, testing each against the noise estimated from replication — the hypothesis-testing logic of Lesson 7 applied to effects. Report the significant effects and, above all, the interactions, because those are what OFAT and intuition miss. DOE is the bridge from passive statistics (describing data that happened) to active engineering (arranging data to be maximally informative), and it recurs across the quality, process, and reliability courses wherever a process must be optimised rather than merely observed. A final note on scope: two levels per factor reveal linear effects and interactions but cannot see <b>curvature</b> — a response that peaks in the middle looks flat if only the ends are tested. Detecting an optimum needs a centre point or a three-level (response-surface) design, the natural next step once a factorial has identified which few factors actually matter. This screen-then-optimise sequence — a cheap factorial to find the vital factors, a richer design to tune them — is the standard industrial recipe, and it is far more efficient than either exhaustive testing or one-factor guesswork.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Hypothesis testing</b> (Lesson 7) — testing an effect against noise.</li><li><b>Factors and levels</b> — inputs set high/low.</li><li><b>Powers of two</b> — the \( 2^k \) run count.</li></ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Full factorial</td><td>\( 2^k \) runs</td><td>Every combination of \(k\) two-level factors.</td></tr>
+<tr><td>Main effect</td><td>avg. low→high change</td><td>A factor's overall influence.</td></tr>
+<tr><td>Interaction</td><td>effect depends on another</td><td>What OFAT cannot detect.</td></tr>
+<tr><td>Fractional factorial</td><td>\( 2^{k-1} \)</td><td>Fewer runs, sacrifice high orders.</td></tr>
+<tr><td>Randomise/replicate/block</td><td>the three safeguards</td><td>Guard against drift and noise.</td></tr></tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Full factorial run count</b></p><p><b>Problem.</b> How many runs does a full factorial with three two-level factors require?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( 2^k=2^3=8 \) runs. <b>Answer:</b> 8.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Adding a factor</b></p><p><b>Problem.</b> How many runs for four two-level factors, and for a half-fraction?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Full: \( 2^4=16 \). Half-fraction: \( 2^{4-1}=8 \). <b>Answer:</b> 16 full, 8 half.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Why not one-factor-at-a-time</b></p><p><b>Problem.</b> In 8 factorial runs versus 8 OFAT runs, what can the factorial estimate that OFAT cannot?</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> The factorial estimates all main effects AND their interactions from the same 8 runs; OFAT estimates only main effects and misses interactions entirely. <b>Answer:</b> interactions between factors.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>A full factorial with \(k\) two-level factors needs how many runs?</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(2^k\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(2k\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(k^2\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(k!\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Every combination of two levels across \(k\) factors.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>The key thing OFAT cannot detect is:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Interactions</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Main effects</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The mean</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The variance</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>OFAT varies one factor with others fixed, so interaction effects are invisible.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>A main effect is the response change averaged:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Over all other factors' settings</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>At one fixed setting</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Over time only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Over replicates only</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Averaging across the design makes it more reliable than a single sweep.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>A fractional factorial saves runs by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Sacrificing high-order interactions</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Ignoring main effects</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Using one factor</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Removing replication</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It aliases usually-negligible high-order interactions to shrink the run count.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Randomising run order protects against:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Unknown drifts over time</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Interactions</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Small samples</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The mean</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It spreads any time-based nuisance variation across the design.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(12\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(82.74\\ \\mathrm{psi}\\)", "\\(1.74\\ \\mathrm{psi}\\)", "\\(17.4\\ \\mathrm{psi}\\)", "\\(0.174\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(12 \\times 0.145 = 1.74\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(150\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(1034\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(21.76\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(217.6\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(2.176\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(150 \times 0.145 = 21.76\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(20\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(268.2\\ \\mathrm{hp}\\)", "\\(14.91\\ \\mathrm{hp}\\)", "\\(26.82\\ \\mathrm{hp}\\)", "\\(2.682\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(20 \\times 1.341 = 26.82\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(2\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(26.82\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.491\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(2.682\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2682\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(2 \times 1.341 = 2.682\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  <div class="lib-alts"><h4>فيديوهات بديلة</h4><ul class="plain small"><li><a href="https://www.youtube.com/watch?v=orl3r0VDNpw" target="_blank" rel="noopener">Full Factorial Experiments Explained</a> <span class="src">Jordan Edmunds Chetty</span></li><li><a href="https://www.youtube.com/watch?v=ntiBXZ7R_kw" target="_blank" rel="noopener">What is Fractional Factorial Design of Experiments Explained and How to Use it Like an Expert</a> <span class="src">The Open Educator</span></li></ul></div>
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/" title="MIT OCW 18.05 Introduction to Probability and Statistics" target="_blank" rel="noopener">MIT OCW 18.05</a> Introduction to Probability and Statistics (ocw.mit.edu)</li><li>NPTEL: Probability and Statistics</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="08-regression.html">← 08 · Regression</a><a href="index.html">كل الدروس · STS 206</a><a href="10-reliability-statistics-preview.html">10 · Reliability statistics preview →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/electronics-sensors/index.html">ELX 205 · Electronics &amp; Sensors →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

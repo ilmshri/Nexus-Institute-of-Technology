@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Dynamics — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for DYN 152 Engineering Dynamics.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s2/dynamics/summary.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>DYN 152 · Year 1 · Semester 2</p>
+  <h1>DYN 152 — Engineering Dynamics</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-dynamics">DYN 152 — Engineering Dynamics</h2>
+
+<section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 01 · Particle kinematics</p><h3><span class="sum-n">Lesson 01</span>Particle kinematics</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Position, velocity and acceleration are linked by differentiation in time and integration back again — everything else in kinematics is bookkeeping on those three.</li>
+<li>On a curved path, acceleration splits into two perpendicular parts with different jobs.</li>
+<li>\( a_t=dv/dt \) changes speed; \( a_n=v^2/\rho \) changes direction and always points toward the centre of curvature.</li>
+<li>A body moving at constant speed round a bend is still accelerating — the normal component never vanishes.</li>
+<li>The \( v^2 \) in \( a_n \) is why cornering loads climb so steeply with speed.</li>
+<li>Projectile motion is just the two axes solved separately: uniform horizontally, uniformly accelerated vertically.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 01 · Particle kinematics · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Derivatives and integrals</b> — velocity and acceleration are rates.</li><li><b>Vectors</b> (from math) — motion in two dimensions.</li><li><b>Right-triangle trigonometry</b> — resolving components.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Velocity / acceleration</td><td>\( v=\dfrac{dx}{dt},\ a=\dfrac{dv}{dt} \)</td><td>Definitions.</td></tr>
+<tr><td>Constant-a equations</td><td>\( v=v_0+at,\ x=x_0+v_0t+\tfrac12at^2 \)</td><td>Rectilinear, constant acceleration.</td></tr>
+<tr><td>Velocity–position</td><td>\( v^2=v_0^2+2a(x-x_0) \)</td><td>When time is not wanted.</td></tr>
+<tr><td>Tangential accel</td><td>\( a_t=dv/dt \)</td><td>Change of speed.</td></tr>
+<tr><td>Normal accel</td><td>\( a_n=v^2/\rho \)</td><td>Change of direction (toward centre).</td></tr>
+<tr><td>Projectile range</td><td>\( R=\dfrac{v_0^2\sin2\theta}{g} \)</td><td>Level-ground range.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 02 · Newton's second law for particles</p><h3><span class="sum-n">Lesson 02</span>Newton's second law for particles</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>\( F=ma \) is applied through a free-body diagram, and the diagram is the analysis — not a preliminary to it.</li>
+<li>Draw only forces acting <em>on</em> the body, and never include \( ma \) as one of them.</li>
+<li>On an incline, resolving along and perpendicular to the surface reduces the problem to two scalar equations.</li>
+<li>Friction opposes relative motion or its tendency, and the static limit \( \mu_sN \) is a maximum available force, not one that is always present.</li>
+<li>Centripetal force is a requirement, not a new force: some real force — friction, tension, normal reaction — must supply \( mv^2/\rho \).</li>
+<li>The method never changes: isolate the body, draw every force, choose axes, then write the equations.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 02 · Newton's second law for particles · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Particle kinematics</b> (Lesson 1) — \(a\), and \( a_n=v^2/\rho \).</li><li><b>Vector components</b> — resolving forces along axes.</li><li><b>Weight</b> \( W=mg \) — the ever-present force.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Newton's 2nd law</td><td>\( \sum\mathbf{F}=m\mathbf{a} \)</td><td>Forces ↔ acceleration.</td></tr>
+<tr><td>Weight</td><td>\( W=mg \)</td><td>Gravity force.</td></tr>
+<tr><td>Normal (incline)</td><td>\( N=mg\cos\theta \)</td><td>Contact force on a slope.</td></tr>
+<tr><td>Dry friction</td><td>\( f\le\mu N \)</td><td>Opposes/limits sliding.</td></tr>
+<tr><td>Centripetal force</td><td>\( F=mv^2/r \)</td><td>Force to turn on a curve.</td></tr>
+<tr><td>Max cornering speed</td><td>\( v_{\max}=\sqrt{\mu g r} \)</td><td>Friction-limited on a flat curve.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 03 · Work and energy</p><h3><span class="sum-n">Lesson 03</span>Work and energy</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Work is force acting through distance, counting only the component along the displacement.</li>
+<li>A force perpendicular to motion does no work — which is why the normal reaction and centripetal force never appear in an energy balance.</li>
+<li>The work–energy theorem: \( W_{net}=\Delta KE=\tfrac12mv_2^2-\tfrac12mv_1^2 \).</li>
+<li>It relates speeds to distances without ever solving for time, which is exactly when to reach for it instead of \( F=ma \).</li>
+<li>Conservative forces such as gravity and springs store energy recoverably as potential energy; friction does not, and its work is path-dependent.</li>
+<li>Power is the rate of doing work, \( P=Fv \) — the quantity that actually sizes a motor.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 03 · Work and energy · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Newton's second law</b> (Lesson 2) — energy is it, integrated over distance.</li><li><b>The dot product</b> — work counts the along-path force component.</li><li><b>Springs</b> \( F=kx \) — the source of elastic energy.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Work</td><td>\( W=Fd\cos\theta \)</td><td>Force through distance.</td></tr>
+<tr><td>Kinetic energy</td><td>\( KE=\tfrac12mv^2 \)</td><td>Energy of motion.</td></tr>
+<tr><td>Work–energy theorem</td><td>\( W_{\text{net}}=\Delta KE \)</td><td>Link work to speed change.</td></tr>
+<tr><td>Gravitational PE</td><td>\( PE=mgh \)</td><td>Height energy.</td></tr>
+<tr><td>Spring PE</td><td>\( \tfrac12kx^2 \)</td><td>Elastic energy.</td></tr>
+<tr><td>Conservation</td><td>\( KE+PE=\text{const} \)</td><td>No friction; \( v=\sqrt{2gh} \).</td></tr>
+<tr><td>Power</td><td>\( P=Fv \)</td><td>Rate of work; motor sizing.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 04 · Impulse, momentum, and impact</p><h3><span class="sum-n">Lesson 04</span>Impulse, momentum, and impact</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Impulse is force integrated over time and equals the change in momentum: \( J=\int F\,dt=m\Delta v \).</li>
+<li>Use it when the force is large, brief and poorly known — impacts, where \( F=ma \) is impractical.</li>
+<li>With no external impulse, total momentum is conserved: \( \sum m_iv_i=\sum m_iv_i' \).</li>
+<li>Momentum is conserved in an impact even when energy is not; only a perfectly elastic collision conserves both.</li>
+<li>The coefficient of restitution measures that, from \( e=1 \) for perfectly elastic to \( e=0 \) for perfectly plastic.</li>
+<li>Extending impact duration reduces peak force for the same momentum change — the principle behind every crumple zone and shock mount.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 04 · Impulse, momentum, and impact · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Newton's second law</b> (Lesson 2) — impulse is it, integrated over time.</li><li><b>Kinetic energy</b> (Lesson 3) — to see what impact loses.</li><li><b>Signed one-dimensional velocities</b> — direction bookkeeping.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Momentum</td><td>\( p=mv \)</td><td>Quantity of motion.</td></tr>
+<tr><td>Impulse</td><td>\( J=\int F\,dt=F\Delta t \)</td><td>Effect of a force over time.</td></tr>
+<tr><td>Impulse–momentum</td><td>\( J=\Delta p \)</td><td>Short, hard interactions.</td></tr>
+<tr><td>Conservation</td><td>\( \sum m_iv_i=\sum m_iv_i' \)</td><td>No external impulse.</td></tr>
+<tr><td>Restitution</td><td>\( e=\dfrac{v_2'-v_1'}{v_1-v_2} \)</td><td>Second impact equation.</td></tr>
+<tr><td>Elastic / plastic</td><td>\( e=1 \) / \( e=0 \)</td><td>KE conserved / bodies stick.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 05 · Systems of particles</p><h3><span class="sum-n">Lesson 05</span>Systems of particles</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A system of particles obeys \( \sum F_{ext}=Ma_{cm} \): the centre of mass moves exactly as a single particle carrying the total mass.</li>
+<li>Internal forces cancel in pairs by Newton's third law and can never move the centre of mass.</li>
+<li>With no external force, total momentum stays constant however violently the parts interact.</li>
+<li>Steady mass flow turns momentum change into a sustained force: a jet striking a surface exerts \( \dot m\Delta v \).</li>
+<li>That is the bridge into fluid mechanics — thrust, nozzle reaction and pipe-bend forces are all this one result.</li>
+<li>Choosing the system boundary is again the decisive step: it fixes which forces count as external.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 05 · Systems of particles · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Momentum and impulse</b> (Lesson 4) — extended to many particles.</li><li><b>Newton's third law</b> — why internal forces cancel.</li><li><b>Density and flow rate</b> — for the jet force.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Centre of mass</td><td>\( \bar x=\dfrac{\sum m_i x_i}{\sum m_i} \)</td><td>Balance point of a system.</td></tr>
+<tr><td>System Newton's law</td><td>\( \sum\mathbf{F}_{\text{ext}}=M\mathbf{a}_{\text{cm}} \)</td><td>Bulk motion; internal forces cancel.</td></tr>
+<tr><td>Momentum conservation</td><td>\( \sum m_i\mathbf{v}_i=\text{const} \)</td><td>No external impulse; recoil.</td></tr>
+<tr><td>Mass flow</td><td>\( \dot m=\rho A v \)</td><td>Steady stream.</td></tr>
+<tr><td>Jet / thrust force</td><td>\( F=\dot m\,\Delta v=\rho A v^2 \)</td><td>Jet on a plate; turbomachinery.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 06 · Rigid-body kinematics</p><h3><span class="sum-n">Lesson 06</span>Rigid-body kinematics</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Rigid-body motion comes in three kinds: translation, rotation about a fixed axis, and general plane motion combining both.</li>
+<li>General plane motion is handled by relative velocity: \( v_B=v_A+\omega\times r_{B/A} \).</li>
+<li>Every body in plane motion has an instantaneous centre of zero velocity, and about it the motion is pure rotation at that instant.</li>
+<li>Locating that centre often turns a two-equation problem into one line.</li>
+<li>Gear trains apply the same idea at the contact point: no slip means equal contact-point velocities, giving the ratio.</li>
+<li>Linkages are solved the same way — the four-bar is the standard exercise, and its velocity analysis is pure relative-velocity work.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 06 · Rigid-body kinematics · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Particle kinematics</b> (Lesson 1) — \( a_n=v^2/\rho \) becomes \( \omega^2 r \).</li><li><b>The cross product</b> — in the relative-velocity equation.</li><li><b>Angular velocity</b> \( \omega \) and acceleration \( \alpha \).</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Rim speed</td><td>\( v=\omega r \)</td><td>Fixed-axis rotation.</td></tr>
+<tr><td>Tangential accel</td><td>\( a_t=\alpha r \)</td><td>Speeding up rotation.</td></tr>
+<tr><td>Normal accel</td><td>\( a_n=\omega^2 r \)</td><td>Centripetal, toward axis.</td></tr>
+<tr><td>Relative velocity</td><td>\( \mathbf{v}_B=\mathbf{v}_A+\boldsymbol{\omega}\times\mathbf{r}_{B/A} \)</td><td>General plane motion.</td></tr>
+<tr><td>Instant centre</td><td>\( v=\omega d \) from it</td><td>Rolling / linkages.</td></tr>
+<tr><td>Gear / belt ratio</td><td>\( \omega_1 r_1=\omega_2 r_2 \)</td><td>Meshing bodies.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 07 · Relative acceleration and Coriolis</p><h3><span class="sum-n">Lesson 07</span>Relative acceleration and Coriolis</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Differentiating the relative-velocity equation gives the relative-acceleration equation, which adds a centripetal \( \omega^2r \) term alongside the tangential \( \alpha r \).</li>
+<li>When the observer's frame itself rotates, an extra term appears: the Coriolis acceleration.</li>
+<li>\( a_{Cor}=2\,\omega\times v_{rel} \), perpendicular to the sliding velocity and proportional to both the rotation rate and that velocity.</li>
+<li>It exists only when something moves <em>relative</em> to a rotating frame — a body fixed in the frame never sees it.</li>
+<li>The worked bead sliding along a rotating arm shows all the terms at once.</li>
+<li>Slotted links, governors and any mechanism with sliding-in-rotating contact need this treatment or the answer is simply wrong.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 07 · Relative acceleration and Coriolis · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Rigid-body velocity</b> (Lesson 6) — this differentiates it.</li><li><b>The cross product</b> — every rotational term uses it.</li><li><b>Vector addition of components</b> — combining the terms.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Relative acceleration</td><td>\( \mathbf{a}_B=\mathbf{a}_A+\boldsymbol{\alpha}\times\mathbf{r}-\omega^2\mathbf{r} \)</td><td>Rigid body, no sliding.</td></tr>
+<tr><td>Tangential term</td><td>\( \alpha r \)</td><td>From angular acceleration.</td></tr>
+<tr><td>Normal (centripetal)</td><td>\( \omega^2 r \)</td><td>Toward the reference point.</td></tr>
+<tr><td>Coriolis</td><td>\( 2\boldsymbol{\omega}\times\mathbf{v}_{\text{rel}} \)</td><td>Sliding within a rotating body.</td></tr>
+<tr><td>Full rotating frame</td><td>\( \mathbf{a}_{\text{rel}}+2\boldsymbol{\omega}\times\mathbf{v}_{\text{rel}}+\boldsymbol{\omega}\times(\boldsymbol{\omega}\times\mathbf{r})+\boldsymbol{\alpha}\times\mathbf{r} \)</td><td>Everything at once.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 08 · Rigid-body kinetics: Newton–Euler</p><h3><span class="sum-n">Lesson 08</span>Rigid-body kinetics: Newton–Euler</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Rigid-body kinetics needs two equations: \( \sum F=ma_{cm} \) for translation and \( \sum M=I\alpha \) for rotation.</li>
+<li>Moment of inertia measures how mass is distributed about the axis, not how much there is — geometry dominates.</li>
+<li>The parallel-axis theorem \( I=I_{cm}+md^2 \) shifts it to any parallel axis, and the \( d^2 \) grows fast.</li>
+<li>Take moments about the centre of mass, or about a fixed point, and be explicit which — mixing the two is the standard error.</li>
+<li>Newton–Euler solved together gives both the motion and the reactions, which is what bearings and mounts must be sized for.</li>
+<li>The same pairing reappears throughout machine design whenever an accelerating component's supports are checked.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 08 · Rigid-body kinetics: Newton–Euler · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Newton's second law</b> (Lesson 2) — the translational half.</li><li><b>Moment of a force</b> (from statics) — torque \( M=Fd \).</li><li><b>Second moment of area</b> (from math) — same \( \int r^2 \) idea for mass.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Euler's law</td><td>\( \sum M=I\alpha \)</td><td>Rotation about a fixed axis / cm.</td></tr>
+<tr><td>Newton's law</td><td>\( \sum\mathbf{F}=m\mathbf{a}_{\text{cm}} \)</td><td>Translation of the cm.</td></tr>
+<tr><td>Disk / cylinder</td><td>\( I=\tfrac12mr^2 \)</td><td>Solid rotor.</td></tr>
+<tr><td>Rod (centre)</td><td>\( I=\tfrac{1}{12}mL^2 \)</td><td>Slender bar.</td></tr>
+<tr><td>Parallel axis</td><td>\( I=I_{\text{cm}}+md^2 \)</td><td>Shift the axis.</td></tr>
+<tr><td>Rolling constraint</td><td>\( a_{\text{cm}}=\alpha r \)</td><td>Links the two equations.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 09 · Rotational energy and momentum</p><h3><span class="sum-n">Lesson 09</span>Rotational energy and momentum</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A rotating body stores \( KE=\tfrac12I\omega^2 \), the rotational twin of \( \tfrac12mv^2 \).</li>
+<li>Angular momentum is \( L=I\omega \), and angular impulse changes it: \( \int M\,dt=\Delta L \).</li>
+<li>With no external moment, angular momentum is conserved — so reducing \( I \) must raise \( \omega \).</li>
+<li>That single statement explains the spinning skater, the governor, and the behaviour of any rotor that sheds or gathers mass.</li>
+<li>A flywheel is an energy buffer sized by \( \tfrac12I\omega^2 \), smoothing a fluctuating torque between strokes.</li>
+<li>Because energy goes as \( \omega^2 \), speed matters far more than mass — the reason flywheels run fast rather than heavy.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 09 · Rotational energy and momentum · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Work–energy and impulse–momentum</b> (Lessons 3, 4) — the linear analogues.</li><li><b>Moment of inertia</b> (Lesson 8) — the rotational mass.</li><li><b>Torque</b> — the rotational force.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Analogue of</th></tr></thead><tbody>
+<tr><td>Rotational KE</td><td>\( \tfrac12I\omega^2 \)</td><td>\( \tfrac12mv^2 \)</td></tr>
+<tr><td>Angular momentum</td><td>\( L=I\omega \)</td><td>\( p=mv \)</td></tr>
+<tr><td>Angular impulse</td><td>\( \int M\,dt=\Delta L \)</td><td>\( \int F\,dt=\Delta p \)</td></tr>
+<tr><td>Work of a torque</td><td>\( \int M\,d\theta=\Delta KE \)</td><td>\( \int F\,dx=\Delta KE \)</td></tr>
+<tr><td>Conservation</td><td>\( I_1\omega_1=I_2\omega_2 \)</td><td>no external torque</td></tr>
+<tr><td>Flywheel storage</td><td>\( E=\tfrac12I\omega^2 \)</td><td>load smoothing</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 10 · Balancing of rotors</p><h3><span class="sum-n">Lesson 10</span>Balancing of rotors</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Unbalance is any offset between the mass centre and the axis of rotation, from casting tolerance, machining, keyways, wear or deposits.</li>
+<li>It produces a rotating force \( F=mr\omega^2 \), synchronous with shaft speed and growing with the <em>square</em> of it.</li>
+<li>Doubling speed quadruples the force — why a rotor acceptable at one speed is destructive at another.</li>
+<li>Static unbalance is a single offset correctable in one plane; dynamic unbalance is a couple and needs correction in two planes.</li>
+<li>A rotor can be statically balanced and still shake, which is exactly why two-plane balancing exists.</li>
+<li>Because the force is at 1× shaft speed, vibration analysis identifies unbalance by its frequency — the diagnostic link into condition monitoring.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 10 · Balancing of rotors · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Centripetal/centrifugal effects</b> (Lessons 1, 6) — \( F=m r\omega^2 \).</li><li><b>Centre of mass</b> (Lesson 5) — what static balance restores.</li><li><b>Couples / moments</b> (from statics) — dynamic unbalance is a couple.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula / meaning</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Unbalance force</td><td>\( F=m r\omega^2 \)</td><td>Rotates at 1×; grows as \( \omega^2 \).</td></tr>
+<tr><td>Unbalance</td><td>\( m r \) (g·mm)</td><td>Speed-independent measure.</td></tr>
+<tr><td>Static unbalance</td><td>cm off axis</td><td>One-plane correction.</td></tr>
+<tr><td>Dynamic unbalance</td><td>rotating couple</td><td>Two-plane correction.</td></tr>
+<tr><td>Balance condition</td><td>\( \sum m_i r_i=0 \)</td><td>Vector sum of unbalances.</td></tr>
+<tr><td>Correction mass</td><td>\( m_b r_b=m r \)</td><td>Opposite the heavy spot.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">DYN 152 · Lesson 11 · Introduction to vibration</p><h3><span class="sum-n">Lesson 11</span>Introduction to vibration</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The single-degree-of-freedom mass-spring-damper is the model behind nearly every vibration problem.</li>
+<li>Its natural frequency \( \omega_n=\sqrt{k/m} \) depends on stiffness and mass alone — not on how hard it is driven.</li>
+<li>The damping ratio \( \zeta \) sorts the response into underdamped oscillation, critical damping, and overdamped crawl.</li>
+<li>Resonance is forcing near \( \omega_n \), where response is limited only by damping and can grow far beyond the static deflection.</li>
+<li>Fixing a resonance means changing stiffness, mass or forcing frequency; adding damping limits the peak but does not move it.</li>
+<li>This is the foundation the Vibrations course and every critical-speed check in machine design build on.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">DYN 152 · Lesson 11 · Introduction to vibration · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Second-order ODEs</b> (from Engineering Mathematics II) — the equation of motion.</li><li><b>Damping regimes</b> — under/critical/over from \( \zeta \).</li><li><b>Rigid-body kinetics</b> (Lesson 8) — where \(m,k\) come from.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>SDOF equation</td><td>\( m\ddot{x}+c\dot{x}+kx=0 \)</td><td>Mass–spring–damper.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n=\sqrt{k/m} \)</td><td>Undamped ringing rate.</td></tr>
+<tr><td>Damping ratio</td><td>\( \zeta=\frac{c}{2\sqrt{mk}} \)</td><td>Regime by \( \zeta\lessgtr1 \).</td></tr>
+<tr><td>Damped frequency</td><td>\( \omega_d=\omega_n\sqrt{1-\zeta^2} \)</td><td>Actual ringing rate.</td></tr>
+<tr><td>Logarithmic decrement</td><td>\( \delta=\ln(x_1/x_2) \)</td><td>Decay of successive peaks.</td></tr>
+<tr><td>Small-damping estimate</td><td>\( \zeta\approx\delta/2\pi \)</td><td>ζ from a measured decay.</td></tr>
+</tbody></table></div></div></div></section>
+</article>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Heat Transfer — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for HTX 253 Heat Transfer.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/heat-transfer/summary.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div lang="en" dir="ltr" class="en-body">
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>HTX 253 · Year 2 · Semester 2</p>
+  <h1>HTX 253 — Heat Transfer</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-heat-transfer">HTX 253 — Heat Transfer</h2>
+
+<section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 01 · Mechanisms and the thermal circuit</p><h3><span class="sum-n">Lesson 01</span>Mechanisms and the thermal circuit</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Three rate laws do one job: Fourier for conduction, Newton's law of cooling for convection, Stefan–Boltzmann for radiation.</li>
+<li>Cast each as a resistance and the problem becomes a circuit: \( R_{tot}=\sum_i R_i \) and \( q=\Delta T_{overall}/R_{tot} \).</li>
+<li>Series resistances add, so the largest single resistance governs — find it before trying to improve anything.</li>
+<li>Insulating a small-diameter pipe can <em>raise</em> heat loss: added conduction resistance competes with the larger outer area, and below the critical radius the area wins.</li>
+<li>The critical radius is \( r_c=k/h \) — a real trap on small tubing, irrelevant on large pipe.</li>
+<li>This resistor-chain bookkeeping carries unchanged through fins, exchangers and radiation for the rest of the course.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 01 · Mechanisms and the thermal circuit · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The steady-flow energy equation and first-law balances</b>
+(Thermodynamics I–II) — those courses established how much energy moves; this course
+establishes how fast, and through which physical mechanism.</li></ul>
+<h4>Toolkit — rate laws and resistances</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Fourier's law</td><td>\( q=-kA\,dT/dx \)</td><td>Conduction rate.</td></tr>
+<tr><td>Newton's law of cooling</td><td>\( q=hA(T_s-T_\infty) \)</td><td>Convection rate.</td></tr>
+<tr><td>Stefan–Boltzmann (gray surface)</td><td>\( q=\varepsilon\sigma A(T_s^4-T_{surr}^4) \)</td><td>Radiation rate.</td></tr>
+<tr><td>Conduction resistance, plane wall</td><td>\( R=L/(kA) \)</td><td>Series network term.</td></tr>
+<tr><td>Conduction resistance, cylinder</td><td>\( R=\ln(r_2/r_1)/(2\pi k L) \)</td><td>Pipes, wrapped cables.</td></tr>
+<tr><td>Convection resistance</td><td>\( R=1/(hA) \)</td><td>Series network term.</td></tr>
+<tr><td>Critical radius of insulation</td><td>\( r_{cr}=k_{ins}/h \)</td><td>Small-cylinder insulation check.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 02 · Steady conduction and fins</p><h3><span class="sum-n">Lesson 02</span>Steady conduction and fins</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A fin buys area when the surface coefficient is too low to reject heat any other way — it trades material for exposed surface.</li>
+<li>The fin equation solves to a cosh profile; for an adiabatic tip, \( \eta_{fin}=\tanh(mL)/mL \) with \( m=\sqrt{hP/kA_c} \).</li>
+<li>Efficiency compares the fin with an isothermal fin; effectiveness compares it with having no fin at all. They answer different questions.</li>
+<li>Fins stop paying once \( mL \) is large: \( \tanh \) saturates, so extra length adds material and almost no heat.</li>
+<li>The worked 200 mm pin fin runs at 59% efficiency with a tip still 41% above ambient — doubling its length to 400 mm bought only 9% more heat for twice the material.</li>
+<li>Fins pay most where \( h \) is lowest, which is why they dominate natural-convection and gas-side surfaces.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 02 · Steady conduction and fins · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Thermal resistance networks and Newton's law of cooling</b>
+(Lesson 1) — a fin is, in that language, a way of shrinking a surface's effective
+\(R_{conv}\) by manufacturing extra area rather than by raising \(h\).</li></ul>
+<h4>Toolkit — fin performance</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Fin parameter</td><td>\( m=\sqrt{hP/(kA_c)} \)</td><td>Sets the decay rate along the fin.</td></tr>
+<tr><td>Adiabatic-tip profile</td><td>\( \theta/\theta_b=\cosh(m(L-x))/\cosh(mL) \)</td><td>Temperature along the fin.</td></tr>
+<tr><td>Fin heat rate</td><td>\( q_{fin}=\sqrt{hPkA_c}\,\theta_b\tanh(mL) \)</td><td>Total heat leaving the base.</td></tr>
+<tr><td>Fin efficiency</td><td>\( \eta_{fin}=\tanh(mL)/mL \)</td><td>Real fin vs. all-base-temperature ideal.</td></tr>
+<tr><td>Fin effectiveness</td><td>\( \varepsilon_{fin}=q_{fin}/(hA_c\theta_b) \)</td><td>Fin vs. no fin at all; worth it once ≫1.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 03 · Transient conduction</p><h3><span class="sum-n">Lesson 03</span>Transient conduction</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Lumped capacitance treats a body as one temperature: \( (T-T_\infty)/(T_i-T_\infty)=e^{-t/\tau} \) with \( \tau=\rho Vc/hA \).</li>
+<li>The entry ticket is \( Bi=hL_c/k<0.1 \) — internal conduction must be fast compared with surface convection.</li>
+<li>Check the Biot number <em>before</em> using the shortcut, not after; the worked pin passes in air at \( Bi=0.05 \) and fails once re-quenched in water.</li>
+<li>The characteristic length is \( L_c=V/A \), the same volume-to-area ratio that governs solidification and fin behaviour.</li>
+<li>When lumped fails, the body has a real internal gradient: use the semi-infinite solution or one-term series charts instead.</li>
+<li>The Fourier number \( \alpha t/L_c^2 \) is dimensionless time — the natural clock for every transient problem.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 03 · Transient conduction · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Fourier's law and thermal resistance</b> (Lesson 1) — the Biot number
+is literally a ratio of two resistances already introduced there, internal conduction against
+external convection.</li></ul>
+<h4>Toolkit — transient conduction</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Biot number</td><td>\( Bi=hL_c/k \)</td><td>Entry ticket for lumped capacitance (\(Bi&lt;0.1\)).</td></tr>
+<tr><td>Characteristic length</td><td>\( L_c=V/A \)</td><td>Same ratio behind Chvorinov's rule.</td></tr>
+<tr><td>Lumped time constant</td><td>\( \tau=\rho V c/(hA) \)</td><td>Time to fall to 1/e of initial excess.</td></tr>
+<tr><td>Fourier number</td><td>\( Fo=\alpha t/L_c^2 \)</td><td>Dimensionless time for one-term/chart solutions.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 04 · Forced convection: external</p><h3><span class="sum-n">Lesson 04</span>Forced convection: external</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>External forced convection is governed by two boundary layers — velocity and thermal — and their relative thickness is set by the Prandtl number.</li>
+<li>The grammar of every correlation is \( Nu=f(Re,Pr) \); for a laminar flat plate, \( Nu_L=0.664\,Re_L^{0.5}Pr^{1/3} \).</li>
+<li>Transition on a flat plate is near \( Re_{crit}\approx5\times10^5 \); this lesson's plate reaches only \( Re_L=62{,}500 \), so it stays laminar throughout.</li>
+<li>A correlation is valid only inside the range it was fitted over — check \( Re \) and \( Pr \) limits before trusting a number.</li>
+<li>\( Nu \) is a dimensionless \( h \): it says how much better convection is than pure conduction across the same layer.</li>
+<li>The flat-plate \( h \) was cross-checked against an independent estimate and agreed to within 1% — always worth a second route.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 04 · Forced convection: external · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Newton's law of cooling</b> (Lesson 1) treated \(h\) as empirical and
+externally given; this lesson is where \(h\) finally gets computed from first principles rather
+than assumed.</li></ul>
+<h4>Toolkit — external forced convection</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Nusselt number</td><td>\( Nu=hL/k \)</td><td>Dimensionless convection coefficient.</td></tr>
+<tr><td>Reynolds number</td><td>\( Re=VL/\nu \)</td><td>Inertial vs. viscous forces; sets laminar/turbulent.</td></tr>
+<tr><td>Prandtl number</td><td>\( Pr=\nu/\alpha \)</td><td>Momentum vs. thermal diffusivity.</td></tr>
+<tr><td>Laminar flat plate (avg)</td><td>\( Nu_L=0.664\,Re_L^{0.5}Pr^{1/3} \)</td><td>Valid \(Pr\gtrsim0.6\), \(Re_L&lt;Re_{crit}\).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 05 · Forced convection: internal</p><h3><span class="sum-n">Lesson 05</span>Forced convection: internal</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Internal flow has an entrance region and a fully developed region; "fully developed" means the profile shape stops changing, not that temperature stops changing.</li>
+<li>The two standard boundary conditions behave differently: constant heat flux gives a linear temperature rise, constant wall temperature an exponential approach.</li>
+<li>For constant wall temperature, \( (T_s-T_o)/(T_s-T_i)=\exp(-hPL/\dot mc_p) \).</li>
+<li>That exponential means the last few metres of a heated pipe buy far less temperature rise than the first few — a real limit on "just add length".</li>
+<li>Dittus–Boelter is the workhorse turbulent correlation for pipe flow.</li>
+<li>Heat pickup along a run is a mass-flow and surface-area problem before it is a coefficient problem.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 05 · Forced convection: internal · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar and boundary-layer ideas</b> (Lesson 4) — internal
+flow reuses the same dimensionless structure, adapted to a duct instead of an open plate.</li></ul>
+<h4>Toolkit — internal forced convection</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Laminar, constant q''</td><td>\( Nu=4.36 \)</td><td>Fully developed, constant flux.</td></tr>
+<tr><td>Laminar, constant Ts</td><td>\( Nu=3.66 \)</td><td>Fully developed, constant wall temperature.</td></tr>
+<tr><td>Dittus–Boelter</td><td>\( Nu=0.023\,Re^{0.8}Pr^{n} \)</td><td>Turbulent, \(Re\gtrsim10^4\), \(L/D\gtrsim10\).</td></tr>
+<tr><td>Constant-Ts approach</td><td>\( \ln\frac{T_s-T_o}{T_s-T_i}=-\frac{hPL}{\dot m c_p} \)</td><td>Exit temperature, exponential approach.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 06 · Natural convection</p><h3><span class="sum-n">Lesson 06</span>Natural convection</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Natural convection has no imposed velocity: buoyancy drives the flow, so the driving temperature difference appears on both sides of the problem.</li>
+<li>Its dimensionless numbers are Grashof and Rayleigh, \( Ra=Gr\cdot Pr=\frac{g\beta\Delta TL^3}{\nu^2}Pr \).</li>
+<li>Orientation changes everything — vertical plate, horizontal plate facing up, and facing down are different correlations, not variants of one.</li>
+<li>Natural-convection \( h \) in a gas sits one to two orders of magnitude below even modest forced convection, which is exactly why fins pay off so decisively here.</li>
+<li>A hotter ambient carries a double penalty: it shrinks \( \Delta T \) and weakens the buoyancy that drives the flow.</li>
+<li>The worked sealed cabinet loses about 24% of its rejected heat to a Gulf-summer ambient even though \( h \) itself barely moves.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 06 · Natural convection · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — natural convection keeps the same
+\(Nu\) idea but replaces the imposed-flow Reynolds number with the buoyancy-driven Grashof/
+Rayleigh number, since there is no external velocity to build Re from.</li></ul>
+<h4>Toolkit — natural convection</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Grashof number</td><td>\( Gr=g\beta\Delta T L^3/\nu^2 \)</td><td>Buoyancy vs. viscous force.</td></tr>
+<tr><td>Rayleigh number</td><td>\( Ra=Gr\cdot Pr \)</td><td>The number correlations are actually fitted to.</td></tr>
+<tr><td>Vertical plate (laminar)</td><td>Churchill–Chu form, 2</td><td>\(Ra\lesssim10^9\).</td></tr>
+<tr><td>Orientation effect</td><td>hot-face-up ≫ hot-face-down, same ΔT</td><td>Same plate, different h.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 07 · Boiling and condensation</p><h3><span class="sum-n">Lesson 07</span>Boiling and condensation</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The boiling curve has four regimes — free convection, nucleate, transition and film — and only nucleate boiling is a good place to operate.</li>
+<li>Past the critical heat flux the surface flux <em>falls</em> before rising again, so a flux-controlled surface jumps straight to film boiling and overheats.</li>
+<li>That jump is why CHF is a safety limit, not a performance target: Zuber's correlation gives \( q''_{max} \) for the worked case at about 1.1 MW/m² for water at 1 atm.</li>
+<li>Condensation splits the same way: dropwise is far better, filmwise is what real plants get once surfaces age and wet out.</li>
+<li>Nusselt's film-condensation results cover vertical plates and horizontal tubes.</li>
+<li>A design specified near the CHF peak has no margin at all — the worked check flags a 0.85 MW/m² duty as running hotter than sound practice.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 07 · Boiling and condensation · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Natural convection</b> (Lesson 6) — the free-convection boiling region
+at the start of the curve is exactly that, before bubble dynamics take over.</li>
+<li><b>Thermal resistance networks</b> (Lesson 1) — boiling and condensation coefficients still
+plug into the same \(q=\Delta T/R\) bookkeeping used everywhere else in this course.</li></ul>
+<h4>Toolkit — boiling and condensation</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Zuber CHF</td><td>\( q''_{max}=C h_{fg}\rho_v[\sigma g(\rho_l-\rho_v)/\rho_v^2]^{1/4} \)</td><td>Safety limit, fluid properties only.</td></tr>
+<tr><td>Nusselt film condensation, vertical</td><td>constant 0.943</td><td>Draining down full plate/tube length.</td></tr>
+<tr><td>Nusselt film condensation, horizontal tube</td><td>constant 0.729</td><td>Draining around the circumference.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 08 · Heat exchangers</p><h3><span class="sum-n">Lesson 08</span>Heat exchangers</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Whatever the architecture — shell-and-tube, plate, double pipe — the thermal problem collapses to one overall coefficient \( U \) and one area.</li>
+<li>LMTD sizing: \( q=UA\,\Delta T_{lm} \) with \( \Delta T_{lm}=(\Delta T_1-\Delta T_2)/\ln(\Delta T_1/\Delta T_2) \).</li>
+<li>Use LMTD when both outlet temperatures are known; use effectiveness–NTU when they are not, which is the honest method for rating an existing exchanger.</li>
+<li>Fouling enters as an extra resistance in \( U \), and it is usually the difference between a clean-duty calculation and installed reality.</li>
+<li>Counterflow beats parallel flow for the same duty because it holds a larger mean temperature difference.</li>
+<li>The \( C_r=0 \) case — condensing or evaporating streams — is the special case worth recognising on sight.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 08 · Heat exchangers · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Thermal resistance networks</b> (Lesson 1) — U is literally the same
+series-resistance idea, now with two convection films, a wall, and (in service) two fouling
+terms.</li></ul>
+<h4>Toolkit — heat exchangers</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>LMTD</td><td>\( \Delta T_{lm}=(\Delta T_1-\Delta T_2)/\ln(\Delta T_1/\Delta T_2) \)</td><td>Sizing, outlets known.</td></tr>
+<tr><td>Effectiveness</td><td>\( \varepsilon=q/q_{max} \)</td><td>Rating, outlets unknown.</td></tr>
+<tr><td>NTU</td><td>\( NTU=UA/C_{min} \)</td><td>Dimensionless size.</td></tr>
+<tr><td>Cr=0 special case</td><td>\( \varepsilon=1-e^{-NTU} \)</td><td>Condensing/evaporating stream.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 09 · Radiation: fundamentals and exchange</p><h3><span class="sum-n">Lesson 09</span>Radiation: fundamentals and exchange</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Radiation needs no medium and scales as \( T^4 \), so it grows fast and is easy to underestimate at moderate temperatures.</li>
+<li>Real surfaces are handled as gray surfaces with an emissivity; geometry enters through view factors, constrained by reciprocity and the enclosure rule.</li>
+<li>The two-surface network reduces to the same series-resistance picture as Lesson 1 — surface resistances either side of a space resistance.</li>
+<li>Radiation shields insert extra resistance pairs; \( N \) shields cut exchange by roughly \( 1/(N+1) \).</li>
+<li>A linearized radiation coefficient \( h_r \) lets radiation sit alongside convection in one combined coefficient.</li>
+<li>On the worked bare pipe, radiation carries about 48% of the total loss — a convection-only audit would miss half the heat, and polishing the surface changes the answer far more than insulation thickness would.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 09 · Radiation: fundamentals and exchange · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Thermal resistance networks</b> (Lesson 1) — the two-surface radiation
+network is the same series-resistance bookkeeping, now driven by \(T^4\).</li>
+<li><b>Natural convection</b> (Lesson 6) — combined-loss problems need an estimated
+\(h_{conv}\) from exactly those methods.</li></ul>
+<h4>Toolkit — radiation exchange</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Gray-surface emission</td><td>\( E=\varepsilon\sigma T^4 \)</td><td>Real surface vs. ideal blackbody.</td></tr>
+<tr><td>Reciprocity</td><td>\( A_1F_{12}=A_2F_{21} \)</td><td>View-factor bookkeeping.</td></tr>
+<tr><td>Two-surface network</td><td>\( q_{12}=\sigma(T_1^4-T_2^4)/R_{tot} \)</td><td>Same resistance idea, T⁴ driven.</td></tr>
+<tr><td>Linearized radiation coefficient</td><td>\( h_{rad}=\varepsilon\sigma(T_s+T_{surr})(T_s^2+T_{surr}^2) \)</td><td>Combine with h_conv in parallel.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 10 · Mass transfer analogy</p><h3><span class="sum-n">Lesson 10</span>Mass transfer analogy</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Mass diffusion obeys Fick's law with exactly the mathematical form of Fourier's law, so every conduction result has a mass-transfer twin.</li>
+<li>Convective mass transfer has its own coefficient \( h_m \) and its own Sherwood number, playing the roles of \( h \) and \( Nu \).</li>
+<li>The Lewis number compares thermal and mass diffusivity; for water vapour in air \( Le\approx1 \), which is why the analogy is unusually exact for this one pair.</li>
+<li>That gives the Lewis relation \( h/h_m\approx\rho c_p \) — a heat-transfer coefficient converts directly into a mass-transfer one.</li>
+<li>Evaporation cools what is left behind because the latent heat has to come from somewhere; this is the mechanism behind cooling towers and wet-bulb temperature.</li>
+<li>The worked evaporation estimate reuses this course's own Lesson 4 and Lesson 6 convection numbers — an explicit numerical callback, not a new correlation.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 10 · Mass transfer analogy · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The Nu–Re–Pr grammar</b> (Lesson 4) — mass transfer reuses the identical
+dimensionless structure (Sherwood, Reynolds, Schmidt in place of Nusselt, Reynolds, Prandtl).</li>
+<li><b>Psychrometrics</b> (Thermodynamics II) — the sensible/latent energy split this lesson's
+evaporative cooling relies on was introduced there for cooling-load estimates.</li></ul>
+<h4>Toolkit — the heat–mass analogy</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Fick's law</td><td>\( N''=-D_{AB}\,dC/dx \)</td><td>Diffusive mass transfer.</td></tr>
+<tr><td>Convective mass transfer</td><td>\( N''=h_m(C_s-C_\infty) \)</td><td>Mass-transfer analog of Newton's law.</td></tr>
+<tr><td>Lewis number</td><td>\( Le=\alpha/D_{AB} \)</td><td>Thermal vs. mass diffusivity.</td></tr>
+<tr><td>Lewis relation</td><td>\( h/h_m\approx\rho c_p \)</td><td>Valid when \(Le\approx1\) (air-water).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">HTX 253 · Lesson 11 · Thermal design mini-project</p><h3><span class="sum-n">Lesson 11</span>Thermal design mini-project</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A thermal design brief is answered in two stages: size for the clean duty, then add margin for how the exchanger will actually age.</li>
+<li>The sizing chain runs duty → LMTD → clean area, with \( U \) assembled from the film coefficients either side plus wall and fouling resistances.</li>
+<li>A fouling margin can be spent two equivalent ways: extra installed area, or a derated design coefficient — \( A_{design}=A_{clean}(1+m) \) is the same statement as \( U_{design}=U_{clean}/(1+m) \).</li>
+<li>The capstone's 20% margin lands on an exact \( U_{design}=375\ \mathrm{W/m^2K} \) by either route, which is the arithmetic check that the two views agree.</li>
+<li>Critique a design against how it fails: fouling, maldistribution, vibration, and the approach temperature that quietly sets the area.</li>
+<li>Every method in this course meets here — resistance networks, correlations, LMTD and NTU — applied to one piece of hardware.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">HTX 253 · Lesson 11 · Thermal design mini-project · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The LMTD sizing method</b> (Lesson 8) — this capstone is its direct
+applied extension, start to finish, with a fouling margin added at the end.</li></ul>
+<h4>Toolkit — the capstone sizing chain</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Duty</td><td>\( Q=\dot m c_p\Delta T \)</td><td>From either stream's own energy balance.</td></tr>
+<tr><td>Clean area</td><td>\( A_{clean}=Q/(U_{clean}\Delta T_{lm}) \)</td><td>Sizing to the specified duty.</td></tr>
+<tr><td>Design area</td><td>\( A_{design}=A_{clean}(1+m) \)</td><td>Margin for in-service fouling.</td></tr>
+<tr><td>Equivalent design U</td><td>\( U_{design}=U_{clean}/(1+m) \)</td><td>Same margin, restated as a derated coefficient.</td></tr>
+</tbody></table></div></div></div></section>
+</article></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

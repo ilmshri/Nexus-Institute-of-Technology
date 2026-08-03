@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Acceleration analysis — Kinematics &amp; Dynamics of Machinery — MechEd</title>
+<meta name="description" content="Acceleration polygons and the Coriolis component in sliding contacts. Slider-crank acceleration solved completely. The source terms for inertia forces">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/kinematics-machinery/3">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s2/kinematics-machinery/03-acceleration-analysis.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">KDM 252 · Kinematics &amp; Dynamics of Machinery</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-mechanisms-and-mobility.html" class="ol" data-key="y2s2/kinematics-machinery/1"><span class="tick"></span><span>01 · Mechanisms and mobility</span></a><a href="02-position-and-velocity-analysis.html" class="ol" data-key="y2s2/kinematics-machinery/2"><span class="tick"></span><span>02 · Position and velocity analysis</span></a><a href="03-acceleration-analysis.html" class="ol cur" data-key="y2s2/kinematics-machinery/3"><span class="tick"></span><span>03 · Acceleration analysis</span></a><a href="04-cams.html" class="ol" data-key="y2s2/kinematics-machinery/4"><span class="tick"></span><span>04 · Cams</span></a><a href="05-gear-tooth-geometry.html" class="ol" data-key="y2s2/kinematics-machinery/5"><span class="tick"></span><span>05 · Gear tooth geometry</span></a><a href="06-gear-trains.html" class="ol" data-key="y2s2/kinematics-machinery/6"><span class="tick"></span><span>06 · Gear trains</span></a><a href="07-static-and-inertia-force-analysis.html" class="ol" data-key="y2s2/kinematics-machinery/7"><span class="tick"></span><span>07 · Static and inertia force analysis</span></a><a href="08-clutches-and-brakes.html" class="ol" data-key="y2s2/kinematics-machinery/8"><span class="tick"></span><span>08 · Clutches and brakes</span></a><a href="09-flywheels-and-speed-fluctuation.html" class="ol" data-key="y2s2/kinematics-machinery/9"><span class="tick"></span><span>09 · Flywheels and speed fluctuation</span></a><a href="10-balancing-of-rotating-and-reciprocating-masses.html" class="ol" data-key="y2s2/kinematics-machinery/10"><span class="tick"></span><span>10 · Balancing of rotating and reciprocating masses</span></a><a href="11-governors-and-gyroscopic-effects.html" class="ol" data-key="y2s2/kinematics-machinery/11"><span class="tick"></span><span>11 · Governors and gyroscopic effects</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">KDM 252</a> /
+<span>Lesson 03 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">KDM 252 · Lesson 03 of 11 · Year 2 · Semester 2</p>
+  <h1>Acceleration analysis</h1>
+  <p class="sub">Acceleration polygons and the Coriolis component in sliding contacts. Slider-crank acceleration solved completely. The source terms for inertia forces.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Theory of Machines</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/kinematics-machinery/3">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Theory of Machines (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/S9n6zX6rRaM" title="Velocity and acceleration analysis of slider crank mechanism using Relative velocity method" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Velocity and acceleration analysis of slider crank mechanism using Relative velocity method <span class="src">Dhananjay Bhoge</span></figcaption></figure></div><div class="vh-bar"><span class="n">Velocity and acceleration analysis of slider crank mechanism using Relative velocity method</span><span class="c">DHANANJAY BHOGE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Where does Coriolis acceleration appear in a quick-return mechanism?</li><li>Why does acceleration, not velocity, size inertia forces?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A plot of piston acceleration against crank angle over one revolution for a 50 millimetre crank and 200 millimetre connecting rod at 200 radians per second. Both curves start at minus 2500 metres per second squared at zero degrees, rise through zero near 75 degrees, peak at plus 1500 near 180 degrees and return. The solid exact curve and the dashed two-term approximation are almost indistinguishable, parting most visibly near 90 degrees where the approximation reads 500 against the exact 516."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Piston acceleration: the exact curve and its two-term approximation</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">crank angle &#952; (degrees)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">piston acceleration (m/s&#178;)</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M193.8 250 L193.8 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="193.8" y="266" text-anchor="middle" fill="#5B6672" font-size="11">90</text><path d="M297.5 250 L297.5 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="297.5" y="266" text-anchor="middle" fill="#5B6672" font-size="11">180</text><path d="M401.2 250 L401.2 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="401.2" y="266" text-anchor="middle" fill="#5B6672" font-size="11">270</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">360</text><path d="M86 223.1 L90 223.1" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="227.1" text-anchor="end" fill="#5B6672" font-size="11">&#8722;2000</text><path d="M86 178.4 L90 178.4" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="182.4" text-anchor="end" fill="#5B6672" font-size="11">&#8722;1000</text><path d="M86 133.6 L90 133.6" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="137.6" text-anchor="end" fill="#5B6672" font-size="11">0</text><path d="M86 88.9 L90 88.9" stroke="#5B6672" stroke-width="1" fill="none"/><text x="82" y="92.9" text-anchor="end" fill="#5B6672" font-size="11">1000</text><path d="M90 133.6 L505 133.6" stroke="#5B6672" stroke-width="1" stroke-dasharray="4 3" fill="none"/><path d="M90 245.5 L92.3 245.4 L94.6 245.1 L96.9 244.6 L99.2 243.8 L101.5 242.9 L103.8 241.7 L106.1 240.4 L108.4 238.8 L110.8 237 L113.1 235.1 L115.4 233 L117.7 230.7 L120 228.2 L122.3 225.5 L124.6 222.7 L126.9 219.7 L129.2 216.6 L131.5 213.4 L133.8 210 L136.1 206.5 L138.4 202.9 L140.7 199.2 L143 195.4 L145.3 191.5 L147.6 187.6 L149.9 183.6 L152.2 179.5 L154.6 175.4 L156.9 171.3 L159.2 167.2 L161.5 163.1 L163.8 159 L166.1 154.9 L168.4 150.8 L170.7 146.8 L173 142.8 L175.3 138.8 L177.6 135 L179.9 131.2 L182.2 127.5 L184.5 123.9 L186.8 120.4 L189.1 117 L191.4 113.7 L193.8 110.5 L196.1 107.4 L198.4 104.5 L200.7 101.7 L203 99 L205.3 96.4 L207.6 94 L209.9 91.7 L212.2 89.5 L214.5 87.4 L216.8 85.5 L219.1 83.7 L221.4 82 L223.7 80.5 L226 79 L228.3 77.7 L230.6 76.4 L232.9 75.3 L235.2 74.3 L237.6 73.3 L239.9 72.5 L242.2 71.7 L244.5 71 L246.8 70.4 L249.1 69.8 L251.4 69.3 L253.7 68.9 L256 68.5 L258.3 68.2 L260.6 67.9 L262.9 67.6 L265.2 67.4 L267.5 67.2 L269.8 67.1 L272.1 67 L274.4 66.8 L276.8 66.8 L279.1 66.7 L281.4 66.6 L283.7 66.6 L286 66.5 L288.3 66.5 L290.6 66.5 L292.9 66.5 L295.2 66.5 L297.5 66.5 L299.8 66.5 L302.1 66.5 L304.4 66.5 L306.7 66.5 L309 66.5 L311.3 66.6 L313.6 66.6 L315.9 66.7 L318.2 66.8 L320.6 66.8 L322.9 67 L325.2 67.1 L327.5 67.2 L329.8 67.4 L332.1 67.6 L334.4 67.9 L336.7 68.2 L339 68.5 L341.3 68.9 L343.6 69.3 L345.9 69.8 L348.2 70.4 L350.5 71 L352.8 71.7 L355.1 72.5 L357.4 73.3 L359.8 74.3 L362.1 75.3 L364.4 76.4 L366.7 77.7 L369 79 L371.3 80.5 L373.6 82 L375.9 83.7 L378.2 85.5 L380.5 87.4 L382.8 89.5 L385.1 91.7 L387.4 94 L389.7 96.4 L392 99 L394.3 101.7 L396.6 104.5 L398.9 107.4 L401.2 110.5 L403.6 113.7 L405.9 117 L408.2 120.4 L410.5 123.9 L412.8 127.5 L415.1 131.2 L417.4 135 L419.7 138.8 L422 142.8 L424.3 146.8 L426.6 150.8 L428.9 154.9 L431.2 159 L433.5 163.1 L435.8 167.2 L438.1 171.3 L440.4 175.4 L442.8 179.5 L445.1 183.6 L447.4 187.6 L449.7 191.5 L452 195.4 L454.3 199.2 L456.6 202.9 L458.9 206.5 L461.2 210 L463.5 213.4 L465.8 216.6 L468.1 219.7 L470.4 222.7 L472.7 225.5 L475 228.2 L477.3 230.7 L479.6 233 L481.9 235.1 L484.2 237 L486.6 238.8 L488.9 240.4 L491.2 241.7 L493.5 242.9 L495.8 243.8 L498.1 244.6 L500.4 245.1 L502.7 245.4 L505 245.5" fill="none" stroke="#1f7a5c" stroke-width="2.4"/><path d="M90 245.5 L92.3 245.4 L94.6 245.1 L96.9 244.5 L99.2 243.8 L101.5 242.8 L103.8 241.6 L106.1 240.2 L108.4 238.7 L110.8 236.9 L113.1 234.9 L115.4 232.7 L117.7 230.4 L120 227.9 L122.3 225.2 L124.6 222.3 L126.9 219.4 L129.2 216.2 L131.5 213 L133.8 209.6 L136.1 206.1 L138.4 202.5 L140.7 198.8 L143 195 L145.3 191.2 L147.6 187.3 L149.9 183.3 L152.2 179.3 L154.6 175.3 L156.9 171.2 L159.2 167.2 L161.5 163.1 L163.8 159.1 L166.1 155.1 L168.4 151.1 L170.7 147.1 L173 143.2 L175.3 139.3 L177.6 135.5 L179.9 131.8 L182.2 128.1 L184.5 124.6 L186.8 121.1 L189.1 117.7 L191.4 114.4 L193.8 111.2 L196.1 108.2 L198.4 105.2 L200.7 102.4 L203 99.6 L205.3 97 L207.6 94.6 L209.9 92.2 L212.2 90 L214.5 87.8 L216.8 85.9 L219.1 84 L221.4 82.2 L223.7 80.6 L226 79.1 L228.3 77.7 L230.6 76.4 L232.9 75.2 L235.2 74.1 L237.6 73.1 L239.9 72.2 L242.2 71.4 L244.5 70.6 L246.8 70 L249.1 69.4 L251.4 68.9 L253.7 68.5 L256 68.1 L258.3 67.8 L260.6 67.5 L262.9 67.3 L265.2 67.1 L267.5 66.9 L269.8 66.8 L272.1 66.7 L274.4 66.6 L276.8 66.6 L279.1 66.5 L281.4 66.5 L283.7 66.5 L286 66.5 L288.3 66.5 L290.6 66.5 L292.9 66.5 L295.2 66.5 L297.5 66.5 L299.8 66.5 L302.1 66.5 L304.4 66.5 L306.7 66.5 L309 66.5 L311.3 66.5 L313.6 66.5 L315.9 66.5 L318.2 66.6 L320.6 66.6 L322.9 66.7 L325.2 66.8 L327.5 66.9 L329.8 67.1 L332.1 67.3 L334.4 67.5 L336.7 67.8 L339 68.1 L341.3 68.5 L343.6 68.9 L345.9 69.4 L348.2 70 L350.5 70.6 L352.8 71.4 L355.1 72.2 L357.4 73.1 L359.8 74.1 L362.1 75.2 L364.4 76.4 L366.7 77.7 L369 79.1 L371.3 80.6 L373.6 82.2 L375.9 84 L378.2 85.9 L380.5 87.8 L382.8 90 L385.1 92.2 L387.4 94.6 L389.7 97 L392 99.6 L394.3 102.4 L396.6 105.2 L398.9 108.2 L401.2 111.2 L403.6 114.4 L405.9 117.7 L408.2 121.1 L410.5 124.6 L412.8 128.1 L415.1 131.8 L417.4 135.5 L419.7 139.3 L422 143.2 L424.3 147.1 L426.6 151.1 L428.9 155.1 L431.2 159.1 L433.5 163.1 L435.8 167.2 L438.1 171.2 L440.4 175.3 L442.8 179.3 L445.1 183.3 L447.4 187.3 L449.7 191.2 L452 195 L454.3 198.8 L456.6 202.5 L458.9 206.1 L461.2 209.6 L463.5 213 L465.8 216.2 L468.1 219.4 L470.4 222.3 L472.7 225.2 L475 227.9 L477.3 230.4 L479.6 232.7 L481.9 234.9 L484.2 236.9 L486.6 238.7 L488.9 240.2 L491.2 241.6 L493.5 242.8 L495.8 243.8 L498.1 244.5 L500.4 245.1 L502.7 245.4 L505 245.5" fill="none" stroke="#c2820f" stroke-width="2" stroke-dasharray="6 4"/><circle cx="193.8" cy="110.5" r="3.5" fill="#1f7a5c"/><circle cx="193.8" cy="111.2" r="3.5" fill="#c2820f"/><text x="210" y="192" fill="#5B6672" font-size="11">worst gap: 3.2% at &#952; = 90&#176;</text><text x="210" y="210" fill="#1f7a5c" font-size="11">exact slider-crank kinematics</text><text x="210" y="228" fill="#c2820f" font-size="11">two-term approximation</text></svg><figcaption>The two-term form \( a \approx -r\omega^2(\cos\theta + \cos 2\theta / n) \) is the working tool: at \( \theta = 0 \) it is exact to the digit (&#8722;2500 m/s&#178;), and its largest error over the whole revolution is 3.2%, at \( \theta = 90^\circ \), where it reads 500 against the true 516 m/s&#178;. The penalty for the approximation is small; the penalty for ignoring acceleration is not, since a 0.5 kg piston at 2500 m/s&#178; presses on its pin with 1250 N &mdash; 255 times its own weight.</figcaption></figure>
+<h3>&#167;1 &middot; The derivative that sends the bill</h3>
+<p>Position tells you whether the parts fit. Velocity tells you how fast the machine runs. It is
+<b>acceleration</b> that sends the bill, because acceleration is what inertia responds to: every
+link that is being accelerated pushes back on whatever accelerates it, with \( ma \) at its
+centre of mass and \( I_G\alpha \) about it. Those reactions travel through the pins into the
+bearings and the frame, and they are usually far larger than the useful load.</p>
+<p>The scale is easy to underestimate. The slider-crank in the figure &mdash; a 50 mm crank and a
+200 mm rod at 200 rad/s, about 1910 rev/min &mdash; puts 2500 m/s&#178; on the piston at top dead
+centre. A piston of only 0.5 kg then needs 1250 N to accelerate it, 255 times its own weight.
+Nothing in the machine cares what the piston weighs; everything cares what it is being
+accelerated to.</p>
+<p>Two more consequences follow from the same number. Inertia forces go as \( \omega^2 \), so
+raising a machine's speed by 20% raises them by 44% &mdash; which is why speeding up existing
+machinery is a structural question, not a motor question. And they reverse direction twice per
+revolution, so they are a fatigue load, not a static one.</p>
+
+<h3>&#167;2 &middot; The slider-crank, exactly and usefully</h3>
+<p>Put the crank pin at radius \( r \) and the rod at length \( L \). The piston position follows
+from the closed loop directly, with \( n = L/r \):</p>
+<p>\[ x = r\left(\cos\theta + \sqrt{n^2-\sin^2\theta}\,\right) \]</p>
+<p>Differentiating twice with respect to time at constant \( \omega \) gives the exact
+acceleration, and expanding the square root for \( n \gg 1 \) gives the form actually used.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; piston acceleration</span>
+<p>\[ a = -r\omega^2\left[\cos\theta
++ \frac{n^2\cos 2\theta + \sin^4\theta}{(n^2-\sin^2\theta)^{3/2}}\right]
+\qquad\longrightarrow\qquad
+a \approx -r\omega^2\left(\cos\theta + \frac{\cos 2\theta}{n}\right) \]</p>
+<p>The first term is the <b>primary</b> component, at crank frequency; the second is the
+<b>secondary</b>, at twice crank frequency, and it exists only because the rod has finite
+length. \( n \to \infty \) would delete it.</p></div>
+<p>The approximation is better than it looks. At \( \theta = 0 \) both give
+\( -r\omega^2(1+1/n) = -2500 \) m/s&#178; exactly; at \( 180^\circ \) both give
+\( +1500 \) m/s&#178;. The largest disagreement over the whole revolution is at
+\( \theta = 90^\circ \), where the approximation reads 500 against the exact 516.4 m/s&#178;
+&mdash; 3.2% low, and low at the point where the acceleration is small anyway. That is why the
+two-term form survives in engine practice: it is accurate where the loads are large and only
+approximate where they are not.</p>
+<p>The secondary term is not a rounding detail. Its amplitude is \( 1/n \) of the primary, so at
+\( n=4 \) it contributes a quarter as much, at twice the frequency &mdash; and it is the reason
+a four-cylinder engine that is perfectly balanced at crank frequency still shakes at twice it.
+Lesson 10 returns to exactly this term.</p>
+
+<h3>&#167;3 &middot; Acceleration of a linkage: the loop, differentiated twice</h3>
+<p>For a general linkage there is no closed form worth memorising; there is a procedure. Take the
+velocity equation and differentiate again. Each link contributes two acceleration terms: a
+<b>centripetal</b> part \( \omega^2 r \) pointing from the moving pin back at the centre of
+rotation, and a <b>tangential</b> part \( \alpha r \) perpendicular to the link.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; acceleration difference</span>
+<p>\[ \mathbf{a}_B=\mathbf{a}_A+\boldsymbol{\alpha}_3\times\mathbf{r}_{B/A}
+-\omega_3^2\,\mathbf{r}_{B/A} \]</p>
+<p>Everything on the right except \( \alpha_3 \) is known once the velocity analysis is done, so
+the two scalar components give two linear equations in the two unknown angular
+accelerations.</p></div>
+<p>Applied to the four-bar of Lesson 2 &mdash; ground 100, crank 40, coupler 120, rocker 90 mm,
+\( \omega_2 = 10 \) rad/s constant, so \( \alpha_2=0 \) &mdash; the solution is
+\( \alpha_3 = 33.05 \) rad/s&#178; and \( \alpha_4 = 39.93 \) rad/s&#178;. Note what a constant
+input speed did <em>not</em> buy: both driven links are accelerating hard. A motor running at
+perfectly steady speed still generates inertia loads throughout the mechanism, because the
+mechanism's own geometry keeps changing the ratio, as Lesson 2 showed.</p>
+<p>Drawn rather than solved, the same equation is an <b>acceleration polygon</b>: lay the known
+vectors head to tail, and the two unknown tangential components close the figure. It is the same
+arithmetic with a ruler, and it has the same virtue as the instant-centre construction &mdash; it
+is an independent check.</p>
+
+<h3>&#167;4 &middot; Coriolis, and why it is the term that gets forgotten</h3>
+<p>Everything above assumed each pair of links keeps a fixed distance. When one link
+<em>slides</em> along another that is itself rotating &mdash; a block in a swinging slot, the
+shoe of a quick-return, a follower running in a rotating guide &mdash; a fifth term appears.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; Coriolis acceleration</span>
+<p>\[ \mathbf{a}_{\text{cor}}=2\,\boldsymbol{\omega}\times\mathbf{v}_{\text{rel}} \]</p>
+<p>Present whenever sliding happens on a rotating member; perpendicular to the sliding velocity;
+zero only if the guide is not rotating or the block is not sliding.</p></div>
+<p>Its size is routinely underestimated. Take a slotted lever turning at \( \omega = 8 \) rad/s
+with \( \alpha = 12 \) rad/s&#178;, carrying a block 0.25 m from the pivot that is sliding
+outward at 1.5 m/s with 4 m/s&#178; of its own. The four contributions are: centripetal
+\( \omega^2 r = 16 \), tangential \( \alpha r = 3 \), relative 4, and Coriolis
+\( 2\omega v = 24 \) m/s&#178;. Coriolis is the largest of them &mdash; eight times the
+tangential term. Collecting components along and across the slot gives \( -12 \) and
+\( +27 \) m/s&#178;, a total of 29.5 m/s&#178;. Leave Coriolis out and the answer is
+12.4 m/s&#178;: 58% low, and 58% low on a bearing load.</p>
+<p>The practical rule is to look for the sliding pair first. If any joint in the chain lets one
+link slide along another that rotates, the term is there, it is perpendicular to the slot, and it
+is often the dominant one. Quick-return mechanisms, Scotch yokes and swinging-block linkages all
+carry it.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Velocity analysis</b> (Lesson 2) &mdash; the acceleration equations are the velocity
+equations differentiated once more, and reuse their results.</li>
+<li><b>Normal and tangential acceleration</b> (Dynamics L2) &mdash; \( v^2/\rho \) and
+\( dv/dt \), reappearing as \( \omega^2r \) and \( \alpha r \).</li>
+<li><b>Rotating reference frames</b> (Dynamics L6) &mdash; the source of the Coriolis term.</li>
+<li><b>Newton's second law</b> (Physics I) &mdash; why acceleration, not velocity, sets the
+force.</li>
+<li><b>Binomial expansion</b> (Mathematics I) &mdash; expanding
+\( \sqrt{n^2-\sin^2\theta} \) is what produces the two-term form.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Centripetal term</td><td>\( \omega^2 r \)</td><td>Always present on a rotating link; points at the centre.</td></tr>
+<tr><td>Tangential term</td><td>\( \alpha r \)</td><td>Present when the link's speed is changing.</td></tr>
+<tr><td>Coriolis term</td><td>\( 2\omega v_{\text{rel}} \)</td><td>Sliding along a rotating member; perpendicular to the slot.</td></tr>
+<tr><td>Rod ratio</td><td>\( n=L/r \)</td><td>Sets the size of the secondary term, \( 1/n \) of the primary.</td></tr>
+<tr><td>Primary component</td><td>\( -r\omega^2\cos\theta \)</td><td>Crank frequency; the dominant inertia load.</td></tr>
+<tr><td>Secondary component</td><td>\( -r\omega^2\cos 2\theta/n \)</td><td>Twice crank frequency; exists only for finite rod length.</td></tr>
+<tr><td>Acceleration polygon</td><td>vectors head to tail</td><td>Graphical solution and independent check.</td></tr>
+<tr><td>Inertia force</td><td>\( F=ma,\ M=I_G\alpha \)</td><td>Converting the kinematics into bearing loads (Lesson 7).</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Piston acceleration, exact against approximate</b></p>
+<p><b>Problem.</b> A slider-crank has crank \( r = 50 \) mm, connecting rod \( L = 200 \) mm and
+runs at a constant \( \omega = 200 \) rad/s. Find the piston acceleration at
+\( \theta = 0^\circ \), \( 90^\circ \) and \( 180^\circ \) using the two-term approximation, and
+compare with the exact values 	&#8722;2500.00, +516.40 and +1500.00 m/s&#178;. State where the
+approximation is worst.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( n = L/r = 200/50 = 4 \) and
+\( r\omega^2 = 0.050(200)^2 = 2000\ \mathrm{m/s^2} \).</p>
+<p>(1) \( \theta = 0^\circ \):
+\( a = -2000\left(\cos 0 + \frac{\cos 0}{4}\right) = -2000(1+0.25)
+= -2500\ \mathrm{m/s^2} \). Exact value \( -2500.00 \) &mdash; error 0.00%.</p>
+<p>(2) \( \theta = 90^\circ \):
+\( a = -2000\left(0 + \frac{-1}{4}\right) = +500\ \mathrm{m/s^2} \). Exact \( +516.40 \)
+&mdash; error \( (500-516.40)/516.40 = -3.18\% \).</p>
+<p>(3) \( \theta = 180^\circ \):
+\( a = -2000\left(-1 + \frac{1}{4}\right) = +1500\ \mathrm{m/s^2} \). Exact \( +1500.00 \)
+&mdash; error 0.00%.</p>
+<p><b>Answer:</b> &#8722;2500, +500 and +1500 m/s&#178;; the approximation is worst at
+\( 90^\circ \), 3.2% low.
+<b>Sanity check:</b> the errors land where they should. At 0&#176; and 180&#176; the crank and
+rod are collinear, the geometry is exactly captured by two terms, and the answers are exact. The
+error appears at 90&#176; &mdash; where the acceleration is smallest, so 3.2% of a small number.
+The peak magnitude is 2500 m/s&#178; at top dead centre, and that is where the approximation has
+no error at all, which is why it is trusted for sizing.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Angular accelerations of a four-bar</b></p>
+<p><b>Problem.</b> The Lesson 2 linkage &mdash; ground 100, crank 40, coupler 120, rocker 90 mm
+&mdash; runs at a constant \( \omega_2 = 10 \) rad/s, so \( \alpha_2 = 0 \). At
+\( \theta_2 = 60^\circ \) the earlier analysis gave \( \theta_3 = 24.95^\circ \),
+\( \theta_4 = 71.34^\circ \), \( \omega_3 = -0.905 \) and \( \omega_4 = 3.525 \) rad/s. Find
+\( \alpha_3 \) and \( \alpha_4 \).</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Differentiating the loop twice and separating components
+gives two linear equations in \( \alpha_3, \alpha_4 \). Collecting the known terms:</p>
+<p>\( A = r_4\sin\theta_4 = 90\sin 71.34^\circ = 85.27 \);
+\( B = r_3\sin\theta_3 = 120\sin 24.95^\circ = 50.63 \);
+\( D = r_4\cos\theta_4 = 28.80 \);
+\( E = r_3\cos\theta_3 = 108.80 \).</p>
+<p>\( C = r_2\omega_2^2\cos\theta_2 + r_3\omega_3^2\cos\theta_3 - r_4\omega_4^2\cos\theta_4
+= 2000.0 + 89.15 - 322.10 = 1767.05 \).</p>
+<p>\( F = -r_2\omega_2^2\sin\theta_2 - r_3\omega_3^2\sin\theta_3 + r_4\omega_4^2\sin\theta_4
+= -3464.10 - 41.48 + 953.65 = -2551.93 \).</p>
+<p>\( \alpha_3 = \frac{CD-AF}{AE-BD}
+= \frac{(1767.05)(28.80) - (85.27)(-2551.93)}{(85.27)(108.80)-(50.63)(28.80)}
+= \frac{50\,891 + 217\,600}{9277.4-1458.1} = 33.05\ \mathrm{rad/s^2} \).</p>
+<p>\( \alpha_4 = \frac{CE-BF}{AE-BD}
+= \frac{(1767.05)(108.80)-(50.63)(-2551.93)}{7819.3}
+= \frac{192\,255 + 129\,204}{7819.3} = 39.93\ \mathrm{rad/s^2} \).</p>
+<p><b>Answer:</b> \( \alpha_3 = 33.05 \) rad/s&#178;, \( \alpha_4 = 39.93 \) rad/s&#178;.
+<b>Sanity check:</b> differentiating \( \omega_3 \) and \( \omega_4 \) numerically across
+\( \theta_2 = 60^\circ \) reproduces both to four decimals. The physical reading matters more
+than the arithmetic: the input shaft is at perfectly constant speed, and the coupler and rocker
+are still accelerating at 33 and 40 rad/s&#178;. Constant input speed does not mean an
+inertia-free mechanism &mdash; the varying velocity ratio of Lesson 2 guarantees the
+opposite.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>The Coriolis term in a quick-return</b></p>
+<p><b>Problem.</b> A block slides in the slot of a rotating lever. At the instant of interest the
+lever turns at \( \omega = 8 \) rad/s with \( \alpha = 12 \) rad/s&#178;, and the block is
+0.25 m from the pivot, sliding outward along the slot at 1.5 m/s and accelerating along it at
+4 m/s&#178;. Find the block's total acceleration, and find what it would come to if the Coriolis
+term were omitted.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> Four contributions, resolved along the slot (radial,
+outward positive) and across it (transverse):</p>
+<p>(1) Centripetal \( \omega^2 r = 8^2(0.25) = 16\ \mathrm{m/s^2} \), radial <em>inward</em>.</p>
+<p>(2) Tangential \( \alpha r = 12(0.25) = 3\ \mathrm{m/s^2} \), transverse.</p>
+<p>(3) Relative \( a_{\text{rel}} = 4\ \mathrm{m/s^2} \), radial outward.</p>
+<p>(4) Coriolis \( 2\omega v_{\text{rel}} = 2(8)(1.5) = 24\ \mathrm{m/s^2} \), transverse, in
+the same sense as the tangential term for outward sliding.</p>
+<p>Radial: \( -16 + 4 = -12\ \mathrm{m/s^2} \). Transverse: \( 3 + 24 = 27\ \mathrm{m/s^2} \).</p>
+<p>\( a = \sqrt{12^2+27^2} = \sqrt{144+729} = 29.55\ \mathrm{m/s^2} \).</p>
+<p>Without Coriolis: transverse \( = 3 \), so
+\( a = \sqrt{144+9} = 12.37\ \mathrm{m/s^2} \).</p>
+<p><b>Answer:</b> 29.55 m/s&#178;; omitting Coriolis gives 12.37 m/s&#178;, 58% low.
+<b>Sanity check:</b> Coriolis supplies 24 of the 27 m/s&#178; of transverse acceleration
+&mdash; 89% of it, and eight times the tangential term from the lever's own angular
+acceleration. An error of that size propagates directly into the block's inertia force and the
+slot's contact pressure, which is why quick-return and swinging-block mechanisms are the classic
+place to lose a bearing to an analysis that looked complete.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>Inertia forces in a machine are sized by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>velocity</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>acceleration</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>displacement</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>jerk</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F = ma \) and \( M = I_G\alpha \): it is acceleration that inertia
+resists. A link can be moving fast and load nothing extra if it is moving at constant velocity in
+a straight line, and can be momentarily at rest &mdash; at a toggle, say &mdash; while carrying
+its largest inertia load. Jerk matters for smoothness and for cam wear, but it does not appear in
+a force equation.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>A machine's speed is raised from 1000 to 1200 rev/min. The inertia forces increase
+by about</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>20%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>44%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>73%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>100%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Inertia forces go as \( \omega^2 \), so the factor is
+\( (1.2)^2 = 1.44 \) &mdash; a 44% increase for a 20% speed rise. This is why "just run it
+faster" is a structural and bearing question rather than a motor question: the drive may have the
+power to spare while the pins, the frame and the foundations do not.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>In \( a \approx -r\omega^2(\cos\theta + \cos 2\theta/n) \), the second term exists
+because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the crank speed varies</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the connecting rod has finite length</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>of friction in the wrist pin</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the piston has mass</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is the finite rod ratio \( n = L/r \). An infinitely long rod would keep
+the piston in pure simple harmonic motion at crank frequency, and the secondary term would
+vanish. Its amplitude is \( 1/n \) of the primary &mdash; a quarter at \( n = 4 \) &mdash; and it
+oscillates at twice crank frequency, which is why it appears as a distinct engine vibration order
+in Lesson 10.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>For a slider-crank at constant \( \omega \), the piston acceleration is largest</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>at top dead centre</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>at 90&#176; after top dead centre</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>at bottom dead centre</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>midway between the dead centres</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>At top dead centre both terms add: \( -r\omega^2(1+1/n) \), which for the
+worked case is \( -2500 \) m/s&#178;, against \( +1500 \) at bottom dead centre where they
+partly cancel, \( -r\omega^2(-1+1/n) \). The asymmetry between the two ends is entirely the
+secondary term, and it is why the piston-pin and rod loads at the top of the stroke govern the
+design.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>The Coriolis component is present whenever</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a link rotates at constant speed</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a point slides along a member that is itself rotating</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>two links are pinned together</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the mechanism is non-Grashof</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( 2\boldsymbol{\omega}\times\mathbf{v}_{\text{rel}} \) needs both factors:
+a rotating frame and a sliding velocity within it. A plain pin joint has no relative sliding, so
+no Coriolis term; a slider on a fixed guide has no rotation, so none either. A block in a
+swinging slot has both, and there the term is often the largest of the four.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>An analysis of a swinging-block mechanism omits the Coriolis term and reports
+12.4 m/s&#178; where the true value is 29.5. The consequence is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a conservative design</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>no consequence &mdash; Coriolis affects direction only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>the block's inertia force and the slot contact pressure are underestimated by more than half</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the velocity analysis must also be wrong</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Acceleration multiplies mass to give force, so a 58% low acceleration is a
+58% low inertia force and a correspondingly low contact pressure in the slot &mdash; the opposite
+of conservative. The velocity analysis is unaffected: Coriolis appears only when the velocity
+result is differentiated, which is exactly why the mistake survives a review that checked the
+velocities and found them right.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>A four-bar is driven at perfectly constant \( \omega_2 \). The angular acceleration
+of the coupler is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>zero</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>generally non-zero</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>equal to \( \omega_2^2 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>zero only at toggle positions</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Constant input speed makes \( \alpha_2 = 0 \) and nothing else. Because the
+velocity ratio of a linkage changes continuously with position, \( \omega_3 \) and
+\( \omega_4 \) vary through the cycle and their derivatives are generally non-zero &mdash;
+33.05 and 39.93 rad/s&#178; for the worked linkage at \( \theta_2 = 60^\circ \). A steady motor
+does not give an inertia-free mechanism.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The centripetal term \( \omega^2 r \) in an acceleration analysis always points</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>along the direction of motion</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>from the point toward its centre of rotation</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>perpendicular to the link, in the sense of \( \alpha \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>vertically downward</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It points from the moving point back at the centre it is turning about, which
+is why it is fully known as soon as the velocity analysis is finished &mdash; both its magnitude
+\( \omega^2r \) and its direction come from results already in hand. The tangential term
+\( \alpha r \) is the perpendicular one, and it carries the unknown that the acceleration
+equations are solved for.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the compressor that failed its pins after an uprate.</b> A
+reciprocating compressor was run 20% faster to recover throughput after a process change. The
+drive had the power, the valves were re-selected, and the machine met its new duty. Within a few
+months the wrist-pin bushes on two cylinders were found spread and the rod small-ends
+picked up.</p>
+<p>Nothing was wrong with the parts. The inertia force on a reciprocating mass goes as
+\( \omega^2 \), so a 20% speed rise multiplies it by \( 1.2^2 = 1.44 \): every pin in the
+machine saw 44% more load, on every stroke, forever. Worked in numbers on a comparable geometry
+&mdash; 50 mm crank, 200 mm rod &mdash; the peak piston acceleration at top dead centre is
+\( r\omega^2(1+r/L) \), which at 200 rad/s is 2500 m/s&#178;, so a 0.5 kg reciprocating mass
+already pushes 1250 N through the pin, 255 times its own weight, before any gas load is added.
+Add 44% and the bearing is running outside the pressure it was selected for while every
+performance figure on the datasheet still reads correctly.</p>
+<p>Two practices follow. A speed change is a re-analysis of the inertia loads, not a control
+setting: the \( \omega^2 \) law means the machine that is 20% faster is a machine with 44% more
+load in its running gear. And the inertia load reverses twice per revolution, so it is a fatigue
+duty &mdash; the consequence of getting it wrong is not an immediate failure that would have
+been caught during commissioning, but a life that has been quietly divided by a large
+number.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(100\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(2.248\\ \\mathrm{lbf}\\)", "\\(444.8\\ \\mathrm{lbf}\\)", "\\(224.8\\ \\mathrm{lbf}\\)", "\\(22.48\\ \\mathrm{lbf}\\)"], "answer": 3, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(100 \\times 0.2248 = 22.48\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(8\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.1798\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(35.59\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(17.98\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">D</span><span>\(1.798\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(8 \times 0.2248 = 1.798\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(150\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(492.1\\ \\mathrm{ft}\\)", "\\(45.72\\ \\mathrm{ft}\\)", "\\(4921\\ \\mathrm{ft}\\)", "\\(49.21\\ \\mathrm{ft}\\)"], "answer": 0, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(150 \\times 3.281 = 492.1\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(12\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(39.37\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(3.658\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(393.7\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(3.937\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(12 \times 3.281 = 39.37\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1802157W" target="_blank" rel="noopener">Design of Machinery — Robert L. Norton</a></li><li><a href="https://openlibrary.org/works/OL18699414W" target="_blank" rel="noopener">Theory of Machines and Mechanisms — Uicker, Pennock &amp; Shigley</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Theory of Machines</p>
+  <ul class="plain small"><li>NPTEL: Theory of Machines (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="02-position-and-velocity-analysis.html">← 02 · Position and velocity analysis</a><a href="index.html">All lessons · KDM 252</a><a href="04-cams.html">04 · Cams →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/metrology/index.html">MET 204 · Metrology &amp; Quality Control →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Fluid Mechanics — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for FLD 203 Fluid Mechanics.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/fluids/summary.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>FLD 203 · Year 2 · Semester 1</p>
+  <h1>FLD 203 — Fluid Mechanics</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-fluids">FLD 203 — Fluid Mechanics</h2>
+
+<section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 01 · Fluid properties</p><h3><span class="sum-n">Lesson 01</span>Fluid properties</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A fluid is defined by behaviour, not phase: it cannot resist shear at rest, so any shear stress at all makes it deform continuously.</li>
+<li>Viscosity is the constant of proportionality in Newton's law of viscosity, \( \tau=\mu\,du/dy \) — resistance to shear <em>rate</em>, not to shear.</li>
+<li>Kinematic viscosity \( \nu=\mu/\rho \) is what appears in the Reynolds number, so it is the one that governs flow regime.</li>
+<li>Temperature moves the two phases opposite ways: liquid viscosity falls sharply as it warms, gas viscosity rises.</li>
+<li>That opposite response is a molecular-mechanism difference — cohesion in liquids, momentum exchange in gases.</li>
+<li>Establish the properties at the actual operating temperature before any calculation; a room-temperature viscosity can be wrong by an order of magnitude.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 01 · Fluid properties · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>SI units</b> — pascals, kg/m³, and their algebra.</li><li><b>Stress</b> — force per area, from Statics/Strength.</li><li><b>Derivatives</b> — the velocity gradient \(du/dy\).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Density</td><td>\( \rho=m/V \)</td><td>Inertia, weight, and every mass balance.</td></tr>
+<tr><td>Specific weight</td><td>\( \gamma=\rho g \)</td><td>Converting mass to force per volume.</td></tr>
+<tr><td>Specific gravity</td><td>\( SG=\rho/\rho_{w} \)</td><td>Dimensionless comparison to water.</td></tr>
+<tr><td>Dynamic viscosity</td><td>\( \tau=\mu\,du/dy \)</td><td>Shear stress in force balances.</td></tr>
+<tr><td>Kinematic viscosity</td><td>\( \nu=\mu/\rho \)</td><td>Reynolds number, momentum diffusion.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 02 · Pressure and fluid statics</p><h3><span class="sum-n">Lesson 02</span>Pressure and fluid statics</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Pressure at a point acts equally in all directions, and in a static fluid it varies only with depth: \( p=\rho gh \).</li>
+<li>Horizontal position and container shape are irrelevant — the hydrostatic paradox follows directly.</li>
+<li>Gauge pressure is measured relative to atmosphere, absolute relative to vacuum, and mixing them is the most common error in the subject.</li>
+<li>Any equation containing a gas law needs absolute pressure; most instruments read gauge.</li>
+<li>Manometers apply the hydrostatic law directly: work through the fluid column by column, adding going down and subtracting going up.</li>
+<li>A manometer's sensitivity is set by the density difference, which is why inclined and differential designs exist.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 02 · Pressure and fluid statics · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Fluid properties</b> (Lesson 1) — density is the key input.</li><li><b>Force and pressure</b> — force per area.</li><li><b>Integration of a gradient</b> — \(dp/dz=-\rho g\).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Hydrostatic law</td><td>\( p=p_0+\rho g h \)</td><td>Pressure at depth in a static fluid.</td></tr>
+<tr><td>Absolute pressure</td><td>\( p_{abs}=p_{atm}+p_{gauge} \)</td><td>Gas laws, cavitation, boiling.</td></tr>
+<tr><td>Gauge pressure</td><td>\( p_{gauge}=p_{abs}-p_{atm} \)</td><td>Structural load across a wall.</td></tr>
+<tr><td>Manometer</td><td>\( \Delta p=\rho g\,\Delta h \)</td><td>Reading pressure as a column height.</td></tr>
+<tr><td>Pascal's principle</td><td>\( p \) equal in all directions</td><td>Pressure at a point in a static fluid.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 03 · Flow description, Reynolds number, and continuity</p><h3><span class="sum-n">Lesson 03</span>Flow description, Reynolds number, and continuity</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Flow is described by streamlines, pathlines and streaklines — identical in steady flow, different otherwise.</li>
+<li>The Reynolds number \( Re=\rho VD/\mu \) is the master number: the ratio of inertial to viscous forces.</li>
+<li>It decides regime, and in pipe flow the transition sits near \( Re=2300 \).</li>
+<li>Laminar flow is orderly and predictable analytically; turbulent flow mixes aggressively and needs correlations.</li>
+<li>Continuity is mass conservation: \( \rho_1A_1V_1=\rho_2A_2V_2 \), reducing to \( A_1V_1=A_2V_2 \) when density is constant.</li>
+<li>Continuity is what makes a nozzle accelerate flow, and it is the first equation to write in almost every problem.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 03 · Flow description, Reynolds number, and continuity · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Kinematic viscosity</b> (Lesson 1) — the \( \nu \) in \(Re\).</li><li><b>Circle area</b> — \(A=\pi D^2/4\).</li><li><b>Mass conservation</b> — nothing accumulates in steady flow.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Volume flow rate</td><td>\( Q=AV \)</td><td>What a flow meter reports.</td></tr>
+<tr><td>Mass flow rate</td><td>\( \dot m=\rho AV \)</td><td>Balances, compressible flow.</td></tr>
+<tr><td>Reynolds number</td><td>\( Re=VD/\nu \)</td><td>Laminar vs turbulent regime.</td></tr>
+<tr><td>Continuity</td><td>\( A_1V_1=A_2V_2 \)</td><td>Relating velocities across sections.</td></tr>
+<tr><td>Transition</td><td>\( Re\approx2300\!-\!4000 \)</td><td>Pipe flow regime boundary.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 04 · Bernoulli, energy equation, pipe flow, and pump curves</p><h3><span class="sum-n">Lesson 04</span>Bernoulli, energy equation, pipe flow, and pump curves</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Bernoulli's equation is energy per unit weight along a streamline: pressure head, velocity head and elevation head sum to a constant.</li>
+<li>It trades the three against each other — faster flow means lower pressure, which is the whole basis of lift, venturis and carburettors.</li>
+<li>Its assumptions are strict: steady, incompressible, frictionless, along a streamline, no machine in between.</li>
+<li>Violate any of them and the equation is simply wrong, not merely approximate.</li>
+<li>The real energy equation restores what Bernoulli discards: head loss \( h_L \) and machine head \( h_p \) or \( h_t \).</li>
+<li>That extended form is what actually sizes pumps and pipework for the rest of the course.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 04 · Bernoulli, energy equation, pipe flow, and pump curves · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Continuity</b> (Lesson 3) — relates the velocities Bernoulli connects.</li><li><b>Hydrostatic head</b> (Lesson 2) — the pressure/elevation terms.</li><li><b>Energy conservation</b> — the balance being written.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Bernoulli</td><td>\( \frac{p}{\rho g}+\frac{V^2}{2g}+z=\text{const} \)</td><td>Ideal steady incompressible streamline.</td></tr>
+<tr><td>Velocity head</td><td>\( V^2/2g \)</td><td>Kinetic energy per unit weight.</td></tr>
+<tr><td>Dynamic pressure</td><td>\( \tfrac12\rho V^2 \)</td><td>Pitot tubes, drag, meters.</td></tr>
+<tr><td>Torricelli</td><td>\( V=\sqrt{2gh} \)</td><td>Jet speed draining under head \(h\).</td></tr>
+<tr><td>Energy equation</td><td>\( \ldots+h_{pump}=\ldots+h_{loss} \)</td><td>Real flow with friction and machines.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 05 · Momentum analysis</p><h3><span class="sum-n">Lesson 05</span>Momentum analysis</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Energy methods give speeds and pressures but never forces — a bend can be analysed by Bernoulli and still tell you nothing about its anchor loads.</li>
+<li>The momentum equation supplies them: \( \sum F=\dot m(V_{out}-V_{in}) \), applied to a chosen control volume.</li>
+<li>Momentum is a vector equation, so it is written per axis and the signs are the analysis.</li>
+<li>Drawing the control volume and marking every force crossing it is the step that decides whether the answer is right.</li>
+<li>A 180° reversal produces roughly twice the force of a 90° bend, because the momentum change is twice as large.</li>
+<li>These are the loads that size thrust blocks, pipe anchors and nozzle reaction supports.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 05 · Momentum analysis · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Continuity and Bernoulli</b> (Lessons 3–4) — supply the velocities.</li><li><b>Newton's second law</b> — momentum rate equals net force.</li><li><b>Vector components</b> — the equation is directional.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Momentum equation</td><td>\( \sum F=\dot m(V_2-V_1) \)</td><td>Force on bends, vanes, nozzles.</td></tr>
+<tr><td>Mass flow</td><td>\( \dot m=\rho Q \)</td><td>The rate carrying momentum.</td></tr>
+<tr><td>Jet on a plate</td><td>\( F=\dot m V \)</td><td>Normal impact, stationary plate.</td></tr>
+<tr><td>Flow reversal</td><td>\( F=2\dot m V \)</td><td>180° bend momentum change.</td></tr>
+<tr><td>Thrust block</td><td>pressure + momentum</td><td>Anchoring pressurised bends.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 06 · Dimensional analysis and similarity</p><h3><span class="sum-n">Lesson 06</span>Dimensional analysis and similarity</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Making variables dimensionless collapses a many-variable problem into a few groups, cutting the experiments needed enormously.</li>
+<li>Buckingham Pi says a relation among \( n \) variables with \( k \) dimensions reduces to \( n-k \) dimensionless groups.</li>
+<li>The named groups are not arbitrary: Reynolds, Froude, Mach, Euler and Weber each compare a specific pair of forces.</li>
+<li>Similarity requires geometric, kinematic and dynamic likeness — matching shape alone is not a model test.</li>
+<li>Dynamic similarity means matching the governing dimensionless group, which is why a model is run at matched \( Re \), not matched speed.</li>
+<li>Matching every group at once is usually impossible, so the engineering judgement is deciding which one governs.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 06 · Dimensional analysis and similarity · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Base dimensions</b> — mass, length, time and their combinations.</li><li><b>Reynolds number</b> (Lesson 3) — the archetypal group.</li><li><b>Algebra of exponents</b> — forming dimensionless products.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Buckingham Pi</td><td>groups \(=n-k\)</td><td>Count dimensionless groups.</td></tr>
+<tr><td>Drag coefficient</td><td>\( C_D=\frac{F}{\frac12\rho V^2A} \)</td><td>Non-dimensional drag.</td></tr>
+<tr><td>Geometric similarity</td><td>scaled lengths</td><td>Same shape, model vs prototype.</td></tr>
+<tr><td>Dynamic similarity</td><td>\( Re_m=Re_p \)</td><td>Matching governing groups.</td></tr>
+<tr><td>Froude / Mach</td><td>free-surface / compressible</td><td>Which group governs the test.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 07 · Laminar and turbulent pipe flow in depth</p><h3><span class="sum-n">Lesson 07</span>Laminar and turbulent pipe flow in depth</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Real pipe flow loses head to friction, given by Darcy–Weisbach: \( h_f=f\frac{L}{D}\frac{V^2}{2g} \).</li>
+<li>The velocity squared is why oversizing a line pays back so quickly — halving velocity quarters the friction loss.</li>
+<li>In laminar flow \( f=64/Re \) exactly, independent of roughness, because the wall is buried under the viscous layer.</li>
+<li>In turbulent flow \( f \) depends on both \( Re \) and relative roughness, read from the Moody chart or Colebrook equation.</li>
+<li>At high \( Re \) the flow becomes fully rough and \( f \) stops depending on \( Re \) altogether.</li>
+<li>Roughness only matters once turbulence has thinned the viscous sublayer enough to expose it.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 07 · Laminar and turbulent pipe flow in depth · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Reynolds number & regime</b> (Lesson 3).</li><li><b>Velocity head</b> (Lesson 4) — the \(V^2/2g\) term.</li><li><b>Relative roughness</b> — \( \varepsilon/D \) for turbulent pipes.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Darcy–Weisbach</td><td>\( h_f=f\frac{L}{D}\frac{V^2}{2g} \)</td><td>Major (friction) head loss.</td></tr>
+<tr><td>Laminar friction</td><td>\( f=64/Re \)</td><td>\(Re<2300\), exact.</td></tr>
+<tr><td>Turbulent friction</td><td>Moody / Colebrook</td><td>\(f=f(Re,\varepsilon/D)\).</td></tr>
+<tr><td>Relative roughness</td><td>\( \varepsilon/D \)</td><td>Wall texture in turbulent flow.</td></tr>
+<tr><td>Velocity-squared law</td><td>\( h_f\propto V^2 \)</td><td>Diameter sizing for energy.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 08 · Piping networks and valves</p><h3><span class="sum-n">Lesson 08</span>Piping networks and valves</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Fittings, bends, valves and entries lose head through \( h_L=K\frac{V^2}{2g} \).</li>
+<li>They are called minor losses, and in a short, fitting-dense run they routinely dominate the straight-pipe friction.</li>
+<li>Equivalent length restates a \( K \) value as a length of pipe, which makes hand estimation quick.</li>
+<li>In series, flow is common and losses add; in parallel, head loss is common and flows divide.</li>
+<li>A partly closed valve has an enormous \( K \) — which is exactly how throttling control works, and why it is thermodynamically wasteful.</li>
+<li>Network solving is bookkeeping on those two rules plus continuity at every junction.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 08 · Piping networks and valves · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Major head loss</b> (Lesson 7) — the friction half.</li><li><b>Velocity head</b> (Lesson 4) — the \(V^2/2g\) factor.</li><li><b>Series/parallel reasoning</b> — like electrical resistance.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Minor loss</td><td>\( h_m=K\frac{V^2}{2g} \)</td><td>Fittings, valves, entrances.</td></tr>
+<tr><td>Equivalent length</td><td>\( L_e=KD/f \)</td><td>Fold a fitting into pipe length.</td></tr>
+<tr><td>Series pipes</td><td>\( Q \) same, \( h \) adds</td><td>One flow path in sequence.</td></tr>
+<tr><td>Parallel pipes</td><td>\( h \) same, \( Q \) adds</td><td>Branches sharing endpoints.</td></tr>
+<tr><td>System curve</td><td>\( h \) vs \( Q \)</td><td>Meets the pump curve (Lesson 10).</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 09 · Flow measurement</p><h3><span class="sum-n">Lesson 09</span>Flow measurement</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Most flow measurement is really pressure measurement, converted through Bernoulli.</li>
+<li>A Pitot tube reads stagnation minus static pressure, giving velocity as \( V=\sqrt{2\Delta p/\rho} \) — a point velocity, not a flow rate.</li>
+<li>Venturi and orifice meters create a deliberate contraction and read the pressure drop across it.</li>
+<li>A discharge coefficient corrects the ideal result for real effects; it is not optional.</li>
+<li>The trade-off is direct: a venturi recovers most of its pressure drop and costs more, an orifice plate is cheap and permanently wasteful.</li>
+<li>Because \( \Delta p\propto Q^2 \), these meters have poor turndown — accuracy collapses at low flow.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 09 · Flow measurement · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Bernoulli & dynamic pressure</b> (Lesson 4).</li><li><b>Continuity</b> (Lesson 3) — the area–velocity link.</li><li><b>Head loss</b> (Lesson 8) — meters' permanent loss.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Pitot tube</td><td>\( V=\sqrt{2\Delta p/\rho} \)</td><td>Point velocity from stagnation.</td></tr>
+<tr><td>Venturi/orifice</td><td>\( Q=C_dA_2\sqrt{\frac{2\Delta p}{\rho(1-\beta^4)}} \)</td><td>Pipe flow from a pressure drop.</td></tr>
+<tr><td>Discharge coeff.</td><td>\( C_d \) (0.6 orifice, 0.98 venturi)</td><td>Correct ideal to real flow.</td></tr>
+<tr><td>Vena contracta</td><td>jet narrows past an orifice</td><td>Why \(C_d<1\) for an orifice.</td></tr>
+<tr><td>Turndown</td><td>\( Q\propto\sqrt{\Delta p} \)</td><td>Poor low-flow resolution.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 10 · Turbomachinery fundamentals</p><h3><span class="sum-n">Lesson 10</span>Turbomachinery fundamentals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A pump adds head, and head is the honest unit because it is independent of fluid density.</li>
+<li>The operating point is where the pump curve crosses the system curve — neither alone determines it.</li>
+<li>Throttling moves the system curve, not the pump curve, which is why throttling control burns energy as loss.</li>
+<li>The affinity laws scale performance with speed: \( Q\propto N \), \( H\propto N^2 \), \( P\propto N^3 \).</li>
+<li>That cubic power law is the entire economic case for variable-speed drives on pumps and fans.</li>
+<li>Cavitation occurs when local pressure falls to vapour pressure; NPSH available must exceed NPSH required, and it is a suction-side problem that no discharge change will fix.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 10 · Turbomachinery fundamentals · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Head and the energy equation</b> (Lesson 4).</li><li><b>System head loss</b> (Lessons 7–8) — the system curve.</li><li><b>Vapour pressure</b> — the cavitation limit.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Hydraulic power</td><td>\( P=\rho g Q H \)</td><td>Useful power delivered to fluid.</td></tr>
+<tr><td>Efficiency</td><td>\( P_{shaft}=P_{hyd}/\eta \)</td><td>Sizing the motor.</td></tr>
+<tr><td>Operating point</td><td>pump curve ∩ system curve</td><td>Actual flow and head.</td></tr>
+<tr><td>Affinity laws</td><td>\( Q\!\propto\!N,H\!\propto\!N^2,P\!\propto\!N^3 \)</td><td>Speed change effects.</td></tr>
+<tr><td>NPSH</td><td>available > required</td><td>Avoiding cavitation.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">FLD 203 · Lesson 11 · Compressible flow first contact</p><h3><span class="sum-n">Lesson 11</span>Compressible flow first contact</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Density stops being constant once Mach number rises above roughly 0.3 — below that, incompressible treatment is honest.</li>
+<li>The speed of sound \( c=\sqrt{kRT} \) depends on temperature alone for an ideal gas, not on pressure.</li>
+<li>Mach number \( M=V/c \) sorts the regimes: subsonic, sonic, supersonic.</li>
+<li>Sound is how a flow is warned of what lies downstream, so supersonic flow cannot be warned at all — which is why shocks exist.</li>
+<li>A normal shock is an abrupt, irreversible jump: pressure and temperature rise, velocity drops to subsonic, and entropy increases.</li>
+<li>A converging-diverging nozzle chokes at the throat and needs the diverging section to go supersonic — the opposite of subsonic intuition.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">FLD 203 · Lesson 11 · Compressible flow first contact · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Ideal gas law</b> — \(p=\rho RT\) from thermodynamics.</li><li><b>Bernoulli's limits</b> (Lesson 4) — where incompressibility fails.</li><li><b>Absolute temperature</b> — the speed of sound needs kelvin.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Mach number</td><td>\( M=V/a \)</td><td>Compressibility gatekeeper.</td></tr>
+<tr><td>Speed of sound</td><td>\( a=\sqrt{\gamma R T} \)</td><td>Depends on gas and temperature.</td></tr>
+<tr><td>Incompressible limit</td><td>\( M<0.3 \)</td><td>When earlier tools still apply.</td></tr>
+<tr><td>Shock wave</td><td>abrupt \(p,T,\rho\) jump</td><td>Supersonic deceleration, energy loss.</td></tr>
+<tr><td>Choking</td><td>\( M=1 \) at a throat</td><td>Flow limit at a restriction.</td></tr></tbody></table></div></div></div></section>
+</article>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

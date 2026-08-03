@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Mathematics III — Differential Equations &amp; Linear Algebra — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for MTH 207 Engineering Mathematics III — Differential Equations &amp; Linear Algebra.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/math-3/summary.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>MTH 207 · Year 2 · Semester 1</p>
+  <h1>MTH 207 — Engineering Mathematics III — Differential Equations &amp; Linear Algebra</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-math-3">MTH 207 — Engineering Mathematics III — Differential Equations &amp; Linear Algebra</h2>
+
+<section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 01 · First-order equations revisited: separable and linear</p><h3><span class="sum-n">Lesson 01</span>First-order equations revisited: separable and linear</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>First-order ODEs met in engineering come in two useful shapes: separable and linear.</li>
+<li>A separable equation splits the variables to opposite sides and integrates each independently.</li>
+<li>A linear equation \( y'+P(x)y=Q(x) \) is solved with the integrating factor \( e^{\int P\,dx} \), which turns the left side into an exact derivative.</li>
+<li>Recognising which shape you have is the whole decision — the integration afterwards is routine.</li>
+<li>The solution splits into a transient that decays and a steady state that persists.</li>
+<li>Reading that split tells you what the system settles to and how long it takes to get there, which is usually what was actually wanted.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 01 · First-order equations revisited: separable and linear · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Integration</b> — the engine of both methods.</li><li><b>The product rule</b> — makes the integrating factor collapse.</li><li><b>Exponentials and logs</b> — the language of first-order decay.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Separable</td><td>\( \frac{dy}{dx}=g(x)h(y) \)</td><td>Variables split; integrate each side alone.</td></tr>
+<tr><td>Linear first-order</td><td>\( y'+p(x)y=q(x) \)</td><td>Unknown differentiated and not; use \(\mu\).</td></tr>
+<tr><td>Integrating factor</td><td>\( \mu=e^{\int p\,dx} \)</td><td>Turns the equation into an exact derivative.</td></tr>
+<tr><td>General solution</td><td>homogeneous + particular</td><td>Carries the arbitrary constant \(C\).</td></tr>
+<tr><td>Steady state</td><td>\( q/p \)</td><td>The destination; a fast sanity check.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 02 · Modeling with first-order equations</p><h3><span class="sum-n">Lesson 02</span>Modeling with first-order equations</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>One balance — accumulation equals input minus output — generates the governing equation for tanks, thermal systems and mixing alike.</li>
+<li>Newton's law of cooling is that balance applied to heat, giving exponential approach to ambient.</li>
+<li>The time constant is read straight off the coefficient: it is the reciprocal of the decay rate.</li>
+<li>After one time constant about 63% of the change is complete; after five, the process is finished for practical purposes.</li>
+<li>That makes the time constant, not the full solution, the number worth carrying around.</li>
+<li>Modelling means naming the conserved quantity, drawing the boundary, and writing the balance — the calculus follows from that, not the other way round.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 02 · Modeling with first-order equations · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Solving linear first-order ODEs</b> (Lesson 1).</li><li><b>Conservation balances</b> — rate in minus rate out.</li><li><b>Unit reasoning</b> — the fastest error check.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Balance law</td><td>\( \dot y=\text{in}-\text{out} \)</td><td>Starting statement for every model.</td></tr>
+<tr><td>Newton cooling</td><td>\( T'=-k(T-T_a) \)</td><td>Body exchanging heat with surroundings.</td></tr>
+<tr><td>Time constant</td><td>\( \tau y'+y=y_{in} \)</td><td>\(\tau\)=time to \(1-1/e\) of the step.</td></tr>
+<tr><td>RC time constant</td><td>\( \tau=RC \)</td><td>Capacitor charging through a resistor.</td></tr>
+<tr><td>Tank time constant</td><td>\( \tau=V/Q \)</td><td>Well-mixed vessel, steady throughput.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 03 · Second-order equations: the homogeneous story</p><h3><span class="sum-n">Lesson 03</span>Second-order equations: the homogeneous story</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A second-order constant-coefficient ODE reduces to a quadratic characteristic equation, turning calculus into algebra.</li>
+<li>The discriminant sorts the response into overdamped, critically damped and underdamped.</li>
+<li>Critical damping returns fastest without overshoot, which is why instrument and door-closer damping targets it.</li>
+<li>Recast in standard form, the whole behaviour is captured by natural frequency \( \omega_n \) and damping ratio \( \zeta \).</li>
+<li>\( \omega_n \) sets how fast, \( \zeta \) sets the shape — and two numbers describe the entire system.</li>
+<li>That compression is why the same pair of parameters recurs in vibration, in circuits and in every first-cut control model.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 03 · Second-order equations: the homogeneous story · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>The quadratic formula</b> — the characteristic equation is a quadratic.</li><li><b>Complex numbers</b> — \(e^{i\omega t}=\cos\omega t+i\sin\omega t\).</li><li><b>Exponential solutions</b> — the ansatz \(x=e^{rt}\).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Characteristic eqn</td><td>\( mr^2+cr+k=0 \)</td><td>Roots set the whole response.</td></tr>
+<tr><td>Discriminant</td><td>\( \Delta=c^2-4mk \)</td><td>Sign selects the regime.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n=\sqrt{k/m} \)</td><td>Undamped oscillation rate.</td></tr>
+<tr><td>Damping ratio</td><td>\( \zeta=\frac{c}{2\sqrt{mk}} \)</td><td>\(<1\) under, \(=1\) critical, \(>1\) over.</td></tr>
+<tr><td>Critical damping</td><td>\( c_c=2\sqrt{mk} \)</td><td>Fastest return without overshoot.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 04 · Nonhomogeneous equations and forced response</p><h3><span class="sum-n">Lesson 04</span>Nonhomogeneous equations and forced response</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The general solution of a forced linear ODE is the homogeneous solution plus one particular solution — the structure theorem.</li>
+<li>The homogeneous part is the system's own behaviour; the particular part is its answer to the input.</li>
+<li>Undetermined coefficients guesses a particular solution of the same form as the forcing and solves for the constants.</li>
+<li>The homogeneous part decays and is the transient; the particular part persists and is the steady state.</li>
+<li>Under sinusoidal forcing the steady state is a sinusoid at the same frequency, differing in amplitude and phase.</li>
+<li>If the forcing matches a homogeneous solution the guess fails and must be multiplied by \( t \) — the algebraic signature of resonance.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 04 · Nonhomogeneous equations and forced response · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Homogeneous solutions</b> (Lesson 3) — \(x_h\) is half the answer.</li><li><b>Differentiating trial forms</b> — polynomials, exponentials, sinusoids.</li><li><b>Matching coefficients</b> — the algebra that fixes \(x_p\).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>General solution</td><td>\( x=x_h+x_p \)</td><td>Always: transient plus forced response.</td></tr>
+<tr><td>Particular solution</td><td>\( x_p \) matches \(f(t)\)</td><td>One solution capturing the forcing.</td></tr>
+<tr><td>Undetermined coeffs</td><td>guess same shape as \(f\)</td><td>\(f\) constant/poly/exp/sinusoid.</td></tr>
+<tr><td>Resonance rule</td><td>multiply guess by \(t\)</td><td>Trial already solves homogeneous eqn.</td></tr>
+<tr><td>Steady state</td><td>\( x_p \) as \(t\to\infty\)</td><td>Where a stable system settles.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 05 · Free and forced oscillations</p><h3><span class="sum-n">Lesson 05</span>Free and forced oscillations</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The mass-spring-damper is the equation dynamics keeps returning to, and every result here transfers to circuits and structures.</li>
+<li>Undamped, it oscillates forever at \( \omega_n=\sqrt{k/m} \); damping makes the ring decay.</li>
+<li>Forcing near \( \omega_n \) produces resonance, where amplitude is limited only by damping.</li>
+<li>Two defences exist: move the natural frequency away from the forcing, or add damping to cap the peak.</li>
+<li>Changing stiffness or mass moves the frequency; damping only limits the amplitude at it.</li>
+<li>Beats appear when two close frequencies interfere, producing a slow amplitude modulation — audible on machinery and diagnostic of two near-identical sources.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 05 · Free and forced oscillations · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Second-order homogeneous solutions</b> — the transient skeleton from Lesson 3.</li><li><b>Undetermined coefficients</b> — how the forced steady part is found (Lesson 4).</li><li><b>Trigonometric addition</b> — the source of the beat envelope.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Natural frequency</td><td>\( \omega_n=\sqrt{k/m} \)</td><td>Undamped ringing rate; set by mass and stiffness alone.</td></tr>
+<tr><td>Damped frequency</td><td>\( \omega_d=\omega_n\sqrt{1-\zeta^2} \)</td><td>Actual oscillation rate with damping present.</td></tr>
+<tr><td>Steady amplitude</td><td>\( X=\frac{F_0}{\sqrt{(k-m\omega^2)^2+(c\omega)^2}} \)</td><td>Size of the forced response after the transient.</td></tr>
+<tr><td>Resonance</td><td>\( \omega\to\omega_n \)</td><td>Amplitude peaks; the case to design away from.</td></tr>
+<tr><td>Beat frequency</td><td>\( |\omega_1-\omega_2| \)</td><td>Slow pulsing when two near-equal tones add.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 06 · Laplace transforms I</p><h3><span class="sum-n">Lesson 06</span>Laplace transforms I</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The Laplace transform converts a differential equation in \( t \) into an algebraic one in \( s \).</li>
+<li>The table is built from the defining integral, and a handful of entries covers most engineering work.</li>
+<li>Linearity lets a transform be assembled piece by piece.</li>
+<li>The derivative rule \( \mathcal{L}\{y'\}=sY(s)-y(0) \) is what makes the method work, and it absorbs the initial conditions automatically.</li>
+<li>The shifting theorems handle exponential decay and time delay, which is how dead time gets modelled.</li>
+<li>Discontinuous and impulsive inputs are handled cleanly, which is precisely where classical methods become awkward.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 06 · Laplace transforms I · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Improper integrals</b> — the transform is one, evaluated to \( \infty \).</li><li><b>Integration by parts</b> — how the \( t^n \) entries are derived.</li><li><b>Exponentials</b> — the kernel \( e^{-st} \) and the shifting theorem.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Definition</td><td>\( F(s)=\int_0^\infty e^{-st}f\,dt \)</td><td>The transform itself; rarely computed by hand after 2.</td></tr>
+<tr><td>Basic pairs</td><td>\( 1\!\to\!\tfrac1s,\ e^{at}\!\to\!\tfrac1{s-a},\ t^n\!\to\!\tfrac{n!}{s^{n+1}} \)</td><td>Look-up table for building \( F(s) \).</td></tr>
+<tr><td>Sinusoids</td><td>\( \cos\omega t\!\to\!\tfrac{s}{s^2+\omega^2},\ \sin\omega t\!\to\!\tfrac{\omega}{s^2+\omega^2} \)</td><td>Oscillatory terms.</td></tr>
+<tr><td>Derivative rule</td><td>\( \mathcal{L}\{f'\}=sF-f(0) \)</td><td>Turns an ODE into algebra; folds in initial data.</td></tr>
+<tr><td>First shift</td><td>\( \mathcal{L}\{e^{at}f\}=F(s-a) \)</td><td>Exponential-times-known-function, no new integral.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 07 · Laplace transforms II: solving problems</p><h3><span class="sum-n">Lesson 07</span>Laplace transforms II: solving problems</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The recipe is three steps: transform the equation, solve for \( Y(s) \) algebraically, invert back to the time domain.</li>
+<li>Partial fractions is the inversion engine — it breaks \( Y(s) \) into terms the table recognises.</li>
+<li>Distinct real roots, repeated roots and complex-conjugate pairs each have their own form, and complex pairs signal oscillation.</li>
+<li>The method earns its keep on problems with initial conditions, step or impulse inputs, and systems of equations.</li>
+<li>The denominator's roots are the poles, and they determine stability and speed on sight.</li>
+<li>Reading the answer means recognising which term is transient and which is steady state before evaluating anything.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 07 · Laplace transforms II: solving problems · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>The transform table and derivative rule</b> — the tools of Lesson 6.</li><li><b>Partial fractions</b> — algebra for splitting rational \( Y(s) \).</li><li><b>Initial-value problems</b> — the ODEs being solved (Lessons 1, 3).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Transform step</td><td>\( \mathcal{L}\{y''\}=s^2Y-sy(0)-y'(0) \)</td><td>Convert the ODE + initial data to algebra.</td></tr>
+<tr><td>Solve step</td><td>\( Y(s)=\dots \)</td><td>Rearrange for \( Y(s) \) — no calculus.</td></tr>
+<tr><td>Partial fractions</td><td>\( \frac{1}{s(s+a)}=\frac{1/a}{s}-\frac{1/a}{s+a} \)</td><td>Split \( Y(s) \) into invertible pieces.</td></tr>
+<tr><td>Inverse transform</td><td>\( \mathcal{L}^{-1}\{Y\}=y(t) \)</td><td>Read each piece back from the table.</td></tr>
+<tr><td>Unit step</td><td>\( u(t-a) \)</td><td>Switched-on / discontinuous forcing (extends the method).</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 08 · Systems of equations: the matrix view</p><h3><span class="sum-n">Lesson 08</span>Systems of equations: the matrix view</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A page of simultaneous equations becomes the single object \( A\mathbf{x}=\mathbf{b} \).</li>
+<li>The matrix is a transformation: it maps the unknown vector to the known one.</li>
+<li>A non-zero determinant means a unique solution exists.</li>
+<li>A zero determinant means the equations are not independent — physically, a mechanism, a redundant loop, or a missing constraint.</li>
+<li>The inverse solves the system formally, but elimination is what is used in practice.</li>
+<li>The matrix view scales: the same notation handles three equations or three thousand, which is what makes numerical methods possible at all.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 08 · Systems of equations: the matrix view · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Simultaneous equations</b> — the systems being repackaged.</li><li><b>Vectors</b> — the unknown and right-hand side as columns.</li><li><b>Arithmetic of rows and columns</b> — the dot products inside \( A\mathbf{x} \).</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Matrix equation</td><td>\( A\mathbf{x}=\mathbf{b} \)</td><td>Package any linear system as one object.</td></tr>
+<tr><td>Matrix–vector product</td><td>row\(_i\cdot\mathbf{x}=b_i\)</td><td>Apply or check a solution.</td></tr>
+<tr><td>Determinant (2×2)</td><td>\( \det A=ad-bc \)</td><td>Nonzero ⇒ unique solution; zero ⇒ singular.</td></tr>
+<tr><td>Inverse (2×2)</td><td>\( A^{-1}=\frac{1}{\det A}\begin{pmatrix}d&-b\\-c&a\end{pmatrix} \)</td><td>Closed-form solve \( \mathbf{x}=A^{-1}\mathbf{b} \).</td></tr>
+<tr><td>Singular</td><td>\( \det A=0 \)</td><td>No unique solution — rows dependent.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 09 · Matrices and linear systems</p><h3><span class="sum-n">Lesson 09</span>Matrices and linear systems</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Gaussian elimination is the universal method — it works whether or not an inverse exists, and it is what software actually does.</li>
+<li>Row operations reduce the system to upper triangular form, then back substitution finishes it.</li>
+<li>Pivots are the leading non-zero entries, and the number of them is the rank.</li>
+<li>Full rank means a unique solution; deficient rank means either no solution or infinitely many.</li>
+<li>Partial pivoting — swapping rows to use the largest available pivot — is what keeps the arithmetic numerically stable.</li>
+<li>Elimination is the engine underneath determinants, inverses and rank, so it is the one procedure worth being fluent in.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 09 · Matrices and linear systems · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Matrix form \( A\mathbf{x}=\mathbf{b} \)</b> — the object being reduced (Lesson 8).</li><li><b>Determinants</b> — the existence test elimination refines into rank.</li><li><b>Back-substitution</b> — solving a triangular system upward.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Row operations</td><td>swap · scale · add-multiple</td><td>Simplify a system without changing its solution.</td></tr>
+<tr><td>Upper triangular</td><td>zeros below the diagonal</td><td>Target form for back-substitution.</td></tr>
+<tr><td>Pivot</td><td>leading nonzero in a row</td><td>Used to eliminate entries below it.</td></tr>
+<tr><td>Rank</td><td>number of pivots</td><td>Count of independent equations; solvability.</td></tr>
+<tr><td>Partial pivoting</td><td>largest \(|\)pivot\(|\) first</td><td>Keeps the elimination numerically stable.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 10 · Eigenvalues and eigenvectors</p><h3><span class="sum-n">Lesson 10</span>Eigenvalues and eigenvectors</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>An eigenvector is a direction the matrix only stretches: \( A\mathbf{v}=\lambda\mathbf{v} \).</li>
+<li>Eigenvalues come from \( \det(A-\lambda I)=0 \), and each then yields its eigenvector from a singular system.</li>
+<li>Engineers compute them because they are a system's natural modes — vibration mode shapes, principal stresses, principal axes of inertia.</li>
+<li>Diagonalising decouples a coupled system into independent one-degree-of-freedom problems.</li>
+<li>The spectrum reads a system's fate: negative real parts decay, positive grow, imaginary parts oscillate.</li>
+<li>That is why stability analysis is an eigenvalue question in every field that uses it.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 10 · Eigenvalues and eigenvectors · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Matrix–vector products</b> — the action \( A\mathbf{v} \) (Lesson 8).</li><li><b>Determinants</b> — the singularity condition \( \det(A-\lambda I)=0 \).</li><li><b>The quadratic formula</b> — for the \( 2\times2 \) characteristic equation.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Eigenvalue relation</td><td>\( A\mathbf{v}=\lambda\mathbf{v} \)</td><td>Direction \(\mathbf{v}\) only scaled, by factor \(\lambda\).</td></tr>
+<tr><td>Characteristic equation</td><td>\( \det(A-\lambda I)=0 \)</td><td>Solve for the eigenvalues.</td></tr>
+<tr><td>2×2 shortcut</td><td>\( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \)</td><td>Fast eigenvalues; trace &amp; determinant checks.</td></tr>
+<tr><td>Eigenvector</td><td>\( (A-\lambda I)\mathbf{v}=\mathbf{0} \)</td><td>The direction belonging to each \(\lambda\).</td></tr>
+<tr><td>Stability of \( \mathbf{x}'=A\mathbf{x} \)</td><td>sign of \( \operatorname{Re}\lambda \)</td><td>All negative ⇒ stable; any positive ⇒ unstable.</td></tr></tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 207 · Lesson 11 · Numerical solution of differential equations</p><h3><span class="sum-n">Lesson 11</span>Numerical solution of differential equations</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Most real ODEs have no closed-form solution, so numerical integration is the normal case rather than the fallback.</li>
+<li>Euler's method steps along the slope at the current point; it is simple and its error accumulates as \( O(h) \).</li>
+<li>Heun's method averages the slope at both ends of the step and improves the order to \( O(h^2) \).</li>
+<li>Fourth-order Runge–Kutta samples four slopes per step for \( O(h^4) \) accuracy, which is why it is the default workhorse.</li>
+<li>Smaller steps cut truncation error but cost more evaluations and eventually accumulate round-off — accuracy is traded against cost.</li>
+<li>Stability is separate from accuracy: a stiff system can go numerically unstable at a step size that looks perfectly reasonable, which is what implicit methods exist to fix.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 207 · Lesson 11 · Numerical solution of differential equations · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><ul class="plain"><li><b>Derivative as slope</b> — Euler follows the tangent line.</li><li><b>Initial-value problems</b> — a starting point plus \( y'=f(x,y) \).</li><li><b>The exponential \( e^x \)</b> — the exact answer used to gauge error.</li></ul></div><div class="sum-block sum-gloss"><h4>Glossary</h4><div class="glossary-wrap"><table class="glossary"><thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Euler's method</td><td>\( y_{n+1}=y_n+h\,f(x_n,y_n) \)</td><td>Simplest step; first-order accuracy.</td></tr>
+<tr><td>Step size</td><td>\( h \)</td><td>Smaller ⇒ less truncation, more work.</td></tr>
+<tr><td>Improved Euler (Heun)</td><td>average of start &amp; predicted-end slope</td><td>Second-order; cheap accuracy gain.</td></tr>
+<tr><td>Runge–Kutta 4</td><td>4 slope samples per step</td><td>Fourth-order; the standard workhorse.</td></tr>
+<tr><td>Convergence check</td><td>halve \(h\), re-run</td><td>Confirm the answer has stabilised.</td></tr></tbody></table></div></div></div></section>
+</article>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

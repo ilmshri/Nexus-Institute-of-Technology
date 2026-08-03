@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Limit gauging and Taylor's principle — Metrology &amp; Quality Control — MechEd</title>
+<meta name="description" content="Limits and fits recalled from the drawing course, then verified the shop-floor way: GO/NO-GO limit gauges designed with gauge-maker's tolerance. Taylo">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/metrology/5">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/metrology/05-limit-gauging-and-taylor-s-principle.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MET 204 · Metrology &amp; Quality Control</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-fundamentals.html" class="ol" data-key="y2s2/metrology/1"><span class="tick"></span><span>01 · Measurement fundamentals</span></a><a href="02-dimensional-instruments.html" class="ol" data-key="y2s2/metrology/2"><span class="tick"></span><span>02 · Dimensional instruments</span></a><a href="03-uncertainty-and-calibration.html" class="ol" data-key="y2s2/metrology/3"><span class="tick"></span><span>03 · Uncertainty and calibration</span></a><a href="04-form-fits-and-gd-t-verification.html" class="ol" data-key="y2s2/metrology/4"><span class="tick"></span><span>04 · Form, fits, and GD&amp;T verification</span></a><a href="05-limit-gauging-and-taylor-s-principle.html" class="ol cur" data-key="y2s2/metrology/5"><span class="tick"></span><span>05 · Limit gauging and Taylor's principle</span></a><a href="06-surface-texture-measurement.html" class="ol" data-key="y2s2/metrology/6"><span class="tick"></span><span>06 · Surface texture measurement</span></a><a href="07-statistical-process-control-i.html" class="ol" data-key="y2s2/metrology/7"><span class="tick"></span><span>07 · Statistical process control I</span></a><a href="08-statistical-process-control-ii-and-capability.html" class="ol" data-key="y2s2/metrology/8"><span class="tick"></span><span>08 · Statistical process control II and capability</span></a><a href="09-acceptance-sampling.html" class="ol" data-key="y2s2/metrology/9"><span class="tick"></span><span>09 · Acceptance sampling</span></a><a href="10-gauge-r-r-and-measurement-systems.html" class="ol" data-key="y2s2/metrology/10"><span class="tick"></span><span>10 · Gauge R&amp;R and measurement systems</span></a><a href="11-quality-systems-and-audits.html" class="ol" data-key="y2s2/metrology/11"><span class="tick"></span><span>11 · Quality systems and audits</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MET 204</a> /
+<span>Lesson 05 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MET 204 · Lesson 05 of 11 · Year 2 · Semester 2</p>
+  <h1>Limit gauging and Taylor's principle</h1>
+  <p class="sub">Limits and fits recalled from the drawing course, then verified the shop-floor way: GO/NO-GO limit gauges designed with gauge-maker's tolerance. Taylor's principle — why the GO gauge must check the whole feature while the NO-GO checks point by point. Where attribute gauging beats measurement, and where it hides trouble.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/5">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/nfoUdm9WdE4" title="Go &amp; No-Go Gauge (Animation)" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Go &amp; No-Go Gauge (Animation) <span class="src">MT Academy English</span></figcaption></figure></div><div class="vh-bar"><span class="n">Go &amp; No-Go Gauge (Animation)</span><span class="c">MT ACADEMY ENGLISH</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why must a GO gauge check the whole feature while the NO-GO checks point by point?</li><li>Gauge-maker's tolerance sits inside the work tolerance: who does that protect?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A horizontal bar chart of size, in micrometres above 25.000 millimetres. The top bar is the hole's 21 micrometre work tolerance. Below it a short bar shows the GO plug gauge occupying 1.05 to 3.15 micrometres, and another shows the NO-GO plug gauge occupying 18.9 to 21.0. The bottom bar shows what is left: 15.75 micrometres are accepted whatever gauge is issued, and the two end slivers totalling 5.25 micrometres are lost to gauge tolerance and wear allowance."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Gauge tolerance is paid for out of the shop's tolerance</text><path d="M112.7 60 L112.7 244" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><path d="M484.6 60 L484.6 244" stroke="#5B6672" stroke-width="1" stroke-dasharray="3 3" fill="none"/><rect x="112.7" y="70" width="371.9" height="16" fill="#14181f14" stroke="#14181F" stroke-width="1.4"/><text x="88" y="82" text-anchor="end" fill="#14181F" font-size="11">hole H7</text><text x="298.6" y="65" text-anchor="middle" fill="#5B6672" font-size="10">work tolerance 21.00 &#181;m</text><rect x="131.3" y="116" width="37.2" height="16" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.4"/><text x="88" y="128" text-anchor="end" fill="#3a6ea5" font-size="11">GO plug</text><text x="131.3" y="111" fill="#3a6ea5" font-size="10">1.05 to 3.15 &#181;m</text><rect x="447.4" y="162" width="37.2" height="16" fill="#c2820f33" stroke="#c2820f" stroke-width="1.4"/><text x="88" y="174" text-anchor="end" fill="#c2820f" font-size="11">NO-GO plug</text><text x="474.6" y="157" text-anchor="end" fill="#c2820f" font-size="10">18.90 to 21.00 &#181;m</text><rect x="112.7" y="208" width="55.8" height="16" fill="#9c2f2f33" stroke="#9c2f2f" stroke-width="1.4"/><rect x="447.4" y="208" width="37.2" height="16" fill="#9c2f2f33" stroke="#9c2f2f" stroke-width="1.4"/><rect x="168.5" y="208" width="278.9" height="16" fill="#1f7a5c33" stroke="#1f7a5c" stroke-width="1.6"/><text x="88" y="220" text-anchor="end" fill="#1f7a5c" font-size="11">accepted</text><text x="307.5" y="203" text-anchor="middle" fill="#1f7a5c" font-size="10">15.75 &#181;m survives &mdash; 75% of 21.00</text><path d="M95 244 L520 244" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M112.7 244 L112.7 248" stroke="#5B6672" stroke-width="1" fill="none"/><text x="112.7" y="260" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M201.2 244 L201.2 248" stroke="#5B6672" stroke-width="1" fill="none"/><text x="201.2" y="260" text-anchor="middle" fill="#5B6672" font-size="11">5</text><path d="M289.8 244 L289.8 248" stroke="#5B6672" stroke-width="1" fill="none"/><text x="289.8" y="260" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M378.3 244 L378.3 248" stroke="#5B6672" stroke-width="1" fill="none"/><text x="378.3" y="260" text-anchor="middle" fill="#5B6672" font-size="11">15</text><path d="M466.9 244 L466.9 248" stroke="#5B6672" stroke-width="1" fill="none"/><text x="466.9" y="260" text-anchor="middle" fill="#5B6672" font-size="11">20</text><text x="307.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">size, micrometres above 25.000 mm</text></svg><figcaption>The hole is specified 25.000 / 25.021, so the shop is given 21 &#181;m. The gauges are made to 10% of that, 2.1 &#181;m each, and the GO plug carries a further 5% &mdash; 1.05 &#181;m &mdash; of wear allowance; both are disposed <em>inside</em> the work zone so that no gauge, new or worn to its limit, can ever accept a bad hole. The price is paid entirely by the shop: a hole is certain to be accepted only between 25.00315 and 25.0189, which is 15.75 of the 21 &#181;m it was nominally given. A quarter of the tolerance buys the customer the guarantee.</figcaption></figure>
+<h3>&#167;1 &middot; From a printed limit to a piece of steel</h3>
+<p>A drawing states a size and two limits. Engineering Drawing &amp; CAD wrote them; this lesson
+checks them. Take the standard clearance fit \( \varnothing25\,\mathrm{H7/g6} \): the hole runs
+25.000 to 25.021 mm, the shaft 24.980 to 24.993 mm, so the assembly clears by between 0.007 and
+0.041 mm. Two limits per feature, four numbers, and every one of them has to be verified on parts
+arriving faster than anyone can measure them.</p>
+<p>The oldest answer is still the fastest: build the limits into metal. A <b>limit gauge</b> is a
+piece of hardened steel made to one limit of the feature, and the inspection is whether it fits.
+For the hole above, a <b>GO plug gauge</b> is made at 25.000 &mdash; the smallest hole allowed
+&mdash; and must enter. A <b>NO-GO plug gauge</b> is made at 25.021, the largest hole allowed, and
+must not. A hole that takes the first and refuses the second is inside its limits, and no one has
+read a scale, interpolated a vernier, or written a number down.</p>
+<div class="keybox"><span class="tag">Key idea &mdash; which limit each gauge embodies</span>
+<p>\[ \text{GO} \to \text{MMC},\qquad \text{NO-GO} \to \text{LMC} \]</p>
+<p><b>Maximum material condition</b> is the limit at which the feature contains the most material:
+the <em>smallest</em> hole, the <em>largest</em> shaft. The GO gauge always embodies MMC, so for a
+shaft it is a <b>ring gauge</b> at 24.993 that must pass over, and the NO-GO ring at 24.980 must
+not.</p></div>
+<p>What a limit gauge returns is an <b>attribute</b> &mdash; pass or fail &mdash; where a
+micrometer returns a <b>variable</b>, a number. That difference is the whole argument of
+&#167;4, and it is worth holding in mind from the start: everything the gauge gains in speed it
+gains by throwing information away.</p>
+
+<h3>&#167;2 &middot; Taylor's principle, and the bore that measures perfectly</h3>
+<p>Making the two gauges to the two limits is not sufficient, and the rule that completes it is
+<b>Taylor's principle</b>, stated in 1905 and still the reason gauges are shaped the way they
+are.</p>
+<div class="keybox"><span class="tag">Key rule &mdash; Taylor's principle</span>
+<p>The <b>GO</b> gauge checks the maximum-material limit of <em>all</em> dimensions of the feature
+<em>simultaneously</em>, over its <em>full length</em>. The <b>NO-GO</b> gauge checks the
+least-material limit of <em>one</em> dimension at a time, at <em>individual cross-sections</em>.</p>
+<p>So a GO plug is a full-length cylinder; a NO-GO plug is short, and ideally a two-point contact
+rather than a full circle.</p></div>
+<p>The reason is not symmetry, it is function. The MMC limit exists to guarantee <b>assembly</b>,
+and assembly is a property of the whole feature at once &mdash; the mating shaft has to pass along
+the entire bore, not through each section separately. The LMC limit exists to guarantee that
+material, wall thickness, or contact area has not been lost, and those are <em>local</em>
+properties: a hole that is oversize anywhere is defective there, whatever the rest of it does.</p>
+<p>Here is what that buys. A bore is bored 25.010 mm in diameter everywhere &mdash; comfortably
+inside 25.000 / 25.021 &mdash; but its axis is bowed by 0.008 mm over its length, because the part
+moved in the fixture. Every two-point measurement anyone can take reads 25.010 and passes. But the
+largest <em>straight</em> cylinder that can pass through a bore whose axis wanders laterally by
+\( \delta \) is smaller than the local diameter:</p>
+<div class="keybox"><span class="tag">Key relation &mdash; what a bowed bore will actually accept</span>
+<p>\[ d_{\max}=D-2\delta \]</p>
+<p>The mating part must clear the wander on both sides, so the bow costs twice its own value in
+usable diameter. The same algebra covers a lobed or tapered bore: what assembles is the smallest
+enclosed straight cylinder, not the smallest measured diameter.</p></div>
+<p>For this bore, \( d_{\max}=25.010-2(0.008)=24.994\ \mathrm{mm} \). The full-form GO plug at
+25.000 will not enter, and it is right not to: a shaft at its own MMC of 24.993 would be left with
+0.001 mm of clearance where the fit was designed for at least 0.007. A two-point instrument cannot
+see this at any number of sections, because the defect is not in any section &mdash; it is in the
+relationship between them. That is Taylor's principle earning its keep, and it is also why
+shortening a worn GO plug into a stubby pin, which shops do, quietly destroys the only check that
+was catching this class of fault.</p>
+<p>The converse matters too. If the NO-GO plug were also full-form it would jam in a bore that was
+locally oversize but slightly bent, and the inspector would read that jam as a pass. Making it
+short and two-point is what lets it find a single oversize section anywhere along the length.</p>
+
+<h3>&#167;3 &middot; The gauge is a manufactured part too</h3>
+<p>A gauge made to 25.000 mm is a drawing instruction, not an object. The object is made to some
+tolerance of its own, called the <b>gauge-maker's tolerance</b>, and it wears in service. Both have
+to be paid for out of somebody's budget, and the convention decides whose.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; gauge tolerance and wear allowance</span>
+<p>\[ t_g=0.10\,T,\qquad w=0.05\,T,\qquad
+\text{guaranteed band}=T-(t_g+w)-t_g=0.75\,T \]</p>
+<p>Both are disposed <em>inside</em> the work tolerance zone \( T \). The wear allowance is applied
+to the GO gauge only, because the GO gauge enters every part made and the NO-GO gauge, by design,
+enters almost none.</p></div>
+<p>Work the hole through. \( T=0.021 \) mm, so \( t_g=0.0021 \) and \( w=0.00105 \) mm. The GO plug
+is made 25.00105 to 25.00315: even at its smallest it is above the smallest permitted hole, so no
+GO plug can ever admit an undersize hole, and as it wears down it has 1.05 &#181;m of life before
+it reaches 25.000 and must be withdrawn. The NO-GO plug is made 25.0189 to 25.0210: even at its
+largest it is no bigger than the largest permitted hole, so no NO-GO plug can ever fail to catch an
+oversize one.</p>
+<p>Now read the diagram again. A hole is <em>certain</em> to be accepted only between 25.00315 and
+25.0189 &mdash; 15.75 &#181;m of the 21 the shop was given, exactly 75%. The other quarter has been
+transferred, silently, from the manufacturer to the customer. That is the answer to the question of
+who unilateral disposition protects: the customer, completely, and at the shop's expense. The
+alternative &mdash; straddling the gauge tolerance across the work limit, which some standards
+permit for general work &mdash; hands the tolerance back and admits parts up to \( t_g/2 \) outside
+the limit. Neither is wrong; they are different answers to who carries the risk, and the drawing or
+the contract should say which is in force.</p>
+<p>Two consequences follow for practice. The gauge belongs on the calibration schedule of Lesson 3
+like any other instrument, and its interval is set by how many parts pass through it, not by the
+calendar. And the wear allowance is a <em>life budget</em>, not a licence: it tells you the gauge
+has 1.05 &#181;m to spend, which is worth knowing only if someone is measuring how much is
+left.</p>
+
+<h3>&#167;4 &middot; What gauging wins, and what it hides</h3>
+<p>Attribute gauging is not a poor relation of measurement. It is faster than any instrument, needs
+no interpretation, cannot be misread, works at the machine in the operator's hands, and makes
+100% inspection affordable where measuring every part would not be. And for a fit, a full-form GO
+gauge is a <em>more faithful</em> test of function than a set of numbers, because it is a physical
+model of the mating part rather than an inference about it.</p>
+<p>What it hides is everything between the limits. Consider a bore process on target, centred at
+25.0105 mm with a standard deviation of 3.5 &#181;m, so that the limits sit three standard
+deviations out. Its natural reject rate is 0.27%: about one part in 370. Let the mean drift by one
+standard deviation and the rate becomes 2.28%, one in 44. Let it drift by two and it is 15.87%,
+about one in six. The gauge reports 99.7%, then 97.7%, then 84.1% pass &mdash; and reports nothing
+at all in between, because a verdict has no units. The first clear signal that the process moved is
+scrap arriving in quantity, by which time everything made since the drift began is suspect.</p>
+<p>A measurement would have said it sooner and said it quantitatively. Ten measured parts locate
+the mean to a standard error of \( 3.5/\sqrt{10}=1.11\ \mu\mathrm{m} \), so a 3.5 &#181;m shift
+stands out from a sample of ten taken before a single part failed anything. The gauge cannot do
+this at any sample size, because it never produces a number to average.</p>
+<p>There is a second, quieter hazard. A gauge shifts its own accept limit as it wears, and it does
+so in the direction of leniency &mdash; a worn GO plug enters holes it should refuse. Nothing in
+the gauging result reveals this; the parts simply keep passing. The instrument that is checking
+everything is the one thing nothing is checking, unless someone has scheduled it.</p>
+<p>The working rule that comes out of all this is short. <b>Gauge for the verdict, measure for the
+process.</b> Use limit gauges where the question is whether this part ships, and measurements
+where the question is where the process is going &mdash; which, over a shift, is nearly always the
+more valuable question.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Limits, fits, and hole-basis notation</b> (Engineering Drawing &amp; CAD L6) &mdash; where
+\( \varnothing25\,\mathrm{H7/g6} \) and its four limits come from.</li>
+<li><b>Material condition modifiers</b> (Lesson 4, and Engineering Drawing &amp; CAD L7) &mdash;
+MMC and LMC, which the two gauges embody.</li>
+<li><b>Two-point measurement and its blind spots</b> (Lesson 2) &mdash; the micrometer that reads
+25.010 all the way along a bent bore.</li>
+<li><b>Calibration intervals and out-of-tolerance investigation</b> (Lesson 3) &mdash; a gauge is a
+controlled instrument, and wear is its drift.</li>
+<li><b>The normal distribution and tail areas</b> (Engineering Statistics L4) &mdash; used to turn
+a process mean and standard deviation into a reject rate.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Value or rule</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Limit gauge</td><td>attribute, pass/fail</td><td>Verifying a limit without reading a scale.</td></tr>
+<tr><td>GO gauge</td><td>made to MMC</td><td>Smallest hole / largest shaft; must enter or pass over.</td></tr>
+<tr><td>NO-GO gauge</td><td>made to LMC</td><td>Largest hole / smallest shaft; must not enter or pass over.</td></tr>
+<tr><td>Taylor's principle</td><td>GO full-form, NO-GO point-by-point</td><td>Shaping a gauge so it tests the function the limit protects.</td></tr>
+<tr><td>Effective bore</td><td>\( d_{\max}=D-2\delta \)</td><td>What a bowed or lobed bore will actually accept.</td></tr>
+<tr><td>Gauge-maker's tolerance</td><td>\( t_g=0.10\,T \)</td><td>The gauge's own tolerance, disposed inside the work zone.</td></tr>
+<tr><td>Wear allowance</td><td>\( w=0.05\,T \)</td><td>GO gauge only; sets its service life, not its licence.</td></tr>
+<tr><td>Guaranteed band</td><td>\( 0.75\,T \)</td><td>What the shop can rely on after gauge tolerance and wear.</td></tr>
+<tr><td>Unilateral disposition</td><td>gauge tolerance inside \( T \)</td><td>Protects the customer completely, at the shop's cost.</td></tr>
+<tr><td>Attribute vs variable</td><td>verdict vs number</td><td>A gauge says whether; only a measurement says where.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Design the plug gauge set, twice, in two unit systems</b></p>
+<p><b>Problem.</b> A hole is specified 25.000 / 25.021 mm. Using a gauge-maker's tolerance of 10%
+of the work tolerance and a wear allowance of 5%, both disposed inside the work tolerance zone,
+give the limits of the GO and NO-GO plug gauges. State the band of hole sizes that is certain to be
+accepted whichever gauges the shop is issued, and what fraction of the work tolerance that is. Then
+repeat the design for a hole specified 1.0000 / 1.0008 in.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The work tolerance is
+\( T = 25.021-25.000 = 0.021\ \mathrm{mm} \), so \( t_g = 0.10T = 0.0021 \) mm and
+\( w = 0.05T = 0.00105 \) mm.</p>
+<p>(2) The GO plug embodies MMC, the smallest hole, 25.000. Its wear allowance is placed
+<em>into</em> the hole's material side so the gauge starts oversize and wears toward the limit:
+low limit \( 25.000+0.00105 = 25.00105 \), high limit \( 25.00105+0.0021 = 25.00315 \). It is
+withdrawn from service when it wears back to 25.000.</p>
+<p>(3) The NO-GO plug embodies LMC, the largest hole, 25.021, and takes no wear allowance because
+it does not enter parts. Its tolerance is disposed inward: 25.0189 to 25.0210.</p>
+<p>(4) A hole is certainly accepted if it admits the largest GO plug and refuses the smallest
+NO-GO plug, so between 25.00315 and 25.0189: a band of
+\( 25.0189-25.00315 = 0.01575\ \mathrm{mm} = 15.75\ \mu\mathrm{m} \).</p>
+<p>(5) \( 0.01575/0.021 = 0.75 \), so 75% of the work tolerance survives. The 25% lost is
+\( t_g + w \) at the GO end and \( t_g \) at the NO-GO end &mdash; \( 10+5+10 \) per cent.</p>
+<p>(6) In inches: \( T = 0.0008 \) in, \( t_g = 0.00008 \), \( w = 0.00004 \). GO plug
+1.00004 / 1.00012 in; NO-GO plug 1.00072 / 1.00080 in; guaranteed band
+\( 1.00072-1.00012 = 0.00060 \) in, again exactly 75%.</p>
+<p><b>Answer:</b> GO 25.00105 / 25.00315 mm, NO-GO 25.0189 / 25.0210 mm, guaranteed band
+15.75 &#181;m = 75% of \( T \); in inches GO 1.00004 / 1.00012, NO-GO 1.00072 / 1.00080, band
+0.00060 in = 75%.
+<b>Sanity check:</b> the 75% is a property of the two percentages, not of the size or the unit
+&mdash; which is why the inch design lands on the same fraction. Note the direction of every
+disposition: each gauge limit was moved so that a gauge at the worst end of its own tolerance still
+cannot accept a bad hole. Reverse either one and the guarantee inverts &mdash; the gauge set would
+then be capable of passing a hole outside its limits, which is the one thing a limit gauge exists
+to prevent.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>The bore that measures perfectly and will not assemble</b></p>
+<p><b>Problem.</b> A bore for the \( \varnothing25\,\mathrm{H7/g6} \) fit measures 25.010 mm at
+every section, but its axis is bowed 0.008 mm off straight. Find the largest straight cylinder that
+will pass through it. Give the verdict from a full-form GO plug gauge at 25.000 and from a
+two-point bore micrometer, and find the clearance left on a shaft at its own MMC. Express the bow
+in inches and in shop &quot;tenths&quot;.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The mating cylinder must clear the wander on both sides,
+so \( d_{\max}=D-2\delta = 25.010-2(0.008) = 24.994\ \mathrm{mm} \).</p>
+<p>(2) The GO plug is 25.000 mm and \( 24.994 < 25.000 \), so it will not enter: the bore is
+<b>rejected</b>.</p>
+<p>(3) The bore micrometer reads 25.010 at every section, and
+\( 25.000 < 25.010 < 25.021 \), so on that evidence the bore <b>passes</b> &mdash; at any number of
+sections, because the defect is between sections, not in one.</p>
+<p>(4) The shaft at MMC is its largest permitted size, 24.993 mm. Clearance is therefore
+\( 24.994-24.993 = 0.001\ \mathrm{mm} \), against a design minimum of
+\( 25.000-24.993 = 0.007\ \mathrm{mm} \) &mdash; a seventh of what the fit called for.</p>
+<p>(5) \( 0.008\ \mathrm{mm}\div25.4 = 0.000315\ \mathrm{in} \), that is 3.15 tenths.</p>
+<p><b>Answer:</b> 24.994 mm effective; GO plug rejects, two-point micrometer passes; 0.001 mm
+clearance instead of 0.007; the bow is 0.000315 in (3.15 tenths).
+<b>Sanity check:</b> the two verdicts disagree and the gauge is the one that is right, which is the
+whole content of Taylor's principle &mdash; the GO gauge is a physical model of the mating shaft,
+and the micrometer is an inference about sections. Note the factor of two: a 0.008 mm bow costs
+0.016 mm of usable diameter, so a bow well inside the tolerance can eat the fit entirely. Note also
+what a shortened, worn-down GO plug would have done here: a stubby pin passes a bent bore easily,
+and the shop would have lost the only check that saw the fault.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>How far can a process drift before the gauge notices?</b></p>
+<p><b>Problem.</b> A bore process is normally distributed with a standard deviation of 3.5 &#181;m
+and is centred in the 25.000 / 25.021 mm tolerance. Find its reject rate when centred, after the
+mean drifts by one standard deviation, and after two. State what a GO/NO-GO gauge reports at each
+stage, and find the standard error of the mean of ten measured parts.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The centre is
+\( (25.000+25.021)/2 = 25.0105 \) mm and the half-width is 0.0105 mm, which is
+\( 0.0105/0.0035 = 3.0 \) standard deviations. Centred, the reject rate is
+\( 2\,\Phi(-3) = 2(0.00135) = 0.0027 \), that is <b>0.27%</b>, one part in 370.</p>
+<p>(2) Drifted by \( 1\sigma \), the mean is 25.014. The upper tail is
+\( z=(25.021-25.014)/0.0035 = 2.0 \rightarrow 0.0228 \); the lower tail is at \( z=4.0 \), worth
+0.00003. Total <b>2.28%</b>, one in 44.</p>
+<p>(3) Drifted by \( 2\sigma \), the mean is 25.0175. The upper tail is
+\( z=1.0 \rightarrow 0.1587 \); the lower is negligible. Total <b>15.87%</b>, about one in six.</p>
+<p>(4) The gauge reports 99.73%, then 97.72%, then 84.13% pass. It reports nothing else, because a
+pass/fail verdict carries no units and no position within the limits.</p>
+<p>(5) \( \mathrm{SE} = \sigma/\sqrt{n} = 0.0035/\sqrt{10} = 0.00111\ \mathrm{mm}
+= 1.11\ \mu\mathrm{m} \).</p>
+<p><b>Answer:</b> 0.27%, 2.28%, 15.87%; the gauge shows 99.73 / 97.72 / 84.13 per cent pass and
+nothing more; ten measured parts locate the mean to &#177;1.11 &#181;m.
+<b>Sanity check:</b> the drift that eventually produced one reject in six was 7 &#181;m, and ten
+measured parts would have resolved it to about 1 &#181;m &mdash; visible long before any part
+failed. That is the trade the gauge makes: it is faster per part and blind between the limits, so
+it answers &quot;does this ship?&quot; and cannot answer &quot;where is the process going?&quot;.
+Note also that the reject rate rose almost sixty-fold for a drift of two standard deviations, so
+the transition from &quot;everything passes&quot; to &quot;a bin of scrap&quot; is abrupt, which is
+exactly what makes gauge-only inspection feel like a sudden failure rather than a slow one.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>A GO plug gauge for a hole specified 25.000 / 25.021 mm is made nominally to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>25.021 mm, the largest permitted hole</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>25.000 mm, the smallest permitted hole</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>25.0105 mm, the middle of the tolerance</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>whatever the mating shaft measures</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The GO gauge always embodies maximum material condition, and for a hole that is
+the <em>smallest</em> permitted size &mdash; most material left. It must enter every acceptable
+hole, so it has to be as small as the smallest one allowed. For a shaft, MMC is the largest size,
+so the GO ring gauge is made to the shaft's upper limit instead.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Under Taylor's principle the NO-GO gauge should be</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a full-length cylinder, like the GO gauge</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>short and ideally two-point, checking one section at a time</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>made to the same size as the GO gauge but hardened differently</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>used only after the part is assembled</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The least-material limit protects local properties &mdash; wall thickness,
+contact area &mdash; so a hole that is oversize anywhere is defective there. A short, two-point
+NO-GO finds a single oversize section. A full-form NO-GO would jam in a bore that was locally
+oversize but slightly bent, and the inspector would read the jam as a pass.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>The GO gauge must check the whole feature at once because the limit it embodies
+protects</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>wall thickness</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>assembly, which is a property of the whole feature</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>surface finish</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the gauge's own service life</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>MMC exists so that the mating part goes together, and the mating part has to
+pass along the entire feature rather than through each section separately. That is why the GO gauge
+is a full-form physical model of the mating part. LMC, by contrast, protects local material, which
+is why its gauge is local.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A bore measures 25.010 mm at every section but its axis is bowed 0.008 mm. The
+largest straight cylinder that will pass through it is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>25.010 mm</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>25.002 mm</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>24.994 mm</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>24.986 mm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( d_{\max}=D-2\delta = 25.010-0.016 = 24.994\ \mathrm{mm} \). The mating part
+must clear the wander on both sides, so a bow costs twice its own value in usable diameter. The
+common slip is subtracting \( \delta \) once and getting 25.002, which would wrongly pass the bore
+against a 25.000 GO plug.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Gauge-maker's tolerance disposed entirely inside the work tolerance zone protects</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the manufacturer, by widening the accepted band</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the customer, by making it impossible for any gauge to accept a part outside its limits</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>neither party; it is a drafting convention only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the gauge, by reducing its wear rate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Placing the gauge's own tolerance inside the work zone means that a gauge at
+the worst end of its tolerance still cannot admit a bad part &mdash; the guarantee is complete, and
+the shop pays for it in lost tolerance. Straddling the work limit instead hands the tolerance back
+and admits parts up to half the gauge tolerance outside the limit. Both are used; the drawing or
+the contract should say which.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>A wear allowance is applied to</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>both gauges equally</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>the NO-GO gauge only</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>the GO gauge only</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>neither, once the gauge is hardened</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The GO gauge enters every part made and wears accordingly; the NO-GO gauge, by
+design, enters almost none. The allowance is placed so the GO gauge starts on the safe side and
+wears <em>toward</em> the work limit, at which point it is withdrawn. It is a service-life budget,
+not permission to keep using a gauge past the limit.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>With gauge tolerance at 10% of the work tolerance and a 5% wear allowance, both
+disposed inward, the band of sizes certain to be accepted is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\( 0.90\,T \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( 0.85\,T \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\( 0.75\,T \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( 0.70\,T \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The GO end consumes \( t_g + w = 15\% \) and the NO-GO end consumes
+\( t_g = 10\% \), so \( 25\% \) is lost and \( 0.75\,T \) survives. On the 21 &#181;m hole that is
+15.75 &#181;m. The fraction depends only on the two percentages, so it is the same in millimetres
+or inches and at any nominal size.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A process gauged GO/NO-GO passes essentially everything for weeks, then rejects about
+one part in six overnight. The most likely explanation is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the gauge suddenly broke</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the mean had been drifting the whole time, and a gauge shows only crossings, not the drift</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the tolerance was changed without notice</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the operator began measuring more carefully</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A two-standard-deviation drift takes the reject rate from 0.27% to 15.87% while
+the gauge reports 99.7% then 84.1% pass &mdash; and reports nothing in between. The abruptness is
+an artefact of attribute inspection, not of the process, which moved gradually. Ten measured parts
+would have located the mean to about 1 &#181;m and shown the drift before anything failed.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the gauges that were replaced with a better instrument.</b> A machine
+shop making \( \varnothing25\,\mathrm{H7} \) bores retired its plug gauge sets in favour of a
+digital bore micrometer, on the reasonable-sounding argument that a number beats a pass. Bore
+inspection records improved immediately: every part measured between 25.005 and 25.015, well inside
+25.000 / 25.021, and the records showed it. Assembly rejects rose over the following weeks, with
+shafts that would not enter bores the paperwork said were correct.</p>
+<p>The bores were bowed. A part that shifts in the fixture during boring produces an axis that
+wanders while the local diameter stays constant, and a two-point instrument is blind to it by
+construction &mdash; it measures across a section and the defect is between sections. A bore
+reading 25.010 everywhere with a 0.008 mm bow admits a straight cylinder of only
+\( 25.010-2(0.008)=24.994\ \mathrm{mm} \). Against a shaft at its MMC of 24.993 that leaves 0.001 mm
+where the fit was designed for at least 0.007, so the parts assembled by force or not at all. The
+full-form GO plug had been rejecting these bores all along, and its verdict was discarded as less
+informative than a number.</p>
+<p>Two practices follow. The GO gauge is not a crude substitute for measurement &mdash; it is a
+physical model of the mating part, and for anything that has to assemble it tests a property no set
+of sectional measurements contains. Where variable data is genuinely wanted for process control,
+the answer is to measure <em>and</em> gauge, not to swap one for the other. And when an inspection
+change is followed by more downstream failures, the change is the first suspect, however much
+better the new records look: the records improved here precisely because the new method could not
+see the defect.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(2\\ \\mathrm{kPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(13.79\\ \\mathrm{psi}\\)", "\\(0.2901\\ \\mathrm{psi}\\)", "\\(2.901\\ \\mathrm{psi}\\)", "\\(0.02901\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{kPa} = 0.145\\ \\mathrm{psi}\\): \\(2 \\times 0.145 = 0.2901\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(20\ \mathrm{kPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(137.9\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(2.901\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(29.01\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.2901\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kPa} = 0.145\ \mathrm{psi}\): \(20 \times 0.145 = 2.901\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(3\\ \\mathrm{kW}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(40.23\\ \\mathrm{hp}\\)", "\\(2.237\\ \\mathrm{hp}\\)", "\\(4.023\\ \\mathrm{hp}\\)", "\\(0.4023\\ \\mathrm{hp}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{kW} = 1.341\\ \\mathrm{hp}\\): \\(3 \\times 1.341 = 4.023\\ \\mathrm{hp}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(45\ \mathrm{kW}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(603.5\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(33.56\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(60.35\ \mathrm{hp}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(6.035\ \mathrm{hp}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{kW} = 1.341\ \mathrm{hp}\): \(45 \times 1.341 = 60.35\ \mathrm{hp}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL8759773W" target="_blank" rel="noopener">Fundamentals of Dimensional Metrology — Dotson</a></li><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Metrology</p>
+  <ul class="plain small"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="04-form-fits-and-gd-t-verification.html">← 04 · Form, fits, and GD&amp;T verification</a><a href="index.html">كل الدروس · MET 204</a><a href="06-surface-texture-measurement.html">06 · Surface texture measurement →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Sheet-metal cutting operations — Manufacturing Processes III — Sheet, Plastics &amp; Additive — MechEd</title>
+<meta name="description" content="Shearing, blanking, and punching; clearance and its burr signature. Cutting force estimates. Nesting and material yield as quiet profit levers.">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/mfg-processes-3/1">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/mfg-processes-3/01-sheet-metal-cutting-operations.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-sheet-metal-cutting-operations.html" class="ol cur" data-key="y2s2/mfg-processes-3/1"><span class="tick"></span><span>01 · Sheet-metal cutting operations</span></a><a href="02-bending-and-springback.html" class="ol" data-key="y2s2/mfg-processes-3/2"><span class="tick"></span><span>02 · Bending and springback</span></a><a href="03-deep-drawing-and-stretch-forming.html" class="ol" data-key="y2s2/mfg-processes-3/3"><span class="tick"></span><span>03 · Deep drawing and stretch forming</span></a><a href="04-roll-forming-and-high-volume-sheet-lines.html" class="ol" data-key="y2s2/mfg-processes-3/4"><span class="tick"></span><span>04 · Roll forming and high-volume sheet lines</span></a><a href="05-presses-dies-and-tooling.html" class="ol" data-key="y2s2/mfg-processes-3/5"><span class="tick"></span><span>05 · Presses, dies, and tooling</span></a><a href="06-polymer-melt-processing-extrusion.html" class="ol" data-key="y2s2/mfg-processes-3/6"><span class="tick"></span><span>06 · Polymer melt processing: extrusion</span></a><a href="07-injection-molding.html" class="ol" data-key="y2s2/mfg-processes-3/7"><span class="tick"></span><span>07 · Injection molding</span></a><a href="08-blow-molding-thermoforming-and-film.html" class="ol" data-key="y2s2/mfg-processes-3/8"><span class="tick"></span><span>08 · Blow molding, thermoforming, and film</span></a><a href="09-packaging-and-filling-operations.html" class="ol" data-key="y2s2/mfg-processes-3/9"><span class="tick"></span><span>09 · Packaging and filling operations</span></a><a href="10-additive-manufacturing-processes.html" class="ol" data-key="y2s2/mfg-processes-3/10"><span class="tick"></span><span>10 · Additive manufacturing processes</span></a><a href="11-design-for-manufacturing-and-assembly.html" class="ol" data-key="y2s2/mfg-processes-3/11"><span class="tick"></span><span>11 · Design for manufacturing and assembly</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MFG 254</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MFG 254 · Lesson 01 of 11 · Year 2 · Semester 2</p>
+  <h1>Sheet-metal cutting operations</h1>
+  <p class="sub">Shearing, blanking, and punching; clearance and its burr signature. Cutting force estimates. Nesting and material yield as quiet profit levers.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>Groover, Fundamentals of Modern Manufacturin</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/mfg-processes-3/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>Groover, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/FQN2zgqwhLg" title="Punching and Blanking Operations | Sheet Metal Operations | GATE Production Engineering | GATE ME" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Punching and Blanking Operations | Sheet Metal Operations | GATE Production Engineering | GATE ME <span class="src">Ekeeda GATE &amp; ESE</span></figcaption></figure></div><div class="vh-bar"><span class="n">Punching and Blanking Operations | Sheet Metal Operations | GATE Production Engineering | GATE ME</span><span class="c">EKEEDA GATE &AMP; ESE</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Why does punch-die clearance set burr height?</li><li>What does nesting efficiency do to material cost?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 312" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="Two coil-strip layouts for a 60 millimetre diameter blank in 3 millimetre steel, drawn to the same scale. The left strip carries a single row of blanks and is 66 millimetres wide, using 68.0 per cent of the coil. The right strip carries two staggered rows and is 120.6 millimetres wide, using 74.5 per cent. The staggered layout consumes 8.7 per cent less coil per blank."><rect x="0" y="0" width="560" height="312" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">The same blank, two strip layouts, and 8.5 grams</text><text x="95" y="44" fill="#1f7a5c" font-size="11">the same part, 8.7% less coil &mdash; 8.5 g each, 849 kg per 100,000 blanks</text><rect x="95" y="60" width="85.8" height="204.8" fill="#5b667211" stroke="#5B6672" stroke-width="1.2"/><circle cx="137.9" cy="101" r="39" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.8"/><circle cx="137.9" cy="182.9" r="39" fill="#3a6ea533" stroke="#3a6ea5" stroke-width="1.8"/><text x="137.9" y="288" text-anchor="middle" fill="#3a6ea5" font-size="11">single row, 66 mm strip</text><text x="137.9" y="304" text-anchor="middle" fill="#5B6672" font-size="10">68.0% of the coil</text><rect x="220" y="60" width="156.7" height="204.8" fill="#5b667211" stroke="#5B6672" stroke-width="1.2"/><circle cx="262.9" cy="101" r="39" fill="#1f7a5c33" stroke="#1f7a5c" stroke-width="1.8"/><circle cx="333.8" cy="141.9" r="39" fill="#1f7a5c33" stroke="#1f7a5c" stroke-width="1.8"/><circle cx="262.9" cy="182.9" r="39" fill="#1f7a5c33" stroke="#1f7a5c" stroke-width="1.8"/><circle cx="333.8" cy="223.8" r="39" fill="#1f7a5c33" stroke="#1f7a5c" stroke-width="1.8"/><text x="298.4" y="288" text-anchor="middle" fill="#1f7a5c" font-size="11">staggered rows, 120.6 mm strip</text><text x="298.4" y="304" text-anchor="middle" fill="#5B6672" font-size="10">74.5% of the coil</text><text x="400" y="100" fill="#5B6672" font-size="10">blank &#8709;60 mm</text><text x="400" y="120" fill="#5B6672" font-size="10">sheet t = 3 mm</text><text x="400" y="140" fill="#5B6672" font-size="10">bridge 3 mm</text><text x="400" y="160" fill="#5B6672" font-size="10">web margin 3 mm</text><text x="400" y="180" fill="#5B6672" font-size="10">row offset 54.6 mm</text></svg><figcaption>Nothing about the part changed. A single row needs a 66 mm strip and advances 63 mm per blank, so each blank consumes 4,158 mm&#178; of coil and 68.0% of it becomes product. Staggering two rows lets the second row sit in the gaps of the first: the rows can be only \( \sqrt{63^2-31.5^2}=54.56 \) mm apart and still clear each other, so a 120.56 mm strip yields two blanks per 63 mm of feed &mdash; 3,798 mm&#178; each, 74.5% utilisation. That is 8.7% less steel per blank, 8.5 g a part, 849 kg per hundred thousand.</figcaption></figure>
+<h3>&#167;1 &middot; What a punch actually does to sheet</h3>
+<p>Sheet-metal cutting is not cutting in the machining sense. Nothing is removed as chips: the
+material is stressed until it fractures along a line the tooling defines. <b>Shearing</b> makes a
+straight cut, usually to size a strip. <b>Blanking</b> cuts a closed contour and keeps the piece
+that comes out. <b>Piercing</b> cuts a closed contour and keeps the sheet, throwing away the slug.
+The mechanics are identical; only the definition of scrap changes, and that difference decides how
+the tooling is dimensioned.</p>
+<p>Follow the punch down and four things happen in order, each leaving its own band on the finished
+edge. First the material bends into the die opening &mdash; <b>rollover</b>, a rounded lip. Then the
+punch penetrates and the material flows past its edge under compression, producing a smooth, shiny
+<b>burnished</b> band that is the only part of the edge you would call machined. At some depth the
+stress reaches the material's limit and cracks start from the punch corner and the die corner; when
+they meet, the piece separates, leaving a rough, angled <b>fracture</b> zone. Whatever material was
+dragged rather than cut stands proud as the <b>burr</b>.</p>
+<p>An edge is therefore a record of the process that made it, readable without instruments. A wide
+burnished band with two distinct shiny zones separated by a step means the cracks did not meet and
+the material was sheared twice. A large rollover and a heavy burr means the opposite. Which of
+those you get is set almost entirely by one dimension.</p>
+
+<h3>&#167;2 &middot; Clearance, and which tool carries the size</h3>
+<p><b>Clearance</b> is the gap between punch and die, per side. It is specified as a fraction of the
+sheet thickness because that is what the crack geometry actually depends on.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; clearance</span>
+<p>\[ c = A_c\,t \]</p>
+<p>\( A_c \) is the clearance allowance: roughly 0.045 for soft aluminium, 0.060 for low-carbon
+steel, 0.075 for stainless and hard alloys &mdash; harder and less ductile material needs more.</p></div>
+<p>The clearance's job is to make the two cracks meet. Too little and they miss: the material
+between them shears a second time, the edge shows a double burnished band, the force rises and the
+tooling wears faster. Too much and the material is dragged into the gap rather than cut: heavy
+rollover, a large ragged burr, and a blank that is dished rather than flat. For 3 mm low-carbon
+steel, \( c = 0.060(3) = 0.18\ \mathrm{mm} \) per side, which is 0.36 mm across a diameter and far
+larger than most people expect.</p>
+<p>That 0.36 mm has to be taken off one tool or added to the other, and the choice is not
+arbitrary.</p>
+<div class="keybox"><span class="tag">Key rule &mdash; the product side carries the size</span>
+<p><b>Blanking:</b> the blank is the product, and it takes the size of the <em>die</em> opening. So
+\( D_{\text{die}} = D \) and \( D_{\text{punch}} = D - 2c \).</p>
+<p><b>Piercing:</b> the hole is the product, and it takes the size of the <em>punch</em>. So
+\( D_{\text{punch}} = D \) and \( D_{\text{die}} = D + 2c \).</p></div>
+<p>Blanking a \( \varnothing60 \) disc from 3 mm steel therefore needs a 60.00 mm die and a 59.64 mm
+punch. Piercing a \( \varnothing25 \) hole in the same sheet needs a 25.00 mm punch and a 25.36 mm
+die. Reverse either rule and every part is 0.36 mm out &mdash; a mistake that survives inspection
+only because it is consistent.</p>
+
+<h3>&#167;3 &middot; Force, and how to need less press than the arithmetic says</h3>
+<p>The force follows from the area actually being sheared, which is the cut perimeter times the
+thickness.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; cutting and stripping force</span>
+<p>\[ F = S\,t\,L,\qquad S\approx0.7\,\mathrm{TS},\qquad F_{\text{strip}}\approx(0.02\ \text{to}\ 0.10)F \]</p>
+<p>\( L \) is the length of the cut, \( t \) the thickness, \( S \) the shear strength. The
+stripping force pulls the sheet back off the punch after the cut and is carried by the same press
+stroke, so it belongs in the tonnage sum.</p></div>
+<p>For the \( \varnothing60 \) blank: \( L=\pi(60)=188.5\ \mathrm{mm} \), and with
+\( \mathrm{TS}=340 \) MPa, \( S=238 \) MPa. Then
+\( F=238(3)(188.5)=134{,}600\ \mathrm{N} \), which is 134.6 kN, 15.1 US tons, or about 13.7 tonnes
+force. Adding 5% stripping brings it to 141.3 kN. How the tonnage a press can deliver varies through
+its stroke is Lesson 5's subject; here the point is only that the number is large and comes almost
+entirely from the perimeter.</p>
+<p>There is a way to need much less of it. Grinding an <b>angular shear</b> onto the tool face means
+the cut starts at one point and progresses along the contour instead of happening everywhere at
+once. The total work is unchanged &mdash; the same material still has to be separated &mdash; but it
+is spread over a longer punch travel, so the peak force falls.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; the effect of angular shear</span>
+<p>\[ F_{\text{peak}}\approx F\,\frac{p_f t}{p_f t+s} \]</p>
+<p>\( s \) is the shear depth ground onto the tool and \( p_f \) is the fraction of the thickness
+penetrated before fracture, around 0.5 for medium steel. The work \( F\,p_f t \) is conserved; only
+its distribution over the stroke changes.</p></div>
+<p>With \( t=3 \) mm and \( p_f=0.5 \), a shear of 1.5 mm halves the peak force to 67.3 kN and a
+shear of 3 mm cuts it to 44.9 kN. The catch is that the tool face is no longer flat, so whatever it
+pushes on is left distorted &mdash; which fixes where the shear goes. In <b>piercing</b> the slug is
+scrap, so the shear goes on the <b>punch</b>. In <b>blanking</b> the strip is scrap, so the shear
+goes on the <b>die</b> and the blank comes out flat. Putting it on the wrong member produces a
+correctly sized, permanently dished product.</p>
+
+<h3>&#167;4 &middot; Nesting: the profit nobody watches</h3>
+<p>In a stamped part the material is commonly half to three-quarters of the cost, and how much of
+the coil becomes product is decided at the layout stage by a draughtsman, once, for the life of the
+tool.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; strip layout</span>
+<p>\[ \text{utilisation}=\frac{A_{\text{blank}}}{W\,p/n},\qquad
+p = D + b,\qquad W = D + 2m\ \ (\text{single row}) \]</p>
+<p>\( p \) is the feed pitch, \( b \) the <b>bridge</b> between blanks, \( m \) the <b>web margin</b>
+at the strip edges, \( n \) the blanks produced per pitch. The bridge and margin are not waste to be
+minimised freely: they are what holds the strip together through the die, and cutting them too fine
+tears the carrier.</p></div>
+<p>Take the \( \varnothing60 \) blank with a 3 mm bridge and 3 mm margins. A single row needs a
+66 mm strip advancing 63 mm per blank, so each blank consumes \( 66\times63=4{,}158 \) mm&#178; and
+utilisation is \( 2827/4158=68.0\% \).</p>
+<p>Now stagger two rows so the second sits in the gaps of the first. Blanks in adjacent rows are
+offset half a pitch along the feed, so their centre distance is
+\( \sqrt{s^2+(p/2)^2} \), and that has to be at least \( D+b \). Solving,
+\( s=\sqrt{63^2-31.5^2}=54.56\ \mathrm{mm} \) &mdash; the rows can be much closer than 63 mm apart
+because they are also displaced along the strip. The strip becomes
+\( 60+54.56+6=120.56 \) mm wide and yields two blanks per 63 mm of feed, so each blank consumes
+3,798 mm&#178; and utilisation rises to <b>74.5%</b>.</p>
+<p>That is 8.7% less coil per blank. On 3 mm steel it is 8.5 grams a part, 849 kg per hundred
+thousand, for a change that costs one afternoon at the layout stage and nothing per part
+thereafter. Three qualifications keep it honest: a wider strip needs a wider press and feed, a
+staggered layout needs two punches or a two-up die, and any layout that assumes a rectangular
+blank orientation must be checked against the rolling direction if the part will later be bent
+&mdash; which is the next lesson's problem.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Shear strength, tensile strength, and ductile fracture</b> (Materials Science I L5&ndash;L6
+and Materials Science II) &mdash; why a cut edge shows a burnished band and then a rough one.</li>
+<li><b>Stress, plastic deformation, and the yield criterion</b> (Strength of Materials L2&ndash;L3)
+&mdash; the material behaviour every relation here rests on.</li>
+<li><b>Bulk deformation and press operations</b> (Manufacturing Processes I L7&ndash;L9) &mdash; the
+forming family this course continues.</li>
+<li><b>Clearance, limits, and how a tolerance is verified</b> (Metrology &amp; Quality Control L5,
+and Engineering Drawing &amp; CAD L6) &mdash; punch and die are a fit, dimensioned like one.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation or value</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Shearing / blanking / piercing</td><td>same mechanics</td><td>Straight cut / keep the piece / keep the sheet.</td></tr>
+<tr><td>Edge zones</td><td>rollover, burnish, fracture, burr</td><td>An edge is a readable record of the clearance.</td></tr>
+<tr><td>Clearance</td><td>\( c=A_c t \); \( A_c\approx0.045\text{--}0.075 \)</td><td>Too little double-shears; too much drags and burrs.</td></tr>
+<tr><td>Blanking sizes</td><td>die \( =D \), punch \( =D-2c \)</td><td>The blank is the product.</td></tr>
+<tr><td>Piercing sizes</td><td>punch \( =D \), die \( =D+2c \)</td><td>The hole is the product.</td></tr>
+<tr><td>Cutting force</td><td>\( F=StL \), \( S\approx0.7\,\mathrm{TS} \)</td><td>Perimeter, not area, drives the tonnage.</td></tr>
+<tr><td>Stripping force</td><td>\( (0.02\text{--}0.10)F \)</td><td>Add it before choosing a press.</td></tr>
+<tr><td>Angular shear</td><td>\( F_{\rm peak}\approx F\,p_ft/(p_ft+s) \)</td><td>Punch for piercing, die for blanking.</td></tr>
+<tr><td>Pitch, bridge, web</td><td>\( p=D+b \), \( W=D+2m \)</td><td>The carrier has to survive the die.</td></tr>
+<tr><td>Staggered row offset</td><td>\( s=\sqrt{(D+b)^2-(p/2)^2} \)</td><td>Rows sit closer because they are also offset along the feed.</td></tr>
+<tr><td>Utilisation</td><td>\( A_{\rm blank}/(Wp/n) \)</td><td>68.0% single row, 74.5% staggered, on the same part.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Size the tools, then the press</b></p>
+<p><b>Problem.</b> A \( \varnothing60 \) mm disc is blanked from 3 mm low-carbon steel
+(\( \mathrm{TS}=340 \) MPa, clearance allowance 0.060), and a \( \varnothing25 \) mm hole is pierced
+in the same sheet. Give the punch and die diameters for both operations. Then find the blanking
+force, the stripping force at 5%, and the total, in kilonewtons and in US tons.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( c=A_ct=0.060(3.0)=0.18\ \mathrm{mm} \) per side.</p>
+<p>(2) Blanking: the blank takes the size of the die opening, so the die is
+\( \varnothing60.00 \) and the punch is \( 60.00-2(0.18)=\varnothing59.64\ \mathrm{mm} \).</p>
+<p>(3) Piercing: the hole takes the size of the punch, so the punch is \( \varnothing25.00 \) and
+the die is \( 25.00+2(0.18)=\varnothing25.36\ \mathrm{mm} \).</p>
+<p>(4) \( S\approx0.7\,\mathrm{TS}=0.7(340)=238\ \mathrm{MPa} \).</p>
+<p>(5) \( L=\pi(60)=188.5\ \mathrm{mm} \), so
+\( F=StL=238(3)(188.5)=134{,}586\ \mathrm{N}=134.6\ \mathrm{kN} \).</p>
+<p>(6) \( F_{\text{strip}}=0.05(134.6)=6.73\ \mathrm{kN} \), giving a total of
+\( 141.3\ \mathrm{kN} \).</p>
+<p>(7) In US customary: \( 134{,}586/4.4482=30{,}256\ \mathrm{lbf}=15.13 \) US tons for the cut, and
+\( 141{,}315/4.4482/2000=15.89 \) US tons in total.</p>
+<p><b>Answer:</b> blanking die \( \varnothing60.00 \), punch \( \varnothing59.64 \); piercing punch
+\( \varnothing25.00 \), die \( \varnothing25.36 \); 134.6 kN of cutting force plus 6.7 kN stripping,
+141.3 kN (15.9 US tons) in total.
+<b>Sanity check:</b> the two operations put the clearance on opposite members, and the reason is the
+same in both cases &mdash; the product side carries the nominal size. Reversing it gives parts
+0.36 mm out on every piece, consistently enough to pass an unwary first-article check. Note that the
+force depends on the <em>perimeter</em>, not the area: the \( \varnothing25 \) hole needs
+\( 238(3)(\pi\times25)=56.1 \) kN, less than half the blank's, despite removing less than a fifth of
+the area.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Buy the press down with angular shear</b></p>
+<p><b>Problem.</b> The 134.6 kN blanking operation above is to run on a press rated 100 kN. Taking
+the penetration fraction at fracture as \( p_f=0.5 \), find the shear depth needed on the tool to
+bring the peak force under the rating with 20% margin, and the peak force at a shear of 3 mm. State
+which member the shear is ground onto and why.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) The work of separation, \( F\,p_ft \), is fixed. Angular
+shear spreads it over a punch travel of \( p_ft+s \), so
+\( F_{\text{peak}}=F\,p_ft/(p_ft+s) \).</p>
+<p>(2) Here \( p_ft=0.5(3)=1.5\ \mathrm{mm} \), so
+\( F_{\text{peak}}=134.6\times1.5/(1.5+s) \).</p>
+<p>(3) A 20% margin on a 100 kN press means a target of 80 kN. Setting
+\( 134.6(1.5)/(1.5+s)=80 \) gives \( 1.5+s=2.524 \), so \( s=1.02\ \mathrm{mm} \). Round up: a
+1.5 mm shear gives \( 134.6(1.5)/3.0=67.3\ \mathrm{kN} \), comfortably inside.</p>
+<p>(4) At \( s=3 \) mm: \( 134.6(1.5)/4.5=44.9\ \mathrm{kN} \), a third of the flat-tool force.</p>
+<p>(5) This is a <b>blanking</b> operation, so the blank is the product and the strip is scrap. The
+sheared face distorts whatever it presses on, so the shear goes on the <b>die</b>, leaving the blank
+flat and dishing the scrap strip. In piercing it would go on the punch, because there the slug is
+the scrap.</p>
+<p><b>Answer:</b> about 1.0 mm of shear meets the 80 kN target and a standard 1.5 mm gives 67.3 kN;
+3 mm gives 44.9 kN. The shear is ground on the die, because the blank must stay flat.
+<b>Sanity check:</b> nothing about the material or the cut length changed, so the total work is the
+same in every case &mdash; only its distribution over the stroke moved, which is exactly why the
+press requirement fell and the tool life did not improve with it. Note the failure mode this
+prevents and the one it introduces: it keeps a 134.6 kN cut off a 100 kN press, and it guarantees a
+dished part if the shear is ground on the wrong member.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>What a layout decision is worth</b></p>
+<p><b>Problem.</b> The \( \varnothing60 \) blank is to be nested with a 3 mm bridge and 3 mm web
+margins. Find the strip width, the material consumed per blank and the utilisation for a single
+row; then for two staggered rows, deriving the row offset. Give the coil saved per blank as a
+percentage and as a mass, and the annual saving on 100,000 blanks. Take steel at
+7.85 g/cm&#179;.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Pitch \( p=D+b=60+3=63\ \mathrm{mm} \); blank area
+\( A=\pi(60)^2/4=2827\ \mathrm{mm}^2 \).</p>
+<p>(2) Single row: \( W=D+2m=60+6=66\ \mathrm{mm} \), so each blank consumes
+\( 66\times63=4158\ \mathrm{mm}^2 \) and utilisation is \( 2827/4158=68.0\% \).</p>
+<p>(3) Staggered rows are offset half a pitch along the feed, so the centre distance between blanks
+in adjacent rows is \( \sqrt{s^2+(p/2)^2} \), which must be at least \( D+b=63 \). Hence
+\( s=\sqrt{63^2-31.5^2}=\sqrt{3969-992.25}=54.56\ \mathrm{mm} \).</p>
+<p>(4) \( W=60+54.56+6=120.56\ \mathrm{mm} \), and two blanks come off per 63 mm of feed, so each
+consumes \( 120.56\times63/2=3798\ \mathrm{mm}^2 \) and utilisation is \( 2827/3798=74.5\% \).</p>
+<p>(5) Coil saved: \( 1-3798/4158=8.67\% \).</p>
+<p>(6) Mass: \( 4158\times3=12{,}474\ \mathrm{mm}^3=12.47\ \mathrm{cm}^3 \), so 97.9 g per blank
+single-row against \( 3798\times3\times7.85\times10^{-3}=89.4 \) g staggered &mdash; 8.49 g
+saved.</p>
+<p>(7) On 100,000 blanks: \( 8.49\times10^5\ \mathrm{g}=849\ \mathrm{kg} \).</p>
+<p><b>Answer:</b> single row 66 mm strip, 4,158 mm&#178; and 68.0%; staggered 120.56 mm strip,
+3,798 mm&#178; and 74.5%; 8.67% less coil, 8.5 g per blank, 849 kg per 100,000.
+<b>Sanity check:</b> the rows sit 54.56 mm apart on a part 60 mm across, which looks impossible
+until you remember they are also displaced 31.5 mm along the feed &mdash; the constraint is the
+centre distance, not the cross-strip gap, and that is the whole trick. Note what the saving is not:
+it is not free, because the wider strip needs a wider press and feed and the layout needs two
+punches. Note also that it is decided once, by a draughtsman, and then repeats on every part for the
+life of the tool, which is why it deserves an afternoon.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>The shiny band on a sheared edge is produced by</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the fracture running from the die corner</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the punch penetrating and the material flowing past its edge under compression</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the burr being wiped flat</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>rollover into the die opening</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>That burnished band is the only part of the edge made by anything resembling
+cutting. Above it sits the rollover where the material first bent into the die, below it the rough
+fracture zone where cracks from the punch and die corners met, and beyond that the burr. The four
+zones together are a readable record of the clearance that produced them.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Clearance that is too small produces</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>a heavy burr and severe rollover</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>a double burnished band and higher cutting force</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>an undersized blank</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>no burnished zone at all</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>With too little clearance the cracks from the two corners miss each other and the
+material between them is sheared a second time, leaving two shiny bands with a step between them and
+raising the force. Heavy burr and rollover are the <em>excessive</em>-clearance signature. Clearance
+does not change the blank's size &mdash; that is set by whichever member is the product side.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>To blank a \( \varnothing60 \) mm disc from 3 mm steel with \( A_c=0.060 \), the tools
+should be</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>punch \( \varnothing60.00 \), die \( \varnothing60.36 \)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>die \( \varnothing60.00 \), punch \( \varnothing59.64 \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>punch \( \varnothing59.82 \), die \( \varnothing60.18 \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>both \( \varnothing60.00 \), with the clearance taken up by tool wear</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>In blanking the blank is the product and it takes the size of the die opening,
+so the die is nominal and the punch is smaller by \( 2c=0.36 \) mm. The first option is the piercing
+rule applied by mistake, and it would make every disc 0.36 mm oversize &mdash; consistently enough
+to survive a careless inspection.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>Doubling the diameter of a blanked disc, at constant thickness, changes the cutting
+force by a factor of</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>1 (unchanged)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>2</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>4</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>8</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( F=StL \) and \( L \) is the perimeter, so force scales with diameter, not
+with area. This is why a long thin slot can need more tonnage than a large round hole, and why
+adding a decorative outline to a stamping is not free.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>In a blanking operation the angular shear should be ground onto the</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>punch, because it carries the load</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>die, because the strip is the scrap and the blank must stay flat</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>either, since the effect is the same</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>stripper plate</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A sheared tool face distorts whatever it presses on. In blanking the product is
+the blank and the scrap is the strip, so the shear goes on the die. In piercing the slug is the
+scrap, so it goes on the punch. Putting it on the wrong member gives a correctly sized and
+permanently dished product.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>Staggering two rows of \( \varnothing60 \) blanks at a 63 mm pitch lets the rows sit
+54.56 mm apart because</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>the blanks are allowed to overlap slightly</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>adjacent-row blanks are also offset half a pitch along the feed, so their centre distance is \( \sqrt{s^2+(p/2)^2} \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the bridge is not needed between rows</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>the strip stretches during feeding</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The constraint is the centre-to-centre distance, not the cross-strip gap. With a
+31.5 mm offset along the feed, a 54.56 mm row spacing still gives
+\( \sqrt{54.56^2+31.5^2}=63 \) mm between centres. It is why staggering works at all, and why the
+saving grows with how round the blank is.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>Moving the \( \varnothing60 \) blank from a single row to staggered double rows takes
+utilisation from 68.0% to 74.5%. The coil saved per blank is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>6.5%</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>8.7%</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>9.5%</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>26%</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Utilisation rose by 6.5 percentage points, which is a 9.5% relative rise, but
+what the shop buys is coil: \( 1-3798/4158=8.67\% \) less steel per blank. Reporting the percentage
+point difference understates it and the utilisation ratio overstates it &mdash; the quantity that
+appears on an invoice is the area consumed.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>The bridge and web margin in a strip layout exist to</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>give the press feed something to grip and hold the strip together through the die</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>compensate for springback</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>allow for thermal expansion of the coil</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>provide clearance for the stripper</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>They are the carrier: the strip has to survive being fed, located and stripped
+after each station, and a bridge cut too fine tears. That is why utilisation cannot simply be driven
+toward 100% by shrinking them, and why the real gains come from the layout geometry
+instead.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the tool that was ordered from the wrong rule.</b> A fabricator ordered a
+blanking tool for a \( \varnothing60 \) mm disc in 3 mm steel. The tool arrived with a
+\( \varnothing60.00 \) punch and a \( \varnothing60.36 \) die. First-article inspection measured the
+blanks at \( \varnothing60.34 \) against a \( \varnothing60\ \pm0.2 \) drawing, and because every
+part measured the same the shop concluded the process was capable and released it. The discs were
+rejected at assembly.</p>
+<p>The tool had been dimensioned by the piercing rule. In blanking the blank is the product and it
+takes the size of the <em>die</em> opening, so the die should have been \( \varnothing60.00 \) and
+the punch \( \varnothing59.64 \). Sized the other way, every disc came out roughly \( 2c=0.36 \) mm
+oversize &mdash; consistently, which is exactly why it passed a check that looked at spread rather
+than at position. Metrology &amp; Quality Control makes the same point from the other side: a
+process can be in perfect control and stably wrong, and a capability index compares the process with
+the <em>tolerance</em>, not with itself.</p>
+<p>Two practices follow. State on the tool drawing which member is nominal and why, in words rather
+than only in numbers &mdash; &quot;die nominal, blank is the product&quot; is one line and it
+removes the entire failure mode. And treat a first article that is consistently offset as the most
+suspicious result available: consistency is evidence about the spread and says nothing at all about
+whether the tooling was built to the right rule.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(200.2\\ \\mathrm{lbf}\\)", "\\(10.12\\ \\mathrm{lbf}\\)", "\\(101.2\\ \\mathrm{lbf}\\)", "\\(1.012\\ \\mathrm{lbf}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(45 \\times 0.2248 = 10.12\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(13.34\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(0.6744\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(6.744\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.06744\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(3 \times 0.2248 = 0.6744\ \mathrm{lbf}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(8.702e+04\\ \\mathrm{psi}\\)", "\\(0.4137\\ \\mathrm{psi}\\)", "\\(8702\\ \\mathrm{psi}\\)", "\\(870.2\\ \\mathrm{psi}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(60 \\times 145 = 8702\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(7252\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(0.03447\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(725.2\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(72.52\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(5 \times 145 = 725.2\ \mathrm{psi}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL3752130W" target="_blank" rel="noopener">Fundamentals of Modern Manufacturing — Mikell P. Groover</a></li><li><a href="https://openlibrary.org/works/OL3289918W" target="_blank" rel="noopener">Manufacturing Engineering and Technology — Kalpakjian &amp; Schmid</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Ch. 20</p>
+  <ul class="plain small"><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, Fundamentals of Modern Manufacturing (Wiley) — sheet metal &amp; plastics chapters</li><li><a href="https://openlibrary.org/works/OL3289918W" title="Kalpakjian &amp; Schmid — Manufacturing Engineering and Technology (Open Library)" target="_blank" rel="noopener">Kalpakjian &amp; Schmid</a>, Manufacturing Engineering and Technology (Pearson)</li></ul>
+</div>
+<div class="wide"><h3>Course-level courseware — verified links</h3><div class="vids">
+<a class="vid" href="https://www.youtube.com/channel/UCiEiOeFUl4Ytrv63Udugckg" target="_blank" rel="noopener">
+  <span class="vtag">PROFESSIONAL BODY · CLEAR NARRATION · VERIFIED</span>
+  <h4>SME — forming, plastics, and additive process videos</h4>
+  <p>Sheet forming, molding, and additive explainers from the manufacturing professional body.</p>
+  <span class="src">SME (Society of Manufacturing Engineers)</span>
+</a>
+<a class="vid" href="https://www.youtube.com/@Marzouk-Tutorials" target="_blank" rel="noopener">
+  <span class="vtag">IN ARABIC — ALTERNATIVE · VERIFIED</span>
+  <h4>Manufacturing lectures by Eng. Mahmoud Marzouk</h4>
+  <p>Arabic-language manufacturing-processes lectures (casting, forming, sheet metal). English sources above remain the primary path.</p>
+  <span class="src">YouTube — independent educator</span>
+</a></div></div></section>
+<nav class="prevnext"><a href="index.html">كل الدروس · MFG 254</a><a href="02-bending-and-springback.html">02 · Bending and springback →</a></nav>
+<nav class="coursenav coursenav-end"><span class="cn-label">End of pathway</span><span class="cn-done">Final course in the curriculum.</span></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

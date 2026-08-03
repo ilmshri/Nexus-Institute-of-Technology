@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Stress and strain under axial load — Strength of Materials — MechEd</title>
+<meta name="description" content="Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility. Allo">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s1/strength/1">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y2s1/strength/01-stress-and-strain-under-axial-load.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">SOM 201 · Strength of Materials</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-stress-and-strain-under-axial-load.html" class="ol cur" data-key="y2s1/strength/1"><span class="tick"></span><span>01 · Stress and strain under axial load</span></a><a href="02-axial-members-and-thermal-stress.html" class="ol" data-key="y2s1/strength/2"><span class="tick"></span><span>02 · Axial members and thermal stress</span></a><a href="03-torsion-of-shafts.html" class="ol" data-key="y2s1/strength/3"><span class="tick"></span><span>03 · Torsion of shafts</span></a><a href="04-bending-and-transverse-shear-in-beams.html" class="ol" data-key="y2s1/strength/4"><span class="tick"></span><span>04 · Bending and transverse shear in beams</span></a><a href="05-beam-deflection.html" class="ol" data-key="y2s1/strength/5"><span class="tick"></span><span>05 · Beam deflection</span></a><a href="06-combined-loading.html" class="ol" data-key="y2s1/strength/6"><span class="tick"></span><span>06 · Combined loading</span></a><a href="07-stress-transformation-and-mohr-s-circle.html" class="ol" data-key="y2s1/strength/7"><span class="tick"></span><span>07 · Stress transformation and Mohr's circle</span></a><a href="08-pressure-vessels-thin-walled-theory.html" class="ol" data-key="y2s1/strength/8"><span class="tick"></span><span>08 · Pressure vessels: thin-walled theory</span></a><a href="09-failure-theories.html" class="ol" data-key="y2s1/strength/9"><span class="tick"></span><span>09 · Failure theories</span></a><a href="10-buckling-of-columns.html" class="ol" data-key="y2s1/strength/10"><span class="tick"></span><span>10 · Buckling of columns</span></a><a href="11-stress-concentration-and-fatigue-preview.html" class="ol" data-key="y2s1/strength/11"><span class="tick"></span><span>11 · Stress concentration and fatigue preview</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">Curriculum</a> /
+<a href="index.html">SOM 201</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">SOM 201 · Lesson 01 of 11 · Year 2 · Semester 1</p>
+  <h1>Stress and strain under axial load</h1>
+  <p class="sub">Normal stress and strain defined from first principles; the tensile curve reread as an engineer's contract — modulus, yield, ultimate, ductility. Allowable stress and factor of safety as institutional honesty. Saint-Venant's caution about where formulas apply.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>MIT OCW 2.001 Mechanics &amp; Materials I</b></span><span class="mchip">Assessment <b>8-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s1/strength/1">Mark as complete</button>
+  <span class="badge amber">CORE 60 · B1</span>
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>MIT OCW 2.001 Mechanics &amp; Materials I (ocw.mit.edu)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/P38xMOqvytU" title="MoM Lesson 9 — The Stress-Strain Diagram" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>MoM Lesson 9 — The Stress-Strain Diagram <span class="src">Jeff Hanson</span></figcaption></figure></div><div class="vh-bar"><span class="n">MoM Lesson 9 — The Stress-Strain Diagram</span><span class="c">JEFF HANSON</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">Lecture</button>
+  <button data-tab="t-foundations">Foundations</button>
+  <button data-tab="t-examples">Examples and Quiz</button>
+  <button data-tab="t-library">Library</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">Lecture</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>A 16 mm bar carries 45 kN: compute the stress and the safety factor against 355 MPa yield.</li><li>Engineering versus true stress: which keeps rising after necking, and why?</li><li>Why do aluminum alloys need the 0.2% offset construction to define yield at all?</li></ul></div><div class="measure">
+<h3>01 · Stress: force made local</h3>
+<p>A load of a few kilonewtons means nothing to a material until it is spread over an
+area. <b>Normal stress</b> \( \sigma = P/A \) is that intensity — force per unit area,
+in pascals (N/m²), or in engineering practice megapascals. A 100&nbsp;kN pull on a
+25&nbsp;mm round bar (\( A=\tfrac{\pi}{4}d^2=490.9\ \text{mm}^2 \)) is
+\( \sigma=100{,}000/490.9\times10^{-6}\approx204\ \text{MPa} \). The same force on a
+thicker bar is a gentler stress. Stress, not force, is what a material feels, and it is
+the quantity every allowable is written against.</p>
+<h3>02 · Strain: deformation made dimensionless</h3>
+<p><b>Normal strain</b> \( \varepsilon = \delta/L \) is the stretch per unit length —
+a pure number. It divides out the specimen size so that a 1&nbsp;mm stretch in a
+1&nbsp;m bar (\( \varepsilon=0.001 \)) and a 2&nbsp;mm stretch in a 2&nbsp;m bar describe
+the <em>same</em> material state. This normalisation is why stress and strain, not force
+and elongation, are the axes of the material's fingerprint: they belong to the material,
+not to the part.</p>
+<h3>03 · Hooke's law and the elastic contract</h3>
+<p>Over the initial straight portion of the tensile curve, stress is proportional to
+strain: \( \sigma = E\varepsilon \). The slope \(E\) is <b>Young's modulus</b> — steel's
+is about 200&nbsp;GPa — a stiffness the material carries regardless of shape. Combining
+the three relations gives the workhorse deformation formula
+\( \delta = \dfrac{PL}{AE} \). An 80&nbsp;kN load on a 2&nbsp;m steel bar of 20&nbsp;mm
+diameter stretches it \( \delta=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}
+\approx2.55\ \text{mm} \). Longer and softer stretches more; thicker and stiffer stretches
+less — all four factors sit in one fraction.</p>
+<h3>04 · Reading the tensile curve as a contract</h3>
+<p>The tensile test is the material's signed contract. The <b>proportional limit</b> ends
+Hooke's law; the <b>yield strength</b> marks the onset of permanent deformation — the
+number most designs are kept below; the <b>ultimate strength</b> is the peak the specimen
+can carry; and the strain at fracture measures <b>ductility</b>, the warning a part gives
+before it breaks. Design keeps the working stress a chosen margin below yield, expressed
+as a <b>factor of safety</b> \( \text{FoS}=\sigma_{\text{yield}}/\sigma_{\text{allow}} \):
+a 250&nbsp;MPa yield held to a 160&nbsp;MPa allowable is a FoS of about 1.56.</p>
+<h3>05 · Why this lesson is the foundation of the course</h3>
+<p>Every later topic — torsion, bending, combined loading, buckling, fatigue — is this
+same logic applied to a different stress: define the stress from the load and geometry,
+relate it to a strain through an elastic law, and compare against an allowable drawn from
+the tensile contract. The stress–strain diagram is therefore not one lesson among many but
+the template for all of them. Master reading it — where the straight part ends, how much
+warning the ductility gives, what margin the factor of safety buys — and the rest of
+Strength of Materials becomes variations on a theme you already understand. The habit of
+converting a raw force into a local stress, and only then judging safety, is the single
+most important reflex the course installs.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">Foundations</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Statics</b> — internal force from a free-body cut precedes any stress.</li>
+<li><b>Areas of sections</b> — \(A=\tfrac{\pi}{4}d^2\) for round bars.</li>
+<li><b>Unit discipline</b> — MPa = N/mm²; keep a consistent system.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Normal stress</td><td>\( \sigma=P/A \)</td><td>Axial force spread over a cross-section.</td></tr>
+<tr><td>Normal strain</td><td>\( \varepsilon=\delta/L \)</td><td>Size-independent measure of stretch.</td></tr>
+<tr><td>Hooke's law</td><td>\( \sigma=E\varepsilon \)</td><td>Elastic (straight-line) region only.</td></tr>
+<tr><td>Axial deformation</td><td>\( \delta=PL/AE \)</td><td>Elongation of a uniform bar.</td></tr>
+<tr><td>Factor of safety</td><td>\( \sigma_y/\sigma_{allow} \)</td><td>Margin held below yield.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">Examples and Quiz</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 8 · solve, then check</span><p class="qname"><b>Axial stress</b></p><p><b>Problem.</b> A 100 kN load acts on a round bar of 25 mm diameter. Find the normal stress.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( A=\tfrac{\pi}{4}(25)^2=490.9\ \text{mm}^2 \). \( \sigma=P/A=100{,}000/490.9=203.7\ \text{MPa} \). <b>Answer:</b> \(\approx204\) MPa. <b>Check:</b> N/mm² = MPa, so no extra conversion.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 8 · solve, then check</span><p class="qname"><b>Axial stretch</b></p><p><b>Problem.</b> An 80 kN load stretches a 2 m steel bar (d=20 mm, E=200 GPa). Find the elongation.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( A=\tfrac{\pi}{4}(20)^2=314\ \text{mm}^2=314\times10^{-6}\,\text{m}^2 \). \( \delta=\dfrac{PL}{AE}=\dfrac{80{,}000\times2}{314\times10^{-6}\times200\times10^9}=2.55\times10^{-3}\,\text{m} \). <b>Answer:</b> \(\approx2.55\) mm.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 8 · solve, then check</span><p class="qname"><b>Factor of safety</b></p><p><b>Problem.</b> A steel of 250 MPa yield is used at an allowable stress of 160 MPa. State the factor of safety.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> \( \text{FoS}=\sigma_y/\sigma_{allow}=250/160=1.56 \). <b>Answer:</b> \(\approx1.56\). <b>Check:</b> FoS>1 means the allowable sits below yield, as required.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 8 · multiple choice</span><p>Normal stress is defined as:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\( P/A \)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\( P\cdot A \)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\( \delta/L \)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\( E\varepsilon/A \)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Stress is force per unit area, \(P/A\). \(\delta/L\) is strain; the others are dimensionally wrong.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 8 · multiple choice</span><p>Young's modulus \(E\) is the slope of:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The elastic part of the stress–strain curve</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>The force–time curve</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The whole curve to fracture</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>The area–length curve</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(E=\sigma/\varepsilon\) is the slope of the straight, elastic portion only. Beyond yield the curve bends and \(E\) no longer applies.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 8 · multiple choice</span><p>Doubling only the length \(L\) of an axially loaded bar changes its elongation \( \delta=PL/AE \) by:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>\(\times2\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(\times\tfrac12\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>no change</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(\times4\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\(\delta\propto L\): twice the length, twice the stretch under the same load. Area and modulus are unchanged.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 8 · multiple choice</span><p>The yield strength is important because it marks:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>The onset of permanent deformation</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Fracture</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>The proportional limit exactly</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>Zero stress</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Below yield, deformation is (nearly) recoverable; above it, permanent set begins. Most designs keep working stress below yield.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 8 · multiple choice</span><p>Strain \( \varepsilon=\delta/L \) has units of:</p></div><div class="choices"><button type="button" class="quiz-choice" data-ok="1"><span class="key">A</span><span>Dimensionless</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>Pascals</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>Metres</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>N/m</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Length over length cancels — strain is a pure number. Stress carries the pascals, not strain.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{MPa}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(0.3103\\ \\mathrm{psi}\\)", "\\(6527\\ \\mathrm{psi}\\)", "\\(6.527e+04\\ \\mathrm{psi}\\)", "\\(652.7\\ \\mathrm{psi}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{MPa} = 145\\ \\mathrm{psi}\\): \\(45 \\times 145 = 6527\\ \\mathrm{psi}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{MPa}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(0.02068\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(435.1\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(4351\ \mathrm{psi}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(43.51\ \mathrm{psi}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{MPa} = 145\ \mathrm{psi}\): \(3 \times 145 = 435.1\ \mathrm{psi}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{m}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1969\\ \\mathrm{ft}\\)", "\\(18.29\\ \\mathrm{ft}\\)", "\\(196.9\\ \\mathrm{ft}\\)", "\\(19.69\\ \\mathrm{ft}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{m} = 3.281\\ \\mathrm{ft}\\): \\(60 \\times 3.281 = 196.9\\ \\mathrm{ft}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{m}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(164\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(1.524\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(16.4\ \mathrm{ft}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(1.64\ \mathrm{ft}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{m} = 3.281\ \mathrm{ft}\): \(5 \times 3.281 = 16.4\ \mathrm{ft}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">Submit answers</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">Library</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL1865035W" target="_blank" rel="noopener">Mechanics of Materials — R. C. Hibbeler</a></li><li><a href="https://openlibrary.org/works/OL284163W" target="_blank" rel="noopener">Mechanics of Materials — Beer, Johnston et al.</a></li></ul>
+  <p class="src"><b>Taught from</b> — <a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a>; <a href="https://openlibrary.org/works/OL29074519W" title="Callister &amp; Rethwisch — Materials Science and Engineering (Open Library)" target="_blank" rel="noopener">Callister &amp; Rethwisch</a>, Ch. 6; video: <a href="https://www.youtube.com/channel/UCXKW_dKcpFh358S1rV5qBDw" title="Jeff Hanson, Ph.D. (Texas Tech) — statics, dynamics, mechanics of materials lecture videos — mechanics of materials series" target="_blank" rel="noopener">Jeff Hanson (Texas Tech) — mechanics of materials</a> <a class="watch ar" href="https://www.youtube.com/playlist?list=PLWoLigrsy5IeHDXY8_vEgUANo9ZEGhbYp" target="_blank" rel="noopener">In Arabic — alternative</a></p>
+  <ul class="plain small"><li><a href="https://ocw.mit.edu/courses/2-001-mechanics-materials-i-fall-2006/" title="MIT OCW 2.001 Mechanics &amp; Materials I" target="_blank" rel="noopener">MIT OCW 2.001</a> Mechanics &amp; Materials I (ocw.mit.edu)</li><li>NPTEL: Strength of Materials (nptel.ac.in)</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">All lessons · SOM 201</a><a href="02-axial-members-and-thermal-stress.html">02 · Axial members and thermal stress →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s1/fluids/index.html">FLD 203 · Fluid Mechanics →</a></nav>
+</div>
+</div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

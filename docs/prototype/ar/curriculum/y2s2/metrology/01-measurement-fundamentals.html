@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-root="../../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Measurement fundamentals — Metrology &amp; Quality Control — MechEd</title>
+<meta name="description" content="Accuracy, precision, resolution, and bias untangled for good. Traceability chains to national standards. The vocabulary that makes calibration certifi">
+<link rel="manifest" href="../../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body data-key="y2s2/metrology/1">
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — هندسةٌ للابتكار">
+      <img src="../../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../../curriculum/y2s2/metrology/01-measurement-fundamentals.html" lang="en" dir="ltr">English</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">الرئيسية</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">عن المعهد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">عن المعهد</a>
+          <a href="../../../about/index.html#standards">معاييرنا</a>
+          <a href="../../../feedback/index.html">الملاحظات</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">الرسالة</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">المنهج<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">المنهج الكامل</a>
+          <a href="../../../curriculum/index.html#year-1">السنة 1</a><a href="../../../curriculum/index.html#year-2">السنة 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">الموارد<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">الأدوات والبرمجيات</a>
+          <a href="../../../reference/index.html#summaries">ملخصات المقررات</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">المسارات المهنية</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">ابحث في الدروس <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+<div class="ar-note" dir="rtl">محتوى هذا الدرس متاح باللغة الإنجليزية. واجهة المنصة وصفحتا الرسالة والمسارات المهنية متاحة بالعربية كاملة.</div><div lang="en" dir="ltr" class="en-body">
+<div class="player">
+
+<aside class="outline" id="outline" aria-label="Course outline">
+  <div class="oh">
+    <a href="index.html">MET 204 · Metrology &amp; Quality Control</a>
+    <div class="bar"><i></i></div><span class="ptext"></span>
+  </div>
+  <a href="01-measurement-fundamentals.html" class="ol cur" data-key="y2s2/metrology/1"><span class="tick"></span><span>01 · Measurement fundamentals</span></a><a href="02-dimensional-instruments.html" class="ol" data-key="y2s2/metrology/2"><span class="tick"></span><span>02 · Dimensional instruments</span></a><a href="03-uncertainty-and-calibration.html" class="ol" data-key="y2s2/metrology/3"><span class="tick"></span><span>03 · Uncertainty and calibration</span></a><a href="04-form-fits-and-gd-t-verification.html" class="ol" data-key="y2s2/metrology/4"><span class="tick"></span><span>04 · Form, fits, and GD&amp;T verification</span></a><a href="05-limit-gauging-and-taylor-s-principle.html" class="ol" data-key="y2s2/metrology/5"><span class="tick"></span><span>05 · Limit gauging and Taylor's principle</span></a><a href="06-surface-texture-measurement.html" class="ol" data-key="y2s2/metrology/6"><span class="tick"></span><span>06 · Surface texture measurement</span></a><a href="07-statistical-process-control-i.html" class="ol" data-key="y2s2/metrology/7"><span class="tick"></span><span>07 · Statistical process control I</span></a><a href="08-statistical-process-control-ii-and-capability.html" class="ol" data-key="y2s2/metrology/8"><span class="tick"></span><span>08 · Statistical process control II and capability</span></a><a href="09-acceptance-sampling.html" class="ol" data-key="y2s2/metrology/9"><span class="tick"></span><span>09 · Acceptance sampling</span></a><a href="10-gauge-r-r-and-measurement-systems.html" class="ol" data-key="y2s2/metrology/10"><span class="tick"></span><span>10 · Gauge R&amp;R and measurement systems</span></a><a href="11-quality-systems-and-audits.html" class="ol" data-key="y2s2/metrology/11"><span class="tick"></span><span>11 · Quality systems and audits</span></a>
+</aside>
+<div class="lesson-main">
+<nav class="crumbs"><a href="../../../curriculum/index.html">المنهج</a> /
+<a href="index.html">MET 204</a> /
+<span>Lesson 01 of 11</span></nav>
+<div class="lesson-head">
+  <p class="eyebrow">MET 204 · Lesson 01 of 11 · Year 2 · Semester 2</p>
+  <h1>Measurement fundamentals</h1>
+  <p class="sub">Accuracy, precision, resolution, and bias untangled for good. Traceability chains to national standards. The vocabulary that makes calibration certificates readable.</p>
+  <div class="metachips"><span class="mchip">Format <b>Full lesson</b></span><span class="mchip">Primary text <b>NPTEL: Metrology and Quality Control-style c</b></span><span class="mchip">Assessment <b>11-problem interactive quiz</b></span></div>
+</div>
+<div class="lesson-tools">
+  <button id="completeBtn" class="complete-btn" type="button" data-key="y2s2/metrology/1">Mark as complete</button>
+  
+</div>
+<div class="src-strip"><span class="t">SOURCED FROM</span>
+  <b>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</b></div>
+<div class="video-hero"><div class="vh-frame"><figure class="embed"><iframe loading="lazy" src="https://www.youtube.com/embed/b4bRhuA0NAg" title="Measurement, resolution, precision, accuracy lecture" frameborder="0" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe><figcaption>Measurement, resolution, precision, accuracy lecture <span class="src">David Sklenicka</span></figcaption></figure></div><div class="vh-bar"><span class="n">Measurement, resolution, precision, accuracy lecture</span><span class="c">DAVID SKLENICKA</span></div></div>
+<div class="tabs" role="tablist">
+  <button class="on" data-tab="t-lecture">المحاضرة</button>
+  <button data-tab="t-foundations">الأسس</button>
+  <button data-tab="t-examples">الأمثلة والاختبار</button>
+  <button data-tab="t-library">المكتبة</button>
+</div>
+<section class="tabpanel on" id="t-lecture"><h2 class="tabcap">المحاضرة</h2><div class="preview"><b>After this lesson you can answer:</b><ul><li>Accuracy versus precision: sketch the four target patterns.</li><li>What does traceability connect your caliper to?</li></ul></div><div class="measure"><figure class="lesson-diagram"><svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" font-family="ui-sans-serif,system-ui,sans-serif" role="img" aria-label="A dot plot of ten micrometer readings of a gauge block certified at 25.0000 millimetres. The readings cluster tightly between 4 and 7 micrometres above the certified value, so the instrument repeats to about 1 micrometre while reading 5.2 micrometres high. A solid line marks the certified value, a dashed line the mean of the readings, and the gap between them is the bias."><rect x="0" y="0" width="560" height="300" fill="#ffffff"/><text x="16" y="22" fill="#14181F" font-size="12" font-weight="700">Precise and wrong: ten readings of a certified block</text><path d="M90 250 L505 250" stroke="#14181F" stroke-width="1.5" fill="none"/><path d="M90 250 L90 62" stroke="#14181F" stroke-width="1.5" fill="none"/><text x="297.5" y="282" text-anchor="middle" fill="#14181F" font-size="12">reading &#8722; 25.0000 mm (&#181;m)</text><text x="26" y="156" font-size="12" fill="#14181F" transform="rotate(-90 26 156)" text-anchor="middle">repeat number</text><path d="M90 250 L90 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="90" y="266" text-anchor="middle" fill="#5B6672" font-size="11">0</text><path d="M173 250 L173 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="173" y="266" text-anchor="middle" fill="#5B6672" font-size="11">2</text><path d="M256 250 L256 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="256" y="266" text-anchor="middle" fill="#5B6672" font-size="11">4</text><path d="M339 250 L339 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="339" y="266" text-anchor="middle" fill="#5B6672" font-size="11">6</text><path d="M422 250 L422 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="422" y="266" text-anchor="middle" fill="#5B6672" font-size="11">8</text><path d="M505 250 L505 254" stroke="#5B6672" stroke-width="1" fill="none"/><text x="505" y="266" text-anchor="middle" fill="#5B6672" font-size="11">10</text><path d="M90 250 L90 62" stroke="#1f7a5c" stroke-width="2" fill="none"/><path d="M305.8 250 L305.8 62" stroke="#9c2f2f" stroke-width="1.6" stroke-dasharray="6 4" fill="none"/><rect x="262.9" y="62.0" width="85.7" height="188.0" fill="#9c2f2f14" stroke="none"/><circle cx="256" cy="108" r="4.5" fill="#3a6ea5"/><circle cx="339" cy="120" r="4.5" fill="#3a6ea5"/><circle cx="297.5" cy="132" r="4.5" fill="#3a6ea5"/><circle cx="380.5" cy="144" r="4.5" fill="#3a6ea5"/><circle cx="256" cy="156" r="4.5" fill="#3a6ea5"/><circle cx="339" cy="168" r="4.5" fill="#3a6ea5"/><circle cx="297.5" cy="180" r="4.5" fill="#3a6ea5"/><circle cx="339" cy="192" r="4.5" fill="#3a6ea5"/><circle cx="256" cy="204" r="4.5" fill="#3a6ea5"/><circle cx="297.5" cy="216" r="4.5" fill="#3a6ea5"/><text x="100" y="46" fill="#1f7a5c" font-size="11">certified 25.0000 mm</text><text x="250" y="46" fill="#9c2f2f" font-size="11">mean +5.2 &#181;m</text><text x="370" y="46" fill="#5B6672" font-size="11">spread s = 1.03 &#181;m</text></svg><figcaption>The instrument is repeating to about a micrometre and reading five micrometres high. Those are two different faults with two different cures: the scatter is <b>precision</b>, improved by technique and averaging, and the offset is <b>bias</b>, removed only by calibration. Averaging the ten readings tightens the mean to \( s/\sqrt{10} = 0.33\ \mu\mathrm{m} \) and does nothing whatever to the 5.2 &#181;m error, because more readings of a wrong ruler are still wrong.</figcaption></figure>
+<h3>&#167;1 &middot; Four words that are not synonyms</h3>
+<p>A measurement is a claim about the world, and like any claim it can be wrong in more than one
+way. Quality work depends on separating the ways, because each has a different cure and confusing
+them wastes money on the wrong one.</p>
+<p><b>Resolution</b> is the smallest change an instrument can display &mdash; 1 &#181;m on a digital
+micrometer, 0.02 mm on a vernier caliper. It is a property of the display, and it is the weakest
+of the four: an instrument can resolve to a micrometre and be wrong by fifty.</p>
+<p><b>Precision</b>, or repeatability, is how closely repeated measurements of the same thing agree
+with <em>each other</em>. It is measured as a standard deviation and improved by technique,
+fixturing and averaging.</p>
+<p><b>Bias</b> is the systematic difference between the average of many measurements and the true
+value. It does not shrink with repetition, and no amount of care in the measuring reduces it.</p>
+<p><b>Accuracy</b> is closeness to the true value, and it needs both: small bias <em>and</em> small
+scatter. The figure shows the case that catches people out &mdash; ten readings of a certified
+25.0000 mm block, scattering by only about a micrometre, all of them about five micrometres too
+big. The instrument is precise and inaccurate, and the operator who checks repeatability and
+stops there will believe it is fine.</p>
+
+<h3>&#167;2 &middot; What the readings actually say</h3>
+<p>Take the ten readings, in micrometres above the certified value: 4, 6, 5, 7, 4, 6, 5, 6, 4, 5.</p>
+<div class="keybox"><span class="tag">Key relations &mdash; separating scatter from offset</span>
+<p>\[ \bar{x}=\frac{1}{n}\sum x_i,\qquad
+s=\sqrt{\frac{\sum(x_i-\bar{x})^2}{n-1}},\qquad
+\text{bias}=\bar{x}-x_{\text{ref}},\qquad
+u(\bar{x})=\frac{s}{\sqrt{n}} \]</p>
+<p>\( s \) is the spread of a single reading; \( s/\sqrt{n} \) is the uncertainty of their mean.
+Bias is the distance from that mean to the reference and is not divided by anything.</p></div>
+<p>The mean is 5.2 &#181;m, so the instrument reads 25.0052 mm against a block certified at
+25.0000. The sample standard deviation is 1.03 &#181;m. Averaging ten readings tightens the mean
+to \( 1.03/\sqrt{10}=0.33\ \mu\mathrm{m} \) &mdash; genuinely worth having &mdash; while the
+5.2 &#181;m bias is untouched. That asymmetry is the whole practical point: repetition buys
+precision and never buys accuracy.</p>
+<p>The block itself carries an uncertainty, quoted on its certificate as
+\( U = 0.2\ \mu\mathrm{m} \) at \( k=2 \). Compare that with the 5.2 &#181;m bias and the verdict
+is unambiguous: the reference is twenty-six times better than the error being measured, so the
+error belongs to the micrometer. Had the two been comparable, the honest conclusion would have
+been that the check could not resolve the question.</p>
+
+<h3>&#167;3 &middot; Traceability: why anyone should believe the block</h3>
+<p>The block's certificate is only worth what stands behind it. <b>Traceability</b> is that chain:
+an unbroken sequence of calibrations, each with its own stated uncertainty, linking a working
+instrument to a national measurement institute and through it to the SI definition of the
+metre.</p>
+<p>Each link degrades slightly &mdash; uncertainty accumulates downward, never shrinks &mdash;
+which is why a working gauge is calibrated against a reference gauge several times better than
+itself, rather than against another working gauge. The usual guidance is a ratio of at least 4:1
+between the tolerance being checked and the uncertainty of the check, and the 26:1 above is
+comfortable.</p>
+<p>A calibration certificate is readable once the vocabulary is: the <b>measurand</b> is what was
+measured, the <b>reference standard</b> is what it was measured against and where <em>its</em>
+traceability comes from, the <b>result</b> is a value with an uncertainty and a coverage factor,
+the <b>conditions</b> are the temperature and humidity it holds at, and the statement of
+conformity is a judgement against a specification, not a measurement. A certificate with a result
+and no uncertainty is not a calibration certificate.</p>
+
+<h3>&#167;4 &middot; Temperature, the error nobody writes on the drawing</h3>
+<p>Dimensional metrology is defined at 20&#176;C. That is not a nicety; it is part of what a
+length <em>means</em>, because every material changes size with temperature.</p>
+<div class="keybox"><span class="tag">Key relation &mdash; thermal error</span>
+<p>\[ \Delta L=L\,\alpha\,\Delta T \]</p>
+<p>\( \alpha \approx 11.5\times10^{-6}\ \mathrm{K^{-1}} \) for steel and
+\( 23.1\times10^{-6} \) for aluminium.</p></div>
+<p>A 200 mm steel part measured in a 25&#176;C workshop instead of a 20&#176;C room is
+\( 200(11.5\times10^{-6})(5) = 11.5\ \mu\mathrm{m} \) longer than its defined size. On an
+IT7 tolerance of about 46 &#181;m that is a quarter of the band, spent before any instrument is
+picked up. The same part in aluminium moves 23.1 &#181;m.</p>
+<p>Two consequences follow. First, the difference between materials matters as much as the
+absolute movement: measuring an aluminium part with a steel gauge at 25&#176;C leaves
+\( 23.1-11.5 = 11.6\ \mu\mathrm{m} \) of differential expansion that no amount of instrument
+quality removes. Second, soak time is a real requirement rather than a ritual &mdash; a part
+carried from a machine to an inspection room is not at room temperature when it arrives, and
+measuring it immediately measures its history rather than its size.</p>
+</div></section>
+<section class="tabpanel" id="t-foundations"><h2 class="tabcap">الأسس</h2><div class="measure">
+<h4>What this lesson assumes</h4>
+<ul class="plain">
+<li><b>Mean and standard deviation</b> (Engineering Statistics L2) &mdash; the two numbers that
+separate scatter from offset.</li>
+<li><b>The standard error of a mean</b> (Engineering Statistics L5) &mdash; \( s/\sqrt{n} \), and
+what it does and does not improve.</li>
+<li><b>Thermal expansion</b> (Materials Science I L6) &mdash; \( \Delta L=L\alpha\Delta T \),
+applied here at micrometre scale.</li>
+<li><b>Tolerances and IT grades</b> (Engineering Drawing &amp; CAD L6) &mdash; the bands these
+errors are being spent against.</li>
+<li><b>SI units</b> (Engineering Mathematics I L1) &mdash; the definition the traceability chain
+terminates at.</li>
+</ul>
+<h4>Glossary</h4>
+<div class="glossary-wrap"><table class="glossary">
+<thead><tr><th>Term</th><th>Equation</th><th>When to use</th></tr></thead>
+<tbody>
+<tr><td>Resolution</td><td>smallest displayed increment</td><td>A display property; says nothing about correctness.</td></tr>
+<tr><td>Precision</td><td>\( s=\sqrt{\sum(x_i-\bar{x})^2/(n-1)} \)</td><td>Agreement of repeats with each other.</td></tr>
+<tr><td>Bias</td><td>\( \bar{x}-x_{\text{ref}} \)</td><td>Systematic offset; removed only by calibration.</td></tr>
+<tr><td>Accuracy</td><td>small bias AND small \( s \)</td><td>Closeness to the true value.</td></tr>
+<tr><td>Uncertainty of the mean</td><td>\( s/\sqrt{n} \)</td><td>What averaging buys &mdash; and it never touches bias.</td></tr>
+<tr><td>Traceability</td><td>unbroken calibration chain</td><td>Links a working gauge to the SI metre.</td></tr>
+<tr><td>Coverage factor</td><td>\( U=k\,u \), usually \( k=2 \)</td><td>Reading a certificate's stated uncertainty.</td></tr>
+<tr><td>Thermal error</td><td>\( \Delta L=L\alpha\Delta T \)</td><td>Any measurement away from 20&#176;C.</td></tr>
+</tbody></table></div>
+</div></section>
+<section class="tabpanel" id="t-examples"><h2 class="tabcap">الأمثلة والاختبار</h2><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 1 of 11 · solve, then check</span><p class="qname"><b>Separating precision from accuracy</b></p>
+<p><b>Problem.</b> A micrometer is used ten times on a gauge block certified at 25.0000 mm with
+\( U = 0.2\ \mu\mathrm{m} \) (\( k=2 \)). The readings, in micrometres above the certified value,
+are 4, 6, 5, 7, 4, 6, 5, 6, 4, 5. Find the mean reading, the repeatability standard deviation, the
+bias, and the uncertainty of the mean. State whether the instrument is precise, accurate, both or
+neither.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) \( \bar{x} = (4+6+5+7+4+6+5+6+4+5)/10 = 52/10
+= 5.2\ \mu\mathrm{m} \), so the mean reading is 25.0052 mm.</p>
+<p>(2) Deviations from 5.2: &#8722;1.2, 0.8, &#8722;0.2, 1.8, &#8722;1.2, 0.8, &#8722;0.2, 0.8,
+&#8722;1.2, &#8722;0.2. Their squares sum to 9.60, so
+\( s = \sqrt{9.60/9} = \sqrt{1.0667} = 1.03\ \mu\mathrm{m} \).</p>
+<p>(3) Bias \( = 5.2 - 0 = +5.2\ \mu\mathrm{m} \): the instrument reads high.</p>
+<p>(4) \( u(\bar{x}) = s/\sqrt{n} = 1.03/\sqrt{10} = 0.33\ \mu\mathrm{m} \).</p>
+<p><b>Answer:</b> mean 25.0052 mm, \( s = 1.03\ \mu\mathrm{m} \), bias \( +5.2\ \mu\mathrm{m} \),
+\( u(\bar{x}) = 0.33\ \mu\mathrm{m} \). The instrument is <b>precise but not accurate</b>.
+<b>Sanity check:</b> the bias is 5.2 &#181;m against a reference uncertainty of 0.2 &#181;m
+&mdash; a ratio of 26, so the error is unambiguously the micrometer's and not the block's. Note
+what averaging did and did not do: it reduced the uncertainty of the mean to 0.33 &#181;m, better
+than a single reading by a factor of \( \sqrt{10} \), while leaving the 5.2 &#181;m error exactly
+where it was. Precision is earned by repetition; accuracy is earned by calibration.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 2 of 11 · solve, then check</span><p class="qname"><b>Thermal error against the tolerance band (with a US customary check)</b></p>
+<p><b>Problem.</b> A 200 mm shaft is measured in a workshop at 25&#176;C rather than the reference
+20&#176;C. Find the thermal error for steel (\( \alpha = 11.5\times10^{-6}\ \mathrm{K^{-1}} \))
+and for aluminium (\( 23.1\times10^{-6} \)), express the steel error as a fraction of an IT7
+tolerance of 46 &#181;m, and give the steel error in thousandths of an inch. Then state the error
+left if an aluminium part is measured with a steel gauge at that temperature.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> (1) Steel:
+\( \Delta L = L\alpha\Delta T = 200(11.5\times10^{-6})(5) = 0.0115\ \mathrm{mm}
+= 11.5\ \mu\mathrm{m} \).</p>
+<p>(2) Aluminium: \( 200(23.1\times10^{-6})(5) = 0.0231\ \mathrm{mm} = 23.1\ \mu\mathrm{m} \).</p>
+<p>(3) \( 11.5/46 = 0.25 \) &mdash; a quarter of the tolerance band.</p>
+<p>(4) \( 11.5\ \mu\mathrm{m} = 0.0115\ \mathrm{mm} \div 25.4 = 0.00045\ \mathrm{in} \), that is
+0.45 thou.</p>
+<p>(5) An aluminium part on a steel gauge, both at 25&#176;C, leaves the <em>difference</em>:
+\( 23.1 - 11.5 = 11.6\ \mu\mathrm{m} \).</p>
+<p><b>Answer:</b> 11.5 &#181;m steel and 23.1 &#181;m aluminium; the steel error is 25% of an IT7
+band, or 0.45 thou; measuring aluminium with a steel gauge leaves 11.6 &#181;m.
+<b>Sanity check:</b> the differential case is the one worth remembering, because it survives every
+improvement to the instrument &mdash; a perfect gauge of the wrong material still reports
+11.6 &#181;m of temperature. It also explains why gauge blocks are specified in the same material
+as the work where precision matters, and why the reference temperature is written into the
+definition of a dimension rather than left to the inspector. A quarter of the tolerance band spent
+before measuring is the practical reason inspection rooms are air-conditioned.</p></div></div><div class="quiz-item" data-kind="solve"><div class="q"><span class="tag">Problem 3 of 11 · solve, then check</span><p class="qname"><b>Is the check good enough to make the call?</b></p>
+<p><b>Problem.</b> A feature has a tolerance band of 46 &#181;m. Three candidate checks are
+offered: (a) the micrometer above, uncertainty 1.03 &#181;m per reading; (b) a vernier caliper
+with 20 &#181;m resolution and a repeatability of 15 &#181;m; (c) a comparator reading against the
+gauge block, uncertainty 2.0 &#181;m. Apply the 4:1 rule &mdash; the tolerance should be at least
+four times the measurement uncertainty &mdash; and say which checks are fit for the job.</p></div><button type="button" class="quiz-reveal" aria-expanded="false">Show the full solution</button><div class="quiz-sol"><p><b>Solution.</b> The rule asks for
+\( T/u \ge 4 \), i.e. \( u \le 46/4 = 11.5\ \mu\mathrm{m} \).</p>
+<p>(a) \( 46/1.03 = 44.7 \) &#10003; comfortably fit &mdash; <em>provided the bias is
+corrected</em>, since the 5.2 &#181;m offset is not part of \( s \).</p>
+<p>(b) \( 46/15 = 3.1 \) &#10007; below 4: the caliper's scatter alone eats a third of the band,
+and its 20 &#181;m resolution is itself nearly half the tolerance.</p>
+<p>(c) \( 46/2.0 = 23 \) &#10003; fit.</p>
+<p><b>Answer:</b> (a) and (c) are fit for purpose, (b) is not.
+<b>Sanity check:</b> case (a) carries the lesson's trap. Judged on repeatability alone the
+micrometer looks like the best of the three, and used uncorrected it would report every part
+5.2 &#181;m oversize &mdash; more than the entire uncertainty budget the rule allows. The 4:1 rule
+is a statement about <em>uncertainty</em>, and an uncorrected bias is not uncertainty, it is
+error. A gauge that has been characterised and not corrected is worse than one that has not been
+characterised, because the number is now trusted.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 4 of 11 · multiple choice</span><p>An instrument's resolution is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>how close its readings are to the true value</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>the smallest change it can display</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>the spread of repeated readings</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>its calibration interval</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Resolution is a property of the display and nothing more. A micrometer
+resolving to 1 &#181;m can read 5 &#181;m high all day, as the worked example does. Closeness to
+truth is accuracy, the spread of repeats is precision, and all three are independent &mdash;
+which is why a specification quoting only resolution tells you almost nothing about whether an
+instrument can do a job.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 5 of 11 · multiple choice</span><p>Ten repeated readings are averaged instead of one being taken. This improves</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>accuracy, by reducing bias</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>precision of the mean, by \( \sqrt{10} \), leaving bias untouched</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>both bias and scatter equally</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>resolution</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>\( u(\bar{x}) = s/\sqrt{n} \), so ten readings tighten the mean from 1.03 to
+0.33 &#181;m. Bias is systematic: every one of the ten readings carries the same 5.2 &#181;m
+offset, so their average carries it too. More readings of a wrong ruler are still wrong, and this
+is the single most useful thing to understand about repetition.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 6 of 11 · multiple choice</span><p>Traceability means that a measurement</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>was made by a certified technician</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>links to a national standard through an unbroken chain of calibrations, each with a stated uncertainty</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is recorded in a quality system</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>was repeated enough times</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is the chain, and the uncertainty stated at every link. Each step adds
+uncertainty rather than removing it, which is why a working gauge is calibrated against a
+reference several times better than itself. A record in a quality system is evidence <em>of</em>
+traceability, not traceability; a technician's certification is about competence, which is a
+different requirement.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 7 of 11 · multiple choice</span><p>A calibration certificate gives a result but states no uncertainty. It is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>acceptable if the laboratory is accredited</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>not a calibration certificate &mdash; the uncertainty is part of the result</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>acceptable for working gauges</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>acceptable if a coverage factor is implied</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>A measurement result without an uncertainty is not a result, because nothing
+can be judged against it: you cannot apply a 4:1 rule, cannot decide conformity near a limit, and
+cannot pass traceability down another link. Accreditation is what makes a stated uncertainty
+credible; it does not substitute for stating one.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 8 of 11 · multiple choice</span><p>Dimensional metrology defines length at</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>25&#176;C</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>20&#176;C</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>0&#176;C</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>whatever the inspection room holds</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>20&#176;C is part of what a dimension <em>means</em>, not a convenience. A
+200 mm steel part at 25&#176;C is 11.5 &#181;m longer than its defined size &mdash; a quarter of
+an IT7 band &mdash; and an aluminium one is 23.1 &#181;m longer. Without a defined reference
+temperature, a drawing dimension would not be a single number.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 9 of 11 · multiple choice</span><p>An aluminium part is measured with a steel gauge, both at 25&#176;C. The residual
+error is</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>zero, because both have expanded</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>11.5 &#181;m per 200 mm</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>11.6 &#181;m per 200 mm, from the difference in expansion coefficients</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>23.1 &#181;m per 200 mm</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Both expand, so part of the error cancels &mdash; but not all of it, because
+the coefficients differ: \( (23.1-11.5)\times10^{-6}(200)(5) = 11.6\ \mu\mathrm{m} \). This
+differential term survives any improvement to the instrument, which is why gauges are specified in
+the same material as the work when precision matters, and why "both are at the same temperature"
+is not the reassurance it sounds like.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 10 of 11 · multiple choice</span><p>The 4:1 rule requires that the tolerance being checked is at least four times the</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>instrument resolution</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>measurement uncertainty</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>bias</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>part size</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>It is a ratio of tolerance to <em>uncertainty</em>, so the whole measurement
+process is in scope, not just the display. It also does not license an uncorrected bias: a bias
+is a known error and belongs corrected, not absorbed into an uncertainty budget. The worked
+micrometer passes the rule at 44:1 on scatter and would still report every part 5.2 &#181;m
+oversize.</p></div></div><div class="quiz-item" data-kind="mc"><div class="q"><span class="tag">Problem 11 of 11 · multiple choice</span><p>A part is carried straight from a machining centre to the inspection room and
+measured immediately. The measurement</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>is valid, because the room is at 20&#176;C</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>reflects the part's temperature history rather than its size</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>is valid if the instrument is calibrated</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>is only affected for aluminium parts</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>The room being at 20&#176;C says nothing about the part, which arrives
+carrying the heat of the cut. Soak time is a real requirement, not a ritual: until the part
+reaches the reference temperature, \( \Delta L=L\alpha\Delta T \) is measuring how recently it was
+machined. A calibrated instrument reports that thermal state faithfully, which is precisely the
+problem.</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div><div class="applied"><span class="tag">Applied case — factory floor (Kuwait)</span>
+<p><b>Applied case &mdash; the shaft batch that failed at the customer and passed at the
+works.</b> A batch of 200 mm shafts was inspected against a 46 &#181;m diameter tolerance, passed,
+shipped, and rejected on receipt as oversize. Both parties re-measured, both were confident, and
+the readings differed by about 5 &#181;m consistently &mdash; not randomly, which is the detail
+that solved it.</p>
+<p>A consistent difference is a bias, and bias belongs to an instrument rather than to a process.
+Checking the works micrometer against a gauge block certified at 25.0000 mm with
+\( U = 0.2\ \mu\mathrm{m} \) gave ten readings averaging 25.0052 mm: the instrument read
+5.2 &#181;m high, with a repeatability of only 1.03 &#181;m. Its scatter was excellent, which is
+why nobody had suspected it &mdash; repeated measurements agreed beautifully with each other and
+consistently with nothing else. Against a 46 &#181;m band, a 5.2 &#181;m offset consumes 11% of
+the tolerance and moves the whole batch toward one limit.</p>
+<p>Two practices follow. Repeatability checks are not calibration: agreeing with yourself is the
+one thing a biased instrument does perfectly, so an instrument must periodically be compared with
+a traceable reference and not merely with itself. And when two parties disagree consistently
+rather than randomly, the argument is about a gauge, not about a process &mdash; the fastest route
+to the answer is for both to measure the same certified artefact, which takes minutes and settles
+what weeks of re-inspection will not.</p>
+</div><div class="measure unit-vers"><h3>Unit versatility</h3><p class="small">The theory above is in SI. Engineering practice also runs in US/Imperial and CGS — convert each quantity, then check. Get one wrong and the engine hands you a fresh variant of the same conversion.</p></div><div class="measure quiz"><p class="quiz-intro">Work every problem on paper first. Solved examples reveal their full solution; for the multiple-choice questions, select your answers and press <b>Submit</b> to see what was right, what was not, and why.</p><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(45\\ \\mathrm{mm}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(1143\\ \\mathrm{in}\\)", "\\(1.772\\ \\mathrm{in}\\)", "\\(17.72\\ \\mathrm{in}\\)", "\\(0.1772\\ \\mathrm{in}\\)"], "answer": 1, "solution": "&lt;p>Using \\(1\\ \\mathrm{mm} = 0.03937\\ \\mathrm{in}\\): \\(45 \\times 0.03937 = 1.772\\ \\mathrm{in}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 1 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(3\ \mathrm{mm}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(76.2\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">B</span><span>\(0.1181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">C</span><span>\(1.181\ \mathrm{in}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.01181\ \mathrm{in}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{mm} = 0.03937\ \mathrm{in}\): \(3 \times 0.03937 = 0.1181\ \mathrm{in}\).</p></div></div><div class="quiz-item" data-kind="mc" data-variants='[{"type": "mc", "q": "&lt;p>&lt;b>Unit versatility.&lt;/b> A quantity is \\(60\\ \\mathrm{N}\\). In US units, this is closest to:&lt;/p>", "choices": ["\\(134.9\\ \\mathrm{lbf}\\)", "\\(266.9\\ \\mathrm{lbf}\\)", "\\(13.49\\ \\mathrm{lbf}\\)", "\\(1.349\\ \\mathrm{lbf}\\)"], "answer": 2, "solution": "&lt;p>Using \\(1\\ \\mathrm{N} = 0.2248\\ \\mathrm{lbf}\\): \\(60 \\times 0.2248 = 13.49\\ \\mathrm{lbf}\\).&lt;/p>"}]'><div class="q"><span class="tag">Problem 2 of 2 · multiple choice</span><p><b>Unit versatility.</b> A quantity is \(5\ \mathrm{N}\). In US units, this is closest to:</p></div><div class="choices"><button type="button" class="quiz-choice"><span class="key">A</span><span>\(11.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">B</span><span>\(22.24\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice" data-ok="1"><span class="key">C</span><span>\(1.124\ \mathrm{lbf}\)</span></button><button type="button" class="quiz-choice"><span class="key">D</span><span>\(0.1124\ \mathrm{lbf}\)</span></button></div><p class="quiz-verdict" hidden></p><div class="quiz-item-actions" hidden><button type="button" class="quiz-recheck btn btn-sm">Check again</button><button type="button" class="quiz-reveal-ans btn btn-sm btn-ghost">Reveal answer</button></div><div class="quiz-sol"><p>Using \(1\ \mathrm{N} = 0.2248\ \mathrm{lbf}\): \(5 \times 0.2248 = 1.124\ \mathrm{lbf}\).</p></div></div><div class="quiz-actions"><button type="button" class="quiz-submit btn btn-primary">إرسال الإجابات</button><p class="quiz-score" hidden></p></div></div></section>
+<section class="tabpanel" id="t-library"><h2 class="tabcap">المكتبة</h2>
+<div class="lib-block lib-video">
+  <h3>Lesson video</h3>
+  <p class="small">The lesson video plays at the top of this page. Alternatives and references below.</p>
+  
+</div>
+
+<div class="lib-block lib-books">
+  <h3>Textbooks &amp; references</h3>
+  <p class="src"><b>The standard university texts</b> — the same references assigned at leading engineering schools:</p><ul class="plain small"><li><a href="https://openlibrary.org/works/OL8759773W" target="_blank" rel="noopener">Fundamentals of Dimensional Metrology — Dotson</a></li><li><a href="https://openlibrary.org/works/OL15423833W" target="_blank" rel="noopener">Applied Statistics and Probability for Engineers — Montgomery &amp; Runger</a></li></ul>
+  <p class="src"><b>Taught from</b> — NPTEL: Metrology</p>
+  <ul class="plain small"><li>NPTEL: Metrology and Quality Control-style courses (nptel.ac.in)</li><li><a href="https://openlibrary.org/works/OL3752130W" title="Groover — Fundamentals of Modern Manufacturing (Open Library)" target="_blank" rel="noopener">Groover</a>, inspection &amp; quality chapters</li></ul>
+</div>
+<div class="wide"></div></section>
+<nav class="prevnext"><a href="index.html">كل الدروس · MET 204</a><a href="02-dimensional-instruments.html">02 · Dimensional instruments →</a></nav>
+<nav class="coursenav"><span class="cn-label">Next course</span><a class="cn-link" href="../../y2s2/mfg-processes-3/index.html">MFG 254 · Manufacturing Processes III — Sheet, Plastics &amp; Additive →</a></nav>
+</div>
+</div></div>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">هندسةٌ للابتكار</span></div>
+  <nav><a href="../../../index.html">الرئيسية</a><a href="../../../about/index.html">عن المعهد</a><a href="../../../mission/index.html">الرسالة</a><a href="../../../curriculum/index.html">المنهج</a><a href="../../../reference/index.html">الموارد</a><a href="../../../career/index.html">المسارات المهنية</a><a href="../../../feedback/index.html">الملاحظات</a></nav>
+  <p class="proto">إصدار أولي مفتوح — نموذج تجريبي نُشر ليجرّبه المتعلمون ويتأملوا فيه. <a href="../../../feedback/index.html">اترك مراجعتك</a> — فهي تشكّل الإصدارات النهائية المخصّصة. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener"><span dir="ltr">المصدر على GitHub</span></a>.</p>
+  <p>تعليم هندسي مفتوح. قيم الأمثلة المحلولة تعليمية؛ والأرقام الصناعية التمثيلية مُعلَّمة بذلك وليست بيانات تشغيل منشورة لأي شركة مسمّاة. كل الرسوم أصلية متجهة. والدروس التي لم تبلغ العمق الكامل تصرّح بذلك بأمانة.</p>
+</div></footer>
+<script src="../../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>

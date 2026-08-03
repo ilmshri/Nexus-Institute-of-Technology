@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#FAF8F4">
+<title>Course summary — Engineering Mathematics II — MechEd</title>
+<meta name="description" content="Condensed per-lesson revision summary for MTH 151 Engineering Mathematics II.">
+<link rel="manifest" href="../../../manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="../../../assets/nx/logo.svg">
+<link rel="apple-touch-icon" href="../../../assets/nx/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&family=Source+Sans+3:wght@400..700&family=Source+Code+Pro:wght@400;600&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../../assets/nx/nexus.css?v=530f1b25c4">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="in brandrow">
+    <a class="brand" href="../../../index.html" aria-label="MechEd — Engineered to Innovate">
+      <img src="../../../assets/nx/logo.svg" alt="">
+      <span class="txt"><span class="teal">MechEd</span></span>
+    </a>
+    <a class="lang-btn" href="../../../ar/curriculum/y1s2/math-2/summary.html" lang="ar" dir="rtl">العربية</a>
+  </div>
+  <div class="in navrow">
+    <nav aria-label="Site">
+      <a href="../../../index.html">Home</a>
+      <div class="navgrp">
+        <a href="../../../about/index.html" class="grp">About<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../about/index.html">About the institute</a>
+          <a href="../../../about/index.html#standards">Our standards</a>
+          <a href="../../../feedback/index.html">Feedback</a>
+        </div>
+      </div>
+      <a href="../../../mission/index.html">Mission</a>
+      <div class="navgrp">
+        <a href="../../../curriculum/index.html" class="grp on">Curriculum<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../curriculum/index.html">Full curriculum</a>
+          <a href="../../../curriculum/index.html#year-1">Year 1</a><a href="../../../curriculum/index.html#year-2">Year 2</a>
+        </div>
+      </div>
+      <div class="navgrp">
+        <a href="../../../reference/index.html" class="grp">Resources<span class="caret" aria-hidden="true"></span></a>
+        <div class="drop">
+          <a href="../../../reference/index.html#tools">Tools &amp; Software</a>
+          <a href="../../../reference/index.html#summaries">Course summaries</a>
+        </div>
+      </div>
+      <a href="../../../career/index.html">Career Paths</a>
+    </nav>
+    <a class="kbtn" href="../../../curriculum/index.html#lessonSearch">Search lessons <span class="kbd">&#8984;K</span></a>
+  </div>
+</header>
+
+<main>
+
+<div class="pagehead sum-head">
+  <p class="kicker"><span class="n">COURSE SUMMARY</span>MTH 151 · Year 1 · Semester 2</p>
+  <h1>MTH 151 — Engineering Mathematics II</h1>
+  <p class="sub">Revision notes for this course: every lesson's key points with
+  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
+  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
+  clean printed set.</p>
+  <div class="cta-row no-print">
+    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+    <a class="btn btn-ghost" href="index.html">Back to course</a>
+  </div>
+</div>
+<article class="part tight sum-doc">
+<h2 class="sum-course" id="sum-math-2">MTH 151 — Engineering Mathematics II</h2>
+
+<section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 01 · Vectors and vector geometry</p><h3><span class="sum-n">Lesson 01</span>Vectors and vector geometry</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A vector carries magnitude and direction, and engineering quantities divide sharply into those that do and those that do not.</li>
+<li>The dot product measures alignment and returns a scalar: \( \mathbf{a}\cdot\mathbf{b}=|a||b|\cos\theta \).</li>
+<li>It gives work directly, and it is zero exactly when two vectors are perpendicular — the fastest orthogonality test available.</li>
+<li>Projection follows from the same product, which is how a force is resolved along any chosen direction.</li>
+<li>The cross product measures area and returns a vector perpendicular to both, with magnitude \( |a||b|\sin\theta \).</li>
+<li>It gives moment \( \mathbf{r}\times\mathbf{F} \), and its direction encodes the axis of rotation — which is why moments are vectors at all.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 01 · Vectors and vector geometry · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Pythagoras in 3-D</b> — the magnitude formula.</li><li><b>Right-triangle trigonometry</b> — where \( \cos\theta \) and \( \sin\theta \) come from.</li><li><b>Force components</b> from statics — the physical setting for projection and moment.</li></ul>
+<h4>Toolkit — laws, formulas, and constants</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Magnitude</td><td>\( |\mathbf{a}|=\sqrt{a_1^2+a_2^2+a_3^2} \)</td><td>Length of a vector.</td></tr>
+<tr><td>Unit vector</td><td>\( \hat{\mathbf{a}}=\mathbf{a}/|\mathbf{a}| \)</td><td>Direction alone, length 1.</td></tr>
+<tr><td>Dot product</td><td>\( \mathbf{a}\cdot\mathbf{b}=|\mathbf{a}||\mathbf{b}|\cos\theta \)</td><td>Alignment; work; components; ⟂ test.</td></tr>
+<tr><td>Angle</td><td>\( \cos\theta=\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|} \)</td><td>Angle between two vectors.</td></tr>
+<tr><td>Projection</td><td>\( \operatorname{proj}_{\mathbf{b}}\mathbf{a}=\frac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{b}\cdot\mathbf{b}}\mathbf{b} \)</td><td>Component of a along b.</td></tr>
+<tr><td>Cross product</td><td>\( |\mathbf{a}\times\mathbf{b}|=|\mathbf{a}||\mathbf{b}|\sin\theta \)</td><td>Area; normal direction; ∥ test.</td></tr>
+<tr><td>Moment</td><td>\( \mathbf{M}=\mathbf{r}\times\mathbf{F} \)</td><td>Torque of a force about a point.</td></tr>
+<tr><td>Plane</td><td>\( \mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_0)=0 \)</td><td>Flat surface with normal n.</td></tr>
+<tr><td>Point→plane distance</td><td>\( \frac{|\mathbf{n}\cdot\mathbf{q}-d|}{|\mathbf{n}|} \)</td><td>Clearance / interference.</td></tr>
+<tr><td>Scalar triple product</td><td>\( \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c}) \)</td><td>Signed volume; independence test.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 02 · Partial derivatives</p><h3><span class="sum-n">Lesson 02</span>Partial derivatives</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A partial derivative is the rate of change with respect to one variable while the others are held fixed.</li>
+<li>Computing one is ordinary one-variable calculus with the other symbols treated as constants.</li>
+<li>The gradient assembles the partials into a vector pointing in the direction of steepest increase.</li>
+<li>Its magnitude is that steepest rate, and it is always perpendicular to the level curves — the reason heat flows down a gradient.</li>
+<li>Mixed second partials are equal for well-behaved functions, which is a genuine check on algebra.</li>
+<li>Linear approximation via the total differential is what makes error propagation possible, and it is the everyday engineering use.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 02 · Partial derivatives · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Single-variable differentiation</b> — every partial is one of these.</li><li><b>Vectors and magnitude</b> (Lesson 1) — the gradient is a vector.</li><li><b>The idea of a slope</b> — extended to slices of a surface.</li></ul>
+<h4>Toolkit — laws, formulas, and constants</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Partial derivative</td><td>\( f_x=\partial f/\partial x \) (hold \(y\) fixed)</td><td>Sensitivity to one input.</td></tr>
+<tr><td>Gradient</td><td>\( \nabla f=(f_x,f_y) \)</td><td>Direction of steepest ascent.</td></tr>
+<tr><td>Steepest rate</td><td>\( |\nabla f| \)</td><td>Maximum slope at a point.</td></tr>
+<tr><td>Level curve</td><td>\( f(x,y)=c \)</td><td>Contours; \( \nabla f \perp \) them.</td></tr>
+<tr><td>Mixed partial (Clairaut)</td><td>\( f_{xy}=f_{yx} \)</td><td>Order of differentiation is free (smooth \(f\)).</td></tr>
+<tr><td>Linear approximation</td><td>\( \Delta f\approx f_x\Delta x+f_y\Delta y \)</td><td>Small changes; error propagation.</td></tr>
+<tr><td>Stationary point</td><td>\( \nabla f=\mathbf{0} \)</td><td>Candidate maxima/minima (optimization).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 03 · Chain rule and total differentials</p><h3><span class="sum-n">Lesson 03</span>Chain rule and total differentials</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The total differential sums each variable's contribution: \( df=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy \).</li>
+<li>The chain rule extends it when the variables themselves depend on something else — one term per path through the dependency.</li>
+<li>Drawing the dependency tree first makes the number of terms obvious and prevents the usual omissions.</li>
+<li>Error propagation is the everyday payoff: uncertainties combine through the partial derivatives, weighted by sensitivity.</li>
+<li>Independent random errors add in quadrature, so the largest single contributor dominates the result.</li>
+<li>That identifies which measurement to improve — refining anything else is wasted effort.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 03 · Chain rule and total differentials · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Partial derivatives and the gradient</b> (Lesson 2).</li><li><b>The single-variable chain rule</b> — this is its multivariable extension.</li><li><b>Relative vs absolute change</b> — the language of tolerances.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Total differential</td><td>\( df=f_x\,dx+f_y\,dy \)</td><td>Exact linear change from all inputs.</td></tr>
+<tr><td>Chain rule (1 driver)</td><td>\( \frac{df}{dt}=f_x x'+f_y y' \)</td><td>Composite of one variable.</td></tr>
+<tr><td>Chain rule (many)</td><td>\( z_s=f_x x_s+f_y y_s \)</td><td>Intermediate vars depend on \(s,t\).</td></tr>
+<tr><td>Relative error</td><td>\( \frac{dV}{V}=2\frac{dr}{r}+\frac{dh}{h} \) (cylinder)</td><td>Exponents become multipliers.</td></tr>
+<tr><td>Worst-case error</td><td>\( |\Delta f|\le|f_x||\Delta x|+|f_y||\Delta y| \)</td><td>Correlated / unknown errors.</td></tr>
+<tr><td>Quadrature (RSS)</td><td>\( \sigma_f=\sqrt{(f_x\sigma_x)^2+(f_y\sigma_y)^2} \)</td><td>Independent random errors.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 04 · Multiple integrals</p><h3><span class="sum-n">Lesson 04</span>Multiple integrals</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A double integral sums a quantity over a two-dimensional region; the hard part is the limits, not the integration.</li>
+<li>Sketch the region first and choose the integration order that keeps the limits simple.</li>
+<li>Mass is the integral of density over the region, and dividing the first moment by mass gives the centroid.</li>
+<li>Moment of inertia is the integral of \( r^2 \) over the mass — the \( r^2 \) is why distribution matters so much more than amount.</li>
+<li>The parallel-axis theorem shifts a computed inertia to any parallel axis without redoing the integral.</li>
+<li>Triple integrals extend all of this to volumes, and choosing cylindrical or spherical coordinates to match the geometry is what makes them tractable.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 04 · Multiple integrals · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Single-variable integration</b> — each iterated step is one of these.</li><li><b>Area and volume</b> as accumulated quantities.</li><li><b>Distance from an axis</b> — the \(r\) in a moment of inertia.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Area</td><td>\( A=\iint_R dA \)</td><td>Region measure (\(f=1\)).</td></tr>
+<tr><td>Iterated integral</td><td>\( \iint f\,dA=\int\!\!\int f\,dx\,dy \)</td><td>Fubini: one variable at a time.</td></tr>
+<tr><td>Mass</td><td>\( m=\iint \rho\,dA \)</td><td>Plate with density \(\rho\).</td></tr>
+<tr><td>Centroid</td><td>\( \bar x=\frac1m\iint x\rho\,dA \)</td><td>Balance point.</td></tr>
+<tr><td>Second moment (rect.)</td><td>\( I_{\text{base}}=\frac{bh^3}{3},\ I_c=\frac{bh^3}{12} \)</td><td>Bending / torsion stiffness.</td></tr>
+<tr><td>Parallel axis</td><td>\( I=I_c+Ad^2 \)</td><td>Shift the reference axis.</td></tr>
+<tr><td>Volume (solid)</td><td>\( V=\iiint_V dV \)</td><td>Triple integral, \(f=1\).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 05 · Vector fields, flux, and circulation</p><h3><span class="sum-n">Lesson 05</span>Vector fields, flux, and circulation</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A vector field assigns a vector to every point — velocity, force and heat flux are all fields.</li>
+<li>A line integral accumulates a field along a path, giving work along it or circulation around a loop.</li>
+<li>Flux measures how much of the field crosses a boundary, which is the mathematical form of every conservation statement.</li>
+<li>Divergence measures net outflow at a point: positive means a source, negative a sink, zero means incompressible.</li>
+<li>Curl measures local rotation — the swirl a paddle wheel placed in the flow would feel.</li>
+<li>A field can circulate without diverging and diverge without circulating; Green's theorem links the boundary integral to the region integral, the two-dimensional ancestor of the divergence and Stokes theorems.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 05 · Vector fields, flux, and circulation · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Dot product</b> (Lesson 1) — inside every line and flux integral.</li><li><b>Partial derivatives</b> (Lesson 2) — divergence and curl are built from them.</li><li><b>Single and double integrals</b> — line, flux, and area integrals.</li></ul>
+<h4>Toolkit — operators and theorems</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>Vector field</td><td>\( \mathbf{F}=(P,Q) \)</td><td>An arrow at every point.</td></tr>
+<tr><td>Work / circulation</td><td>\( \int_C \mathbf{F}\cdot d\mathbf{r} \)</td><td>Field along a path / loop.</td></tr>
+<tr><td>Flux</td><td>\( \int_C \mathbf{F}\cdot\mathbf{n}\,ds \)</td><td>Field across a boundary.</td></tr>
+<tr><td>Divergence</td><td>\( P_x+Q_y \)</td><td>Source strength (outflow/area).</td></tr>
+<tr><td>Curl (2-D)</td><td>\( Q_x-P_y \)</td><td>Swirl (rotation/area).</td></tr>
+<tr><td>Green's theorem</td><td>\( \oint_C\mathbf{F}\cdot d\mathbf{r}=\iint_R(Q_x-P_y)\,dA \)</td><td>Boundary ⇔ interior.</td></tr>
+<tr><td>Incompressible / irrotational</td><td>\( \operatorname{div}=0 \) / \( \operatorname{curl}=0 \)</td><td>No source / no spin.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 06 · Matrices and linear systems</p><h3><span class="sum-n">Lesson 06</span>Matrices and linear systems</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A system of linear equations is one matrix equation \( A\mathbf{x}=\mathbf{b} \), which is what makes it a computational object.</li>
+<li>A non-zero determinant means the inverse exists and the solution is unique.</li>
+<li>Gaussian elimination is the practical method; inverting the matrix is almost never the efficient route.</li>
+<li>A zero determinant means singularity — either no solution, or infinitely many.</li>
+<li>Singularity is a physical warning, not just an algebraic one: in a structure it means a mechanism, in a network an unconstrained loop.</li>
+<li>Near-singular systems are ill-conditioned: small data errors produce large solution errors, which is why the condition number matters in numerical work.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 06 · Matrices and linear systems · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Simultaneous equations</b> — the systems being packaged.</li><li><b>Vectors and dot products</b> (Lesson 1) — inside \( A\mathbf{x} \).</li><li><b>Back-substitution</b> — solving a triangular system upward.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>When to use</th></tr></thead><tbody>
+<tr><td>Matrix equation</td><td>\( A\mathbf{x}=\mathbf{b} \)</td><td>Package any linear system.</td></tr>
+<tr><td>Determinant (2×2)</td><td>\( ad-bc \)</td><td>Nonzero ⇒ unique solution.</td></tr>
+<tr><td>Inverse (2×2)</td><td>\( \frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix} \)</td><td>Closed-form solve \( A^{-1}\mathbf{b} \).</td></tr>
+<tr><td>Row operations</td><td>swap · scale · add-multiple</td><td>Simplify without changing the solution.</td></tr>
+<tr><td>Pivot / rank</td><td>leading nonzeros</td><td>Count of independent equations.</td></tr>
+<tr><td>Singular</td><td>\( \det=0 \)</td><td>Mechanism / under-constrained system.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 07 · Eigenvalues and eigenvectors</p><h3><span class="sum-n">Lesson 07</span>Eigenvalues and eigenvectors</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>An eigenvector is a direction a matrix leaves unrotated: \( A\mathbf{v}=\lambda\mathbf{v} \), with the eigenvalue giving the scaling.</li>
+<li>Eigenvalues come from the characteristic equation \( \det(A-\lambda I)=0 \).</li>
+<li>Each eigenvalue then gives its eigenvector by solving the singular system that results.</li>
+<li>Eigenvectors are directions, so any scalar multiple is the same eigenvector.</li>
+<li>Engineers compute them because they are the natural modes of a system — mode shapes in vibration, principal axes in stress and inertia.</li>
+<li>Diagonalising in the eigenvector basis decouples the equations, which is exactly how a multi-degree-of-freedom vibration problem becomes several independent one-degree problems.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 07 · Eigenvalues and eigenvectors · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Matrix–vector products and determinants</b> (Lesson 6).</li><li><b>The quadratic formula</b> — for the \(2\times2\) characteristic equation.</li><li><b>Singular matrices</b> — \( \det(A-\lambda I)=0 \) is a singularity condition.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>Eigenvalue relation</td><td>\( A\mathbf{v}=\lambda\mathbf{v} \)</td><td>Direction only scaled by \(\lambda\).</td></tr>
+<tr><td>Characteristic equation</td><td>\( \det(A-\lambda I)=0 \)</td><td>Solve for the eigenvalues.</td></tr>
+<tr><td>2×2 shortcut</td><td>\( \lambda^2-(\operatorname{tr}A)\lambda+\det A=0 \)</td><td>Fast eigenvalues + built-in checks.</td></tr>
+<tr><td>Eigenvector</td><td>\( (A-\lambda I)\mathbf{v}=\mathbf{0} \)</td><td>Direction for each \(\lambda\).</td></tr>
+<tr><td>Sum / product</td><td>\( \sum\lambda=\operatorname{tr}A,\ \prod\lambda=\det A \)</td><td>Sanity checks.</td></tr>
+<tr><td>Stability of \( \mathbf{x}'=A\mathbf{x} \)</td><td>all \( \operatorname{Re}\lambda<0 \)</td><td>Every mode decays.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 08 · Second-order linear ODEs</p><h3><span class="sum-n">Lesson 08</span>Second-order linear ODEs</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>A second-order linear ODE with constant coefficients reduces to a quadratic characteristic equation — calculus becomes algebra.</li>
+<li>The discriminant sorts the behaviour into three regimes: overdamped, critically damped and underdamped.</li>
+<li>Overdamped returns slowly without oscillating; critically damped returns fastest without overshoot; underdamped oscillates with a decaying envelope.</li>
+<li>Written in standard form, the parameters are the natural frequency \( \omega_n \) and damping ratio \( \zeta \).</li>
+<li>\( \zeta<1 \), \( =1 \) and \( >1 \) name the three regimes, and \( \zeta \) alone sets the shape of the response.</li>
+<li>This single equation models the mass-spring-damper, the RLC circuit and any first-cut control loop.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 08 · Second-order linear ODEs · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>The quadratic formula</b> — the characteristic roots.</li><li><b>Exponentials and sinusoids</b> — the solution building blocks.</li><li><b>Complex roots</b> — where oscillation comes from.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>Characteristic equation</td><td>\( mr^2+cr+k=0 \)</td><td>From the \( e^{rt} \) guess.</td></tr>
+<tr><td>Discriminant</td><td>\( \Delta=c^2-4mk \)</td><td>Sign ⇒ the regime.</td></tr>
+<tr><td>Overdamped</td><td>\( Ae^{r_1t}+Be^{r_2t} \)</td><td>\( \Delta>0 \): no oscillation.</td></tr>
+<tr><td>Critically damped</td><td>\( (A+Bt)e^{rt} \)</td><td>\( \Delta=0 \): fastest, no overshoot.</td></tr>
+<tr><td>Underdamped</td><td>\( e^{-\sigma t}(A\cos\omega_d t+B\sin\omega_d t) \)</td><td>\( \Delta<0 \): decaying oscillation.</td></tr>
+<tr><td>Natural frequency</td><td>\( \omega_n=\sqrt{k/m} \)</td><td>Undamped ringing rate.</td></tr>
+<tr><td>Damping ratio</td><td>\( \zeta=\frac{c}{2\sqrt{mk}} \)</td><td>Regime by \( \zeta \lessgtr 1 \).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 09 · Forced oscillations and resonance</p><h3><span class="sum-n">Lesson 09</span>Forced oscillations and resonance</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Adding a forcing term gives a steady-state response at the forcing frequency, plus a transient that decays away.</li>
+<li>The amplitude ratio plotted against frequency is the frequency response, and its peak is resonance.</li>
+<li>At resonance the response is limited only by damping, so a lightly damped system can amplify enormously.</li>
+<li>Phase lags behind the forcing and passes through 90° exactly at the natural frequency, whatever the damping.</li>
+<li>Damping lowers the peak and shifts it slightly, but it cannot move resonance far — only mass or stiffness can.</li>
+<li>Every vibration spectrum on a plant screen is this curve, which is why a measured peak identifies a natural frequency.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 09 · Forced oscillations and resonance · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Homogeneous second-order solutions</b> (Lesson 8) — the transient skeleton.</li><li><b>Natural frequency and damping ratio</b> \( \omega_n,\zeta \).</li><li><b>Sinusoids and phase</b> — the form of the forced response.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>Forced equation</td><td>\( mx''+cx'+kx=F_0\cos\omega t \)</td><td>Harmonic drive.</td></tr>
+<tr><td>Steady amplitude</td><td>\( \frac{F_0}{\sqrt{(k-m\omega^2)^2+(c\omega)^2}} \)</td><td>Size of the forced response.</td></tr>
+<tr><td>Static deflection</td><td>\( F_0/k \)</td><td>Zero-frequency limit.</td></tr>
+<tr><td>Resonance</td><td>\( \omega\to\omega_n \)</td><td>Amplitude peaks.</td></tr>
+<tr><td>Peak amplitude</td><td>\( \approx F_0/(c\omega_n) \)</td><td>Limited by damping.</td></tr>
+<tr><td>Magnification</td><td>\( 1/\sqrt{(1-r^2)^2+(2\zeta r)^2} \)</td><td>\( r=\omega/\omega_n \); peak \(\approx 1/(2\zeta)\).</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 10 · Laplace transforms</p><h3><span class="sum-n">Lesson 10</span>Laplace transforms</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>The Laplace transform converts a differential equation in time into an algebraic equation in \( s \).</li>
+<li>The derivative rule is what does the work, turning \( dy/dt \) into \( sY(s)-y(0) \).</li>
+<li>Initial conditions therefore enter automatically instead of being fitted afterwards.</li>
+<li>The method is: transform, solve algebraically, then invert with a table and partial fractions.</li>
+<li>It handles step, impulse and discontinuous inputs cleanly, which classical methods struggle with.</li>
+<li>The ratio of output to input transform is the transfer function — the foundation of the entire controls sequence.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 10 · Laplace transforms · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Improper integrals</b> — the transform is one.</li><li><b>Partial fractions</b> — for the inverse step.</li><li><b>Initial-value problems</b> (Lessons 8, 9) — what is being solved.</li></ul>
+<h4>Toolkit — transform pairs and rules</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Use</th></tr></thead><tbody>
+<tr><td>Definition</td><td>\( F(s)=\int_0^\infty e^{-st}f\,dt \)</td><td>The transform.</td></tr>
+<tr><td>Basic pairs</td><td>\( 1\!\to\!\tfrac1s,\ e^{at}\!\to\!\tfrac1{s-a},\ t\!\to\!\tfrac1{s^2} \)</td><td>Look-up table.</td></tr>
+<tr><td>Sine</td><td>\( \sin\omega t\to\tfrac{\omega}{s^2+\omega^2} \)</td><td>Oscillatory terms.</td></tr>
+<tr><td>Derivative rule</td><td>\( \mathcal{L}\{y'\}=sY-y(0) \)</td><td>ODE → algebra.</td></tr>
+<tr><td>Method</td><td>transform · solve · invert</td><td>The three steps.</td></tr>
+<tr><td>Transfer function</td><td>output/input in \(s\)</td><td>System description; poles ⇒ stability.</td></tr>
+</tbody></table></div></div></div></section><section class="sum-lesson"><p class="sum-run">MTH 151 · Lesson 11 · Fourier series first contact</p><h3><span class="sum-n">Lesson 11</span>Fourier series first contact</h3><div class="sum-block"><h4>Key points</h4><div class="sum-recap"><ul>
+<li>Any periodic signal, however jagged, is a sum of sinusoids at multiples of its fundamental frequency.</li>
+<li>The Fourier coefficients are found by integrating the signal against each sinusoid over one period.</li>
+<li>A square wave contains only odd harmonics, with amplitudes falling as \( 1/n \) — which is why it never quite becomes square with finite terms.</li>
+<li>Sharp edges need high harmonics, so bandwidth and rise time are the same statement in two languages.</li>
+<li>Time domain and frequency domain hold the same information presented differently.</li>
+<li>An FFT screen shows lines because a periodic machine signal genuinely contains discrete frequencies — and identifying which line belongs to which fault is the whole of vibration diagnostics.</li>
+</ul></div></div><div class="sum-fund"><p class="sum-run">MTH 151 · Lesson 11 · Fourier series first contact · fundamentals</p><div class="sum-block sum-assumes"><h4>Assumed knowledge</h4><h4>What this lesson assumes</h4>
+<ul class="plain"><li><b>Integration of sines and cosines</b> — the coefficient integrals.</li><li><b>Period and frequency</b> — \( \omega_0=2\pi/T \).</li><li><b>Sinusoids</b> — the harmonic building blocks.</li></ul>
+<h4>Toolkit — laws and formulas</h4>
+<div class="glossary-wrap"><table class="glossary"><thead><tr><th>Quantity</th><th>Formula</th><th>Reads as</th></tr></thead><tbody>
+<tr><td>Fourier series</td><td>\( \tfrac{a_0}{2}+\sum(a_n\cos n\omega_0 t+b_n\sin n\omega_0 t) \)</td><td>Signal = sum of harmonics.</td></tr>
+<tr><td>Fundamental</td><td>\( \omega_0=2\pi/T \)</td><td>Lowest frequency present.</td></tr>
+<tr><td>Coefficients</td><td>\( b_n=\tfrac2T\int_0^T f\sin n\omega_0 t\,dt \)</td><td>Amount of each harmonic.</td></tr>
+<tr><td>Orthogonality</td><td>harmonics integrate to 0</td><td>Why each integral isolates one term.</td></tr>
+<tr><td>Square wave</td><td>\( b_n=4/(n\pi) \), \(n\) odd</td><td>Odd harmonics, amplitude \(1/n\).</td></tr>
+<tr><td>Spectrum</td><td>amplitudes vs harmonic</td><td>The FFT / vibration display.</td></tr>
+</tbody></table></div></div></div></section>
+</article>
+</main>
+<footer class="nx-foot"><div class="in">
+  <img class="foot-shield" src="../../../assets/nx/logo.svg" alt="">
+  <div class="mark"><span class="teal">MechEd</span><span class="slogan">Engineered to Innovate</span></div>
+  <nav><a href="../../../index.html">Home</a><a href="../../../about/index.html">About</a><a href="../../../mission/index.html">Mission</a><a href="../../../curriculum/index.html">Curriculum</a><a href="../../../reference/index.html">Resources</a><a href="../../../career/index.html">Career Paths</a><a href="../../../feedback/index.html">Feedback</a></nav>
+  <p class="proto">Preliminary open release — a prototype published so learners can try it and reflect. <a href="../../../feedback/index.html">Leave a review</a> — it shapes the final, tailored releases. <a href="https://github.com/mechedkw/mechedkw.github.io" target="_blank" rel="noopener">Source on GitHub</a>.</p>
+  <p>Open engineering education. Worked-example values are pedagogical; representative industrial figures are labeled as such and are not published operating data of any named company. Every visual is an original vector illustration. Lessons not yet at full depth say so honestly.</p>
+</div></footer>
+<script src="../../../assets/nx/nexus.js?v=530f1b25c4"></script>
+</body>
+</html>
