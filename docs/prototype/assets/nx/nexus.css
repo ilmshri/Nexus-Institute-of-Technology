@@ -527,9 +527,12 @@ html.js .tabpanel.on{display:block}
   figure.lesson-diagram svg{min-width:0;max-width:100%}
   .keybox,figure,.sum-block,.sum-gloss tr{break-inside:avoid}
   /* THE rule: every lesson starts its own sheet, and no lesson is ever split
-     across two. The cover block occupies the first page on its own, so the
-     first lesson still breaks — that is intended, not an off-by-one. */
+     across two. Since 2026-08-03 every summary opens with the fixed-height
+     branded .rev-cover sheet, so the course heading starts sheet 2 — the
+     FIRST lesson follows the heading on that same sheet instead of forcing
+     a near-blank leaf; later lessons still break. */
   .sum-lesson{break-before:page;break-inside:auto;padding:0 0 12px;border-top:0}
+  .sum-course + .sum-lesson,.sum-course + .ref-thin + .sum-lesson{break-before:auto}
   /* Each lesson is a two-page spread: key points recto, fundamentals verso.
      Measured over a full course at A4/18mm the recto peaks at 55% of the sheet
      and the verso at 90%, so neither overflows. */

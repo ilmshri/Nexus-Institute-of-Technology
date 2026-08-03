@@ -1853,6 +1853,28 @@ def revision_lesson_pages(code, les, rev, folio_start=None):
                  for i, pg in enumerate(pages)]
     return pages
 
+def revision_cover(sem, course, prefix):
+    """Branded front cover — identity masthead on top, course title centred
+    and dominant. Owner 2026-08-03 ("apply it on existing notes"): EVERY
+    course's notes document opens with this cover, legacy recap spreads and
+    compiled fallbacks included, not only fully-migrated revision courses.
+    The root-asset logo reference uses the baked EN prefix; nx_page rewrites
+    it (+1 level) for the ar/ mirror, and the tagline swaps via data-ar."""
+    code = esc(course['code'])
+    return (
+        f'<section class="rev-page rev-cover">'
+        f'<div class="rev-mast"><img src="{prefix}assets/nx/logo.svg" alt="">'
+        f'<span class="rev-mast-name">MechEd'
+        f'<span class="rev-mast-tag" data-ar="{esc(BRAND_SMALL_AR)}">'
+        f'{esc(BRAND_SMALL_EN)}</span></span></div>'
+        f'<div class="rev-cover-mid">'
+        f'<p class="rev-cover-kicker">{code} · {esc(sem["title"])}</p>'
+        f'<h1 class="rev-cover-title">{esc(course["title"])}</h1>'
+        f'<span class="rev-cover-rule"></span>'
+        f'<p class="rev-cover-type">Revision Notes</p></div>'
+        f'<p class="rev-cover-foot">MechEd · mechedkw.github.io</p>'
+        f'</section>')
+
 def revision_document_fragment(sem, course, tabs_all, prefix):
     """The revision-notes document for a FULLY migrated course (caller enforces
     all-or-legacy). Page 1 is a real front cover: identity masthead on top,
@@ -1870,19 +1892,7 @@ def revision_document_fragment(sem, course, tabs_all, prefix):
         starts.append(nxt)
         nxt += 2 + len(rev['sheets']) + len(rev.get('examples') or [])
 
-    cover = (
-        f'<section class="rev-page rev-cover">'
-        f'<div class="rev-mast"><img src="{prefix}assets/nx/logo.svg" alt="">'
-        f'<span class="rev-mast-name">MechEd'
-        f'<span class="rev-mast-tag" data-ar="{esc(BRAND_SMALL_AR)}">'
-        f'{esc(BRAND_SMALL_EN)}</span></span></div>'
-        f'<div class="rev-cover-mid">'
-        f'<p class="rev-cover-kicker">{code} · {esc(sem["title"])}</p>'
-        f'<h1 class="rev-cover-title">{esc(course["title"])}</h1>'
-        f'<span class="rev-cover-rule"></span>'
-        f'<p class="rev-cover-type">Revision Notes</p></div>'
-        f'<p class="rev-cover-foot">MechEd · mechedkw.github.io</p>'
-        f'</section>')
+    cover = revision_cover(sem, course, prefix)
 
     toc_rows = []
     for (les, rev), start in zip(lessons_rev, starts):
@@ -1935,6 +1945,11 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
     if course['lessons'] and all(_revision_ok(tabs_all.get(str(l['n'])))
                                  for l in course['lessons']):
         return revision_document_fragment(sem, course, tabs_all, prefix)
+    # Owner 2026-08-03: legacy notes carry the branded cover too — identity on
+    # every notes document, not only migrated courses. No contents page here:
+    # legacy spreads have no fixed sheet heights, so exact folios cannot be
+    # computed; the paginated contents stays revision-mode-only.
+    cover = revision_cover(sem, course, prefix)
     heading = (f'<h2 class="sum-course" id="sum-{course["id"]}">'
                f'{esc(course["code"])} — {esc(course["title"])}</h2>')
 
@@ -1979,7 +1994,7 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
             f'{fund_html}</section>')
 
     if not sheets:
-        return heading + _legacy_compiled_fragment(course, tabs_all)
+        return cover + heading + _legacy_compiled_fragment(course, tabs_all)
 
     gap = ''
     if no_recap:
@@ -1989,7 +2004,7 @@ def course_summary_fragment(sem, course, prefix, tabs_all, ref):
                f'{", ".join("%02d" % n for n in no_recap)} — read '
                f'{"those lessons" if plural else "that lesson"} in full on the '
                f'course page.</p>')
-    return f"{heading}\n{gap}\n{''.join(sheets)}"
+    return f"{cover}\n{heading}\n{gap}\n{''.join(sheets)}"
 
 def build_course_summary(sem, course, prefix, tabs_all, ref):
     """Owner directive #5: end-of-course summary, print-optimized so the browser's
@@ -1998,10 +2013,10 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
     page chrome + print button."""
     rev_mode = course['lessons'] and all(
         _revision_ok(tabs_all.get(str(l['n']))) for l in course['lessons'])
-    if rev_mode:
-        # The revision document opens on its own cover (owner directive
-        # 2026-08-02) — no web pagehead above it, just the screen-only actions.
-        body = f"""
+    # Every summary opens on its own branded cover (owner 2026-08-03 — the
+    # 2026-08-02 revision-mode-only rule generalised) — no web pagehead
+    # anywhere, just the screen-only action row above the document.
+    body = f"""
 <div class="cta-row no-print rev-actions">
   <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
   <a class="btn btn-ghost" href="index.html">Back to course</a>
@@ -2009,33 +2024,14 @@ def build_course_summary(sem, course, prefix, tabs_all, ref):
 <article class="part tight sum-doc">
 {course_summary_fragment(sem, course, prefix, tabs_all, ref)}
 </article>"""
-        nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
-                f"Revision notes — {course['title']} — MechEd",
-                f"Printable revision notes for {course['code']} "
-                f"{course['title']}: terms first, one sheet per A4 page.",
-                body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
-        return
-    body = f"""
-<div class="pagehead sum-head">
-  <p class="kicker"><span class="n">COURSE SUMMARY</span>{esc(course['code'])} · {esc(sem['title'])}</p>
-  <h1>{esc(course['code'])} — {esc(course['title'])}</h1>
-  <p class="sub">Revision notes for this course: every lesson's key points with
-  its own assumed knowledge and glossary, one lesson to a page. Not a copy of the
-  lectures — read those on the course page. Use <b>Print / Save as PDF</b> for a
-  clean printed set.</p>
-  <div class="cta-row no-print">
-    <button class="btn btn-primary" type="button" onclick="window.print()">Print / Save as PDF</button>
-    <a class="btn btn-ghost" href="index.html">Back to course</a>
-  </div>
-</div>
-<article class="part tight sum-doc">
-{course_summary_fragment(sem, course, prefix, tabs_all, ref)}
-</article>"""
-    nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
-            f"Course summary — {course['title']} — MechEd",
+    desc = (f"Printable revision notes for {course['code']} "
+            f"{course['title']}: terms first, one sheet per A4 page."
+            if rev_mode else
             f"Condensed per-lesson revision summary for "
-            f"{course['code']} {course['title']}.",
-            body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
+            f"{course['code']} {course['title']}.")
+    nx_page(f"curriculum/{sem['id']}/{course['id']}/summary.html",
+            f"Revision notes — {course['title']} — MechEd",
+            desc, body, prefix, "curriculum", extra_head=MATHJAX, wrap=False)
 
 def main():
     global NX_V
