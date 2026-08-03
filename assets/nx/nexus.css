@@ -47,32 +47,36 @@ a:hover{color:var(--accent-deep)}
 ::selection{background:var(--tint);color:var(--accent-ink)}
 .wrap{max-width:1140px;margin:0 auto;padding:0 5vw 70px}
 
-/* ---------- top app bar (two-row centred chrome, owner 2026-08-02/03) ----------
-   Row 1: centred VERTICAL lockup — mark above wordmark above tagline, every
-   line centre-aligned (owner 2026-08-03; the tagline is back). Language
-   toggle pinned inline-end. Row 2: nav centred with the search button.
-   Sticky offsets below derive from --appbar-h. */
-:root{--appbar-h:157px}
-.appbar{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 92%,transparent);
+/* ---------- top app bar (masthead + pinned nav, owner 2026-08-02/03) ----------
+   Row 1: a generous centred VERTICAL masthead — mark above wordmark above
+   tagline, every line centre-aligned (owner 2026-08-03: identity made
+   larger/more visible). Row 2: nav centred with the search button.
+   The masthead SCROLLS AWAY (negative sticky top = exactly the brandrow
+   height) so only the slim nav row stays pinned — big identity at the top
+   of every page without a permanently tall sticky band.
+   --appbar-h is therefore the PINNED remainder (nav row + border), which is
+   what the sticky offsets below must clear. */
+:root{--appbar-h:47px}
+.appbar{position:sticky;top:-140px;z-index:80;background:color-mix(in srgb,var(--bg) 92%,transparent);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .appbar .in{max-width:1240px;margin:0 auto;padding:0 20px}
-.appbar .brandrow{position:relative;display:flex;align-items:center;justify-content:center;height:112px}
-.appbar .brand{display:flex;flex-direction:column;align-items:center;gap:5px;
+.appbar .brandrow{position:relative;display:flex;align-items:center;justify-content:center;height:140px}
+.appbar .brand{display:flex;flex-direction:column;align-items:center;gap:6px;
   text-decoration:none;color:var(--ink);white-space:nowrap;text-align:center}
-.appbar .brand img{width:40px;height:40px}
-.appbar .brand .txt{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.01em;
+.appbar .brand img{width:56px;height:56px}
+.appbar .brand .txt{font-family:var(--serif);font-size:28px;font-weight:700;letter-spacing:.01em;
   line-height:1.15;display:flex;flex-direction:column;align-items:center;text-align:center}
-.appbar .brand .txt small{display:block;font-family:var(--sans);font-size:8.5px;font-weight:600;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-top:3px}
+.appbar .brand .txt small{display:block;font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--amber);margin-top:4px}
 [dir="rtl"] .appbar .brand .txt small{font-family:var(--ar-sans);letter-spacing:0;
-  text-transform:none;font-size:11px}
+  text-transform:none;font-size:12.5px}
 .appbar .brand .teal{color:var(--navy)}
 /* The toggle carries its own dir attribute (label in the destination
    language), so inset-inline-* would resolve against the ELEMENT's direction
    and land on the wrong side — position physically, keyed off the root dir. */
 .appbar .lang-btn{position:absolute;right:20px;top:50%;transform:translateY(-50%)}
 [dir="rtl"] .appbar .lang-btn{right:auto;left:20px}
-.appbar .navrow{display:flex;align-items:center;justify-content:center;gap:10px;height:44px}
+.appbar .navrow{display:flex;align-items:center;justify-content:center;gap:10px;height:46px}
 .appbar nav{display:flex;gap:0;align-items:center}
 .appbar nav a{color:var(--soft);text-decoration:none;font-size:13.5px;font-weight:600;padding:8px 12px;
   border-radius:var(--r-sm);position:relative}
@@ -111,14 +115,16 @@ a:hover{color:var(--accent-deep)}
 .lang-btn:hover{border-color:var(--gold);background:var(--gold-tint)}
 [dir="rtl"] .lang-btn{font-family:var(--sans)}
 @media(max-width:920px){
-  :root{--appbar-h:135px}
+  :root{--appbar-h:43px}
+  .appbar{top:-108px}
   .appbar .in{padding:0 12px}
-  .appbar .brandrow{height:92px}
+  .appbar .brandrow{height:108px}
   .appbar .brand{gap:4px}
-  .appbar .brand img{width:32px;height:32px}
-  .appbar .brand .txt{font-size:17px}
-  .appbar .brand .txt small{font-size:7.5px}
-  [dir="rtl"] .appbar .brand .txt small{font-size:10px}
+  .appbar .brand img{width:44px;height:44px}
+  .appbar .brand .txt{font-size:22px}
+  .appbar .brand .txt small{font-size:8.5px}
+  [dir="rtl"] .appbar .brand .txt small{font-size:11.5px}
+  .appbar .navrow{height:42px}
   .appbar .lang-btn{right:12px}
   [dir="rtl"] .appbar .lang-btn{right:auto;left:12px}
   .appbar .navrow{height:42px;justify-content:flex-start}
