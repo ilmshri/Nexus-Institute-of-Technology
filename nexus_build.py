@@ -245,7 +245,8 @@ NX_PAGE = """<!doctype html>
   <div class="in brandrow">
     <a class="brand" href="{prefix}index.html" aria-label="MechEd — {brand_small}">
       <img src="{aprefix}assets/nx/logo.svg" alt="">
-      <span class="txt"><span class="teal">MechEd</span></span>
+      <span class="txt"><span class="teal">MechEd</span>
+        <small>{brand_small}</small></span>
     </a>
     <a class="lang-btn" href="{toggle_href}" lang="{toggle_lang}" dir="{toggle_dir}">{toggle_label}</a>
   </div>
@@ -1873,7 +1874,8 @@ def revision_document_fragment(sem, course, tabs_all, prefix):
         f'<section class="rev-page rev-cover">'
         f'<div class="rev-mast"><img src="{prefix}assets/nx/logo.svg" alt="">'
         f'<span class="rev-mast-name">MechEd'
-        f'<span class="rev-mast-tag">{esc(BRAND_SMALL_EN)}</span></span></div>'
+        f'<span class="rev-mast-tag" data-ar="{esc(BRAND_SMALL_AR)}">'
+        f'{esc(BRAND_SMALL_EN)}</span></span></div>'
         f'<div class="rev-cover-mid">'
         f'<p class="rev-cover-kicker">{code} · {esc(sem["title"])}</p>'
         f'<h1 class="rev-cover-title">{esc(course["title"])}</h1>'
